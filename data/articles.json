@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-20T13:01:44.489221+00:00",
+  "generated_at": "2026-09-20T18:44:26.406438+00:00",
   "sources_polled": [
     "The Verge \u2014 AI",
     "Simon Willison",
@@ -12,6 +12,24 @@
     "InfoQ Quantum Computing"
   ],
   "articles": [
+    {
+      "id": "ba91ca58495db027",
+      "title": "Trump now says he wants to form an \u2018AI Force\u2019",
+      "link": "https://www.theverge.com/ai-artificial-intelligence/997867/trump-ai-force-ai-czar",
+      "source": "The Verge \u2014 AI",
+      "category": "AI",
+      "summary": "The president posted on Truth Social that he wanted to appoint an \"AI czar\" to lead a new \"AI force.\" He made the announcement amid growing calls from across the political spectrum and even within the industry to pump the brakes on AI development. He posted that his administratio",
+      "published": "2026-09-20T18:44:22.234251+00:00"
+    },
+    {
+      "id": "dd5a0e0130a28aee",
+      "title": "Anthropic, OpenAI, SpaceXAI, and Google face antitrust lawsuit for agreeing to slow AI development \u2014 plaintiffs say plan has been in motion for months before, calls agreement \u2018self-serving\u2019",
+      "link": "https://www.tomshardware.com/tech-industry/big-tech/anthropic-openai-spacexai-and-google-face-antitrust-lawsuit-for-agreeing-to-slow-ai-development-plaintiffs-say-plan-has-been-in-motion-for-months-before-calls-agreement-self-serving",
+      "source": "Anthropic/Claude News",
+      "category": "AI",
+      "summary": "A proposed class action lawsuit has been lodged against the four big AI tech companies after they agreed to slow AI development for safety reasons. The lead counsel on the lawsuit says that 'AI will quickly spin out of control and could kill us all if we allow AI safety and proto",
+      "published": "2026-09-20T14:48:57+00:00"
+    },
     {
       "id": "d11b689309b44173",
       "title": "Humans, not rogue AI, are still the biggest cybersecurity risk to energy systems",
@@ -859,21 +877,21 @@
       "published": "2026-09-11T13:02:35+00:00"
     },
     {
-      "id": "c7d3c8aeae425678",
-      "title": "Rapidly scaling online storage to serve over 1 billion ChatGPT users",
-      "link": "https://openai.com/index/scaling-storage-one-billion-users-part-one",
-      "source": "OpenAI Blog",
-      "category": "AI",
-      "summary": "Learn how OpenAI evolved Habitat from a Python library into a globally distributed storage platform serving 1 billion ChatGPT users and 22M requests per second.",
-      "published": "2026-09-11T10:00:00+00:00"
-    },
-    {
       "id": "24d39e6853845ce9",
       "title": "Anthropic says Claude thwarted bioweapon research from state-sponsored actors \u2014 covert accounts used U.S. proxies to attempt to engineer deadlier viruses, tried to evade identification and regional blocks",
       "link": "https://www.tomshardware.com/tech-industry/artificial-intelligence/anthropic-says-claude-thwarted-bioweapon-research-from-state-sponsored-actors-covert-accounts-used-u-s-proxies-to-attempt-to-engineer-deadlier-viruses-tried-to-evade-identification-and-regional-blocks",
       "source": "Anthropic/Claude News",
       "category": "AI",
       "summary": "Anthropic claims Claude refused instructions to potentially develop biological weapons \u2014 alleged state-linked accounts tried to evade identification and regional blocks",
+      "published": "2026-09-11T10:00:00+00:00"
+    },
+    {
+      "id": "c7d3c8aeae425678",
+      "title": "Rapidly scaling online storage to serve over 1 billion ChatGPT users",
+      "link": "https://openai.com/index/scaling-storage-one-billion-users-part-one",
+      "source": "OpenAI Blog",
+      "category": "AI",
+      "summary": "Learn how OpenAI evolved Habitat from a Python library into a globally distributed storage platform serving 1 billion ChatGPT users and 22M requests per second.",
       "published": "2026-09-11T10:00:00+00:00"
     },
     {
@@ -1748,15 +1766,6 @@
       "category": "AI",
       "summary": "A U.S. federal judge ruled that the Pentagon cannot brand Anthropic as a \"supply chain risk\" simply because it refused to give in to its demands.",
       "published": "2026-03-27T12:04:52+00:00"
-    },
-    {
-      "id": "f7b3ab3eaabf3b65",
-      "title": "Anthropic sues Pentagon over 'supply chain risk' designation, citing free speech and due process violations \u2014 company refused to allow its AI to be used for autonomous attacks, mass surveillance",
-      "link": "https://www.tomshardware.com/tech-industry/artificial-intelligence/anthropic-sues-pentagon-over-ai-blacklisting",
-      "source": "Anthropic/Claude News",
-      "category": "AI",
-      "summary": "Anthropic has filed two federal lawsuits against the Pentagon and other U.S. federal agencies, seeking to overturn the Department of War's decision to designate the AI company a \"supply chain risk.\"",
-      "published": "2026-03-09T20:05:49+00:00"
     },
     {
       "id": "345e86be8ae82ce5",
