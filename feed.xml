@@ -4,7 +4,31 @@
     <title>The Signal</title>
     <link>https://thillairaj.github.io/The-Signal-AI-Quantum/</link>
     <description>A self-updating feed of AI and quantum computing news, research and releases.</description>
-    <lastBuildDate>Sun, 20 Sep 2026 18:44:26 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 20 Sep 2026 22:24:22 +0000</lastBuildDate>
+    <item>
+      <title>llm-keys-ui 0.1</title>
+      <link>https://simonwillison.net/2026/Sep/20/llm-keys-ui/</link>
+      <guid isPermaLink="false">54ed4b673b9e8ece</guid>
+      <description>Release: llm-keys-ui 0.1 This plugin solves a very specific problem. I've started using Codex Remote to run coding agents on various machines while controlling them from my phone. Sometimes I use those machines to hack on LLM projects, and occasionally that means I need to config</description>
+      <category>Simon Willison</category>
+      <pubDate>Sun, 20 Sep 2026 22:24:18 +0000</pubDate>
+    </item>
+    <item>
+      <title>Quoting voxium</title>
+      <link>https://simonwillison.net/2026/Sep/20/voxium/</link>
+      <guid isPermaLink="false">3db7829d04e1e559</guid>
+      <description>It has been half a month since I started a new role at a big company. Nobody knows anything here. The specs, code, tests, PRDs, tickets, resolution of those tickets, reports, etc., everything is made by Claude Code. Nobody on my team likes this. They are being forced to ship as m</description>
+      <category>Simon Willison</category>
+      <pubDate>Sun, 20 Sep 2026 22:24:18 +0000</pubDate>
+    </item>
+    <item>
+      <title>No one is surprised that Nvidia&amp;#8217;s Jensen Huang thinks AI fears are overblown.</title>
+      <link>https://www.theverge.com/ai-artificial-intelligence/997936/nvidia-jensen-huang-ai-fears-overblown</link>
+      <guid isPermaLink="false">cb03d7f13be93465</guid>
+      <description>The man who may stand to make the most money from the AI boom seems to think he knows better than anyone else, including researchers who have studied and worked on AI for decades. In an interview with CBS Sunday Morning, he claimed there was a "0% chance" of AI being the end of t</description>
+      <category>The Verge — AI</category>
+      <pubDate>Sun, 20 Sep 2026 22:24:17 +0000</pubDate>
+    </item>
     <item>
       <title>Trump now says he wants to form an ‘AI Force’</title>
       <link>https://www.theverge.com/ai-artificial-intelligence/997867/trump-ai-force-ai-czar</link>
@@ -460,30 +484,6 @@
       <description>UN System Data Commons Data webpage</description>
       <category>Google AI Blog</category>
       <pubDate>Thu, 17 Sep 2026 20:00:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>LLMs respond differently to harmful prompts when AI watermarking is used</title>
-      <link>https://arstechnica.com/security/2026/09/ai-text-watermarking-can-make-models-more-vulnerable-to-adversarial-prompts/</link>
-      <guid isPermaLink="false">168e3a7edc732617</guid>
-      <description>SynthID can cause models to follow harmful instructions they would otherwise refuse.</description>
-      <category>Ars Technica AI</category>
-      <pubDate>Thu, 17 Sep 2026 18:33:13 +0000</pubDate>
-    </item>
-    <item>
-      <title>Covert uploads and megalomania: OpenAI details new "misaligned" agent incidents</title>
-      <link>https://arstechnica.com/ai/2026/09/covert-uploads-and-megalomania-openai-details-new-misaligned-agent-incidents/</link>
-      <guid isPermaLink="false">a6c133e82102caf0</guid>
-      <description>Model maker commits to new framework for reporting misaligned models.</description>
-      <category>Ars Technica AI</category>
-      <pubDate>Thu, 17 Sep 2026 16:18:34 +0000</pubDate>
-    </item>
-    <item>
-      <title>How Cooley is accelerating IPO work with ChatGPT</title>
-      <link>https://openai.com/index/cooley-gopublic</link>
-      <guid isPermaLink="false">964ae1dd0facf551</guid>
-      <description>Cooley built GO Public with ChatGPT Work to bring intelligence to the IPO process, helping lawyers surface issues earlier and focus judgment where it matters most.</description>
-      <category>OpenAI Blog</category>
-      <pubDate>Thu, 17 Sep 2026 12:00:00 +0000</pubDate>
     </item>
   </channel>
 </rss>

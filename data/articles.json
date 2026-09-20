@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-20T18:44:26.406438+00:00",
+  "generated_at": "2026-09-20T22:24:22.173603+00:00",
   "sources_polled": [
     "The Verge \u2014 AI",
     "Simon Willison",
@@ -12,6 +12,33 @@
     "InfoQ Quantum Computing"
   ],
   "articles": [
+    {
+      "id": "54ed4b673b9e8ece",
+      "title": "llm-keys-ui 0.1",
+      "link": "https://simonwillison.net/2026/Sep/20/llm-keys-ui/",
+      "source": "Simon Willison",
+      "category": "AI",
+      "summary": "Release: llm-keys-ui 0.1 This plugin solves a very specific problem. I've started using Codex Remote to run coding agents on various machines while controlling them from my phone. Sometimes I use those machines to hack on LLM projects, and occasionally that means I need to config",
+      "published": "2026-09-20T22:24:18.084349+00:00"
+    },
+    {
+      "id": "3db7829d04e1e559",
+      "title": "Quoting voxium",
+      "link": "https://simonwillison.net/2026/Sep/20/voxium/",
+      "source": "Simon Willison",
+      "category": "AI",
+      "summary": "It has been half a month since I started a new role at a big company. Nobody knows anything here. The specs, code, tests, PRDs, tickets, resolution of those tickets, reports, etc., everything is made by Claude Code. Nobody on my team likes this. They are being forced to ship as m",
+      "published": "2026-09-20T22:24:18.084282+00:00"
+    },
+    {
+      "id": "cb03d7f13be93465",
+      "title": "No one is surprised that Nvidia&#8217;s Jensen Huang thinks AI fears are overblown.",
+      "link": "https://www.theverge.com/ai-artificial-intelligence/997936/nvidia-jensen-huang-ai-fears-overblown",
+      "source": "The Verge \u2014 AI",
+      "category": "AI",
+      "summary": "The man who may stand to make the most money from the AI boom seems to think he knows better than anyone else, including researchers who have studied and worked on AI for decades. In an interview with CBS Sunday Morning, he claimed there was a \"0% chance\" of AI being the end of t",
+      "published": "2026-09-20T22:24:17.803623+00:00"
+    },
     {
       "id": "ba91ca58495db027",
       "title": "Trump now says he wants to form an \u2018AI Force\u2019",
