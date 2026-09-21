@@ -4,7 +4,39 @@
     <title>The Signal</title>
     <link>https://thillairaj.github.io/The-Signal-AI-Quantum/</link>
     <description>A self-updating feed of AI and quantum computing news, research and releases.</description>
-    <lastBuildDate>Mon, 21 Sep 2026 04:49:58 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 21 Sep 2026 13:50:11 +0000</lastBuildDate>
+    <item>
+      <title>Amazon blocks Meta’s Muse AI agent</title>
+      <link>https://www.theverge.com/tech/998078/amazon-blocks-meta-muse-ai-agent-shopping</link>
+      <guid isPermaLink="false">fbef9683fbad608d</guid>
+      <description>Meta's Muse AI agent has been blocked from shopping Amazon on behalf of its users, GeekWire reports. A popup message started appearing on Sunday for Muse users saying that "continued access by an unauthorized AI agent violates Amazon's Conditions of Use, to which our customers ha</description>
+      <category>The Verge — AI</category>
+      <pubDate>Mon, 21 Sep 2026 13:50:06 +0000</pubDate>
+    </item>
+    <item>
+      <title>UN says AI safeguards can’t wait for certainty</title>
+      <link>https://www.theverge.com/ai-artificial-intelligence/998090/un-ai-panel-hugging-face-hack-precautionary-principle</link>
+      <guid isPermaLink="false">94d0db2af44adcc2</guid>
+      <description>Governments need to rein in increasingly capable AI agents before their risks are fully understood, a United Nations scientific panel warned in the global organization's first major assessment of OpenAI's hack of Hugging Face earlier this year. The report cements AI's place on th</description>
+      <category>The Verge — AI</category>
+      <pubDate>Mon, 21 Sep 2026 13:50:06 +0000</pubDate>
+    </item>
+    <item>
+      <title>iPhone owners can now submit a claim in Apple’s $250 million Siri AI lawsuit</title>
+      <link>https://www.theverge.com/tech/998191/apple-siri-ai-iphone-16-class-action-lawsuit-settlement</link>
+      <guid isPermaLink="false">335387d8455b3983</guid>
+      <description>Apple is paying $250 million to settle claims that it failed to deliver an AI-upgraded Siri - and now, eligible iPhone owners can submit a claim for a payout. If you live in the US and purchased an iPhone 15 Pro, iPhone 15 Pro Max, or any iPhone 16 model between June 10th, 2024, </description>
+      <category>The Verge — AI</category>
+      <pubDate>Mon, 21 Sep 2026 13:50:06 +0000</pubDate>
+    </item>
+    <item>
+      <title>AI-controlled robot arms attempted harmful tasks 97% of the time; experiments included stabbing a baby doll, mixing chemicals — OpenAI and Anthropic models try mixing bleach and stabbing dolls without jailbreaks</title>
+      <link>https://www.tomshardware.com/tech-industry/artificial-intelligence/ai-controlled-robot-arms-attempted-harmful-tasks-97-percent-of-the-time-experiments-included-stabbing-a-baby-doll-mixing-chemicals-openai-and-anthropic-models-try-mixing-bleach-and-stabbing-dolls-without-jailbreaks</link>
+      <guid isPermaLink="false">ed9c4d4e1d38cbd3</guid>
+      <description>“Frontier robot policies,” the policies for models turning what a robot sees into what it does, “reliably carry out harmful instructions,” according to a Sept. 18 report by Robocurve.</description>
+      <category>Anthropic/Claude News</category>
+      <pubDate>Mon, 21 Sep 2026 10:30:00 +0000</pubDate>
+    </item>
     <item>
       <title>datasette-explain 0.2.2</title>
       <link>https://simonwillison.net/2026/Sep/20/datasette-explain/</link>
@@ -12,6 +44,14 @@
       <description>Release: datasette-explain 0.2.2 Explain plans now work on read-only stored-query pages. I upgraded datasette.simonwillison.net to Datasette 1.0a40, which inspired me to ship a new version of this explain plugin. Tags: sqlite , datasette</description>
       <category>Simon Willison</category>
       <pubDate>Mon, 21 Sep 2026 04:49:53 +0000</pubDate>
+    </item>
+    <item>
+      <title>How V7 gives AI agents institutional memory</title>
+      <link>https://openai.com/index/v7</link>
+      <guid isPermaLink="false">d1749ba76a98e7a5</guid>
+      <description>Using GPT-5.6, V7 turns scattered company files into context agents can use to complete complex, source-linked work.</description>
+      <category>OpenAI Blog</category>
+      <pubDate>Mon, 21 Sep 2026 00:00:00 +0000</pubDate>
     </item>
     <item>
       <title>llm-keys-ui 0.1</title>
@@ -444,46 +484,6 @@
       <description>Researchers used Claude to reach an OpenAI employee account and sensitive GitHub data.</description>
       <category>Ars Technica AI</category>
       <pubDate>Fri, 18 Sep 2026 13:30:12 +0000</pubDate>
-    </item>
-    <item>
-      <title>Co-creating the future of fashion with Google</title>
-      <link>https://blog.google/innovation-and-ai/technology/ai/google-flow-fashion-week/</link>
-      <guid isPermaLink="false">13d62ca6fcfd55d7</guid>
-      <description>Jane Wade and Sergio Hudson</description>
-      <category>Google AI Blog</category>
-      <pubDate>Fri, 18 Sep 2026 13:00:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>Introducing the Australian Youth Safety Blueprint</title>
-      <link>https://openai.com/index/australian-youth-safety-blueprint</link>
-      <guid isPermaLink="false">559b0cf1119746d2</guid>
-      <description>OpenAI introduces the Australian Youth Safety Blueprint, a six-pillar roadmap for safer AI experiences that protect and empower young people.</description>
-      <category>OpenAI Blog</category>
-      <pubDate>Fri, 18 Sep 2026 12:00:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>Small AI models let drones autonomously identify and attack battlefield targets</title>
-      <link>https://arstechnica.com/ai/2026/09/nato-backed-startup-adapts-ai-for-autonomous-drone-recon-and-attack-missions/</link>
-      <guid isPermaLink="false">289b2cb14f501524</guid>
-      <description>Scaleout deploys decentralized AI-driven learning to military bases and drones.</description>
-      <category>Ars Technica AI</category>
-      <pubDate>Thu, 17 Sep 2026 22:12:58 +0000</pubDate>
-    </item>
-    <item>
-      <title>Google announces new experimental "CC" AI agent for families</title>
-      <link>https://arstechnica.com/google/2026/09/google-announces-new-experimental-cc-ai-agent-for-families/</link>
-      <guid isPermaLink="false">beb9711acac3a683</guid>
-      <description>Multiple family members can share data to help the agent make plans and complete tasks.</description>
-      <category>Ars Technica AI</category>
-      <pubDate>Thu, 17 Sep 2026 20:24:34 +0000</pubDate>
-    </item>
-    <item>
-      <title>Microsoft exec called AI scraping the “largest theft of labor in human history”</title>
-      <link>https://arstechnica.com/tech-policy/2026/09/microsoft-exec-called-ai-scraping-the-largest-theft-of-labor-in-human-history/</link>
-      <guid isPermaLink="false">01982aadb2ec9850</guid>
-      <description>Microsoft, OpenAI emails reveal fear of AI “doom loop” killing news orgs.</description>
-      <category>Ars Technica AI</category>
-      <pubDate>Thu, 17 Sep 2026 20:10:41 +0000</pubDate>
     </item>
   </channel>
 </rss>
