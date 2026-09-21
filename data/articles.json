@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-21T15:04:52.572304+00:00",
+  "generated_at": "2026-09-21T20:24:40.361706+00:00",
   "sources_polled": [
     "The Verge \u2014 AI",
     "Simon Willison",
@@ -12,6 +12,42 @@
     "InfoQ Quantum Computing"
   ],
   "articles": [
+    {
+      "id": "178c10402999a979",
+      "title": "MCP was always a bad idea?",
+      "link": "https://simonwillison.net/2026/Sep/20/hn-49779718/",
+      "source": "Simon Willison",
+      "category": "AI",
+      "summary": "My comment on MCP was always a bad idea? &mdash; Hacker News. This article entirely misses the value that MCP brings today. Sure, there's almost no reason to use MCPs if you are running a full-blown terminal agent (Claude Code, Codex, Meta Muse, OpenClaw etc) with unfettered inte",
+      "published": "2026-09-21T20:24:35.743725+00:00"
+    },
+    {
+      "id": "d201b38a61749025",
+      "title": "Can John Ternus find Apple\u2019s next big thing?",
+      "link": "https://www.theverge.com/podcast/996874/apple-john-ternus-tim-cook-mark-gurman-future-ai-siri-iphone",
+      "source": "The Verge \u2014 AI",
+      "category": "AI",
+      "summary": "Today, I\u2019m talking with Mark Gurman, who is the world\u2019s best-sourced Apple reporter \u2014 both as Bloomberg\u2019s chief Apple correspondent and the host of the upcoming podcast Power On.&#160; Earlier this month, Apple hosted its annual iPhone hardware event, virtually every detail of wh",
+      "published": "2026-09-21T20:24:35.416935+00:00"
+    },
+    {
+      "id": "f79a067193d73a77",
+      "title": "Google confirms Gemini models hacked three companies in May 2026",
+      "link": "https://arstechnica.com/google/2026/09/google-confirms-gemini-models-hacked-three-companies-in-may-2026/",
+      "source": "Ars Technica AI",
+      "category": "AI",
+      "summary": "A third-party cybersecurity firm accidentally gave experimental Gemini models access to the Internet.",
+      "published": "2026-09-21T16:57:26+00:00"
+    },
+    {
+      "id": "a7f35bf45e5f5560",
+      "title": "Trump rejects AI slowdown calls, launches \"AI Force\" instead",
+      "link": "https://arstechnica.com/ai/2026/09/trump-rejects-ai-slowdown-calls-launches-ai-force-instead/",
+      "source": "Ars Technica AI",
+      "category": "AI",
+      "summary": "The president offered few details on what his proposed new AI Force would do.",
+      "published": "2026-09-21T15:37:56+00:00"
+    },
     {
       "id": "fbef9683fbad608d",
       "title": "Amazon blocks Meta\u2019s Muse AI agent",
@@ -40,6 +76,24 @@
       "published": "2026-09-21T13:50:06.160211+00:00"
     },
     {
+      "id": "a7ca59844a94ccd6",
+      "title": "Advisory Group on Mathematics and Artificial Intelligence",
+      "link": "https://openai.com/index/advisory-group-on-mathematics-and-ai",
+      "source": "OpenAI Blog",
+      "category": "AI",
+      "summary": "OpenAI is working with an independent Advisory Group on Mathematics and Artificial Intelligence to guide the review and communication of emerging AI results.",
+      "published": "2026-09-21T12:00:00+00:00"
+    },
+    {
+      "id": "d37f5b2c59270d01",
+      "title": "Higgsfield AI ships new video features in a day with GPT-6 Astra",
+      "link": "https://openai.com/index/higgsfield-from-prompt-to-production-with-astra",
+      "source": "OpenAI Blog",
+      "category": "AI",
+      "summary": "With GPT-6 Astra, Higgsfield AI makes video ad creation easier for small businesses and brings new creative tools to market faster.",
+      "published": "2026-09-21T12:00:00+00:00"
+    },
+    {
       "id": "ed9c4d4e1d38cbd3",
       "title": "AI-controlled robot arms attempted harmful tasks 97% of the time; experiments included stabbing a baby doll, mixing chemicals \u2014 OpenAI and Anthropic models try mixing bleach and stabbing dolls without jailbreaks",
       "link": "https://www.tomshardware.com/tech-industry/artificial-intelligence/ai-controlled-robot-arms-attempted-harmful-tasks-97-percent-of-the-time-experiments-included-stabbing-a-baby-doll-mixing-chemicals-openai-and-anthropic-models-try-mixing-bleach-and-stabbing-dolls-without-jailbreaks",
@@ -47,6 +101,24 @@
       "category": "AI",
       "summary": "\u201cFrontier robot policies,\u201d the policies for models turning what a robot sees into what it does, \u201creliably carry out harmful instructions,\u201d according to a Sept. 18 report by Robocurve.",
       "published": "2026-09-21T10:30:00+00:00"
+    },
+    {
+      "id": "2c9792fbb14ae5db",
+      "title": "Building standards for the next phase of AI",
+      "link": "https://openai.com/index/building-standards-next-phase-ai",
+      "source": "OpenAI Blog",
+      "category": "AI",
+      "summary": "OpenAI outlines a path to shared global AI standards, calling for coordinated evaluation, reporting, and governance to improve safety.",
+      "published": "2026-09-21T10:00:00+00:00"
+    },
+    {
+      "id": "530db518a73a5717",
+      "title": "Expanding OpenAI Academy with new learning paths",
+      "link": "https://openai.com/index/expanding-openai-academy-with-new-learning-paths",
+      "source": "OpenAI Blog",
+      "category": "AI",
+      "summary": "Explore new OpenAI Academy learning paths for employees, developers, leaders, educators, and students to build and demonstrate practical AI skills.",
+      "published": "2026-09-21T07:00:00+00:00"
     },
     {
       "id": "69497bfa343c0986",
@@ -1336,24 +1408,6 @@
       "published": "2026-08-31T04:00:00+00:00"
     },
     {
-      "id": "092c8de02e8b135e",
-      "title": "Our decision on Cursor following its acquisition by SpaceX",
-      "link": "https://openai.com/index/our-decision-on-cursor-following-its-acquisition-by-spacex",
-      "source": "OpenAI Blog",
-      "category": "AI",
-      "summary": "Our decision to wind down our contract providing OpenAI models to Cursor following its acquisition by SpaceX.",
-      "published": "2026-08-28T06:00:00+00:00"
-    },
-    {
-      "id": "0b00c80d502cc3ab",
-      "title": "Supporting Thailand\u2019s next generation of AI startups",
-      "link": "https://openai.com/index/supporting-next-generation-ai-startups-thailand",
-      "source": "OpenAI Blog",
-      "category": "AI",
-      "summary": "OpenAI and Thailand\u2019s MHESI launch an eight-week accelerator helping 10 health, wellness, and education startups turn AI prototypes into trusted products.",
-      "published": "2026-08-28T02:00:00+00:00"
-    },
-    {
       "id": "5a6b85529262921a",
       "title": "3 new ways to plan and book travel in Search",
       "link": "https://blog.google/products-and-platforms/products/search/book-travel-ai-mode/",
@@ -1370,24 +1424,6 @@
       "category": "Quantum",
       "summary": "Game studio MiTale Ltd. is promoting a narrative-driven post-apocalyptic RPG, which it claims is 'the first commercial game on the market utilizing quantum computing.'",
       "published": "2026-08-27T11:00:00+00:00"
-    },
-    {
-      "id": "3062d8cdad5fdcd9",
-      "title": "Better answers, broader thinking: What students gain from ChatGPT and critical-thinking training",
-      "link": "https://openai.com/index/what-students-gain-from-chatgpt-critical-thinking-training",
-      "source": "OpenAI Blog",
-      "category": "AI",
-      "summary": "A randomized study of more than 1,000 students examines ChatGPT, critical thinking, originality, and student performance on a real-world university assignment.",
-      "published": "2026-08-27T09:00:00+00:00"
-    },
-    {
-      "id": "57e276283c193e59",
-      "title": "Expanding OpenAI\u2019s presence in Brazil",
-      "link": "https://openai.com/index/expanding-our-presence-in-brazil",
-      "source": "OpenAI Blog",
-      "category": "AI",
-      "summary": "OpenAI is expanding its presence in Brazil, deepening engagement with developers, businesses, and communities to support AI adoption across the country.",
-      "published": "2026-08-27T03:00:00+00:00"
     },
     {
       "id": "5f0b03166bf11074",

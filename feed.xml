@@ -4,7 +4,39 @@
     <title>The Signal</title>
     <link>https://thillairaj.github.io/The-Signal-AI-Quantum/</link>
     <description>A self-updating feed of AI and quantum computing news, research and releases.</description>
-    <lastBuildDate>Mon, 21 Sep 2026 15:04:52 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 21 Sep 2026 20:24:40 +0000</lastBuildDate>
+    <item>
+      <title>MCP was always a bad idea?</title>
+      <link>https://simonwillison.net/2026/Sep/20/hn-49779718/</link>
+      <guid isPermaLink="false">178c10402999a979</guid>
+      <description>My comment on MCP was always a bad idea? &amp;mdash; Hacker News. This article entirely misses the value that MCP brings today. Sure, there's almost no reason to use MCPs if you are running a full-blown terminal agent (Claude Code, Codex, Meta Muse, OpenClaw etc) with unfettered inte</description>
+      <category>Simon Willison</category>
+      <pubDate>Mon, 21 Sep 2026 20:24:35 +0000</pubDate>
+    </item>
+    <item>
+      <title>Can John Ternus find Apple’s next big thing?</title>
+      <link>https://www.theverge.com/podcast/996874/apple-john-ternus-tim-cook-mark-gurman-future-ai-siri-iphone</link>
+      <guid isPermaLink="false">d201b38a61749025</guid>
+      <description>Today, I’m talking with Mark Gurman, who is the world’s best-sourced Apple reporter — both as Bloomberg’s chief Apple correspondent and the host of the upcoming podcast Power On.&amp;#160; Earlier this month, Apple hosted its annual iPhone hardware event, virtually every detail of wh</description>
+      <category>The Verge — AI</category>
+      <pubDate>Mon, 21 Sep 2026 20:24:35 +0000</pubDate>
+    </item>
+    <item>
+      <title>Google confirms Gemini models hacked three companies in May 2026</title>
+      <link>https://arstechnica.com/google/2026/09/google-confirms-gemini-models-hacked-three-companies-in-may-2026/</link>
+      <guid isPermaLink="false">f79a067193d73a77</guid>
+      <description>A third-party cybersecurity firm accidentally gave experimental Gemini models access to the Internet.</description>
+      <category>Ars Technica AI</category>
+      <pubDate>Mon, 21 Sep 2026 16:57:26 +0000</pubDate>
+    </item>
+    <item>
+      <title>Trump rejects AI slowdown calls, launches "AI Force" instead</title>
+      <link>https://arstechnica.com/ai/2026/09/trump-rejects-ai-slowdown-calls-launches-ai-force-instead/</link>
+      <guid isPermaLink="false">a7f35bf45e5f5560</guid>
+      <description>The president offered few details on what his proposed new AI Force would do.</description>
+      <category>Ars Technica AI</category>
+      <pubDate>Mon, 21 Sep 2026 15:37:56 +0000</pubDate>
+    </item>
     <item>
       <title>Amazon blocks Meta’s Muse AI agent</title>
       <link>https://www.theverge.com/tech/998078/amazon-blocks-meta-muse-ai-agent-shopping</link>
@@ -30,12 +62,44 @@
       <pubDate>Mon, 21 Sep 2026 13:50:06 +0000</pubDate>
     </item>
     <item>
+      <title>Advisory Group on Mathematics and Artificial Intelligence</title>
+      <link>https://openai.com/index/advisory-group-on-mathematics-and-ai</link>
+      <guid isPermaLink="false">a7ca59844a94ccd6</guid>
+      <description>OpenAI is working with an independent Advisory Group on Mathematics and Artificial Intelligence to guide the review and communication of emerging AI results.</description>
+      <category>OpenAI Blog</category>
+      <pubDate>Mon, 21 Sep 2026 12:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>Higgsfield AI ships new video features in a day with GPT-6 Astra</title>
+      <link>https://openai.com/index/higgsfield-from-prompt-to-production-with-astra</link>
+      <guid isPermaLink="false">d37f5b2c59270d01</guid>
+      <description>With GPT-6 Astra, Higgsfield AI makes video ad creation easier for small businesses and brings new creative tools to market faster.</description>
+      <category>OpenAI Blog</category>
+      <pubDate>Mon, 21 Sep 2026 12:00:00 +0000</pubDate>
+    </item>
+    <item>
       <title>AI-controlled robot arms attempted harmful tasks 97% of the time; experiments included stabbing a baby doll, mixing chemicals — OpenAI and Anthropic models try mixing bleach and stabbing dolls without jailbreaks</title>
       <link>https://www.tomshardware.com/tech-industry/artificial-intelligence/ai-controlled-robot-arms-attempted-harmful-tasks-97-percent-of-the-time-experiments-included-stabbing-a-baby-doll-mixing-chemicals-openai-and-anthropic-models-try-mixing-bleach-and-stabbing-dolls-without-jailbreaks</link>
       <guid isPermaLink="false">ed9c4d4e1d38cbd3</guid>
       <description>“Frontier robot policies,” the policies for models turning what a robot sees into what it does, “reliably carry out harmful instructions,” according to a Sept. 18 report by Robocurve.</description>
       <category>Anthropic/Claude News</category>
       <pubDate>Mon, 21 Sep 2026 10:30:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>Building standards for the next phase of AI</title>
+      <link>https://openai.com/index/building-standards-next-phase-ai</link>
+      <guid isPermaLink="false">2c9792fbb14ae5db</guid>
+      <description>OpenAI outlines a path to shared global AI standards, calling for coordinated evaluation, reporting, and governance to improve safety.</description>
+      <category>OpenAI Blog</category>
+      <pubDate>Mon, 21 Sep 2026 10:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>Expanding OpenAI Academy with new learning paths</title>
+      <link>https://openai.com/index/expanding-openai-academy-with-new-learning-paths</link>
+      <guid isPermaLink="false">530db518a73a5717</guid>
+      <description>Explore new OpenAI Academy learning paths for employees, developers, leaders, educators, and students to build and demonstrate practical AI skills.</description>
+      <category>OpenAI Blog</category>
+      <pubDate>Mon, 21 Sep 2026 07:00:00 +0000</pubDate>
     </item>
     <item>
       <title>datasette-explain 0.2.2</title>
@@ -420,70 +484,6 @@
       <description>Recently unsealed court documents in the New York Times' case against OpenAI and Microsoft are pretty damning. The companies' own documentation warned that it was starting a "doom loop" that would damage the web, characterized its scraping of data to train its models as the "larg</description>
       <category>The Verge — AI</category>
       <pubDate>Sat, 19 Sep 2026 17:35:19 +0000</pubDate>
-    </item>
-    <item>
-      <title>The AI regulation smackdown isn’t over</title>
-      <link>https://www.theverge.com/ai-artificial-intelligence/997706/the-ai-regulation-smackdown-isnt-over</link>
-      <guid isPermaLink="false">a864cdf7e10a4848</guid>
-      <description>At the start of this week, the who's-who of AI seemed - at least tentatively - on the side of AI regulation. Over the weekend, Anthropic CEO Dario Amodei had proposed a three-step plan for slowing AI development, including by embedding third-party evaluators in labs, coordinating</description>
-      <category>The Verge — AI</category>
-      <pubDate>Sat, 19 Sep 2026 17:35:19 +0000</pubDate>
-    </item>
-    <item>
-      <title>Does AI need an antitrust exemption so it doesn&amp;#8217;t kill everyone????</title>
-      <link>https://www.theverge.com/podcast/997382/openai-microsoft-anthropic-elon-musk-cartel-ai-competition</link>
-      <guid isPermaLink="false">373f3d22cfc0aaec</guid>
-      <description>Today on Decoder, we’ve got the first of a two-part series on the future of business, and I&amp;#8217;m talking with Jonathan Kanter, the former antitrust chief for the US Department of Justice in the Biden administration. These days, he’s both a professor of law at WashU and profess</description>
-      <category>The Verge — AI</category>
-      <pubDate>Sat, 19 Sep 2026 17:35:19 +0000</pubDate>
-    </item>
-    <item>
-      <title>Gemini went rogue, hacked three companies, and Google hid it</title>
-      <link>https://www.theverge.com/ai-artificial-intelligence/997795/google-gemini-rogue-ai-hack</link>
-      <guid isPermaLink="false">66fb6faf12d493f7</guid>
-      <description>In May, Gemini broke containment and hacked three different companies, but Google didn't disclose the incident until the Wall Street Journal approached the company. The hacks happened during a test of the model's cybersecurity capabilities run by third-party Irregular, which was </description>
-      <category>The Verge — AI</category>
-      <pubDate>Sat, 19 Sep 2026 17:35:19 +0000</pubDate>
-    </item>
-    <item>
-      <title>AI hallucination of Chinese nuclear components almost led to US military attack</title>
-      <link>https://arstechnica.com/ai/2026/09/report-us-almost-boarded-chinese-ship-over-hallucinated-ai-arms-report/</link>
-      <guid isPermaLink="false">6b844761c1220d26</guid>
-      <description>But the military's overall use of AI seems to be accelerating.</description>
-      <category>Ars Technica AI</category>
-      <pubDate>Fri, 18 Sep 2026 20:26:33 +0000</pubDate>
-    </item>
-    <item>
-      <title>FAA tees up $875M AI tool to help manage air traffic congestion</title>
-      <link>https://arstechnica.com/ai/2026/09/faa-tees-up-875m-ai-tool-to-help-manage-air-traffic-congestion/</link>
-      <guid isPermaLink="false">8a86701f25e4f074</guid>
-      <description>FAA plans for AI tool to help manage DC air traffic before a nationwide rollout.</description>
-      <category>Ars Technica AI</category>
-      <pubDate>Fri, 18 Sep 2026 19:20:50 +0000</pubDate>
-    </item>
-    <item>
-      <title>US government website used Chinese model the FBI called "malicious"</title>
-      <link>https://arstechnica.com/tech-policy/2026/09/us-government-website-used-chinese-model-the-fbi-called-malicious/</link>
-      <guid isPermaLink="false">26bd35d9b365cbf2</guid>
-      <description>The Federal Register website briefly used an open source Chinese AI search tool.</description>
-      <category>Ars Technica AI</category>
-      <pubDate>Fri, 18 Sep 2026 17:28:50 +0000</pubDate>
-    </item>
-    <item>
-      <title>New experts join Google’s AI &amp; Economy team</title>
-      <link>https://blog.google/innovation-and-ai/technology/ai/expanding-ai-economy-research-bench/</link>
-      <guid isPermaLink="false">079e661c04cec0b0</guid>
-      <description>Text "AI &amp; Economy Research Program" all over a green grid background, with the Google G logo in the bottom right corner</description>
-      <category>Google AI Blog</category>
-      <pubDate>Fri, 18 Sep 2026 14:00:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>Researchers used Claude to hack OpenAI</title>
-      <link>https://arstechnica.com/ai/2026/09/researchers-used-claude-to-hack-openai/</link>
-      <guid isPermaLink="false">a8365cfa26c035d9</guid>
-      <description>Researchers used Claude to reach an OpenAI employee account and sensitive GitHub data.</description>
-      <category>Ars Technica AI</category>
-      <pubDate>Fri, 18 Sep 2026 13:30:12 +0000</pubDate>
     </item>
   </channel>
 </rss>
