@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-20T22:24:22.173603+00:00",
+  "generated_at": "2026-09-21T04:49:58.262085+00:00",
   "sources_polled": [
     "The Verge \u2014 AI",
     "Simon Willison",
@@ -12,6 +12,15 @@
     "InfoQ Quantum Computing"
   ],
   "articles": [
+    {
+      "id": "69497bfa343c0986",
+      "title": "datasette-explain 0.2.2",
+      "link": "https://simonwillison.net/2026/Sep/20/datasette-explain/",
+      "source": "Simon Willison",
+      "category": "AI",
+      "summary": "Release: datasette-explain 0.2.2 Explain plans now work on read-only stored-query pages. I upgraded datasette.simonwillison.net to Datasette 1.0a40, which inspired me to ship a new version of this explain plugin. Tags: sqlite , datasette",
+      "published": "2026-09-21T04:49:53.473418+00:00"
+    },
     {
       "id": "54ed4b673b9e8ece",
       "title": "llm-keys-ui 0.1",
