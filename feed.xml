@@ -4,7 +4,15 @@
     <title>The Signal</title>
     <link>https://thillairaj.github.io/The-Signal-AI-Quantum/</link>
     <description>A self-updating feed of AI and quantum computing news, research and releases.</description>
-    <lastBuildDate>Tue, 22 Sep 2026 04:48:43 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 22 Sep 2026 13:23:02 +0000</lastBuildDate>
+    <item>
+      <title>Meta patches Muse exploit that let attackers control the AI agent</title>
+      <link>https://www.theverge.com/tech/998679/meta-muse-patch-zero-day-exploit-ai-agent</link>
+      <guid isPermaLink="false">6ab491a44d134ad8</guid>
+      <description>Meta has issued a patch for its Muse macOS app following the discovery of a zero-day vulnerability that could allow someone to take control of the AI agent. The bug found by security researcher Patrick Wardle utilized an undocumented Muse setting that enabled potential attackers </description>
+      <category>The Verge — AI</category>
+      <pubDate>Tue, 22 Sep 2026 13:22:54 +0000</pubDate>
+    </item>
     <item>
       <title>Cloudflare Python Workers are now generally available</title>
       <link>https://simonwillison.net/2026/Sep/21/cloudflare-python-worker/</link>
@@ -474,14 +482,6 @@
       <link>https://www.theverge.com/science/997083/flash-flood-warning-tacls-satellite-machine-learning</link>
       <guid isPermaLink="false">82da9e642a0899d3</guid>
       <description>On the morning of June 9th, Laura Lin was working from her home in Lanesville, a rural southern Indiana town about 15 miles from the Kentucky border. She was on a Zoom call, unaware that the heavy rain outside was beginning to flood her yard. "I look over to where the barn is ove</description>
-      <category>The Verge — AI</category>
-      <pubDate>Sat, 19 Sep 2026 17:35:19 +0000</pubDate>
-    </item>
-    <item>
-      <title>Security researchers used Claude to help them hack into OpenAI</title>
-      <link>https://www.theverge.com/ai-artificial-intelligence/997444/openai-hack-claude-heif-heist</link>
-      <guid isPermaLink="false">907e9d5308761968</guid>
-      <description>A team of three independent security researchers at Hacktron says it took less than 72 hours for them to hack into OpenAI employee accounts using Anthropic's Claude Opus 4.8 and 5, The Wall Street Journal reports. They were able to access OpenAI's GitHub repository, called "Monor</description>
       <category>The Verge — AI</category>
       <pubDate>Sat, 19 Sep 2026 17:35:19 +0000</pubDate>
     </item>
