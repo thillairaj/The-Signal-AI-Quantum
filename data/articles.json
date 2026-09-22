@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-21T20:24:40.361706+00:00",
+  "generated_at": "2026-09-22T04:48:43.959941+00:00",
   "sources_polled": [
     "The Verge \u2014 AI",
     "Simon Willison",
@@ -12,6 +12,42 @@
     "InfoQ Quantum Computing"
   ],
   "articles": [
+    {
+      "id": "ff3a1364a89f9d84",
+      "title": "Cloudflare Python Workers are now generally available",
+      "link": "https://simonwillison.net/2026/Sep/21/cloudflare-python-worker/",
+      "source": "Simon Willison",
+      "category": "AI",
+      "summary": "Cloudflare Python Workers are now generally available After a two year preview, Cloudflare's support for running Python code in their server-side Workers platform is now stable: \"Python is now a first-class, fully supported language on the Cloudflare Developer Platform\". A neat t",
+      "published": "2026-09-22T04:48:40.188847+00:00"
+    },
+    {
+      "id": "c079d2e6330409d9",
+      "title": "Jev introduces a new shape of LLM - System One, aka Decision Models",
+      "link": "https://simonwillison.net/2026/Sep/21/jev/",
+      "source": "Simon Willison",
+      "category": "AI",
+      "summary": "Last week TypeSafe AI unveiled Jev , their first example of a new category of model that they are calling \"System One models\" (I'm with Maggie Appleton, I think \"decision models\" is a better name for these). Jev is an interesting variant on the usual LLM format: it still accepts ",
+      "published": "2026-09-22T04:48:40.188770+00:00"
+    },
+    {
+      "id": "c4d22e79dcded9e5",
+      "title": "California tightens rules on AI data center energy and water use",
+      "link": "https://www.theverge.com/ai-artificial-intelligence/998453/california-ai-data-center-bills",
+      "source": "The Verge \u2014 AI",
+      "category": "AI",
+      "summary": "California Gov. Gavin Newsom has signed seven bills designed to prevent AI data centers from passing utility costs onto residents, as reported earlier by the Los Angeles Times. The package of laws requires the California Public Utilities Commission to introduce a new rate classif",
+      "published": "2026-09-22T04:48:39.973067+00:00"
+    },
+    {
+      "id": "b2c543ac59e1c451",
+      "title": "Muse, Meta's extraordinarily privileged AI assistant, has a serious 0-day",
+      "link": "https://arstechnica.com/security/2026/09/muse-metas-extraordinarily-privileged-ai-assistant-has-a-serious-0-day/",
+      "source": "Ars Technica AI",
+      "category": "AI",
+      "summary": "A simple ClickFix attack is only one way to completely hijack the new agent.",
+      "published": "2026-09-21T22:24:38+00:00"
+    },
     {
       "id": "178c10402999a979",
       "title": "MCP was always a bad idea?",
@@ -1030,21 +1066,21 @@
       "published": "2026-09-11T13:02:35+00:00"
     },
     {
-      "id": "24d39e6853845ce9",
-      "title": "Anthropic says Claude thwarted bioweapon research from state-sponsored actors \u2014 covert accounts used U.S. proxies to attempt to engineer deadlier viruses, tried to evade identification and regional blocks",
-      "link": "https://www.tomshardware.com/tech-industry/artificial-intelligence/anthropic-says-claude-thwarted-bioweapon-research-from-state-sponsored-actors-covert-accounts-used-u-s-proxies-to-attempt-to-engineer-deadlier-viruses-tried-to-evade-identification-and-regional-blocks",
-      "source": "Anthropic/Claude News",
-      "category": "AI",
-      "summary": "Anthropic claims Claude refused instructions to potentially develop biological weapons \u2014 alleged state-linked accounts tried to evade identification and regional blocks",
-      "published": "2026-09-11T10:00:00+00:00"
-    },
-    {
       "id": "c7d3c8aeae425678",
       "title": "Rapidly scaling online storage to serve over 1 billion ChatGPT users",
       "link": "https://openai.com/index/scaling-storage-one-billion-users-part-one",
       "source": "OpenAI Blog",
       "category": "AI",
       "summary": "Learn how OpenAI evolved Habitat from a Python library into a globally distributed storage platform serving 1 billion ChatGPT users and 22M requests per second.",
+      "published": "2026-09-11T10:00:00+00:00"
+    },
+    {
+      "id": "24d39e6853845ce9",
+      "title": "Anthropic says Claude thwarted bioweapon research from state-sponsored actors \u2014 covert accounts used U.S. proxies to attempt to engineer deadlier viruses, tried to evade identification and regional blocks",
+      "link": "https://www.tomshardware.com/tech-industry/artificial-intelligence/anthropic-says-claude-thwarted-bioweapon-research-from-state-sponsored-actors-covert-accounts-used-u-s-proxies-to-attempt-to-engineer-deadlier-viruses-tried-to-evade-identification-and-regional-blocks",
+      "source": "Anthropic/Claude News",
+      "category": "AI",
+      "summary": "Anthropic claims Claude refused instructions to potentially develop biological weapons \u2014 alleged state-linked accounts tried to evade identification and regional blocks",
       "published": "2026-09-11T10:00:00+00:00"
     },
     {
