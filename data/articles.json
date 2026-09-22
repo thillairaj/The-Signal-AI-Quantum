@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-22T19:43:34.049847+00:00",
+  "generated_at": "2026-09-22T22:54:58.155275+00:00",
   "sources_polled": [
     "The Verge \u2014 AI",
     "Simon Willison",
@@ -12,6 +12,42 @@
     "InfoQ Quantum Computing"
   ],
   "articles": [
+    {
+      "id": "cc0d123c3bddd635",
+      "title": "Rabbit\u2019s new AI agent doesn\u2019t need an R1 to run",
+      "link": "https://www.theverge.com/ai-artificial-intelligence/999094/rabbit-ai-agent-os3",
+      "source": "The Verge \u2014 AI",
+      "category": "AI",
+      "summary": "Rabbit, the company behind the underwhelming R1 device, is rolling out a standalone AI agent that you don't need its hardware to use, as reported earlier by Wired. The startup says its new OS3 \"agentic operating system\" runs in the cloud but operates locally across Windows, Mac, ",
+      "published": "2026-09-22T22:54:52.256129+00:00"
+    },
+    {
+      "id": "5618ffbe19d5709c",
+      "title": "New Anthropic, OpenAI models make same promise: A little more for a lot less money",
+      "link": "https://arstechnica.com/ai/2026/09/new-anthropic-openai-models-make-same-promise-a-little-more-for-a-lot-less-money/",
+      "source": "Ars Technica AI",
+      "category": "AI",
+      "summary": "The frontier AI model race has entered its comparison shopping phase.",
+      "published": "2026-09-22T21:25:18+00:00"
+    },
+    {
+      "id": "b6b1e4118cdbb529",
+      "title": "Better prompt caching for GPT-6",
+      "link": "https://openai.com/index/better-prompt-caching-for-gpt-6",
+      "source": "OpenAI Blog",
+      "category": "AI",
+      "summary": "Learn how GPT-6 improves prompt caching with higher cache hit rates, new diagnostics, explicit breakpoints, and controls that reduce latency and costs.",
+      "published": "2026-09-22T21:00:00+00:00"
+    },
+    {
+      "id": "69bd5b227657facc",
+      "title": "Microsoft disrupts AI-assisted platform that compromised 12,000 accounts",
+      "link": "https://arstechnica.com/security/2026/09/microsoft-disrupts-ai-assisted-platform-that-compromised-12000/",
+      "source": "Ars Technica AI",
+      "category": "AI",
+      "summary": "EvilTokens provided an end-to-end platform that makes mass compromises faster and easier.",
+      "published": "2026-09-22T19:45:47+00:00"
+    },
     {
       "id": "7528f5f11fc6fb5e",
       "title": "llm-typesafe 0.1a0",
@@ -101,6 +137,15 @@
       "category": "AI",
       "summary": "Meta has issued a patch for its Muse macOS app following the discovery of a zero-day vulnerability that could allow someone to take control of the AI agent. The bug found by security researcher Patrick Wardle utilized an undocumented Muse setting that enabled potential attackers ",
       "published": "2026-09-22T13:22:54.812825+00:00"
+    },
+    {
+      "id": "ce45d8dc0f6c9cea",
+      "title": "Parallel cut research time and cost in half with GPT\u20116 Astra",
+      "link": "https://openai.com/index/parallel-cuts-time-and-cost-with-astra",
+      "source": "OpenAI Blog",
+      "category": "AI",
+      "summary": "GPT\u20116 Astra allowed Parallel\u2019s agents to research and synthesize labor-market data in half the time and at half the cost vs. prior models.",
+      "published": "2026-09-22T12:00:00+00:00"
     },
     {
       "id": "ff3a1364a89f9d84",
@@ -1505,24 +1550,6 @@
       "category": "AI",
       "summary": "ChatGPT can now connect to trusted healthcare data, helping clinicians securely access patient context, medical research, and more.",
       "published": "2026-09-01T12:00:00+00:00"
-    },
-    {
-      "id": "631a857c7a24a6f9",
-      "title": "How law firm Gilbert + Tobin governs and scales AI with OpenAI",
-      "link": "https://openai.com/index/gilbert-tobin",
-      "source": "OpenAI Blog",
-      "category": "AI",
-      "summary": "See how Gilbert + Tobin combines CEO-led commitment, rigorous governance, and human accountability to scale ChatGPT Enterprise and Codex across the firm.",
-      "published": "2026-09-01T01:00:00+00:00"
-    },
-    {
-      "id": "0703988e3a331916",
-      "title": "OpenAI supports California\u2019s bill to advance youth AI safety",
-      "link": "https://openai.com/index/supporting-california-bill-advance-ai-youth-safety",
-      "source": "OpenAI Blog",
-      "category": "AI",
-      "summary": "OpenAI supports California SB 1119, advancing strong, age-appropriate AI safeguards for teens while preserving opportunities to learn, create, and explore.",
-      "published": "2026-08-31T07:00:00+00:00"
     },
     {
       "id": "5a6b85529262921a",

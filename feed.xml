@@ -4,7 +4,39 @@
     <title>The Signal</title>
     <link>https://thillairaj.github.io/The-Signal-AI-Quantum/</link>
     <description>A self-updating feed of AI and quantum computing news, research and releases.</description>
-    <lastBuildDate>Tue, 22 Sep 2026 19:43:34 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 22 Sep 2026 22:54:58 +0000</lastBuildDate>
+    <item>
+      <title>Rabbit’s new AI agent doesn’t need an R1 to run</title>
+      <link>https://www.theverge.com/ai-artificial-intelligence/999094/rabbit-ai-agent-os3</link>
+      <guid isPermaLink="false">cc0d123c3bddd635</guid>
+      <description>Rabbit, the company behind the underwhelming R1 device, is rolling out a standalone AI agent that you don't need its hardware to use, as reported earlier by Wired. The startup says its new OS3 "agentic operating system" runs in the cloud but operates locally across Windows, Mac, </description>
+      <category>The Verge — AI</category>
+      <pubDate>Tue, 22 Sep 2026 22:54:52 +0000</pubDate>
+    </item>
+    <item>
+      <title>New Anthropic, OpenAI models make same promise: A little more for a lot less money</title>
+      <link>https://arstechnica.com/ai/2026/09/new-anthropic-openai-models-make-same-promise-a-little-more-for-a-lot-less-money/</link>
+      <guid isPermaLink="false">5618ffbe19d5709c</guid>
+      <description>The frontier AI model race has entered its comparison shopping phase.</description>
+      <category>Ars Technica AI</category>
+      <pubDate>Tue, 22 Sep 2026 21:25:18 +0000</pubDate>
+    </item>
+    <item>
+      <title>Better prompt caching for GPT-6</title>
+      <link>https://openai.com/index/better-prompt-caching-for-gpt-6</link>
+      <guid isPermaLink="false">b6b1e4118cdbb529</guid>
+      <description>Learn how GPT-6 improves prompt caching with higher cache hit rates, new diagnostics, explicit breakpoints, and controls that reduce latency and costs.</description>
+      <category>OpenAI Blog</category>
+      <pubDate>Tue, 22 Sep 2026 21:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>Microsoft disrupts AI-assisted platform that compromised 12,000 accounts</title>
+      <link>https://arstechnica.com/security/2026/09/microsoft-disrupts-ai-assisted-platform-that-compromised-12000/</link>
+      <guid isPermaLink="false">69bd5b227657facc</guid>
+      <description>EvilTokens provided an end-to-end platform that makes mass compromises faster and easier.</description>
+      <category>Ars Technica AI</category>
+      <pubDate>Tue, 22 Sep 2026 19:45:47 +0000</pubDate>
+    </item>
     <item>
       <title>llm-typesafe 0.1a0</title>
       <link>https://simonwillison.net/2026/Sep/22/llm-typesafe/</link>
@@ -84,6 +116,14 @@
       <description>Meta has issued a patch for its Muse macOS app following the discovery of a zero-day vulnerability that could allow someone to take control of the AI agent. The bug found by security researcher Patrick Wardle utilized an undocumented Muse setting that enabled potential attackers </description>
       <category>The Verge — AI</category>
       <pubDate>Tue, 22 Sep 2026 13:22:54 +0000</pubDate>
+    </item>
+    <item>
+      <title>Parallel cut research time and cost in half with GPT‑6 Astra</title>
+      <link>https://openai.com/index/parallel-cuts-time-and-cost-with-astra</link>
+      <guid isPermaLink="false">ce45d8dc0f6c9cea</guid>
+      <description>GPT‑6 Astra allowed Parallel’s agents to research and synthesize labor-market data in half the time and at half the cost vs. prior models.</description>
+      <category>OpenAI Blog</category>
+      <pubDate>Tue, 22 Sep 2026 12:00:00 +0000</pubDate>
     </item>
     <item>
       <title>Cloudflare Python Workers are now generally available</title>
@@ -442,46 +482,6 @@
       <link>https://simonwillison.net/2026/Sep/14/the-contagion-of-fear/</link>
       <guid isPermaLink="false">bed1156254a4ff47</guid>
       <description>The contagion of fear Bryan Cantrill responds to the tweet by former Anthropic employee Jacob Coxon confirming that many Anthropic researchers believe AI "could kill us all by the end of the decade". Bryan shares a story of his own youthful mistakes causing unjustified panic amon</description>
-      <category>Simon Willison</category>
-      <pubDate>Sat, 19 Sep 2026 17:35:20 +0000</pubDate>
-    </item>
-    <item>
-      <title>Gemini Live audio</title>
-      <link>https://simonwillison.net/2026/Sep/15/gemini-live/</link>
-      <guid isPermaLink="false">500c6bf99a8171dc</guid>
-      <description>Tool: Gemini Live audio Google released Gemini 3.8 Live and 3.8 Live Extended Thinking today - two new speech-to-speech models that are a similar shape to OpenAI's GPT-Live family. I pointed GPT-6 Astra Extra High at the documentation and had it build me this web UI for trying ou</description>
-      <category>Simon Willison</category>
-      <pubDate>Sat, 19 Sep 2026 17:35:20 +0000</pubDate>
-    </item>
-    <item>
-      <title>Quoting Mustafa Suleyman</title>
-      <link>https://simonwillison.net/2026/Sep/16/mustafa-suleyman/</link>
-      <guid isPermaLink="false">fc651ee7288f058a</guid>
-      <description>We should not treat models as though they have feelings, preferences, rights, or any entitlement to our welfare. Consciousness is the foundation of our ethical, legal, and political systems. To invite another entity to share any flavor of these rights isn’t justified by the evide</description>
-      <category>Simon Willison</category>
-      <pubDate>Sat, 19 Sep 2026 17:35:20 +0000</pubDate>
-    </item>
-    <item>
-      <title>Claude Cowork and chat are now one Claude</title>
-      <link>https://simonwillison.net/2026/Sep/16/one-claude/</link>
-      <guid isPermaLink="false">d86c6da463d50815</guid>
-      <description>Claude Cowork and chat are now one Claude In hopefully good news for anyone who, like me, was increasingly confused at Cowork v.s. Claude v.s. Claude Code: Starting today, Claude Cowork and chat are merging into one Claude. Bring a quick question, or hand over a report due at noo</description>
-      <category>Simon Willison</category>
-      <pubDate>Sat, 19 Sep 2026 17:35:20 +0000</pubDate>
-    </item>
-    <item>
-      <title>datasette 0.65.5</title>
-      <link>https://simonwillison.net/2026/Sep/16/datasette-2/</link>
-      <guid isPermaLink="false">2105625f58a47d54</guid>
-      <description>Release: datasette 0.65.5 Security fix for an issue where a trailing newline in a requested table name could bypass table permissions and expose private rows, reported by dpfkdlemtp in GHSA-h547-rmjf-5m2m . Tags: security , datasette</description>
-      <category>Simon Willison</category>
-      <pubDate>Sat, 19 Sep 2026 17:35:20 +0000</pubDate>
-    </item>
-    <item>
-      <title>datasette 1.0a40</title>
-      <link>https://simonwillison.net/2026/Sep/16/datasette/</link>
-      <guid isPermaLink="false">738877fde7567c89</guid>
-      <description>Release: datasette 1.0a40 Same security fix as 0.65.5 , plus some neat new features and bug fixes: Plugins can now launch and manage background tasks using the new datasette.add_background_task() method. Thanks, Alex Garcia . I've migrated Datasette to httpx2 for features like th</description>
       <category>Simon Willison</category>
       <pubDate>Sat, 19 Sep 2026 17:35:20 +0000</pubDate>
     </item>
