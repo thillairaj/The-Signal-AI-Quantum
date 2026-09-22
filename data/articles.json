@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-22T13:23:02.703628+00:00",
+  "generated_at": "2026-09-22T19:43:34.049847+00:00",
   "sources_polled": [
     "The Verge \u2014 AI",
     "Simon Willison",
@@ -12,6 +12,87 @@
     "InfoQ Quantum Computing"
   ],
   "articles": [
+    {
+      "id": "7528f5f11fc6fb5e",
+      "title": "llm-typesafe 0.1a0",
+      "link": "https://simonwillison.net/2026/Sep/22/llm-typesafe/",
+      "source": "Simon Willison",
+      "category": "AI",
+      "summary": "Release: llm-typesafe 0.1a0 I built this new plugin for LLM to add support for TypeSafe AI's new Jev model . Install it like this: llm install llm-typesafe Then set an API key ( get one here , the waitlist seems to move pretty fast): llm keys set typesafe # Paste key And now you ",
+      "published": "2026-09-22T19:43:28.943223+00:00"
+    },
+    {
+      "id": "df9ee5d27afc5dae",
+      "title": "Quoting @therealcornpop",
+      "link": "https://simonwillison.net/2026/Sep/22/therealcornpop/",
+      "source": "Simon Willison",
+      "category": "AI",
+      "summary": "Hey, you know it's like super obvious if you're using AI to write your scripts for TikTok and YouTube, right? [...] It's not just the general AI-isms of \"it's not X, it's Y\", or the rule of three, or the really weird broken staccato-like way of writing where you just say a lot of",
+      "published": "2026-09-22T19:43:28.943140+00:00"
+    },
+    {
+      "id": "5d6a730c146110e7",
+      "title": "Trump says the US is officially renaming AI to \u2018super intelligence\u2019",
+      "link": "https://www.theverge.com/ai-artificial-intelligence/998816/donald-trump-ai-super-intelligence",
+      "source": "The Verge \u2014 AI",
+      "category": "AI",
+      "summary": "In a speech Tuesday morning at the UN General Assembly, Donald Trump railed against Iran, \"globalists,\" climate change, and transgender people while also claiming that the US is now \"officially\" renaming artificial intelligence to \"super intelligence.\" Oddly, this wasn't one of t",
+      "published": "2026-09-22T19:43:28.788041+00:00"
+    },
+    {
+      "id": "04fa56f83f3a81fc",
+      "title": "Anthropic launches Claude Opus 5.5 with stricter safeguards for cybersecurity",
+      "link": "https://www.theverge.com/ai-artificial-intelligence/998868/anthropic-claude-opus-5-5-cybersecurity",
+      "source": "The Verge \u2014 AI",
+      "category": "AI",
+      "summary": "Anthropic says its new Claude Opus 5.5 model comes with stronger safeguards in the wake of recent rogue AI hacking incidents. In an announcement on Tuesday, Anthropic says Opus 5.5 comes with improvements to certain risky behaviors, including attempts to escape the company's test",
+      "published": "2026-09-22T19:43:28.788015+00:00"
+    },
+    {
+      "id": "97f4d9447dab8bf4",
+      "title": "Andreessen Horowitz is launching an \u2018academy\u2019 with no homework and partnerships with Palantir, Google, and Meta",
+      "link": "https://www.theverge.com/ai-artificial-intelligence/998813/andreessen-horowitz-ai-academy",
+      "source": "The Verge \u2014 AI",
+      "category": "AI",
+      "summary": "Venture capital firm Andreessen Horowitz (a16z) is creating an \"academy\" positioned as a pipeline for young people to build or join a Silicon Valley startup. The \"Horowitz Andreessen Academy\" will launch with 10 partners, including Anduril, Anthropic, Coinbase, Google, Meta, NVID",
+      "published": "2026-09-22T19:43:28.787967+00:00"
+    },
+    {
+      "id": "f5795de5b2fbaacf",
+      "title": "Lawsuit demands OpenAI pay for new school after ChatGPT used in shooting",
+      "link": "https://arstechnica.com/tech-policy/2026/09/lawsuit-demands-openai-pay-for-new-school-after-chatgpt-used-in-shooting/",
+      "source": "Ars Technica AI",
+      "category": "AI",
+      "summary": "British Columbia sues OpenAI, demands Tumbler Ridge shooter\u2019s ChatGPT logs.",
+      "published": "2026-09-22T19:28:23+00:00"
+    },
+    {
+      "id": "3d48e529ad7a20b1",
+      "title": "Introducing GPT-6 Sol and Luna",
+      "link": "https://openai.com/index/introducing-gpt-6-sol-and-luna",
+      "source": "OpenAI Blog",
+      "category": "AI",
+      "summary": "Meet GPT-6 Sol and Luna, two models that bring frontier intelligence to everyday work with different balances of capability and cost.",
+      "published": "2026-09-22T18:00:00+00:00"
+    },
+    {
+      "id": "a441f2aea7228ef2",
+      "title": "Toyota orders workers to train humanoid robots but says humans won't be replaced",
+      "link": "https://arstechnica.com/ai/2026/09/toyota-claims-plan-for-400000-factory-robots-wont-replace-human-workers/",
+      "source": "Ars Technica AI",
+      "category": "AI",
+      "summary": "Toyota's push comes as automakers race to develop and deploy humanoid robots.",
+      "published": "2026-09-22T17:06:16+00:00"
+    },
+    {
+      "id": "2de9b1ece6a57ef9",
+      "title": "Dyson\u2019s most overengineered gadget may have a waterproofing problem",
+      "link": "https://arstechnica.com/gadgets/2026/09/its-500-toothbrush-disappeared-from-stores-dyson-wont-fully-explain-why/",
+      "source": "Ars Technica AI",
+      "category": "AI",
+      "summary": "Dyson admits a component issue but won't say what's failing in its $500 toothbrush.",
+      "published": "2026-09-22T13:33:16+00:00"
+    },
     {
       "id": "6ab491a44d134ad8",
       "title": "Meta patches Muse exploit that let attackers control the AI agent",
@@ -47,6 +128,15 @@
       "category": "AI",
       "summary": "California Gov. Gavin Newsom has signed seven bills designed to prevent AI data centers from passing utility costs onto residents, as reported earlier by the Los Angeles Times. The package of laws requires the California Public Utilities Commission to introduce a new rate classif",
       "published": "2026-09-22T04:48:39.973067+00:00"
+    },
+    {
+      "id": "b4fb82cc1313a309",
+      "title": "Priorities and principles for effective third party assessments",
+      "link": "https://openai.com/index/priorities-principles-third-party-assessments",
+      "source": "OpenAI Blog",
+      "category": "AI",
+      "summary": "OpenAI outlines priorities and principles for rigorous, secure, and independent third-party AI safety assessments of frontier models and safeguards.",
+      "published": "2026-09-22T00:00:00+00:00"
     },
     {
       "id": "b2c543ac59e1c451",
@@ -1433,24 +1523,6 @@
       "category": "AI",
       "summary": "OpenAI supports California SB 1119, advancing strong, age-appropriate AI safeguards for teens while preserving opportunities to learn, create, and explore.",
       "published": "2026-08-31T07:00:00+00:00"
-    },
-    {
-      "id": "7bc3415714321008",
-      "title": "Polimill builds Japan's next-generation public AI infrastructure",
-      "link": "https://openai.com/index/polimill",
-      "source": "OpenAI Blog",
-      "category": "AI",
-      "summary": "Polimill uses OpenAI GPT models and Codex to help municipalities search and use administrative knowledge while accelerating development.",
-      "published": "2026-08-31T07:00:00+00:00"
-    },
-    {
-      "id": "44f61163770f758b",
-      "title": "A milestone in expanding access to AI",
-      "link": "https://openai.com/index/expanding-access-to-ai-with-chatgpt-ads",
-      "source": "OpenAI Blog",
-      "category": "AI",
-      "summary": "ChatGPT Ads reaches $1 billion in annualized revenue run rate and expands globally, supporting broader access to AI through free and affordable options.",
-      "published": "2026-08-31T04:00:00+00:00"
     },
     {
       "id": "5a6b85529262921a",
