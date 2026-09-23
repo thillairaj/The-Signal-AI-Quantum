@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-23T19:39:34.180554+00:00",
+  "generated_at": "2026-09-23T22:55:39.187889+00:00",
   "sources_polled": [
     "The Verge \u2014 AI",
     "Simon Willison",
@@ -12,6 +12,69 @@
     "InfoQ Quantum Computing"
   ],
   "articles": [
+    {
+      "id": "ba339dfd75be84d1",
+      "title": "Shadow roots, explained with live examples",
+      "link": "https://simonwillison.net/2026/Sep/23/shadow-roots/",
+      "source": "Simon Willison",
+      "category": "AI",
+      "summary": "Tool: Shadow roots, explained with live examples Prompt to Fable 5.1 Medium: Build an artifact to explain shadow roots in CSS with interactive examples Tags: css",
+      "published": "2026-09-23T22:55:33.901650+00:00"
+    },
+    {
+      "id": "e9c1ddde4585931b",
+      "title": "Gemini 3.8 TTS Playground",
+      "link": "https://simonwillison.net/2026/Sep/23/gemini-tts-playground/",
+      "source": "Simon Willison",
+      "category": "AI",
+      "summary": "Tool: Gemini 3.8 TTS Playground Google released two new Gemini text-to-speech models today - gemini-3.8-flash-tts and gemini-3.8-flash-lite-tts . They come with a library of over 2,000 voices, plus the ability to create a custom voice with \"just a 30-second audio sample of your v",
+      "published": "2026-09-23T22:55:33.901613+00:00"
+    },
+    {
+      "id": "ad93c749ed6509d0",
+      "title": "Anthropic&#8217;s biolab made a discovery it&#8217;s comparing to Crispr",
+      "link": "https://www.theverge.com/ai-artificial-intelligence/999470/anthropic-biolab-claude-crispr",
+      "source": "The Verge \u2014 AI",
+      "category": "AI",
+      "summary": "Anthropic says its AI Claude has \"autonomously discovered\" a new enzyme system similar to machinery behind the powerful gene-editing tool Crispr. It's the first result from Anthropic's newly-launched wet lab and an early test of Claude's usefulness for science as the company prep",
+      "published": "2026-09-23T22:55:33.774171+00:00"
+    },
+    {
+      "id": "211a6281fee6a0bf",
+      "title": "Data centers are black boxes, but California wants to change that",
+      "link": "https://www.theverge.com/policy/999412/data-center-water-electricity-disclosure-bills",
+      "source": "The Verge \u2014 AI",
+      "category": "AI",
+      "summary": "California Gov. Gavin Newsom signed a slate of bills on Monday that could finally give communities better data - and more say - on how data centers impact their electricity bills and water supply. As data centers invade a growing number of communities across the US, they've trigg",
+      "published": "2026-09-23T22:55:33.774131+00:00"
+    },
+    {
+      "id": "54336ea97e9aec13",
+      "title": "Meta\u2019s AI agent is a cute little guy who\u2019s great at spending my money",
+      "link": "https://www.theverge.com/ai-artificial-intelligence/999526/meta-muse-ai-agent-hands-on-shopping",
+      "source": "The Verge \u2014 AI",
+      "category": "AI",
+      "summary": "Modern life comes with an unending, auto-populating to-do list. It never ceases to amaze me how I can be doing nothing at all, minding my own business, and suddenly something needs to be taken care of. You're telling me a tree branch fell in the backyard and now I have to figure ",
+      "published": "2026-09-23T22:55:33.774060+00:00"
+    },
+    {
+      "id": "c1c97de161b0f3b7",
+      "title": "Trump\u2019s China rivalry and \u201cAI race\u201d delusion may endanger US, experts say",
+      "link": "https://arstechnica.com/tech-policy/2026/09/china-silent-as-us-touts-plan-for-ai-safety-alerts-that-omits-tech-experts/",
+      "source": "Ars Technica AI",
+      "category": "AI",
+      "summary": "Trump focus on winning \u201cAI race\u201d may deter China from sharing safety intel.",
+      "published": "2026-09-23T20:52:28+00:00"
+    },
+    {
+      "id": "f553567bf21507d8",
+      "title": "XPRIZE Wildfire winners spotted fires within 10 min\u2014but couldn\u2019t stop them",
+      "link": "https://arstechnica.com/gadgets/2026/09/xprize-wildfire-winners-spotted-fires-within-10-min-but-couldnt-stop-them/",
+      "source": "Ars Technica AI",
+      "category": "AI",
+      "summary": "$11M competition showed wildfire detection is still easier than stopping fires.",
+      "published": "2026-09-23T20:28:42+00:00"
+    },
     {
       "id": "6fd27f05163752d0",
       "title": "OpenAI nabs key Patreon execs ahead of upcoming announcement",
@@ -38,6 +101,15 @@
       "category": "AI",
       "summary": "Sen. Bernie Sanders (I-VT) and Rep. Greg Casar (D-TX) have introduced new legislation that would ban anyone from developing artificial superintelligence - a technology the bill describes as capable of the \"destruction or disempowerment of humanity,\" including by overthrowing the ",
       "published": "2026-09-23T19:39:29.741487+00:00"
+    },
+    {
+      "id": "25698732c6b8e24b",
+      "title": "YouTube promises custom feeds and a lot more AI later this year",
+      "link": "https://arstechnica.com/gadgets/2026/09/youtube-promises-custom-feeds-and-a-lot-more-ai-later-this-year/",
+      "source": "Ars Technica AI",
+      "category": "AI",
+      "summary": "YouTube's next year could change the content you see with a big focus on AI and livestreams.",
+      "published": "2026-09-23T19:35:53+00:00"
     },
     {
       "id": "8a86c97089bb6492",
@@ -103,6 +175,24 @@
       "published": "2026-09-23T12:00:00+00:00"
     },
     {
+      "id": "01d4e543c9419cea",
+      "title": "Sam Altman\u2019s remarks at the United Nations Security Council",
+      "link": "https://openai.com/index/sam-altman-un-security-council-remarks",
+      "source": "OpenAI Blog",
+      "category": "AI",
+      "summary": "OpenAI CEO Sam Altman discusses AI safety, human control, and international cooperation in remarks to the United Nations Security Council.",
+      "published": "2026-09-23T12:00:00+00:00"
+    },
+    {
+      "id": "1d5a9cc2d9509da8",
+      "title": "Introducing MentalHealthBench",
+      "link": "https://openai.com/index/introducing-mentalhealthbench",
+      "source": "OpenAI Blog",
+      "category": "AI",
+      "summary": "MentalHealthBench is an expert-informed benchmark for evaluating helpful and safe AI responses across realistic mental health conversations.",
+      "published": "2026-09-23T10:00:00+00:00"
+    },
+    {
       "id": "263fa952490ea5db",
       "title": "llm-anthropic 0.29",
       "link": "https://simonwillison.net/2026/Sep/22/llm-anthropic/",
@@ -146,6 +236,15 @@
       "category": "AI",
       "summary": "After turning a string of spectacular mathematical results into a reputational crisis, OpenAI is consulting human mathematicians to help it figure out a less disastrous path forward. On Monday, the company announced a new independent panel of mathematicians tasked with advising i",
       "published": "2026-09-23T04:40:32.688338+00:00"
+    },
+    {
+      "id": "73fafdf6f45f6a41",
+      "title": "Airbnb widens access to GPT-6 Astra and OpenAI frontier models",
+      "link": "https://openai.com/index/airbnb-gpt-6-astra",
+      "source": "OpenAI Blog",
+      "category": "AI",
+      "summary": "Learn how Airbnb is expanding access to GPT-6 Astra and OpenAI frontier models to help engineering teams solve bugs, design systems, and ship faster.",
+      "published": "2026-09-23T01:00:00+00:00"
     },
     {
       "id": "09a0c6dbf1c6c00d",
@@ -1372,21 +1471,21 @@
       "published": "2026-09-11T10:00:00+00:00"
     },
     {
-      "id": "014159943e4d9643",
-      "title": "How a researcher uses Codex and ChatGPT to search for new antimicrobial molecules",
-      "link": "https://openai.com/index/using-codex-chatgpt-to-search-for-new-antimicrobials",
-      "source": "OpenAI Blog",
-      "category": "AI",
-      "summary": "C\u00e9sar de la Fuente\u2019s lab uses Codex and ChatGPT to search living and extinct genomes for antimicrobial candidates to fight drug-resistant infections.",
-      "published": "2026-09-10T16:00:00+00:00"
-    },
-    {
       "id": "1852061b5cf6950b",
       "title": "3 ways to prep for your next big race with Search",
       "link": "https://blog.google/products-and-platforms/products/search/running-race-training-tips/",
       "source": "Google AI Blog",
       "category": "AI",
       "summary": "Illustration on a blue background of technicolor runners with a magnifying glass and Gemini spark overlaid",
+      "published": "2026-09-10T16:00:00+00:00"
+    },
+    {
+      "id": "014159943e4d9643",
+      "title": "How a researcher uses Codex and ChatGPT to search for new antimicrobial molecules",
+      "link": "https://openai.com/index/using-codex-chatgpt-to-search-for-new-antimicrobials",
+      "source": "OpenAI Blog",
+      "category": "AI",
+      "summary": "C\u00e9sar de la Fuente\u2019s lab uses Codex and ChatGPT to search living and extinct genomes for antimicrobial candidates to fight drug-resistant infections.",
       "published": "2026-09-10T16:00:00+00:00"
     },
     {
@@ -1586,33 +1685,6 @@
       "category": "AI",
       "summary": "Inside OpenAI, coding agents are reshaping AI research. Explore early data on agent usage, experiment velocity, task complexity, and research acceleration.",
       "published": "2026-09-06T08:00:00+00:00"
-    },
-    {
-      "id": "5190d2a1dccd48dc",
-      "title": "Daybreak for Frontline Defenders: $1B to protect essential services",
-      "link": "https://openai.com/index/daybreak-for-frontline-defenders",
-      "source": "OpenAI Blog",
-      "category": "AI",
-      "summary": "OpenAI introduces Daybreak for Frontline Defenders. A $1 billion commitment expands access to frontier cyber AI, training, and support for essential services.",
-      "published": "2026-09-03T13:15:00+00:00"
-    },
-    {
-      "id": "be4a3c5426264d71",
-      "title": "Legora reviewed 41 documents in minutes with GPT-6 Astra",
-      "link": "https://openai.com/index/legora-financial-statement-review-with-astra",
-      "source": "OpenAI Blog",
-      "category": "AI",
-      "summary": "Legora used GPT-6 Astra to review 41 documents in minutes, find all four planted errors, and improve performance by nearly 40% in this financial-review workflow.",
-      "published": "2026-09-03T12:00:00+00:00"
-    },
-    {
-      "id": "7a45b185cff53085",
-      "title": "Playco cut manual fixes 50% prototyping games with GPT-6 Astra",
-      "link": "https://openai.com/index/playco-game-prototyping-with-astra",
-      "source": "OpenAI Blog",
-      "category": "AI",
-      "summary": "Using GPT-6 Astra, Playco built three themed game prototypes from one grey box foundation and reported 50% fewer manual fixes than with the previous model.",
-      "published": "2026-09-03T12:00:00+00:00"
     },
     {
       "id": "28b149c75e15ee18",
