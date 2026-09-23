@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-22T22:54:58.155275+00:00",
+  "generated_at": "2026-09-23T04:40:38.156059+00:00",
   "sources_polled": [
     "The Verge \u2014 AI",
     "Simon Willison",
@@ -12,6 +12,51 @@
     "InfoQ Quantum Computing"
   ],
   "articles": [
+    {
+      "id": "263fa952490ea5db",
+      "title": "llm-anthropic 0.29",
+      "link": "https://simonwillison.net/2026/Sep/22/llm-anthropic/",
+      "source": "Simon Willison",
+      "category": "AI",
+      "summary": "Release: llm-anthropic 0.29 Adds support for Claude Opus 5.5 : llm -m claude-opus-5.5 \"prompt goes here\" Tags: llm , anthropic",
+      "published": "2026-09-23T04:40:32.923754+00:00"
+    },
+    {
+      "id": "0ec1b9d730210e81",
+      "title": "llm 0.36",
+      "link": "https://simonwillison.net/2026/Sep/22/llm/",
+      "source": "Simon Willison",
+      "category": "AI",
+      "summary": "Release: llm 0.36 New OpenAI models: gpt-6-sol for GPT-6 Sol and gpt-6-luna for GPT-6 Luna . #1702 Model plugins can now declare supports_conversation = False for models that only accept single-turn prompts. LLM raises llm.ConversationNotSupported when these models receive assist",
+      "published": "2026-09-23T04:40:32.923731+00:00"
+    },
+    {
+      "id": "f526d7679022c6d3",
+      "title": "Claude Opus 5.5, GPT-6 Sol, GPT-6 Luna, and a new price war",
+      "link": "https://simonwillison.net/2026/Sep/22/opus-and-sol-and-luna/",
+      "source": "Simon Willison",
+      "category": "AI",
+      "summary": "Yesterday was Grok 4.7 ( pelicans ) and MiMo v2.6 Flash/Pro ( more pelicans ). Today Anthropic released Claude Opus 5.5 , and around an hour later OpenAI released GPT-6 Sol and GPT-6 Luna . It's going to take a while to get a good read on all of these new models, but here are my ",
+      "published": "2026-09-23T04:40:32.923684+00:00"
+    },
+    {
+      "id": "75e3d066fe171b2a",
+      "title": "SF October 14th: A Birds of a Feather Session on Agentic Engineering",
+      "link": "https://simonwillison.net/2026/Sep/23/bof-agentic-engineering/",
+      "source": "Simon Willison",
+      "category": "AI",
+      "summary": "SF October 14th: A Birds of a Feather Session on Agentic Engineering I'm hosting an evening event with Jesse Vincent in San Francisco on Wednesday 14th October for people who are building weird and interesting things with and on top of coding agents. Think of it as an agentic sho",
+      "published": "2026-09-23T04:40:32.923353+00:00"
+    },
+    {
+      "id": "0ab4ac60a8fbe21a",
+      "title": "OpenAI wants to consult elite mathematicians about how to not fumble again",
+      "link": "https://www.theverge.com/ai-artificial-intelligence/999167/openai-elite-mathematicians-panel",
+      "source": "The Verge \u2014 AI",
+      "category": "AI",
+      "summary": "After turning a string of spectacular mathematical results into a reputational crisis, OpenAI is consulting human mathematicians to help it figure out a less disastrous path forward. On Monday, the company announced a new independent panel of mathematicians tasked with advising i",
+      "published": "2026-09-23T04:40:32.688338+00:00"
+    },
     {
       "id": "cc0d123c3bddd635",
       "title": "Rabbit\u2019s new AI agent doesn\u2019t need an R1 to run",

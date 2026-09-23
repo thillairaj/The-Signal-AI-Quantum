@@ -4,7 +4,47 @@
     <title>The Signal</title>
     <link>https://thillairaj.github.io/The-Signal-AI-Quantum/</link>
     <description>A self-updating feed of AI and quantum computing news, research and releases.</description>
-    <lastBuildDate>Tue, 22 Sep 2026 22:54:58 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 23 Sep 2026 04:40:38 +0000</lastBuildDate>
+    <item>
+      <title>llm-anthropic 0.29</title>
+      <link>https://simonwillison.net/2026/Sep/22/llm-anthropic/</link>
+      <guid isPermaLink="false">263fa952490ea5db</guid>
+      <description>Release: llm-anthropic 0.29 Adds support for Claude Opus 5.5 : llm -m claude-opus-5.5 "prompt goes here" Tags: llm , anthropic</description>
+      <category>Simon Willison</category>
+      <pubDate>Wed, 23 Sep 2026 04:40:32 +0000</pubDate>
+    </item>
+    <item>
+      <title>llm 0.36</title>
+      <link>https://simonwillison.net/2026/Sep/22/llm/</link>
+      <guid isPermaLink="false">0ec1b9d730210e81</guid>
+      <description>Release: llm 0.36 New OpenAI models: gpt-6-sol for GPT-6 Sol and gpt-6-luna for GPT-6 Luna . #1702 Model plugins can now declare supports_conversation = False for models that only accept single-turn prompts. LLM raises llm.ConversationNotSupported when these models receive assist</description>
+      <category>Simon Willison</category>
+      <pubDate>Wed, 23 Sep 2026 04:40:32 +0000</pubDate>
+    </item>
+    <item>
+      <title>Claude Opus 5.5, GPT-6 Sol, GPT-6 Luna, and a new price war</title>
+      <link>https://simonwillison.net/2026/Sep/22/opus-and-sol-and-luna/</link>
+      <guid isPermaLink="false">f526d7679022c6d3</guid>
+      <description>Yesterday was Grok 4.7 ( pelicans ) and MiMo v2.6 Flash/Pro ( more pelicans ). Today Anthropic released Claude Opus 5.5 , and around an hour later OpenAI released GPT-6 Sol and GPT-6 Luna . It's going to take a while to get a good read on all of these new models, but here are my </description>
+      <category>Simon Willison</category>
+      <pubDate>Wed, 23 Sep 2026 04:40:32 +0000</pubDate>
+    </item>
+    <item>
+      <title>SF October 14th: A Birds of a Feather Session on Agentic Engineering</title>
+      <link>https://simonwillison.net/2026/Sep/23/bof-agentic-engineering/</link>
+      <guid isPermaLink="false">75e3d066fe171b2a</guid>
+      <description>SF October 14th: A Birds of a Feather Session on Agentic Engineering I'm hosting an evening event with Jesse Vincent in San Francisco on Wednesday 14th October for people who are building weird and interesting things with and on top of coding agents. Think of it as an agentic sho</description>
+      <category>Simon Willison</category>
+      <pubDate>Wed, 23 Sep 2026 04:40:32 +0000</pubDate>
+    </item>
+    <item>
+      <title>OpenAI wants to consult elite mathematicians about how to not fumble again</title>
+      <link>https://www.theverge.com/ai-artificial-intelligence/999167/openai-elite-mathematicians-panel</link>
+      <guid isPermaLink="false">0ab4ac60a8fbe21a</guid>
+      <description>After turning a string of spectacular mathematical results into a reputational crisis, OpenAI is consulting human mathematicians to help it figure out a less disastrous path forward. On Monday, the company announced a new independent panel of mathematicians tasked with advising i</description>
+      <category>The Verge — AI</category>
+      <pubDate>Wed, 23 Sep 2026 04:40:32 +0000</pubDate>
+    </item>
     <item>
       <title>Rabbit’s new AI agent doesn’t need an R1 to run</title>
       <link>https://www.theverge.com/ai-artificial-intelligence/999094/rabbit-ai-agent-os3</link>
@@ -442,46 +482,6 @@
       <link>https://simonwillison.net/2026/Sep/12/astra-running-routes/</link>
       <guid isPermaLink="false">3f37b0a02f79eadd</guid>
       <description>Here's a neat thing I had ChatGPT Work with GPT-6 Astra (Max) do this morning: I live at &amp;lt;my address&amp;gt;. Figure out 5K and 10K running routes from me that loop from my house. Use OSM data. It worked for 27 minutes and produced exactly what I'd asked for, as both an embedded v</description>
-      <category>Simon Willison</category>
-      <pubDate>Sat, 19 Sep 2026 17:35:20 +0000</pubDate>
-    </item>
-    <item>
-      <title>shot-scraper 1.12</title>
-      <link>https://simonwillison.net/2026/Sep/13/shot-scraper/</link>
-      <guid isPermaLink="false">39d9007229120c6f</guid>
-      <description>Release: shot-scraper 1.12 I've added WebP support to my shot-scraper screenshot automation tool. You can now take a WebP screenshot of a web page like this: shot-scraper https://simonwillison.net -o screenshot.webp --quality 80 The --quality option sets the quality - without tha</description>
-      <category>Simon Willison</category>
-      <pubDate>Sat, 19 Sep 2026 17:35:20 +0000</pubDate>
-    </item>
-    <item>
-      <title>commit-rewriter 0.1</title>
-      <link>https://simonwillison.net/2026/Sep/14/commit-rewriter/</link>
-      <guid isPermaLink="false">2e88014063fe25dc</guid>
-      <description>Release: commit-rewriter 0.1 I built this little web app the other day to help edit the commit messages for the Datasette security releases . The initial commits were full of coding agent cruft and references to issue IDs from our private repository, so they weren't fit for publi</description>
-      <category>Simon Willison</category>
-      <pubDate>Sat, 19 Sep 2026 17:35:20 +0000</pubDate>
-    </item>
-    <item>
-      <title>Quoting Laurie Voss</title>
-      <link>https://simonwillison.net/2026/Sep/14/laurie-voss/</link>
-      <guid isPermaLink="false">affb45ca605e0127</guid>
-      <description>The cost of writing code collapsed, and the cost of reviewing, fixing and operating it is following, and I'm assuming it gets there. What's left of making software is finding out what people actually want, defining it precisely, and making it pleasant to use. That cost is per pie</description>
-      <category>Simon Willison</category>
-      <pubDate>Sat, 19 Sep 2026 17:35:20 +0000</pubDate>
-    </item>
-    <item>
-      <title>What blog posts influenced your thinking the most?</title>
-      <link>https://simonwillison.net/2026/Sep/14/influences/</link>
-      <guid isPermaLink="false">263391f1136f23a1</guid>
-      <description>My comment on What blog posts influenced your thinking the most? &amp;mdash; Lobste.rs. An early Joel Spolsky one for me was The Law of Leaky Abstractions . I read that near the start of my career and it's encouraged me to always be looking for improved understanding of the layers un</description>
-      <category>Simon Willison</category>
-      <pubDate>Sat, 19 Sep 2026 17:35:20 +0000</pubDate>
-    </item>
-    <item>
-      <title>The contagion of fear</title>
-      <link>https://simonwillison.net/2026/Sep/14/the-contagion-of-fear/</link>
-      <guid isPermaLink="false">bed1156254a4ff47</guid>
-      <description>The contagion of fear Bryan Cantrill responds to the tweet by former Anthropic employee Jacob Coxon confirming that many Anthropic researchers believe AI "could kill us all by the end of the decade". Bryan shares a story of his own youthful mistakes causing unjustified panic amon</description>
       <category>Simon Willison</category>
       <pubDate>Sat, 19 Sep 2026 17:35:20 +0000</pubDate>
     </item>
