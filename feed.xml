@@ -4,7 +4,31 @@
     <title>The Signal</title>
     <link>https://thillairaj.github.io/The-Signal-AI-Quantum/</link>
     <description>A self-updating feed of AI and quantum computing news, research and releases.</description>
-    <lastBuildDate>Thu, 24 Sep 2026 19:58:39 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 24 Sep 2026 23:11:45 +0000</lastBuildDate>
+    <item>
+      <title>datasette 1.0a41</title>
+      <link>https://simonwillison.net/2026/Sep/24/datasette/</link>
+      <guid isPermaLink="false">afd37b587ece6ba4</guid>
+      <description>Release: datasette 1.0a41 Alec Garcia added support for OpenTelemetry to Datasette in this release. I've also refactored all of Datasette's modal dialogs to a single Web Component, which is now documented for other plugins to use . Tags: javascript , datasette , web-components , </description>
+      <category>Simon Willison</category>
+      <pubDate>Thu, 24 Sep 2026 23:11:39 +0000</pubDate>
+    </item>
+    <item>
+      <title>commit-rewriter 0.2</title>
+      <link>https://simonwillison.net/2026/Sep/24/commit-rewriter/</link>
+      <guid isPermaLink="false">e804eb39ba09ffde</guid>
+      <description>Release: commit-rewriter 0.2 Support for branches other than the default branch. Use uvx commit-rewriter --branch other to run against another branch. #3 Tags: git</description>
+      <category>Simon Willison</category>
+      <pubDate>Thu, 24 Sep 2026 23:11:39 +0000</pubDate>
+    </item>
+    <item>
+      <title>Gemini 3.8 Live with Live Avatar gives Google&amp;#8217;s AI a face</title>
+      <link>https://www.theverge.com/tech/1000328/google-gemini-ai-live-avatar-face</link>
+      <guid isPermaLink="false">ee9698a7fdb9719d</guid>
+      <description>Google's new Gemini 3.8 Live update lets users have conversations with the model while watching an animated AI persona respond in real time. The "Live Avatar" will lip-sync and show different facial expressions during conversations, but it's currently only available to Gemini Ent</description>
+      <category>The Verge — AI</category>
+      <pubDate>Thu, 24 Sep 2026 23:11:39 +0000</pubDate>
+    </item>
     <item>
       <title>I have some questions for Mark Zuckerberg</title>
       <link>https://www.theverge.com/podcast/999383/mark-zuckerberg-meta-glasses-ai-teen-safety-surveillance-data-centers</link>
@@ -460,30 +484,6 @@
       <description>In a speech Tuesday morning at the UN General Assembly, Donald Trump railed against Iran, "globalists," climate change, and transgender people while also claiming that the US is now "officially" renaming artificial intelligence to "super intelligence." Oddly, this wasn't one of t</description>
       <category>The Verge — AI</category>
       <pubDate>Tue, 22 Sep 2026 19:43:28 +0000</pubDate>
-    </item>
-    <item>
-      <title>Anthropic launches Claude Opus 5.5 with stricter safeguards for cybersecurity</title>
-      <link>https://www.theverge.com/ai-artificial-intelligence/998868/anthropic-claude-opus-5-5-cybersecurity</link>
-      <guid isPermaLink="false">04fa56f83f3a81fc</guid>
-      <description>Anthropic says its new Claude Opus 5.5 model comes with stronger safeguards in the wake of recent rogue AI hacking incidents. In an announcement on Tuesday, Anthropic says Opus 5.5 comes with improvements to certain risky behaviors, including attempts to escape the company's test</description>
-      <category>The Verge — AI</category>
-      <pubDate>Tue, 22 Sep 2026 19:43:28 +0000</pubDate>
-    </item>
-    <item>
-      <title>Andreessen Horowitz is launching an ‘academy’ with no homework and partnerships with Palantir, Google, and Meta</title>
-      <link>https://www.theverge.com/ai-artificial-intelligence/998813/andreessen-horowitz-ai-academy</link>
-      <guid isPermaLink="false">97f4d9447dab8bf4</guid>
-      <description>Venture capital firm Andreessen Horowitz (a16z) is creating an "academy" positioned as a pipeline for young people to build or join a Silicon Valley startup. The "Horowitz Andreessen Academy" will launch with 10 partners, including Anduril, Anthropic, Coinbase, Google, Meta, NVID</description>
-      <category>The Verge — AI</category>
-      <pubDate>Tue, 22 Sep 2026 19:43:28 +0000</pubDate>
-    </item>
-    <item>
-      <title>Lawsuit demands OpenAI pay for new school after ChatGPT used in shooting</title>
-      <link>https://arstechnica.com/tech-policy/2026/09/lawsuit-demands-openai-pay-for-new-school-after-chatgpt-used-in-shooting/</link>
-      <guid isPermaLink="false">f5795de5b2fbaacf</guid>
-      <description>British Columbia sues OpenAI, demands Tumbler Ridge shooter’s ChatGPT logs.</description>
-      <category>Ars Technica AI</category>
-      <pubDate>Tue, 22 Sep 2026 19:28:23 +0000</pubDate>
     </item>
   </channel>
 </rss>

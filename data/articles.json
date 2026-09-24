@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-24T19:58:39.122134+00:00",
+  "generated_at": "2026-09-24T23:11:45.044355+00:00",
   "sources_polled": [
     "The Verge \u2014 AI",
     "Simon Willison",
@@ -12,6 +12,33 @@
     "InfoQ Quantum Computing"
   ],
   "articles": [
+    {
+      "id": "afd37b587ece6ba4",
+      "title": "datasette 1.0a41",
+      "link": "https://simonwillison.net/2026/Sep/24/datasette/",
+      "source": "Simon Willison",
+      "category": "AI",
+      "summary": "Release: datasette 1.0a41 Alec Garcia added support for OpenTelemetry to Datasette in this release. I've also refactored all of Datasette's modal dialogs to a single Web Component, which is now documented for other plugins to use . Tags: javascript , datasette , web-components , ",
+      "published": "2026-09-24T23:11:39.795962+00:00"
+    },
+    {
+      "id": "e804eb39ba09ffde",
+      "title": "commit-rewriter 0.2",
+      "link": "https://simonwillison.net/2026/Sep/24/commit-rewriter/",
+      "source": "Simon Willison",
+      "category": "AI",
+      "summary": "Release: commit-rewriter 0.2 Support for branches other than the default branch. Use uvx commit-rewriter --branch other to run against another branch. #3 Tags: git",
+      "published": "2026-09-24T23:11:39.795908+00:00"
+    },
+    {
+      "id": "ee9698a7fdb9719d",
+      "title": "Gemini 3.8 Live with Live Avatar gives Google&#8217;s AI a face",
+      "link": "https://www.theverge.com/tech/1000328/google-gemini-ai-live-avatar-face",
+      "source": "The Verge \u2014 AI",
+      "category": "AI",
+      "summary": "Google's new Gemini 3.8 Live update lets users have conversations with the model while watching an animated AI persona respond in real time. The \"Live Avatar\" will lip-sync and show different facial expressions during conversations, but it's currently only available to Gemini Ent",
+      "published": "2026-09-24T23:11:39.529710+00:00"
+    },
     {
       "id": "6fb7e688771724e1",
       "title": "I have some questions for Mark Zuckerberg",
