@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-24T13:31:40.502755+00:00",
+  "generated_at": "2026-09-24T19:58:39.122134+00:00",
   "sources_polled": [
     "The Verge \u2014 AI",
     "Simon Willison",
@@ -12,6 +12,132 @@
     "InfoQ Quantum Computing"
   ],
   "articles": [
+    {
+      "id": "6fb7e688771724e1",
+      "title": "I have some questions for Mark Zuckerberg",
+      "link": "https://www.theverge.com/podcast/999383/mark-zuckerberg-meta-glasses-ai-teen-safety-surveillance-data-centers",
+      "source": "The Verge \u2014 AI",
+      "category": "AI",
+      "summary": "It&#8217;s a big week for Meta. The company just kicked off its big Connect conference on Wednesday, and the new Muse AI agent appears to be an early hit. I&#8217;ve been using it \u2014 it is surprisingly good.&#160; CEO Mark Zuckerberg has obviously been out there taking a victory l",
+      "published": "2026-09-24T19:58:33.757345+00:00"
+    },
+    {
+      "id": "1175020668fb88f7",
+      "title": "The vibes are bad for Flock in Washington",
+      "link": "https://www.theverge.com/policy/1000005/flock-senate-hearing",
+      "source": "The Verge \u2014 AI",
+      "category": "AI",
+      "summary": "Flock is in the hot seat in Washington, even if its CEO declined to actually face senators at a hearing about its \"AI Surveillance Network\" on Wednesday. \"There's many players in this industry, but there's one name that really stands out above the rest, and that is Flock,\" Senate",
+      "published": "2026-09-24T19:58:33.757314+00:00"
+    },
+    {
+      "id": "bd3f02787fa0480e",
+      "title": "Google is sending an AI satellite into space next week",
+      "link": "https://www.theverge.com/tech/1000015/google-ai-satellite-space-project-suncatcher",
+      "source": "The Verge \u2014 AI",
+      "category": "AI",
+      "summary": "Google is getting ready to launch a satellite with its AI processors to test how well they perform in space, as reported earlier by The New York Times. The move is part of Google's Project Suncatcher, the company's experimental initiative that could eventually put AI data centers",
+      "published": "2026-09-24T19:58:33.757283+00:00"
+    },
+    {
+      "id": "eb32233e29f9e6a3",
+      "title": "Why can\u2019t we just keep rogue AIs off the internet?",
+      "link": "https://www.theverge.com/ai-artificial-intelligence/999881/why-cant-we-airgap-rogue-ai-agents",
+      "source": "The Verge \u2014 AI",
+      "category": "AI",
+      "summary": "AI agents keep getting loose, escaping supposedly secure tests to attack real-world targets, commandeer obscure wikis, and leave instructions for other agents to follow. Researchers are testing these systems precisely because they might behave in unpredictable, even dangerous, wa",
+      "published": "2026-09-24T19:58:33.757258+00:00"
+    },
+    {
+      "id": "69d34719f9a17ab3",
+      "title": "Gemini can now call businesses for you so you don\u2019t have to wait on hold",
+      "link": "https://www.theverge.com/ai-artificial-intelligence/1000116/google-gemini-business-phone-calls",
+      "source": "The Verge \u2014 AI",
+      "category": "AI",
+      "summary": "Google's launching an \"early experiment\" feature on Pixel 11 that lets users delegate local business calls to Gemini, like making a reservation, checking if a product is in stock, or rescheduling an appointment. According to Google, you don't even need to start the call to have G",
+      "published": "2026-09-24T19:58:33.757233+00:00"
+    },
+    {
+      "id": "091e61d14291c59c",
+      "title": "It\u2019s sinister that Meta\u2019s Muse AI mascot is so cute",
+      "link": "https://www.theverge.com/column/999999/optimizer-meta-muse-ai-cute",
+      "source": "The Verge \u2014 AI",
+      "category": "AI",
+      "summary": "This is Optimizer, a weekly newsletter sent from Verge senior reviewer Victoria Song that dissects and discusses the latest gizmos and potions that swear they're going to change your life. Opt in for Optimizer here. Last night, I asked Blorbo - what I named my Muse AI agent - to ",
+      "published": "2026-09-24T19:58:33.757208+00:00"
+    },
+    {
+      "id": "0b7b681fb83d1416",
+      "title": "Muse sure looks a lot like OpenClaw",
+      "link": "https://www.theverge.com/report/1000180/muse-openclaw-instinct-lookalike",
+      "source": "The Verge \u2014 AI",
+      "category": "AI",
+      "summary": "We seem to be entering into an AI agent renaissance. Meta's new consumer-facing AI agent, Muse, topped the App Store charts soon after its release and has 600,000 daily active users in the US, by an Apptopia estimate. And AI agent platform Instinct, whose eponymous creator is fun",
+      "published": "2026-09-24T19:58:33.757183+00:00"
+    },
+    {
+      "id": "cb7e0a0370f056e2",
+      "title": "Muse will apparently let you download its entire filesystem",
+      "link": "https://www.theverge.com/ai-artificial-intelligence/1000222/meta-muse-ai-filesystem",
+      "source": "The Verge \u2014 AI",
+      "category": "AI",
+      "summary": "A pair of developers say that with very little prompting, Meta's Muse will share its entire filesystem with you. Peter James and Jonny L. Saunders have said they both independently coaxed Muse into zipping up and sharing the entire contents of its root filesystem, Ubuntu system f",
+      "published": "2026-09-24T19:58:33.757156+00:00"
+    },
+    {
+      "id": "18e7444965179a13",
+      "title": "Meta is going to let you build games with AI right on your phone",
+      "link": "https://www.theverge.com/games/999972/meta-horizon-create-studio-ai-games",
+      "source": "The Verge \u2014 AI",
+      "category": "AI",
+      "summary": "Meta has a new plan to get people to make games for its Horizon social platform. The company today announced two new development tools that will let you create games with AI prompts: Horizon Create, a mobile app, and Horizon Studio, a browser app that offers more granular control",
+      "published": "2026-09-24T19:58:33.757125+00:00"
+    },
+    {
+      "id": "3ab9cbba8c0d8bf4",
+      "title": "Jensen Huang talks about AI and climate change like a supervillain",
+      "link": "https://www.theverge.com/tech/1000140/jensen-huang-nvidia-ai-energy-climate-change-supervillain",
+      "source": "The Verge \u2014 AI",
+      "category": "AI",
+      "summary": "As Jensen Huang puts it, AI can help fight climate change - but only if it inflicts \"an enormous amount of pain and suffering\" first. The Nvidia CEO discussed the future of energy and AI's impact on our planet in the latest episode of The Ezra Klein Show. But his comments boil do",
+      "published": "2026-09-24T19:58:33.757072+00:00"
+    },
+    {
+      "id": "e64c35c9e5d7cbc7",
+      "title": "New Jersey fines data center $1.1M after drone pics expose 62 gas generators",
+      "link": "https://arstechnica.com/tech-policy/2026/09/new-jersey-fines-data-center-1-1m-after-satellite-pics-expose-62-gas-generators/",
+      "source": "Ars Technica AI",
+      "category": "AI",
+      "summary": "Million-dollar fines won\u2019t end billionaires\u2019 data center pollution, neighbors fear.",
+      "published": "2026-09-24T18:20:58+00:00"
+    },
+    {
+      "id": "cd729cf3bb436752",
+      "title": "Google's first Suncatcher orbital data center test launches October 1",
+      "link": "https://arstechnica.com/google/2026/09/googles-first-suncatcher-orbital-data-center-test-launches-october-1/",
+      "source": "Ars Technica AI",
+      "category": "AI",
+      "summary": "Google's experimental orbital data center will have four TPUs and only run for 15 minutes at a time.",
+      "published": "2026-09-24T16:16:34+00:00"
+    },
+    {
+      "id": "fe13b3d5a5fd2d53",
+      "title": "OpenAI agent \u201cdidn\u2019t accept no for an answer\u201d in Australian government breach",
+      "link": "https://arstechnica.com/ai/2026/09/openai-agent-didnt-accept-no-for-an-answer-in-australian-government-breach/",
+      "source": "Ars Technica AI",
+      "category": "AI",
+      "summary": "\"There will obviously be legal consequences,\" prime minister promises.",
+      "published": "2026-09-24T16:01:16+00:00"
+    },
+    {
+      "id": "3eafea9b7d9fa7dd",
+      "title": "Meta puts its AI assistant on a keychain",
+      "link": "https://arstechnica.com/ai/2026/09/meta-puts-its-ai-assistant-on-a-keychain/",
+      "source": "Ars Technica AI",
+      "category": "AI",
+      "summary": "Meta says the keychain-sized Muse Charm will ship in December.",
+      "published": "2026-09-24T14:03:38+00:00"
+    },
     {
       "id": "864189f9e259ba6c",
       "title": "Gemini 4 is almost ready, says new Google DeepMind chief",
