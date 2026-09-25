@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-25T20:00:25.909757+00:00",
+  "generated_at": "2026-09-25T23:17:02.830640+00:00",
   "sources_polled": [
     "The Verge \u2014 AI",
     "Simon Willison",
@@ -12,6 +12,33 @@
     "InfoQ Quantum Computing"
   ],
   "articles": [
+    {
+      "id": "47336030addf468e",
+      "title": "California Sea Lion, Brandt's Cormorant",
+      "link": "https://simonwillison.net/2026/Sep/19/sighting-401567341/",
+      "source": "Simon Willison",
+      "category": "AI",
+      "summary": "California Sea Lion, Brandt&#x27;s Cormorant, in Pillar Point Harbor, CA, US I only noticed this after I had taken the photo: Morris the Northern Gannet is peeking out from behind the base of the sign. Tags: wildlife",
+      "published": "2026-09-25T23:16:57.841699+00:00"
+    },
+    {
+      "id": "4a19c9abdcc198ed",
+      "title": "Court rules Trump can blacklist Anthropic for refusing to enable Claude features",
+      "link": "https://arstechnica.com/tech-policy/2026/09/court-rules-trump-can-blacklist-anthropic-for-refusing-to-enable-claude-features/",
+      "source": "Ars Technica AI",
+      "category": "AI",
+      "summary": "\"Overly constrained AI models\" could cause military operations to fail, judges say.",
+      "published": "2026-09-25T21:36:20+00:00"
+    },
+    {
+      "id": "de7583d0d2e5b85c",
+      "title": "Tesla workers balk at training Optimus humanoid robots as replacements",
+      "link": "https://arstechnica.com/ai/2026/09/tesla-workers-balk-at-training-optimus-humanoid-robots-as-replacements/",
+      "source": "Ars Technica AI",
+      "category": "AI",
+      "summary": "Despite challenges, Tesla aims for 1,000 Optimus robots per week by end of 2026.",
+      "published": "2026-09-25T21:10:51+00:00"
+    },
     {
       "id": "d694a950e816f501",
       "title": "Bonsai 2 27B: Near-Lossless Compression in a 9x Smaller Footprint",
@@ -1246,15 +1273,6 @@
       "published": "2026-09-19T17:35:20.105278+00:00"
     },
     {
-      "id": "a2b68d122f77626f",
-      "title": "Gemini Hacked Three Companies in First Known Breakout by Google\u2019s AI",
-      "link": "https://simonwillison.net/2026/Sep/18/gemini-hacked-three-companies/",
-      "source": "Simon Willison",
-      "category": "AI",
-      "summary": "Gemini Hacked Three Companies in First Known Breakout by Google\u2019s AI Gemini finally caught up on Felony Bench ! The hacks, which the company confirmed on Friday, occurred in May as part of a test run by the company Irregular, which was also involved in similar incidents disclosed",
-      "published": "2026-09-19T17:35:20.105242+00:00"
-    },
-    {
       "id": "539c5a96bbf45589",
       "title": "The AI Superintelligence Slowdown",
       "link": "https://www.theverge.com/ai-artificial-intelligence/996923/ai-safety-slow-openai-anthropic",
@@ -1768,21 +1786,21 @@
       "published": "2026-09-11T10:00:00+00:00"
     },
     {
-      "id": "1852061b5cf6950b",
-      "title": "3 ways to prep for your next big race with Search",
-      "link": "https://blog.google/products-and-platforms/products/search/running-race-training-tips/",
-      "source": "Google AI Blog",
-      "category": "AI",
-      "summary": "Illustration on a blue background of technicolor runners with a magnifying glass and Gemini spark overlaid",
-      "published": "2026-09-10T16:00:00+00:00"
-    },
-    {
       "id": "014159943e4d9643",
       "title": "How a researcher uses Codex and ChatGPT to search for new antimicrobial molecules",
       "link": "https://openai.com/index/using-codex-chatgpt-to-search-for-new-antimicrobials",
       "source": "OpenAI Blog",
       "category": "AI",
       "summary": "C\u00e9sar de la Fuente\u2019s lab uses Codex and ChatGPT to search living and extinct genomes for antimicrobial candidates to fight drug-resistant infections.",
+      "published": "2026-09-10T16:00:00+00:00"
+    },
+    {
+      "id": "1852061b5cf6950b",
+      "title": "3 ways to prep for your next big race with Search",
+      "link": "https://blog.google/products-and-platforms/products/search/running-race-training-tips/",
+      "source": "Google AI Blog",
+      "category": "AI",
+      "summary": "Illustration on a blue background of technicolor runners with a magnifying glass and Gemini spark overlaid",
       "published": "2026-09-10T16:00:00+00:00"
     },
     {

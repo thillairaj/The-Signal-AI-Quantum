@@ -4,7 +4,31 @@
     <title>The Signal</title>
     <link>https://thillairaj.github.io/The-Signal-AI-Quantum/</link>
     <description>A self-updating feed of AI and quantum computing news, research and releases.</description>
-    <lastBuildDate>Fri, 25 Sep 2026 20:00:25 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 25 Sep 2026 23:17:02 +0000</lastBuildDate>
+    <item>
+      <title>California Sea Lion, Brandt's Cormorant</title>
+      <link>https://simonwillison.net/2026/Sep/19/sighting-401567341/</link>
+      <guid isPermaLink="false">47336030addf468e</guid>
+      <description>California Sea Lion, Brandt&amp;#x27;s Cormorant, in Pillar Point Harbor, CA, US I only noticed this after I had taken the photo: Morris the Northern Gannet is peeking out from behind the base of the sign. Tags: wildlife</description>
+      <category>Simon Willison</category>
+      <pubDate>Fri, 25 Sep 2026 23:16:57 +0000</pubDate>
+    </item>
+    <item>
+      <title>Court rules Trump can blacklist Anthropic for refusing to enable Claude features</title>
+      <link>https://arstechnica.com/tech-policy/2026/09/court-rules-trump-can-blacklist-anthropic-for-refusing-to-enable-claude-features/</link>
+      <guid isPermaLink="false">4a19c9abdcc198ed</guid>
+      <description>"Overly constrained AI models" could cause military operations to fail, judges say.</description>
+      <category>Ars Technica AI</category>
+      <pubDate>Fri, 25 Sep 2026 21:36:20 +0000</pubDate>
+    </item>
+    <item>
+      <title>Tesla workers balk at training Optimus humanoid robots as replacements</title>
+      <link>https://arstechnica.com/ai/2026/09/tesla-workers-balk-at-training-optimus-humanoid-robots-as-replacements/</link>
+      <guid isPermaLink="false">de7583d0d2e5b85c</guid>
+      <description>Despite challenges, Tesla aims for 1,000 Optimus robots per week by end of 2026.</description>
+      <category>Ars Technica AI</category>
+      <pubDate>Fri, 25 Sep 2026 21:10:51 +0000</pubDate>
+    </item>
     <item>
       <title>Bonsai 2 27B: Near-Lossless Compression in a 9x Smaller Footprint</title>
       <link>https://simonwillison.net/2026/Sep/17/hn-49747390/</link>
@@ -460,30 +484,6 @@
       <description>OpenAI CEO Sam Altman discusses AI safety, human control, and international cooperation in remarks to the United Nations Security Council.</description>
       <category>OpenAI Blog</category>
       <pubDate>Wed, 23 Sep 2026 12:00:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>Introducing MentalHealthBench</title>
-      <link>https://openai.com/index/introducing-mentalhealthbench</link>
-      <guid isPermaLink="false">1d5a9cc2d9509da8</guid>
-      <description>MentalHealthBench is an expert-informed benchmark for evaluating helpful and safe AI responses across realistic mental health conversations.</description>
-      <category>OpenAI Blog</category>
-      <pubDate>Wed, 23 Sep 2026 10:00:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>llm-anthropic 0.29</title>
-      <link>https://simonwillison.net/2026/Sep/22/llm-anthropic/</link>
-      <guid isPermaLink="false">263fa952490ea5db</guid>
-      <description>Release: llm-anthropic 0.29 Adds support for Claude Opus 5.5 : llm -m claude-opus-5.5 "prompt goes here" Tags: llm , anthropic</description>
-      <category>Simon Willison</category>
-      <pubDate>Wed, 23 Sep 2026 04:40:32 +0000</pubDate>
-    </item>
-    <item>
-      <title>llm 0.36</title>
-      <link>https://simonwillison.net/2026/Sep/22/llm/</link>
-      <guid isPermaLink="false">0ec1b9d730210e81</guid>
-      <description>Release: llm 0.36 New OpenAI models: gpt-6-sol for GPT-6 Sol and gpt-6-luna for GPT-6 Luna . #1702 Model plugins can now declare supports_conversation = False for models that only accept single-turn prompts. LLM raises llm.ConversationNotSupported when these models receive assist</description>
-      <category>Simon Willison</category>
-      <pubDate>Wed, 23 Sep 2026 04:40:32 +0000</pubDate>
     </item>
   </channel>
 </rss>
