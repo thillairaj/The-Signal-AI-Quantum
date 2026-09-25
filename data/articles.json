@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-25T13:42:37.810117+00:00",
+  "generated_at": "2026-09-25T20:00:25.909757+00:00",
   "sources_polled": [
     "The Verge \u2014 AI",
     "Simon Willison",
@@ -12,6 +12,96 @@
     "InfoQ Quantum Computing"
   ],
   "articles": [
+    {
+      "id": "d694a950e816f501",
+      "title": "Bonsai 2 27B: Near-Lossless Compression in a 9x Smaller Footprint",
+      "link": "https://simonwillison.net/2026/Sep/17/hn-49747390/",
+      "source": "Simon Willison",
+      "category": "AI",
+      "summary": "My comment on Bonsai 2 27B: Near-Lossless Compression in a 9x Smaller Footprint &mdash; Hacker News. If you want to try out out the GGUFs from https://huggingface.co/prism-ml/Ternary-Bonsai-2-27B-gguf#th... be aware that you need Prism's llama.cpp fork to get them to work, from h",
+      "published": "2026-09-25T20:00:21.453311+00:00"
+    },
+    {
+      "id": "414ec5ebf00c8740",
+      "title": "Note on 24th September 2026",
+      "link": "https://simonwillison.net/2026/Sep/24/harder/",
+      "source": "Simon Willison",
+      "category": "AI",
+      "summary": "The more time I spend working with coding agents, the more convinced I am that they make software engineering even harder. We can do amazing things with them, but unlocking their full potential requires extraordinary discipline and knowledge. Tags: coding-agents , ai , llms",
+      "published": "2026-09-25T20:00:21.453171+00:00"
+    },
+    {
+      "id": "28f369bbea848f9a",
+      "title": "Northern Gannet, Great Blue Heron, California Brown Pelican",
+      "link": "https://simonwillison.net/2026/Sep/25/sighting-403293902/",
+      "source": "Simon Willison",
+      "category": "AI",
+      "summary": "Northern Gannet, Great Blue Heron, California Brown Pelican, in Monterey Bay National Marine Sanctuary, CA, US, CA New 200-800mm Canon EF lens got me my best photo of Morris yet. They really like hanging out under that sign in the harbor! Tags: photography , wildlife",
+      "published": "2026-09-25T20:00:21.453142+00:00"
+    },
+    {
+      "id": "5bff2e7c4ac60c5c",
+      "title": "Quoting John Gruber",
+      "link": "https://simonwillison.net/2026/Sep/25/john-gruber/",
+      "source": "Simon Willison",
+      "category": "AI",
+      "summary": "Muse is getting a lot of attention \u2014 including mine \u2014 because it\u2019s both groundbreaking technically (each user gets their own entire persistent Linux VM running in Meta\u2019s cloud) and because it\u2019s packaged in an easy-to-install easy-to-use way. It\u2019s literally presented as a cute mas",
+      "published": "2026-09-25T20:00:21.453097+00:00"
+    },
+    {
+      "id": "637d4699a545ce92",
+      "title": "One company is at the center of a wave of rogue AI attacks",
+      "link": "https://www.theverge.com/ai-artificial-intelligence/1000644/irregular-rogue-ai-cyberattacks-hacking-openai-meta-anthropic-google",
+      "source": "The Verge \u2014 AI",
+      "category": "AI",
+      "summary": "In July, OpenAI revealed that its AI agents had attacked Hugging Face without permission, sparking widespread concerns about AI safety. Since then, a string of similar incidents involving agents from Meta, Anthropic, Google, and other companies has fueled further fears about rogu",
+      "published": "2026-09-25T20:00:21.250438+00:00"
+    },
+    {
+      "id": "706759721ffd238c",
+      "title": "Sony and UMG are suing Suno again",
+      "link": "https://www.theverge.com/ai-artificial-intelligence/1000758/suno-sony-umg-lawsuit-ai-music",
+      "source": "The Verge \u2014 AI",
+      "category": "AI",
+      "summary": "Sony and Universal Music Group filed yet another suit against Suno. The labels claim its new v6 model still infringes on their copyrights because it's trained on user outputs from previous models, which were themselves trained on unlicensed music ripped from YouTube and other sou",
+      "published": "2026-09-25T20:00:21.250408+00:00"
+    },
+    {
+      "id": "e84d98e81ae7850f",
+      "title": "Meta makes the Muse filesystem even more accessible",
+      "link": "https://www.theverge.com/ai-artificial-intelligence/1000784/meta-muse-filesystem",
+      "source": "The Verge \u2014 AI",
+      "category": "AI",
+      "summary": "Yesterday, with a little prodding, it was discovered that Meta's Muse would expose its filesystem to curious users. The files offered a fascinating peek under the hood of an AI chatbot, and appeared to expose details we weren't meant to see, not least because Muse itself told peo",
+      "published": "2026-09-25T20:00:21.250358+00:00"
+    },
+    {
+      "id": "ff8bda4a60f0dd5e",
+      "title": "AI was supposed to hit new grads hard. So far, unemployment data says otherwise.",
+      "link": "https://arstechnica.com/ai/2026/09/ai-was-supposed-to-hit-new-grads-hard-so-far-unemployment-data-says-otherwise/",
+      "source": "Ars Technica AI",
+      "category": "AI",
+      "summary": "\"There is no evidence of any significant, widespread displacement or reduction in hiring.\u201d",
+      "published": "2026-09-25T19:11:05+00:00"
+    },
+    {
+      "id": "d2d497e5eee41848",
+      "title": "Proaction boosts sales 60% and saves 75+ hours with Codex",
+      "link": "https://openai.com/index/proaction",
+      "source": "OpenAI Blog",
+      "category": "AI",
+      "summary": "With Codex, GPT-Live-1, and GPT-6 Astra, Proaction builds, operates, and sells modern fleet management faster.",
+      "published": "2026-09-25T19:00:00+00:00"
+    },
+    {
+      "id": "469d8da91a36901d",
+      "title": "Microsoft stops insisting you need a \"Copilot+ PC\"",
+      "link": "https://arstechnica.com/gadgets/2026/09/microsoft-stops-insisting-you-need-a-copilot-pc/",
+      "source": "Ars Technica AI",
+      "category": "AI",
+      "summary": "Microsoft's new Surface laptops forgo Copilot+ PC branding.",
+      "published": "2026-09-25T17:57:37+00:00"
+    },
     {
       "id": "c9b6dd7b22a4e54a",
       "title": "Microsoft thinks its new Copilot \u2018super app\u2019 will be as influential as Office",
@@ -1165,15 +1255,6 @@
       "published": "2026-09-19T17:35:20.105242+00:00"
     },
     {
-      "id": "47336030addf468e",
-      "title": "California Sea Lion, Brandt's Cormorant",
-      "link": "https://simonwillison.net/2026/Sep/19/sighting-401567341/",
-      "source": "Simon Willison",
-      "category": "AI",
-      "summary": "California Sea Lion, Brandt&#x27;s Cormorant, in Pillar Point Harbor, CA, US I only noticed this after I had taken the photo: Morris the Northern Gannet is peeking out from behind the base of the sign. Tags: wildlife",
-      "published": "2026-09-19T17:35:20.105129+00:00"
-    },
-    {
       "id": "539c5a96bbf45589",
       "title": "The AI Superintelligence Slowdown",
       "link": "https://www.theverge.com/ai-artificial-intelligence/996923/ai-safety-slow-openai-anthropic",
@@ -1217,33 +1298,6 @@
       "category": "AI",
       "summary": "California Gov. Gavin Newsom (D) is positioning the state to take the lead on AI oversight, including the potential to mandate a \"kill switch\" for frontier models, with a new executive order issued Friday. Newsom's order directs the state to convene a group of experts that will d",
       "published": "2026-09-19T17:35:19.917084+00:00"
-    },
-    {
-      "id": "802486953da21839",
-      "title": "Virginia governor creates an AI task force and moves to restrain data centers",
-      "link": "https://www.theverge.com/policy/997573/virginia-governor-spanberger-data-center-ai-task-force",
-      "source": "The Verge \u2014 AI",
-      "category": "AI",
-      "summary": "Virginia Gov. Abigail Spanberger ordered the state government to take steps that could empower local communities to have a larger say in data center development and slow down approvals in a state that is already home to the data center capital of the world. Executive Order 22 ban",
-      "published": "2026-09-19T17:35:19.917060+00:00"
-    },
-    {
-      "id": "7456d8000ebfebb2",
-      "title": "OpenAI and Microsoft knew they were starting a \u2018doom loop\u2019 for the web",
-      "link": "https://www.theverge.com/ai-artificial-intelligence/997633/openai-microsoft-chatgpt-ai-new-york-times-doom-loop-theft-google-zero",
-      "source": "The Verge \u2014 AI",
-      "category": "AI",
-      "summary": "Recently unsealed court documents in the New York Times' case against OpenAI and Microsoft are pretty damning. The companies' own documentation warned that it was starting a \"doom loop\" that would damage the web, characterized its scraping of data to train its models as the \"larg",
-      "published": "2026-09-19T17:35:19.917035+00:00"
-    },
-    {
-      "id": "a864cdf7e10a4848",
-      "title": "The AI regulation smackdown isn\u2019t over",
-      "link": "https://www.theverge.com/ai-artificial-intelligence/997706/the-ai-regulation-smackdown-isnt-over",
-      "source": "The Verge \u2014 AI",
-      "category": "AI",
-      "summary": "At the start of this week, the who's-who of AI seemed - at least tentatively - on the side of AI regulation. Over the weekend, Anthropic CEO Dario Amodei had proposed a three-step plan for slowing AI development, including by embedding third-party evaluators in labs, coordinating",
-      "published": "2026-09-19T17:35:19.917009+00:00"
     },
     {
       "id": "6b844761c1220d26",
@@ -1910,15 +1964,6 @@
       "category": "AI",
       "summary": "OpenAI, AIRPPU and WAN-IFRA launch an AI program to help Ukrainian news organizations strengthen innovation, resilience, and independent journalism.",
       "published": "2026-09-07T00:00:00+00:00"
-    },
-    {
-      "id": "a8e8f9dc895a026b",
-      "title": "An Alien Mind",
-      "link": "https://openai.com/index/an-alien-mind",
-      "source": "OpenAI Blog",
-      "category": "AI",
-      "summary": "Jakub Pachocki reflects on increasingly capable AI and the challenge of keeping it aligned. He calls for stronger safeguards and international coordination.",
-      "published": "2026-09-06T09:00:00+00:00"
     },
     {
       "id": "28b149c75e15ee18",

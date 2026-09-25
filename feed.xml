@@ -4,7 +4,87 @@
     <title>The Signal</title>
     <link>https://thillairaj.github.io/The-Signal-AI-Quantum/</link>
     <description>A self-updating feed of AI and quantum computing news, research and releases.</description>
-    <lastBuildDate>Fri, 25 Sep 2026 13:42:37 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 25 Sep 2026 20:00:25 +0000</lastBuildDate>
+    <item>
+      <title>Bonsai 2 27B: Near-Lossless Compression in a 9x Smaller Footprint</title>
+      <link>https://simonwillison.net/2026/Sep/17/hn-49747390/</link>
+      <guid isPermaLink="false">d694a950e816f501</guid>
+      <description>My comment on Bonsai 2 27B: Near-Lossless Compression in a 9x Smaller Footprint &amp;mdash; Hacker News. If you want to try out out the GGUFs from https://huggingface.co/prism-ml/Ternary-Bonsai-2-27B-gguf#th... be aware that you need Prism's llama.cpp fork to get them to work, from h</description>
+      <category>Simon Willison</category>
+      <pubDate>Fri, 25 Sep 2026 20:00:21 +0000</pubDate>
+    </item>
+    <item>
+      <title>Note on 24th September 2026</title>
+      <link>https://simonwillison.net/2026/Sep/24/harder/</link>
+      <guid isPermaLink="false">414ec5ebf00c8740</guid>
+      <description>The more time I spend working with coding agents, the more convinced I am that they make software engineering even harder. We can do amazing things with them, but unlocking their full potential requires extraordinary discipline and knowledge. Tags: coding-agents , ai , llms</description>
+      <category>Simon Willison</category>
+      <pubDate>Fri, 25 Sep 2026 20:00:21 +0000</pubDate>
+    </item>
+    <item>
+      <title>Northern Gannet, Great Blue Heron, California Brown Pelican</title>
+      <link>https://simonwillison.net/2026/Sep/25/sighting-403293902/</link>
+      <guid isPermaLink="false">28f369bbea848f9a</guid>
+      <description>Northern Gannet, Great Blue Heron, California Brown Pelican, in Monterey Bay National Marine Sanctuary, CA, US, CA New 200-800mm Canon EF lens got me my best photo of Morris yet. They really like hanging out under that sign in the harbor! Tags: photography , wildlife</description>
+      <category>Simon Willison</category>
+      <pubDate>Fri, 25 Sep 2026 20:00:21 +0000</pubDate>
+    </item>
+    <item>
+      <title>Quoting John Gruber</title>
+      <link>https://simonwillison.net/2026/Sep/25/john-gruber/</link>
+      <guid isPermaLink="false">5bff2e7c4ac60c5c</guid>
+      <description>Muse is getting a lot of attention — including mine — because it’s both groundbreaking technically (each user gets their own entire persistent Linux VM running in Meta’s cloud) and because it’s packaged in an easy-to-install easy-to-use way. It’s literally presented as a cute mas</description>
+      <category>Simon Willison</category>
+      <pubDate>Fri, 25 Sep 2026 20:00:21 +0000</pubDate>
+    </item>
+    <item>
+      <title>One company is at the center of a wave of rogue AI attacks</title>
+      <link>https://www.theverge.com/ai-artificial-intelligence/1000644/irregular-rogue-ai-cyberattacks-hacking-openai-meta-anthropic-google</link>
+      <guid isPermaLink="false">637d4699a545ce92</guid>
+      <description>In July, OpenAI revealed that its AI agents had attacked Hugging Face without permission, sparking widespread concerns about AI safety. Since then, a string of similar incidents involving agents from Meta, Anthropic, Google, and other companies has fueled further fears about rogu</description>
+      <category>The Verge — AI</category>
+      <pubDate>Fri, 25 Sep 2026 20:00:21 +0000</pubDate>
+    </item>
+    <item>
+      <title>Sony and UMG are suing Suno again</title>
+      <link>https://www.theverge.com/ai-artificial-intelligence/1000758/suno-sony-umg-lawsuit-ai-music</link>
+      <guid isPermaLink="false">706759721ffd238c</guid>
+      <description>Sony and Universal Music Group filed yet another suit against Suno. The labels claim its new v6 model still infringes on their copyrights because it's trained on user outputs from previous models, which were themselves trained on unlicensed music ripped from YouTube and other sou</description>
+      <category>The Verge — AI</category>
+      <pubDate>Fri, 25 Sep 2026 20:00:21 +0000</pubDate>
+    </item>
+    <item>
+      <title>Meta makes the Muse filesystem even more accessible</title>
+      <link>https://www.theverge.com/ai-artificial-intelligence/1000784/meta-muse-filesystem</link>
+      <guid isPermaLink="false">e84d98e81ae7850f</guid>
+      <description>Yesterday, with a little prodding, it was discovered that Meta's Muse would expose its filesystem to curious users. The files offered a fascinating peek under the hood of an AI chatbot, and appeared to expose details we weren't meant to see, not least because Muse itself told peo</description>
+      <category>The Verge — AI</category>
+      <pubDate>Fri, 25 Sep 2026 20:00:21 +0000</pubDate>
+    </item>
+    <item>
+      <title>AI was supposed to hit new grads hard. So far, unemployment data says otherwise.</title>
+      <link>https://arstechnica.com/ai/2026/09/ai-was-supposed-to-hit-new-grads-hard-so-far-unemployment-data-says-otherwise/</link>
+      <guid isPermaLink="false">ff8bda4a60f0dd5e</guid>
+      <description>"There is no evidence of any significant, widespread displacement or reduction in hiring.”</description>
+      <category>Ars Technica AI</category>
+      <pubDate>Fri, 25 Sep 2026 19:11:05 +0000</pubDate>
+    </item>
+    <item>
+      <title>Proaction boosts sales 60% and saves 75+ hours with Codex</title>
+      <link>https://openai.com/index/proaction</link>
+      <guid isPermaLink="false">d2d497e5eee41848</guid>
+      <description>With Codex, GPT-Live-1, and GPT-6 Astra, Proaction builds, operates, and sells modern fleet management faster.</description>
+      <category>OpenAI Blog</category>
+      <pubDate>Fri, 25 Sep 2026 19:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>Microsoft stops insisting you need a "Copilot+ PC"</title>
+      <link>https://arstechnica.com/gadgets/2026/09/microsoft-stops-insisting-you-need-a-copilot-pc/</link>
+      <guid isPermaLink="false">469d8da91a36901d</guid>
+      <description>Microsoft's new Surface laptops forgo Copilot+ PC branding.</description>
+      <category>Ars Technica AI</category>
+      <pubDate>Fri, 25 Sep 2026 17:57:37 +0000</pubDate>
+    </item>
     <item>
       <title>Microsoft thinks its new Copilot ‘super app’ will be as influential as Office</title>
       <link>https://www.theverge.com/news/1000532/microsoft-copilot-super-app-chat-coding-autopilot</link>
@@ -404,86 +484,6 @@
       <description>Release: llm 0.36 New OpenAI models: gpt-6-sol for GPT-6 Sol and gpt-6-luna for GPT-6 Luna . #1702 Model plugins can now declare supports_conversation = False for models that only accept single-turn prompts. LLM raises llm.ConversationNotSupported when these models receive assist</description>
       <category>Simon Willison</category>
       <pubDate>Wed, 23 Sep 2026 04:40:32 +0000</pubDate>
-    </item>
-    <item>
-      <title>Claude Opus 5.5, GPT-6 Sol, GPT-6 Luna, and a new price war</title>
-      <link>https://simonwillison.net/2026/Sep/22/opus-and-sol-and-luna/</link>
-      <guid isPermaLink="false">f526d7679022c6d3</guid>
-      <description>Yesterday was Grok 4.7 ( pelicans ) and MiMo v2.6 Flash/Pro ( more pelicans ). Today Anthropic released Claude Opus 5.5 , and around an hour later OpenAI released GPT-6 Sol and GPT-6 Luna . It's going to take a while to get a good read on all of these new models, but here are my </description>
-      <category>Simon Willison</category>
-      <pubDate>Wed, 23 Sep 2026 04:40:32 +0000</pubDate>
-    </item>
-    <item>
-      <title>SF October 14th: A Birds of a Feather Session on Agentic Engineering</title>
-      <link>https://simonwillison.net/2026/Sep/23/bof-agentic-engineering/</link>
-      <guid isPermaLink="false">75e3d066fe171b2a</guid>
-      <description>SF October 14th: A Birds of a Feather Session on Agentic Engineering I'm hosting an evening event with Jesse Vincent in San Francisco on Wednesday 14th October for people who are building weird and interesting things with and on top of coding agents. Think of it as an agentic sho</description>
-      <category>Simon Willison</category>
-      <pubDate>Wed, 23 Sep 2026 04:40:32 +0000</pubDate>
-    </item>
-    <item>
-      <title>OpenAI wants to consult elite mathematicians about how to not fumble again</title>
-      <link>https://www.theverge.com/ai-artificial-intelligence/999167/openai-elite-mathematicians-panel</link>
-      <guid isPermaLink="false">0ab4ac60a8fbe21a</guid>
-      <description>After turning a string of spectacular mathematical results into a reputational crisis, OpenAI is consulting human mathematicians to help it figure out a less disastrous path forward. On Monday, the company announced a new independent panel of mathematicians tasked with advising i</description>
-      <category>The Verge — AI</category>
-      <pubDate>Wed, 23 Sep 2026 04:40:32 +0000</pubDate>
-    </item>
-    <item>
-      <title>ChatGPT Ads expands to Southeast Asia and Taiwan</title>
-      <link>https://openai.com/index/chatgpt-ads-expands-southeast-asia-taiwan</link>
-      <guid isPermaLink="false">1dd9ce125c6e0e60</guid>
-      <description>ChatGPT Ads is expanding to Southeast Asia and Taiwan, giving eligible businesses new ways to reach people across more than 60 countries.</description>
-      <category>OpenAI Blog</category>
-      <pubDate>Wed, 23 Sep 2026 02:00:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>Airbnb widens access to GPT-6 Astra and OpenAI frontier models</title>
-      <link>https://openai.com/index/airbnb-gpt-6-astra</link>
-      <guid isPermaLink="false">73fafdf6f45f6a41</guid>
-      <description>Learn how Airbnb is expanding access to GPT-6 Astra and OpenAI frontier models to help engineering teams solve bugs, design systems, and ship faster.</description>
-      <category>OpenAI Blog</category>
-      <pubDate>Wed, 23 Sep 2026 01:00:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>Grab and OpenAI bring practical AI skills to Southeast Asia</title>
-      <link>https://openai.com/index/grab-openai-ai-skills-southeast-asia</link>
-      <guid isPermaLink="false">09a0c6dbf1c6c00d</guid>
-      <description>OpenAI and Grab launch GO Forward with AI, a regional programme helping 30,000 partners build practical AI skills across Southeast Asia.</description>
-      <category>OpenAI Blog</category>
-      <pubDate>Wed, 23 Sep 2026 00:00:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>Rabbit’s new AI agent doesn’t need an R1 to run</title>
-      <link>https://www.theverge.com/ai-artificial-intelligence/999094/rabbit-ai-agent-os3</link>
-      <guid isPermaLink="false">cc0d123c3bddd635</guid>
-      <description>Rabbit, the company behind the underwhelming R1 device, is rolling out a standalone AI agent that you don't need its hardware to use, as reported earlier by Wired. The startup says its new OS3 "agentic operating system" runs in the cloud but operates locally across Windows, Mac, </description>
-      <category>The Verge — AI</category>
-      <pubDate>Tue, 22 Sep 2026 22:54:52 +0000</pubDate>
-    </item>
-    <item>
-      <title>New Anthropic, OpenAI models make same promise: A little more for a lot less money</title>
-      <link>https://arstechnica.com/ai/2026/09/new-anthropic-openai-models-make-same-promise-a-little-more-for-a-lot-less-money/</link>
-      <guid isPermaLink="false">5618ffbe19d5709c</guid>
-      <description>The frontier AI model race has entered its comparison shopping phase.</description>
-      <category>Ars Technica AI</category>
-      <pubDate>Tue, 22 Sep 2026 21:25:18 +0000</pubDate>
-    </item>
-    <item>
-      <title>Better prompt caching for GPT-6</title>
-      <link>https://openai.com/index/better-prompt-caching-for-gpt-6</link>
-      <guid isPermaLink="false">b6b1e4118cdbb529</guid>
-      <description>Learn how GPT-6 improves prompt caching with higher cache hit rates, new diagnostics, explicit breakpoints, and controls that reduce latency and costs.</description>
-      <category>OpenAI Blog</category>
-      <pubDate>Tue, 22 Sep 2026 21:00:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>Microsoft disrupts AI-assisted platform that compromised 12,000 accounts</title>
-      <link>https://arstechnica.com/security/2026/09/microsoft-disrupts-ai-assisted-platform-that-compromised-12000/</link>
-      <guid isPermaLink="false">69bd5b227657facc</guid>
-      <description>EvilTokens provided an end-to-end platform that makes mass compromises faster and easier.</description>
-      <category>Ars Technica AI</category>
-      <pubDate>Tue, 22 Sep 2026 19:45:47 +0000</pubDate>
     </item>
   </channel>
 </rss>
