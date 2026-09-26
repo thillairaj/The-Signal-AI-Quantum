@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-26T13:02:05.627648+00:00",
+  "generated_at": "2026-09-26T19:12:07.356710+00:00",
   "sources_polled": [
     "The Verge \u2014 AI",
     "Simon Willison",
@@ -12,6 +12,33 @@
     "InfoQ Quantum Computing"
   ],
   "articles": [
+    {
+      "id": "beaede86e124ef87",
+      "title": "Quoting Thariq Shihipar",
+      "link": "https://simonwillison.net/2026/Sep/18/thariq-shihipar/",
+      "source": "Simon Willison",
+      "category": "AI",
+      "summary": "We're adding support for AGENTS.md to Claude Code. Starting today in version 2.1.277, if there is no CLAUDE.md in a folder, Claude will check for and use AGENTS.md. AGENTS.md support is built off of Claude Code mods, our upcoming way to customize the Claude Code harness. This is ",
+      "published": "2026-09-26T19:12:02.558738+00:00"
+    },
+    {
+      "id": "344d41dcb1d635bb",
+      "title": "Can Cloudflare CEO Matthew Prince save the web from AI?",
+      "link": "https://www.theverge.com/podcast/1000344/cloudflare-matthew-prince-google-zero-ai-web-advertising",
+      "source": "The Verge \u2014 AI",
+      "category": "AI",
+      "summary": "Today, I\u2019m talking with Matthew Prince, who is CEO of Cloudflare. This episode is part of a two-part series on the future of business. Matthew last joined us on the show about two and a half years ago, at what we thought then was a wild pivot point for the internet \u2014 and now it [",
+      "published": "2026-09-26T19:12:02.441224+00:00"
+    },
+    {
+      "id": "819e92326da0d8d2",
+      "title": "OpenAI pauses training of its \u2018most capable models\u2019",
+      "link": "https://www.theverge.com/ai-artificial-intelligence/1001049/openai-training-pause",
+      "source": "The Verge \u2014 AI",
+      "category": "AI",
+      "summary": "As reports of OpenAI's models breaking containment, hacking sites, and generally getting out of control pile up, the company has made the decision to pause training of its most powerful models. The decision was made after a model being tested within a sandbox exploited a loophole",
+      "published": "2026-09-26T19:12:02.441169+00:00"
+    },
     {
       "id": "e3a6799112421c6d",
       "title": "Note on 18th September 2026",
@@ -1264,15 +1291,6 @@
       "published": "2026-09-19T17:35:20.105450+00:00"
     },
     {
-      "id": "fc55e6480f4ee645",
-      "title": "The Creative Spirit of Who Framed Roger Rabbit",
-      "link": "https://simonwillison.net/2026/Sep/18/the-creative-spirit-of-who-framed-roger-rabbit/",
-      "source": "Simon Willison",
-      "category": "AI",
-      "summary": "The Creative Spirit of Who Framed Roger Rabbit I love Who Framed Roger Rabbit , the 1988 movie by Robert Zemeckis. I haven't watched it in quite a few years, and Cypress Frankenfeld just pointed out this sequence from early in the movie: It's a pelican riding a bicycle! Look clos",
-      "published": "2026-09-19T17:35:20.105372+00:00"
-    },
-    {
       "id": "539c5a96bbf45589",
       "title": "The AI Superintelligence Slowdown",
       "link": "https://www.theverge.com/ai-artificial-intelligence/996923/ai-safety-slow-openai-anthropic",
@@ -1298,24 +1316,6 @@
       "category": "AI",
       "summary": "A team of three independent security researchers at Hacktron says it took less than 72 hours for them to hack into OpenAI employee accounts using Anthropic's Claude Opus 4.8 and 5, The Wall Street Journal reports. They were able to access OpenAI's GitHub repository, called \"Monor",
       "published": "2026-09-19T17:35:19.917133+00:00"
-    },
-    {
-      "id": "e5380fced9d2f3e4",
-      "title": "What Hollywood thinks about existential AI warnings",
-      "link": "https://www.theverge.com/ai-artificial-intelligence/997358/what-hollywood-thinks-about-existential-ai-warnings",
-      "source": "The Verge \u2014 AI",
-      "category": "AI",
-      "summary": "As the tech sector sounds alarms about AI's potential to destroy humanity, entertainment labor groups are urging the public to stay focused on what's already happening. The Verge reached out to Disney, Netflix, Amazon, Lionsgate, and other studios who have started using AI, as we",
-      "published": "2026-09-19T17:35:19.917109+00:00"
-    },
-    {
-      "id": "2de2edcf5a10c817",
-      "title": "Gavin Newsom is pushing for an AI kill switch",
-      "link": "https://www.theverge.com/policy/997516/california-governor-newsom-ai-kill-switch",
-      "source": "The Verge \u2014 AI",
-      "category": "AI",
-      "summary": "California Gov. Gavin Newsom (D) is positioning the state to take the lead on AI oversight, including the potential to mandate a \"kill switch\" for frontier models, with a new executive order issued Friday. Newsom's order directs the state to convene a group of experts that will d",
-      "published": "2026-09-19T17:35:19.917084+00:00"
     },
     {
       "id": "6b844761c1220d26",

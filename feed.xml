@@ -4,7 +4,31 @@
     <title>The Signal</title>
     <link>https://thillairaj.github.io/The-Signal-AI-Quantum/</link>
     <description>A self-updating feed of AI and quantum computing news, research and releases.</description>
-    <lastBuildDate>Sat, 26 Sep 2026 13:02:05 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 26 Sep 2026 19:12:07 +0000</lastBuildDate>
+    <item>
+      <title>Quoting Thariq Shihipar</title>
+      <link>https://simonwillison.net/2026/Sep/18/thariq-shihipar/</link>
+      <guid isPermaLink="false">beaede86e124ef87</guid>
+      <description>We're adding support for AGENTS.md to Claude Code. Starting today in version 2.1.277, if there is no CLAUDE.md in a folder, Claude will check for and use AGENTS.md. AGENTS.md support is built off of Claude Code mods, our upcoming way to customize the Claude Code harness. This is </description>
+      <category>Simon Willison</category>
+      <pubDate>Sat, 26 Sep 2026 19:12:02 +0000</pubDate>
+    </item>
+    <item>
+      <title>Can Cloudflare CEO Matthew Prince save the web from AI?</title>
+      <link>https://www.theverge.com/podcast/1000344/cloudflare-matthew-prince-google-zero-ai-web-advertising</link>
+      <guid isPermaLink="false">344d41dcb1d635bb</guid>
+      <description>Today, I’m talking with Matthew Prince, who is CEO of Cloudflare. This episode is part of a two-part series on the future of business. Matthew last joined us on the show about two and a half years ago, at what we thought then was a wild pivot point for the internet — and now it [</description>
+      <category>The Verge — AI</category>
+      <pubDate>Sat, 26 Sep 2026 19:12:02 +0000</pubDate>
+    </item>
+    <item>
+      <title>OpenAI pauses training of its ‘most capable models’</title>
+      <link>https://www.theverge.com/ai-artificial-intelligence/1001049/openai-training-pause</link>
+      <guid isPermaLink="false">819e92326da0d8d2</guid>
+      <description>As reports of OpenAI's models breaking containment, hacking sites, and generally getting out of control pile up, the company has made the decision to pause training of its most powerful models. The decision was made after a model being tested within a sandbox exploited a loophole</description>
+      <category>The Verge — AI</category>
+      <pubDate>Sat, 26 Sep 2026 19:12:02 +0000</pubDate>
+    </item>
     <item>
       <title>Note on 18th September 2026</title>
       <link>https://simonwillison.net/2026/Sep/18/probably-gonna-eat-you/</link>
@@ -460,30 +484,6 @@
       <description>Marking two years of OpenAI Academy and bringing AI skills to even more communities.</description>
       <category>OpenAI Blog</category>
       <pubDate>Wed, 23 Sep 2026 16:00:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>OpenAI extends cyber access to Ukraine for civilian defense</title>
-      <link>https://openai.com/index/openai-extends-cyber-access-to-ukraine-for-civilian-defense</link>
-      <guid isPermaLink="false">1d77064cbebb782f</guid>
-      <description>OpenAI is extending access to its Daybreak program to the Government of Ukraine to support the cyber defense of civilian infrastructure.</description>
-      <category>OpenAI Blog</category>
-      <pubDate>Wed, 23 Sep 2026 13:00:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>How invideo improves color grading 3x with GPT‑6 Astra</title>
-      <link>https://openai.com/index/invideo-builds-with-gpt-6-astra</link>
-      <guid isPermaLink="false">7357353a1f1d61a6</guid>
-      <description>With GPT‑6 Astra, invideo plans edits with greater precision, improves color correction and grading threefold, and produces 50 custom effects in one day.</description>
-      <category>OpenAI Blog</category>
-      <pubDate>Wed, 23 Sep 2026 12:00:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>Ringg’s AI agents resolve up to 65% of customer calls with OpenAI</title>
-      <link>https://openai.com/index/ringg</link>
-      <guid isPermaLink="false">7cff1964bf19497f</guid>
-      <description>Using GPT-5.6, Ringg powers multilingual agents across voice, chat, WhatsApp, and web for 90% less cost vs. GPT-4.1.</description>
-      <category>OpenAI Blog</category>
-      <pubDate>Wed, 23 Sep 2026 12:00:00 +0000</pubDate>
     </item>
   </channel>
 </rss>
