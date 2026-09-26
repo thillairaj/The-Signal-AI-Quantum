@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-26T04:51:56.402520+00:00",
+  "generated_at": "2026-09-26T13:02:05.627648+00:00",
   "sources_polled": [
     "The Verge \u2014 AI",
     "Simon Willison",
@@ -12,6 +12,15 @@
     "InfoQ Quantum Computing"
   ],
   "articles": [
+    {
+      "id": "e3a6799112421c6d",
+      "title": "Note on 18th September 2026",
+      "link": "https://simonwillison.net/2026/Sep/18/probably-gonna-eat-you/",
+      "source": "Simon Willison",
+      "category": "AI",
+      "summary": "Being a computer scientist who refuses to find anything about LLMs interesting right now is a bit like being a geneticist who refuses to find anything interesting about the recently opened Jurassic Park. Skeptical geneticist: \"pfft, it's just frog DNA. And they deliberately let t",
+      "published": "2026-09-26T13:02:01.171163+00:00"
+    },
     {
       "id": "a2b68d122f77626f",
       "title": "Gemini Hacked Three Companies in First Known Breakout by Google\u2019s AI",
@@ -1262,15 +1271,6 @@
       "category": "AI",
       "summary": "The Creative Spirit of Who Framed Roger Rabbit I love Who Framed Roger Rabbit , the 1988 movie by Robert Zemeckis. I haven't watched it in quite a few years, and Cypress Frankenfeld just pointed out this sequence from early in the movie: It's a pelican riding a bicycle! Look clos",
       "published": "2026-09-19T17:35:20.105372+00:00"
-    },
-    {
-      "id": "beaede86e124ef87",
-      "title": "Quoting Thariq Shihipar",
-      "link": "https://simonwillison.net/2026/Sep/18/thariq-shihipar/",
-      "source": "Simon Willison",
-      "category": "AI",
-      "summary": "We're adding support for AGENTS.md to Claude Code. Starting today in version 2.1.277, if there is no CLAUDE.md in a folder, Claude will check for and use AGENTS.md. AGENTS.md support is built off of Claude Code mods, our upcoming way to customize the Claude Code harness. This is ",
-      "published": "2026-09-19T17:35:20.105329+00:00"
     },
     {
       "id": "539c5a96bbf45589",
