@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-27T19:44:49.728280+00:00",
+  "generated_at": "2026-09-27T22:59:45.522387+00:00",
   "sources_polled": [
     "The Verge \u2014 AI",
     "Simon Willison",
@@ -12,6 +12,24 @@
     "InfoQ Quantum Computing"
   ],
   "articles": [
+    {
+      "id": "ed2cbcca51ab9ede",
+      "title": "OpenAI agents tried to \u2018bruteforce\u2019 a UN website",
+      "link": "https://www.theverge.com/ai-artificial-intelligence/1001178/openai-agents-bruteforce-un-website",
+      "source": "The Verge \u2014 AI",
+      "category": "AI",
+      "summary": "Security researcher Rowan Howard-Jones says that OpenAI agents scanned the UN Conference on Trade and Development's (UNCTAD) statistics site over 16,000 times between April and June. While the incident doesn't quite rise to the level of the Hugging Face hack, or the recent attack",
+      "published": "2026-09-27T22:59:42.513041+00:00"
+    },
+    {
+      "id": "9c14e3f084274fca",
+      "title": "Engram is a sampler that turns broken AI hallucinations into music",
+      "link": "https://www.theverge.com/ai-artificial-intelligence/1001193/engram-sampler-ai-hallucinations-music",
+      "source": "The Verge \u2014 AI",
+      "category": "AI",
+      "summary": "Music startup Thoughtful Things has just launched the Kickstarter campaign for its first instrument, Engram. It's a sampler and groovebox that uses AI to mangle incoming audio and even hallucinate completely new sounds. This isn't Suno in a box, though. This isn't a \"push-button,",
+      "published": "2026-09-27T22:59:42.512994+00:00"
+    },
     {
       "id": "2f269a03d10ac235",
       "title": "Self-generated prompt injections in compaction summaries",
@@ -1298,24 +1316,6 @@
       "category": "AI",
       "summary": "Remember when tech leaders would tell their employees to \u201cmove fast and break things\u201d? It seemed that would be the way of AI too. But after a summer where rogue AI agents became reality, and researchers warned that AI could kill us all, a number of leading US AI companies are pub",
       "published": "2026-09-19T17:35:19.917184+00:00"
-    },
-    {
-      "id": "82da9e642a0899d3",
-      "title": "Flash floods can strike without warning \u2014 this new technology could change that",
-      "link": "https://www.theverge.com/science/997083/flash-flood-warning-tacls-satellite-machine-learning",
-      "source": "The Verge \u2014 AI",
-      "category": "AI",
-      "summary": "On the morning of June 9th, Laura Lin was working from her home in Lanesville, a rural southern Indiana town about 15 miles from the Kentucky border. She was on a Zoom call, unaware that the heavy rain outside was beginning to flood her yard. \"I look over to where the barn is ove",
-      "published": "2026-09-19T17:35:19.917157+00:00"
-    },
-    {
-      "id": "907e9d5308761968",
-      "title": "Security researchers used Claude to help them hack into OpenAI",
-      "link": "https://www.theverge.com/ai-artificial-intelligence/997444/openai-hack-claude-heif-heist",
-      "source": "The Verge \u2014 AI",
-      "category": "AI",
-      "summary": "A team of three independent security researchers at Hacktron says it took less than 72 hours for them to hack into OpenAI employee accounts using Anthropic's Claude Opus 4.8 and 5, The Wall Street Journal reports. They were able to access OpenAI's GitHub repository, called \"Monor",
-      "published": "2026-09-19T17:35:19.917133+00:00"
     },
     {
       "id": "6b844761c1220d26",
