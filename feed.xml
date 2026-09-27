@@ -4,7 +4,23 @@
     <title>The Signal</title>
     <link>https://thillairaj.github.io/The-Signal-AI-Quantum/</link>
     <description>A self-updating feed of AI and quantum computing news, research and releases.</description>
-    <lastBuildDate>Sun, 27 Sep 2026 05:13:42 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 27 Sep 2026 13:54:54 +0000</lastBuildDate>
+    <item>
+      <title>Self-generated prompt injections in compaction summaries</title>
+      <link>https://simonwillison.net/2026/Sep/17/compaction-summaries/</link>
+      <guid isPermaLink="false">2f269a03d10ac235</guid>
+      <description>Self-generated prompt injections in compaction summaries In Our framework for reporting model misalignment OpenAI provide "six reports on unexpected or concerning model behavior we’ve observed in the last six months". This one here is my favorite: they caught some of their models</description>
+      <category>Simon Willison</category>
+      <pubDate>Sun, 27 Sep 2026 13:54:50 +0000</pubDate>
+    </item>
+    <item>
+      <title>How To Write With An LLM</title>
+      <link>https://simonwillison.net/2026/Sep/17/how-to-write-with-an-llm/</link>
+      <guid isPermaLink="false">e4addcf48f06208d</guid>
+      <description>How To Write With An LLM Thomas Ptacek on using LLMs as copyeditors, not as writing assistants: Rule Number One: You may not use a single word an LLM suggests to you. [...] I think that as a form of intellectual personal protective equipment you should adopt the rule that any spe</description>
+      <category>Simon Willison</category>
+      <pubDate>Sun, 27 Sep 2026 13:54:50 +0000</pubDate>
+    </item>
     <item>
       <title>Be alert: targeted attacks on prominent Rustaceans</title>
       <link>https://simonwillison.net/2026/Sep/17/targeted-attacks-on-rustaceans/</link>
@@ -468,22 +484,6 @@
       <description>Part of the job of a content creator is to figure out how to get their work in front of the most people. Cracking - or fighting - the algorithm has historically been a frustration for creators, but YouTube is increasingly simply telling creators what they should do. At the annual</description>
       <category>The Verge — AI</category>
       <pubDate>Wed, 23 Sep 2026 19:39:29 +0000</pubDate>
-    </item>
-    <item>
-      <title>Bernie Sanders proposes banning ‘superintelligence’ and putting violators in prison</title>
-      <link>https://www.theverge.com/ai-artificial-intelligence/999443/bernie-sanders-ai-superintelligence-ban-act</link>
-      <guid isPermaLink="false">baef686b29274fc4</guid>
-      <description>Sen. Bernie Sanders (I-VT) and Rep. Greg Casar (D-TX) have introduced new legislation that would ban anyone from developing artificial superintelligence - a technology the bill describes as capable of the "destruction or disempowerment of humanity," including by overthrowing the </description>
-      <category>The Verge — AI</category>
-      <pubDate>Wed, 23 Sep 2026 19:39:29 +0000</pubDate>
-    </item>
-    <item>
-      <title>YouTube promises custom feeds and a lot more AI later this year</title>
-      <link>https://arstechnica.com/gadgets/2026/09/youtube-promises-custom-feeds-and-a-lot-more-ai-later-this-year/</link>
-      <guid isPermaLink="false">25698732c6b8e24b</guid>
-      <description>YouTube's next year could change the content you see with a big focus on AI and livestreams.</description>
-      <category>Ars Technica AI</category>
-      <pubDate>Wed, 23 Sep 2026 19:35:53 +0000</pubDate>
     </item>
   </channel>
 </rss>

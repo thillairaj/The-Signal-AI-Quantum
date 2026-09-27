@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-27T05:13:42.259983+00:00",
+  "generated_at": "2026-09-27T13:54:54.483475+00:00",
   "sources_polled": [
     "The Verge \u2014 AI",
     "Simon Willison",
@@ -12,6 +12,24 @@
     "InfoQ Quantum Computing"
   ],
   "articles": [
+    {
+      "id": "2f269a03d10ac235",
+      "title": "Self-generated prompt injections in compaction summaries",
+      "link": "https://simonwillison.net/2026/Sep/17/compaction-summaries/",
+      "source": "Simon Willison",
+      "category": "AI",
+      "summary": "Self-generated prompt injections in compaction summaries In Our framework for reporting model misalignment OpenAI provide \"six reports on unexpected or concerning model behavior we\u2019ve observed in the last six months\". This one here is my favorite: they caught some of their models",
+      "published": "2026-09-27T13:54:50.767370+00:00"
+    },
+    {
+      "id": "e4addcf48f06208d",
+      "title": "How To Write With An LLM",
+      "link": "https://simonwillison.net/2026/Sep/17/how-to-write-with-an-llm/",
+      "source": "Simon Willison",
+      "category": "AI",
+      "summary": "How To Write With An LLM Thomas Ptacek on using LLMs as copyeditors, not as writing assistants: Rule Number One: You may not use a single word an LLM suggests to you. [...] I think that as a form of intellectual personal protective equipment you should adopt the rule that any spe",
+      "published": "2026-09-27T13:54:50.767085+00:00"
+    },
     {
       "id": "acc67ef32e42e5a2",
       "title": "Be alert: targeted attacks on prominent Rustaceans",
@@ -1271,24 +1289,6 @@
       "category": "AI",
       "summary": "Claude Cowork and chat are now one Claude In hopefully good news for anyone who, like me, was increasingly confused at Cowork v.s. Claude v.s. Claude Code: Starting today, Claude Cowork and chat are merging into one Claude. Bring a quick question, or hand over a report due at noo",
       "published": "2026-09-19T17:35:20.105760+00:00"
-    },
-    {
-      "id": "2105625f58a47d54",
-      "title": "datasette 0.65.5",
-      "link": "https://simonwillison.net/2026/Sep/16/datasette-2/",
-      "source": "Simon Willison",
-      "category": "AI",
-      "summary": "Release: datasette 0.65.5 Security fix for an issue where a trailing newline in a requested table name could bypass table permissions and expose private rows, reported by dpfkdlemtp in GHSA-h547-rmjf-5m2m . Tags: security , datasette",
-      "published": "2026-09-19T17:35:20.105690+00:00"
-    },
-    {
-      "id": "738877fde7567c89",
-      "title": "datasette 1.0a40",
-      "link": "https://simonwillison.net/2026/Sep/16/datasette/",
-      "source": "Simon Willison",
-      "category": "AI",
-      "summary": "Release: datasette 1.0a40 Same security fix as 0.65.5 , plus some neat new features and bug fixes: Plugins can now launch and manage background tasks using the new datasette.add_background_task() method. Thanks, Alex Garcia . I've migrated Datasette to httpx2 for features like th",
-      "published": "2026-09-19T17:35:20.105666+00:00"
     },
     {
       "id": "539c5a96bbf45589",
