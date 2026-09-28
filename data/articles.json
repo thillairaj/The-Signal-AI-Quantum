@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-27T22:59:45.522387+00:00",
+  "generated_at": "2026-09-28T05:17:30.090171+00:00",
   "sources_polled": [
     "The Verge \u2014 AI",
     "Simon Willison",
@@ -12,6 +12,51 @@
     "InfoQ Quantum Computing"
   ],
   "articles": [
+    {
+      "id": "750e8b0007c03aa5",
+      "title": "We just shipped support for the ugliest part of HTTP: Vary",
+      "link": "https://simonwillison.net/2026/Sep/23/hn-49823961/",
+      "source": "Simon Willison",
+      "category": "AI",
+      "summary": "My comment on We just shipped support for the ugliest part of HTTP: Vary &mdash; Hacker News. I've been wanting this from Cloudflare for years . The classic problem here is if you do that thing where user agents that send \"accept: text/html\" get HTML, while user agents that don't",
+      "published": "2026-09-28T05:17:25.151116+00:00"
+    },
+    {
+      "id": "dbaa344dafea1b67",
+      "title": "Bluesky reply bot checker",
+      "link": "https://simonwillison.net/2026/Sep/27/bluesky-bot-check/",
+      "source": "Simon Willison",
+      "category": "AI",
+      "summary": "Tool: Bluesky reply bot checker Automated reply bots on Twitter are a scourge - as someone with a decent number of followers I attract a swarm of these, such that anything I post there attracts dozens of mindless automated replies. They've started manifesting on Bluesky as well. ",
+      "published": "2026-09-28T05:17:25.151054+00:00"
+    },
+    {
+      "id": "4cfa73e20de35720",
+      "title": "S3 Is the Future, S3 Is the Past",
+      "link": "https://simonwillison.net/2026/Sep/27/hn-49871741/",
+      "source": "Simon Willison",
+      "category": "AI",
+      "summary": "My comment on S3 Is the Future, S3 Is the Past &mdash; Hacker News. One thing I find notable about S3 today is that, while it used to drop in price reasonably often, there hasn't been a price drop in a full decade : 2006-03-14 $0.150/GB-month 2010-11-01 $0.140/GB-month 2012-02-01",
+      "published": "2026-09-28T05:17:25.150968+00:00"
+    },
+    {
+      "id": "558841854585e6c7",
+      "title": "2026 in LLMs (so far)",
+      "link": "https://simonwillison.net/2026/Sep/27/2026-in-llms-so-far/",
+      "source": "Simon Willison",
+      "category": "AI",
+      "summary": "On Friday I gave the closing keynote at the WeAreDevelopers World Congress North America in San Jose. I tied together the key trends from the past year into a chronological exploration of everything that happened in 2026. The video is on YouTube ; here are my annotated slides and",
+      "published": "2026-09-28T05:17:25.150896+00:00"
+    },
+    {
+      "id": "00e0e3a4ad2d2f3b",
+      "title": "Quoting Muse AI Agent",
+      "link": "https://simonwillison.net/2026/Sep/28/muse-ai-agent/",
+      "source": "Simon Willison",
+      "category": "AI",
+      "summary": "Bad news on the MX Keys Mini pickup. Usman showed up at your building around 9:15 and waited, messaged a bunch of times, and nobody came down. He left angry at 9:38 and left a negative rating. Worse, my auto-reply told him \"Yep I'm here!\" at 9:27 when you clearly weren't availabl",
+      "published": "2026-09-28T05:17:25.149471+00:00"
+    },
     {
       "id": "ed2cbcca51ab9ede",
       "title": "OpenAI agents tried to \u2018bruteforce\u2019 a UN website",
@@ -1262,51 +1307,6 @@
       "category": "AI",
       "summary": "The cost of writing code collapsed, and the cost of reviewing, fixing and operating it is following, and I'm assuming it gets there. What's left of making software is finding out what people actually want, defining it precisely, and making it pleasant to use. That cost is per pie",
       "published": "2026-09-19T17:35:20.106077+00:00"
-    },
-    {
-      "id": "263391f1136f23a1",
-      "title": "What blog posts influenced your thinking the most?",
-      "link": "https://simonwillison.net/2026/Sep/14/influences/",
-      "source": "Simon Willison",
-      "category": "AI",
-      "summary": "My comment on What blog posts influenced your thinking the most? &mdash; Lobste.rs. An early Joel Spolsky one for me was The Law of Leaky Abstractions . I read that near the start of my career and it's encouraged me to always be looking for improved understanding of the layers un",
-      "published": "2026-09-19T17:35:20.106029+00:00"
-    },
-    {
-      "id": "bed1156254a4ff47",
-      "title": "The contagion of fear",
-      "link": "https://simonwillison.net/2026/Sep/14/the-contagion-of-fear/",
-      "source": "Simon Willison",
-      "category": "AI",
-      "summary": "The contagion of fear Bryan Cantrill responds to the tweet by former Anthropic employee Jacob Coxon confirming that many Anthropic researchers believe AI \"could kill us all by the end of the decade\". Bryan shares a story of his own youthful mistakes causing unjustified panic amon",
-      "published": "2026-09-19T17:35:20.105964+00:00"
-    },
-    {
-      "id": "500c6bf99a8171dc",
-      "title": "Gemini Live audio",
-      "link": "https://simonwillison.net/2026/Sep/15/gemini-live/",
-      "source": "Simon Willison",
-      "category": "AI",
-      "summary": "Tool: Gemini Live audio Google released Gemini 3.8 Live and 3.8 Live Extended Thinking today - two new speech-to-speech models that are a similar shape to OpenAI's GPT-Live family. I pointed GPT-6 Astra Extra High at the documentation and had it build me this web UI for trying ou",
-      "published": "2026-09-19T17:35:20.105856+00:00"
-    },
-    {
-      "id": "fc651ee7288f058a",
-      "title": "Quoting Mustafa Suleyman",
-      "link": "https://simonwillison.net/2026/Sep/16/mustafa-suleyman/",
-      "source": "Simon Willison",
-      "category": "AI",
-      "summary": "We should not treat models as though they have feelings, preferences, rights, or any entitlement to our welfare. Consciousness is the foundation of our ethical, legal, and political systems. To invite another entity to share any flavor of these rights isn\u2019t justified by the evide",
-      "published": "2026-09-19T17:35:20.105801+00:00"
-    },
-    {
-      "id": "d86c6da463d50815",
-      "title": "Claude Cowork and chat are now one Claude",
-      "link": "https://simonwillison.net/2026/Sep/16/one-claude/",
-      "source": "Simon Willison",
-      "category": "AI",
-      "summary": "Claude Cowork and chat are now one Claude In hopefully good news for anyone who, like me, was increasingly confused at Cowork v.s. Claude v.s. Claude Code: Starting today, Claude Cowork and chat are merging into one Claude. Bring a quick question, or hand over a report due at noo",
-      "published": "2026-09-19T17:35:20.105760+00:00"
     },
     {
       "id": "539c5a96bbf45589",

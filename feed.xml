@@ -4,7 +4,47 @@
     <title>The Signal</title>
     <link>https://thillairaj.github.io/The-Signal-AI-Quantum/</link>
     <description>A self-updating feed of AI and quantum computing news, research and releases.</description>
-    <lastBuildDate>Sun, 27 Sep 2026 22:59:45 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 28 Sep 2026 05:17:30 +0000</lastBuildDate>
+    <item>
+      <title>We just shipped support for the ugliest part of HTTP: Vary</title>
+      <link>https://simonwillison.net/2026/Sep/23/hn-49823961/</link>
+      <guid isPermaLink="false">750e8b0007c03aa5</guid>
+      <description>My comment on We just shipped support for the ugliest part of HTTP: Vary &amp;mdash; Hacker News. I've been wanting this from Cloudflare for years . The classic problem here is if you do that thing where user agents that send "accept: text/html" get HTML, while user agents that don't</description>
+      <category>Simon Willison</category>
+      <pubDate>Mon, 28 Sep 2026 05:17:25 +0000</pubDate>
+    </item>
+    <item>
+      <title>Bluesky reply bot checker</title>
+      <link>https://simonwillison.net/2026/Sep/27/bluesky-bot-check/</link>
+      <guid isPermaLink="false">dbaa344dafea1b67</guid>
+      <description>Tool: Bluesky reply bot checker Automated reply bots on Twitter are a scourge - as someone with a decent number of followers I attract a swarm of these, such that anything I post there attracts dozens of mindless automated replies. They've started manifesting on Bluesky as well. </description>
+      <category>Simon Willison</category>
+      <pubDate>Mon, 28 Sep 2026 05:17:25 +0000</pubDate>
+    </item>
+    <item>
+      <title>S3 Is the Future, S3 Is the Past</title>
+      <link>https://simonwillison.net/2026/Sep/27/hn-49871741/</link>
+      <guid isPermaLink="false">4cfa73e20de35720</guid>
+      <description>My comment on S3 Is the Future, S3 Is the Past &amp;mdash; Hacker News. One thing I find notable about S3 today is that, while it used to drop in price reasonably often, there hasn't been a price drop in a full decade : 2006-03-14 $0.150/GB-month 2010-11-01 $0.140/GB-month 2012-02-01</description>
+      <category>Simon Willison</category>
+      <pubDate>Mon, 28 Sep 2026 05:17:25 +0000</pubDate>
+    </item>
+    <item>
+      <title>2026 in LLMs (so far)</title>
+      <link>https://simonwillison.net/2026/Sep/27/2026-in-llms-so-far/</link>
+      <guid isPermaLink="false">558841854585e6c7</guid>
+      <description>On Friday I gave the closing keynote at the WeAreDevelopers World Congress North America in San Jose. I tied together the key trends from the past year into a chronological exploration of everything that happened in 2026. The video is on YouTube ; here are my annotated slides and</description>
+      <category>Simon Willison</category>
+      <pubDate>Mon, 28 Sep 2026 05:17:25 +0000</pubDate>
+    </item>
+    <item>
+      <title>Quoting Muse AI Agent</title>
+      <link>https://simonwillison.net/2026/Sep/28/muse-ai-agent/</link>
+      <guid isPermaLink="false">00e0e3a4ad2d2f3b</guid>
+      <description>Bad news on the MX Keys Mini pickup. Usman showed up at your building around 9:15 and waited, messaged a bunch of times, and nobody came down. He left angry at 9:38 and left a negative rating. Worse, my auto-reply told him "Yep I'm here!" at 9:27 when you clearly weren't availabl</description>
+      <category>Simon Willison</category>
+      <pubDate>Mon, 28 Sep 2026 05:17:25 +0000</pubDate>
+    </item>
     <item>
       <title>OpenAI agents tried to ‘bruteforce’ a UN website</title>
       <link>https://www.theverge.com/ai-artificial-intelligence/1001178/openai-agents-bruteforce-un-website</link>
@@ -444,46 +484,6 @@
       <description>Tool: Gemini 3.8 TTS Playground Google released two new Gemini text-to-speech models today - gemini-3.8-flash-tts and gemini-3.8-flash-lite-tts . They come with a library of over 2,000 voices, plus the ability to create a custom voice with "just a 30-second audio sample of your v</description>
       <category>Simon Willison</category>
       <pubDate>Wed, 23 Sep 2026 22:55:33 +0000</pubDate>
-    </item>
-    <item>
-      <title>Anthropic&amp;#8217;s biolab made a discovery it&amp;#8217;s comparing to Crispr</title>
-      <link>https://www.theverge.com/ai-artificial-intelligence/999470/anthropic-biolab-claude-crispr</link>
-      <guid isPermaLink="false">ad93c749ed6509d0</guid>
-      <description>Anthropic says its AI Claude has "autonomously discovered" a new enzyme system similar to machinery behind the powerful gene-editing tool Crispr. It's the first result from Anthropic's newly-launched wet lab and an early test of Claude's usefulness for science as the company prep</description>
-      <category>The Verge — AI</category>
-      <pubDate>Wed, 23 Sep 2026 22:55:33 +0000</pubDate>
-    </item>
-    <item>
-      <title>Data centers are black boxes, but California wants to change that</title>
-      <link>https://www.theverge.com/policy/999412/data-center-water-electricity-disclosure-bills</link>
-      <guid isPermaLink="false">211a6281fee6a0bf</guid>
-      <description>California Gov. Gavin Newsom signed a slate of bills on Monday that could finally give communities better data - and more say - on how data centers impact their electricity bills and water supply. As data centers invade a growing number of communities across the US, they've trigg</description>
-      <category>The Verge — AI</category>
-      <pubDate>Wed, 23 Sep 2026 22:55:33 +0000</pubDate>
-    </item>
-    <item>
-      <title>Meta’s AI agent is a cute little guy who’s great at spending my money</title>
-      <link>https://www.theverge.com/ai-artificial-intelligence/999526/meta-muse-ai-agent-hands-on-shopping</link>
-      <guid isPermaLink="false">54336ea97e9aec13</guid>
-      <description>Modern life comes with an unending, auto-populating to-do list. It never ceases to amaze me how I can be doing nothing at all, minding my own business, and suddenly something needs to be taken care of. You're telling me a tree branch fell in the backyard and now I have to figure </description>
-      <category>The Verge — AI</category>
-      <pubDate>Wed, 23 Sep 2026 22:55:33 +0000</pubDate>
-    </item>
-    <item>
-      <title>Trump’s China rivalry and “AI race” delusion may endanger US, experts say</title>
-      <link>https://arstechnica.com/tech-policy/2026/09/china-silent-as-us-touts-plan-for-ai-safety-alerts-that-omits-tech-experts/</link>
-      <guid isPermaLink="false">c1c97de161b0f3b7</guid>
-      <description>Trump focus on winning “AI race” may deter China from sharing safety intel.</description>
-      <category>Ars Technica AI</category>
-      <pubDate>Wed, 23 Sep 2026 20:52:28 +0000</pubDate>
-    </item>
-    <item>
-      <title>XPRIZE Wildfire winners spotted fires within 10 min—but couldn’t stop them</title>
-      <link>https://arstechnica.com/gadgets/2026/09/xprize-wildfire-winners-spotted-fires-within-10-min-but-couldnt-stop-them/</link>
-      <guid isPermaLink="false">f553567bf21507d8</guid>
-      <description>$11M competition showed wildfire detection is still easier than stopping fires.</description>
-      <category>Ars Technica AI</category>
-      <pubDate>Wed, 23 Sep 2026 20:28:42 +0000</pubDate>
     </item>
   </channel>
 </rss>
