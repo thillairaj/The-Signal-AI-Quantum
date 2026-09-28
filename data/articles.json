@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-28T05:17:30.090171+00:00",
+  "generated_at": "2026-09-28T16:43:50.617375+00:00",
   "sources_polled": [
     "The Verge \u2014 AI",
     "Simon Willison",
@@ -12,6 +12,33 @@
     "InfoQ Quantum Computing"
   ],
   "articles": [
+    {
+      "id": "fa45a29570c32d23",
+      "title": "Nvidia says its new AI safety platform can contain rogue agents within \u2018milliseconds\u2019",
+      "link": "https://www.theverge.com/tech/1001287/nvidia-ai-safety-platform-rogue-agents",
+      "source": "The Verge \u2014 AI",
+      "category": "AI",
+      "summary": "Nvidia is launching a new safety platform designed to contain and monitor AI agents, a move that comes in response to a wave of rogue hacking incidents, as reported earlier by Reuters. In an announcement on Monday, Nvidia says its new Open Agent Safety Platform can quarantine age",
+      "published": "2026-09-28T16:43:44.886513+00:00"
+    },
+    {
+      "id": "0ed30c8df6bfb914",
+      "title": "The SaaSpocalypse that wasn&#8217;t, with Atlassian CEO Mike Cannon-Brookes",
+      "link": "https://www.theverge.com/podcast/1000914/atlassian-ceo-mike-cannon-brookes-saaspocalypse-ai-enterprise-software-trello-jira",
+      "source": "The Verge \u2014 AI",
+      "category": "AI",
+      "summary": "Today, I\u2019m talking with Mike Cannon-Brookes, who is cofounder and CEO of Atlassian.&#160; Atlassian is one of those companies that every other company runs on \u2014 it makes important platform tools like Jira and Trello that allow people to organize and manage big teams, create share",
+      "published": "2026-09-28T16:43:44.886468+00:00"
+    },
+    {
+      "id": "d6ebb3bfb87ecb52",
+      "title": "Microsoft goes quiet after church groups ask for 1% of data center costs",
+      "link": "https://arstechnica.com/tech-policy/2026/09/microsoft-goes-quiet-after-church-groups-ask-for-1-of-data-center-costs/",
+      "source": "Ars Technica AI",
+      "category": "AI",
+      "summary": "\u201cMicrosoft claims to want to be a good neighbor, but the jury is still out.\"",
+      "published": "2026-09-28T11:00:09+00:00"
+    },
     {
       "id": "750e8b0007c03aa5",
       "title": "We just shipped support for the ugliest part of HTTP: Vary",
@@ -1165,15 +1192,6 @@
       "published": "2026-09-19T22:18:54.502751+00:00"
     },
     {
-      "id": "607ffaad2d1c704d",
-      "title": "Meta\u2019s Muse is creepy, but maybe not for the reasons you think",
-      "link": "https://www.theverge.com/ai-artificial-intelligence/997833/meta-muse-creepy",
-      "source": "The Verge \u2014 AI",
-      "category": "AI",
-      "summary": "Meta's Muse is apparently an effective AI assistant, but one that's a little creepy. Part of that is because of its new Mac app, which can access Messages, Calendar, and Notes. But for all its smarts, Muse doesn't actually know how to describe itself. Jason Aten, a contributing e",
-      "published": "2026-09-19T22:18:54.374254+00:00"
-    },
-    {
       "id": "0fdcd72966260f9c",
       "title": "datasette-publish-fly 1.4",
       "link": "https://simonwillison.net/2026/Sep/11/datasette-publish-fly/",
@@ -1307,15 +1325,6 @@
       "category": "AI",
       "summary": "The cost of writing code collapsed, and the cost of reviewing, fixing and operating it is following, and I'm assuming it gets there. What's left of making software is finding out what people actually want, defining it precisely, and making it pleasant to use. That cost is per pie",
       "published": "2026-09-19T17:35:20.106077+00:00"
-    },
-    {
-      "id": "539c5a96bbf45589",
-      "title": "The AI Superintelligence Slowdown",
-      "link": "https://www.theverge.com/ai-artificial-intelligence/996923/ai-safety-slow-openai-anthropic",
-      "source": "The Verge \u2014 AI",
-      "category": "AI",
-      "summary": "Remember when tech leaders would tell their employees to \u201cmove fast and break things\u201d? It seemed that would be the way of AI too. But after a summer where rogue AI agents became reality, and researchers warned that AI could kill us all, a number of leading US AI companies are pub",
-      "published": "2026-09-19T17:35:19.917184+00:00"
     },
     {
       "id": "6b844761c1220d26",
