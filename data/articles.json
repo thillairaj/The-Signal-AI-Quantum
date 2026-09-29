@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-29T10:38:16.047875+00:00",
+  "generated_at": "2026-09-29T18:03:25.712530+00:00",
   "sources_polled": [
     "The Verge \u2014 AI",
     "Simon Willison",
@@ -12,6 +12,114 @@
     "InfoQ Quantum Computing"
   ],
   "articles": [
+    {
+      "id": "3bd3ec89a48c5722",
+      "title": "OpenAI DevDay 2026 live blog",
+      "link": "https://simonwillison.net/2026/Sep/29/openai-devday-2026-live-blog/",
+      "source": "Simon Willison",
+      "category": "AI",
+      "summary": "I'm at OpenAI DevDay today, in Fort Mason, San Francisco. Same as last year I'll be live blogging the keynote and some other notes during the day. OpenAI gave me a free ticket and a seat in the \"creator\" area for the keynote. Tags: ai , openai , generative-ai , llms , coding-agen",
+      "published": "2026-09-29T18:03:21.674491+00:00"
+    },
+    {
+      "id": "4673f7cac181a103",
+      "title": "Anthropic warns of \u2018catastrophic\u2019 AI risks in its own IPO filing",
+      "link": "https://www.theverge.com/ai-artificial-intelligence/1001838/anthropic-ipo-prospectus-ai-safety-threat",
+      "source": "The Verge \u2014 AI",
+      "category": "AI",
+      "summary": "As Anthropic gears up for its greatly anticipated public debut, a preview of the company's IPO filing reportedly details its mounting losses, leadership proposals to retain power, and how its AI development plans could \"further increase the risk that our models cause harm.\" These",
+      "published": "2026-09-29T18:03:21.140275+00:00"
+    },
+    {
+      "id": "3704d533c81df67e",
+      "title": "Will Chinese AI companies slow down? A top House Democrat wants answers",
+      "link": "https://www.theverge.com/policy/1001767/khanna-ai-safety-china-treaty",
+      "source": "The Verge \u2014 AI",
+      "category": "AI",
+      "summary": "As President Donald Trump prepares to meet tech and AI CEOs in Washington, Rep. Ro Khanna (D-CA) is calling for a treaty between the US and China to keep AI from wreaking havoc on the world. But wrangling leaders in both countries to take action could be a long shot. In letters s",
+      "published": "2026-09-29T18:03:21.140256+00:00"
+    },
+    {
+      "id": "7cd7dfe3ad5e3fe1",
+      "title": "Meta&#8217;s Muse AI sent a YouTuber\u2019s address to a stranger",
+      "link": "https://www.theverge.com/ai-artificial-intelligence/1001886/meta-muse-ai-facebook-marketplace-security-concerns",
+      "source": "The Verge \u2014 AI",
+      "category": "AI",
+      "summary": "Tech YouTuber Matt Robb says that Muse gave out his home address to a total stranger this weekend, after authorizing the bot to handle his Facebook Marketplace account. That's despite Meta placing great emphasis on the security features of Muse when it launched the personal AI ag",
+      "published": "2026-09-29T18:03:21.140236+00:00"
+    },
+    {
+      "id": "0d5fc586f5910cab",
+      "title": "OpenAI DevDay 2026: The biggest news and announcements",
+      "link": "https://www.theverge.com/ai-artificial-intelligence/1001681/openai-devday-2026-biggest-news-announcements",
+      "source": "The Verge \u2014 AI",
+      "category": "AI",
+      "summary": "It&#8217;s OpenAI\u2019s turn in the fall tech events calendar. The company is hosting its annual DevDay on September 29th in San Francisco, starting with a live keynote featuring CEO Sam Altman. The company is teasing &#8220;20+ launches&#8221; with Altman saying that &#8220;we have ",
+      "published": "2026-09-29T18:03:21.140216+00:00"
+    },
+    {
+      "id": "13cfd55ec784162d",
+      "title": "Protesters gather at OpenAI\u2019s DevDay",
+      "link": "https://www.theverge.com/ai-artificial-intelligence/1002201/openai-sam-altman-openai-devday-protests-ice-data-centers",
+      "source": "The Verge \u2014 AI",
+      "category": "AI",
+      "summary": "On Tuesday, OpenAI's annual DevDay event began with protests, flyers, and chants. \"Sam Altman, get off it, put people over profit,\" said a group of protesters marching in a circle in front of a series of signs that spelled out \"PEOPLE OVER PROFIT.\" More than a dozen organizations",
+      "published": "2026-09-29T18:03:21.140192+00:00"
+    },
+    {
+      "id": "7562a87434495800",
+      "title": "OpenAI launches Dots, its Muse competitor",
+      "link": "https://www.theverge.com/ai-artificial-intelligence/1002033/openai-dots-launch-muse-competitor",
+      "source": "The Verge \u2014 AI",
+      "category": "AI",
+      "summary": "OpenAI is responding to Meta's buzzy Muse AI with agentic helpers of its own: Dots. During its DevDay keynote on Tuesday, OpenAI announced that Dots will serve as always-on AI assistants that can \"do nearly anything\" across connected apps in the background while learning your pre",
+      "published": "2026-09-29T18:03:21.140168+00:00"
+    },
+    {
+      "id": "5726e15c5cb807ba",
+      "title": "AI researchers put out videos saying superintelligence is \u2018exactly as dangerous as it sounds\u2019",
+      "link": "https://www.theverge.com/ai-artificial-intelligence/1002238/openai-google-anthropic-ai-researchers-safety-interviews",
+      "source": "The Verge \u2014 AI",
+      "category": "AI",
+      "summary": "\"The chance of human extinction is about a coin flip, in my view,\" Geoffrey Irving, a former OpenAI and Google DeepMind employee, said in a new interview. It's one of a dozen interviews with AI researchers, including current and former employees at OpenAI, Google, and Anthropic. ",
+      "published": "2026-09-29T18:03:21.140126+00:00"
+    },
+    {
+      "id": "55b32e350614bcd5",
+      "title": "OpenAI says planned GPT-6.1 is too insecure to release",
+      "link": "https://arstechnica.com/ai/2026/09/openai-says-planned-gpt-6-1-is-too-insecure-to-release/",
+      "source": "Ars Technica AI",
+      "category": "AI",
+      "summary": "Similar performance, security trade-offs also seen in current public models.",
+      "published": "2026-09-29T14:22:31+00:00"
+    },
+    {
+      "id": "b04e939d35b780a0",
+      "title": "Anthropic\u2019s IPO pitch includes a warning about human extinction",
+      "link": "https://arstechnica.com/ai/2026/09/anthropics-ipo-pitch-includes-a-warning-about-human-extinction/",
+      "source": "Ars Technica AI",
+      "category": "AI",
+      "summary": "The Claude maker warns its own models could resist shutdowns and cause catastrophic harm.",
+      "published": "2026-09-29T14:10:00+00:00"
+    },
+    {
+      "id": "c39b11c935db6806",
+      "title": "Anthropic lists \u2018existential risks to humanity\u2019 as one of its risk factors in IPO prospectus",
+      "link": "https://www.tomshardware.com/tech-industry/artificial-intelligence/anthropic-lists-existential-risks-to-humanity-as-one-of-its-risk-factors-in-ipo-prospectus-80-pages-of-risk-factors-dwarf-business-description-as-firm-eyes-usd2-trillion-debut",
+      "source": "Anthropic/Claude News",
+      "category": "AI",
+      "summary": "Anthropic serves a dire warning in its IPO prospectus, saying how a rogue model could lead to the end of humanity and, consequentially, its business. Nevertheless, investors are still hoping for a $2-trillion valuation once the company goes public.",
+      "published": "2026-09-29T13:30:00+00:00"
+    },
+    {
+      "id": "41149516380caa14",
+      "title": "Interview: Firefox's chief on why he hopes a redesign will help win users from Chrome",
+      "link": "https://arstechnica.com/gadgets/2026/09/mozillas-head-of-firefox-talks-product-priorities-ai-skepticism-and-browser-choice/",
+      "source": "Ars Technica AI",
+      "category": "AI",
+      "summary": "Mozilla's Ajit Varma explains why a redesign suits the fight for the open web.",
+      "published": "2026-09-29T13:00:19+00:00"
+    },
     {
       "id": "c94a110c6c4a61a8",
       "title": "Quoting @joedaroo",
@@ -967,15 +1075,6 @@
       "published": "2026-09-23T00:00:00+00:00"
     },
     {
-      "id": "cc0d123c3bddd635",
-      "title": "Rabbit\u2019s new AI agent doesn\u2019t need an R1 to run",
-      "link": "https://www.theverge.com/ai-artificial-intelligence/999094/rabbit-ai-agent-os3",
-      "source": "The Verge \u2014 AI",
-      "category": "AI",
-      "summary": "Rabbit, the company behind the underwhelming R1 device, is rolling out a standalone AI agent that you don't need its hardware to use, as reported earlier by Wired. The startup says its new OS3 \"agentic operating system\" runs in the cloud but operates locally across Windows, Mac, ",
-      "published": "2026-09-22T22:54:52.256129+00:00"
-    },
-    {
       "id": "5618ffbe19d5709c",
       "title": "New Anthropic, OpenAI models make same promise: A little more for a lot less money",
       "link": "https://arstechnica.com/ai/2026/09/new-anthropic-openai-models-make-same-promise-a-little-more-for-a-lot-less-money/",
@@ -1021,33 +1120,6 @@
       "published": "2026-09-22T19:43:28.943140+00:00"
     },
     {
-      "id": "5d6a730c146110e7",
-      "title": "Trump says the US is officially renaming AI to \u2018super intelligence\u2019",
-      "link": "https://www.theverge.com/ai-artificial-intelligence/998816/donald-trump-ai-super-intelligence",
-      "source": "The Verge \u2014 AI",
-      "category": "AI",
-      "summary": "In a speech Tuesday morning at the UN General Assembly, Donald Trump railed against Iran, \"globalists,\" climate change, and transgender people while also claiming that the US is now \"officially\" renaming artificial intelligence to \"super intelligence.\" Oddly, this wasn't one of t",
-      "published": "2026-09-22T19:43:28.788041+00:00"
-    },
-    {
-      "id": "04fa56f83f3a81fc",
-      "title": "Anthropic launches Claude Opus 5.5 with stricter safeguards for cybersecurity",
-      "link": "https://www.theverge.com/ai-artificial-intelligence/998868/anthropic-claude-opus-5-5-cybersecurity",
-      "source": "The Verge \u2014 AI",
-      "category": "AI",
-      "summary": "Anthropic says its new Claude Opus 5.5 model comes with stronger safeguards in the wake of recent rogue AI hacking incidents. In an announcement on Tuesday, Anthropic says Opus 5.5 comes with improvements to certain risky behaviors, including attempts to escape the company's test",
-      "published": "2026-09-22T19:43:28.788015+00:00"
-    },
-    {
-      "id": "97f4d9447dab8bf4",
-      "title": "Andreessen Horowitz is launching an \u2018academy\u2019 with no homework and partnerships with Palantir, Google, and Meta",
-      "link": "https://www.theverge.com/ai-artificial-intelligence/998813/andreessen-horowitz-ai-academy",
-      "source": "The Verge \u2014 AI",
-      "category": "AI",
-      "summary": "Venture capital firm Andreessen Horowitz (a16z) is creating an \"academy\" positioned as a pipeline for young people to build or join a Silicon Valley startup. The \"Horowitz Andreessen Academy\" will launch with 10 partners, including Anduril, Anthropic, Coinbase, Google, Meta, NVID",
-      "published": "2026-09-22T19:43:28.787967+00:00"
-    },
-    {
       "id": "f5795de5b2fbaacf",
       "title": "Lawsuit demands OpenAI pay for new school after ChatGPT used in shooting",
       "link": "https://arstechnica.com/tech-policy/2026/09/lawsuit-demands-openai-pay-for-new-school-after-chatgpt-used-in-shooting/",
@@ -1084,15 +1156,6 @@
       "published": "2026-09-22T13:33:16+00:00"
     },
     {
-      "id": "6ab491a44d134ad8",
-      "title": "Meta patches Muse exploit that let attackers control the AI agent",
-      "link": "https://www.theverge.com/tech/998679/meta-muse-patch-zero-day-exploit-ai-agent",
-      "source": "The Verge \u2014 AI",
-      "category": "AI",
-      "summary": "Meta has issued a patch for its Muse macOS app following the discovery of a zero-day vulnerability that could allow someone to take control of the AI agent. The bug found by security researcher Patrick Wardle utilized an undocumented Muse setting that enabled potential attackers ",
-      "published": "2026-09-22T13:22:54.812825+00:00"
-    },
-    {
       "id": "ce45d8dc0f6c9cea",
       "title": "Parallel cut research time and cost in half with GPT\u20116 Astra",
       "link": "https://openai.com/index/parallel-cuts-time-and-cost-with-astra",
@@ -1120,15 +1183,6 @@
       "published": "2026-09-22T04:48:40.188770+00:00"
     },
     {
-      "id": "c4d22e79dcded9e5",
-      "title": "California tightens rules on AI data center energy and water use",
-      "link": "https://www.theverge.com/ai-artificial-intelligence/998453/california-ai-data-center-bills",
-      "source": "The Verge \u2014 AI",
-      "category": "AI",
-      "summary": "California Gov. Gavin Newsom has signed seven bills designed to prevent AI data centers from passing utility costs onto residents, as reported earlier by the Los Angeles Times. The package of laws requires the California Public Utilities Commission to introduce a new rate classif",
-      "published": "2026-09-22T04:48:39.973067+00:00"
-    },
-    {
       "id": "b4fb82cc1313a309",
       "title": "Priorities and principles for effective third party assessments",
       "link": "https://openai.com/index/priorities-principles-third-party-assessments",
@@ -1154,15 +1208,6 @@
       "category": "AI",
       "summary": "My comment on MCP was always a bad idea? &mdash; Hacker News. This article entirely misses the value that MCP brings today. Sure, there's almost no reason to use MCPs if you are running a full-blown terminal agent (Claude Code, Codex, Meta Muse, OpenClaw etc) with unfettered inte",
       "published": "2026-09-21T20:24:35.743725+00:00"
-    },
-    {
-      "id": "d201b38a61749025",
-      "title": "Can John Ternus find Apple\u2019s next big thing?",
-      "link": "https://www.theverge.com/podcast/996874/apple-john-ternus-tim-cook-mark-gurman-future-ai-siri-iphone",
-      "source": "The Verge \u2014 AI",
-      "category": "AI",
-      "summary": "Today, I\u2019m talking with Mark Gurman, who is the world\u2019s best-sourced Apple reporter \u2014 both as Bloomberg\u2019s chief Apple correspondent and the host of the upcoming podcast Power On.&#160; Earlier this month, Apple hosted its annual iPhone hardware event, virtually every detail of wh",
-      "published": "2026-09-21T20:24:35.416935+00:00"
     },
     {
       "id": "f79a067193d73a77",
@@ -1397,15 +1442,6 @@
       "category": "AI",
       "summary": "Here's a neat thing I had ChatGPT Work with GPT-6 Astra (Max) do this morning: I live at &lt;my address&gt;. Figure out 5K and 10K running routes from me that loop from my house. Use OSM data. It worked for 27 minutes and produced exactly what I'd asked for, as both an embedded v",
       "published": "2026-09-19T17:35:20.106420+00:00"
-    },
-    {
-      "id": "39d9007229120c6f",
-      "title": "shot-scraper 1.12",
-      "link": "https://simonwillison.net/2026/Sep/13/shot-scraper/",
-      "source": "Simon Willison",
-      "category": "AI",
-      "summary": "Release: shot-scraper 1.12 I've added WebP support to my shot-scraper screenshot automation tool. You can now take a WebP screenshot of a web page like this: shot-scraper https://simonwillison.net -o screenshot.webp --quality 80 The --quality option sets the quality - without tha",
-      "published": "2026-09-19T17:35:20.106181+00:00"
     },
     {
       "id": "6b844761c1220d26",
@@ -2495,15 +2531,6 @@
       "category": "AI",
       "summary": "Anthropic's latest frontier AI model, Claude Mythos Preview, is so adept at finding software vulnerabilities that the lab is holding it back to allow companies and institutions to proactively patch their products against the 'thousands' of bugs it has already uncovered.",
       "published": "2026-04-07T19:47:45+00:00"
-    },
-    {
-      "id": "9724a78dcf9ee383",
-      "title": "Broadcom to supply Anthropic with 3.5 gigawatts of Google TPU capacity from 2027 \u2014 Claude pioneer says its annual revenue run rate has passed $30 billion",
-      "link": "https://www.tomshardware.com/tech-industry/broadcom-expands-anthropic-deal-to-3-5gw-of-google-tpu-capacity-from-2027",
-      "source": "Anthropic/Claude News",
-      "category": "AI",
-      "summary": "Broadcom disclosed in a securities filing on Monday that it\u2019ll supply Anthropic with roughly 3.5 gigawatts of Google TPU capacity starting in 2027.",
-      "published": "2026-04-07T11:26:13+00:00"
     },
     {
       "id": "a479508be9f052ae",
