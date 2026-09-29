@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-29T18:03:25.712530+00:00",
+  "generated_at": "2026-09-29T23:41:31.384879+00:00",
   "sources_polled": [
     "The Verge \u2014 AI",
     "Simon Willison",
@@ -12,6 +12,60 @@
     "InfoQ Quantum Computing"
   ],
   "articles": [
+    {
+      "id": "6cd102f752db7713",
+      "title": "Quoting Anthropic Frontier Red Team",
+      "link": "https://simonwillison.net/2026/Sep/29/anthropic-frontier-red-team/",
+      "source": "Simon Willison",
+      "category": "AI",
+      "summary": "We evaluate several models on 100 tasks from the [internal Binary Exploitation benchmark] (selected at random), and find that GLM-5.3 develops full control flow hijacks in 4% of the trials; Claude Mythos Preview did so in 6%. Although GLM-5.3 performs below Claude Mythos Preview ",
+      "published": "2026-09-29T23:41:26.314724+00:00"
+    },
+    {
+      "id": "c01a20c9c38e65a4",
+      "title": "Elon Musk&#8217;s AI-powered Grokipedia is updating again",
+      "link": "https://www.theverge.com/tech/1002448/elon-musk-grokipedia-ai-updating-again",
+      "source": "The Verge \u2014 AI",
+      "category": "AI",
+      "summary": "Grokipedia, the AI-powered online encyclopedia from SpaceXAI, appears to be updating articles once again after a months-long pause. In August, Lawfare reported that articles on Grokipedia hadn't reviewed edits since April, but the platform's live updates site is now showing vario",
+      "published": "2026-09-29T23:41:26.129971+00:00"
+    },
+    {
+      "id": "719d3195b24b8f32",
+      "title": "Trump orders US government to call AI \u2018Super Intelligence\u2019",
+      "link": "https://www.theverge.com/policy/1002468/trump-ai-superintelligence-executive-order-ai",
+      "source": "The Verge \u2014 AI",
+      "category": "AI",
+      "summary": "The US executive branch is no longer acknowledging the existence of \"artificial intelligence.\" Going forward, official policy websites, policy documents, and press releases will refer only to \"Super Intelligence,\" thanks to a new executive order signed by President Donald Trump. ",
+      "published": "2026-09-29T23:41:26.129924+00:00"
+    },
+    {
+      "id": "f8e7c3348cfce784",
+      "title": "Protests against OpenAI get increasingly creative",
+      "link": "https://arstechnica.com/ai/2026/09/what-iceberg-bay-area-artists-target-openai-with-titanic-themed-protest-art/",
+      "source": "Ars Technica AI",
+      "category": "AI",
+      "summary": "New sculpture depicts AI leaders escaping a sinking ship.",
+      "published": "2026-09-29T21:52:58+00:00"
+    },
+    {
+      "id": "088b2b332c119759",
+      "title": "AMD acquires World Labs AI startup, upping the ante against Nvidia",
+      "link": "https://arstechnica.com/ai/2026/09/amd-acquires-world-labs-ai-pioneer-fei-fei-lis-world-models-startup/",
+      "source": "Ars Technica AI",
+      "category": "AI",
+      "summary": "The deal, which is expected to close by year's end, is worth $8.2 billion.",
+      "published": "2026-09-29T21:14:49+00:00"
+    },
+    {
+      "id": "a5b4ce65c1ee9ac6",
+      "title": "Here's what actually happened in OpenAI's Australian gov't server hack",
+      "link": "https://arstechnica.com/ai/2026/09/heres-what-actually-happened-in-openais-australian-govt-server-hack/",
+      "source": "Ars Technica AI",
+      "category": "AI",
+      "summary": "Without a \"full set of safeguards,\" agent accessed \"system information and source code.\"",
+      "published": "2026-09-29T18:11:09+00:00"
+    },
     {
       "id": "3bd3ec89a48c5722",
       "title": "OpenAI DevDay 2026 live blog",
@@ -121,6 +175,24 @@
       "published": "2026-09-29T13:00:19+00:00"
     },
     {
+      "id": "dd66acaed2a04b44",
+      "title": "Introducing GPT-6.1 Sol",
+      "link": "https://openai.com/index/introducing-gpt-6-1-sol",
+      "source": "OpenAI Blog",
+      "category": "AI",
+      "summary": "Meet GPT-6.1 Sol: near-Astra intelligence for coding, computer use, and professional work at one-fifth of Astra\u2019s standard API input and output token prices.",
+      "published": "2026-09-29T10:00:00+00:00"
+    },
+    {
+      "id": "19db7cc5ca5cc5ea",
+      "title": "DevDay 2026 Recap",
+      "link": "https://openai.com/index/devday-2026-recap",
+      "source": "OpenAI Blog",
+      "category": "AI",
+      "summary": "Explore more than 20 announcements from OpenAI DevDay 2026, including GPT-6 Astra, ChatGPT, Codex, APIs, security, and new tools for builders.",
+      "published": "2026-09-29T10:00:00+00:00"
+    },
+    {
       "id": "c94a110c6c4a61a8",
       "title": "Quoting @joedaroo",
       "link": "https://simonwillison.net/2026/Sep/28/joedaroo/",
@@ -191,6 +263,15 @@
       "category": "AI",
       "summary": "AMD announced today that it's acquiring World Labs, an AI research lab co-founded by the prominent researcher Dr. Fei-Fei Li, in an all-stock deal worth approximately $8.2 billion. World Labs launched in 2024 and was valued at $1 billion in a matter of months. The startup launche",
       "published": "2026-09-29T00:21:02.758024+00:00"
+    },
+    {
+      "id": "884977ecb8004cb3",
+      "title": "Introducing dots",
+      "link": "https://openai.com/index/introducing-dots",
+      "source": "OpenAI Blog",
+      "category": "AI",
+      "summary": "Dots by OpenAI are a proactive assistant that can keep working across complex projects and everyday tasks. Learn how dots help you stay in control while work moves forward.",
+      "published": "2026-09-29T00:00:00+00:00"
     },
     {
       "id": "ce7b13e0f7aa9e81",
@@ -904,15 +985,6 @@
       "published": "2026-09-23T19:39:29.741564+00:00"
     },
     {
-      "id": "baef686b29274fc4",
-      "title": "Bernie Sanders proposes banning \u2018superintelligence\u2019 and putting violators in prison",
-      "link": "https://www.theverge.com/ai-artificial-intelligence/999443/bernie-sanders-ai-superintelligence-ban-act",
-      "source": "The Verge \u2014 AI",
-      "category": "AI",
-      "summary": "Sen. Bernie Sanders (I-VT) and Rep. Greg Casar (D-TX) have introduced new legislation that would ban anyone from developing artificial superintelligence - a technology the bill describes as capable of the \"destruction or disempowerment of humanity,\" including by overthrowing the ",
-      "published": "2026-09-23T19:39:29.741487+00:00"
-    },
-    {
       "id": "25698732c6b8e24b",
       "title": "YouTube promises custom feeds and a lot more AI later this year",
       "link": "https://arstechnica.com/gadgets/2026/09/youtube-promises-custom-feeds-and-a-lot-more-ai-later-this-year/",
@@ -1037,15 +1109,6 @@
       "category": "AI",
       "summary": "SF October 14th: A Birds of a Feather Session on Agentic Engineering I'm hosting an evening event with Jesse Vincent in San Francisco on Wednesday 14th October for people who are building weird and interesting things with and on top of coding agents. Think of it as an agentic sho",
       "published": "2026-09-23T04:40:32.923353+00:00"
-    },
-    {
-      "id": "0ab4ac60a8fbe21a",
-      "title": "OpenAI wants to consult elite mathematicians about how to not fumble again",
-      "link": "https://www.theverge.com/ai-artificial-intelligence/999167/openai-elite-mathematicians-panel",
-      "source": "The Verge \u2014 AI",
-      "category": "AI",
-      "summary": "After turning a string of spectacular mathematical results into a reputational crisis, OpenAI is consulting human mathematicians to help it figure out a less disastrous path forward. On Monday, the company announced a new independent panel of mathematicians tasked with advising i",
-      "published": "2026-09-23T04:40:32.688338+00:00"
     },
     {
       "id": "1dd9ce125c6e0e60",
@@ -1433,15 +1496,6 @@
       "category": "AI",
       "summary": "California Brown Pelican, in San Mateo County, CA, US The Pacifica Pier shut down at the start of June after a crack in the concrete walkway made access to the pier unsafe. It has since been entirely taken over by pelicans! Tags: wildlife",
       "published": "2026-09-19T17:35:20.106449+00:00"
-    },
-    {
-      "id": "3f37b0a02f79eadd",
-      "title": "Generating running routes with GPT-6 Astra and ChatGPT Work",
-      "link": "https://simonwillison.net/2026/Sep/12/astra-running-routes/",
-      "source": "Simon Willison",
-      "category": "AI",
-      "summary": "Here's a neat thing I had ChatGPT Work with GPT-6 Astra (Max) do this morning: I live at &lt;my address&gt;. Figure out 5K and 10K running routes from me that loop from my house. Use OSM data. It worked for 27 minutes and produced exactly what I'd asked for, as both an embedded v",
-      "published": "2026-09-19T17:35:20.106420+00:00"
     },
     {
       "id": "6b844761c1220d26",
@@ -1885,13 +1939,13 @@
       "published": "2026-09-11T16:00:00+00:00"
     },
     {
-      "id": "499c7eee1e277f11",
-      "title": "Claude users found ways around safeguards for bioweapons research",
-      "link": "https://arstechnica.com/ai/2026/09/claude-users-found-ways-around-safeguards-for-bioweapons-research/",
-      "source": "Ars Technica AI",
+      "id": "24d39e6853845ce9",
+      "title": "Anthropic says Claude thwarted bioweapon research from state-sponsored actors \u2014 covert accounts used U.S. proxies to attempt to engineer deadlier viruses, tried to evade identification and regional blocks",
+      "link": "https://www.tomshardware.com/tech-industry/artificial-intelligence/anthropic-says-claude-thwarted-bioweapon-research-from-state-sponsored-actors-covert-accounts-used-u-s-proxies-to-attempt-to-engineer-deadlier-viruses-tried-to-evade-identification-and-regional-blocks",
+      "source": "Anthropic/Claude News",
       "category": "AI",
-      "summary": "Some dangerous biology looks much like legitimate research, complicating AI safeguards.",
-      "published": "2026-09-11T13:02:35+00:00"
+      "summary": "Anthropic claims Claude refused instructions to potentially develop biological weapons \u2014 alleged state-linked accounts tried to evade identification and regional blocks",
+      "published": "2026-09-11T10:00:00+00:00"
     },
     {
       "id": "c7d3c8aeae425678",
@@ -1900,15 +1954,6 @@
       "source": "OpenAI Blog",
       "category": "AI",
       "summary": "Learn how OpenAI evolved Habitat from a Python library into a globally distributed storage platform serving 1 billion ChatGPT users and 22M requests per second.",
-      "published": "2026-09-11T10:00:00+00:00"
-    },
-    {
-      "id": "24d39e6853845ce9",
-      "title": "Anthropic says Claude thwarted bioweapon research from state-sponsored actors \u2014 covert accounts used U.S. proxies to attempt to engineer deadlier viruses, tried to evade identification and regional blocks",
-      "link": "https://www.tomshardware.com/tech-industry/artificial-intelligence/anthropic-says-claude-thwarted-bioweapon-research-from-state-sponsored-actors-covert-accounts-used-u-s-proxies-to-attempt-to-engineer-deadlier-viruses-tried-to-evade-identification-and-regional-blocks",
-      "source": "Anthropic/Claude News",
-      "category": "AI",
-      "summary": "Anthropic claims Claude refused instructions to potentially develop biological weapons \u2014 alleged state-linked accounts tried to evade identification and regional blocks",
       "published": "2026-09-11T10:00:00+00:00"
     },
     {
@@ -2029,24 +2074,6 @@
       "published": "2026-09-09T09:26:28+00:00"
     },
     {
-      "id": "167bce5d47e71e47",
-      "title": "How GPT-5.6 Sol helps run quantum computing experiments",
-      "link": "https://openai.com/index/codex-quantum-computing-experiments",
-      "source": "OpenAI Blog",
-      "category": "AI",
-      "summary": "See how an MIT researcher uses GPT-5.6 Sol with Codex to autonomously run quantum computing experiments, analyze results, and calibrate qubits.",
-      "published": "2026-09-08T17:00:00+00:00"
-    },
-    {
-      "id": "aaada63e998e3254",
-      "title": "The Work Now Within Reach",
-      "link": "https://openai.com/index/the-work-now-within-reach",
-      "source": "OpenAI Blog",
-      "category": "AI",
-      "summary": "Explore how more capable, affordable AI can expand the work people and businesses can accomplish\u2014and make growth more economical.",
-      "published": "2026-09-08T13:00:00+00:00"
-    },
-    {
       "id": "0975595cd110d574",
       "title": "NEC has quietly quit quantum computing hardware development, report claims \u2014 company says it will continue to evaluate practical applications and industrialization of quantum technologies",
       "link": "https://www.tomshardware.com/tech-industry/quantum-computing/nec-has-quietly-quit-quantum-computing-hardware-development-report-claims-company-says-it-will-continue-to-evaluate-practical-applications-and-industrialization-of-quantum-technologies",
@@ -2054,15 +2081,6 @@
       "category": "Quantum",
       "summary": "NEC reportedly quits development of quantum computers, but plans to explore practical applications for such systems.",
       "published": "2026-09-08T11:45:00+00:00"
-    },
-    {
-      "id": "305f03a4aa6aa16d",
-      "title": "Introducing ChatGPT Images 2.5",
-      "link": "https://openai.com/index/introducing-chatgpt-images-2-5",
-      "source": "OpenAI Blog",
-      "category": "AI",
-      "summary": "ChatGPT Images 2.5 helps turn your ideas, sketches, and reference photos into more personalized, polished images that better reflect your ideas.",
-      "published": "2026-09-08T11:30:00+00:00"
     },
     {
       "id": "28b149c75e15ee18",

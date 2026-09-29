@@ -4,7 +4,55 @@
     <title>The Signal</title>
     <link>https://thillairaj.github.io/The-Signal-AI-Quantum/</link>
     <description>A self-updating feed of AI and quantum computing news, research and releases.</description>
-    <lastBuildDate>Tue, 29 Sep 2026 18:03:25 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 29 Sep 2026 23:41:31 +0000</lastBuildDate>
+    <item>
+      <title>Quoting Anthropic Frontier Red Team</title>
+      <link>https://simonwillison.net/2026/Sep/29/anthropic-frontier-red-team/</link>
+      <guid isPermaLink="false">6cd102f752db7713</guid>
+      <description>We evaluate several models on 100 tasks from the [internal Binary Exploitation benchmark] (selected at random), and find that GLM-5.3 develops full control flow hijacks in 4% of the trials; Claude Mythos Preview did so in 6%. Although GLM-5.3 performs below Claude Mythos Preview </description>
+      <category>Simon Willison</category>
+      <pubDate>Tue, 29 Sep 2026 23:41:26 +0000</pubDate>
+    </item>
+    <item>
+      <title>Elon Musk&amp;#8217;s AI-powered Grokipedia is updating again</title>
+      <link>https://www.theverge.com/tech/1002448/elon-musk-grokipedia-ai-updating-again</link>
+      <guid isPermaLink="false">c01a20c9c38e65a4</guid>
+      <description>Grokipedia, the AI-powered online encyclopedia from SpaceXAI, appears to be updating articles once again after a months-long pause. In August, Lawfare reported that articles on Grokipedia hadn't reviewed edits since April, but the platform's live updates site is now showing vario</description>
+      <category>The Verge — AI</category>
+      <pubDate>Tue, 29 Sep 2026 23:41:26 +0000</pubDate>
+    </item>
+    <item>
+      <title>Trump orders US government to call AI ‘Super Intelligence’</title>
+      <link>https://www.theverge.com/policy/1002468/trump-ai-superintelligence-executive-order-ai</link>
+      <guid isPermaLink="false">719d3195b24b8f32</guid>
+      <description>The US executive branch is no longer acknowledging the existence of "artificial intelligence." Going forward, official policy websites, policy documents, and press releases will refer only to "Super Intelligence," thanks to a new executive order signed by President Donald Trump. </description>
+      <category>The Verge — AI</category>
+      <pubDate>Tue, 29 Sep 2026 23:41:26 +0000</pubDate>
+    </item>
+    <item>
+      <title>Protests against OpenAI get increasingly creative</title>
+      <link>https://arstechnica.com/ai/2026/09/what-iceberg-bay-area-artists-target-openai-with-titanic-themed-protest-art/</link>
+      <guid isPermaLink="false">f8e7c3348cfce784</guid>
+      <description>New sculpture depicts AI leaders escaping a sinking ship.</description>
+      <category>Ars Technica AI</category>
+      <pubDate>Tue, 29 Sep 2026 21:52:58 +0000</pubDate>
+    </item>
+    <item>
+      <title>AMD acquires World Labs AI startup, upping the ante against Nvidia</title>
+      <link>https://arstechnica.com/ai/2026/09/amd-acquires-world-labs-ai-pioneer-fei-fei-lis-world-models-startup/</link>
+      <guid isPermaLink="false">088b2b332c119759</guid>
+      <description>The deal, which is expected to close by year's end, is worth $8.2 billion.</description>
+      <category>Ars Technica AI</category>
+      <pubDate>Tue, 29 Sep 2026 21:14:49 +0000</pubDate>
+    </item>
+    <item>
+      <title>Here's what actually happened in OpenAI's Australian gov't server hack</title>
+      <link>https://arstechnica.com/ai/2026/09/heres-what-actually-happened-in-openais-australian-govt-server-hack/</link>
+      <guid isPermaLink="false">a5b4ce65c1ee9ac6</guid>
+      <description>Without a "full set of safeguards," agent accessed "system information and source code."</description>
+      <category>Ars Technica AI</category>
+      <pubDate>Tue, 29 Sep 2026 18:11:09 +0000</pubDate>
+    </item>
     <item>
       <title>OpenAI DevDay 2026 live blog</title>
       <link>https://simonwillison.net/2026/Sep/29/openai-devday-2026-live-blog/</link>
@@ -102,6 +150,22 @@
       <pubDate>Tue, 29 Sep 2026 13:00:19 +0000</pubDate>
     </item>
     <item>
+      <title>Introducing GPT-6.1 Sol</title>
+      <link>https://openai.com/index/introducing-gpt-6-1-sol</link>
+      <guid isPermaLink="false">dd66acaed2a04b44</guid>
+      <description>Meet GPT-6.1 Sol: near-Astra intelligence for coding, computer use, and professional work at one-fifth of Astra’s standard API input and output token prices.</description>
+      <category>OpenAI Blog</category>
+      <pubDate>Tue, 29 Sep 2026 10:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>DevDay 2026 Recap</title>
+      <link>https://openai.com/index/devday-2026-recap</link>
+      <guid isPermaLink="false">19db7cc5ca5cc5ea</guid>
+      <description>Explore more than 20 announcements from OpenAI DevDay 2026, including GPT-6 Astra, ChatGPT, Codex, APIs, security, and new tools for builders.</description>
+      <category>OpenAI Blog</category>
+      <pubDate>Tue, 29 Sep 2026 10:00:00 +0000</pubDate>
+    </item>
+    <item>
       <title>Quoting @joedaroo</title>
       <link>https://simonwillison.net/2026/Sep/28/joedaroo/</link>
       <guid isPermaLink="false">c94a110c6c4a61a8</guid>
@@ -164,6 +228,14 @@
       <description>AMD announced today that it's acquiring World Labs, an AI research lab co-founded by the prominent researcher Dr. Fei-Fei Li, in an all-stock deal worth approximately $8.2 billion. World Labs launched in 2024 and was valued at $1 billion in a matter of months. The startup launche</description>
       <category>The Verge — AI</category>
       <pubDate>Tue, 29 Sep 2026 00:21:02 +0000</pubDate>
+    </item>
+    <item>
+      <title>Introducing dots</title>
+      <link>https://openai.com/index/introducing-dots</link>
+      <guid isPermaLink="false">884977ecb8004cb3</guid>
+      <description>Dots by OpenAI are a proactive assistant that can keep working across complex projects and everyday tasks. Learn how dots help you stay in control while work moves forward.</description>
+      <category>OpenAI Blog</category>
+      <pubDate>Tue, 29 Sep 2026 00:00:00 +0000</pubDate>
     </item>
     <item>
       <title>Experts worry about Nvidia's AI chip sales in China and influence over Trump</title>
@@ -412,78 +484,6 @@
       <description>"Overly constrained AI models" could cause military operations to fail, judges say.</description>
       <category>Ars Technica AI</category>
       <pubDate>Fri, 25 Sep 2026 21:36:20 +0000</pubDate>
-    </item>
-    <item>
-      <title>Tesla workers balk at training Optimus humanoid robots as replacements</title>
-      <link>https://arstechnica.com/ai/2026/09/tesla-workers-balk-at-training-optimus-humanoid-robots-as-replacements/</link>
-      <guid isPermaLink="false">de7583d0d2e5b85c</guid>
-      <description>Despite challenges, Tesla aims for 1,000 Optimus robots per week by end of 2026.</description>
-      <category>Ars Technica AI</category>
-      <pubDate>Fri, 25 Sep 2026 21:10:51 +0000</pubDate>
-    </item>
-    <item>
-      <title>Bonsai 2 27B: Near-Lossless Compression in a 9x Smaller Footprint</title>
-      <link>https://simonwillison.net/2026/Sep/17/hn-49747390/</link>
-      <guid isPermaLink="false">d694a950e816f501</guid>
-      <description>My comment on Bonsai 2 27B: Near-Lossless Compression in a 9x Smaller Footprint &amp;mdash; Hacker News. If you want to try out out the GGUFs from https://huggingface.co/prism-ml/Ternary-Bonsai-2-27B-gguf#th... be aware that you need Prism's llama.cpp fork to get them to work, from h</description>
-      <category>Simon Willison</category>
-      <pubDate>Fri, 25 Sep 2026 20:00:21 +0000</pubDate>
-    </item>
-    <item>
-      <title>Note on 24th September 2026</title>
-      <link>https://simonwillison.net/2026/Sep/24/harder/</link>
-      <guid isPermaLink="false">414ec5ebf00c8740</guid>
-      <description>The more time I spend working with coding agents, the more convinced I am that they make software engineering even harder. We can do amazing things with them, but unlocking their full potential requires extraordinary discipline and knowledge. Tags: coding-agents , ai , llms</description>
-      <category>Simon Willison</category>
-      <pubDate>Fri, 25 Sep 2026 20:00:21 +0000</pubDate>
-    </item>
-    <item>
-      <title>Northern Gannet, Great Blue Heron, California Brown Pelican</title>
-      <link>https://simonwillison.net/2026/Sep/25/sighting-403293902/</link>
-      <guid isPermaLink="false">28f369bbea848f9a</guid>
-      <description>Northern Gannet, Great Blue Heron, California Brown Pelican, in Monterey Bay National Marine Sanctuary, CA, US, CA New 200-800mm Canon EF lens got me my best photo of Morris yet. They really like hanging out under that sign in the harbor! Tags: photography , wildlife</description>
-      <category>Simon Willison</category>
-      <pubDate>Fri, 25 Sep 2026 20:00:21 +0000</pubDate>
-    </item>
-    <item>
-      <title>Quoting John Gruber</title>
-      <link>https://simonwillison.net/2026/Sep/25/john-gruber/</link>
-      <guid isPermaLink="false">5bff2e7c4ac60c5c</guid>
-      <description>Muse is getting a lot of attention — including mine — because it’s both groundbreaking technically (each user gets their own entire persistent Linux VM running in Meta’s cloud) and because it’s packaged in an easy-to-install easy-to-use way. It’s literally presented as a cute mas</description>
-      <category>Simon Willison</category>
-      <pubDate>Fri, 25 Sep 2026 20:00:21 +0000</pubDate>
-    </item>
-    <item>
-      <title>One company is at the center of a wave of rogue AI attacks</title>
-      <link>https://www.theverge.com/ai-artificial-intelligence/1000644/irregular-rogue-ai-cyberattacks-hacking-openai-meta-anthropic-google</link>
-      <guid isPermaLink="false">637d4699a545ce92</guid>
-      <description>In July, OpenAI revealed that its AI agents had attacked Hugging Face without permission, sparking widespread concerns about AI safety. Since then, a string of similar incidents involving agents from Meta, Anthropic, Google, and other companies has fueled further fears about rogu</description>
-      <category>The Verge — AI</category>
-      <pubDate>Fri, 25 Sep 2026 20:00:21 +0000</pubDate>
-    </item>
-    <item>
-      <title>Sony and UMG are suing Suno again</title>
-      <link>https://www.theverge.com/ai-artificial-intelligence/1000758/suno-sony-umg-lawsuit-ai-music</link>
-      <guid isPermaLink="false">706759721ffd238c</guid>
-      <description>Sony and Universal Music Group filed yet another suit against Suno. The labels claim its new v6 model still infringes on their copyrights because it's trained on user outputs from previous models, which were themselves trained on unlicensed music ripped from YouTube and other sou</description>
-      <category>The Verge — AI</category>
-      <pubDate>Fri, 25 Sep 2026 20:00:21 +0000</pubDate>
-    </item>
-    <item>
-      <title>Meta makes the Muse filesystem even more accessible</title>
-      <link>https://www.theverge.com/ai-artificial-intelligence/1000784/meta-muse-filesystem</link>
-      <guid isPermaLink="false">e84d98e81ae7850f</guid>
-      <description>Yesterday, with a little prodding, it was discovered that Meta's Muse would expose its filesystem to curious users. The files offered a fascinating peek under the hood of an AI chatbot, and appeared to expose details we weren't meant to see, not least because Muse itself told peo</description>
-      <category>The Verge — AI</category>
-      <pubDate>Fri, 25 Sep 2026 20:00:21 +0000</pubDate>
-    </item>
-    <item>
-      <title>AI was supposed to hit new grads hard. So far, unemployment data says otherwise.</title>
-      <link>https://arstechnica.com/ai/2026/09/ai-was-supposed-to-hit-new-grads-hard-so-far-unemployment-data-says-otherwise/</link>
-      <guid isPermaLink="false">ff8bda4a60f0dd5e</guid>
-      <description>"There is no evidence of any significant, widespread displacement or reduction in hiring.”</description>
-      <category>Ars Technica AI</category>
-      <pubDate>Fri, 25 Sep 2026 19:11:05 +0000</pubDate>
     </item>
   </channel>
 </rss>
