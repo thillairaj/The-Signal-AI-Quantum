@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-28T16:43:50.617375+00:00",
+  "generated_at": "2026-09-29T00:21:08.839163+00:00",
   "sources_polled": [
     "The Verge \u2014 AI",
     "Simon Willison",
@@ -12,6 +12,105 @@
     "InfoQ Quantum Computing"
   ],
   "articles": [
+    {
+      "id": "c94a110c6c4a61a8",
+      "title": "Quoting @joedaroo",
+      "link": "https://simonwillison.net/2026/Sep/28/joedaroo/",
+      "source": "Simon Willison",
+      "category": "AI",
+      "summary": "To say that we were surprised at the jump and suddenness of the capabilities of our models when it came to \u201ccyber\u201d or \u201cswarming\u201d or \u201cmessage boards\u201d or anything else related to the incidents is an understatement. Security posture takes time to develop. It\u2019s not just about hardeni",
+      "published": "2026-09-29T00:21:03.323377+00:00"
+    },
+    {
+      "id": "2d52fce20760eca7",
+      "title": "Claude Sonnet 5.5",
+      "link": "https://simonwillison.net/2026/Sep/28/claude-sonnet-5-5/",
+      "source": "Simon Willison",
+      "category": "AI",
+      "summary": "Claude Sonnet 5.5 New Sonnet model from Anthropic today. They say it \"runs 30%+ faster, and costs up to 30% less for most work\" - it's priced the same as Sonnet 5 but appears to beat it on every benchmark, and should be cheaper to run as well. Here are some pelicans riding bicycl",
+      "published": "2026-09-29T00:21:03.323296+00:00"
+    },
+    {
+      "id": "907cbfcfae983fb3",
+      "title": "Walmart won\u2019t hike prices based on your shopping history, CEO says",
+      "link": "https://www.theverge.com/tech/1001492/walmart-dynamic-pricing-digital-shelf-labels",
+      "source": "The Verge \u2014 AI",
+      "category": "AI",
+      "summary": "Walmart says it won't change product prices based on your personal information or the time of day, as reported earlier by The Wall Street Journal. In a letter to customers, Walmart CEO John Furner writes that the company's switch to digital shelf labels is meant to save store ass",
+      "published": "2026-09-29T00:21:02.758165+00:00"
+    },
+    {
+      "id": "c5ed54694a4a2d5e",
+      "title": "OpenAI keeps bulldozing mathematicians",
+      "link": "https://www.theverge.com/ai-artificial-intelligence/1001477/openai-math-advisory-group",
+      "source": "The Verge \u2014 AI",
+      "category": "AI",
+      "summary": "In a chaotic few months, OpenAI has demonstrated it can do two things with remarkable consistency: make impressive breakthroughs in mathematics, then colossally screw up announcing them. OpenAI is now trying to do better. Somehow, it has botched that too. OpenAI's latest attempt ",
+      "published": "2026-09-29T00:21:02.758143+00:00"
+    },
+    {
+      "id": "523d5e9de5b0c404",
+      "title": "Florida seeks a ban on ChatGPT acting like a person",
+      "link": "https://www.theverge.com/ai-artificial-intelligence/1001527/chatgpt-florida-ban-first-person-human-attributes-kids",
+      "source": "The Verge \u2014 AI",
+      "category": "AI",
+      "summary": "Florida Attorney General James Uthmeier is calling for a judge to block OpenAI from \"giving ChatGPT false human attributes,\" a few months after Florida sued the AI company over safety concerns. According to Uthmeier, users are lulled into a false sense of security by the AI bot, ",
+      "published": "2026-09-29T00:21:02.758119+00:00"
+    },
+    {
+      "id": "7c7b6ea24fb9b3a9",
+      "title": "AI is supercharging hacking, and your local hospitals and banks aren\u2019t ready",
+      "link": "https://www.theverge.com/ai-artificial-intelligence/1001427/ai-is-supercharging-hacking-and-your-local-hospitals-and-banks-arent-ready",
+      "source": "The Verge \u2014 AI",
+      "category": "AI",
+      "summary": "In March, Janice Malone began getting calls about suspicious activity from her nonprofit organization, Vivian's Door. Vivian's Door, headquartered in Alabama, typically provided training, resources, and community to underserved and minority-owned businesses. The work sometimes pu",
+      "published": "2026-09-29T00:21:02.758095+00:00"
+    },
+    {
+      "id": "7627b64443e10e0d",
+      "title": "OpenAI\u2019s AI agents need to catch up",
+      "link": "https://www.theverge.com/ai-artificial-intelligence/1001590/openai-devday-2026-aeon-ai-agent",
+      "source": "The Verge \u2014 AI",
+      "category": "AI",
+      "summary": "OpenAI popularized the modern generative AI chatbot, but as its 2026 DevDay event approaches, it's fallen behind in one of the industry's hottest categories: continuously running, consumer-facing AI agents. On Tuesday, it will likely try to capture the lead in that race. Rumors a",
+      "published": "2026-09-29T00:21:02.758067+00:00"
+    },
+    {
+      "id": "227c6ab559343ea9",
+      "title": "AMD is acquiring AI company World Labs in a deal worth more than $8 billion",
+      "link": "https://www.theverge.com/tech/1001749/amd-world-labs-ai-acquisition-deal",
+      "source": "The Verge \u2014 AI",
+      "category": "AI",
+      "summary": "AMD announced today that it's acquiring World Labs, an AI research lab co-founded by the prominent researcher Dr. Fei-Fei Li, in an all-stock deal worth approximately $8.2 billion. World Labs launched in 2024 and was valued at $1 billion in a matter of months. The startup launche",
+      "published": "2026-09-29T00:21:02.758024+00:00"
+    },
+    {
+      "id": "ce7b13e0f7aa9e81",
+      "title": "Experts worry about Nvidia's AI chip sales in China and influence over Trump",
+      "link": "https://arstechnica.com/tech-policy/2026/09/nvidia-may-sell-more-chips-in-china-as-jensen-huangs-influence-over-trump-grows/",
+      "source": "Ars Technica AI",
+      "category": "AI",
+      "summary": "China is reportedly mulling letting ByteDance, Alibaba buy banned Nvidia chips.",
+      "published": "2026-09-28T21:49:10+00:00"
+    },
+    {
+      "id": "35cd9b23afc7edda",
+      "title": "Florida invokes extinction fears in legal bid to halt OpenAI development",
+      "link": "https://arstechnica.com/ai/2026/09/florida-asks-court-to-put-the-brakes-on-openais-frontier-ai-development/",
+      "source": "Ars Technica AI",
+      "category": "AI",
+      "summary": "State says LLMs threaten civilization as \"the greatest public nuisance ever created.\"",
+      "published": "2026-09-28T20:49:39+00:00"
+    },
+    {
+      "id": "1eadd5627184a89f",
+      "title": "Watch the winning trailer from the Future Vision XPRIZE, The Gifted.",
+      "link": "https://blog.google/innovation-and-ai/technology/ai/winner-future-vision-xprize/",
+      "source": "Google AI Blog",
+      "category": "AI",
+      "summary": "Watch the winning trailer from the Future Vision XPRIZE, The Gifted.",
+      "published": "2026-09-28T19:00:00+00:00"
+    },
     {
       "id": "fa45a29570c32d23",
       "title": "Nvidia says its new AI safety platform can contain rogue agents within \u2018milliseconds\u2019",
@@ -31,6 +130,15 @@
       "published": "2026-09-28T16:43:44.886468+00:00"
     },
     {
+      "id": "8f41a0251e7beca4",
+      "title": "OpenAI halts frontier-model training amid string of agent misalignment incidents",
+      "link": "https://arstechnica.com/ai/2026/09/openai-halts-frontier-model-training-amid-string-of-agent-misalignment-incidents/",
+      "source": "Ars Technica AI",
+      "category": "AI",
+      "summary": "US Government websites among \"dozens of third parties\" OpenAI has recently notified.",
+      "published": "2026-09-28T16:43:18+00:00"
+    },
+    {
       "id": "d6ebb3bfb87ecb52",
       "title": "Microsoft goes quiet after church groups ask for 1% of data center costs",
       "link": "https://arstechnica.com/tech-policy/2026/09/microsoft-goes-quiet-after-church-groups-ask-for-1-of-data-center-costs/",
@@ -38,6 +146,15 @@
       "category": "AI",
       "summary": "\u201cMicrosoft claims to want to be a good neighbor, but the jury is still out.\"",
       "published": "2026-09-28T11:00:09+00:00"
+    },
+    {
+      "id": "216d56bba26ca458",
+      "title": "The Lenfest Institute grows landmark program with expanded OpenAI support",
+      "link": "https://openai.com/index/lenfest-ai-collaborative-expansion",
+      "source": "OpenAI Blog",
+      "category": "AI",
+      "summary": "OpenAI is expanding the Lenfest AI Collaborative and Fellowship Program with $5 million in funding and up to $5 million in software credits and engineering support.",
+      "published": "2026-09-28T07:00:00+00:00"
     },
     {
       "id": "750e8b0007c03aa5",
@@ -83,6 +200,24 @@
       "category": "AI",
       "summary": "Bad news on the MX Keys Mini pickup. Usman showed up at your building around 9:15 and waited, messaged a bunch of times, and nobody came down. He left angry at 9:38 and left a negative rating. Worse, my auto-reply told him \"Yep I'm here!\" at 9:27 when you clearly weren't availabl",
       "published": "2026-09-28T05:17:25.149471+00:00"
+    },
+    {
+      "id": "914f14710638400c",
+      "title": "Are you a Codex Original?",
+      "link": "https://openai.com/form/codex-originals",
+      "source": "OpenAI Blog",
+      "category": "AI",
+      "summary": "We\u2019re collecting real stories of builders, tinkerers, researchers, and creators who are using Codex to do incredible things. If you want to be a part of the next chapter of the Codex Originals program, tell us more about your story and project below.",
+      "published": "2026-09-28T00:00:00+00:00"
+    },
+    {
+      "id": "bf0fe8cc388a3447",
+      "title": "Basis completes a tax workbook 2x faster with GPT-6 Astra",
+      "link": "https://openai.com/index/basis-tax-workbook-with-astra",
+      "source": "OpenAI Blog",
+      "category": "AI",
+      "summary": "GPT-6 Astra completed a 50-tab tax workbook twice as fast as GPT-5.6 Sol, and its stronger understanding of user intent gives Basis more confidence in real-world use.",
+      "published": "2026-09-28T00:00:00+00:00"
     },
     {
       "id": "ed2cbcca51ab9ede",
@@ -1030,33 +1165,6 @@
       "published": "2026-09-21T15:37:56+00:00"
     },
     {
-      "id": "fbef9683fbad608d",
-      "title": "Amazon blocks Meta\u2019s Muse AI agent",
-      "link": "https://www.theverge.com/tech/998078/amazon-blocks-meta-muse-ai-agent-shopping",
-      "source": "The Verge \u2014 AI",
-      "category": "AI",
-      "summary": "Meta's Muse AI agent has been blocked from shopping Amazon on behalf of its users, GeekWire reports. A popup message started appearing on Sunday for Muse users saying that \"continued access by an unauthorized AI agent violates Amazon's Conditions of Use, to which our customers ha",
-      "published": "2026-09-21T13:50:06.160259+00:00"
-    },
-    {
-      "id": "94d0db2af44adcc2",
-      "title": "UN says AI safeguards can\u2019t wait for certainty",
-      "link": "https://www.theverge.com/ai-artificial-intelligence/998090/un-ai-panel-hugging-face-hack-precautionary-principle",
-      "source": "The Verge \u2014 AI",
-      "category": "AI",
-      "summary": "Governments need to rein in increasingly capable AI agents before their risks are fully understood, a United Nations scientific panel warned in the global organization's first major assessment of OpenAI's hack of Hugging Face earlier this year. The report cements AI's place on th",
-      "published": "2026-09-21T13:50:06.160243+00:00"
-    },
-    {
-      "id": "335387d8455b3983",
-      "title": "iPhone owners can now submit a claim in Apple\u2019s $250 million Siri AI lawsuit",
-      "link": "https://www.theverge.com/tech/998191/apple-siri-ai-iphone-16-class-action-lawsuit-settlement",
-      "source": "The Verge \u2014 AI",
-      "category": "AI",
-      "summary": "Apple is paying $250 million to settle claims that it failed to deliver an AI-upgraded Siri - and now, eligible iPhone owners can submit a claim for a payout. If you live in the US and purchased an iPhone 15 Pro, iPhone 15 Pro Max, or any iPhone 16 model between June 10th, 2024, ",
-      "published": "2026-09-21T13:50:06.160211+00:00"
-    },
-    {
       "id": "a7ca59844a94ccd6",
       "title": "Advisory Group on Mathematics and Artificial Intelligence",
       "link": "https://openai.com/index/advisory-group-on-mathematics-and-ai",
@@ -1138,24 +1246,6 @@
       "published": "2026-09-20T22:24:18.084282+00:00"
     },
     {
-      "id": "cb03d7f13be93465",
-      "title": "No one is surprised that Nvidia&#8217;s Jensen Huang thinks AI fears are overblown.",
-      "link": "https://www.theverge.com/ai-artificial-intelligence/997936/nvidia-jensen-huang-ai-fears-overblown",
-      "source": "The Verge \u2014 AI",
-      "category": "AI",
-      "summary": "The man who may stand to make the most money from the AI boom seems to think he knows better than anyone else, including researchers who have studied and worked on AI for decades. In an interview with CBS Sunday Morning, he claimed there was a \"0% chance\" of AI being the end of t",
-      "published": "2026-09-20T22:24:17.803623+00:00"
-    },
-    {
-      "id": "ba91ca58495db027",
-      "title": "Trump now says he wants to form an \u2018AI Force\u2019",
-      "link": "https://www.theverge.com/ai-artificial-intelligence/997867/trump-ai-force-ai-czar",
-      "source": "The Verge \u2014 AI",
-      "category": "AI",
-      "summary": "The president posted on Truth Social that he wanted to appoint an \"AI czar\" to lead a new \"AI force.\" He made the announcement amid growing calls from across the political spectrum and even within the industry to pump the brakes on AI development. He posted that his administratio",
-      "published": "2026-09-20T18:44:22.234251+00:00"
-    },
-    {
       "id": "dd5a0e0130a28aee",
       "title": "Anthropic, OpenAI, SpaceXAI, and Google face antitrust lawsuit for agreeing to slow AI development \u2014 plaintiffs say plan has been in motion for months before, calls agreement \u2018self-serving\u2019",
       "link": "https://www.tomshardware.com/tech-industry/big-tech/anthropic-openai-spacexai-and-google-face-antitrust-lawsuit-for-agreeing-to-slow-ai-development-plaintiffs-say-plan-has-been-in-motion-for-months-before-calls-agreement-self-serving",
@@ -1163,15 +1253,6 @@
       "category": "AI",
       "summary": "A proposed class action lawsuit has been lodged against the four big AI tech companies after they agreed to slow AI development for safety reasons. The lead counsel on the lawsuit says that 'AI will quickly spin out of control and could kill us all if we allow AI safety and proto",
       "published": "2026-09-20T14:48:57+00:00"
-    },
-    {
-      "id": "d11b689309b44173",
-      "title": "Humans, not rogue AI, are still the biggest cybersecurity risk to energy systems",
-      "link": "https://www.theverge.com/science/997834/ai-cyberattack-energy-critical-infrastructure",
-      "source": "The Verge \u2014 AI",
-      "category": "AI",
-      "summary": "Before recent high-profile hacks raised the specter of AI possibly \"killing all humans,\" our energy systems were already disturbingly vulnerable to cyberattack - and the risk is growing. \"We were always prey. We were just kind of surviving at the appetite of our predators,\" Joshu",
-      "published": "2026-09-20T13:01:39.377497+00:00"
     },
     {
       "id": "bfdd40457e56c037",
@@ -1307,24 +1388,6 @@
       "category": "AI",
       "summary": "Release: shot-scraper 1.12 I've added WebP support to my shot-scraper screenshot automation tool. You can now take a WebP screenshot of a web page like this: shot-scraper https://simonwillison.net -o screenshot.webp --quality 80 The --quality option sets the quality - without tha",
       "published": "2026-09-19T17:35:20.106181+00:00"
-    },
-    {
-      "id": "2e88014063fe25dc",
-      "title": "commit-rewriter 0.1",
-      "link": "https://simonwillison.net/2026/Sep/14/commit-rewriter/",
-      "source": "Simon Willison",
-      "category": "AI",
-      "summary": "Release: commit-rewriter 0.1 I built this little web app the other day to help edit the commit messages for the Datasette security releases . The initial commits were full of coding agent cruft and references to issue IDs from our private repository, so they weren't fit for publi",
-      "published": "2026-09-19T17:35:20.106133+00:00"
-    },
-    {
-      "id": "affb45ca605e0127",
-      "title": "Quoting Laurie Voss",
-      "link": "https://simonwillison.net/2026/Sep/14/laurie-voss/",
-      "source": "Simon Willison",
-      "category": "AI",
-      "summary": "The cost of writing code collapsed, and the cost of reviewing, fixing and operating it is following, and I'm assuming it gets there. What's left of making software is finding out what people actually want, defining it precisely, and making it pleasant to use. That cost is per pie",
-      "published": "2026-09-19T17:35:20.106077+00:00"
     },
     {
       "id": "6b844761c1220d26",
@@ -1964,33 +2027,6 @@
       "category": "AI",
       "summary": "Apply now for OpenAI\u2019s $5 million grant program supporting independent research on how generative AI affects teen development, well-being, and safety.",
       "published": "2026-09-08T09:00:00+00:00"
-    },
-    {
-      "id": "671a9fed35e21548",
-      "title": "OpenAI expands initiatives to support journalism from classrooms to newsrooms",
-      "link": "https://openai.com/index/supporting-journalism-from-classrooms-to-newsrooms",
-      "source": "OpenAI Blog",
-      "category": "AI",
-      "summary": "OpenAI is expanding support for journalism with tools, training, and partnerships for students, educators, journalists, and news organizations.",
-      "published": "2026-09-08T00:00:00+00:00"
-    },
-    {
-      "id": "9816f5beea82e263",
-      "title": "1Password increases engineering productivity 21% with Codex",
-      "link": "https://openai.com/index/1password",
-      "source": "OpenAI Blog",
-      "category": "AI",
-      "summary": "Engineers at 1Password use Codex to rapidly build new features and internal tools, reaching production-readiness while maintaining rigorous security policies.",
-      "published": "2026-09-08T00:00:00+00:00"
-    },
-    {
-      "id": "e02ae19def6b6f7c",
-      "title": "Supporting independent journalism in Ukraine",
-      "link": "https://openai.com/index/supporting-independent-journalism-in-ukraine",
-      "source": "OpenAI Blog",
-      "category": "AI",
-      "summary": "OpenAI, AIRPPU and WAN-IFRA launch an AI program to help Ukrainian news organizations strengthen innovation, resilience, and independent journalism.",
-      "published": "2026-09-07T00:00:00+00:00"
     },
     {
       "id": "28b149c75e15ee18",
