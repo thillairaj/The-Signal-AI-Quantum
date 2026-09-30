@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-29T23:41:31.384879+00:00",
+  "generated_at": "2026-09-30T05:27:22.882733+00:00",
   "sources_polled": [
     "The Verge \u2014 AI",
     "Simon Willison",
@@ -12,6 +12,24 @@
     "InfoQ Quantum Computing"
   ],
   "articles": [
+    {
+      "id": "147ef720989f663d",
+      "title": "GPT 6.1 Sol: Near-Astra intelligence for a fifth of the price",
+      "link": "https://simonwillison.net/2026/Sep/29/hn-49898129/",
+      "source": "Simon Willison",
+      "category": "AI",
+      "summary": "My comment on GPT 6.1 Sol: Near-Astra intelligence for a fifth of the price &mdash; Hacker News. I'm a bit late with the pelicans because I was live-blogging the keynote: https://simonwillison.net/2026/Sep/29/openai-devday-2026-liv... Here they are for GPT-6.1-Sol: https://tools.",
+      "published": "2026-09-30T05:27:18.091904+00:00"
+    },
+    {
+      "id": "1eb6183d721b63e0",
+      "title": "Sam Altman says OpenAI won\u2019t go public until its models are safe",
+      "link": "https://www.theverge.com/ai-artificial-intelligence/1002505/sam-altman-openai-ipo-devday-ai-safety",
+      "source": "The Verge \u2014 AI",
+      "category": "AI",
+      "summary": "For months, people have wondered when OpenAI will go public. CEO Sam Altman says it won't happen until the company can make better promises about model safety, with no firm timeline in sight. \"We intend to continue with AI progress \u2026 but as the models have had this surge forward ",
+      "published": "2026-09-30T05:27:17.845437+00:00"
+    },
     {
       "id": "6cd102f752db7713",
       "title": "Quoting Anthropic Frontier Red Team",
@@ -292,15 +310,6 @@
       "published": "2026-09-28T20:49:39+00:00"
     },
     {
-      "id": "1eadd5627184a89f",
-      "title": "Watch the winning trailer from the Future Vision XPRIZE, The Gifted.",
-      "link": "https://blog.google/innovation-and-ai/technology/ai/winner-future-vision-xprize/",
-      "source": "Google AI Blog",
-      "category": "AI",
-      "summary": "Watch the winning trailer from the Future Vision XPRIZE, The Gifted.",
-      "published": "2026-09-28T19:00:00+00:00"
-    },
-    {
       "id": "cfe8e900401f31bb",
       "title": "How we will do better for Australia",
       "link": "https://openai.com/index/how-we-will-do-better-for-australia",
@@ -316,6 +325,15 @@
       "source": "OpenAI Blog",
       "category": "AI",
       "summary": "Our early guidelines for safety cases in frontier AI training cover technical safeguards, operational practices, and investigating misalignment incidents",
+      "published": "2026-09-28T19:00:00+00:00"
+    },
+    {
+      "id": "1eadd5627184a89f",
+      "title": "Watch the winning trailer from the Future Vision XPRIZE, The Gifted.",
+      "link": "https://blog.google/innovation-and-ai/technology/ai/winner-future-vision-xprize/",
+      "source": "Google AI Blog",
+      "category": "AI",
+      "summary": "Watch the winning trailer from the Future Vision XPRIZE, The Gifted.",
       "published": "2026-09-28T19:00:00+00:00"
     },
     {
@@ -976,15 +994,6 @@
       "published": "2026-09-23T19:39:29.741606+00:00"
     },
     {
-      "id": "5ef7b4daed8713ca",
-      "title": "YouTube is building AI creator tools that do almost everything for them",
-      "link": "https://www.theverge.com/tech/999140/made-on-youtube-creator-tools-ai-thumbnails-tests",
-      "source": "The Verge \u2014 AI",
-      "category": "AI",
-      "summary": "Part of the job of a content creator is to figure out how to get their work in front of the most people. Cracking - or fighting - the algorithm has historically been a frustration for creators, but YouTube is increasingly simply telling creators what they should do. At the annual",
-      "published": "2026-09-23T19:39:29.741564+00:00"
-    },
-    {
       "id": "25698732c6b8e24b",
       "title": "YouTube promises custom feeds and a lot more AI later this year",
       "link": "https://arstechnica.com/gadgets/2026/09/youtube-promises-custom-feeds-and-a-lot-more-ai-later-this-year/",
@@ -1489,15 +1498,6 @@
       "published": "2026-09-19T17:35:20.106501+00:00"
     },
     {
-      "id": "86c07f5a755140f4",
-      "title": "California Brown Pelican",
-      "link": "https://simonwillison.net/2026/Sep/12/sighting-399708714/",
-      "source": "Simon Willison",
-      "category": "AI",
-      "summary": "California Brown Pelican, in San Mateo County, CA, US The Pacifica Pier shut down at the start of June after a crack in the concrete walkway made access to the pier unsafe. It has since been entirely taken over by pelicans! Tags: wildlife",
-      "published": "2026-09-19T17:35:20.106449+00:00"
-    },
-    {
       "id": "6b844761c1220d26",
       "title": "AI hallucination of Chinese nuclear components almost led to US military attack",
       "link": "https://arstechnica.com/ai/2026/09/report-us-almost-boarded-chinese-ship-over-hallucinated-ai-arms-report/",
@@ -1957,21 +1957,21 @@
       "published": "2026-09-11T10:00:00+00:00"
     },
     {
-      "id": "1852061b5cf6950b",
-      "title": "3 ways to prep for your next big race with Search",
-      "link": "https://blog.google/products-and-platforms/products/search/running-race-training-tips/",
-      "source": "Google AI Blog",
-      "category": "AI",
-      "summary": "Illustration on a blue background of technicolor runners with a magnifying glass and Gemini spark overlaid",
-      "published": "2026-09-10T16:00:00+00:00"
-    },
-    {
       "id": "014159943e4d9643",
       "title": "How a researcher uses Codex and ChatGPT to search for new antimicrobial molecules",
       "link": "https://openai.com/index/using-codex-chatgpt-to-search-for-new-antimicrobials",
       "source": "OpenAI Blog",
       "category": "AI",
       "summary": "C\u00e9sar de la Fuente\u2019s lab uses Codex and ChatGPT to search living and extinct genomes for antimicrobial candidates to fight drug-resistant infections.",
+      "published": "2026-09-10T16:00:00+00:00"
+    },
+    {
+      "id": "1852061b5cf6950b",
+      "title": "3 ways to prep for your next big race with Search",
+      "link": "https://blog.google/products-and-platforms/products/search/running-race-training-tips/",
+      "source": "Google AI Blog",
+      "category": "AI",
+      "summary": "Illustration on a blue background of technicolor runners with a magnifying glass and Gemini spark overlaid",
       "published": "2026-09-10T16:00:00+00:00"
     },
     {
