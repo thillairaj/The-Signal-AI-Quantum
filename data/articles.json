@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-30T05:27:22.882733+00:00",
+  "generated_at": "2026-09-30T14:53:31.084032+00:00",
   "sources_polled": [
     "The Verge \u2014 AI",
     "Simon Willison",
@@ -12,6 +12,60 @@
     "InfoQ Quantum Computing"
   ],
   "articles": [
+    {
+      "id": "afe6a29f26715829",
+      "title": "Photo Scrubber \u2014 local face blur & metadata removal",
+      "link": "https://simonwillison.net/2026/Sep/29/photo-scrubber/",
+      "source": "Simon Willison",
+      "category": "AI",
+      "summary": "Tool: Photo Scrubber \u2014 local face blur &amp; metadata removal I took a photograph of some protesters, then thought about how I don't like sharing photographs of strangers with identifiable faces. I had GPT-6 Astra build this experimental tool that would identify faces and automat",
+      "published": "2026-09-30T14:53:25.611152+00:00"
+    },
+    {
+      "id": "2104d195eeaa747c",
+      "title": "Here\u2019s how tech leaders will self-police AI safety under Trump\u2019s deal",
+      "link": "https://www.theverge.com/ai-artificial-intelligence/1002584/trump-us-ai-safety-deal-self-regulation-tech-execs",
+      "source": "The Verge \u2014 AI",
+      "category": "AI",
+      "summary": "We now have the full details of the \"morally binding\" AI safety deal announced by President Trump yesterday, in which top executives agreed to self-regulate their artificial intelligence technology. The accord, officially titled the Joint Commitment on Frontier Responsibilities, ",
+      "published": "2026-09-30T14:53:25.413527+00:00"
+    },
+    {
+      "id": "0f203ce721db6c03",
+      "title": "Instagram is adding an AI \u2018assistant\u2019 to tell you how to post",
+      "link": "https://www.theverge.com/tech/1002402/instagram-ai-edits-assistant-creators-analytics-youtube",
+      "source": "The Verge \u2014 AI",
+      "category": "AI",
+      "summary": "Instagram is the latest social media platform to add built-in AI-powered features that will give users feedback on their posts. The company announced Wednesday that its standalone Edits app will now include an AI \"creative assistant\" that pulls in data from a user's Instagram acc",
+      "published": "2026-09-30T14:53:25.413495+00:00"
+    },
+    {
+      "id": "445d1099f6799085",
+      "title": "Google reportedly tests paying publishers for AI search results",
+      "link": "https://www.theverge.com/tech/1002665/google-paying-publishers-ai-search-features",
+      "source": "The Verge \u2014 AI",
+      "category": "AI",
+      "summary": "Google has launched a pilot program that pays publishers for their contributions to its AI-powered search features, according to a report from The Information. The pilot program reportedly includes around 100 publishers and comes as Google faces scrutiny over the impact of its AI",
+      "published": "2026-09-30T14:53:25.413446+00:00"
+    },
+    {
+      "id": "70b828fa286d9fa6",
+      "title": "Anthropic claims popular Chinese AI model has Mythos-class hacking abilities",
+      "link": "https://www.tomshardware.com/tech-industry/artificial-intelligence/anthropic-claims-popular-chinese-ai-model-has-mythos-class-hacking-abilities-frontier-red-teaming-report-details-weak-safeguards-on-open-weight-ai",
+      "source": "Anthropic/Claude News",
+      "category": "AI",
+      "summary": "Anthropic has released a frontier red teaming report, claiming that Zhipu AI's GLM-5.3 has weak safeguarding, and can easily be used to generate harmful content.",
+      "published": "2026-09-30T14:40:00+00:00"
+    },
+    {
+      "id": "c5683a0ff45677b6",
+      "title": "OpenAI delays IPO over AI safety concerns",
+      "link": "https://arstechnica.com/ai/2026/09/openai-delays-ipo-over-ai-safety-concerns/",
+      "source": "Ars Technica AI",
+      "category": "AI",
+      "summary": "OpenAI is seeking another $30 billion privately as its IPO plans slip.",
+      "published": "2026-09-30T14:06:15+00:00"
+    },
     {
       "id": "147ef720989f663d",
       "title": "GPT 6.1 Sol: Near-Astra intelligence for a fifth of the price",
@@ -949,24 +1003,6 @@
       "published": "2026-09-23T22:55:33.774171+00:00"
     },
     {
-      "id": "211a6281fee6a0bf",
-      "title": "Data centers are black boxes, but California wants to change that",
-      "link": "https://www.theverge.com/policy/999412/data-center-water-electricity-disclosure-bills",
-      "source": "The Verge \u2014 AI",
-      "category": "AI",
-      "summary": "California Gov. Gavin Newsom signed a slate of bills on Monday that could finally give communities better data - and more say - on how data centers impact their electricity bills and water supply. As data centers invade a growing number of communities across the US, they've trigg",
-      "published": "2026-09-23T22:55:33.774131+00:00"
-    },
-    {
-      "id": "54336ea97e9aec13",
-      "title": "Meta\u2019s AI agent is a cute little guy who\u2019s great at spending my money",
-      "link": "https://www.theverge.com/ai-artificial-intelligence/999526/meta-muse-ai-agent-hands-on-shopping",
-      "source": "The Verge \u2014 AI",
-      "category": "AI",
-      "summary": "Modern life comes with an unending, auto-populating to-do list. It never ceases to amaze me how I can be doing nothing at all, minding my own business, and suddenly something needs to be taken care of. You're telling me a tree branch fell in the backyard and now I have to figure ",
-      "published": "2026-09-23T22:55:33.774060+00:00"
-    },
-    {
       "id": "c1c97de161b0f3b7",
       "title": "Trump\u2019s China rivalry and \u201cAI race\u201d delusion may endanger US, experts say",
       "link": "https://arstechnica.com/tech-policy/2026/09/china-silent-as-us-touts-plan-for-ai-safety-alerts-that-omits-tech-experts/",
@@ -983,15 +1019,6 @@
       "category": "AI",
       "summary": "$11M competition showed wildfire detection is still easier than stopping fires.",
       "published": "2026-09-23T20:28:42+00:00"
-    },
-    {
-      "id": "6fd27f05163752d0",
-      "title": "OpenAI nabs key Patreon execs ahead of upcoming announcement",
-      "link": "https://www.theverge.com/ai-artificial-intelligence/999249/openai-creators-patreon-execs-hire-sam-yam",
-      "source": "The Verge \u2014 AI",
-      "category": "AI",
-      "summary": "OpenAI has hired three former Patreon execs to anchor its product strategy for creators. After starting the creator subscription platform 13 years ago, cofounder and technology chief Sam Yam announced on X that he's joining OpenAI to lead Creator Product. He's also bringing Patre",
-      "published": "2026-09-23T19:39:29.741606+00:00"
     },
     {
       "id": "25698732c6b8e24b",
@@ -1489,15 +1516,6 @@
       "published": "2026-09-19T17:35:20.106694+00:00"
     },
     {
-      "id": "db19087c5b7011d2",
-      "title": "Quoting Paul Ford",
-      "link": "https://simonwillison.net/2026/Sep/12/paul-ford/",
-      "source": "Simon Willison",
-      "category": "AI",
-      "summary": "For a while, I must admit, it looked as if software developer roles like mine were done for. How could we fight against tireless robots? But our industry is slowly realizing that making truly cutting-edge software still requires humans to think and work together, to maximize thei",
-      "published": "2026-09-19T17:35:20.106501+00:00"
-    },
-    {
       "id": "6b844761c1220d26",
       "title": "AI hallucination of Chinese nuclear components almost led to US military attack",
       "link": "https://arstechnica.com/ai/2026/09/report-us-almost-boarded-chinese-ship-over-hallucinated-ai-arms-report/",
@@ -1919,15 +1937,6 @@
       "category": "AI",
       "summary": "Unitree might be the world\u2019s most important robotics company.",
       "published": "2026-09-12T11:00:53+00:00"
-    },
-    {
-      "id": "bdc78941dc3564da",
-      "title": "ChatGPT-using lawyer punished for citing fake testimony from made-up witnesses",
-      "link": "https://arstechnica.com/tech-policy/2026/09/chatgpt-using-lawyer-punished-for-citing-fake-testimony-from-made-up-witnesses/",
-      "source": "Ars Technica AI",
-      "category": "AI",
-      "summary": "\"I didn't know that AI could hallucinate facts,\" New Mexico defense lawyer says.",
-      "published": "2026-09-11T19:34:09+00:00"
     },
     {
       "id": "c3aa33826442d0f0",
@@ -2540,15 +2549,6 @@
       "category": "AI",
       "summary": "Anthropic has convened America's big tech companies and the U.S. government to deal with the many bugs and vulnerabilities its new AI found, but this may be just the latest attempt by Anthropic to scare people into thinking its AI is the solution to its own discovered problems.",
       "published": "2026-04-10T12:32:44+00:00"
-    },
-    {
-      "id": "cd6075c1e951b88f",
-      "title": "Anthropic's latest AI model identifies 'thousands of zero-day vulnerabilities' in 'every major operating system and every major web browser' \u2014 Claude Mythos Preview sparks race to fix critical bugs, some unpatched for decades",
-      "link": "https://www.tomshardware.com/tech-industry/artificial-intelligence/anthropics-latest-ai-model-identifies-thousands-of-zero-day-vulnerabilities-in-every-major-operating-system-and-every-major-web-browser-claude-mythos-preview-sparks-race-to-fix-critical-bugs-some-unpatched-for-decades",
-      "source": "Anthropic/Claude News",
-      "category": "AI",
-      "summary": "Anthropic's latest frontier AI model, Claude Mythos Preview, is so adept at finding software vulnerabilities that the lab is holding it back to allow companies and institutions to proactively patch their products against the 'thousands' of bugs it has already uncovered.",
-      "published": "2026-04-07T19:47:45+00:00"
     },
     {
       "id": "a479508be9f052ae",

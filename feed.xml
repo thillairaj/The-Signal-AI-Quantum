@@ -4,7 +4,55 @@
     <title>The Signal</title>
     <link>https://thillairaj.github.io/The-Signal-AI-Quantum/</link>
     <description>A self-updating feed of AI and quantum computing news, research and releases.</description>
-    <lastBuildDate>Wed, 30 Sep 2026 05:27:22 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 30 Sep 2026 14:53:31 +0000</lastBuildDate>
+    <item>
+      <title>Photo Scrubber — local face blur &amp; metadata removal</title>
+      <link>https://simonwillison.net/2026/Sep/29/photo-scrubber/</link>
+      <guid isPermaLink="false">afe6a29f26715829</guid>
+      <description>Tool: Photo Scrubber — local face blur &amp;amp; metadata removal I took a photograph of some protesters, then thought about how I don't like sharing photographs of strangers with identifiable faces. I had GPT-6 Astra build this experimental tool that would identify faces and automat</description>
+      <category>Simon Willison</category>
+      <pubDate>Wed, 30 Sep 2026 14:53:25 +0000</pubDate>
+    </item>
+    <item>
+      <title>Here’s how tech leaders will self-police AI safety under Trump’s deal</title>
+      <link>https://www.theverge.com/ai-artificial-intelligence/1002584/trump-us-ai-safety-deal-self-regulation-tech-execs</link>
+      <guid isPermaLink="false">2104d195eeaa747c</guid>
+      <description>We now have the full details of the "morally binding" AI safety deal announced by President Trump yesterday, in which top executives agreed to self-regulate their artificial intelligence technology. The accord, officially titled the Joint Commitment on Frontier Responsibilities, </description>
+      <category>The Verge — AI</category>
+      <pubDate>Wed, 30 Sep 2026 14:53:25 +0000</pubDate>
+    </item>
+    <item>
+      <title>Instagram is adding an AI ‘assistant’ to tell you how to post</title>
+      <link>https://www.theverge.com/tech/1002402/instagram-ai-edits-assistant-creators-analytics-youtube</link>
+      <guid isPermaLink="false">0f203ce721db6c03</guid>
+      <description>Instagram is the latest social media platform to add built-in AI-powered features that will give users feedback on their posts. The company announced Wednesday that its standalone Edits app will now include an AI "creative assistant" that pulls in data from a user's Instagram acc</description>
+      <category>The Verge — AI</category>
+      <pubDate>Wed, 30 Sep 2026 14:53:25 +0000</pubDate>
+    </item>
+    <item>
+      <title>Google reportedly tests paying publishers for AI search results</title>
+      <link>https://www.theverge.com/tech/1002665/google-paying-publishers-ai-search-features</link>
+      <guid isPermaLink="false">445d1099f6799085</guid>
+      <description>Google has launched a pilot program that pays publishers for their contributions to its AI-powered search features, according to a report from The Information. The pilot program reportedly includes around 100 publishers and comes as Google faces scrutiny over the impact of its AI</description>
+      <category>The Verge — AI</category>
+      <pubDate>Wed, 30 Sep 2026 14:53:25 +0000</pubDate>
+    </item>
+    <item>
+      <title>Anthropic claims popular Chinese AI model has Mythos-class hacking abilities</title>
+      <link>https://www.tomshardware.com/tech-industry/artificial-intelligence/anthropic-claims-popular-chinese-ai-model-has-mythos-class-hacking-abilities-frontier-red-teaming-report-details-weak-safeguards-on-open-weight-ai</link>
+      <guid isPermaLink="false">70b828fa286d9fa6</guid>
+      <description>Anthropic has released a frontier red teaming report, claiming that Zhipu AI's GLM-5.3 has weak safeguarding, and can easily be used to generate harmful content.</description>
+      <category>Anthropic/Claude News</category>
+      <pubDate>Wed, 30 Sep 2026 14:40:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>OpenAI delays IPO over AI safety concerns</title>
+      <link>https://arstechnica.com/ai/2026/09/openai-delays-ipo-over-ai-safety-concerns/</link>
+      <guid isPermaLink="false">c5683a0ff45677b6</guid>
+      <description>OpenAI is seeking another $30 billion privately as its IPO plans slip.</description>
+      <category>Ars Technica AI</category>
+      <pubDate>Wed, 30 Sep 2026 14:06:15 +0000</pubDate>
+    </item>
     <item>
       <title>GPT 6.1 Sol: Near-Astra intelligence for a fifth of the price</title>
       <link>https://simonwillison.net/2026/Sep/29/hn-49898129/</link>
@@ -436,54 +484,6 @@
       <description>Tool: Kākāpō Party I presented a closing keynote for the WeAreDevelopers World Congress North America yesterday. As a STAR moment I decided to weave in references to the record breaking kākāpō breeding season we had in 2026. For my closing slide I wanted to celebrate, and I had s</description>
       <category>Simon Willison</category>
       <pubDate>Sun, 27 Sep 2026 05:13:37 +0000</pubDate>
-    </item>
-    <item>
-      <title>The Creative Spirit of Who Framed Roger Rabbit</title>
-      <link>https://simonwillison.net/2026/Sep/18/the-creative-spirit-of-who-framed-roger-rabbit/</link>
-      <guid isPermaLink="false">fc55e6480f4ee645</guid>
-      <description>The Creative Spirit of Who Framed Roger Rabbit I love Who Framed Roger Rabbit , the 1988 movie by Robert Zemeckis. I haven't watched it in quite a few years, and Cypress Frankenfeld just pointed out this sequence from early in the movie: It's a pelican riding a bicycle! Look clos</description>
-      <category>Simon Willison</category>
-      <pubDate>Sat, 26 Sep 2026 22:45:01 +0000</pubDate>
-    </item>
-    <item>
-      <title>Quoting Thariq Shihipar</title>
-      <link>https://simonwillison.net/2026/Sep/18/thariq-shihipar/</link>
-      <guid isPermaLink="false">beaede86e124ef87</guid>
-      <description>We're adding support for AGENTS.md to Claude Code. Starting today in version 2.1.277, if there is no CLAUDE.md in a folder, Claude will check for and use AGENTS.md. AGENTS.md support is built off of Claude Code mods, our upcoming way to customize the Claude Code harness. This is </description>
-      <category>Simon Willison</category>
-      <pubDate>Sat, 26 Sep 2026 19:12:02 +0000</pubDate>
-    </item>
-    <item>
-      <title>Can Cloudflare CEO Matthew Prince save the web from AI?</title>
-      <link>https://www.theverge.com/podcast/1000344/cloudflare-matthew-prince-google-zero-ai-web-advertising</link>
-      <guid isPermaLink="false">344d41dcb1d635bb</guid>
-      <description>Today, I’m talking with Matthew Prince, who is CEO of Cloudflare. This episode is part of a two-part series on the future of business. Matthew last joined us on the show about two and a half years ago, at what we thought then was a wild pivot point for the internet — and now it [</description>
-      <category>The Verge — AI</category>
-      <pubDate>Sat, 26 Sep 2026 19:12:02 +0000</pubDate>
-    </item>
-    <item>
-      <title>OpenAI pauses training of its ‘most capable models’</title>
-      <link>https://www.theverge.com/ai-artificial-intelligence/1001049/openai-training-pause</link>
-      <guid isPermaLink="false">819e92326da0d8d2</guid>
-      <description>As reports of OpenAI's models breaking containment, hacking sites, and generally getting out of control pile up, the company has made the decision to pause training of its most powerful models. The decision was made after a model being tested within a sandbox exploited a loophole</description>
-      <category>The Verge — AI</category>
-      <pubDate>Sat, 26 Sep 2026 19:12:02 +0000</pubDate>
-    </item>
-    <item>
-      <title>Note on 18th September 2026</title>
-      <link>https://simonwillison.net/2026/Sep/18/probably-gonna-eat-you/</link>
-      <guid isPermaLink="false">e3a6799112421c6d</guid>
-      <description>Being a computer scientist who refuses to find anything about LLMs interesting right now is a bit like being a geneticist who refuses to find anything interesting about the recently opened Jurassic Park. Skeptical geneticist: "pfft, it's just frog DNA. And they deliberately let t</description>
-      <category>Simon Willison</category>
-      <pubDate>Sat, 26 Sep 2026 13:02:01 +0000</pubDate>
-    </item>
-    <item>
-      <title>Gemini Hacked Three Companies in First Known Breakout by Google’s AI</title>
-      <link>https://simonwillison.net/2026/Sep/18/gemini-hacked-three-companies/</link>
-      <guid isPermaLink="false">a2b68d122f77626f</guid>
-      <description>Gemini Hacked Three Companies in First Known Breakout by Google’s AI Gemini finally caught up on Felony Bench ! The hacks, which the company confirmed on Friday, occurred in May as part of a test run by the company Irregular, which was also involved in similar incidents disclosed</description>
-      <category>Simon Willison</category>
-      <pubDate>Sat, 26 Sep 2026 04:51:50 +0000</pubDate>
     </item>
   </channel>
 </rss>
