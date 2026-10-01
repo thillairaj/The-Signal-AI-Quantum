@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-01T05:45:39.949139+00:00",
+  "generated_at": "2026-10-01T15:25:24.047052+00:00",
   "sources_polled": [
     "The Verge \u2014 AI",
     "Simon Willison",
@@ -12,6 +12,42 @@
     "InfoQ Quantum Computing"
   ],
   "articles": [
+    {
+      "id": "4fb3caa1bad2e135",
+      "title": "Quoting Matthew Green",
+      "link": "https://simonwillison.net/2026/Oct/1/matthew-green/",
+      "source": "Simon Willison",
+      "category": "AI",
+      "summary": "[...] Put these pieces together and you have the two halves of a worm: a payload that hijacks the agent, and an agent that will carry the payload to the next agent. Agents in separately-isolated sandboxes discovered that they could leave instructions for each other in a shared pa",
+      "published": "2026-10-01T15:25:14.040769+00:00"
+    },
+    {
+      "id": "adb45e048c1df812",
+      "title": "Inside our months-long investigation into Kevin O\u2019Leary\u2019s Utah data center debacle",
+      "link": "https://www.theverge.com/podcast/1002851/utah-ai-data-center-stratos-kevin-oleary-investigation-backlash",
+      "source": "The Verge \u2014 AI",
+      "category": "AI",
+      "summary": "Today I\u2019m talking with Josh Dzieza, a longtime features writer here at The Verge, about Kevin O\u2019Leary\u2019s plans to build a massive data center in Utah.&#160; The idea was to build the world&#8217;s biggest data center \u2014 a 40,000-acre AI campus with nine gigawatts of power, or more ",
+      "published": "2026-10-01T15:25:13.804773+00:00"
+    },
+    {
+      "id": "9c6f1560c6228e1a",
+      "title": "OpenAI\u2019s new agent is a shot at Meta \u2014 but can it compete with free?",
+      "link": "https://www.theverge.com/ai-artificial-intelligence/1003399/meta-openai-ai-agents-muse-dots-battle",
+      "source": "The Verge \u2014 AI",
+      "category": "AI",
+      "summary": "At OpenAI's annual DevDay conference, the company pulled out all the stops to compete with its rivals - primarily Meta, whose Muse AI agent platform has seen early runaway success. CEO Sam Altman walked onstage to cheers and announced Dots, a \"real-deal AI\" agent powered by GPT-6",
+      "published": "2026-10-01T15:25:13.804719+00:00"
+    },
+    {
+      "id": "bb7b9a3b03df3ee3",
+      "title": "Firm rents four Nvidia H200s to test '80x cheaper' DeepSeek claim",
+      "link": "https://www.tomshardware.com/tech-industry/artificial-intelligence/firm-rents-four-nvidia-h200s-to-test-80x-cheaper-deepseek-claim-usd13-200-monthly-gpu-rental-doubles-claude-bill-while-security-flaws-keep-code-offline",
+      "source": "Anthropic/Claude News",
+      "category": "AI",
+      "summary": "A call center consultancy rented four Nvidia H200s to run DeepSeek V4.1 Flash for Claude Code and found DeepSeek's API cheaper.",
+      "published": "2026-10-01T10:30:00+00:00"
+    },
     {
       "id": "562470c22e2896c8",
       "title": "He Built This City",
@@ -1048,24 +1084,6 @@
       "published": "2026-09-24T13:31:30.615966+00:00"
     },
     {
-      "id": "cb0c28937af7ed15",
-      "title": "Meta Connect 2026 live blog: On the ground at Mark Zuckerberg\u2019s next big product launch",
-      "link": "https://www.theverge.com/tech/998457/meta-connect-2026-live-blog-mark-zuckerberg-keynote",
-      "source": "The Verge \u2014 AI",
-      "category": "AI",
-      "summary": "It's time once again for Meta's annual September product launch event, and The Verge is on the ground in Menlo Park to cover the show live. Meta says that today's keynote by Mark Zuckerberg will be about how \"Meta is building a future for everyone\" - something he wrote at length ",
-      "published": "2026-09-24T04:42:41.171484+00:00"
-    },
-    {
-      "id": "be0bf243840e12cf",
-      "title": "Meta Connect 2026: The biggest news and announcements",
-      "link": "https://www.theverge.com/tech/998480/meta-connect-2026-biggest-news-announcements",
-      "source": "The Verge \u2014 AI",
-      "category": "AI",
-      "summary": "It&#8217;s about time for Meta Connect, the company&#8217;s annual product launch event. This year, given the company&#8217;s major focus on AI and wearables like smart glasses, it seems likely that we&#8217;ll see updates from CEO Mark Zuckerberg and his team on those categories",
-      "published": "2026-09-24T04:42:41.171461+00:00"
-    },
-    {
       "id": "ba339dfd75be84d1",
       "title": "Shadow roots, explained with live examples",
       "link": "https://simonwillison.net/2026/Sep/23/shadow-roots/",
@@ -1577,15 +1595,6 @@
       "category": "AI",
       "summary": "Production code written by Claude should have a higher bar than if it was written by a human. At Anthropic, we have many guardrails in place to make sure this is happening: lots of lint rules, lots of tests, Claude-driven end to end tests, Claude-powered fuzzers running daily, au",
       "published": "2026-09-19T17:35:20.106811+00:00"
-    },
-    {
-      "id": "7e6aa646d847f7fa",
-      "title": "So you want to use OpenRouter?",
-      "link": "https://simonwillison.net/2026/Sep/11/so-you-want-to-use-openrouter/",
-      "source": "Simon Willison",
-      "category": "AI",
-      "summary": "So you want to use OpenRouter? One of OpenRouter's selling points is that it \"handles fallbacks automatically and picks the most cost-effective option for each request\", so you can call a single API endpoint for a model and get routed to the best available backend provider. Moham",
-      "published": "2026-09-19T17:35:20.106758+00:00"
     },
     {
       "id": "6b844761c1220d26",
@@ -2540,15 +2549,6 @@
       "category": "AI",
       "summary": "Anthropic's Mythos might be the best cybersecurity AI ever, but it's not the only one and it may well be the most expensive, raising questions about how useful it actually is, when weighed against the competition.",
       "published": "2026-04-14T17:38:30+00:00"
-    },
-    {
-      "id": "9e91d1b90e4dd11d",
-      "title": "Anthropic's Claude Mythos isn't a sentient super-hacker, it's a sales pitch \u2014 claims of 'thousands' of severe zero-days rely on just 198 manual reviews",
-      "link": "https://www.tomshardware.com/tech-industry/artificial-intelligence/anthropics-claude-mythos-isnt-a-sentient-super-hacker-its-a-sales-pitch-claims-of-thousands-of-severe-zero-days-rely-on-just-198-manual-reviews",
-      "source": "Anthropic/Claude News",
-      "category": "AI",
-      "summary": "Anthropic has convened America's big tech companies and the U.S. government to deal with the many bugs and vulnerabilities its new AI found, but this may be just the latest attempt by Anthropic to scare people into thinking its AI is the solution to its own discovered problems.",
-      "published": "2026-04-10T12:32:44+00:00"
     },
     {
       "id": "a479508be9f052ae",

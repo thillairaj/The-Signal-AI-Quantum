@@ -4,7 +4,39 @@
     <title>The Signal</title>
     <link>https://thillairaj.github.io/The-Signal-AI-Quantum/</link>
     <description>A self-updating feed of AI and quantum computing news, research and releases.</description>
-    <lastBuildDate>Thu, 01 Oct 2026 05:45:39 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 01 Oct 2026 15:25:24 +0000</lastBuildDate>
+    <item>
+      <title>Quoting Matthew Green</title>
+      <link>https://simonwillison.net/2026/Oct/1/matthew-green/</link>
+      <guid isPermaLink="false">4fb3caa1bad2e135</guid>
+      <description>[...] Put these pieces together and you have the two halves of a worm: a payload that hijacks the agent, and an agent that will carry the payload to the next agent. Agents in separately-isolated sandboxes discovered that they could leave instructions for each other in a shared pa</description>
+      <category>Simon Willison</category>
+      <pubDate>Thu, 01 Oct 2026 15:25:14 +0000</pubDate>
+    </item>
+    <item>
+      <title>Inside our months-long investigation into Kevin O’Leary’s Utah data center debacle</title>
+      <link>https://www.theverge.com/podcast/1002851/utah-ai-data-center-stratos-kevin-oleary-investigation-backlash</link>
+      <guid isPermaLink="false">adb45e048c1df812</guid>
+      <description>Today I’m talking with Josh Dzieza, a longtime features writer here at The Verge, about Kevin O’Leary’s plans to build a massive data center in Utah.&amp;#160; The idea was to build the world&amp;#8217;s biggest data center — a 40,000-acre AI campus with nine gigawatts of power, or more </description>
+      <category>The Verge — AI</category>
+      <pubDate>Thu, 01 Oct 2026 15:25:13 +0000</pubDate>
+    </item>
+    <item>
+      <title>OpenAI’s new agent is a shot at Meta — but can it compete with free?</title>
+      <link>https://www.theverge.com/ai-artificial-intelligence/1003399/meta-openai-ai-agents-muse-dots-battle</link>
+      <guid isPermaLink="false">9c6f1560c6228e1a</guid>
+      <description>At OpenAI's annual DevDay conference, the company pulled out all the stops to compete with its rivals - primarily Meta, whose Muse AI agent platform has seen early runaway success. CEO Sam Altman walked onstage to cheers and announced Dots, a "real-deal AI" agent powered by GPT-6</description>
+      <category>The Verge — AI</category>
+      <pubDate>Thu, 01 Oct 2026 15:25:13 +0000</pubDate>
+    </item>
+    <item>
+      <title>Firm rents four Nvidia H200s to test '80x cheaper' DeepSeek claim</title>
+      <link>https://www.tomshardware.com/tech-industry/artificial-intelligence/firm-rents-four-nvidia-h200s-to-test-80x-cheaper-deepseek-claim-usd13-200-monthly-gpu-rental-doubles-claude-bill-while-security-flaws-keep-code-offline</link>
+      <guid isPermaLink="false">bb7b9a3b03df3ee3</guid>
+      <description>A call center consultancy rented four Nvidia H200s to run DeepSeek V4.1 Flash for Claude Code and found DeepSeek's API cheaper.</description>
+      <category>Anthropic/Claude News</category>
+      <pubDate>Thu, 01 Oct 2026 10:30:00 +0000</pubDate>
+    </item>
     <item>
       <title>He Built This City</title>
       <link>https://simonwillison.net/2026/Sep/30/he-built-this-city/</link>
@@ -452,38 +484,6 @@
       <description>Watch the winning trailer from the Future Vision XPRIZE, The Gifted.</description>
       <category>Google AI Blog</category>
       <pubDate>Mon, 28 Sep 2026 19:00:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>Nvidia says its new AI safety platform can contain rogue agents within ‘milliseconds’</title>
-      <link>https://www.theverge.com/tech/1001287/nvidia-ai-safety-platform-rogue-agents</link>
-      <guid isPermaLink="false">fa45a29570c32d23</guid>
-      <description>Nvidia is launching a new safety platform designed to contain and monitor AI agents, a move that comes in response to a wave of rogue hacking incidents, as reported earlier by Reuters. In an announcement on Monday, Nvidia says its new Open Agent Safety Platform can quarantine age</description>
-      <category>The Verge — AI</category>
-      <pubDate>Mon, 28 Sep 2026 16:43:44 +0000</pubDate>
-    </item>
-    <item>
-      <title>The SaaSpocalypse that wasn&amp;#8217;t, with Atlassian CEO Mike Cannon-Brookes</title>
-      <link>https://www.theverge.com/podcast/1000914/atlassian-ceo-mike-cannon-brookes-saaspocalypse-ai-enterprise-software-trello-jira</link>
-      <guid isPermaLink="false">0ed30c8df6bfb914</guid>
-      <description>Today, I’m talking with Mike Cannon-Brookes, who is cofounder and CEO of Atlassian.&amp;#160; Atlassian is one of those companies that every other company runs on — it makes important platform tools like Jira and Trello that allow people to organize and manage big teams, create share</description>
-      <category>The Verge — AI</category>
-      <pubDate>Mon, 28 Sep 2026 16:43:44 +0000</pubDate>
-    </item>
-    <item>
-      <title>OpenAI halts frontier-model training amid string of agent misalignment incidents</title>
-      <link>https://arstechnica.com/ai/2026/09/openai-halts-frontier-model-training-amid-string-of-agent-misalignment-incidents/</link>
-      <guid isPermaLink="false">8f41a0251e7beca4</guid>
-      <description>US Government websites among "dozens of third parties" OpenAI has recently notified.</description>
-      <category>Ars Technica AI</category>
-      <pubDate>Mon, 28 Sep 2026 16:43:18 +0000</pubDate>
-    </item>
-    <item>
-      <title>Microsoft goes quiet after church groups ask for 1% of data center costs</title>
-      <link>https://arstechnica.com/tech-policy/2026/09/microsoft-goes-quiet-after-church-groups-ask-for-1-of-data-center-costs/</link>
-      <guid isPermaLink="false">d6ebb3bfb87ecb52</guid>
-      <description>“Microsoft claims to want to be a good neighbor, but the jury is still out."</description>
-      <category>Ars Technica AI</category>
-      <pubDate>Mon, 28 Sep 2026 11:00:09 +0000</pubDate>
     </item>
   </channel>
 </rss>
