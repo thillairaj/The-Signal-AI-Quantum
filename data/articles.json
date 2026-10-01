@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-01T15:25:24.047052+00:00",
+  "generated_at": "2026-10-01T21:00:15.855428+00:00",
   "sources_polled": [
     "The Verge \u2014 AI",
     "Simon Willison",
@@ -12,6 +12,60 @@
     "InfoQ Quantum Computing"
   ],
   "articles": [
+    {
+      "id": "e7f973146b85fb7c",
+      "title": "Judge dismisses antitrust lawsuits over Google\u2019s AI Overviews",
+      "link": "https://www.theverge.com/tech/1003589/google-ai-overviews-chegg-penske-lawsuits-dismissed",
+      "source": "The Verge \u2014 AI",
+      "category": "AI",
+      "summary": "A federal judge has dismissed a pair of antitrust lawsuits filed by Chegg and Rolling Stone parent company Penske Media Corporation, which accused Google of driving away web traffic with its AI-powered search features, as reported earlier by Reuters. US District Judge Amit Mehta ",
+      "published": "2026-10-01T21:00:12.367485+00:00"
+    },
+    {
+      "id": "c2e280cb224968cc",
+      "title": "Google\u2019s new Guided Vision feature can help you read the fine print",
+      "link": "https://www.theverge.com/ai-artificial-intelligence/1003756/google-gemini-live-guided-vision",
+      "source": "The Verge \u2014 AI",
+      "category": "AI",
+      "summary": "Guided Vision is launching in Gemini Live on compatible Android devices today to use AI to give real-time audio descriptions of anything you point your phone's camera at. By sharing your camera in Gemini Live, you can have Google's AI help with things like reading small text, des",
+      "published": "2026-10-01T21:00:12.367436+00:00"
+    },
+    {
+      "id": "de8e231194157ca9",
+      "title": "Judge dismisses Chegg and Penske antitrust lawsuits targeting Google AI search",
+      "link": "https://arstechnica.com/google/2026/10/antitrust-lawsuits-targeting-google-ai-search-dismissed-by-federal-judge/",
+      "source": "Ars Technica AI",
+      "category": "AI",
+      "summary": "The court acknowledges AI search comes with consequences, but it's not an antitrust issue.",
+      "published": "2026-10-01T20:11:55+00:00"
+    },
+    {
+      "id": "7e67b43cf9d0e609",
+      "title": "The eternal complement",
+      "link": "https://openai.com/index/the-eternal-complement",
+      "source": "OpenAI Blog",
+      "category": "AI",
+      "summary": "Advanced AI may matter most for the routine work behind breakthrough ideas. Explore why execution could shape the next economy and the pace of progress.",
+      "published": "2026-10-01T17:00:00+00:00"
+    },
+    {
+      "id": "decb5d86e7448725",
+      "title": "With most information hidden, the game Stratego had stumped AI\u2014until now",
+      "link": "https://arstechnica.com/science/2026/10/ai-finally-beat-the-best-stratego-player-in-history-and-did-it-on-a-budget/",
+      "source": "Ars Technica AI",
+      "category": "AI",
+      "summary": "Adding in a second neural network that guesses the identity of hidden pieces was key.",
+      "published": "2026-10-01T16:28:04+00:00"
+    },
+    {
+      "id": "a80484c2d5849bdb",
+      "title": "How Albertsons Companies is reimagining retail from the inside out",
+      "link": "https://openai.com/index/albertsons-reimagining-retail",
+      "source": "OpenAI Blog",
+      "category": "AI",
+      "summary": "Albertsons Cos. is using ChatGPT Enterprise and the OpenAI API to help teams work faster and make grocery shopping easier for millions of customers.",
+      "published": "2026-10-01T16:00:00+00:00"
+    },
     {
       "id": "4fb3caa1bad2e135",
       "title": "Quoting Matthew Green",
@@ -1066,24 +1120,6 @@
       "published": "2026-09-24T14:03:38+00:00"
     },
     {
-      "id": "864189f9e259ba6c",
-      "title": "Gemini 4 is almost ready, says new Google DeepMind chief",
-      "link": "https://www.theverge.com/tech/999802/google-deepmind-gemini-4-timeline-koray-kavukcuoglu",
-      "source": "The Verge \u2014 AI",
-      "category": "AI",
-      "summary": "Google is reportedly nearing the launch of its long awaited Gemini 4 model, after dawdling behind rival developers on flagship AI releases. Speaking with The Information during his first media appearance as the leader of Google's DeepMind division, Koray Kavukcuoglu said that Gem",
-      "published": "2026-09-24T13:31:30.616014+00:00"
-    },
-    {
-      "id": "7230613e317e42f3",
-      "title": "OpenAI agents hacked an Australian government website in search for data",
-      "link": "https://www.theverge.com/ai-artificial-intelligence/999874/openai-agents-hacked-an-australian-government-website-in-search-for-data",
-      "source": "The Verge \u2014 AI",
-      "category": "AI",
-      "summary": "OpenAI's artificial intelligence agents hacked an Australian government website and attempted to breach numerous other government and university websites. The attack appears to be the first confirmed instance of a rogue AI agent breaching a government website, adding fuel to rapi",
-      "published": "2026-09-24T13:31:30.615966+00:00"
-    },
-    {
       "id": "ba339dfd75be84d1",
       "title": "Shadow roots, explained with live examples",
       "link": "https://simonwillison.net/2026/Sep/23/shadow-roots/",
@@ -1813,15 +1849,6 @@
       "published": "2026-09-16T09:00:00+00:00"
     },
     {
-      "id": "f557dac5230fe02d",
-      "title": "Agility\u2019s new humanoid robot will stop, squat to avoid harming human coworkers",
-      "link": "https://arstechnica.com/ai/2026/09/agilitys-new-humanoid-robot-will-stop-squat-to-avoid-harming-human-coworkers/",
-      "source": "Ars Technica AI",
-      "category": "AI",
-      "summary": "Robots can start working outside physical cages and without safety barriers.",
-      "published": "2026-09-15T18:33:02+00:00"
-    },
-    {
       "id": "2ae59aa324a72c9f",
       "title": "AI leaders clash over safety fears after Anthropic whistleblower says AI could 'kill us all' by 2030 \u2014 OpenAI, Anthropic and xAI figureheads call for external governance, while Jensen Huang says worries are 'made up'",
       "link": "https://www.tomshardware.com/tech-industry/artificial-intelligence/ai-leaders-clash-over-safety-fears-after-anthropic-whistleblower-says-ai-could-kill-us-all-by-2030-openai-anthropic-and-xai-figureheads-call-for-external-governance-while-jensen-huang-says-worries-are-made-up",
@@ -1874,15 +1901,6 @@
       "category": "AI",
       "summary": "Text \"AI & Economy Atlas v1.0 2026\" with the Google G and a spinning globe illustration",
       "published": "2026-09-15T13:00:00+00:00"
-    },
-    {
-      "id": "c2297ec081db00dc",
-      "title": "Exclusive: Paying for frontier AI models buys 4-month head start at 5x the cost",
-      "link": "https://arstechnica.com/ai/2026/09/exclusive-open-chinese-models-close-gap-with-silicon-valleys-frontier-ai-models/",
-      "source": "Ars Technica AI",
-      "category": "AI",
-      "summary": "Ars previewed Mozilla\u2019s report on how cheap open models caught up on capability.",
-      "published": "2026-09-15T12:00:41+00:00"
     },
     {
       "id": "b49b47db0b359f67",
@@ -2045,24 +2063,6 @@
       "category": "AI",
       "summary": "GPT\u2011Live\u20111 brings natural, full-duplex voice conversations to the API, with stronger instruction following, custom voices, and telephony support.",
       "published": "2026-09-10T00:00:00+00:00"
-    },
-    {
-      "id": "2b26a8066576cc98",
-      "title": "Introducing the Agents API",
-      "link": "https://openai.com/index/introducing-the-agents-api",
-      "source": "OpenAI Blog",
-      "category": "AI",
-      "summary": "Build and launch cloud agents with the Agents API, a managed service powered by the Codex harness for orchestration, long-running sessions, and tool use.",
-      "published": "2026-09-10T00:00:00+00:00"
-    },
-    {
-      "id": "534907e0d31e4171",
-      "title": "Paul Christiano joins OpenAI Foundation Board",
-      "link": "https://openai.com/index/paul-christiano-joins-openai-foundation-board",
-      "source": "OpenAI Blog",
-      "category": "AI",
-      "summary": "Paul Christiano joins the OpenAI Foundation Board and its Safety and Security Committee, bringing experience in AI alignment, safety, and standards.",
-      "published": "2026-09-09T17:00:00+00:00"
     },
     {
       "id": "b0dd0e34ba0b936c",
