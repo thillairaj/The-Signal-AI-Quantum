@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-02T05:29:54.456927+00:00",
+  "generated_at": "2026-10-02T14:42:43.169497+00:00",
   "sources_polled": [
     "The Verge \u2014 AI",
     "Simon Willison",
@@ -12,6 +12,42 @@
     "InfoQ Quantum Computing"
   ],
   "articles": [
+    {
+      "id": "b7dd825032631828",
+      "title": "AI music maker Suno now generates spoken words",
+      "link": "https://www.theverge.com/ai-artificial-intelligence/1003925/suno-speech-ai-voice-feature-beta-availability",
+      "source": "The Verge \u2014 AI",
+      "category": "AI",
+      "summary": "Suno is branching out from the world of AI music, launching a new feature that generates spoken voices based on scripts or prompted descriptions. Speech is now available in public beta across Suno's web and mobile platforms, and allows you to simultaneously generate voiceovers an",
+      "published": "2026-10-02T14:42:36.464815+00:00"
+    },
+    {
+      "id": "78ffcfd0a288af0c",
+      "title": "Amazon writes scary blog warning communities not to block data centers",
+      "link": "https://www.theverge.com/tech/1003929/amazon-ai-data-center-blog-warning",
+      "source": "The Verge \u2014 AI",
+      "category": "AI",
+      "summary": "Amazon is calling for people to support AI data center projects, or risk irreparable harm to the US economy and national security. In a more than 3,000 word blog posted today, Amazon web services CEO Matt Garman pushed back on public concerns around the impact that data centers m",
+      "published": "2026-10-02T14:42:36.464794+00:00"
+    },
+    {
+      "id": "f829ccaecea00650",
+      "title": "If a data center is camouflaged in the woods, will anyone hate it?",
+      "link": "https://www.theverge.com/tech/1003681/microsoft-data-centers-ai-environment-biomimicry",
+      "source": "The Verge \u2014 AI",
+      "category": "AI",
+      "summary": "San Antonio City Councilmember Ric Galvan remembers when data centers first arrived in his city in the 2000s, looking like relatively unassuming office buildings. But that's changed in recent years, as data centers have grown into massive \"hyperscale\" facilities spanning millions",
+      "published": "2026-10-02T14:42:36.464770+00:00"
+    },
+    {
+      "id": "b3a9a516e91b03e6",
+      "title": "AI hallucinations are making entitled customers even worse",
+      "link": "https://www.theverge.com/report/1002963/ai-hallucinations-customer-service-jobs-agents",
+      "source": "The Verge \u2014 AI",
+      "category": "AI",
+      "summary": "Madison, a server in New York City, greets every table by asking about each diner's allergies. Lately, there have been some close calls. \"Sometimes people will tell me they have a shellfish allergy, and I'll come back, and they won't ask me any questions,\" says Madison, who asked",
+      "published": "2026-10-02T14:42:36.464726+00:00"
+    },
     {
       "id": "e7f973146b85fb7c",
       "title": "Judge dismisses antitrust lawsuits over Google\u2019s AI Overviews",
@@ -1055,42 +1091,6 @@
       "category": "AI",
       "summary": "This is Optimizer, a weekly newsletter sent from Verge senior reviewer Victoria Song that dissects and discusses the latest gizmos and potions that swear they're going to change your life. Opt in for Optimizer here. Last night, I asked Blorbo - what I named my Muse AI agent - to ",
       "published": "2026-09-24T19:58:33.757208+00:00"
-    },
-    {
-      "id": "0b7b681fb83d1416",
-      "title": "Muse sure looks a lot like OpenClaw",
-      "link": "https://www.theverge.com/report/1000180/muse-openclaw-instinct-lookalike",
-      "source": "The Verge \u2014 AI",
-      "category": "AI",
-      "summary": "We seem to be entering into an AI agent renaissance. Meta's new consumer-facing AI agent, Muse, topped the App Store charts soon after its release and has 600,000 daily active users in the US, by an Apptopia estimate. And AI agent platform Instinct, whose eponymous creator is fun",
-      "published": "2026-09-24T19:58:33.757183+00:00"
-    },
-    {
-      "id": "cb7e0a0370f056e2",
-      "title": "Muse will apparently let you download its entire filesystem",
-      "link": "https://www.theverge.com/ai-artificial-intelligence/1000222/meta-muse-ai-filesystem",
-      "source": "The Verge \u2014 AI",
-      "category": "AI",
-      "summary": "A pair of developers say that with very little prompting, Meta's Muse will share its entire filesystem with you. Peter James and Jonny L. Saunders have said they both independently coaxed Muse into zipping up and sharing the entire contents of its root filesystem, Ubuntu system f",
-      "published": "2026-09-24T19:58:33.757156+00:00"
-    },
-    {
-      "id": "18e7444965179a13",
-      "title": "Meta is going to let you build games with AI right on your phone",
-      "link": "https://www.theverge.com/games/999972/meta-horizon-create-studio-ai-games",
-      "source": "The Verge \u2014 AI",
-      "category": "AI",
-      "summary": "Meta has a new plan to get people to make games for its Horizon social platform. The company today announced two new development tools that will let you create games with AI prompts: Horizon Create, a mobile app, and Horizon Studio, a browser app that offers more granular control",
-      "published": "2026-09-24T19:58:33.757125+00:00"
-    },
-    {
-      "id": "3ab9cbba8c0d8bf4",
-      "title": "Jensen Huang talks about AI and climate change like a supervillain",
-      "link": "https://www.theverge.com/tech/1000140/jensen-huang-nvidia-ai-energy-climate-change-supervillain",
-      "source": "The Verge \u2014 AI",
-      "category": "AI",
-      "summary": "As Jensen Huang puts it, AI can help fight climate change - but only if it inflicts \"an enormous amount of pain and suffering\" first. The Nvidia CEO discussed the future of energy and AI's impact on our planet in the latest episode of The Ezra Klein Show. But his comments boil do",
-      "published": "2026-09-24T19:58:33.757072+00:00"
     },
     {
       "id": "e64c35c9e5d7cbc7",
