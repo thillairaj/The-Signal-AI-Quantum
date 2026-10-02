@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-01T21:00:15.855428+00:00",
+  "generated_at": "2026-10-02T05:29:54.456927+00:00",
   "sources_polled": [
     "The Verge \u2014 AI",
     "Simon Willison",
@@ -119,6 +119,15 @@
       "category": "AI",
       "summary": "Grokipedia, SpaceXAI's AI-powered competitor to Wikipedia, recently started incorporating edits again, and today, it got some design tweaks as part of a v0.3 update, including a new logo and refreshes to its homepage and live edits page. SpaceXAI head of design Benji Taylor calls",
       "published": "2026-10-01T05:45:35.766564+00:00"
+    },
+    {
+      "id": "3bba527585738108",
+      "title": "The Den frees up 10-15 hours a week to grow with ChatGPT Work",
+      "link": "https://openai.com/index/the-den-family-social",
+      "source": "OpenAI Blog",
+      "category": "AI",
+      "summary": "As it opens a new location, the social club prepares grant applications in 2 hours instead of 3 days and liquor-license materials in 3 hours instead of 4 days.",
+      "published": "2026-10-01T00:00:00+00:00"
     },
     {
       "id": "1c9685f8d86dfe8f",
@@ -1993,21 +2002,21 @@
       "published": "2026-09-11T16:00:00+00:00"
     },
     {
-      "id": "24d39e6853845ce9",
-      "title": "Anthropic says Claude thwarted bioweapon research from state-sponsored actors \u2014 covert accounts used U.S. proxies to attempt to engineer deadlier viruses, tried to evade identification and regional blocks",
-      "link": "https://www.tomshardware.com/tech-industry/artificial-intelligence/anthropic-says-claude-thwarted-bioweapon-research-from-state-sponsored-actors-covert-accounts-used-u-s-proxies-to-attempt-to-engineer-deadlier-viruses-tried-to-evade-identification-and-regional-blocks",
-      "source": "Anthropic/Claude News",
-      "category": "AI",
-      "summary": "Anthropic claims Claude refused instructions to potentially develop biological weapons \u2014 alleged state-linked accounts tried to evade identification and regional blocks",
-      "published": "2026-09-11T10:00:00+00:00"
-    },
-    {
       "id": "c7d3c8aeae425678",
       "title": "Rapidly scaling online storage to serve over 1 billion ChatGPT users",
       "link": "https://openai.com/index/scaling-storage-one-billion-users-part-one",
       "source": "OpenAI Blog",
       "category": "AI",
       "summary": "Learn how OpenAI evolved Habitat from a Python library into a globally distributed storage platform serving 1 billion ChatGPT users and 22M requests per second.",
+      "published": "2026-09-11T10:00:00+00:00"
+    },
+    {
+      "id": "24d39e6853845ce9",
+      "title": "Anthropic says Claude thwarted bioweapon research from state-sponsored actors \u2014 covert accounts used U.S. proxies to attempt to engineer deadlier viruses, tried to evade identification and regional blocks",
+      "link": "https://www.tomshardware.com/tech-industry/artificial-intelligence/anthropic-says-claude-thwarted-bioweapon-research-from-state-sponsored-actors-covert-accounts-used-u-s-proxies-to-attempt-to-engineer-deadlier-viruses-tried-to-evade-identification-and-regional-blocks",
+      "source": "Anthropic/Claude News",
+      "category": "AI",
+      "summary": "Anthropic claims Claude refused instructions to potentially develop biological weapons \u2014 alleged state-linked accounts tried to evade identification and regional blocks",
       "published": "2026-09-11T10:00:00+00:00"
     },
     {
@@ -2054,15 +2063,6 @@
       "category": "AI",
       "summary": "OpenAI and GSA will offer eligible federal, state, local, and tribal governments $0 license fees, 50% off usage, and expanded cyber defense support.",
       "published": "2026-09-10T07:00:00+00:00"
-    },
-    {
-      "id": "4e410dad70fb9298",
-      "title": "Build more natural voice experiences with GPT\u2011Live\u20111 in the API",
-      "link": "https://openai.com/index/introducing-gpt-live-1-in-the-api",
-      "source": "OpenAI Blog",
-      "category": "AI",
-      "summary": "GPT\u2011Live\u20111 brings natural, full-duplex voice conversations to the API, with stronger instruction following, custom voices, and telephony support.",
-      "published": "2026-09-10T00:00:00+00:00"
     },
     {
       "id": "b0dd0e34ba0b936c",
