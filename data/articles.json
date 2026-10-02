@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-02T14:42:43.169497+00:00",
+  "generated_at": "2026-10-02T20:41:11.148690+00:00",
   "sources_polled": [
     "The Verge \u2014 AI",
     "Simon Willison",
@@ -12,6 +12,69 @@
     "InfoQ Quantum Computing"
   ],
   "articles": [
+    {
+      "id": "69164ce789ec620a",
+      "title": "Breaking up (with Elon Musk) is hard to do",
+      "link": "https://www.theverge.com/tech/1004177/elon-musk-unfollows-shivon-zilis",
+      "source": "The Verge \u2014 AI",
+      "category": "AI",
+      "summary": "In a throwback to MySpace-style internet drama, Shivon Zilis announced that she and the father of her four children, Elon Musk, had broken up on X. To do so, she quote-tweeted a post from \"Big Tech Alert,\" an account that, among other things, monitors what accounts are following ",
+      "published": "2026-10-02T20:41:05.246227+00:00"
+    },
+    {
+      "id": "5028b5fce3747e84",
+      "title": "OpenAI\u2019s Dot agent is enterprise software that can also order your dinner",
+      "link": "https://www.theverge.com/ai-artificial-intelligence/1004096/openai-chatgpt-dots-hands-on-agent",
+      "source": "The Verge \u2014 AI",
+      "category": "AI",
+      "summary": "It's a tale as old as last week: OpenAI's new agent platform, called Dots, is full of cute little guys who can do your bidding. But unlike the ultra-approachable Meta Muse, Dots feel very much like using workplace software that happens to be able to order you a burrito - emphasis",
+      "published": "2026-10-02T20:41:05.246159+00:00"
+    },
+    {
+      "id": "f10ac2fa6ec29335",
+      "title": "Amazon\u2019s $1B plan to combat data center backlash draws more backlash",
+      "link": "https://arstechnica.com/tech-policy/2026/10/amazons-1b-plan-to-combat-data-center-backlash-draws-more-backlash/",
+      "source": "Ars Technica AI",
+      "category": "AI",
+      "summary": "Amazon praised for ending NDAs but slammed for downplaying data center pollution.",
+      "published": "2026-10-02T20:30:27+00:00"
+    },
+    {
+      "id": "d3db30efe56f6be9",
+      "title": "US arrests tech CEO accused of smuggling $300M in Nvidia chips into China",
+      "link": "https://arstechnica.com/tech-policy/2026/10/us-arrests-tech-ceo-accused-of-smuggling-300m-in-nvidia-chips-into-china/",
+      "source": "Ars Technica AI",
+      "category": "AI",
+      "summary": "Nvidia\u2019s chip-smuggling problem won\u2019t go away as arrests continue.",
+      "published": "2026-10-02T18:39:36+00:00"
+    },
+    {
+      "id": "8e206c4d9ed6ea5b",
+      "title": "A model guide for the GPT-6 family",
+      "link": "https://openai.com/index/practical-guide-building-gpt-6",
+      "source": "OpenAI Blog",
+      "category": "AI",
+      "summary": "Learn how startups can choose GPT-6 models, tune reasoning effort, improve prompts and skills, coordinate tools, and prepare workflows for production.",
+      "published": "2026-10-02T16:15:00+00:00"
+    },
+    {
+      "id": "1122627a66dfc215",
+      "title": "The latest AI news we announced in September 2026",
+      "link": "https://blog.google/innovation-and-ai/technology/ai/google-ai-updates-september-2026/",
+      "source": "Google AI Blog",
+      "category": "AI",
+      "summary": "A video showing the September AI updates",
+      "published": "2026-10-02T15:00:00+00:00"
+    },
+    {
+      "id": "d3446779ff0f63d4",
+      "title": "The 7-year-old Nvidia Shield TV is now $100 more expensive due to AI",
+      "link": "https://arstechnica.com/gadgets/2026/10/the-7-year-old-nvidia-shield-tv-is-now-100-more-expensive-thanks-to-ai/",
+      "source": "Ars Technica AI",
+      "category": "AI",
+      "summary": "Initially launched in 2019, the Nvidia Shield TV Pro now retails for $299.99.",
+      "published": "2026-10-02T14:52:16+00:00"
+    },
     {
       "id": "b7dd825032631828",
       "title": "AI music maker Suno now generates spoken words",
@@ -47,6 +110,15 @@
       "category": "AI",
       "summary": "Madison, a server in New York City, greets every table by asking about each diner's allergies. Lately, there have been some close calls. \"Sometimes people will tell me they have a shellfish allergy, and I'll come back, and they won't ask me any questions,\" says Madison, who asked",
       "published": "2026-10-02T14:42:36.464726+00:00"
+    },
+    {
+      "id": "a97398f76ee518bf",
+      "title": "Chatham scales its capital markets expertise with OpenAI",
+      "link": "https://openai.com/index/chatham-financial",
+      "source": "OpenAI Blog",
+      "category": "AI",
+      "summary": "Chatham Financial uses Codex and GPT-5.6 to build technology and redesign workflows, cutting trade validation from 30 minutes to under 4.",
+      "published": "2026-10-02T00:00:00+00:00"
     },
     {
       "id": "e7f973146b85fb7c",
@@ -1075,24 +1147,6 @@
       "published": "2026-09-24T19:58:33.757258+00:00"
     },
     {
-      "id": "69d34719f9a17ab3",
-      "title": "Gemini can now call businesses for you so you don\u2019t have to wait on hold",
-      "link": "https://www.theverge.com/ai-artificial-intelligence/1000116/google-gemini-business-phone-calls",
-      "source": "The Verge \u2014 AI",
-      "category": "AI",
-      "summary": "Google's launching an \"early experiment\" feature on Pixel 11 that lets users delegate local business calls to Gemini, like making a reservation, checking if a product is in stock, or rescheduling an appointment. According to Google, you don't even need to start the call to have G",
-      "published": "2026-09-24T19:58:33.757233+00:00"
-    },
-    {
-      "id": "091e61d14291c59c",
-      "title": "It\u2019s sinister that Meta\u2019s Muse AI mascot is so cute",
-      "link": "https://www.theverge.com/column/999999/optimizer-meta-muse-ai-cute",
-      "source": "The Verge \u2014 AI",
-      "category": "AI",
-      "summary": "This is Optimizer, a weekly newsletter sent from Verge senior reviewer Victoria Song that dissects and discusses the latest gizmos and potions that swear they're going to change your life. Opt in for Optimizer here. Last night, I asked Blorbo - what I named my Muse AI agent - to ",
-      "published": "2026-09-24T19:58:33.757208+00:00"
-    },
-    {
       "id": "e64c35c9e5d7cbc7",
       "title": "New Jersey fines data center $1.1M after drone pics expose 62 gas generators",
       "link": "https://arstechnica.com/tech-policy/2026/09/new-jersey-fines-data-center-1-1m-after-satellite-pics-expose-62-gas-generators/",
@@ -1741,24 +1795,6 @@
       "published": "2026-09-17T20:00:00+00:00"
     },
     {
-      "id": "168e3a7edc732617",
-      "title": "LLMs respond differently to harmful prompts when AI watermarking is used",
-      "link": "https://arstechnica.com/security/2026/09/ai-text-watermarking-can-make-models-more-vulnerable-to-adversarial-prompts/",
-      "source": "Ars Technica AI",
-      "category": "AI",
-      "summary": "SynthID can cause models to follow harmful instructions they would otherwise refuse.",
-      "published": "2026-09-17T18:33:13+00:00"
-    },
-    {
-      "id": "a6c133e82102caf0",
-      "title": "Covert uploads and megalomania: OpenAI details new \"misaligned\" agent incidents",
-      "link": "https://arstechnica.com/ai/2026/09/covert-uploads-and-megalomania-openai-details-new-misaligned-agent-incidents/",
-      "source": "Ars Technica AI",
-      "category": "AI",
-      "summary": "Model maker commits to new framework for reporting misaligned models.",
-      "published": "2026-09-17T16:18:34+00:00"
-    },
-    {
       "id": "964ae1dd0facf551",
       "title": "How Cooley is accelerating IPO work with ChatGPT",
       "link": "https://openai.com/index/cooley-gopublic",
@@ -1775,15 +1811,6 @@
       "category": "AI",
       "summary": "OpenAI for Law brings frontier intelligence for law, custom firm workflows, connected legal data sources, and legal-grade controls for confidential client work.",
       "published": "2026-09-17T00:00:00+00:00"
-    },
-    {
-      "id": "00f56e1b1eec192b",
-      "title": "Apple reportedly building server packed with M-series Ultra chips for AI",
-      "link": "https://arstechnica.com/ai/2026/09/apple-reportedly-building-server-packed-with-m-series-ultra-chips-for-ai/",
-      "source": "Ars Technica AI",
-      "category": "AI",
-      "summary": "Planned 2029 debut could make this Apple\u2019s first enterprise server in decades.",
-      "published": "2026-09-16T22:02:46+00:00"
     },
     {
       "id": "69ed3401ae72080f",
@@ -2045,24 +2072,6 @@
       "category": "AI",
       "summary": "Meet the Data agent in ChatGPT Work. Connect company data, uncover insights, and build interactive dashboards with AI using natural language.",
       "published": "2026-09-10T15:00:00+00:00"
-    },
-    {
-      "id": "016c3ec9b775a98e",
-      "title": "Introducing ChatGPT for Financial Services",
-      "link": "https://openai.com/index/introducing-chatgpt-financial-services",
-      "source": "OpenAI Blog",
-      "category": "AI",
-      "summary": "Introducing ChatGPT for Financial Services, combining built-in financial data and GPT-6 Astra for research, modeling, and client-ready materials.",
-      "published": "2026-09-10T07:00:00+00:00"
-    },
-    {
-      "id": "1ef5285e671d0ace",
-      "title": "Expanding AI access and cyber defense for federal, state, local, and tribal governments",
-      "link": "https://openai.com/index/expanding-ai-access-us-government",
-      "source": "OpenAI Blog",
-      "category": "AI",
-      "summary": "OpenAI and GSA will offer eligible federal, state, local, and tribal governments $0 license fees, 50% off usage, and expanded cyber defense support.",
-      "published": "2026-09-10T07:00:00+00:00"
     },
     {
       "id": "b0dd0e34ba0b936c",
