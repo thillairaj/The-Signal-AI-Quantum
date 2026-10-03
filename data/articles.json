@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-02T20:41:11.148690+00:00",
+  "generated_at": "2026-10-03T05:12:40.795218+00:00",
   "sources_polled": [
     "The Verge \u2014 AI",
     "Simon Willison",
@@ -12,6 +12,33 @@
     "InfoQ Quantum Computing"
   ],
   "articles": [
+    {
+      "id": "e148a12b4219ef6a",
+      "title": "Apple will limit Mac disk access as AI agents \u2018substantially\u2019 increase risk",
+      "link": "https://www.theverge.com/tech/1004295/apple-limit-mac-disk-access-ai-agents",
+      "source": "The Verge \u2014 AI",
+      "category": "AI",
+      "summary": "Apple will add new limits for \"full disk access\" on Mac in response to risks posed by AI agents, as reported earlier by TechCrunch. In an update on Friday, Apple says it's rolling out new controls to \"ensure that users who genuinely wish to grant an app this extraordinary level o",
+      "published": "2026-10-03T05:12:36.616687+00:00"
+    },
+    {
+      "id": "c0a74765cc53d7bd",
+      "title": "Meta open sources code to let you make Muse AI gadgets",
+      "link": "https://www.theverge.com/tech/1004330/meta-muse-ai-gadgets-home-link",
+      "source": "The Verge \u2014 AI",
+      "category": "AI",
+      "summary": "Meta now lets you make your own Muse gadgets that feature the company's new AI agent with code that the company open sourced. The company suggests projects like loading Muse on a color E Ink display to show reminders, adding it to an HDMI stick so you can display Muse on a big sc",
+      "published": "2026-10-03T05:12:36.616641+00:00"
+    },
+    {
+      "id": "6ee8ae0821d338b7",
+      "title": "Apple changes full-disk access permissions to curb abuse from AI agents",
+      "link": "https://arstechnica.com/security/2026/10/apple-changes-full-disk-access-permissions-to-curb-abuse-from-ai-agents/",
+      "source": "Ars Technica AI",
+      "category": "AI",
+      "summary": "Meta says FDA isn't sufficient to Muse reading messages. Apple begs to differ.",
+      "published": "2026-10-02T23:03:16+00:00"
+    },
     {
       "id": "69164ce789ec620a",
       "title": "Breaking up (with Elon Musk) is hard to do",
@@ -1129,24 +1156,6 @@
       "published": "2026-09-24T19:58:33.757314+00:00"
     },
     {
-      "id": "bd3f02787fa0480e",
-      "title": "Google is sending an AI satellite into space next week",
-      "link": "https://www.theverge.com/tech/1000015/google-ai-satellite-space-project-suncatcher",
-      "source": "The Verge \u2014 AI",
-      "category": "AI",
-      "summary": "Google is getting ready to launch a satellite with its AI processors to test how well they perform in space, as reported earlier by The New York Times. The move is part of Google's Project Suncatcher, the company's experimental initiative that could eventually put AI data centers",
-      "published": "2026-09-24T19:58:33.757283+00:00"
-    },
-    {
-      "id": "eb32233e29f9e6a3",
-      "title": "Why can\u2019t we just keep rogue AIs off the internet?",
-      "link": "https://www.theverge.com/ai-artificial-intelligence/999881/why-cant-we-airgap-rogue-ai-agents",
-      "source": "The Verge \u2014 AI",
-      "category": "AI",
-      "summary": "AI agents keep getting loose, escaping supposedly secure tests to attack real-world targets, commandeer obscure wikis, and leave instructions for other agents to follow. Researchers are testing these systems precisely because they might behave in unpredictable, even dangerous, wa",
-      "published": "2026-09-24T19:58:33.757258+00:00"
-    },
-    {
       "id": "e64c35c9e5d7cbc7",
       "title": "New Jersey fines data center $1.1M after drone pics expose 62 gas generators",
       "link": "https://arstechnica.com/tech-policy/2026/09/new-jersey-fines-data-center-1-1m-after-satellite-pics-expose-62-gas-generators/",
@@ -1775,15 +1784,6 @@
       "category": "AI",
       "summary": "Multiple family members can share data to help the agent make plans and complete tasks.",
       "published": "2026-09-17T20:24:34+00:00"
-    },
-    {
-      "id": "01982aadb2ec9850",
-      "title": "Microsoft exec called AI scraping the \u201clargest theft of labor in human history\u201d",
-      "link": "https://arstechnica.com/tech-policy/2026/09/microsoft-exec-called-ai-scraping-the-largest-theft-of-labor-in-human-history/",
-      "source": "Ars Technica AI",
-      "category": "AI",
-      "summary": "Microsoft, OpenAI emails reveal fear of AI \u201cdoom loop\u201d killing news orgs.",
-      "published": "2026-09-17T20:10:41+00:00"
     },
     {
       "id": "e7b9d12d1b3a7eb0",
