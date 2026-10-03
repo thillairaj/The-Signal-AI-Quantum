@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-03T19:12:49.922468+00:00",
+  "generated_at": "2026-10-03T22:52:10.140644+00:00",
   "sources_polled": [
     "The Verge \u2014 AI",
     "Simon Willison",
@@ -12,6 +12,15 @@
     "InfoQ Quantum Computing"
   ],
   "articles": [
+    {
+      "id": "4956a5acae88d47d",
+      "title": "September sponsors-only newsletter",
+      "link": "https://simonwillison.net/2026/Oct/3/newsletter/",
+      "source": "Simon Willison",
+      "category": "AI",
+      "summary": "I just sent the September edition of my sponsors-only monthly newsletter . If you are a sponsor (or start a sponsorship now) you can access it here . This month: More Fable class models A pricing war 3D graphics, Blender, and pixel art LLMs come for mathematics So many more accid",
+      "published": "2026-10-03T22:52:04.789008+00:00"
+    },
     {
       "id": "da9bc33d3feb59e4",
       "title": "Rex's Dino Store",
@@ -1705,15 +1714,6 @@
       "published": "2026-09-19T17:35:20.106931+00:00"
     },
     {
-      "id": "6f95f2bec50997af",
-      "title": "Feeling sad about AI",
-      "link": "https://simonwillison.net/2026/Sep/11/feeling-sad-about-ai/",
-      "source": "Simon Willison",
-      "category": "AI",
-      "summary": "My comment on Feeling sad about AI &mdash; Hacker News. I'm not sure how useful it is to say this, but I think a lot of people (myself included, a few years ago now) have been through this moment of existential crisis and come out the other side. The initial reaction, when some c",
-      "published": "2026-09-19T17:35:20.106897+00:00"
-    },
-    {
       "id": "6b844761c1220d26",
       "title": "AI hallucination of Chinese nuclear components almost led to US military attack",
       "link": "https://arstechnica.com/ai/2026/09/report-us-almost-boarded-chinese-ship-over-hallucinated-ai-arms-report/",
@@ -2038,21 +2038,21 @@
       "published": "2026-09-11T16:00:00+00:00"
     },
     {
-      "id": "c7d3c8aeae425678",
-      "title": "Rapidly scaling online storage to serve over 1 billion ChatGPT users",
-      "link": "https://openai.com/index/scaling-storage-one-billion-users-part-one",
-      "source": "OpenAI Blog",
-      "category": "AI",
-      "summary": "Learn how OpenAI evolved Habitat from a Python library into a globally distributed storage platform serving 1 billion ChatGPT users and 22M requests per second.",
-      "published": "2026-09-11T10:00:00+00:00"
-    },
-    {
       "id": "24d39e6853845ce9",
       "title": "Anthropic says Claude thwarted bioweapon research from state-sponsored actors \u2014 covert accounts used U.S. proxies to attempt to engineer deadlier viruses, tried to evade identification and regional blocks",
       "link": "https://www.tomshardware.com/tech-industry/artificial-intelligence/anthropic-says-claude-thwarted-bioweapon-research-from-state-sponsored-actors-covert-accounts-used-u-s-proxies-to-attempt-to-engineer-deadlier-viruses-tried-to-evade-identification-and-regional-blocks",
       "source": "Anthropic/Claude News",
       "category": "AI",
       "summary": "Anthropic claims Claude refused instructions to potentially develop biological weapons \u2014 alleged state-linked accounts tried to evade identification and regional blocks",
+      "published": "2026-09-11T10:00:00+00:00"
+    },
+    {
+      "id": "c7d3c8aeae425678",
+      "title": "Rapidly scaling online storage to serve over 1 billion ChatGPT users",
+      "link": "https://openai.com/index/scaling-storage-one-billion-users-part-one",
+      "source": "OpenAI Blog",
+      "category": "AI",
+      "summary": "Learn how OpenAI evolved Habitat from a Python library into a globally distributed storage platform serving 1 billion ChatGPT users and 22M requests per second.",
       "published": "2026-09-11T10:00:00+00:00"
     },
     {
