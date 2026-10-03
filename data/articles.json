@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-03T13:20:22.053908+00:00",
+  "generated_at": "2026-10-03T19:12:49.922468+00:00",
   "sources_polled": [
     "The Verge \u2014 AI",
     "Simon Willison",
@@ -12,6 +12,51 @@
     "InfoQ Quantum Computing"
   ],
   "articles": [
+    {
+      "id": "da9bc33d3feb59e4",
+      "title": "Rex's Dino Store",
+      "link": "https://simonwillison.net/2026/Oct/2/rex-s-dino-store/",
+      "source": "Simon Willison",
+      "category": "AI",
+      "summary": "Museum: Rex&#x27;s Dino Store Located just before the turnstiles in the Grand Army Plaza subway station at the north end of Brooklyn's Prospect Park is this former newsstand which is now operated by a dinosaur. The density of dinosaur puns is exceptional . Tags: art , new-york",
+      "published": "2026-10-03T19:12:46.415348+00:00"
+    },
+    {
+      "id": "91c2390ce603b2e9",
+      "title": "An OpenAI safety employee has quit and is sounding the alarm",
+      "link": "https://www.theverge.com/ai-artificial-intelligence/1004408/openai-safety-quits-sounding-the-alarm",
+      "source": "The Verge \u2014 AI",
+      "category": "AI",
+      "summary": "David Robinson used to write the safety reports that accompanied every major model release at OpenAI. This week, he resigned from his position and is now speaking out in an editorial in The Atlantic. It's understandable if you're feeling a bit cynical about everyone suddenly comi",
+      "published": "2026-10-03T19:12:46.134327+00:00"
+    },
+    {
+      "id": "2b2053e0bc6be5df",
+      "title": "Splice CEO Kakul Srivastava thinks AI emails are killing conversations",
+      "link": "https://www.theverge.com/entertainment/1004162/splice-ceo-kakul-srivastava-ai-interview",
+      "source": "The Verge \u2014 AI",
+      "category": "AI",
+      "summary": "Kakul Srivastava is the CEO of Splice, the sample platform countless producers rely on for one-shots and melodic loops. Samples pulled from the service have found their way into massive hits like Lisa's \"Money\" and \"Espresso\" by Sabrina Carpenter. (The original samples are here a",
+      "published": "2026-10-03T19:12:46.134310+00:00"
+    },
+    {
+      "id": "f1c80105d2f2cb39",
+      "title": "Capcom is preparing for a \u2018future where we create games together with AI\u2019",
+      "link": "https://www.theverge.com/games/1004418/capcom-ai-game-development",
+      "source": "The Verge \u2014 AI",
+      "category": "AI",
+      "summary": "Capcom's Pragmata might be all about the horrors of AI, but in practice the studio doesn't seem so down on the tech. During the Capcom Open Conference RE: 2026 programmer Satoshi Ishida gave a presentation with the mouthful of a title: \"The Outlook and Future of the REX Project, ",
+      "published": "2026-10-03T19:12:46.134277+00:00"
+    },
+    {
+      "id": "819c0468b7bfbe58",
+      "title": "This week on Tom's Hardware Premium: October 3, 2026",
+      "link": "https://www.tomshardware.com/tech-industry/artificial-intelligence/this-week-on-toms-hardware-premium-october-3-2026-ai-chip-design-week-openai-interview-and-ai-agent-safety",
+      "source": "Anthropic/Claude News",
+      "category": "AI",
+      "summary": "This week on Tom's Hardware Premium, we open the floodgates with a free-to-access chip design week, including expert interviews, a sit-down with OpenAI on its custom ASIC, and much more.",
+      "published": "2026-10-03T14:00:00+00:00"
+    },
     {
       "id": "e148a12b4219ef6a",
       "title": "Apple will limit Mac disk access as AI agents \u2018substantially\u2019 increase risk",
@@ -1129,33 +1174,6 @@
       "published": "2026-09-24T23:11:39.795908+00:00"
     },
     {
-      "id": "ee9698a7fdb9719d",
-      "title": "Gemini 3.8 Live with Live Avatar gives Google&#8217;s AI a face",
-      "link": "https://www.theverge.com/tech/1000328/google-gemini-ai-live-avatar-face",
-      "source": "The Verge \u2014 AI",
-      "category": "AI",
-      "summary": "Google's new Gemini 3.8 Live update lets users have conversations with the model while watching an animated AI persona respond in real time. The \"Live Avatar\" will lip-sync and show different facial expressions during conversations, but it's currently only available to Gemini Ent",
-      "published": "2026-09-24T23:11:39.529710+00:00"
-    },
-    {
-      "id": "6fb7e688771724e1",
-      "title": "I have some questions for Mark Zuckerberg",
-      "link": "https://www.theverge.com/podcast/999383/mark-zuckerberg-meta-glasses-ai-teen-safety-surveillance-data-centers",
-      "source": "The Verge \u2014 AI",
-      "category": "AI",
-      "summary": "It&#8217;s a big week for Meta. The company just kicked off its big Connect conference on Wednesday, and the new Muse AI agent appears to be an early hit. I&#8217;ve been using it \u2014 it is surprisingly good.&#160; CEO Mark Zuckerberg has obviously been out there taking a victory l",
-      "published": "2026-09-24T19:58:33.757345+00:00"
-    },
-    {
-      "id": "1175020668fb88f7",
-      "title": "The vibes are bad for Flock in Washington",
-      "link": "https://www.theverge.com/policy/1000005/flock-senate-hearing",
-      "source": "The Verge \u2014 AI",
-      "category": "AI",
-      "summary": "Flock is in the hot seat in Washington, even if its CEO declined to actually face senators at a hearing about its \"AI Surveillance Network\" on Wednesday. \"There's many players in this industry, but there's one name that really stands out above the rest, and that is Flock,\" Senate",
-      "published": "2026-09-24T19:58:33.757314+00:00"
-    },
-    {
       "id": "e64c35c9e5d7cbc7",
       "title": "New Jersey fines data center $1.1M after drone pics expose 62 gas generators",
       "link": "https://arstechnica.com/tech-policy/2026/09/new-jersey-fines-data-center-1-1m-after-satellite-pics-expose-62-gas-generators/",
@@ -1694,15 +1712,6 @@
       "category": "AI",
       "summary": "My comment on Feeling sad about AI &mdash; Hacker News. I'm not sure how useful it is to say this, but I think a lot of people (myself included, a few years ago now) have been through this moment of existential crisis and come out the other side. The initial reaction, when some c",
       "published": "2026-09-19T17:35:20.106897+00:00"
-    },
-    {
-      "id": "3369a7745ac2cadd",
-      "title": "Quoting Boris Cherny",
-      "link": "https://simonwillison.net/2026/Sep/11/boris-cherny/",
-      "source": "Simon Willison",
-      "category": "AI",
-      "summary": "Production code written by Claude should have a higher bar than if it was written by a human. At Anthropic, we have many guardrails in place to make sure this is happening: lots of lint rules, lots of tests, Claude-driven end to end tests, Claude-powered fuzzers running daily, au",
-      "published": "2026-09-19T17:35:20.106811+00:00"
     },
     {
       "id": "6b844761c1220d26",
@@ -2549,15 +2558,6 @@
       "category": "AI",
       "summary": "Researchers at OX Security have exposed an architectural vulnerability in Anthropic's Model Context Protocol that allows for remote code execution on affected systems.",
       "published": "2026-04-22T11:00:00+00:00"
-    },
-    {
-      "id": "9265cb67bb4bca99",
-      "title": "Anthropic's Claude Mythos might be the best overall AI model for cybersecurity, but cheaper models can attain similar results, research shows \u2014 cross-examination of the frontier model raises questions on uptime and reliability",
-      "link": "https://www.tomshardware.com/tech-industry/artificial-intelligence/anthropics-claude-mythos-might-be-the-best-overall-ai-model-for-cybersecurity-but-cheaper-models-can-attain-similar-results-research-shows-cross-examination-of-the-frontier-model-raises-questions-on-uptime-and-reliability",
-      "source": "Anthropic/Claude News",
-      "category": "AI",
-      "summary": "Anthropic's Mythos might be the best cybersecurity AI ever, but it's not the only one and it may well be the most expensive, raising questions about how useful it actually is, when weighed against the competition.",
-      "published": "2026-04-14T17:38:30+00:00"
     },
     {
       "id": "a479508be9f052ae",
