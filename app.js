@@ -163,6 +163,11 @@ function renderFeed() {
       <div>
         <h2 class="article-title"><a href="${a.link}" target="_blank" rel="noopener">${a.title}</a></h2>
         <p class="article-summary">${a.summary || ""}</p>
+        ${a.audio_url ? `
+        <div class="audio-player">
+          <audio controls preload="none" src="${a.audio_url}"></audio>
+          ${a.duration ? `<span class="duration">${a.duration}</span>` : ""}
+        </div>` : ""}
       </div>
     </article>
   `;
