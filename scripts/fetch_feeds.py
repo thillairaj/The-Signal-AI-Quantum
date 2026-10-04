@@ -3,7 +3,9 @@
 Pulls every feed listed in feeds.json, merges new items into data/articles.json,
 and keeps the 50 most recent articles per source (no time cutoff). Podcast feeds
 additionally carry an audio_url and duration, extracted from the RSS <enclosure>
-tag, so the site can show an inline player. Also writes feed.xml.
+tag, so the site can show an inline player. If a podcast entry has no standalone
+<link> (common for podcast feeds), the audio URL itself is used as the link.
+Also writes feed.xml.
 
 Usage: python3 scripts/fetch_feeds.py
 """
@@ -127,7 +129,7 @@ def build_rss(articles) -> str:
 def main():
     feeds = json.loads(FEEDS_FILE.read_text())
     by_id = load_existing()
-    added, skipped_offtopic, seen_sources = 0, 0, []
+    added, skipped_offtopic, skipped_no_link, seen_sources = 0, 0, 0, []
 
     print("--- Per-source diagnostic ---")
     for feed in feeds:
@@ -148,9 +150,14 @@ def main():
 
         seen_sources.append(source)
         for entry in parsed.entries:
-            link = entry.get("link", "").strip()
+            audio_url, duration = extract_audio(entry)
+
+            # Podcast feeds often have no standalone <link> - fall back to the
+            # audio file's own URL so the episode isn't silently dropped.
+            link = entry.get("link", "").strip() or (audio_url or "")
             title = entry.get("title", "").strip()
             if not link or not title:
+                skipped_no_link += 1
                 continue
 
             aid = article_id(link)
@@ -161,8 +168,6 @@ def main():
             if not is_relevant(source, category, title, summary):
                 skipped_offtopic += 1
                 continue
-
-            audio_url, duration = extract_audio(entry)
 
             by_id[aid] = {
                 "id": aid,
@@ -199,8 +204,8 @@ def main():
     RSS_FILE.write_text(build_rss(articles), encoding="utf-8")
 
     print(f"Polled {len(seen_sources)}/{len(feeds)} feeds, added {added} new item(s) "
-          f"(skipped {skipped_offtopic} off-topic), kept up to {MAX_PER_SOURCE} per source, "
-          f"{len(articles)} total stored, feed.xml written.")
+          f"(skipped {skipped_offtopic} off-topic, {skipped_no_link} with no usable link), "
+          f"kept up to {MAX_PER_SOURCE} per source, {len(articles)} total stored, feed.xml written.")
 
 
 if __name__ == "__main__":
