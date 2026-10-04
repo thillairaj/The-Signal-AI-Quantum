@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
 """
 Pulls every feed listed in feeds.json, merges new items into data/articles.json,
-and keeps the 50 most recent articles per source (no time cutoff - a quiet
-source's older posts stay visible instead of aging out). Also writes feed.xml,
-an RSS 2.0 feed of the curated results.
+and keeps the 50 most recent articles per source (no time cutoff). Podcast feeds
+additionally carry an audio_url and duration, extracted from the RSS <enclosure>
+tag, so the site can show an inline player. Also writes feed.xml.
 
 Usage: python3 scripts/fetch_feeds.py
 """
@@ -82,6 +82,19 @@ def is_relevant(source: str, category: str, title: str, summary: str) -> bool:
     return bool(pattern.search(title) or pattern.search(summary))
 
 
+def extract_audio(entry):
+    """Return (audio_url, duration) if this entry has a podcast audio enclosure."""
+    audio_url = None
+    for enc in entry.get("enclosures", []) or []:
+        href = enc.get("href") or enc.get("url")
+        enc_type = enc.get("type", "")
+        if href and ("audio" in enc_type or href.lower().endswith((".mp3", ".m4a", ".wav"))):
+            audio_url = href
+            break
+    duration = entry.get("itunes_duration", "") or ""
+    return audio_url, duration
+
+
 def build_rss(articles) -> str:
     items = []
     for a in articles[:RSS_ITEM_LIMIT]:
@@ -103,7 +116,7 @@ def build_rss(articles) -> str:
   <channel>
     <title>The Signal</title>
     <link>{SITE_URL}</link>
-    <description>A self-updating feed of AI and quantum computing news, research and releases.</description>
+    <description>A self-updating feed of AI, quantum computing, and podcast updates.</description>
     <lastBuildDate>{format_datetime(datetime.now(timezone.utc))}</lastBuildDate>
 {items_xml}
   </channel>
@@ -149,6 +162,8 @@ def main():
                 skipped_offtopic += 1
                 continue
 
+            audio_url, duration = extract_audio(entry)
+
             by_id[aid] = {
                 "id": aid,
                 "title": title,
@@ -157,13 +172,12 @@ def main():
                 "category": category,
                 "summary": summary,
                 "published": parse_date(entry),
+                "audio_url": audio_url,
+                "duration": duration,
             }
             added += 1
     print("--- End diagnostic ---")
 
-    # Keep only the MAX_PER_SOURCE most recent articles for each individual
-    # source - no time cutoff, so a slow-posting source's older items stay
-    # visible instead of aging out.
     by_source = defaultdict(list)
     for a in by_id.values():
         by_source[a["source"]].append(a)
