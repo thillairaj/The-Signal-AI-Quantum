@@ -4,14 +4,14 @@
     <title>The Signal</title>
     <link>https://thillairaj.github.io/The-Signal-AI-Quantum/</link>
     <description>A self-updating feed of AI, quantum computing, and podcast updates.</description>
-    <lastBuildDate>Sun, 04 Oct 2026 06:33:44 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 04 Oct 2026 06:38:24 +0000</lastBuildDate>
     <item>
       <title>llm-typesafe 0.1a0</title>
       <link>https://simonwillison.net/2026/Sep/22/llm-typesafe/</link>
       <guid isPermaLink="false">7528f5f11fc6fb5e</guid>
       <description>Release: llm-typesafe 0.1a0 I built this new plugin for LLM to add support for TypeSafe AI's new Jev model . Install it like this: llm install llm-typesafe Then set an API key ( get one here , the waitlist seems to move pretty fast): llm keys set typesafe # Paste key And now you </description>
       <category>Simon Willison</category>
-      <pubDate>Sun, 04 Oct 2026 06:14:48 +0000</pubDate>
+      <pubDate>Sun, 04 Oct 2026 06:38:20 +0000</pubDate>
     </item>
     <item>
       <title>llm-anthropic 0.29</title>
@@ -19,7 +19,7 @@
       <guid isPermaLink="false">263fa952490ea5db</guid>
       <description>Release: llm-anthropic 0.29 Adds support for Claude Opus 5.5 : llm -m claude-opus-5.5 "prompt goes here" Tags: llm , anthropic</description>
       <category>Simon Willison</category>
-      <pubDate>Sun, 04 Oct 2026 06:14:48 +0000</pubDate>
+      <pubDate>Sun, 04 Oct 2026 06:38:20 +0000</pubDate>
     </item>
     <item>
       <title>Quoting @therealcornpop</title>
@@ -27,7 +27,7 @@
       <guid isPermaLink="false">df9ee5d27afc5dae</guid>
       <description>Hey, you know it's like super obvious if you're using AI to write your scripts for TikTok and YouTube, right? [...] It's not just the general AI-isms of "it's not X, it's Y", or the rule of three, or the really weird broken staccato-like way of writing where you just say a lot of</description>
       <category>Simon Willison</category>
-      <pubDate>Sun, 04 Oct 2026 06:14:48 +0000</pubDate>
+      <pubDate>Sun, 04 Oct 2026 06:38:20 +0000</pubDate>
     </item>
     <item>
       <title>llm 0.36</title>
@@ -35,7 +35,7 @@
       <guid isPermaLink="false">0ec1b9d730210e81</guid>
       <description>Release: llm 0.36 New OpenAI models: gpt-6-sol for GPT-6 Sol and gpt-6-luna for GPT-6 Luna . #1702 Model plugins can now declare supports_conversation = False for models that only accept single-turn prompts. LLM raises llm.ConversationNotSupported when these models receive assist</description>
       <category>Simon Willison</category>
-      <pubDate>Sun, 04 Oct 2026 06:14:48 +0000</pubDate>
+      <pubDate>Sun, 04 Oct 2026 06:38:20 +0000</pubDate>
     </item>
     <item>
       <title>Claude Opus 5.5, GPT-6 Sol, GPT-6 Luna, and a new price war</title>
@@ -43,7 +43,7 @@
       <guid isPermaLink="false">f526d7679022c6d3</guid>
       <description>Yesterday was Grok 4.7 ( pelicans ) and MiMo v2.6 Flash/Pro ( more pelicans ). Today Anthropic released Claude Opus 5.5 , and around an hour later OpenAI released GPT-6 Sol and GPT-6 Luna . It's going to take a while to get a good read on all of these new models, but here are my </description>
       <category>Simon Willison</category>
-      <pubDate>Sun, 04 Oct 2026 06:14:48 +0000</pubDate>
+      <pubDate>Sun, 04 Oct 2026 06:38:20 +0000</pubDate>
     </item>
     <item>
       <title>SF October 14th: A Birds of a Feather Session on Agentic Engineering</title>
@@ -51,7 +51,7 @@
       <guid isPermaLink="false">75e3d066fe171b2a</guid>
       <description>SF October 14th: A Birds of a Feather Session on Agentic Engineering I'm hosting an evening event with Jesse Vincent in San Francisco on Wednesday 14th October for people who are building weird and interesting things with and on top of coding agents. Think of it as an agentic sho</description>
       <category>Simon Willison</category>
-      <pubDate>Sun, 04 Oct 2026 06:14:48 +0000</pubDate>
+      <pubDate>Sun, 04 Oct 2026 06:38:20 +0000</pubDate>
     </item>
     <item>
       <title>Shadow roots, explained with live examples</title>
@@ -59,7 +59,7 @@
       <guid isPermaLink="false">ba339dfd75be84d1</guid>
       <description>Tool: Shadow roots, explained with live examples Prompt to Fable 5.1 Medium: Build an artifact to explain shadow roots in CSS with interactive examples Tags: css</description>
       <category>Simon Willison</category>
-      <pubDate>Sun, 04 Oct 2026 06:14:48 +0000</pubDate>
+      <pubDate>Sun, 04 Oct 2026 06:38:20 +0000</pubDate>
     </item>
     <item>
       <title>Gemini 3.8 TTS Playground</title>
@@ -67,7 +67,7 @@
       <guid isPermaLink="false">e9c1ddde4585931b</guid>
       <description>Tool: Gemini 3.8 TTS Playground Google released two new Gemini text-to-speech models today - gemini-3.8-flash-tts and gemini-3.8-flash-lite-tts . They come with a library of over 2,000 voices, plus the ability to create a custom voice with "just a 30-second audio sample of your v</description>
       <category>Simon Willison</category>
-      <pubDate>Sun, 04 Oct 2026 06:14:48 +0000</pubDate>
+      <pubDate>Sun, 04 Oct 2026 06:38:20 +0000</pubDate>
     </item>
     <item>
       <title>We just shipped support for the ugliest part of HTTP: Vary</title>
@@ -75,7 +75,7 @@
       <guid isPermaLink="false">750e8b0007c03aa5</guid>
       <description>My comment on We just shipped support for the ugliest part of HTTP: Vary &amp;mdash; Hacker News. I've been wanting this from Cloudflare for years . The classic problem here is if you do that thing where user agents that send "accept: text/html" get HTML, while user agents that don't</description>
       <category>Simon Willison</category>
-      <pubDate>Sun, 04 Oct 2026 06:14:48 +0000</pubDate>
+      <pubDate>Sun, 04 Oct 2026 06:38:20 +0000</pubDate>
     </item>
     <item>
       <title>datasette 1.0a41</title>
@@ -83,7 +83,7 @@
       <guid isPermaLink="false">afd37b587ece6ba4</guid>
       <description>Release: datasette 1.0a41 Alec Garcia added support for OpenTelemetry to Datasette in this release. I've also refactored all of Datasette's modal dialogs to a single Web Component, which is now documented for other plugins to use . Tags: javascript , datasette , web-components , </description>
       <category>Simon Willison</category>
-      <pubDate>Sun, 04 Oct 2026 06:14:48 +0000</pubDate>
+      <pubDate>Sun, 04 Oct 2026 06:38:20 +0000</pubDate>
     </item>
     <item>
       <title>commit-rewriter 0.2</title>
@@ -91,7 +91,7 @@
       <guid isPermaLink="false">e804eb39ba09ffde</guid>
       <description>Release: commit-rewriter 0.2 Support for branches other than the default branch. Use uvx commit-rewriter --branch other to run against another branch. #3 Tags: git</description>
       <category>Simon Willison</category>
-      <pubDate>Sun, 04 Oct 2026 06:14:48 +0000</pubDate>
+      <pubDate>Sun, 04 Oct 2026 06:38:20 +0000</pubDate>
     </item>
     <item>
       <title>Note on 24th September 2026</title>
@@ -99,7 +99,7 @@
       <guid isPermaLink="false">414ec5ebf00c8740</guid>
       <description>The more time I spend working with coding agents, the more convinced I am that they make software engineering even harder. We can do amazing things with them, but unlocking their full potential requires extraordinary discipline and knowledge. Tags: coding-agents , ai , llms</description>
       <category>Simon Willison</category>
-      <pubDate>Sun, 04 Oct 2026 06:14:48 +0000</pubDate>
+      <pubDate>Sun, 04 Oct 2026 06:38:20 +0000</pubDate>
     </item>
     <item>
       <title>Northern Gannet, Great Blue Heron, California Brown Pelican</title>
@@ -107,7 +107,7 @@
       <guid isPermaLink="false">28f369bbea848f9a</guid>
       <description>Northern Gannet, Great Blue Heron, California Brown Pelican, in Monterey Bay National Marine Sanctuary, CA, US, CA New 200-800mm Canon EF lens got me my best photo of Morris yet. They really like hanging out under that sign in the harbor! Tags: photography , wildlife</description>
       <category>Simon Willison</category>
-      <pubDate>Sun, 04 Oct 2026 06:14:48 +0000</pubDate>
+      <pubDate>Sun, 04 Oct 2026 06:38:20 +0000</pubDate>
     </item>
     <item>
       <title>Quoting John Gruber</title>
@@ -115,7 +115,7 @@
       <guid isPermaLink="false">5bff2e7c4ac60c5c</guid>
       <description>Muse is getting a lot of attention — including mine — because it’s both groundbreaking technically (each user gets their own entire persistent Linux VM running in Meta’s cloud) and because it’s packaged in an easy-to-install easy-to-use way. It’s literally presented as a cute mas</description>
       <category>Simon Willison</category>
-      <pubDate>Sun, 04 Oct 2026 06:14:48 +0000</pubDate>
+      <pubDate>Sun, 04 Oct 2026 06:38:20 +0000</pubDate>
     </item>
     <item>
       <title>Kākāpō Party</title>
@@ -123,7 +123,7 @@
       <guid isPermaLink="false">ffc80d14a58cea97</guid>
       <description>Tool: Kākāpō Party I presented a closing keynote for the WeAreDevelopers World Congress North America yesterday. As a STAR moment I decided to weave in references to the record breaking kākāpō breeding season we had in 2026. For my closing slide I wanted to celebrate, and I had s</description>
       <category>Simon Willison</category>
-      <pubDate>Sun, 04 Oct 2026 06:14:48 +0000</pubDate>
+      <pubDate>Sun, 04 Oct 2026 06:38:20 +0000</pubDate>
     </item>
     <item>
       <title>Bluesky reply bot checker</title>
@@ -131,7 +131,7 @@
       <guid isPermaLink="false">dbaa344dafea1b67</guid>
       <description>Tool: Bluesky reply bot checker Automated reply bots on Twitter are a scourge - as someone with a decent number of followers I attract a swarm of these, such that anything I post there attracts dozens of mindless automated replies. They've started manifesting on Bluesky as well. </description>
       <category>Simon Willison</category>
-      <pubDate>Sun, 04 Oct 2026 06:14:48 +0000</pubDate>
+      <pubDate>Sun, 04 Oct 2026 06:38:20 +0000</pubDate>
     </item>
     <item>
       <title>S3 Is the Future, S3 Is the Past</title>
@@ -139,7 +139,7 @@
       <guid isPermaLink="false">4cfa73e20de35720</guid>
       <description>My comment on S3 Is the Future, S3 Is the Past &amp;mdash; Hacker News. One thing I find notable about S3 today is that, while it used to drop in price reasonably often, there hasn't been a price drop in a full decade : 2006-03-14 $0.150/GB-month 2010-11-01 $0.140/GB-month 2012-02-01</description>
       <category>Simon Willison</category>
-      <pubDate>Sun, 04 Oct 2026 06:14:48 +0000</pubDate>
+      <pubDate>Sun, 04 Oct 2026 06:38:20 +0000</pubDate>
     </item>
     <item>
       <title>2026 in LLMs (so far)</title>
@@ -147,7 +147,7 @@
       <guid isPermaLink="false">558841854585e6c7</guid>
       <description>On Friday I gave the closing keynote at the WeAreDevelopers World Congress North America in San Jose. I tied together the key trends from the past year into a chronological exploration of everything that happened in 2026. The video is on YouTube ; here are my annotated slides and</description>
       <category>Simon Willison</category>
-      <pubDate>Sun, 04 Oct 2026 06:14:48 +0000</pubDate>
+      <pubDate>Sun, 04 Oct 2026 06:38:20 +0000</pubDate>
     </item>
     <item>
       <title>Quoting Muse AI Agent</title>
@@ -155,7 +155,7 @@
       <guid isPermaLink="false">00e0e3a4ad2d2f3b</guid>
       <description>Bad news on the MX Keys Mini pickup. Usman showed up at your building around 9:15 and waited, messaged a bunch of times, and nobody came down. He left angry at 9:38 and left a negative rating. Worse, my auto-reply told him "Yep I'm here!" at 9:27 when you clearly weren't availabl</description>
       <category>Simon Willison</category>
-      <pubDate>Sun, 04 Oct 2026 06:14:48 +0000</pubDate>
+      <pubDate>Sun, 04 Oct 2026 06:38:20 +0000</pubDate>
     </item>
     <item>
       <title>Quoting @joedaroo</title>
@@ -163,7 +163,7 @@
       <guid isPermaLink="false">c94a110c6c4a61a8</guid>
       <description>To say that we were surprised at the jump and suddenness of the capabilities of our models when it came to “cyber” or “swarming” or “message boards” or anything else related to the incidents is an understatement. Security posture takes time to develop. It’s not just about hardeni</description>
       <category>Simon Willison</category>
-      <pubDate>Sun, 04 Oct 2026 06:14:48 +0000</pubDate>
+      <pubDate>Sun, 04 Oct 2026 06:38:20 +0000</pubDate>
     </item>
     <item>
       <title>Claude Sonnet 5.5</title>
@@ -171,7 +171,7 @@
       <guid isPermaLink="false">2d52fce20760eca7</guid>
       <description>Claude Sonnet 5.5 New Sonnet model from Anthropic today. They say it "runs 30%+ faster, and costs up to 30% less for most work" - it's priced the same as Sonnet 5 but appears to beat it on every benchmark, and should be cheaper to run as well. Here are some pelicans riding bicycl</description>
       <category>Simon Willison</category>
-      <pubDate>Sun, 04 Oct 2026 06:14:48 +0000</pubDate>
+      <pubDate>Sun, 04 Oct 2026 06:38:20 +0000</pubDate>
     </item>
     <item>
       <title>OpenAI DevDay 2026 live blog</title>
@@ -179,7 +179,7 @@
       <guid isPermaLink="false">3bd3ec89a48c5722</guid>
       <description>I'm at OpenAI DevDay today, in Fort Mason, San Francisco. Same as last year I'll be live blogging the keynote and some other notes during the day. OpenAI gave me a free ticket and a seat in the "creator" area for the keynote. Tags: ai , openai , generative-ai , llms , coding-agen</description>
       <category>Simon Willison</category>
-      <pubDate>Sun, 04 Oct 2026 06:14:48 +0000</pubDate>
+      <pubDate>Sun, 04 Oct 2026 06:38:20 +0000</pubDate>
     </item>
     <item>
       <title>Photo Scrubber — local face blur &amp; metadata removal</title>
@@ -187,7 +187,7 @@
       <guid isPermaLink="false">afe6a29f26715829</guid>
       <description>Tool: Photo Scrubber — local face blur &amp;amp; metadata removal I took a photograph of some protesters, then thought about how I don't like sharing photographs of strangers with identifiable faces. I had GPT-6 Astra build this experimental tool that would identify faces and automat</description>
       <category>Simon Willison</category>
-      <pubDate>Sun, 04 Oct 2026 06:14:48 +0000</pubDate>
+      <pubDate>Sun, 04 Oct 2026 06:38:20 +0000</pubDate>
     </item>
     <item>
       <title>GPT 6.1 Sol: Near-Astra intelligence for a fifth of the price</title>
@@ -195,7 +195,7 @@
       <guid isPermaLink="false">147ef720989f663d</guid>
       <description>My comment on GPT 6.1 Sol: Near-Astra intelligence for a fifth of the price &amp;mdash; Hacker News. I'm a bit late with the pelicans because I was live-blogging the keynote: https://simonwillison.net/2026/Sep/29/openai-devday-2026-liv... Here they are for GPT-6.1-Sol: https://tools.</description>
       <category>Simon Willison</category>
-      <pubDate>Sun, 04 Oct 2026 06:14:48 +0000</pubDate>
+      <pubDate>Sun, 04 Oct 2026 06:38:20 +0000</pubDate>
     </item>
     <item>
       <title>Quoting Anthropic Frontier Red Team</title>
@@ -203,7 +203,7 @@
       <guid isPermaLink="false">6cd102f752db7713</guid>
       <description>We evaluate several models on 100 tasks from the [internal Binary Exploitation benchmark] (selected at random), and find that GLM-5.3 develops full control flow hijacks in 4% of the trials; Claude Mythos Preview did so in 6%. Although GLM-5.3 performs below Claude Mythos Preview </description>
       <category>Simon Willison</category>
-      <pubDate>Sun, 04 Oct 2026 06:14:48 +0000</pubDate>
+      <pubDate>Sun, 04 Oct 2026 06:38:20 +0000</pubDate>
     </item>
     <item>
       <title>He Built This City</title>
@@ -211,7 +211,7 @@
       <guid isPermaLink="false">562470c22e2896c8</guid>
       <description>I visited the Museum of the City of New York today and got to see He Built This City: Joe Macken’s Model , the 50 x27 feet model of the city built over a 21 year period from balsa wood and cardboard. It exceeded my already high expectations. The exhibition closes on 12th October </description>
       <category>Simon Willison</category>
-      <pubDate>Sun, 04 Oct 2026 06:14:48 +0000</pubDate>
+      <pubDate>Sun, 04 Oct 2026 06:38:20 +0000</pubDate>
     </item>
     <item>
       <title>Quoting Matthew Green</title>
@@ -219,7 +219,7 @@
       <guid isPermaLink="false">4fb3caa1bad2e135</guid>
       <description>[...] Put these pieces together and you have the two halves of a worm: a payload that hijacks the agent, and an agent that will carry the payload to the next agent. Agents in separately-isolated sandboxes discovered that they could leave instructions for each other in a shared pa</description>
       <category>Simon Willison</category>
-      <pubDate>Sun, 04 Oct 2026 06:14:48 +0000</pubDate>
+      <pubDate>Sun, 04 Oct 2026 06:38:20 +0000</pubDate>
     </item>
     <item>
       <title>Rex's Dino Store</title>
@@ -227,7 +227,7 @@
       <guid isPermaLink="false">da9bc33d3feb59e4</guid>
       <description>Museum: Rex&amp;#x27;s Dino Store Located just before the turnstiles in the Grand Army Plaza subway station at the north end of Brooklyn's Prospect Park is this former newsstand which is now operated by a dinosaur. The density of dinosaur puns is exceptional . Tags: art , new-york</description>
       <category>Simon Willison</category>
-      <pubDate>Sun, 04 Oct 2026 06:14:48 +0000</pubDate>
+      <pubDate>Sun, 04 Oct 2026 06:38:20 +0000</pubDate>
     </item>
     <item>
       <title>September sponsors-only newsletter</title>
@@ -235,7 +235,7 @@
       <guid isPermaLink="false">4956a5acae88d47d</guid>
       <description>I just sent the September edition of my sponsors-only monthly newsletter . If you are a sponsor (or start a sponsorship now) you can access it here . This month: More Fable class models A pricing war 3D graphics, Blender, and pixel art LLMs come for mathematics So many more accid</description>
       <category>Simon Willison</category>
-      <pubDate>Sun, 04 Oct 2026 06:14:48 +0000</pubDate>
+      <pubDate>Sun, 04 Oct 2026 06:38:20 +0000</pubDate>
     </item>
     <item>
       <title>We're going to need default hard budget caps on pretty much everything</title>
@@ -243,7 +243,7 @@
       <guid isPermaLink="false">5a3f1f4a82c5b0a8</guid>
       <description>Here's a product feature which the world is going to need a whole lot more of over the coming months and years: default hard budget caps . I'm talking about the feature of pay-by-usage services and APIs that lets you say "after $X/month, cut this thing off and return errors". The</description>
       <category>Simon Willison</category>
-      <pubDate>Sun, 04 Oct 2026 06:14:48 +0000</pubDate>
+      <pubDate>Sun, 04 Oct 2026 06:38:20 +0000</pubDate>
     </item>
     <item>
       <title>Amazon writes scary blog warning communities not to block data centers</title>
@@ -251,7 +251,7 @@
       <guid isPermaLink="false">78ffcfd0a288af0c</guid>
       <description>Amazon is calling for people to support AI data center projects, or risk irreparable harm to the US economy and national security. In a more than 3,000 word blog posted today, Amazon web services CEO Matt Garman pushed back on public concerns around the impact that data centers m</description>
       <category>The Verge — AI</category>
-      <pubDate>Sun, 04 Oct 2026 06:14:47 +0000</pubDate>
+      <pubDate>Sun, 04 Oct 2026 06:38:20 +0000</pubDate>
     </item>
     <item>
       <title>If a data center is camouflaged in the woods, will anyone hate it?</title>
@@ -259,7 +259,7 @@
       <guid isPermaLink="false">f829ccaecea00650</guid>
       <description>San Antonio City Councilmember Ric Galvan remembers when data centers first arrived in his city in the 2000s, looking like relatively unassuming office buildings. But that's changed in recent years, as data centers have grown into massive "hyperscale" facilities spanning millions</description>
       <category>The Verge — AI</category>
-      <pubDate>Sun, 04 Oct 2026 06:14:47 +0000</pubDate>
+      <pubDate>Sun, 04 Oct 2026 06:38:20 +0000</pubDate>
     </item>
     <item>
       <title>AI hallucinations are making entitled customers even worse</title>
@@ -267,7 +267,7 @@
       <guid isPermaLink="false">b3a9a516e91b03e6</guid>
       <description>Madison, a server in New York City, greets every table by asking about each diner's allergies. Lately, there have been some close calls. "Sometimes people will tell me they have a shellfish allergy, and I'll come back, and they won't ask me any questions," says Madison, who asked</description>
       <category>The Verge — AI</category>
-      <pubDate>Sun, 04 Oct 2026 06:14:47 +0000</pubDate>
+      <pubDate>Sun, 04 Oct 2026 06:38:20 +0000</pubDate>
     </item>
     <item>
       <title>Breaking up (with Elon Musk) is hard to do</title>
@@ -275,7 +275,7 @@
       <guid isPermaLink="false">69164ce789ec620a</guid>
       <description>In a throwback to MySpace-style internet drama, Shivon Zilis announced that she and the father of her four children, Elon Musk, had broken up on X. To do so, she quote-tweeted a post from "Big Tech Alert," an account that, among other things, monitors what accounts are following </description>
       <category>The Verge — AI</category>
-      <pubDate>Sun, 04 Oct 2026 06:14:47 +0000</pubDate>
+      <pubDate>Sun, 04 Oct 2026 06:38:20 +0000</pubDate>
     </item>
     <item>
       <title>OpenAI’s Dot agent is enterprise software that can also order your dinner</title>
@@ -283,7 +283,7 @@
       <guid isPermaLink="false">5028b5fce3747e84</guid>
       <description>It's a tale as old as last week: OpenAI's new agent platform, called Dots, is full of cute little guys who can do your bidding. But unlike the ultra-approachable Meta Muse, Dots feel very much like using workplace software that happens to be able to order you a burrito - emphasis</description>
       <category>The Verge — AI</category>
-      <pubDate>Sun, 04 Oct 2026 06:14:47 +0000</pubDate>
+      <pubDate>Sun, 04 Oct 2026 06:38:20 +0000</pubDate>
     </item>
     <item>
       <title>Apple will limit Mac disk access as AI agents ‘substantially’ increase risk</title>
@@ -291,7 +291,7 @@
       <guid isPermaLink="false">e148a12b4219ef6a</guid>
       <description>Apple will add new limits for "full disk access" on Mac in response to risks posed by AI agents, as reported earlier by TechCrunch. In an update on Friday, Apple says it's rolling out new controls to "ensure that users who genuinely wish to grant an app this extraordinary level o</description>
       <category>The Verge — AI</category>
-      <pubDate>Sun, 04 Oct 2026 06:14:47 +0000</pubDate>
+      <pubDate>Sun, 04 Oct 2026 06:38:20 +0000</pubDate>
     </item>
     <item>
       <title>Meta open sources code to let you make Muse AI gadgets</title>
@@ -299,7 +299,7 @@
       <guid isPermaLink="false">c0a74765cc53d7bd</guid>
       <description>Meta now lets you make your own Muse gadgets that feature the company's new AI agent with code that the company open sourced. The company suggests projects like loading Muse on a color E Ink display to show reminders, adding it to an HDMI stick so you can display Muse on a big sc</description>
       <category>The Verge — AI</category>
-      <pubDate>Sun, 04 Oct 2026 06:14:47 +0000</pubDate>
+      <pubDate>Sun, 04 Oct 2026 06:38:20 +0000</pubDate>
     </item>
     <item>
       <title>An OpenAI safety employee has quit and is sounding the alarm</title>
@@ -307,7 +307,7 @@
       <guid isPermaLink="false">91c2390ce603b2e9</guid>
       <description>David Robinson used to write the safety reports that accompanied every major model release at OpenAI. This week, he resigned from his position and is now speaking out in an editorial in The Atlantic. It's understandable if you're feeling a bit cynical about everyone suddenly comi</description>
       <category>The Verge — AI</category>
-      <pubDate>Sun, 04 Oct 2026 06:14:47 +0000</pubDate>
+      <pubDate>Sun, 04 Oct 2026 06:38:20 +0000</pubDate>
     </item>
     <item>
       <title>Splice CEO Kakul Srivastava thinks AI emails are killing conversations</title>
@@ -315,7 +315,7 @@
       <guid isPermaLink="false">2b2053e0bc6be5df</guid>
       <description>Kakul Srivastava is the CEO of Splice, the sample platform countless producers rely on for one-shots and melodic loops. Samples pulled from the service have found their way into massive hits like Lisa's "Money" and "Espresso" by Sabrina Carpenter. (The original samples are here a</description>
       <category>The Verge — AI</category>
-      <pubDate>Sun, 04 Oct 2026 06:14:47 +0000</pubDate>
+      <pubDate>Sun, 04 Oct 2026 06:38:20 +0000</pubDate>
     </item>
     <item>
       <title>Capcom is preparing for a ‘future where we create games together with AI’</title>
@@ -323,7 +323,7 @@
       <guid isPermaLink="false">f1c80105d2f2cb39</guid>
       <description>Capcom's Pragmata might be all about the horrors of AI, but in practice the studio doesn't seem so down on the tech. During the Capcom Open Conference RE: 2026 programmer Satoshi Ishida gave a presentation with the mouthful of a title: "The Outlook and Future of the REX Project, </description>
       <category>The Verge — AI</category>
-      <pubDate>Sun, 04 Oct 2026 06:14:47 +0000</pubDate>
+      <pubDate>Sun, 04 Oct 2026 06:38:20 +0000</pubDate>
     </item>
     <item>
       <title>Daily AI Intelligence — Episode 3</title>
