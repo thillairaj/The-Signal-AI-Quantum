@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-04T06:38:24.687622+00:00",
+  "generated_at": "2026-10-04T13:54:23.719611+00:00",
   "sources_polled": [
     "The Verge \u2014 AI",
     "Simon Willison",
@@ -14,6 +14,61 @@
     "Technology Learnings"
   ],
   "articles": [
+    {
+      "id": "ee552e49b6c7c965",
+      "title": "Tech Learning: Data Engineering & Analytics \u2014 Ep 4: Real Scenario: Tuning a Query from 10 Minutes to 10 Seconds",
+      "link": "https://muse.ai/podcasts/media/1248297608376725/4720f1e9-8c94-4958-8367-c455f31c5edc/ep-6ed03ba3-bd28-4505-bf82-b4251f2791fb.mp3",
+      "source": "Technology Learnings",
+      "category": "Podcast",
+      "summary": "Data Engineering & Analytics track: EXPLAIN plans, indexes, and the optimization ladder AI Generated",
+      "published": "2026-10-04T13:46:47+00:00",
+      "audio_url": "https://muse.ai/podcasts/media/1248297608376725/4720f1e9-8c94-4958-8367-c455f31c5edc/ep-6ed03ba3-bd28-4505-bf82-b4251f2791fb.mp3",
+      "duration": "425"
+    },
+    {
+      "id": "678b904cf2817bbb",
+      "title": "Tech Learning: Data Engineering & Analytics \u2014 Ep 3: SQL Beyond SELECT: Joins, Windows, CTEs",
+      "link": "https://muse.ai/podcasts/media/1248297608376725/4720f1e9-8c94-4958-8367-c455f31c5edc/ep-5f99a06b-312d-481c-bb0b-352368848305.mp3",
+      "source": "Technology Learnings",
+      "category": "Podcast",
+      "summary": "Data Engineering & Analytics track: the essential SQL toolkit \u2014 joins, window functions, and CTEs AI Generated",
+      "published": "2026-10-04T13:46:19+00:00",
+      "audio_url": "https://muse.ai/podcasts/media/1248297608376725/4720f1e9-8c94-4958-8367-c455f31c5edc/ep-5f99a06b-312d-481c-bb0b-352368848305.mp3",
+      "duration": "426"
+    },
+    {
+      "id": "c433bc5ea0d4ac73",
+      "title": "Tech Learning: Data Engineering & Analytics \u2014 Ep 2: Real Scenario: Choosing Storage for a New App",
+      "link": "https://muse.ai/podcasts/media/1248297608376725/4720f1e9-8c94-4958-8367-c455f31c5edc/ep-4dfc4aa7-979f-45e6-917d-750f38b266c0.mp3",
+      "source": "Technology Learnings",
+      "category": "Podcast",
+      "summary": "Data Engineering & Analytics track: matching storage to access patterns, cost and growth trade-offs AI Generated",
+      "published": "2026-10-04T13:45:38+00:00",
+      "audio_url": "https://muse.ai/podcasts/media/1248297608376725/4720f1e9-8c94-4958-8367-c455f31c5edc/ep-4dfc4aa7-979f-45e6-917d-750f38b266c0.mp3",
+      "duration": "431"
+    },
+    {
+      "id": "dac125b00a4bd19b",
+      "title": "Tech Learning: Data Engineering & Analytics \u2014 Ep 1: Structured vs Unstructured, OLTP vs OLAP",
+      "link": "https://muse.ai/podcasts/media/1248297608376725/4720f1e9-8c94-4958-8367-c455f31c5edc/ep-94adf4ff-5856-4c8f-9088-37f017c49614.mp3",
+      "source": "Technology Learnings",
+      "category": "Podcast",
+      "summary": "Data Engineering & Analytics track: data shapes, OLTP vs OLAP, and why analytics never touches the live database AI Generated",
+      "published": "2026-10-04T13:45:12+00:00",
+      "audio_url": "https://muse.ai/podcasts/media/1248297608376725/4720f1e9-8c94-4958-8367-c455f31c5edc/ep-94adf4ff-5856-4c8f-9088-37f017c49614.mp3",
+      "duration": "427"
+    },
+    {
+      "id": "3f1473a50150bd7e",
+      "title": "Open-source tool designs LEGO builds with more than 2,000 real pieces",
+      "link": "https://www.tomshardware.com/tech-industry/artificial-intelligence/open-source-tool-designs-lego-builds-with-more-than-2-000-real-pieces-their-programs-output-detailed-cad-files-but-no-models-have-been-built-yet",
+      "source": "Anthropic/Claude News",
+      "category": "AI",
+      "summary": "Carlos Antelo's open-source ldraw-nova lets GPT-6 Astra and Claude Opus 5.5 design LEGO models as LDraw CAD files.",
+      "published": "2026-10-04T10:50:00+00:00",
+      "audio_url": null,
+      "duration": ""
+    },
     {
       "id": "7528f5f11fc6fb5e",
       "title": "llm-typesafe 0.1a0",
@@ -1599,23 +1654,23 @@
       "duration": ""
     },
     {
-      "id": "c7d3c8aeae425678",
-      "title": "Rapidly scaling online storage to serve over 1 billion ChatGPT users",
-      "link": "https://openai.com/index/scaling-storage-one-billion-users-part-one",
-      "source": "OpenAI Blog",
-      "category": "AI",
-      "summary": "Learn how OpenAI evolved Habitat from a Python library into a globally distributed storage platform serving 1 billion ChatGPT users and 22M requests per second.",
-      "published": "2026-09-11T10:00:00+00:00",
-      "audio_url": null,
-      "duration": ""
-    },
-    {
       "id": "24d39e6853845ce9",
       "title": "Anthropic says Claude thwarted bioweapon research from state-sponsored actors",
       "link": "https://www.tomshardware.com/tech-industry/artificial-intelligence/anthropic-says-claude-thwarted-bioweapon-research-from-state-sponsored-actors-covert-accounts-used-u-s-proxies-to-attempt-to-engineer-deadlier-viruses-tried-to-evade-identification-and-regional-blocks",
       "source": "Anthropic/Claude News",
       "category": "AI",
       "summary": "Anthropic claims Claude refused instructions to potentially develop biological weapons \u2014 alleged state-linked accounts tried to evade identification and regional blocks",
+      "published": "2026-09-11T10:00:00+00:00",
+      "audio_url": null,
+      "duration": ""
+    },
+    {
+      "id": "c7d3c8aeae425678",
+      "title": "Rapidly scaling online storage to serve over 1 billion ChatGPT users",
+      "link": "https://openai.com/index/scaling-storage-one-billion-users-part-one",
+      "source": "OpenAI Blog",
+      "category": "AI",
+      "summary": "Learn how OpenAI evolved Habitat from a Python library into a globally distributed storage platform serving 1 billion ChatGPT users and 22M requests per second.",
       "published": "2026-09-11T10:00:00+00:00",
       "audio_url": null,
       "duration": ""
@@ -2189,17 +2244,6 @@
       "category": "AI",
       "summary": "Unauthorized individuals have accessed Anthropic's new Mythos cybersecurity-focused AI model, despite the developer locking it down to just a handful of companies. Considering the AI was purposefully designed to find zero-day exploits and offer viable fixes, the breach raises que",
       "published": "2026-04-24T15:12:08+00:00",
-      "audio_url": null,
-      "duration": ""
-    },
-    {
-      "id": "5f34fc7f629e6505",
-      "title": "Anthropic's Model Context Protocol includes a critical remote code execution vulnerability",
-      "link": "https://www.tomshardware.com/tech-industry/artificial-intelligence/anthropics-model-context-protocol-has-critical-security-flaw-exposed",
-      "source": "Anthropic/Claude News",
-      "category": "AI",
-      "summary": "Researchers at OX Security have exposed an architectural vulnerability in Anthropic's Model Context Protocol that allows for remote code execution on affected systems.",
-      "published": "2026-04-22T11:00:00+00:00",
       "audio_url": null,
       "duration": ""
     },
