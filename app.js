@@ -1,4 +1,5 @@
 const DATA_URL = "data/articles.json";
+const AUDIO_PROXY = "https://signal-audio-proxy.raj-thillai.workers.dev/?u=";
 const CLIENT_REFRESH_MS = 5 * 60 * 1000;
 const TICK_MS = 30 * 1000;
 const PAGE_SIZE = 10;
@@ -165,7 +166,7 @@ function renderFeed() {
         <p class="article-summary">${a.summary || ""}</p>
         ${a.audio_url ? `
         <div class="audio-player">
-          <audio controls preload="none" src="${a.audio_url}"></audio>
+          <audio controls preload="none" src="${AUDIO_PROXY + encodeURIComponent(a.audio_url)}"></audio>
           ${a.duration ? `<span class="duration">${a.duration}</span>` : ""}
         </div>` : ""}
       </div>
