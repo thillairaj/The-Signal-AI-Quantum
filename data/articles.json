@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-05T16:30:41.192700+00:00",
+  "generated_at": "2026-10-05T17:00:11.601684+00:00",
   "sources_polled": [
     "The Verge \u2014 AI",
     "Simon Willison",
@@ -14,6 +14,39 @@
     "Technology Learnings"
   ],
   "articles": [
+    {
+      "id": "88d553ae09bb6778",
+      "title": "Qwen3.8 27B addition in words",
+      "link": "https://simonwillison.net/2026/Oct/4/qwen38-addition-in-words/",
+      "source": "Simon Willison",
+      "category": "AI",
+      "summary": "Research: Qwen3.8 27B addition in words Colin Frasier posted on Bluesky about an experiment he ran over two years ago using GPT-4o to see how well it could \"compute the sum but return the answer in words\" across increasingly large numbers. Here's the chart he shared of those resu",
+      "published": "2026-10-05T16:59:59.611462+00:00",
+      "audio_url": null,
+      "duration": ""
+    },
+    {
+      "id": "4d92ee383d0037d5",
+      "title": "Sam Altman says \u2018some bad things&#8217; will happen but AI is totally worth it",
+      "link": "https://www.theverge.com/ai-artificial-intelligence/1004811/openai-altman-bad-things-ai-tradeoff",
+      "source": "The Verge \u2014 AI",
+      "category": "AI",
+      "summary": "Sam Altman thinks that the benefits of AI will be so great that \"the world should accept some bad things happening\" along the way. The OpenAI CEO pointed to hacks, scams, and \"other bad things\" as costs society should expect to tolerate because \"people will do tremendously orders",
+      "published": "2026-10-05T16:59:58.871343+00:00",
+      "audio_url": null,
+      "duration": ""
+    },
+    {
+      "id": "cf94a559a1126059",
+      "title": "OpenAI PR tells journalist to \u2018move on\u2019 while asking Sam Altman about a ChatGPT user&#8217;s suicide",
+      "link": "https://www.theverge.com/ai-artificial-intelligence/1004827/openai-sam-altman-vanity-fair-interview-pr",
+      "source": "The Verge \u2014 AI",
+      "category": "AI",
+      "summary": "An OpenAI publicist tried to change the topic of CEO Sam Altman's interview with Vanity Fair's Mark Guiducci after the editor brought up a ChatGPT user's suicide. When Guiducci confronted Altman about the incident, the publicist warned Guiducci about running out of time, saying s",
+      "published": "2026-10-05T16:59:58.871274+00:00",
+      "audio_url": null,
+      "duration": ""
+    },
     {
       "id": "a5a880c6829c652f",
       "title": "Our minds aren\u2019t equipped to handle AI",
@@ -1819,23 +1852,23 @@
       "duration": ""
     },
     {
-      "id": "24d39e6853845ce9",
-      "title": "Anthropic says Claude thwarted bioweapon research from state-sponsored actors",
-      "link": "https://www.tomshardware.com/tech-industry/artificial-intelligence/anthropic-says-claude-thwarted-bioweapon-research-from-state-sponsored-actors-covert-accounts-used-u-s-proxies-to-attempt-to-engineer-deadlier-viruses-tried-to-evade-identification-and-regional-blocks",
-      "source": "Anthropic/Claude News",
-      "category": "AI",
-      "summary": "Anthropic claims Claude refused instructions to potentially develop biological weapons \u2014 alleged state-linked accounts tried to evade identification and regional blocks",
-      "published": "2026-09-11T10:00:00+00:00",
-      "audio_url": null,
-      "duration": ""
-    },
-    {
       "id": "c7d3c8aeae425678",
       "title": "Rapidly scaling online storage to serve over 1 billion ChatGPT users",
       "link": "https://openai.com/index/scaling-storage-one-billion-users-part-one",
       "source": "OpenAI Blog",
       "category": "AI",
       "summary": "Learn how OpenAI evolved Habitat from a Python library into a globally distributed storage platform serving 1 billion ChatGPT users and 22M requests per second.",
+      "published": "2026-09-11T10:00:00+00:00",
+      "audio_url": null,
+      "duration": ""
+    },
+    {
+      "id": "24d39e6853845ce9",
+      "title": "Anthropic says Claude thwarted bioweapon research from state-sponsored actors",
+      "link": "https://www.tomshardware.com/tech-industry/artificial-intelligence/anthropic-says-claude-thwarted-bioweapon-research-from-state-sponsored-actors-covert-accounts-used-u-s-proxies-to-attempt-to-engineer-deadlier-viruses-tried-to-evade-identification-and-regional-blocks",
+      "source": "Anthropic/Claude News",
+      "category": "AI",
+      "summary": "Anthropic claims Claude refused instructions to potentially develop biological weapons \u2014 alleged state-linked accounts tried to evade identification and regional blocks",
       "published": "2026-09-11T10:00:00+00:00",
       "audio_url": null,
       "duration": ""
