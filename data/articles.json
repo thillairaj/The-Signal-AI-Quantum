@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-05T05:31:14.221266+00:00",
+  "generated_at": "2026-10-05T16:30:41.192700+00:00",
   "sources_polled": [
     "The Verge \u2014 AI",
     "Simon Willison",
@@ -14,6 +14,94 @@
     "Technology Learnings"
   ],
   "articles": [
+    {
+      "id": "a5a880c6829c652f",
+      "title": "Our minds aren\u2019t equipped to handle AI",
+      "link": "https://www.theverge.com/ai-artificial-intelligence/1003794/ai-education-computational-model-thought",
+      "source": "The Verge \u2014 AI",
+      "category": "AI",
+      "summary": "Norbert Wiener, godfather of cybernetics, once said, \"The thought of every age is reflected in its technique.\" For the past century, our thought has been reflected in our computers, including by those in the AI industry. Google's Demis Hassabis calls the brain \"a biological appro",
+      "published": "2026-10-05T16:30:23.161171+00:00",
+      "audio_url": null,
+      "duration": ""
+    },
+    {
+      "id": "ec6a33d8c1604062",
+      "title": "OpenAI is sticking more ads in ChatGPT",
+      "link": "https://www.theverge.com/ai-artificial-intelligence/1004655/openai-chatgpt-visual-ads",
+      "source": "The Verge \u2014 AI",
+      "category": "AI",
+      "summary": "OpenAI's latest ad format will put images of sponsored products and services on your screen. The ads, which OpenAI will begin testing in the US later this month, will \"initially\" appear when you generate images with ChatGPT, according to an announcement on Monday. The company fir",
+      "published": "2026-10-05T16:30:23.161104+00:00",
+      "audio_url": null,
+      "duration": ""
+    },
+    {
+      "id": "0d7653e5ccb1edf6",
+      "title": "An open-source tool lets you delete 12GB of Apple Intelligence data on macOS",
+      "link": "https://www.theverge.com/ai-artificial-intelligence/1004672/mac-delete-apple-intelligence-ai-tool",
+      "source": "The Verge \u2014 AI",
+      "category": "AI",
+      "summary": "Getting some extra storage space on your Mac could be as easy as deleting Apple's AI features with a new open-source command line tool called RemoveMacAI. There used to be a single Settings toggle for disabling Apple Intelligence, but that was removed in macOS 27. Now, the models",
+      "published": "2026-10-05T16:30:23.161064+00:00",
+      "audio_url": null,
+      "duration": ""
+    },
+    {
+      "id": "b48158e5ab87dd61",
+      "title": "Sen. Adam Schiff on AI regulation, free speech, and impeaching Trump one more time",
+      "link": "https://www.theverge.com/podcast/1004286/senator-adam-schiff-ai-trump-regulation-corruption",
+      "source": "The Verge \u2014 AI",
+      "category": "AI",
+      "summary": "Today, I\u2019m talking with Sen. Adam Schiff, a Democrat from California. Schiff sits on a number of committees with oversight into tech and AI: intellectual property, antitrust, privacy and technology \u2014 it\u2019s all there. I really wanted to ask him about how we might regulate anything ",
+      "published": "2026-10-05T16:30:23.160991+00:00",
+      "audio_url": null,
+      "duration": ""
+    },
+    {
+      "id": "78ad53815846c15c",
+      "title": "Our approach to EU text provenance rules",
+      "link": "https://openai.com/index/eu-text-provenance",
+      "source": "OpenAI Blog",
+      "category": "AI",
+      "summary": "How OpenAI is approaching text watermarking under EU rules. Learn where watermarks apply, how detection works, and why access starts with researchers.",
+      "published": "2026-10-05T15:00:00+00:00",
+      "audio_url": null,
+      "duration": ""
+    },
+    {
+      "id": "fdcf6b49e5f5916c",
+      "title": "AI glasses face their first major government crackdown",
+      "link": "https://arstechnica.com/ai/2026/10/ai-glasses-face-their-first-major-government-crackdown/",
+      "source": "Ars Technica AI",
+      "category": "AI",
+      "summary": "Norway wants time to write permanent rules for glasses that can record bystanders.",
+      "published": "2026-10-05T13:39:30+00:00",
+      "audio_url": null,
+      "duration": ""
+    },
+    {
+      "id": "3cbec84de8bf6155",
+      "title": "Building advertising for the way people use AI",
+      "link": "https://openai.com/index/new-chatgpt-ads-format-and-measurement",
+      "source": "OpenAI Blog",
+      "category": "AI",
+      "summary": "OpenAI introduces a new visual ad format in ChatGPT and expands measurement tools, attribution partnerships, and brand suitability for advertisers.",
+      "published": "2026-10-05T10:00:00+00:00",
+      "audio_url": null,
+      "duration": ""
+    },
+    {
+      "id": "e9864d099c8c0051",
+      "title": "Anthropic reports Florida woman\u2019s Claude \u2018diary\u2019 threat to shoot up sheriff\u2019s office, felony charge follows",
+      "link": "https://www.tomshardware.com/tech-industry/artificial-intelligence/anthropic-reports-florida-womans-claude-diary-threat-to-shoot-up-sheriffs-office-felony-charge-follows-its-at-least-the-third-such-conversation-to-reach-police-since-august",
+      "source": "Anthropic/Claude News",
+      "category": "AI",
+      "summary": "Anthropic reviewers reported a Florida woman\u2019s Claude threat against the Lee County Sheriff\u2019s Office, leading to a felony charge.",
+      "published": "2026-10-05T09:40:00+00:00",
+      "audio_url": null,
+      "duration": ""
+    },
     {
       "id": "5d97f2ef3ef2147d",
       "title": "Tech Learning: Cybersecurity & SOC \u2014 Ep 4: Real Scenario: Detecting and Blocking a Port Scan",
@@ -1753,17 +1841,6 @@
       "duration": ""
     },
     {
-      "id": "014159943e4d9643",
-      "title": "How a researcher uses Codex and ChatGPT to search for new antimicrobial molecules",
-      "link": "https://openai.com/index/using-codex-chatgpt-to-search-for-new-antimicrobials",
-      "source": "OpenAI Blog",
-      "category": "AI",
-      "summary": "C\u00e9sar de la Fuente\u2019s lab uses Codex and ChatGPT to search living and extinct genomes for antimicrobial candidates to fight drug-resistant infections.",
-      "published": "2026-09-10T16:00:00+00:00",
-      "audio_url": null,
-      "duration": ""
-    },
-    {
       "id": "1852061b5cf6950b",
       "title": "3 ways to prep for your next big race with Search",
       "link": "https://blog.google/products-and-platforms/products/search/running-race-training-tips/",
@@ -1771,17 +1848,6 @@
       "category": "AI",
       "summary": "Illustration on a blue background of technicolor runners with a magnifying glass and Gemini spark overlaid",
       "published": "2026-09-10T16:00:00+00:00",
-      "audio_url": null,
-      "duration": ""
-    },
-    {
-      "id": "4d4e7920d8a762a2",
-      "title": "Now everyone can put data to work",
-      "link": "https://openai.com/index/put-data-to-work",
-      "source": "OpenAI Blog",
-      "category": "AI",
-      "summary": "Meet the Data agent in ChatGPT Work. Connect company data, uncover insights, and build interactive dashboards with AI using natural language.",
-      "published": "2026-09-10T15:00:00+00:00",
       "audio_url": null,
       "duration": ""
     },
@@ -2310,17 +2376,6 @@
       "category": "AI",
       "summary": "OpenAI has reportedly modified its arrangement on several Stargate projects, leaving the direct ownership set up and instead preferring to lease compute from other partners who took on the direct risk of investing in the infrastructure.",
       "published": "2026-04-29T16:00:31+00:00",
-      "audio_url": null,
-      "duration": ""
-    },
-    {
-      "id": "b10981d3b1111e62",
-      "title": "How a cavalcade of blunders gave unauthorized users access to Claude Mythos",
-      "link": "https://www.tomshardware.com/tech-industry/cyber-security/how-a-cavalcade-of-blunders-gave-unauthorized-users-access-to-claude-mythos-restricted-model-accessed-by-third-parties-thanks-to-knowledge-from-data-breach",
-      "source": "Anthropic/Claude News",
-      "category": "AI",
-      "summary": "Unauthorized individuals have accessed Anthropic's new Mythos cybersecurity-focused AI model, despite the developer locking it down to just a handful of companies. Considering the AI was purposefully designed to find zero-day exploits and offer viable fixes, the breach raises que",
-      "published": "2026-04-24T15:12:08+00:00",
       "audio_url": null,
       "duration": ""
     },
