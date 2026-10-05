@@ -54,8 +54,11 @@
     </div>
 
     <div class="panel-block">
-      <p class="panel-label">Sources</p>
-      <ul class="source-list" id="sourceList"><!-- populated by app.js --></ul>
+      <button class="sources-header" id="sourcesToggle" aria-expanded="false" aria-controls="sourceList">
+        <span>Sources&nbsp;<span class="count" id="sourcesCount"></span></span>
+        <span class="chevron" aria-hidden="true"></span>
+      </button>
+      <ul class="source-list is-collapsed" id="sourceList"><!-- populated by app.js --></ul>
     </div>
 
     <div class="panel-block">
