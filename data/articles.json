@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-04T23:04:33.779256+00:00",
+  "generated_at": "2026-10-05T05:31:14.221266+00:00",
   "sources_polled": [
     "The Verge \u2014 AI",
     "Simon Willison",
@@ -14,6 +14,61 @@
     "Technology Learnings"
   ],
   "articles": [
+    {
+      "id": "5d97f2ef3ef2147d",
+      "title": "Tech Learning: Cybersecurity & SOC \u2014 Ep 4: Real Scenario: Detecting and Blocking a Port Scan",
+      "link": "https://muse.ai/podcasts/media/1248297608376725/4720f1e9-8c94-4958-8367-c455f31c5edc/ep-60b3e80d-d966-445c-8f19-aa8f28e06537.mp3",
+      "source": "Technology Learnings",
+      "category": "Podcast",
+      "summary": "Cybersecurity & SOC track: A SOC analyst detects a port scan, blocks it, and tunes the IDS. AI Generated",
+      "published": "2026-10-05T02:43:44+00:00",
+      "audio_url": "https://muse.ai/podcasts/media/1248297608376725/4720f1e9-8c94-4958-8367-c455f31c5edc/ep-60b3e80d-d966-445c-8f19-aa8f28e06537.mp3",
+      "duration": "422"
+    },
+    {
+      "id": "5eeeac46e99be16d",
+      "title": "Tech Learning: Cybersecurity & SOC \u2014 Ep 3: Firewalls, IDS/IPS and Segmentation",
+      "link": "https://muse.ai/podcasts/media/1248297608376725/4720f1e9-8c94-4958-8367-c455f31c5edc/ep-74ab9f74-7668-46a9-a3e9-a572f98532d6.mp3",
+      "source": "Technology Learnings",
+      "category": "Podcast",
+      "summary": "Cybersecurity & SOC track: The network defenses that stop attacks before they reach you. AI Generated",
+      "published": "2026-10-05T02:43:36+00:00",
+      "audio_url": "https://muse.ai/podcasts/media/1248297608376725/4720f1e9-8c94-4958-8367-c455f31c5edc/ep-74ab9f74-7668-46a9-a3e9-a572f98532d6.mp3",
+      "duration": "454"
+    },
+    {
+      "id": "d42f6ad77fe9214a",
+      "title": "Tech Learning: Cybersecurity & SOC \u2014 Ep 2: Real Scenario: Dissecting a Phishing Email",
+      "link": "https://muse.ai/podcasts/media/1248297608376725/4720f1e9-8c94-4958-8367-c455f31c5edc/ep-fe5d6a35-aa63-449c-8d06-6aa724829c56.mp3",
+      "source": "Technology Learnings",
+      "category": "Podcast",
+      "summary": "Cybersecurity & SOC track: A SOC analyst triages a reported phishing email, header by header. AI Generated",
+      "published": "2026-10-05T02:43:28+00:00",
+      "audio_url": "https://muse.ai/podcasts/media/1248297608376725/4720f1e9-8c94-4958-8367-c455f31c5edc/ep-fe5d6a35-aa63-449c-8d06-6aa724829c56.mp3",
+      "duration": "453"
+    },
+    {
+      "id": "0a2c46084bc9edd0",
+      "title": "Tech Learning: Cybersecurity & SOC \u2014 Ep 1: The CIA Triad and the Threat Landscape",
+      "link": "https://muse.ai/podcasts/media/1248297608376725/4720f1e9-8c94-4958-8367-c455f31c5edc/ep-aba7e670-60f8-4fbc-b826-09ae07936539.mp3",
+      "source": "Technology Learnings",
+      "category": "Podcast",
+      "summary": "Cybersecurity & SOC track: The three promises every secure system makes, and the threat actors trying to break them. AI Generated",
+      "published": "2026-10-05T02:43:16+00:00",
+      "audio_url": "https://muse.ai/podcasts/media/1248297608376725/4720f1e9-8c94-4958-8367-c455f31c5edc/ep-aba7e670-60f8-4fbc-b826-09ae07936539.mp3",
+      "duration": "499"
+    },
+    {
+      "id": "4a84a3ce167eaad9",
+      "title": "Daily AI Intelligence \u2014 Episode 4",
+      "link": "https://muse.ai/podcasts/media/1248297608376725/94f09345-ad4a-4981-83dd-e3206bbf5c4e/ep-a6f0f922-2b59-469d-b9f3-1d5f87bcb228.mp3",
+      "source": "Daily AI Intelligence",
+      "category": "Podcast",
+      "summary": "Daily 5-minute AI intelligence flash: OpenAI safety resignation, GPT-6 Astra Ultrafast on Blackwell, Anthropic voice-data opt-in and model-welfare talks, Gemini Skills for Workspace, Muse's auto-generated contact dossiers, Copilot in Edge refresh, and Nvidia's DGX Spark ahead of ",
+      "published": "2026-10-05T01:00:23+00:00",
+      "audio_url": "https://muse.ai/podcasts/media/1248297608376725/94f09345-ad4a-4981-83dd-e3206bbf5c4e/ep-a6f0f922-2b59-469d-b9f3-1d5f87bcb228.mp3",
+      "duration": "237"
+    },
     {
       "id": "d5a8ffd2dd505a15",
       "title": "An AI couldn\u2019t beat humans at StarCraft, so it decided to cheat",

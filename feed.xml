@@ -4,7 +4,47 @@
     <title>The Signal</title>
     <link>https://thillairaj.github.io/The-Signal-AI-Quantum/</link>
     <description>A self-updating feed of AI, quantum computing, and podcast updates.</description>
-    <lastBuildDate>Sun, 04 Oct 2026 23:04:33 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 05 Oct 2026 05:31:14 +0000</lastBuildDate>
+    <item>
+      <title>Tech Learning: Cybersecurity &amp; SOC — Ep 4: Real Scenario: Detecting and Blocking a Port Scan</title>
+      <link>https://muse.ai/podcasts/media/1248297608376725/4720f1e9-8c94-4958-8367-c455f31c5edc/ep-60b3e80d-d966-445c-8f19-aa8f28e06537.mp3</link>
+      <guid isPermaLink="false">5d97f2ef3ef2147d</guid>
+      <description>Cybersecurity &amp; SOC track: A SOC analyst detects a port scan, blocks it, and tunes the IDS. AI Generated</description>
+      <category>Technology Learnings</category>
+      <pubDate>Mon, 05 Oct 2026 02:43:44 +0000</pubDate>
+    </item>
+    <item>
+      <title>Tech Learning: Cybersecurity &amp; SOC — Ep 3: Firewalls, IDS/IPS and Segmentation</title>
+      <link>https://muse.ai/podcasts/media/1248297608376725/4720f1e9-8c94-4958-8367-c455f31c5edc/ep-74ab9f74-7668-46a9-a3e9-a572f98532d6.mp3</link>
+      <guid isPermaLink="false">5eeeac46e99be16d</guid>
+      <description>Cybersecurity &amp; SOC track: The network defenses that stop attacks before they reach you. AI Generated</description>
+      <category>Technology Learnings</category>
+      <pubDate>Mon, 05 Oct 2026 02:43:36 +0000</pubDate>
+    </item>
+    <item>
+      <title>Tech Learning: Cybersecurity &amp; SOC — Ep 2: Real Scenario: Dissecting a Phishing Email</title>
+      <link>https://muse.ai/podcasts/media/1248297608376725/4720f1e9-8c94-4958-8367-c455f31c5edc/ep-fe5d6a35-aa63-449c-8d06-6aa724829c56.mp3</link>
+      <guid isPermaLink="false">d42f6ad77fe9214a</guid>
+      <description>Cybersecurity &amp; SOC track: A SOC analyst triages a reported phishing email, header by header. AI Generated</description>
+      <category>Technology Learnings</category>
+      <pubDate>Mon, 05 Oct 2026 02:43:28 +0000</pubDate>
+    </item>
+    <item>
+      <title>Tech Learning: Cybersecurity &amp; SOC — Ep 1: The CIA Triad and the Threat Landscape</title>
+      <link>https://muse.ai/podcasts/media/1248297608376725/4720f1e9-8c94-4958-8367-c455f31c5edc/ep-aba7e670-60f8-4fbc-b826-09ae07936539.mp3</link>
+      <guid isPermaLink="false">0a2c46084bc9edd0</guid>
+      <description>Cybersecurity &amp; SOC track: The three promises every secure system makes, and the threat actors trying to break them. AI Generated</description>
+      <category>Technology Learnings</category>
+      <pubDate>Mon, 05 Oct 2026 02:43:16 +0000</pubDate>
+    </item>
+    <item>
+      <title>Daily AI Intelligence — Episode 4</title>
+      <link>https://muse.ai/podcasts/media/1248297608376725/94f09345-ad4a-4981-83dd-e3206bbf5c4e/ep-a6f0f922-2b59-469d-b9f3-1d5f87bcb228.mp3</link>
+      <guid isPermaLink="false">4a84a3ce167eaad9</guid>
+      <description>Daily 5-minute AI intelligence flash: OpenAI safety resignation, GPT-6 Astra Ultrafast on Blackwell, Anthropic voice-data opt-in and model-welfare talks, Gemini Skills for Workspace, Muse's auto-generated contact dossiers, Copilot in Edge refresh, and Nvidia's DGX Spark ahead of </description>
+      <category>Daily AI Intelligence</category>
+      <pubDate>Mon, 05 Oct 2026 01:00:23 +0000</pubDate>
+    </item>
     <item>
       <title>An AI couldn’t beat humans at StarCraft, so it decided to cheat</title>
       <link>https://www.theverge.com/ai-artificial-intelligence/1004543/openai-gpt-cheat-starcraft</link>
@@ -444,46 +484,6 @@
       <description>A video showing the September AI updates</description>
       <category>Google AI Blog</category>
       <pubDate>Fri, 02 Oct 2026 15:00:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>The 7-year-old Nvidia Shield TV is now $100 more expensive due to AI</title>
-      <link>https://arstechnica.com/gadgets/2026/10/the-7-year-old-nvidia-shield-tv-is-now-100-more-expensive-thanks-to-ai/</link>
-      <guid isPermaLink="false">d3446779ff0f63d4</guid>
-      <description>Initially launched in 2019, the Nvidia Shield TV Pro now retails for $299.99.</description>
-      <category>Ars Technica AI</category>
-      <pubDate>Fri, 02 Oct 2026 14:52:16 +0000</pubDate>
-    </item>
-    <item>
-      <title>Tech Learning Series — Ep 4: Real Scenario: Containerizing a Legacy Application</title>
-      <link>https://muse.ai/podcasts/media/1248297608376725/4720f1e9-8c94-4958-8367-c455f31c5edc/ep-1614d474-03cb-4964-8e11-250230399664.mp3</link>
-      <guid isPermaLink="false">97775957c995561f</guid>
-      <description>Taking a legacy app into containers: Dockerfile decisions, stateful pain points, and a safe rollout. AI Generated</description>
-      <category>Technology Learnings</category>
-      <pubDate>Fri, 02 Oct 2026 14:33:57 +0000</pubDate>
-    </item>
-    <item>
-      <title>Tech Learning Series — Ep 3: VMs vs Containers: What Actually Changed</title>
-      <link>https://muse.ai/podcasts/media/1248297608376725/4720f1e9-8c94-4958-8367-c455f31c5edc/ep-39aea924-dc88-49b7-b637-fc1b06b3a0e0.mp3</link>
-      <guid isPermaLink="false">4be698bb0e2fd89d</guid>
-      <description>Virtual machines versus containers in plain words: hypervisors, namespaces, images, and what really changed. AI Generated</description>
-      <category>Technology Learnings</category>
-      <pubDate>Fri, 02 Oct 2026 14:18:51 +0000</pubDate>
-    </item>
-    <item>
-      <title>Tech Learning Series — Ep 2: Real Scenario: Lifting an On-Prem App to the Cloud</title>
-      <link>https://muse.ai/podcasts/media/1248297608376725/4720f1e9-8c94-4958-8367-c455f31c5edc/ep-0fdf819f-8537-4021-985e-3102ae06ffc9.mp3</link>
-      <guid isPermaLink="false">fc8c60fd8723bb17</guid>
-      <description>A realistic lift-and-shift walkthrough: discovery, hidden risks, and how to think about rollback before you need it. AI Generated</description>
-      <category>Technology Learnings</category>
-      <pubDate>Fri, 02 Oct 2026 14:18:43 +0000</pubDate>
-    </item>
-    <item>
-      <title>Tech Learning Series — Ep 1: Cloud Models Explained: IaaS vs PaaS vs SaaS</title>
-      <link>https://muse.ai/podcasts/media/1248297608376725/4720f1e9-8c94-4958-8367-c455f31c5edc/ep-35f36e24-f394-4e61-931e-12633efd2a7b.mp3</link>
-      <guid isPermaLink="false">04df6270573324f4</guid>
-      <description>Sobana and Sudhan unpack IaaS, PaaS and SaaS: what each model means, who manages what, and how to pick the right one. AI Generated</description>
-      <category>Technology Learnings</category>
-      <pubDate>Fri, 02 Oct 2026 14:18:34 +0000</pubDate>
     </item>
   </channel>
 </rss>
