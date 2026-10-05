@@ -24,6 +24,8 @@ const statusText = document.getElementById("statusText");
 const viewsTextEl = document.getElementById("viewsText");
 const footerMeta = document.getElementById("footerMeta");
 const themeToggleBtn = document.getElementById("themeToggle");
+const sourcesToggleBtn = document.getElementById("sourcesToggle");
+const sourcesCountEl = document.getElementById("sourcesCount");
 
 function timeAgo(iso) {
   const then = new Date(iso).getTime();
@@ -115,6 +117,7 @@ function renderSources() {
   const counts = {};
   scoped.forEach(a => { counts[a.source] = (counts[a.source] || 0) + 1; });
   const sources = Object.keys(counts).sort();
+  if (sourcesCountEl) sourcesCountEl.textContent = `(${sources.length})`;
 
   sourceListEl.innerHTML = "";
   const allBtn = document.createElement("li");
@@ -246,6 +249,14 @@ categoryToggleEl.querySelectorAll(".cat-btn").forEach(btn => {
     renderFeed();
   });
 });
+
+if (sourcesToggleBtn) {
+  sourcesToggleBtn.addEventListener("click", () => {
+    const expanded = sourcesToggleBtn.getAttribute("aria-expanded") === "true";
+    sourcesToggleBtn.setAttribute("aria-expanded", String(!expanded));
+    sourceListEl.classList.toggle("is-collapsed", expanded);
+  });
+}
 
 loadData();
 loadViews();
