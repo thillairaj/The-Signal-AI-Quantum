@@ -4,7 +4,15 @@
     <title>The Signal</title>
     <link>https://thillairaj.github.io/The-Signal-AI-Quantum/</link>
     <description>A self-updating feed of AI, quantum computing, and podcast updates.</description>
-    <lastBuildDate>Mon, 05 Oct 2026 17:02:11 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 05 Oct 2026 17:06:36 +0000</lastBuildDate>
+    <item>
+      <title>llm-anthropic 0.30</title>
+      <link>https://simonwillison.net/2026/Sep/28/llm-anthropic/</link>
+      <guid isPermaLink="false">e9331b1c07602897</guid>
+      <description>Release: llm-anthropic 0.30 In addition to Claude Sonnet 5.5, this release adds the ability to run llm anthropic refresh to refresh the list of Anthropic models directly from their API - which means I don't need to push a new release just to add support for a newly released model</description>
+      <category>Simon Willison</category>
+      <pubDate>Mon, 05 Oct 2026 17:06:31 +0000</pubDate>
+    </item>
     <item>
       <title>Qwen3.8 27B addition in words</title>
       <link>https://simonwillison.net/2026/Oct/4/qwen38-addition-in-words/</link>
@@ -474,14 +482,6 @@
       <link>https://www.theverge.com/tech/1004295/apple-limit-mac-disk-access-ai-agents</link>
       <guid isPermaLink="false">e148a12b4219ef6a</guid>
       <description>Apple will add new limits for "full disk access" on Mac in response to risks posed by AI agents, as reported earlier by TechCrunch. In an update on Friday, Apple says it's rolling out new controls to "ensure that users who genuinely wish to grant an app this extraordinary level o</description>
-      <category>The Verge — AI</category>
-      <pubDate>Sun, 04 Oct 2026 06:38:20 +0000</pubDate>
-    </item>
-    <item>
-      <title>Meta open sources code to let you make Muse AI gadgets</title>
-      <link>https://www.theverge.com/tech/1004330/meta-muse-ai-gadgets-home-link</link>
-      <guid isPermaLink="false">c0a74765cc53d7bd</guid>
-      <description>Meta now lets you make your own Muse gadgets that feature the company's new AI agent with code that the company open sourced. The company suggests projects like loading Muse on a color E Ink display to show reminders, adding it to an HDMI stick so you can display Muse on a big sc</description>
       <category>The Verge — AI</category>
       <pubDate>Sun, 04 Oct 2026 06:38:20 +0000</pubDate>
     </item>

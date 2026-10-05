@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-05T17:02:10.990765+00:00",
+  "generated_at": "2026-10-05T17:06:36.583442+00:00",
   "sources_polled": [
     "The Verge \u2014 AI",
     "Simon Willison",
@@ -14,6 +14,17 @@
     "Technology Learnings"
   ],
   "articles": [
+    {
+      "id": "e9331b1c07602897",
+      "title": "llm-anthropic 0.30",
+      "link": "https://simonwillison.net/2026/Sep/28/llm-anthropic/",
+      "source": "Simon Willison",
+      "category": "AI",
+      "summary": "Release: llm-anthropic 0.30 In addition to Claude Sonnet 5.5, this release adds the ability to run llm anthropic refresh to refresh the list of Anthropic models directly from their API - which means I don't need to push a new release just to add support for a newly released model",
+      "published": "2026-10-05T17:06:31.468006+00:00",
+      "audio_url": null,
+      "duration": ""
+    },
     {
       "id": "88d553ae09bb6778",
       "title": "Qwen3.8 27B addition in words",
