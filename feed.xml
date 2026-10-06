@@ -4,7 +4,31 @@
     <title>The Signal</title>
     <link>https://thillairaj.github.io/The-Signal-AI-Quantum/</link>
     <description>A self-updating feed of AI, quantum computing, and podcast updates.</description>
-    <lastBuildDate>Tue, 06 Oct 2026 14:00:38 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 06 Oct 2026 18:00:03 +0000</lastBuildDate>
+    <item>
+      <title>Scrimshaw Jukebox</title>
+      <link>https://simonwillison.net/2026/Oct/6/scrimshaw-jukebox/</link>
+      <guid isPermaLink="false">f66486df2fd590e7</guid>
+      <description>Tool: Scrimshaw Jukebox I wanted to see if Claude Opus 5.5 could compose music, so I tried this : I want you to write some computer game music for me. First design simple text based format for the music and build an artifact that can play it out loud - include some example tracks</description>
+      <category>Simon Willison</category>
+      <pubDate>Tue, 06 Oct 2026 17:59:48 +0000</pubDate>
+    </item>
+    <item>
+      <title>We can’t just change the definition of ‘recording’</title>
+      <link>https://www.theverge.com/column/1005697/we-cant-just-change-the-definition-of-recording</link>
+      <guid isPermaLink="false">688a40cc7a92b803</guid>
+      <description>With AI hardware, tech companies are pushing the definition of what does and doesn't constitute a recording. For most of gadget history, it'd be reasonable to assume that a device with a microphone or camera is either recording you or it isn't; it's either on or off, without much</description>
+      <category>The Verge — AI</category>
+      <pubDate>Tue, 06 Oct 2026 17:59:47 +0000</pubDate>
+    </item>
+    <item>
+      <title>Atlassian and OpenAI expand partnership to turn enterprise knowledge into action</title>
+      <link>https://openai.com/index/atlassian-partnership</link>
+      <guid isPermaLink="false">60ef2af305e795fe</guid>
+      <description>Atlassian and OpenAI are expanding their partnership to connect frontier models with enterprise knowledge and help teams plan, build, and deliver work.</description>
+      <category>OpenAI Blog</category>
+      <pubDate>Tue, 06 Oct 2026 16:00:00 +0000</pubDate>
+    </item>
     <item>
       <title>Amazon Alexa Plus keeps creepily singing ‘lalala’ for minutes on end</title>
       <link>https://www.theverge.com/tech/1005342/amazon-alexa-plus-keeps-creepily-singing-lalala-for-minutes-on-end</link>
@@ -458,30 +482,6 @@
       <link>https://simonwillison.net/2026/Sep/28/joedaroo/</link>
       <guid isPermaLink="false">c94a110c6c4a61a8</guid>
       <description>To say that we were surprised at the jump and suddenness of the capabilities of our models when it came to “cyber” or “swarming” or “message boards” or anything else related to the incidents is an understatement. Security posture takes time to develop. It’s not just about hardeni</description>
-      <category>Simon Willison</category>
-      <pubDate>Sun, 04 Oct 2026 06:38:20 +0000</pubDate>
-    </item>
-    <item>
-      <title>Claude Sonnet 5.5</title>
-      <link>https://simonwillison.net/2026/Sep/28/claude-sonnet-5-5/</link>
-      <guid isPermaLink="false">2d52fce20760eca7</guid>
-      <description>Claude Sonnet 5.5 New Sonnet model from Anthropic today. They say it "runs 30%+ faster, and costs up to 30% less for most work" - it's priced the same as Sonnet 5 but appears to beat it on every benchmark, and should be cheaper to run as well. Here are some pelicans riding bicycl</description>
-      <category>Simon Willison</category>
-      <pubDate>Sun, 04 Oct 2026 06:38:20 +0000</pubDate>
-    </item>
-    <item>
-      <title>OpenAI DevDay 2026 live blog</title>
-      <link>https://simonwillison.net/2026/Sep/29/openai-devday-2026-live-blog/</link>
-      <guid isPermaLink="false">3bd3ec89a48c5722</guid>
-      <description>I'm at OpenAI DevDay today, in Fort Mason, San Francisco. Same as last year I'll be live blogging the keynote and some other notes during the day. OpenAI gave me a free ticket and a seat in the "creator" area for the keynote. Tags: ai , openai , generative-ai , llms , coding-agen</description>
-      <category>Simon Willison</category>
-      <pubDate>Sun, 04 Oct 2026 06:38:20 +0000</pubDate>
-    </item>
-    <item>
-      <title>Photo Scrubber — local face blur &amp; metadata removal</title>
-      <link>https://simonwillison.net/2026/Sep/29/photo-scrubber/</link>
-      <guid isPermaLink="false">afe6a29f26715829</guid>
-      <description>Tool: Photo Scrubber — local face blur &amp;amp; metadata removal I took a photograph of some protesters, then thought about how I don't like sharing photographs of strangers with identifiable faces. I had GPT-6 Astra build this experimental tool that would identify faces and automat</description>
       <category>Simon Willison</category>
       <pubDate>Sun, 04 Oct 2026 06:38:20 +0000</pubDate>
     </item>
