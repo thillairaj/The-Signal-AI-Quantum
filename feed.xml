@@ -4,7 +4,87 @@
     <title>The Signal</title>
     <link>https://thillairaj.github.io/The-Signal-AI-Quantum/</link>
     <description>A self-updating feed of AI, quantum computing, and podcast updates.</description>
-    <lastBuildDate>Mon, 05 Oct 2026 17:06:36 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 06 Oct 2026 02:04:30 +0000</lastBuildDate>
+    <item>
+      <title>pwasm 0.2a0</title>
+      <link>https://simonwillison.net/2026/Oct/1/pwasm/</link>
+      <guid isPermaLink="false">88caa1a107f0635d</guid>
+      <description>Release: pwasm 0.2a0 pwasm is one of my folly projects - an entirely vibe-coded pure Python WebAssembly engine that I built in January during my first bout of AI mania . I hadn't touched it since January, so I decided to let Claude Opus 5.5 loose on it and see if it could make an</description>
+      <category>Simon Willison</category>
+      <pubDate>Tue, 06 Oct 2026 02:04:21 +0000</pubDate>
+    </item>
+    <item>
+      <title>Quoting Felix Rieseberg</title>
+      <link>https://simonwillison.net/2026/Oct/5/felix-rieseberg/</link>
+      <guid isPermaLink="false">16140ec435b023df</guid>
+      <description>The "old" version of Cowork runs model inference in the cloud, executing tool calls in an Anthropic-provided VM we shipped to your computer. We added the VM for capability, safety, and security reasons - mapping in just the data you explicitly added to your session. People loved </description>
+      <category>Simon Willison</category>
+      <pubDate>Tue, 06 Oct 2026 02:04:21 +0000</pubDate>
+    </item>
+    <item>
+      <title>OpenAI is adding text watermarking in ChatGPT and Codex</title>
+      <link>https://www.theverge.com/ai-artificial-intelligence/1004880/openai-chatgpt-text-watermarks-eu-ai-act</link>
+      <guid isPermaLink="false">773083672101122d</guid>
+      <description>An invisible, machine-readable watermark in text output is rolling out to ChatGPT and Codex, but only for users in the European Union at first. OpenAI says its textGrain watermarking "matched or exceeded" other approaches like Google DeepMind's SynthID for text, which is also the</description>
+      <category>The Verge — AI</category>
+      <pubDate>Tue, 06 Oct 2026 02:04:20 +0000</pubDate>
+    </item>
+    <item>
+      <title>Wikipedia operator says OpenAI&amp;#8217;s &amp;#8216;rogue&amp;#8217; bots may be linked to a May outage</title>
+      <link>https://www.theverge.com/news/1004929/wikipedia-openai-rogue-bots-wikimedia-foundation-outage</link>
+      <guid isPermaLink="false">e3d6a6e5d9a351b0</guid>
+      <description>Following many recent disclosures about AI agents accessing third-party websites and services, the Wikimedia Foundation, which hosts Wikipedia, says that it "can confirm that we have discovered some activity" by "rogue" OpenAI agents on Wikimedia platforms. The activity includes </description>
+      <category>The Verge — AI</category>
+      <pubDate>Tue, 06 Oct 2026 02:04:20 +0000</pubDate>
+    </item>
+    <item>
+      <title>All the drama around AI&amp;#8217;s takeover of mathematics</title>
+      <link>https://www.theverge.com/ai-artificial-intelligence/1004933/ai-math-openai-breakthrough-solution</link>
+      <guid isPermaLink="false">ba6c5da9a8807f4f</guid>
+      <description>This past year, OpenAI, Anthropic, and other labs have announced breakthroughs on numerous long-standing mathematical problems, in some cases pushing well beyond what researchers expected current systems to be capable of — including resolving one of the famous Millennium Prize pr</description>
+      <category>The Verge — AI</category>
+      <pubDate>Tue, 06 Oct 2026 02:04:20 +0000</pubDate>
+    </item>
+    <item>
+      <title>This startup is issuing AI-generated acne prescriptions</title>
+      <link>https://www.theverge.com/ai-artificial-intelligence/1005075/nolla-health-acne-ai-prescriptions</link>
+      <guid isPermaLink="false">5bc9d1f4735012c9</guid>
+      <description>People in Utah can now use AI to get a prescription for acne treatment. On Monday, healthcare startup Nolla Health announced that users in the state can scan their faces using its app, allowing its AI system to analyze acne severity and autonomously write a prescription, as repor</description>
+      <category>The Verge — AI</category>
+      <pubDate>Tue, 06 Oct 2026 02:04:20 +0000</pubDate>
+    </item>
+    <item>
+      <title>Gemini Call for Me might tell your mom you&amp;#8217;re running late</title>
+      <link>https://www.theverge.com/ai-artificial-intelligence/1005177/google-gemini-call-for-me-expansion-rumors</link>
+      <guid isPermaLink="false">fb1f3dca95af1a8c</guid>
+      <description>Google may be expanding its "Call for Me" AI feature beyond business calls so you can use it to send messages to friends and family. Android Authority reports finding a "Gemini Calling" introductory screen in an APK teardown with examples that include "Call Mom and tell her I wil</description>
+      <category>The Verge — AI</category>
+      <pubDate>Tue, 06 Oct 2026 02:04:20 +0000</pubDate>
+    </item>
+    <item>
+      <title>Daily AI Intelligence — Episode 5: OpenAI watermarks ChatGPT in the EU, Pentagon drops Claude</title>
+      <link>https://muse.ai/podcasts/media/1248297608376725/94f09345-ad4a-4981-83dd-e3206bbf5c4e/ep-8b04d272-7c91-4d22-9ee5-aa3ec8989237.mp3</link>
+      <guid isPermaLink="false">0285defcd58f71ae</guid>
+      <description>Tuesday, October 6, 2026: OpenAI's invisible text watermarking for EU ChatGPT/Codex; Pentagon says it stopped using Claude; Meta and Microsoft cut internal Claude use; Muse reroutes shopping away from Amazon; Apple tightens agent disk access; Microsoft Copilot usage-based billing</description>
+      <category>Daily AI Intelligence</category>
+      <pubDate>Tue, 06 Oct 2026 01:01:49 +0000</pubDate>
+    </item>
+    <item>
+      <title>MCP for agent-to-agent comms may be the riskiest protocol you've never heard of</title>
+      <link>https://arstechnica.com/security/2026/10/vulnerability-in-agents-from-google-and-others-exposes-structural-flaw-in-mcp/</link>
+      <guid isPermaLink="false">aaf1cc502a6b1603</guid>
+      <description>Trust gaps in the new protocol spread malicious prompts from one agent to another.</description>
+      <category>Ars Technica AI</category>
+      <pubDate>Mon, 05 Oct 2026 22:26:35 +0000</pubDate>
+    </item>
+    <item>
+      <title>Command-line tool quickly removes Apple Intelligence from macOS 27</title>
+      <link>https://arstechnica.com/apple/2026/10/command-line-tool-quickly-removes-apple-intelligence-from-macos-27/</link>
+      <guid isPermaLink="false">04277ae7314bbae1</guid>
+      <description>The tool can free up over 12GB of storage.</description>
+      <category>Ars Technica AI</category>
+      <pubDate>Mon, 05 Oct 2026 19:14:44 +0000</pubDate>
+    </item>
     <item>
       <title>llm-anthropic 0.30</title>
       <link>https://simonwillison.net/2026/Sep/28/llm-anthropic/</link>
@@ -403,86 +483,6 @@
       <guid isPermaLink="false">562470c22e2896c8</guid>
       <description>I visited the Museum of the City of New York today and got to see He Built This City: Joe Macken’s Model , the 50 x27 feet model of the city built over a 21 year period from balsa wood and cardboard. It exceeded my already high expectations. The exhibition closes on 12th October </description>
       <category>Simon Willison</category>
-      <pubDate>Sun, 04 Oct 2026 06:38:20 +0000</pubDate>
-    </item>
-    <item>
-      <title>Quoting Matthew Green</title>
-      <link>https://simonwillison.net/2026/Oct/1/matthew-green/</link>
-      <guid isPermaLink="false">4fb3caa1bad2e135</guid>
-      <description>[...] Put these pieces together and you have the two halves of a worm: a payload that hijacks the agent, and an agent that will carry the payload to the next agent. Agents in separately-isolated sandboxes discovered that they could leave instructions for each other in a shared pa</description>
-      <category>Simon Willison</category>
-      <pubDate>Sun, 04 Oct 2026 06:38:20 +0000</pubDate>
-    </item>
-    <item>
-      <title>Rex's Dino Store</title>
-      <link>https://simonwillison.net/2026/Oct/2/rex-s-dino-store/</link>
-      <guid isPermaLink="false">da9bc33d3feb59e4</guid>
-      <description>Museum: Rex&amp;#x27;s Dino Store Located just before the turnstiles in the Grand Army Plaza subway station at the north end of Brooklyn's Prospect Park is this former newsstand which is now operated by a dinosaur. The density of dinosaur puns is exceptional . Tags: art , new-york</description>
-      <category>Simon Willison</category>
-      <pubDate>Sun, 04 Oct 2026 06:38:20 +0000</pubDate>
-    </item>
-    <item>
-      <title>September sponsors-only newsletter</title>
-      <link>https://simonwillison.net/2026/Oct/3/newsletter/</link>
-      <guid isPermaLink="false">4956a5acae88d47d</guid>
-      <description>I just sent the September edition of my sponsors-only monthly newsletter . If you are a sponsor (or start a sponsorship now) you can access it here . This month: More Fable class models A pricing war 3D graphics, Blender, and pixel art LLMs come for mathematics So many more accid</description>
-      <category>Simon Willison</category>
-      <pubDate>Sun, 04 Oct 2026 06:38:20 +0000</pubDate>
-    </item>
-    <item>
-      <title>We're going to need default hard budget caps on pretty much everything</title>
-      <link>https://simonwillison.net/2026/Oct/3/default-hard-budget-caps/</link>
-      <guid isPermaLink="false">5a3f1f4a82c5b0a8</guid>
-      <description>Here's a product feature which the world is going to need a whole lot more of over the coming months and years: default hard budget caps . I'm talking about the feature of pay-by-usage services and APIs that lets you say "after $X/month, cut this thing off and return errors". The</description>
-      <category>Simon Willison</category>
-      <pubDate>Sun, 04 Oct 2026 06:38:20 +0000</pubDate>
-    </item>
-    <item>
-      <title>Amazon writes scary blog warning communities not to block data centers</title>
-      <link>https://www.theverge.com/tech/1003929/amazon-ai-data-center-blog-warning</link>
-      <guid isPermaLink="false">78ffcfd0a288af0c</guid>
-      <description>Amazon is calling for people to support AI data center projects, or risk irreparable harm to the US economy and national security. In a more than 3,000 word blog posted today, Amazon web services CEO Matt Garman pushed back on public concerns around the impact that data centers m</description>
-      <category>The Verge — AI</category>
-      <pubDate>Sun, 04 Oct 2026 06:38:20 +0000</pubDate>
-    </item>
-    <item>
-      <title>If a data center is camouflaged in the woods, will anyone hate it?</title>
-      <link>https://www.theverge.com/tech/1003681/microsoft-data-centers-ai-environment-biomimicry</link>
-      <guid isPermaLink="false">f829ccaecea00650</guid>
-      <description>San Antonio City Councilmember Ric Galvan remembers when data centers first arrived in his city in the 2000s, looking like relatively unassuming office buildings. But that's changed in recent years, as data centers have grown into massive "hyperscale" facilities spanning millions</description>
-      <category>The Verge — AI</category>
-      <pubDate>Sun, 04 Oct 2026 06:38:20 +0000</pubDate>
-    </item>
-    <item>
-      <title>AI hallucinations are making entitled customers even worse</title>
-      <link>https://www.theverge.com/report/1002963/ai-hallucinations-customer-service-jobs-agents</link>
-      <guid isPermaLink="false">b3a9a516e91b03e6</guid>
-      <description>Madison, a server in New York City, greets every table by asking about each diner's allergies. Lately, there have been some close calls. "Sometimes people will tell me they have a shellfish allergy, and I'll come back, and they won't ask me any questions," says Madison, who asked</description>
-      <category>The Verge — AI</category>
-      <pubDate>Sun, 04 Oct 2026 06:38:20 +0000</pubDate>
-    </item>
-    <item>
-      <title>Breaking up (with Elon Musk) is hard to do</title>
-      <link>https://www.theverge.com/tech/1004177/elon-musk-unfollows-shivon-zilis</link>
-      <guid isPermaLink="false">69164ce789ec620a</guid>
-      <description>In a throwback to MySpace-style internet drama, Shivon Zilis announced that she and the father of her four children, Elon Musk, had broken up on X. To do so, she quote-tweeted a post from "Big Tech Alert," an account that, among other things, monitors what accounts are following </description>
-      <category>The Verge — AI</category>
-      <pubDate>Sun, 04 Oct 2026 06:38:20 +0000</pubDate>
-    </item>
-    <item>
-      <title>OpenAI’s Dot agent is enterprise software that can also order your dinner</title>
-      <link>https://www.theverge.com/ai-artificial-intelligence/1004096/openai-chatgpt-dots-hands-on-agent</link>
-      <guid isPermaLink="false">5028b5fce3747e84</guid>
-      <description>It's a tale as old as last week: OpenAI's new agent platform, called Dots, is full of cute little guys who can do your bidding. But unlike the ultra-approachable Meta Muse, Dots feel very much like using workplace software that happens to be able to order you a burrito - emphasis</description>
-      <category>The Verge — AI</category>
-      <pubDate>Sun, 04 Oct 2026 06:38:20 +0000</pubDate>
-    </item>
-    <item>
-      <title>Apple will limit Mac disk access as AI agents ‘substantially’ increase risk</title>
-      <link>https://www.theverge.com/tech/1004295/apple-limit-mac-disk-access-ai-agents</link>
-      <guid isPermaLink="false">e148a12b4219ef6a</guid>
-      <description>Apple will add new limits for "full disk access" on Mac in response to risks posed by AI agents, as reported earlier by TechCrunch. In an update on Friday, Apple says it's rolling out new controls to "ensure that users who genuinely wish to grant an app this extraordinary level o</description>
-      <category>The Verge — AI</category>
       <pubDate>Sun, 04 Oct 2026 06:38:20 +0000</pubDate>
     </item>
   </channel>
