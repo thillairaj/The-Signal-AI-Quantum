@@ -4,7 +4,63 @@
     <title>The Signal</title>
     <link>https://thillairaj.github.io/The-Signal-AI-Quantum/</link>
     <description>A self-updating feed of AI, quantum computing, and podcast updates.</description>
-    <lastBuildDate>Tue, 06 Oct 2026 18:00:03 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 06 Oct 2026 22:00:27 +0000</lastBuildDate>
+    <item>
+      <title>datasette-atom 0.11a0</title>
+      <link>https://simonwillison.net/2026/Oct/6/datasette-atom/</link>
+      <guid isPermaLink="false">17c1ef68addffb00</guid>
+      <description>Release: datasette-atom 0.11a0 A minor fix for compatibility with the latest Datasette alphas. This meant we could upgrade the datasette.io site to Datasette 1.0a41. Tags: atom , datasette</description>
+      <category>Simon Willison</category>
+      <pubDate>Tue, 06 Oct 2026 22:00:16 +0000</pubDate>
+    </item>
+    <item>
+      <title>Mistral Large 4</title>
+      <link>https://simonwillison.net/2026/Oct/6/hn-49982139/</link>
+      <guid isPermaLink="false">ec56094036c906f8</guid>
+      <description>My comment on Mistral Large 4 &amp;mdash; Hacker News. wren6991 : The benchmark is saturated. Frontier models are tested with an armadillo in fishnet tights jaywalking on Mars. OK well I couldn't resist this one: llm -m claude-opus-5.5 'Generate an SVG of an armadillo in fishnet tigh</description>
+      <category>Simon Willison</category>
+      <pubDate>Tue, 06 Oct 2026 22:00:16 +0000</pubDate>
+    </item>
+    <item>
+      <title>Using Parseable with Datasette for OpenTelemetry traces</title>
+      <link>https://simonwillison.net/2026/Oct/6/datasette-parseable-opentelemetry/</link>
+      <guid isPermaLink="false">f5f88d08399f657b</guid>
+      <description>TIL: Using Parseable with Datasette for OpenTelemetry traces I saw Parseable in a Show HN today - it's a new observability platform with both an open source (AGPL) Rust implementation (a single ~180MB binary), an "Enterprise" version with extra features and a cloud hosted option.</description>
+      <category>Simon Willison</category>
+      <pubDate>Tue, 06 Oct 2026 22:00:16 +0000</pubDate>
+    </item>
+    <item>
+      <title>Introducing Mistral Large 4: Le chonk</title>
+      <link>https://simonwillison.net/2026/Oct/6/le-chonk/</link>
+      <guid isPermaLink="false">a651b0ec0b3d2f74</guid>
+      <description>Introducing Mistral Large 4: Le chonk Mistral are back in the game. Today they're releasing a preview of Mistral Large 4, a 1 trillion parameter, 49 billion active parameter model trained on their own cluster of 3,800 NVIDIA Grace Blackwell GPUs. The preview is available via thei</description>
+      <category>Simon Willison</category>
+      <pubDate>Tue, 06 Oct 2026 22:00:16 +0000</pubDate>
+    </item>
+    <item>
+      <title>EmbeddingGemma 2</title>
+      <link>https://simonwillison.net/2026/Oct/6/hn-49983751/</link>
+      <guid isPermaLink="false">b3ffaa721999ed41</guid>
+      <description>My comment on EmbeddingGemma 2 &amp;mdash; Hacker News. I really appreciate that EmbeddingGemma 2 is under the Apache 2.0 license. For embedding models in particular, I don't think it makes sense to use a closed, proprietary, hosted-only model. Most applications of embedding models i</description>
+      <category>Simon Willison</category>
+      <pubDate>Tue, 06 Oct 2026 22:00:16 +0000</pubDate>
+    </item>
+    <item>
+      <title>llm-mistral 0.16</title>
+      <link>https://simonwillison.net/2026/Oct/6/llm-mistral/</link>
+      <guid isPermaLink="false">f2b4a146fbeb53f2</guid>
+      <description>Release: llm-mistral 0.16 Adds support for reasoning models, such as the newly released Mistral Large 4 . Tags: llm , mistral , llm-reasoning</description>
+      <category>Simon Willison</category>
+      <pubDate>Tue, 06 Oct 2026 22:00:16 +0000</pubDate>
+    </item>
+    <item>
+      <title>OpenAI will watermark ChatGPT outputs by default—but only in the EU</title>
+      <link>https://arstechnica.com/ai/2026/10/openai-will-watermark-chatgpt-outputs-by-default-but-only-in-the-eu/</link>
+      <guid isPermaLink="false">11669444bfa3fd7b</guid>
+      <description>Like other solutions, it is not especially reliable, and it's easy to circumvent.</description>
+      <category>Ars Technica AI</category>
+      <pubDate>Tue, 06 Oct 2026 20:50:32 +0000</pubDate>
+    </item>
     <item>
       <title>Scrimshaw Jukebox</title>
       <link>https://simonwillison.net/2026/Oct/6/scrimshaw-jukebox/</link>
@@ -52,6 +108,14 @@
       <description>The reports of OpenAI agents harming 3rd party sites keep coming.</description>
       <category>Ars Technica AI</category>
       <pubDate>Tue, 06 Oct 2026 12:21:53 +0000</pubDate>
+    </item>
+    <item>
+      <title>Advancing computer use with Ironclad</title>
+      <link>https://openai.com/index/advancing-computer-use-with-ironclad</link>
+      <guid isPermaLink="false">9964af802e9c5fde</guid>
+      <description>Learn how OpenAI and Ironclad are training and evaluating AI agents on complex contracting workflows to advance computer use for professional work.</description>
+      <category>OpenAI Blog</category>
+      <pubDate>Tue, 06 Oct 2026 10:00:00 +0000</pubDate>
     </item>
     <item>
       <title>pwasm 0.2a0</title>
@@ -418,70 +482,6 @@
       <link>https://simonwillison.net/2026/Sep/24/harder/</link>
       <guid isPermaLink="false">414ec5ebf00c8740</guid>
       <description>The more time I spend working with coding agents, the more convinced I am that they make software engineering even harder. We can do amazing things with them, but unlocking their full potential requires extraordinary discipline and knowledge. Tags: coding-agents , ai , llms</description>
-      <category>Simon Willison</category>
-      <pubDate>Sun, 04 Oct 2026 06:38:20 +0000</pubDate>
-    </item>
-    <item>
-      <title>Northern Gannet, Great Blue Heron, California Brown Pelican</title>
-      <link>https://simonwillison.net/2026/Sep/25/sighting-403293902/</link>
-      <guid isPermaLink="false">28f369bbea848f9a</guid>
-      <description>Northern Gannet, Great Blue Heron, California Brown Pelican, in Monterey Bay National Marine Sanctuary, CA, US, CA New 200-800mm Canon EF lens got me my best photo of Morris yet. They really like hanging out under that sign in the harbor! Tags: photography , wildlife</description>
-      <category>Simon Willison</category>
-      <pubDate>Sun, 04 Oct 2026 06:38:20 +0000</pubDate>
-    </item>
-    <item>
-      <title>Quoting John Gruber</title>
-      <link>https://simonwillison.net/2026/Sep/25/john-gruber/</link>
-      <guid isPermaLink="false">5bff2e7c4ac60c5c</guid>
-      <description>Muse is getting a lot of attention — including mine — because it’s both groundbreaking technically (each user gets their own entire persistent Linux VM running in Meta’s cloud) and because it’s packaged in an easy-to-install easy-to-use way. It’s literally presented as a cute mas</description>
-      <category>Simon Willison</category>
-      <pubDate>Sun, 04 Oct 2026 06:38:20 +0000</pubDate>
-    </item>
-    <item>
-      <title>Kākāpō Party</title>
-      <link>https://simonwillison.net/2026/Sep/26/kakapo-party/</link>
-      <guid isPermaLink="false">ffc80d14a58cea97</guid>
-      <description>Tool: Kākāpō Party I presented a closing keynote for the WeAreDevelopers World Congress North America yesterday. As a STAR moment I decided to weave in references to the record breaking kākāpō breeding season we had in 2026. For my closing slide I wanted to celebrate, and I had s</description>
-      <category>Simon Willison</category>
-      <pubDate>Sun, 04 Oct 2026 06:38:20 +0000</pubDate>
-    </item>
-    <item>
-      <title>Bluesky reply bot checker</title>
-      <link>https://simonwillison.net/2026/Sep/27/bluesky-bot-check/</link>
-      <guid isPermaLink="false">dbaa344dafea1b67</guid>
-      <description>Tool: Bluesky reply bot checker Automated reply bots on Twitter are a scourge - as someone with a decent number of followers I attract a swarm of these, such that anything I post there attracts dozens of mindless automated replies. They've started manifesting on Bluesky as well. </description>
-      <category>Simon Willison</category>
-      <pubDate>Sun, 04 Oct 2026 06:38:20 +0000</pubDate>
-    </item>
-    <item>
-      <title>S3 Is the Future, S3 Is the Past</title>
-      <link>https://simonwillison.net/2026/Sep/27/hn-49871741/</link>
-      <guid isPermaLink="false">4cfa73e20de35720</guid>
-      <description>My comment on S3 Is the Future, S3 Is the Past &amp;mdash; Hacker News. One thing I find notable about S3 today is that, while it used to drop in price reasonably often, there hasn't been a price drop in a full decade : 2006-03-14 $0.150/GB-month 2010-11-01 $0.140/GB-month 2012-02-01</description>
-      <category>Simon Willison</category>
-      <pubDate>Sun, 04 Oct 2026 06:38:20 +0000</pubDate>
-    </item>
-    <item>
-      <title>2026 in LLMs (so far)</title>
-      <link>https://simonwillison.net/2026/Sep/27/2026-in-llms-so-far/</link>
-      <guid isPermaLink="false">558841854585e6c7</guid>
-      <description>On Friday I gave the closing keynote at the WeAreDevelopers World Congress North America in San Jose. I tied together the key trends from the past year into a chronological exploration of everything that happened in 2026. The video is on YouTube ; here are my annotated slides and</description>
-      <category>Simon Willison</category>
-      <pubDate>Sun, 04 Oct 2026 06:38:20 +0000</pubDate>
-    </item>
-    <item>
-      <title>Quoting Muse AI Agent</title>
-      <link>https://simonwillison.net/2026/Sep/28/muse-ai-agent/</link>
-      <guid isPermaLink="false">00e0e3a4ad2d2f3b</guid>
-      <description>Bad news on the MX Keys Mini pickup. Usman showed up at your building around 9:15 and waited, messaged a bunch of times, and nobody came down. He left angry at 9:38 and left a negative rating. Worse, my auto-reply told him "Yep I'm here!" at 9:27 when you clearly weren't availabl</description>
-      <category>Simon Willison</category>
-      <pubDate>Sun, 04 Oct 2026 06:38:20 +0000</pubDate>
-    </item>
-    <item>
-      <title>Quoting @joedaroo</title>
-      <link>https://simonwillison.net/2026/Sep/28/joedaroo/</link>
-      <guid isPermaLink="false">c94a110c6c4a61a8</guid>
-      <description>To say that we were surprised at the jump and suddenness of the capabilities of our models when it came to “cyber” or “swarming” or “message boards” or anything else related to the incidents is an understatement. Security posture takes time to develop. It’s not just about hardeni</description>
       <category>Simon Willison</category>
       <pubDate>Sun, 04 Oct 2026 06:38:20 +0000</pubDate>
     </item>

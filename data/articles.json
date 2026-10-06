@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-06T18:00:03.159148+00:00",
+  "generated_at": "2026-10-06T22:00:27.275313+00:00",
   "sources_polled": [
     "The Verge \u2014 AI",
     "Simon Willison",
@@ -14,6 +14,83 @@
     "Technology Learnings"
   ],
   "articles": [
+    {
+      "id": "17c1ef68addffb00",
+      "title": "datasette-atom 0.11a0",
+      "link": "https://simonwillison.net/2026/Oct/6/datasette-atom/",
+      "source": "Simon Willison",
+      "category": "AI",
+      "summary": "Release: datasette-atom 0.11a0 A minor fix for compatibility with the latest Datasette alphas. This meant we could upgrade the datasette.io site to Datasette 1.0a41. Tags: atom , datasette",
+      "published": "2026-10-06T22:00:16.229208+00:00",
+      "audio_url": null,
+      "duration": ""
+    },
+    {
+      "id": "ec56094036c906f8",
+      "title": "Mistral Large 4",
+      "link": "https://simonwillison.net/2026/Oct/6/hn-49982139/",
+      "source": "Simon Willison",
+      "category": "AI",
+      "summary": "My comment on Mistral Large 4 &mdash; Hacker News. wren6991 : The benchmark is saturated. Frontier models are tested with an armadillo in fishnet tights jaywalking on Mars. OK well I couldn't resist this one: llm -m claude-opus-5.5 'Generate an SVG of an armadillo in fishnet tigh",
+      "published": "2026-10-06T22:00:16.229155+00:00",
+      "audio_url": null,
+      "duration": ""
+    },
+    {
+      "id": "f5f88d08399f657b",
+      "title": "Using Parseable with Datasette for OpenTelemetry traces",
+      "link": "https://simonwillison.net/2026/Oct/6/datasette-parseable-opentelemetry/",
+      "source": "Simon Willison",
+      "category": "AI",
+      "summary": "TIL: Using Parseable with Datasette for OpenTelemetry traces I saw Parseable in a Show HN today - it's a new observability platform with both an open source (AGPL) Rust implementation (a single ~180MB binary), an \"Enterprise\" version with extra features and a cloud hosted option.",
+      "published": "2026-10-06T22:00:16.229099+00:00",
+      "audio_url": null,
+      "duration": ""
+    },
+    {
+      "id": "a651b0ec0b3d2f74",
+      "title": "Introducing Mistral Large 4: Le chonk",
+      "link": "https://simonwillison.net/2026/Oct/6/le-chonk/",
+      "source": "Simon Willison",
+      "category": "AI",
+      "summary": "Introducing Mistral Large 4: Le chonk Mistral are back in the game. Today they're releasing a preview of Mistral Large 4, a 1 trillion parameter, 49 billion active parameter model trained on their own cluster of 3,800 NVIDIA Grace Blackwell GPUs. The preview is available via thei",
+      "published": "2026-10-06T22:00:16.229039+00:00",
+      "audio_url": null,
+      "duration": ""
+    },
+    {
+      "id": "b3ffaa721999ed41",
+      "title": "EmbeddingGemma 2",
+      "link": "https://simonwillison.net/2026/Oct/6/hn-49983751/",
+      "source": "Simon Willison",
+      "category": "AI",
+      "summary": "My comment on EmbeddingGemma 2 &mdash; Hacker News. I really appreciate that EmbeddingGemma 2 is under the Apache 2.0 license. For embedding models in particular, I don't think it makes sense to use a closed, proprietary, hosted-only model. Most applications of embedding models i",
+      "published": "2026-10-06T22:00:16.228956+00:00",
+      "audio_url": null,
+      "duration": ""
+    },
+    {
+      "id": "f2b4a146fbeb53f2",
+      "title": "llm-mistral 0.16",
+      "link": "https://simonwillison.net/2026/Oct/6/llm-mistral/",
+      "source": "Simon Willison",
+      "category": "AI",
+      "summary": "Release: llm-mistral 0.16 Adds support for reasoning models, such as the newly released Mistral Large 4 . Tags: llm , mistral , llm-reasoning",
+      "published": "2026-10-06T22:00:16.228740+00:00",
+      "audio_url": null,
+      "duration": ""
+    },
+    {
+      "id": "11669444bfa3fd7b",
+      "title": "OpenAI will watermark ChatGPT outputs by default\u2014but only in the EU",
+      "link": "https://arstechnica.com/ai/2026/10/openai-will-watermark-chatgpt-outputs-by-default-but-only-in-the-eu/",
+      "source": "Ars Technica AI",
+      "category": "AI",
+      "summary": "Like other solutions, it is not especially reliable, and it's easy to circumvent.",
+      "published": "2026-10-06T20:50:32+00:00",
+      "audio_url": null,
+      "duration": ""
+    },
     {
       "id": "f66486df2fd590e7",
       "title": "Scrimshaw Jukebox",
@@ -77,6 +154,17 @@
       "category": "AI",
       "summary": "The reports of OpenAI agents harming 3rd party sites keep coming.",
       "published": "2026-10-06T12:21:53+00:00",
+      "audio_url": null,
+      "duration": ""
+    },
+    {
+      "id": "9964af802e9c5fde",
+      "title": "Advancing computer use with Ironclad",
+      "link": "https://openai.com/index/advancing-computer-use-with-ironclad",
+      "source": "OpenAI Blog",
+      "category": "AI",
+      "summary": "Learn how OpenAI and Ironclad are training and evaluating AI agents on complex contracting workflows to advance computer use for professional work.",
+      "published": "2026-10-06T10:00:00+00:00",
       "audio_url": null,
       "duration": ""
     },
@@ -1991,17 +2079,6 @@
       "category": "AI",
       "summary": "Russia turned Claude into a tool for weapons development, espionage, and propaganda, Anthropic's new threat report claims.",
       "published": "2026-09-14T11:00:00+00:00",
-      "audio_url": null,
-      "duration": ""
-    },
-    {
-      "id": "12e9dd6851803557",
-      "title": "Perplexity trusts GPT-6 Astra with end-to-end systems",
-      "link": "https://openai.com/index/perplexity-improving-accuracy-with-astra",
-      "source": "OpenAI Blog",
-      "category": "AI",
-      "summary": "Perplexity uses Astra to write communications, change software, and monitor production systems, and checks in much less frequently than with earlier models.",
-      "published": "2026-09-14T00:00:00+00:00",
       "audio_url": null,
       "duration": ""
     },
