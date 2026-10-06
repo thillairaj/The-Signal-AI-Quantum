@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-06T10:02:30.925631+00:00",
+  "generated_at": "2026-10-06T14:00:38.057206+00:00",
   "sources_polled": [
     "The Verge \u2014 AI",
     "Simon Willison",
@@ -14,6 +14,39 @@
     "Technology Learnings"
   ],
   "articles": [
+    {
+      "id": "9f54e4bc2e92628f",
+      "title": "Amazon Alexa Plus keeps creepily singing \u2018lalala\u2019 for minutes on end",
+      "link": "https://www.theverge.com/tech/1005342/amazon-alexa-plus-keeps-creepily-singing-lalala-for-minutes-on-end",
+      "source": "The Verge \u2014 AI",
+      "category": "AI",
+      "summary": "An unsettling Alexa Plus bug has seen some Amazon Echo smart home speakers reduced to saying - and sometimes singing - nothing but \"lalala\" on repeat for minutes at a time, often in the middle of conversations with users. When quizzed about the behavior, Alexa is apparently entir",
+      "published": "2026-10-06T14:00:21.278122+00:00",
+      "audio_url": null,
+      "duration": ""
+    },
+    {
+      "id": "c481fc93e0dd7dc8",
+      "title": "Google is about to remove free access to Gemini Flash and Pro",
+      "link": "https://www.theverge.com/ai-artificial-intelligence/1005451/google-gemini-free-flash-lite-only",
+      "source": "The Verge \u2014 AI",
+      "category": "AI",
+      "summary": "Starting on October 9th, anyone using Google Gemini on a free plan will be limited to the Flash Lite model. Free users can currently choose from Gemini Flash Lite, Flash, and Pro, but now you'll need a $4.99/month Google AI Plus subscription to access the standard Flash model. Ho",
+      "published": "2026-10-06T14:00:21.278054+00:00",
+      "audio_url": null,
+      "duration": ""
+    },
+    {
+      "id": "307bfda48464106b",
+      "title": "OpenAI agents tried to hack Wikipedia tools and flooded it with traffic",
+      "link": "https://arstechnica.com/security/2026/10/openai-agents-tried-to-hack-wikipedia-tools-and-flooded-it-with-traffic/",
+      "source": "Ars Technica AI",
+      "category": "AI",
+      "summary": "The reports of OpenAI agents harming 3rd party sites keep coming.",
+      "published": "2026-10-06T12:21:53+00:00",
+      "audio_url": null,
+      "duration": ""
+    },
     {
       "id": "88caa1a107f0635d",
       "title": "pwasm 0.2a0",
