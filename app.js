@@ -18,6 +18,7 @@ let lastGeneratedAt = null;
 const feedEl = document.getElementById("feed");
 const learnViewEl = document.getElementById("learn-view");
 const podcastViewEl = document.getElementById("podcast-view");
+const topTabsEl = document.getElementById("topTabs");
 const podcastFeaturedEl = document.getElementById("podcast-featured");
 const podcastListEl = document.getElementById("podcast-list");
 const sourceListEl = document.getElementById("sourceList");
@@ -98,6 +99,8 @@ function showView(name) {
   feedEl.hidden = name !== "feed";
   learnViewEl.hidden = name !== "learn";
   podcastViewEl.hidden = name !== "podcast";
+  topTabsEl.querySelectorAll(".top-tab").forEach(b =>
+    b.classList.toggle("active", b.dataset.view === name));
   if (name === "podcast") renderPodcast();
 }
 
@@ -286,14 +289,20 @@ categoryToggleEl.querySelectorAll(".cat-btn").forEach(btn => {
   btn.addEventListener("click", () => {
     categoryToggleEl.querySelectorAll(".cat-btn").forEach(b => b.classList.remove("active"));
     btn.classList.add("active");
-    if (btn.dataset.view === "learn") { showView("learn"); return; }
-    if (btn.dataset.view === "podcast") { showView("podcast"); return; }
     activeCategory = btn.dataset.category;
     activeSource = null;
     visibleCount = PAGE_SIZE;
     renderSources();
     renderFeed();
     showView("feed");
+  });
+});
+
+topTabsEl.querySelectorAll(".top-tab").forEach(btn => {
+  btn.addEventListener("click", () => {
+    topTabsEl.querySelectorAll(".top-tab").forEach(b => b.classList.remove("active"));
+    btn.classList.add("active");
+    showView(btn.dataset.view);
   });
 });
 
