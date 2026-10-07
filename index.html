@@ -66,24 +66,6 @@
     </div>
 
     <div class="panel-block">
-      <p class="panel-label">Learning Spaces</p>
-      <p class="sub-label">Video Learning</p>
-      <a class="follow-link" href="https://muse.ai/s/learning-space-wxp5xkruxbxxixtc" target="_blank" rel="noopener">
-        AI Bot Learning Space ↗
-      </a>
-      <a class="follow-link" href="https://muse.ai/s/ai-quantum-learning-space-xgm5xnbxbn1xdxde" target="_blank" rel="noopener">
-        AI + Quantum Learning Space ↗
-      </a>
-      <p class="sub-label">Interactive Decks</p>
-      <a class="follow-link" href="quantum-deck/" target="_blank" rel="noopener">
-        The Quantum Deck ↗
-      </a>
-      <a class="follow-link" href="ai-deck/" target="_blank" rel="noopener">
-        The AI Deck ↗
-      </a>
-    </div>
-
-    <div class="panel-block">
       <p class="panel-label">Follow</p>
       <a class="follow-link" href="https://www.linkedin.com/showcase/qu-bits/" target="_blank" rel="noopener">
         LinkedIn — Qu-Bits ↗
@@ -137,7 +119,7 @@
         <span class="learn-play" aria-hidden="true">▤</span>
         <span class="learn-kicker">Interactive Deck · 8 topics</span>
         <span class="learn-title">The AI Deck</span>
-        <span class="learn-desc">15-card visual lessons with flashcards and quizzes — AI Fundamentals live now.</span>
+        <span class="learn-desc">15-card visual lessons with flashcards and quizzes — 4 topics live now.</span>
         <span class="learn-open">Open deck ↗</span>
       </a>
     </div>
@@ -147,11 +129,7 @@
     <div class="view-intro">
       <h2>Podcasts</h2>
       <p>Daily AI Intelligence and the Tech Learning series — listen right here.</p>
-      <div class="rss-links">
-        <a href="https://muse.ai/podcasts/feed/1248297608376725/94f09345-ad4a-4981-83dd-e3206bbf5c4e" target="_blank" rel="noopener">Daily AI Intelligence RSS</a>
-        <span aria-hidden="true">·</span>
-        <a href="https://muse.ai/podcasts/feed/1248297608376725/4720f1e9-8c94-4958-8367-c455f31c5edc" target="_blank" rel="noopener">Tech Learnings RSS</a>
-      </div>
+      <div class="series-toggle" id="podcastSeries"><!-- populated by app.js --></div>
     </div>
     <div id="podcast-featured"></div>
     <div id="podcast-list"></div>
@@ -165,5 +143,23 @@
 
 <script data-goatcounter="https://trttech.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 <script src="app.js"></script>
+<script>
+(function(){
+  var q = new URLSearchParams(location.search);
+  var v = q.get("view");
+  if (!v) return;
+  function go(){
+    var tab = document.querySelector('.top-tab[data-view="'+v+'"]');
+    if (tab) tab.click();
+    var s = q.get("series");
+    if (s) {
+      var pill = Array.from(document.querySelectorAll(".series-btn")).find(b => b.dataset.series === s);
+      if (pill) pill.click();
+    }
+  }
+  if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", function(){ setTimeout(go, 400); });
+  else setTimeout(go, 400);
+})();
+</script>
 </body>
 </html>

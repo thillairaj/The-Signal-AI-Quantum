@@ -379,9 +379,19 @@ body {
 .view-intro { margin-bottom: 1.5rem; }
 .view-intro h2 { font-family: var(--font-display); font-size: 1.9rem; margin: 0 0 0.4rem; }
 .view-intro p { color: var(--muted); margin: 0 0 0.6rem; }
-.rss-links { font-size: 0.85rem; }
-.rss-links a { color: var(--accent); text-decoration: underline; text-underline-offset: 2px; }
-.rss-links span { color: var(--muted); margin: 0 0.4rem; }
+.series-toggle { display: flex; gap: 0.5rem; flex-wrap: wrap; margin-top: 0.9rem; }
+.series-btn {
+  padding: 0.45rem 0.95rem;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  color: var(--muted);
+  cursor: pointer;
+}
+.series-btn:hover { color: var(--ink); border-color: var(--muted); }
+.series-btn.active { background: var(--ink); color: var(--bg); border-color: var(--ink); }
 
 .learn-group-label {
   font-family: var(--font-mono);
@@ -401,7 +411,7 @@ body {
   gap: 0.35rem;
   border-radius: 14px;
   padding: 1.4rem 1.3rem;
-  color: #f4f1e6;
+  color: #232a35;
   text-decoration: none;
   min-height: 210px;
   position: relative;
@@ -409,15 +419,15 @@ body {
   transition: transform 0.18s ease, box-shadow 0.18s ease;
 }
 .learn-card:hover { transform: translateY(-3px); box-shadow: 0 14px 30px rgba(0,0,0,0.25); }
-.learn-card.video-bot { background: linear-gradient(150deg, #0d1526 0%, #1c2a52 100%); border: 1px solid #2a3a6e; }
-.learn-card.video-quantum { background: linear-gradient(150deg, #160f2e 0%, #3a2060 100%); border: 1px solid #4b2f7d; }
-.learn-card.deck-quantum { background: linear-gradient(150deg, #0d0f14 0%, #232028 100%); border: 1px solid #6b5a2e; }
-.learn-card.deck-ai { background: linear-gradient(150deg, #0B1F3B 0%, #1d3a63 100%); border: 1px solid #2c4f82; }
-.learn-play { font-size: 1.5rem; color: #d4af6a; line-height: 1; }
-.learn-kicker { font-family: var(--font-mono); font-size: 0.66rem; letter-spacing: 0.08em; color: #b9b29a; }
-.learn-title { font-family: var(--font-display); font-size: 1.35rem; font-weight: 600; color: #fff; }
-.learn-desc { font-size: 0.88rem; color: #cfc9b4; flex: 1; }
-.learn-open { font-size: 0.85rem; font-weight: 600; color: #d4af6a; margin-top: 0.5rem; }
+.learn-card.video-bot { background: linear-gradient(150deg, #EAF3FE 0%, #CBE2FA 100%); border: 1px solid #A9CDEF; }
+.learn-card.video-quantum { background: linear-gradient(150deg, #F1EAFB 0%, #DCCBF6 100%); border: 1px solid #B99FE6; }
+.learn-card.deck-quantum { background: linear-gradient(150deg, #F9F3E5 0%, #EEDFBE 100%); border: 1px solid #D3B968; }
+.learn-card.deck-ai { background: linear-gradient(150deg, #E3F5F3 0%, #C2E7E1 100%); border: 1px solid #93CBC4; }
+.learn-play { font-size: 1.5rem; color: #a5761f; line-height: 1; }
+.learn-kicker { font-family: var(--font-mono); font-size: 0.66rem; letter-spacing: 0.08em; color: #232a35; opacity: 0.6; }
+.learn-title { font-family: var(--font-display); font-size: 1.35rem; font-weight: 600; color: #1a2030; }
+.learn-desc { font-size: 0.88rem; color: #232a35; opacity: 0.78; flex: 1; }
+.learn-open { font-size: 0.85rem; font-weight: 600; color: #8a5f16; margin-top: 0.5rem; }
 
 .pod-featured {
   background: var(--surface);

@@ -21,6 +21,7 @@ const podcastViewEl = document.getElementById("podcast-view");
 const topTabsEl = document.getElementById("topTabs");
 const podcastFeaturedEl = document.getElementById("podcast-featured");
 const podcastListEl = document.getElementById("podcast-list");
+let activeSeries = "";
 const sourceListEl = document.getElementById("sourceList");
 const searchEl = document.getElementById("search");
 const categoryToggleEl = document.getElementById("categoryToggle");
@@ -113,12 +114,25 @@ function renderPodcast() {
   const eps = allArticles
     .filter(a => a.category === "Podcast" && a.audio_url)
     .sort((a, b) => new Date(b.published) - new Date(a.published));
-  if (!eps.length) {
-    podcastFeaturedEl.innerHTML = `<p class="empty-state">No episodes yet — check back after the next scheduled run.</p>`;
+  /* Series selector with episode counts — filters in place, no outbound links. */
+  const seriesEl = document.getElementById("podcastSeries");
+  const seriesOrder = ["Daily AI Intelligence", "Technology Learnings"];
+  const present = seriesOrder.filter(s => eps.some(e => e.source === s));
+  const countOf = s => eps.filter(e => e.source === s).length;
+  seriesEl.innerHTML =
+    `<button class="series-btn${!activeSeries ? " active" : ""}" data-series="">All series (${eps.length})</button>` +
+    present.map(s =>
+      `<button class="series-btn${activeSeries === s ? " active" : ""}" data-series="${s}">${s} (${countOf(s)})</button>`
+    ).join("");
+  seriesEl.querySelectorAll(".series-btn").forEach(b =>
+    b.addEventListener("click", () => { activeSeries = b.dataset.series; renderPodcast(); }));
+  const list = activeSeries ? eps.filter(e => e.source === activeSeries) : eps;
+  if (!list.length) {
+    podcastFeaturedEl.innerHTML = `<p class="empty-state">No episodes in this series yet — check back after the next scheduled run.</p>`;
     podcastListEl.innerHTML = "";
     return;
   }
-  const [latest, ...rest] = eps;
+  const [latest, ...rest] = list;
   podcastFeaturedEl.innerHTML = `
     <div class="pod-featured">
       <p class="pod-kicker">Latest episode · ${latest.source}</p>
