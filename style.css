@@ -351,6 +351,8 @@ body {
   gap: 0.5rem;
 }
 .credit { color: var(--ink); }
+.site-footer a.footlink{color:var(--muted);text-decoration:underline;text-underline-offset:2px}
+.site-footer a.footlink:hover{color:var(--ink)}
 
 @media (max-width: 780px) {
   .layout { grid-template-columns: 1fr; }
