@@ -276,6 +276,7 @@ async function loadData() {
     allArticles = data.articles || [];
     renderSources();
     renderFeed();
+    if (!podcastViewEl.hidden) renderPodcast();
 
     if (data.generated_at) {
       statusDot.classList.add("live");
