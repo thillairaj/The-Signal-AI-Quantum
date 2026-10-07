@@ -440,13 +440,15 @@ body {
   min-height: 210px;
   position: relative;
   overflow: hidden;
-  transition: transform 0.18s ease, box-shadow 0.18s ease;
+  transition: transform 0.18s ease, box-shadow 0.18s ease, background-color 0.18s ease, border-color 0.18s ease;
 }
 .learn-card:hover { transform: translateY(-3px); box-shadow: 0 14px 30px rgba(0,0,0,0.25); }
-.learn-card.video-bot { background: linear-gradient(150deg, #EAF3FE 0%, #CBE2FA 100%); border: 1px solid #A9CDEF; }
-.learn-card.video-quantum { background: linear-gradient(150deg, #F1EAFB 0%, #DCCBF6 100%); border: 1px solid #B99FE6; }
-.learn-card.deck-quantum { background: linear-gradient(150deg, #F9F3E5 0%, #EEDFBE 100%); border: 1px solid #D3B968; }
-.learn-card.deck-ai { background: linear-gradient(150deg, #E3F5F3 0%, #C2E7E1 100%); border: 1px solid #93CBC4; }
+/* Video cards: a whisper lighter than the page background. */
+.learn-card.video-bot, .learn-card.video-quantum { background-color: #FEFDFB; border: 1px solid #E6DFCC; }
+.learn-card.video-bot:hover, .learn-card.video-quantum:hover { background-color: #F5EFE0; border-color: #CFBE93; }
+/* Deck cards: a touch darker than the page background. */
+.learn-card.deck-quantum, .learn-card.deck-ai { background-color: #F3EDDE; border: 1px solid #D8C9A3; }
+.learn-card.deck-quantum:hover, .learn-card.deck-ai:hover { background-color: #E9DDC0; border-color: #B99F5F; }
 .learn-play { font-size: 1.5rem; color: #a5761f; line-height: 1; }
 .learn-kicker { font-family: var(--font-mono); font-size: 0.66rem; letter-spacing: 0.08em; color: #232a35; opacity: 0.6; }
 .learn-title { font-family: var(--font-display); font-size: 1.35rem; font-weight: 600; color: #1a2030; }
