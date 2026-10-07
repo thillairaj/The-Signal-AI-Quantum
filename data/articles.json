@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-07T14:01:10.126127+00:00",
+  "generated_at": "2026-10-07T17:59:46.786676+00:00",
   "sources_polled": [
     "The Verge \u2014 AI",
     "Simon Willison",
@@ -15,6 +15,83 @@
   ],
   "articles": [
     {
+      "id": "dd551f425089cbdd",
+      "title": "Anti-Patterns in Software Blogging",
+      "link": "https://simonwillison.net/2026/Oct/7/anti-patterns-in-software-blogging/",
+      "source": "Simon Willison",
+      "category": "AI",
+      "summary": "Anti-Patterns in Software Blogging Some excellent writing advice from Michael Lynch. Michael warns against \"meandering intros\", misjudging your reader's existing knowledge, assuming they'll read your previous posts, and excessive formality. He also warns against overreliance on l",
+      "published": "2026-10-07T17:59:37.535085+00:00",
+      "audio_url": null,
+      "duration": ""
+    },
+    {
+      "id": "4c9b009d21f89481",
+      "title": "Google invests millions in Mark Zuckerberg\u2019s efforts to create a \u2018virtual cell\u2019",
+      "link": "https://www.theverge.com/tech/1006766/google-meta-biohub-investment-virtual-cell",
+      "source": "The Verge \u2014 AI",
+      "category": "AI",
+      "summary": "Google DeepMind, Meta, and AI drug discovery startup Isomorphic Labs are jointly investing $300 million into an initiative to create a \"virtual cell\" that researchers can use to combat disease, as reported earlier by Reuters. The project is led by Biohub, a nonprofit biomedical r",
+      "published": "2026-10-07T17:59:36.961806+00:00",
+      "audio_url": null,
+      "duration": ""
+    },
+    {
+      "id": "b8b3b1c514003fad",
+      "title": "Muse launches on the iPad",
+      "link": "https://www.theverge.com/tech/1006813/muse-ai-agent-ios-app-ipad-support",
+      "source": "The Verge \u2014 AI",
+      "category": "AI",
+      "summary": "After launching nearly a month ago and spending several weeks as the top free app in Apple's App Store, the latest update to Meta's Muse iOS app introduces native support for the iPad. A Mac version of Meta's agentic AI tool (designed to compete with OpenClaw, ChatGPT's Dots, and",
+      "published": "2026-10-07T17:59:36.961771+00:00",
+      "audio_url": null,
+      "duration": ""
+    },
+    {
+      "id": "ee6859a51c49dfea",
+      "title": "ChatGPT is getting college planning tools",
+      "link": "https://www.theverge.com/ai-artificial-intelligence/1005194/openai-chatgpt-teens-college-planner-notecards",
+      "source": "The Verge \u2014 AI",
+      "category": "AI",
+      "summary": "OpenAI is bringing new tools to ChatGPT for Teens, a mode for teens introduced in August with safeguards and break reminders, to help users with the college application process. \"College Planner brings together application requirements, deadlines, tasks, and financial-aid steps f",
+      "published": "2026-10-07T17:59:36.961701+00:00",
+      "audio_url": null,
+      "duration": ""
+    },
+    {
+      "id": "2c81a4fbc76bda68",
+      "title": "Surface RTX Spark Dev Box is available for preorder for $5,999",
+      "link": "https://www.theverge.com/tech/1006915/microsoft-surface-rtx-spark-dev-box-preorder",
+      "source": "The Verge \u2014 AI",
+      "category": "AI",
+      "summary": "Microsoft's Nvidia-powered Surface RTX Spark Dev Box is available for preorder now directly, and slated to ship in November for just about $6,000. It's pricier than the DGX Spark mini PC Nvidia launched last year, but PC prices have been climbing due to shortages of RAM and other",
+      "published": "2026-10-07T17:59:36.961628+00:00",
+      "audio_url": null,
+      "duration": ""
+    },
+    {
+      "id": "2943f19100563cde",
+      "title": "Outstreaming Taylor Swift is easy with 10K bots and AI songs, fraudster admits",
+      "link": "https://arstechnica.com/tech-policy/2026/10/outstreaming-taylor-swift-is-easy-with-10k-bots-and-ai-songs-fraudster-admits/",
+      "source": "Ars Technica AI",
+      "category": "AI",
+      "summary": "Man gets 18 months for AI scheme stealing $8M in music streaming royalties.",
+      "published": "2026-10-07T17:57:39+00:00",
+      "audio_url": null,
+      "duration": ""
+    },
+    {
+      "id": "e1ff572449c9001b",
+      "title": "Mistral says \"Le Chonk\" can challenge the best AI models",
+      "link": "https://arstechnica.com/ai/2026/10/mistral-says-le-chonk-can-challenge-the-best-ai-models/",
+      "source": "Ars Technica AI",
+      "category": "AI",
+      "summary": "Mistral says Le Chonk can rival top closed models while remaining open-weight.",
+      "published": "2026-10-07T14:12:37+00:00",
+      "audio_url": null,
+      "duration": ""
+    },
+    {
       "id": "8b63f191edc0d5fe",
       "title": "AI could upend food delivery",
       "link": "https://www.theverge.com/ai-artificial-intelligence/1005726/doordash-ai-agentic-food-delivery-bites",
@@ -22,6 +99,17 @@
       "category": "AI",
       "summary": "DoorDash, the leading food delivery app, processed 970 million orders in its second quarter this year and generated $4.5 billion in revenue. A 10-person startup called Bites is a blip in comparison: It has just around 300 restaurants signed up in the Bay Area, where it's operatin",
       "published": "2026-10-07T14:00:50.907064+00:00",
+      "audio_url": null,
+      "duration": ""
+    },
+    {
+      "id": "eba1d42227099159",
+      "title": "Google rolls out improved SynthID AI content detector, now available globally",
+      "link": "https://arstechnica.com/ai/2026/10/google-rolls-out-improved-synthid-ai-content-detector-now-available-globally/",
+      "source": "Ars Technica AI",
+      "category": "AI",
+      "summary": "The new SynthID website can now identify AI content from Google, OpenAI, and more.",
+      "published": "2026-10-07T14:00:08+00:00",
       "audio_url": null,
       "duration": ""
     },
@@ -37,6 +125,17 @@
       "duration": ""
     },
     {
+      "id": "ad4e14640e358f44",
+      "title": "Helping teens learn, plan, and shape the future of AI",
+      "link": "https://openai.com/index/teens-learn-and-plan",
+      "source": "OpenAI Blog",
+      "category": "AI",
+      "summary": "College Planner is coming to ChatGPT for Teens to help students manage college applications, alongside new flashcards, quizzes, and a teen AI council.",
+      "published": "2026-10-07T12:00:00+00:00",
+      "audio_url": null,
+      "duration": ""
+    },
+    {
       "id": "f81ac359aaf43f76",
       "title": "ChatGPT for Teens is an \u2018unacceptable risk,\u2019 says Common Sense Media",
       "link": "https://www.theverge.com/ai-artificial-intelligence/1006355/openai-chatgpt-for-teens-common-sense-media",
@@ -44,6 +143,17 @@
       "category": "AI",
       "summary": "Common Sense Media, a nonprofit that offers reviews of apps, services, and entertainment with a focus on youth safety, today said that OpenAI's ChatGPT for Teens is an \"unacceptable risk.\" ChatGPT for Teens, introduced in August, has guardrails for teens and is designed to help s",
       "published": "2026-10-07T09:59:44.775986+00:00",
+      "audio_url": null,
+      "duration": ""
+    },
+    {
+      "id": "04e9dc3828b5420c",
+      "title": "Radisson Hotel Group brings hotel discovery into ChatGPT",
+      "link": "https://openai.com/index/radisson",
+      "source": "OpenAI Blog",
+      "category": "AI",
+      "summary": "Radisson partnered with Accenture to build a ChatGPT plugin using OpenAI technology, helping travelers find, compare, and book hotels while planning their trips.",
+      "published": "2026-10-07T07:00:00+00:00",
       "audio_url": null,
       "duration": ""
     },
@@ -1632,6 +1742,17 @@
       "duration": ""
     },
     {
+      "id": "1eadd5627184a89f",
+      "title": "Watch the winning trailer from the Future Vision XPRIZE, The Gifted.",
+      "link": "https://blog.google/innovation-and-ai/technology/ai/winner-future-vision-xprize/",
+      "source": "Google AI Blog",
+      "category": "AI",
+      "summary": "Watch the winning trailer from the Future Vision XPRIZE, The Gifted.",
+      "published": "2026-09-28T19:00:00+00:00",
+      "audio_url": null,
+      "duration": ""
+    },
+    {
       "id": "cfe8e900401f31bb",
       "title": "How we will do better for Australia",
       "link": "https://openai.com/index/how-we-will-do-better-for-australia",
@@ -1649,17 +1770,6 @@
       "source": "OpenAI Blog",
       "category": "AI",
       "summary": "Our early guidelines for safety cases in frontier AI training cover technical safeguards, operational practices, and investigating misalignment incidents",
-      "published": "2026-09-28T19:00:00+00:00",
-      "audio_url": null,
-      "duration": ""
-    },
-    {
-      "id": "1eadd5627184a89f",
-      "title": "Watch the winning trailer from the Future Vision XPRIZE, The Gifted.",
-      "link": "https://blog.google/innovation-and-ai/technology/ai/winner-future-vision-xprize/",
-      "source": "Google AI Blog",
-      "category": "AI",
-      "summary": "Watch the winning trailer from the Future Vision XPRIZE, The Gifted.",
       "published": "2026-09-28T19:00:00+00:00",
       "audio_url": null,
       "duration": ""
@@ -2079,28 +2189,6 @@
       "category": "AI",
       "summary": "Explore new AI-powered advertising experiences from OpenAI, including Sponsored Agents, tools for marketers, and integrations with HubSpot and Shopify.",
       "published": "2026-09-16T13:00:00+00:00",
-      "audio_url": null,
-      "duration": ""
-    },
-    {
-      "id": "973a91148c502943",
-      "title": "Hex turns complex analysis into visual reports with GPT\u20116 Astra",
-      "link": "https://openai.com/index/hex-gpt-6-astra",
-      "source": "OpenAI Blog",
-      "category": "AI",
-      "summary": "GPT-6 Astra helps Hex\u2019s data agents turn answers into interactive visualizations that employees are proud to share.",
-      "published": "2026-09-16T12:00:00+00:00",
-      "audio_url": null,
-      "duration": ""
-    },
-    {
-      "id": "5f7e182a53f2403b",
-      "title": "How to connect AI usage to business value",
-      "link": "https://openai.com/index/how-to-connect-ai-usage-to-business-value",
-      "source": "OpenAI Blog",
-      "category": "AI",
-      "summary": "Learn how ChatGPT Work and Codex analytics help teams understand AI usage and spend, identify training needs, and connect adoption to business outcomes.",
-      "published": "2026-09-16T12:00:00+00:00",
       "audio_url": null,
       "duration": ""
     },
