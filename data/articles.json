@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-07T17:59:46.786676+00:00",
+  "generated_at": "2026-10-07T21:59:56.703701+00:00",
   "sources_polled": [
     "The Verge \u2014 AI",
     "Simon Willison",
@@ -14,6 +14,61 @@
     "Technology Learnings"
   ],
   "articles": [
+    {
+      "id": "6dcb3088ac59686b",
+      "title": "Claude Haiku 5.5",
+      "link": "https://simonwillison.net/2026/Oct/7/claude-haiku-5-5/",
+      "source": "Simon Willison",
+      "category": "AI",
+      "summary": "As previously promised , here's Anthropic's new fast, low cost model: Introducing Claude Haiku 5.5 . The previous Haiku, 4.5, was very much showing its age. It came out almost a year ago , and was priced at $1/million input and $5/million output - relatively expensive even back t",
+      "published": "2026-10-07T21:59:47.547481+00:00",
+      "audio_url": null,
+      "duration": ""
+    },
+    {
+      "id": "9c7dd462aa5ae2f1",
+      "title": "Microsoft is giving Copilot more control over Windows and your files",
+      "link": "https://www.theverge.com/tech/1007113/microsoft-windows-copilot-ai-control-search-hybrid-intelligence",
+      "source": "The Verge \u2014 AI",
+      "category": "AI",
+      "summary": "At today's Windows and Surface event, Microsoft showed off an upgrade to its Copilot AI system that will give it access to local files on your PC and the ability to take actions across the OS. It's part of an idea Microsoft is calling \"Hybrid Intelligence,\" where apps and tools r",
+      "published": "2026-10-07T21:59:44.444856+00:00",
+      "audio_url": null,
+      "duration": ""
+    },
+    {
+      "id": "a5b44d5e4c84e5df",
+      "title": "Everything announced at Microsoft&#8217;s Surface Laptop Ultra event",
+      "link": "https://www.theverge.com/tech/1007147/microsoft-surface-laptop-ultra-windows-event-everything-announced",
+      "source": "The Verge \u2014 AI",
+      "category": "AI",
+      "summary": "Microsoft just wrapped up a big Windows and Surface-focused keynote in San Francisco. The biggest announcement was arguably the release details about the Surface Laptop Ultra, its new laptop that&#8217;s powered by Nvidia&#8217;s RTX Spark Arm-based chip. The machine will start a",
+      "published": "2026-10-07T21:59:44.444816+00:00",
+      "audio_url": null,
+      "duration": ""
+    },
+    {
+      "id": "876648c3358ff5ff",
+      "title": "ChatGPT&#8217;s &#8216;Intelligent UI&#8217; update fills its responses with pictures, charts, and buttons",
+      "link": "https://www.theverge.com/ai-artificial-intelligence/1007276/openai-chatgpt-intelligent-ui-gpt-6",
+      "source": "The Verge \u2014 AI",
+      "category": "AI",
+      "summary": "OpenAI is launching a new Intelligent UI feature in ChatGPT that allows the chatbot to answer your questions with interactive visuals. The update, which is rolling out to all users alongside GPT-6, gives ChatGPT the ability to combine a text response with diagrams, charts, forms,",
+      "published": "2026-10-07T21:59:44.444705+00:00",
+      "audio_url": null,
+      "duration": ""
+    },
+    {
+      "id": "0598a3e5bb11bf63",
+      "title": "\u201cSoftware is over\u201d: Bold AI developer takes aim at Adobe with open source clones",
+      "link": "https://arstechnica.com/ai/2026/10/software-is-over-bold-ai-developer-takes-aim-at-adobe-with-open-source-clones/",
+      "source": "Ars Technica AI",
+      "category": "AI",
+      "summary": "Opus-built Creative Cloud alternatives are ambitious, free, and nowhere near finished.",
+      "published": "2026-10-07T21:56:42+00:00",
+      "audio_url": null,
+      "duration": ""
+    },
     {
       "id": "dd551f425089cbdd",
       "title": "Anti-Patterns in Software Blogging",
@@ -266,6 +321,17 @@
       "published": "2026-10-07T01:30:47+00:00",
       "audio_url": "https://muse.ai/podcasts/media/1248297608376725/94f09345-ad4a-4981-83dd-e3206bbf5c4e/ep-a58582d7-d10a-4815-b9ac-199980dcdbee.mp3",
       "duration": "283"
+    },
+    {
+      "id": "0ca1450969b5beb5",
+      "title": "GPT-6 and Intelligent UI for everyone",
+      "link": "https://openai.com/index/gpt-6-for-everyone",
+      "source": "OpenAI Blog",
+      "category": "AI",
+      "summary": "GPT\u20116 is rolling out globally in ChatGPT with Intelligent UI, delivering faster responses with visuals and interactive experiences you can explore and use directly.",
+      "published": "2026-10-07T00:00:00+00:00",
+      "audio_url": null,
+      "duration": ""
     },
     {
       "id": "17c1ef68addffb00",
@@ -2178,17 +2244,6 @@
       "category": "AI",
       "summary": "OpenAI and AARP are bringing free, hands-on ChatGPT workshops to 1,000 older adults across 10 U.S. cities to build practical AI skills safely.",
       "published": "2026-09-16T16:00:00+00:00",
-      "audio_url": null,
-      "duration": ""
-    },
-    {
-      "id": "52752974efc060af",
-      "title": "Reimagining advertising with AI",
-      "link": "https://openai.com/index/reimagining-advertising-with-ai",
-      "source": "OpenAI Blog",
-      "category": "AI",
-      "summary": "Explore new AI-powered advertising experiences from OpenAI, including Sponsored Agents, tools for marketers, and integrations with HubSpot and Shopify.",
-      "published": "2026-09-16T13:00:00+00:00",
       "audio_url": null,
       "duration": ""
     },

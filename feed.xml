@@ -4,7 +4,47 @@
     <title>The Signal</title>
     <link>https://thillairaj.github.io/The-Signal-AI-Quantum/</link>
     <description>A self-updating feed of AI, quantum computing, and podcast updates.</description>
-    <lastBuildDate>Wed, 07 Oct 2026 17:59:46 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 07 Oct 2026 21:59:56 +0000</lastBuildDate>
+    <item>
+      <title>Claude Haiku 5.5</title>
+      <link>https://simonwillison.net/2026/Oct/7/claude-haiku-5-5/</link>
+      <guid isPermaLink="false">6dcb3088ac59686b</guid>
+      <description>As previously promised , here's Anthropic's new fast, low cost model: Introducing Claude Haiku 5.5 . The previous Haiku, 4.5, was very much showing its age. It came out almost a year ago , and was priced at $1/million input and $5/million output - relatively expensive even back t</description>
+      <category>Simon Willison</category>
+      <pubDate>Wed, 07 Oct 2026 21:59:47 +0000</pubDate>
+    </item>
+    <item>
+      <title>Microsoft is giving Copilot more control over Windows and your files</title>
+      <link>https://www.theverge.com/tech/1007113/microsoft-windows-copilot-ai-control-search-hybrid-intelligence</link>
+      <guid isPermaLink="false">9c7dd462aa5ae2f1</guid>
+      <description>At today's Windows and Surface event, Microsoft showed off an upgrade to its Copilot AI system that will give it access to local files on your PC and the ability to take actions across the OS. It's part of an idea Microsoft is calling "Hybrid Intelligence," where apps and tools r</description>
+      <category>The Verge — AI</category>
+      <pubDate>Wed, 07 Oct 2026 21:59:44 +0000</pubDate>
+    </item>
+    <item>
+      <title>Everything announced at Microsoft&amp;#8217;s Surface Laptop Ultra event</title>
+      <link>https://www.theverge.com/tech/1007147/microsoft-surface-laptop-ultra-windows-event-everything-announced</link>
+      <guid isPermaLink="false">a5b44d5e4c84e5df</guid>
+      <description>Microsoft just wrapped up a big Windows and Surface-focused keynote in San Francisco. The biggest announcement was arguably the release details about the Surface Laptop Ultra, its new laptop that&amp;#8217;s powered by Nvidia&amp;#8217;s RTX Spark Arm-based chip. The machine will start a</description>
+      <category>The Verge — AI</category>
+      <pubDate>Wed, 07 Oct 2026 21:59:44 +0000</pubDate>
+    </item>
+    <item>
+      <title>ChatGPT&amp;#8217;s &amp;#8216;Intelligent UI&amp;#8217; update fills its responses with pictures, charts, and buttons</title>
+      <link>https://www.theverge.com/ai-artificial-intelligence/1007276/openai-chatgpt-intelligent-ui-gpt-6</link>
+      <guid isPermaLink="false">876648c3358ff5ff</guid>
+      <description>OpenAI is launching a new Intelligent UI feature in ChatGPT that allows the chatbot to answer your questions with interactive visuals. The update, which is rolling out to all users alongside GPT-6, gives ChatGPT the ability to combine a text response with diagrams, charts, forms,</description>
+      <category>The Verge — AI</category>
+      <pubDate>Wed, 07 Oct 2026 21:59:44 +0000</pubDate>
+    </item>
+    <item>
+      <title>“Software is over”: Bold AI developer takes aim at Adobe with open source clones</title>
+      <link>https://arstechnica.com/ai/2026/10/software-is-over-bold-ai-developer-takes-aim-at-adobe-with-open-source-clones/</link>
+      <guid isPermaLink="false">0598a3e5bb11bf63</guid>
+      <description>Opus-built Creative Cloud alternatives are ambitious, free, and nowhere near finished.</description>
+      <category>Ars Technica AI</category>
+      <pubDate>Wed, 07 Oct 2026 21:56:42 +0000</pubDate>
+    </item>
     <item>
       <title>Anti-Patterns in Software Blogging</title>
       <link>https://simonwillison.net/2026/Oct/7/anti-patterns-in-software-blogging/</link>
@@ -188,6 +228,14 @@
       <description>Wednesday, October 7, 2026: Anthropic's Cyber Verification Program expands to three tiers after 129,000 vulnerabilities found; Claude for Startups adds a free year plus ,000 API credits; OpenAI simplifies API rate-limit tiers; xAI ships a first-party TypeScript SDK; Citigroup peg</description>
       <category>Daily AI Intelligence</category>
       <pubDate>Wed, 07 Oct 2026 01:30:47 +0000</pubDate>
+    </item>
+    <item>
+      <title>GPT-6 and Intelligent UI for everyone</title>
+      <link>https://openai.com/index/gpt-6-for-everyone</link>
+      <guid isPermaLink="false">0ca1450969b5beb5</guid>
+      <description>GPT‑6 is rolling out globally in ChatGPT with Intelligent UI, delivering faster responses with visuals and interactive experiences you can explore and use directly.</description>
+      <category>OpenAI Blog</category>
+      <pubDate>Wed, 07 Oct 2026 00:00:00 +0000</pubDate>
     </item>
     <item>
       <title>datasette-atom 0.11a0</title>
@@ -436,54 +484,6 @@
       <description>Norbert Wiener, godfather of cybernetics, once said, "The thought of every age is reflected in its technique." For the past century, our thought has been reflected in our computers, including by those in the AI industry. Google's Demis Hassabis calls the brain "a biological appro</description>
       <category>The Verge — AI</category>
       <pubDate>Mon, 05 Oct 2026 16:30:23 +0000</pubDate>
-    </item>
-    <item>
-      <title>OpenAI is sticking more ads in ChatGPT</title>
-      <link>https://www.theverge.com/ai-artificial-intelligence/1004655/openai-chatgpt-visual-ads</link>
-      <guid isPermaLink="false">ec6a33d8c1604062</guid>
-      <description>OpenAI's latest ad format will put images of sponsored products and services on your screen. The ads, which OpenAI will begin testing in the US later this month, will "initially" appear when you generate images with ChatGPT, according to an announcement on Monday. The company fir</description>
-      <category>The Verge — AI</category>
-      <pubDate>Mon, 05 Oct 2026 16:30:23 +0000</pubDate>
-    </item>
-    <item>
-      <title>An open-source tool lets you delete 12GB of Apple Intelligence data on macOS</title>
-      <link>https://www.theverge.com/ai-artificial-intelligence/1004672/mac-delete-apple-intelligence-ai-tool</link>
-      <guid isPermaLink="false">0d7653e5ccb1edf6</guid>
-      <description>Getting some extra storage space on your Mac could be as easy as deleting Apple's AI features with a new open-source command line tool called RemoveMacAI. There used to be a single Settings toggle for disabling Apple Intelligence, but that was removed in macOS 27. Now, the models</description>
-      <category>The Verge — AI</category>
-      <pubDate>Mon, 05 Oct 2026 16:30:23 +0000</pubDate>
-    </item>
-    <item>
-      <title>Sen. Adam Schiff on AI regulation, free speech, and impeaching Trump one more time</title>
-      <link>https://www.theverge.com/podcast/1004286/senator-adam-schiff-ai-trump-regulation-corruption</link>
-      <guid isPermaLink="false">b48158e5ab87dd61</guid>
-      <description>Today, I’m talking with Sen. Adam Schiff, a Democrat from California. Schiff sits on a number of committees with oversight into tech and AI: intellectual property, antitrust, privacy and technology — it’s all there. I really wanted to ask him about how we might regulate anything </description>
-      <category>The Verge — AI</category>
-      <pubDate>Mon, 05 Oct 2026 16:30:23 +0000</pubDate>
-    </item>
-    <item>
-      <title>Our approach to EU text provenance rules</title>
-      <link>https://openai.com/index/eu-text-provenance</link>
-      <guid isPermaLink="false">78ad53815846c15c</guid>
-      <description>How OpenAI is approaching text watermarking under EU rules. Learn where watermarks apply, how detection works, and why access starts with researchers.</description>
-      <category>OpenAI Blog</category>
-      <pubDate>Mon, 05 Oct 2026 15:00:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>AI glasses face their first major government crackdown</title>
-      <link>https://arstechnica.com/ai/2026/10/ai-glasses-face-their-first-major-government-crackdown/</link>
-      <guid isPermaLink="false">fdcf6b49e5f5916c</guid>
-      <description>Norway wants time to write permanent rules for glasses that can record bystanders.</description>
-      <category>Ars Technica AI</category>
-      <pubDate>Mon, 05 Oct 2026 13:39:30 +0000</pubDate>
-    </item>
-    <item>
-      <title>Building advertising for the way people use AI</title>
-      <link>https://openai.com/index/new-chatgpt-ads-format-and-measurement</link>
-      <guid isPermaLink="false">3cbec84de8bf6155</guid>
-      <description>OpenAI introduces a new visual ad format in ChatGPT and expands measurement tools, attribution partnerships, and brand suitability for advertisers.</description>
-      <category>OpenAI Blog</category>
-      <pubDate>Mon, 05 Oct 2026 10:00:00 +0000</pubDate>
     </item>
   </channel>
 </rss>
