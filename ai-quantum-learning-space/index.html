@@ -1,0 +1,1120 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="color-scheme" content="light dark" />
+  <meta name="referrer" content="strict-origin-when-cross-origin" />
+  <meta name="description" content="AI + Quantum Learning Space — 22 hand-picked videos from the official labs (Google DeepMind, OpenAI, Anthropic, Meta, IBM, Microsoft, Qiskit), beginner to intermediate." />
+  <link rel="icon" href="data:," />
+  <title>AI + Quantum Learning Space</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Figtree:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --paper: #faf7f1;
+      --surface: #ffffff;
+      --wash: #f1ece2;
+      --ink: #201b14;
+      --ink-soft: #4c463b;
+      --muted: #7c7365;
+      --line: #e4dac6;
+      --accent: #b04a1f;
+      --accent-deep: #8f3815;
+      --on-accent: #fffaf3;
+      --beginner: #2e7d4f;
+      --intermediate: #96690a;
+      --skeleton: #e9e1d1;
+      --frame-shadow: 0 18px 40px -22px rgba(60, 42, 22, .35);
+      --radius: 14px;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --paper: #12100d;
+        --surface: #1b1814;
+        --wash: #242019;
+        --ink: #f1ebdd;
+        --ink-soft: #c9c0af;
+        --muted: #9d937f;
+        --line: #2c2720;
+        --accent: #e0844a;
+        --accent-deep: #f0a76f;
+        --on-accent: #241307;
+        --beginner: #58b47c;
+        --intermediate: #cfa14a;
+        --skeleton: #28231c;
+        --frame-shadow: 0 18px 40px -22px rgba(0, 0, 0, .7);
+      }
+    }
+    * { box-sizing: border-box; }
+    html { -webkit-text-size-adjust: 100%; }
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: "Figtree", system-ui, -apple-system, "Segoe UI", sans-serif;
+      line-height: 1.6;
+      font-size: 16px;
+    }
+    .wrap { max-width: 1180px; margin: 0 auto; padding: 0 22px; }
+    ::selection { background: var(--accent); color: var(--on-accent); }
+
+    /* ---------- Masthead ---------- */
+    header.masthead {
+      padding: 44px 0 6px;
+      border-bottom: 1px solid var(--line);
+    }
+    .reader {
+      display: flex; align-items: center; gap: 10px;
+      font-size: 13px; color: var(--muted); margin: 0 0 10px;
+      letter-spacing: .02em;
+    }
+    .reader svg { width: 17px; height: 17px; flex: none; }
+    .masthead h1 {
+      font-family: "DM Serif Display", Georgia, serif;
+      font-weight: 400;
+      font-size: clamp(38px, 6vw, 58px);
+      line-height: 1.05;
+      margin: 0 0 12px;
+      letter-spacing: -0.01em;
+    }
+    .masthead h1 em { font-style: italic; color: var(--accent); }
+    .deck {
+      font-size: clamp(16px, 2.2vw, 19px);
+      color: var(--ink-soft);
+      max-width: 62ch;
+      margin: 0 0 18px;
+    }
+    .meta-row {
+      display: flex; flex-wrap: wrap; gap: 8px 18px;
+      padding: 14px 0 16px;
+      font-size: 13.5px; color: var(--muted);
+    }
+    .meta-row strong { color: var(--ink-soft); font-weight: 600; }
+    .dot-sep::before { content: "·"; margin: 0 18px 0 0; color: var(--line); }
+    .dot-sep { margin-left: 0; }
+
+    /* ---------- Section nav + filters ---------- */
+    .jumpbar {
+      display: flex; flex-wrap: wrap; gap: 10px; align-items: center;
+      margin: 26px 0 4px;
+    }
+    .viewseg {
+      display: inline-flex; flex-wrap: wrap; gap: 2px;
+      border: 1px solid var(--line); background: var(--surface);
+      border-radius: 999px; padding: 4px;
+    }
+    .seg {
+      appearance: none; cursor: pointer; text-decoration: none;
+      display: inline-flex; align-items: center; gap: 8px;
+      border: 0; background: transparent; color: var(--ink-soft);
+      font: inherit; font-size: 14px; font-weight: 600;
+      border-radius: 999px; padding: 7px 13px;
+      transition: background .15s ease, color .15s ease;
+    }
+    .seg .n {
+      font-family: ui-monospace, "SF Mono", Menlo, monospace;
+      font-size: 11.5px; font-weight: 600;
+      background: var(--wash); border-radius: 999px;
+      min-width: 22px; height: 22px;
+      display: inline-flex; align-items: center; justify-content: center;
+      padding: 0 5px;
+    }
+    .seg:hover { color: var(--accent); }
+    .seg[aria-pressed="true"] { background: var(--ink); color: var(--paper); }
+    .seg[aria-pressed="true"] .n { background: var(--wash); color: var(--ink); }
+    .seg[aria-pressed="true"]:hover { color: var(--paper); }
+    .seg:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+    .filters { display: flex; flex-wrap: wrap; gap: 7px; margin-left: auto; }
+    .chip {
+      appearance: none; cursor: pointer;
+      font: inherit; font-size: 13px; font-weight: 600;
+      border: 1px solid var(--line); background: transparent; color: var(--ink-soft);
+      border-radius: 999px; padding: 6px 13px;
+      transition: background .15s ease, color .15s ease, border-color .15s ease;
+    }
+    .chip:hover { border-color: var(--accent); color: var(--accent); }
+    .chip[aria-pressed="true"] { background: var(--ink); border-color: var(--ink); color: var(--paper); }
+    .chip:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+    /* ---------- Focused-view banner ---------- */
+    .viewbar {
+      display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between;
+      gap: 8px 16px;
+      border: 1px solid var(--line); background: var(--wash);
+      border-radius: 12px; padding: 12px 16px;
+      margin: 18px 0 2px;
+    }
+    .viewbar[hidden] { display: none; }
+    .viewbar p { margin: 0; font-size: 14.5px; color: var(--ink-soft); }
+    .viewbar .vb-label {
+      font-size: 11.5px; font-weight: 700; letter-spacing: .05em; text-transform: uppercase;
+      color: var(--muted); margin-right: 9px;
+    }
+    .viewbar strong { color: var(--ink); font-weight: 700; }
+    .viewbar-reset {
+      appearance: none; cursor: pointer;
+      font: inherit; font-size: 13px; font-weight: 600;
+      border: 1px solid var(--line); background: var(--surface); color: var(--ink-soft);
+      border-radius: 999px; padding: 6px 13px;
+      transition: border-color .15s ease, color .15s ease;
+    }
+    .viewbar-reset:hover { border-color: var(--accent); color: var(--accent); }
+    .viewbar-reset:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+    /* ---------- Sections ---------- */
+    section.track { margin: 34px 0 10px; }
+    .track-head {
+      display: flex; align-items: baseline; gap: 14px; flex-wrap: wrap;
+      margin-bottom: 6px;
+    }
+    .track-head h2 {
+      font-family: "DM Serif Display", Georgia, serif;
+      font-weight: 400; font-size: clamp(27px, 4vw, 34px); margin: 0;
+      line-height: 1.15;
+    }
+    .track-head h2 em { font-style: italic; color: var(--accent); }
+    .track-head .count {
+      font-family: ui-monospace, "SF Mono", Menlo, monospace;
+      font-size: 13px; color: var(--muted);
+    }
+    .track-sub { color: var(--ink-soft); font-size: 15.5px; margin: 0 0 20px; max-width: 68ch; }
+
+    /* ---------- New arrivals ---------- */
+    .newarrivals { margin: 0 0 14px; }
+    .na-head { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; margin-bottom: 14px; }
+    .na-head h3 {
+      font-family: "DM Serif Display", Georgia, serif;
+      font-weight: 400; font-size: 22px; margin: 0; line-height: 1.2;
+    }
+    .na-head h3 em { font-style: italic; color: var(--accent); }
+    .na-tag {
+      font-size: 11.5px; font-weight: 700; letter-spacing: .05em; text-transform: uppercase;
+      color: var(--accent-deep);
+      border: 1px solid var(--line); background: var(--wash);
+      border-radius: 999px; padding: 3px 10px;
+    }
+    .newarrivals[hidden] { display: none; }
+
+    /* ---------- Compact thumbnail rails ---------- */
+    .railwrap { margin-bottom: 8px; }
+    .rail-head {
+      display: flex; align-items: center; gap: 12px; flex-wrap: wrap;
+      margin-bottom: 10px;
+    }
+    .rail-head h4 {
+      font-family: "DM Serif Display", Georgia, serif;
+      font-weight: 400; font-size: 19px; margin: 0; line-height: 1.2;
+    }
+    .rail-nav { display: flex; gap: 6px; margin-left: auto; }
+    .rail-btn {
+      appearance: none; cursor: pointer;
+      width: 34px; height: 34px; border-radius: 50%;
+      border: 1px solid var(--line); background: var(--surface); color: var(--ink-soft);
+      display: inline-flex; align-items: center; justify-content: center;
+      transition: border-color .15s ease, color .15s ease, opacity .15s ease;
+    }
+    .rail-btn svg { width: 16px; height: 16px; }
+    .rail-btn:hover:not(:disabled) { border-color: var(--accent); color: var(--accent); }
+    .rail-btn:disabled { opacity: .35; cursor: default; }
+    .rail-btn:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+    .rail {
+      display: flex; gap: 14px;
+      overflow-x: auto; overflow-y: hidden;
+      scroll-snap-type: x mandatory;
+      scroll-behavior: smooth;
+      padding: 2px 2px 10px;
+      scrollbar-width: none;
+      -webkit-overflow-scrolling: touch;
+    }
+    .rail::-webkit-scrollbar { display: none; }
+    .rail .card {
+      flex: 0 0 248px;
+      scroll-snap-align: start;
+    }
+    @media (max-width: 640px) { .rail .card { flex-basis: 204px; } }
+
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: var(--frame-shadow);
+      display: flex; flex-direction: column;
+    }
+    /* ---------- Section player (one per section) ---------- */
+    .stage {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: var(--frame-shadow);
+      max-width: 720px;
+      margin: 24px auto 6px;
+    }
+    .stage-screen {
+      position: relative;
+      aspect-ratio: 16 / 9;
+      background: var(--skeleton);
+    }
+    .stage-screen iframe {
+      position: absolute; inset: 0;
+      width: 100%; height: 100%;
+      border: 0; display: block;
+    }
+    .stage-idle {
+      position: absolute; inset: 0;
+      display: flex; flex-direction: column; align-items: center; justify-content: center;
+      gap: 10px; color: var(--muted); font-size: 13.5px;
+      text-align: center; padding: 16px;
+    }
+    .stage-idle .ring {
+      width: 58px; height: 58px; border-radius: 50%;
+      border: 1.5px solid currentColor;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .stage-idle .ring svg { width: 24px; height: 24px; }
+    .stage-meta { padding: 16px 20px 18px; }
+    .stage-meta .level { margin-bottom: 6px; }
+    .level[hidden] { display: none; }
+    .stage-title {
+      font-family: "DM Serif Display", Georgia, serif;
+      font-weight: 400; font-size: 22px; line-height: 1.3;
+      margin: 0 0 4px;
+    }
+    .stage-byline { font-size: 13.5px; color: var(--muted); margin: 0; }
+    .stage-byline strong { color: var(--ink-soft); font-weight: 600; }
+
+    /* ---------- Thumbnail cards ---------- */
+    .thumb {
+      appearance: none; cursor: pointer;
+      position: relative; display: block; width: 100%;
+      aspect-ratio: 16 / 9;
+      border: 0; padding: 0; margin: 0;
+      background: var(--skeleton);
+      flex: none;
+    }
+    .thumb img {
+      position: absolute; inset: 0;
+      width: 100%; height: 100%;
+      object-fit: cover; display: block;
+    }
+    .thumb .ring {
+      position: absolute; top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+      width: 42px; height: 42px; border-radius: 50%;
+      background: rgba(18, 14, 9, .55);
+      color: #fff7ea;
+      display: flex; align-items: center; justify-content: center;
+      transition: transform .15s ease, background .15s ease;
+    }
+    .thumb .ring svg { width: 18px; height: 18px; }
+    .thumb:hover .ring { transform: translate(-50%, -50%) scale(1.08); background: var(--accent); }
+    .thumb:focus-visible { outline: 2px solid var(--accent); outline-offset: -3px; }
+    .card.is-playing { border-color: var(--accent); }
+    .card.is-playing .thumb .ring { background: var(--accent); }
+    .now-badge {
+      position: absolute; top: 10px; left: 10px;
+      font-size: 11px; font-weight: 700; letter-spacing: .05em; text-transform: uppercase;
+      background: var(--accent); color: var(--on-accent);
+      border-radius: 999px; padding: 3px 9px;
+    }
+    .now-badge[hidden] { display: none; }
+    .card-meta { padding: 12px 14px 14px; display: flex; flex-direction: column; flex: 1; }
+    .level {
+      display: inline-flex; align-items: center; gap: 7px;
+      font-size: 11.5px; font-weight: 700; letter-spacing: .05em; text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+    .level::before { content: ""; width: 8px; height: 8px; border-radius: 50%; background: currentColor; }
+    .level.beginner { color: var(--beginner); }
+    .level.intermediate { color: var(--intermediate); }
+    .card-meta h3 {
+      font-family: "DM Serif Display", Georgia, serif;
+      font-weight: 400; font-size: 15.5px; line-height: 1.3;
+      margin: 0 0 4px;
+      display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+    .byline { font-size: 12.5px; color: var(--muted); margin: 0 0 8px; }
+    .byline strong { color: var(--ink-soft); font-weight: 600; }
+    .card-actions { margin-top: auto; }
+    .btn {
+      display: inline-flex; align-items: center; gap: 8px;
+      font: inherit; font-weight: 600; font-size: 14px;
+      border-radius: 999px; padding: 8px 15px;
+      text-decoration: none; cursor: pointer;
+      border: 1px solid var(--line); background: var(--surface); color: var(--ink);
+      transition: border-color .15s ease, color .15s ease, transform .15s ease;
+    }
+    .btn svg { width: 14px; height: 14px; }
+    .btn:hover { border-color: var(--accent); color: var(--accent); transform: translateY(-1px); }
+    .btn:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+    .card .btn { padding: 6px 11px; font-size: 12.5px; }
+    .empty-note { font-size: 14.5px; color: var(--muted); padding: 12px 2px; margin: 0; }
+
+    /* ---------- Stay-current section ---------- */
+    .stay {
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--wash);
+      padding: 28px 30px;
+      margin: 8px 0 34px;
+      display: grid; grid-template-columns: auto 1fr; gap: 18px; align-items: start;
+    }
+    @media (max-width: 640px) { .stay { grid-template-columns: 1fr; padding: 22px; } }
+    .stay .icon-badge {
+      width: 48px; height: 48px; border-radius: 14px;
+      background: var(--accent); color: var(--on-accent);
+      display: flex; align-items: center; justify-content: center;
+      flex: none;
+    }
+    .stay .icon-badge svg { width: 24px; height: 24px; }
+    .stay h2 {
+      font-family: "DM Serif Display", Georgia, serif;
+      font-weight: 400; font-size: 24px; margin: 0 0 8px;
+    }
+    .stay p { margin: 0 0 10px; color: var(--ink-soft); font-size: 15.5px; max-width: 70ch; }
+    .stay p:last-child { margin-bottom: 0; }
+    .stay strong { color: var(--ink); }
+
+    footer.page-foot {
+      border-top: 1px solid var(--line);
+      padding: 22px 0 34px;
+      font-size: 13px; color: var(--muted);
+      display: flex; flex-wrap: wrap; gap: 6px 20px; justify-content: space-between;
+    }
+    footer.page-foot p { margin: 0; }
+
+    footer.curator-foot {
+      padding: 4px 0 40px;
+      text-align: center;
+      font-size: 13.5px;
+      color: var(--muted);
+      letter-spacing: .02em;
+    }
+    footer.curator-foot p { margin: 0; }
+    footer.curator-foot .curator-name {
+      font-family: "DM Serif Display", Georgia, serif;
+      font-size: 15px;
+      color: var(--ink-soft);
+      font-style: italic;
+    }
+    footer.curator-foot .follow-link {
+      display: inline-flex; align-items: center; gap: 5px;
+      color: var(--muted);
+      text-decoration: none;
+      font-size: 12.5px;
+      letter-spacing: .02em;
+      transition: color .15s ease;
+    }
+    footer.curator-foot .follow-link svg { width: 12px; height: 12px; flex: none; }
+    footer.curator-foot .follow-link:hover { color: var(--accent); }
+    footer.curator-foot .follow-link:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 2px; }
+    footer.curator-foot .curator-sep { color: var(--line); margin: 0 2px; }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { transition: none !important; }
+      .rail { scroll-behavior: auto; }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header class="masthead">
+      <p class="reader">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+          <rect x="2" y="5" width="20" height="13" rx="3"></rect>
+          <path d="M10 9.5v4l3.2-2z" fill="currentColor" stroke="none"></path>
+          <path d="M8 21h8"></path>
+        </svg>
+        A video learning room
+      </p>
+      <h1 id="mastTitle">AI <em>+</em> Quantum</h1>
+      <p class="deck" id="mastDeck">
+        Twenty-two videos straight from the labs building the frontier — Google DeepMind, OpenAI,
+        Anthropic, Meta, IBM, Microsoft and Qiskit. Eleven on AI, eleven on quantum, with the
+        newest drops leading each rail. Tap any lesson and it plays in the player up top —
+        one video at a time, never two at once.
+      </p>
+      <div class="meta-row">
+        <span><strong id="mastCount">22 lessons</strong></span>
+        <span class="dot-sep">Beginner to intermediate</span>
+        <span class="dot-sep">Official lab channels only</span>
+        <span class="dot-sep">Updated <strong>5 Oct 2026</strong></span>
+      </div>
+    </header>
+
+    <main>
+      <div class="jumpbar">
+        <div class="viewseg" role="group" aria-label="Choose which track to view">
+          <button class="seg" type="button" data-track="all" aria-pressed="true">Everything</button>
+          <button class="seg" type="button" data-track="ai" aria-pressed="false">Artificial intelligence <span class="n">11</span></button>
+          <button class="seg" type="button" data-track="quantum" aria-pressed="false">Quantum computing <span class="n">11</span></button>
+        </div>
+        <div class="filters" role="group" aria-label="Filter by level">
+          <button class="chip" type="button" data-filter="All" aria-pressed="true">All levels</button>
+          <button class="chip" type="button" data-filter="Beginner" aria-pressed="false">Beginner</button>
+          <button class="chip" type="button" data-filter="Intermediate" aria-pressed="false">Intermediate</button>
+        </div>
+      </div>
+
+      <div class="viewbar" id="viewbar" hidden>
+        <p><span class="vb-label">Now showing</span><strong id="viewName"></strong></p>
+        <button class="viewbar-reset" id="resetView" type="button">Show everything</button>
+      </div>
+
+      <div class="stage" id="player" aria-label="Video player">
+        <div class="stage-screen">
+          <div class="stage-idle" data-stage-idle>
+            <span class="ring"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M9.5 7.8v8.4l6.8-4.2z" fill="currentColor" stroke="none"></path></svg></span>
+            <span>Pick any lesson below — it plays here, one video at a time.</span>
+          </div>
+        </div>
+        <div class="stage-meta">
+          <span class="level beginner" data-stage-level hidden>Beginner</span>
+          <h3 class="stage-title" data-stage-title>No lesson selected yet</h3>
+          <p class="stage-byline" data-stage-byline>Tap any thumbnail below and the video loads into this player.</p>
+        </div>
+      </div>
+
+      <section class="track" id="ai" aria-label="Artificial intelligence videos">
+        <div class="track-head">
+          <h2>Artificial <em>intelligence</em></h2>
+          <span class="count" data-count></span>
+        </div>
+        <p class="track-sub">Frontier model launches, agents and developer tooling — the releases shaping how AI gets built and used, from the teams shipping them.</p>
+        <div class="newarrivals" data-newarrivals data-railwrap>
+          <div class="na-head">
+            <h3>New <em>arrivals</em></h3>
+            <span class="na-tag">Added Oct 2026</span>
+            <div class="rail-nav" role="group" aria-label="Scroll new arrivals">
+              <button class="rail-btn" type="button" data-rail-prev aria-label="Previous new arrival"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M14.5 5.5L8 12l6.5 6.5"></path></svg></button>
+              <button class="rail-btn" type="button" data-rail-next aria-label="Next new arrival"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M9.5 5.5L16 12l-6.5 6.5"></path></svg></button>
+            </div>
+          </div>
+          <div class="rail" data-newgrid></div>
+        </div>
+        <div class="railwrap" data-mainwrap data-railwrap>
+          <div class="rail-head">
+            <h4>All lessons</h4>
+            <div class="rail-nav" role="group" aria-label="Scroll all lessons">
+              <button class="rail-btn" type="button" data-rail-prev aria-label="Previous lesson"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M14.5 5.5L8 12l6.5 6.5"></path></svg></button>
+              <button class="rail-btn" type="button" data-rail-next aria-label="Next lesson"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M9.5 5.5L16 12l-6.5 6.5"></path></svg></button>
+            </div>
+          </div>
+          <div class="rail" data-grid></div>
+        </div>
+        <p class="empty-note" data-empty hidden>No lessons at this level in this section.</p>
+      </section>
+
+      <section class="track" id="quantum" aria-label="Quantum computing videos">
+        <div class="track-head">
+          <h2>Quantum <em>computing</em></h2>
+          <span class="count" data-count></span>
+        </div>
+        <p class="track-sub">From first circuits to fault-tolerance roadmaps: how IBM, Google, Microsoft and Qiskit are turning fragile qubits into machines that solve real problems.</p>
+        <div class="newarrivals" data-newarrivals data-railwrap>
+          <div class="na-head">
+            <h3>New <em>arrivals</em></h3>
+            <span class="na-tag">Added Oct 2026</span>
+            <div class="rail-nav" role="group" aria-label="Scroll new arrivals">
+              <button class="rail-btn" type="button" data-rail-prev aria-label="Previous new arrival"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M14.5 5.5L8 12l6.5 6.5"></path></svg></button>
+              <button class="rail-btn" type="button" data-rail-next aria-label="Next new arrival"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M9.5 5.5L16 12l-6.5 6.5"></path></svg></button>
+            </div>
+          </div>
+          <div class="rail" data-newgrid></div>
+        </div>
+        <div class="railwrap" data-mainwrap data-railwrap>
+          <div class="rail-head">
+            <h4>All lessons</h4>
+            <div class="rail-nav" role="group" aria-label="Scroll all lessons">
+              <button class="rail-btn" type="button" data-rail-prev aria-label="Previous lesson"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M14.5 5.5L8 12l6.5 6.5"></path></svg></button>
+              <button class="rail-btn" type="button" data-rail-next aria-label="Next lesson"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M9.5 5.5L16 12l-6.5 6.5"></path></svg></button>
+            </div>
+          </div>
+          <div class="rail" data-grid></div>
+        </div>
+        <p class="empty-note" data-empty hidden>No lessons at this level in this section.</p>
+      </section>
+
+      <section class="stay" id="stayCurrent" aria-label="Staying up to date">
+        <div class="icon-badge" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+            <path d="M21 12a9 9 0 1 1-2.64-6.36"></path>
+            <path d="M21 3v6h-6"></path>
+          </svg>
+        </div>
+        <div>
+          <h2>What about new videos?</h2>
+          <p>
+            This room is a <strong>curated snapshot</strong> — a hand-picked selection of AI and
+            quantum videos from the official lab channels, last reviewed <strong>5 October 2026</strong>. A page like this can't
+            add new releases on its own; it has no way to watch YouTube for you.
+          </p>
+          <p>
+            One gap worth knowing: <strong>xAI</strong> streams its launches on X rather than YouTube,
+            so no verifiable xAI video made this cut. To never miss the rest, subscribe to the official
+            <strong>Google DeepMind</strong>, <strong>OpenAI</strong>, <strong>Anthropic</strong>,
+            <strong>Meta Developers</strong>, <strong>IBM Research</strong>, <strong>Qiskit</strong> and
+            <strong>Microsoft</strong> channels and turn on notifications. Want a fresh round of picks
+            later? Just ask in chat and I'll re-curate this room.
+          </p>
+        </div>
+      </section>
+
+      <footer class="page-foot">
+        <p>AI + Quantum Learning Space</p>
+        <p>Videos via YouTube · Curated 2 Oct 2026 · Updated 5 Oct 2026 · Titles and channels as published by their creators</p>
+      </footer>
+
+      <footer class="curator-foot">
+        <p>Curated by <span class="curator-name">Thillai Raj Thanam Jeya Veera Raj</span> <span class="curator-sep" aria-hidden="true">·</span> <a class="follow-link" href="https://www.linkedin.com/in/thillairaj" target="_blank" rel="noopener" aria-label="Follow Thillai Raj on LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.55V9h3.57v11.45z"/></svg>Follow on LinkedIn</a></p>
+      </footer>
+    </main>
+  </div>
+
+  <script>
+    (function () {
+      "use strict";
+
+      /* ------------------------------------------------------------------
+       * DATA — baked snapshot, verified 2 Oct 2026 (New arrivals added
+       * 5 Oct 2026). Every id comes from a
+       * pre-verified https://www.youtube.com/watch?v=<id> URL published on
+       * an official lab channel. The /embed/ form is YouTube's official
+       * embed endpoint, mounted in the page's single shared player when a
+       * thumbnail card is pressed.
+       * ------------------------------------------------------------------ */
+      var VIDEOS = {
+        ai: [
+          {
+            id: "Z8Qip0kgl3A",
+            title: "Google DeepMind + Gemini for Developers | I/O 2025 Keynote",
+            channel: "Google",
+            date: "May 2025",
+            level: "Beginner",
+            desc: "Gemini developer announcements, APIs and tooling from Google I/O 2025."
+          },
+          {
+            id: "0Uu_VJeVVfo",
+            title: "Introducing GPT-5",
+            channel: "OpenAI",
+            date: "Aug 2025",
+            level: "Beginner",
+            desc: "Official explainer of the GPT-5 model release and what it can do."
+          },
+          {
+            id: "AJpK3YTTKZ4",
+            title: "Introducing Claude Code",
+            channel: "Anthropic",
+            date: "Feb 2025",
+            level: "Intermediate",
+            desc: "Anthropic's agentic coding assistant working directly in the terminal."
+          },
+          {
+            id: "kgUc3WJvOM4",
+            title: "Introducing Llama API: A Seamless Way to Revolutionize Your Workflow",
+            channel: "Meta Developers",
+            date: "2025",
+            level: "Intermediate",
+            desc: "Meta's Llama API for developers — open-model AI infrastructure."
+          },
+          {
+            id: "1jn_RpbPbEc",
+            title: "Introduction to ChatGPT agent",
+            channel: "OpenAI",
+            date: "Jul 2025",
+            level: "Beginner",
+            desc: "Autonomous multi-step task completion with tools, end to end."
+          },
+          {
+            id: "56kq0VTkU4k",
+            title: "Introducing Claude Opus 4.5",
+            channel: "Anthropic",
+            date: "Nov 2025",
+            level: "Beginner",
+            desc: "Model release explainer for Anthropic's flagship reasoning model."
+          },
+          {
+            id: "mCFMn0UkRt0",
+            title: "Veo 3 demo | Sailor and the sea",
+            channel: "Google DeepMind",
+            date: "May 2025",
+            level: "Beginner",
+            desc: "Veo 3 generative video showcase — multimodal AI in action."
+          },
+          {
+            id: "sq8GBPUb3rk",
+            title: "OpenAI o3 & o4-mini",
+            channel: "OpenAI",
+            date: "Apr 2025",
+            level: "Intermediate",
+            desc: "Reasoning models that “think with images”, with agentic tool use."
+          }
+        ],
+        quantum: [
+          {
+            id: "_y43boNNoVo",
+            title: "2025 IBM Quantum Roadmap update",
+            channel: "IBM Research",
+            date: "Jun 2025",
+            level: "Intermediate",
+            desc: "IBM's updated quantum roadmap toward fault-tolerant computing."
+          },
+          {
+            id: "mEBCQidaNTQ",
+            title: "Quantum Echoes: Towards real world applications",
+            channel: "Google Quantum AI",
+            date: "Oct 2025",
+            level: "Intermediate",
+            desc: "Verifiable quantum advantage experiment run on the Willow chip."
+          },
+          {
+            id: "wSHmygPQukQ",
+            title: "Majorana 1 Explained: The Path to a Million Qubits",
+            channel: "Microsoft",
+            date: "Feb 2025",
+            level: "Beginner",
+            desc: "The topological-qubit Majorana 1 chip and scalable quantum computing."
+          },
+          {
+            id: "zrZHPil0BTA",
+            title: "Realizing large-scale, fault-tolerant quantum computing",
+            channel: "IBM Research",
+            date: "Jun 2025",
+            level: "Intermediate",
+            desc: "The fault-tolerance framework and IBM's Starling path."
+          },
+          {
+            id: "maJaB4-WfFg",
+            title: "Foundations of Quantum Mechanics: Olivia Lanes | QGSS 2025",
+            channel: "Qiskit",
+            date: "2025",
+            level: "Beginner",
+            desc: "Beginner-friendly foundations of quantum mechanics."
+          },
+          {
+            id: "vSFv_i_FAXg",
+            title: "From Zero to Quantum | Use A Quantum Computer Today | Ep.1",
+            channel: "Qiskit",
+            date: "2026",
+            level: "Beginner",
+            desc: "True-beginner course: run your first real quantum program."
+          },
+          {
+            id: "Aaa4DZNDDzw",
+            title: "Quantum Advantage",
+            channel: "Microsoft Azure Developers",
+            date: "2026",
+            level: "Intermediate",
+            desc: "The Quantum Advantage Evaluator on Azure — honest quantum-vs-classical verdicts."
+          },
+          {
+            id: "PVCZb0p2FBo",
+            title: "Foundational Quantum Algorithms Part I: Deutsch's and Grover's Algorithms: John Watrous | QGSS 2025",
+            channel: "Qiskit",
+            date: "2025",
+            level: "Intermediate",
+            desc: "Foundational quantum algorithms lecture from Qiskit Global Summer School."
+          }
+        ]
+      };
+
+      /* ------------------------------------------------------------------
+       * NEW ARRIVALS — added 5 Oct 2026, newest first. Rendered into each
+       * section's "New arrivals" area, above the main grid. Levels sit
+       * inside the two existing levels so the level filter keeps working.
+       * ------------------------------------------------------------------ */
+      var NEW_VIDEOS = {
+        ai: [
+          {
+            id: "fHEIw5CcN5U",
+            title: "The dots demo, take two | OpenAI DevDay 2026",
+            channel: "OpenAI",
+            date: "Sep 2026",
+            level: "Beginner",
+            desc: "The DevDay 2026 stage demo of dots, OpenAI's always-on agents, working live."
+          },
+          {
+            id: "uXspbC2srEQ",
+            title: "Introducing dots, always-on agents built to handle everything.",
+            channel: "OpenAI",
+            date: "Sep 2026",
+            level: "Beginner",
+            desc: "OpenAI's launch film for dots: always-on agents that keep working between prompts, each with its own cloud computer."
+          },
+          {
+            id: "ROF2Nv_KjOM",
+            title: "Introducing Claude Fable 5.1",
+            channel: "Anthropic",
+            date: "2026",
+            level: "Beginner",
+            desc: "Anthropic's launch video for Claude Fable 5.1, the newest model in the Claude family."
+          }
+        ],
+        quantum: [
+          {
+            id: "0JzjPcgY7w0",
+            title: "Unlocking mitigation techniques | Tools for Quantum Advantage | Ep3",
+            channel: "IBM Research",
+            date: "2026",
+            level: "Intermediate",
+            desc: "Tools for Quantum Advantage, Ep. 3: error mitigation on today's hardware — M3, TREX, zero-noise extrapolation and probabilistic error cancellation."
+          },
+          {
+            id: "chHUUHI3yEI",
+            title: "Inside quantum-centric supercomputing",
+            channel: "IBM Research",
+            date: "Sep 2026",
+            level: "Intermediate",
+            desc: "IBM and AMD on quantum-centric supercomputing: QPUs working alongside the CPUs and GPUs behind classical supercomputers."
+          },
+          {
+            id: "-oCAu9g2nKk",
+            title: "Explaining quantum noise | Tools for Quantum Advantage | Ep2",
+            channel: "IBM Research",
+            date: "2026",
+            level: "Beginner",
+            desc: "Tools for Quantum Advantage, Ep. 2: where quantum noise comes from and why it limits today's machines."
+          }
+        ]
+      };
+
+      var LEVEL_CLASS = { Beginner: "beginner", Intermediate: "intermediate" };
+
+      function watchUrl(id) { return "https://www.youtube.com/watch?v=" + id; }
+      function embedUrl(id) { return "https://www.youtube-nocookie.com/embed/" + id + "?autoplay=1&rel=0"; }
+
+      function playSvg() {
+        return '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">' +
+               '<path d="M9.5 7.8v8.4l6.8-4.2z" fill="currentColor" stroke="none"></path></svg>';
+      }
+      function arrowSvg() {
+        return '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">' +
+               '<path d="M7 17L17 7M8 7h9v9"></path></svg>';
+      }
+
+      function buildCard(v) {
+        var card = document.createElement("article");
+        card.className = "card";
+        card.dataset.level = v.level;
+
+        var thumbBtn = document.createElement("button");
+        thumbBtn.type = "button";
+        thumbBtn.className = "thumb";
+        thumbBtn.setAttribute("aria-label", "Play: " + v.title);
+        var img = document.createElement("img");
+        img.src = "assets/thumbs/" + v.id + ".jpg";
+        img.alt = "";
+        img.loading = "lazy";
+        img.width = 640;
+        img.height = 360;
+        thumbBtn.appendChild(img);
+        var ring = document.createElement("span");
+        ring.className = "ring";
+        ring.innerHTML = playSvg();
+        thumbBtn.appendChild(ring);
+        var badge = document.createElement("span");
+        badge.className = "now-badge";
+        badge.textContent = "Now playing";
+        badge.hidden = true;
+        thumbBtn.appendChild(badge);
+        thumbBtn.addEventListener("click", function () { playVideo(v, card); });
+
+        var meta = document.createElement("div");
+        meta.className = "card-meta";
+
+        var level = document.createElement("span");
+        level.className = "level " + LEVEL_CLASS[v.level];
+        level.textContent = v.level;
+        meta.appendChild(level);
+
+        var h3 = document.createElement("h3");
+        h3.textContent = v.title;
+        meta.appendChild(h3);
+
+        var byline = document.createElement("p");
+        byline.className = "byline";
+        byline.innerHTML = "By <strong></strong> · ";
+        byline.querySelector("strong").textContent = v.channel;
+        byline.appendChild(document.createTextNode(v.date));
+        meta.appendChild(byline);
+
+        var actions = document.createElement("div");
+        actions.className = "card-actions";
+        var link = document.createElement("a");
+        link.className = "btn";
+        link.href = watchUrl(v.id);
+        link.target = "_blank";
+        link.rel = "noopener";
+        link.textContent = "Watch on YouTube";
+        link.insertAdjacentHTML("beforeend", " " + arrowSvg());
+        actions.appendChild(link);
+        meta.appendChild(actions);
+
+        card.appendChild(thumbBtn);
+        card.appendChild(meta);
+        return card;
+      }
+
+      /* ------------------------------------------------------------------
+       * PLAYER — one shared stage for the whole page, sitting above both
+       * sections. playVideo() swaps whatever is loaded, so two videos can
+       * never sound at the same time.
+       * ------------------------------------------------------------------ */
+      var playerStage = document.getElementById("player");
+      var player = {
+        screen: playerStage.querySelector(".stage-screen"),
+        idle: playerStage.querySelector("[data-stage-idle]"),
+        levelEl: playerStage.querySelector("[data-stage-level]"),
+        titleEl: playerStage.querySelector("[data-stage-title]"),
+        bylineEl: playerStage.querySelector("[data-stage-byline]"),
+        iframe: null, card: null
+      };
+
+      function stopPlayback() {
+        if (player.iframe) { player.iframe.remove(); player.iframe = null; }
+        if (player.card) {
+          player.card.classList.remove("is-playing");
+          var b = player.card.querySelector(".now-badge");
+          if (b) b.hidden = true;
+          player.card = null;
+        }
+      }
+
+      function playVideo(v, card) {
+        stopPlayback();
+        if (player.idle) { player.idle.remove(); player.idle = null; }
+        var iframe = document.createElement("iframe");
+        iframe.src = embedUrl(v.id);
+        iframe.setAttribute("title", "Video: " + v.title);
+        iframe.setAttribute("allow", "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share");
+        iframe.setAttribute("allowfullscreen", "");
+        /* Embeds load from youtube-nocookie.com (the host verified playing
+           inline on the public page), and the player refuses to configure
+           (Error 153) when the embed request carries no Referer, so send
+           the origin. Do NOT sandbox a YouTube embed — YouTube does not
+           support it. */
+        iframe.setAttribute("referrerpolicy", "strict-origin-when-cross-origin");
+        player.screen.appendChild(iframe);
+        player.iframe = iframe;
+        player.levelEl.hidden = false;
+        player.levelEl.className = "level " + LEVEL_CLASS[v.level];
+        player.levelEl.textContent = v.level;
+        player.titleEl.textContent = v.title;
+        player.bylineEl.innerHTML = "By <strong></strong> · ";
+        player.bylineEl.querySelector("strong").textContent = v.channel;
+        player.bylineEl.appendChild(document.createTextNode(v.date));
+        card.classList.add("is-playing");
+        var badge = card.querySelector(".now-badge");
+        if (badge) badge.hidden = false;
+        playerStage.scrollIntoView({ behavior: "smooth", block: "start" });
+      }
+
+      var sections = {};
+      Object.keys(VIDEOS).forEach(function (key) {
+        var section = document.getElementById(key);
+        var grid = section.querySelector("[data-grid]");
+        var newGrid = section.querySelector("[data-newgrid]");
+        var newWrap = section.querySelector("[data-newarrivals]");
+        var mainWrap = section.querySelector("[data-mainwrap]");
+        var count = section.querySelector("[data-count]");
+        var empty = section.querySelector("[data-empty]");
+        (NEW_VIDEOS[key] || []).forEach(function (v) { newGrid.appendChild(buildCard(v)); });
+        VIDEOS[key].forEach(function (v) { grid.appendChild(buildCard(v)); });
+        sections[key] = {
+          grid: grid, newGrid: newGrid, newWrap: newWrap, mainWrap: mainWrap,
+          count: count, empty: empty,
+          total: VIDEOS[key].length + (NEW_VIDEOS[key] || []).length
+        };
+      });
+
+      /* ------------------------------------------------------------------
+       * VIEW STATE — track (all / ai / quantum) x level (All / Beginner /
+       * Intermediate). The track tabs switch the view in place: picking
+       * Artificial intelligence shows only the AI section here, picking
+       * Quantum computing shows only the quantum section. The view also
+       * round-trips through the URL (?track=ai&level=beginner), so a
+       * copied address loads showing only the matching track and level.
+       * ------------------------------------------------------------------ */
+      var TRACK_NAMES = { ai: "Artificial intelligence", quantum: "Quantum computing" };
+      var state = { track: "all", level: "All" };
+
+      function readParams() {
+        var params;
+        try { params = new URLSearchParams(window.location.search); } catch (e) { return; }
+        var t = (params.get("track") || "").toLowerCase();
+        if (t === "ai" || t === "quantum") state.track = t;
+        var l = (params.get("level") || "").toLowerCase();
+        if (l === "beginner") state.level = "Beginner";
+        else if (l === "intermediate") state.level = "Intermediate";
+      }
+
+      function viewHref() {
+        var parts = [];
+        if (state.track !== "all") parts.push("track=" + state.track);
+        if (state.level !== "All") parts.push("level=" + state.level.toLowerCase());
+        /* Query-only reference: resolves against this page's own address,
+           however the page happens to be served. */
+        return parts.length ? "?" + parts.join("&") : "?";
+      }
+
+      var viewbar = document.getElementById("viewbar");
+      var viewName = document.getElementById("viewName");
+      var mastTitle = document.getElementById("mastTitle");
+      var mastDeck = document.getElementById("mastDeck");
+      var mastCount = document.getElementById("mastCount");
+      var stayCurrent = document.getElementById("stayCurrent");
+
+      var MAST = {
+        all: {
+          title: "AI <em>+</em> Quantum",
+          count: "22 lessons",
+          deck: "Twenty-two videos straight from the labs building the frontier — Google DeepMind, OpenAI, Anthropic, Meta, IBM, Microsoft and Qiskit. Eleven on AI, eleven on quantum, with the newest drops leading each rail. Tap any lesson and it plays in the player up top — one video at a time, never two at once."
+        },
+        ai: {
+          title: "Artificial <em>intelligence</em>",
+          count: "11 lessons",
+          deck: "Eleven videos from the teams building the frontier — Google DeepMind, OpenAI, Anthropic and Meta. Frontier model launches, agents and developer tooling, with the newest drops leading the rail. Tap any lesson and it plays in the player at the top — one video at a time."
+        },
+        quantum: {
+          title: "Quantum <em>computing</em>",
+          count: "11 lessons",
+          deck: "Eleven videos from IBM, Google Quantum AI, Microsoft and Qiskit. From first circuits to fault-tolerance roadmaps — how fragile qubits are becoming machines that solve real problems, with the newest drops leading the rail. Tap any lesson and it plays in the player at the top — one video at a time."
+        }
+      };
+
+      function applyView(syncUrl) {
+        Object.keys(sections).forEach(function (key) {
+          var secEl = document.getElementById(key);
+          var secHidden = state.track !== "all" && state.track !== key;
+          secEl.hidden = secHidden;
+          var s = sections[key];
+          function filterGrid(grid) {
+            var n = 0;
+            Array.prototype.forEach.call(grid.children, function (card) {
+              var on = state.level === "All" || card.dataset.level === state.level;
+              card.style.display = on ? "" : "none";
+              if (on) n++;
+            });
+            return n;
+          }
+          var newShown = filterGrid(s.newGrid);
+          var mainShown = filterGrid(s.grid);
+          var shown = newShown + mainShown;
+          /* The New arrivals rail steps aside when the level filter
+             leaves none of its cards standing; the All lessons rail
+             does the same. */
+          s.newWrap.hidden = newShown === 0;
+          s.mainWrap.hidden = mainShown === 0;
+          s.count.textContent = state.level === "All"
+            ? s.total + " lessons"
+            : shown + " of " + s.total + " lessons";
+          s.empty.hidden = shown !== 0;
+        });
+
+        /* Rail scroll ranges changed with the filtering — refresh the
+           prev/next arrow states. */
+        document.querySelectorAll("[data-railwrap]").forEach(updateRailNav);
+
+        /* A focused tab is single-subject: the masthead speaks only for the
+           visible track, and the mixed-topic sections step aside. */
+        var mast = MAST[state.track];
+        mastTitle.innerHTML = mast.title;
+        mastDeck.textContent = mast.deck;
+        mastCount.textContent = mast.count;
+        stayCurrent.hidden = state.track !== "all";
+
+        document.querySelectorAll(".seg").forEach(function (tab) {
+          tab.setAttribute("aria-pressed", tab.dataset.track === state.track ? "true" : "false");
+        });
+        document.querySelectorAll(".chip").forEach(function (chip) {
+          chip.setAttribute("aria-pressed", chip.dataset.filter === state.level ? "true" : "false");
+        });
+
+        if (syncUrl && window.history && window.history.replaceState) {
+          try { window.history.replaceState(null, "", viewHref()); } catch (e) { /* address stays as-is */ }
+        }
+
+        var focused = state.track !== "all" || state.level !== "All";
+        viewbar.hidden = !focused;
+        if (focused) {
+          var name = state.track === "all" ? "Everything" : TRACK_NAMES[state.track];
+          if (state.level !== "All") name += " · " + state.level + " only";
+          viewName.textContent = name;
+          var titleParts = [];
+          if (state.track !== "all") titleParts.push(TRACK_NAMES[state.track]);
+          if (state.level !== "All") titleParts.push(state.level);
+          document.title = titleParts.join(" · ") + " — AI + Quantum Learning Space";
+        } else {
+          document.title = "AI + Quantum Learning Space";
+        }
+      }
+
+      /* The track tabs switch the view in place — no new browser tab.
+         Picking a track shows only that track's section on this page,
+         and the level filter then narrows within it. */
+      document.querySelectorAll(".seg").forEach(function (tab) {
+        tab.addEventListener("click", function () {
+          state.track = tab.dataset.track;
+          applyView(true);
+        });
+      });
+      document.querySelectorAll(".chip").forEach(function (chip) {
+        chip.addEventListener("click", function () {
+          state.level = chip.dataset.filter;
+          applyView(true);
+        });
+      });
+      document.getElementById("resetView").addEventListener("click", function () {
+        state.track = "all";
+        state.level = "All";
+        applyView(true);
+      });
+
+      /* ------------------------------------------------------------------
+       * RAILS — each rail scrolls one card at a time via its prev/next
+       * arrows; scroll-snap keeps cards aligned. Arrow states follow the
+       * scroll position and are refreshed after filtering and resizes.
+       * ------------------------------------------------------------------ */
+      function updateRailNav(wrap) {
+        var rail = wrap.querySelector(".rail");
+        var prev = wrap.querySelector("[data-rail-prev]");
+        var next = wrap.querySelector("[data-rail-next]");
+        if (!rail || !prev || !next) return;
+        var max = rail.scrollWidth - rail.clientWidth;
+        prev.disabled = rail.scrollLeft <= 2;
+        next.disabled = rail.scrollLeft >= max - 2;
+      }
+
+      function railStep(rail) {
+        var card = rail.querySelector(".card");
+        return card ? card.getBoundingClientRect().width + 14 : 262;
+      }
+
+      document.querySelectorAll("[data-railwrap]").forEach(function (wrap) {
+        var rail = wrap.querySelector(".rail");
+        var prev = wrap.querySelector("[data-rail-prev]");
+        var next = wrap.querySelector("[data-rail-next]");
+        if (!rail || !prev || !next) return;
+        prev.addEventListener("click", function () {
+          rail.scrollBy({ left: -railStep(rail), behavior: "smooth" });
+        });
+        next.addEventListener("click", function () {
+          rail.scrollBy({ left: railStep(rail), behavior: "smooth" });
+        });
+        rail.addEventListener("scroll", function () { updateRailNav(wrap); }, { passive: true });
+        updateRailNav(wrap);
+      });
+      window.addEventListener("resize", function () {
+        document.querySelectorAll("[data-railwrap]").forEach(updateRailNav);
+      });
+
+      readParams();
+      applyView(false);
+    })();
+  </script>
+</body>
+</html>

@@ -1,0 +1,1589 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="color-scheme" content="light dark" />
+  <meta name="description" content="Agentic AI — a curated hub for learning the new always-on agents: Grok Bot, Meta Muse, OpenAI dots, Claude and Copilot Autopilot. Watch hand-picked YouTube tutorials, ordered beginner to advanced." />
+  <link rel="icon" href="data:," />
+  <title>AI Bot Learning Space</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Figtree:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --paper: #faf7f1;
+      --surface: #ffffff;
+      --wash: #f1ece2;
+      --ink: #201b14;
+      --ink-soft: #4c463b;
+      --muted: #7c7365;
+      --line: #e4dac6;
+      --accent: #b04a1f;
+      --accent-deep: #8f3815;
+      --on-accent: #fffaf3;
+      --beginner: #2e7d4f;
+      --intermediate: #96690a;
+      --advanced: #a53a2c;
+      --skeleton: #e9e1d1;
+      --frame-shadow: 0 18px 40px -22px rgba(60, 42, 22, .35);
+      --radius: 14px;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --paper: #12100d;
+        --surface: #1b1814;
+        --wash: #242019;
+        --ink: #f1ebdd;
+        --ink-soft: #c9c0af;
+        --muted: #9d937f;
+        --line: #2c2720;
+        --accent: #e0844a;
+        --accent-deep: #f0a76f;
+        --on-accent: #241307;
+        --beginner: #58b47c;
+        --intermediate: #cfa14a;
+        --advanced: #d97a68;
+        --skeleton: #28231c;
+        --frame-shadow: 0 18px 40px -22px rgba(0, 0, 0, .7);
+      }
+    }
+    * { box-sizing: border-box; }
+    html { -webkit-text-size-adjust: 100%; }
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: "Figtree", system-ui, -apple-system, "Segoe UI", sans-serif;
+      line-height: 1.6;
+      font-size: 16px;
+    }
+    .wrap { max-width: 1180px; margin: 0 auto; padding: 0 22px; }
+    ::selection { background: var(--accent); color: var(--on-accent); }
+
+    /* ---------- Masthead ---------- */
+    header.masthead {
+      padding: 44px 0 6px;
+      border-bottom: 1px solid var(--line);
+    }
+    .reader {
+      display: flex; align-items: center; gap: 10px;
+      font-size: 13px; color: var(--muted); margin: 0 0 10px;
+      letter-spacing: .02em;
+    }
+    .reader svg { width: 17px; height: 17px; flex: none; }
+    .masthead h1 {
+      font-family: "DM Serif Display", Georgia, serif;
+      font-weight: 400;
+      font-size: clamp(38px, 6vw, 58px);
+      line-height: 1.05;
+      margin: 0 0 12px;
+      letter-spacing: -0.01em;
+    }
+    .masthead h1 em { font-style: italic; color: var(--accent); }
+    .deck {
+      font-size: clamp(16px, 2.2vw, 19px);
+      color: var(--ink-soft);
+      max-width: 62ch;
+      margin: 0 0 18px;
+    }
+    .meta-row {
+      display: flex; flex-wrap: wrap; gap: 8px 18px;
+      padding: 14px 0 16px;
+      font-size: 13.5px; color: var(--muted);
+    }
+    .meta-row strong { color: var(--ink-soft); font-weight: 600; }
+    .dot-sep::before { content: "·"; margin: 0 18px 0 0; color: var(--line); }
+    .dot-sep { margin-left: 0; }
+
+    /* ---------- Track tabs ---------- */
+    .trackbar {
+      display: flex; gap: 10px; flex-wrap: wrap;
+      margin: 26px 0 22px;
+    }
+    .track-tab {
+      appearance: none; border: 1px solid var(--line);
+      background: var(--surface); color: var(--ink-soft);
+      border-radius: 999px; padding: 11px 20px 11px 16px;
+      font: inherit; font-weight: 600; font-size: 15px;
+      cursor: pointer; display: inline-flex; align-items: center; gap: 10px;
+      transition: border-color .15s ease, background .15s ease, color .15s ease, transform .15s ease;
+    }
+    .track-tab .n {
+      font-family: ui-monospace, "SF Mono", Menlo, monospace;
+      font-size: 12px; font-weight: 600;
+      background: var(--wash); border-radius: 999px;
+      min-width: 26px; height: 26px;
+      display: inline-flex; align-items: center; justify-content: center;
+      padding: 0 7px; color: var(--ink-soft);
+    }
+    .track-tab small { font-weight: 400; color: var(--muted); display: block; font-size: 12.5px; line-height: 1.3; }
+    .track-tab .tcol { text-align: left; }
+    .track-tab[aria-selected="true"] {
+      background: var(--accent); border-color: var(--accent); color: var(--on-accent);
+    }
+    .track-tab[aria-selected="true"] small { color: var(--on-accent); opacity: .85; }
+    .track-tab[aria-selected="true"] .n { background: rgba(255,255,255,.22); color: var(--on-accent); }
+    .track-tab:hover:not([aria-selected="true"]) { border-color: var(--accent); transform: translateY(-1px); }
+    .track-tab:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+
+    /* ---------- Room layout ---------- */
+    .room {
+      display: grid;
+      grid-template-columns: minmax(0, 7fr) minmax(300px, 4fr);
+      gap: 26px; align-items: start;
+      margin-bottom: 40px;
+    }
+    @media (max-width: 920px) {
+      .room { grid-template-columns: 1fr; }
+    }
+    .now-card {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: var(--frame-shadow);
+    }
+    .frame {
+      position: relative;
+      aspect-ratio: 16 / 9;
+      background: var(--skeleton);
+      display: block;
+    }
+    .frame .placeholder {
+      position: absolute; inset: 0;
+      display: flex; flex-direction: column; align-items: center; justify-content: center;
+      gap: 12px; color: var(--muted); font-size: 13.5px;
+    }
+    .frame .placeholder svg { width: 44px; height: 44px; opacity: .7; }
+    .frame iframe {
+      position: absolute; inset: 0;
+      width: 100%; height: 100%;
+      border: 0; display: block;
+    }
+    .now-meta { padding: 22px 24px 24px; }
+    .level {
+      display: inline-flex; align-items: center; gap: 7px;
+      font-size: 12.5px; font-weight: 700; letter-spacing: .04em; text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+    .level::before {
+      content: ""; width: 9px; height: 9px; border-radius: 50%;
+      background: currentColor;
+    }
+    .level.beginner { color: var(--beginner); }
+    .level.intermediate { color: var(--intermediate); }
+    .level.advanced { color: var(--advanced); }
+    .now-meta h2 {
+      font-family: "DM Serif Display", Georgia, serif;
+      font-weight: 400; font-size: clamp(22px, 3vw, 28px);
+      line-height: 1.25; margin: 0 0 6px;
+    }
+    .byline {
+      font-size: 13.5px; color: var(--muted); margin: 0 0 12px;
+    }
+    .byline strong { color: var(--ink-soft); font-weight: 600; }
+    .now-desc { color: var(--ink-soft); font-size: 15.5px; margin: 0 0 18px; max-width: 64ch; }
+    .actions { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; }
+    .btn {
+      display: inline-flex; align-items: center; gap: 8px;
+      font: inherit; font-weight: 600; font-size: 14.5px;
+      border-radius: 999px; padding: 10px 18px;
+      text-decoration: none; cursor: pointer;
+      border: 1px solid var(--line); background: var(--surface); color: var(--ink);
+      transition: border-color .15s ease, color .15s ease, transform .15s ease;
+    }
+    .btn svg { width: 15px; height: 15px; }
+    .btn:hover { border-color: var(--accent); color: var(--accent); transform: translateY(-1px); }
+    .btn:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+    .btn.ghost { background: transparent; color: var(--ink-soft); }
+    .counter {
+      margin-left: auto; font-family: ui-monospace, "SF Mono", Menlo, monospace;
+      font-size: 13px; color: var(--muted);
+    }
+
+    /* ---------- Playlist ---------- */
+    .playlist-card {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 18px;
+      position: sticky; top: 14px;
+    }
+    @media (max-width: 920px) { .playlist-card { position: static; } }
+    .playlist-head {
+      display: flex; align-items: baseline; justify-content: space-between;
+      gap: 12px; margin-bottom: 12px;
+    }
+    .playlist-head h3 {
+      font-family: "DM Serif Display", Georgia, serif;
+      font-weight: 400; font-size: 21px; margin: 0;
+    }
+    .filters { display: flex; flex-wrap: wrap; gap: 7px; margin-bottom: 14px; }
+    .chip {
+      appearance: none; cursor: pointer;
+      font: inherit; font-size: 13px; font-weight: 600;
+      border: 1px solid var(--line); background: transparent; color: var(--ink-soft);
+      border-radius: 999px; padding: 6px 13px;
+      transition: background .15s ease, color .15s ease, border-color .15s ease;
+    }
+    .chip:hover { border-color: var(--accent); color: var(--accent); }
+    .chip[aria-pressed="true"] { background: var(--ink); border-color: var(--ink); color: var(--paper); }
+    .chip:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+    ol.lessons { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 8px; }
+    @media (min-width: 921px) {
+      ol.lessons { max-height: 620px; overflow-y: auto; scrollbar-width: thin; padding-right: 4px; }
+    }
+    .lesson {
+      width: 100%; appearance: none; cursor: pointer;
+      display: grid; grid-template-columns: 34px 1fr auto; gap: 12px; align-items: start;
+      text-align: left; font: inherit;
+      background: transparent; border: 1px solid var(--line); border-radius: 12px;
+      padding: 13px 14px; color: var(--ink);
+      transition: border-color .15s ease, background .15s ease, transform .15s ease;
+    }
+    .lesson:hover { border-color: var(--accent); transform: translateX(2px); }
+    .lesson[aria-current="true"] {
+      border-color: var(--accent);
+      background: var(--wash);
+      box-shadow: inset 3px 0 0 var(--accent);
+    }
+    .lesson:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+    .lesson .idx {
+      font-family: "DM Serif Display", Georgia, serif;
+      font-size: 20px; color: var(--muted); line-height: 1.25;
+    }
+    .lesson[aria-current="true"] .idx { color: var(--accent); }
+    .lesson .lt { font-weight: 600; font-size: 14.5px; line-height: 1.4; margin: 0 0 4px; }
+    .lesson .lc { font-size: 12.5px; color: var(--muted); margin: 0; }
+    .lesson .ldot {
+      width: 10px; height: 10px; border-radius: 50%; margin-top: 6px;
+      flex: none;
+    }
+    .lesson .ldot.beginner { background: var(--beginner); }
+    .lesson .ldot.intermediate { background: var(--intermediate); }
+    .lesson .ldot.advanced { background: var(--advanced); }
+    .empty-note { font-size: 14px; color: var(--muted); padding: 10px 2px; margin: 0; }
+
+    /* ---------- New arrivals (compact carousel) ---------- */
+    .arrivals { margin: 6px 0 30px; }
+    .arrivals-head {
+      display: flex; align-items: baseline; gap: 14px; flex-wrap: wrap;
+      margin-bottom: 12px;
+    }
+    .arrivals-head h2 {
+      font-family: "DM Serif Display", Georgia, serif;
+      font-weight: 400; font-size: 26px; margin: 0;
+    }
+    .arrivals-head p { margin: 0; font-size: 13.5px; color: var(--muted); }
+    .arrivals-carousel { max-width: 640px; }
+    .arrivals-viewport {
+      overflow: hidden;
+      border-radius: var(--radius);
+      /* keep the card shadow/border visible inside the clip */
+      padding: 1px;
+      margin: -1px;
+    }
+    .arrivals-track {
+      display: flex;
+      transition: transform .38s ease;
+      will-change: transform;
+    }
+    .arrival {
+      appearance: none; cursor: pointer; text-align: left; font: inherit;
+      background: var(--surface); border: 1px solid var(--line);
+      border-radius: var(--radius); padding: 16px 17px; color: var(--ink);
+      display: flex; flex-direction: column; gap: 7px;
+      transition: border-color .15s ease, background .15s ease;
+      flex: 0 0 100%;
+      max-width: 100%;
+      min-height: 112px;
+    }
+    .arrival:hover { border-color: var(--accent); }
+    .arrival:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+    .arrival[aria-current="true"] { border-color: var(--accent); background: var(--wash); }
+    .arrival .a-top { display: flex; align-items: center; gap: 8px; }
+    .arrival .a-track {
+      font-size: 11.5px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase;
+      color: var(--ink-soft);
+    }
+    .newpill {
+      font-size: 10.5px; font-weight: 700; letter-spacing: .07em; text-transform: uppercase;
+      background: var(--accent); color: var(--on-accent);
+      border-radius: 999px; padding: 2px 8px; line-height: 1.5;
+    }
+    .arrival .a-title { font-weight: 600; font-size: 15px; line-height: 1.4; margin: 0; }
+    .arrival .a-meta { font-size: 12.5px; color: var(--muted); margin: 0; margin-top: auto; }
+    .lesson .newpill { margin-left: 7px; vertical-align: 1px; }
+    .arrivals-controls {
+      display: flex; align-items: center; gap: 10px;
+      margin-top: 12px; flex-wrap: wrap;
+    }
+    .arrivals-btn {
+      appearance: none; cursor: pointer;
+      width: 38px; height: 38px; border-radius: 999px;
+      border: 1px solid var(--line); background: var(--surface); color: var(--ink);
+      font-size: 16px; line-height: 1; display: inline-flex; align-items: center; justify-content: center;
+      flex: none;
+      transition: border-color .15s ease, color .15s ease, background .15s ease, opacity .15s ease;
+    }
+    .arrivals-btn:hover:not(:disabled) { border-color: var(--accent); color: var(--accent); }
+    .arrivals-btn:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+    .arrivals-btn:disabled { opacity: .38; cursor: default; }
+    .arrivals-dots {
+      display: flex; align-items: center; gap: 6px; flex-wrap: wrap; flex: 1;
+    }
+    .arrivals-dot {
+      appearance: none; cursor: pointer;
+      width: 8px; height: 8px; border-radius: 999px; border: 0; padding: 0;
+      background: var(--line); flex: none;
+      transition: background .15s ease, transform .15s ease, width .15s ease;
+    }
+    .arrivals-dot:hover { background: var(--accent); }
+    .arrivals-dot:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+    .arrivals-dot[aria-current="true"] { background: var(--accent); width: 22px; }
+    .arrivals-counter {
+      font-family: ui-monospace, "SF Mono", Menlo, monospace;
+      font-size: 12.5px; color: var(--muted); flex: none;
+    }
+    @media (max-width: 640px) {
+      .arrivals-carousel { max-width: 100%; }
+      .arrival { min-height: 0; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .arrivals-track { transition: none !important; }
+    }
+
+    /* ---------- Stay-current section ---------- */
+    .stay {
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--wash);
+      padding: 28px 30px;
+      margin: 8px 0 34px;
+      display: grid; grid-template-columns: auto 1fr; gap: 18px; align-items: start;
+    }
+    @media (max-width: 640px) { .stay { grid-template-columns: 1fr; padding: 22px; } }
+    .stay .icon-badge {
+      width: 48px; height: 48px; border-radius: 14px;
+      background: var(--accent); color: var(--on-accent);
+      display: flex; align-items: center; justify-content: center;
+      flex: none;
+    }
+    .stay .icon-badge svg { width: 24px; height: 24px; }
+    .stay h2 {
+      font-family: "DM Serif Display", Georgia, serif;
+      font-weight: 400; font-size: 24px; margin: 0 0 8px;
+    }
+    .stay p { margin: 0 0 10px; color: var(--ink-soft); font-size: 15.5px; max-width: 70ch; }
+    .stay p:last-child { margin-bottom: 0; }
+    .stay strong { color: var(--ink); }
+
+    /* ---------- Agent Wire ---------- */
+    .wire {
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--wash);
+      margin: 18px 0 8px;
+      overflow: hidden;
+    }
+    .wire-head {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 10px 14px 6px;
+      font-size: 12px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: var(--ink-soft);
+    }
+    .wire-head span:last-child { font-weight: 400; text-transform: none; letter-spacing: 0; color: var(--muted); font-size: 12.5px; }
+    .wire-viewport { overflow: hidden; position: relative; }
+    .wire.paused .wire-viewport { overflow-x: auto; overflow-y: hidden; scrollbar-width: none; }
+    .wire.paused .wire-viewport::-webkit-scrollbar { display: none; }
+    .wire.paused .wire-track { animation-play-state: paused; }
+    .wire-track {
+      display: flex; gap: 28px; padding: 6px 14px 10px; white-space: nowrap;
+      width: max-content; animation: wire-scroll 46s linear infinite; will-change: transform;
+    }
+    .wire.paused .wire-track { animation-play-state: paused; }
+    @keyframes wire-scroll { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+    .wire-item {
+      appearance: none; border: 1px solid var(--line); background: var(--surface); color: var(--ink);
+      border-radius: 999px; padding: 7px 13px; font: inherit; font-size: 13.5px; font-weight: 600;
+      cursor: pointer; white-space: nowrap; display: inline-flex; align-items: center; gap: 8px;
+    }
+    .wire-item::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: var(--accent); flex: none; }
+    .wire-item:hover { border-color: var(--accent); }
+    .wire-item:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+    .wire-summary {
+      display: none; padding: 0 14px 12px; font-size: 14px; color: var(--ink-soft); line-height: 1.5;
+    }
+    .wire-summary.open { display: block; }
+    .wire-summary a { color: var(--accent); font-weight: 600; }
+    .wire-summary strong { color: var(--ink); }
+
+    /* ---------- Meet the Agents ---------- */
+    .agents { margin: 22px 0 8px; }
+    .agents-head { display: flex; align-items: baseline; gap: 14px; flex-wrap: wrap; margin-bottom: 14px; }
+    .agents-head h2 { font-family: "DM Serif Display", Georgia, serif; font-weight: 400; font-size: 26px; margin: 0; }
+    .agents-head p { margin: 0; font-size: 13.5px; color: var(--muted); }
+    .agents-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 12px; align-items: start; }
+    .agent-card {
+      background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius);
+      padding: 14px 17px; display: flex; flex-direction: column; gap: 0; color: var(--ink);
+    }
+    .agent-card:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+    .agent-head-row { display: flex; align-items: center; justify-content: space-between; gap: 10px; }
+    .agent-card h3 { font-family: "DM Serif Display", Georgia, serif; font-weight: 400; font-size: 21px; margin: 0; line-height: 1.2; cursor: pointer; }
+    .agent-card .co { font-size: 12px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: var(--muted); margin: 0; }
+    .agent-card .one { font-size: 14.5px; color: var(--ink-soft); margin: 0; line-height: 1.5; }
+    .agent-facts { display: grid; gap: 6px; margin: 4px 0 2px; font-size: 13px; }
+    .agent-facts div { display: grid; grid-template-columns: 76px 1fr; gap: 8px; }
+    .agent-facts dt { font-weight: 700; color: var(--ink-soft); }
+    .agent-facts dd { margin: 0; color: var(--ink-soft); }
+    .agent-link { font-size: 13.5px; font-weight: 600; color: var(--accent); text-decoration: none; margin-top: 4px; }
+    .agent-link:hover { text-decoration: underline; }
+    .agent-toggle {
+      appearance: none; border: 1px solid var(--line); background: var(--surface); color: var(--ink);
+      border-radius: 999px; padding: 6px 13px; font: inherit; font-size: 13px; font-weight: 600; cursor: pointer; text-align: left; flex: none;
+    }
+    .agent-toggle:hover { border-color: var(--accent); color: var(--accent); }
+    .agent-toggle:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+    .agent-details { display: none; flex-direction: column; gap: 8px; margin-top: 12px; }
+    .agent-card.expanded .agent-details { display: flex; }
+    .agent-more { font-size: 14px; color: var(--ink-soft); line-height: 1.55; border-top: 1px solid var(--line); padding-top: 10px; }
+    .agent-more p { margin: 0 0 8px; }
+    .agent-more p:last-child { margin-bottom: 0; }
+
+    /* ---------- How they differ ---------- */
+    .diff { margin: 8px 0 28px; }
+    .diff-head { display: flex; align-items: baseline; gap: 14px; flex-wrap: wrap; margin-bottom: 12px; }
+    .diff-head h2 { font-family: "DM Serif Display", Georgia, serif; font-weight: 400; font-size: 24px; margin: 0; }
+    .diff-head p { margin: 0; font-size: 13.5px; color: var(--muted); }
+    .diff-card { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; }
+    .diff-row { display: grid; grid-template-columns: 1.05fr 1.25fr 1.25fr 1.2fr; gap: 0; }
+    .diff-row + .diff-row { border-top: 1px solid var(--line); }
+    .diff-row > div { padding: 13px 15px; font-size: 14px; color: var(--ink-soft); line-height: 1.45; }
+    .diff-row > div + div { border-left: 1px solid var(--line); }
+    .diff-row.head { background: var(--wash); }
+    .diff-row.head > div { font-size: 12px; font-weight: 700; letter-spacing: .05em; text-transform: uppercase; color: var(--ink-soft); }
+    .diff-name { font-weight: 700; color: var(--ink) !important; }
+    .diff-pitch { font-style: italic; color: var(--ink) !important; }
+    @media (max-width: 760px) {
+      .diff-row { grid-template-columns: 1fr; }
+      .diff-row > div + div { border-left: 0; border-top: 1px solid var(--line); }
+      .diff-row.head { display: none; }
+      .diff-row > div::before { content: attr(data-label); display: block; font-size: 11px; font-weight: 700; letter-spacing: .05em; text-transform: uppercase; color: var(--muted); margin-bottom: 3px; }
+      .diff-name::before { display: none !important; }
+    }
+
+    footer.page-foot {
+      border-top: 1px solid var(--line);
+      padding: 22px 0 34px;
+      font-size: 13px; color: var(--muted);
+      display: flex; flex-wrap: wrap; gap: 6px 20px; justify-content: space-between;
+    }
+    footer.page-foot p { margin: 0; }
+    footer.page-foot .curator { flex-basis: 100%; text-align: center; margin-top: 12px; color: var(--ink-soft); font-weight: 600; letter-spacing: .01em; }
+    footer.page-foot .curator .sep { color: var(--line); font-weight: 400; margin: 0 4px 0 8px; }
+    footer.page-foot .curator a { color: var(--muted); font-weight: 400; text-decoration: none; border-bottom: 1px solid transparent; transition: color .15s ease, border-color .15s ease; }
+    footer.page-foot .curator a:hover { color: var(--accent); border-bottom-color: var(--accent); }
+    footer.page-foot .curator a:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-radius: 2px; }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { transition: none !important; }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header class="masthead">
+      <p class="reader">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+          <rect x="2" y="5" width="20" height="13" rx="3"></rect>
+          <path d="M10 9.5v4l3.2-2z" fill="currentColor" stroke="none"></path>
+          <path d="M8 21h8"></path>
+        </svg>
+        An agentic AI hub
+      </p>
+      <h1>AI Bot <em>Learning</em> Space</h1>
+      <p class="deck">
+        A hand-picked hub for the new always-on agents — Grok Bot, Meta Muse, OpenAI dots, Claude and Copilot Autopilot.
+        Meet the agents, see how they differ, and watch tutorials ordered beginner to advanced.
+      </p>
+      <div class="meta-row">
+        <span><strong id="metaCount">20 lessons</strong></span>
+        <span class="dot-sep">Beginner to advanced</span>
+        <span class="dot-sep">Curated <strong id="metaDate">5 Oct 2026</strong> from YouTube</span>
+      </div>
+    </header>
+
+    <main>
+      <section class="wire" id="agentWire" aria-label="Agent Wire — daily agentic AI headlines">
+        <div class="wire-head"><span>Agent Wire</span><span>Curated snapshot · 7 Oct 2026 · tap to read, touch to pause</span></div>
+        <div class="wire-viewport" id="wireViewport">
+          <div class="wire-track" id="wireTrack"></div>
+        </div>
+        <div class="wire-summary" id="wireSummary" aria-live="polite"></div>
+      </section>
+
+      <nav class="trackbar" role="tablist" aria-label="Learning tracks">
+        <button class="track-tab" role="tab" id="tab-grok" aria-selected="true" aria-controls="room" data-track="grok">
+          <span class="n" id="count-grok">7</span>
+          <span class="tcol">Grok Bot <small>xAI's always-on agent team</small></span>
+        </button>
+        <button class="track-tab" role="tab" id="tab-muse" aria-selected="false" aria-controls="room" data-track="muse">
+          <span class="n" id="count-muse">8</span>
+          <span class="tcol">Meta Muse <small>Meta's personal AI agent</small></span>
+        </button>
+        <button class="track-tab" role="tab" id="tab-openai" aria-selected="false" aria-controls="room" data-track="openai">
+          <span class="n" id="count-openai">0</span>
+          <span class="tcol">OpenAI dots <small>Always-on agents in ChatGPT</small></span>
+        </button>
+        <button class="track-tab" role="tab" id="tab-claude" aria-selected="false" aria-controls="room" data-track="claude">
+          <span class="n" id="count-claude">0</span>
+          <span class="tcol">Claude (Anthropic) <small>Code &amp; Cowork</small></span>
+        </button>
+        <button class="track-tab" role="tab" id="tab-copilot" aria-selected="false" aria-controls="room" data-track="copilot">
+          <span class="n" id="count-copilot">0</span>
+          <span class="tcol">Copilot Autopilot (Microsoft) <small>Persistent M365 coworker</small></span>
+        </button>
+      </nav>
+
+      <section class="room" id="room" aria-label="Video lessons">
+        <article class="now-card" aria-live="polite">
+          <div class="frame" id="frame">
+            <div class="placeholder" id="framePlaceholder" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+                <circle cx="12" cy="12" r="9.2"></circle>
+                <path d="M10 8.8v6.4l5.2-3.2z" fill="currentColor" stroke="none"></path>
+              </svg>
+              <span>Player loads as you scroll to it</span>
+            </div>
+          </div>
+          <div class="now-meta">
+            <span class="level beginner" id="nowLevel">Beginner</span>
+            <h2 id="nowTitle">How to Use Grok Bot for Beginners (Full Guide)</h2>
+            <p class="byline" id="nowByline">By <strong>Meet Brandon</strong></p>
+            <p class="now-desc" id="nowDesc"></p>
+            <div class="actions">
+              <a class="btn" id="watchLink" href="https://www.youtube.com/watch?v=3wfO0PmDWp4" target="_blank" rel="noopener">
+                Watch on YouTube
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                  <path d="M7 17L17 7M8 7h9v9"></path>
+                </svg>
+              </a>
+              <button class="btn ghost" id="prevBtn" type="button">← Previous</button>
+              <button class="btn ghost" id="nextBtn" type="button">Next →</button>
+              <span class="counter" id="counter">1 / 7</span>
+            </div>
+          </div>
+        </article>
+
+        <aside class="playlist-card" aria-label="Lesson playlist">
+          <div class="playlist-head">
+            <h3 id="playlistTitle">Grok Bot lessons</h3>
+          </div>
+          <div class="filters" role="group" aria-label="Filter by level">
+            <button class="chip" type="button" data-filter="All" aria-pressed="true">All</button>
+            <button class="chip" type="button" data-filter="Beginner" aria-pressed="false">Beginner</button>
+            <button class="chip" type="button" data-filter="Intermediate" aria-pressed="false">Intermediate</button>
+            <button class="chip" type="button" data-filter="Advanced" aria-pressed="false">Advanced</button>
+          </div>
+          <ol class="lessons" id="lessons"></ol>
+        </aside>
+      </section>
+
+      <section class="arrivals" aria-label="New arrivals">
+        <div class="arrivals-head">
+          <h2>New arrivals</h2>
+          <p>Latest additions to the room, newest first — use the arrows to browse, pick one to play it.</p>
+        </div>
+        <div class="arrivals-carousel">
+          <div class="arrivals-viewport">
+            <div class="arrivals-track" id="arrivals"></div>
+          </div>
+          <div class="arrivals-controls">
+            <button class="arrivals-btn" id="arrPrev" type="button" aria-label="Previous new arrival">←</button>
+            <div class="arrivals-dots" id="arrDots" role="tablist" aria-label="New arrivals navigation"></div>
+            <button class="arrivals-btn" id="arrNext" type="button" aria-label="Next new arrival">→</button>
+            <span class="arrivals-counter" id="arrCounter" aria-live="polite"></span>
+          </div>
+        </div>
+      </section>
+
+      <section class="agents" aria-label="Meet the Agents">
+        <div class="agents-head">
+          <h2>Meet the Agents</h2>
+          <p>Five always-on agents, five different bets — hover or tap a name for details.</p>
+        </div>
+        <div class="agents-grid">
+          <article class="agent-card" tabindex="0" aria-expanded="false" aria-controls="agent-details-grok">
+            <div class="agent-head-row">
+              <h3>Grok Bot</h3>
+              <button class="agent-toggle" type="button" aria-expanded="false" aria-controls="agent-details-grok">More</button>
+            </div>
+            <div class="agent-details" id="agent-details-grok">
+              <p class="co">xAI / SpaceXAI</p>
+              <p class="one">A team of always-on AI agents — persistent coworkers on cloud computers that sign into your tools and finish multi-step jobs.</p>
+              <dl class="agent-facts"><div><dt>Launched</dt><dd>Beta Aug 11, 2026</dd></div>
+              <div><dt>Access</dt><dd>Bundled with SuperGrok and Cursor plans</dd></div>
+              <div><dt>Best for</dt><dd>Developers, business teams, enterprises</dd></div></dl>
+              <div class="agent-more"><p>A roster of role-specific bots — a sales bot updates the CRM from call transcripts, an ops bot onboards hires and processes invoices out of Gmail, an engineering bot reproduces bugs, files tickets and hands fixes to a debugging bot.</p>
+              <p>Bots coordinate in group chats, run scheduled routines, and learn a workflow by watching you do it once. For personal use, its Finance integration (read-only via Plaid) finds recurring subscriptions and price hikes. Limits: still in beta; cloud computers US-only during beta; all bots in an account share one computer.</p></div>
+              <a class="agent-link" href="https://x.ai/bot" target="_blank" rel="noopener">Official product page →</a>
+            </div>
+          </article>
+
+          <article class="agent-card" tabindex="0" aria-expanded="false" aria-controls="agent-details-muse">
+            <div class="agent-head-row">
+              <h3>Meta Muse</h3>
+              <button class="agent-toggle" type="button" aria-expanded="false" aria-controls="agent-details-muse">More</button>
+            </div>
+            <div class="agent-details" id="agent-details-muse">
+              <p class="co">Meta</p>
+              <p class="one">A personal AI agent that does tasks for you — books, emails, shops — and keeps working after you close the app.</p>
+              <dl class="agent-facts"><div><dt>Launched</dt><dd>Sept 8, 2026</dd></div>
+              <div><dt>Access</dt><dd>Free tier (100M tokens/week); $20/$100 plans; US and Canada</dd></div>
+              <div><dt>Best for</dt><dd>Individuals, households, small business</dd></div></dl>
+              <div class="agent-more"><p>Day-to-day personal work — books travel, sends email, fills forms, shops and checks out (always asks before paying), manages calendar and reminders, remembers your details and makes unprompted suggestions, works from its own app and WhatsApp.</p>
+              <p>Official/project work — plans around longer-term goals and coordinates across connected apps (Slack, Notion, Shopify); the Small Business version connects ad accounts, QuickBooks and Asana to review sales performance, draft campaigns and flag expenses. Nothing is sent or spent without your approval. Runs on a dedicated Muse Secure VM; a separate Sentinel agent governs its internet access.</p></div>
+              <a class="agent-link" href="https://muse.ai" target="_blank" rel="noopener">Official product page →</a>
+            </div>
+          </article>
+
+          <article class="agent-card" tabindex="0" aria-expanded="false" aria-controls="agent-details-dots">
+            <div class="agent-head-row">
+              <h3>OpenAI dots</h3>
+              <button class="agent-toggle" type="button" aria-expanded="false" aria-controls="agent-details-dots">More</button>
+            </div>
+            <div class="agent-details" id="agent-details-dots">
+              <p class="co">OpenAI</p>
+              <p class="one">Always-on agents in ChatGPT — give one a goal and it keeps working in the background across days.</p>
+              <dl class="agent-facts"><div><dt>Launched</dt><dd>Sept 29, 2026 at DevDay</dd></div>
+              <div><dt>Access</dt><dd>ChatGPT Pro and Business Premium (first dot included); Enterprise beta</dd></div>
+              <div><dt>Best for</dt><dd>Pro users and businesses</dd></div></dl>
+              <div class="agent-more"><p>Each dot gets its own cloud computer and browser, 4,000+ app plugins, and works through ChatGPT, Slack and Teams. Personal use: delegate-and-forget tasks plus proactive read-only research across your apps — it catches a forgotten invoice or a bug mentioned in Slack and reports back.</p>
+              <p>Project work: monitors customer feedback, prepares fixes, tests them and opens pull requests; updates launch materials when scope changes; reruns research as new data arrives; turns interview transcripts into clips and drafts. Specialist dots (enterprise pilots) own defined jobs like procurement, invoicing and customer support. Powered by GPT-6 Astra.</p></div>
+              <a class="agent-link" href="https://openai.com/index/introducing-dots/" target="_blank" rel="noopener">Official product page →</a>
+            </div>
+          </article>
+
+          <article class="agent-card" tabindex="0" aria-expanded="false" aria-controls="agent-details-claude">
+            <div class="agent-head-row">
+              <h3>Claude</h3>
+              <button class="agent-toggle" type="button" aria-expanded="false" aria-controls="agent-details-claude">More</button>
+            </div>
+            <div class="agent-details" id="agent-details-claude">
+              <p class="co">Anthropic</p>
+              <p class="one">Anthropic's agentic AI — Claude Code for developers, Claude Cowork for knowledge work.</p>
+              <dl class="agent-facts"><div><dt>Launched</dt><dd>Claude Code available now (terminal, IDE, desktop, web); Cowork in research preview on macOS</dd></div>
+              <div><dt>Access</dt><dd>Subscription and API</dd></div>
+              <div><dt>Best for</dt><dd>Developers and knowledge workers</dd></div></dl>
+              <div class="agent-more"><p>Claude Code reads codebases, edits across files, runs commands, does automated code review and pull requests, refactors, and runs parallel subagents. Claude Cowork does outcome-based knowledge work in your local files — organising files, building documents and spreadsheets, analysing data; you describe the outcome and it works on its own.</p>
+              <p>Personal: file organisation, documents, data analysis. Project work: engineering teams and knowledge-work automation.</p></div>
+              <a class="agent-link" href="https://claude.com/product/claude-code" target="_blank" rel="noopener">Official product page →</a>
+            </div>
+          </article>
+
+          <article class="agent-card" tabindex="0" aria-expanded="false" aria-controls="agent-details-autopilot">
+            <div class="agent-head-row">
+              <h3>Copilot Autopilot</h3>
+              <button class="agent-toggle" type="button" aria-expanded="false" aria-controls="agent-details-autopilot">More</button>
+            </div>
+            <div class="agent-details" id="agent-details-autopilot">
+              <p class="co">Microsoft</p>
+              <p class="one">A persistent AI coworker inside Microsoft 365 with its own corporate identity.</p>
+              <dl class="agent-facts"><div><dt>Launched</dt><dd>Late Sept 2026</dd></div>
+              <div><dt>Access</dt><dd>Microsoft 365 enterprise licensing</dd></div>
+              <div><dt>Best for</dt><dd>Enterprises and compliance-heavy organisations</dd></div></dl>
+              <div class="agent-more"><p>Retains memory, monitors Teams and Outlook communication, and carries multi-day assignments without human intervention. Each instance gets its own Entra identity with email, calendar, OneDrive and Teams access.</p>
+              <p>Demonstrated running three agents at once: contract review in Word, forecasting in Excel, scheduling in Outlook. Governed through Agent 365 with audit logs and policy controls. Barely a personal product — enterprise-first by design.</p></div>
+              <a class="agent-link" href="https://blogs.microsoft.com/blog/2026/09/25/introducing-the-new-copilot-with-home-code-and-autopilot/" target="_blank" rel="noopener">Official product page →</a>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="diff" aria-label="How they differ">
+        <div class="diff-head">
+          <h2>How they differ</h2>
+          <p>The five agents at a glance — who they are for, what shape they take, and the one-line pitch.</p>
+        </div>
+        <div class="diff-card">
+          <div class="diff-row head" aria-hidden="true">
+            <div>Agent</div><div>Who it's for</div><div>Agent shape</div><div>The pitch</div>
+          </div>
+          <div class="diff-row">
+            <div class="diff-name" data-label="Agent">Grok Bot</div>
+            <div data-label="Who it's for">Developers, business teams, enterprises</div>
+            <div data-label="Agent shape">A team of role-specific bots sharing one cloud computer</div>
+            <div class="diff-pitch" data-label="The pitch">&ldquo;Teammates that finish the job, not 90% of it.&rdquo;</div>
+          </div>
+          <div class="diff-row">
+            <div class="diff-name" data-label="Agent">Meta Muse</div>
+            <div data-label="Who it's for">Individuals, households, small business</div>
+            <div data-label="Agent shape">One personal agent on its own secure VM</div>
+            <div class="diff-pitch" data-label="The pitch">&ldquo;An agent for everyone, free to start.&rdquo;</div>
+          </div>
+          <div class="diff-row">
+            <div class="diff-name" data-label="Agent">OpenAI dots</div>
+            <div data-label="Who it's for">ChatGPT Pro users and businesses</div>
+            <div data-label="Agent shape">One agent per dot, each with its own cloud computer</div>
+            <div class="diff-pitch" data-label="The pitch">&ldquo;Agents that handle everything, on the strongest model.&rdquo;</div>
+          </div>
+          <div class="diff-row">
+            <div class="diff-name" data-label="Agent">Claude</div>
+            <div data-label="Who it's for">Developers and knowledge workers</div>
+            <div data-label="Agent shape">Task harness (Code) plus local-file worker (Cowork)</div>
+            <div class="diff-pitch" data-label="The pitch">&ldquo;The agent that does the work in your files and repos.&rdquo;</div>
+          </div>
+          <div class="diff-row">
+            <div class="diff-name" data-label="Agent">Copilot Autopilot</div>
+            <div data-label="Who it's for">Microsoft 365 enterprises</div>
+            <div data-label="Agent shape">Governed corporate coworker with Entra identity</div>
+            <div class="diff-pitch" data-label="The pitch">&ldquo;The agent your IT department will actually allow.&rdquo;</div>
+          </div>
+        </div>
+      </section>
+
+      <section class="stay" aria-label="Staying up to date">
+        <div class="icon-badge" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+            <path d="M21 12a9 9 0 1 1-2.64-6.36"></path>
+            <path d="M21 3v6h-6"></path>
+          </svg>
+        </div>
+        <div>
+          <h2>What about new videos?</h2>
+          <p>
+            This room is a <strong>curated snapshot</strong> — the best agentic AI videos
+            found on YouTube as of <strong>5 October 2026</strong>. A page like this can't add new
+            releases on its own; it has no way to watch YouTube for you.
+          </p>
+          <p>
+            To never miss one, subscribe to the official <strong>xAI</strong>, <strong>Meta</strong>, <strong>OpenAI</strong>, <strong>Anthropic</strong> and <strong>Microsoft</strong>
+            YouTube channels and turn on notifications. Want a fresh round of picks later?
+            Just ask in chat and I'll re-curate this room.
+          </p>
+        </div>
+      </section>
+
+      <footer class="page-foot">
+        <p>Agentic AI · Grok Bot, Meta Muse, OpenAI dots, Claude &amp; Copilot Autopilot hub</p>
+        <p>Videos via YouTube · Curated 5 Oct 2026 · Titles and channels as listed by their creators</p>
+        <p class="curator">Curated by Thillai Raj Thanam Jeya Veera Raj <span class="sep" aria-hidden="true">·</span> <a href="https://www.linkedin.com/in/thillairaj" target="_blank" rel="noopener">Follow on LinkedIn</a></p>
+      </footer>
+    </main>
+  </div>
+
+  <script>
+    (function () {
+      "use strict";
+
+      /* ------------------------------------------------------------------
+       * DATA — baked snapshot. Sourced via web search on 1 Oct 2026.
+       * Each id comes from a verified https://www.youtube.com/watch?v=<id> URL.
+       * The /embed/ form is YouTube's official embed endpoint.
+       * ------------------------------------------------------------------ */
+      var AS_OF = "5 Oct 2026";
+
+      var TRACKS = {
+        grok: {
+          label: "Grok Bot lessons",
+          videos: [
+            {
+              id: "3wfO0PmDWp4",
+              title: "How to Use Grok Bot for Beginners (Full Guide)",
+              channel: "Meet Brandon",
+              level: "Beginner",
+              desc: "A plain-words starter guide: six simple ways to begin with Grok Bot, three mistakes to skip, and a 15-minute day-one checklist. No tech background needed."
+            },
+            {
+              id: "HAaXXFvSyCs",
+              title: "From Beginner to PRO w/ Grok AI in 9 Minutes | TUTORIAL",
+              channel: "Mitch Asser",
+              level: "Beginner",
+              desc: "A fast tour of what Grok is, where it ranks among AI chatbots, and its standout skills — from sentiment analysis to image generation."
+            },
+            {
+              id: "NzO_kapnI_E",
+              title: "Ultimate GROK Tutorial (How to use Grok 4.3 for Beginners in 2026)",
+              channel: "AI Master",
+              level: "Beginner",
+              desc: "Goes hands-on with Expert Mode, web and X search, long-context analysis, image and video generation, Voice Mode, and structured outputs — with real workflows for research and content."
+            },
+            {
+              id: "on-d0ZuZxhA",
+              title: "The Grok Bot Agents Every Non-Developer Should Build First",
+              channel: "10x Builder",
+              level: "Beginner",
+              isNew: true,
+              desc: "Build a personal fleet from scratch: an assistant bot running hourly routines, an email bot with its own inbox, a house manager that orders groceries, and a learning bot that sends morning reading — plus Teach a Task, routines, and secure agent payments."
+            },
+            {
+              id: "V3YzhHlDt9c",
+              title: "Ultimate GROK 4 Guide 2026: How to Use GROK For Beginners",
+              channel: "AI Master",
+              level: "Intermediate",
+              desc: "Setup, the four modes (Auto, Fast, Expert, Heavy), prompting, web search and code execution, Voice and Vision, plus Personas, Memory, Workspaces, and Multi-Agent Mode."
+            },
+            {
+              id: "pxchioM5cNQ",
+              title: "Grok AI Full Tutorial 2026: Create Prompts, Images, Videos & Lip Sync",
+              channel: null,
+              level: "Intermediate",
+              desc: "For creators: start from a simple prompt and end with an animated AI video — styles, consistent characters, and talking videos with lip sync."
+            },
+            {
+              id: "HazsXJgRdr0",
+              title: "I Built My Whole AI Team in Grok Bot With One Prompt (Full Setup)",
+              channel: null,
+              level: "Intermediate",
+              isNew: true,
+              desc: "From zero to a whole AI team: install Grok Bot, connect Gmail, Calendar and ClickUp, load shared memory, then let a Chief of Staff bot build the Ops, Marketing, Research and Sales managers — with usage caps, ask-before-acting rules, and a 6 AM inbox routine. No code, on the SuperGrok plan."
+            },
+            {
+              id: "f1P61-3ivA8",
+              title: "Grok 4 Full Breakdown: Heavy Mode, Think Mode & Hidden Features You Didn't Know",
+              channel: "Bitbiased",
+              level: "Intermediate",
+              isNew: true,
+              desc: "A deep dive into Grok 4: when Heavy Mode's multi-agent setup is worth the cost, Think Mode's step-by-step reasoning, DeepSearch, the 256k context window, Voice & Vision, and a staged prompting workflow — Standard, then Think, then Heavy."
+            },
+            {
+              id: "o9ad9eFYrh4",
+              title: "GrokAI Complete Guide 2026: Master Elon Musk's xAI (Step-by-Step)",
+              channel: null,
+              level: "Advanced",
+              desc: "The full tour: getting started, Deep Search for structured reports, Think Mode, scheduled tasks and newsletters, Projects, Grok 4 Heavy, and data controls including Private Mode."
+            },
+            {
+              id: "EUv3iH542pc",
+              title: "AI Video Generator Automation (Grok + Make Tutorial)",
+              channel: "AxaGen",
+              level: "Advanced",
+              desc: "Build a real automation: call the Grok video API from Make.com with HTTP modules, poll for completion, and save finished videos straight to Google Drive."
+            }
+          ]
+        },
+        muse: {
+          label: "Meta Muse lessons",
+          videos: [
+            {
+              id: "B-uXvCi-mXU",
+              title: "Meta Muse: Explained",
+              channel: "Tool Finder",
+              level: "Beginner",
+              desc: "The quick overview: connect Gmail and Calendar, give Muse a goal, and it works in the background inside its own secure cloud computer — covering the Goals, Feed, Ideas, and Artifacts tabs, WhatsApp access, and cost."
+            },
+            {
+              id: "S-JfMOjcMso",
+              title: "What Is Meta Muse? The New AI That Actually Does Tasks for You (Explained for Seniors)",
+              channel: null,
+              level: "Beginner",
+              desc: "A plain-English guide: what an AI agent is, what errands Muse can run, the approval gate that stops it from buying anything without your say-so, and four safety rules to follow."
+            },
+            {
+              id: "pkwnJcETgfE",
+              title: "Amazing: FREE AI Agent from Meta",
+              channel: "The Next New Thing",
+              level: "Beginner",
+              isNew: true,
+              desc: "An inside look at Muse in action: export Instagram followers into Excel, message across Meta's apps, human-in-the-loop approvals, persistent memory and identity, connectors, and a free cloud computer — plus where the agent still falls short."
+            },
+            {
+              id: "FuThnvIvlOY",
+              title: "Finally, An AI That Actually Remembers: Meta Muse AI Explained",
+              channel: null,
+              level: "Intermediate",
+              desc: "A complete walkthrough: onboarding, memory and persistent context, Ideas and Feed, artifacts and workspaces, connectors, goals, and deep research workflows."
+            },
+            {
+              id: "q_PKk3MiR9Y",
+              title: "I tested Meta's Muse new AI agent powered by Muse Spark — hands on review",
+              channel: "Thursdai",
+              level: "Intermediate",
+              desc: "A hands-on review of Muse's agentic capabilities: virtual machine security, personal data handling, practical research and payment use cases, and building a whole website from scratch."
+            },
+            {
+              id: "7UabM3KStc0",
+              title: "EVERYONE is right about Meta Muse",
+              channel: "Easy Machine AI",
+              level: "Intermediate",
+              desc: "Real automation use cases — content, research, automated posting, Meta Pixel setup, and GitHub website updates — plus where to draw the line on access to personal information."
+            },
+            {
+              id: "sNYnrzOf5e0",
+              title: "Meta Muse Explained: What Can an AI Agent Actually Do?",
+              channel: "SSRR Rise",
+              level: "Intermediate",
+              desc: "Muse put to work on real jobs — hotel booking, inbox management, expense analysis, goal tracking, shopping — compared against Grok Bot and Astra 6, with a look at the security risks."
+            },
+            {
+              id: "sFcmy7WsT0I",
+              title: "I Let Meta's New AI Agent Run My Workday (Muse Tutorial)",
+              channel: null,
+              level: "Intermediate",
+              isNew: true,
+              desc: "Muse gets four real jobs — inbox, meeting, team offsite, customer support — each run twice: once with a lazy one-line prompt, once with the RCTFC framework (Role, Context, Task, Format, Constraints). Includes how to connect Muse safely, and why the Constraints line matters."
+            },
+            {
+              id: "YJWlMVtuVVc",
+              title: "Meta Muse Explained: The AI Agent That Owns Its Own Computer",
+              channel: null,
+              level: "Advanced",
+              desc: "Under the hood: Muse Spark versus the Hatch harness, the per-user Secure VM, Sentinel, how Muse never holds your real passwords, and what persistence actually enables."
+            },
+            {
+              id: "jK6LITKH7JA",
+              title: "Muse Spark 1.3 Review: Did Meta Finally Catch the Frontier?",
+              channel: null,
+              level: "Advanced",
+              desc: "A skeptical read of the model itself: head-to-head benchmarks against GPT-5.6 Sol and Opus 5, standout long-context scores, hands-on tool-workflow tests, and who it's actually for."
+            }
+          ]
+        },
+        openai: {
+          label: "OpenAI dots lessons",
+          videos: [
+            {
+              id: "YXDUsYH5cG0",
+              title: "ChatGPT Dots Explained: 5 Ways They Change How You Use AI",
+              channel: null,
+              level: "Beginner",
+              isNew: true,
+              desc: "New arrival — ChatGPT Dots Explained: 5 Ways They Change How You Use AI."
+            },
+            {
+              id: "CMSD8eYJG8g",
+              title: "I Tested OpenAI Dots: The AI Agent That Does Everything",
+              channel: null,
+              level: "Beginner",
+              isNew: true,
+              desc: "New arrival — I Tested OpenAI Dots: The AI Agent That Does Everything."
+            },
+            {
+              id: "GGeaYdS0P00",
+              title: "Meet OpenAI Dots: AI Agents With Their Own Computer",
+              channel: null,
+              level: "Beginner",
+              isNew: true,
+              desc: "New arrival — Meet OpenAI Dots: AI Agents With Their Own Computer."
+            }
+          ]
+        },
+        claude: {
+          label: "Claude lessons",
+          videos: [
+            {
+              id: "qI6S-dRz1sQ",
+              title: "Build & Deploy a Website with Claude Code (Full Tutorial)",
+              channel: null,
+              level: "Beginner",
+              isNew: true,
+              desc: "New arrival — Build & Deploy a Website with Claude Code (Full Tutorial)."
+            },
+            {
+              id: "T734TI5V2lg",
+              title: "How to Use Claude Code to Control Your iPhone (mobile-mcp Tutorial)",
+              channel: null,
+              level: "Beginner",
+              isNew: true,
+              desc: "New arrival — How to Use Claude Code to Control Your iPhone (mobile-mcp Tutorial)."
+            },
+            {
+              id: "OKtIy-dZ5wA",
+              title: "Claude Code for Beginners: Meet Your AI Colleague in the Terminal",
+              channel: null,
+              level: "Beginner",
+              isNew: true,
+              desc: "New arrival — Claude Code for Beginners: Meet Your AI Colleague in the Terminal."
+            }
+          ]
+        },
+        copilot: {
+          label: "Copilot Autopilot lessons",
+          videos: [
+            {
+              id: "HG6z7jdj2dg",
+              title: "Microsoft's New Copilot Explained: Home, Code & Autopilot",
+              channel: null,
+              level: "Beginner",
+              isNew: true,
+              desc: "New arrival — Microsoft's New Copilot Explained: Home, Code & Autopilot."
+            },
+            {
+              id: "AEi77QEG-JI",
+              title: "NEW Copilot Wave 4: Home, Code & Autopilot Explained | Insights From A Microsoft Engineer",
+              channel: null,
+              level: "Beginner",
+              isNew: true,
+              desc: "New arrival — NEW Copilot Wave 4: Home, Code & Autopilot Explained | Insights From A Microsoft Engineer."
+            },
+            {
+              id: "WbSGjfvssWU",
+              title: "What Is In Microsoft's New Copilot Super App?",
+              channel: null,
+              level: "Beginner",
+              isNew: true,
+              desc: "New arrival — What Is In Microsoft's New Copilot Super App?."
+            }
+          ]
+        }
+      };
+
+      var LEVEL_CLASS = { Beginner: "beginner", Intermediate: "intermediate", Advanced: "advanced" };
+
+      /* Newest additions first — the order the New arrivals band shows. */
+      var NEW_ARRIVALS = [
+        { track: "claude", id: "qI6S-dRz1sQ" },
+        { track: "claude", id: "T734TI5V2lg" },
+        { track: "claude", id: "OKtIy-dZ5wA" },
+        { track: "openai", id: "YXDUsYH5cG0" },
+        { track: "openai", id: "CMSD8eYJG8g" },
+        { track: "openai", id: "GGeaYdS0P00" },
+        { track: "copilot", id: "HG6z7jdj2dg" },
+        { track: "copilot", id: "AEi77QEG-JI" },
+        { track: "copilot", id: "WbSGjfvssWU" },
+        { track: "grok", id: "HazsXJgRdr0" },
+        { track: "grok", id: "on-d0ZuZxhA" },
+        { track: "grok", id: "f1P61-3ivA8" },
+        { track: "muse", id: "sFcmy7WsT0I" },
+        { track: "muse", id: "pkwnJcETgfE" }
+      ];
+
+      var state = { track: "grok", index: 0, filter: "All" };
+      var arrivalsIndex = 0;
+
+      var $ = function (id) { return document.getElementById(id); };
+      var frame = $("frame"), placeholder = $("framePlaceholder");
+      var lessonsEl = $("lessons"), arrivalsEl = $("arrivals"), nowLevel = $("nowLevel"), nowTitle = $("nowTitle"),
+          nowByline = $("nowByline"), nowDesc = $("nowDesc"), watchLink = $("watchLink"),
+          counterEl = $("counter"), playlistTitle = $("playlistTitle"),
+          prevBtn = $("prevBtn"), nextBtn = $("nextBtn");
+      var arrPrev = $("arrPrev"), arrNext = $("arrNext"), arrDots = $("arrDots"), arrCounter = $("arrCounter");
+
+      var totalLessons = TRACKS.grok.videos.length + TRACKS.muse.videos.length + TRACKS.openai.videos.length + TRACKS.claude.videos.length + TRACKS.copilot.videos.length;
+      $("metaCount").textContent = totalLessons + " lessons";
+      $("metaDate").textContent = AS_OF;
+      $("count-grok").textContent = TRACKS.grok.videos.length;
+      $("count-muse").textContent = TRACKS.muse.videos.length;
+      $("count-openai").textContent = TRACKS.openai.videos.length;
+      $("count-claude").textContent = TRACKS.claude.videos.length;
+      $("count-copilot").textContent = TRACKS.copilot.videos.length;
+
+      function watchUrl(id) { return "https://www.youtube.com/watch?v=" + id; }
+      function embedUrl(id) { return "https://www.youtube-nocookie.com/embed/" + id; }
+
+      function currentVideos() { return TRACKS[state.track].videos; }
+      function currentVideo() { return currentVideos()[state.index]; }
+
+      function autoplayable(id) { return embedUrl(id); }
+
+      /* Mounts the YouTube iframe only as the player scrolls near the viewport
+         (embed documents are heavy), and swaps the video on selection. */
+      var iframe = null, frameNear = false, pendingId = null;
+
+      function ensureIframe() {
+        if (iframe) return;
+        var el = document.createElement("iframe");
+        el.setAttribute("title", "Video player");
+        el.setAttribute("loading", "lazy");
+        el.setAttribute("allowfullscreen", "");
+        el.setAttribute("allow", "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share");
+        /* YouTube's player refuses to configure (Error 153) when the embed
+           request carries no Referer, so send the origin. Do NOT sandbox a
+           YouTube embed — YouTube does not support it. */
+        el.setAttribute("referrerpolicy", "strict-origin-when-cross-origin");
+        frame.appendChild(el);
+        iframe = el;
+        if (placeholder) placeholder.style.display = "none";
+        if (pendingId) { iframe.src = embedUrl(pendingId); }
+      }
+
+      function updateFrame(id, title) {
+        pendingId = id;
+        if (iframe) { iframe.src = embedUrl(id); }
+        if (frameNear) { ensureIframe(); }
+        if (iframe) { iframe.setAttribute("title", "Video: " + title); }
+      }
+
+      if ("IntersectionObserver" in window) {
+        var io = new IntersectionObserver(function (entries) {
+          entries.forEach(function (e) {
+            if (e.isIntersecting) {
+              frameNear = true;
+              ensureIframe();
+              io.disconnect();
+            }
+          });
+        }, { rootMargin: "320px 0px" });
+        io.observe(frame);
+      } else {
+        frameNear = true;
+        ensureIframe();
+      }
+
+      function visibleIndices() {
+        var vids = currentVideos(), out = [];
+        for (var i = 0; i < vids.length; i++) {
+          if (state.filter === "All" || vids[i].level === state.filter) out.push(i);
+        }
+        return out;
+      }
+
+      function renderPlaylist() {
+        var vids = currentVideos();
+        var shown = visibleIndices();
+        lessonsEl.innerHTML = "";
+        playlistTitle.textContent = TRACKS[state.track].label;
+        if (!shown.length) {
+          var li = document.createElement("li");
+          li.innerHTML = vids.length === 0
+            ? '<p class="empty-note">No lessons curated here yet — this track is ready for the next curation round.</p>'
+            : '<p class="empty-note">No lessons at this level in this track.</p>';
+          lessonsEl.appendChild(li);
+          return;
+        }
+        shown.forEach(function (i, k) {
+          var v = vids[i];
+          var li = document.createElement("li");
+          var btn = document.createElement("button");
+          btn.type = "button";
+          btn.className = "lesson";
+          btn.setAttribute("aria-current", i === state.index ? "true" : "false");
+          var idx = document.createElement("span");
+          idx.className = "idx";
+          idx.textContent = String(k + 1).padStart(2, "0");
+          var mid = document.createElement("span");
+          var t = document.createElement("p");
+          t.className = "lt";
+          t.textContent = v.title;
+          mid.appendChild(t);
+          var meta = document.createElement("p");
+          meta.className = "lc";
+          meta.textContent = (v.channel ? v.channel + " · " : "") + v.level;
+          if (v.isNew) {
+            var pill = document.createElement("span");
+            pill.className = "newpill";
+            pill.textContent = "New";
+            meta.appendChild(pill);
+          }
+          mid.appendChild(meta);
+          var dot = document.createElement("span");
+          dot.className = "ldot " + LEVEL_CLASS[v.level];
+          dot.setAttribute("aria-hidden", "true");
+          btn.appendChild(idx);
+          btn.appendChild(mid);
+          btn.appendChild(dot);
+          btn.addEventListener("click", function () { select(i); });
+          li.appendChild(btn);
+          lessonsEl.appendChild(li);
+        });
+      }
+
+      function renderNow() {
+        var vids = currentVideos();
+        var v = vids[state.index];
+        if (!v) {
+          nowLevel.textContent = "Coming soon";
+          nowLevel.className = "level beginner";
+          nowTitle.textContent = TRACKS[state.track].label.replace(" lessons", "") + " — lessons coming soon";
+          nowByline.innerHTML = "";
+          nowByline.style.display = "none";
+          nowDesc.textContent = "This section is part of the new Agentic AI hub. Video curation for this agent is in progress — the layout and filters above are ready for the next round of picks.";
+          watchLink.style.display = "none";
+          counterEl.textContent = "0 / 0";
+          pendingId = null;
+          if (iframe) { iframe.removeAttribute("src"); iframe.style.display = "none"; }
+          if (placeholder) placeholder.style.display = "flex";
+          prevBtn.disabled = true;
+          nextBtn.disabled = true;
+          prevBtn.style.opacity = ".45";
+          nextBtn.style.opacity = ".45";
+          prevBtn.style.pointerEvents = "none";
+          nextBtn.style.pointerEvents = "none";
+          return;
+        }
+        watchLink.style.display = "";
+        if (iframe) iframe.style.display = "";
+        if (placeholder && iframe) placeholder.style.display = "none";
+        nowLevel.textContent = v.level;
+        nowLevel.className = "level " + LEVEL_CLASS[v.level];
+        nowTitle.textContent = v.title;
+        if (v.channel) {
+          nowByline.innerHTML = "By <strong></strong>";
+          nowByline.querySelector("strong").textContent = v.channel;
+          nowByline.style.display = "";
+        } else {
+          nowByline.innerHTML = "";
+          nowByline.style.display = "none";
+        }
+        nowDesc.textContent = v.desc;
+        watchLink.href = watchUrl(v.id);
+        var shown = visibleIndices();
+        var pos = shown.indexOf(state.index);
+        counterEl.textContent = (pos > -1 ? pos + 1 : state.index + 1) + " / " + shown.length;
+        updateFrame(v.id, v.title);
+        prevBtn.disabled = pos <= 0;
+        nextBtn.disabled = pos < 0 || pos >= shown.length - 1;
+        prevBtn.style.opacity = prevBtn.disabled ? ".45" : "1";
+        nextBtn.style.opacity = nextBtn.disabled ? ".45" : "1";
+        prevBtn.style.pointerEvents = prevBtn.disabled ? "none" : "auto";
+        nextBtn.style.pointerEvents = nextBtn.disabled ? "none" : "auto";
+      }
+
+      function playNew(track, i) {
+        var switched = state.track !== track;
+        if (switched) {
+          state.track = track;
+          document.querySelectorAll(".track-tab").forEach(function (t) {
+            t.setAttribute("aria-selected", t.dataset.track === track ? "true" : "false");
+          });
+        }
+        /* Keep the level filter only if it still shows this video. */
+        if (state.filter !== "All" && currentVideos()[i].level !== state.filter) {
+          state.filter = "All";
+          document.querySelectorAll(".chip").forEach(function (c) {
+            c.setAttribute("aria-pressed", c.dataset.filter === "All" ? "true" : "false");
+          });
+        }
+        state.index = i;
+        renderPlaylist();
+        renderNow();
+        renderArrivals();
+        document.querySelector(".now-card").scrollIntoView({ behavior: "smooth", block: "start" });
+      }
+
+      function updateArrivalsCarousel() {
+        if (!arrivalsEl) return;
+        var total = arrivalsEl.children.length;
+        if (total === 0) {
+          if (arrCounter) arrCounter.textContent = "";
+          return;
+        }
+        if (arrivalsIndex < 0) arrivalsIndex = 0;
+        if (arrivalsIndex > total - 1) arrivalsIndex = total - 1;
+        arrivalsEl.style.transform = "translateX(-" + (arrivalsIndex * 100) + "%)";
+        /* dots */
+        if (arrDots) {
+          var dots = arrDots.children;
+          for (var d = 0; d < dots.length; d++) {
+            dots[d].setAttribute("aria-current", d === arrivalsIndex ? "true" : "false");
+          }
+        }
+        if (arrCounter) arrCounter.textContent = (arrivalsIndex + 1) + " / " + total;
+        if (arrPrev) arrPrev.disabled = arrivalsIndex <= 0;
+        if (arrNext) arrNext.disabled = arrivalsIndex >= total - 1;
+      }
+
+      function setArrivalsIndex(i) {
+        arrivalsIndex = i;
+        updateArrivalsCarousel();
+      }
+
+      function renderArrivals() {
+        if (!arrivalsEl) return;
+        /* Preserve the carousel position across re-renders when possible,
+           but follow the now-playing video if it is in the arrivals list. */
+        var prevIndex = arrivalsIndex;
+        var built = [];
+        arrivalsEl.innerHTML = "";
+        if (arrDots) arrDots.innerHTML = "";
+
+        NEW_ARRIVALS.forEach(function (entry) {
+          var vids = TRACKS[entry.track].videos, v = null, idx = -1;
+          for (var i = 0; i < vids.length; i++) {
+            if (vids[i].id === entry.id) { v = vids[i]; idx = i; break; }
+          }
+          if (!v) return;
+          built.push({ entry: entry, video: v, idx: idx });
+        });
+
+        built.forEach(function (item, pos) {
+          var entry = item.entry, v = item.video, idx = item.idx;
+          var card = document.createElement("button");
+          card.type = "button";
+          card.className = "arrival";
+          card.dataset.track = entry.track;
+          card.dataset.videoId = entry.id;
+          card.setAttribute("aria-current",
+            state.track === entry.track && currentVideo() && currentVideo().id === entry.id ? "true" : "false");
+          card.setAttribute("aria-label", v.title + " — play");
+          var top = document.createElement("span");
+          top.className = "a-top";
+          var trackLabel = document.createElement("span");
+          trackLabel.className = "a-track";
+          trackLabel.textContent = entry.track === "grok" ? "Grok Bot" : (entry.track === "muse" ? "Meta Muse" : (entry.track === "openai" ? "OpenAI dots" : (entry.track === "claude" ? "Claude" : (entry.track === "copilot" ? "Copilot Autopilot" : entry.track))));
+          var pill = document.createElement("span");
+          pill.className = "newpill";
+          pill.textContent = "New";
+          top.appendChild(trackLabel);
+          top.appendChild(pill);
+          var title = document.createElement("span");
+          title.className = "a-title";
+          title.textContent = v.title;
+          var meta = document.createElement("span");
+          meta.className = "a-meta";
+          meta.textContent = (v.channel ? v.channel + " · " : "") + v.level;
+          card.appendChild(top);
+          card.appendChild(title);
+          card.appendChild(meta);
+          (function (track, i) {
+            card.addEventListener("click", function () { playNew(track, i); });
+          })(entry.track, idx);
+          arrivalsEl.appendChild(card);
+
+          if (arrDots) {
+            var dot = document.createElement("button");
+            dot.type = "button";
+            dot.className = "arrivals-dot";
+            dot.setAttribute("role", "tab");
+            dot.setAttribute("aria-label", "Go to new arrival " + (pos + 1) + ": " + v.title);
+            dot.setAttribute("aria-current", pos === arrivalsIndex ? "true" : "false");
+            (function (p) {
+              dot.addEventListener("click", function () { setArrivalsIndex(p); });
+            })(pos);
+            arrDots.appendChild(dot);
+          }
+        });
+
+        /* If the now-playing video is in the list, bring it into view;
+           otherwise keep the previous position. */
+        var playingPos = -1;
+        for (var k = 0; k < built.length; k++) {
+          if (state.track === built[k].entry.track && currentVideo() && currentVideo().id === built[k].entry.id) { playingPos = k; break; }
+        }
+        if (playingPos > -1) arrivalsIndex = playingPos;
+        else arrivalsIndex = Math.min(prevIndex, Math.max(0, built.length - 1));
+        updateArrivalsCarousel();
+      }
+
+      function select(i) {
+        state.index = i;
+        renderPlaylist();
+        renderNow();
+        renderArrivals();
+      }
+
+      function step(delta) {
+        var shown = visibleIndices();
+        var pos = shown.indexOf(state.index);
+        var next = pos + delta;
+        if (next >= 0 && next < shown.length) select(shown[next]);
+      }
+
+      prevBtn.addEventListener("click", function () { step(-1); });
+      nextBtn.addEventListener("click", function () { step(1); });
+
+      if (arrPrev) arrPrev.addEventListener("click", function () { setArrivalsIndex(arrivalsIndex - 1); });
+      if (arrNext) arrNext.addEventListener("click", function () { setArrivalsIndex(arrivalsIndex + 1); });
+
+      /* Keyboard arrows when focus is inside the arrivals carousel */
+      (function () {
+        var carousel = document.querySelector(".arrivals-carousel");
+        if (!carousel) return;
+        carousel.addEventListener("keydown", function (e) {
+          if (e.key === "ArrowLeft") { e.preventDefault(); setArrivalsIndex(arrivalsIndex - 1); }
+          if (e.key === "ArrowRight") { e.preventDefault(); setArrivalsIndex(arrivalsIndex + 1); }
+        });
+      })();
+
+      document.querySelectorAll(".track-tab").forEach(function (tab) {
+        tab.addEventListener("click", function () {
+          if (state.track === tab.dataset.track) return;
+          state.track = tab.dataset.track;
+          document.querySelectorAll(".track-tab").forEach(function (t) {
+            t.setAttribute("aria-selected", t === tab ? "true" : "false");
+          });
+          var shown = visibleIndices();
+          state.index = shown.length ? shown[0] : 0;
+          renderPlaylist();
+          renderNow();
+          renderArrivals();
+        });
+      });
+
+      document.querySelectorAll(".chip").forEach(function (chip) {
+        chip.addEventListener("click", function () {
+          document.querySelectorAll(".chip").forEach(function (c) {
+            c.setAttribute("aria-pressed", c === chip ? "true" : "false");
+          });
+          state.filter = chip.dataset.filter;
+          var shown = visibleIndices();
+          if (shown.indexOf(state.index) === -1) {
+            state.index = shown.length ? shown[0] : state.index;
+          }
+          renderPlaylist();
+          renderNow();
+        });
+      });
+
+      /* ---------- Meet the Agents expanders — compact name-only by default ---------- */
+      document.querySelectorAll(".agent-card").forEach(function (card) {
+        var btn = card.querySelector(".agent-toggle");
+        var details = card.querySelector(".agent-details");
+        var heading = card.querySelector("h3");
+        var link = card.querySelector(".agent-link");
+        if (!btn || !details) return;
+        var pinned = false;
+        var hovered = false;
+        var canHover = window.matchMedia && window.matchMedia("(hover: hover) and (pointer: fine)").matches;
+        function render() {
+          var open = pinned || hovered;
+          card.classList.toggle("expanded", open);
+          card.setAttribute("aria-expanded", open ? "true" : "false");
+          btn.setAttribute("aria-expanded", open ? "true" : "false");
+          btn.textContent = open ? "Less" : "More";
+        }
+        function togglePinned() {
+          pinned = !pinned;
+          /* If we just unpinned while still hovered, keep hover state; render will reflect it */
+          render();
+        }
+        btn.addEventListener("click", function (e) { e.stopPropagation(); togglePinned(); });
+        if (heading) {
+          heading.addEventListener("click", function (e) { e.stopPropagation(); togglePinned(); });
+        }
+        if (link) {
+          link.addEventListener("click", function (e) { e.stopPropagation(); });
+        }
+        /* Tapping anywhere on the collapsed header row (name area) toggles; clicks inside details (except link/button) do not collapse accidentally */
+        var headRow = card.querySelector(".agent-head-row");
+        if (headRow) {
+          headRow.addEventListener("click", function (e) {
+            if (e.target.closest("button") || e.target.closest("a")) return;
+            if (e.target === heading) return; /* already handled */
+            togglePinned();
+          });
+        }
+        if (canHover) {
+          card.addEventListener("mouseenter", function () { hovered = true; render(); });
+          card.addEventListener("mouseleave", function () { hovered = false; render(); });
+        }
+        card.addEventListener("keydown", function (e) {
+          if (e.target !== card && e.target !== heading) return;
+          if (e.key === "Enter" || e.key === " " || e.key === "Spacebar") {
+            e.preventDefault();
+            togglePinned();
+          }
+        });
+        render();
+      });
+
+      /* ---------- Agent Wire ---------- */
+      var WIRE = [
+        {
+          headline: "Anthropic opens Claude for Google Workspace in public beta",
+          summary: "Anthropic launched a public beta that puts Claude in a sidebar inside Google Docs, Sheets and Slides for all paid Claude plans, letting users read, select and edit content without switching apps, with enterprise controls like the Compliance API and audit export carrying over.",
+          href: "https://www.reworked.co/digital-workplace/anthropic-opens-claude-for-google-workspace-in-beta/",
+          source: "reworked.co"
+        },
+        {
+          headline: "Meta's Muse could become a $27 billion business, Citi says",
+          summary: "A Citi analysis cited by Reuters on Oct 6 estimates Muse could generate over $27B in annual revenue by 2030, with 6.6 million cumulative downloads and 1.8 million daily active users since its September launch; Citi calls personal agents like Muse \"the new front door to the internet.\"",
+          href: "https://www.pymnts.com/news/artificial-intelligence/2026/metas-muse-could-become-27-billion-business-citi-says/",
+          source: "pymnts.com"
+        },
+        {
+          headline: "Meta opens Muse agent to DIY hardware builders with open-source gadget SDKs",
+          summary: "Meta launched Muse Gadgets on Oct 2, an open-source project under Apache 2.0 that lets hobbyists build Muse-connected devices via ESP32 firmware or a Linux SDK on a Raspberry Pi; Meta also shipped its Muse Home Link device and is giving away 5,000 units to active U.S. subscribers.",
+          href: "https://mpost.io/meta-opens-muse-agent-to-diy-hardware-builders-with-open-source-gadget-sdks/",
+          source: "mpost.io"
+        },
+        {
+          headline: "xAI Team Bots turn Grok into a shared AI coworker for whole teams",
+          summary: "SpaceXAI's Team Bots feature, announced Sep 28 and in public beta, lets a team publish one Grok Bot around a shared role with combined context, plugins, credentials and memory, giving each bot its own Slack handle while keeping individual conversations private.",
+          href: "https://bitcoinversus.tech/2026/10/03/xai-team-bots-shared-ai-coworker-whole-teams/",
+          source: "bitcoinversus.tech"
+        },
+        {
+          headline: "Anthropic wants your voice chats to train Claude",
+          summary: "Anthropic is rolling out a new opt-in prompt asking Claude users to donate voice recordings and voice chats to train future AI speech models, with a dedicated \"Allow us to use your voice data\" toggle in Settings that is off by default and architecturally separate from text-chat training opt-in.",
+          href: "https://www.androidheadlines.com/2026/10/anthropic-claude-voice-data-ai-training-toggle.html",
+          source: "androidheadlines.com"
+        },
+        {
+          headline: "Microsoft and Meta steer staff from Anthropic's Claude to in-house AI",
+          summary: "Microsoft has cut its planned internal Anthropic spend by a third, pushing staff toward GitHub Copilot and its own models, while Meta has halved employee Claude Code usage from roughly 60,000 to 30,000 in favour of Muse Code and its internal MetaCode.",
+          href: "https://www.pymnts.com/news/artificial-intelligence/2026/microsoft-meta-steer-staff-from-anthropic-claude-in-house-ai/",
+          source: "The Information via PYMNTS"
+        },
+        {
+          headline: "Anthropic launches $100M Claude Frontier Academy",
+          summary: "Anthropic announced a $100 million-backed programme to train 10,000 \"Frontier Deployed Engineers\" by end-2027 through a residency-style course ending in a graded deployment project, with first badges expected early 2027.",
+          href: "https://www.resultsense.com/news/2026-10-05-anthropic-claude-frontier-academy/",
+          source: "ResultSense"
+        }
+      ];
+
+      (function initWire() {
+        var wireEl = document.getElementById("agentWire");
+        var trackEl = document.getElementById("wireTrack");
+        var viewport = document.getElementById("wireViewport");
+        var summaryEl = document.getElementById("wireSummary");
+        if (!wireEl || !trackEl || !viewport || !summaryEl) return;
+        var resumeTimer = null;
+
+        function makeItem(item) {
+          var b = document.createElement("button");
+          b.type = "button";
+          b.className = "wire-item";
+          b.textContent = item.headline;
+          b.addEventListener("click", function () {
+            wireEl.classList.add("paused");
+            summaryEl.innerHTML = "";
+            var strong = document.createElement("strong");
+            strong.textContent = item.headline + " — ";
+            var span = document.createElement("span");
+            span.textContent = item.summary + " ";
+            var a = document.createElement("a");
+            a.href = item.href;
+            a.target = "_blank";
+            a.rel = "noopener";
+            a.textContent = item.source + " →";
+            summaryEl.appendChild(strong);
+            summaryEl.appendChild(span);
+            summaryEl.appendChild(a);
+            summaryEl.classList.add("open");
+            if (resumeTimer) clearTimeout(resumeTimer);
+            resumeTimer = setTimeout(function () {
+              wireEl.classList.remove("paused");
+              summaryEl.classList.remove("open");
+            }, 6000);
+          });
+          return b;
+        }
+
+        /* Duplicate the set once so the -50% loop is seamless. */
+        [0, 1].forEach(function () {
+          WIRE.forEach(function (item) { trackEl.appendChild(makeItem(item)); });
+        });
+
+        function pause() { wireEl.classList.add("paused"); if (resumeTimer) clearTimeout(resumeTimer); }
+        function resumeSoon(ms) {
+          if (resumeTimer) clearTimeout(resumeTimer);
+          resumeTimer = setTimeout(function () {
+            wireEl.classList.remove("paused");
+            /* Keep summary open briefly after resume; close on next tap cycle. */
+          }, ms || 3500);
+        }
+
+        viewport.addEventListener("pointerdown", pause);
+        viewport.addEventListener("pointerenter", pause);
+        viewport.addEventListener("pointerleave", function () { resumeSoon(2200); });
+        viewport.addEventListener("touchstart", pause, { passive: true });
+        viewport.addEventListener("touchend", function () { resumeSoon(4500); }, { passive: true });
+        summaryEl.addEventListener("click", function () { resumeSoon(1500); });
+
+        if (window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+          wireEl.classList.add("paused");
+          trackEl.style.animation = "none";
+        }
+      })();
+
+      /* First paint. */
+      renderPlaylist();
+      renderNow();
+      renderArrivals();
+    })();
+  </script>
+</body>
+</html>
