@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-06T22:00:27.275313+00:00",
+  "generated_at": "2026-10-07T02:02:36.680476+00:00",
   "sources_polled": [
     "The Verge \u2014 AI",
     "Simon Willison",
@@ -14,6 +14,83 @@
     "Technology Learnings"
   ],
   "articles": [
+    {
+      "id": "bc657e1acdd70771",
+      "title": "llm-openai-decisions 0.1a0",
+      "link": "https://simonwillison.net/2026/Oct/6/llm-openai-decisions/",
+      "source": "Simon Willison",
+      "category": "AI",
+      "summary": "Release: llm-openai-decisions 0.1a0 OpenAI released their new Jev-style Decisions API , as previously announced at last week's DevDay. Since I already have an llm-typesafe plugin for talking to Jev, I had GPT-6 Astra read the new OpenAI API documentation and build an llm-openai-d",
+      "published": "2026-10-07T02:02:27.635413+00:00",
+      "audio_url": null,
+      "duration": ""
+    },
+    {
+      "id": "c41d88164f839288",
+      "title": "Quoting Victoria Kim",
+      "link": "https://simonwillison.net/2026/Oct/6/victoria-kim/",
+      "source": "Simon Willison",
+      "category": "AI",
+      "summary": "Since the Medicare breach, OpenAI has put in place additional monitoring to allow \u201cimmediate intervention\u201d by staff to stop training if the company\u2019s models access the internet in ways they\u2019re not supposed to, Mr. Kwon [chief strategy officer at OpenAI] said. &mdash; Victoria Kim",
+      "published": "2026-10-07T02:02:27.635321+00:00",
+      "audio_url": null,
+      "duration": ""
+    },
+    {
+      "id": "40c4d27cba869495",
+      "title": "OpenAI \u201crogue\u201d agent activities found on Wikimedia projects",
+      "link": "https://simonwillison.net/2026/Oct/7/openai-rogue-agents-wikimedia/",
+      "source": "Simon Willison",
+      "category": "AI",
+      "summary": "OpenAI \u201crogue\u201d agent activities found on Wikimedia projects Given how tempting a target wikis are for rogue agent swarms, it's not a huge surprise that Wikipedia found evidence of that activity once they went looking: The Wikimedia Foundation conducted its own investigation to se",
+      "published": "2026-10-07T02:02:27.635248+00:00",
+      "audio_url": null,
+      "duration": ""
+    },
+    {
+      "id": "e4feb1bf5e6900f4",
+      "title": "OpenAI drops another batch of mathematical breakthroughs",
+      "link": "https://www.theverge.com/ai-artificial-intelligence/1005004/openai-math-release-github",
+      "source": "The Verge \u2014 AI",
+      "category": "AI",
+      "summary": "OpenAI has revealed solutions to a number of long-standing mathematics problems produced by an unreleased frontier model in a batch of 722 manuscripts, covering 372 result families that group related papers. It extends a run of breakthroughs that have both impressed and unsettled",
+      "published": "2026-10-07T02:02:27.046672+00:00",
+      "audio_url": null,
+      "duration": ""
+    },
+    {
+      "id": "1a1052f124153d49",
+      "title": "Tech Learning: IT Infrastructure & Cloud \u2014 Ep 6: Real Scenario: Debugging a CrashLoopBackOff in Production",
+      "link": "https://muse.ai/podcasts/media/1248297608376725/4720f1e9-8c94-4958-8367-c455f31c5edc/ep-ff223bbf-3c16-42fb-978a-d6226abb8dc9.mp3",
+      "source": "Technology Learnings",
+      "category": "Podcast",
+      "summary": "IT Infrastructure & Cloud track: a real-time scenario walkthrough \u2014 debugging a CrashLoopBackOff in production, triage flow and fixes. AI Generated",
+      "published": "2026-10-07T02:01:50+00:00",
+      "audio_url": "https://muse.ai/podcasts/media/1248297608376725/4720f1e9-8c94-4958-8367-c455f31c5edc/ep-ff223bbf-3c16-42fb-978a-d6226abb8dc9.mp3",
+      "duration": "463"
+    },
+    {
+      "id": "e62c1065c59a3fd2",
+      "title": "Tech Learning: IT Infrastructure & Cloud \u2014 Ep 5: Kubernetes in Plain Words: Pods, Deployments, Services",
+      "link": "https://muse.ai/podcasts/media/1248297608376725/4720f1e9-8c94-4958-8367-c455f31c5edc/ep-e4753720-a233-469b-8298-37f84b287553.mp3",
+      "source": "Technology Learnings",
+      "category": "Podcast",
+      "summary": "IT Infrastructure & Cloud track: Kubernetes core objects \u2014 pods, deployments, services \u2014 explained in plain words. AI Generated",
+      "published": "2026-10-07T01:59:27+00:00",
+      "audio_url": "https://muse.ai/podcasts/media/1248297608376725/4720f1e9-8c94-4958-8367-c455f31c5edc/ep-e4753720-a233-469b-8298-37f84b287553.mp3",
+      "duration": "458"
+    },
+    {
+      "id": "d7dad7f74ee3fba4",
+      "title": "Daily AI Intelligence \u2014 Episode 6: Anthropic arms security teams, OpenAI lowers API top tier",
+      "link": "https://muse.ai/podcasts/media/1248297608376725/94f09345-ad4a-4981-83dd-e3206bbf5c4e/ep-a58582d7-d10a-4815-b9ac-199980dcdbee.mp3",
+      "source": "Daily AI Intelligence",
+      "category": "Podcast",
+      "summary": "Wednesday, October 7, 2026: Anthropic's Cyber Verification Program expands to three tiers after 129,000 vulnerabilities found; Claude for Startups adds a free year plus ,000 API credits; OpenAI simplifies API rate-limit tiers; xAI ships a first-party TypeScript SDK; Citigroup peg",
+      "published": "2026-10-07T01:30:47+00:00",
+      "audio_url": "https://muse.ai/podcasts/media/1248297608376725/94f09345-ad4a-4981-83dd-e3206bbf5c4e/ep-a58582d7-d10a-4815-b9ac-199980dcdbee.mp3",
+      "duration": "283"
+    },
     {
       "id": "17c1ef68addffb00",
       "title": "datasette-atom 0.11a0",
@@ -154,6 +231,28 @@
       "category": "AI",
       "summary": "The reports of OpenAI agents harming 3rd party sites keep coming.",
       "published": "2026-10-06T12:21:53+00:00",
+      "audio_url": null,
+      "duration": ""
+    },
+    {
+      "id": "342677ae7eadb2eb",
+      "title": "How Jump Trading is scaling quant research with ChatGPT",
+      "link": "https://openai.com/index/jump-trading",
+      "source": "OpenAI Blog",
+      "category": "AI",
+      "summary": "Jump Trading uses OpenAI to expand quantitative research. See how longer-running AI workflows combine multiple data sources with human review.",
+      "published": "2026-10-06T12:00:00+00:00",
+      "audio_url": null,
+      "duration": ""
+    },
+    {
+      "id": "47b9255d8fa0f8e8",
+      "title": "Sharing AI progress in mathematics",
+      "link": "https://openai.com/index/sharing-ai-progress-in-mathematics",
+      "source": "OpenAI Blog",
+      "category": "AI",
+      "summary": "OpenAI publishes new results on open problems in mathematics from an internal frontier model and shares Lean proof formalizations and research details on GitHub.",
+      "published": "2026-10-06T12:00:00+00:00",
       "audio_url": null,
       "duration": ""
     },
@@ -1951,17 +2050,6 @@
       "duration": ""
     },
     {
-      "id": "71646fffd914b496",
-      "title": "How workers are unlocking new ways of working",
-      "link": "https://openai.com/index/unlocking-new-ways-of-working",
-      "source": "OpenAI Blog",
-      "category": "AI",
-      "summary": "New OpenAI Economic Research shows how workers use AI beyond traditional roles and which new activities become recurring parts of their work.",
-      "published": "2026-09-16T09:00:00+00:00",
-      "audio_url": null,
-      "duration": ""
-    },
-    {
       "id": "2ae59aa324a72c9f",
       "title": "AI leaders clash over safety fears after Anthropic whistleblower says AI could 'kill us all' by 2030",
       "link": "https://www.tomshardware.com/tech-industry/artificial-intelligence/ai-leaders-clash-over-safety-fears-after-anthropic-whistleblower-says-ai-could-kill-us-all-by-2030-openai-anthropic-and-xai-figureheads-call-for-external-governance-while-jensen-huang-says-worries-are-made-up",
@@ -2057,17 +2145,6 @@
       "category": "AI",
       "summary": "Animation of the text \"{DevFest} 2026 Join us! Google Developer Groups\" with a globe icon, asterisk icon, icon",
       "published": "2026-09-14T16:00:00+00:00",
-      "audio_url": null,
-      "duration": ""
-    },
-    {
-      "id": "296d33defd03a1b2",
-      "title": "How Fyxer built an AI executive assistant people trust",
-      "link": "https://openai.com/index/fyxer",
-      "source": "OpenAI Blog",
-      "category": "AI",
-      "summary": "Fyxer uses OpenAI models, fine-tuning, memory, and real user feedback to organize inboxes and draft emails in each user\u2019s voice.",
-      "published": "2026-09-14T12:00:00+00:00",
       "audio_url": null,
       "duration": ""
     },

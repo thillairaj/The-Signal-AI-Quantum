@@ -4,7 +4,63 @@
     <title>The Signal</title>
     <link>https://thillairaj.github.io/The-Signal-AI-Quantum/</link>
     <description>A self-updating feed of AI, quantum computing, and podcast updates.</description>
-    <lastBuildDate>Tue, 06 Oct 2026 22:00:27 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 07 Oct 2026 02:02:36 +0000</lastBuildDate>
+    <item>
+      <title>llm-openai-decisions 0.1a0</title>
+      <link>https://simonwillison.net/2026/Oct/6/llm-openai-decisions/</link>
+      <guid isPermaLink="false">bc657e1acdd70771</guid>
+      <description>Release: llm-openai-decisions 0.1a0 OpenAI released their new Jev-style Decisions API , as previously announced at last week's DevDay. Since I already have an llm-typesafe plugin for talking to Jev, I had GPT-6 Astra read the new OpenAI API documentation and build an llm-openai-d</description>
+      <category>Simon Willison</category>
+      <pubDate>Wed, 07 Oct 2026 02:02:27 +0000</pubDate>
+    </item>
+    <item>
+      <title>Quoting Victoria Kim</title>
+      <link>https://simonwillison.net/2026/Oct/6/victoria-kim/</link>
+      <guid isPermaLink="false">c41d88164f839288</guid>
+      <description>Since the Medicare breach, OpenAI has put in place additional monitoring to allow “immediate intervention” by staff to stop training if the company’s models access the internet in ways they’re not supposed to, Mr. Kwon [chief strategy officer at OpenAI] said. &amp;mdash; Victoria Kim</description>
+      <category>Simon Willison</category>
+      <pubDate>Wed, 07 Oct 2026 02:02:27 +0000</pubDate>
+    </item>
+    <item>
+      <title>OpenAI “rogue” agent activities found on Wikimedia projects</title>
+      <link>https://simonwillison.net/2026/Oct/7/openai-rogue-agents-wikimedia/</link>
+      <guid isPermaLink="false">40c4d27cba869495</guid>
+      <description>OpenAI “rogue” agent activities found on Wikimedia projects Given how tempting a target wikis are for rogue agent swarms, it's not a huge surprise that Wikipedia found evidence of that activity once they went looking: The Wikimedia Foundation conducted its own investigation to se</description>
+      <category>Simon Willison</category>
+      <pubDate>Wed, 07 Oct 2026 02:02:27 +0000</pubDate>
+    </item>
+    <item>
+      <title>OpenAI drops another batch of mathematical breakthroughs</title>
+      <link>https://www.theverge.com/ai-artificial-intelligence/1005004/openai-math-release-github</link>
+      <guid isPermaLink="false">e4feb1bf5e6900f4</guid>
+      <description>OpenAI has revealed solutions to a number of long-standing mathematics problems produced by an unreleased frontier model in a batch of 722 manuscripts, covering 372 result families that group related papers. It extends a run of breakthroughs that have both impressed and unsettled</description>
+      <category>The Verge — AI</category>
+      <pubDate>Wed, 07 Oct 2026 02:02:27 +0000</pubDate>
+    </item>
+    <item>
+      <title>Tech Learning: IT Infrastructure &amp; Cloud — Ep 6: Real Scenario: Debugging a CrashLoopBackOff in Production</title>
+      <link>https://muse.ai/podcasts/media/1248297608376725/4720f1e9-8c94-4958-8367-c455f31c5edc/ep-ff223bbf-3c16-42fb-978a-d6226abb8dc9.mp3</link>
+      <guid isPermaLink="false">1a1052f124153d49</guid>
+      <description>IT Infrastructure &amp; Cloud track: a real-time scenario walkthrough — debugging a CrashLoopBackOff in production, triage flow and fixes. AI Generated</description>
+      <category>Technology Learnings</category>
+      <pubDate>Wed, 07 Oct 2026 02:01:50 +0000</pubDate>
+    </item>
+    <item>
+      <title>Tech Learning: IT Infrastructure &amp; Cloud — Ep 5: Kubernetes in Plain Words: Pods, Deployments, Services</title>
+      <link>https://muse.ai/podcasts/media/1248297608376725/4720f1e9-8c94-4958-8367-c455f31c5edc/ep-e4753720-a233-469b-8298-37f84b287553.mp3</link>
+      <guid isPermaLink="false">e62c1065c59a3fd2</guid>
+      <description>IT Infrastructure &amp; Cloud track: Kubernetes core objects — pods, deployments, services — explained in plain words. AI Generated</description>
+      <category>Technology Learnings</category>
+      <pubDate>Wed, 07 Oct 2026 01:59:27 +0000</pubDate>
+    </item>
+    <item>
+      <title>Daily AI Intelligence — Episode 6: Anthropic arms security teams, OpenAI lowers API top tier</title>
+      <link>https://muse.ai/podcasts/media/1248297608376725/94f09345-ad4a-4981-83dd-e3206bbf5c4e/ep-a58582d7-d10a-4815-b9ac-199980dcdbee.mp3</link>
+      <guid isPermaLink="false">d7dad7f74ee3fba4</guid>
+      <description>Wednesday, October 7, 2026: Anthropic's Cyber Verification Program expands to three tiers after 129,000 vulnerabilities found; Claude for Startups adds a free year plus ,000 API credits; OpenAI simplifies API rate-limit tiers; xAI ships a first-party TypeScript SDK; Citigroup peg</description>
+      <category>Daily AI Intelligence</category>
+      <pubDate>Wed, 07 Oct 2026 01:30:47 +0000</pubDate>
+    </item>
     <item>
       <title>datasette-atom 0.11a0</title>
       <link>https://simonwillison.net/2026/Oct/6/datasette-atom/</link>
@@ -108,6 +164,22 @@
       <description>The reports of OpenAI agents harming 3rd party sites keep coming.</description>
       <category>Ars Technica AI</category>
       <pubDate>Tue, 06 Oct 2026 12:21:53 +0000</pubDate>
+    </item>
+    <item>
+      <title>How Jump Trading is scaling quant research with ChatGPT</title>
+      <link>https://openai.com/index/jump-trading</link>
+      <guid isPermaLink="false">342677ae7eadb2eb</guid>
+      <description>Jump Trading uses OpenAI to expand quantitative research. See how longer-running AI workflows combine multiple data sources with human review.</description>
+      <category>OpenAI Blog</category>
+      <pubDate>Tue, 06 Oct 2026 12:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>Sharing AI progress in mathematics</title>
+      <link>https://openai.com/index/sharing-ai-progress-in-mathematics</link>
+      <guid isPermaLink="false">47b9255d8fa0f8e8</guid>
+      <description>OpenAI publishes new results on open problems in mathematics from an internal frontier model and shares Lean proof formalizations and research details on GitHub.</description>
+      <category>OpenAI Blog</category>
+      <pubDate>Tue, 06 Oct 2026 12:00:00 +0000</pubDate>
     </item>
     <item>
       <title>Advancing computer use with Ironclad</title>
@@ -410,78 +482,6 @@
       <link>https://simonwillison.net/2026/Sep/22/therealcornpop/</link>
       <guid isPermaLink="false">df9ee5d27afc5dae</guid>
       <description>Hey, you know it's like super obvious if you're using AI to write your scripts for TikTok and YouTube, right? [...] It's not just the general AI-isms of "it's not X, it's Y", or the rule of three, or the really weird broken staccato-like way of writing where you just say a lot of</description>
-      <category>Simon Willison</category>
-      <pubDate>Sun, 04 Oct 2026 06:38:20 +0000</pubDate>
-    </item>
-    <item>
-      <title>llm 0.36</title>
-      <link>https://simonwillison.net/2026/Sep/22/llm/</link>
-      <guid isPermaLink="false">0ec1b9d730210e81</guid>
-      <description>Release: llm 0.36 New OpenAI models: gpt-6-sol for GPT-6 Sol and gpt-6-luna for GPT-6 Luna . #1702 Model plugins can now declare supports_conversation = False for models that only accept single-turn prompts. LLM raises llm.ConversationNotSupported when these models receive assist</description>
-      <category>Simon Willison</category>
-      <pubDate>Sun, 04 Oct 2026 06:38:20 +0000</pubDate>
-    </item>
-    <item>
-      <title>Claude Opus 5.5, GPT-6 Sol, GPT-6 Luna, and a new price war</title>
-      <link>https://simonwillison.net/2026/Sep/22/opus-and-sol-and-luna/</link>
-      <guid isPermaLink="false">f526d7679022c6d3</guid>
-      <description>Yesterday was Grok 4.7 ( pelicans ) and MiMo v2.6 Flash/Pro ( more pelicans ). Today Anthropic released Claude Opus 5.5 , and around an hour later OpenAI released GPT-6 Sol and GPT-6 Luna . It's going to take a while to get a good read on all of these new models, but here are my </description>
-      <category>Simon Willison</category>
-      <pubDate>Sun, 04 Oct 2026 06:38:20 +0000</pubDate>
-    </item>
-    <item>
-      <title>SF October 14th: A Birds of a Feather Session on Agentic Engineering</title>
-      <link>https://simonwillison.net/2026/Sep/23/bof-agentic-engineering/</link>
-      <guid isPermaLink="false">75e3d066fe171b2a</guid>
-      <description>SF October 14th: A Birds of a Feather Session on Agentic Engineering I'm hosting an evening event with Jesse Vincent in San Francisco on Wednesday 14th October for people who are building weird and interesting things with and on top of coding agents. Think of it as an agentic sho</description>
-      <category>Simon Willison</category>
-      <pubDate>Sun, 04 Oct 2026 06:38:20 +0000</pubDate>
-    </item>
-    <item>
-      <title>Shadow roots, explained with live examples</title>
-      <link>https://simonwillison.net/2026/Sep/23/shadow-roots/</link>
-      <guid isPermaLink="false">ba339dfd75be84d1</guid>
-      <description>Tool: Shadow roots, explained with live examples Prompt to Fable 5.1 Medium: Build an artifact to explain shadow roots in CSS with interactive examples Tags: css</description>
-      <category>Simon Willison</category>
-      <pubDate>Sun, 04 Oct 2026 06:38:20 +0000</pubDate>
-    </item>
-    <item>
-      <title>Gemini 3.8 TTS Playground</title>
-      <link>https://simonwillison.net/2026/Sep/23/gemini-tts-playground/</link>
-      <guid isPermaLink="false">e9c1ddde4585931b</guid>
-      <description>Tool: Gemini 3.8 TTS Playground Google released two new Gemini text-to-speech models today - gemini-3.8-flash-tts and gemini-3.8-flash-lite-tts . They come with a library of over 2,000 voices, plus the ability to create a custom voice with "just a 30-second audio sample of your v</description>
-      <category>Simon Willison</category>
-      <pubDate>Sun, 04 Oct 2026 06:38:20 +0000</pubDate>
-    </item>
-    <item>
-      <title>We just shipped support for the ugliest part of HTTP: Vary</title>
-      <link>https://simonwillison.net/2026/Sep/23/hn-49823961/</link>
-      <guid isPermaLink="false">750e8b0007c03aa5</guid>
-      <description>My comment on We just shipped support for the ugliest part of HTTP: Vary &amp;mdash; Hacker News. I've been wanting this from Cloudflare for years . The classic problem here is if you do that thing where user agents that send "accept: text/html" get HTML, while user agents that don't</description>
-      <category>Simon Willison</category>
-      <pubDate>Sun, 04 Oct 2026 06:38:20 +0000</pubDate>
-    </item>
-    <item>
-      <title>datasette 1.0a41</title>
-      <link>https://simonwillison.net/2026/Sep/24/datasette/</link>
-      <guid isPermaLink="false">afd37b587ece6ba4</guid>
-      <description>Release: datasette 1.0a41 Alec Garcia added support for OpenTelemetry to Datasette in this release. I've also refactored all of Datasette's modal dialogs to a single Web Component, which is now documented for other plugins to use . Tags: javascript , datasette , web-components , </description>
-      <category>Simon Willison</category>
-      <pubDate>Sun, 04 Oct 2026 06:38:20 +0000</pubDate>
-    </item>
-    <item>
-      <title>commit-rewriter 0.2</title>
-      <link>https://simonwillison.net/2026/Sep/24/commit-rewriter/</link>
-      <guid isPermaLink="false">e804eb39ba09ffde</guid>
-      <description>Release: commit-rewriter 0.2 Support for branches other than the default branch. Use uvx commit-rewriter --branch other to run against another branch. #3 Tags: git</description>
-      <category>Simon Willison</category>
-      <pubDate>Sun, 04 Oct 2026 06:38:20 +0000</pubDate>
-    </item>
-    <item>
-      <title>Note on 24th September 2026</title>
-      <link>https://simonwillison.net/2026/Sep/24/harder/</link>
-      <guid isPermaLink="false">414ec5ebf00c8740</guid>
-      <description>The more time I spend working with coding agents, the more convinced I am that they make software engineering even harder. We can do amazing things with them, but unlocking their full potential requires extraordinary discipline and knowledge. Tags: coding-agents , ai , llms</description>
       <category>Simon Willison</category>
       <pubDate>Sun, 04 Oct 2026 06:38:20 +0000</pubDate>
     </item>
