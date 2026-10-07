@@ -143,23 +143,5 @@
 
 <script data-goatcounter="https://trttech.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 <script src="app.js"></script>
-<script>
-(function(){
-  var q = new URLSearchParams(location.search);
-  var v = q.get("view");
-  if (!v) return;
-  function go(){
-    var tab = document.querySelector('.top-tab[data-view="'+v+'"]');
-    if (tab) tab.click();
-    var s = q.get("series");
-    if (s) {
-      var pill = Array.from(document.querySelectorAll(".series-btn")).find(b => b.dataset.series === s);
-      if (pill) pill.click();
-    }
-  }
-  if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", function(){ setTimeout(go, 400); });
-  else setTimeout(go, 400);
-})();
-</script>
 </body>
 </html>
