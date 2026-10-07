@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-07T02:02:36.680476+00:00",
+  "generated_at": "2026-10-07T05:59:50.276814+00:00",
   "sources_polled": [
     "The Verge \u2014 AI",
     "Simon Willison",
@@ -14,6 +14,39 @@
     "Technology Learnings"
   ],
   "articles": [
+    {
+      "id": "544da1e9a61fc2a9",
+      "title": "Quoting Jake Boggan",
+      "link": "https://simonwillison.net/2026/Oct/7/jake-boggan/",
+      "source": "Simon Willison",
+      "category": "AI",
+      "summary": "I was a graph theory junkie long ago and even moved to Budapest for awhile to study among the greats. While I was there I started working on Barnette's Conjecture which came to occupy my thoughts over the next 24 years of my life, on and off as I worked in many different fields. ",
+      "published": "2026-10-07T05:59:40.790734+00:00",
+      "audio_url": null,
+      "duration": ""
+    },
+    {
+      "id": "3b67c0fcd5313a0c",
+      "title": "Tech Learning: IT Infrastructure & Cloud \u2014 Ep 8: Real Scenario: Tracing Cross-Region Latency",
+      "link": "https://muse.ai/podcasts/media/1248297608376725/4720f1e9-8c94-4958-8367-c455f31c5edc/ep-506e2741-025b-4c6e-83f5-aae3fca328a2.mp3",
+      "source": "Technology Learnings",
+      "category": "Podcast",
+      "summary": "IT Infrastructure & Cloud track: a real-time scenario walkthrough \u2014 tracing cross-region latency, finding where the milliseconds hide, and fixing them. AI Generated",
+      "published": "2026-10-07T02:07:21+00:00",
+      "audio_url": "https://muse.ai/podcasts/media/1248297608376725/4720f1e9-8c94-4958-8367-c455f31c5edc/ep-506e2741-025b-4c6e-83f5-aae3fca328a2.mp3",
+      "duration": "456"
+    },
+    {
+      "id": "945127fe218507d6",
+      "title": "Tech Learning: IT Infrastructure & Cloud \u2014 Ep 7: VPCs, Subnets, DNS and Load Balancers",
+      "link": "https://muse.ai/podcasts/media/1248297608376725/4720f1e9-8c94-4958-8367-c455f31c5edc/ep-958ee95a-dfcc-4771-83ae-139807dcfb6e.mp3",
+      "source": "Technology Learnings",
+      "category": "Podcast",
+      "summary": "IT Infrastructure & Cloud track: cloud networking basics \u2014 VPCs, subnets, DNS, and load balancers explained. AI Generated",
+      "published": "2026-10-07T02:04:01+00:00",
+      "audio_url": "https://muse.ai/podcasts/media/1248297608376725/4720f1e9-8c94-4958-8367-c455f31c5edc/ep-958ee95a-dfcc-4771-83ae-139807dcfb6e.mp3",
+      "duration": "449"
+    },
     {
       "id": "bc657e1acdd70771",
       "title": "llm-openai-decisions 0.1a0",

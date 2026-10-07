@@ -4,7 +4,31 @@
     <title>The Signal</title>
     <link>https://thillairaj.github.io/The-Signal-AI-Quantum/</link>
     <description>A self-updating feed of AI, quantum computing, and podcast updates.</description>
-    <lastBuildDate>Wed, 07 Oct 2026 02:02:36 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 07 Oct 2026 05:59:50 +0000</lastBuildDate>
+    <item>
+      <title>Quoting Jake Boggan</title>
+      <link>https://simonwillison.net/2026/Oct/7/jake-boggan/</link>
+      <guid isPermaLink="false">544da1e9a61fc2a9</guid>
+      <description>I was a graph theory junkie long ago and even moved to Budapest for awhile to study among the greats. While I was there I started working on Barnette's Conjecture which came to occupy my thoughts over the next 24 years of my life, on and off as I worked in many different fields. </description>
+      <category>Simon Willison</category>
+      <pubDate>Wed, 07 Oct 2026 05:59:40 +0000</pubDate>
+    </item>
+    <item>
+      <title>Tech Learning: IT Infrastructure &amp; Cloud — Ep 8: Real Scenario: Tracing Cross-Region Latency</title>
+      <link>https://muse.ai/podcasts/media/1248297608376725/4720f1e9-8c94-4958-8367-c455f31c5edc/ep-506e2741-025b-4c6e-83f5-aae3fca328a2.mp3</link>
+      <guid isPermaLink="false">3b67c0fcd5313a0c</guid>
+      <description>IT Infrastructure &amp; Cloud track: a real-time scenario walkthrough — tracing cross-region latency, finding where the milliseconds hide, and fixing them. AI Generated</description>
+      <category>Technology Learnings</category>
+      <pubDate>Wed, 07 Oct 2026 02:07:21 +0000</pubDate>
+    </item>
+    <item>
+      <title>Tech Learning: IT Infrastructure &amp; Cloud — Ep 7: VPCs, Subnets, DNS and Load Balancers</title>
+      <link>https://muse.ai/podcasts/media/1248297608376725/4720f1e9-8c94-4958-8367-c455f31c5edc/ep-958ee95a-dfcc-4771-83ae-139807dcfb6e.mp3</link>
+      <guid isPermaLink="false">945127fe218507d6</guid>
+      <description>IT Infrastructure &amp; Cloud track: cloud networking basics — VPCs, subnets, DNS, and load balancers explained. AI Generated</description>
+      <category>Technology Learnings</category>
+      <pubDate>Wed, 07 Oct 2026 02:04:01 +0000</pubDate>
+    </item>
     <item>
       <title>llm-openai-decisions 0.1a0</title>
       <link>https://simonwillison.net/2026/Oct/6/llm-openai-decisions/</link>
@@ -460,30 +484,6 @@
       <description>Carlos Antelo's open-source ldraw-nova lets GPT-6 Astra and Claude Opus 5.5 design LEGO models as LDraw CAD files.</description>
       <category>Anthropic/Claude News</category>
       <pubDate>Sun, 04 Oct 2026 10:50:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>llm-typesafe 0.1a0</title>
-      <link>https://simonwillison.net/2026/Sep/22/llm-typesafe/</link>
-      <guid isPermaLink="false">7528f5f11fc6fb5e</guid>
-      <description>Release: llm-typesafe 0.1a0 I built this new plugin for LLM to add support for TypeSafe AI's new Jev model . Install it like this: llm install llm-typesafe Then set an API key ( get one here , the waitlist seems to move pretty fast): llm keys set typesafe # Paste key And now you </description>
-      <category>Simon Willison</category>
-      <pubDate>Sun, 04 Oct 2026 06:38:20 +0000</pubDate>
-    </item>
-    <item>
-      <title>llm-anthropic 0.29</title>
-      <link>https://simonwillison.net/2026/Sep/22/llm-anthropic/</link>
-      <guid isPermaLink="false">263fa952490ea5db</guid>
-      <description>Release: llm-anthropic 0.29 Adds support for Claude Opus 5.5 : llm -m claude-opus-5.5 "prompt goes here" Tags: llm , anthropic</description>
-      <category>Simon Willison</category>
-      <pubDate>Sun, 04 Oct 2026 06:38:20 +0000</pubDate>
-    </item>
-    <item>
-      <title>Quoting @therealcornpop</title>
-      <link>https://simonwillison.net/2026/Sep/22/therealcornpop/</link>
-      <guid isPermaLink="false">df9ee5d27afc5dae</guid>
-      <description>Hey, you know it's like super obvious if you're using AI to write your scripts for TikTok and YouTube, right? [...] It's not just the general AI-isms of "it's not X, it's Y", or the rule of three, or the really weird broken staccato-like way of writing where you just say a lot of</description>
-      <category>Simon Willison</category>
-      <pubDate>Sun, 04 Oct 2026 06:38:20 +0000</pubDate>
     </item>
   </channel>
 </rss>
