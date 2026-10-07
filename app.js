@@ -16,6 +16,10 @@ let bookmarks = new Set(JSON.parse(localStorage.getItem(BOOKMARK_KEY) || "[]"));
 let lastGeneratedAt = null;
 
 const feedEl = document.getElementById("feed");
+const learnViewEl = document.getElementById("learn-view");
+const podcastViewEl = document.getElementById("podcast-view");
+const podcastFeaturedEl = document.getElementById("podcast-featured");
+const podcastListEl = document.getElementById("podcast-list");
 const sourceListEl = document.getElementById("sourceList");
 const searchEl = document.getElementById("search");
 const categoryToggleEl = document.getElementById("categoryToggle");
@@ -87,6 +91,46 @@ async function loadViews() {
   } catch (err) {
     // Views are a nice-to-have; fail silently.
   }
+}
+
+/* ---------- Views: feed / learn / podcast ---------- */
+function showView(name) {
+  feedEl.hidden = name !== "feed";
+  learnViewEl.hidden = name !== "learn";
+  podcastViewEl.hidden = name !== "podcast";
+  if (name === "podcast") renderPodcast();
+}
+
+function fmtDur(s) {
+  s = Math.round(Number(s) || 0);
+  return Math.floor(s / 60) + ":" + String(s % 60).padStart(2, "0");
+}
+
+function renderPodcast() {
+  const eps = allArticles
+    .filter(a => a.category === "Podcast" && a.audio_url)
+    .sort((a, b) => new Date(b.published) - new Date(a.published));
+  if (!eps.length) {
+    podcastFeaturedEl.innerHTML = `<p class="empty-state">No episodes yet — check back after the next scheduled run.</p>`;
+    podcastListEl.innerHTML = "";
+    return;
+  }
+  const [latest, ...rest] = eps;
+  podcastFeaturedEl.innerHTML = `
+    <div class="pod-featured">
+      <p class="pod-kicker">Latest episode · ${latest.source}</p>
+      <h3>${latest.title}</h3>
+      <p class="pod-meta">${timeAgo(latest.published)}${latest.duration ? " · " + fmtDur(latest.duration) : ""}</p>
+      <audio controls preload="none" src="${AUDIO_PROXY + encodeURIComponent(latest.audio_url)}"></audio>
+    </div>`;
+  podcastListEl.innerHTML = rest.slice(0, 12).map(a => `
+    <div class="pod-row">
+      <div class="pod-row-text">
+        <p class="pod-row-title">${a.title}</p>
+        <p class="pod-row-meta">${a.source} · ${timeAgo(a.published)}${a.duration ? " · " + fmtDur(a.duration) : ""}</p>
+      </div>
+      <audio controls preload="none" src="${AUDIO_PROXY + encodeURIComponent(a.audio_url)}"></audio>
+    </div>`).join("");
 }
 
 /* ---------- Filtering & rendering ---------- */
@@ -240,13 +284,16 @@ searchEl.addEventListener("input", (e) => {
 
 categoryToggleEl.querySelectorAll(".cat-btn").forEach(btn => {
   btn.addEventListener("click", () => {
+    categoryToggleEl.querySelectorAll(".cat-btn").forEach(b => b.classList.remove("active"));
+    btn.classList.add("active");
+    if (btn.dataset.view === "learn") { showView("learn"); return; }
+    if (btn.dataset.view === "podcast") { showView("podcast"); return; }
     activeCategory = btn.dataset.category;
     activeSource = null;
     visibleCount = PAGE_SIZE;
-    categoryToggleEl.querySelectorAll(".cat-btn").forEach(b => b.classList.remove("active"));
-    btn.classList.add("active");
     renderSources();
     renderFeed();
+    showView("feed");
   });
 });
 

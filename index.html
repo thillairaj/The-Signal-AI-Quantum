@@ -48,7 +48,8 @@
         <button class="cat-btn active" data-category="">All</button>
         <button class="cat-btn" data-category="AI">AI</button>
         <button class="cat-btn" data-category="Quantum">Quantum</button>
-        <button class="cat-btn" data-category="Podcast">🎙 Podcast</button>
+        <button class="cat-btn" data-view="learn">Learn</button>
+        <button class="cat-btn" data-view="podcast">🎙 Podcast</button>
         <button class="cat-btn" data-category="__bookmarked">★ Saved</button>
       </div>
     </div>
@@ -97,6 +98,61 @@
   <main class="feed" id="feed">
     <p class="empty-state">Waiting on the first automated run — once the bot's GitHub Action fires, articles will appear here.</p>
   </main>
+
+  <section id="learn-view" class="view-section" hidden>
+    <div class="view-intro">
+      <h2>Learning Spaces</h2>
+      <p>Video series and interactive card decks — pick how you want to learn.</p>
+    </div>
+    <p class="learn-group-label">Video Learning</p>
+    <div class="learn-grid">
+      <a class="learn-card video-bot" href="https://muse.ai/s/learning-space-wxp5xkruxbxxixtc" target="_blank" rel="noopener">
+        <span class="learn-play" aria-hidden="true">▶</span>
+        <span class="learn-kicker">Video Learning · Weekly</span>
+        <span class="learn-title">AI Bot Learning Space</span>
+        <span class="learn-desc">Video drops on the AI assistants that matter — Grok, Muse, Copilot, ChatGPT, Gemini.</span>
+        <span class="learn-open">Open space ↗</span>
+      </a>
+      <a class="learn-card video-quantum" href="https://muse.ai/s/ai-quantum-learning-space-xgm5xnbxbn1xdxde" target="_blank" rel="noopener">
+        <span class="learn-play" aria-hidden="true">▶</span>
+        <span class="learn-kicker">Video Learning · Weekly</span>
+        <span class="learn-title">AI + Quantum Learning Space</span>
+        <span class="learn-desc">Weekly videos where artificial intelligence meets quantum computing.</span>
+        <span class="learn-open">Open space ↗</span>
+      </a>
+    </div>
+    <p class="learn-group-label">Interactive Decks</p>
+    <div class="learn-grid">
+      <a class="learn-card deck-quantum" href="quantum-deck/" target="_blank" rel="noopener">
+        <span class="learn-play" aria-hidden="true">▤</span>
+        <span class="learn-kicker">Interactive Deck · 8 topics</span>
+        <span class="learn-title">The Quantum Deck</span>
+        <span class="learn-desc">15-card visual lessons with flashcards and quizzes — 4 topics live now.</span>
+        <span class="learn-open">Open deck ↗</span>
+      </a>
+      <a class="learn-card deck-ai" href="ai-deck/" target="_blank" rel="noopener">
+        <span class="learn-play" aria-hidden="true">▤</span>
+        <span class="learn-kicker">Interactive Deck · 8 topics</span>
+        <span class="learn-title">The AI Deck</span>
+        <span class="learn-desc">15-card visual lessons with flashcards and quizzes — AI Fundamentals live now.</span>
+        <span class="learn-open">Open deck ↗</span>
+      </a>
+    </div>
+  </section>
+
+  <section id="podcast-view" class="view-section" hidden>
+    <div class="view-intro">
+      <h2>Podcasts</h2>
+      <p>Daily AI Intelligence and the Tech Learning series — listen right here.</p>
+      <div class="rss-links">
+        <a href="https://muse.ai/podcasts/feed/1248297608376725/94f09345-ad4a-4981-83dd-e3206bbf5c4e" target="_blank" rel="noopener">Daily AI Intelligence RSS</a>
+        <span aria-hidden="true">·</span>
+        <a href="https://muse.ai/podcasts/feed/1248297608376725/4720f1e9-8c94-4958-8367-c455f31c5edc" target="_blank" rel="noopener">Tech Learnings RSS</a>
+      </div>
+    </div>
+    <div id="podcast-featured"></div>
+    <div id="podcast-list"></div>
+  </section>
 </div>
 
 <footer class="site-footer">
