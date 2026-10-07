@@ -137,6 +137,8 @@ body {
 }
 
 .panel-block { margin-bottom: 1.75rem; }
+body[data-view="podcast"] .feed-only,
+body[data-view="learn"] .feed-only { display: none; }
 
 .panel-label {
   font-family: var(--font-mono);

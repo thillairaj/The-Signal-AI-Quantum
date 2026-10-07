@@ -100,6 +100,7 @@ async function loadViews() {
 
 /* ---------- Views: feed / learn / podcast ---------- */
 function showView(name) {
+  document.body.dataset.view = name;
   feedEl.hidden = name !== "feed";
   learnViewEl.hidden = name !== "learn";
   podcastViewEl.hidden = name !== "podcast";

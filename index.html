@@ -18,7 +18,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,500&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body data-view="feed">
 
 <header class="masthead">
   <div class="masthead-left">
@@ -42,12 +42,12 @@
 
 <div class="layout">
   <aside class="panel">
-    <div class="panel-block">
+    <div class="panel-block feed-only">
       <label class="panel-label" for="search">Search</label>
       <input type="text" id="search" class="search-input" placeholder="filter headlines…" autocomplete="off">
     </div>
 
-    <div class="panel-block">
+    <div class="panel-block feed-only">
       <p class="panel-label">Topic</p>
       <div class="category-toggle" id="categoryToggle">
         <button class="cat-btn active" data-category="">All</button>
@@ -57,7 +57,7 @@
       </div>
     </div>
 
-    <div class="panel-block">
+    <div class="panel-block feed-only">
       <button class="sources-header" id="sourcesToggle" aria-expanded="false" aria-controls="sourceList">
         <span>Sources&nbsp;<span class="count" id="sourcesCount"></span></span>
         <span class="chevron" aria-hidden="true"></span>
