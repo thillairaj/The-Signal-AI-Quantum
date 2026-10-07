@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The AI Deck</title>
+<meta property="og:type" content="website">
+<meta property="og:title" content="The AI Deck — learn AI, one card at a time">
+<meta property="og:description" content="15-card visual lessons on artificial intelligence: fundamentals, LLMs, agents, RAG and more. Read a card, flip it, prove you know it.">
+<meta property="og:url" content="https://thillairaj.github.io/The-Signal-AI-Quantum/ai-deck/">
+<style>
+  :root{
+    --obsidian:#0d0f14; --obsidian2:#151923; --gold:#b08d3e; --gold-dim:rgba(176,141,62,.4);
+    --ivory:#faf7f0; --card:#ffffff; --ink:#171b24; --muted:#6b7280; --line:#e8e2d4;
+    --green:#1e7e46; --red:#b3261e;
+    --page:#faf9f6; --page-ink:#2b3542;
+    --header-bg:radial-gradient(1200px 400px at 50% -80px,#f1eee4 0%,#faf9f6 65%);
+    --header-ink:#171b24; --header-sub:#5b6470;
+    --bar:rgba(250,249,246,.97); --bar-border:#e0dccf;
+    --chip-bg:#ffffff; --chip-ink:#2b3542; --chip-small:#6b7280;
+    --nav-bg:#ffffff;
+    --title-ink:#171b24; --row-sub:#5b6470;
+    --foot-ink:#6b7280; --foot-border:#e0dccf;
+  }
+  :root[data-theme="dark"]{
+    --obsidian:#0d0f14; --obsidian2:#151923; --gold:#d4af6a; --gold-dim:rgba(212,175,106,.4);
+    --ivory:#faf7f0; --card:#ffffff; --ink:#171b24; --muted:#6b7280; --line:#e8e2d4;
+    --green:#1e7e46; --red:#b3261e;
+    --page:#2f353e; --page-ink:#e9e4d6;
+    --header-bg:radial-gradient(1200px 400px at 50% -80px,#454e5b 0%,#2b3038 65%);
+    --header-ink:#ffffff; --header-sub:#aeb8c8;
+    --bar:rgba(47,53,62,.97); --bar-border:#4a5260;
+    --chip-bg:#22272f; --chip-ink:#cfd6e2; --chip-small:#8a919c;
+    --nav-bg:rgba(70,78,90,.45);
+    --title-ink:#f2ede0; --row-sub:#a8adb5;
+    --foot-ink:#9aa0aa; --foot-border:#4a5260;
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --gold:#d4af6a; --gold-dim:rgba(212,175,106,.4);
+      --page:#2f353e; --page-ink:#e9e4d6;
+      --header-bg:radial-gradient(1200px 400px at 50% -80px,#454e5b 0%,#2b3038 65%);
+      --header-ink:#ffffff; --header-sub:#aeb8c8;
+      --bar:rgba(47,53,62,.97); --bar-border:#4a5260;
+      --chip-bg:#22272f; --chip-ink:#cfd6e2; --chip-small:#8a919c;
+      --nav-bg:rgba(70,78,90,.45);
+      --title-ink:#f2ede0; --row-sub:#a8adb5;
+      --foot-ink:#9aa0aa; --foot-border:#4a5260;
+    }
+  }
+  .theme-toggle{position:absolute;top:14px;right:14px;background:var(--chip-bg);
+    border:1px solid var(--bar-border);border-radius:50%;width:32px;height:32px;
+    font-size:.95rem;cursor:pointer;color:var(--chip-ink);z-index:60;line-height:1}
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--page);color:var(--page-ink);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;line-height:1.55}
+  header{position:relative;background:var(--header-bg);
+    color:var(--header-ink);padding:44px 20px 34px;text-align:center;border-bottom:3px solid var(--gold)}
+  header .kicker{color:var(--gold);letter-spacing:4px;font-size:12px;font-weight:700}
+  header h1{margin:12px 0 8px;font-size:34px;letter-spacing:.5px;font-weight:800}
+  header h1 .thin{font-weight:300;color:var(--gold)}
+  header p{margin:0 auto;color:var(--header-sub);font-size:15px;max-width:620px}
+  /* topic navigator: horizontal scroll strip + search */
+  .topicbar{position:sticky;top:0;z-index:20;background:var(--bar);backdrop-filter:blur(6px);
+    border-bottom:1px solid var(--bar-border);padding:12px 18px;display:flex;gap:10px;align-items:center}
+  .tsearch{flex:0 0 220px;display:flex;align-items:center;background:var(--chip-bg);border:1px solid var(--bar-border);
+    border-radius:9px;padding:7px 10px}
+  .tsearch input{flex:1;background:none;border:none;outline:none;color:var(--chip-ink);font-size:13.5px;min-width:0}
+  .tsearch input::placeholder{color:var(--chip-small)}
+  .tstrip-wrap{flex:1;min-width:0;overflow:hidden}
+  .tstrip{display:flex;gap:10px;overflow-x:auto;scrollbar-width:none;padding:2px;scroll-snap-type:x proximity}
+  .tstrip::-webkit-scrollbar{display:none}
+  .tlabel{flex:0 0 auto;color:var(--gold);font-size:11px;font-weight:800;letter-spacing:2.5px;white-space:nowrap}
+  .tchip{flex:0 0 auto;scroll-snap-align:start;border:1px solid var(--bar-border);background:var(--chip-bg);color:var(--chip-ink);
+    font-size:15px;font-weight:700;padding:11px 20px;border-radius:999px;cursor:pointer;white-space:nowrap}
+  .tchip small{color:var(--chip-small);font-weight:700;margin-right:8px;letter-spacing:1px;font-size:12px}
+  .tchip:hover{border-color:var(--gold-dim)}
+  .tchip.active{background:var(--gold);border-color:var(--gold);color:#171b24}
+  .tchip.active small{color:#5c4a1f}
+  .tchip.soon{opacity:.55;border-style:dashed;cursor:default}
+  .tchip.soon:hover{border-color:var(--bar-border)}
+  .tnav{flex:0 0 auto;width:34px;height:34px;border-radius:50%;border:1px solid var(--gold-dim);
+    background:var(--nav-bg);color:var(--gold);font-size:18px;cursor:pointer;line-height:1}
+  .tnav:hover{background:rgba(70,78,90,.72)}
+  main{max-width:1140px;margin:0 auto;padding:30px 18px 60px}
+  .topic-head{text-align:center;margin:6px 0 4px}
+  .topic-head .tnum{color:var(--gold);letter-spacing:4px;font-size:12px;font-weight:700}
+  .topic-head h2{margin:8px 0 0;font-size:30px;font-weight:800;color:var(--title-ink);font-family:Georgia,serif;letter-spacing:.3px}
+  .topic-head .tsub{margin:10px auto 0;max-width:640px;font-size:15px;color:var(--muted);line-height:1.55}
+  .topic-head .tdraft{display:inline-block;margin-top:8px;font-size:11px;letter-spacing:3px;font-weight:700;
+    color:var(--gold);border:1px dashed var(--gold-dim);border-radius:999px;padding:4px 14px}
+  .rowhead{display:flex;align-items:baseline;justify-content:space-between;margin:34px 0 6px}
+  .rowhead h2{margin:0;font-size:21px;letter-spacing:.3px;color:var(--title-ink)}
+  .rowhead h2 .n{color:var(--gold);font-size:13px;letter-spacing:2px;vertical-align:middle;margin-right:8px}
+  .rowhead p{margin:4px 0 0;color:var(--row-sub);font-size:13.5px}
+  .rail-wrap{position:relative}
+  .rail{display:flex;gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;
+    scrollbar-width:none;padding:14px 4px 18px;align-items:stretch}
+  .rail::-webkit-scrollbar{display:none}
+  .rail-btn{position:absolute;top:42%;transform:translateY(-50%);z-index:5;width:44px;height:44px;border-radius:50%;
+    border:1px solid var(--gold-dim);background:rgba(70,78,90,.45);color:var(--gold);font-size:22px;cursor:pointer;
+    box-shadow:0 2px 8px rgba(0,0,0,.18)}
+  .rail-btn:hover{background:rgba(70,78,90,.72)}
+  .rail-btn.prev{left:-8px}.rail-btn.next{right:-8px}
+  @keyframes wiggle{0%,100%{transform:rotate(0deg)}25%{transform:rotate(.7deg) translateY(-2px)}75%{transform:rotate(-.7deg)}}
+  @media(hover:hover) and (prefers-reduced-motion:no-preference){
+    .pcard:hover{animation:wiggle .45s ease-in-out}
+    .fcard:hover{animation:wiggle .45s ease-in-out}
+  }
+  .pcard{flex:0 0 320px;height:480px;scroll-snap-align:start;border-radius:16px;background:var(--card);
+    border:1px solid var(--line);box-shadow:0 6px 22px rgba(13,15,20,.08);
+    display:flex;flex-direction:column;padding:20px;position:relative;overflow:hidden}
+  .pcard::before{content:"";position:absolute;top:0;left:0;right:0;height:5px;
+    background:linear-gradient(90deg,var(--gold),#f0d9a0,var(--gold))}
+  .pnum{font-size:12px;font-weight:800;color:var(--gold);letter-spacing:2px}
+  .ptag{font-size:11px;font-weight:700;letter-spacing:2px;color:var(--muted);margin:2px 0 8px}
+  .pq{font-size:17.5px;font-weight:750;line-height:1.35;margin:0 0 10px;font-family:Georgia,serif;color:var(--ink)}
+  .pbody{flex:1;overflow-y:auto;font-size:13.5px;color:#2b3542;scrollbar-width:thin}
+  .pbody p{margin:0 0 9px}
+  .toolbar{border-top:1px dashed var(--line);padding-top:10px;margin-top:8px;display:flex;flex-wrap:wrap;gap:6px;align-items:center}
+  .toolbar select{font-size:11.5px;padding:6px 6px;border-radius:7px;border:1px solid var(--line);background:#f4f1e8;max-width:128px}
+  .toolbar button{font-size:11.5px;font-weight:700;padding:6px 10px;border-radius:7px;cursor:pointer;
+    border:1px solid var(--line);background:#f4f1e8;color:var(--ink)}
+  .toolbar button:hover{background:var(--gold);border-color:var(--gold);color:#fff}
+  .copied{font-size:11px;color:var(--green);font-weight:700;display:none}
+  /* click-to-zoom reading view */
+  .pcard[data-i]{cursor:pointer}
+  #zoom-ov{position:fixed;inset:0;background:rgba(10,12,16,.68);z-index:300;display:none;align-items:center;justify-content:center;padding:24px;box-sizing:border-box}
+  #zoom-ov.open{display:flex}
+  #zoom-card{position:relative;max-width:660px;width:100%;max-height:88vh;overflow-y:auto;background:var(--card);color:var(--ink);border:1px solid var(--line);border-radius:18px;padding:38px 42px 32px;box-shadow:0 24px 70px rgba(0,0,0,.35);box-sizing:border-box}
+  #zoom-card::before{content:"";position:absolute;top:0;left:0;right:0;height:6px;background:linear-gradient(90deg,var(--gold),#f0d9a0,var(--gold));border-radius:18px 18px 0 0}
+  #zoom-num{font-size:12px;font-weight:800;color:var(--gold);letter-spacing:2px;margin-bottom:8px}
+  #zoom-tag{font-size:12px;font-weight:700;letter-spacing:2.5px;color:var(--muted);margin-bottom:10px}
+  #zoom-q{font-size:26px;font-weight:750;line-height:1.35;margin:0 0 16px;font-family:Georgia,serif;color:var(--ink)}
+  #zoom-body{font-size:17px;line-height:1.7;color:var(--ink)}
+  #zoom-body p{margin:0 0 14px}
+  #zoom-close{position:absolute;top:14px;right:14px;width:36px;height:36px;border-radius:50%;border:1px solid var(--line);background:var(--card);color:var(--ink);font-size:18px;cursor:pointer;line-height:1;padding:0}
+  #zoom-close:hover{background:var(--gold);border-color:var(--gold);color:#fff}
+  @media(max-width:700px){#zoom-card{padding:30px 24px 24px}#zoom-q{font-size:22px}#zoom-body{font-size:16px}}
+  /* compact flashcards */
+  .fcard{flex:0 0 260px;height:215px;scroll-snap-align:start;perspective:1000px;cursor:pointer}
+  .finner{position:relative;width:100%;height:100%;transform-style:preserve-3d;transition:transform .55s}
+  .fcard.flipped .finner{transform:rotateY(180deg)}
+  .fface{position:absolute;inset:0;backface-visibility:hidden;-webkit-backface-visibility:hidden;border-radius:12px;
+    padding:16px 18px;display:flex;flex-direction:column;justify-content:flex-start;overflow:auto}
+  .ffront{background:linear-gradient(160deg,#3d444f 0%,#2c313a 72%);color:#fff;border:1px solid #545d6b}
+  .ffront .fnum{color:var(--gold);font-size:11px;font-weight:800;letter-spacing:2px;margin-bottom:6px}
+  .ffront .fq{font-size:13.5px;font-weight:700;line-height:1.45;font-family:Georgia,serif}
+  .ffront .fhint{margin-top:8px;font-size:9.5px;letter-spacing:2px;color:var(--gold);font-weight:700}
+  .fback{background:var(--card);transform:rotateY(180deg);border:1px solid var(--line);color:var(--ink);font-size:12px}
+  .fback .fnum{font-size:10.5px;font-weight:800;color:var(--gold);letter-spacing:2px;margin-bottom:5px}
+  /* quiz */
+  #quiz-box{max-width:700px;margin:6px auto 0;background:var(--card);border:1px solid var(--line);
+    border-radius:16px;padding:28px;box-shadow:0 6px 22px rgba(13,15,20,.08)}
+  #quiz-progress{font-size:11.5px;color:var(--muted);font-weight:700;letter-spacing:1.5px;margin-bottom:10px}
+  #quiz-q{font-size:18px;font-weight:700;margin:0 0 18px;font-family:Georgia,serif;
+    background:#2b3038;color:#fff;padding:18px 20px;border-radius:12px;border-left:5px solid var(--gold)}
+  .opt{display:block;width:100%;text-align:left;margin:0 0 10px;padding:13px 15px;font-size:14.5px;
+    border:1px solid var(--line);border-radius:10px;background:#fbfaf6;cursor:pointer;color:var(--ink)}
+  .opt:hover:not(:disabled){border-color:var(--gold)}
+  .opt:disabled{cursor:default}
+  .opt.correct{background:#e6f4ea;border-color:var(--green);font-weight:700}
+  .opt.wrong{background:#fbeae9;border-color:var(--red)}
+  #quiz-feedback{font-size:14px;font-weight:700;margin:6px 0 12px;min-height:22px}
+  #quiz-next{display:none;padding:10px 28px;font-size:14px;font-weight:700;border-radius:10px;border:none;
+    background:#2b3038;color:var(--gold);cursor:pointer}
+  #quiz-result{text-align:center}
+  #quiz-score{font-size:46px;font-weight:800;color:#2b3038}
+  #quiz-band{font-size:18px;font-weight:750;margin:8px 0 4px}
+  #quiz-sub{color:var(--muted);font-size:14px;margin-bottom:18px}
+  #quiz-restart{padding:10px 28px;font-size:14px;font-weight:700;border-radius:10px;border:none;
+    background:#2b3038;color:var(--gold);cursor:pointer}
+  .upgrid{display:flex;gap:14px;overflow-x:auto;scrollbar-width:none;padding:14px 4px 18px;
+    scroll-snap-type:x proximity;margin-top:10px}
+  .upgrid::-webkit-scrollbar{display:none}
+  .upcard{flex:0 0 230px;scroll-snap-align:start;border:1px dashed var(--gold-dim);border-radius:12px;padding:22px;background:#fff;text-align:center;color:var(--muted)}
+  .upcard b{display:block;color:#2b3038;font-size:16px;margin-bottom:6px}
+  .upcard span{font-size:11px;letter-spacing:2px;font-weight:700;color:var(--gold)}
+  .upcard.live{border-style:solid;cursor:pointer}
+  .upcard.live:hover{border-color:var(--gold)}
+  .upcard.live span{color:var(--green)}
+  footer{text-align:center;padding:28px 16px;color:var(--foot-ink);font-size:13px;border-top:1px solid var(--foot-border);margin-top:20px}
+  footer .rule{width:60px;height:2px;background:var(--gold);margin:0 auto 12px}
+  footer a{color:var(--gold);font-weight:700;text-decoration:none}
+  @media(max-width:700px){.pcard{flex-basis:80%}.fcard{flex-basis:62%}.rail-btn{display:none}
+    .topicbar{flex-wrap:wrap;row-gap:10px}
+    .tstrip-wrap{flex:1 1 auto}
+    .tnav{display:none}
+    .tsearch{flex:1 1 100%;order:5}}
+</style>
+</head>
+<body>
+<header>
+  <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">☾</button>
+  <div class="kicker" id="deck-kicker">ARTIFICIAL INTELLIGENCE, MADE VISUAL</div>
+  <h1>The <span class="thin">AI</span> Deck</h1>
+</header>
+<div class="topicbar">
+  <span class="tlabel">SELECT TOPIC</span>
+  <button class="tnav" id="tstrip-prev" aria-label="Scroll topics left">‹</button>
+  <div class="tstrip-wrap"><div class="tstrip" id="topic-strip"></div></div>
+  <button class="tnav" id="tstrip-next" aria-label="Scroll topics right">›</button>
+  <label class="tsearch"><input id="topic-search" type="search" placeholder="Search topics…" aria-label="Search topics"></label>
+</div>
+<main>
+  <div class="topic-head">
+    <div class="tnum" id="topic-num">IN CO-CREATION</div>
+    <h2 id="topic-title">The AI Deck</h2>
+    <p class="tsub" id="topic-tagline"></p>
+    <div><span class="tdraft" id="topic-draft" style="display:none">DRAFT · UNDER REVIEW</span></div>
+  </div>
+  <div class="rowhead"><div><h2><span class="n">01</span>Learn</h2><p>Scroll the rail — arrows move one card at a time. Share any card as an image, post, or text.</p></div></div>
+  <div class="rail-wrap">
+    <button class="rail-btn prev" data-rail="learn-rail" aria-label="Previous">‹</button>
+    <div class="rail" id="learn-rail"></div>
+    <button class="rail-btn next" data-rail="learn-rail" aria-label="Next">›</button>
+  </div>
+
+  <div class="rowhead"><div><h2><span class="n">02</span>Flashcards</h2><p>Read the question, think, tap to flip. Honest self-check — no scoring, no sharing.</p></div></div>
+  <div class="rail-wrap">
+    <button class="rail-btn prev" data-rail="flash-rail" aria-label="Previous">‹</button>
+    <div class="rail" id="flash-rail"></div>
+    <button class="rail-btn next" data-rail="flash-rail" aria-label="Next">›</button>
+  </div>
+
+  <div class="rowhead"><div><h2><span class="n">03</span>Quiz</h2><p>Ten questions, one at a time. Options shuffle every attempt.</p></div></div>
+  <div id="quiz-box"></div>
+
+  <div class="rowhead"><div><h2><span class="n">+</span>What's next</h2><p>The full roadmap — scroll sideways, tap a live deck to open it.</p></div></div>
+  <div class="rail-wrap">
+    <button class="rail-btn prev" data-rail="upgrid" aria-label="Previous">‹</button>
+    <div class="upgrid" id="upgrid"></div>
+    <button class="rail-btn next" data-rail="upgrid" aria-label="Next">›</button>
+  </div>
+</main>
+<footer><div class="rule"></div>Curated by Thillai Raj Thanam Jeya Veera Raj · <a href="https://www.linkedin.com/in/thillairaj" target="_blank" rel="noopener">Follow on LinkedIn</a></footer>
+<script>
+const FOOTER="Curated by Thillai Raj Thanam Jeya Veera Raj";
+const BRAND="The AI Deck";
+const PUBLIC_URL="https://thillairaj.github.io/The-Signal-AI-Quantum/ai-deck/";
+const THEMES={
+obsidian:{bg0:"#151923",bg1:"#0d0f14",accent:"#d4af6a",dim:"rgba(212,175,106,.5)",head:"#ffffff",body:"#c3ccd9",foot:"#8fa0b5"},
+ivory:{bg0:"#fffdf9",bg1:"#f0ebdf",accent:"#a8842f",dim:"rgba(168,132,47,.45)",head:"#171b24",body:"#334052",foot:"#6b7280"},
+midnight:{bg0:"#122c55",bg1:"#0b1f3b",accent:"#d4af6a",dim:"rgba(212,175,106,.5)",head:"#ffffff",body:"#c3ccd9",foot:"#8fa0b5"}};
+/* ---------- topics: one data block per deck; shared render below ---------- */
+/* ---------- Theme (same pattern as The Signal) ---------- */
+const THEME_KEY="deck_theme";
+const themeToggleBtn=document.getElementById("themeToggle");
+function applyTheme(theme){
+  if(theme==="dark"||theme==="light"){document.documentElement.setAttribute("data-theme",theme);}
+  else{document.documentElement.removeAttribute("data-theme");}
+  themeToggleBtn.textContent=(theme==="dark")?"\u2600":"\u263e";
+  if(!theme&&window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches){
+    themeToggleBtn.textContent="\u2600";
+  }
+}
+(function initTheme(){
+  let saved=null;try{saved=localStorage.getItem(THEME_KEY);}catch(e){}
+  applyTheme(saved);
+})();
+themeToggleBtn.addEventListener("click",()=>{
+  const cur=document.documentElement.getAttribute("data-theme")||
+    (window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light");
+  const next=cur==="dark"?"light":"dark";
+  try{localStorage.setItem(THEME_KEY,next);}catch(e){}
+  applyTheme(next);
+});
+
+const TOPICS=[
+{id:"ai-fundamentals",num:"01",short:"AI Basics",title:"AI Fundamentals",status:"live",draft:true,
+ tagline:"What AI actually is — learning, data, and models, without the mystique.",
+ xTags:"#ArtificialIntelligence #LearnAI",liTags:"#ArtificialIntelligence #AIDeck #LearnInPublic",learn:[{n:"1",tag:"AI DEFINITIONS",q:"What do we actually mean by “AI”?",body:["AI is the broad field of building systems that perform tasks requiring intelligence — perception, prediction, language, control. Most real systems are narrow AI: specialized models doing one thing well.","Artificial General Intelligence (AGI) — human-level generality — remains hypothetical, not a product tier. Don't mistake capable narrow systems for rungs on a guaranteed ladder."]},{n:"2",tag:"MACHINE LEARNING",q:"What does “learning from data” really mean?",body:["A model is a function with adjustable parameters. Training fits those parameters to patterns in example data by minimizing error — it discovers statistical regularities; it never “understands” like a human.","Once fitted, the same function maps new inputs to predictions. “Learning” here is parameter estimation from examples, not comprehension — a distinction that keeps expectations honest."]},{n:"3",tag:"ML PARADIGMS",q:"What are the paradigms of machine learning?",body:["Supervised learning maps labeled inputs to outputs; unsupervised learning finds structure in unlabeled data; reinforcement learning learns from reward signals. Useful foundations — not an exhaustive taxonomy.","Self-supervised learning — predicting hidden parts of the data itself — now underpins modern AI: rich representations learned from vast unlabeled corpora, before any labels enter."]},{n:"4",tag:"DATA QUALITY",q:"Is data quality more important than quantity?",body:["Both matter, and neither absolutely: quality, quantity, diversity, relevance, coverage, and labeling all shape the model. More data won't fix systematic bias; pristine data can't cover rare cases it never saw.","The right question is what the task demands — then whether the dataset delivers it. “Quality beats quantity” is a slogan, not an engineering rule."]},{n:"5",tag:"REPRESENTATIONS",q:"What are features — and who designs them?",body:["Classical machine learning (ML) runs on hand-engineered features: humans decide which measurements the model gets to see. Feature design was the craft; the model just drew the boundary.","Deep learning learns representations instead: the network discovers its own features from raw input, layer by layer. This shift — not just scale — is why deep models dominate perception."]},{n:"6",tag:"TRAINING & INFERENCE",q:"What is the difference between training and inference?",body:["Training fits the model's parameters to data — compute-heavy, done once or periodically on serious hardware. Inference applies the frozen model to new inputs — comparatively cheap, repeated millions of times.","Confusing the two misleads cost and capability discussions: a model's training bill says little about its per-query cost, and a demo is inference, not learning."]},{n:"7",tag:"GENERALIZATION",q:"What is overfitting — and why does generalization matter?",body:["A model that memorizes training examples — noise included — fails on new data: that's overfitting. Generalization, performance on unseen inputs, is the only performance that counts.","Held-out validation and test sets measure it; regularization and early stopping trade a little training accuracy for real-world reliability. If you remember one ML concept, remember this one."]},{n:"8",tag:"NEURAL NETWORKS",q:"What is a neural network, intuitively?",body:["Interconnected units in layers — but the layers aren't the point. Weights are learned parameters encoding what the network knows; activations nonlinearly transform representations as signals flow through.","Depth lets early layers learn simple patterns and deeper layers compose them: a hierarchy of learned representations, not merely a tall stack of layers."]},{n:"9",tag:"OPTIMIZATION",q:"What are loss functions and gradient descent?",body:["The loss function defines the objective: a number quantifying how wrong predictions are. Everything the model “should” do is encoded there.","Gradient descent is the optimizer: it computes how each parameter should change to reduce the loss and steps that way, repeatedly. The model isn't “understanding its mistakes” — it's descending a mathematical landscape."]},{n:"10",tag:"EVALUATION",q:"Why isn't accuracy enough?",body:["Accuracy hides what matters: a 99%-accurate fraud detector can still miss every fraud. Choose metrics by task — precision and recall for rare events, F1 for balance, calibration for trustworthy probabilities.","Add robustness, latency, and cost — and evaluate on unseen data under deployment-like conditions. Otherwise you're grading the rehearsal, not the performance."]},{n:"11",tag:"MODEL BIAS",q:"Where does model bias come from?",body:["Data bias can become model bias — but model behavior is shaped by more than data alone. Architecture, objectives, sampling and labeling decisions, deployment context, and feedback loops all contribute.","Auditing only the dataset misses half the story: bias must be traced through the full pipeline. “Bias in, bias out” is memorable, but too deterministic to engineer against."]},{n:"12",tag:"MODEL FAMILIES",q:"Classical ML or deep learning — which wins?",body:["There is no single winner. Classical ML — linear models, trees, ensembles — excels on structured tabular data, smaller datasets, tight compute budgets, and wherever interpretability matters.","Deep learning dominates unstructured, high-dimensional data — images, audio, language — where learned representations beat hand-engineering. Match the tool to the data and constraints, not the hype cycle."]},{n:"13",tag:"GENERATIVE MODELS",q:"Generative vs discriminative — what's the difference?",body:["Discriminative models learn decision boundaries: given an input, predict the label — P(y|x). Generative models learn the data distribution itself — P(x) — and can produce new samples resembling training data.","The textbook line blurs in practice: modern architectures mix both objectives. Treat the distinction as a lens for understanding models, not a law of nature."]},{n:"14",tag:"AI LIMITATIONS",q:"What can't AI do?",body:["Treat limits scientifically, not mystically: models degrade under distribution shift, hallucinate plausible falsehoods with no correctness guarantees, and react sensitively to input phrasing.","They extrapolate poorly, express uncertainty badly, and every output is conditioned on training data and context. Knowing where a model stops being trustworthy is an engineering discipline."]},{n:"15",tag:"AI STACK",q:"What does the modern AI stack look like?",body:["Beyond data → train → deploy → monitor: today's systems layer models, inference serving, evaluation harnesses, data and knowledge pipelines, application logic, orchestration, observability, and governance.","Each layer has its own failure modes and metrics. Production AI is systems engineering — the model is only one component, and the stack around it decides whether it survives reality."]}]},
+{id:"llms",num:"02",short:"LLMs",title:"Large Language Models",status:"soon",
+ tagline:"How LLMs work — tokens, transformers, and what scale buys.",
+ xTags:"#LLM #LearnAI",liTags:"#LLM #AIDeck #LearnInPublic"},
+{id:"prompt-engineering",num:"03",short:"Prompting",title:"Prompt Engineering",status:"soon",
+ tagline:"Getting the best from models — instructions, context, and technique.",
+ xTags:"#PromptEngineering #LearnAI",liTags:"#PromptEngineering #AIDeck #LearnInPublic"},
+{id:"agentic-ai",num:"04",short:"Agents",title:"Agentic AI",status:"soon",
+ tagline:"Systems that act — tools, planning, and autonomous loops.",
+ xTags:"#AgenticAI #LearnAI",liTags:"#AgenticAI #AIDeck #LearnInPublic"},
+{id:"rag",num:"05",short:"RAG",title:"RAG & Knowledge Systems",status:"soon",
+ tagline:"Grounding models in your data — retrieval, embeddings, and truth.",
+ xTags:"#RAG #LearnAI",liTags:"#RAG #AIDeck #LearnInPublic"},
+{id:"eval-safety",num:"06",short:"Eval & Safety",title:"AI Evaluation & Safety",status:"soon",
+ tagline:"Measuring what matters — evals, alignment, and responsible deployment.",
+ xTags:"#AISafety #LearnAI",liTags:"#AISafety #AIDeck #LearnInPublic"},
+{id:"multimodal",num:"07",short:"Multimodal",title:"Multimodal AI",status:"soon",
+ tagline:"Beyond text — vision, audio, and unified models.",
+ xTags:"#MultimodalAI #LearnAI",liTags:"#MultimodalAI #AIDeck #LearnInPublic"},
+{id:"deploying-ai",num:"08",short:"Deploying",title:"Deploying AI",status:"soon",
+ tagline:"From demo to production — inference, cost, and operations.",
+ xTags:"#MLOps #LearnAI",liTags:"#MLOps #AIDeck #LearnInPublic"}
+];
+let activeTopic=TOPICS[0];
+</script>
+<script>
+/* ---------- robust copy + download ---------- */
+function showCopied(i,msg){const s=document.getElementById("copied-"+i);
+  if(s){s.textContent=msg||"Copied ✓";s.style.display="inline";
+    setTimeout(()=>{s.style.display="none";s.textContent="Copied ✓";},2400);}}
+function copyText(t,i,msg){
+  const done=()=>showCopied(i,msg);
+  const legacy=()=>{const ta=document.createElement("textarea");
+    ta.value=t;ta.setAttribute("readonly","");ta.style.position="fixed";ta.style.opacity="0";
+    document.body.appendChild(ta);ta.select();
+    try{if(document.execCommand("copy")){done();}else{window.prompt("Copy this text:",t);}}
+    catch(e){window.prompt("Copy this text:",t);}
+    document.body.removeChild(ta);};
+  if(navigator.clipboard&&window.isSecureContext){navigator.clipboard.writeText(t).then(done).catch(()=>legacy());}
+  else{legacy();}
+}
+function triggerDownload(url,filename){
+  const a=document.createElement("a");a.download=filename;a.href=url;
+  document.body.appendChild(a);a.click();
+  setTimeout(()=>document.body.removeChild(a),400);
+}
+/* ---------- topic navigator ---------- */
+function renderStrip(filter){
+  const s=document.getElementById("topic-strip");s.innerHTML="";
+  const f=(filter||"").toLowerCase();
+  TOPICS.filter(t=>(t.title+" "+t.short+" "+t.num).toLowerCase().includes(f)).forEach(t=>{
+    const b=document.createElement("button");
+    b.className="tchip"+(t.id===activeTopic.id?" active":"")+(t.status!=="live"?" soon":"");
+    b.dataset.id=t.id;
+    b.innerHTML="<small>"+t.num+"</small>"+t.short+(t.status!=="live"?" · soon":"");
+    if(t.status==="live"){b.addEventListener("click",()=>selectTopic(t.id));}
+    else{b.disabled=true;b.title="Coming soon";}
+    s.appendChild(b);
+  });
+}
+function renderUpcoming(){
+  const g=document.getElementById("upgrid");g.innerHTML="";
+  TOPICS.forEach(t=>{
+    const d=document.createElement("div");
+    if(t.status==="live"){
+      d.className="upcard live";d.title="Open this deck";
+      d.innerHTML="<b>"+t.title+"</b><span>LIVE</span>";
+      d.addEventListener("click",()=>{selectTopic(t.id);window.scrollTo({top:0,behavior:"smooth"});});
+    }else{
+      d.className="upcard";
+      d.innerHTML="<b>"+t.title+"</b><span>COMING SOON</span>";
+    }
+    g.appendChild(d);
+  });
+}
+function selectTopic(id,skipHash){
+  const t=TOPICS.find(x=>x.id===id&&x.status==="live");if(!t)return;
+  activeTopic=t;
+  document.getElementById("topic-num").textContent="DECK "+t.num;
+  document.getElementById("topic-title").textContent=t.title;
+  document.getElementById("topic-tagline").textContent=t.tagline||"";
+  document.getElementById("topic-draft").style.display=t.draft?"inline-block":"none";
+  document.title="The AI Deck — "+t.title;
+  document.querySelectorAll(".tchip").forEach(ch=>ch.classList.toggle("active",ch.dataset.id===id));
+  renderLearn();renderFlash();startQuiz();
+  document.getElementById("learn-rail").scrollLeft=0;
+  document.getElementById("flash-rail").scrollLeft=0;
+  if(!skipHash){try{history.replaceState(null,"","#"+t.id);}catch(e){}}
+}
+/* ---------- learn rail ---------- */
+function cardText(i){const c=activeTopic.learn[i];
+  return c.q+"\n\n"+c.body.join("\n\n");}
+/* social-media rewrites: text only, no URLs, no credentials needed (intent links) */
+function xText(i){const c=activeTopic.learn[i];
+  const first=c.body[0].split(/(?<=[.!?])\s+/)[0];
+  const tags="\n\n"+activeTopic.xTags;
+  let t=c.q+"\n\n"+first;
+  const max=280-tags.length;
+  if(t.length>max){t=t.slice(0,max-1).trimEnd()+"\u2026";}
+  return t+tags;}
+function liText(i){const c=activeTopic.learn[i];
+  return "\u201c"+c.q+"\u201d\n\n"+c.body.join("\n\n")+"\n\n"+activeTopic.liTags;}
+let learnBound=false;
+function renderLearn(){
+  const rail=document.getElementById("learn-rail");rail.innerHTML="";
+  const L=activeTopic.learn||[];
+  if(!L.length){
+    rail.innerHTML='<article class="pcard" style="justify-content:center;text-align:center"><div class="ptag">COMING SOON</div><h3 class="pq">Learn cards are being co-created.</h3><div class="pbody"><p>Each deck is built together through discussion — this one is in the pipeline.</p></div></article>';
+  }
+  L.forEach((c,i)=>{
+    const d=document.createElement("article");d.className="pcard";d.id="card-"+activeTopic.id+"-"+c.n;d.dataset.i=i;d.title="Click to read larger";
+    d.innerHTML='<div class="pnum">'+c.n+' / '+L.length+'</div><div class="ptag">'+c.tag+'</div>'
+      +'<h3 class="pq">'+c.q+'</h3>'
+      +'<div class="pbody">'+c.body.map(p=>"<p>"+p+"</p>").join("")+'</div>'
+      +'<div class="toolbar"><select id="size-'+i+'" aria-label="Image size">'
+      +'<option value="1080x1350">1080×1350</option><option value="1080x1080">1080×1080</option>'
+      +'</select><select id="theme-'+i+'" aria-label="Colour theme">'
+      +'<option value="obsidian">Obsidian Gold</option><option value="ivory">Ivory</option><option value="midnight">Deep Tech Blue</option>'
+      +'</select><button data-act="dl" data-i="'+i+'">PNG</button>'
+      +'<button data-act="x" data-i="'+i+'">X</button><button data-act="li" data-i="'+i+'">in</button>'
+      +'<button data-act="copy" data-i="'+i+'">Copy</button>'
+      +'<span class="copied" id="copied-'+i+'">Copied ✓</span></div>';
+    rail.appendChild(d);
+  });
+  if(!learnBound){learnBound=true;
+    rail.addEventListener("click",e=>{
+      const b=e.target.closest("button[data-act]");if(!b)return;
+      const i=+b.dataset.i,act=b.dataset.act;
+      if(act==="copy"){copyText(cardText(i),i);}
+      else if(act==="x"){window.open("https://twitter.com/intent/tweet?text="+encodeURIComponent(xText(i)),"_blank","width=560,height=460");}
+      else if(act==="li"){const t=liText(i);
+        copyText(t,i,"Copied \u2014 paste into the LinkedIn composer");
+        window.open("https://www.linkedin.com/sharing/share-offsite/?url="+encodeURIComponent(PUBLIC_URL),"_blank");}
+      else if(act==="dl"){downloadCard(i,document.getElementById("size-"+i).value,document.getElementById("theme-"+i).value);}
+    });
+    rail.addEventListener("click",e=>{
+      if(e.target.closest("button[data-act]"))return;
+      if(e.target.closest(".toolbar"))return;
+      if(window.getSelection&&window.getSelection().toString())return;
+      const card=e.target.closest(".pcard");if(!card)return;
+      if(card.dataset.i===undefined||card.dataset.i==="")return;
+      openZoom(+card.dataset.i);
+    });
+  }
+}
+/* ---------- card zoom: click a card to read it larger ---------- */
+let zoomReturnTo=null;
+function openZoom(i){
+  const c=activeTopic.learn[i];if(!c)return;
+  zoomReturnTo=document.querySelector('.pcard[data-i="'+i+'"]');
+  document.getElementById("zoom-num").textContent=c.n+" / "+activeTopic.learn.length;
+  document.getElementById("zoom-tag").textContent=c.tag;
+  document.getElementById("zoom-q").textContent=c.q;
+  document.getElementById("zoom-body").innerHTML=c.body.map(p=>"<p>"+p+"</p>").join("");
+  document.getElementById("zoom-ov").classList.add("open");
+  document.body.style.overflow="hidden";
+  document.getElementById("zoom-close").focus();
+}
+function closeZoom(){
+  document.getElementById("zoom-ov").classList.remove("open");
+  document.body.style.overflow="";
+  if(zoomReturnTo){zoomReturnTo.setAttribute("tabindex","-1");zoomReturnTo.focus({preventScroll:true});}
+}
+document.addEventListener("click",e=>{
+  if(e.target.id==="zoom-close"||e.target.id==="zoom-ov")closeZoom();
+});
+document.addEventListener("keydown",e=>{
+  if(e.key==="Escape"){const ov=document.getElementById("zoom-ov");if(ov&&ov.classList.contains("open"))closeZoom();}
+});
+/* ---------- card -> PNG (premium obsidian/gold) ---------- */
+function wrap(x,t,mw){const w=t.split(" "),L=[];let l="";w.forEach(s=>{const t2=l?l+" "+s:s;
+  if(x.measureText(t2).width>mw&&l){L.push(l);l=s;}else l=t2;});if(l)L.push(l);return L;}
+function downloadCard(i,size,theme){
+  const [W,H]=size.split("x").map(Number),c=activeTopic.learn[i],k=W/1080;
+  const T=THEMES[theme]||THEMES.obsidian;
+  const cv=document.createElement("canvas");cv.width=W;cv.height=H;const x=cv.getContext("2d");
+  const grd=x.createLinearGradient(0,0,0,H);grd.addColorStop(0,T.bg0);grd.addColorStop(1,T.bg1);
+  x.fillStyle=grd;x.fillRect(0,0,W,H);
+  x.fillStyle=T.accent;x.fillRect(0,0,W,8*k);
+  const pad=84*k,mw=W-2*pad,cx=W/2;
+  const topSafe=48*k,footTop=H-150*k;
+  x.textAlign="left";
+  x.fillStyle=T.head;x.font="700 "+Math.round(72*k)+"px Georgia,serif";
+  const headLines=wrap(x,c.tag,mw);
+  const headH=headLines.length*Math.round(86*k);
+  let bf=44;
+  const fit=()=>{x.font=Math.round(bf*k)+"px system-ui,sans-serif";const L=[];
+    c.body.forEach(p=>{wrap(x,p,mw).forEach(l=>L.push(l));L.push("");});return L;};
+  const measure=()=>{const L=fit();return{L,h:L.length*Math.round((bf+14)*k)};};
+  let m=measure();
+  const gapH=Math.round(34*k),divGap=Math.round(56*k);
+  while((headH+gapH+divGap+m.h)>(footTop-topSafe)&&bf>24){bf-=2;m=measure();}
+  const lines=m.L,lh=Math.round((bf+14)*k);
+  let y=topSafe+Math.round(66*k);
+  x.fillStyle=T.head;x.font="700 "+Math.round(72*k)+"px Georgia,serif";
+  headLines.forEach(l=>{x.fillText(l,pad,y);y+=Math.round(86*k);});
+  y+=gapH;
+  x.strokeStyle=T.dim;x.lineWidth=2*k;
+  x.beginPath();x.moveTo(pad,y);x.lineTo(pad+130*k,y);x.stroke();
+  const divY=y;
+  y=divY+divGap+Math.max(0,(footTop-(divY+divGap)-m.h)/2);
+  x.fillStyle=T.body;x.font=Math.round(bf*k)+"px system-ui,sans-serif";
+  lines.forEach(l=>{if(l&&y<footTop){x.fillText(l,pad,y);}y+=lh;});
+  x.textAlign="center";
+  x.strokeStyle=T.dim;x.lineWidth=2*k;
+  x.beginPath();x.moveTo(pad,H-116*k);x.lineTo(W-pad,H-116*k);x.stroke();
+  x.fillStyle=T.foot;x.font="600 "+Math.round(28*k)+"px system-ui,sans-serif";
+  x.fillText("THE AI DECK",cx,H-68*k);
+  x.fillStyle=T.accent;x.fillText(activeTopic.title,cx,H-30*k);
+  x.textAlign="left";
+  const bx=W-pad-Math.round(38*k),by=H-Math.round(62*k),br=Math.round(34*k);
+  x.strokeStyle=T.accent;x.lineWidth=Math.round(3*k);
+  x.beginPath();x.arc(bx,by,br,0,Math.PI*2);x.stroke();
+  x.fillStyle=T.accent;x.font="700 "+Math.round(26*k)+"px Georgia,'Times New Roman',serif";
+  x.textAlign="center";x.textBaseline="middle";
+  try{x.letterSpacing="3px";}catch(e){}
+  x.fillText("TRT",bx,by+Math.round(2*k));
+  try{x.letterSpacing="0px";}catch(e){}
+  x.textAlign="left";x.textBaseline="alphabetic";
+  const filename="ai-deck-"+activeTopic.id+"-"+c.n+".png";
+  cv.toBlob(function(blob){
+    if(!blob){return;}
+    const file=new File([blob],filename,{type:"image/png"});
+    const mobile=/Android|iPhone|iPad|iPod/i.test(navigator.userAgent||"");
+    if(mobile&&navigator.canShare&&navigator.canShare({files:[file]})){
+      navigator.share({files:[file],title:filename}).catch(function(e){
+        if(e&&e.name!=="AbortError"){fallbackDownload(blob,filename);}
+      });
+    }else{fallbackDownload(blob,filename);}
+  },"image/png");
+}
+function fallbackDownload(blob,filename){
+  const url=URL.createObjectURL(blob);
+  triggerDownload(url,filename);
+  setTimeout(function(){URL.revokeObjectURL(url);},8000);
+}
+/* ---------- compact flashcard rail ---------- */
+function renderFlash(){
+  const rail=document.getElementById("flash-rail");rail.innerHTML="";
+  const F=activeTopic.flash;
+  if(!F||!F.length){
+    rail.innerHTML='<div class="fcard" style="cursor:default"><div class="finner"><div class="fface ffront" style="justify-content:center;align-items:center;text-align:center"><div class="fq">Flashcards unlock after the Learn cards pass review.</div></div></div></div>';
+    return;
+  }
+  F.forEach((f,i)=>{
+    const d=document.createElement("div");d.className="fcard";
+    d.innerHTML='<div class="finner"><div class="fface ffront"><div class="fnum">'+(i+1)+' / '+F.length+'</div>'
+      +'<div class="fq">'+f.q+'</div><div class="fhint">TAP TO FLIP</div></div>'
+      +'<div class="fface fback"><div class="fnum">'+(i+1)+' / '+F.length+' · ANSWER</div><div>'+f.a+'</div></div></div>';
+    d.addEventListener("click",()=>d.classList.toggle("flipped"));
+    rail.appendChild(d);
+  });
+}
+/* ---------- rail arrows: one card at a time ---------- */
+document.querySelectorAll(".rail-btn").forEach(b=>b.addEventListener("click",()=>{
+  const rail=document.getElementById(b.dataset.rail);
+  const card=rail.querySelector(".pcard,.fcard,.upcard");
+  const step=card?card.getBoundingClientRect().width+16:320;
+  rail.scrollBy({left:(b.classList.contains("next")?1:-1)*step,behavior:"smooth"});
+}));
+/* ---------- quiz ---------- */
+let qi=0,qscore=0,qorder=[];
+const shuffle=a=>{for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]];}return a;};
+function startQuiz(){
+  const box=document.getElementById("quiz-box");
+  if(!activeTopic.quiz||!activeTopic.quiz.length){
+    box.innerHTML='<div id="quiz-result"><div id="quiz-progress">DECK '+activeTopic.num+' · QUIZ</div><div id="quiz-band">Coming soon</div><div id="quiz-sub">The quiz unlocks after the Learn cards pass review.</div></div>';
+    return;
+  }
+  qi=0;qscore=0;qorder=activeTopic.quiz.map((_,i)=>i);renderQ();}
+function renderQ(){
+  const box=document.getElementById("quiz-box"),QZ=activeTopic.quiz;
+  if(qi>=QZ.length){
+    const band=qscore>=9?["Excellent","You have the fundamentals down cold."]:qscore>=7?["Solid","A strong foundation — skim the cards you missed."]:qscore>=5?["Keep going","Revisit the Learn cards, then retake."]:["Re-read the deck","Go through the 15 Learn cards once more, then try again."];
+    box.innerHTML='<div id="quiz-result"><div id="quiz-progress">DECK '+activeTopic.num+' · COMPLETE</div><div id="quiz-score">'
+      +qscore+' / '+QZ.length+'</div><div id="quiz-band">'+band[0]+'</div><div id="quiz-sub">'+band[1]
+      +'</div><button id="quiz-restart">Retake quiz</button></div>';
+    document.getElementById("quiz-restart").addEventListener("click",startQuiz);return;
+  }
+  const Q=QZ[qorder[qi]],order=shuffle(Q.opts.map((t,idx)=>({t,ok:idx===Q.c})));
+  box.innerHTML='<div id="quiz-progress">QUESTION '+(qi+1)+' OF '+QZ.length+' · SCORE '+qscore+'</div>'
+    +'<div id="quiz-q">'+Q.q+'</div>'
+    +order.map(o=>'<button class="opt" data-ok="'+(o.ok?1:0)+'">'+o.t+'</button>').join("")
+    +'<div id="quiz-feedback"></div><button id="quiz-next">Next →</button>';
+  const opts=[...box.querySelectorAll(".opt")],fb=box.querySelector("#quiz-feedback"),nx=box.querySelector("#quiz-next");
+  opts.forEach(b=>b.addEventListener("click",()=>{
+    const good=b.dataset.ok==="1";
+    opts.forEach(o=>{o.disabled=true;if(o.dataset.ok==="1")o.classList.add("correct");});
+    if(good){qscore++;fb.textContent="Correct ✓";fb.style.color="var(--green)";}
+    else{b.classList.add("wrong");fb.textContent="Not quite — the highlighted answer is correct.";fb.style.color="var(--red)";}
+    nx.style.display="inline-block";
+  }));
+  nx.addEventListener("click",()=>{qi++;renderQ();});
+}
+/* ---------- init ---------- */
+renderStrip();renderUpcoming();
+document.getElementById("topic-search").addEventListener("input",e=>renderStrip(e.target.value));
+document.getElementById("tstrip-prev").addEventListener("click",()=>document.getElementById("topic-strip").scrollBy({left:-240,behavior:"smooth"}));
+document.getElementById("tstrip-next").addEventListener("click",()=>document.getElementById("topic-strip").scrollBy({left:240,behavior:"smooth"}));
+(function(){
+  const live=TOPICS.filter(t=>t.status==="live");
+  const h=(location.hash||"").replace("#","");
+  const m=h.match(/^card-([a-z-]+)-(\d+)$/);
+  if(m&&TOPICS.some(t=>t.id===m[1]&&t.status==="live")){
+    selectTopic(m[1],true);
+    requestAnimationFrame(()=>{const el=document.getElementById(h);if(el)el.scrollIntoView({behavior:"smooth",block:"center"});});
+  }else if(h&&TOPICS.some(t=>t.id===h&&t.status==="live")){
+    selectTopic(h,true);
+  }else if(live.length){
+    selectTopic(live[0].id,true);
+  }else{
+    activeTopic=TOPICS[0];
+    document.getElementById("topic-num").textContent="IN CO-CREATION";
+    document.getElementById("topic-title").textContent="The AI Deck";
+    document.getElementById("topic-tagline").textContent=activeTopic.tagline||"";
+    document.getElementById("topic-draft").style.display="none";
+    renderLearn();renderFlash();startQuiz();
+    document.getElementById("learn-rail").scrollLeft=0;
+    document.getElementById("flash-rail").scrollLeft=0;
+  }
+})();
+</script>
+<div id="zoom-ov" role="dialog" aria-modal="true" aria-label="Card reading view">
+  <div id="zoom-card">
+    <button id="zoom-close" aria-label="Close">×</button>
+    <div id="zoom-num"></div>
+    <div id="zoom-tag"></div>
+    <h3 id="zoom-q"></h3>
+    <div id="zoom-body"></div>
+  </div>
+</div>
+</body>
+</html>
