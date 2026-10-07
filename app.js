@@ -11,7 +11,7 @@ let allArticles = [];
 let activeSource = null;
 let activeCategory = "";
 let searchTerm = "";
-let visibleCount = PAGE_SIZE;
+let feedPage = 0;
 let bookmarks = new Set(JSON.parse(localStorage.getItem(BOOKMARK_KEY) || "[]"));
 let lastGeneratedAt = null;
 
@@ -22,6 +22,9 @@ const topTabsEl = document.getElementById("topTabs");
 const podcastFeaturedEl = document.getElementById("podcast-featured");
 const podcastListEl = document.getElementById("podcast-list");
 let activeSeries = "";
+let podcastQuery = "";
+let podcastPage = 0;
+const POD_PAGE_SIZE = 10;
 const sourceListEl = document.getElementById("sourceList");
 const searchEl = document.getElementById("search");
 const categoryToggleEl = document.getElementById("categoryToggle");
@@ -105,6 +108,10 @@ function showView(name) {
   if (name === "podcast") renderPodcast();
 }
 
+function escapeHtml(s) {
+  return String(s).replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+}
+
 function fmtDur(s) {
   s = Math.round(Number(s) || 0);
   return Math.floor(s / 60) + ":" + String(s % 60).padStart(2, "0");
@@ -125,29 +132,59 @@ function renderPodcast() {
       `<button class="series-btn${activeSeries === s ? " active" : ""}" data-series="${s}">${s} (${countOf(s)})</button>`
     ).join("");
   seriesEl.querySelectorAll(".series-btn").forEach(b =>
-    b.addEventListener("click", () => { activeSeries = b.dataset.series; renderPodcast(); }));
-  const list = activeSeries ? eps.filter(e => e.source === activeSeries) : eps;
-  if (!list.length) {
-    podcastFeaturedEl.innerHTML = `<p class="empty-state">No episodes in this series yet — check back after the next scheduled run.</p>`;
-    podcastListEl.innerHTML = "";
+    b.addEventListener("click", () => { activeSeries = b.dataset.series; podcastPage = 0; renderPodcast(); }));
+  let list = activeSeries ? eps.filter(e => e.source === activeSeries) : eps;
+  const q = podcastQuery.trim().toLowerCase();
+  if (q) list = list.filter(e => (e.title || "").toLowerCase().includes(q));
+
+  const total = list.length;
+  const totalPages = Math.max(1, Math.ceil(total / POD_PAGE_SIZE));
+  if (podcastPage > totalPages - 1) podcastPage = totalPages - 1;
+  const start = podcastPage * POD_PAGE_SIZE;
+  const pageItems = list.slice(start, start + POD_PAGE_SIZE);
+
+  if (!pageItems.length) {
+    podcastFeaturedEl.innerHTML = "";
+    podcastListEl.innerHTML = `<p class="empty-state">${q ? `No episodes match "${escapeHtml(podcastQuery.trim())}". Try another search.` : "No episodes in this series yet — check back after the next scheduled run."}</p>`;
     return;
   }
-  const [latest, ...rest] = list;
-  podcastFeaturedEl.innerHTML = `
+
+  /* Page 1 leads with the featured hero card; later pages are all rows. */
+  let heroHtml = "";
+  let rows = pageItems;
+  if (podcastPage === 0) {
+    const [latest, ...rest] = pageItems;
+    rows = rest;
+    heroHtml = `
     <div class="pod-featured">
-      <p class="pod-kicker">Latest episode · ${latest.source}</p>
+      <p class="pod-kicker">${q ? "Top result" : "Latest episode"} · ${latest.source}</p>
       <h3>${latest.title}</h3>
       <p class="pod-meta">${timeAgo(latest.published)}${latest.duration ? " · " + fmtDur(latest.duration) : ""}</p>
       <audio controls preload="none" src="${AUDIO_PROXY + encodeURIComponent(latest.audio_url)}"></audio>
     </div>`;
-  podcastListEl.innerHTML = rest.slice(0, 12).map(a => `
+  }
+  podcastFeaturedEl.innerHTML = heroHtml;
+  const from = total ? start + 1 : 0;
+  const to = Math.min(start + POD_PAGE_SIZE, total);
+  podcastListEl.innerHTML = rows.map(a => `
     <div class="pod-row">
       <div class="pod-row-text">
         <p class="pod-row-title">${a.title}</p>
         <p class="pod-row-meta">${a.source} · ${timeAgo(a.published)}${a.duration ? " · " + fmtDur(a.duration) : ""}</p>
       </div>
       <audio controls preload="none" src="${AUDIO_PROXY + encodeURIComponent(a.audio_url)}"></audio>
-    </div>`).join("");
+    </div>`).join("") + `
+    <div class="pager">
+      <button class="pager-btn" id="podPrev" ${podcastPage === 0 ? "disabled" : ""}>← Prev</button>
+      <span class="pager-info">${from}–${to} of ${total}${q ? ` for "${escapeHtml(podcastQuery.trim())}"` : ""}</span>
+      <button class="pager-btn" id="podNext" ${podcastPage >= totalPages - 1 ? "disabled" : ""}>Next →</button>
+    </div>`;
+  document.getElementById("podPrev").addEventListener("click", () => {
+    if (podcastPage > 0) { podcastPage--; renderPodcast(); podcastViewEl.scrollIntoView(); }
+  });
+  document.getElementById("podNext").addEventListener("click", () => {
+    if (podcastPage < totalPages - 1) { podcastPage++; renderPodcast(); podcastViewEl.scrollIntoView(); }
+  });
 }
 
 /* ---------- Filtering & rendering ---------- */
@@ -196,7 +233,7 @@ function renderSources() {
   sourceListEl.querySelectorAll(".source-toggle").forEach(btn => {
     btn.addEventListener("click", () => {
       activeSource = btn.dataset.source || null;
-      visibleCount = PAGE_SIZE;
+      feedPage = 0;
       renderSources();
       renderFeed();
     });
@@ -211,7 +248,10 @@ function renderFeed() {
     return;
   }
 
-  const shown = filtered.slice(0, visibleCount);
+  const totalPages = Math.max(1, Math.ceil(filtered.length / PAGE_SIZE));
+  if (feedPage > totalPages - 1) feedPage = totalPages - 1;
+  const start = feedPage * PAGE_SIZE;
+  const shown = filtered.slice(start, start + PAGE_SIZE);
 
   feedEl.innerHTML = shown.map(a => {
     const saved = bookmarks.has(a.id);
@@ -238,17 +278,21 @@ function renderFeed() {
   `;
   }).join("");
 
-  if (filtered.length > visibleCount) {
-    const remaining = filtered.length - visibleCount;
-    const btnWrap = document.createElement("div");
-    btnWrap.className = "load-more-wrap";
-    btnWrap.innerHTML = `<button class="load-more-btn" id="loadMoreBtn">Show ${Math.min(PAGE_SIZE, remaining)} more (${remaining} left)</button>`;
-    feedEl.appendChild(btnWrap);
-    document.getElementById("loadMoreBtn").addEventListener("click", () => {
-      visibleCount += PAGE_SIZE;
-      renderFeed();
-    });
-  }
+  const pager = document.createElement("div");
+  pager.className = "pager";
+  const from = filtered.length ? start + 1 : 0;
+  const to = Math.min(start + PAGE_SIZE, filtered.length);
+  pager.innerHTML = `
+    <button class="pager-btn" id="feedPrev" ${feedPage === 0 ? "disabled" : ""}>← Prev</button>
+    <span class="pager-info">${from}–${to} of ${filtered.length}</span>
+    <button class="pager-btn" id="feedNext" ${feedPage >= totalPages - 1 ? "disabled" : ""}>Next →</button>`;
+  feedEl.appendChild(pager);
+  document.getElementById("feedPrev").addEventListener("click", () => {
+    if (feedPage > 0) { feedPage--; renderFeed(); feedEl.scrollIntoView(); }
+  });
+  document.getElementById("feedNext").addEventListener("click", () => {
+    if (feedPage < totalPages - 1) { feedPage++; renderFeed(); feedEl.scrollIntoView(); }
+  });
 }
 
 feedEl.addEventListener("click", (e) => {
@@ -296,8 +340,14 @@ async function loadData() {
 
 searchEl.addEventListener("input", (e) => {
   searchTerm = e.target.value;
-  visibleCount = PAGE_SIZE;
+  feedPage = 0;
   renderFeed();
+});
+
+document.getElementById("podcastSearch").addEventListener("input", (e) => {
+  podcastQuery = e.target.value;
+  podcastPage = 0;
+  renderPodcast();
 });
 
 categoryToggleEl.querySelectorAll(".cat-btn").forEach(btn => {
@@ -306,7 +356,7 @@ categoryToggleEl.querySelectorAll(".cat-btn").forEach(btn => {
     btn.classList.add("active");
     activeCategory = btn.dataset.category;
     activeSource = null;
-    visibleCount = PAGE_SIZE;
+    feedPage = 0;
     renderSources();
     renderFeed();
     showView("feed");
