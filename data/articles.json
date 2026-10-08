@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-08T18:00:01.648204+00:00",
+  "generated_at": "2026-10-08T22:00:05.170408+00:00",
   "sources_polled": [
     "The Verge \u2014 AI",
     "Simon Willison",
@@ -14,6 +14,28 @@
     "Technology Learnings"
   ],
   "articles": [
+    {
+      "id": "f55b626ec460a20b",
+      "title": "Quoting Carson Gross",
+      "link": "https://simonwillison.net/2026/Oct/8/carson-gross/",
+      "source": "Simon Willison",
+      "category": "AI",
+      "summary": "Computer programming is, fundamentally, about two things: Problem-solving using computers Learning to control complexity while solving these problems I have a hard time imagining a future where knowing how to solve problems with computers and how to control the complexity of thos",
+      "published": "2026-10-08T21:59:53.591583+00:00",
+      "audio_url": null,
+      "duration": ""
+    },
+    {
+      "id": "4079389ad67f283a",
+      "title": "California is trying to shut down robot vs. human cage matches",
+      "link": "https://www.theverge.com/tech/1008401/california-shut-down-rek-fighting-robot-company-human",
+      "source": "The Verge \u2014 AI",
+      "category": "AI",
+      "summary": "The California State Athletic Commission sent a cease-and-desist letter to a startup that hosted a match between a human and a robot last month, as reported by The New York Times. The fight, which took place on September 18th, pitted a human, Frankie LaPenna, against a humanoid r",
+      "published": "2026-10-08T21:59:53.047784+00:00",
+      "audio_url": null,
+      "duration": ""
+    },
     {
       "id": "c0dbfb6ce7667ee0",
       "title": "Artificial is a wicked satire that also sticks to the facts",
@@ -334,23 +356,23 @@
       "duration": ""
     },
     {
-      "id": "22643d6fcb195220",
-      "title": "Introducing Playground: Create and play custom games",
-      "link": "https://blog.google/innovation-and-ai/technology/ai/playground-experimental-gaming-platform/",
-      "source": "Google AI Blog",
-      "category": "AI",
-      "summary": "Overview of Playground",
-      "published": "2026-10-07T12:00:00+00:00",
-      "audio_url": null,
-      "duration": ""
-    },
-    {
       "id": "ad4e14640e358f44",
       "title": "Helping teens learn, plan, and shape the future of AI",
       "link": "https://openai.com/index/teens-learn-and-plan",
       "source": "OpenAI Blog",
       "category": "AI",
       "summary": "College Planner is coming to ChatGPT for Teens to help students manage college applications, alongside new flashcards, quizzes, and a teen AI council.",
+      "published": "2026-10-07T12:00:00+00:00",
+      "audio_url": null,
+      "duration": ""
+    },
+    {
+      "id": "22643d6fcb195220",
+      "title": "Introducing Playground: Create and play custom games",
+      "link": "https://blog.google/innovation-and-ai/technology/ai/playground-experimental-gaming-platform/",
+      "source": "Google AI Blog",
+      "category": "AI",
+      "summary": "Overview of Playground",
       "published": "2026-10-07T12:00:00+00:00",
       "audio_url": null,
       "duration": ""
@@ -1973,17 +1995,6 @@
       "duration": ""
     },
     {
-      "id": "1eadd5627184a89f",
-      "title": "Watch the winning trailer from the Future Vision XPRIZE, The Gifted.",
-      "link": "https://blog.google/innovation-and-ai/technology/ai/winner-future-vision-xprize/",
-      "source": "Google AI Blog",
-      "category": "AI",
-      "summary": "Watch the winning trailer from the Future Vision XPRIZE, The Gifted.",
-      "published": "2026-09-28T19:00:00+00:00",
-      "audio_url": null,
-      "duration": ""
-    },
-    {
       "id": "cfe8e900401f31bb",
       "title": "How we will do better for Australia",
       "link": "https://openai.com/index/how-we-will-do-better-for-australia",
@@ -2001,6 +2012,17 @@
       "source": "OpenAI Blog",
       "category": "AI",
       "summary": "Our early guidelines for safety cases in frontier AI training cover technical safeguards, operational practices, and investigating misalignment incidents",
+      "published": "2026-09-28T19:00:00+00:00",
+      "audio_url": null,
+      "duration": ""
+    },
+    {
+      "id": "1eadd5627184a89f",
+      "title": "Watch the winning trailer from the Future Vision XPRIZE, The Gifted.",
+      "link": "https://blog.google/innovation-and-ai/technology/ai/winner-future-vision-xprize/",
+      "source": "Google AI Blog",
+      "category": "AI",
+      "summary": "Watch the winning trailer from the Future Vision XPRIZE, The Gifted.",
       "published": "2026-09-28T19:00:00+00:00",
       "audio_url": null,
       "duration": ""
