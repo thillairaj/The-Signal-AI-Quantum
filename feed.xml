@@ -4,7 +4,31 @@
     <title>The Signal</title>
     <link>https://thillairaj.github.io/The-Signal-AI-Quantum/</link>
     <description>A self-updating feed of AI, quantum computing, and podcast updates.</description>
-    <lastBuildDate>Thu, 08 Oct 2026 09:59:56 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 08 Oct 2026 14:00:35 +0000</lastBuildDate>
+    <item>
+      <title>It appears .agent and .agi are about to be the hot new domains</title>
+      <link>https://www.theverge.com/tech/1007132/icann-domains-2026-ai-agi</link>
+      <guid isPermaLink="false">4b28fadcbc6553dd</guid>
+      <description>For the first time in years, the Internet Corporation for Assigned Names and Numbers - better known as ICANN - is accepting applications for new top-level domains. These are the suffixes at the end of all URLs, and you may know them as things like .com, .org, and .pizza. ICANN ju</description>
+      <category>The Verge — AI</category>
+      <pubDate>Thu, 08 Oct 2026 14:00:23 +0000</pubDate>
+    </item>
+    <item>
+      <title>Can you trust Meta’s Muse or OpenAI’s Dots to run your life?</title>
+      <link>https://www.theverge.com/podcast/1007408/meta-muse-openai-dots-ai-agent-race-privacy-free</link>
+      <guid isPermaLink="false">d883472ab4068301</guid>
+      <description>My Decoder guest today is Hayden Field, The Verge’s senior AI reporter, and we’re discussing the new wave of consumer-friendly AI agents. If you’ve been paying attention to this space, you know AI enthusiasts have been using agents for a minute now — homebrew OpenClaw setups led </description>
+      <category>The Verge — AI</category>
+      <pubDate>Thu, 08 Oct 2026 14:00:23 +0000</pubDate>
+    </item>
+    <item>
+      <title>Nvidia's big bet on physical AI aims for safer robotaxis, humanoid robots</title>
+      <link>https://arstechnica.com/ai/2026/10/nvidias-big-bet-on-physical-ai-aims-for-safer-robotaxis-humanoid-robots/</link>
+      <guid isPermaLink="false">5387f8e8d5e8c2a4</guid>
+      <description>Full-stack safety solution for physical AI is being used by robotics companies.</description>
+      <category>Ars Technica AI</category>
+      <pubDate>Thu, 08 Oct 2026 11:15:33 +0000</pubDate>
+    </item>
     <item>
       <title>Quoting Ben Affleck</title>
       <link>https://simonwillison.net/2026/Oct/7/ben-affleck/</link>
@@ -460,30 +484,6 @@
       <description>Trust gaps in the new protocol spread malicious prompts from one agent to another.</description>
       <category>Ars Technica AI</category>
       <pubDate>Mon, 05 Oct 2026 22:26:35 +0000</pubDate>
-    </item>
-    <item>
-      <title>Command-line tool quickly removes Apple Intelligence from macOS 27</title>
-      <link>https://arstechnica.com/apple/2026/10/command-line-tool-quickly-removes-apple-intelligence-from-macos-27/</link>
-      <guid isPermaLink="false">04277ae7314bbae1</guid>
-      <description>The tool can free up over 12GB of storage.</description>
-      <category>Ars Technica AI</category>
-      <pubDate>Mon, 05 Oct 2026 19:14:44 +0000</pubDate>
-    </item>
-    <item>
-      <title>llm-anthropic 0.30</title>
-      <link>https://simonwillison.net/2026/Sep/28/llm-anthropic/</link>
-      <guid isPermaLink="false">e9331b1c07602897</guid>
-      <description>Release: llm-anthropic 0.30 In addition to Claude Sonnet 5.5, this release adds the ability to run llm anthropic refresh to refresh the list of Anthropic models directly from their API - which means I don't need to push a new release just to add support for a newly released model</description>
-      <category>Simon Willison</category>
-      <pubDate>Mon, 05 Oct 2026 17:06:31 +0000</pubDate>
-    </item>
-    <item>
-      <title>Qwen3.8 27B addition in words</title>
-      <link>https://simonwillison.net/2026/Oct/4/qwen38-addition-in-words/</link>
-      <guid isPermaLink="false">88d553ae09bb6778</guid>
-      <description>Research: Qwen3.8 27B addition in words Colin Frasier posted on Bluesky about an experiment he ran over two years ago using GPT-4o to see how well it could "compute the sum but return the answer in words" across increasingly large numbers. Here's the chart he shared of those resu</description>
-      <category>Simon Willison</category>
-      <pubDate>Mon, 05 Oct 2026 16:59:59 +0000</pubDate>
     </item>
   </channel>
 </rss>
