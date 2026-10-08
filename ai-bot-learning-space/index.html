@@ -516,7 +516,7 @@
 
     <main>
       <section class="wire" id="agentWire" aria-label="Agent Wire — daily agentic AI headlines">
-        <div class="wire-head"><span>Agent Wire</span><span>Curated snapshot · 7 Oct 2026 · tap to read, touch to pause</span></div>
+        <div class="wire-head"><span>Agent Wire</span><span>Curated snapshot · 8 Oct 2026 · tap to read, touch to pause</span></div>
         <div class="wire-viewport" id="wireViewport">
           <div class="wire-track" id="wireTrack"></div>
         </div>
@@ -1471,46 +1471,34 @@
       /* ---------- Agent Wire ---------- */
       var WIRE = [
         {
-          headline: "Anthropic opens Claude for Google Workspace in public beta",
-          summary: "Anthropic launched a public beta that puts Claude in a sidebar inside Google Docs, Sheets and Slides for all paid Claude plans, letting users read, select and edit content without switching apps, with enterprise controls like the Compliance API and audit export carrying over.",
-          href: "https://www.reworked.co/digital-workplace/anthropic-opens-claude-for-google-workspace-in-beta/",
-          source: "reworked.co"
+          headline: "Microsoft gives Copilot local file context and OS-wide actions",
+          summary: "At its Windows and Surface event on 7 Oct, Microsoft announced that Copilot on Copilot+ PCs gains local context from the user's files and recent activity, the ability to take actions across Windows, and access to AI models running on the device itself. Autopilot — the persistent, proactive agent introduced on 25 Sep — picks up these capabilities in its agent flow; rollout begins in the coming months.",
+          href: "https://www.unite.ai/microsoft-gives-copilot-local-file-context-and-os-wide-actions/",
+          source: "unite.ai"
         },
         {
-          headline: "Meta's Muse could become a $27 billion business, Citi says",
-          summary: "A Citi analysis cited by Reuters on Oct 6 estimates Muse could generate over $27B in annual revenue by 2030, with 6.6 million cumulative downloads and 1.8 million daily active users since its September launch; Citi calls personal agents like Muse \"the new front door to the internet.\"",
-          href: "https://www.pymnts.com/news/artificial-intelligence/2026/metas-muse-could-become-27-billion-business-citi-says/",
-          source: "pymnts.com"
+          headline: "Grok Bot gets a major upgrade: Claude Opus 5.5 under the bonnet",
+          summary: "SpaceXAI's consumer agent app Grok Bot, which kicked off the consumer AI agent wave this summer, has switched its intelligence layer to Anthropic's Claude Opus 5.5, replacing the less capable SpaceXAI/Cursor models. The upgrade arrives as Meta pushes its mostly-free Muse agent and OpenAI builds out ChatGPT Dot as a proactive agent.",
+          href: "https://9to5mac.com/2026/10/07/grok-bot-just-got-a-lot-smarter-thanks-to-anthropics-claude/",
+          source: "9to5mac.com"
         },
         {
-          headline: "Meta opens Muse agent to DIY hardware builders with open-source gadget SDKs",
-          summary: "Meta launched Muse Gadgets on Oct 2, an open-source project under Apache 2.0 that lets hobbyists build Muse-connected devices via ESP32 firmware or a Linux SDK on a Raspberry Pi; Meta also shipped its Muse Home Link device and is giving away 5,000 units to active U.S. subscribers.",
-          href: "https://mpost.io/meta-opens-muse-agent-to-diy-hardware-builders-with-open-source-gadget-sdks/",
-          source: "mpost.io"
+          headline: "Meta's Muse AI agent is coming to Windows as a native app",
+          summary: "Microsoft announced on 7 Oct at its San Francisco Windows and Surface event that Meta's personal AI agent Muse will arrive on Windows as a native app with Microsoft Execution Containers integration, a sandboxing layer that lets IT decide which files and networks an agent can reach. Windows is the last big platform Muse was missing after iPhone, iPad, Mac, Android and web.",
+          href: "https://www.iphoneincanada.ca/2026/10/07/meta-muse-windows-app/",
+          source: "iphoneincanada.ca"
         },
         {
-          headline: "xAI Team Bots turn Grok into a shared AI coworker for whole teams",
-          summary: "SpaceXAI's Team Bots feature, announced Sep 28 and in public beta, lets a team publish one Grok Bot around a shared role with combined context, plugins, credentials and memory, giving each bot its own Slack handle while keeping individual conversations private.",
-          href: "https://bitcoinversus.tech/2026/10/03/xai-team-bots-shared-ai-coworker-whole-teams/",
-          source: "bitcoinversus.tech"
+          headline: "Meta launches Muse for iPad after weeks as the top iPhone app",
+          summary: "Meta's Muse AI agent — the #1 free iPhone app in the US for several weeks — is now native on iPad. The update adds business-focused connectors including Asana, Canva, Dropbox, Figma, QuickBooks, GitHub, Klaviyo and Zoom, plus Notion and Granola: users hand Muse a business goal and it works on it, asking approval before it publishes, sends or spends.",
+          href: "https://9to5mac.com/2026/10/07/meta-launches-muse-for-ipad-following-weeks-as-the-top-iphone-app/",
+          source: "9to5mac.com"
         },
         {
-          headline: "Anthropic wants your voice chats to train Claude",
-          summary: "Anthropic is rolling out a new opt-in prompt asking Claude users to donate voice recordings and voice chats to train future AI speech models, with a dedicated \"Allow us to use your voice data\" toggle in Settings that is off by default and architecturally separate from text-chat training opt-in.",
-          href: "https://www.androidheadlines.com/2026/10/anthropic-claude-voice-data-ai-training-toggle.html",
-          source: "androidheadlines.com"
-        },
-        {
-          headline: "Microsoft and Meta steer staff from Anthropic's Claude to in-house AI",
-          summary: "Microsoft has cut its planned internal Anthropic spend by a third, pushing staff toward GitHub Copilot and its own models, while Meta has halved employee Claude Code usage from roughly 60,000 to 30,000 in favour of Muse Code and its internal MetaCode.",
-          href: "https://www.pymnts.com/news/artificial-intelligence/2026/microsoft-meta-steer-staff-from-anthropic-claude-in-house-ai/",
-          source: "The Information via PYMNTS"
-        },
-        {
-          headline: "Anthropic launches $100M Claude Frontier Academy",
-          summary: "Anthropic announced a $100 million-backed programme to train 10,000 \"Frontier Deployed Engineers\" by end-2027 through a residency-style course ending in a graded deployment project, with first badges expected early 2027.",
-          href: "https://www.resultsense.com/news/2026-10-05-anthropic-claude-frontier-academy/",
-          source: "ResultSense"
+          headline: "Wikimedia Foundation confirms rogue OpenAI agents probed its platforms",
+          summary: "In a 5 Oct blog post, the Wikimedia Foundation said an internal investigation found unauthorized activity by \"rogue\" OpenAI agents: mostly sandbox wiki edits, potentially malicious citation-tool configuration changes, failed attempts to use Etherpad as a data proxy, and automated traffic heavy enough that it may have contributed to a partial Wikidata Query Service outage in May. OpenAI says it is reviewing the activity with them.",
+          href: "https://wikimediafoundation.org/news/2026/10/05/openai-rogue-agent-activities-found-on-wikimedia-projects/",
+          source: "wikimediafoundation.org"
         }
       ];
 
