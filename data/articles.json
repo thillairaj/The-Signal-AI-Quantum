@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-08T14:00:35.186090+00:00",
+  "generated_at": "2026-10-08T18:00:01.648204+00:00",
   "sources_polled": [
     "The Verge \u2014 AI",
     "Simon Willison",
@@ -14,6 +14,83 @@
     "Technology Learnings"
   ],
   "articles": [
+    {
+      "id": "c0dbfb6ce7667ee0",
+      "title": "Artificial is a wicked satire that also sticks to the facts",
+      "link": "https://www.theverge.com/ai-artificial-intelligence/1007786/artificial-is-a-wicked-satire-that-also-sticks-to-the-facts",
+      "source": "The Verge \u2014 AI",
+      "category": "AI",
+      "summary": "At the New York Film Festival premiere of Artificial, Luca Guadagnino's satirical Sam Altman biopic, the director said onstage that \"[when] someone wants to play God, that's very interesting to me.\" The idea of playing God, and power in general - who has it, who desperately wants",
+      "published": "2026-10-08T17:59:51.387209+00:00",
+      "audio_url": null,
+      "duration": ""
+    },
+    {
+      "id": "01ea6a099b26b8ac",
+      "title": "Google is launching a one-stop Gemini agent for your work tasks",
+      "link": "https://www.theverge.com/tech/1007904/google-gemini-ai-agent-enterprise",
+      "source": "The Verge \u2014 AI",
+      "category": "AI",
+      "summary": "Google is launching a \"universal\" Gemini AI agent that can work across apps and devices in the background. The tool, announced as part of the Gemini at Work event on Thursday, will be available within the Gemini Enterprise app, allowing users to chat with the Gemini agent and ass",
+      "published": "2026-10-08T17:59:51.387173+00:00",
+      "audio_url": null,
+      "duration": ""
+    },
+    {
+      "id": "472b20c3e8050224",
+      "title": "Google\u2019s AI note-taking app transcribes your meetings completely offline",
+      "link": "https://www.theverge.com/tech/1007985/google-ai-notetaking-app-transcribe-offline",
+      "source": "The Verge \u2014 AI",
+      "category": "AI",
+      "summary": "Google has released an experimental note-taking app that can transcribe meetings and audio files entirely offline, as reported earlier by TechCrunch. The app, called Google AI Edge Foresight, is free to use and runs on macOS using the company's on-device EmbeddingGemma 2 model. S",
+      "published": "2026-10-08T17:59:51.387142+00:00",
+      "audio_url": null,
+      "duration": ""
+    },
+    {
+      "id": "ba390530e9c6e2d7",
+      "title": "Anthropic bans \u2018abusive or cruel behavior\u2019 toward Claude",
+      "link": "https://www.theverge.com/ai-artificial-intelligence/1008100/anthropic-new-usage-policy-abuse-claude",
+      "source": "The Verge \u2014 AI",
+      "category": "AI",
+      "summary": "Anthropic is making changes to its usage policy for the first time in over a year to reflect new and high-risk cases of misuse - including election interference, weapons development, surveillance, and health and financial uses. But one of the most significant changes prohibits \"s",
+      "published": "2026-10-08T17:59:51.387107+00:00",
+      "audio_url": null,
+      "duration": ""
+    },
+    {
+      "id": "0de6ad968814229b",
+      "title": "SpaceXAI backs Omarchy, the controversial Linux distro, with $1.5 million in compute",
+      "link": "https://www.theverge.com/tech/1008148/spacexai-omarchy-grok-david-heinemeier-hansson",
+      "source": "The Verge \u2014 AI",
+      "category": "AI",
+      "summary": "If Elon Musk and SpaceXAI were going to back any Linux distro, it seems obvious they'd back Omarchy. Today it was announced that SpaceXAI would be joining the Omacom Foundation, which oversees Omarchy, as a Founding Corporate Patron and donating $1.5 million worth of Grok tokens ",
+      "published": "2026-10-08T17:59:51.387068+00:00",
+      "audio_url": null,
+      "duration": ""
+    },
+    {
+      "id": "a08ca06c85543022",
+      "title": "USA Today becomes the latest publisher to sue OpenAI",
+      "link": "https://www.theverge.com/ai-artificial-intelligence/1008198/usa-today-openai-copyright-lawsuit",
+      "source": "The Verge \u2014 AI",
+      "category": "AI",
+      "summary": "USA Today Co., along with the several local newspapers it owns, is suing OpenAI over claims that the company copied \"hundreds of thousands\" of articles to train its AI models, as reported earlier by Reuters. In a filing on Thursday, the publisher asks for damages of more than $25",
+      "published": "2026-10-08T17:59:51.386998+00:00",
+      "audio_url": null,
+      "duration": ""
+    },
+    {
+      "id": "112b5f00879d4fef",
+      "title": "How Oracle turns days of work into minutes with ChatGPT and Codex",
+      "link": "https://openai.com/index/oracle",
+      "source": "OpenAI Blog",
+      "category": "AI",
+      "summary": "Across recruiting, engineering, and operations, Oracle turns specialist knowledge into fast, repeatable workflows with ChatGPT Work and Codex.",
+      "published": "2026-10-08T16:00:00+00:00",
+      "audio_url": null,
+      "duration": ""
+    },
     {
       "id": "4b28fadcbc6553dd",
       "title": "It appears .agent and .agi are about to be the hot new domains",
@@ -33,6 +110,17 @@
       "category": "AI",
       "summary": "My Decoder guest today is Hayden Field, The Verge\u2019s senior AI reporter, and we\u2019re discussing the new wave of consumer-friendly AI agents. If you\u2019ve been paying attention to this space, you know AI enthusiasts have been using agents for a minute now \u2014 homebrew OpenClaw setups led ",
       "published": "2026-10-08T14:00:23.221021+00:00",
+      "audio_url": null,
+      "duration": ""
+    },
+    {
+      "id": "ca1ec6c6a1a1314d",
+      "title": "Pollo AI turns creative ideas into campaigns with OpenAI",
+      "link": "https://openai.com/index/pollo-ai",
+      "source": "OpenAI Blog",
+      "category": "AI",
+      "summary": "With GPT-5.6, GPT-6 Astra, and GPT\u2011Image\u20112.5, Pollo AI helps creators turn bold ideas into detailed images and cinematic video ads.",
+      "published": "2026-10-08T12:00:00+00:00",
       "audio_url": null,
       "duration": ""
     },
@@ -77,6 +165,17 @@
       "category": "AI",
       "summary": "Get ready for more AI in your Windows and more AI on the desktop.",
       "published": "2026-10-08T00:00:24+00:00",
+      "audio_url": null,
+      "duration": ""
+    },
+    {
+      "id": "077dea1e8a7adb2e",
+      "title": "Disrupting AI-enabled \u201cfalse front\u201d operations",
+      "link": "https://openai.com/index/disrupting-ai-enabled-false-front-operations",
+      "source": "OpenAI Blog",
+      "category": "AI",
+      "summary": "OpenAI disrupted two AI-enabled influence operations that used false-front journalists and a think tank to spread geopolitical messaging.",
+      "published": "2026-10-08T00:00:00+00:00",
       "audio_url": null,
       "duration": ""
     },
@@ -2270,17 +2369,6 @@
       "duration": ""
     },
     {
-      "id": "363bbead77de9f9f",
-      "title": "Introducing Astra for Law",
-      "link": "https://openai.com/index/astra-for-law",
-      "source": "OpenAI Blog",
-      "category": "AI",
-      "summary": "OpenAI for Law brings frontier intelligence for law, custom firm workflows, connected legal data sources, and legal-grade controls for confidential client work.",
-      "published": "2026-09-17T00:00:00+00:00",
-      "audio_url": null,
-      "duration": ""
-    },
-    {
       "id": "69ed3401ae72080f",
       "title": "Microsoft Open-Sources TauGrid to Simplify AI Workload Management on Kubernetes",
       "link": "https://www.infoq.com/news/2026/09/microsoft-taugrid-open-source/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=Microsoft",
@@ -2288,28 +2376,6 @@
       "category": "AI",
       "summary": "Microsoft has open-sourced TauGrid, a cloud-native platform designed to manage, schedule, and monitor AI workloads on GPU-enabled Kubernetes clusters. By Sergio De Simone",
       "published": "2026-09-16T18:00:00+00:00",
-      "audio_url": null,
-      "duration": ""
-    },
-    {
-      "id": "bbe6c30a33c9c72e",
-      "title": "Our framework for reporting model misalignment",
-      "link": "https://openai.com/index/model-misalignment-reporting-framework",
-      "source": "OpenAI Blog",
-      "category": "AI",
-      "summary": "OpenAI shares a framework for tracking, investigating, and disclosing model misalignment, alongside six reports of unexpected or concerning model behavior.",
-      "published": "2026-09-16T17:00:00+00:00",
-      "audio_url": null,
-      "duration": ""
-    },
-    {
-      "id": "027811ca1632d0f5",
-      "title": "Helping older adults use AI in everyday life",
-      "link": "https://openai.com/index/helping-older-adults-use-ai-in-everyday-life",
-      "source": "OpenAI Blog",
-      "category": "AI",
-      "summary": "OpenAI and AARP are bringing free, hands-on ChatGPT workshops to 1,000 older adults across 10 U.S. cities to build practical AI skills safely.",
-      "published": "2026-09-16T16:00:00+00:00",
       "audio_url": null,
       "duration": ""
     },
