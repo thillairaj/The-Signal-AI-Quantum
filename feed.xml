@@ -4,7 +4,31 @@
     <title>The Signal</title>
     <link>https://thillairaj.github.io/The-Signal-AI-Quantum/</link>
     <description>A self-updating feed of AI, quantum computing, and podcast updates.</description>
-    <lastBuildDate>Fri, 09 Oct 2026 05:59:46 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 09 Oct 2026 09:59:49 +0000</lastBuildDate>
+    <item>
+      <title>We're going to need default hard budget caps on pretty much everything</title>
+      <link>https://simonwillison.net/2026/Oct/3/default-hard-budget-caps/</link>
+      <guid isPermaLink="false">5a3f1f4a82c5b0a8</guid>
+      <description>Here's a product feature which the world is going to need a whole lot more of over the coming months and years: default hard budget caps . I'm talking about the feature of pay-by-usage services and APIs that lets you say "after $X/month, cut this thing off and return errors". The</description>
+      <category>Simon Willison</category>
+      <pubDate>Fri, 09 Oct 2026 09:59:38 +0000</pubDate>
+    </item>
+    <item>
+      <title>OpenAI doubles down on decision to fire three AI safety researchers</title>
+      <link>https://www.theverge.com/ai-artificial-intelligence/1008604/openai-defends-decision-fire-safety-researchers</link>
+      <guid isPermaLink="false">15717a6b7c9a1b04</guid>
+      <description>OpenAI is standing firm on its decision to fire three safety researchers after an investigation found they committed "a significant breach of trust." In a post on X on Friday, the company said Jasmine Wang, Tomek Korbak and Mikita &amp;#8288;Balesni were dismissed for violating "clea</description>
+      <category>The Verge — AI</category>
+      <pubDate>Fri, 09 Oct 2026 09:59:37 +0000</pubDate>
+    </item>
+    <item>
+      <title>Sophos cuts threat investigation time by 96% with OpenAI Daybreak</title>
+      <link>https://openai.com/index/sophos</link>
+      <guid isPermaLink="false">edd58468d564448f</guid>
+      <description>Discover how Sophos uses OpenAI’s Daybreak to cut cyber-threat investigation time by 96% and automate 52% of MDR cases while preserving human oversight.</description>
+      <category>OpenAI Blog</category>
+      <pubDate>Fri, 09 Oct 2026 07:00:00 +0000</pubDate>
+    </item>
     <item>
       <title>ttok 1.0</title>
       <link>https://simonwillison.net/2026/Oct/9/ttok/</link>
@@ -458,30 +482,6 @@
       <link>https://simonwillison.net/2026/Oct/6/hn-49982139/</link>
       <guid isPermaLink="false">ec56094036c906f8</guid>
       <description>My comment on Mistral Large 4 &amp;mdash; Hacker News. wren6991 : The benchmark is saturated. Frontier models are tested with an armadillo in fishnet tights jaywalking on Mars. OK well I couldn't resist this one: llm -m claude-opus-5.5 'Generate an SVG of an armadillo in fishnet tigh</description>
-      <category>Simon Willison</category>
-      <pubDate>Tue, 06 Oct 2026 22:00:16 +0000</pubDate>
-    </item>
-    <item>
-      <title>Using Parseable with Datasette for OpenTelemetry traces</title>
-      <link>https://simonwillison.net/2026/Oct/6/datasette-parseable-opentelemetry/</link>
-      <guid isPermaLink="false">f5f88d08399f657b</guid>
-      <description>TIL: Using Parseable with Datasette for OpenTelemetry traces I saw Parseable in a Show HN today - it's a new observability platform with both an open source (AGPL) Rust implementation (a single ~180MB binary), an "Enterprise" version with extra features and a cloud hosted option.</description>
-      <category>Simon Willison</category>
-      <pubDate>Tue, 06 Oct 2026 22:00:16 +0000</pubDate>
-    </item>
-    <item>
-      <title>Introducing Mistral Large 4: Le chonk</title>
-      <link>https://simonwillison.net/2026/Oct/6/le-chonk/</link>
-      <guid isPermaLink="false">a651b0ec0b3d2f74</guid>
-      <description>Introducing Mistral Large 4: Le chonk Mistral are back in the game. Today they're releasing a preview of Mistral Large 4, a 1 trillion parameter, 49 billion active parameter model trained on their own cluster of 3,800 NVIDIA Grace Blackwell GPUs. The preview is available via thei</description>
-      <category>Simon Willison</category>
-      <pubDate>Tue, 06 Oct 2026 22:00:16 +0000</pubDate>
-    </item>
-    <item>
-      <title>EmbeddingGemma 2</title>
-      <link>https://simonwillison.net/2026/Oct/6/hn-49983751/</link>
-      <guid isPermaLink="false">b3ffaa721999ed41</guid>
-      <description>My comment on EmbeddingGemma 2 &amp;mdash; Hacker News. I really appreciate that EmbeddingGemma 2 is under the Apache 2.0 license. For embedding models in particular, I don't think it makes sense to use a closed, proprietary, hosted-only model. Most applications of embedding models i</description>
       <category>Simon Willison</category>
       <pubDate>Tue, 06 Oct 2026 22:00:16 +0000</pubDate>
     </item>
