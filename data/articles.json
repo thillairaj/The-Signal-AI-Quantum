@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-09T09:59:49.033139+00:00",
+  "generated_at": "2026-10-09T13:59:59.377119+00:00",
   "sources_polled": [
     "The Verge \u2014 AI",
     "Simon Willison",
@@ -14,6 +14,39 @@
     "Technology Learnings"
   ],
   "articles": [
+    {
+      "id": "4956a5acae88d47d",
+      "title": "September sponsors-only newsletter",
+      "link": "https://simonwillison.net/2026/Oct/3/newsletter/",
+      "source": "Simon Willison",
+      "category": "AI",
+      "summary": "I just sent the September edition of my sponsors-only monthly newsletter . If you are a sponsor (or start a sponsorship now) you can access it here . This month: More Fable class models A pricing war 3D graphics, Blender, and pixel art LLMs come for mathematics So many more accid",
+      "published": "2026-10-09T13:59:46.674833+00:00",
+      "audio_url": null,
+      "duration": ""
+    },
+    {
+      "id": "95fd0fb1a7d9fd74",
+      "title": "A new feature for my blog, built using my voice",
+      "link": "https://simonwillison.net/2026/Oct/9/built-using-my-voice/",
+      "source": "Simon Willison",
+      "category": "AI",
+      "summary": "I shipped a new feature for my blog today: the Newsletters page, which offers an index of all of the newsletters I've sent out, both my free weekly Substack and my monthly sponsors-only updates. I built the feature almost entirely using my voice, chatting away to my laptop while ",
+      "published": "2026-10-09T13:59:46.674646+00:00",
+      "audio_url": null,
+      "duration": ""
+    },
+    {
+      "id": "9a2be2386cfbaac3",
+      "title": "Alexa Plus is better at running my home, but it&#8217;s not ready to run my life",
+      "link": "https://www.theverge.com/tech/1007565/amazon-alexa-plus-review-one-year-echo-show-dot-max",
+      "source": "The Verge \u2014 AI",
+      "category": "AI",
+      "summary": "Of all the things Alexa Plus can do, I never expected it to make me cry. Since my son left for college, the Echo Show in my office has been making then-and-now photo montages: the toddler with his first tennis racket next to the captain of his varsity team; me hugging him as a tw",
+      "published": "2026-10-09T13:59:46.157825+00:00",
+      "audio_url": null,
+      "duration": ""
+    },
     {
       "id": "5a3f1f4a82c5b0a8",
       "title": "We're going to need default hard budget caps on pretty much everything",
@@ -1485,28 +1518,6 @@
       "category": "AI",
       "summary": "I visited the Museum of the City of New York today and got to see He Built This City: Joe Macken\u2019s Model , the 50 x27 feet model of the city built over a 21 year period from balsa wood and cardboard. It exceeded my already high expectations. The exhibition closes on 12th October ",
       "published": "2026-10-04T06:38:20.830615+00:00",
-      "audio_url": null,
-      "duration": ""
-    },
-    {
-      "id": "4fb3caa1bad2e135",
-      "title": "Quoting Matthew Green",
-      "link": "https://simonwillison.net/2026/Oct/1/matthew-green/",
-      "source": "Simon Willison",
-      "category": "AI",
-      "summary": "[...] Put these pieces together and you have the two halves of a worm: a payload that hijacks the agent, and an agent that will carry the payload to the next agent. Agents in separately-isolated sandboxes discovered that they could leave instructions for each other in a shared pa",
-      "published": "2026-10-04T06:38:20.830584+00:00",
-      "audio_url": null,
-      "duration": ""
-    },
-    {
-      "id": "da9bc33d3feb59e4",
-      "title": "Rex's Dino Store",
-      "link": "https://simonwillison.net/2026/Oct/2/rex-s-dino-store/",
-      "source": "Simon Willison",
-      "category": "AI",
-      "summary": "Museum: Rex&#x27;s Dino Store Located just before the turnstiles in the Grand Army Plaza subway station at the north end of Brooklyn's Prospect Park is this former newsstand which is now operated by a dinosaur. The density of dinosaur puns is exceptional . Tags: art , new-york",
-      "published": "2026-10-04T06:38:20.830548+00:00",
       "audio_url": null,
       "duration": ""
     },

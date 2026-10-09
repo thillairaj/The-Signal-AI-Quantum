@@ -4,7 +4,31 @@
     <title>The Signal</title>
     <link>https://thillairaj.github.io/The-Signal-AI-Quantum/</link>
     <description>A self-updating feed of AI, quantum computing, and podcast updates.</description>
-    <lastBuildDate>Fri, 09 Oct 2026 09:59:49 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 09 Oct 2026 13:59:59 +0000</lastBuildDate>
+    <item>
+      <title>September sponsors-only newsletter</title>
+      <link>https://simonwillison.net/2026/Oct/3/newsletter/</link>
+      <guid isPermaLink="false">4956a5acae88d47d</guid>
+      <description>I just sent the September edition of my sponsors-only monthly newsletter . If you are a sponsor (or start a sponsorship now) you can access it here . This month: More Fable class models A pricing war 3D graphics, Blender, and pixel art LLMs come for mathematics So many more accid</description>
+      <category>Simon Willison</category>
+      <pubDate>Fri, 09 Oct 2026 13:59:46 +0000</pubDate>
+    </item>
+    <item>
+      <title>A new feature for my blog, built using my voice</title>
+      <link>https://simonwillison.net/2026/Oct/9/built-using-my-voice/</link>
+      <guid isPermaLink="false">95fd0fb1a7d9fd74</guid>
+      <description>I shipped a new feature for my blog today: the Newsletters page, which offers an index of all of the newsletters I've sent out, both my free weekly Substack and my monthly sponsors-only updates. I built the feature almost entirely using my voice, chatting away to my laptop while </description>
+      <category>Simon Willison</category>
+      <pubDate>Fri, 09 Oct 2026 13:59:46 +0000</pubDate>
+    </item>
+    <item>
+      <title>Alexa Plus is better at running my home, but it&amp;#8217;s not ready to run my life</title>
+      <link>https://www.theverge.com/tech/1007565/amazon-alexa-plus-review-one-year-echo-show-dot-max</link>
+      <guid isPermaLink="false">9a2be2386cfbaac3</guid>
+      <description>Of all the things Alexa Plus can do, I never expected it to make me cry. Since my son left for college, the Echo Show in my office has been making then-and-now photo montages: the toddler with his first tennis racket next to the captain of his varsity team; me hugging him as a tw</description>
+      <category>The Verge — AI</category>
+      <pubDate>Fri, 09 Oct 2026 13:59:46 +0000</pubDate>
+    </item>
     <item>
       <title>We're going to need default hard budget caps on pretty much everything</title>
       <link>https://simonwillison.net/2026/Oct/3/default-hard-budget-caps/</link>
@@ -460,30 +484,6 @@
       <description>Wednesday, October 7, 2026: Anthropic's Cyber Verification Program expands to three tiers after 129,000 vulnerabilities found; Claude for Startups adds a free year plus ,000 API credits; OpenAI simplifies API rate-limit tiers; xAI ships a first-party TypeScript SDK; Citigroup peg</description>
       <category>Daily AI Intelligence</category>
       <pubDate>Wed, 07 Oct 2026 01:30:47 +0000</pubDate>
-    </item>
-    <item>
-      <title>GPT-6 and Intelligent UI for everyone</title>
-      <link>https://openai.com/index/gpt-6-for-everyone</link>
-      <guid isPermaLink="false">0ca1450969b5beb5</guid>
-      <description>GPT‑6 is rolling out globally in ChatGPT with Intelligent UI, delivering faster responses with visuals and interactive experiences you can explore and use directly.</description>
-      <category>OpenAI Blog</category>
-      <pubDate>Wed, 07 Oct 2026 00:00:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>datasette-atom 0.11a0</title>
-      <link>https://simonwillison.net/2026/Oct/6/datasette-atom/</link>
-      <guid isPermaLink="false">17c1ef68addffb00</guid>
-      <description>Release: datasette-atom 0.11a0 A minor fix for compatibility with the latest Datasette alphas. This meant we could upgrade the datasette.io site to Datasette 1.0a41. Tags: atom , datasette</description>
-      <category>Simon Willison</category>
-      <pubDate>Tue, 06 Oct 2026 22:00:16 +0000</pubDate>
-    </item>
-    <item>
-      <title>Mistral Large 4</title>
-      <link>https://simonwillison.net/2026/Oct/6/hn-49982139/</link>
-      <guid isPermaLink="false">ec56094036c906f8</guid>
-      <description>My comment on Mistral Large 4 &amp;mdash; Hacker News. wren6991 : The benchmark is saturated. Frontier models are tested with an armadillo in fishnet tights jaywalking on Mars. OK well I couldn't resist this one: llm -m claude-opus-5.5 'Generate an SVG of an armadillo in fishnet tigh</description>
-      <category>Simon Willison</category>
-      <pubDate>Tue, 06 Oct 2026 22:00:16 +0000</pubDate>
     </item>
   </channel>
 </rss>
