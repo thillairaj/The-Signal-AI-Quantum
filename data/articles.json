@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-09T18:00:09.180155+00:00",
+  "generated_at": "2026-10-09T22:00:10.120531+00:00",
   "sources_polled": [
     "The Verge \u2014 AI",
     "Simon Willison",
@@ -14,6 +14,94 @@
     "Technology Learnings"
   ],
   "articles": [
+    {
+      "id": "147ef720989f663d",
+      "title": "GPT 6.1 Sol: Near-Astra intelligence for a fifth of the price",
+      "link": "https://simonwillison.net/2026/Sep/29/hn-49898129/",
+      "source": "Simon Willison",
+      "category": "AI",
+      "summary": "My comment on GPT 6.1 Sol: Near-Astra intelligence for a fifth of the price &mdash; Hacker News. I'm a bit late with the pelicans because I was live-blogging the keynote: https://simonwillison.net/2026/Sep/29/openai-devday-2026-liv... Here they are for GPT-6.1-Sol: https://tools.",
+      "published": "2026-10-09T21:59:58.379519+00:00",
+      "audio_url": null,
+      "duration": ""
+    },
+    {
+      "id": "6cd102f752db7713",
+      "title": "Quoting Anthropic Frontier Red Team",
+      "link": "https://simonwillison.net/2026/Sep/29/anthropic-frontier-red-team/",
+      "source": "Simon Willison",
+      "category": "AI",
+      "summary": "We evaluate several models on 100 tasks from the [internal Binary Exploitation benchmark] (selected at random), and find that GLM-5.3 develops full control flow hijacks in 4% of the trials; Claude Mythos Preview did so in 6%. Although GLM-5.3 performs below Claude Mythos Preview ",
+      "published": "2026-10-09T21:59:58.379470+00:00",
+      "audio_url": null,
+      "duration": ""
+    },
+    {
+      "id": "562470c22e2896c8",
+      "title": "He Built This City",
+      "link": "https://simonwillison.net/2026/Sep/30/he-built-this-city/",
+      "source": "Simon Willison",
+      "category": "AI",
+      "summary": "I visited the Museum of the City of New York today and got to see He Built This City: Joe Macken\u2019s Model , the 50 x27 feet model of the city built over a 21 year period from balsa wood and cardboard. It exceeded my already high expectations. The exhibition closes on 12th October ",
+      "published": "2026-10-09T21:59:58.379391+00:00",
+      "audio_url": null,
+      "duration": ""
+    },
+    {
+      "id": "f11f2c288c2c9565",
+      "title": "Nikon microscopic video competition winner disqualified for using generative AI",
+      "link": "https://www.theverge.com/ai-artificial-intelligence/1008930/nikon-small-world-in-motion-winner-ai",
+      "source": "The Verge \u2014 AI",
+      "category": "AI",
+      "summary": "Nikon says the video that originally won first place in its Small World in Motion contest \"did not comply with the competition rules regarding generative AI.\" BBC reports that the original first place video from Dr. Ning Xu claimed to show \"tiny, hair-like structures called cilia",
+      "published": "2026-10-09T21:59:57.542591+00:00",
+      "audio_url": null,
+      "duration": ""
+    },
+    {
+      "id": "d07dddd55da28704",
+      "title": "&#8216;Pure insanity&#8217;: Mathematicians will need years to make sense of OpenAI&#8217;s latest drop",
+      "link": "https://www.theverge.com/ai-artificial-intelligence/1008726/openai-mathematics-solutions-chaos",
+      "source": "The Verge \u2014 AI",
+      "category": "AI",
+      "summary": "\"Staggering.\" \"Overwhelming.\" \"Unprecedented.\" \"Surreal.\" \"Pure insanity.\" Those were among the descriptions more than three dozen mathematicians reached for in conversations with The Verge as they tried to make sense of the flood of mathematical results OpenAI abruptly dropped o",
+      "published": "2026-10-09T21:59:57.542551+00:00",
+      "audio_url": null,
+      "duration": ""
+    },
+    {
+      "id": "0ad44f3ce5c4ad25",
+      "title": "Anthropic\u2019s AI gave Philadelphia police a fake tip about an unsolved homicide",
+      "link": "https://www.theverge.com/ai-artificial-intelligence/1009090/anthropic-fake-homicide-information-philadelphia-pd-tip",
+      "source": "The Verge \u2014 AI",
+      "category": "AI",
+      "summary": "An Anthropic AI model provided false information about an unsolved homicide to a Philadelphia Police Department (PPD) tipline, according to a report from 6abc. In a statement released on Friday, the PPD said the AI model sent the tip through PhillyUnsolvedMurders.com on July 18th",
+      "published": "2026-10-09T21:59:57.542476+00:00",
+      "audio_url": null,
+      "duration": ""
+    },
+    {
+      "id": "9f4f46039e3dc6c1",
+      "title": "AI coding agents generate more code, but not more software",
+      "link": "https://arstechnica.com/ai/2026/10/ai-coding-agents-generate-more-code-but-not-more-software/",
+      "source": "Ars Technica AI",
+      "category": "AI",
+      "summary": "Study finds coding efficiency gains get \"absorbed\" by human review \"bottleneck.\"",
+      "published": "2026-10-09T19:43:50+00:00",
+      "audio_url": null,
+      "duration": ""
+    },
+    {
+      "id": "9304db4f19bb1881",
+      "title": "AI disqualification yields new Nikon Small World in Motion winner",
+      "link": "https://arstechnica.com/science/2026/10/winning-nikon-small-world-in-motion-video-disqualified-for-ai-use/",
+      "source": "Ars Technica AI",
+      "category": "AI",
+      "summary": "New winner is Nguyen Nam Nhat of Vietnam for video of a roundworm and single-celled Dileptus.",
+      "published": "2026-10-09T18:44:06+00:00",
+      "audio_url": null,
+      "duration": ""
+    },
     {
       "id": "4fb3caa1bad2e135",
       "title": "Quoting Matthew Green",
@@ -131,6 +219,17 @@
       "source": "OpenAI Blog",
       "category": "AI",
       "summary": "Discover how Sophos uses OpenAI\u2019s Daybreak to cut cyber-threat investigation time by 96% and automate 52% of MDR cases while preserving human oversight.",
+      "published": "2026-10-09T07:00:00+00:00",
+      "audio_url": null,
+      "duration": ""
+    },
+    {
+      "id": "90995f7dbc9c2674",
+      "title": "Asana cuts model costs 76x in browser tests with GPT-6.1 Sol",
+      "link": "https://openai.com/index/asana-browser-agent",
+      "source": "OpenAI Blog",
+      "category": "AI",
+      "summary": "Using GPT-6 Astra in Codex, Asana made its browser agent 76x cheaper and 5x faster in tests to offer customers more capable models.",
       "published": "2026-10-09T07:00:00+00:00",
       "audio_url": null,
       "duration": ""
@@ -1511,39 +1610,6 @@
       "duration": ""
     },
     {
-      "id": "2d52fce20760eca7",
-      "title": "Claude Sonnet 5.5",
-      "link": "https://simonwillison.net/2026/Sep/28/claude-sonnet-5-5/",
-      "source": "Simon Willison",
-      "category": "AI",
-      "summary": "Claude Sonnet 5.5 New Sonnet model from Anthropic today. They say it \"runs 30%+ faster, and costs up to 30% less for most work\" - it's priced the same as Sonnet 5 but appears to beat it on every benchmark, and should be cheaper to run as well. Here are some pelicans riding bicycl",
-      "published": "2026-10-04T06:38:20.830788+00:00",
-      "audio_url": null,
-      "duration": ""
-    },
-    {
-      "id": "3bd3ec89a48c5722",
-      "title": "OpenAI DevDay 2026 live blog",
-      "link": "https://simonwillison.net/2026/Sep/29/openai-devday-2026-live-blog/",
-      "source": "Simon Willison",
-      "category": "AI",
-      "summary": "I'm at OpenAI DevDay today, in Fort Mason, San Francisco. Same as last year I'll be live blogging the keynote and some other notes during the day. OpenAI gave me a free ticket and a seat in the \"creator\" area for the keynote. Tags: ai , openai , generative-ai , llms , coding-agen",
-      "published": "2026-10-04T06:38:20.830731+00:00",
-      "audio_url": null,
-      "duration": ""
-    },
-    {
-      "id": "afe6a29f26715829",
-      "title": "Photo Scrubber \u2014 local face blur & metadata removal",
-      "link": "https://simonwillison.net/2026/Sep/29/photo-scrubber/",
-      "source": "Simon Willison",
-      "category": "AI",
-      "summary": "Tool: Photo Scrubber \u2014 local face blur &amp; metadata removal I took a photograph of some protesters, then thought about how I don't like sharing photographs of strangers with identifiable faces. I had GPT-6 Astra build this experimental tool that would identify faces and automat",
-      "published": "2026-10-04T06:38:20.830706+00:00",
-      "audio_url": null,
-      "duration": ""
-    },
-    {
       "id": "78ffcfd0a288af0c",
       "title": "Amazon writes scary blog warning communities not to block data centers",
       "link": "https://www.theverge.com/tech/1003929/amazon-ai-data-center-blog-warning",
@@ -1617,39 +1683,6 @@
       "category": "AI",
       "summary": "Meta now lets you make your own Muse gadgets that feature the company's new AI agent with code that the company open sourced. The company suggests projects like loading Muse on a color E Ink display to show reminders, adding it to an HDMI stick so you can display Muse on a big sc",
       "published": "2026-10-04T06:38:20.631261+00:00",
-      "audio_url": null,
-      "duration": ""
-    },
-    {
-      "id": "91c2390ce603b2e9",
-      "title": "An OpenAI safety employee has quit and is sounding the alarm",
-      "link": "https://www.theverge.com/ai-artificial-intelligence/1004408/openai-safety-quits-sounding-the-alarm",
-      "source": "The Verge \u2014 AI",
-      "category": "AI",
-      "summary": "David Robinson used to write the safety reports that accompanied every major model release at OpenAI. This week, he resigned from his position and is now speaking out in an editorial in The Atlantic. It's understandable if you're feeling a bit cynical about everyone suddenly comi",
-      "published": "2026-10-04T06:38:20.631227+00:00",
-      "audio_url": null,
-      "duration": ""
-    },
-    {
-      "id": "2b2053e0bc6be5df",
-      "title": "Splice CEO Kakul Srivastava thinks AI emails are killing conversations",
-      "link": "https://www.theverge.com/entertainment/1004162/splice-ceo-kakul-srivastava-ai-interview",
-      "source": "The Verge \u2014 AI",
-      "category": "AI",
-      "summary": "Kakul Srivastava is the CEO of Splice, the sample platform countless producers rely on for one-shots and melodic loops. Samples pulled from the service have found their way into massive hits like Lisa's \"Money\" and \"Espresso\" by Sabrina Carpenter. (The original samples are here a",
-      "published": "2026-10-04T06:38:20.631188+00:00",
-      "audio_url": null,
-      "duration": ""
-    },
-    {
-      "id": "f1c80105d2f2cb39",
-      "title": "Capcom is preparing for a \u2018future where we create games together with AI\u2019",
-      "link": "https://www.theverge.com/games/1004418/capcom-ai-game-development",
-      "source": "The Verge \u2014 AI",
-      "category": "AI",
-      "summary": "Capcom's Pragmata might be all about the horrors of AI, but in practice the studio doesn't seem so down on the tech. During the Capcom Open Conference RE: 2026 programmer Satoshi Ishida gave a presentation with the mouthful of a title: \"The Outlook and Future of the REX Project, ",
-      "published": "2026-10-04T06:38:20.631132+00:00",
       "audio_url": null,
       "duration": ""
     },
@@ -2215,6 +2248,17 @@
       "duration": ""
     },
     {
+      "id": "e340960976580f86",
+      "title": "Lowe\u2019s answers millions of home improvement questions with OpenAI",
+      "link": "https://openai.com/index/lowes",
+      "source": "OpenAI Blog",
+      "category": "AI",
+      "summary": "Lowe\u2019s uses OpenAI models to power Mylow and Mylow Companion, helping customers and associates answer 25M+ questions and move home improvement projects forward.",
+      "published": "2026-09-25T07:00:00+00:00",
+      "audio_url": null,
+      "duration": ""
+    },
+    {
       "id": "69f2b5ec7d181072",
       "title": "Wayfair boosts catalog accuracy and support speed with OpenAI",
       "link": "https://openai.com/index/wayfair",
@@ -2431,28 +2475,6 @@
       "category": "AI",
       "summary": "OpenAI outlines a path to shared global AI standards, calling for coordinated evaluation, reporting, and governance to improve safety.",
       "published": "2026-09-21T10:00:00+00:00",
-      "audio_url": null,
-      "duration": ""
-    },
-    {
-      "id": "530db518a73a5717",
-      "title": "Expanding OpenAI Academy with new learning paths",
-      "link": "https://openai.com/index/expanding-openai-academy-with-new-learning-paths",
-      "source": "OpenAI Blog",
-      "category": "AI",
-      "summary": "Explore new OpenAI Academy learning paths for employees, developers, leaders, educators, and students to build and demonstrate practical AI skills.",
-      "published": "2026-09-21T07:00:00+00:00",
-      "audio_url": null,
-      "duration": ""
-    },
-    {
-      "id": "d1749ba76a98e7a5",
-      "title": "V7 cuts costs 78% while boosting accuracy with GPT-5.6 Luna",
-      "link": "https://openai.com/index/v7",
-      "source": "OpenAI Blog",
-      "category": "AI",
-      "summary": "Using GPT-5.6, V7 turns scattered company files into context agents can use to complete complex, source-linked work.",
-      "published": "2026-09-21T00:00:00+00:00",
       "audio_url": null,
       "duration": ""
     },

@@ -4,7 +4,71 @@
     <title>The Signal</title>
     <link>https://thillairaj.github.io/The-Signal-AI-Quantum/</link>
     <description>A self-updating feed of AI, quantum computing, and podcast updates.</description>
-    <lastBuildDate>Fri, 09 Oct 2026 18:00:09 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 09 Oct 2026 22:00:10 +0000</lastBuildDate>
+    <item>
+      <title>GPT 6.1 Sol: Near-Astra intelligence for a fifth of the price</title>
+      <link>https://simonwillison.net/2026/Sep/29/hn-49898129/</link>
+      <guid isPermaLink="false">147ef720989f663d</guid>
+      <description>My comment on GPT 6.1 Sol: Near-Astra intelligence for a fifth of the price &amp;mdash; Hacker News. I'm a bit late with the pelicans because I was live-blogging the keynote: https://simonwillison.net/2026/Sep/29/openai-devday-2026-liv... Here they are for GPT-6.1-Sol: https://tools.</description>
+      <category>Simon Willison</category>
+      <pubDate>Fri, 09 Oct 2026 21:59:58 +0000</pubDate>
+    </item>
+    <item>
+      <title>Quoting Anthropic Frontier Red Team</title>
+      <link>https://simonwillison.net/2026/Sep/29/anthropic-frontier-red-team/</link>
+      <guid isPermaLink="false">6cd102f752db7713</guid>
+      <description>We evaluate several models on 100 tasks from the [internal Binary Exploitation benchmark] (selected at random), and find that GLM-5.3 develops full control flow hijacks in 4% of the trials; Claude Mythos Preview did so in 6%. Although GLM-5.3 performs below Claude Mythos Preview </description>
+      <category>Simon Willison</category>
+      <pubDate>Fri, 09 Oct 2026 21:59:58 +0000</pubDate>
+    </item>
+    <item>
+      <title>He Built This City</title>
+      <link>https://simonwillison.net/2026/Sep/30/he-built-this-city/</link>
+      <guid isPermaLink="false">562470c22e2896c8</guid>
+      <description>I visited the Museum of the City of New York today and got to see He Built This City: Joe Macken’s Model , the 50 x27 feet model of the city built over a 21 year period from balsa wood and cardboard. It exceeded my already high expectations. The exhibition closes on 12th October </description>
+      <category>Simon Willison</category>
+      <pubDate>Fri, 09 Oct 2026 21:59:58 +0000</pubDate>
+    </item>
+    <item>
+      <title>Nikon microscopic video competition winner disqualified for using generative AI</title>
+      <link>https://www.theverge.com/ai-artificial-intelligence/1008930/nikon-small-world-in-motion-winner-ai</link>
+      <guid isPermaLink="false">f11f2c288c2c9565</guid>
+      <description>Nikon says the video that originally won first place in its Small World in Motion contest "did not comply with the competition rules regarding generative AI." BBC reports that the original first place video from Dr. Ning Xu claimed to show "tiny, hair-like structures called cilia</description>
+      <category>The Verge — AI</category>
+      <pubDate>Fri, 09 Oct 2026 21:59:57 +0000</pubDate>
+    </item>
+    <item>
+      <title>&amp;#8216;Pure insanity&amp;#8217;: Mathematicians will need years to make sense of OpenAI&amp;#8217;s latest drop</title>
+      <link>https://www.theverge.com/ai-artificial-intelligence/1008726/openai-mathematics-solutions-chaos</link>
+      <guid isPermaLink="false">d07dddd55da28704</guid>
+      <description>"Staggering." "Overwhelming." "Unprecedented." "Surreal." "Pure insanity." Those were among the descriptions more than three dozen mathematicians reached for in conversations with The Verge as they tried to make sense of the flood of mathematical results OpenAI abruptly dropped o</description>
+      <category>The Verge — AI</category>
+      <pubDate>Fri, 09 Oct 2026 21:59:57 +0000</pubDate>
+    </item>
+    <item>
+      <title>Anthropic’s AI gave Philadelphia police a fake tip about an unsolved homicide</title>
+      <link>https://www.theverge.com/ai-artificial-intelligence/1009090/anthropic-fake-homicide-information-philadelphia-pd-tip</link>
+      <guid isPermaLink="false">0ad44f3ce5c4ad25</guid>
+      <description>An Anthropic AI model provided false information about an unsolved homicide to a Philadelphia Police Department (PPD) tipline, according to a report from 6abc. In a statement released on Friday, the PPD said the AI model sent the tip through PhillyUnsolvedMurders.com on July 18th</description>
+      <category>The Verge — AI</category>
+      <pubDate>Fri, 09 Oct 2026 21:59:57 +0000</pubDate>
+    </item>
+    <item>
+      <title>AI coding agents generate more code, but not more software</title>
+      <link>https://arstechnica.com/ai/2026/10/ai-coding-agents-generate-more-code-but-not-more-software/</link>
+      <guid isPermaLink="false">9f4f46039e3dc6c1</guid>
+      <description>Study finds coding efficiency gains get "absorbed" by human review "bottleneck."</description>
+      <category>Ars Technica AI</category>
+      <pubDate>Fri, 09 Oct 2026 19:43:50 +0000</pubDate>
+    </item>
+    <item>
+      <title>AI disqualification yields new Nikon Small World in Motion winner</title>
+      <link>https://arstechnica.com/science/2026/10/winning-nikon-small-world-in-motion-video-disqualified-for-ai-use/</link>
+      <guid isPermaLink="false">9304db4f19bb1881</guid>
+      <description>New winner is Nguyen Nam Nhat of Vietnam for video of a roundworm and single-celled Dileptus.</description>
+      <category>Ars Technica AI</category>
+      <pubDate>Fri, 09 Oct 2026 18:44:06 +0000</pubDate>
+    </item>
     <item>
       <title>Quoting Matthew Green</title>
       <link>https://simonwillison.net/2026/Oct/1/matthew-green/</link>
@@ -90,6 +154,14 @@
       <link>https://openai.com/index/sophos</link>
       <guid isPermaLink="false">edd58468d564448f</guid>
       <description>Discover how Sophos uses OpenAI’s Daybreak to cut cyber-threat investigation time by 96% and automate 52% of MDR cases while preserving human oversight.</description>
+      <category>OpenAI Blog</category>
+      <pubDate>Fri, 09 Oct 2026 07:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>Asana cuts model costs 76x in browser tests with GPT-6.1 Sol</title>
+      <link>https://openai.com/index/asana-browser-agent</link>
+      <guid isPermaLink="false">90995f7dbc9c2674</guid>
+      <description>Using GPT-6 Astra in Codex, Asana made its browser agent 76x cheaper and 5x faster in tests to offer customers more capable models.</description>
       <category>OpenAI Blog</category>
       <pubDate>Fri, 09 Oct 2026 07:00:00 +0000</pubDate>
     </item>
@@ -412,78 +484,6 @@
       <description>The new SynthID website can now identify AI content from Google, OpenAI, and more.</description>
       <category>Ars Technica AI</category>
       <pubDate>Wed, 07 Oct 2026 14:00:08 +0000</pubDate>
-    </item>
-    <item>
-      <title>Helping teens learn, plan, and shape the future of AI</title>
-      <link>https://openai.com/index/teens-learn-and-plan</link>
-      <guid isPermaLink="false">ad4e14640e358f44</guid>
-      <description>College Planner is coming to ChatGPT for Teens to help students manage college applications, alongside new flashcards, quizzes, and a teen AI council.</description>
-      <category>OpenAI Blog</category>
-      <pubDate>Wed, 07 Oct 2026 12:00:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>Introducing Playground: Create and play custom games</title>
-      <link>https://blog.google/innovation-and-ai/technology/ai/playground-experimental-gaming-platform/</link>
-      <guid isPermaLink="false">22643d6fcb195220</guid>
-      <description>Overview of Playground</description>
-      <category>Google AI Blog</category>
-      <pubDate>Wed, 07 Oct 2026 12:00:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>ChatGPT for Teens is an ‘unacceptable risk,’ says Common Sense Media</title>
-      <link>https://www.theverge.com/ai-artificial-intelligence/1006355/openai-chatgpt-for-teens-common-sense-media</link>
-      <guid isPermaLink="false">f81ac359aaf43f76</guid>
-      <description>Common Sense Media, a nonprofit that offers reviews of apps, services, and entertainment with a focus on youth safety, today said that OpenAI's ChatGPT for Teens is an "unacceptable risk." ChatGPT for Teens, introduced in August, has guardrails for teens and is designed to help s</description>
-      <category>The Verge — AI</category>
-      <pubDate>Wed, 07 Oct 2026 09:59:44 +0000</pubDate>
-    </item>
-    <item>
-      <title>Radisson Hotel Group brings hotel discovery into ChatGPT</title>
-      <link>https://openai.com/index/radisson</link>
-      <guid isPermaLink="false">04e9dc3828b5420c</guid>
-      <description>Radisson partnered with Accenture to build a ChatGPT plugin using OpenAI technology, helping travelers find, compare, and book hotels while planning their trips.</description>
-      <category>OpenAI Blog</category>
-      <pubDate>Wed, 07 Oct 2026 07:00:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>Quoting Jake Boggan</title>
-      <link>https://simonwillison.net/2026/Oct/7/jake-boggan/</link>
-      <guid isPermaLink="false">544da1e9a61fc2a9</guid>
-      <description>I was a graph theory junkie long ago and even moved to Budapest for awhile to study among the greats. While I was there I started working on Barnette's Conjecture which came to occupy my thoughts over the next 24 years of my life, on and off as I worked in many different fields. </description>
-      <category>Simon Willison</category>
-      <pubDate>Wed, 07 Oct 2026 05:59:40 +0000</pubDate>
-    </item>
-    <item>
-      <title>Tech Learning: IT Infrastructure &amp; Cloud — Ep 8: Real Scenario: Tracing Cross-Region Latency</title>
-      <link>https://muse.ai/podcasts/media/1248297608376725/4720f1e9-8c94-4958-8367-c455f31c5edc/ep-506e2741-025b-4c6e-83f5-aae3fca328a2.mp3</link>
-      <guid isPermaLink="false">3b67c0fcd5313a0c</guid>
-      <description>IT Infrastructure &amp; Cloud track: a real-time scenario walkthrough — tracing cross-region latency, finding where the milliseconds hide, and fixing them. AI Generated</description>
-      <category>Technology Learnings</category>
-      <pubDate>Wed, 07 Oct 2026 02:07:21 +0000</pubDate>
-    </item>
-    <item>
-      <title>Tech Learning: IT Infrastructure &amp; Cloud — Ep 7: VPCs, Subnets, DNS and Load Balancers</title>
-      <link>https://muse.ai/podcasts/media/1248297608376725/4720f1e9-8c94-4958-8367-c455f31c5edc/ep-958ee95a-dfcc-4771-83ae-139807dcfb6e.mp3</link>
-      <guid isPermaLink="false">945127fe218507d6</guid>
-      <description>IT Infrastructure &amp; Cloud track: cloud networking basics — VPCs, subnets, DNS, and load balancers explained. AI Generated</description>
-      <category>Technology Learnings</category>
-      <pubDate>Wed, 07 Oct 2026 02:04:01 +0000</pubDate>
-    </item>
-    <item>
-      <title>llm-openai-decisions 0.1a0</title>
-      <link>https://simonwillison.net/2026/Oct/6/llm-openai-decisions/</link>
-      <guid isPermaLink="false">bc657e1acdd70771</guid>
-      <description>Release: llm-openai-decisions 0.1a0 OpenAI released their new Jev-style Decisions API , as previously announced at last week's DevDay. Since I already have an llm-typesafe plugin for talking to Jev, I had GPT-6 Astra read the new OpenAI API documentation and build an llm-openai-d</description>
-      <category>Simon Willison</category>
-      <pubDate>Wed, 07 Oct 2026 02:02:27 +0000</pubDate>
-    </item>
-    <item>
-      <title>Quoting Victoria Kim</title>
-      <link>https://simonwillison.net/2026/Oct/6/victoria-kim/</link>
-      <guid isPermaLink="false">c41d88164f839288</guid>
-      <description>Since the Medicare breach, OpenAI has put in place additional monitoring to allow “immediate intervention” by staff to stop training if the company’s models access the internet in ways they’re not supposed to, Mr. Kwon [chief strategy officer at OpenAI] said. &amp;mdash; Victoria Kim</description>
-      <category>Simon Willison</category>
-      <pubDate>Wed, 07 Oct 2026 02:02:27 +0000</pubDate>
     </item>
   </channel>
 </rss>
