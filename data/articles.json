@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-09T01:59:55.216388+00:00",
+  "generated_at": "2026-10-09T05:59:46.272392+00:00",
   "sources_polled": [
     "The Verge \u2014 AI",
     "Simon Willison",
@@ -14,6 +14,17 @@
     "Technology Learnings"
   ],
   "articles": [
+    {
+      "id": "40466bc21512f32b",
+      "title": "ttok 1.0",
+      "link": "https://simonwillison.net/2026/Oct/9/ttok/",
+      "source": "Simon Willison",
+      "category": "AI",
+      "summary": "Release: ttok 1.0 I released ttok 0.4 , ran uv tool upgrade ttok , piped a file into the new version... and realized that it was defaulting to the GPT-4 tokenizer when it should very clearly default to GPT-5/GPT-6 instead! I figured switching the default was a reasonable excuse t",
+      "published": "2026-10-09T05:59:36.348279+00:00",
+      "audio_url": null,
+      "duration": ""
+    },
     {
       "id": "e0a9b95e17641063",
       "title": "ttok 0.4",
@@ -1474,17 +1485,6 @@
       "category": "AI",
       "summary": "I just sent the September edition of my sponsors-only monthly newsletter . If you are a sponsor (or start a sponsorship now) you can access it here . This month: More Fable class models A pricing war 3D graphics, Blender, and pixel art LLMs come for mathematics So many more accid",
       "published": "2026-10-04T06:38:20.830523+00:00",
-      "audio_url": null,
-      "duration": ""
-    },
-    {
-      "id": "5a3f1f4a82c5b0a8",
-      "title": "We're going to need default hard budget caps on pretty much everything",
-      "link": "https://simonwillison.net/2026/Oct/3/default-hard-budget-caps/",
-      "source": "Simon Willison",
-      "category": "AI",
-      "summary": "Here's a product feature which the world is going to need a whole lot more of over the coming months and years: default hard budget caps . I'm talking about the feature of pay-by-usage services and APIs that lets you say \"after $X/month, cut this thing off and return errors\". The",
-      "published": "2026-10-04T06:38:20.830475+00:00",
       "audio_url": null,
       "duration": ""
     },

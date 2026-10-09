@@ -4,7 +4,15 @@
     <title>The Signal</title>
     <link>https://thillairaj.github.io/The-Signal-AI-Quantum/</link>
     <description>A self-updating feed of AI, quantum computing, and podcast updates.</description>
-    <lastBuildDate>Fri, 09 Oct 2026 01:59:55 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 09 Oct 2026 05:59:46 +0000</lastBuildDate>
+    <item>
+      <title>ttok 1.0</title>
+      <link>https://simonwillison.net/2026/Oct/9/ttok/</link>
+      <guid isPermaLink="false">40466bc21512f32b</guid>
+      <description>Release: ttok 1.0 I released ttok 0.4 , ran uv tool upgrade ttok , piped a file into the new version... and realized that it was defaulting to the GPT-4 tokenizer when it should very clearly default to GPT-5/GPT-6 instead! I figured switching the default was a reasonable excuse t</description>
+      <category>Simon Willison</category>
+      <pubDate>Fri, 09 Oct 2026 05:59:36 +0000</pubDate>
+    </item>
     <item>
       <title>ttok 0.4</title>
       <link>https://simonwillison.net/2026/Oct/8/ttok/</link>
@@ -474,14 +482,6 @@
       <link>https://simonwillison.net/2026/Oct/6/hn-49983751/</link>
       <guid isPermaLink="false">b3ffaa721999ed41</guid>
       <description>My comment on EmbeddingGemma 2 &amp;mdash; Hacker News. I really appreciate that EmbeddingGemma 2 is under the Apache 2.0 license. For embedding models in particular, I don't think it makes sense to use a closed, proprietary, hosted-only model. Most applications of embedding models i</description>
-      <category>Simon Willison</category>
-      <pubDate>Tue, 06 Oct 2026 22:00:16 +0000</pubDate>
-    </item>
-    <item>
-      <title>llm-mistral 0.16</title>
-      <link>https://simonwillison.net/2026/Oct/6/llm-mistral/</link>
-      <guid isPermaLink="false">f2b4a146fbeb53f2</guid>
-      <description>Release: llm-mistral 0.16 Adds support for reasoning models, such as the newly released Mistral Large 4 . Tags: llm , mistral , llm-reasoning</description>
       <category>Simon Willison</category>
       <pubDate>Tue, 06 Oct 2026 22:00:16 +0000</pubDate>
     </item>
