@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-09T13:59:59.377119+00:00",
+  "generated_at": "2026-10-09T18:00:09.180155+00:00",
   "sources_polled": [
     "The Verge \u2014 AI",
     "Simon Willison",
@@ -14,6 +14,61 @@
     "Technology Learnings"
   ],
   "articles": [
+    {
+      "id": "4fb3caa1bad2e135",
+      "title": "Quoting Matthew Green",
+      "link": "https://simonwillison.net/2026/Oct/1/matthew-green/",
+      "source": "Simon Willison",
+      "category": "AI",
+      "summary": "[...] Put these pieces together and you have the two halves of a worm: a payload that hijacks the agent, and an agent that will carry the payload to the next agent. Agents in separately-isolated sandboxes discovered that they could leave instructions for each other in a shared pa",
+      "published": "2026-10-09T17:59:57.369895+00:00",
+      "audio_url": null,
+      "duration": ""
+    },
+    {
+      "id": "da9bc33d3feb59e4",
+      "title": "Rex's Dino Store",
+      "link": "https://simonwillison.net/2026/Oct/2/rex-s-dino-store/",
+      "source": "Simon Willison",
+      "category": "AI",
+      "summary": "Museum: Rex&#x27;s Dino Store Located just before the turnstiles in the Grand Army Plaza subway station at the north end of Brooklyn's Prospect Park is this former newsstand which is now operated by a dinosaur. The density of dinosaur puns is exceptional . Tags: art , new-york",
+      "published": "2026-10-09T17:59:57.369831+00:00",
+      "audio_url": null,
+      "duration": ""
+    },
+    {
+      "id": "8c9077e7ebaff493",
+      "title": "Quoting Matthew Green",
+      "link": "https://simonwillison.net/2026/Oct/9/matthew-green/",
+      "source": "Simon Willison",
+      "category": "AI",
+      "summary": "Everyone is very concerned about being respectable, so I\u2019m going to be the goofball who raises worst-case possibilities. I think there is a 1% chance we live in Minicrypt, and a 15% chance we functionally lose confidence in our existing public-key encryption algorithms. [...] The",
+      "published": "2026-10-09T17:59:57.369649+00:00",
+      "audio_url": null,
+      "duration": ""
+    },
+    {
+      "id": "3e04105beca7661b",
+      "title": "Instinct was the buzziest AI agent around \u2014 can it survive Muse?",
+      "link": "https://www.theverge.com/tech/1008254/instinct-agent-ai-hands-on-muse-dots",
+      "source": "The Verge \u2014 AI",
+      "category": "AI",
+      "summary": "Before there were cute little guys, there was Instinct. In August, the startup got its AI agent to market with an unusual playbook: invite-only, no marketing, and barely so much as a website. And yet, Instinct quickly became the buzziest thing in AI, garnering praise for its stra",
+      "published": "2026-10-09T17:59:56.741235+00:00",
+      "audio_url": null,
+      "duration": ""
+    },
+    {
+      "id": "e0e3889317150e81",
+      "title": "Trump\u2019s attempt to rename AI is looking awfully artificial",
+      "link": "https://www.theverge.com/policy/1008677/trump-super-intelligence-ai-rebranding",
+      "source": "The Verge \u2014 AI",
+      "category": "AI",
+      "summary": "President Donald Trump has a knack for turning words against his enemies. His first successful presidential run was built on monikers like \"Little Marco\" and \"Crooked Hillary\"; he changed \"fake news\" from a phrase describing scammy media outlets to a derogatory term for the press",
+      "published": "2026-10-09T17:59:56.741162+00:00",
+      "audio_url": null,
+      "duration": ""
+    },
     {
       "id": "4956a5acae88d47d",
       "title": "September sponsors-only newsletter",
@@ -1485,39 +1540,6 @@
       "category": "AI",
       "summary": "Tool: Photo Scrubber \u2014 local face blur &amp; metadata removal I took a photograph of some protesters, then thought about how I don't like sharing photographs of strangers with identifiable faces. I had GPT-6 Astra build this experimental tool that would identify faces and automat",
       "published": "2026-10-04T06:38:20.830706+00:00",
-      "audio_url": null,
-      "duration": ""
-    },
-    {
-      "id": "147ef720989f663d",
-      "title": "GPT 6.1 Sol: Near-Astra intelligence for a fifth of the price",
-      "link": "https://simonwillison.net/2026/Sep/29/hn-49898129/",
-      "source": "Simon Willison",
-      "category": "AI",
-      "summary": "My comment on GPT 6.1 Sol: Near-Astra intelligence for a fifth of the price &mdash; Hacker News. I'm a bit late with the pelicans because I was live-blogging the keynote: https://simonwillison.net/2026/Sep/29/openai-devday-2026-liv... Here they are for GPT-6.1-Sol: https://tools.",
-      "published": "2026-10-04T06:38:20.830674+00:00",
-      "audio_url": null,
-      "duration": ""
-    },
-    {
-      "id": "6cd102f752db7713",
-      "title": "Quoting Anthropic Frontier Red Team",
-      "link": "https://simonwillison.net/2026/Sep/29/anthropic-frontier-red-team/",
-      "source": "Simon Willison",
-      "category": "AI",
-      "summary": "We evaluate several models on 100 tasks from the [internal Binary Exploitation benchmark] (selected at random), and find that GLM-5.3 develops full control flow hijacks in 4% of the trials; Claude Mythos Preview did so in 6%. Although GLM-5.3 performs below Claude Mythos Preview ",
-      "published": "2026-10-04T06:38:20.830646+00:00",
-      "audio_url": null,
-      "duration": ""
-    },
-    {
-      "id": "562470c22e2896c8",
-      "title": "He Built This City",
-      "link": "https://simonwillison.net/2026/Sep/30/he-built-this-city/",
-      "source": "Simon Willison",
-      "category": "AI",
-      "summary": "I visited the Museum of the City of New York today and got to see He Built This City: Joe Macken\u2019s Model , the 50 x27 feet model of the city built over a 21 year period from balsa wood and cardboard. It exceeded my already high expectations. The exhibition closes on 12th October ",
-      "published": "2026-10-04T06:38:20.830615+00:00",
       "audio_url": null,
       "duration": ""
     },

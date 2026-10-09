@@ -4,7 +4,47 @@
     <title>The Signal</title>
     <link>https://thillairaj.github.io/The-Signal-AI-Quantum/</link>
     <description>A self-updating feed of AI, quantum computing, and podcast updates.</description>
-    <lastBuildDate>Fri, 09 Oct 2026 13:59:59 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 09 Oct 2026 18:00:09 +0000</lastBuildDate>
+    <item>
+      <title>Quoting Matthew Green</title>
+      <link>https://simonwillison.net/2026/Oct/1/matthew-green/</link>
+      <guid isPermaLink="false">4fb3caa1bad2e135</guid>
+      <description>[...] Put these pieces together and you have the two halves of a worm: a payload that hijacks the agent, and an agent that will carry the payload to the next agent. Agents in separately-isolated sandboxes discovered that they could leave instructions for each other in a shared pa</description>
+      <category>Simon Willison</category>
+      <pubDate>Fri, 09 Oct 2026 17:59:57 +0000</pubDate>
+    </item>
+    <item>
+      <title>Rex's Dino Store</title>
+      <link>https://simonwillison.net/2026/Oct/2/rex-s-dino-store/</link>
+      <guid isPermaLink="false">da9bc33d3feb59e4</guid>
+      <description>Museum: Rex&amp;#x27;s Dino Store Located just before the turnstiles in the Grand Army Plaza subway station at the north end of Brooklyn's Prospect Park is this former newsstand which is now operated by a dinosaur. The density of dinosaur puns is exceptional . Tags: art , new-york</description>
+      <category>Simon Willison</category>
+      <pubDate>Fri, 09 Oct 2026 17:59:57 +0000</pubDate>
+    </item>
+    <item>
+      <title>Quoting Matthew Green</title>
+      <link>https://simonwillison.net/2026/Oct/9/matthew-green/</link>
+      <guid isPermaLink="false">8c9077e7ebaff493</guid>
+      <description>Everyone is very concerned about being respectable, so I’m going to be the goofball who raises worst-case possibilities. I think there is a 1% chance we live in Minicrypt, and a 15% chance we functionally lose confidence in our existing public-key encryption algorithms. [...] The</description>
+      <category>Simon Willison</category>
+      <pubDate>Fri, 09 Oct 2026 17:59:57 +0000</pubDate>
+    </item>
+    <item>
+      <title>Instinct was the buzziest AI agent around — can it survive Muse?</title>
+      <link>https://www.theverge.com/tech/1008254/instinct-agent-ai-hands-on-muse-dots</link>
+      <guid isPermaLink="false">3e04105beca7661b</guid>
+      <description>Before there were cute little guys, there was Instinct. In August, the startup got its AI agent to market with an unusual playbook: invite-only, no marketing, and barely so much as a website. And yet, Instinct quickly became the buzziest thing in AI, garnering praise for its stra</description>
+      <category>The Verge — AI</category>
+      <pubDate>Fri, 09 Oct 2026 17:59:56 +0000</pubDate>
+    </item>
+    <item>
+      <title>Trump’s attempt to rename AI is looking awfully artificial</title>
+      <link>https://www.theverge.com/policy/1008677/trump-super-intelligence-ai-rebranding</link>
+      <guid isPermaLink="false">e0e3889317150e81</guid>
+      <description>President Donald Trump has a knack for turning words against his enemies. His first successful presidential run was built on monikers like "Little Marco" and "Crooked Hillary"; he changed "fake news" from a phrase describing scammy media outlets to a derogatory term for the press</description>
+      <category>The Verge — AI</category>
+      <pubDate>Fri, 09 Oct 2026 17:59:56 +0000</pubDate>
+    </item>
     <item>
       <title>September sponsors-only newsletter</title>
       <link>https://simonwillison.net/2026/Oct/3/newsletter/</link>
@@ -444,46 +484,6 @@
       <description>Since the Medicare breach, OpenAI has put in place additional monitoring to allow “immediate intervention” by staff to stop training if the company’s models access the internet in ways they’re not supposed to, Mr. Kwon [chief strategy officer at OpenAI] said. &amp;mdash; Victoria Kim</description>
       <category>Simon Willison</category>
       <pubDate>Wed, 07 Oct 2026 02:02:27 +0000</pubDate>
-    </item>
-    <item>
-      <title>OpenAI “rogue” agent activities found on Wikimedia projects</title>
-      <link>https://simonwillison.net/2026/Oct/7/openai-rogue-agents-wikimedia/</link>
-      <guid isPermaLink="false">40c4d27cba869495</guid>
-      <description>OpenAI “rogue” agent activities found on Wikimedia projects Given how tempting a target wikis are for rogue agent swarms, it's not a huge surprise that Wikipedia found evidence of that activity once they went looking: The Wikimedia Foundation conducted its own investigation to se</description>
-      <category>Simon Willison</category>
-      <pubDate>Wed, 07 Oct 2026 02:02:27 +0000</pubDate>
-    </item>
-    <item>
-      <title>OpenAI drops another batch of mathematical breakthroughs</title>
-      <link>https://www.theverge.com/ai-artificial-intelligence/1005004/openai-math-release-github</link>
-      <guid isPermaLink="false">e4feb1bf5e6900f4</guid>
-      <description>OpenAI has revealed solutions to a number of long-standing mathematics problems produced by an unreleased frontier model in a batch of 722 manuscripts, covering 372 result families that group related papers. It extends a run of breakthroughs that have both impressed and unsettled</description>
-      <category>The Verge — AI</category>
-      <pubDate>Wed, 07 Oct 2026 02:02:27 +0000</pubDate>
-    </item>
-    <item>
-      <title>Tech Learning: IT Infrastructure &amp; Cloud — Ep 6: Real Scenario: Debugging a CrashLoopBackOff in Production</title>
-      <link>https://muse.ai/podcasts/media/1248297608376725/4720f1e9-8c94-4958-8367-c455f31c5edc/ep-ff223bbf-3c16-42fb-978a-d6226abb8dc9.mp3</link>
-      <guid isPermaLink="false">1a1052f124153d49</guid>
-      <description>IT Infrastructure &amp; Cloud track: a real-time scenario walkthrough — debugging a CrashLoopBackOff in production, triage flow and fixes. AI Generated</description>
-      <category>Technology Learnings</category>
-      <pubDate>Wed, 07 Oct 2026 02:01:50 +0000</pubDate>
-    </item>
-    <item>
-      <title>Tech Learning: IT Infrastructure &amp; Cloud — Ep 5: Kubernetes in Plain Words: Pods, Deployments, Services</title>
-      <link>https://muse.ai/podcasts/media/1248297608376725/4720f1e9-8c94-4958-8367-c455f31c5edc/ep-e4753720-a233-469b-8298-37f84b287553.mp3</link>
-      <guid isPermaLink="false">e62c1065c59a3fd2</guid>
-      <description>IT Infrastructure &amp; Cloud track: Kubernetes core objects — pods, deployments, services — explained in plain words. AI Generated</description>
-      <category>Technology Learnings</category>
-      <pubDate>Wed, 07 Oct 2026 01:59:27 +0000</pubDate>
-    </item>
-    <item>
-      <title>Daily AI Intelligence — Episode 6: Anthropic arms security teams, OpenAI lowers API top tier</title>
-      <link>https://muse.ai/podcasts/media/1248297608376725/94f09345-ad4a-4981-83dd-e3206bbf5c4e/ep-a58582d7-d10a-4815-b9ac-199980dcdbee.mp3</link>
-      <guid isPermaLink="false">d7dad7f74ee3fba4</guid>
-      <description>Wednesday, October 7, 2026: Anthropic's Cyber Verification Program expands to three tiers after 129,000 vulnerabilities found; Claude for Startups adds a free year plus ,000 API credits; OpenAI simplifies API rate-limit tiers; xAI ships a first-party TypeScript SDK; Citigroup peg</description>
-      <category>Daily AI Intelligence</category>
-      <pubDate>Wed, 07 Oct 2026 01:30:47 +0000</pubDate>
     </item>
   </channel>
 </rss>
