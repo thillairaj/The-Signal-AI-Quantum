@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-10T09:59:47.116473+00:00",
+  "generated_at": "2026-10-10T13:59:56.920756+00:00",
   "sources_polled": [
     "The Verge \u2014 AI",
     "Simon Willison",
@@ -14,6 +14,28 @@
     "Technology Learnings"
   ],
   "articles": [
+    {
+      "id": "0ea9d786e45ed9d7",
+      "title": "AI agent makers are promising privacy \u2014 will they deliver?",
+      "link": "https://www.theverge.com/ai-artificial-intelligence/1009051/privacy-ai-agent-promises-openai-meta-muse-dots",
+      "source": "The Verge \u2014 AI",
+      "category": "AI",
+      "summary": "At this year's OpenAI DevDay, CEO Sam Altman unveiled the company's new AI agent Dots - and told the crowd that the company wants to \"set a new standard for privacy in frontier AI.\" OpenAI would spend the day taking veiled shots at Meta's Muse, its primary competitor, for failing",
+      "published": "2026-10-10T13:59:45.436799+00:00",
+      "audio_url": null,
+      "duration": ""
+    },
+    {
+      "id": "258fdb044f8a7769",
+      "title": "Top AI labs reportedly planning for catastrophic AI event fallout",
+      "link": "https://www.tomshardware.com/tech-industry/artificial-intelligence/top-ai-labs-reportedly-planning-for-catastrophic-ai-event-fallout-anthropic-openai-and-others-reportedly-building-contingency-plans-and-running-scenarios-of-a-runaway-ai-wreaking-havoc",
+      "source": "Anthropic/Claude News",
+      "category": "AI",
+      "summary": "One focus of these contingency plans is how to manage Congress after a catastrophic event puts these labs in the spotlight.",
+      "published": "2026-10-10T13:20:00+00:00",
+      "audio_url": null,
+      "duration": ""
+    },
     {
       "id": "5528ba1d9cba341e",
       "title": "Quoting The New York Times",
@@ -1698,17 +1720,6 @@
       "duration": ""
     },
     {
-      "id": "c0a74765cc53d7bd",
-      "title": "Meta open sources code to let you make Muse AI gadgets",
-      "link": "https://www.theverge.com/tech/1004330/meta-muse-ai-gadgets-home-link",
-      "source": "The Verge \u2014 AI",
-      "category": "AI",
-      "summary": "Meta now lets you make your own Muse gadgets that feature the company's new AI agent with code that the company open sourced. The company suggests projects like loading Muse on a color E Ink display to show reminders, adding it to an HDMI stick so you can display Muse on a big sc",
-      "published": "2026-10-04T06:38:20.631261+00:00",
-      "audio_url": null,
-      "duration": ""
-    },
-    {
       "id": "3efc92f60ee2bdc4",
       "title": "Daily AI Intelligence \u2014 Episode 3",
       "link": "https://muse.ai/podcasts/media/1248297608376725/94f09345-ad4a-4981-83dd-e3206bbf5c4e/ep-5d595bb0-b357-4c8f-a1b2-3780269ef6ff.mp3",
@@ -3256,17 +3267,6 @@
       "category": "AI",
       "summary": "An SaaS business got all its data back after its cloud data provider recovered critical databases that were ruthlessly wiped by an AI agent gone rogue.",
       "published": "2026-04-30T12:13:38+00:00",
-      "audio_url": null,
-      "duration": ""
-    },
-    {
-      "id": "37d99d120015d43a",
-      "title": "OpenAI has effectively abandoned first-party Stargate data centers in favor of more flexible deals",
-      "link": "https://www.tomshardware.com/tech-industry/artificial-intelligence/openai-has-effectively-abandoned-first-party-stargate-data-centers-in-favor-of-more-flexible-deals-company-now-prefers-to-lease-compute-and-says-stargate-is-an-umbrella-term",
-      "source": "Anthropic/Claude News",
-      "category": "AI",
-      "summary": "OpenAI has reportedly modified its arrangement on several Stargate projects, leaving the direct ownership set up and instead preferring to lease compute from other partners who took on the direct risk of investing in the infrastructure.",
-      "published": "2026-04-29T16:00:31+00:00",
       "audio_url": null,
       "duration": ""
     },
