@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-10T13:59:56.920756+00:00",
+  "generated_at": "2026-10-10T18:00:04.105652+00:00",
   "sources_polled": [
     "The Verge \u2014 AI",
     "Simon Willison",
@@ -14,6 +14,17 @@
     "Technology Learnings"
   ],
   "articles": [
+    {
+      "id": "0decde66c5ee642f",
+      "title": "Anthropic is cutting off its internal evaluations from the internet",
+      "link": "https://www.theverge.com/ai-artificial-intelligence/1009286/anthropic-is-cutting-off-its-internal-evaluations-from-the-internet",
+      "source": "The Verge \u2014 AI",
+      "category": "AI",
+      "summary": "After a recent spate of high-profile incidents in which AI agents escaped containment, Anthropic is cutting off internet access for all internal evaluations. In a report Friday, the company detailed \"unintended model actions,\" including submitting a false tip regarding an unsolve",
+      "published": "2026-10-10T17:59:52.036246+00:00",
+      "audio_url": null,
+      "duration": ""
+    },
     {
       "id": "0ea9d786e45ed9d7",
       "title": "AI agent makers are promising privacy \u2014 will they deliver?",
@@ -1705,17 +1716,6 @@
       "category": "AI",
       "summary": "It's a tale as old as last week: OpenAI's new agent platform, called Dots, is full of cute little guys who can do your bidding. But unlike the ultra-approachable Meta Muse, Dots feel very much like using workplace software that happens to be able to order you a burrito - emphasis",
       "published": "2026-10-04T06:38:20.631327+00:00",
-      "audio_url": null,
-      "duration": ""
-    },
-    {
-      "id": "e148a12b4219ef6a",
-      "title": "Apple will limit Mac disk access as AI agents \u2018substantially\u2019 increase risk",
-      "link": "https://www.theverge.com/tech/1004295/apple-limit-mac-disk-access-ai-agents",
-      "source": "The Verge \u2014 AI",
-      "category": "AI",
-      "summary": "Apple will add new limits for \"full disk access\" on Mac in response to risks posed by AI agents, as reported earlier by TechCrunch. In an update on Friday, Apple says it's rolling out new controls to \"ensure that users who genuinely wish to grant an app this extraordinary level o",
-      "published": "2026-10-04T06:38:20.631294+00:00",
       "audio_url": null,
       "duration": ""
     },
