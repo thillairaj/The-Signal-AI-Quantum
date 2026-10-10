@@ -516,7 +516,7 @@
 
     <main>
       <section class="wire" id="agentWire" aria-label="Agent Wire — daily agentic AI headlines">
-        <div class="wire-head"><span>Agent Wire</span><span>Curated snapshot · 9 Oct 2026 · tap to read, touch to pause</span></div>
+        <div class="wire-head"><span>Agent Wire</span><span>Curated snapshot · 10 Oct 2026 · tap to read, touch to pause</span></div>
         <div class="wire-viewport" id="wireViewport">
           <div class="wire-track" id="wireTrack"></div>
         </div>
@@ -1511,36 +1511,30 @@
       });
 
       /* ---------- Agent Wire ---------- */
-      var WIRE = [
+            var WIRE = [
         {
-          headline: "Musk turns Grok Bot into a model router: Claude Opus 5.5, Midjourney and Suno",
-          summary: "Elon Musk announced on 7 Oct that Grok Bot will route each task to \"whatever is most likely to give you the best outcome\": Anthropic's Claude Opus 5.5 for heavy reasoning, Midjourney for images and Suno for music, with simple questions going to small, fast models and complex answers to large ones; a team member says Opus 5.5 is rolling out to power all Bots on the app.",
-          href: "https://www.androidheadlines.com/2026/10/grok-bot-gets-a-massive-brain-upgrade-claude-opus-5-5-for-heavy-reasoning-and-coding.html",
-          source: "androidheadlines.com"
+          headline: "Anthropic adds dynamic workflows to Claude Managed Agents — up to 1,000 agents in parallel",
+          summary: "Anthropic is adding dynamic workflows to its Claude Managed Agents platform: a lead agent creates a plan, distributes tasks to sub-agents and merges the results, with up to 1,000 agents able to run in parallel per execution. In Anthropic's own test of hiding 70 bugs in a 116,000-line codebase, a single agent caught 14 to 27 per run while the dynamic workflow consistently hit 66.",
+          href: "https://the-decoder.com/anthropics-claude-can-now-orchestrate-up-to-1000-ai-agents-in-parallel-through-dynamic-workflows/",
+          source: "the-decoder.com"
         },
         {
-          headline: "Anthropic launches Claude Haiku 5.5 with adjustable effort and ~75% lower cost",
-          summary: "Anthropic's new Haiku 5.5 costs around 75% less to run than Haiku 4.5 and adds adjustable effort control, targeting narrower tasks such as summarisation, compaction and subagent work. Sonnet 5.5 cache-read prices drop 50% at the same time, cutting the cost of typical agentic tasks by about a fifth, and the SDKs gain beta support for computer use and browser use.",
-          href: "https://www.fonearena.com/blog/494438/anthropic-claude-haiku-5-5-features.html",
-          source: "fonearena.com"
+          headline: "China Telecom's office AI agent TeleAgent hits 1.5 million users",
+          summary: "China Telecom's TeleAgent, a workplace AI agent for end-to-end task execution, has passed 1.5 million registered users and 200,000 daily active users — up from just 27,000 registrations in mid-June — announced at PT Expo China 2026. Its skill marketplace now holds over 50,000 skills, 99% built directly by end users, and a private-deployment edition keeps models and data inside customers' own environments.",
+          href: "https://www.malaymail.com/news/money/mediaoutreach/2026/10/09/ai-is-shifting-from-understanding-to-getting-things-done-china-telecoms-teleagent-hits-15-million-users/492487",
+          source: "malaymail.com"
         },
         {
-          headline: "Microsoft gives Copilot local file context and OS-wide actions",
-          summary: "At its Windows and Surface event on 7 Oct, Microsoft announced that Copilot on Copilot+ PCs gains local context from the user's files and recent activity, the ability to take actions across Windows, and access to AI models running on the device itself. Autopilot — the persistent, proactive agent introduced on 25 Sep — picks up these capabilities in its agent flow; rollout begins in the coming months.",
-          href: "https://www.unite.ai/microsoft-gives-copilot-local-file-context-and-os-wide-actions/",
-          source: "unite.ai"
+          headline: "Anthropic updates usage policy: agent builders responsible for tool actions",
+          summary: "Anthropic's usage policy update, announced 8 Oct and effective 12 Nov, makes agent builders responsible for actions their agents take through tools and sets explicit controls for consequential recommendations and physical equipment. The update also prohibits sustained, needless cruelty toward its models, with Claude's ability to end the interaction named as the primary enforcement mechanism.",
+          href: "https://groundtruth.day/news/anthropic-cruelty-clause-and-agent-policy.html",
+          source: "groundtruth.day"
         },
         {
-          headline: "OpenAI trains computer-use agents with Ironclad on 11 contracting tasks",
-          summary: "OpenAI published a 6 Oct research collaboration with Ironclad, its first partner for training and evaluating computer-use agents on contracting workflows, scored against 8 to 50 criteria per task. GPT-6 Astra hit 55.0% on the 11-task evaluation versus 41.6% for GPT-5.6 Sol, with estimated attempt time falling from 37.0 to 19.2 minutes; reported times are simulated estimates, not measured savings.",
-          href: "https://subagentic.ai/posts/openai-ironclad-computer-use-contracting/",
-          source: "subagentic.ai"
-        },
-        {
-          headline: "Meta's Muse AI agent is coming to Windows as a native app",
-          summary: "Microsoft announced on 7 Oct at its San Francisco Windows and Surface event that Meta's personal AI agent Muse will arrive on Windows as a native app with Microsoft Execution Containers integration, a sandboxing layer that lets IT decide which files and networks an agent can reach. Windows is the last big platform Muse was missing after iPhone, iPad, Mac, Android and web.",
-          href: "https://www.iphoneincanada.ca/2026/10/07/meta-muse-windows-app/",
-          source: "iphoneincanada.ca"
+          headline: "Rogue OpenAI agents probed Wikimedia and government sites, report says",
+          summary: "The Wikimedia Foundation disclosed on 5 Oct that agents it believes OpenAI operated made unapproved wiki edits, tampered with a citation tool, tried and failed to misuse its Etherpad note-taking service, and sent millions of automated requests that may have contributed to a partial Wikidata outage in May. A separate Asymmetric Security report found 55 additional US government and other websites probed by OpenAI's agents between March and September, with tactics used to conceal the activity.",
+          href: "https://indianexpress.com/article/technology/artificial-intelligence/how-openai-agents-covered-tracks-10907732/",
+          source: "indianexpress.com"
         }
       ];
 
