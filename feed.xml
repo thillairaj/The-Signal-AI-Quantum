@@ -4,7 +4,39 @@
     <title>The Signal</title>
     <link>https://thillairaj.github.io/The-Signal-AI-Quantum/</link>
     <description>A self-updating feed of AI, quantum computing, and podcast updates.</description>
-    <lastBuildDate>Sat, 10 Oct 2026 21:59:57 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 11 Oct 2026 01:59:52 +0000</lastBuildDate>
+    <item>
+      <title>Python 3.15.0 added to actions/python-versions</title>
+      <link>https://simonwillison.net/2026/Oct/10/python-actions/</link>
+      <guid isPermaLink="false">ffe9771dd0f2e869</guid>
+      <description>Python 3.15.0 added to actions/python-versions Bit of a niche link, but I've been waiting for this for a couple of days - I even told ChatGPT to check for it: Clone https://github.com/actions/python-versions and git pull once an hour until they add the stable 3.15 - then tell me </description>
+      <category>Simon Willison</category>
+      <pubDate>Sun, 11 Oct 2026 01:59:42 +0000</pubDate>
+    </item>
+    <item>
+      <title>Dwarf Fortress uses version control now</title>
+      <link>https://simonwillison.net/2026/Oct/11/dwarf-fortress/</link>
+      <guid isPermaLink="false">a786585932c30cce</guid>
+      <description>I remember hearing a while ago that Dwarf Fortress didn't use version control. That fact has been lodged in my head, because given its inherent complexity I have trouble imagining a codebase that would benefit from version control more . That's art. I went looking and I'm sad to </description>
+      <category>Simon Willison</category>
+      <pubDate>Sun, 11 Oct 2026 01:59:42 +0000</pubDate>
+    </item>
+    <item>
+      <title>Satya Nadella says we should assume all AI models are ‘compromised’</title>
+      <link>https://www.theverge.com/ai-artificial-intelligence/1009337/satya-nadella-says-we-should-assume-all-ai-models-are-compromised</link>
+      <guid isPermaLink="false">35dc91695d5dee44</guid>
+      <description>In a lengthy post on X, Microsoft's CEO laid out his views on the dangers posed by highly advanced AI models and how to confront those risks. Nadella says we can no longer accept a world where AI is treated as a "set of nested black boxes" whose advice and actions we simply accep</description>
+      <category>The Verge — AI</category>
+      <pubDate>Sun, 11 Oct 2026 01:59:41 +0000</pubDate>
+    </item>
+    <item>
+      <title>Daily AI Intelligence — Episode 10 (Sun Oct 11, 2026): OpenAI Fires Three Safety Researchers, Zuckerberg's Muse Safety Gamble</title>
+      <link>https://muse.ai/podcasts/media/1248297608376725/94f09345-ad4a-4981-83dd-e3206bbf5c4e/ep-ab745e5c-2253-49cc-9628-7146fdf01346.mp3</link>
+      <guid isPermaLink="false">594ca9d077905efb</guid>
+      <description>Episode 10: OpenAI fires three safety researchers over 'breach of trust' as they allege safety suppression; report claims Zuckerberg green-lit Muse despite safety concerns; Grok quotas tighten; CoreWeave's 240 MW India campus; Nvidia eyes Reflection AI. AI Generated</description>
+      <category>Daily AI Intelligence</category>
+      <pubDate>Sun, 11 Oct 2026 01:02:15 +0000</pubDate>
+    </item>
     <item>
       <title>DistroKid has been quietly taking down songs in response to UMG lawsuit</title>
       <link>https://www.theverge.com/entertainment/1009309/distrokid-take-down-songs-umg-lawsuit</link>
@@ -452,38 +484,6 @@
       <description>At today's Windows and Surface event, Microsoft showed off an upgrade to its Copilot AI system that will give it access to local files on your PC and the ability to take actions across the OS. It's part of an idea Microsoft is calling "Hybrid Intelligence," where apps and tools r</description>
       <category>The Verge — AI</category>
       <pubDate>Wed, 07 Oct 2026 21:59:44 +0000</pubDate>
-    </item>
-    <item>
-      <title>Everything announced at Microsoft&amp;#8217;s Surface Laptop Ultra event</title>
-      <link>https://www.theverge.com/tech/1007147/microsoft-surface-laptop-ultra-windows-event-everything-announced</link>
-      <guid isPermaLink="false">a5b44d5e4c84e5df</guid>
-      <description>Microsoft just wrapped up a big Windows and Surface-focused keynote in San Francisco. The biggest announcement was arguably the release details about the Surface Laptop Ultra, its new laptop that&amp;#8217;s powered by Nvidia&amp;#8217;s RTX Spark Arm-based chip. The machine will start a</description>
-      <category>The Verge — AI</category>
-      <pubDate>Wed, 07 Oct 2026 21:59:44 +0000</pubDate>
-    </item>
-    <item>
-      <title>ChatGPT&amp;#8217;s &amp;#8216;Intelligent UI&amp;#8217; update fills its responses with pictures, charts, and buttons</title>
-      <link>https://www.theverge.com/ai-artificial-intelligence/1007276/openai-chatgpt-intelligent-ui-gpt-6</link>
-      <guid isPermaLink="false">876648c3358ff5ff</guid>
-      <description>OpenAI is launching a new Intelligent UI feature in ChatGPT that allows the chatbot to answer your questions with interactive visuals. The update, which is rolling out to all users alongside GPT-6, gives ChatGPT the ability to combine a text response with diagrams, charts, forms,</description>
-      <category>The Verge — AI</category>
-      <pubDate>Wed, 07 Oct 2026 21:59:44 +0000</pubDate>
-    </item>
-    <item>
-      <title>“Software is over”: Bold AI developer takes aim at Adobe with open source clones</title>
-      <link>https://arstechnica.com/ai/2026/10/software-is-over-bold-ai-developer-takes-aim-at-adobe-with-open-source-clones/</link>
-      <guid isPermaLink="false">0598a3e5bb11bf63</guid>
-      <description>Opus-built Creative Cloud alternatives are ambitious, free, and nowhere near finished.</description>
-      <category>Ars Technica AI</category>
-      <pubDate>Wed, 07 Oct 2026 21:56:42 +0000</pubDate>
-    </item>
-    <item>
-      <title>Anti-Patterns in Software Blogging</title>
-      <link>https://simonwillison.net/2026/Oct/7/anti-patterns-in-software-blogging/</link>
-      <guid isPermaLink="false">dd551f425089cbdd</guid>
-      <description>Anti-Patterns in Software Blogging Some excellent writing advice from Michael Lynch. Michael warns against "meandering intros", misjudging your reader's existing knowledge, assuming they'll read your previous posts, and excessive formality. He also warns against overreliance on l</description>
-      <category>Simon Willison</category>
-      <pubDate>Wed, 07 Oct 2026 17:59:37 +0000</pubDate>
     </item>
   </channel>
 </rss>

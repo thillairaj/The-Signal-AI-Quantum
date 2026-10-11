@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-10T21:59:57.746107+00:00",
+  "generated_at": "2026-10-11T01:59:52.379785+00:00",
   "sources_polled": [
     "The Verge \u2014 AI",
     "Simon Willison",
@@ -14,6 +14,50 @@
     "Technology Learnings"
   ],
   "articles": [
+    {
+      "id": "ffe9771dd0f2e869",
+      "title": "Python 3.15.0 added to actions/python-versions",
+      "link": "https://simonwillison.net/2026/Oct/10/python-actions/",
+      "source": "Simon Willison",
+      "category": "AI",
+      "summary": "Python 3.15.0 added to actions/python-versions Bit of a niche link, but I've been waiting for this for a couple of days - I even told ChatGPT to check for it: Clone https://github.com/actions/python-versions and git pull once an hour until they add the stable 3.15 - then tell me ",
+      "published": "2026-10-11T01:59:42.165340+00:00",
+      "audio_url": null,
+      "duration": ""
+    },
+    {
+      "id": "a786585932c30cce",
+      "title": "Dwarf Fortress uses version control now",
+      "link": "https://simonwillison.net/2026/Oct/11/dwarf-fortress/",
+      "source": "Simon Willison",
+      "category": "AI",
+      "summary": "I remember hearing a while ago that Dwarf Fortress didn't use version control. That fact has been lodged in my head, because given its inherent complexity I have trouble imagining a codebase that would benefit from version control more . That's art. I went looking and I'm sad to ",
+      "published": "2026-10-11T01:59:42.165263+00:00",
+      "audio_url": null,
+      "duration": ""
+    },
+    {
+      "id": "35dc91695d5dee44",
+      "title": "Satya Nadella says we should assume all AI models are \u2018compromised\u2019",
+      "link": "https://www.theverge.com/ai-artificial-intelligence/1009337/satya-nadella-says-we-should-assume-all-ai-models-are-compromised",
+      "source": "The Verge \u2014 AI",
+      "category": "AI",
+      "summary": "In a lengthy post on X, Microsoft's CEO laid out his views on the dangers posed by highly advanced AI models and how to confront those risks. Nadella says we can no longer accept a world where AI is treated as a \"set of nested black boxes\" whose advice and actions we simply accep",
+      "published": "2026-10-11T01:59:41.675658+00:00",
+      "audio_url": null,
+      "duration": ""
+    },
+    {
+      "id": "594ca9d077905efb",
+      "title": "Daily AI Intelligence \u2014 Episode 10 (Sun Oct 11, 2026): OpenAI Fires Three Safety Researchers, Zuckerberg's Muse Safety Gamble",
+      "link": "https://muse.ai/podcasts/media/1248297608376725/94f09345-ad4a-4981-83dd-e3206bbf5c4e/ep-ab745e5c-2253-49cc-9628-7146fdf01346.mp3",
+      "source": "Daily AI Intelligence",
+      "category": "Podcast",
+      "summary": "Episode 10: OpenAI fires three safety researchers over 'breach of trust' as they allege safety suppression; report claims Zuckerberg green-lit Muse despite safety concerns; Grok quotas tighten; CoreWeave's 240 MW India campus; Nvidia eyes Reflection AI. AI Generated",
+      "published": "2026-10-11T01:02:15+00:00",
+      "audio_url": "https://muse.ai/podcasts/media/1248297608376725/94f09345-ad4a-4981-83dd-e3206bbf5c4e/ep-ab745e5c-2253-49cc-9628-7146fdf01346.mp3",
+      "duration": "265"
+    },
     {
       "id": "e77e9ae83492452b",
       "title": "DistroKid has been quietly taking down songs in response to UMG lawsuit",
@@ -1654,28 +1698,6 @@
       "duration": ""
     },
     {
-      "id": "4cfa73e20de35720",
-      "title": "S3 Is the Future, S3 Is the Past",
-      "link": "https://simonwillison.net/2026/Sep/27/hn-49871741/",
-      "source": "Simon Willison",
-      "category": "AI",
-      "summary": "My comment on S3 Is the Future, S3 Is the Past &mdash; Hacker News. One thing I find notable about S3 today is that, while it used to drop in price reasonably often, there hasn't been a price drop in a full decade : 2006-03-14 $0.150/GB-month 2010-11-01 $0.140/GB-month 2012-02-01",
-      "published": "2026-10-04T06:38:20.832001+00:00",
-      "audio_url": null,
-      "duration": ""
-    },
-    {
-      "id": "558841854585e6c7",
-      "title": "2026 in LLMs (so far)",
-      "link": "https://simonwillison.net/2026/Sep/27/2026-in-llms-so-far/",
-      "source": "Simon Willison",
-      "category": "AI",
-      "summary": "On Friday I gave the closing keynote at the WeAreDevelopers World Congress North America in San Jose. I tied together the key trends from the past year into a chronological exploration of everything that happened in 2026. The video is on YouTube ; here are my annotated slides and",
-      "published": "2026-10-04T06:38:20.831969+00:00",
-      "audio_url": null,
-      "duration": ""
-    },
-    {
       "id": "78ffcfd0a288af0c",
       "title": "Amazon writes scary blog warning communities not to block data centers",
       "link": "https://www.theverge.com/tech/1003929/amazon-ai-data-center-blog-warning",
@@ -1705,17 +1727,6 @@
       "category": "AI",
       "summary": "Madison, a server in New York City, greets every table by asking about each diner's allergies. Lately, there have been some close calls. \"Sometimes people will tell me they have a shellfish allergy, and I'll come back, and they won't ask me any questions,\" says Madison, who asked",
       "published": "2026-10-04T06:38:20.631393+00:00",
-      "audio_url": null,
-      "duration": ""
-    },
-    {
-      "id": "69164ce789ec620a",
-      "title": "Breaking up (with Elon Musk) is hard to do",
-      "link": "https://www.theverge.com/tech/1004177/elon-musk-unfollows-shivon-zilis",
-      "source": "The Verge \u2014 AI",
-      "category": "AI",
-      "summary": "In a throwback to MySpace-style internet drama, Shivon Zilis announced that she and the father of her four children, Elon Musk, had broken up on X. To do so, she quote-tweeted a post from \"Big Tech Alert,\" an account that, among other things, monitors what accounts are following ",
-      "published": "2026-10-04T06:38:20.631361+00:00",
       "audio_url": null,
       "duration": ""
     },
