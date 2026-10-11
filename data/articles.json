@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-11T10:00:11.044119+00:00",
+  "generated_at": "2026-10-11T14:00:22.037893+00:00",
   "sources_polled": [
     "The Verge \u2014 AI",
     "Simon Willison",
@@ -14,6 +14,17 @@
     "Technology Learnings"
   ],
   "articles": [
+    {
+      "id": "ea95eacbd85b4f83",
+      "title": "Learning to use local AI is exciting, overwhelming, and frustrating",
+      "link": "https://www.theverge.com/ai-artificial-intelligence/1008484/learning-local-ai-hermes-qwen-model-mac-studio-testing-diary-progress",
+      "source": "The Verge \u2014 AI",
+      "category": "AI",
+      "summary": "I'm embarking on a journey I've so far been hesitant to go on: actually using AI on the regular. Giving my most personal data to cloud services has been a major hold up for me, but it's increasingly possible to run powerful models locally to see what they're capable of. Is this t",
+      "published": "2026-10-11T13:59:56.167610+00:00",
+      "audio_url": null,
+      "duration": ""
+    },
     {
       "id": "ffe9771dd0f2e869",
       "title": "Python 3.15.0 added to actions/python-versions",
@@ -1716,17 +1727,6 @@
       "category": "AI",
       "summary": "San Antonio City Councilmember Ric Galvan remembers when data centers first arrived in his city in the 2000s, looking like relatively unassuming office buildings. But that's changed in recent years, as data centers have grown into massive \"hyperscale\" facilities spanning millions",
       "published": "2026-10-04T06:38:20.631426+00:00",
-      "audio_url": null,
-      "duration": ""
-    },
-    {
-      "id": "b3a9a516e91b03e6",
-      "title": "AI hallucinations are making entitled customers even worse",
-      "link": "https://www.theverge.com/report/1002963/ai-hallucinations-customer-service-jobs-agents",
-      "source": "The Verge \u2014 AI",
-      "category": "AI",
-      "summary": "Madison, a server in New York City, greets every table by asking about each diner's allergies. Lately, there have been some close calls. \"Sometimes people will tell me they have a shellfish allergy, and I'll come back, and they won't ask me any questions,\" says Madison, who asked",
-      "published": "2026-10-04T06:38:20.631393+00:00",
       "audio_url": null,
       "duration": ""
     },
