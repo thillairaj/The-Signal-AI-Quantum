@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-12T10:00:12.490332+00:00",
+  "generated_at": "2026-10-12T14:00:41.127087+00:00",
   "sources_polled": [
     "The Verge \u2014 AI",
     "Simon Willison",
@@ -14,6 +14,39 @@
     "Technology Learnings"
   ],
   "articles": [
+    {
+      "id": "f35a073890448086",
+      "title": "Microsoft\u2019s new AI chip makes it less reliant on Nvidia\u2019s GPUs",
+      "link": "https://www.theverge.com/news/1009465/microsoft-maia-300-chip-improvements-rollout",
+      "source": "The Verge \u2014 AI",
+      "category": "AI",
+      "summary": "Microsoft is announcing its third-generation Maia in-house AI chip today, designed to be the \"primary AI inference system\" for Microsoft's products and services. Maia 300 not only improves the cost and efficiency of running AI workloads in the cloud, it's also more capable of han",
+      "published": "2026-10-12T13:59:46.695626+00:00",
+      "audio_url": null,
+      "duration": ""
+    },
+    {
+      "id": "5dfaa1d43f85e664",
+      "title": "Amazon has over 1 million robot workers. What\u2019s next for human employees?",
+      "link": "https://arstechnica.com/ai/2026/10/inside-amazons-robotic-arms-race-and-what-it-means-for-the-future-of-human-work/",
+      "source": "Ars Technica AI",
+      "category": "AI",
+      "summary": "The second-largest corporate employer has bet big on robot workers to scale.",
+      "published": "2026-10-12T12:43:10+00:00",
+      "audio_url": null,
+      "duration": ""
+    },
+    {
+      "id": "e77534a29e124c97",
+      "title": "Dev used AI agents and more than 500 billion tokens to rebuild Call of Duty: Modern Warfare 2's source code",
+      "link": "https://www.tomshardware.com/tech-industry/artificial-intelligence/dev-used-ai-agents-and-more-than-500-billion-tokens-to-rebuild-call-of-duty-modern-warfare-2s-source-code-83-percent-of-the-2009-shooters-functions-now-match-the-original-byte-for-byte",
+      "source": "Anthropic/Claude News",
+      "category": "AI",
+      "summary": "Maurice Heumann's Claude and Codex agents rebuilt Modern Warfare 2's source; 83% of functions match the original byte for byte.",
+      "published": "2026-10-12T11:00:00+00:00",
+      "audio_url": null,
+      "duration": ""
+    },
     {
       "id": "63ddb34ce9542223",
       "title": "Tech Learning: Cybersecurity & SOC \u2014 Ep 8: Real Scenario: Malware on a Finance Laptop",
@@ -1775,17 +1808,6 @@
       "duration": ""
     },
     {
-      "id": "78ffcfd0a288af0c",
-      "title": "Amazon writes scary blog warning communities not to block data centers",
-      "link": "https://www.theverge.com/tech/1003929/amazon-ai-data-center-blog-warning",
-      "source": "The Verge \u2014 AI",
-      "category": "AI",
-      "summary": "Amazon is calling for people to support AI data center projects, or risk irreparable harm to the US economy and national security. In a more than 3,000 word blog posted today, Amazon web services CEO Matt Garman pushed back on public concerns around the impact that data centers m",
-      "published": "2026-10-04T06:38:20.631458+00:00",
-      "audio_url": null,
-      "duration": ""
-    },
-    {
       "id": "3efc92f60ee2bdc4",
       "title": "Daily AI Intelligence \u2014 Episode 3",
       "link": "https://muse.ai/podcasts/media/1248297608376725/94f09345-ad4a-4981-83dd-e3206bbf5c4e/ep-5d595bb0-b357-4c8f-a1b2-3780269ef6ff.mp3",
@@ -3322,17 +3344,6 @@
       "category": "AI",
       "summary": "Anthropic has reportedly held early discussions with London-based chip startup Fractile about purchasing the company's inference accelerators.",
       "published": "2026-05-03T12:51:54+00:00",
-      "audio_url": null,
-      "duration": ""
-    },
-    {
-      "id": "7096e2c894442039",
-      "title": "Victim of AI agent that deleted company's entire database gets their data back",
-      "link": "https://www.tomshardware.com/tech-industry/artificial-intelligence/victim-of-ai-agent-that-deleted-companys-entire-database-gets-their-data-back-cloud-provider-recovers-critical-files-and-broadens-its-48-hour-delayed-delete-policy",
-      "source": "Anthropic/Claude News",
-      "category": "AI",
-      "summary": "An SaaS business got all its data back after its cloud data provider recovered critical databases that were ruthlessly wiped by an AI agent gone rogue.",
-      "published": "2026-04-30T12:13:38+00:00",
       "audio_url": null,
       "duration": ""
     },
