@@ -4,7 +4,39 @@
     <title>The Signal</title>
     <link>https://thillairaj.github.io/The-Signal-AI-Quantum/</link>
     <description>A self-updating feed of AI, quantum computing, and podcast updates.</description>
-    <lastBuildDate>Mon, 12 Oct 2026 18:00:11 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 12 Oct 2026 22:00:04 +0000</lastBuildDate>
+    <item>
+      <title>datasette-ports 0.4</title>
+      <link>https://simonwillison.net/2026/Oct/12/datasette-ports/</link>
+      <guid isPermaLink="false">59e7fc14e8c1a5c7</guid>
+      <description>Release: datasette-ports 0.4 My plugin for detecting and listing all Datasette instances on the current machine now works with the latest version, and displays the detected PID as well. Knowing the PID makes it easier to attach the new Python 3.15 profiler . Tags: datasette</description>
+      <category>Simon Willison</category>
+      <pubDate>Mon, 12 Oct 2026 21:59:55 +0000</pubDate>
+    </item>
+    <item>
+      <title>Hello Python 3.15, goodbye 3.10, and now I can use 3.11</title>
+      <link>https://simonwillison.net/2026/Oct/12/python-3-15/</link>
+      <guid isPermaLink="false">92f57cbc8464c256</guid>
+      <description>Python 3.15 is here ! Here's the essential What's new in Python 3.15 guide, this year curated by 3.14 and 3.15 release manager Hugo van Kemenade. As someone who builds open source software that works in every supported Python version, I get to say goodbye to Python 3.10 and start</description>
+      <category>Simon Willison</category>
+      <pubDate>Mon, 12 Oct 2026 21:59:55 +0000</pubDate>
+    </item>
+    <item>
+      <title>Epic Games reportedly pivoting to "AI first" game development model</title>
+      <link>https://arstechnica.com/gaming/2026/10/report-epic-games-goes-all-in-on-ai-for-disney-collaboration/</link>
+      <guid isPermaLink="false">37b5a1e81dc84f2f</guid>
+      <description>"No more hand-written code" or AI-free art for delayed Marvel/Star Wars shooter.</description>
+      <category>Ars Technica AI</category>
+      <pubDate>Mon, 12 Oct 2026 20:59:50 +0000</pubDate>
+    </item>
+    <item>
+      <title>Anthropic's Claude AI submitted false murder tip to Philadelphia police</title>
+      <link>https://arstechnica.com/tech-policy/2026/10/anthropics-claude-ai-submitted-false-murder-tip-to-philadelphia-police/</link>
+      <guid isPermaLink="false">b470d062734aea8f</guid>
+      <description>“I may have information regarding this case," Claude AI told Philly police.</description>
+      <category>Ars Technica AI</category>
+      <pubDate>Mon, 12 Oct 2026 18:21:36 +0000</pubDate>
+    </item>
     <item>
       <title>Meta has some Wonder Full new AI models</title>
       <link>https://www.theverge.com/ai-artificial-intelligence/1009479/meta-muse-wonder-full-ai-model</link>
@@ -450,38 +482,6 @@
       <link>https://www.theverge.com/tech/1007904/google-gemini-ai-agent-enterprise</link>
       <guid isPermaLink="false">01ea6a099b26b8ac</guid>
       <description>Google is launching a "universal" Gemini AI agent that can work across apps and devices in the background. The tool, announced as part of the Gemini at Work event on Thursday, will be available within the Gemini Enterprise app, allowing users to chat with the Gemini agent and ass</description>
-      <category>The Verge — AI</category>
-      <pubDate>Thu, 08 Oct 2026 17:59:51 +0000</pubDate>
-    </item>
-    <item>
-      <title>Google’s AI note-taking app transcribes your meetings completely offline</title>
-      <link>https://www.theverge.com/tech/1007985/google-ai-notetaking-app-transcribe-offline</link>
-      <guid isPermaLink="false">472b20c3e8050224</guid>
-      <description>Google has released an experimental note-taking app that can transcribe meetings and audio files entirely offline, as reported earlier by TechCrunch. The app, called Google AI Edge Foresight, is free to use and runs on macOS using the company's on-device EmbeddingGemma 2 model. S</description>
-      <category>The Verge — AI</category>
-      <pubDate>Thu, 08 Oct 2026 17:59:51 +0000</pubDate>
-    </item>
-    <item>
-      <title>Anthropic bans ‘abusive or cruel behavior’ toward Claude</title>
-      <link>https://www.theverge.com/ai-artificial-intelligence/1008100/anthropic-new-usage-policy-abuse-claude</link>
-      <guid isPermaLink="false">ba390530e9c6e2d7</guid>
-      <description>Anthropic is making changes to its usage policy for the first time in over a year to reflect new and high-risk cases of misuse - including election interference, weapons development, surveillance, and health and financial uses. But one of the most significant changes prohibits "s</description>
-      <category>The Verge — AI</category>
-      <pubDate>Thu, 08 Oct 2026 17:59:51 +0000</pubDate>
-    </item>
-    <item>
-      <title>SpaceXAI backs Omarchy, the controversial Linux distro, with $1.5 million in compute</title>
-      <link>https://www.theverge.com/tech/1008148/spacexai-omarchy-grok-david-heinemeier-hansson</link>
-      <guid isPermaLink="false">0de6ad968814229b</guid>
-      <description>If Elon Musk and SpaceXAI were going to back any Linux distro, it seems obvious they'd back Omarchy. Today it was announced that SpaceXAI would be joining the Omacom Foundation, which oversees Omarchy, as a Founding Corporate Patron and donating $1.5 million worth of Grok tokens </description>
-      <category>The Verge — AI</category>
-      <pubDate>Thu, 08 Oct 2026 17:59:51 +0000</pubDate>
-    </item>
-    <item>
-      <title>USA Today becomes the latest publisher to sue OpenAI</title>
-      <link>https://www.theverge.com/ai-artificial-intelligence/1008198/usa-today-openai-copyright-lawsuit</link>
-      <guid isPermaLink="false">a08ca06c85543022</guid>
-      <description>USA Today Co., along with the several local newspapers it owns, is suing OpenAI over claims that the company copied "hundreds of thousands" of articles to train its AI models, as reported earlier by Reuters. In a filing on Thursday, the publisher asks for damages of more than $25</description>
       <category>The Verge — AI</category>
       <pubDate>Thu, 08 Oct 2026 17:59:51 +0000</pubDate>
     </item>

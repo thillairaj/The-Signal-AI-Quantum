@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-12T18:00:11.147599+00:00",
+  "generated_at": "2026-10-12T22:00:04.928693+00:00",
   "sources_polled": [
     "The Verge \u2014 AI",
     "Simon Willison",
@@ -14,6 +14,50 @@
     "Technology Learnings"
   ],
   "articles": [
+    {
+      "id": "59e7fc14e8c1a5c7",
+      "title": "datasette-ports 0.4",
+      "link": "https://simonwillison.net/2026/Oct/12/datasette-ports/",
+      "source": "Simon Willison",
+      "category": "AI",
+      "summary": "Release: datasette-ports 0.4 My plugin for detecting and listing all Datasette instances on the current machine now works with the latest version, and displays the detected PID as well. Knowing the PID makes it easier to attach the new Python 3.15 profiler . Tags: datasette",
+      "published": "2026-10-12T21:59:55.814511+00:00",
+      "audio_url": null,
+      "duration": ""
+    },
+    {
+      "id": "92f57cbc8464c256",
+      "title": "Hello Python 3.15, goodbye 3.10, and now I can use 3.11",
+      "link": "https://simonwillison.net/2026/Oct/12/python-3-15/",
+      "source": "Simon Willison",
+      "category": "AI",
+      "summary": "Python 3.15 is here ! Here's the essential What's new in Python 3.15 guide, this year curated by 3.14 and 3.15 release manager Hugo van Kemenade. As someone who builds open source software that works in every supported Python version, I get to say goodbye to Python 3.10 and start",
+      "published": "2026-10-12T21:59:55.814431+00:00",
+      "audio_url": null,
+      "duration": ""
+    },
+    {
+      "id": "37b5a1e81dc84f2f",
+      "title": "Epic Games reportedly pivoting to \"AI first\" game development model",
+      "link": "https://arstechnica.com/gaming/2026/10/report-epic-games-goes-all-in-on-ai-for-disney-collaboration/",
+      "source": "Ars Technica AI",
+      "category": "AI",
+      "summary": "\"No more hand-written code\" or AI-free art for delayed Marvel/Star Wars shooter.",
+      "published": "2026-10-12T20:59:50+00:00",
+      "audio_url": null,
+      "duration": ""
+    },
+    {
+      "id": "b470d062734aea8f",
+      "title": "Anthropic's Claude AI submitted false murder tip to Philadelphia police",
+      "link": "https://arstechnica.com/tech-policy/2026/10/anthropics-claude-ai-submitted-false-murder-tip-to-philadelphia-police/",
+      "source": "Ars Technica AI",
+      "category": "AI",
+      "summary": "\u201cI may have information regarding this case,\" Claude AI told Philly police.",
+      "published": "2026-10-12T18:21:36+00:00",
+      "audio_url": null,
+      "duration": ""
+    },
     {
       "id": "5b0bbc20b589187e",
       "title": "Meta has some Wonder Full new AI models",
@@ -1793,28 +1837,6 @@
       "category": "AI",
       "summary": "Muse is getting a lot of attention \u2014 including mine \u2014 because it\u2019s both groundbreaking technically (each user gets their own entire persistent Linux VM running in Meta\u2019s cloud) and because it\u2019s packaged in an easy-to-install easy-to-use way. It\u2019s literally presented as a cute mas",
       "published": "2026-10-04T06:38:20.832244+00:00",
-      "audio_url": null,
-      "duration": ""
-    },
-    {
-      "id": "ffc80d14a58cea97",
-      "title": "K\u0101k\u0101p\u014d Party",
-      "link": "https://simonwillison.net/2026/Sep/26/kakapo-party/",
-      "source": "Simon Willison",
-      "category": "AI",
-      "summary": "Tool: K\u0101k\u0101p\u014d Party I presented a closing keynote for the WeAreDevelopers World Congress North America yesterday. As a STAR moment I decided to weave in references to the record breaking k\u0101k\u0101p\u014d breeding season we had in 2026. For my closing slide I wanted to celebrate, and I had s",
-      "published": "2026-10-04T06:38:20.832194+00:00",
-      "audio_url": null,
-      "duration": ""
-    },
-    {
-      "id": "dbaa344dafea1b67",
-      "title": "Bluesky reply bot checker",
-      "link": "https://simonwillison.net/2026/Sep/27/bluesky-bot-check/",
-      "source": "Simon Willison",
-      "category": "AI",
-      "summary": "Tool: Bluesky reply bot checker Automated reply bots on Twitter are a scourge - as someone with a decent number of followers I attract a swarm of these, such that anything I post there attracts dozens of mindless automated replies. They've started manifesting on Bluesky as well. ",
-      "published": "2026-10-04T06:38:20.832044+00:00",
       "audio_url": null,
       "duration": ""
     },
