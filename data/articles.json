@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-11T21:59:55.509383+00:00",
+  "generated_at": "2026-10-12T02:00:05.661866+00:00",
   "sources_polled": [
     "The Verge \u2014 AI",
     "Simon Willison",
@@ -14,6 +14,61 @@
     "Technology Learnings"
   ],
   "articles": [
+    {
+      "id": "63ddb34ce9542223",
+      "title": "Tech Learning: Cybersecurity & SOC \u2014 Ep 8: Real Scenario: Malware on a Finance Laptop",
+      "link": "https://muse.ai/podcasts/media/1248297608376725/4720f1e9-8c94-4958-8367-c455f31c5edc/ep-23caf78a-9229-4ee9-ab34-f260c89de9ee.mp3",
+      "source": "Technology Learnings",
+      "category": "Podcast",
+      "summary": "Cybersecurity & SOC track: triaging, containing, and recovering from macro malware on a finance laptop. AI Generated",
+      "published": "2026-10-12T01:44:26+00:00",
+      "audio_url": "https://muse.ai/podcasts/media/1248297608376725/4720f1e9-8c94-4958-8367-c455f31c5edc/ep-23caf78a-9229-4ee9-ab34-f260c89de9ee.mp3",
+      "duration": "415"
+    },
+    {
+      "id": "c70823de2128a5d6",
+      "title": "Tech Learning: Cybersecurity & SOC \u2014 Ep 7: EDR Explained: Beyond Antivirus",
+      "link": "https://muse.ai/podcasts/media/1248297608376725/4720f1e9-8c94-4958-8367-c455f31c5edc/ep-97494c9c-0e68-44af-9d47-bcec0b741be4.mp3",
+      "source": "Technology Learnings",
+      "category": "Podcast",
+      "summary": "Cybersecurity & SOC track: how endpoint detection and response watches behavior to catch what classic antivirus misses. AI Generated",
+      "published": "2026-10-12T01:41:59+00:00",
+      "audio_url": "https://muse.ai/podcasts/media/1248297608376725/4720f1e9-8c94-4958-8367-c455f31c5edc/ep-97494c9c-0e68-44af-9d47-bcec0b741be4.mp3",
+      "duration": "416"
+    },
+    {
+      "id": "65a5eeee5de47411",
+      "title": "Tech Learning: Cybersecurity & SOC \u2014 Ep 6: Real Scenario: Leaked Credentials - Lockdown in 30 Minutes",
+      "link": "https://muse.ai/podcasts/media/1248297608376725/4720f1e9-8c94-4958-8367-c455f31c5edc/ep-72c5d62d-d045-456b-8de8-e5b66f4e15b2.mp3",
+      "source": "Technology Learnings",
+      "category": "Podcast",
+      "summary": "Cybersecurity & SOC track: a minute-by-minute walkthrough of containing a compromised account in thirty minutes. AI Generated",
+      "published": "2026-10-12T01:39:39+00:00",
+      "audio_url": "https://muse.ai/podcasts/media/1248297608376725/4720f1e9-8c94-4958-8367-c455f31c5edc/ep-72c5d62d-d045-456b-8de8-e5b66f4e15b2.mp3",
+      "duration": "404"
+    },
+    {
+      "id": "bc274c079af8f6c1",
+      "title": "Tech Learning: Cybersecurity & SOC \u2014 Ep 5: MFA and Least Privilege, Simply",
+      "link": "https://muse.ai/podcasts/media/1248297608376725/4720f1e9-8c94-4958-8367-c455f31c5edc/ep-a9c7d97e-e2b0-4d4b-97b7-f292896916ec.mp3",
+      "source": "Technology Learnings",
+      "category": "Podcast",
+      "summary": "Cybersecurity & SOC track: why passwords alone fail, and how multi factor authentication plus least privilege fix it. AI Generated",
+      "published": "2026-10-12T01:37:18+00:00",
+      "audio_url": "https://muse.ai/podcasts/media/1248297608376725/4720f1e9-8c94-4958-8367-c455f31c5edc/ep-a9c7d97e-e2b0-4d4b-97b7-f292896916ec.mp3",
+      "duration": "425"
+    },
+    {
+      "id": "08a5d82dc86edf33",
+      "title": "Daily AI Intelligence \u2014 Episode 11 (Mon Oct 12, 2026): Musk's Credit-Card Grok Shopping Push, OpenAI's Revenue Revision, Amazon\u2013Decart Acquisition Talks",
+      "link": "https://muse.ai/podcasts/media/1248297608376725/94f09345-ad4a-4981-83dd-e3206bbf5c4e/ep-0678c25e-a2d2-4c97-9db6-8fd67abc6cc1.mp3",
+      "source": "Daily AI Intelligence",
+      "category": "Podcast",
+      "summary": "Episode 11: Musk urges users to upload credit-card photos to Grok Bot for shopping; OpenAI cuts its 2026 revenue projection to 50 billion dollars; new research attributes 40 percent of agent web traffic to Meta's Muse; Microsoft's 30 CRM skills for Copilot; Amazon in talks to acq",
+      "published": "2026-10-12T01:08:21+00:00",
+      "audio_url": "https://muse.ai/podcasts/media/1248297608376725/94f09345-ad4a-4981-83dd-e3206bbf5c4e/ep-0678c25e-a2d2-4c97-9db6-8fd67abc6cc1.mp3",
+      "duration": "237"
+    },
     {
       "id": "7ec8afeed3530ddc",
       "title": "Silicon Valley is falling in line with Trump\u2019s attempt to rename AI",
