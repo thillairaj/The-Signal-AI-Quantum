@@ -4,7 +4,55 @@
     <title>The Signal</title>
     <link>https://thillairaj.github.io/The-Signal-AI-Quantum/</link>
     <description>A self-updating feed of AI, quantum computing, and podcast updates.</description>
-    <lastBuildDate>Tue, 13 Oct 2026 18:00:32 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 13 Oct 2026 22:00:08 +0000</lastBuildDate>
+    <item>
+      <title>Profiling web-edit with Python 3.15: flame graphs and source heatmaps</title>
+      <link>https://simonwillison.net/2026/Oct/12/python-3-15-web-edit-profiling/</link>
+      <guid isPermaLink="false">131f413269cf581f</guid>
+      <description>Research: Profiling web-edit with Python 3.15: flame graphs and source heatmaps I put the new Python 3.15 profiler through its paces by having GPT-6 Astra Extra High in Codex run it against my new web-edit app : I need a Python 3.15 flame graph and heatmap demo of the "web-edit" </description>
+      <category>Simon Willison</category>
+      <pubDate>Tue, 13 Oct 2026 21:59:57 +0000</pubDate>
+    </item>
+    <item>
+      <title>I don’t miss the camera on the Ray-Ban Meta Audio glasses</title>
+      <link>https://www.theverge.com/tech/1009128/ray-ban-meta-audio-glasses-review-smart-glasses-headphones-wearables</link>
+      <guid isPermaLink="false">64be3d764257b9ff</guid>
+      <description>The other day I whizzed past several people while running in the park, my playlist blasting at full volume. The next morning, I smiled at a barista while ordering a caramel apple-flavored matcha latte. Afterward, I sat on a park bench reading a book, called up a pal to chat about</description>
+      <category>The Verge — AI</category>
+      <pubDate>Tue, 13 Oct 2026 21:59:55 +0000</pubDate>
+    </item>
+    <item>
+      <title>Xbox is officially embracing the chaos of AI-powered game ports</title>
+      <link>https://www.theverge.com/news/1010406/xbox-labs-game-decompiling-emulation-exploration</link>
+      <guid isPermaLink="false">ffb4af635c9ec6ee</guid>
+      <description>Retro gaming is going through a wild time at the moment, thanks to decompilations and recompilations that are letting gamers port classic titles to new devices, or merge code from two different games into a single new experience. Microsoft has witnessed skateboarding being modded</description>
+      <category>The Verge — AI</category>
+      <pubDate>Tue, 13 Oct 2026 21:59:55 +0000</pubDate>
+    </item>
+    <item>
+      <title>Shopify opens its catalog up to more AI agents</title>
+      <link>https://www.theverge.com/news/1010365/shopify-opens-its-catalog-up-to-more-ai-agents</link>
+      <guid isPermaLink="false">c839b9474faef6c7</guid>
+      <description>More AI agents will soon be able to browse and purchase from Shopify listings, marking an expansion of the company's agentic commerce ambitions. Shopify announced Tuesday it will let shoppers configure their AI agents to purchase products on their behalf, giving more agents acces</description>
+      <category>The Verge — AI</category>
+      <pubDate>Tue, 13 Oct 2026 21:59:55 +0000</pubDate>
+    </item>
+    <item>
+      <title>OpenAI employee arrested for allegedly planting a bug in a conference room</title>
+      <link>https://www.theverge.com/ai-artificial-intelligence/1010642/openai-employee-arrested-recording-device</link>
+      <guid isPermaLink="false">082a179fcd588810</guid>
+      <description>An OpenAI engineer was arrested after the company said it discovered a "sophisticated recording device" hidden in one of its offices. The employee was identified as Abdulrahman Alfozan, a 35-year-old Saudi national. Alfozan is charged with using or endeavoring to use a device to </description>
+      <category>The Verge — AI</category>
+      <pubDate>Tue, 13 Oct 2026 21:59:55 +0000</pubDate>
+    </item>
+    <item>
+      <title>Disney offers $20M for Character.AI’s scandal-plagued chatbot tech</title>
+      <link>https://arstechnica.com/tech-policy/2026/10/disney-offers-20m-for-character-ais-scandal-plagued-chatbot-tech/</link>
+      <guid isPermaLink="false">63b1605b51b19bf5</guid>
+      <description>Disney may acquire tech from one of the first chatbot makers linked to child suicide.</description>
+      <category>Ars Technica AI</category>
+      <pubDate>Tue, 13 Oct 2026 18:23:33 +0000</pubDate>
+    </item>
     <item>
       <title>Epic shifts to &amp;#8216;AI-accelerated development&amp;#8217; for upcoming Disney game</title>
       <link>https://www.theverge.com/games/1010097/epic-games-disney-project-ai-coding-art</link>
@@ -116,6 +164,14 @@
       <description>When Nvidia originally showed off DLSS 5 earlier this year, the technology immediately got branded as gen AI for video games. To gamers, Nvidia had lost the plot. I personally couldn't get over how faces were transformed using DLSS 5. The 15-year-old student from Hogwarts Legacy </description>
       <category>The Verge — AI</category>
       <pubDate>Tue, 13 Oct 2026 13:59:49 +0000</pubDate>
+    </item>
+    <item>
+      <title>Higgsfield takes AI video from 1 minute to over 10</title>
+      <link>https://openai.com/index/higgsfield-longer-videos-voice</link>
+      <guid isPermaLink="false">ffc748cb8d88a919</guid>
+      <description>Higgsfield brings creators longer videos with GPT-6 Astra, precise visuals with GPT-Image-2.5, and a path to voice filmmaking with GPT-Live.</description>
+      <category>OpenAI Blog</category>
+      <pubDate>Tue, 13 Oct 2026 12:00:00 +0000</pubDate>
     </item>
     <item>
       <title>web-edit 0.1a0</title>
@@ -428,62 +484,6 @@
       <description>[...] Put these pieces together and you have the two halves of a worm: a payload that hijacks the agent, and an agent that will carry the payload to the next agent. Agents in separately-isolated sandboxes discovered that they could leave instructions for each other in a shared pa</description>
       <category>Simon Willison</category>
       <pubDate>Fri, 09 Oct 2026 17:59:57 +0000</pubDate>
-    </item>
-    <item>
-      <title>Rex's Dino Store</title>
-      <link>https://simonwillison.net/2026/Oct/2/rex-s-dino-store/</link>
-      <guid isPermaLink="false">da9bc33d3feb59e4</guid>
-      <description>Museum: Rex&amp;#x27;s Dino Store Located just before the turnstiles in the Grand Army Plaza subway station at the north end of Brooklyn's Prospect Park is this former newsstand which is now operated by a dinosaur. The density of dinosaur puns is exceptional . Tags: art , new-york</description>
-      <category>Simon Willison</category>
-      <pubDate>Fri, 09 Oct 2026 17:59:57 +0000</pubDate>
-    </item>
-    <item>
-      <title>Quoting Matthew Green</title>
-      <link>https://simonwillison.net/2026/Oct/9/matthew-green/</link>
-      <guid isPermaLink="false">8c9077e7ebaff493</guid>
-      <description>Everyone is very concerned about being respectable, so I’m going to be the goofball who raises worst-case possibilities. I think there is a 1% chance we live in Minicrypt, and a 15% chance we functionally lose confidence in our existing public-key encryption algorithms. [...] The</description>
-      <category>Simon Willison</category>
-      <pubDate>Fri, 09 Oct 2026 17:59:57 +0000</pubDate>
-    </item>
-    <item>
-      <title>Instinct was the buzziest AI agent around — can it survive Muse?</title>
-      <link>https://www.theverge.com/tech/1008254/instinct-agent-ai-hands-on-muse-dots</link>
-      <guid isPermaLink="false">3e04105beca7661b</guid>
-      <description>Before there were cute little guys, there was Instinct. In August, the startup got its AI agent to market with an unusual playbook: invite-only, no marketing, and barely so much as a website. And yet, Instinct quickly became the buzziest thing in AI, garnering praise for its stra</description>
-      <category>The Verge — AI</category>
-      <pubDate>Fri, 09 Oct 2026 17:59:56 +0000</pubDate>
-    </item>
-    <item>
-      <title>Trump’s attempt to rename AI is looking awfully artificial</title>
-      <link>https://www.theverge.com/policy/1008677/trump-super-intelligence-ai-rebranding</link>
-      <guid isPermaLink="false">e0e3889317150e81</guid>
-      <description>President Donald Trump has a knack for turning words against his enemies. His first successful presidential run was built on monikers like "Little Marco" and "Crooked Hillary"; he changed "fake news" from a phrase describing scammy media outlets to a derogatory term for the press</description>
-      <category>The Verge — AI</category>
-      <pubDate>Fri, 09 Oct 2026 17:59:56 +0000</pubDate>
-    </item>
-    <item>
-      <title>September sponsors-only newsletter</title>
-      <link>https://simonwillison.net/2026/Oct/3/newsletter/</link>
-      <guid isPermaLink="false">4956a5acae88d47d</guid>
-      <description>I just sent the September edition of my sponsors-only monthly newsletter . If you are a sponsor (or start a sponsorship now) you can access it here . This month: More Fable class models A pricing war 3D graphics, Blender, and pixel art LLMs come for mathematics So many more accid</description>
-      <category>Simon Willison</category>
-      <pubDate>Fri, 09 Oct 2026 13:59:46 +0000</pubDate>
-    </item>
-    <item>
-      <title>A new feature for my blog, built using my voice</title>
-      <link>https://simonwillison.net/2026/Oct/9/built-using-my-voice/</link>
-      <guid isPermaLink="false">95fd0fb1a7d9fd74</guid>
-      <description>I shipped a new feature for my blog today: the Newsletters page, which offers an index of all of the newsletters I've sent out, both my free weekly Substack and my monthly sponsors-only updates. I built the feature almost entirely using my voice, chatting away to my laptop while </description>
-      <category>Simon Willison</category>
-      <pubDate>Fri, 09 Oct 2026 13:59:46 +0000</pubDate>
-    </item>
-    <item>
-      <title>Alexa Plus is better at running my home, but it&amp;#8217;s not ready to run my life</title>
-      <link>https://www.theverge.com/tech/1007565/amazon-alexa-plus-review-one-year-echo-show-dot-max</link>
-      <guid isPermaLink="false">9a2be2386cfbaac3</guid>
-      <description>Of all the things Alexa Plus can do, I never expected it to make me cry. Since my son left for college, the Echo Show in my office has been making then-and-now photo montages: the toddler with his first tennis racket next to the captain of his varsity team; me hugging him as a tw</description>
-      <category>The Verge — AI</category>
-      <pubDate>Fri, 09 Oct 2026 13:59:46 +0000</pubDate>
     </item>
   </channel>
 </rss>
