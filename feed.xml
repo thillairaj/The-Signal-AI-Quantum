@@ -4,7 +4,39 @@
     <title>The Signal</title>
     <link>https://thillairaj.github.io/The-Signal-AI-Quantum/</link>
     <description>A self-updating feed of AI, quantum computing, and podcast updates.</description>
-    <lastBuildDate>Tue, 13 Oct 2026 09:59:48 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 13 Oct 2026 14:00:05 +0000</lastBuildDate>
+    <item>
+      <title>Quoting Geoffrey Huntley</title>
+      <link>https://simonwillison.net/2026/Oct/13/geoffrey-huntley/</link>
+      <guid isPermaLink="false">87e22abf54d8b628</guid>
+      <description>If the agent isn't using my diagnostics library, I could introspect and update AGENTS.md, but there's still a delta, and it'll drift. Instead, I write a pre-commit hook that checks the git diff for direct calls to observability modules that bypass my diagnostics module. Boom: fai</description>
+      <category>Simon Willison</category>
+      <pubDate>Tue, 13 Oct 2026 13:59:50 +0000</pubDate>
+    </item>
+    <item>
+      <title>Character.AI files for bankruptcy</title>
+      <link>https://www.theverge.com/ai-artificial-intelligence/1009802/character-ai-files-for-bankruptcy-disney</link>
+      <guid isPermaLink="false">17822a6c9063e726</guid>
+      <description>Character.AI, one of the first breakout startups of the generative AI boom, has filed for bankruptcy and is selling some of its assets to Disney. The company, which builds various online bots for users to chat or roleplay with, has faced mounting scrutiny and lawsuits over the sa</description>
+      <category>The Verge — AI</category>
+      <pubDate>Tue, 13 Oct 2026 13:59:49 +0000</pubDate>
+    </item>
+    <item>
+      <title>Apple launches HomeView, its first smart display for the home</title>
+      <link>https://www.theverge.com/tech/1009704/apple-homeview-smart-display-first-look</link>
+      <guid isPermaLink="false">fa1d998e852ed881</guid>
+      <description>It's finally here: Apple's long-rumored smart display, the Apple HomeView, has arrived. I got a first look at the device in New York City this week, and it's gorgeous. The HomeView puts a small, vibrant screen atop a speaker base for taking video calls, beautifully displaying pho</description>
+      <category>The Verge — AI</category>
+      <pubDate>Tue, 13 Oct 2026 13:59:49 +0000</pubDate>
+    </item>
+    <item>
+      <title>DLSS 5 gets toned down for its Hogwarts Legacy debut next month</title>
+      <link>https://www.theverge.com/news/1009904/dlss-5-hogwarts-legacy-changes-improvements</link>
+      <guid isPermaLink="false">579aa4e27ad56348</guid>
+      <description>When Nvidia originally showed off DLSS 5 earlier this year, the technology immediately got branded as gen AI for video games. To gamers, Nvidia had lost the plot. I personally couldn't get over how faces were transformed using DLSS 5. The 15-year-old student from Hogwarts Legacy </description>
+      <category>The Verge — AI</category>
+      <pubDate>Tue, 13 Oct 2026 13:59:49 +0000</pubDate>
+    </item>
     <item>
       <title>web-edit 0.1a0</title>
       <link>https://simonwillison.net/2026/Oct/12/web-edit/</link>
@@ -452,38 +484,6 @@
       <description>Data Engineering &amp; Analytics track: a 2 AM pipeline incident walkthrough — tracing upstream, idempotent backfills, and data quality guardrails. AI Generated</description>
       <category>Technology Learnings</category>
       <pubDate>Fri, 09 Oct 2026 01:43:07 +0000</pubDate>
-    </item>
-    <item>
-      <title>Tech Learning: Data Engineering &amp; Analytics — Ep 5: Batch vs Streaming Pipelines</title>
-      <link>https://muse.ai/podcasts/media/1248297608376725/4720f1e9-8c94-4958-8367-c455f31c5edc/ep-319793fe-bd68-46e3-9da4-989d01471f37.mp3</link>
-      <guid isPermaLink="false">d38b8d716505521c</guid>
-      <description>Data Engineering &amp; Analytics track: batch vs streaming pipelines, ETL vs ELT, and how freshness requirements pick the pattern. AI Generated</description>
-      <category>Technology Learnings</category>
-      <pubDate>Fri, 09 Oct 2026 01:43:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>Daily AI Intelligence — Episode 8 (Fri Oct 9, 2026): Google Gemini Agent, Ultrafast Sol, DeepSeek Mega Raise</title>
-      <link>https://muse.ai/podcasts/media/1248297608376725/94f09345-ad4a-4981-83dd-e3206bbf5c4e/ep-72446f8b-dd17-4084-adf9-b4916a5e8963.mp3</link>
-      <guid isPermaLink="false">3e537b56113718b2</guid>
-      <description>Google launches its universal workplace agent; OpenAI prices speed at 6x with GPT-6.1 Sol Ultrafast; Anthropic adds dashboards and animations to Claude plus a USD 150 million science commitment; Grok Bot starts routing to rival models; Muse traffic surges invisibly across busines</description>
-      <category>Daily AI Intelligence</category>
-      <pubDate>Fri, 09 Oct 2026 01:06:10 +0000</pubDate>
-    </item>
-    <item>
-      <title>Quoting Carson Gross</title>
-      <link>https://simonwillison.net/2026/Oct/8/carson-gross/</link>
-      <guid isPermaLink="false">f55b626ec460a20b</guid>
-      <description>Computer programming is, fundamentally, about two things: Problem-solving using computers Learning to control complexity while solving these problems I have a hard time imagining a future where knowing how to solve problems with computers and how to control the complexity of thos</description>
-      <category>Simon Willison</category>
-      <pubDate>Thu, 08 Oct 2026 21:59:53 +0000</pubDate>
-    </item>
-    <item>
-      <title>California is trying to shut down robot vs. human cage matches</title>
-      <link>https://www.theverge.com/tech/1008401/california-shut-down-rek-fighting-robot-company-human</link>
-      <guid isPermaLink="false">4079389ad67f283a</guid>
-      <description>The California State Athletic Commission sent a cease-and-desist letter to a startup that hosted a match between a human and a robot last month, as reported by The New York Times. The fight, which took place on September 18th, pitted a human, Frankie LaPenna, against a humanoid r</description>
-      <category>The Verge — AI</category>
-      <pubDate>Thu, 08 Oct 2026 21:59:53 +0000</pubDate>
     </item>
   </channel>
 </rss>

@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-13T09:59:48.701891+00:00",
+  "generated_at": "2026-10-13T14:00:05.871488+00:00",
   "sources_polled": [
     "The Verge \u2014 AI",
     "Simon Willison",
@@ -14,6 +14,50 @@
     "Technology Learnings"
   ],
   "articles": [
+    {
+      "id": "87e22abf54d8b628",
+      "title": "Quoting Geoffrey Huntley",
+      "link": "https://simonwillison.net/2026/Oct/13/geoffrey-huntley/",
+      "source": "Simon Willison",
+      "category": "AI",
+      "summary": "If the agent isn't using my diagnostics library, I could introspect and update AGENTS.md, but there's still a delta, and it'll drift. Instead, I write a pre-commit hook that checks the git diff for direct calls to observability modules that bypass my diagnostics module. Boom: fai",
+      "published": "2026-10-13T13:59:50.433273+00:00",
+      "audio_url": null,
+      "duration": ""
+    },
+    {
+      "id": "17822a6c9063e726",
+      "title": "Character.AI files for bankruptcy",
+      "link": "https://www.theverge.com/ai-artificial-intelligence/1009802/character-ai-files-for-bankruptcy-disney",
+      "source": "The Verge \u2014 AI",
+      "category": "AI",
+      "summary": "Character.AI, one of the first breakout startups of the generative AI boom, has filed for bankruptcy and is selling some of its assets to Disney. The company, which builds various online bots for users to chat or roleplay with, has faced mounting scrutiny and lawsuits over the sa",
+      "published": "2026-10-13T13:59:49.830693+00:00",
+      "audio_url": null,
+      "duration": ""
+    },
+    {
+      "id": "fa1d998e852ed881",
+      "title": "Apple launches HomeView, its first smart display for the home",
+      "link": "https://www.theverge.com/tech/1009704/apple-homeview-smart-display-first-look",
+      "source": "The Verge \u2014 AI",
+      "category": "AI",
+      "summary": "It's finally here: Apple's long-rumored smart display, the Apple HomeView, has arrived. I got a first look at the device in New York City this week, and it's gorgeous. The HomeView puts a small, vibrant screen atop a speaker base for taking video calls, beautifully displaying pho",
+      "published": "2026-10-13T13:59:49.830635+00:00",
+      "audio_url": null,
+      "duration": ""
+    },
+    {
+      "id": "579aa4e27ad56348",
+      "title": "DLSS 5 gets toned down for its Hogwarts Legacy debut next month",
+      "link": "https://www.theverge.com/news/1009904/dlss-5-hogwarts-legacy-changes-improvements",
+      "source": "The Verge \u2014 AI",
+      "category": "AI",
+      "summary": "When Nvidia originally showed off DLSS 5 earlier this year, the technology immediately got branded as gen AI for video games. To gamers, Nvidia had lost the plot. I personally couldn't get over how faces were transformed using DLSS 5. The 15-year-old student from Hogwarts Legacy ",
+      "published": "2026-10-13T13:59:49.830564+00:00",
+      "audio_url": null,
+      "duration": ""
+    },
     {
       "id": "93062c67d6f00e76",
       "title": "web-edit 0.1a0",
@@ -1522,28 +1566,6 @@
       "duration": ""
     },
     {
-      "id": "0d7653e5ccb1edf6",
-      "title": "An open-source tool lets you delete 12GB of Apple Intelligence data on macOS",
-      "link": "https://www.theverge.com/ai-artificial-intelligence/1004672/mac-delete-apple-intelligence-ai-tool",
-      "source": "The Verge \u2014 AI",
-      "category": "AI",
-      "summary": "Getting some extra storage space on your Mac could be as easy as deleting Apple's AI features with a new open-source command line tool called RemoveMacAI. There used to be a single Settings toggle for disabling Apple Intelligence, but that was removed in macOS 27. Now, the models",
-      "published": "2026-10-05T16:30:23.161064+00:00",
-      "audio_url": null,
-      "duration": ""
-    },
-    {
-      "id": "b48158e5ab87dd61",
-      "title": "Sen. Adam Schiff on AI regulation, free speech, and impeaching Trump one more time",
-      "link": "https://www.theverge.com/podcast/1004286/senator-adam-schiff-ai-trump-regulation-corruption",
-      "source": "The Verge \u2014 AI",
-      "category": "AI",
-      "summary": "Today, I\u2019m talking with Sen. Adam Schiff, a Democrat from California. Schiff sits on a number of committees with oversight into tech and AI: intellectual property, antitrust, privacy and technology \u2014 it\u2019s all there. I really wanted to ask him about how we might regulate anything ",
-      "published": "2026-10-05T16:30:23.160991+00:00",
-      "audio_url": null,
-      "duration": ""
-    },
-    {
       "id": "78ad53815846c15c",
       "title": "Our approach to EU text provenance rules",
       "link": "https://openai.com/index/eu-text-provenance",
@@ -1641,17 +1663,6 @@
       "published": "2026-10-05T01:00:23+00:00",
       "audio_url": "https://muse.ai/podcasts/media/1248297608376725/94f09345-ad4a-4981-83dd-e3206bbf5c4e/ep-a6f0f922-2b59-469d-b9f3-1d5f87bcb228.mp3",
       "duration": "237"
-    },
-    {
-      "id": "d5a8ffd2dd505a15",
-      "title": "An AI couldn\u2019t beat humans at StarCraft, so it decided to cheat",
-      "link": "https://www.theverge.com/ai-artificial-intelligence/1004543/openai-gpt-cheat-starcraft",
-      "source": "The Verge \u2014 AI",
-      "category": "AI",
-      "summary": "StarSkirmish pits AI-made StarCraft-playing bots against one another, as well as against human-made bots. OpenAI's GPT-6 Astra and Claude Opus 5.5 were essentially tied as the best-performing AI-made bots, but they couldn't top Stardust, the top-rated human-made bot. On Friday, G",
-      "published": "2026-10-04T19:34:07.381335+00:00",
-      "audio_url": null,
-      "duration": ""
     },
     {
       "id": "ee552e49b6c7c965",
@@ -1837,17 +1848,6 @@
       "category": "AI",
       "summary": "The more time I spend working with coding agents, the more convinced I am that they make software engineering even harder. We can do amazing things with them, but unlocking their full potential requires extraordinary discipline and knowledge. Tags: coding-agents , ai , llms",
       "published": "2026-10-04T06:38:20.832286+00:00",
-      "audio_url": null,
-      "duration": ""
-    },
-    {
-      "id": "28f369bbea848f9a",
-      "title": "Northern Gannet, Great Blue Heron, California Brown Pelican",
-      "link": "https://simonwillison.net/2026/Sep/25/sighting-403293902/",
-      "source": "Simon Willison",
-      "category": "AI",
-      "summary": "Northern Gannet, Great Blue Heron, California Brown Pelican, in Monterey Bay National Marine Sanctuary, CA, US, CA New 200-800mm Canon EF lens got me my best photo of Morris yet. They really like hanging out under that sign in the harbor! Tags: photography , wildlife",
-      "published": "2026-10-04T06:38:20.832266+00:00",
       "audio_url": null,
       "duration": ""
     },
