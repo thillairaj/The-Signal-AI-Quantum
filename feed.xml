@@ -4,7 +4,23 @@
     <title>The Signal</title>
     <link>https://thillairaj.github.io/The-Signal-AI-Quantum/</link>
     <description>A self-updating feed of AI, quantum computing, and podcast updates.</description>
-    <lastBuildDate>Mon, 12 Oct 2026 22:00:04 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 13 Oct 2026 01:59:53 +0000</lastBuildDate>
+    <item>
+      <title>web-edit 0.1a0</title>
+      <link>https://simonwillison.net/2026/Oct/12/web-edit/</link>
+      <guid isPermaLink="false">93062c67d6f00e76</guid>
+      <description>Release: web-edit 0.1a0 I was working on a project from my phone using Codex Remote when I found myself wanting to edit a credentials file without round-tripping those credentials through the LLM itself. So... I had Codex and GPT-6 Astra Extra High build this Python web app which</description>
+      <category>Simon Willison</category>
+      <pubDate>Tue, 13 Oct 2026 01:59:42 +0000</pubDate>
+    </item>
+    <item>
+      <title>Daily AI Intelligence — Episode 12 (Tue Oct 13, 2026): Meta's Muse Wonder Frontier Model, HCLTech–Anthropic Partnership, OpenAI's EU Watermark</title>
+      <link>https://muse.ai/podcasts/media/1248297608376725/94f09345-ad4a-4981-83dd-e3206bbf5c4e/ep-2c99a941-4407-4667-9f77-0c237a92d4a3.mp3</link>
+      <guid isPermaLink="false">d4fe547e1001af92</guid>
+      <description>Meta launches its first frontier model (Muse Wonder), Anthropic signs a Global Premier Partnership with HCLTech, OpenAI rolls out an invisible EU watermark, xAI bundles Grok/Cursor/X Premium, Microsoft upgrades Copilot Notebooks, and a cautionary DeepSeek long-context study. AI G</description>
+      <category>Daily AI Intelligence</category>
+      <pubDate>Tue, 13 Oct 2026 01:03:31 +0000</pubDate>
+    </item>
     <item>
       <title>datasette-ports 0.4</title>
       <link>https://simonwillison.net/2026/Oct/12/datasette-ports/</link>
@@ -468,22 +484,6 @@
       <description>The California State Athletic Commission sent a cease-and-desist letter to a startup that hosted a match between a human and a robot last month, as reported by The New York Times. The fight, which took place on September 18th, pitted a human, Frankie LaPenna, against a humanoid r</description>
       <category>The Verge — AI</category>
       <pubDate>Thu, 08 Oct 2026 21:59:53 +0000</pubDate>
-    </item>
-    <item>
-      <title>Artificial is a wicked satire that also sticks to the facts</title>
-      <link>https://www.theverge.com/ai-artificial-intelligence/1007786/artificial-is-a-wicked-satire-that-also-sticks-to-the-facts</link>
-      <guid isPermaLink="false">c0dbfb6ce7667ee0</guid>
-      <description>At the New York Film Festival premiere of Artificial, Luca Guadagnino's satirical Sam Altman biopic, the director said onstage that "[when] someone wants to play God, that's very interesting to me." The idea of playing God, and power in general - who has it, who desperately wants</description>
-      <category>The Verge — AI</category>
-      <pubDate>Thu, 08 Oct 2026 17:59:51 +0000</pubDate>
-    </item>
-    <item>
-      <title>Google is launching a one-stop Gemini agent for your work tasks</title>
-      <link>https://www.theverge.com/tech/1007904/google-gemini-ai-agent-enterprise</link>
-      <guid isPermaLink="false">01ea6a099b26b8ac</guid>
-      <description>Google is launching a "universal" Gemini AI agent that can work across apps and devices in the background. The tool, announced as part of the Gemini at Work event on Thursday, will be available within the Gemini Enterprise app, allowing users to chat with the Gemini agent and ass</description>
-      <category>The Verge — AI</category>
-      <pubDate>Thu, 08 Oct 2026 17:59:51 +0000</pubDate>
     </item>
   </channel>
 </rss>

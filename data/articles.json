@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-12T22:00:04.928693+00:00",
+  "generated_at": "2026-10-13T01:59:53.388397+00:00",
   "sources_polled": [
     "The Verge \u2014 AI",
     "Simon Willison",
@@ -14,6 +14,28 @@
     "Technology Learnings"
   ],
   "articles": [
+    {
+      "id": "93062c67d6f00e76",
+      "title": "web-edit 0.1a0",
+      "link": "https://simonwillison.net/2026/Oct/12/web-edit/",
+      "source": "Simon Willison",
+      "category": "AI",
+      "summary": "Release: web-edit 0.1a0 I was working on a project from my phone using Codex Remote when I found myself wanting to edit a credentials file without round-tripping those credentials through the LLM itself. So... I had Codex and GPT-6 Astra Extra High build this Python web app which",
+      "published": "2026-10-13T01:59:42.841624+00:00",
+      "audio_url": null,
+      "duration": ""
+    },
+    {
+      "id": "d4fe547e1001af92",
+      "title": "Daily AI Intelligence \u2014 Episode 12 (Tue Oct 13, 2026): Meta's Muse Wonder Frontier Model, HCLTech\u2013Anthropic Partnership, OpenAI's EU Watermark",
+      "link": "https://muse.ai/podcasts/media/1248297608376725/94f09345-ad4a-4981-83dd-e3206bbf5c4e/ep-2c99a941-4407-4667-9f77-0c237a92d4a3.mp3",
+      "source": "Daily AI Intelligence",
+      "category": "Podcast",
+      "summary": "Meta launches its first frontier model (Muse Wonder), Anthropic signs a Global Premier Partnership with HCLTech, OpenAI rolls out an invisible EU watermark, xAI bundles Grok/Cursor/X Premium, Microsoft upgrades Copilot Notebooks, and a cautionary DeepSeek long-context study. AI G",
+      "published": "2026-10-13T01:03:31+00:00",
+      "audio_url": "https://muse.ai/podcasts/media/1248297608376725/94f09345-ad4a-4981-83dd-e3206bbf5c4e/ep-2c99a941-4407-4667-9f77-0c237a92d4a3.mp3",
+      "duration": "291"
+    },
     {
       "id": "59e7fc14e8c1a5c7",
       "title": "datasette-ports 0.4",
@@ -1826,17 +1848,6 @@
       "category": "AI",
       "summary": "Northern Gannet, Great Blue Heron, California Brown Pelican, in Monterey Bay National Marine Sanctuary, CA, US, CA New 200-800mm Canon EF lens got me my best photo of Morris yet. They really like hanging out under that sign in the harbor! Tags: photography , wildlife",
       "published": "2026-10-04T06:38:20.832266+00:00",
-      "audio_url": null,
-      "duration": ""
-    },
-    {
-      "id": "5bff2e7c4ac60c5c",
-      "title": "Quoting John Gruber",
-      "link": "https://simonwillison.net/2026/Sep/25/john-gruber/",
-      "source": "Simon Willison",
-      "category": "AI",
-      "summary": "Muse is getting a lot of attention \u2014 including mine \u2014 because it\u2019s both groundbreaking technically (each user gets their own entire persistent Linux VM running in Meta\u2019s cloud) and because it\u2019s packaged in an easy-to-install easy-to-use way. It\u2019s literally presented as a cute mas",
-      "published": "2026-10-04T06:38:20.832244+00:00",
       "audio_url": null,
       "duration": ""
     },
