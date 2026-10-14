@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-14T18:10:05.855780+00:00",
+  "generated_at": "2026-10-14T22:03:12.970420+00:00",
   "sources_polled": [
     "The Verge \u2014 AI",
     "Simon Willison",
@@ -14,6 +14,61 @@
     "Technology Learnings"
   ],
   "articles": [
+    {
+      "id": "939ecdfa504040eb",
+      "title": "YouTube sticks new labels on AI-generated songs",
+      "link": "https://www.theverge.com/ai-artificial-intelligence/1011369/youtube-music-ai-label",
+      "source": "The Verge \u2014 AI",
+      "category": "AI",
+      "summary": "YouTube is adding a \"Made with AI\" label to tracks that were \"altered or fully generated\" using AI, with a similar approach to its existing process for applying AI labels to videos. It doesn't sound like this will apply to any and all use of AI tools in making music, but accordin",
+      "published": "2026-10-14T22:03:03.093252+00:00",
+      "audio_url": null,
+      "duration": ""
+    },
+    {
+      "id": "738aed8dcc6e54fb",
+      "title": "Now that Character.AI is going bankrupt, what happens to all of its users&#8217; data?",
+      "link": "https://www.theverge.com/policy/1011417/new-york-ag-characterai-bankruptcy",
+      "source": "The Verge \u2014 AI",
+      "category": "AI",
+      "summary": "New York Attorney General Letitia James revealed a years-long multi-state investigation against Character.AI as they now seek to require protections on consumer data sold through its bankruptcy proceeding. James is among 40 bipartisan AGs who filed a notice of interest in Charact",
+      "published": "2026-10-14T22:03:03.093218+00:00",
+      "audio_url": null,
+      "duration": ""
+    },
+    {
+      "id": "2fac9b600466967a",
+      "title": "The AI race is back on",
+      "link": "https://www.theverge.com/ai-artificial-intelligence/1011311/the-ai-race-is-back-on",
+      "source": "The Verge \u2014 AI",
+      "category": "AI",
+      "summary": "Last week, Anthropic and OpenAI looked like they had the AI race to themselves, pulling ahead with increasingly powerful models that left their rivals in the dust. Google seemed hopelessly far behind, while Meta, despite spending billions to revive its floundering AI ambitions, h",
+      "published": "2026-10-14T22:03:03.093177+00:00",
+      "audio_url": null,
+      "duration": ""
+    },
+    {
+      "id": "88ac6d1c3f06222f",
+      "title": "Eight states sue OpenAI, saying ChatGPT isn&#8217;t safe for kids",
+      "link": "https://www.theverge.com/ai-artificial-intelligence/1011500/openai-state-lawsuits-chatgpt-safety",
+      "source": "The Verge \u2014 AI",
+      "category": "AI",
+      "summary": "OpenAI is facing a new wave of lawsuits from eight US states that accuse the company of harming children and misleading customers about the safety of ChatGPT, as reported earlier by Reuters. The lawsuits, filed separately by Iowa, Kansas, Nebraska, West Virginia, Arkansas, Arizon",
+      "published": "2026-10-14T22:03:03.093099+00:00",
+      "audio_url": null,
+      "duration": ""
+    },
+    {
+      "id": "2af446043d102e54",
+      "title": "Epic says its new vibe-coded Epic Games Launcher is faster than Steam",
+      "link": "https://arstechnica.com/gaming/2026/10/programming-is-hard-epic-games-leans-on-vibe-coding-for-its-new-launcher-app/",
+      "source": "Ars Technica AI",
+      "category": "AI",
+      "summary": "But the new \"Preview\" app \"will have some bugs,\" Epic warns.",
+      "published": "2026-10-14T21:15:56+00:00",
+      "audio_url": null,
+      "duration": ""
+    },
     {
       "id": "8560636ebc000f33",
       "title": "AI is mass decompiling games. That's both awesome and scary.",
@@ -142,6 +197,17 @@
       "source": "OpenAI Blog",
       "category": "AI",
       "summary": "See how Amp pushes the frontier of what agents can do with GPT-6 Astra, Ultrafast, GPT-Live-1, and Sign in with ChatGPT.",
+      "published": "2026-10-14T12:00:00+00:00",
+      "audio_url": null,
+      "duration": ""
+    },
+    {
+      "id": "24cc989c02dbc2a2",
+      "title": "SentinelOne cuts malware analysis from weeks to hours",
+      "link": "https://openai.com/index/sentinelone",
+      "source": "OpenAI Blog",
+      "category": "AI",
+      "summary": "With OpenAI Daybreak, SentinelOne cuts weeks of malware analysis to hours, creating capacity to investigate more threats.",
       "published": "2026-10-14T12:00:00+00:00",
       "audio_url": null,
       "duration": ""
@@ -1379,17 +1445,6 @@
       "duration": ""
     },
     {
-      "id": "876648c3358ff5ff",
-      "title": "ChatGPT&#8217;s &#8216;Intelligent UI&#8217; update fills its responses with pictures, charts, and buttons",
-      "link": "https://www.theverge.com/ai-artificial-intelligence/1007276/openai-chatgpt-intelligent-ui-gpt-6",
-      "source": "The Verge \u2014 AI",
-      "category": "AI",
-      "summary": "OpenAI is launching a new Intelligent UI feature in ChatGPT that allows the chatbot to answer your questions with interactive visuals. The update, which is rolling out to all users alongside GPT-6, gives ChatGPT the ability to combine a text response with diagrams, charts, forms,",
-      "published": "2026-10-07T21:59:44.444705+00:00",
-      "audio_url": null,
-      "duration": ""
-    },
-    {
       "id": "0598a3e5bb11bf63",
       "title": "\u201cSoftware is over\u201d: Bold AI developer takes aim at Adobe with open source clones",
       "link": "https://arstechnica.com/ai/2026/10/software-is-over-bold-ai-developer-takes-aim-at-adobe-with-open-source-clones/",
@@ -1408,39 +1463,6 @@
       "category": "AI",
       "summary": "Anti-Patterns in Software Blogging Some excellent writing advice from Michael Lynch. Michael warns against \"meandering intros\", misjudging your reader's existing knowledge, assuming they'll read your previous posts, and excessive formality. He also warns against overreliance on l",
       "published": "2026-10-07T17:59:37.535085+00:00",
-      "audio_url": null,
-      "duration": ""
-    },
-    {
-      "id": "4c9b009d21f89481",
-      "title": "Google invests millions in Mark Zuckerberg\u2019s efforts to create a \u2018virtual cell\u2019",
-      "link": "https://www.theverge.com/tech/1006766/google-meta-biohub-investment-virtual-cell",
-      "source": "The Verge \u2014 AI",
-      "category": "AI",
-      "summary": "Google DeepMind, Meta, and AI drug discovery startup Isomorphic Labs are jointly investing $300 million into an initiative to create a \"virtual cell\" that researchers can use to combat disease, as reported earlier by Reuters. The project is led by Biohub, a nonprofit biomedical r",
-      "published": "2026-10-07T17:59:36.961806+00:00",
-      "audio_url": null,
-      "duration": ""
-    },
-    {
-      "id": "b8b3b1c514003fad",
-      "title": "Muse launches on the iPad",
-      "link": "https://www.theverge.com/tech/1006813/muse-ai-agent-ios-app-ipad-support",
-      "source": "The Verge \u2014 AI",
-      "category": "AI",
-      "summary": "After launching nearly a month ago and spending several weeks as the top free app in Apple's App Store, the latest update to Meta's Muse iOS app introduces native support for the iPad. A Mac version of Meta's agentic AI tool (designed to compete with OpenClaw, ChatGPT's Dots, and",
-      "published": "2026-10-07T17:59:36.961771+00:00",
-      "audio_url": null,
-      "duration": ""
-    },
-    {
-      "id": "ee6859a51c49dfea",
-      "title": "ChatGPT is getting college planning tools",
-      "link": "https://www.theverge.com/ai-artificial-intelligence/1005194/openai-chatgpt-teens-college-planner-notecards",
-      "source": "The Verge \u2014 AI",
-      "category": "AI",
-      "summary": "OpenAI is bringing new tools to ChatGPT for Teens, a mode for teens introduced in August with safeguards and break reminders, to help users with the college application process. \"College Planner brings together application requirements, deadlines, tasks, and financial-aid steps f",
-      "published": "2026-10-07T17:59:36.961701+00:00",
       "audio_url": null,
       "duration": ""
     },
@@ -2783,17 +2805,6 @@
       "category": "AI",
       "summary": "Meet GPT-6 Sol and Luna, two models that bring frontier intelligence to everyday work with different balances of capability and cost.",
       "published": "2026-09-22T18:00:00+00:00",
-      "audio_url": null,
-      "duration": ""
-    },
-    {
-      "id": "ce45d8dc0f6c9cea",
-      "title": "Parallel cut research time and cost in half with GPT\u20116 Astra",
-      "link": "https://openai.com/index/parallel-cuts-time-and-cost-with-astra",
-      "source": "OpenAI Blog",
-      "category": "AI",
-      "summary": "GPT\u20116 Astra allowed Parallel\u2019s agents to research and synthesize labor-market data in half the time and at half the cost vs. prior models.",
-      "published": "2026-09-22T12:00:00+00:00",
       "audio_url": null,
       "duration": ""
     },
