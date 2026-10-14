@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-14T09:59:49.366983+00:00",
+  "generated_at": "2026-10-14T14:05:31.521700+00:00",
   "sources_polled": [
     "The Verge \u2014 AI",
     "Simon Willison",
@@ -14,6 +14,39 @@
     "Technology Learnings"
   ],
   "articles": [
+    {
+      "id": "08495a955cc82e8d",
+      "title": "Epic&#8217;s new games launcher is \u2018vibe coded\u2019",
+      "link": "https://www.theverge.com/games/1010751/epic-games-launcher-vibe-coded-ai-linux",
+      "source": "The Verge \u2014 AI",
+      "category": "AI",
+      "summary": "Epic Games is announcing a big refresh of its PC games launcher today in preview, saying that the new version is \"way faster\" and now supports Linux. But the company, which has been publicly making a big push into AI-assisted development, also notes that the refresh was \"vibe cod",
+      "published": "2026-10-14T14:05:13.762123+00:00",
+      "audio_url": null,
+      "duration": ""
+    },
+    {
+      "id": "7923e9fedadd3085",
+      "title": "Anthropic warns small AI models could self-replicate through IoT devices",
+      "link": "https://arstechnica.com/security/2026/10/anthropic-warns-small-ai-models-could-self-replicate-through-iot-devices/",
+      "source": "Ars Technica AI",
+      "category": "AI",
+      "summary": "\"Small weight-based replicators\" could usher in a new generation of computer worms.",
+      "published": "2026-10-14T12:55:06+00:00",
+      "audio_url": null,
+      "duration": ""
+    },
+    {
+      "id": "9fd67fba7efb1f2d",
+      "title": "OpenAI, Google pushing new AI models easily tricked into making nudes, researchers say",
+      "link": "https://arstechnica.com/tech-policy/2026/10/openai-google-pushing-new-ai-models-easily-tricked-into-making-nudes-researchers-say/",
+      "source": "Ars Technica AI",
+      "category": "AI",
+      "summary": "Attack method exposes flaws in OpenAI, Google safeguards against AI nudes.",
+      "published": "2026-10-14T11:00:30+00:00",
+      "audio_url": null,
+      "duration": ""
+    },
     {
       "id": "ef47cf6a028c4b74",
       "title": "llm-meta-ai 0.2",
@@ -1346,23 +1379,23 @@
       "duration": ""
     },
     {
-      "id": "22643d6fcb195220",
-      "title": "Introducing Playground: Create and play custom games",
-      "link": "https://blog.google/innovation-and-ai/technology/ai/playground-experimental-gaming-platform/",
-      "source": "Google AI Blog",
-      "category": "AI",
-      "summary": "Overview of Playground",
-      "published": "2026-10-07T12:00:00+00:00",
-      "audio_url": null,
-      "duration": ""
-    },
-    {
       "id": "ad4e14640e358f44",
       "title": "Helping teens learn, plan, and shape the future of AI",
       "link": "https://openai.com/index/teens-learn-and-plan",
       "source": "OpenAI Blog",
       "category": "AI",
       "summary": "College Planner is coming to ChatGPT for Teens to help students manage college applications, alongside new flashcards, quizzes, and a teen AI council.",
+      "published": "2026-10-07T12:00:00+00:00",
+      "audio_url": null,
+      "duration": ""
+    },
+    {
+      "id": "22643d6fcb195220",
+      "title": "Introducing Playground: Create and play custom games",
+      "link": "https://blog.google/innovation-and-ai/technology/ai/playground-experimental-gaming-platform/",
+      "source": "Google AI Blog",
+      "category": "AI",
+      "summary": "Overview of Playground",
       "published": "2026-10-07T12:00:00+00:00",
       "audio_url": null,
       "duration": ""
@@ -1628,17 +1661,6 @@
       "category": "AI",
       "summary": "An unsettling Alexa Plus bug has seen some Amazon Echo smart home speakers reduced to saying - and sometimes singing - nothing but \"lalala\" on repeat for minutes at a time, often in the middle of conversations with users. When quizzed about the behavior, Alexa is apparently entir",
       "published": "2026-10-06T14:00:21.278122+00:00",
-      "audio_url": null,
-      "duration": ""
-    },
-    {
-      "id": "c481fc93e0dd7dc8",
-      "title": "Google is about to remove free access to Gemini Flash and Pro",
-      "link": "https://www.theverge.com/ai-artificial-intelligence/1005451/google-gemini-free-flash-lite-only",
-      "source": "The Verge \u2014 AI",
-      "category": "AI",
-      "summary": "Starting on October 9th, anyone using Google Gemini on a free plan will be limited to the Flash Lite model. Free users can currently choose from Gemini Flash Lite, Flash, and Pro, but now you'll need a $4.99/month Google AI Plus subscription to access the standard Flash model. Ho",
-      "published": "2026-10-06T14:00:21.278054+00:00",
       "audio_url": null,
       "duration": ""
     },
@@ -2479,17 +2501,6 @@
       "duration": ""
     },
     {
-      "id": "1eadd5627184a89f",
-      "title": "Watch the winning trailer from the Future Vision XPRIZE, The Gifted.",
-      "link": "https://blog.google/innovation-and-ai/technology/ai/winner-future-vision-xprize/",
-      "source": "Google AI Blog",
-      "category": "AI",
-      "summary": "Watch the winning trailer from the Future Vision XPRIZE, The Gifted.",
-      "published": "2026-09-28T19:00:00+00:00",
-      "audio_url": null,
-      "duration": ""
-    },
-    {
       "id": "cfe8e900401f31bb",
       "title": "How we will do better for Australia",
       "link": "https://openai.com/index/how-we-will-do-better-for-australia",
@@ -2507,6 +2518,17 @@
       "source": "OpenAI Blog",
       "category": "AI",
       "summary": "Our early guidelines for safety cases in frontier AI training cover technical safeguards, operational practices, and investigating misalignment incidents",
+      "published": "2026-09-28T19:00:00+00:00",
+      "audio_url": null,
+      "duration": ""
+    },
+    {
+      "id": "1eadd5627184a89f",
+      "title": "Watch the winning trailer from the Future Vision XPRIZE, The Gifted.",
+      "link": "https://blog.google/innovation-and-ai/technology/ai/winner-future-vision-xprize/",
+      "source": "Google AI Blog",
+      "category": "AI",
+      "summary": "Watch the winning trailer from the Future Vision XPRIZE, The Gifted.",
       "published": "2026-09-28T19:00:00+00:00",
       "audio_url": null,
       "duration": ""
