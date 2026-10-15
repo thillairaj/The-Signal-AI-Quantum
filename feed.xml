@@ -4,7 +4,55 @@
     <title>The Signal</title>
     <link>https://thillairaj.github.io/The-Signal-AI-Quantum/</link>
     <description>A self-updating feed of AI, quantum computing, and podcast updates.</description>
-    <lastBuildDate>Thu, 15 Oct 2026 14:00:29 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 15 Oct 2026 18:00:10 +0000</lastBuildDate>
+    <item>
+      <title>Benn Jordan on Flock, privacy, and the new surveillance backlash</title>
+      <link>https://www.theverge.com/podcast/1011170/benn-jordan-flock-cameras-alpr-ai-surveillance-privacy</link>
+      <guid isPermaLink="false">e86ff66c491075b8</guid>
+      <description>Today, I’m talking with Benn Jordan, musician, YouTuber, researcher, and investigative journalist. You might know Benn from those first two titles — he’s got a prolific discography of experimental music dating back decades. But in the last couple of years, he’s become a high-prof</description>
+      <category>The Verge — AI</category>
+      <pubDate>Thu, 15 Oct 2026 17:59:58 +0000</pubDate>
+    </item>
+    <item>
+      <title>Nobody is safe from celebrity AI deepfakes</title>
+      <link>https://www.theverge.com/report/1011927/instagram-celebrity-ai-slop-likeness-taylor-swift-mia-goth</link>
+      <guid isPermaLink="false">f616628c1389da33</guid>
+      <description>In hindsight, the post on Instagram should have raised more red flags. The image purported to show actress Mia Goth, just days after filing for divorce from actor and filmmaker Shia LaBeouf, posing in a T-shirt with a pointed message: MY EX IS MY BIGGEST FAN. To really drive home</description>
+      <category>The Verge — AI</category>
+      <pubDate>Thu, 15 Oct 2026 17:59:58 +0000</pubDate>
+    </item>
+    <item>
+      <title>How Windows is being optimized for Nvidia’s RTX Spark laptops</title>
+      <link>https://www.theverge.com/tech/1011996/microsoft-windows-rtx-spark-platform-changes-notepad</link>
+      <guid isPermaLink="false">97f8573c584b7784</guid>
+      <description>Microsoft and Nvidia held a launch party for the first wave of RTX Spark laptops last week in San Francisco, where a new wave of AI PCs took center stage amid a packed crowd and a lively hands-on area. A day after the media event, I was invited to a quieter Nvidia event to hear [</description>
+      <category>The Verge — AI</category>
+      <pubDate>Thu, 15 Oct 2026 17:59:58 +0000</pubDate>
+    </item>
+    <item>
+      <title>Friends don&amp;#8217;t let friends feed their data to AI agents</title>
+      <link>https://www.theverge.com/tech/1011938/muse-ai-data-friends-consent</link>
+      <guid isPermaLink="false">1b6257d35772528f</guid>
+      <description>There's a growing trend in the consumer tech world: gadgets designed to spy on everything and everyone around you, regardless of whether or not anyone else actually consented to it. Now, with the advent of "AI personal assistants" like Meta's Muse, you're being cheerfully asked n</description>
+      <category>The Verge — AI</category>
+      <pubDate>Thu, 15 Oct 2026 17:59:58 +0000</pubDate>
+    </item>
+    <item>
+      <title>Report: FTC probes Anthropic, OpenAI after Trump dismissed AI fears as “hoax”</title>
+      <link>https://arstechnica.com/tech-policy/2026/10/ftc-probes-if-openai-anthropic-security-incidents-harmed-americans-report-says/</link>
+      <guid isPermaLink="false">1cc24ddce8a425aa</guid>
+      <description>FTC may fine AI firms on par with companies that delay data breach reports.</description>
+      <category>Ars Technica AI</category>
+      <pubDate>Thu, 15 Oct 2026 15:43:24 +0000</pubDate>
+    </item>
+    <item>
+      <title>Singer or clanker? YouTube Music will tell you with new gen AI labeling.</title>
+      <link>https://arstechnica.com/ai/2026/10/youtube-music-begins-labeling-ai-songs/</link>
+      <guid isPermaLink="false">a112a9fc3278612d</guid>
+      <description>The AI music labels are rolling out now in YouTube Music and will come to YouTube soon.</description>
+      <category>Ars Technica AI</category>
+      <pubDate>Thu, 15 Oct 2026 15:12:58 +0000</pubDate>
+    </item>
     <item>
       <title>Anthropic tells investors quarterly revenue up nearly 50% to $16.8bn ahead of IPO</title>
       <link>https://simonwillison.net/2026/Oct/15/anthropic-tells-investors/</link>
@@ -436,54 +484,6 @@
       <description>Solar geoengineering simulation shows what happens when geopolitics takes over.</description>
       <category>Ars Technica AI</category>
       <pubDate>Tue, 13 Oct 2026 15:17:59 +0000</pubDate>
-    </item>
-    <item>
-      <title>Anthropic warns of self-replicating AI worm threat that doesn't need data centers to self-improve and spread</title>
-      <link>https://www.tomshardware.com/tech-industry/artificial-intelligence/anthropic-warns-of-self-replicating-ai-worm-threat-that-doesnt-need-data-centers-to-self-improve-and-spread-current-deployment-is-impractical-but-could-become-a-worry-as-tech-improves</link>
-      <guid isPermaLink="false">7408946146311b21</guid>
-      <description>Anthropic’s paper establishes conceptual model capabilities, but doesn’t quite demonstrate a real threat until models improve further.</description>
-      <category>Anthropic/Claude News</category>
-      <pubDate>Tue, 13 Oct 2026 14:00:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>Quoting Geoffrey Huntley</title>
-      <link>https://simonwillison.net/2026/Oct/13/geoffrey-huntley/</link>
-      <guid isPermaLink="false">87e22abf54d8b628</guid>
-      <description>If the agent isn't using my diagnostics library, I could introspect and update AGENTS.md, but there's still a delta, and it'll drift. Instead, I write a pre-commit hook that checks the git diff for direct calls to observability modules that bypass my diagnostics module. Boom: fai</description>
-      <category>Simon Willison</category>
-      <pubDate>Tue, 13 Oct 2026 13:59:50 +0000</pubDate>
-    </item>
-    <item>
-      <title>Character.AI files for bankruptcy</title>
-      <link>https://www.theverge.com/ai-artificial-intelligence/1009802/character-ai-files-for-bankruptcy-disney</link>
-      <guid isPermaLink="false">17822a6c9063e726</guid>
-      <description>Character.AI, one of the first breakout startups of the generative AI boom, has filed for bankruptcy and is selling some of its assets to Disney. The company, which builds various online bots for users to chat or roleplay with, has faced mounting scrutiny and lawsuits over the sa</description>
-      <category>The Verge — AI</category>
-      <pubDate>Tue, 13 Oct 2026 13:59:49 +0000</pubDate>
-    </item>
-    <item>
-      <title>Apple launches HomeView, its first smart display for the home</title>
-      <link>https://www.theverge.com/tech/1009704/apple-homeview-smart-display-first-look</link>
-      <guid isPermaLink="false">fa1d998e852ed881</guid>
-      <description>It's finally here: Apple's long-rumored smart display, the Apple HomeView, has arrived. I got a first look at the device in New York City this week, and it's gorgeous. The HomeView puts a small, vibrant screen atop a speaker base for taking video calls, beautifully displaying pho</description>
-      <category>The Verge — AI</category>
-      <pubDate>Tue, 13 Oct 2026 13:59:49 +0000</pubDate>
-    </item>
-    <item>
-      <title>DLSS 5 gets toned down for its Hogwarts Legacy debut next month</title>
-      <link>https://www.theverge.com/news/1009904/dlss-5-hogwarts-legacy-changes-improvements</link>
-      <guid isPermaLink="false">579aa4e27ad56348</guid>
-      <description>When Nvidia originally showed off DLSS 5 earlier this year, the technology immediately got branded as gen AI for video games. To gamers, Nvidia had lost the plot. I personally couldn't get over how faces were transformed using DLSS 5. The 15-year-old student from Hogwarts Legacy </description>
-      <category>The Verge — AI</category>
-      <pubDate>Tue, 13 Oct 2026 13:59:49 +0000</pubDate>
-    </item>
-    <item>
-      <title>Higgsfield takes AI video from 1 minute to over 10</title>
-      <link>https://openai.com/index/higgsfield-longer-videos-voice</link>
-      <guid isPermaLink="false">ffc748cb8d88a919</guid>
-      <description>Higgsfield brings creators longer videos with GPT-6 Astra, precise visuals with GPT-Image-2.5, and a path to voice filmmaking with GPT-Live.</description>
-      <category>OpenAI Blog</category>
-      <pubDate>Tue, 13 Oct 2026 12:00:00 +0000</pubDate>
     </item>
   </channel>
 </rss>
