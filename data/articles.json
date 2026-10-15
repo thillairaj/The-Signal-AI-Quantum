@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-15T18:00:10.718504+00:00",
+  "generated_at": "2026-10-15T21:59:56.635056+00:00",
   "sources_polled": [
     "The Verge \u2014 AI",
     "Simon Willison",
@@ -14,6 +14,72 @@
     "Technology Learnings"
   ],
   "articles": [
+    {
+      "id": "08c79764230e6e3c",
+      "title": "Chirp Pong",
+      "link": "https://simonwillison.net/2026/Oct/15/chirp-pong/",
+      "source": "Simon Willison",
+      "category": "AI",
+      "summary": "Tool: Chirp Pong Another game experiment - I wanted to see if it was feasible to have a two player game on two separate phones running in static HTML where the networking code uses chirps sent via the microphone. It seems to work! Build a two player competitive pong like game whe",
+      "published": "2026-10-15T21:59:44.528685+00:00",
+      "audio_url": null,
+      "duration": ""
+    },
+    {
+      "id": "c7cea461bd6d67da",
+      "title": "Meta and Apple team up to make Muse AI models run better on Macs",
+      "link": "https://www.theverge.com/news/1012293/meta-apple-muse-spark-open-ai-model-mlx",
+      "source": "The Verge \u2014 AI",
+      "category": "AI",
+      "summary": "Meta announced the Muse Spark Open AI model today, claiming that it's the \"most capable US open-weight model to date.\" But the company also says that it's the \"the first model in its class\" that can \"run on your desktop using two Apple M5 Ultra Mac Studios with the latest MLX fra",
+      "published": "2026-10-15T21:59:43.967854+00:00",
+      "audio_url": null,
+      "duration": ""
+    },
+    {
+      "id": "2c7772f8550aecf7",
+      "title": "Bluesky&#8217;s AI tool now lets you make games and apps to share on social",
+      "link": "https://www.theverge.com/tech/1012374/bluesky-ai-attie-small-social-games-apps",
+      "source": "The Verge \u2014 AI",
+      "category": "AI",
+      "summary": "Bluesky's Attie AI tool, which initially launched earlier this year as a way to use AI to build your own feeds, now lets you make \"small\" social apps like games, polls, and dashboards that you can then share with others as their own websites. In an interview at TechCrunch Disrupt",
+      "published": "2026-10-15T21:59:43.967820+00:00",
+      "audio_url": null,
+      "duration": ""
+    },
+    {
+      "id": "54d7a618ecd38be0",
+      "title": "Trump posts AI-edited photo to brag about White House restoration work",
+      "link": "https://www.theverge.com/policy/1012445/donald-trump-ai-photo-white-house-rennovation-column",
+      "source": "The Verge \u2014 AI",
+      "category": "AI",
+      "summary": "President Donald Trump posted a series of photos on Truth Social showing off renovations to the White House - but one of them appears to be modified with AI. The picture, which compares an old White House column to a \"restored\" one, has several discrepancies and was flagged by Go",
+      "published": "2026-10-15T21:59:43.967781+00:00",
+      "audio_url": null,
+      "duration": ""
+    },
+    {
+      "id": "66efd2f87608334b",
+      "title": "The tech backlash is now in theaters",
+      "link": "https://www.theverge.com/entertainment/1012438/hollywood-tech-backlash-you-can-see-everything-musk-the-social-reckoning-artificial",
+      "source": "The Verge \u2014 AI",
+      "category": "AI",
+      "summary": "Though movies about disruptive tech founders are nothing new, 2026 has been unusually stacked with features that take a much more critical look at how Silicon Valley is reshaping our reality. Aaron Sorkin's The Social Reckoning frames Mark Zuckerberg as a robotic villain whose am",
+      "published": "2026-10-15T21:59:43.967711+00:00",
+      "audio_url": null,
+      "duration": ""
+    },
+    {
+      "id": "a72d1e4da6b0e106",
+      "title": "Bringing GPT-Rosalind to academic research labs",
+      "link": "https://openai.com/index/introducing-the-rosalind-academic-plan",
+      "source": "OpenAI Blog",
+      "category": "AI",
+      "summary": "Introducing the Rosalind Academic Plan, offering eligible academic labs sponsored access to GPT-Rosalind and tools to advance life sciences research.",
+      "published": "2026-10-15T19:00:00+00:00",
+      "audio_url": null,
+      "duration": ""
+    },
     {
       "id": "e86ff66c491075b8",
       "title": "Benn Jordan on Flock, privacy, and the new surveillance backlash",
@@ -1313,17 +1379,6 @@
       "duration": ""
     },
     {
-      "id": "df7e5433800bf1dd",
-      "title": "Anthropic launches free AI security scans for open-source projects",
-      "link": "https://www.theverge.com/ai-artificial-intelligence/1008521/anthropic-open-source-oss-scanner",
-      "source": "The Verge \u2014 AI",
-      "category": "AI",
-      "summary": "Anthropic's offering to help open-source projects track down security vulnerabilities with a new service called OSS Scanner. It says open-source projects that opt-in will get \"thorough, periodic security scans by our strongest models at no cost.\" That could mean open-source proje",
-      "published": "2026-10-09T01:59:44.302807+00:00",
-      "audio_url": null,
-      "duration": ""
-    },
-    {
       "id": "9e8de5d12da311b9",
       "title": "Tech Learning: Data Engineering & Analytics \u2014 Ep 8: Real Scenario: Designing a Star Schema",
       "link": "https://muse.ai/podcasts/media/1248297608376725/4720f1e9-8c94-4958-8367-c455f31c5edc/ep-1d45ef13-f1a0-443a-9c30-17b276ce2f30.mp3",
@@ -1386,39 +1441,6 @@
       "category": "AI",
       "summary": "Computer programming is, fundamentally, about two things: Problem-solving using computers Learning to control complexity while solving these problems I have a hard time imagining a future where knowing how to solve problems with computers and how to control the complexity of thos",
       "published": "2026-10-08T21:59:53.591583+00:00",
-      "audio_url": null,
-      "duration": ""
-    },
-    {
-      "id": "4079389ad67f283a",
-      "title": "California is trying to shut down robot vs. human cage matches",
-      "link": "https://www.theverge.com/tech/1008401/california-shut-down-rek-fighting-robot-company-human",
-      "source": "The Verge \u2014 AI",
-      "category": "AI",
-      "summary": "The California State Athletic Commission sent a cease-and-desist letter to a startup that hosted a match between a human and a robot last month, as reported by The New York Times. The fight, which took place on September 18th, pitted a human, Frankie LaPenna, against a humanoid r",
-      "published": "2026-10-08T21:59:53.047784+00:00",
-      "audio_url": null,
-      "duration": ""
-    },
-    {
-      "id": "c0dbfb6ce7667ee0",
-      "title": "Artificial is a wicked satire that also sticks to the facts",
-      "link": "https://www.theverge.com/ai-artificial-intelligence/1007786/artificial-is-a-wicked-satire-that-also-sticks-to-the-facts",
-      "source": "The Verge \u2014 AI",
-      "category": "AI",
-      "summary": "At the New York Film Festival premiere of Artificial, Luca Guadagnino's satirical Sam Altman biopic, the director said onstage that \"[when] someone wants to play God, that's very interesting to me.\" The idea of playing God, and power in general - who has it, who desperately wants",
-      "published": "2026-10-08T17:59:51.387209+00:00",
-      "audio_url": null,
-      "duration": ""
-    },
-    {
-      "id": "01ea6a099b26b8ac",
-      "title": "Google is launching a one-stop Gemini agent for your work tasks",
-      "link": "https://www.theverge.com/tech/1007904/google-gemini-ai-agent-enterprise",
-      "source": "The Verge \u2014 AI",
-      "category": "AI",
-      "summary": "Google is launching a \"universal\" Gemini AI agent that can work across apps and devices in the background. The tool, announced as part of the Gemini at Work event on Thursday, will be available within the Gemini Enterprise app, allowing users to chat with the Gemini agent and ass",
-      "published": "2026-10-08T17:59:51.387173+00:00",
       "audio_url": null,
       "duration": ""
     },
@@ -2127,17 +2149,6 @@
       "duration": ""
     },
     {
-      "id": "0ec1b9d730210e81",
-      "title": "llm 0.36",
-      "link": "https://simonwillison.net/2026/Sep/22/llm/",
-      "source": "Simon Willison",
-      "category": "AI",
-      "summary": "Release: llm 0.36 New OpenAI models: gpt-6-sol for GPT-6 Sol and gpt-6-luna for GPT-6 Luna . #1702 Model plugins can now declare supports_conversation = False for models that only accept single-turn prompts. LLM raises llm.ConversationNotSupported when these models receive assist",
-      "published": "2026-10-04T06:38:20.832769+00:00",
-      "audio_url": null,
-      "duration": ""
-    },
-    {
       "id": "3efc92f60ee2bdc4",
       "title": "Daily AI Intelligence \u2014 Episode 3",
       "link": "https://muse.ai/podcasts/media/1248297608376725/94f09345-ad4a-4981-83dd-e3206bbf5c4e/ep-5d595bb0-b357-4c8f-a1b2-3780269ef6ff.mp3",
@@ -2827,17 +2838,6 @@
       "category": "AI",
       "summary": "Learn how Airbnb is expanding access to GPT-6 Astra and OpenAI frontier models to help engineering teams solve bugs, design systems, and ship faster.",
       "published": "2026-09-23T01:00:00+00:00",
-      "audio_url": null,
-      "duration": ""
-    },
-    {
-      "id": "09a0c6dbf1c6c00d",
-      "title": "Grab and OpenAI bring practical AI skills to Southeast Asia",
-      "link": "https://openai.com/index/grab-openai-ai-skills-southeast-asia",
-      "source": "OpenAI Blog",
-      "category": "AI",
-      "summary": "OpenAI and Grab launch GO Forward with AI, a regional programme helping 30,000 partners build practical AI skills across Southeast Asia.",
-      "published": "2026-09-23T00:00:00+00:00",
       "audio_url": null,
       "duration": ""
     },
