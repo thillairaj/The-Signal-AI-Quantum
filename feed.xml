@@ -4,7 +4,31 @@
     <title>The Signal</title>
     <link>https://thillairaj.github.io/The-Signal-AI-Quantum/</link>
     <description>A self-updating feed of AI, quantum computing, and podcast updates.</description>
-    <lastBuildDate>Wed, 14 Oct 2026 22:03:12 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 15 Oct 2026 02:00:06 +0000</lastBuildDate>
+    <item>
+      <title>Tree Appreciator</title>
+      <link>https://simonwillison.net/2026/Oct/14/tree-appreciator/</link>
+      <guid isPermaLink="false">bbc1e25e9e985e45</guid>
+      <description>Tool: Tree Appreciator Another game experiment with Claude. This one used the default Claude iPhone app (chat mode, not Claude Code mode) where I prompted Claude Opus 5.5 Max with: Build a three js game called "Tree appreciator" - it shows you two algorithmically generated trees </description>
+      <category>Simon Willison</category>
+      <pubDate>Thu, 15 Oct 2026 01:59:55 +0000</pubDate>
+    </item>
+    <item>
+      <title>McKinsey is making job applicants spar with a fake AI client</title>
+      <link>https://www.theverge.com/news/1011654/mckinsey-ai-client-interview</link>
+      <guid isPermaLink="false">d1f8876dacf92535</guid>
+      <description>Consulting firm McKinsey &amp;#38; Company is going to ask some entry-level candidates to have a 10-minute conversation with an AI simulation of a client as part of the interview process, according to The Wall Street Journal. The AI simulation "aims to reflect 80% of the scenarios Mc</description>
+      <category>The Verge — AI</category>
+      <pubDate>Thu, 15 Oct 2026 01:59:54 +0000</pubDate>
+    </item>
+    <item>
+      <title>Daily AI Intelligence — Episode 14 (Thu Oct 15, 2026): Anthropic's $16.8B Quarter, Eight States Sue OpenAI, EU's First AI Act Enforcement</title>
+      <link>https://muse.ai/podcasts/media/1248297608376725/94f09345-ad4a-4981-83dd-e3206bbf5c4e/ep-9e3fc3f9-e686-407c-9193-25dd12aade96.mp3</link>
+      <guid isPermaLink="false">e6110a3b7bbd6f4b</guid>
+      <description>Daily AI Intelligence, October 15, 2026: Anthropic's $16.8B Q3 and IPO timeline, eight US states suing OpenAI over child safety, OpenAI-Apple trade secrets, Claude voting info, Grok Voice 3.0, Muse Wonder reception, Microsoft Maia 300, and the EU's first AI Act enforcement action</description>
+      <category>Daily AI Intelligence</category>
+      <pubDate>Thu, 15 Oct 2026 01:04:41 +0000</pubDate>
+    </item>
     <item>
       <title>YouTube sticks new labels on AI-generated songs</title>
       <link>https://www.theverge.com/ai-artificial-intelligence/1011369/youtube-music-ai-label</link>
@@ -162,6 +186,14 @@
       <link>https://openai.com/index/third-moment-research</link>
       <guid isPermaLink="false">e181547094b0a112</guid>
       <description>With GPT-6 Astra and GPT-6.1 Sol, Codex, and Daybreak for cybersecurity, this AI lab builds agents that focus for days and improve with use.</description>
+      <category>OpenAI Blog</category>
+      <pubDate>Wed, 14 Oct 2026 07:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>How Block is building AI-powered security with OpenAI technology</title>
+      <link>https://openai.com/index/block-ai-powered-security</link>
+      <guid isPermaLink="false">7d10f0ddfecf202c</guid>
+      <description>Block is building AI-powered security with OpenAI. Its security team investigates threats faster and proposes patches in minutes.</description>
       <category>OpenAI Blog</category>
       <pubDate>Wed, 14 Oct 2026 07:00:00 +0000</pubDate>
     </item>
@@ -452,38 +484,6 @@
       <description>"No more hand-written code" or AI-free art for delayed Marvel/Star Wars shooter.</description>
       <category>Ars Technica AI</category>
       <pubDate>Mon, 12 Oct 2026 20:59:50 +0000</pubDate>
-    </item>
-    <item>
-      <title>Anthropic's Claude AI submitted false murder tip to Philadelphia police</title>
-      <link>https://arstechnica.com/tech-policy/2026/10/anthropics-claude-ai-submitted-false-murder-tip-to-philadelphia-police/</link>
-      <guid isPermaLink="false">b470d062734aea8f</guid>
-      <description>“I may have information regarding this case," Claude AI told Philly police.</description>
-      <category>Ars Technica AI</category>
-      <pubDate>Mon, 12 Oct 2026 18:21:36 +0000</pubDate>
-    </item>
-    <item>
-      <title>Meta has some Wonder Full new AI models</title>
-      <link>https://www.theverge.com/ai-artificial-intelligence/1009479/meta-muse-wonder-full-ai-model</link>
-      <guid isPermaLink="false">5b0bbc20b589187e</guid>
-      <description>Meta is making up for lost time in the AI race. After launching Muse Spark, the first model from its revamped Superintelligence Labs division, and buzzy AI agent Muse, it's now launching two new models it claims can go toe-to-toe with the industry's best. The new models, Muse Won</description>
-      <category>The Verge — AI</category>
-      <pubDate>Mon, 12 Oct 2026 17:59:59 +0000</pubDate>
-    </item>
-    <item>
-      <title>Russia was not ready for the data center war it started with Ukraine</title>
-      <link>https://arstechnica.com/gadgets/2026/10/russia-was-not-ready-for-the-data-center-war-it-started-with-ukraine/</link>
-      <guid isPermaLink="false">b4c6a3e5aa4cab30</guid>
-      <description>Russian bloggers warn Russia’s hyper-centralized digital economy is vulnerable.</description>
-      <category>Ars Technica AI</category>
-      <pubDate>Mon, 12 Oct 2026 17:52:36 +0000</pubDate>
-    </item>
-    <item>
-      <title>Microsoft’s new AI chip makes it less reliant on Nvidia’s GPUs</title>
-      <link>https://www.theverge.com/news/1009465/microsoft-maia-300-chip-improvements-rollout</link>
-      <guid isPermaLink="false">f35a073890448086</guid>
-      <description>Microsoft is announcing its third-generation Maia in-house AI chip today, designed to be the "primary AI inference system" for Microsoft's products and services. Maia 300 not only improves the cost and efficiency of running AI workloads in the cloud, it's also more capable of han</description>
-      <category>The Verge — AI</category>
-      <pubDate>Mon, 12 Oct 2026 13:59:46 +0000</pubDate>
     </item>
   </channel>
 </rss>

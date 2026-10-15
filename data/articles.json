@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-14T22:03:12.970420+00:00",
+  "generated_at": "2026-10-15T02:00:06.121619+00:00",
   "sources_polled": [
     "The Verge \u2014 AI",
     "Simon Willison",
@@ -14,6 +14,39 @@
     "Technology Learnings"
   ],
   "articles": [
+    {
+      "id": "bbc1e25e9e985e45",
+      "title": "Tree Appreciator",
+      "link": "https://simonwillison.net/2026/Oct/14/tree-appreciator/",
+      "source": "Simon Willison",
+      "category": "AI",
+      "summary": "Tool: Tree Appreciator Another game experiment with Claude. This one used the default Claude iPhone app (chat mode, not Claude Code mode) where I prompted Claude Opus 5.5 Max with: Build a three js game called \"Tree appreciator\" - it shows you two algorithmically generated trees ",
+      "published": "2026-10-15T01:59:55.495801+00:00",
+      "audio_url": null,
+      "duration": ""
+    },
+    {
+      "id": "d1f8876dacf92535",
+      "title": "McKinsey is making job applicants spar with a fake AI client",
+      "link": "https://www.theverge.com/news/1011654/mckinsey-ai-client-interview",
+      "source": "The Verge \u2014 AI",
+      "category": "AI",
+      "summary": "Consulting firm McKinsey &#38; Company is going to ask some entry-level candidates to have a 10-minute conversation with an AI simulation of a client as part of the interview process, according to The Wall Street Journal. The AI simulation \"aims to reflect 80% of the scenarios Mc",
+      "published": "2026-10-15T01:59:54.763187+00:00",
+      "audio_url": null,
+      "duration": ""
+    },
+    {
+      "id": "e6110a3b7bbd6f4b",
+      "title": "Daily AI Intelligence \u2014 Episode 14 (Thu Oct 15, 2026): Anthropic's $16.8B Quarter, Eight States Sue OpenAI, EU's First AI Act Enforcement",
+      "link": "https://muse.ai/podcasts/media/1248297608376725/94f09345-ad4a-4981-83dd-e3206bbf5c4e/ep-9e3fc3f9-e686-407c-9193-25dd12aade96.mp3",
+      "source": "Daily AI Intelligence",
+      "category": "Podcast",
+      "summary": "Daily AI Intelligence, October 15, 2026: Anthropic's $16.8B Q3 and IPO timeline, eight US states suing OpenAI over child safety, OpenAI-Apple trade secrets, Claude voting info, Grok Voice 3.0, Muse Wonder reception, Microsoft Maia 300, and the EU's first AI Act enforcement action",
+      "published": "2026-10-15T01:04:41+00:00",
+      "audio_url": "https://muse.ai/podcasts/media/1248297608376725/94f09345-ad4a-4981-83dd-e3206bbf5c4e/ep-9e3fc3f9-e686-407c-9193-25dd12aade96.mp3",
+      "duration": "266"
+    },
     {
       "id": "939ecdfa504040eb",
       "title": "YouTube sticks new labels on AI-generated songs",
@@ -230,6 +263,17 @@
       "source": "OpenAI Blog",
       "category": "AI",
       "summary": "With GPT-6 Astra and GPT-6.1 Sol, Codex, and Daybreak for cybersecurity, this AI lab builds agents that focus for days and improve with use.",
+      "published": "2026-10-14T07:00:00+00:00",
+      "audio_url": null,
+      "duration": ""
+    },
+    {
+      "id": "7d10f0ddfecf202c",
+      "title": "How Block is building AI-powered security with OpenAI technology",
+      "link": "https://openai.com/index/block-ai-powered-security",
+      "source": "OpenAI Blog",
+      "category": "AI",
+      "summary": "Block is building AI-powered security with OpenAI. Its security team investigates threats faster and proposes patches in minutes.",
       "published": "2026-10-14T07:00:00+00:00",
       "audio_url": null,
       "duration": ""
@@ -1434,17 +1478,6 @@
       "duration": ""
     },
     {
-      "id": "a5b44d5e4c84e5df",
-      "title": "Everything announced at Microsoft&#8217;s Surface Laptop Ultra event",
-      "link": "https://www.theverge.com/tech/1007147/microsoft-surface-laptop-ultra-windows-event-everything-announced",
-      "source": "The Verge \u2014 AI",
-      "category": "AI",
-      "summary": "Microsoft just wrapped up a big Windows and Surface-focused keynote in San Francisco. The biggest announcement was arguably the release details about the Surface Laptop Ultra, its new laptop that&#8217;s powered by Nvidia&#8217;s RTX Spark Arm-based chip. The machine will start a",
-      "published": "2026-10-07T21:59:44.444816+00:00",
-      "audio_url": null,
-      "duration": ""
-    },
-    {
       "id": "0598a3e5bb11bf63",
       "title": "\u201cSoftware is over\u201d: Bold AI developer takes aim at Adobe with open source clones",
       "link": "https://arstechnica.com/ai/2026/10/software-is-over-bold-ai-developer-takes-aim-at-adobe-with-open-source-clones/",
@@ -2068,17 +2101,6 @@
       "category": "AI",
       "summary": "Yesterday was Grok 4.7 ( pelicans ) and MiMo v2.6 Flash/Pro ( more pelicans ). Today Anthropic released Claude Opus 5.5 , and around an hour later OpenAI released GPT-6 Sol and GPT-6 Luna . It's going to take a while to get a good read on all of these new models, but here are my ",
       "published": "2026-10-04T06:38:20.832728+00:00",
-      "audio_url": null,
-      "duration": ""
-    },
-    {
-      "id": "75e3d066fe171b2a",
-      "title": "SF October 14th: A Birds of a Feather Session on Agentic Engineering",
-      "link": "https://simonwillison.net/2026/Sep/23/bof-agentic-engineering/",
-      "source": "Simon Willison",
-      "category": "AI",
-      "summary": "SF October 14th: A Birds of a Feather Session on Agentic Engineering I'm hosting an evening event with Jesse Vincent in San Francisco on Wednesday 14th October for people who are building weird and interesting things with and on top of coding agents. Think of it as an agentic sho",
-      "published": "2026-10-04T06:38:20.832475+00:00",
       "audio_url": null,
       "duration": ""
     },
@@ -2794,17 +2816,6 @@
       "category": "AI",
       "summary": "Learn how GPT-6 improves prompt caching with higher cache hit rates, new diagnostics, explicit breakpoints, and controls that reduce latency and costs.",
       "published": "2026-09-22T21:00:00+00:00",
-      "audio_url": null,
-      "duration": ""
-    },
-    {
-      "id": "3d48e529ad7a20b1",
-      "title": "Introducing GPT-6 Sol and Luna",
-      "link": "https://openai.com/index/introducing-gpt-6-sol-and-luna",
-      "source": "OpenAI Blog",
-      "category": "AI",
-      "summary": "Meet GPT-6 Sol and Luna, two models that bring frontier intelligence to everyday work with different balances of capability and cost.",
-      "published": "2026-09-22T18:00:00+00:00",
       "audio_url": null,
       "duration": ""
     },
