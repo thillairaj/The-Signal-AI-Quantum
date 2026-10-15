@@ -4,7 +4,47 @@
     <title>The Signal</title>
     <link>https://thillairaj.github.io/The-Signal-AI-Quantum/</link>
     <description>A self-updating feed of AI, quantum computing, and podcast updates.</description>
-    <lastBuildDate>Thu, 15 Oct 2026 09:59:55 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 15 Oct 2026 14:00:29 +0000</lastBuildDate>
+    <item>
+      <title>Anthropic tells investors quarterly revenue up nearly 50% to $16.8bn ahead of IPO</title>
+      <link>https://simonwillison.net/2026/Oct/15/anthropic-tells-investors/</link>
+      <guid isPermaLink="false">6702d1aaf0afce3a</guid>
+      <description>Anthropic tells investors quarterly revenue up nearly 50% to $16.8bn ahead of IPO The phrase "told investors" appears four times in this FT article, which reports on Anthropic's day of hosting investors on Wednesday. Lots of details in here from " people with knowledge of the mat</description>
+      <category>Simon Willison</category>
+      <pubDate>Thu, 15 Oct 2026 14:00:02 +0000</pubDate>
+    </item>
+    <item>
+      <title>Your secrets aren’t safe with this cute robot toy — they’re on Chinese servers ready to be hacked</title>
+      <link>https://www.theverge.com/tech/1010727/eiliko-robot-hack-energize-lab</link>
+      <guid isPermaLink="false">faf4d5dfcd6c5d73</guid>
+      <description>There's a new digital pet in town - a cute little marshmallow of a robot that can change its cartoony expressions to match your mood. But if you or your kids talk to "Eiliko" over Wi-Fi, it'll phone home to China. Its AI companion can store literally everything you tell it on Chi</description>
+      <category>The Verge — AI</category>
+      <pubDate>Thu, 15 Oct 2026 14:00:01 +0000</pubDate>
+    </item>
+    <item>
+      <title>Amazon’s always-listening Bee wearable can now help you buy stuff</title>
+      <link>https://www.theverge.com/tech/1011475/amazon-bee-frontier-eclipse-price-specs</link>
+      <guid isPermaLink="false">b6af0c3578bc7e52</guid>
+      <description>Last year, Amazon bought Bee, a relatively unknown startup with a $50 always-listening AI wearable that summarized every conversation you had. Today, the e-commerce giant is announcing two new Bee devices - and a new subscription to go with them. First is the $74.99 Bee Frontier,</description>
+      <category>The Verge — AI</category>
+      <pubDate>Thu, 15 Oct 2026 14:00:01 +0000</pubDate>
+    </item>
+    <item>
+      <title>Google launches its &amp;#8216;universal&amp;#8217; online shopping cart ahead of the holidays</title>
+      <link>https://www.theverge.com/tech/1011797/google-ai-universal-cart-shopping-tool-launch</link>
+      <guid isPermaLink="false">adaf79e50c2e54f8</guid>
+      <description>Google's intelligent AI shopping cart is finally here, and just in time to tempt users into Black Friday and seasonal holiday spending. The Universal Cart tool Google previewed at its I/O event in May is now rolling out in the US across the Gemini app and Google Search, with the </description>
+      <category>The Verge — AI</category>
+      <pubDate>Thu, 15 Oct 2026 14:00:01 +0000</pubDate>
+    </item>
+    <item>
+      <title>Teaching students to think and learn through questions</title>
+      <link>https://openai.com/index/teaching-students-to-think-and-learn-through-questions</link>
+      <guid isPermaLink="false">fa14b8f7db4605df</guid>
+      <description>Celebrate Teachers’ Day with AI for Educators in Brazilian Portuguese and see how Study Mode can help teachers support active, step-by-step learning.</description>
+      <category>OpenAI Blog</category>
+      <pubDate>Thu, 15 Oct 2026 13:00:00 +0000</pubDate>
+    </item>
     <item>
       <title>Tree Appreciator</title>
       <link>https://simonwillison.net/2026/Oct/14/tree-appreciator/</link>
@@ -444,46 +484,6 @@
       <description>Higgsfield brings creators longer videos with GPT-6 Astra, precise visuals with GPT-Image-2.5, and a path to voice filmmaking with GPT-Live.</description>
       <category>OpenAI Blog</category>
       <pubDate>Tue, 13 Oct 2026 12:00:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>web-edit 0.1a0</title>
-      <link>https://simonwillison.net/2026/Oct/12/web-edit/</link>
-      <guid isPermaLink="false">93062c67d6f00e76</guid>
-      <description>Release: web-edit 0.1a0 I was working on a project from my phone using Codex Remote when I found myself wanting to edit a credentials file without round-tripping those credentials through the LLM itself. So... I had Codex and GPT-6 Astra Extra High build this Python web app which</description>
-      <category>Simon Willison</category>
-      <pubDate>Tue, 13 Oct 2026 01:59:42 +0000</pubDate>
-    </item>
-    <item>
-      <title>Daily AI Intelligence — Episode 12 (Tue Oct 13, 2026): Meta's Muse Wonder Frontier Model, HCLTech–Anthropic Partnership, OpenAI's EU Watermark</title>
-      <link>https://muse.ai/podcasts/media/1248297608376725/94f09345-ad4a-4981-83dd-e3206bbf5c4e/ep-2c99a941-4407-4667-9f77-0c237a92d4a3.mp3</link>
-      <guid isPermaLink="false">d4fe547e1001af92</guid>
-      <description>Meta launches its first frontier model (Muse Wonder), Anthropic signs a Global Premier Partnership with HCLTech, OpenAI rolls out an invisible EU watermark, xAI bundles Grok/Cursor/X Premium, Microsoft upgrades Copilot Notebooks, and a cautionary DeepSeek long-context study. AI G</description>
-      <category>Daily AI Intelligence</category>
-      <pubDate>Tue, 13 Oct 2026 01:03:31 +0000</pubDate>
-    </item>
-    <item>
-      <title>datasette-ports 0.4</title>
-      <link>https://simonwillison.net/2026/Oct/12/datasette-ports/</link>
-      <guid isPermaLink="false">59e7fc14e8c1a5c7</guid>
-      <description>Release: datasette-ports 0.4 My plugin for detecting and listing all Datasette instances on the current machine now works with the latest version, and displays the detected PID as well. Knowing the PID makes it easier to attach the new Python 3.15 profiler . Tags: datasette</description>
-      <category>Simon Willison</category>
-      <pubDate>Mon, 12 Oct 2026 21:59:55 +0000</pubDate>
-    </item>
-    <item>
-      <title>Hello Python 3.15, goodbye 3.10, and now I can use 3.11</title>
-      <link>https://simonwillison.net/2026/Oct/12/python-3-15/</link>
-      <guid isPermaLink="false">92f57cbc8464c256</guid>
-      <description>Python 3.15 is here ! Here's the essential What's new in Python 3.15 guide, this year curated by 3.14 and 3.15 release manager Hugo van Kemenade. As someone who builds open source software that works in every supported Python version, I get to say goodbye to Python 3.10 and start</description>
-      <category>Simon Willison</category>
-      <pubDate>Mon, 12 Oct 2026 21:59:55 +0000</pubDate>
-    </item>
-    <item>
-      <title>Epic Games reportedly pivoting to "AI first" game development model</title>
-      <link>https://arstechnica.com/gaming/2026/10/report-epic-games-goes-all-in-on-ai-for-disney-collaboration/</link>
-      <guid isPermaLink="false">37b5a1e81dc84f2f</guid>
-      <description>"No more hand-written code" or AI-free art for delayed Marvel/Star Wars shooter.</description>
-      <category>Ars Technica AI</category>
-      <pubDate>Mon, 12 Oct 2026 20:59:50 +0000</pubDate>
     </item>
   </channel>
 </rss>

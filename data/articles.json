@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-15T09:59:55.754502+00:00",
+  "generated_at": "2026-10-15T14:00:29.095018+00:00",
   "sources_polled": [
     "The Verge \u2014 AI",
     "Simon Willison",
@@ -14,6 +14,61 @@
     "Technology Learnings"
   ],
   "articles": [
+    {
+      "id": "6702d1aaf0afce3a",
+      "title": "Anthropic tells investors quarterly revenue up nearly 50% to $16.8bn ahead of IPO",
+      "link": "https://simonwillison.net/2026/Oct/15/anthropic-tells-investors/",
+      "source": "Simon Willison",
+      "category": "AI",
+      "summary": "Anthropic tells investors quarterly revenue up nearly 50% to $16.8bn ahead of IPO The phrase \"told investors\" appears four times in this FT article, which reports on Anthropic's day of hosting investors on Wednesday. Lots of details in here from \" people with knowledge of the mat",
+      "published": "2026-10-15T14:00:02.547821+00:00",
+      "audio_url": null,
+      "duration": ""
+    },
+    {
+      "id": "faf4d5dfcd6c5d73",
+      "title": "Your secrets aren\u2019t safe with this cute robot toy \u2014 they\u2019re on Chinese servers ready to be hacked",
+      "link": "https://www.theverge.com/tech/1010727/eiliko-robot-hack-energize-lab",
+      "source": "The Verge \u2014 AI",
+      "category": "AI",
+      "summary": "There's a new digital pet in town - a cute little marshmallow of a robot that can change its cartoony expressions to match your mood. But if you or your kids talk to \"Eiliko\" over Wi-Fi, it'll phone home to China. Its AI companion can store literally everything you tell it on Chi",
+      "published": "2026-10-15T14:00:01.901592+00:00",
+      "audio_url": null,
+      "duration": ""
+    },
+    {
+      "id": "b6af0c3578bc7e52",
+      "title": "Amazon\u2019s always-listening Bee wearable can now help you buy stuff",
+      "link": "https://www.theverge.com/tech/1011475/amazon-bee-frontier-eclipse-price-specs",
+      "source": "The Verge \u2014 AI",
+      "category": "AI",
+      "summary": "Last year, Amazon bought Bee, a relatively unknown startup with a $50 always-listening AI wearable that summarized every conversation you had. Today, the e-commerce giant is announcing two new Bee devices - and a new subscription to go with them. First is the $74.99 Bee Frontier,",
+      "published": "2026-10-15T14:00:01.901553+00:00",
+      "audio_url": null,
+      "duration": ""
+    },
+    {
+      "id": "adaf79e50c2e54f8",
+      "title": "Google launches its &#8216;universal&#8217; online shopping cart ahead of the holidays",
+      "link": "https://www.theverge.com/tech/1011797/google-ai-universal-cart-shopping-tool-launch",
+      "source": "The Verge \u2014 AI",
+      "category": "AI",
+      "summary": "Google's intelligent AI shopping cart is finally here, and just in time to tempt users into Black Friday and seasonal holiday spending. The Universal Cart tool Google previewed at its I/O event in May is now rolling out in the US across the Gemini app and Google Search, with the ",
+      "published": "2026-10-15T14:00:01.901456+00:00",
+      "audio_url": null,
+      "duration": ""
+    },
+    {
+      "id": "fa14b8f7db4605df",
+      "title": "Teaching students to think and learn through questions",
+      "link": "https://openai.com/index/teaching-students-to-think-and-learn-through-questions",
+      "source": "OpenAI Blog",
+      "category": "AI",
+      "summary": "Celebrate Teachers\u2019 Day with AI for Educators in Brazilian Portuguese and see how Study Mode can help teachers support active, step-by-step learning.",
+      "published": "2026-10-15T13:00:00+00:00",
+      "audio_url": null,
+      "duration": ""
+    },
     {
       "id": "bbc1e25e9e985e45",
       "title": "Tree Appreciator",
@@ -1357,28 +1412,6 @@
       "duration": ""
     },
     {
-      "id": "4b28fadcbc6553dd",
-      "title": "It appears .agent and .agi are about to be the hot new domains",
-      "link": "https://www.theverge.com/tech/1007132/icann-domains-2026-ai-agi",
-      "source": "The Verge \u2014 AI",
-      "category": "AI",
-      "summary": "For the first time in years, the Internet Corporation for Assigned Names and Numbers - better known as ICANN - is accepting applications for new top-level domains. These are the suffixes at the end of all URLs, and you may know them as things like .com, .org, and .pizza. ICANN ju",
-      "published": "2026-10-08T14:00:23.221102+00:00",
-      "audio_url": null,
-      "duration": ""
-    },
-    {
-      "id": "d883472ab4068301",
-      "title": "Can you trust Meta\u2019s Muse or OpenAI\u2019s Dots to run your life?",
-      "link": "https://www.theverge.com/podcast/1007408/meta-muse-openai-dots-ai-agent-race-privacy-free",
-      "source": "The Verge \u2014 AI",
-      "category": "AI",
-      "summary": "My Decoder guest today is Hayden Field, The Verge\u2019s senior AI reporter, and we\u2019re discussing the new wave of consumer-friendly AI agents. If you\u2019ve been paying attention to this space, you know AI enthusiasts have been using agents for a minute now \u2014 homebrew OpenClaw setups led ",
-      "published": "2026-10-08T14:00:23.221021+00:00",
-      "audio_url": null,
-      "duration": ""
-    },
-    {
       "id": "ca1ec6c6a1a1314d",
       "title": "Pollo AI turns creative ideas into campaigns with OpenAI",
       "link": "https://openai.com/index/pollo-ai",
@@ -1463,17 +1496,6 @@
       "category": "AI",
       "summary": "As previously promised , here's Anthropic's new fast, low cost model: Introducing Claude Haiku 5.5 . The previous Haiku, 4.5, was very much showing its age. It came out almost a year ago , and was priced at $1/million input and $5/million output - relatively expensive even back t",
       "published": "2026-10-07T21:59:47.547481+00:00",
-      "audio_url": null,
-      "duration": ""
-    },
-    {
-      "id": "9c7dd462aa5ae2f1",
-      "title": "Microsoft is giving Copilot more control over Windows and your files",
-      "link": "https://www.theverge.com/tech/1007113/microsoft-windows-copilot-ai-control-search-hybrid-intelligence",
-      "source": "The Verge \u2014 AI",
-      "category": "AI",
-      "summary": "At today's Windows and Surface event, Microsoft showed off an upgrade to its Copilot AI system that will give it access to local files on your PC and the ability to take actions across the OS. It's part of an idea Microsoft is calling \"Hybrid Intelligence,\" where apps and tools r",
-      "published": "2026-10-07T21:59:44.444856+00:00",
       "audio_url": null,
       "duration": ""
     },
@@ -2090,17 +2112,6 @@
       "category": "AI",
       "summary": "Release: llm 0.36 New OpenAI models: gpt-6-sol for GPT-6 Sol and gpt-6-luna for GPT-6 Luna . #1702 Model plugins can now declare supports_conversation = False for models that only accept single-turn prompts. LLM raises llm.ConversationNotSupported when these models receive assist",
       "published": "2026-10-04T06:38:20.832769+00:00",
-      "audio_url": null,
-      "duration": ""
-    },
-    {
-      "id": "f526d7679022c6d3",
-      "title": "Claude Opus 5.5, GPT-6 Sol, GPT-6 Luna, and a new price war",
-      "link": "https://simonwillison.net/2026/Sep/22/opus-and-sol-and-luna/",
-      "source": "Simon Willison",
-      "category": "AI",
-      "summary": "Yesterday was Grok 4.7 ( pelicans ) and MiMo v2.6 Flash/Pro ( more pelicans ). Today Anthropic released Claude Opus 5.5 , and around an hour later OpenAI released GPT-6 Sol and GPT-6 Luna . It's going to take a while to get a good read on all of these new models, but here are my ",
-      "published": "2026-10-04T06:38:20.832728+00:00",
       "audio_url": null,
       "duration": ""
     },
@@ -2805,17 +2816,6 @@
       "category": "AI",
       "summary": "OpenAI and Grab launch GO Forward with AI, a regional programme helping 30,000 partners build practical AI skills across Southeast Asia.",
       "published": "2026-09-23T00:00:00+00:00",
-      "audio_url": null,
-      "duration": ""
-    },
-    {
-      "id": "b6b1e4118cdbb529",
-      "title": "Better prompt caching for GPT-6",
-      "link": "https://openai.com/index/better-prompt-caching-for-gpt-6",
-      "source": "OpenAI Blog",
-      "category": "AI",
-      "summary": "Learn how GPT-6 improves prompt caching with higher cache hit rates, new diagnostics, explicit breakpoints, and controls that reduce latency and costs.",
-      "published": "2026-09-22T21:00:00+00:00",
       "audio_url": null,
       "duration": ""
     },
