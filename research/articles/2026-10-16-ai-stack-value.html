@@ -1,0 +1,47 @@
+<p><em>Signal Research Notes is a weekly original-research series on The Signal. Each edition asks one question, works through it from primary sources, and keeps confirmed facts separate from analysis. Sources are linked at the end.</em></p>
+
+<p>Every computing stack eventually reveals where the durable profits sit. In PCs it was the microprocessor and the operating system. In mobile it was the app store and the baseband. Five years into the generative AI buildout, the map is legible enough to read, and it does not match the early predictions. Value is pooling at the two ends of the stack that are hardest to commoditize: the physical bottom and the workflow top. The middle is being squeezed from both sides.</p>
+
+<h3>1. Power and land are the binding constraint</h3>
+
+<p>The scarcest input to AI in 2026 is not capital. It is not chips either. It is electricity.</p>
+
+<p>Gartner puts global data center electricity consumption at 565 TWh in 2026, up 26 percent in a single year, with power demand reaching 132 GW. AI-optimized servers already account for 31 percent of that draw and will overtake conventional servers in 2027. In the US alone, Goldman Sachs sees data center demand rising from 31 GW in 2025 to 41 GW in 2026 and 66 GW in 2027. Gartner analyst Linglan Wang has called power security the new battleground for scaling AI, and the order books agree. Microsoft is reported to carry an $80 billion backlog of unfulfilled Azure orders. Read that again: paying customers waiting on power-constrained capacity that does not exist yet. The five largest hyperscalers guided roughly $775 to $800 billion in 2026 capital expenditure.</p>
+
+<p>Put simply, whoever controls grid-adjacent land, firm power contracts, and the right to build collects a toll on every token computed above them.</p>
+
+<h3>2. Silicon: a fortress with a growing side door</h3>
+
+<p>NVIDIA still controls an estimated 80 percent of the AI accelerator market, and frontier model training remains its uncontested territory. But inference, now roughly two thirds of all AI compute, is where the economics are moving.</p>
+
+<p>Hyperscaler custom silicon (Google's TPUs, AWS Trainium, Microsoft's Maia, Meta's MTIA) collectively holds an estimated 15 to 20 percent of the accelerator market and is compounding at over 40 percent a year. The motive is straightforward: compress the dollar-per-token cost of inference. AWS reports that Trainium already processes more than half of the token throughput on Bedrock. There is a structural catch worth stating plainly. These chips are captive to their builders. If you are not AWS, Google, Microsoft, or Meta, they do not exist for you.</p>
+
+<p>Meanwhile every advanced chip still funnels through TSMC's 3nm lines, reportedly running at full utilization with demand far exceeding supply. The fulcrum assets in silicon are not only GPU design but fabrication capacity and the software stacks that make the silicon usable.</p>
+
+<h3>3. Models: the fastest-depreciating asset in the stack</h3>
+
+<p>Foundation models look like the crown jewels and behave like a commodity in training. Analyst Benedict Evans frames it well: inference runs at an estimated 40 to 50 percent gross margins today, but that figure excludes the cost of training the next model, which currently exceeds revenue. Token prices keep falling as supply expands. Frontier-class models list around $5 per million input tokens while small efficient models sit near $0.20. The FinOps Foundation's framing, widely cited in 2026, is that inference is 80 to 90 percent of total GenAI spend in real deployments.</p>
+
+<p>The conclusion is uncomfortable for model builders. Expect frontier models to behave increasingly like infrastructure: essential, expensive to build, and brutal on margins. Pricing power in this layer is the open question, not capability.</p>
+
+<h3>4. Execution and agents: where ROI goes to die, or compound</h3>
+
+<p>This is the layer the enterprise is actually buying, and the numbers tell a split story. KPMG's Q3 2026 survey finds 62 percent of large enterprises deploying or developing AI agents. Another survey puts deployment at 97 percent of executives, yet only 29 percent report significant ROI. McKinsey finds 88 percent of organizations use AI in at least one function but only 23 percent are scaling an agentic system. Gartner predicts over 40 percent of agentic AI projects will be cancelled by the end of 2027, citing unclear value and weak governance.</p>
+
+<p>There is a technical reason cost discipline matters here. Agent workflows are five to thirty times more computationally intensive than simple chatbot queries, so architecture choices are the primary cost lever as inference spend scales. The value in this layer will accrue not to whoever ships the most agents but to whoever solves orchestration, governance, and cost control. The control plane for the agentic enterprise is still up for grabs.</p>
+
+<h3>5. Applications: distribution eats the margin</h3>
+
+<p>AI products carry gross margins roughly 25 to 30 points below traditional SaaS, because every request has a variable token cost attached. That single fact is reshaping software pricing toward outcome-based models: per resolved ticket, per completed task. It punishes thin wrappers and rewards products embedded in real workflows with proprietary data feedback loops. Distribution plus compounding data is the moat. The model underneath is increasingly interchangeable.</p>
+
+<h3>Where this leaves us</h3>
+
+<p>Buy the picks and shovels where supply is genuinely constrained: firm power, advanced fabrication, and the interconnect between them. Rent the middle: models and generic compute, where prices fall. Build at the top: workflows, agents, and data loops that compound. The stack rewards ownership of bottlenecks, not ownership of intelligence.</p>
+
+<p>Three things could break this thesis, and they are worth watching:</p>
+
+<ul>
+<li>Grid and power buildout outpacing demand faster than expected.</li>
+<li>A step-change in model capability that re-prices tokens upward instead of down.</li>
+<li>Regulation that reshapes data center siting or model deployment economics in major markets.</li>
+</ul>

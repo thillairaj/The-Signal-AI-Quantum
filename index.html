@@ -29,6 +29,7 @@
     <button class="top-tab active" data-view="feed">RSS Feed</button>
     <button class="top-tab" data-view="podcast">Podcast</button>
     <button class="top-tab" data-view="learn">Learning Space</button>
+    <button class="top-tab" data-view="research">Research</button>
   </nav>
   <div class="masthead-right">
     <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">☾</button>
@@ -134,6 +135,15 @@
     </div>
     <div id="podcast-featured"></div>
     <div id="podcast-list"></div>
+  </section>
+
+  <section id="research-view" class="view-section" hidden>
+    <div class="view-intro">
+      <h2>Research Notes</h2>
+      <p>Original research from The Signal — one question-led analysis at a time, on AI and quantum.</p>
+    </div>
+    <div class="research-grid" id="researchGrid"></div>
+    <div id="researchArticle" hidden></div>
   </section>
 </div>
 

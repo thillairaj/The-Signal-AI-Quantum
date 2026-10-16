@@ -18,6 +18,11 @@ let lastGeneratedAt = null;
 const feedEl = document.getElementById("feed");
 const learnViewEl = document.getElementById("learn-view");
 const podcastViewEl = document.getElementById("podcast-view");
+const researchViewEl = document.getElementById("research-view");
+const researchGridEl = document.getElementById("researchGrid");
+const researchArticleEl = document.getElementById("researchArticle");
+let researchItems = [];
+let openResearchId = null;
 const topTabsEl = document.getElementById("topTabs");
 const podcastFeaturedEl = document.getElementById("podcast-featured");
 const podcastListEl = document.getElementById("podcast-list");
@@ -104,9 +109,11 @@ function showView(name) {
   feedEl.hidden = name !== "feed";
   learnViewEl.hidden = name !== "learn";
   podcastViewEl.hidden = name !== "podcast";
+  researchViewEl.hidden = name !== "research";
   topTabsEl.querySelectorAll(".top-tab").forEach(b =>
     b.classList.toggle("active", b.dataset.view === name));
   if (name === "podcast") renderPodcast();
+  if (name === "research") renderResearch();
 }
 
 function escapeHtml(s) {
@@ -185,6 +192,82 @@ function renderPodcast() {
   });
   document.getElementById("podNext").addEventListener("click", () => {
     if (podcastPage < totalPages - 1) { podcastPage++; renderPodcast(); podcastViewEl.scrollIntoView(); }
+  });
+}
+
+/* ---------- Research Notes ---------- */
+function fmtResearchDate(iso) {
+  if (!iso) return "";
+  const d = new Date(iso.length <= 10 ? iso + "T12:00:00" : iso);
+  if (isNaN(d.getTime())) return iso;
+  return d.toLocaleDateString("en-GB", { day: "numeric", month: "short", year: "numeric" });
+}
+
+async function loadResearch() {
+  try {
+    const res = await fetch(`data/research.json?t=${Date.now()}`, { cache: "no-store" });
+    if (!res.ok) throw new Error(`HTTP ${res.status}`);
+    const data = await res.json();
+    researchItems = (data.articles || []).slice()
+      .sort((a, b) => String(b.date || "").localeCompare(String(a.date || "")));
+  } catch (err) {
+    researchItems = [];
+    console.error("Failed to load research.json", err);
+  }
+  renderResearch();
+}
+
+function renderResearch() {
+  if (!researchViewEl) return;
+  if (openResearchId) { renderResearchArticle(openResearchId); return; }
+  researchArticleEl.hidden = true;
+  researchArticleEl.innerHTML = "";
+  researchGridEl.hidden = false;
+  if (!researchItems.length) {
+    researchGridEl.innerHTML = `<p class="empty-state">The first Research Notes edition lands soon.</p>`;
+    return;
+  }
+  researchGridEl.innerHTML = researchItems.map(a => `
+    <button class="research-card" data-id="${escapeHtml(a.id)}">
+      <img src="${escapeHtml(a.card)}" alt="${escapeHtml(a.title)} cover" loading="lazy">
+      <span class="research-card-meta">${escapeHtml(a.kind || "Research")} · ${fmtResearchDate(a.date)}</span>
+      <span class="research-card-title">${escapeHtml(a.title)}</span>
+      <span class="research-card-sub">${escapeHtml(a.subtitle || "")}</span>
+    </button>`).join("");
+  researchGridEl.querySelectorAll(".research-card").forEach(c =>
+    c.addEventListener("click", () => {
+      openResearchId = c.dataset.id;
+      renderResearch();
+      researchViewEl.scrollIntoView();
+    }));
+}
+
+async function renderResearchArticle(id) {
+  const a = researchItems.find(x => x.id === id);
+  if (!a) { openResearchId = null; renderResearch(); return; }
+  researchGridEl.hidden = true;
+  researchArticleEl.hidden = false;
+  let body = "";
+  try {
+    const res = await fetch(`${a.body}?t=${Date.now()}`, { cache: "no-store" });
+    body = res.ok ? await res.text() : "<p>Article body unavailable.</p>";
+  } catch (err) {
+    body = "<p>Article body unavailable.</p>";
+  }
+  const sources = (a.sources || []).map(s =>
+    `<li><a href="${escapeHtml(s.url)}" target="_blank" rel="noopener">${escapeHtml(s.label)}</a></li>`).join("");
+  researchArticleEl.innerHTML = `
+    <button class="research-back" id="researchBack">← All research</button>
+    <p class="research-kicker">THE SIGNAL · RESEARCH NOTES · ${escapeHtml((a.kind || "Research").toUpperCase())}</p>
+    <h2 class="research-title">${escapeHtml(a.title)}</h2>
+    <p class="research-sub">${escapeHtml(a.subtitle || "")}</p>
+    <p class="research-date">${fmtResearchDate(a.date)} · By The Signal</p>
+    <img class="research-hero" src="${escapeHtml(a.card)}" alt="${escapeHtml(a.title)} cover">
+    <div class="research-body">${body}</div>
+    ${sources ? `<h3 class="research-sources-h">Sources</h3><ul class="research-sources">${sources}</ul>` : ""}`;
+  document.getElementById("researchBack").addEventListener("click", () => {
+    openResearchId = null;
+    renderResearch();
   });
 }
 
@@ -381,6 +464,7 @@ if (sourcesToggleBtn) {
 }
 
 loadData();
+loadResearch();
 loadViews();
 setInterval(loadData, CLIENT_REFRESH_MS);
 setInterval(loadViews, CLIENT_REFRESH_MS);
