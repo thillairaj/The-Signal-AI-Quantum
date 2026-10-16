@@ -496,6 +496,7 @@ body[data-view="research"] .feed-only { display: none; }
   grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
   gap: 1.2rem;
 }
+.research-grid[hidden] { display: none; }
 .research-card {
   background: var(--surface);
   border: 1px solid var(--border);
