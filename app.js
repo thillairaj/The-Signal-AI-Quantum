@@ -256,19 +256,49 @@ async function renderResearchArticle(id) {
   }
   const sources = (a.sources || []).map(s =>
     `<li><a href="${escapeHtml(s.url)}" target="_blank" rel="noopener">${escapeHtml(s.label)}</a></li>`).join("");
+  const title = escapeHtml(a.title);
+  const card = escapeHtml(a.card);
   researchArticleEl.innerHTML = `
     <button class="research-back" id="researchBack">← All research</button>
-    <p class="research-kicker">THE SIGNAL · RESEARCH NOTES · ${escapeHtml((a.kind || "Research").toUpperCase())}</p>
-    <h2 class="research-title">${escapeHtml(a.title)}</h2>
-    <p class="research-sub">${escapeHtml(a.subtitle || "")}</p>
-    <p class="research-date">${fmtResearchDate(a.date)} · By The Signal</p>
-    <img class="research-hero" src="${escapeHtml(a.card)}" alt="${escapeHtml(a.title)} cover">
-    <div class="research-body">${body}</div>
-    ${sources ? `<h3 class="research-sources-h">Sources</h3><ul class="research-sources">${sources}</ul>` : ""}`;
+    <div class="research-article-wrap">
+      <p class="research-kicker">THE SIGNAL · RESEARCH NOTES · ${escapeHtml((a.kind || "Research").toUpperCase())}</p>
+      <h2 class="research-title">${title}</h2>
+      <p class="research-sub">${escapeHtml(a.subtitle || "")}</p>
+      <p class="research-date">${fmtResearchDate(a.date)} · By The Signal</p>
+      <div class="research-layout">
+        <div class="research-main">
+          <div class="research-body">${body}</div>
+          ${sources ? `<h3 class="research-sources-h">Sources</h3><ul class="research-sources">${sources}</ul>` : ""}
+        </div>
+        <aside class="research-rail">
+          <button class="research-thumb" id="researchThumb" aria-label="Expand cover image">
+            <img src="${card}" alt="${title} cover">
+            <span class="research-zoom">⤢ Tap to expand</span>
+          </button>
+        </aside>
+      </div>
+    </div>
+    <div class="research-lightbox" id="researchLightbox" hidden>
+      <img src="${card}" alt="${title} cover">
+    </div>`;
   document.getElementById("researchBack").addEventListener("click", () => {
     openResearchId = null;
     renderResearch();
   });
+  const thumb = document.getElementById("researchThumb");
+  const lightbox = document.getElementById("researchLightbox");
+  const onEsc = (e) => { if (e.key === "Escape") closeLb(); };
+  function closeLb() {
+    lightbox.hidden = true;
+    document.body.style.overflow = "";
+    document.removeEventListener("keydown", onEsc);
+  }
+  thumb.addEventListener("click", () => {
+    lightbox.hidden = false;
+    document.body.style.overflow = "hidden";
+    document.addEventListener("keydown", onEsc);
+  });
+  lightbox.addEventListener("click", closeLb);
 }
 
 /* ---------- Filtering & rendering ---------- */
