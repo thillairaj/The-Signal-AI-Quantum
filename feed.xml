@@ -4,7 +4,39 @@
     <title>The Signal</title>
     <link>https://thillairaj.github.io/The-Signal-AI-Quantum/</link>
     <description>A self-updating feed of AI, quantum computing, and podcast updates.</description>
-    <lastBuildDate>Fri, 16 Oct 2026 14:00:10 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 16 Oct 2026 18:44:30 +0000</lastBuildDate>
+    <item>
+      <title>Meta’s new terms may allow it to train AI on news sites for free</title>
+      <link>https://www.theverge.com/tech/1012846/meta-business-terms-scrape-news-publishers</link>
+      <guid isPermaLink="false">ad3a47861a304e90</guid>
+      <description>Meta's new terms appear to give it permission to crawl and scrape websites "associated" with the businesses that use its platforms - including online publishers, according to a report from Nieman Lab. The new terms, which go into effect on October 30th, say Meta can use this outs</description>
+      <category>The Verge — AI</category>
+      <pubDate>Fri, 16 Oct 2026 18:44:19 +0000</pubDate>
+    </item>
+    <item>
+      <title>A week with RTX Spark: everything we’ve learned using Nvidia’s new laptops</title>
+      <link>https://www.theverge.com/tech/1012748/nvidia-rtx-spark-windows-arm-laptops-asus-hp-lenovo-impressions</link>
+      <guid isPermaLink="false">3d6f16cf09a8486c</guid>
+      <description>Nvidia's RTX Spark N1X processor is finally here, and we've been collectively testing a small fortune's worth of powerful laptops sporting this new "superchip." RTX Spark is designed to be a high-performing Arm-based SoC for laptops and small desktop computers, rivaling the best </description>
+      <category>The Verge — AI</category>
+      <pubDate>Fri, 16 Oct 2026 18:44:19 +0000</pubDate>
+    </item>
+    <item>
+      <title>Meta may use sweeping new commercial TOS to avoid millions in AI licensing fees</title>
+      <link>https://arstechnica.com/tech-policy/2026/10/meta-may-use-sweeping-new-commercial-tos-to-avoid-millions-in-ai-licensing-fees/</link>
+      <guid isPermaLink="false">ae8741fad8038911</guid>
+      <description>Meta “streamlined” its commercial TOS. Legal experts warn it’s an AI power grab.</description>
+      <category>Ars Technica AI</category>
+      <pubDate>Fri, 16 Oct 2026 15:41:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>Super Scam Me documentary shows what it takes to catch a romance scammer</title>
+      <link>https://arstechnica.com/tech-policy/2026/10/romance-scam-doc-super-scam-me-takes-viewers-deep-into-love-bombing-terrain/</link>
+      <guid isPermaLink="false">bbf1b6b9791d9c9d</guid>
+      <description>Watch an exclusive clip from Super Scam Me where a victim tracks down her scammer.</description>
+      <category>Ars Technica AI</category>
+      <pubDate>Fri, 16 Oct 2026 14:00:59 +0000</pubDate>
+    </item>
     <item>
       <title>Sega pulls Total War: Shogun 2 remaster from sale following disastrous launch</title>
       <link>https://www.theverge.com/games/1012512/sega-total-war-shogun-2-remaster-pulled</link>
@@ -452,38 +484,6 @@
       <description>IT Infrastructure &amp; Cloud track: walking through a primary database failure and failover AI Generated</description>
       <category>Technology Learnings</category>
       <pubDate>Wed, 14 Oct 2026 01:37:58 +0000</pubDate>
-    </item>
-    <item>
-      <title>Tech Learning: IT Infrastructure &amp; Cloud — Ep 9: SQL vs NoSQL: Choosing the Right Database</title>
-      <link>https://muse.ai/podcasts/media/1248297608376725/4720f1e9-8c94-4958-8367-c455f31c5edc/ep-efbeab5e-e443-4d02-bce1-388d0f66d784.mp3</link>
-      <guid isPermaLink="false">8a90dac9e01520f9</guid>
-      <description>IT Infrastructure &amp; Cloud track: relational vs NoSQL databases and how to choose between them AI Generated</description>
-      <category>Technology Learnings</category>
-      <pubDate>Wed, 14 Oct 2026 01:36:07 +0000</pubDate>
-    </item>
-    <item>
-      <title>Daily AI Intelligence — Episode 13 (Wed Oct 14, 2026): Gemini 4 Argon Goes Global, OpenAI's FBI Case, Nvidia Slips in China</title>
-      <link>https://muse.ai/podcasts/media/1248297608376725/94f09345-ad4a-4981-83dd-e3206bbf5c4e/ep-f332482a-dfd8-4f06-9f6f-e9217dbeb9f2.mp3</link>
-      <guid isPermaLink="false">67daf9d11d6c9a3b</guid>
-      <description>Google takes Gemini 4 Argon global, Anthropic says Claude leads 26% of its own R&amp;amp;D, the FBI arrests an OpenAI employee over a planted listening device, a class action targets OpenAI's handling of minors' data, independent scores cool Meta's Wonder hype, and IDC data shows Nvi</description>
-      <category>Daily AI Intelligence</category>
-      <pubDate>Wed, 14 Oct 2026 01:01:53 +0000</pubDate>
-    </item>
-    <item>
-      <title>The EU’s next chapter in AI is agentic</title>
-      <link>https://openai.com/index/the-eus-next-chapter-in-ai-is-agentic</link>
-      <guid isPermaLink="false">2f3282e483141f68</guid>
-      <description>New analysis shows how agentic AI adoption is growing across EU enterprises and small businesses—and where deeper use could unlock more value.</description>
-      <category>OpenAI Blog</category>
-      <pubDate>Wed, 14 Oct 2026 00:00:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>Profiling web-edit with Python 3.15: flame graphs and source heatmaps</title>
-      <link>https://simonwillison.net/2026/Oct/12/python-3-15-web-edit-profiling/</link>
-      <guid isPermaLink="false">131f413269cf581f</guid>
-      <description>Research: Profiling web-edit with Python 3.15: flame graphs and source heatmaps I put the new Python 3.15 profiler through its paces by having GPT-6 Astra Extra High in Codex run it against my new web-edit app : I need a Python 3.15 flame graph and heatmap demo of the "web-edit" </description>
-      <category>Simon Willison</category>
-      <pubDate>Tue, 13 Oct 2026 21:59:57 +0000</pubDate>
     </item>
   </channel>
 </rss>
