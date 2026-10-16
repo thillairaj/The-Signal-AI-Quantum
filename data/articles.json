@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-15T21:59:56.635056+00:00",
+  "generated_at": "2026-10-16T02:00:04.724201+00:00",
   "sources_polled": [
     "The Verge \u2014 AI",
     "Simon Willison",
@@ -14,6 +14,83 @@
     "Technology Learnings"
   ],
   "articles": [
+    {
+      "id": "b78fa0f3af3a7b6b",
+      "title": "Sega pulls Total War: Shogun 2 remaster from sale following disastrous launch",
+      "link": "https://www.theverge.com/games/1012512/sega-total-war-shogun-2-remaster-pulled",
+      "source": "The Verge \u2014 AI",
+      "category": "AI",
+      "summary": "Sega is removing Total War: Shogun 2 - Complete Edition from storefronts following a disastrous launch where users complained about issues like bugs and upscaling that appears to have been done by AI. Complete Edition, a remaster of the 2011 strategy game, launched on Tuesday, an",
+      "published": "2026-10-16T01:59:52.202451+00:00",
+      "audio_url": null,
+      "duration": ""
+    },
+    {
+      "id": "924ca13842a36839",
+      "title": "ChatGPT can peek at your Chrome tabs now",
+      "link": "https://www.theverge.com/ai-artificial-intelligence/1012510/openai-chatgpt-google-chrome-tabs",
+      "source": "The Verge \u2014 AI",
+      "category": "AI",
+      "summary": "OpenAI's ChatGPT Atlas browser is gone, but now ChatGPT's Google Chrome extension is getting some upgrades that allow it to use the browser tabs you already have open. With the extension installed, OpenAI says ChatGPT can now view your browser tabs when you tag Chrome in ChatGPT'",
+      "published": "2026-10-16T01:59:52.202328+00:00",
+      "audio_url": null,
+      "duration": ""
+    },
+    {
+      "id": "1ec9fe0226287d9d",
+      "title": "Tech Learning: Data Engineering & Analytics \u2014 Ep 11: Kafka and Real-Time Thinking",
+      "link": "https://muse.ai/podcasts/media/1248297608376725/4720f1e9-8c94-4958-8367-c455f31c5edc/ep-c522d6a6-849e-43e5-a921-a6bc9255761b.mp3",
+      "source": "Technology Learnings",
+      "category": "Podcast",
+      "summary": "Data Engineering & Analytics track: Kafka topics, partitions and consumer groups, and how to think in events instead of snapshots. AI Generated",
+      "published": "2026-10-16T01:43:12+00:00",
+      "audio_url": "https://muse.ai/podcasts/media/1248297608376725/4720f1e9-8c94-4958-8367-c455f31c5edc/ep-c522d6a6-849e-43e5-a921-a6bc9255761b.mp3",
+      "duration": "459"
+    },
+    {
+      "id": "c8895aaa8f5d0727",
+      "title": "Tech Learning: Data Engineering & Analytics \u2014 Ep 10: Real Scenario: Migrating Warehouse to Lakehouse",
+      "link": "https://muse.ai/podcasts/media/1248297608376725/4720f1e9-8c94-4958-8367-c455f31c5edc/ep-8aabc415-31f7-47df-b972-62d46deb16c3.mp3",
+      "source": "Technology Learnings",
+      "category": "Podcast",
+      "summary": "Data Engineering & Analytics track: A wave-by-wave playbook for moving a data warehouse to a lakehouse without breaking dashboards. AI Generated",
+      "published": "2026-10-16T01:42:44+00:00",
+      "audio_url": "https://muse.ai/podcasts/media/1248297608376725/4720f1e9-8c94-4958-8367-c455f31c5edc/ep-8aabc415-31f7-47df-b972-62d46deb16c3.mp3",
+      "duration": "446"
+    },
+    {
+      "id": "f0ce65b96ca8dc23",
+      "title": "Tech Learning: Data Engineering & Analytics \u2014 Ep 9: From Lakes to Lakehouse: Delta Lake Explained",
+      "link": "https://muse.ai/podcasts/media/1248297608376725/4720f1e9-8c94-4958-8367-c455f31c5edc/ep-31dd45b4-44a2-48a4-a99e-6b4f96541540.mp3",
+      "source": "Technology Learnings",
+      "category": "Podcast",
+      "summary": "Data Engineering & Analytics track: Why the lakehouse emerged and how Delta Lake adds warehouse-grade reliability to cheap lake storage. AI Generated",
+      "published": "2026-10-16T01:42:16+00:00",
+      "audio_url": "https://muse.ai/podcasts/media/1248297608376725/4720f1e9-8c94-4958-8367-c455f31c5edc/ep-31dd45b4-44a2-48a4-a99e-6b4f96541540.mp3",
+      "duration": "493"
+    },
+    {
+      "id": "3970495d0eecb887",
+      "title": "Tech Learning: Data Engineering & Analytics \u2014 Ep 12: Real Scenario: Real-Time Fraud Detection",
+      "link": "https://muse.ai/podcasts/media/1248297608376725/4720f1e9-8c94-4958-8367-c455f31c5edc/ep-12851e05-bd2f-4419-94d5-bcc2d9b5d29c.mp3",
+      "source": "Technology Learnings",
+      "category": "Podcast",
+      "summary": "Data Engineering & Analytics track: Building a real-time fraud pipeline with windowing, watermarks and exactly-once processing. AI Generated",
+      "published": "2026-10-16T01:41:37+00:00",
+      "audio_url": "https://muse.ai/podcasts/media/1248297608376725/4720f1e9-8c94-4958-8367-c455f31c5edc/ep-12851e05-bd2f-4419-94d5-bcc2d9b5d29c.mp3",
+      "duration": "444"
+    },
+    {
+      "id": "e9938f53a21e1f20",
+      "title": "Daily AI Intelligence \u2014 Episode 15 (Fri Oct 16, 2026): Meta's Open-Weight Muse Spark Open, Anthropic's Code Review GA, DeepSeek's Outage",
+      "link": "https://muse.ai/podcasts/media/1248297608376725/94f09345-ad4a-4981-83dd-e3206bbf5c4e/ep-7c654dd9-5d03-4240-9e6f-574493469385.mp3",
+      "source": "Daily AI Intelligence",
+      "category": "Podcast",
+      "summary": "AI Generated",
+      "published": "2026-10-16T01:00:54+00:00",
+      "audio_url": "https://muse.ai/podcasts/media/1248297608376725/94f09345-ad4a-4981-83dd-e3206bbf5c4e/ep-7c654dd9-5d03-4240-9e6f-574493469385.mp3",
+      "duration": "265"
+    },
     {
       "id": "08c79764230e6e3c",
       "title": "Chirp Pong",
@@ -233,6 +310,17 @@
       "published": "2026-10-15T01:04:41+00:00",
       "audio_url": "https://muse.ai/podcasts/media/1248297608376725/94f09345-ad4a-4981-83dd-e3206bbf5c4e/ep-9e3fc3f9-e686-407c-9193-25dd12aade96.mp3",
       "duration": "266"
+    },
+    {
+      "id": "dd00c04c9b95848e",
+      "title": "Sullivan & Cromwell brings legal expertise into agreement review",
+      "link": "https://openai.com/index/sullivan-cromwell",
+      "source": "OpenAI Blog",
+      "category": "AI",
+      "summary": "In collaboration with OpenAI, Sullivan & Cromwell developed Agreement Analyzer, an AI tool for identifying issues in a draft agreement.",
+      "published": "2026-10-15T00:00:00+00:00",
+      "audio_url": null,
+      "duration": ""
     },
     {
       "id": "939ecdfa504040eb",
@@ -1302,17 +1390,6 @@
       "duration": ""
     },
     {
-      "id": "9a2be2386cfbaac3",
-      "title": "Alexa Plus is better at running my home, but it&#8217;s not ready to run my life",
-      "link": "https://www.theverge.com/tech/1007565/amazon-alexa-plus-review-one-year-echo-show-dot-max",
-      "source": "The Verge \u2014 AI",
-      "category": "AI",
-      "summary": "Of all the things Alexa Plus can do, I never expected it to make me cry. Since my son left for college, the Echo Show in my office has been making then-and-now photo montages: the toddler with his first tennis racket next to the captain of his varsity team; me hugging him as a tw",
-      "published": "2026-10-09T13:59:46.157825+00:00",
-      "audio_url": null,
-      "duration": ""
-    },
-    {
       "id": "5a3f1f4a82c5b0a8",
       "title": "We're going to need default hard budget caps on pretty much everything",
       "link": "https://simonwillison.net/2026/Oct/3/default-hard-budget-caps/",
@@ -1320,17 +1397,6 @@
       "category": "AI",
       "summary": "Here's a product feature which the world is going to need a whole lot more of over the coming months and years: default hard budget caps . I'm talking about the feature of pay-by-usage services and APIs that lets you say \"after $X/month, cut this thing off and return errors\". The",
       "published": "2026-10-09T09:59:38.625273+00:00",
-      "audio_url": null,
-      "duration": ""
-    },
-    {
-      "id": "15717a6b7c9a1b04",
-      "title": "OpenAI doubles down on decision to fire three AI safety researchers",
-      "link": "https://www.theverge.com/ai-artificial-intelligence/1008604/openai-defends-decision-fire-safety-researchers",
-      "source": "The Verge \u2014 AI",
-      "category": "AI",
-      "summary": "OpenAI is standing firm on its decision to fire three safety researchers after an investigation found they committed \"a significant breach of trust.\" In a post on X on Friday, the company said Jasmine Wang, Tomek Korbak and Mikita &#8288;Balesni were dismissed for violating \"clea",
-      "published": "2026-10-09T09:59:37.931640+00:00",
       "audio_url": null,
       "duration": ""
     },
@@ -2827,17 +2893,6 @@
       "category": "AI",
       "summary": "ChatGPT Ads is expanding to Southeast Asia and Taiwan, giving eligible businesses new ways to reach people across more than 60 countries.",
       "published": "2026-09-23T02:00:00+00:00",
-      "audio_url": null,
-      "duration": ""
-    },
-    {
-      "id": "73fafdf6f45f6a41",
-      "title": "Airbnb widens access to GPT-6 Astra and OpenAI frontier models",
-      "link": "https://openai.com/index/airbnb-gpt-6-astra",
-      "source": "OpenAI Blog",
-      "category": "AI",
-      "summary": "Learn how Airbnb is expanding access to GPT-6 Astra and OpenAI frontier models to help engineering teams solve bugs, design systems, and ship faster.",
-      "published": "2026-09-23T01:00:00+00:00",
       "audio_url": null,
       "duration": ""
     },
