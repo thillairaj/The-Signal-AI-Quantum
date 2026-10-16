@@ -4,7 +4,23 @@
     <title>The Signal</title>
     <link>https://thillairaj.github.io/The-Signal-AI-Quantum/</link>
     <description>A self-updating feed of AI, quantum computing, and podcast updates.</description>
-    <lastBuildDate>Fri, 16 Oct 2026 18:44:30 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 16 Oct 2026 22:00:01 +0000</lastBuildDate>
+    <item>
+      <title>OpenAI models hacked a crypto wallet and breached more websites</title>
+      <link>https://arstechnica.com/security/2026/10/openai-models-hacked-a-crypto-wallet-and-breached-more-websites/</link>
+      <guid isPermaLink="false">b140e0bf691ca144</guid>
+      <description>The actions could have resulted in criminal charges had humans been behind the keyboard.</description>
+      <category>Ars Technica AI</category>
+      <pubDate>Fri, 16 Oct 2026 20:59:01 +0000</pubDate>
+    </item>
+    <item>
+      <title>“thegentlemanpervert” producing AI CSAM is a NJ prosecutor, say cops</title>
+      <link>https://arstechnica.com/tech-policy/2026/10/thegentlemanpervert-producing-ai-csam-is-a-nj-prosecutor-say-cops/</link>
+      <guid isPermaLink="false">5a8a8cf37871920c</guid>
+      <description>Discord user flagged AI CSAM, triggering arrest of New Jersey deputy AG.</description>
+      <category>Ars Technica AI</category>
+      <pubDate>Fri, 16 Oct 2026 20:20:07 +0000</pubDate>
+    </item>
     <item>
       <title>Meta’s new terms may allow it to train AI on news sites for free</title>
       <link>https://www.theverge.com/tech/1012846/meta-business-terms-scrape-news-publishers</link>
@@ -92,6 +108,14 @@
       <description>AI Generated</description>
       <category>Daily AI Intelligence</category>
       <pubDate>Fri, 16 Oct 2026 01:00:54 +0000</pubDate>
+    </item>
+    <item>
+      <title>Stack Overflow for Agents triples signups with ChatGPT plugin</title>
+      <link>https://openai.com/index/stack-overflow-chatgpt-plugin</link>
+      <guid isPermaLink="false">9db4940a53f86840</guid>
+      <description>Two engineers shipped Stack Overflow for Agents in a few weeks with Codex, and its ChatGPT plugin helped drive up to 10× growth in agent creation.</description>
+      <category>OpenAI Blog</category>
+      <pubDate>Fri, 16 Oct 2026 00:00:00 +0000</pubDate>
     </item>
     <item>
       <title>Chirp Pong</title>
@@ -460,30 +484,6 @@
       <description>Redesigning source control at Anthropic Interesting piece from Anthropic describing why and how they built their own custom alternative to Git, based on the dramatic increase in rate of changes to their code after the past six months. In May 2026, Anthropic averaged around 2,500 </description>
       <category>Simon Willison</category>
       <pubDate>Wed, 14 Oct 2026 01:59:42 +0000</pubDate>
-    </item>
-    <item>
-      <title>Tech Learning: IT Infrastructure &amp; Cloud — Ep 12: Real Scenario: Running a Disaster Recovery Drill</title>
-      <link>https://muse.ai/podcasts/media/1248297608376725/4720f1e9-8c94-4958-8367-c455f31c5edc/ep-6d775560-907a-4484-ae72-59c5a3d941ef.mp3</link>
-      <guid isPermaLink="false">b7495b8fc4716e35</guid>
-      <description>IT Infrastructure &amp; Cloud track: planning and running a disaster recovery drill AI Generated</description>
-      <category>Technology Learnings</category>
-      <pubDate>Wed, 14 Oct 2026 01:38:16 +0000</pubDate>
-    </item>
-    <item>
-      <title>Tech Learning: IT Infrastructure &amp; Cloud — Ep 11: Backups, RTO and RPO, Simply Explained</title>
-      <link>https://muse.ai/podcasts/media/1248297608376725/4720f1e9-8c94-4958-8367-c455f31c5edc/ep-8b8de1e6-22aa-489d-a9ec-130ed3f2d8f5.mp3</link>
-      <guid isPermaLink="false">9377a04839f2055a</guid>
-      <description>IT Infrastructure &amp; Cloud track: backup strategies and recovery objectives explained AI Generated</description>
-      <category>Technology Learnings</category>
-      <pubDate>Wed, 14 Oct 2026 01:38:10 +0000</pubDate>
-    </item>
-    <item>
-      <title>Tech Learning: IT Infrastructure &amp; Cloud — Ep 10: Real Scenario: Surviving a Primary Database Failure</title>
-      <link>https://muse.ai/podcasts/media/1248297608376725/4720f1e9-8c94-4958-8367-c455f31c5edc/ep-fabaecb3-a06d-4519-9717-9c171cb7c7d9.mp3</link>
-      <guid isPermaLink="false">95ce2691799552cf</guid>
-      <description>IT Infrastructure &amp; Cloud track: walking through a primary database failure and failover AI Generated</description>
-      <category>Technology Learnings</category>
-      <pubDate>Wed, 14 Oct 2026 01:37:58 +0000</pubDate>
     </item>
   </channel>
 </rss>

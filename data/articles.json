@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-16T18:44:30.844609+00:00",
+  "generated_at": "2026-10-16T22:00:01.635983+00:00",
   "sources_polled": [
     "The Verge \u2014 AI",
     "Simon Willison",
@@ -14,6 +14,28 @@
     "Technology Learnings"
   ],
   "articles": [
+    {
+      "id": "b140e0bf691ca144",
+      "title": "OpenAI models hacked a crypto wallet and breached more websites",
+      "link": "https://arstechnica.com/security/2026/10/openai-models-hacked-a-crypto-wallet-and-breached-more-websites/",
+      "source": "Ars Technica AI",
+      "category": "AI",
+      "summary": "The actions could have resulted in criminal charges had humans been behind the keyboard.",
+      "published": "2026-10-16T20:59:01+00:00",
+      "audio_url": null,
+      "duration": ""
+    },
+    {
+      "id": "5a8a8cf37871920c",
+      "title": "\u201cthegentlemanpervert\u201d producing AI CSAM is a NJ prosecutor, say cops",
+      "link": "https://arstechnica.com/tech-policy/2026/10/thegentlemanpervert-producing-ai-csam-is-a-nj-prosecutor-say-cops/",
+      "source": "Ars Technica AI",
+      "category": "AI",
+      "summary": "Discord user flagged AI CSAM, triggering arrest of New Jersey deputy AG.",
+      "published": "2026-10-16T20:20:07+00:00",
+      "audio_url": null,
+      "duration": ""
+    },
     {
       "id": "ad3a47861a304e90",
       "title": "Meta\u2019s new terms may allow it to train AI on news sites for free",
@@ -134,6 +156,17 @@
       "published": "2026-10-16T01:00:54+00:00",
       "audio_url": "https://muse.ai/podcasts/media/1248297608376725/94f09345-ad4a-4981-83dd-e3206bbf5c4e/ep-7c654dd9-5d03-4240-9e6f-574493469385.mp3",
       "duration": "265"
+    },
+    {
+      "id": "9db4940a53f86840",
+      "title": "Stack Overflow for Agents triples signups with ChatGPT plugin",
+      "link": "https://openai.com/index/stack-overflow-chatgpt-plugin",
+      "source": "OpenAI Blog",
+      "category": "AI",
+      "summary": "Two engineers shipped Stack Overflow for Agents in a few weeks with Codex, and its ChatGPT plugin helped drive up to 10\u00d7 growth in agent creation.",
+      "published": "2026-10-16T00:00:00+00:00",
+      "audio_url": null,
+      "duration": ""
     },
     {
       "id": "08c79764230e6e3c",
@@ -2644,17 +2677,6 @@
       "duration": ""
     },
     {
-      "id": "b04e939d35b780a0",
-      "title": "Anthropic\u2019s IPO pitch includes a warning about human extinction",
-      "link": "https://arstechnica.com/ai/2026/09/anthropics-ipo-pitch-includes-a-warning-about-human-extinction/",
-      "source": "Ars Technica AI",
-      "category": "AI",
-      "summary": "The Claude maker warns its own models could resist shutdowns and cause catastrophic harm.",
-      "published": "2026-09-29T14:10:00+00:00",
-      "audio_url": null,
-      "duration": ""
-    },
-    {
       "id": "c39b11c935db6806",
       "title": "Anthropic lists \u2018existential risks to humanity\u2019 as one of its risk factors in IPO prospectus",
       "link": "https://www.tomshardware.com/tech-industry/artificial-intelligence/anthropic-lists-existential-risks-to-humanity-as-one-of-its-risk-factors-in-ipo-prospectus-80-pages-of-risk-factors-dwarf-business-description-as-firm-eyes-usd2-trillion-debut",
@@ -2662,17 +2684,6 @@
       "category": "AI",
       "summary": "Anthropic serves a dire warning in its IPO prospectus, saying how a rogue model could lead to the end of humanity and, consequentially, its business. Nevertheless, investors are still hoping for a $2-trillion valuation once the company goes public.",
       "published": "2026-09-29T13:30:00+00:00",
-      "audio_url": null,
-      "duration": ""
-    },
-    {
-      "id": "41149516380caa14",
-      "title": "Interview: Firefox's chief on why he hopes a redesign will help win users from Chrome",
-      "link": "https://arstechnica.com/gadgets/2026/09/mozillas-head-of-firefox-talks-product-priorities-ai-skepticism-and-browser-choice/",
-      "source": "Ars Technica AI",
-      "category": "AI",
-      "summary": "Mozilla's Ajit Varma explains why a redesign suits the fight for the open web.",
-      "published": "2026-09-29T13:00:19+00:00",
       "audio_url": null,
       "duration": ""
     },
@@ -2893,17 +2904,6 @@
       "category": "AI",
       "summary": "MentalHealthBench is an expert-informed benchmark for evaluating helpful and safe AI responses across realistic mental health conversations.",
       "published": "2026-09-23T10:00:00+00:00",
-      "audio_url": null,
-      "duration": ""
-    },
-    {
-      "id": "1dd9ce125c6e0e60",
-      "title": "ChatGPT Ads expands to Southeast Asia and Taiwan",
-      "link": "https://openai.com/index/chatgpt-ads-expands-southeast-asia-taiwan",
-      "source": "OpenAI Blog",
-      "category": "AI",
-      "summary": "ChatGPT Ads is expanding to Southeast Asia and Taiwan, giving eligible businesses new ways to reach people across more than 60 countries.",
-      "published": "2026-09-23T02:00:00+00:00",
       "audio_url": null,
       "duration": ""
     },
