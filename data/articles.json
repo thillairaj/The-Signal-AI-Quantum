@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-16T22:00:01.635983+00:00",
+  "generated_at": "2026-10-17T01:59:53.402102+00:00",
   "sources_polled": [
     "The Verge \u2014 AI",
     "Simon Willison",
@@ -14,6 +14,39 @@
     "Technology Learnings"
   ],
   "articles": [
+    {
+      "id": "e3274600bfe5739a",
+      "title": "LaTeX renderer",
+      "link": "https://simonwillison.net/2026/Oct/15/latex/",
+      "source": "Simon Willison",
+      "category": "AI",
+      "summary": "Tool: LaTeX renderer Inspired by Paul Ford and Aboard Foundary's new web app Tiny Little Office , which provides a suite of web app content editors (a Word Processor, Outliner, Presentation Builder, Spreadsheet, Calculator, Drawing Tool, Diagram Maker, Animator, Calendar, and Tri",
+      "published": "2026-10-17T01:59:42.992795+00:00",
+      "audio_url": null,
+      "duration": ""
+    },
+    {
+      "id": "e946af68fd7dbe0e",
+      "title": "Quoting Addy Osmani, Morgan Westlee Lunt, and Qing Wang",
+      "link": "https://simonwillison.net/2026/Oct/16/code-review/",
+      "source": "Simon Willison",
+      "category": "AI",
+      "summary": "We think \"did a human read the code?\" is an imprecise proxy for \"what could go wrong with this change, and which check\u2014automated or human\u2014is the right one to catch it?\" Asking that question also changed when review happens. Before, review was a gate at the end of the road: write ",
+      "published": "2026-10-17T01:59:42.992576+00:00",
+      "audio_url": null,
+      "duration": ""
+    },
+    {
+      "id": "e5cd6773e8d9a9e6",
+      "title": "Daily AI Intelligence \u2014 Episode 16 (Sat Oct 17, 2026): OpenAI's Jalape\u00f1o chip, Anthropic's distillation defense and Canadian data center, Copilot for Legal",
+      "link": "https://muse.ai/podcasts/media/1248297608376725/94f09345-ad4a-4981-83dd-e3206bbf5c4e/ep-d248c7e0-cc61-4705-9c9e-095fd9df47bc.mp3",
+      "source": "Daily AI Intelligence",
+      "category": "Podcast",
+      "summary": "OpenAI reveals its Jalape\u00f1o inference chip; Anthropic cracks down on distillation, locks down internal evals, and signs its first Canadian data center; Microsoft launches Copilot for Legal; Perplexity open-sources its SPACE agent sandbox. AI Generated",
+      "published": "2026-10-17T01:01:59+00:00",
+      "audio_url": "https://muse.ai/podcasts/media/1248297608376725/94f09345-ad4a-4981-83dd-e3206bbf5c4e/ep-d248c7e0-cc61-4705-9c9e-095fd9df47bc.mp3",
+      "duration": "290"
+    },
     {
       "id": "b140e0bf691ca144",
       "title": "OpenAI models hacked a crypto wallet and breached more websites",
@@ -33,6 +66,17 @@
       "category": "AI",
       "summary": "Discord user flagged AI CSAM, triggering arrest of New Jersey deputy AG.",
       "published": "2026-10-16T20:20:07+00:00",
+      "audio_url": null,
+      "duration": ""
+    },
+    {
+      "id": "65442e708214c10b",
+      "title": "How Ita\u00fa is building generative AI for its entire customer base",
+      "link": "https://openai.com/index/itau-generative-ai",
+      "source": "OpenAI Blog",
+      "category": "AI",
+      "summary": "With ia.i, a conversational interface, and the IARA governance platform, Ita\u00fa is applying its AI First strategy to customers and employees \u2014 in one of Brazil\u2019s most regulated sectors.",
+      "published": "2026-10-16T19:00:00+00:00",
       "audio_url": null,
       "duration": ""
     },
@@ -2248,28 +2292,6 @@
       "duration": ""
     },
     {
-      "id": "263fa952490ea5db",
-      "title": "llm-anthropic 0.29",
-      "link": "https://simonwillison.net/2026/Sep/22/llm-anthropic/",
-      "source": "Simon Willison",
-      "category": "AI",
-      "summary": "Release: llm-anthropic 0.29 Adds support for Claude Opus 5.5 : llm -m claude-opus-5.5 \"prompt goes here\" Tags: llm , anthropic",
-      "published": "2026-10-04T06:38:20.832818+00:00",
-      "audio_url": null,
-      "duration": ""
-    },
-    {
-      "id": "df9ee5d27afc5dae",
-      "title": "Quoting @therealcornpop",
-      "link": "https://simonwillison.net/2026/Sep/22/therealcornpop/",
-      "source": "Simon Willison",
-      "category": "AI",
-      "summary": "Hey, you know it's like super obvious if you're using AI to write your scripts for TikTok and YouTube, right? [...] It's not just the general AI-isms of \"it's not X, it's Y\", or the rule of three, or the really weird broken staccato-like way of writing where you just say a lot of",
-      "published": "2026-10-04T06:38:20.832801+00:00",
-      "audio_url": null,
-      "duration": ""
-    },
-    {
       "id": "3efc92f60ee2bdc4",
       "title": "Daily AI Intelligence \u2014 Episode 3",
       "link": "https://muse.ai/podcasts/media/1248297608376725/94f09345-ad4a-4981-83dd-e3206bbf5c4e/ep-5d595bb0-b357-4c8f-a1b2-3780269ef6ff.mp3",
@@ -2893,17 +2915,6 @@
       "category": "AI",
       "summary": "GPT-6 Astra produces more structured, context-aware legal documents, freeing lawyers to focus on strategy.",
       "published": "2026-09-23T12:00:00+00:00",
-      "audio_url": null,
-      "duration": ""
-    },
-    {
-      "id": "1d5a9cc2d9509da8",
-      "title": "Introducing MentalHealthBench",
-      "link": "https://openai.com/index/introducing-mentalhealthbench",
-      "source": "OpenAI Blog",
-      "category": "AI",
-      "summary": "MentalHealthBench is an expert-informed benchmark for evaluating helpful and safe AI responses across realistic mental health conversations.",
-      "published": "2026-09-23T10:00:00+00:00",
       "audio_url": null,
       "duration": ""
     },
