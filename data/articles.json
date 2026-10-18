@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-18T14:00:09.365405+00:00",
+  "generated_at": "2026-10-18T18:00:02.862805+00:00",
   "sources_polled": [
     "The Verge \u2014 AI",
     "Simon Willison",
@@ -14,6 +14,17 @@
     "Technology Learnings"
   ],
   "articles": [
+    {
+      "id": "c82b8eb2cf968bbd",
+      "title": "Anthropic gives outside AI watchdog \u201cemployee-like\u201d access",
+      "link": "https://arstechnica.com/ai/2026/10/anthropic-gives-outside-ai-watchdog-employee-like-access/",
+      "source": "Ars Technica AI",
+      "category": "AI",
+      "summary": "The outside watchdog can publish its findings without Anthropic's approval.",
+      "published": "2026-10-18T16:25:19+00:00",
+      "audio_url": null,
+      "duration": ""
+    },
     {
       "id": "a257dddc2d05fd3f",
       "title": "Anthropic\u2019s proposed AI safety bill only kicks in if 50 deaths or $1 billion in damages are on the line",
@@ -2728,17 +2739,6 @@
       "category": "AI",
       "summary": "Without a \"full set of safeguards,\" agent accessed \"system information and source code.\"",
       "published": "2026-09-29T18:11:09+00:00",
-      "audio_url": null,
-      "duration": ""
-    },
-    {
-      "id": "55b32e350614bcd5",
-      "title": "OpenAI says planned GPT-6.1 is too insecure to release",
-      "link": "https://arstechnica.com/ai/2026/09/openai-says-planned-gpt-6-1-is-too-insecure-to-release/",
-      "source": "Ars Technica AI",
-      "category": "AI",
-      "summary": "Similar performance, security trade-offs also seen in current public models.",
-      "published": "2026-09-29T14:22:31+00:00",
       "audio_url": null,
       "duration": ""
     },
