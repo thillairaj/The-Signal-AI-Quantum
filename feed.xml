@@ -4,7 +4,23 @@
     <title>The Signal</title>
     <link>https://thillairaj.github.io/The-Signal-AI-Quantum/</link>
     <description>A self-updating feed of AI, quantum computing, and podcast updates.</description>
-    <lastBuildDate>Sun, 18 Oct 2026 01:59:55 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 18 Oct 2026 05:59:55 +0000</lastBuildDate>
+    <item>
+      <title>web-edit 0.1a2</title>
+      <link>https://simonwillison.net/2026/Oct/17/web-edit/</link>
+      <guid isPermaLink="false">d6c06ffc09a8bd33</guid>
+      <description>Release: web-edit 0.1a2 web-edit ( previously ) is my tiny web app for browsing and editing files in a folder. I mainly built it for editing files on different machines via Tailscale. I added a "copy to clipboard" option for both text and image data. I needed this because I was r</description>
+      <category>Simon Willison</category>
+      <pubDate>Sun, 18 Oct 2026 05:59:42 +0000</pubDate>
+    </item>
+    <item>
+      <title>Inline rendering with document​.currentScript</title>
+      <link>https://simonwillison.net/2026/Oct/17/document-currentscript/</link>
+      <guid isPermaLink="false">69ead926e6899b5e</guid>
+      <description>Inline rendering with document​.currentScript Lean Rada describes a neat trick that takes advantage of the document.currentScript property. You can use that to drop in a tiny inline &amp;lt;script&amp;gt; element that replaces itself when the page loads: The year is &amp;lt;script&amp;gt; docume</description>
+      <category>Simon Willison</category>
+      <pubDate>Sun, 18 Oct 2026 05:59:42 +0000</pubDate>
+    </item>
     <item>
       <title>Daily AI Intelligence — Episode 17 (Sun Oct 18, 2026): DeepSeek's V4.1-Flash-1017, Microsoft's agent accounts, Google's Gemini Plus downgrade</title>
       <link>https://muse.ai/podcasts/media/1248297608376725/94f09345-ad4a-4981-83dd-e3206bbf5c4e/ep-9d67f8e1-4602-4188-9a6d-e209ea1a9b37.mp3</link>
@@ -468,22 +484,6 @@
       <description>OpenAI engineer faces 5 years and $250K fine as FBI lobs foreign spy charges.</description>
       <category>Ars Technica AI</category>
       <pubDate>Wed, 14 Oct 2026 16:41:49 +0000</pubDate>
-    </item>
-    <item>
-      <title>Epic&amp;#8217;s new games launcher is ‘vibe coded’</title>
-      <link>https://www.theverge.com/games/1010751/epic-games-launcher-vibe-coded-ai-linux</link>
-      <guid isPermaLink="false">08495a955cc82e8d</guid>
-      <description>Epic Games is announcing a big refresh of its PC games launcher today in preview, saying that the new version is "way faster" and now supports Linux. But the company, which has been publicly making a big push into AI-assisted development, also notes that the refresh was "vibe cod</description>
-      <category>The Verge — AI</category>
-      <pubDate>Wed, 14 Oct 2026 14:05:13 +0000</pubDate>
-    </item>
-    <item>
-      <title>Anthropic warns small AI models could self-replicate through IoT devices</title>
-      <link>https://arstechnica.com/security/2026/10/anthropic-warns-small-ai-models-could-self-replicate-through-iot-devices/</link>
-      <guid isPermaLink="false">7923e9fedadd3085</guid>
-      <description>"Small weight-based replicators" could usher in a new generation of computer worms.</description>
-      <category>Ars Technica AI</category>
-      <pubDate>Wed, 14 Oct 2026 12:55:06 +0000</pubDate>
     </item>
   </channel>
 </rss>

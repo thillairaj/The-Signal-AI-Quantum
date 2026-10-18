@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-18T01:59:55.158225+00:00",
+  "generated_at": "2026-10-18T05:59:55.015595+00:00",
   "sources_polled": [
     "The Verge \u2014 AI",
     "Simon Willison",
@@ -14,6 +14,28 @@
     "Technology Learnings"
   ],
   "articles": [
+    {
+      "id": "d6c06ffc09a8bd33",
+      "title": "web-edit 0.1a2",
+      "link": "https://simonwillison.net/2026/Oct/17/web-edit/",
+      "source": "Simon Willison",
+      "category": "AI",
+      "summary": "Release: web-edit 0.1a2 web-edit ( previously ) is my tiny web app for browsing and editing files in a folder. I mainly built it for editing files on different machines via Tailscale. I added a \"copy to clipboard\" option for both text and image data. I needed this because I was r",
+      "published": "2026-10-18T05:59:42.836463+00:00",
+      "audio_url": null,
+      "duration": ""
+    },
+    {
+      "id": "69ead926e6899b5e",
+      "title": "Inline rendering with document\u200b.currentScript",
+      "link": "https://simonwillison.net/2026/Oct/17/document-currentscript/",
+      "source": "Simon Willison",
+      "category": "AI",
+      "summary": "Inline rendering with document\u200b.currentScript Lean Rada describes a neat trick that takes advantage of the document.currentScript property. You can use that to drop in a tiny inline &lt;script&gt; element that replaces itself when the page loads: The year is &lt;script&gt; docume",
+      "published": "2026-10-18T05:59:42.836378+00:00",
+      "audio_url": null,
+      "duration": ""
+    },
     {
       "id": "afd8a1cfa0be0c7d",
       "title": "Daily AI Intelligence \u2014 Episode 17 (Sun Oct 18, 2026): DeepSeek's V4.1-Flash-1017, Microsoft's agent accounts, Google's Gemini Plus downgrade",
@@ -2149,17 +2171,6 @@
       "duration": ""
     },
     {
-      "id": "88d553ae09bb6778",
-      "title": "Qwen3.8 27B addition in words",
-      "link": "https://simonwillison.net/2026/Oct/4/qwen38-addition-in-words/",
-      "source": "Simon Willison",
-      "category": "AI",
-      "summary": "Research: Qwen3.8 27B addition in words Colin Frasier posted on Bluesky about an experiment he ran over two years ago using GPT-4o to see how well it could \"compute the sum but return the answer in words\" across increasingly large numbers. Here's the chart he shared of those resu",
-      "published": "2026-10-05T16:59:59.611462+00:00",
-      "audio_url": null,
-      "duration": ""
-    },
-    {
       "id": "78ad53815846c15c",
       "title": "Our approach to EU text provenance rules",
       "link": "https://openai.com/index/eu-text-provenance",
@@ -2310,17 +2321,6 @@
       "category": "AI",
       "summary": "Carlos Antelo's open-source ldraw-nova lets GPT-6 Astra and Claude Opus 5.5 design LEGO models as LDraw CAD files.",
       "published": "2026-10-04T10:50:00+00:00",
-      "audio_url": null,
-      "duration": ""
-    },
-    {
-      "id": "7528f5f11fc6fb5e",
-      "title": "llm-typesafe 0.1a0",
-      "link": "https://simonwillison.net/2026/Sep/22/llm-typesafe/",
-      "source": "Simon Willison",
-      "category": "AI",
-      "summary": "Release: llm-typesafe 0.1a0 I built this new plugin for LLM to add support for TypeSafe AI's new Jev model . Install it like this: llm install llm-typesafe Then set an API key ( get one here , the waitlist seems to move pretty fast): llm keys set typesafe # Paste key And now you ",
-      "published": "2026-10-04T06:38:20.832874+00:00",
       "audio_url": null,
       "duration": ""
     },
