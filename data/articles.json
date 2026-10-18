@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-18T10:00:00.337484+00:00",
+  "generated_at": "2026-10-18T14:00:09.365405+00:00",
   "sources_polled": [
     "The Verge \u2014 AI",
     "Simon Willison",
@@ -14,6 +14,17 @@
     "Technology Learnings"
   ],
   "articles": [
+    {
+      "id": "a257dddc2d05fd3f",
+      "title": "Anthropic\u2019s proposed AI safety bill only kicks in if 50 deaths or $1 billion in damages are on the line",
+      "link": "https://www.tomshardware.com/tech-industry/artificial-intelligence/anthropics-proposed-ai-safety-bill-only-kicks-in-if-50-deaths-or-usd1-billion-in-damages-are-on-the-line-proposal-would-effectively-make-the-commerce-department-the-only-agency-capable-of-stopping-an-ai-model",
+      "source": "Anthropic/Claude News",
+      "category": "AI",
+      "summary": "Anthropic's proposal requires evaluators to report any imminent risk to the Department of Commerce within 72 hours, after which the Department must present the evidence to a federal judge and await an order.",
+      "published": "2026-10-18T11:25:00+00:00",
+      "audio_url": null,
+      "duration": ""
+    },
     {
       "id": "d6c06ffc09a8bd33",
       "title": "web-edit 0.1a2",
@@ -3663,17 +3674,6 @@
       "category": "AI",
       "summary": "The Trump administration is in early discussions about an executive order that would create a government review process for AI models before public release.",
       "published": "2026-05-07T17:53:21+00:00",
-      "audio_url": null,
-      "duration": ""
-    },
-    {
-      "id": "a97017205952c7b8",
-      "title": "Musk's SpaceX has rented out access to its supercomputer's 220,000 Nvidia GPUs and 300 megawatts of AI compute power to rival Anthropic",
-      "link": "https://www.tomshardware.com/tech-industry/artificial-intelligence/musks-spacex-has-rented-out-access-to-its-supercomputers-220-000-nvidia-gpus-and-300-megawatts-of-ai-compute-power-to-rival-anthropic-musk-says-no-one-set-off-my-evil-detector-antrhropic-also-interested-in-orbital-data-centers",
-      "source": "Anthropic/Claude News",
-      "category": "AI",
-      "summary": "Anthropic has signed a deal with SpaceX to access the latter's massive data center, which has over 220,000 Nvidia GPUs and 300 megawatts of computing power.",
-      "published": "2026-05-07T12:19:55+00:00",
       "audio_url": null,
       "duration": ""
     },
