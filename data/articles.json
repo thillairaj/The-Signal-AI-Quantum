@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-18T22:00:20.795894+00:00",
+  "generated_at": "2026-10-19T01:59:57.282403+00:00",
   "sources_polled": [
     "The Verge \u2014 AI",
     "Simon Willison",
@@ -14,6 +14,72 @@
     "Technology Learnings"
   ],
   "articles": [
+    {
+      "id": "12899128ec45e6d3",
+      "title": "llm-echo 0.5",
+      "link": "https://simonwillison.net/2026/Oct/18/llm-echo/",
+      "source": "Simon Willison",
+      "category": "AI",
+      "summary": "Release: llm-echo 0.5 I'm working towards a new LLM release, and testing PRs caused me to revisit the llm-echo debug plugin. This plugin provides a \"model\" which doesn't involve an LLM at all - it just repeats back the prompts that have been fed to it. The new release now updates",
+      "published": "2026-10-19T01:59:47.400117+00:00",
+      "audio_url": null,
+      "duration": ""
+    },
+    {
+      "id": "b8a89dddc6c67001",
+      "title": "llm-tools-datasette 0.1.1",
+      "link": "https://simonwillison.net/2026/Oct/18/llm-tools-datasette/",
+      "source": "Simon Willison",
+      "category": "AI",
+      "summary": "Release: llm-tools-datasette 0.1.1 When I switched LLM over to httpx2 in LLM 0.33 I forget that this would break any plugins which used httpx without directly depending on it. llm-tools-datasette was one of those plugins, now fixed. Tags: datasette , llm",
+      "published": "2026-10-19T01:59:47.400027+00:00",
+      "audio_url": null,
+      "duration": ""
+    },
+    {
+      "id": "0fe9cedee7072ff3",
+      "title": "Tech Learning: Cybersecurity & SOC \u2014 Ep 12: Real Scenario: Correlating Logs to Catch Lateral Movement",
+      "link": "https://muse.ai/podcasts/media/1248297608376725/4720f1e9-8c94-4958-8367-c455f31c5edc/ep-7aa65ef7-4818-413f-bdcd-2f028616578a.mp3",
+      "source": "Technology Learnings",
+      "category": "Podcast",
+      "summary": "Cybersecurity & SOC track: hunting an attacker moving sideways through the network using correlated SIEM logs. AI Generated",
+      "published": "2026-10-19T01:48:01+00:00",
+      "audio_url": "https://muse.ai/podcasts/media/1248297608376725/4720f1e9-8c94-4958-8367-c455f31c5edc/ep-7aa65ef7-4818-413f-bdcd-2f028616578a.mp3",
+      "duration": "369"
+    },
+    {
+      "id": "a0d7aa82d9ed4545",
+      "title": "Tech Learning: Cybersecurity & SOC \u2014 Ep 10: Real Scenario: Triaging 200 Alerts Before Lunch",
+      "link": "https://muse.ai/podcasts/media/1248297608376725/4720f1e9-8c94-4958-8367-c455f31c5edc/ep-505d94b5-79cc-4622-b241-e683dd7959be.mp3",
+      "source": "Technology Learnings",
+      "category": "Podcast",
+      "summary": "Cybersecurity & SOC track: an L1 analyst triages 214 overnight alerts \u2014 prioritization, false positives, and escalation judgment. AI Generated",
+      "published": "2026-10-19T01:45:25+00:00",
+      "audio_url": "https://muse.ai/podcasts/media/1248297608376725/4720f1e9-8c94-4958-8367-c455f31c5edc/ep-505d94b5-79cc-4622-b241-e683dd7959be.mp3",
+      "duration": "373"
+    },
+    {
+      "id": "dd2df7896ac3d3f8",
+      "title": "Tech Learning: Cybersecurity & SOC \u2014 Ep 9: Inside a SOC: Tiers, Queues and Workflows",
+      "link": "https://muse.ai/podcasts/media/1248297608376725/4720f1e9-8c94-4958-8367-c455f31c5edc/ep-557364e9-1f3d-4b9a-86f4-a26d1c4467d3.mp3",
+      "source": "Technology Learnings",
+      "category": "Podcast",
+      "summary": "Cybersecurity & SOC track: how a Security Operations Center is organized across analyst tiers, queues, and incident workflows. AI Generated",
+      "published": "2026-10-19T01:45:16+00:00",
+      "audio_url": "https://muse.ai/podcasts/media/1248297608376725/4720f1e9-8c94-4958-8367-c455f31c5edc/ep-557364e9-1f3d-4b9a-86f4-a26d1c4467d3.mp3",
+      "duration": "379"
+    },
+    {
+      "id": "f407620af074c4f5",
+      "title": "Daily AI Intelligence \u2014 Episode 18 (Mon Oct 19, 2026): Anthropic's governance triple play, Dots head to the EU, the web pushes back on agents",
+      "link": "https://muse.ai/podcasts/media/1248297608376725/94f09345-ad4a-4981-83dd-e3206bbf5c4e/ep-e1d8244b-f69b-4e2b-89db-c3e09fde7cb9.mp3",
+      "source": "Daily AI Intelligence",
+      "category": "Podcast",
+      "summary": "Anthropic commits 5% of shares to a public benefit fund and opens Claude's values to public consultation; OpenAI plans a Dots EU launch; Gemini heads to GM cars; Microsoft exits the Nscale UK datacenter deal; and websites start locking AI agents out. AI Generated",
+      "published": "2026-10-19T01:06:20+00:00",
+      "audio_url": "https://muse.ai/podcasts/media/1248297608376725/94f09345-ad4a-4981-83dd-e3206bbf5c4e/ep-e1d8244b-f69b-4e2b-89db-c3e09fde7cb9.mp3",
+      "duration": "253"
+    },
     {
       "id": "de6b0c59a9e6b0d3",
       "title": "A woman was arrested in Philly for blocking a delivery robot",
@@ -2138,17 +2204,6 @@
       "duration": ""
     },
     {
-      "id": "16140ec435b023df",
-      "title": "Quoting Felix Rieseberg",
-      "link": "https://simonwillison.net/2026/Oct/5/felix-rieseberg/",
-      "source": "Simon Willison",
-      "category": "AI",
-      "summary": "The \"old\" version of Cowork runs model inference in the cloud, executing tool calls in an Anthropic-provided VM we shipped to your computer. We added the VM for capability, safety, and security reasons - mapping in just the data you explicitly added to your session. People loved ",
-      "published": "2026-10-06T02:04:21.670232+00:00",
-      "audio_url": null,
-      "duration": ""
-    },
-    {
       "id": "0285defcd58f71ae",
       "title": "Daily AI Intelligence \u2014 Episode 5: OpenAI watermarks ChatGPT in the EU, Pentagon drops Claude",
       "link": "https://muse.ai/podcasts/media/1248297608376725/94f09345-ad4a-4981-83dd-e3206bbf5c4e/ep-8b04d272-7c91-4d22-9ee5-aa3ec8989237.mp3",
@@ -2178,17 +2233,6 @@
       "category": "AI",
       "summary": "The tool can free up over 12GB of storage.",
       "published": "2026-10-05T19:14:44+00:00",
-      "audio_url": null,
-      "duration": ""
-    },
-    {
-      "id": "e9331b1c07602897",
-      "title": "llm-anthropic 0.30",
-      "link": "https://simonwillison.net/2026/Sep/28/llm-anthropic/",
-      "source": "Simon Willison",
-      "category": "AI",
-      "summary": "Release: llm-anthropic 0.30 In addition to Claude Sonnet 5.5, this release adds the ability to run llm anthropic refresh to refresh the list of Anthropic models directly from their API - which means I don't need to push a new release just to add support for a newly released model",
-      "published": "2026-10-05T17:06:31.468006+00:00",
       "audio_url": null,
       "duration": ""
     },
