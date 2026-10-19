@@ -1,0 +1,39 @@
+<p><em>Signal Research Notes is a weekly original-research series on The Signal. Each edition asks one question, works through it from primary sources, and keeps confirmed facts separate from analysis. Sources are linked at the end.</em></p>
+
+<p>On October 15, Google Quantum AI published a twenty-year-awaited result in Science: on the 105-qubit Willow processor, magic state cultivation cut the error rate of prepared magic states about fortyfold, reaching 99.99 percent logical fidelity. It is the first hardware demonstration of the method, and the crypto press immediately asked whether it moves the quantum security clock.</p>
+
+<p>The short answer is no, not directly. The longer answer is more interesting, because it shows the two clocks everyone confuses are running on separate tracks.</p>
+
+<h3>1. The bottleneck is real, and cultivation attacks it honestly</h3>
+
+<p>Universal quantum computing needs operations that error correction alone cannot provide, so machines consume special inputs called magic states. Each one is destroyed when used, and making clean ones has been brutally expensive. Estimates going back to 2004 put the cost as high as 95 percent of a machine's total capacity devoted to magic state production, leaving a thin slice for actual computation.</p>
+
+<p>Distillation, the traditional answer, runs many noisy copies through cascaded factories until a few emerge pure. Cultivation, proposed in 2024 by Google's Craig Gidney, Noah Shutty, and Cody Jones, works like selective breeding instead: a noisy candidate is injected into a small chip patch, coordinated measurements probe it for errors, flawed attempts are discarded, and the survivor is grown into a larger, more robust encoding. On Willow, only about 8 percent of attempts survived the filter. The team also showed a purified state could be grafted from a distance-3 color code into a distance-5 surface code, proving the technique plugs into the architecture everyone actually uses.</p>
+
+<p>Google cautions the method still needs a larger-scale demonstration. That caveat is load-bearing.</p>
+
+<h3>2. Why this does not change the Q-day timeline</h3>
+
+<p>Here is where the reporting needs a correction. The 40x figure describes the quality of one kind of prepared state, not the capability of the processor. Factoring an RSA-2048 key would require magic states with error rates around one in ten billion, roughly a million times cleaner than what Willow just demonstrated. The experiment used at most 54 of Willow's 105 qubits. These are not small gaps.</p>
+
+<p>Subtler still, as Project Eleven's Alex Pruden notes: cultivation was already factored into the resource estimates researchers use to forecast cryptographically relevant machines, so the result validates the roadmap rather than shortening it. The honest reading is that Google removed cost from the bill of materials for a future fault-tolerant machine. It did not move the delivery date.</p>
+
+<p>The threat floor has been falling on paper, not in the lab. Craig Gidney's May 2025 analysis put RSA-2048 within reach of fewer than a million noisy physical qubits, a twentyfold drop from the 2019 estimate of twenty million, with no new hardware involved. A February 2026 preprint claimed under 100,000 qubits on an unbuilt architecture. Meanwhile the best demonstrated logical-qubit systems still run in the tens to low hundreds of logical qubits. Algorithmic progress compresses the estimate; engineering still has to build the machine.</p>
+
+<h3>3. The migration clock runs on a different track, and it is the one that matters</h3>
+
+<p>While the threat timeline gets the headlines, the migration timeline is where the action is. The standards are final: NIST published FIPS 203, 204, and 205 in August 2024, the IETF standardized hybrid ML-KEM key exchange for TLS 1.3 as RFC 10024 in August 2026, and every major browser now negotiates hybrid post-quantum key exchange by default. Cloudflare reported in April 2026 that more than two-thirds of human-generated TLS traffic on its network is protected with hybrid ML-KEM. The key exchange half is, to a first approximation, won on the public internet.</p>
+
+<p>The authentication half has barely started. No browser supports post-quantum signatures yet, no post-quantum certificates sit in the root stores, and Chrome is pursuing Merkle Tree Certificates instead, with a feasibility study running into 2027. A DigiCert survey in July 2026 found only 7 percent of enterprises had deployed post-quantum cryptography. The migration is really two migrations on two timelines, and the policy deadlines reflect exactly that split: a June 2026 US executive order set 2030 and 2031 deadlines for federal high-value systems to move key establishment and digital signatures respectively, and the NSA's CNSA 2.0 targets full migration by 2035. The nearest hard gate is January 1, 2027, when new national security system acquisitions must meet the CNSA 2.0 standard.</p>
+
+<h3>Where this leaves us</h3>
+
+<p>Google's result is genuine progress on the most expensive line item in fault-tolerant quantum computing, demonstrated on real hardware for the first time. It is not a reason to revise any security timeline, and the experts closest to the resource estimates say so themselves. The security question was never about Willow. It is whether the decade-long migration of the world's authentication infrastructure finishes before a cryptographically relevant machine exists. On that track the binding constraints are inventories, certificates, and procurement pipelines, not physics.</p>
+
+<p>Three things to watch:</p>
+
+<ul>
+<li>A larger-scale cultivation demonstration, which is Google's own stated next step.</li>
+<li>Post-quantum certificates appearing in browser root stores, or Chrome's Merkle Tree Certificate feasibility results due through 2027.</li>
+<li>EU member state migration plans, due by December 31, 2026, and the January 2027 CNSA 2.0 acquisition gate.</li>
+</ul>
