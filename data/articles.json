@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-19T01:59:57.282403+00:00",
+  "generated_at": "2026-10-19T06:00:01.626366+00:00",
   "sources_polled": [
     "The Verge \u2014 AI",
     "Simon Willison",
@@ -11,9 +11,32 @@
     "Tom's Hardware Quantum",
     "InfoQ Quantum Computing",
     "Daily AI Intelligence",
-    "Technology Learnings"
+    "Technology Learnings",
+    "Quantum Intelligence"
   ],
   "articles": [
+    {
+      "id": "e883b6b9b923beb1",
+      "title": "Quantum Intelligence \u2014 Episode 1 (Mon Oct 19, 2026): Google's Willow cuts magic-state errors forty-fold, DARPA's hardware testing stage, IonQ's big week",
+      "link": "https://muse.ai/podcasts/media/1248297608376725/e94514d7-438c-4486-b16c-5a6c5b6bd1cd/ep-58735b3a-b9ad-44f5-91a1-69331d135ebe.mp3",
+      "source": "Quantum Intelligence",
+      "category": "Podcast",
+      "summary": "Alex breaks down the week's top quantum computing stories: Google's magic state cultivation breakthrough on Willow, DARPA's three hundred million dollar quantum hardware testing program, and IonQ's acquisition and equity raise, plus a plain-language explainer on magic states. AI ",
+      "published": "2026-10-19T05:46:43+00:00",
+      "audio_url": "https://muse.ai/podcasts/media/1248297608376725/e94514d7-438c-4486-b16c-5a6c5b6bd1cd/ep-58735b3a-b9ad-44f5-91a1-69331d135ebe.mp3",
+      "duration": "326"
+    },
+    {
+      "id": "9b6d3acd7261c5c7",
+      "title": "Tech Learning: Cybersecurity & SOC \u2014 Ep 11: SIEM Basics: Collecting the Right Logs",
+      "link": "https://muse.ai/podcasts/media/1248297608376725/4720f1e9-8c94-4958-8367-c455f31c5edc/ep-c1d8a7fa-1520-448e-92a7-7f7839a5426d.mp3",
+      "source": "Technology Learnings",
+      "category": "Podcast",
+      "summary": "Cybersecurity & SOC track: how a SIEM collects, normalizes, and correlates logs into detectable attack stories. AI Generated",
+      "published": "2026-10-19T02:07:20+00:00",
+      "audio_url": "https://muse.ai/podcasts/media/1248297608376725/4720f1e9-8c94-4958-8367-c455f31c5edc/ep-c1d8a7fa-1520-448e-92a7-7f7839a5426d.mp3",
+      "duration": "371"
+    },
     {
       "id": "12899128ec45e6d3",
       "title": "llm-echo 0.5",
