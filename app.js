@@ -131,7 +131,7 @@ function renderPodcast() {
     .sort((a, b) => new Date(b.published) - new Date(a.published));
   /* Series selector with episode counts — filters in place, no outbound links. */
   const seriesEl = document.getElementById("podcastSeries");
-  const seriesOrder = ["Daily AI Intelligence", "Technology Learnings"];
+  const seriesOrder = ["Daily AI Intelligence", "Technology Learnings", "Quantum Intelligence"];
   const present = seriesOrder.filter(s => eps.some(e => e.source === s));
   const countOf = s => eps.filter(e => e.source === s).length;
   seriesEl.innerHTML =
