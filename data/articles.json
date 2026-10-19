@@ -1,11 +1,10 @@
 {
-  "generated_at": "2026-10-19T14:00:15.190195+00:00",
+  "generated_at": "2026-10-19T18:00:32.341547+00:00",
   "sources_polled": [
     "The Verge \u2014 AI",
     "Simon Willison",
     "Ars Technica AI",
     "OpenAI Blog",
-    "Google AI Blog",
     "Anthropic/Claude News",
     "InfoQ \u2014 Microsoft",
     "Tom's Hardware Quantum",
@@ -15,6 +14,39 @@
     "Quantum Intelligence"
   ],
   "articles": [
+    {
+      "id": "fd89b9b5cd5875ba",
+      "title": "JB Pritzker thinks AI could help us live to 100 \u2014 or threaten us like nukes",
+      "link": "https://www.theverge.com/podcast/1012839/pritzker-ai-privacy-data-centers-flock-congress-laws",
+      "source": "The Verge \u2014 AI",
+      "category": "AI",
+      "summary": "Today, I\u2019m talking with Illinois Gov. JB Pritzker, who has a lot of thoughts about AI, tech, and privacy. If you\u2019ve been listening to the show, you know that one of my running theories is that those issues are driving a big and maybe kind of unexpected political realignment \u2014 and",
+      "published": "2026-10-19T17:59:53.396656+00:00",
+      "audio_url": null,
+      "duration": ""
+    },
+    {
+      "id": "5d37bd28a169e437",
+      "title": "AI game clones are making indie developers afraid to show their work",
+      "link": "https://arstechnica.com/gaming/2026/10/ai-game-clones-are-making-indie-developers-afraid-to-show-their-work/",
+      "source": "Ars Technica AI",
+      "category": "AI",
+      "summary": "Delayed Steam Next Fest demo is a sign of a growing problem for indie devs.",
+      "published": "2026-10-19T16:59:22+00:00",
+      "audio_url": null,
+      "duration": ""
+    },
+    {
+      "id": "d41776e0c26f77e6",
+      "title": "Disney found a way to buy Character.AI without buying its lawsuits",
+      "link": "https://arstechnica.com/tech-policy/2026/10/disney-found-a-way-to-buy-character-ai-without-buying-its-lawsuits/",
+      "source": "Ars Technica AI",
+      "category": "AI",
+      "summary": "Character.AI faces claims its bots encouraged minors to self-harm and kill their parents.",
+      "published": "2026-10-19T14:45:43+00:00",
+      "audio_url": null,
+      "duration": ""
+    },
     {
       "id": "9279cf6bb0c3cf64",
       "title": "Democrats think cracking down on AI could give them an edge",
@@ -1479,17 +1511,6 @@
       "duration": "265"
     },
     {
-      "id": "e77e9ae83492452b",
-      "title": "DistroKid has been quietly taking down songs in response to UMG lawsuit",
-      "link": "https://www.theverge.com/entertainment/1009309/distrokid-take-down-songs-umg-lawsuit",
-      "source": "The Verge \u2014 AI",
-      "category": "AI",
-      "summary": "Artists are taking to social media to complain that DistroKid has unceremoniously removed their work without notice. Now DistroKid has confirmed to The Verge that the takedowns are a direct response to claims made by UMG. The label filed a lawsuit in September claiming that Distr",
-      "published": "2026-10-10T21:59:46.687517+00:00",
-      "audio_url": null,
-      "duration": ""
-    },
-    {
       "id": "258fdb044f8a7769",
       "title": "Top AI labs reportedly planning for catastrophic AI event fallout",
       "link": "https://www.tomshardware.com/tech-industry/artificial-intelligence/top-ai-labs-reportedly-planning-for-catastrophic-ai-event-fallout-anthropic-openai-and-others-reportedly-building-contingency-plans-and-running-scenarios-of-a-runaway-ai-wreaking-havoc",
@@ -2784,28 +2805,6 @@
       "category": "AI",
       "summary": "New sculpture depicts AI leaders escaping a sinking ship.",
       "published": "2026-09-29T21:52:58+00:00",
-      "audio_url": null,
-      "duration": ""
-    },
-    {
-      "id": "088b2b332c119759",
-      "title": "AMD acquires World Labs AI startup, upping the ante against Nvidia",
-      "link": "https://arstechnica.com/ai/2026/09/amd-acquires-world-labs-ai-pioneer-fei-fei-lis-world-models-startup/",
-      "source": "Ars Technica AI",
-      "category": "AI",
-      "summary": "The deal, which is expected to close by year's end, is worth $8.2 billion.",
-      "published": "2026-09-29T21:14:49+00:00",
-      "audio_url": null,
-      "duration": ""
-    },
-    {
-      "id": "a5b4ce65c1ee9ac6",
-      "title": "Here's what actually happened in OpenAI's Australian gov't server hack",
-      "link": "https://arstechnica.com/ai/2026/09/heres-what-actually-happened-in-openais-australian-govt-server-hack/",
-      "source": "Ars Technica AI",
-      "category": "AI",
-      "summary": "Without a \"full set of safeguards,\" agent accessed \"system information and source code.\"",
-      "published": "2026-09-29T18:11:09+00:00",
       "audio_url": null,
       "duration": ""
     },
