@@ -1,10 +1,11 @@
 {
-  "generated_at": "2026-10-19T18:00:32.341547+00:00",
+  "generated_at": "2026-10-19T22:00:00.102621+00:00",
   "sources_polled": [
     "The Verge \u2014 AI",
     "Simon Willison",
     "Ars Technica AI",
     "OpenAI Blog",
+    "Google AI Blog",
     "Anthropic/Claude News",
     "InfoQ \u2014 Microsoft",
     "Tom's Hardware Quantum",
@@ -14,6 +15,39 @@
     "Quantum Intelligence"
   ],
   "articles": [
+    {
+      "id": "073765c16b4994fd",
+      "title": "CoreWeave&#8217;s debt is becoming the whole AI industry&#8217;s problem",
+      "link": "https://www.theverge.com/ai-artificial-intelligence/1014045/coreweave-stock-debt-sector-ai",
+      "source": "The Verge \u2014 AI",
+      "category": "AI",
+      "summary": "CoreWeave had a bad week last week. Its bonds slipped into distressed territory by a common definition - when investors demand 1,000 basis points more in yield than they'd get from government bonds. Last Tuesady Chamath \"SPAC King\" Palihapitiya noticed the distressed debt, and al",
+      "published": "2026-10-19T21:59:49.149285+00:00",
+      "audio_url": null,
+      "duration": ""
+    },
+    {
+      "id": "50c115309d98a51f",
+      "title": "The fossil fuel comeback is here",
+      "link": "https://www.theverge.com/science/1013954/fossil-fuel-power-infrastructure-data-centers-report",
+      "source": "The Verge \u2014 AI",
+      "category": "AI",
+      "summary": "The US is building more fossil fuel infrastructure than it has in a decade while renewable energy growth slows down, a new report shows. Electricity demand is also climbing faster than it has in more than a decade with more data centers, factories, and electric vehicles plugging ",
+      "published": "2026-10-19T21:59:49.149216+00:00",
+      "audio_url": null,
+      "duration": ""
+    },
+    {
+      "id": "71a28de11a06820b",
+      "title": "Accused OpenAI spy had folder called \u201cSaudi Gov Docs,\u201d FBI says",
+      "link": "https://arstechnica.com/tech-policy/2026/10/accused-openai-spy-had-folder-called-saudi-gov-docs-fbi-says/",
+      "source": "Ars Technica AI",
+      "category": "AI",
+      "summary": "US fears Saudi government will help ex-OpenAI engineer flee spying charges.",
+      "published": "2026-10-19T20:21:53+00:00",
+      "audio_url": null,
+      "duration": ""
+    },
     {
       "id": "fd89b9b5cd5875ba",
       "title": "JB Pritzker thinks AI could help us live to 100 \u2014 or threaten us like nukes",
@@ -1456,17 +1490,6 @@
       "duration": ""
     },
     {
-      "id": "ea95eacbd85b4f83",
-      "title": "Learning to use local AI is exciting, overwhelming, and frustrating",
-      "link": "https://www.theverge.com/ai-artificial-intelligence/1008484/learning-local-ai-hermes-qwen-model-mac-studio-testing-diary-progress",
-      "source": "The Verge \u2014 AI",
-      "category": "AI",
-      "summary": "I'm embarking on a journey I've so far been hesitant to go on: actually using AI on the regular. Giving my most personal data to cloud services has been a major hold up for me, but it's increasingly possible to run powerful models locally to see what they're capable of. Is this t",
-      "published": "2026-10-11T13:59:56.167610+00:00",
-      "audio_url": null,
-      "duration": ""
-    },
-    {
       "id": "ffe9771dd0f2e869",
       "title": "Python 3.15.0 added to actions/python-versions",
       "link": "https://simonwillison.net/2026/Oct/10/python-actions/",
@@ -1485,17 +1508,6 @@
       "category": "AI",
       "summary": "I remember hearing a while ago that Dwarf Fortress didn't use version control. That fact has been lodged in my head, because given its inherent complexity I have trouble imagining a codebase that would benefit from version control more . That's art. I went looking and I'm sad to ",
       "published": "2026-10-11T01:59:42.165263+00:00",
-      "audio_url": null,
-      "duration": ""
-    },
-    {
-      "id": "35dc91695d5dee44",
-      "title": "Satya Nadella says we should assume all AI models are \u2018compromised\u2019",
-      "link": "https://www.theverge.com/ai-artificial-intelligence/1009337/satya-nadella-says-we-should-assume-all-ai-models-are-compromised",
-      "source": "The Verge \u2014 AI",
-      "category": "AI",
-      "summary": "In a lengthy post on X, Microsoft's CEO laid out his views on the dangers posed by highly advanced AI models and how to confront those risks. Nadella says we can no longer accept a world where AI is treated as a \"set of nested black boxes\" whose advice and actions we simply accep",
-      "published": "2026-10-11T01:59:41.675658+00:00",
       "audio_url": null,
       "duration": ""
     },
@@ -2794,17 +2806,6 @@
       "category": "AI",
       "summary": "OpenAI is partnering with America\u2019s SBDC to expand hands-on AI training and local support for small businesses, alongside a new report on how small teams are using AI.",
       "published": "2026-09-30T10:00:00+00:00",
-      "audio_url": null,
-      "duration": ""
-    },
-    {
-      "id": "f8e7c3348cfce784",
-      "title": "Protests against OpenAI get increasingly creative",
-      "link": "https://arstechnica.com/ai/2026/09/what-iceberg-bay-area-artists-target-openai-with-titanic-themed-protest-art/",
-      "source": "Ars Technica AI",
-      "category": "AI",
-      "summary": "New sculpture depicts AI leaders escaping a sinking ship.",
-      "published": "2026-09-29T21:52:58+00:00",
       "audio_url": null,
       "duration": ""
     },
