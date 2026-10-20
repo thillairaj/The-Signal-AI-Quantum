@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-20T13:59:58.846502+00:00",
+  "generated_at": "2026-10-20T17:59:58.003563+00:00",
   "sources_polled": [
     "The Verge \u2014 AI",
     "Simon Willison",
@@ -15,6 +15,28 @@
     "Quantum Intelligence"
   ],
   "articles": [
+    {
+      "id": "e85a4c5da2af52ae",
+      "title": "Spotify pulled 50 million AI slop and spam tracks from its recommendations",
+      "link": "https://www.theverge.com/entertainment/1014284/spotify-ai-slop-spam-songs-removed",
+      "source": "The Verge \u2014 AI",
+      "category": "AI",
+      "summary": "Spotify says it has removed more than 50 million songs considered AI-generated slop or spam from user recommendations over the past year. That's according to an announcement on Tuesday that says Spotify has also made changes to its recommendation system to highlight more music ma",
+      "published": "2026-10-20T17:59:45.324349+00:00",
+      "audio_url": null,
+      "duration": ""
+    },
+    {
+      "id": "f25d567c798eab30",
+      "title": "Meta tries to scapegoat staff who downloaded torrents to spare execs",
+      "link": "https://arstechnica.com/tech-policy/2026/10/meta-ordered-to-name-execs-who-approved-torrenting-for-ai-training/",
+      "source": "Ars Technica AI",
+      "category": "AI",
+      "summary": "Meta argues nobody \u201cdecided\u201d to pirate books to train AI.",
+      "published": "2026-10-20T17:40:20+00:00",
+      "audio_url": null,
+      "duration": ""
+    },
     {
       "id": "af3e08fe45e19629",
       "title": "Adobe Lightroom mobile can now open closed eyes in photos with a simple tap",
@@ -34,6 +56,17 @@
       "category": "AI",
       "summary": "A single query is all that's required to find thousands of conversations listed by title.",
       "published": "2026-10-20T12:33:13+00:00",
+      "audio_url": null,
+      "duration": ""
+    },
+    {
+      "id": "b3fcb2e42d321123",
+      "title": "Franchisee reconciles cash in 94% less time with ChatGPT Work",
+      "link": "https://openai.com/index/ted-taylor-restaurant",
+      "source": "OpenAI Blog",
+      "category": "AI",
+      "summary": "An independent Schlotzsky\u2019s and Cinnabon franchisee cut menu repricing time by 95% and built a workflow that could free up $100K in cash flow.",
+      "published": "2026-10-20T10:00:00+00:00",
       "audio_url": null,
       "duration": ""
     },
@@ -1446,17 +1479,6 @@
       "duration": ""
     },
     {
-      "id": "f35a073890448086",
-      "title": "Microsoft\u2019s new AI chip makes it less reliant on Nvidia\u2019s GPUs",
-      "link": "https://www.theverge.com/news/1009465/microsoft-maia-300-chip-improvements-rollout",
-      "source": "The Verge \u2014 AI",
-      "category": "AI",
-      "summary": "Microsoft is announcing its third-generation Maia in-house AI chip today, designed to be the \"primary AI inference system\" for Microsoft's products and services. Maia 300 not only improves the cost and efficiency of running AI workloads in the cloud, it's also more capable of han",
-      "published": "2026-10-12T13:59:46.695626+00:00",
-      "audio_url": null,
-      "duration": ""
-    },
-    {
       "id": "5dfaa1d43f85e664",
       "title": "Amazon has over 1 million robot workers. What\u2019s next for human employees?",
       "link": "https://arstechnica.com/ai/2026/10/inside-amazons-robotic-arms-race-and-what-it-means-for-the-future-of-human-work/",
@@ -2788,17 +2810,6 @@
       "duration": ""
     },
     {
-      "id": "bae3c02ce114f1cb",
-      "title": "Google figures out how to watermark AI-designed proteins",
-      "link": "https://arstechnica.com/science/2026/09/google-figures-out-how-to-watermark-ai-designed-proteins/",
-      "source": "Ars Technica AI",
-      "category": "AI",
-      "summary": "Intended to help with biosecurity, it works with a popular AI protein design tool.",
-      "published": "2026-09-30T15:54:52+00:00",
-      "audio_url": null,
-      "duration": ""
-    },
-    {
       "id": "70b828fa286d9fa6",
       "title": "Anthropic claims popular Chinese AI model has Mythos-class hacking abilities",
       "link": "https://www.tomshardware.com/tech-industry/artificial-intelligence/anthropic-claims-popular-chinese-ai-model-has-mythos-class-hacking-abilities-frontier-red-teaming-report-details-weak-safeguards-on-open-weight-ai",
@@ -3014,17 +3025,6 @@
       "source": "OpenAI Blog",
       "category": "AI",
       "summary": "OpenAI CEO Sam Altman discusses AI safety, human control, and international cooperation in remarks to the United Nations Security Council.",
-      "published": "2026-09-23T12:00:00+00:00",
-      "audio_url": null,
-      "duration": ""
-    },
-    {
-      "id": "7cff1964bf19497f",
-      "title": "Ringg\u2019s AI agents resolve up to 65% of customer calls with OpenAI",
-      "link": "https://openai.com/index/ringg",
-      "source": "OpenAI Blog",
-      "category": "AI",
-      "summary": "Using GPT-5.6, Ringg powers multilingual agents across voice, chat, WhatsApp, and web for 90% less cost vs. GPT-4.1.",
       "published": "2026-09-23T12:00:00+00:00",
       "audio_url": null,
       "duration": ""
