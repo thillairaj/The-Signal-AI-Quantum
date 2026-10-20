@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-19T22:00:00.102621+00:00",
+  "generated_at": "2026-10-20T02:00:11.316393+00:00",
   "sources_polled": [
     "The Verge \u2014 AI",
     "Simon Willison",
@@ -15,6 +15,28 @@
     "Quantum Intelligence"
   ],
   "articles": [
+    {
+      "id": "af02b0baed077a86",
+      "title": "My obituary for programming",
+      "link": "https://simonwillison.net/2026/Oct/19/my-obituary-for-programming/",
+      "source": "Simon Willison",
+      "category": "AI",
+      "summary": "My obituary for programming Jeremy Scheff poignantly captures the key loss caused by coding agents for career programmers who enjoyed the puzzle of developing code: Programming turned into one of the greatest jobs you could imagine. You got paid to work on tricky little logic puz",
+      "published": "2026-10-20T01:59:58.115975+00:00",
+      "audio_url": null,
+      "duration": ""
+    },
+    {
+      "id": "03d5598da02e4460",
+      "title": "Daily AI Intelligence \u2014 Episode 19 (Tue Oct 20, 2026): The Information's three-lab model wave, DHS bans DeepSeek from federal systems, White House meets labs",
+      "link": "https://muse.ai/podcasts/media/1248297608376725/94f09345-ad4a-4981-83dd-e3206bbf5c4e/ep-be3189c4-4559-4f75-964a-126062edd473.mp3",
+      "source": "Daily AI Intelligence",
+      "category": "Podcast",
+      "summary": "Five-minute AI news flash for Tuesday, October 20, 2026: Anthropic's intent-inferring model, Google's Gemini 4 Carbon, and OpenAI's Terra-family model surface together; the US bans DeepSeek from civilian federal agencies; the White House meets labs on pre-release review; Microsof",
+      "published": "2026-10-20T01:06:42+00:00",
+      "audio_url": "https://muse.ai/podcasts/media/1248297608376725/94f09345-ad4a-4981-83dd-e3206bbf5c4e/ep-be3189c4-4559-4f75-964a-126062edd473.mp3",
+      "duration": "220"
+    },
     {
       "id": "073765c16b4994fd",
       "title": "CoreWeave&#8217;s debt is becoming the whole AI industry&#8217;s problem",
@@ -100,6 +122,17 @@
       "category": "AI",
       "summary": "A hacker broke into more than 100 websites using an army of AI agents that mostly operated on their own, according to findings from the AI security firm Norforge. Though Norforge doesn't name the targets, Reuters reports that the victims included companies like John Deere, SharkN",
       "published": "2026-10-19T13:59:55.578803+00:00",
+      "audio_url": null,
+      "duration": ""
+    },
+    {
+      "id": "7a364f356aab4946",
+      "title": "Advancing coding in low\u2011resource programming languages",
+      "link": "https://openai.com/index/low-resource-programming-languages",
+      "source": "OpenAI Blog",
+      "category": "AI",
+      "summary": "Learn how OpenAI is improving ChatGPT across low-resource programming languages, with new evaluations for software engineering, SQLite, and COBOL migration.",
+      "published": "2026-10-19T12:00:00+00:00",
       "audio_url": null,
       "duration": ""
     },
@@ -2249,17 +2282,6 @@
       "duration": ""
     },
     {
-      "id": "88caa1a107f0635d",
-      "title": "pwasm 0.2a0",
-      "link": "https://simonwillison.net/2026/Oct/1/pwasm/",
-      "source": "Simon Willison",
-      "category": "AI",
-      "summary": "Release: pwasm 0.2a0 pwasm is one of my folly projects - an entirely vibe-coded pure Python WebAssembly engine that I built in January during my first bout of AI mania . I hadn't touched it since January, so I decided to let Claude Opus 5.5 loose on it and see if it could make an",
-      "published": "2026-10-06T02:04:21.670352+00:00",
-      "audio_url": null,
-      "duration": ""
-    },
-    {
       "id": "0285defcd58f71ae",
       "title": "Daily AI Intelligence \u2014 Episode 5: OpenAI watermarks ChatGPT in the EU, Pentagon drops Claude",
       "link": "https://muse.ai/podcasts/media/1248297608376725/94f09345-ad4a-4981-83dd-e3206bbf5c4e/ep-8b04d272-7c91-4d22-9ee5-aa3ec8989237.mp3",
@@ -3003,17 +3025,6 @@
       "source": "OpenAI Blog",
       "category": "AI",
       "summary": "Using GPT-5.6, Ringg powers multilingual agents across voice, chat, WhatsApp, and web for 90% less cost vs. GPT-4.1.",
-      "published": "2026-09-23T12:00:00+00:00",
-      "audio_url": null,
-      "duration": ""
-    },
-    {
-      "id": "7357353a1f1d61a6",
-      "title": "How invideo improves color grading 3x with GPT\u20116 Astra",
-      "link": "https://openai.com/index/invideo-builds-with-gpt-6-astra",
-      "source": "OpenAI Blog",
-      "category": "AI",
-      "summary": "With GPT\u20116 Astra, invideo plans edits with greater precision, improves color correction and grading threefold, and produces 50 custom effects in one day.",
       "published": "2026-09-23T12:00:00+00:00",
       "audio_url": null,
       "duration": ""
