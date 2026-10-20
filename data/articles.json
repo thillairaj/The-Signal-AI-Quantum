@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-20T17:59:58.003563+00:00",
+  "generated_at": "2026-10-20T22:00:06.175623+00:00",
   "sources_polled": [
     "The Verge \u2014 AI",
     "Simon Willison",
@@ -15,6 +15,61 @@
     "Quantum Intelligence"
   ],
   "articles": [
+    {
+      "id": "3b5ce86c8c402c8d",
+      "title": "Battle Drones - a vibe coded RTS with audio-based multiplayer",
+      "link": "https://simonwillison.net/2026/Oct/20/battledrones/",
+      "source": "Simon Willison",
+      "category": "AI",
+      "summary": "My latest vibe coded game experiment is a Command &amp; Conquer style RTS (Real Time Strategy) game called Battle Drones ( play it here ). Unlike my previous experiments , this one is actually fun to play . I'm somewhat embarrassed to admit that I got there by telling Claude to \"",
+      "published": "2026-10-20T21:59:54.444485+00:00",
+      "audio_url": null,
+      "duration": ""
+    },
+    {
+      "id": "f52190a49967b68d",
+      "title": "Meta pauses Muse sharing after researchers find AI chats on the web",
+      "link": "https://www.theverge.com/tech/1014627/meta-muse-ai-sharing-ai-chats",
+      "source": "The Verge \u2014 AI",
+      "category": "AI",
+      "summary": "Meta says it paused a Muse feature that lets you share conversations with the AI assistant after researchers found the URLs publicly available on the web, as reported by Ars Technica. In a report published this week, researchers at the security firm Claroc say they found more tha",
+      "published": "2026-10-20T21:59:53.657222+00:00",
+      "audio_url": null,
+      "duration": ""
+    },
+    {
+      "id": "165cb15531466377",
+      "title": "Meta drops the word \"train\" from its commercial TOS after AI backlash",
+      "link": "https://arstechnica.com/tech-policy/2026/10/meta-drops-the-word-train-from-its-commercial-tos-after-ai-backlash/",
+      "source": "Ars Technica AI",
+      "category": "AI",
+      "summary": "Meta changes AI scraping policy but won\u2019t add language respecting robots.txt.",
+      "published": "2026-10-20T20:07:58+00:00",
+      "audio_url": null,
+      "duration": ""
+    },
+    {
+      "id": "f74f11fae08faea7",
+      "title": "Gemini's Personal Intelligence is coming to cars",
+      "link": "https://arstechnica.com/google/2026/10/geminis-personal-intelligence-is-coming-to-cars/",
+      "source": "Ars Technica AI",
+      "category": "AI",
+      "summary": "It's probably time to audit your Gemini settings.",
+      "published": "2026-10-20T20:00:33+00:00",
+      "audio_url": null,
+      "duration": ""
+    },
+    {
+      "id": "748b8e425db02d3d",
+      "title": "Ukraine\u2019s drone rescue of wounded soldier puts much touted idea into practice",
+      "link": "https://arstechnica.com/gadgets/2026/10/ukraines-drone-rescue-of-wounded-soldier-puts-much-touted-idea-into-practice/",
+      "source": "Ars Technica AI",
+      "category": "AI",
+      "summary": "Ukraine\u2019s latest drone innovation may boost bleak odds of evacuating casualties.",
+      "published": "2026-10-20T18:22:54+00:00",
+      "audio_url": null,
+      "duration": ""
+    },
     {
       "id": "e85a4c5da2af52ae",
       "title": "Spotify pulled 50 million AI slop and spam tracks from its recommendations",
@@ -91,6 +146,17 @@
       "published": "2026-10-20T01:06:42+00:00",
       "audio_url": "https://muse.ai/podcasts/media/1248297608376725/94f09345-ad4a-4981-83dd-e3206bbf5c4e/ep-be3189c4-4559-4f75-964a-126062edd473.mp3",
       "duration": "220"
+    },
+    {
+      "id": "dbaa902542534b3a",
+      "title": "OpenAI acquires Orchestra Bio",
+      "link": "https://openai.com/index/openai-to-acquire-orchestra-bio",
+      "source": "OpenAI Blog",
+      "category": "AI",
+      "summary": "OpenAI is acquiring Orchestra Bio to bring AI-powered operations to life sciences R&amp;D, helping biopharma teams accelerate drug development and advance new treatments.",
+      "published": "2026-10-20T00:00:00+00:00",
+      "audio_url": null,
+      "duration": ""
     },
     {
       "id": "073765c16b4994fd",
@@ -1457,17 +1523,6 @@
       "duration": ""
     },
     {
-      "id": "5b0bbc20b589187e",
-      "title": "Meta has some Wonder Full new AI models",
-      "link": "https://www.theverge.com/ai-artificial-intelligence/1009479/meta-muse-wonder-full-ai-model",
-      "source": "The Verge \u2014 AI",
-      "category": "AI",
-      "summary": "Meta is making up for lost time in the AI race. After launching Muse Spark, the first model from its revamped Superintelligence Labs division, and buzzy AI agent Muse, it's now launching two new models it claims can go toe-to-toe with the industry's best. The new models, Muse Won",
-      "published": "2026-10-12T17:59:59.853417+00:00",
-      "audio_url": null,
-      "duration": ""
-    },
-    {
       "id": "b4c6a3e5aa4cab30",
       "title": "Russia was not ready for the data center war it started with Ukraine",
       "link": "https://arstechnica.com/gadgets/2026/10/russia-was-not-ready-for-the-data-center-war-it-started-with-ukraine/",
@@ -2249,17 +2304,6 @@
       "duration": ""
     },
     {
-      "id": "f66486df2fd590e7",
-      "title": "Scrimshaw Jukebox",
-      "link": "https://simonwillison.net/2026/Oct/6/scrimshaw-jukebox/",
-      "source": "Simon Willison",
-      "category": "AI",
-      "summary": "Tool: Scrimshaw Jukebox I wanted to see if Claude Opus 5.5 could compose music, so I tried this : I want you to write some computer game music for me. First design simple text based format for the music and build an artifact that can play it out loud - include some example tracks",
-      "published": "2026-10-06T17:59:48.941697+00:00",
-      "audio_url": null,
-      "duration": ""
-    },
-    {
       "id": "60ef2af305e795fe",
       "title": "Atlassian and OpenAI expand partnership to turn enterprise knowledge into action",
       "link": "https://openai.com/index/atlassian-partnership",
@@ -2777,39 +2821,6 @@
       "duration": ""
     },
     {
-      "id": "846404c900e61350",
-      "title": "Trump plan to combat AI risks hinges on Big Tech pals policing themselves",
-      "link": "https://arstechnica.com/tech-policy/2026/09/trump-plan-to-combat-ai-risks-hinges-on-big-tech-pals-policing-themselves/",
-      "source": "Ars Technica AI",
-      "category": "AI",
-      "summary": "Trump gets dozens of AI firms to agree to voluntary safety tests.",
-      "published": "2026-09-30T18:47:01+00:00",
-      "audio_url": null,
-      "duration": ""
-    },
-    {
-      "id": "7cdb83130a45aafc",
-      "title": "\"An AI did it\" is no defense, says nonprofit suing OpenAI over Hugging Face hack",
-      "link": "https://arstechnica.com/tech-policy/2026/09/lawsuit-demands-openai-halt-unsafe-development-that-caused-hugging-face-hack/",
-      "source": "Ars Technica AI",
-      "category": "AI",
-      "summary": "OpenAI makes others suffer \"the harms of its unsafe decision-making,\" nonprofit says.",
-      "published": "2026-09-30T18:25:04+00:00",
-      "audio_url": null,
-      "duration": ""
-    },
-    {
-      "id": "c1c0d3f819474c8d",
-      "title": "Google's early attempt to pay websites for AI answers is struggling",
-      "link": "https://arstechnica.com/google/2026/09/google-is-paying-100-websites-for-contributions-to-ai-overviews-but-the-amounts-are-tiny/",
-      "source": "Ars Technica AI",
-      "category": "AI",
-      "summary": "Many sites see just one-tenth of one percent of their advertising revenue from AI payments.",
-      "published": "2026-09-30T16:03:48+00:00",
-      "audio_url": null,
-      "duration": ""
-    },
-    {
       "id": "70b828fa286d9fa6",
       "title": "Anthropic claims popular Chinese AI model has Mythos-class hacking abilities",
       "link": "https://www.tomshardware.com/tech-industry/artificial-intelligence/anthropic-claims-popular-chinese-ai-model-has-mythos-class-hacking-abilities-frontier-red-teaming-report-details-weak-safeguards-on-open-weight-ai",
@@ -3015,17 +3026,6 @@
       "category": "AI",
       "summary": "OpenAI is extending access to its Daybreak program to the Government of Ukraine to support the cyber defense of civilian infrastructure.",
       "published": "2026-09-23T13:00:00+00:00",
-      "audio_url": null,
-      "duration": ""
-    },
-    {
-      "id": "01d4e543c9419cea",
-      "title": "Sam Altman\u2019s remarks at the United Nations Security Council",
-      "link": "https://openai.com/index/sam-altman-un-security-council-remarks",
-      "source": "OpenAI Blog",
-      "category": "AI",
-      "summary": "OpenAI CEO Sam Altman discusses AI safety, human control, and international cooperation in remarks to the United Nations Security Council.",
-      "published": "2026-09-23T12:00:00+00:00",
       "audio_url": null,
       "duration": ""
     },
