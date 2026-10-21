@@ -192,24 +192,21 @@
   .topicbar .backlink{color:inherit;opacity:.78;text-decoration:none;font-size:13.5px;font-weight:600;white-space:nowrap;align-self:center}
   .topicbar .backlink:hover{opacity:1;text-decoration:underline}
 
-  /* Sibling navigation: move within this group without returning to the landing page (Thillai, Oct 21 2026). */
-  .sibwrap{max-width:1180px;margin:26px auto 4px;padding:0 18px}
-  .sibcap{font-size:11px;letter-spacing:2px;text-transform:uppercase;opacity:.6;font-weight:700;margin:0 0 10px}
-  .sibnav{display:flex;gap:12px;justify-content:space-between}
-  .sib{flex:0 1 46%;display:flex;flex-direction:column;gap:3px;padding:13px 16px;border-radius:14px;text-decoration:none;transition:border-color .15s ease,transform .15s ease;border:1px solid var(--gold-dim);background:var(--card);color:var(--ink)}
-  .sib:hover{border-color:var(--gold);transform:translateY(-1px)}
-  .sib-dir{font-size:11px;letter-spacing:1.6px;text-transform:uppercase;opacity:.65;font-weight:700}
-  .sib-title{font-size:16px;font-weight:700;line-height:1.3}
-  .sib.next{text-align:right;margin-left:auto}
-  .sib.empty{visibility:hidden;border:none;background:transparent}
-  @media(max-width:640px){.sibnav{flex-direction:column}.sib{flex:1 1 auto}.sib.next{text-align:left;margin-left:0}.sib.empty{display:none}}
-
-  /* LinkedIn follow button (Thillai, Oct 21 2026): pill with the LinkedIn badge, fills blue on hover. */
-  .li-btn{display:inline-flex;align-items:center;gap:8px;padding:6px 14px 6px 7px;border:1px solid #0A66C2;border-radius:999px;background:#EAF3FC;color:#0A66C2 !important;text-decoration:none !important;font-weight:700;font-size:13.5px;letter-spacing:.01em;vertical-align:middle;transition:background .15s ease,color .15s ease}
-  .li-btn:hover{background:#0A66C2;color:#fff !important}
-  .li-badge{display:inline-flex;align-items:center;justify-content:center;width:20px;height:20px;border-radius:5px;background:#0A66C2;color:#fff;flex:0 0 auto}
-  .li-badge svg{width:12px;height:12px;display:block}
-  .li-btn:hover .li-badge{background:#fff;color:#0A66C2}
+  /* Frozen navigation cards (Thillai, Oct 21 2026): Back + sibling deck live inside the sticky topic bar. */
+  .topicbar .navcard{display:flex;flex-direction:column;gap:1px;justify-content:center;padding:6px 12px;border:1px solid var(--gold-dim);border-radius:12px;background:var(--card);color:var(--ink);text-decoration:none;min-width:0;transition:border-color .15s ease,transform .15s ease}
+  .topicbar .navcard:hover{border-color:var(--gold);transform:translateY(-1px)}
+  .topicbar .navcard.sib{margin-left:auto}
+  .nc-dir{font-size:9.5px;letter-spacing:1.8px;text-transform:uppercase;opacity:.62;font-weight:700;white-space:nowrap}
+  .nc-title{font-size:14px;font-weight:700;line-height:1.25;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:200px}
+  .topicbar .navcard.next{text-align:right}
+  /* LinkedIn follow button (Thillai, Oct 21 2026): coloured card-button, LinkedIn blue gradient. */
+  .li-btn{display:inline-flex;align-items:center;gap:10px;padding:8px 16px 8px 9px;border-radius:14px;background:linear-gradient(135deg,#0A66C2,#004182);color:#fff !important;text-decoration:none !important;box-shadow:0 4px 14px rgba(10,102,194,.35);vertical-align:middle;transition:transform .15s ease,box-shadow .15s ease}
+  .li-btn:hover{transform:translateY(-1px);box-shadow:0 8px 22px rgba(10,102,194,.45)}
+  .li-btn .li-badge{display:inline-flex;align-items:center;justify-content:center;width:30px;height:30px;border-radius:8px;background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.45);color:#fff;flex:0 0 auto}
+  .li-btn .li-badge svg{width:16px;height:16px;display:block}
+  .li-txt{display:flex;flex-direction:column;line-height:1.15;text-align:left}
+  .li-dir{font-size:9.5px;letter-spacing:1.8px;text-transform:uppercase;opacity:.85;font-weight:700}
+  .li-name{font-size:15.5px;font-weight:800;letter-spacing:.01em}
 </style>
 </head>
 <body>
@@ -220,12 +217,13 @@
   <h1>The <span class="thin">Quantum</span> Deck</h1>
 </header>
 <div class="topicbar">
-  <a class="backlink" href="../#learn-decks">← Back to Learning Spaces</a>
+  <a class="navcard back" href="../#learn-decks"><span class="nc-dir">← Back to</span><span class="nc-title">Learning Spaces</span></a>
   <span class="tlabel">SELECT TOPIC</span>
   <button class="tnav" id="tstrip-prev" aria-label="Scroll topics left">‹</button>
   <div class="tstrip-wrap"><div class="tstrip" id="topic-strip"></div></div>
   <button class="tnav" id="tstrip-next" aria-label="Scroll topics right">›</button>
   <label class="tsearch"><input id="topic-search" type="search" placeholder="Search topics…" aria-label="Search topics"></label>
+  <a class="navcard sib next" href="../ai-deck/"><span class="nc-dir">Next →</span><span class="nc-title">The AI Deck</span></a>
 </div>
 <main>
   <div class="topic-head">
@@ -259,8 +257,7 @@
   </div>
 </main>
 
-<div class="sibwrap"><p class="sibcap">Interactive Decks · 1 of 2</p><nav class="sibnav" aria-label="More in this group"><span class="sib empty" aria-hidden="true"></span><a class="sib next" href="../ai-deck/"><span class="sib-dir">Next →</span><span class="sib-title">The AI Deck</span></a></nav></div>
-<footer><div class="rule"></div>Curated by Thillai Raj Thanam Jeya Veera Raj · <a class="li-btn" href="https://www.linkedin.com/in/thillairaj" target="_blank" rel="noopener"><span class="li-badge" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.55V9h3.57v11.45z"/></svg></span>Follow on LinkedIn</a></footer>
+<footer><div class="rule"></div>Curated by Thillai Raj Thanam Jeya Veera Raj · <a class="li-btn" href="https://www.linkedin.com/in/thillairaj" target="_blank" rel="noopener"><span class="li-badge" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.55V9h3.57v11.45z"/></svg></span><span class="li-txt"><span class="li-dir">Follow on</span><span class="li-name">LinkedIn</span></span></a></footer>
 <script>
 const FOOTER="Curated by Thillai Raj Thanam Jeya Veera Raj";
 const BRAND="The Quantum Deck";

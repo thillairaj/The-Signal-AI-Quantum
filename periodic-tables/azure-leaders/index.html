@@ -76,7 +76,7 @@
   .chip{white-space:nowrap;flex:0 0 auto}
   .backbtn{display:inline-flex;align-items:center;gap:6px;padding:9px 14px;border-radius:999px;border:1px solid var(--line);background:var(--panel2);color:var(--ink);font-size:13.5px;font-weight:700;cursor:pointer;margin-bottom:14px}
   .backbtn:hover{border-color:#38bdf8}
-  #detail{top:200px}
+  #detail{top:224px}
   /* Light theme */
   html[data-theme="light"] body{background:radial-gradient(1200px 600px at 20% -10%,#e8eefc 0%,#FAF9F6 55%);color:#17293f}
   html[data-theme="light"] h1{color:#0b213f}
@@ -140,24 +140,23 @@ h1,h2,h3{font-family:"Fraunces",serif}
   .legend-wrap .rail-btn:disabled{opacity:.25;cursor:default}
   .legend-wrap.no-overflow .rail-btn{display:none}
 
-  /* Sibling navigation: move within this group without returning to the landing page (Thillai, Oct 21 2026). */
-  .sibwrap{max-width:1280px;margin:30px auto 4px;padding:0 16px}
-  .sibcap{font-size:11px;letter-spacing:2px;text-transform:uppercase;opacity:.6;font-weight:700;margin:0 0 10px}
-  .sibnav{display:flex;gap:12px;justify-content:space-between}
-  .sib{flex:0 1 46%;display:flex;flex-direction:column;gap:3px;padding:13px 16px;border-radius:14px;text-decoration:none;transition:border-color .15s ease,transform .15s ease;border:1px solid var(--line);background:var(--panel);color:inherit}
-  .sib:hover{border-color:#38bdf8;transform:translateY(-1px)}
-  .sib-dir{font-size:11px;letter-spacing:1.6px;text-transform:uppercase;opacity:.65;font-weight:700}
-  .sib-title{font-size:16px;font-weight:700;line-height:1.3}
-  .sib.next{text-align:right;margin-left:auto}
-  .sib.empty{visibility:hidden;border:none;background:transparent}
-  @media(max-width:640px){.sibnav{flex-direction:column}.sib{flex:1 1 auto}.sib.next{text-align:left;margin-left:0}.sib.empty{display:none}}
-
-  /* LinkedIn follow button (Thillai, Oct 21 2026): pill with the LinkedIn badge, fills blue on hover. */
-  .li-btn{display:inline-flex;align-items:center;gap:8px;padding:6px 14px 6px 7px;border:1px solid #0A66C2;border-radius:999px;background:#EAF3FC;color:#0A66C2 !important;text-decoration:none !important;font-weight:700;font-size:13.5px;letter-spacing:.01em;vertical-align:middle;transition:background .15s ease,color .15s ease}
-  .li-btn:hover{background:#0A66C2;color:#fff !important}
-  .li-badge{display:inline-flex;align-items:center;justify-content:center;width:20px;height:20px;border-radius:5px;background:#0A66C2;color:#fff;flex:0 0 auto}
-  .li-badge svg{width:12px;height:12px;display:block}
-  .li-btn:hover .li-badge{background:#fff;color:#0A66C2}
+  /* Frozen navigation cards (Thillai, Oct 21 2026): Back + Previous/Next live inside the sticky toolbar. */
+  .navrow{display:flex;gap:10px;align-items:stretch;max-width:1280px;margin:0 auto 8px;flex-wrap:wrap}
+  .navside{display:flex;gap:10px;margin-left:auto;flex-wrap:wrap}
+  .navcard{display:flex;flex-direction:column;gap:1px;justify-content:center;padding:7px 13px;border:1px solid var(--line);border-radius:12px;background:var(--panel2);color:inherit;text-decoration:none;min-width:0;transition:border-color .15s ease,transform .15s ease}
+  .navcard:hover{border-color:#38bdf8;transform:translateY(-1px)}
+  .nc-dir{font-size:9.5px;letter-spacing:1.8px;text-transform:uppercase;opacity:.62;font-weight:700;white-space:nowrap}
+  .nc-title{font-size:14.5px;font-weight:700;line-height:1.25;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:230px}
+  .navcard.next{text-align:right}
+  @media(max-width:640px){.nc-title{max-width:150px}.navside{margin-left:0}}
+  /* LinkedIn follow button (Thillai, Oct 21 2026): coloured card-button, LinkedIn blue gradient. */
+  .li-btn{display:inline-flex;align-items:center;gap:10px;padding:8px 16px 8px 9px;border-radius:14px;background:linear-gradient(135deg,#0A66C2,#004182);color:#fff !important;text-decoration:none !important;box-shadow:0 4px 14px rgba(10,102,194,.35);vertical-align:middle;transition:transform .15s ease,box-shadow .15s ease}
+  .li-btn:hover{transform:translateY(-1px);box-shadow:0 8px 22px rgba(10,102,194,.45)}
+  .li-btn .li-badge{display:inline-flex;align-items:center;justify-content:center;width:30px;height:30px;border-radius:8px;background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.45);color:#fff;flex:0 0 auto}
+  .li-btn .li-badge svg{width:16px;height:16px;display:block}
+  .li-txt{display:flex;flex-direction:column;line-height:1.15;text-align:left}
+  .li-dir{font-size:9.5px;letter-spacing:1.8px;text-transform:uppercase;opacity:.85;font-weight:700}
+  .li-name{font-size:15.5px;font-weight:800;letter-spacing:.01em}
 </style>
 </head>
 <body>
@@ -171,7 +170,7 @@ h1,h2,h3{font-family:"Fraunces",serif}
 </header>
 
 <div class="toolbar">
-  <div style="text-align:left;max-width:1280px;margin:0 auto 6px;height:26px;display:flex;align-items:center"><a href="../../#learn-tables-cloud" style="color:inherit;opacity:.75;text-decoration:none;font-size:13.5px;font-weight:600">← Back to Learning Spaces</a></div>
+  <div class="navrow"><a class="navcard back" href="../../#learn-tables-cloud"><span class="nc-dir">← Back to</span><span class="nc-title">Learning Spaces</span></a><span class="navside"><a class="navcard prev" href="../aws-leaders/"><span class="nc-dir">← Previous</span><span class="nc-title">AWS for Leaders</span></a><a class="navcard next" href="../google-cloud-leaders/"><span class="nc-dir">Next →</span><span class="nc-title">Google Cloud for Leaders</span></a></span></div>
   <div class="toolbar-in">
     <input id="search" type="search" placeholder="Search a term — try AKS, Entra ID, Azure OpenAI, Cosmos DB…" aria-label="Search terms">
     <span class="count" id="count"></span>
@@ -192,8 +191,7 @@ h1,h2,h3{font-family:"Fraunces",serif}
 <section class="below"><h3>Six things a leader should hold on to about Azure</h3><div class="cards"><div class="card"><h4>Integration is the product</h4><p>Azure rarely wins a feature-by-feature shootout; it wins because Entra ID, Microsoft 365, Windows and SQL Server already run your business. Judge it as an ecosystem decision, not a hosting decision.</p></div><div class="card"><h4>Licences are money</h4><p>Hybrid Benefit, reservations and enterprise agreement terms move the Azure bill more than most engineering choices. Your licensing position deserves the same rigour as your architecture.</p></div><div class="card"><h4>Governance before scale</h4><p>Landing zones, Azure Policy and RBAC cost little at the start and a fortune to retrofit. Estates that skip them do not move faster for long — they sprawl faster.</p></div><div class="card"><h4>Identity is the perimeter</h4><p>With Entra ID, the old network boundary matters less than who can sign in and under what conditions. MFA and conditional access protect more value than any firewall rule.</p></div><div class="card"><h4>Managed beats lifted</h4><p>Every workload moved from a VM to a managed service — App Service, Azure SQL, Functions — removes patching, backup and babysitting from your team permanently. The migration premium pays for itself in operations.</p></div><div class="card"><h4>AI rides the same rails</h4><p>Azure OpenAI, AI Search and Copilot Studio plug into the same identity, network and compliance controls as the rest of the estate. That is the real enterprise AI advantage: governed by default, not by exception.</p></div></div><h3>A leader's Azure checklist</h3><div class="cards"><div class="card"><h4>Foundation and money</h4><ul><li>Is an Azure landing zone in place before workloads scale?</li><li>Has the licensing team certified our Hybrid Benefit entitlements?</li><li>Are reservations covering the always-on baseline — and nothing speculative?</li><li>Does every resource carry an owner and cost-centre tag?</li><li>Is there a monthly per-team cost review using Azure Cost Management?</li></ul></div><div class="card"><h4>Security and operations</h4><ul><li>Is MFA with conditional access enforced for every user and admin?</li><li>How many people hold Owner or Contributor at subscription level?</li><li>Are Azure Policy guardrails in deny mode for the non-negotiables?</li><li>Is Defender for Cloud's backlog being cleared within agreed SLAs?</li><li>Does Sentinel ingest only the logs the SOC actually watches?</li></ul></div><div class="card example"><h4>The honest note</h4><p>Azure is the natural cloud for a Microsoft estate, and that gravity is both the value and the risk. The integration is real, the licensing leverage is real, and so is the lock-in: Entra ID, the enterprise agreement and a decade of Microsoft skills make leaving expensive by design. Go in with eyes open — negotiate the agreement like the multi-year commitment it is, keep data and skills as portable as you sensibly can, and let governance, not enthusiasm, set the pace of adoption.</p></div></div></section>
 
 
-<div class="sibwrap"><p class="sibcap">Cloud · 3 of 4</p><nav class="sibnav" aria-label="More in this group"><a class="sib prev" href="../aws-leaders/"><span class="sib-dir">← Previous</span><span class="sib-title">AWS for Leaders</span></a><a class="sib next" href="../google-cloud-leaders/"><span class="sib-dir">Next →</span><span class="sib-title">Google Cloud for Leaders</span></a></nav></div>
-<footer>An educational map of Microsoft Azure for leaders. Service names, tiers and positions as of October 2026; verify current details in Microsoft's documentation before procurement decisions.<div style="margin-top:12px;font-size:13px">Curated by Thillai Raj Thanam Jeya Veera Raj · <a class="li-btn" href="https://www.linkedin.com/in/thillairaj" target="_blank" rel="noopener"><span class="li-badge" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.55V9h3.57v11.45z"/></svg></span>Follow on LinkedIn</a></div></footer>
+<footer>An educational map of Microsoft Azure for leaders. Service names, tiers and positions as of October 2026; verify current details in Microsoft's documentation before procurement decisions.<div style="margin-top:12px;font-size:13px">Curated by Thillai Raj Thanam Jeya Veera Raj · <a class="li-btn" href="https://www.linkedin.com/in/thillairaj" target="_blank" rel="noopener"><span class="li-badge" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.55V9h3.57v11.45z"/></svg></span><span class="li-txt"><span class="li-dir">Follow on</span><span class="li-name">LinkedIn</span></span></a></div></footer>
 
 <script>
 const CATS = { compute:{name:"Compute & Containers",color:"#0284c7"}, storage:{name:"Storage & Data",color:"#4f46e5"}, ai:{name:"AI & Cognitive Services",color:"#a21caf"}, network:{name:"Networking",color:"#0891b2"}, security:{name:"Identity, Security & Governance",color:"#dc2626"}, dev:{name:"Developer & Integration",color:"#65a30d"}, manage:{name:"Management, Cost & Strategy",color:"#d97706"} };

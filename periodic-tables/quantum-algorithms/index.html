@@ -76,7 +76,7 @@
   .chip{white-space:nowrap;flex:0 0 auto}
   .backbtn{display:inline-flex;align-items:center;gap:6px;padding:9px 14px;border-radius:999px;border:1px solid var(--line);background:var(--panel2);color:var(--ink);font-size:13.5px;font-weight:700;cursor:pointer;margin-bottom:14px}
   .backbtn:hover{border-color:#38bdf8}
-  #detail{top:200px}
+  #detail{top:224px}
   /* Light theme */
   html[data-theme="light"] body{background:radial-gradient(1200px 600px at 20% -10%,#e8eefc 0%,#FAF9F6 55%);color:#17293f}
   html[data-theme="light"] h1{color:#0b213f}
@@ -140,24 +140,23 @@ h1,h2,h3{font-family:"Fraunces",serif}
   .legend-wrap .rail-btn:disabled{opacity:.25;cursor:default}
   .legend-wrap.no-overflow .rail-btn{display:none}
 
-  /* Sibling navigation: move within this group without returning to the landing page (Thillai, Oct 21 2026). */
-  .sibwrap{max-width:1280px;margin:30px auto 4px;padding:0 16px}
-  .sibcap{font-size:11px;letter-spacing:2px;text-transform:uppercase;opacity:.6;font-weight:700;margin:0 0 10px}
-  .sibnav{display:flex;gap:12px;justify-content:space-between}
-  .sib{flex:0 1 46%;display:flex;flex-direction:column;gap:3px;padding:13px 16px;border-radius:14px;text-decoration:none;transition:border-color .15s ease,transform .15s ease;border:1px solid var(--line);background:var(--panel);color:inherit}
-  .sib:hover{border-color:#38bdf8;transform:translateY(-1px)}
-  .sib-dir{font-size:11px;letter-spacing:1.6px;text-transform:uppercase;opacity:.65;font-weight:700}
-  .sib-title{font-size:16px;font-weight:700;line-height:1.3}
-  .sib.next{text-align:right;margin-left:auto}
-  .sib.empty{visibility:hidden;border:none;background:transparent}
-  @media(max-width:640px){.sibnav{flex-direction:column}.sib{flex:1 1 auto}.sib.next{text-align:left;margin-left:0}.sib.empty{display:none}}
-
-  /* LinkedIn follow button (Thillai, Oct 21 2026): pill with the LinkedIn badge, fills blue on hover. */
-  .li-btn{display:inline-flex;align-items:center;gap:8px;padding:6px 14px 6px 7px;border:1px solid #0A66C2;border-radius:999px;background:#EAF3FC;color:#0A66C2 !important;text-decoration:none !important;font-weight:700;font-size:13.5px;letter-spacing:.01em;vertical-align:middle;transition:background .15s ease,color .15s ease}
-  .li-btn:hover{background:#0A66C2;color:#fff !important}
-  .li-badge{display:inline-flex;align-items:center;justify-content:center;width:20px;height:20px;border-radius:5px;background:#0A66C2;color:#fff;flex:0 0 auto}
-  .li-badge svg{width:12px;height:12px;display:block}
-  .li-btn:hover .li-badge{background:#fff;color:#0A66C2}
+  /* Frozen navigation cards (Thillai, Oct 21 2026): Back + Previous/Next live inside the sticky toolbar. */
+  .navrow{display:flex;gap:10px;align-items:stretch;max-width:1280px;margin:0 auto 8px;flex-wrap:wrap}
+  .navside{display:flex;gap:10px;margin-left:auto;flex-wrap:wrap}
+  .navcard{display:flex;flex-direction:column;gap:1px;justify-content:center;padding:7px 13px;border:1px solid var(--line);border-radius:12px;background:var(--panel2);color:inherit;text-decoration:none;min-width:0;transition:border-color .15s ease,transform .15s ease}
+  .navcard:hover{border-color:#38bdf8;transform:translateY(-1px)}
+  .nc-dir{font-size:9.5px;letter-spacing:1.8px;text-transform:uppercase;opacity:.62;font-weight:700;white-space:nowrap}
+  .nc-title{font-size:14.5px;font-weight:700;line-height:1.25;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:230px}
+  .navcard.next{text-align:right}
+  @media(max-width:640px){.nc-title{max-width:150px}.navside{margin-left:0}}
+  /* LinkedIn follow button (Thillai, Oct 21 2026): coloured card-button, LinkedIn blue gradient. */
+  .li-btn{display:inline-flex;align-items:center;gap:10px;padding:8px 16px 8px 9px;border-radius:14px;background:linear-gradient(135deg,#0A66C2,#004182);color:#fff !important;text-decoration:none !important;box-shadow:0 4px 14px rgba(10,102,194,.35);vertical-align:middle;transition:transform .15s ease,box-shadow .15s ease}
+  .li-btn:hover{transform:translateY(-1px);box-shadow:0 8px 22px rgba(10,102,194,.45)}
+  .li-btn .li-badge{display:inline-flex;align-items:center;justify-content:center;width:30px;height:30px;border-radius:8px;background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.45);color:#fff;flex:0 0 auto}
+  .li-btn .li-badge svg{width:16px;height:16px;display:block}
+  .li-txt{display:flex;flex-direction:column;line-height:1.15;text-align:left}
+  .li-dir{font-size:9.5px;letter-spacing:1.8px;text-transform:uppercase;opacity:.85;font-weight:700}
+  .li-name{font-size:15.5px;font-weight:800;letter-spacing:.01em}
 </style>
 </head>
 <body>
@@ -171,7 +170,7 @@ h1,h2,h3{font-family:"Fraunces",serif}
 </header>
 
 <div class="toolbar">
-  <div style="text-align:left;max-width:1280px;margin:0 auto 6px;height:26px;display:flex;align-items:center"><a href="../../#learn-tables-quantum" style="color:inherit;opacity:.75;text-decoration:none;font-size:13.5px;font-weight:600">← Back to Learning Spaces</a></div>
+  <div class="navrow"><a class="navcard back" href="../../#learn-tables-quantum"><span class="nc-dir">← Back to</span><span class="nc-title">Learning Spaces</span></a><span class="navside"><a class="navcard prev" href="../quantum-keywords/"><span class="nc-dir">← Previous</span><span class="nc-title">Quantum Keywords for Leaders</span></a><a class="navcard next" href="../quantum-hardware/"><span class="nc-dir">Next →</span><span class="nc-title">Quantum Hardware</span></a></span></div>
   <div class="toolbar-in">
     <input id="search" type="search" placeholder="Search a term — try Shor, Grover, QFT, VQE, QAOA…" aria-label="Search terms">
     <span class="count" id="count"></span>
@@ -192,8 +191,7 @@ h1,h2,h3{font-family:"Fraunces",serif}
 <section class="below"><h3>Six things to hold on to</h3><div class="cards"><div class="card"><h4>Structure is the speedup</h4><p>Every exponential quantum speedup exploits structure — periodicity, algebraic structure, the physics of a quantum system itself. Unstructured problems get at most a quadratic Grover gain. When you evaluate a claim, name the structure being exploited or discount it.</p></div><div class="card"><h4>Query complexity is not runtime</h4><p>Oracle separations are real theorems about an idealised model. End-to-end advantage must also pay for building the oracle, loading the data and reading the answer — the three places famous speedups quietly die.</p></div><div class="card"><h4>Two eras, two algorithm families</h4><p>Variational and mitigation-based methods are the NISQ era: bounded, noisy, sampling-hungry. Phase estimation, Shor and qubitisation are the fault-tolerant era: proven and powerful, waiting on logical qubits. Confusing the two eras is the most common error in quantum commentary.</p></div><div class="card"><h4>Resource estimates are the ground truth</h4><p>Logical qubits, T-count, physical-qubit footprint and runtime, under stated error assumptions — that is what a serious algorithm proposal looks like. The field can now cost its flagship applications; insist that claims use the same accounting.</p></div><div class="card"><h4>Classical algorithms fight back</h4><p>Dequantisation, tensor networks and better heuristics have retired many quantum claims after publication. A speedup that survives years of classical counterattack is a different class of result from a launch announcement.</p></div><div class="card"><h4>Simulation is the surest ground</h4><p>Quantum simulation of quantum systems — chemistry and materials — rests on the firmest theoretical footing, because the exponential classical cost is intrinsic, not an artefact of problem encoding. Expect the first unambiguous, useful advantages there.</p></div></div><h3>A realism checklist for algorithm claims</h3><div class="cards"><div class="card"><h4>Questions for any speedup claim</h4><ul><li>Is the speedup exponential, polynomial or quadratic — and proven, or benchmarked?</li><li>Is the result in the oracle model? What does the oracle cost to build?</li><li>How is classical data loaded, and what does state preparation cost end to end?</li><li>How is the answer read out? Does readout cost scale with the system size?</li><li>Which classical algorithm is the baseline — and is it the best known?</li></ul></div><div class="card"><h4>Questions for any demonstration</h4><ul><li>Does it need fault tolerance? If so, what are the logical-qubit and T-count estimates?</li><li>What is the total shot count or sampling overhead, including mitigation and optimiser loops?</li><li>Could a tensor network, stabiliser simulation or dequantised algorithm reproduce it?</li><li>Is the problem instance classically verifiable only because it is small?</li><li>Has the claim survived independent attempts to match it classically?</li></ul></div><div class="card example"><h4>The honest summary</h4><p>Most of the powerful algorithms in this table — Shor, phase estimation, qubitised chemistry — assume fault-tolerant hardware that does not yet exist, and the near-term family has not yet beaten strong classical baselines on useful problems. That is not a reason for dismissal; it is the accurate map. Quantum computing's proven mathematics is strong, its engineering frontier is logical qubits, and its first durable advantages are most likely in simulation. Invest attention in proportion to evidence, and let resource estimates — not announcements — set the pace.</p></div></div></section>
 
 
-<div class="sibwrap"><p class="sibcap">Quantum · 2 of 4</p><nav class="sibnav" aria-label="More in this group"><a class="sib prev" href="../quantum-keywords/"><span class="sib-dir">← Previous</span><span class="sib-title">Quantum Keywords for Leaders</span></a><a class="sib next" href="../quantum-hardware/"><span class="sib-dir">Next →</span><span class="sib-title">Quantum Hardware</span></a></nav></div>
-<footer>Educational only. Most algorithms in this table assume fault-tolerant quantum hardware that does not exist yet; near-term claims should be read against the resource estimates, not the headlines.<div style="margin-top:12px;font-size:13px">Curated by Thillai Raj Thanam Jeya Veera Raj · <a class="li-btn" href="https://www.linkedin.com/in/thillairaj" target="_blank" rel="noopener"><span class="li-badge" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.55V9h3.57v11.45z"/></svg></span>Follow on LinkedIn</a></div></footer>
+<footer>Educational only. Most algorithms in this table assume fault-tolerant quantum hardware that does not exist yet; near-term claims should be read against the resource estimates, not the headlines.<div style="margin-top:12px;font-size:13px">Curated by Thillai Raj Thanam Jeya Veera Raj · <a class="li-btn" href="https://www.linkedin.com/in/thillairaj" target="_blank" rel="noopener"><span class="li-badge" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.55V9h3.57v11.45z"/></svg></span><span class="li-txt"><span class="li-dir">Follow on</span><span class="li-name">LinkedIn</span></span></a></div></footer>
 
 <script>
 const CATS = { prim:{name:"Core Primitives",color:"#4f46e5"}, search:{name:"Search & Optimisation",color:"#0284c7"}, sim:{name:"Simulation & Chemistry",color:"#0d9488"}, ml:{name:"Quantum Machine Learning",color:"#a21caf"}, crypto:{name:"Cryptography & Number Theory",color:"#dc2626"}, hybrid:{name:"Near-Term Hybrid Algorithms",color:"#ea580c"}, ft:{name:"Fault-Tolerant Algorithms",color:"#7c3aed"}, limits:{name:"Limits & Complexity",color:"#64748b"} };

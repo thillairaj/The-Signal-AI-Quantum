@@ -76,7 +76,7 @@
   .chip{white-space:nowrap;flex:0 0 auto}
   .backbtn{display:inline-flex;align-items:center;gap:6px;padding:9px 14px;border-radius:999px;border:1px solid var(--line);background:var(--panel2);color:var(--ink);font-size:13.5px;font-weight:700;cursor:pointer;margin-bottom:14px}
   .backbtn:hover{border-color:#38bdf8}
-  #detail{top:200px}
+  #detail{top:224px}
   /* Light theme */
   html[data-theme="light"] body{background:radial-gradient(1200px 600px at 20% -10%,#e8eefc 0%,#FAF9F6 55%);color:#17293f}
   html[data-theme="light"] h1{color:#0b213f}
@@ -140,24 +140,23 @@ h1,h2,h3{font-family:"Fraunces",serif}
   .legend-wrap .rail-btn:disabled{opacity:.25;cursor:default}
   .legend-wrap.no-overflow .rail-btn{display:none}
 
-  /* Sibling navigation: move within this group without returning to the landing page (Thillai, Oct 21 2026). */
-  .sibwrap{max-width:1280px;margin:30px auto 4px;padding:0 16px}
-  .sibcap{font-size:11px;letter-spacing:2px;text-transform:uppercase;opacity:.6;font-weight:700;margin:0 0 10px}
-  .sibnav{display:flex;gap:12px;justify-content:space-between}
-  .sib{flex:0 1 46%;display:flex;flex-direction:column;gap:3px;padding:13px 16px;border-radius:14px;text-decoration:none;transition:border-color .15s ease,transform .15s ease;border:1px solid var(--line);background:var(--panel);color:inherit}
-  .sib:hover{border-color:#38bdf8;transform:translateY(-1px)}
-  .sib-dir{font-size:11px;letter-spacing:1.6px;text-transform:uppercase;opacity:.65;font-weight:700}
-  .sib-title{font-size:16px;font-weight:700;line-height:1.3}
-  .sib.next{text-align:right;margin-left:auto}
-  .sib.empty{visibility:hidden;border:none;background:transparent}
-  @media(max-width:640px){.sibnav{flex-direction:column}.sib{flex:1 1 auto}.sib.next{text-align:left;margin-left:0}.sib.empty{display:none}}
-
-  /* LinkedIn follow button (Thillai, Oct 21 2026): pill with the LinkedIn badge, fills blue on hover. */
-  .li-btn{display:inline-flex;align-items:center;gap:8px;padding:6px 14px 6px 7px;border:1px solid #0A66C2;border-radius:999px;background:#EAF3FC;color:#0A66C2 !important;text-decoration:none !important;font-weight:700;font-size:13.5px;letter-spacing:.01em;vertical-align:middle;transition:background .15s ease,color .15s ease}
-  .li-btn:hover{background:#0A66C2;color:#fff !important}
-  .li-badge{display:inline-flex;align-items:center;justify-content:center;width:20px;height:20px;border-radius:5px;background:#0A66C2;color:#fff;flex:0 0 auto}
-  .li-badge svg{width:12px;height:12px;display:block}
-  .li-btn:hover .li-badge{background:#fff;color:#0A66C2}
+  /* Frozen navigation cards (Thillai, Oct 21 2026): Back + Previous/Next live inside the sticky toolbar. */
+  .navrow{display:flex;gap:10px;align-items:stretch;max-width:1280px;margin:0 auto 8px;flex-wrap:wrap}
+  .navside{display:flex;gap:10px;margin-left:auto;flex-wrap:wrap}
+  .navcard{display:flex;flex-direction:column;gap:1px;justify-content:center;padding:7px 13px;border:1px solid var(--line);border-radius:12px;background:var(--panel2);color:inherit;text-decoration:none;min-width:0;transition:border-color .15s ease,transform .15s ease}
+  .navcard:hover{border-color:#38bdf8;transform:translateY(-1px)}
+  .nc-dir{font-size:9.5px;letter-spacing:1.8px;text-transform:uppercase;opacity:.62;font-weight:700;white-space:nowrap}
+  .nc-title{font-size:14.5px;font-weight:700;line-height:1.25;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:230px}
+  .navcard.next{text-align:right}
+  @media(max-width:640px){.nc-title{max-width:150px}.navside{margin-left:0}}
+  /* LinkedIn follow button (Thillai, Oct 21 2026): coloured card-button, LinkedIn blue gradient. */
+  .li-btn{display:inline-flex;align-items:center;gap:10px;padding:8px 16px 8px 9px;border-radius:14px;background:linear-gradient(135deg,#0A66C2,#004182);color:#fff !important;text-decoration:none !important;box-shadow:0 4px 14px rgba(10,102,194,.35);vertical-align:middle;transition:transform .15s ease,box-shadow .15s ease}
+  .li-btn:hover{transform:translateY(-1px);box-shadow:0 8px 22px rgba(10,102,194,.45)}
+  .li-btn .li-badge{display:inline-flex;align-items:center;justify-content:center;width:30px;height:30px;border-radius:8px;background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.45);color:#fff;flex:0 0 auto}
+  .li-btn .li-badge svg{width:16px;height:16px;display:block}
+  .li-txt{display:flex;flex-direction:column;line-height:1.15;text-align:left}
+  .li-dir{font-size:9.5px;letter-spacing:1.8px;text-transform:uppercase;opacity:.85;font-weight:700}
+  .li-name{font-size:15.5px;font-weight:800;letter-spacing:.01em}
 </style>
 </head>
 <body>
@@ -171,7 +170,7 @@ h1,h2,h3{font-family:"Fraunces",serif}
 </header>
 
 <div class="toolbar">
-  <div style="text-align:left;max-width:1280px;margin:0 auto 6px;height:26px;display:flex;align-items:center"><a href="../../#learn-tables-cloud" style="color:inherit;opacity:.75;text-decoration:none;font-size:13.5px;font-weight:600">← Back to Learning Spaces</a></div>
+  <div class="navrow"><a class="navcard back" href="../../#learn-tables-cloud"><span class="nc-dir">← Back to</span><span class="nc-title">Learning Spaces</span></a><span class="navside"><a class="navcard prev" href="../cloud-devops/"><span class="nc-dir">← Previous</span><span class="nc-title">Cloud &amp; DevOps for Leaders</span></a><a class="navcard next" href="../azure-leaders/"><span class="nc-dir">Next →</span><span class="nc-title">Microsoft Azure for Leaders</span></a></span></div>
   <div class="toolbar-in">
     <input id="search" type="search" placeholder="Search a term — try EC2, S3, Lambda, Bedrock, Savings Plans…" aria-label="Search terms">
     <span class="count" id="count"></span>
@@ -192,8 +191,7 @@ h1,h2,h3{font-family:"Fraunces",serif}
 <section class="below"><h3>Six things a leader should hold on to about AWS</h3><div class="cards"><div class="card"><h4>Most estates run on a small core</h4><p>EC2, S3, VPC, IAM, RDS, Lambda and CloudWatch cover the majority of real workloads. Master the core before chasing the catalogue's long tail.</p></div><div class="card"><h4>Discounts are earned by commitment</h4><p>Savings Plans and reservations convert predictable usage into lower prices — up to 72% versus on-demand on AWS's published figures. Uncommitted, variable estates pay the premium rate forever.</p></div><div class="card"><h4>Every managed service is a lock-in decision</h4><p>Aurora, DynamoDB and Bedrock save real effort and deepen dependence in the same motion. Take those decisions explicitly, workload by workload.</p></div><div class="card"><h4>Identity is the perimeter</h4><p>IAM, Organizations and CloudTrail decide whether your estate is governable. Most AWS security failures are misconfigurations on the customer's side of the shared responsibility line.</p></div><div class="card"><h4>Tagging is a financial control</h4><p>Without enforced cost-allocation tags you cannot say who spent what, and every cost conversation becomes an argument. Tags are policy, not housekeeping.</p></div><div class="card"><h4>The bill is a management report</h4><p>Cost Explorer trends, budget alerts and Trusted Advisor findings together tell you how disciplined your engineering organisation is. Read them monthly.</p></div></div><h3>A leader's AWS checklist</h3><div class="cards"><div class="card"><h4>Monthly</h4><ul><li>Review Cost Explorer by account and service; explain the top three movements</li><li>Check Savings Plans coverage and utilisation against the stable baseline</li><li>Confirm every account has a budget alert with a named owner</li><li>Scan Trusted Advisor for new security and idle-resource findings</li></ul></div><div class="card"><h4>Quarterly</h4><ul><li>Audit IAM: no root usage, least privilege, stale access removed</li><li>Verify CloudTrail is on everywhere and GuardDuty has no suppressed accounts</li><li>Test a backup restore, not just a backup report</li><li>Re-run a Well-Architected review on one top workload and close high-risk items</li><li>Review the service inventory for sprawl: new services adopted, duplicates retired</li></ul></div><div class="card example"><h4>An honest note</h4><p>This table is a map, not a recommendation. AWS offers several ways to solve most problems, and the right choice depends on your team's skills, your existing commitments and your tolerance for lock-in. Positions are as of October 2026 and services evolve quickly — verify before you commit budget.</p></div></div></section>
 
 
-<div class="sibwrap"><p class="sibcap">Cloud · 2 of 4</p><nav class="sibnav" aria-label="More in this group"><a class="sib prev" href="../cloud-devops/"><span class="sib-dir">← Previous</span><span class="sib-title">Cloud &amp; DevOps for Leaders</span></a><a class="sib next" href="../azure-leaders/"><span class="sib-dir">Next →</span><span class="sib-title">Microsoft Azure for Leaders</span></a></nav></div>
-<footer>An educational map of the AWS catalogue for business and technology leaders. Service positions, names and capabilities as of October 2026; AWS changes services frequently, so verify current details before procurement or architecture decisions.<div style="margin-top:12px;font-size:13px">Curated by Thillai Raj Thanam Jeya Veera Raj · <a class="li-btn" href="https://www.linkedin.com/in/thillairaj" target="_blank" rel="noopener"><span class="li-badge" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.55V9h3.57v11.45z"/></svg></span>Follow on LinkedIn</a></div></footer>
+<footer>An educational map of the AWS catalogue for business and technology leaders. Service positions, names and capabilities as of October 2026; AWS changes services frequently, so verify current details before procurement or architecture decisions.<div style="margin-top:12px;font-size:13px">Curated by Thillai Raj Thanam Jeya Veera Raj · <a class="li-btn" href="https://www.linkedin.com/in/thillairaj" target="_blank" rel="noopener"><span class="li-badge" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.55V9h3.57v11.45z"/></svg></span><span class="li-txt"><span class="li-dir">Follow on</span><span class="li-name">LinkedIn</span></span></a></div></footer>
 
 <script>
 const CATS = { compute:{name:"Compute",color:"#ea580c"}, storage:{name:"Storage",color:"#65a30d"}, data:{name:"Databases & Analytics",color:"#4f46e5"}, network:{name:"Networking & Content Delivery",color:"#0284c7"}, security:{name:"Security & Identity",color:"#dc2626"}, ai:{name:"AI & Machine Learning",color:"#a21caf"}, dev:{name:"Developer, Integration & DevOps",color:"#0891b2"}, manage:{name:"Management, Cost & Strategy",color:"#d97706"} };
