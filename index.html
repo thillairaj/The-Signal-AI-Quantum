@@ -82,7 +82,7 @@
   </aside>
 
   <main class="feed" id="feed">
-    <p class="empty-state">Waiting on the first automated run — once the bot's GitHub Action fires, articles will appear here.</p>
+    <p class="empty-state">Waiting on the first automated run — articles will appear here as soon as the next scheduled refresh lands.</p>
   </main>
 
   <section id="learn-view" class="view-section" hidden>
@@ -91,7 +91,7 @@
       <p>Video series and interactive card decks — pick how you want to learn.</p>
     </div>
     <p class="learn-group-label">Video Learning</p>
-    <div class="table-rail">
+    <div class="rail-wrap"><button class="rail-btn prev" type="button" aria-label="Previous cards">‹</button><div class="table-rail">
       <a class="learn-card video-bot" href="https://thillairaj.github.io/The-Signal-AI-Quantum/ai-bot-learning-space/" target="_blank" rel="noopener">
         <span class="learn-play" aria-hidden="true">▶</span>
         <span class="learn-kicker">Video Learning · Weekly</span>
@@ -106,28 +106,28 @@
         <span class="learn-desc">Weekly videos where artificial intelligence meets quantum computing.</span>
         <span class="learn-open">Open space ↗</span>
       </a>
-    </div>
+    </div><button class="rail-btn next" type="button" aria-label="Next cards">›</button></div>
     <p class="learn-group-label">Interactive Decks</p>
-    <div class="table-rail">
+    <div class="rail-wrap"><button class="rail-btn prev" type="button" aria-label="Previous cards">‹</button><div class="table-rail">
       <a class="learn-card deck-quantum" href="quantum-deck/" target="_blank" rel="noopener">
         <span class="learn-play" aria-hidden="true">▤</span>
         <span class="learn-kicker">Interactive Deck · 8 topics</span>
         <span class="learn-title">The Quantum Deck</span>
-        <span class="learn-desc">15-card visual lessons with flashcards and quizzes — 4 topics live now.</span>
+        <span class="learn-desc">15-card visual lessons with flashcards and quizzes — 6 topics live now.</span>
         <span class="learn-open">Open deck ↗</span>
       </a>
       <a class="learn-card deck-ai" href="ai-deck/" target="_blank" rel="noopener">
         <span class="learn-play" aria-hidden="true">▤</span>
         <span class="learn-kicker">Interactive Deck · 8 topics</span>
         <span class="learn-title">The AI Deck</span>
-        <span class="learn-desc">15-card visual lessons with flashcards and quizzes — 4 topics live now.</span>
+        <span class="learn-desc">15-card visual lessons with flashcards and quizzes — 6 topics live now.</span>
         <span class="learn-open">Open deck ↗</span>
       </a>
-    </div>
+    </div><button class="rail-btn next" type="button" aria-label="Next cards">›</button></div>
         <p class="learn-group-label">Interactive Tables</p>
     <div class="table-rail-group">
       <p class="table-rail-head"><i class="fam-dot fam-founders"></i>Founders &amp; Leadership</p>
-      <div class="table-rail">
+      <div class="rail-wrap"><button class="rail-btn prev" type="button" aria-label="Previous cards">‹</button><div class="table-rail">
       <a class="learn-card table-finance" href="periodic-tables/founder-finance/" target="_blank" rel="noopener">
         <span class="learn-play" aria-hidden="true">▦</span>
         <span class="learn-kicker">Interactive Table · 154 terms</span>
@@ -156,11 +156,11 @@
         <span class="learn-desc">Discovery, qualification, MEDDPICC, champions, procurement and closing — the sales vocabulary for founders who are their company's first salesperson.</span>
         <span class="learn-open">Open table ↗</span>
       </a>
-      </div>
+      </div><button class="rail-btn next" type="button" aria-label="Next cards">›</button></div>
     </div>
     <div class="table-rail-group">
       <p class="table-rail-head"><i class="fam-dot fam-quantum"></i>Quantum</p>
-      <div class="table-rail">
+      <div class="rail-wrap"><button class="rail-btn prev" type="button" aria-label="Previous cards">‹</button><div class="table-rail">
       <a class="learn-card table-quantum" href="periodic-tables/quantum-keywords/" target="_blank" rel="noopener">
         <span class="learn-play" aria-hidden="true">▦</span>
         <span class="learn-kicker">Interactive Table · 85 terms</span>
@@ -189,11 +189,11 @@
         <span class="learn-desc">The quantum threat, NIST's FIPS 203/204/205 standards, ML-KEM migration and crypto-agility — the PQC playbook for leaders.</span>
         <span class="learn-open">Open table ↗</span>
       </a>
-      </div>
+      </div><button class="rail-btn next" type="button" aria-label="Next cards">›</button></div>
     </div>
     <div class="table-rail-group">
       <p class="table-rail-head"><i class="fam-dot fam-ai"></i>AI</p>
-      <div class="table-rail">
+      <div class="rail-wrap"><button class="rail-btn prev" type="button" aria-label="Previous cards">‹</button><div class="table-rail">
       <a class="learn-card table-ai" href="periodic-tables/ai-keywords/" target="_blank" rel="noopener">
         <span class="learn-play" aria-hidden="true">▦</span>
         <span class="learn-kicker">Interactive Table · 70 terms</span>
@@ -222,11 +222,11 @@
         <span class="learn-desc">Everyday generative AI tools mapped: assistants, AI search, image and video creation, meeting tools and workplace suites. As of Oct 2026.</span>
         <span class="learn-open">Open table ↗</span>
       </a>
-      </div>
+      </div><button class="rail-btn next" type="button" aria-label="Next cards">›</button></div>
     </div>
     <div class="table-rail-group">
       <p class="table-rail-head"><i class="fam-dot fam-cloud"></i>Cloud</p>
-      <div class="table-rail">
+      <div class="rail-wrap"><button class="rail-btn prev" type="button" aria-label="Previous cards">‹</button><div class="table-rail">
       <a class="learn-card table-cloud" href="periodic-tables/cloud-devops/" target="_blank" rel="noopener">
         <span class="learn-play" aria-hidden="true">▦</span>
         <span class="learn-kicker">Interactive Table · 72 terms</span>
@@ -255,11 +255,11 @@
         <span class="learn-desc">BigQuery, GKE, Spanner, Vertex AI and Gemini — where data, containers and AI meet, plus the discount mechanics.</span>
         <span class="learn-open">Open table ↗</span>
       </a>
-      </div>
+      </div><button class="rail-btn next" type="button" aria-label="Next cards">›</button></div>
     </div>
     <div class="table-rail-group">
       <p class="table-rail-head"><i class="fam-dot fam-cyber"></i>Cybersecurity</p>
-      <div class="table-rail">
+      <div class="rail-wrap"><button class="rail-btn prev" type="button" aria-label="Previous cards">‹</button><div class="table-rail">
       <a class="learn-card table-cyber" href="periodic-tables/cybersecurity/" target="_blank" rel="noopener">
         <span class="learn-play" aria-hidden="true">▦</span>
         <span class="learn-kicker">Interactive Table · 69 terms</span>
@@ -288,14 +288,14 @@
         <span class="learn-desc">Prompt injection, deepfake fraud, adversarial ML, AI red teaming — and how AI strengthens the defence. MITRE ATLAS and OWASP LLM included.</span>
         <span class="learn-open">Open table ↗</span>
       </a>
-      </div>
+      </div><button class="rail-btn next" type="button" aria-label="Next cards">›</button></div>
     </div>
   </section>
 
   <section id="podcast-view" class="view-section" hidden>
     <div class="view-intro">
       <h2>Podcasts</h2>
-      <p>Daily AI Intelligence and the Tech Learning series — listen right here.</p>
+      <p>Daily AI Intelligence, the Tech Learning series and Quantum Intelligence — listen right here.</p>
       <div class="series-toggle" id="podcastSeries"><!-- populated by app.js --></div>
       <input type="search" id="podcastSearch" class="podcast-search" placeholder="Search episodes… (e.g. cloud)" autocomplete="off" aria-label="Search podcast episodes">
     </div>
@@ -315,10 +315,10 @@
 
 <footer class="site-footer">
   <span id="footerMeta">—</span>
-  <span class="credit">Built by Thillai Raj Thanam Jeya Veera Raj · <a class="footlink" href="https://www.linkedin.com/in/thillairaj" target="_blank" rel="noopener">Follow on LinkedIn</a></span>
+  <span class="credit">Curated by Thillai Raj Thanam Jeya Veera Raj · <a class="footlink" href="https://www.linkedin.com/in/thillairaj" target="_blank" rel="noopener">Follow on LinkedIn</a></span>
 </footer>
 
-<script data-goatcounter="https://trttech.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+<script data-goatcounter="https://trttech.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
 <script src="app.js"></script>
 </body>
 </html>

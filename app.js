@@ -114,6 +114,7 @@ function showView(name) {
     b.classList.toggle("active", b.dataset.view === name));
   if (name === "podcast") renderPodcast();
   if (name === "research") renderResearch();
+  if (name === "learn") requestAnimationFrame(() => document.querySelectorAll(".rail-wrap").forEach(refreshRail));
 }
 
 function escapeHtml(s) {
@@ -493,6 +494,37 @@ if (sourcesToggleBtn) {
   });
 }
 
+/* ---------- Learning Space rail arrows ---------- */
+function refreshRail(wrap) {
+  const rail = wrap.querySelector(".table-rail");
+  if (!rail) return;
+  const max = rail.scrollWidth - rail.clientWidth;
+  wrap.classList.toggle("no-overflow", max <= 2);
+  const prev = wrap.querySelector(".rail-btn.prev");
+  const next = wrap.querySelector(".rail-btn.next");
+  if (prev) prev.disabled = rail.scrollLeft <= 2;
+  if (next) next.disabled = rail.scrollLeft >= max - 2;
+}
+function initRails() {
+  document.querySelectorAll(".rail-wrap").forEach(wrap => {
+    const rail = wrap.querySelector(".table-rail");
+    if (!rail || wrap.dataset.wired) return;
+    wrap.dataset.wired = "1";
+    const step = () => {
+      const card = rail.querySelector(".learn-card");
+      return card ? card.offsetWidth + 14 : rail.clientWidth * 0.8;
+    };
+    const prev = wrap.querySelector(".rail-btn.prev");
+    const next = wrap.querySelector(".rail-btn.next");
+    if (prev) prev.addEventListener("click", () => rail.scrollBy({ left: -step(), behavior: "smooth" }));
+    if (next) next.addEventListener("click", () => rail.scrollBy({ left: step(), behavior: "smooth" }));
+    rail.addEventListener("scroll", () => refreshRail(wrap), { passive: true });
+    refreshRail(wrap);
+  });
+}
+window.addEventListener("resize", () => document.querySelectorAll(".rail-wrap").forEach(refreshRail));
+
+initRails();
 loadData();
 loadResearch();
 loadViews();
