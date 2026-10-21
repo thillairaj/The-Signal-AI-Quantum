@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-20T22:00:06.175623+00:00",
+  "generated_at": "2026-10-21T01:59:49.878529+00:00",
   "sources_polled": [
     "The Verge \u2014 AI",
     "Simon Willison",
@@ -15,6 +15,50 @@
     "Quantum Intelligence"
   ],
   "articles": [
+    {
+      "id": "aac036aa8666576a",
+      "title": "eMudhra Intermediate CA Compromise",
+      "link": "https://simonwillison.net/2026/Oct/20/emudhra-certificates/",
+      "source": "Simon Willison",
+      "category": "AI",
+      "summary": "eMudhra Intermediate CA Compromise This is very, very bad news: The private keys of eight eMudhra intermediate CA certificates have been compromised. They chain to roots trusted by the Mozilla, Microsoft, Apple and Chrome root programs and by many downstream trust stores. Any sof",
+      "published": "2026-10-21T01:59:38.672835+00:00",
+      "audio_url": null,
+      "duration": ""
+    },
+    {
+      "id": "7f6bb9c0aa5027ea",
+      "title": "Google\u2019s more personalized Gemini AI is heading to your car",
+      "link": "https://www.theverge.com/tech/1014999/google-gemini-ai-cars-android-auto",
+      "source": "The Verge \u2014 AI",
+      "category": "AI",
+      "summary": "Google is bringing Personal Intelligence to Gemini AI in your car. With this update, Gemini in Android Auto and cars with Google built-in can tap into your information across Google apps, including Gmail, Calendar, Maps, Photos, YouTube, and Search. As an example, Google says you",
+      "published": "2026-10-21T01:59:37.918285+00:00",
+      "audio_url": null,
+      "duration": ""
+    },
+    {
+      "id": "6559d9cb2b558fef",
+      "title": "Judge dismisses Sam Altman\u2019s sister\u2019s sexual abuse lawsuit",
+      "link": "https://www.theverge.com/ai-artificial-intelligence/1014976/sam-altman-ann-altman-lawsuit-dismissed",
+      "source": "The Verge \u2014 AI",
+      "category": "AI",
+      "summary": "On Tuesday, US District Judge Zachary Bluestone dismissed the lawsuit Ann Altman filed last year alleging that her brother, OpenAI CEO Sam Altman, had sexually abused her throughout her childhood. As reported earlier by The Guardian, the judge wrote that over the past year, Ann h",
+      "published": "2026-10-21T01:59:37.918214+00:00",
+      "audio_url": null,
+      "duration": ""
+    },
+    {
+      "id": "a7de8745fb9417ff",
+      "title": "Daily AI Intelligence \u2014 Episode 20: DeepSeek Open-Sources DeepInfer, Muse Hits 10M Downloads, Nvidia's $35B China Chip Rush",
+      "link": "https://muse.ai/podcasts/media/1248297608376725/94f09345-ad4a-4981-83dd-e3206bbf5c4e/ep-63f07fa5-21da-424a-998d-c131c79710b1.mp3",
+      "source": "Daily AI Intelligence",
+      "category": "Podcast",
+      "summary": "DeepSeek open-sources its DeepInfer inference engine; UKG in Claude via MCP; ChatGPT Slides and Locked Chats roll out; Gemini for Government Services in preview; NYC Council moves on Grok safeguards; Meta's Muse passes 10M US downloads as Claroc exposes share links; CAS Connectio",
+      "published": "2026-10-21T01:08:41+00:00",
+      "audio_url": "https://muse.ai/podcasts/media/1248297608376725/94f09345-ad4a-4981-83dd-e3206bbf5c4e/ep-63f07fa5-21da-424a-998d-c131c79710b1.mp3",
+      "duration": "287"
+    },
     {
       "id": "3b5ce86c8c402c8d",
       "title": "Battle Drones - a vibe coded RTS with audio-based multiplayer",
@@ -122,6 +166,17 @@
       "category": "AI",
       "summary": "An independent Schlotzsky\u2019s and Cinnabon franchisee cut menu repricing time by 95% and built a workflow that could free up $100K in cash flow.",
       "published": "2026-10-20T10:00:00+00:00",
+      "audio_url": null,
+      "duration": ""
+    },
+    {
+      "id": "a84b6a7bee5c68a6",
+      "title": "Terminal X matches senior investor judgment 88.6% with GPT-6.1",
+      "link": "https://openai.com/index/terminal-x",
+      "source": "OpenAI Blog",
+      "category": "AI",
+      "summary": "Terminal X\u2019s Eval Agent grades outputs against a 54-criterion rubric, catching 25% more deviances from a fund\u2019s mandate with GPT-6.1 Sol.",
+      "published": "2026-10-20T07:00:00+00:00",
       "audio_url": null,
       "duration": ""
     },
@@ -1424,28 +1479,6 @@
       "duration": ""
     },
     {
-      "id": "fa1d998e852ed881",
-      "title": "Apple launches HomeView, its first smart display for the home",
-      "link": "https://www.theverge.com/tech/1009704/apple-homeview-smart-display-first-look",
-      "source": "The Verge \u2014 AI",
-      "category": "AI",
-      "summary": "It's finally here: Apple's long-rumored smart display, the Apple HomeView, has arrived. I got a first look at the device in New York City this week, and it's gorgeous. The HomeView puts a small, vibrant screen atop a speaker base for taking video calls, beautifully displaying pho",
-      "published": "2026-10-13T13:59:49.830635+00:00",
-      "audio_url": null,
-      "duration": ""
-    },
-    {
-      "id": "579aa4e27ad56348",
-      "title": "DLSS 5 gets toned down for its Hogwarts Legacy debut next month",
-      "link": "https://www.theverge.com/news/1009904/dlss-5-hogwarts-legacy-changes-improvements",
-      "source": "The Verge \u2014 AI",
-      "category": "AI",
-      "summary": "When Nvidia originally showed off DLSS 5 earlier this year, the technology immediately got branded as gen AI for video games. To gamers, Nvidia had lost the plot. I personally couldn't get over how faces were transformed using DLSS 5. The 15-year-old student from Hogwarts Legacy ",
-      "published": "2026-10-13T13:59:49.830564+00:00",
-      "audio_url": null,
-      "duration": ""
-    },
-    {
       "id": "ffc748cb8d88a919",
       "title": "Higgsfield takes AI video from 1 minute to over 10",
       "link": "https://openai.com/index/higgsfield-longer-videos-voice",
@@ -2282,17 +2315,6 @@
       "duration": ""
     },
     {
-      "id": "f2b4a146fbeb53f2",
-      "title": "llm-mistral 0.16",
-      "link": "https://simonwillison.net/2026/Oct/6/llm-mistral/",
-      "source": "Simon Willison",
-      "category": "AI",
-      "summary": "Release: llm-mistral 0.16 Adds support for reasoning models, such as the newly released Mistral Large 4 . Tags: llm , mistral , llm-reasoning",
-      "published": "2026-10-06T22:00:16.228740+00:00",
-      "audio_url": null,
-      "duration": ""
-    },
-    {
       "id": "11669444bfa3fd7b",
       "title": "OpenAI will watermark ChatGPT outputs by default\u2014but only in the EU",
       "link": "https://arstechnica.com/ai/2026/10/openai-will-watermark-chatgpt-outputs-by-default-but-only-in-the-eu/",
@@ -3015,17 +3037,6 @@
       "category": "AI",
       "summary": "Marking two years of OpenAI Academy and bringing AI skills to even more communities.",
       "published": "2026-09-23T16:00:00+00:00",
-      "audio_url": null,
-      "duration": ""
-    },
-    {
-      "id": "1d77064cbebb782f",
-      "title": "OpenAI extends cyber access to Ukraine for civilian defense",
-      "link": "https://openai.com/index/openai-extends-cyber-access-to-ukraine-for-civilian-defense",
-      "source": "OpenAI Blog",
-      "category": "AI",
-      "summary": "OpenAI is extending access to its Daybreak program to the Government of Ukraine to support the cyber defense of civilian infrastructure.",
-      "published": "2026-09-23T13:00:00+00:00",
       "audio_url": null,
       "duration": ""
     },
