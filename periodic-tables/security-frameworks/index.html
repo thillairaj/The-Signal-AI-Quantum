@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Security Frameworks & Compliance — The Periodic Table</title>
+<meta name="description" content="56 frameworks, laws and certifications: NIST CSF, ISO 27001, SOC 2, PCI DSS, GDPR, DORA, India's DPDP Act and CERT-In rules — what each demands and who it applies to.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Security Frameworks & Compliance — The Periodic Table">
+<meta property="og:description" content="56 frameworks, laws and certifications: NIST CSF, ISO 27001, SOC 2, PCI DSS, GDPR, DORA, India's DPDP Act and CERT-In rules — what each demands and who it applies to.">
+<meta property="og:url" content="https://thillairaj.github.io/The-Signal-AI-Quantum/periodic-tables/security-frameworks/">
+<style>
+  :root{--bg:#071527;--panel:#0b213f;--panel2:#0e2a52;--ink:#eef4ff;--muted:#9db4d4;--line:rgba(255,255,255,.14)}
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:'Segoe UI',system-ui,-apple-system,Arial,sans-serif;background:radial-gradient(1200px 600px at 20% -10%,#12325e 0%,var(--bg) 55%);color:var(--ink);min-height:100vh}
+  header{padding:34px 22px 10px;text-align:center;max-width:1200px;margin:0 auto}
+  .kicker{letter-spacing:.35em;font-size:11px;color:#7dd3fc;text-transform:uppercase;font-weight:700}
+  h1{font-size:clamp(28px,5vw,48px);line-height:1.08;margin:10px 0 10px;font-weight:800}
+  h1 span{color:#fbbf24}
+  .sub{color:var(--muted);max-width:820px;margin:0 auto;font-size:15.5px;line-height:1.55}
+  .principle{margin:18px auto 4px;max-width:880px;background:rgba(251,191,36,.08);border:1px solid rgba(251,191,36,.35);border-radius:12px;padding:12px 16px;font-size:14px;line-height:1.55;color:#fde68a}
+  .toolbar{position:sticky;top:0;z-index:40;background:rgba(7,21,39,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line);padding:12px 16px}
+  .toolbar-in{max-width:1280px;margin:0 auto;display:flex;flex-wrap:wrap;gap:10px;align-items:center;justify-content:center}
+  #search{flex:1 1 260px;max-width:420px;padding:11px 14px;border-radius:10px;border:1px solid var(--line);background:var(--panel);color:var(--ink);font-size:15px;outline:none}
+  #search:focus{border-color:#38bdf8}
+  .count{color:var(--muted);font-size:13.5px}
+  .btn{padding:10px 14px;border-radius:10px;border:1px solid var(--line);background:var(--panel2);color:var(--ink);cursor:pointer;font-size:13.5px;font-weight:600}
+  .btn:hover{border-color:#38bdf8}
+  #legend{max-width:1280px;margin:14px auto 0;padding:0 16px;display:flex;flex-wrap:wrap;gap:8px;justify-content:center}
+  .chip{display:inline-flex;align-items:center;gap:7px;padding:7px 12px;border-radius:999px;border:1px solid var(--line);background:var(--panel);color:var(--ink);font-size:12.5px;cursor:pointer;font-weight:600;transition:all .15s}
+  .chip .dot{width:11px;height:11px;border-radius:3px}
+  .chip:hover{transform:translateY(-1px);border-color:#fff}
+  .chip.active{outline:2px solid #fff;outline-offset:1px}
+  main{max-width:1280px;margin:0 auto;padding:20px 16px 30px;display:grid;grid-template-columns:1fr 340px;gap:20px;align-items:start}
+  #grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(96px,1fr));gap:8px}
+  .tile{border:none;border-radius:10px;padding:8px 6px 7px;min-height:96px;color:#fff;cursor:pointer;text-align:left;position:relative;transition:transform .16s ease,filter .16s ease,box-shadow .16s ease,opacity .16s;display:flex;flex-direction:column;box-shadow:inset 0 0 0 1px rgba(255,255,255,.22)}
+  .tile .no{font-size:10.5px;font-weight:700;opacity:.85}
+  .tile .sym{font-size:24px;font-weight:800;line-height:1.05;margin:auto 0 2px;letter-spacing:.01em;word-break:break-word}
+  .tile .nm{font-size:10px;line-height:1.25;font-weight:600;opacity:.95}
+  .tile:hover,.tile:focus-visible{transform:scale(1.09) translateY(-4px);filter:brightness(1.28) saturate(1.25);box-shadow:0 12px 28px rgba(0,0,0,.5),0 0 0 2px #fff;z-index:5;outline:none}
+  .tile.selected{box-shadow:0 0 0 3px #fff,0 12px 28px rgba(0,0,0,.5);filter:brightness(1.2)}
+  .tile.dim{opacity:.13;filter:grayscale(.6)}
+  .tile.hidden{display:none}
+  #detail{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:22px;position:sticky;top:132px;min-height:300px}
+  #detail .d-no{font-size:12px;color:var(--muted);letter-spacing:.15em;text-transform:uppercase;font-weight:700}
+  #detail .d-sym{display:inline-flex;align-items:center;justify-content:center;min-width:74px;height:74px;padding:0 10px;border-radius:14px;font-size:30px;font-weight:800;color:#fff;margin:12px 0}
+  #detail h2{font-size:24px;line-height:1.2;margin-bottom:6px}
+  #detail .d-cat{font-size:12.5px;font-weight:700;text-transform:uppercase;letter-spacing:.12em;margin-bottom:14px}
+  #detail p{font-size:15px;line-height:1.65;color:#dbe7fa}
+  #detail .box{margin-top:14px;border-radius:10px;padding:12px 14px;font-size:14px;line-height:1.55}
+  #detail .formula{background:rgba(56,189,248,.1);border:1px solid rgba(56,189,248,.4);color:#bae6fd}
+  #detail .lens{background:rgba(251,191,36,.08);border:1px solid rgba(251,191,36,.35);color:#fde68a}
+  #detail .box b{display:block;font-size:11px;letter-spacing:.18em;text-transform:uppercase;margin-bottom:5px;opacity:.85}
+  .hint{color:var(--muted);font-size:14.5px;line-height:1.6}
+  section.below{max-width:1280px;margin:0 auto;padding:6px 16px 26px}
+  section.below h3{font-size:22px;margin:18px 0 12px}
+  .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:12px}
+  .card{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:16px}
+  .card h4{font-size:15px;margin-bottom:7px;color:#7dd3fc}
+  .card p,.card li{font-size:14px;line-height:1.6;color:#dbe7fa}
+  .card ul{padding-left:18px}
+  .example{background:linear-gradient(135deg,#0e2a52,#12325e);border:1px solid rgba(251,191,36,.4)}
+  .example h4{color:#fbbf24}
+  .big{font-size:19px;font-weight:800;color:#fff;margin:6px 0}
+  footer{max-width:1280px;margin:0 auto;padding:10px 16px 38px;color:var(--muted);font-size:12.5px;line-height:1.6;text-align:center}
+  #overlay{display:none}
+  /* placeholder, zoom view styles are at the end of this stylesheet */
+  /* Theme toggle + sticky legend + back button (added Oct 21) */
+  header{position:relative}
+  .theme-toggle{position:absolute;top:16px;right:16px;width:44px;height:44px;border-radius:50%;border:1px solid var(--line);background:var(--panel2);color:#fbbf24;font-size:19px;cursor:pointer;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 14px rgba(0,0,0,.35)}
+  .theme-toggle:hover{transform:scale(1.08)}
+  #legend{flex-wrap:nowrap;overflow-x:auto;justify-content:flex-start;padding:10px 2px 3px;scrollbar-width:thin}
+  .chip{white-space:nowrap;flex:0 0 auto}
+  .backbtn{display:inline-flex;align-items:center;gap:6px;padding:9px 14px;border-radius:999px;border:1px solid var(--line);background:var(--panel2);color:var(--ink);font-size:13.5px;font-weight:700;cursor:pointer;margin-bottom:14px}
+  .backbtn:hover{border-color:#38bdf8}
+  #detail{top:168px}
+  /* Light theme */
+  html[data-theme="light"] body{background:radial-gradient(1200px 600px at 20% -10%,#e8eefc 0%,#FAF9F6 55%);color:#17293f}
+  html[data-theme="light"] h1{color:#0b213f}
+  html[data-theme="light"] .sub{color:#4d6482}
+  html[data-theme="light"] .principle{background:#fff8e1;border-color:#e5c15c;color:#6b5510}
+  html[data-theme="light"] .toolbar{background:rgba(250,249,246,.95);border-color:#ddd5c0}
+  html[data-theme="light"] #search{background:#fff;color:#17293f;border-color:#cfd8e3}
+  html[data-theme="light"] .btn{background:#fff;color:#17293f;border-color:#cfd8e3}
+  html[data-theme="light"] .chip{background:#fff;color:#17293f;border-color:#cfd8e3}
+  html[data-theme="light"] .chip.active{outline-color:#0b213f}
+  html[data-theme="light"] .count{color:#5a6f88}
+  html[data-theme="light"] #detail{background:#fff;border-color:#e0d9c6}
+  html[data-theme="light"] #detail p{color:#33475e}
+  html[data-theme="light"] #detail .d-no{color:#5a6f88}
+  html[data-theme="light"] #detail h2{color:#0b213f}
+  html[data-theme="light"] #detail .formula{background:#e8f4fd;border-color:#9fd0f5;color:#124d75}
+  html[data-theme="light"] #detail .lens{background:#fff8e1;border-color:#e5c15c;color:#6b5510}
+  html[data-theme="light"] .backbtn{background:#eef3fa;color:#17293f;border-color:#cfd8e3}
+  html[data-theme="light"] .hint{color:#5a6f88}
+  html[data-theme="light"] .card{background:#fff;border-color:#e0d9c6}
+  html[data-theme="light"] .card p,html[data-theme="light"] .card li{color:#33475e}
+  html[data-theme="light"] section.below h3{color:#0b213f}
+  html[data-theme="light"] .example{background:linear-gradient(135deg,#fff8e1,#fdf3d0);border-color:#e5c15c}
+  html[data-theme="light"] .example .big{color:#17293f}
+  html[data-theme="light"] footer{color:#5a6f88}
+  html[data-theme="light"] .theme-toggle{background:#fff;color:#d97706;border-color:#cfd8e3}
+  @media(max-width:900px){
+    main{grid-template-columns:1fr}
+    #detail{position:fixed;inset:auto 0 0 0;z-index:60;border-radius:18px 18px 0 0;max-height:72vh;overflow:auto;transform:translateY(105%);transition:transform .25s ease;box-shadow:0 -12px 40px rgba(0,0,0,.6)}
+    #detail.open{transform:translateY(0)}
+    #overlay{display:block;position:fixed;inset:0;background:rgba(0,0,0,.55);z-index:55;opacity:0;pointer-events:none;transition:opacity .25s}
+    #overlay.open{opacity:1;pointer-events:auto}
+    #grid{grid-template-columns:repeat(auto-fill,minmax(82px,1fr))}
+    .tile{min-height:86px}.tile .sym{font-size:20px}
+  }
+  /* Zoom reading view — same pattern as the Quantum / AI Deck cards (Oct 21) */
+  main{grid-template-columns:1fr}
+  #overlay{display:block;position:fixed;inset:0;background:rgba(3,10,20,.62);z-index:55;opacity:0;pointer-events:none;transition:opacity .22s ease}
+  #overlay.open{opacity:1;pointer-events:auto}
+  #detail{position:fixed;top:50%;left:50%;right:auto;bottom:auto;width:min(560px,92vw);max-width:92vw;max-height:86vh;overflow:auto;z-index:60;border-radius:18px;padding:26px;opacity:0;pointer-events:none;transform:translate(-50%,-47%) scale(.88);transition:transform .24s ease,opacity .24s ease;box-shadow:0 30px 80px rgba(0,0,0,.55)}
+  #detail.open{opacity:1;pointer-events:auto;transform:translate(-50%,-50%) scale(1)}
+  .zoom-close{position:absolute;top:12px;right:12px;width:38px;height:38px;border-radius:50%;border:1px solid var(--line);background:var(--panel2);color:var(--ink);font-size:15px;cursor:pointer;display:flex;align-items:center;justify-content:center;z-index:2}
+  .zoom-close:hover{border-color:#38bdf8;transform:scale(1.08)}
+  html[data-theme="light"] .zoom-close{background:#eef3fa;color:#17293f;border-color:#cfd8e3}
+  @media(max-width:900px){#detail{padding:22px 18px}}
+</style>
+</head>
+<body>
+<header>
+  <div style="text-align:left;max-width:1200px;margin:0 auto 14px"><a href="../../#learn" style="color:inherit;opacity:.75;text-decoration:none;font-size:13.5px;font-weight:600">← Back to Learning Spaces</a></div>
+  <button class="theme-toggle" id="themeToggle" type="button" aria-label="Switch light or dark theme" title="Switch light / dark theme">☀</button>
+  <div class="kicker">The Frameworks Table</div>
+  <h1>Security Frameworks & <span>Compliance</span></h1>
+  <p class="sub">The standards, laws and certifications that shape what good security looks like — and what leaders are accountable for.</p>
+  <div class="principle"><strong>Core principle:</strong> Frameworks are floors, not ceilings. Compliance proves a baseline was met on audit day; security is what happens every other day. Use frameworks to set the minimum and to structure the conversation with the board, then invest past the floor where your real risks live.</div>
+</header>
+
+<div class="toolbar">
+  <div class="toolbar-in">
+    <input id="search" type="search" placeholder="Search a term — try ISO 27001, NIST, SOC 2, DPDP, PCI DSS…" aria-label="Search terms">
+    <span class="count" id="count"></span>
+    <button class="btn" id="resetBtn" type="button">Show all</button>
+  </div>
+  <div id="legend" aria-label="Category filter"></div>
+</div>
+
+<main>
+  <div id="grid" role="list"></div>
+  <aside id="detail" aria-live="polite">
+    <div class="d-no">Element detail</div>
+    <p class="hint" style="margin-top:12px">Click any element in the table to zoom into its full explanation.<br><br>Start with: <strong>CSF, ISO 27001, SOC 2, DPDP</strong>.</p>
+  </aside>
+</main>
+<div id="overlay"></div>
+
+<section class="below"><h3>Six things a leader should hold on to</h3><div class="cards"><div class="card"><h4>Compliance is a floor, not a ceiling</h4><p>Every framework in this table describes a minimum. Meeting it means you are defensible; it does not mean you are secure. Your real risk profile decides how far past the floor you invest.</p></div><div class="card"><h4>Pick a spine, then map</h4><p>Choose one primary framework — NIST CSF, ISO 27001 or CIS Controls — as your organising spine, then map everything else to it. Obligations multiply; your control set should not.</p></div><div class="card"><h4>Reports are not certificates</h4><p>SOC 2 is an auditor's report over a period; ISO 27001 is a certificate on a cycle. They answer different questions. Read SOC 2 exceptions, check ISO scope, and never accept either at cover value.</p></div><div class="card"><h4>Regulators now name the board</h4><p>NIS2 makes management bodies accountable, the SEC demands board oversight disclosure, and Indian regulators require board-approved policies. Governance is no longer delegable to the CISO alone.</p></div><div class="card"><h4>Clocks are the real test</h4><p>CERT-In gives you 6 hours, the RBI 2 to 6, NIS2 a 24-hour early warning, the SEC four business days after materiality. Incident processes that cannot meet the fastest clock you face are not finished.</p></div><div class="card"><h4>Your vendors are your compliance surface</h4><p>DORA, DPDP and every sector framework push obligations into your supply chain — and pull your vendors' failures onto your record. Tier them, evidence them, rehearse an exit.</p></div></div><h3>A leader's compliance checklist</h3><div class="cards"><div class="card"><h4>Know your obligations</h4><ul><li>List every framework, law and regulator that applies, by entity and country</li><li>Name one accountable owner per obligation</li><li>Choose a primary framework as the control spine</li><li>Map all other requirements to that spine</li><li>Track audit and attestation dates on one calendar</li></ul></div><div class="card"><h4>Operate, do not just attest</h4><ul><li>Review the exceptions inside every report you rely on, including your own</li><li>Check ISMS and report scopes before trusting any certificate</li><li>Test incident reporting against the fastest regulatory clock you face</li><li>Review third-party evidence at renewal, not after an incident</li><li>Report audit status and top real risks to the board together</li></ul></div><div class="card example"><h4>The honest note</h4><p>No organisation in this table's audience has ever been breached because it lacked a framework — breaches happen in the gap between the documented control and the operating one. Treat every certificate, including your own, as a claim to be spot-checked, and treat the audit as the floor of the conversation with your board, never the whole of it.</p></div></div></section>
+
+<footer>Educational only. Frameworks, laws and applicability change over time and differ by sector and country; confirm what applies to your organisation with qualified legal and compliance counsel.<div style="margin-top:12px;font-size:13px">Curated by Thillai Raj Thanam Jeya Veera Raj · <a href="https://www.linkedin.com/in/thillairaj" target="_blank" rel="noopener" style="color:inherit;text-decoration:underline">Follow on LinkedIn</a></div></footer>
+
+<script>
+const CATS = { frameworks:{name:"Core Frameworks",color:"#4f46e5"}, certs:{name:"Certifications & Attestations",color:"#0284c7"}, privacy:{name:"Privacy & Data Laws",color:"#a21caf"}, sector:{name:"Sector & Regional Rules",color:"#ea580c"}, india:{name:"India — Laws & Regulators",color:"#d97706"}, practice:{name:"Governance in Practice",color:"#0d9488"} };
+const TERMS = [
+{s:"CSF",n:"NIST CSF — Cybersecurity Framework 2.0",c:"frameworks",d:"The US National Institute of Standards and Technology's voluntary framework for managing cybersecurity risk, used worldwide as a common language between technical teams, executives and boards. Version 2.0 organises outcomes into six Functions and applies to organisations of any size or sector, not just critical infrastructure.",f:"CSF 2.0 was released in February 2024 and added a sixth Function, Govern, to the original five — putting leadership accountability inside the framework itself.",l:"Ask for your security posture reported in CSF language: it forces a balanced view across governance, prevention, detection and recovery instead of a shopping list of tools."},
+{s:"Fns",n:"Govern, Identify, Protect, Detect, Respond, Recover",c:"frameworks",d:"The six Functions of the NIST Cybersecurity Framework: Govern sets strategy and accountability, Identify maps assets and risks, Protect implements safeguards, Detect finds incidents, Respond contains them, and Recover restores services. Together they describe the full lifecycle of managing a cyber incident, before, during and after.",f:"The Functions are outcomes, not a checklist order — NIST stresses they should operate concurrently and continuously.",l:"If your programme is almost all Protect with thin Detect, Respond and Recover, you are built to prevent yesterday's attack and unprepared for the one that gets through."},
+{s:"853",n:"NIST SP 800-53 — Security Controls",c:"frameworks",d:"NIST's catalogue of over a thousand security and privacy controls for information systems, from access control and audit logging to incident response and supply chain risk. US federal agencies and their contractors must implement selected controls, and many private frameworks map back to it as a reference library.",f:"Control sets are chosen through baselines — Low, Moderate and High — so the same catalogue scales from a small agency system to national-security infrastructure.",l:"Treat 800-53 as a library to draw from, not a standard to 'complete'. What matters is which controls you selected, why, and whether they actually operate."},
+{s:"CIS",n:"CIS Controls v8",c:"frameworks",d:"The Center for Internet Security's prioritised set of 18 controls and 153 safeguards, written as concrete actions rather than abstract outcomes. It is designed for organisations without large security teams: implement the first Implementation Group and you have covered the defences against the most common attacks.",f:"The Controls are ordered by priority, and Implementation Group 1 is explicitly described by CIS as basic cyber hygiene that every organisation should be able to achieve.",l:"This is the most practical starting standard for SMEs. If a vendor or internal team cannot say where you stand against the 18 controls, that is your first gap."},
+{s:"CIB",n:"CIS Benchmarks",c:"frameworks",d:"Consensus-developed configuration guides for securely setting up more than a hundred technologies — operating systems, cloud platforms, browsers, databases and network devices. Where the CIS Controls say what to achieve, the Benchmarks say exactly which settings to apply on a given product.",f:"Benchmarks are developed by a global volunteer community of practitioners and are the configuration baseline most scanning tools check against.",l:"Configuration drift is a quiet source of breaches. A Benchmark gives your teams an objective, auditable answer to 'is this system set up safely?'"},
+{s:"COB",n:"COBIT — Control Objectives for Information Technologies",c:"frameworks",d:"ISACA's governance framework for enterprise information and technology, focused on aligning IT with business goals, managing risk and measuring performance. Where NIST and ISO focus on security practice, COBIT speaks the language of boards, auditors and enterprise governance, with 40 governance and management objectives.",f:"COBIT 2019 introduced design factors that tailor the governance system to the enterprise, replacing the old one-size-fits-all COBIT 5 model.",l:"COBIT is the bridge when your auditors and your engineers cannot understand each other — it frames security as enterprise governance, not IT preference."},
+{s:"2701",n:"ISO/IEC 27001 — Information Security Management",c:"frameworks",d:"The international standard for an Information Security Management System: a risk-based management system for protecting confidentiality, integrity and availability. Organisations implement it and can be certified by accredited auditors; customers and regulators worldwide recognise the certificate as evidence of disciplined security management.",f:"The 2022 revision cut Annex A from 114 controls in 14 domains to 93 controls organised into 4 themes: organisational, people, physical and technological.",l:"Certification is a three-year cycle with annual surveillance audits — so it is a commitment to operate the system continuously, not a one-off project. Budget for the operating cost, not just the audit."},
+{s:"2702",n:"ISO/IEC 27002 — Security Controls",c:"frameworks",d:"The companion guidance standard to ISO 27001: it explains each of the 93 Annex A controls in detail, with implementation guidance and examples. It is not certifiable itself — it is the reference your teams use to decide how a control should actually be implemented.",l:"When a team argues about what a control 'really requires', ISO 27002 is usually where the argument gets settled. Make sure implementers have it, not just the auditors."},
+{s:"ISMS",n:"ISMS — Information Security Management System",c:"frameworks",d:"The management system at the heart of ISO 27001: the policies, risk assessments, roles, controls and improvement cycles an organisation runs to manage information security as a business process. Its scope is a leadership decision — which parts of the organisation, products and data the system covers.",f:"The ISMS runs on the Plan-Do-Check-Act cycle, the same continuous-improvement loop used in ISO quality and environmental management systems.",l:"Scope is where certificates are quietly gamed. Always ask what is inside and outside the ISMS scope before accepting a certificate as assurance."},
+{s:"ATK",n:"MITRE ATT&CK — Threat Framework",c:"frameworks",d:"MITRE's knowledge base of real-world adversary behaviour, organised as tactics (the attacker's goal) and techniques (how they achieve it) across the attack lifecycle. Security teams use it to map detection coverage, run realistic red-team exercises and prioritise defences against how attacks actually unfold.",f:"ATT&CK is built from observed incidents, not theory, and the Enterprise matrix spans 14 tactics from Reconnaissance to Impact.",l:"Ask your SOC one question: which ATT&CK techniques would we not see today? The honest gaps in that answer are your detection investment plan."},
+{s:"SAMM",n:"OWASP SAMM — Software Assurance Maturity Model",c:"frameworks",d:"OWASP's open maturity model for software security, covering five business functions — Governance, Design, Implementation, Verification and Operations — each with defined maturity levels. It helps organisations assess their application security programme and build a realistic improvement roadmap.",l:"SAMM turns 'our appsec is weak' into a scored, sequenced plan. Useful when development speed and security assurance are in open conflict."},
+{s:"NPF",n:"NIST Privacy Framework",c:"frameworks",d:"NIST's companion to the Cybersecurity Framework, applying the same outcome-based structure to privacy risk: how an organisation's data processing itself can create problems for individuals. It helps align privacy, legal and security teams around shared language and outcomes.",f:"Version 1.0 was released in January 2020 and is structured to be used alongside CSF profiles and privacy laws such as the GDPR.",l:"Privacy failures are usually design choices, not breaches. This framework gives product and legal teams a shared way to price that risk before launch."},
+{s:"FAIR",n:"FAIR — Factor Analysis of Information Risk",c:"frameworks",d:"A quantitative model for cyber risk that expresses risk in financial terms: how often a loss event is likely to occur and how much it would probably cost. It gives boards risk in currency rather than in red-amber-green heat maps, enabling genuine cost-benefit decisions about security investment.",f:"FAIR is maintained as an international standard by The Open Group and underpins most commercial cyber risk quantification platforms.",l:"When a security budget request competes with other investments, FAIR-style numbers — ranges with stated assumptions — are what survive a CFO's questions."},
+{s:"SOC2",n:"SOC 2 — Trust Services Criteria",c:"certs",d:"An attestation report from a licensed CPA firm examining an organisation's controls against AICPA's Trust Services Criteria: Security, Availability, Processing Integrity, Confidentiality and Privacy. It is the de facto assurance standard enterprise customers demand from SaaS and cloud providers, especially in North America.",f:"Only the Security criteria (the CC series) are effectively mandatory in every SOC 2; the other four categories are included when relevant to the service.",l:"A SOC 2 report is a report, not a certificate — and its value depends on the audit period and the exceptions noted inside. Read the exceptions section, not the cover."},
+{s:"SOCv",n:"SOC 1 vs SOC 2",c:"certs",d:"SOC 1 covers controls relevant to a customer's financial reporting — think payroll processors and payment platforms whose errors would distort accounts. SOC 2 covers controls relevant to security, availability and confidentiality of a service. Many providers need SOC 2; SOC 1 matters when your service touches the customer's books.",l:"Asking every vendor for 'SOC' without the type wastes everyone's time. Match the report to the risk the vendor actually creates for you."},
+{s:"T12",n:"Type I vs Type II Reports",c:"certs",d:"A Type I report evaluates whether controls are suitably designed at a single point in time. A Type II report additionally tests whether those controls operated effectively over a period — usually several months of evidence. Type II is therefore the stronger assurance, and what enterprise procurement normally expects.",f:"A typical Type II observation window is 3 to 12 months; a brand-new provider with only a Type I has a design, not a track record.",l:"Treat a fresh Type I as a promise and a Type II with few exceptions as evidence. Price vendor risk accordingly in contracts."},
+{s:"PCI",n:"PCI DSS — Payment Card Data Security",c:"certs",d:"The Payment Card Industry Data Security Standard: mandatory security requirements for any organisation that stores, processes or transmits cardholder data, enforced through the card brands and acquiring banks. Its 12 requirement areas cover network security, encryption, access control, testing and monitoring.",f:"PCI DSS v4.0 was published in 2022; version 3.2.1 was retired on 31 March 2024, and the standard's future-dated requirements became effective on 31 March 2025.",l:"Non-compliance surfaces after a breach as fines, forensic costs and potentially losing card acceptance. If you take cards, PCI scope reduction — touching less card data — is usually the cheapest control."},
+{s:"CCM",n:"CSA CCM — Cloud Controls Matrix",c:"certs",d:"The Cloud Security Alliance's control framework for cloud computing, mapping cloud-specific controls against standards such as ISO 27001, NIST and PCI DSS. Cloud providers publish CCM-based self-assessments (CAIQ) so customers can review their security posture in a consistent format.",f:"CCM v4 organises 197 control objectives across 17 domains specific to cloud, from supply chain and tenancy isolation to cryptography.",l:"When evaluating cloud vendors, the CCM/CAIQ gives you comparable answers instead of marketing PDFs. Ask for it before the sales demo, not after."},
+{s:"CE",n:"Cyber Essentials (UK)",c:"certs",d:"The UK government's baseline certification, run by the National Cyber Security Centre, covering five technical control themes: firewalls, secure configuration, access control, malware protection and patch management. It is inexpensive, annually renewed, and mandatory for many UK public-sector contracts.",f:"Cyber Essentials targets the commodity attacks that make up most SME incidents; the scheme's premise is that five basics, done consistently, stop the majority of them.",l:"A good floor for smaller suppliers. If a small vendor cannot meet Cyber Essentials, their access to your systems should be very limited."},
+{s:"E8",n:"Essential Eight (Australia)",c:"certs",d:"The Australian Cyber Security Centre's eight prioritised mitigation strategies — including application control, patching, restricting macros, multi-factor authentication and regular backups — each rated across maturity levels zero to three. Australian government agencies are required to implement it, and insurers increasingly reference it.",f:"The Essential Eight is deliberately narrow: eight strategies chosen because they address the techniques behind most incidents ACSC responds to.",l:"Its maturity levels give you a clean board metric: 'we are at level two on seven of eight, backups at level one, here is the plan' beats a hundred-page posture report."},
+{s:"CMMC",n:"CMMC — Cybersecurity Maturity Model Certification",c:"certs",d:"The US Department of Defense programme that requires defence contractors to meet defined cybersecurity levels to win contracts handling sensitive unclassified information. Level 1 covers basic safeguarding, Level 2 aligns with the 110 practices of NIST SP 800-171, and Level 3 adds advanced requirements from SP 800-172.",f:"Unlike self-attestation regimes, CMMC Level 2 for many contracts requires certification by an accredited third-party assessment organisation.",l:"If your roadmap includes US defence supply chains, CMMC timelines belong in the strategy now — certification queues and remediation both take longer than expected."},
+{s:"FR",n:"FedRAMP",c:"certs",d:"The US Federal Risk and Authorization Management Program: the standardised security assessment and authorisation process cloud providers must pass to sell to US federal agencies. Providers are assessed against NIST SP 800-53 baselines at Low, Moderate or High impact levels and monitored continuously afterwards.",f:"FedRAMP's founding principle is 'do once, use many times' — one rigorous authorisation package that any federal agency can reuse.",l:"A FedRAMP authorisation is a strong quality signal even for private buyers: it means controls were independently assessed to a federal baseline, not self-declared."},
+{s:"AvC",n:"Attestation vs Certification",c:"certs",d:"Two different kinds of assurance that are constantly confused. An attestation (like SOC 2) is a practitioner's report on controls over a period, issued under professional standards. A certification (like ISO 27001) is a formal certificate from an accredited body that a management system conforms to a standard, valid for a set cycle with surveillance audits.",f:"Saying 'SOC 2 certified' is technically wrong — SOC 2 results in a report with an auditor's opinion, not a certificate. The error is a useful tell for how carefully a vendor handles detail.",l:"In procurement, file the two separately and weight them differently: certification proves a system exists; a clean Type II attestation shows it worked, day after day."},
+{s:"SOC3",n:"SOC 3 — General-Use Trust Report",c:"certs",d:"A general-use version of the SOC 2 report against the same Trust Services Criteria, designed to be published freely — for example on a vendor's website — without the restricted detail of a SOC 2. It carries the auditor's opinion on whether the criteria were met, but not the control-by-control detail.",l:"A SOC 3 on a website is a legitimate signal but a shallow one. For any material dependency, request the full SOC 2 under NDA and read the exceptions."},
+{s:"STAR",n:"CSA STAR — Security, Trust, Assurance and Risk",c:"certs",d:"The Cloud Security Alliance's public registry and assurance programme for cloud providers, built on the Cloud Controls Matrix. Providers progress from self-assessment to independent attestation or certification that combines CCM with ISO 27001 or SOC 2 audits.",f:"The STAR Registry is publicly searchable, so a provider's claimed cloud controls and audit status can be checked before you ever speak to sales.",l:"Use STAR as a pre-screen: it will not replace your own review, but it quickly separates providers with audited cloud controls from those with assertions."},
+{s:"GDPR",n:"GDPR — General Data Protection Regulation",c:"privacy",d:"The European Union's comprehensive data protection law, in force since 25 May 2018, governing how organisations worldwide collect, use, share and protect personal data of people in the EU. It grants individuals enforceable rights over their data and obliges controllers and processors to be able to demonstrate compliance, not merely claim it.",f:"Maximum fines reach 20 million euros or 4 percent of worldwide annual turnover, whichever is higher — the figure that moved privacy from legal departments to board agendas.",l:"GDPR exposure scales with your data practices, not your EU footprint: one EU customer base or tracking setup can bring the whole group into scope. Know your lawful bases and your records of processing."},
+{s:"GDP",n:"GDPR Principles",c:"privacy",d:"Article 5 of the GDPR sets seven principles for processing personal data: lawfulness, fairness and transparency; purpose limitation; data minimisation; accuracy; storage limitation; integrity and confidentiality; and accountability, which makes the organisation responsible for proving the other six.",l:"These principles are design constraints for products and processes. If a project cannot explain its purpose, minimisation and retention in one paragraph each, it is not ready to build."},
+{s:"DPO",n:"DPO — Data Protection Officer",c:"privacy",d:"A designated expert role required under the GDPR for public authorities and for organisations whose core activities involve large-scale systematic monitoring of individuals or large-scale processing of special-category data. The DPO advises the organisation, monitors compliance and is the contact point for regulators and data subjects.",f:"The DPO must be able to act independently and cannot be dismissed or penalised for performing their tasks — a protection written into Article 38 of the GDPR.",l:"Appointing a DPO and then routing decisions around them is worse than not appointing one. Their independence is the assurance; undermining it is a governance red flag."},
+{s:"DPIA",n:"DPIA — Data Protection Impact Assessment",c:"privacy",d:"A structured assessment required by the GDPR before processing that is likely to result in high risk to individuals — such as systematic monitoring, large-scale sensitive data or new technologies. It documents the processing, its necessity and proportionality, the risks to individuals and the mitigations applied.",f:"If a DPIA shows high risk that cannot be mitigated, the organisation must consult the supervisory authority before processing — Article 36 prior consultation.",l:"A DPIA done before procurement or build is a cheap design review. The same findings delivered by a regulator after launch are an enforcement case."},
+{s:"HIP",n:"HIPAA — Health Insurance Portability and Accountability Act",c:"privacy",d:"The US federal law protecting health information, whose Privacy and Security Rules bind healthcare providers, health plans, clearinghouses and their business associates. The Security Rule requires administrative, physical and technical safeguards for electronic protected health information, plus breach notification to affected individuals.",f:"HIPAA has no official certification — products marketed as 'HIPAA certified' have passed a private assessment, not a government approval.",l:"If you sell into US healthcare, expect Business Associate Agreements and customer security reviews referencing HIPAA safeguards. Breach notification duties run on a 60-day clock at the latest."},
+{s:"GLBA",n:"GLBA — Gramm-Leach-Bliley Act",c:"privacy",d:"The US law requiring financial institutions to explain their information-sharing practices and to safeguard sensitive customer data. Its Safeguards Rule requires a written information security programme with risk assessment, access controls, encryption, testing and incident response; the Privacy Rule governs notices and opt-outs.",f:"The FTC's amended Safeguards Rule, fully effective in June 2023, added concrete requirements such as multi-factor authentication and a qualified individual accountable for the programme.",l:"GLBA reaches beyond banks — auto dealers, mortgage brokers and fintechs can all be 'financial institutions'. Check whether partners in your chain assume you are covered."},
+{s:"CCPA",n:"CCPA/CPRA — California Privacy Laws",c:"privacy",d:"California's privacy regime: the CCPA of 2018, substantially amended and expanded by the CPRA, effective 1 January 2023. It gives California residents rights to know, delete and correct personal information and to opt out of its 'sale' or 'sharing', applying to businesses meeting revenue or data-volume thresholds, enforced by the California Privacy Protection Agency.",f:"The CPRA created the first US agency dedicated solely to privacy enforcement and added a new category — sensitive personal information — with its own right to limit use.",l:"US privacy is now a state patchwork, with many states following California's model. Build to the strictest state you operate in, or budget for state-by-state engineering forever."},
+{s:"DRes",n:"Data Residency & Localisation",c:"privacy",d:"Requirements that certain data be stored or processed within a country's borders, or simply knowledge of where data physically resides. Residency (knowing the location) and localisation (being forced to keep data in-country) are driven by privacy law, sector regulation and national security policy, and they directly constrain cloud architecture.",f:"India's central bank set a hard example in 2018: payment system data must be stored only in India, a localisation rule that forced global processors to rebuild infrastructure.",l:"Localisation is an architecture and cost decision made at market entry, not a legal footnote. Discovering a residency rule after signing enterprise customers is an expensive re-platforming."},
+{s:"LGPD",n:"LGPD — Brazil General Data Protection Law",c:"privacy",d:"Brazil's comprehensive data protection law, modelled closely on the GDPR, in force since September 2020 and enforced by the national authority, ANPD. It sets lawful bases for processing, grants data subject rights and requires governance measures from organisations processing Brazilians' personal data.",f:"LGPD fines can reach 2 percent of a company's revenue in Brazil, capped at 50 million reais per infraction.",l:"If your GDPR programme is mature, LGPD is mostly an adaptation exercise — but it is a separate adaptation, with its own regulator, language and legal bases. Do not assume one policy covers both."},
+{s:"DORA",n:"DORA — Digital Operational Resilience Act",c:"sector",d:"The EU regulation making digital resilience a legal obligation for financial entities — banks, insurers, investment firms and their critical ICT suppliers. It harmonises requirements across five pillars: ICT risk management, incident reporting, resilience testing, third-party risk and information sharing, and it applies from 17 January 2025.",f:"DORA reaches the supply chain: ICT providers designated as 'critical' are supervised directly by EU-level oversight, a first for technology vendors in finance.",l:"If you sell technology into EU finance, DORA is now part of your product: contractual audit rights, incident support and exit plans are being written into your agreements."},
+{s:"NIS2",n:"NIS2 Directive",c:"sector",d:"The EU's expanded cybersecurity directive for essential and important entities across energy, transport, health, digital infrastructure, manufacturing and more. It mandates risk-management measures, supply-chain security, strict incident reporting timelines and — unusually — direct accountability for management bodies, who can be held liable for gross negligence.",f:"NIS2 penalties reach 10 million euros or 2 percent of worldwide turnover for essential entities, and early incident warning is due within 24 hours of becoming aware.",l:"The management-liability clause changes internal politics: boards in scope must approve and oversee cyber measures, and can be required to take training. That is leverage for every security budget conversation."},
+{s:"SEC",n:"SEC — Securities and Exchange Commission Disclosure Rules",c:"sector",d:"US rules adopted in 2023 requiring listed companies to disclose material cybersecurity incidents on Form 8-K within four business days of determining materiality, and to describe their cyber risk management, strategy and board oversight annually. Cybersecurity is thereby treated as investor-relevant information, like any other material risk.",f:"The four-business-day clock starts when materiality is determined, not when the incident is discovered — a distinction companies must be able to evidence with a documented process.",l:"Your incident response plan now needs a materiality decision path involving legal, finance and the disclosure committee — rehearsed in advance, not improvised mid-breach."},
+{s:"Bas",n:"Basel — Operational Resilience Principles",c:"sector",d:"The Basel Committee on Banking Supervision's principles for operational resilience (2021), setting expectations for how banks withstand and recover from disruptions — including cyber incidents — while continuing critical operations. They are implemented through national banking regulators and influence supervision, examinations and recovery planning worldwide.",l:"Basel principles set the tone your banking regulators will examine against. For bank technology suppliers, resilience expectations cascade contractually to you."},
+{s:"SWF",n:"SWIFT CSCF — Customer Security Controls Framework",c:"sector",d:"The mandatory security framework for users of the SWIFT financial messaging network: a set of mandatory and advisory controls covering environment protection, access restriction, detection and response. Every SWIFT user must self-attest compliance annually in the KYC registry, and counterparties can see whether attestations are in place.",f:"SWIFT can report non-attesting institutions to their regulators, and counterparties routinely check attestation status before transacting — market enforcement on top of rule enforcement.",l:"In correspondent banking, your attestation is visible to partners. Treat CSCF status as part of your institution's creditworthiness, because counterparties quietly do."},
+{s:"NERC",n:"NERC CIP — Critical Infrastructure Protection",c:"sector",d:"The mandatory cybersecurity standards for North America's bulk power system, covering asset identification, electronic and physical security perimeters, access management, incident reporting and supply chain risk for grid operators. They are enforceable with substantial financial penalties, unlike most voluntary frameworks.",f:"NERC CIP violations can draw penalties exceeding one million US dollars per violation per day, among the steepest in critical-infrastructure regulation.",l:"CIP is the template regulators in other sectors study. If you operate critical infrastructure anywhere, expect your regime to converge toward mandatory, audited, penalty-backed controls."},
+{s:"TRM",n:"MAS TRM — Technology Risk Management Guidelines",c:"sector",d:"The Monetary Authority of Singapore's technology risk guidelines for financial institutions, setting expectations on technology governance, cyber risk management, software development, third-party risk and incident reporting. Widely referenced across Asia-Pacific, they are paired with legally binding notices for areas such as cyber hygiene.",f:"Singapore separates guidance from law carefully: the TRM Guidelines are supervisory expectations, while the Cyber Hygiene Notice makes specific controls — including MFA for administrative access — legally mandatory.",l:"For APAC financial operations, MAS expectations often become the regional design standard. Build once to TRM and you are close for most neighbouring regulators."},
+{s:"DPDP",n:"DPDP Act — Digital Personal Data Protection Act 2023",c:"india",d:"India's first comprehensive data protection law, applying to digital personal data processed in India and to foreign processing connected with offering goods or services in India. It is built on consent and notice, grants rights to individuals (Data Principals) and imposes duties and security safeguards on organisations (Data Fiduciaries), with phased implementation through rules framed under the Act.",f:"The DPDP Act was passed in August 2023, and its penalty schedule reaches 250 crore rupees for a failure to maintain reasonable security safeguards leading to a breach.",l:"DPDP is a build programme, not a policy PDF: consent flows, notices in 22 languages potentially, grievance handling, breach notification and vendor contracts all change. Start with a data inventory — you cannot scope the Act without one."},
+{s:"CIn",n:"CERT-In — Indian Computer Emergency Response Team Directions",c:"india",d:"Directions issued by India's national incident response agency in April 2022 under the IT Act, binding service providers, intermediaries, data centres, cloud and VPN providers and companies generally. They require rapid incident reporting, retention of logs and subscriber records, and synchronisation of system clocks to national time servers.",f:"Specified cyber incidents must be reported to CERT-In within 6 hours of noticing them — among the fastest mandatory reporting timelines anywhere in the world.",l:"A 6-hour clock means your incident process must decide and escalate at 3 a.m., not at the morning stand-up. Check that contracts with your SOC and cloud providers support that timeline."},
+{s:"RBI",n:"RBI — Reserve Bank of India Cyber Framework",c:"india",d:"The Reserve Bank of India's cybersecurity expectations for banks and regulated financial entities, anchored by its 2016 Cyber Security Framework and subsequent directions on digital payments, IT outsourcing and governance. It requires board-approved cyber policies, a distinct CISO function, continuous monitoring and prompt incident reporting to the RBI.",f:"Banks must report cyber incidents to the RBI within 2 to 6 hours of discovery, depending on severity — set long before instant reporting became fashionable elsewhere.",l:"If you serve Indian banking, RBI expectations flow down through outsourcing audits into your own controls. Being able to show your SOC 2 or ISO 27001 mapped to RBI requirements shortens every vendor review."},
+{s:"SEBI",n:"SEBI CSCRF — Cybersecurity & Cyber Resilience Framework",c:"india",d:"The Securities and Exchange Board of India's comprehensive framework, adopted in August 2024, for stock exchanges, depositories, brokers, mutual funds and other regulated entities. It organises requirements into governance, identification, protection, detection, response and recovery, with graded obligations by entity size, self-certification and audit requirements.",f:"CSCRF explicitly adopts a Zero Trust direction and requires regulated entities to conduct cyber audits and report incidents on tight timelines to SEBI and CERT-In.",l:"For capital-markets firms this is now the master checklist: align your existing ISO or NIST programme to CSCRF's structure early, because its self-certification deadlines do not move for late starters."},
+{s:"ISNP",n:"IRDAI — Insurance Information Security Guidelines",c:"india",d:"The Insurance Regulatory and Development Authority of India's information and cyber security guidelines for insurers, brokers and intermediaries. They require a board-approved information security policy, an ISMS aligned to recognised standards, appointment of a CISO, periodic security audits and incident reporting, reflecting how much sensitive health and financial data insurers hold.",l:"Insurance data is doubly sensitive — health plus finance. If you process it for Indian insurers, expect IRDAI-driven audit clauses in your contracts and plan evidence accordingly."},
+{s:"ITA",n:"IT Act — Information Technology Act 2000",c:"india",d:"India's foundational law for electronic commerce and cybercrime, giving legal recognition to electronic records and signatures and defining offences from hacking to identity theft. It remains the statutory base for CERT-In's powers and, through its rules, long carried India's data protection obligations for 'reasonable security practices' until the DPDP era.",f:"Section 43A of the IT Act made companies liable to compensate for negligence in handling sensitive personal data — India's original data-protection lever, predating the DPDP Act by two decades.",l:"The IT Act is not legacy trivia: CERT-In directions, intermediary rules and criminal provisions your teams rely on today all derive from it. Legal reviews should read DPDP and the IT Act together."},
+{s:"DPB",n:"Data Protection Board of India",c:"india",d:"The adjudicatory body created by the DPDP Act to handle complaints, inquire into personal data breaches and impose penalties. Designed to function digitally — filings, hearings and orders online — it is the enforcement counterpart to the rights the Act grants individuals.",f:"The Board can accept voluntary undertakings from organisations in place of proceedings — a settlement mechanism that rewards fast, credible remediation after a breach.",l:"Your breach playbook for India should name the Board explicitly: who files, in what form, with what evidence. Rehearse it the way you rehearse regulator calls in banking."},
+{s:"NCIP",n:"NCIIPC — Critical Infrastructure Protection Centre",c:"india",d:"The National Critical Information Infrastructure Protection Centre, designated under Section 70A of the IT Act as India's national nodal agency for protecting critical information infrastructure — power, banking and finance, transport, telecom, government and strategic sectors. It issues sectoral guidelines, threat advisories and vulnerability assessments to operators of protected systems.",l:"If your systems are designated critical, NCIIPC guidelines and audits join your compliance set. Even without designation, its advisories are a solid India-specific threat intelligence source."},
+{s:"GRC",n:"GRC — Governance, Risk & Compliance",c:"practice",d:"The integrated discipline — and the software category named after it — that connects governance structures, risk management and compliance obligations so they share one view of controls and evidence. Done well, GRC stops three teams from auditing the same control three ways; done badly, it is expensive shelfware for managing spreadsheets.",l:"Buy GRC tooling only after your control set and owners are stable. Automating a confused control framework produces faster confusion, at enterprise prices."},
+{s:"CMp",n:"Control Mapping",c:"practice",d:"The practice of relating controls across frameworks — showing, for example, that your access-control implementation satisfies requirements in ISO 27001, SOC 2, NIST and PCI DSS simultaneously. Mapping enables 'test once, comply many': one control, one evidence set, several frameworks satisfied.",f:"Cross-framework mapping is built into several standards themselves: the CCM maps cloud controls to ISO and NIST, and NIST publishes mapping appendices between CSF and SP 800-53.",l:"Unmapped compliance programmes re-collect the same evidence in different formats all year. Fund mapping once and audit season gets permanently shorter."},
+{s:"MM",n:"Maturity Models",c:"practice",d:"Structured scales that describe how capable a security or governance process is, from ad hoc and reactive to measured and continuously improving. Frameworks use them differently — the NIST CSF has Tiers from Partial to Adaptive, CMMC has levels, and OWASP SAMM scores software security practices — but all exist to sequence improvement credibly.",f:"NIST is explicit that CSF Tiers are not grades to max out: an organisation should choose the tier its risk and mission justify, not chase Tier 4 everywhere.",l:"Maturity scores are planning tools, not report cards. Use them to choose the next three improvements, and be suspicious of any assessment where everything scores at the top."},
+{s:"Aud",n:"Internal, External & Customer Audits",c:"practice",d:"Three distinct assurance streams most organisations now juggle: internal audits by their own independent function, external audits by accredited firms for certifications and attestations, and customer audits or security questionnaires from enterprise buyers. Each has different depth, evidence standards and consequences for failure.",f:"Customer assurance is increasingly met with shared evidence — trust centres and standard questionnaires like the SIG and HECVAT — precisely because one-to-one audits do not scale for either side.",l:"Publish a maintained evidence pack — certificates, reports under NDA, questionnaire answers — and route all three audit streams to it. Your security team's roadmap will thank you."},
+{s:"CCo",n:"Continuous Compliance",c:"practice",d:"The shift from point-in-time audit preparation to continuously monitoring whether controls are operating — automatically collecting evidence from cloud platforms, identity systems and endpoints, and alerting when a control drifts. It narrows the gap between 'compliant at audit' and 'secure today'.",f:"Continuous monitoring is itself a scored practice: FedRAMP and NIST both treat ongoing assessment and authorisation as part of the standard, not an innovation.",l:"The real prize is not passing audits faster — it is learning about a failed control the week it fails, from your tooling, instead of next year, from an auditor."},
+{s:"CvS",n:"Compliance vs Security",c:"practice",d:"The persistent gap between satisfying an audit and resisting an attack. Organisations accumulate 'compliance debt' when effort goes to producing evidence for checklists while real exposures — unpatched edge systems, flat networks, excessive privileges — wait for a future budget cycle. Breached organisations are frequently found to have been compliant on paper.",l:"Hold both numbers in the same review: audit status and top real-world risks, side by side. When the first is green and the second is red, the meeting should get uncomfortable — that discomfort is the control working."},
+{s:"TPRM",n:"TPRM — Third-Party Risk Management",c:"practice",d:"The governance discipline for security risk created by vendors, cloud services, processors and their own subcontractors ('fourth parties'). It covers pre-contract assessment, contractual security requirements, continuous monitoring and exit planning — the control set regulators from the RBI to the EU now examine directly.",f:"Regulators have made the point with enforcement: firms have been fined for breaches that occurred entirely inside their processors, because accountability for customer data cannot be outsourced.",l:"Your framework certificates stop at your boundary; your risk does not. Tier vendors by data sensitivity, demand evidence proportionate to the tier, and rehearse one vendor's exit before you need it."}
+];
+const grid=document.getElementById('grid');
+const detail=document.getElementById('detail');
+const overlay=document.getElementById('overlay');
+const countEl=document.getElementById('count');
+let activeCat=null, selected=null;
+function render(){
+  grid.innerHTML='';
+  TERMS.forEach((t,i)=>{
+    const b=document.createElement('button');
+    b.className='tile'; b.type='button'; b.setAttribute('role','listitem');
+    b.style.background=CATS[t.c].color; b.dataset.cat=t.c;
+    b.dataset.search=(t.n+' '+t.s+' '+t.d+' '+CATS[t.c].name).toLowerCase();
+    b.innerHTML='<span class="no">'+(i+1)+'</span><span class="sym">'+t.s+'</span><span class="nm">'+t.n+'</span>';
+    b.addEventListener('click',()=>show(t,i,b));
+    grid.appendChild(b);
+  });
+  updateCount(TERMS.length);
+}
+function updateCount(n){countEl.textContent=n+' of '+TERMS.length+' terms shown';}
+function closeDetail(){
+  const el=selected;
+  if(selected)selected.classList.remove('selected');
+  selected=null; selectedIdx=-1;
+  detail.classList.remove('open'); overlay.classList.remove('open');
+  document.body.style.overflow='';
+  if(el && el.focus)el.focus({preventScroll:true});
+}
+let selectedIdx=-1;
+function show(t,i,el){
+  if(selectedIdx===i){closeDetail();selectedIdx=-1;return;}
+  if(selected)selected.classList.remove('selected');
+  selected=el; selectedIdx=i; if(el)el.classList.add('selected');
+  let html='<button class="zoom-close" type="button" onclick="closeDetail()" aria-label="Close">✕</button>';
+  html+='<div class="d-no">Element '+(i+1)+' of '+TERMS.length+'</div>';
+  html+='<span class="d-sym" style="background:'+CATS[t.c].color+'">'+t.s+'</span>';
+  html+='<h2>'+t.n+'</h2><div class="d-cat" style="color:'+CATS[t.c].color+'">'+CATS[t.c].name+'</div>';
+  html+='<p>'+t.d+'</p>';
+  if(t.f)html+='<div class="box formula"><b>Key fact</b>'+t.f+'</div>';
+  if(t.l)html+='<div class="box lens"><b>Leader lens</b>'+t.l+'</div>';
+  detail.innerHTML=html;
+  detail.classList.add('open'); overlay.classList.add('open');
+  document.body.style.overflow='hidden';
+}
+overlay.addEventListener('click',closeDetail);
+const legend=document.getElementById('legend');
+Object.keys(CATS).forEach(k=>{
+  const c=document.createElement('button'); c.type='button'; c.className='chip'; c.dataset.cat=k;
+  c.innerHTML='<span class="dot" style="background:'+CATS[k].color+'"></span>'+CATS[k].name;
+  c.addEventListener('click',()=>{
+    activeCat = activeCat===k ? null : k;
+    document.querySelectorAll('.chip').forEach(x=>x.classList.toggle('active',x.dataset.cat===activeCat));
+    applyFilter();
+  });
+  legend.appendChild(c);
+});
+function applyFilter(){
+  const q=document.getElementById('search').value.trim().toLowerCase();
+  let n=0;
+  document.querySelectorAll('.tile').forEach(tile=>{
+    const matchQ=!q || tile.dataset.search.includes(q);
+    const matchC=!activeCat || tile.dataset.cat===activeCat;
+    tile.classList.toggle('hidden',!matchQ);
+    tile.classList.toggle('dim',!!activeCat && !matchC && matchQ);
+    if(matchQ)n++;
+  });
+  updateCount(n);
+}
+document.getElementById('search').addEventListener('input',applyFilter);
+document.getElementById('resetBtn').addEventListener('click',()=>{
+  document.getElementById('search').value=''; activeCat=null;
+  document.querySelectorAll('.chip').forEach(x=>x.classList.remove('active')); applyFilter();
+});
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeDetail();});
+/* Theme toggle: saved choice wins, otherwise dark (the original look) */
+const themeBtn=document.getElementById('themeToggle');
+function applyTheme(th){
+  document.documentElement.setAttribute('data-theme',th);
+  themeBtn.textContent = th==='light' ? '☾' : '☀';
+  try{localStorage.setItem('security_frameworks_theme',th);}catch(e){}
+}
+let savedTheme='dark';
+try{savedTheme=localStorage.getItem('security_frameworks_theme')||'dark';}catch(e){}
+applyTheme(savedTheme==='light'?'light':'dark');
+themeBtn.addEventListener('click',()=>{
+  const cur=document.documentElement.getAttribute('data-theme')==='light'?'light':'dark';
+  applyTheme(cur==='light'?'dark':'light');
+});
+render();
+</script>
+</body>
+</html>

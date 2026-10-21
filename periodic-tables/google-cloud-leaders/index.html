@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Google Cloud for Leaders — The Periodic Table</title>
+<meta name="description" content="58 Google Cloud services and concepts: BigQuery, GKE, Spanner, Vertex AI and Gemini — where data, containers and AI meet, plus committed-use discount mechanics.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Google Cloud for Leaders — The Periodic Table">
+<meta property="og:description" content="58 Google Cloud services and concepts: BigQuery, GKE, Spanner, Vertex AI and Gemini — where data, containers and AI meet, plus committed-use discount mechanics.">
+<meta property="og:url" content="https://thillairaj.github.io/The-Signal-AI-Quantum/periodic-tables/google-cloud-leaders/">
+<style>
+  :root{--bg:#071527;--panel:#0b213f;--panel2:#0e2a52;--ink:#eef4ff;--muted:#9db4d4;--line:rgba(255,255,255,.14)}
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:'Segoe UI',system-ui,-apple-system,Arial,sans-serif;background:radial-gradient(1200px 600px at 20% -10%,#12325e 0%,var(--bg) 55%);color:var(--ink);min-height:100vh}
+  header{padding:34px 22px 10px;text-align:center;max-width:1200px;margin:0 auto}
+  .kicker{letter-spacing:.35em;font-size:11px;color:#7dd3fc;text-transform:uppercase;font-weight:700}
+  h1{font-size:clamp(28px,5vw,48px);line-height:1.08;margin:10px 0 10px;font-weight:800}
+  h1 span{color:#fbbf24}
+  .sub{color:var(--muted);max-width:820px;margin:0 auto;font-size:15.5px;line-height:1.55}
+  .principle{margin:18px auto 4px;max-width:880px;background:rgba(251,191,36,.08);border:1px solid rgba(251,191,36,.35);border-radius:12px;padding:12px 16px;font-size:14px;line-height:1.55;color:#fde68a}
+  .toolbar{position:sticky;top:0;z-index:40;background:rgba(7,21,39,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line);padding:12px 16px}
+  .toolbar-in{max-width:1280px;margin:0 auto;display:flex;flex-wrap:wrap;gap:10px;align-items:center;justify-content:center}
+  #search{flex:1 1 260px;max-width:420px;padding:11px 14px;border-radius:10px;border:1px solid var(--line);background:var(--panel);color:var(--ink);font-size:15px;outline:none}
+  #search:focus{border-color:#38bdf8}
+  .count{color:var(--muted);font-size:13.5px}
+  .btn{padding:10px 14px;border-radius:10px;border:1px solid var(--line);background:var(--panel2);color:var(--ink);cursor:pointer;font-size:13.5px;font-weight:600}
+  .btn:hover{border-color:#38bdf8}
+  #legend{max-width:1280px;margin:14px auto 0;padding:0 16px;display:flex;flex-wrap:wrap;gap:8px;justify-content:center}
+  .chip{display:inline-flex;align-items:center;gap:7px;padding:7px 12px;border-radius:999px;border:1px solid var(--line);background:var(--panel);color:var(--ink);font-size:12.5px;cursor:pointer;font-weight:600;transition:all .15s}
+  .chip .dot{width:11px;height:11px;border-radius:3px}
+  .chip:hover{transform:translateY(-1px);border-color:#fff}
+  .chip.active{outline:2px solid #fff;outline-offset:1px}
+  main{max-width:1280px;margin:0 auto;padding:20px 16px 30px;display:grid;grid-template-columns:1fr 340px;gap:20px;align-items:start}
+  #grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(96px,1fr));gap:8px}
+  .tile{border:none;border-radius:10px;padding:8px 6px 7px;min-height:96px;color:#fff;cursor:pointer;text-align:left;position:relative;transition:transform .16s ease,filter .16s ease,box-shadow .16s ease,opacity .16s;display:flex;flex-direction:column;box-shadow:inset 0 0 0 1px rgba(255,255,255,.22)}
+  .tile .no{font-size:10.5px;font-weight:700;opacity:.85}
+  .tile .sym{font-size:24px;font-weight:800;line-height:1.05;margin:auto 0 2px;letter-spacing:.01em;word-break:break-word}
+  .tile .nm{font-size:10px;line-height:1.25;font-weight:600;opacity:.95}
+  .tile:hover,.tile:focus-visible{transform:scale(1.09) translateY(-4px);filter:brightness(1.28) saturate(1.25);box-shadow:0 12px 28px rgba(0,0,0,.5),0 0 0 2px #fff;z-index:5;outline:none}
+  .tile.selected{box-shadow:0 0 0 3px #fff,0 12px 28px rgba(0,0,0,.5);filter:brightness(1.2)}
+  .tile.dim{opacity:.13;filter:grayscale(.6)}
+  .tile.hidden{display:none}
+  #detail{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:22px;position:sticky;top:132px;min-height:300px}
+  #detail .d-no{font-size:12px;color:var(--muted);letter-spacing:.15em;text-transform:uppercase;font-weight:700}
+  #detail .d-sym{display:inline-flex;align-items:center;justify-content:center;min-width:74px;height:74px;padding:0 10px;border-radius:14px;font-size:30px;font-weight:800;color:#fff;margin:12px 0}
+  #detail h2{font-size:24px;line-height:1.2;margin-bottom:6px}
+  #detail .d-cat{font-size:12.5px;font-weight:700;text-transform:uppercase;letter-spacing:.12em;margin-bottom:14px}
+  #detail p{font-size:15px;line-height:1.65;color:#dbe7fa}
+  #detail .box{margin-top:14px;border-radius:10px;padding:12px 14px;font-size:14px;line-height:1.55}
+  #detail .formula{background:rgba(56,189,248,.1);border:1px solid rgba(56,189,248,.4);color:#bae6fd}
+  #detail .lens{background:rgba(251,191,36,.08);border:1px solid rgba(251,191,36,.35);color:#fde68a}
+  #detail .box b{display:block;font-size:11px;letter-spacing:.18em;text-transform:uppercase;margin-bottom:5px;opacity:.85}
+  .hint{color:var(--muted);font-size:14.5px;line-height:1.6}
+  section.below{max-width:1280px;margin:0 auto;padding:6px 16px 26px}
+  section.below h3{font-size:22px;margin:18px 0 12px}
+  .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:12px}
+  .card{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:16px}
+  .card h4{font-size:15px;margin-bottom:7px;color:#7dd3fc}
+  .card p,.card li{font-size:14px;line-height:1.6;color:#dbe7fa}
+  .card ul{padding-left:18px}
+  .example{background:linear-gradient(135deg,#0e2a52,#12325e);border:1px solid rgba(251,191,36,.4)}
+  .example h4{color:#fbbf24}
+  .big{font-size:19px;font-weight:800;color:#fff;margin:6px 0}
+  footer{max-width:1280px;margin:0 auto;padding:10px 16px 38px;color:var(--muted);font-size:12.5px;line-height:1.6;text-align:center}
+  #overlay{display:none}
+  /* placeholder, zoom view styles are at the end of this stylesheet */
+  /* Theme toggle + sticky legend + back button (added Oct 21) */
+  header{position:relative}
+  .theme-toggle{position:absolute;top:16px;right:16px;width:44px;height:44px;border-radius:50%;border:1px solid var(--line);background:var(--panel2);color:#fbbf24;font-size:19px;cursor:pointer;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 14px rgba(0,0,0,.35)}
+  .theme-toggle:hover{transform:scale(1.08)}
+  #legend{flex-wrap:nowrap;overflow-x:auto;justify-content:flex-start;padding:10px 2px 3px;scrollbar-width:thin}
+  .chip{white-space:nowrap;flex:0 0 auto}
+  .backbtn{display:inline-flex;align-items:center;gap:6px;padding:9px 14px;border-radius:999px;border:1px solid var(--line);background:var(--panel2);color:var(--ink);font-size:13.5px;font-weight:700;cursor:pointer;margin-bottom:14px}
+  .backbtn:hover{border-color:#38bdf8}
+  #detail{top:168px}
+  /* Light theme */
+  html[data-theme="light"] body{background:radial-gradient(1200px 600px at 20% -10%,#e8eefc 0%,#FAF9F6 55%);color:#17293f}
+  html[data-theme="light"] h1{color:#0b213f}
+  html[data-theme="light"] .sub{color:#4d6482}
+  html[data-theme="light"] .principle{background:#fff8e1;border-color:#e5c15c;color:#6b5510}
+  html[data-theme="light"] .toolbar{background:rgba(250,249,246,.95);border-color:#ddd5c0}
+  html[data-theme="light"] #search{background:#fff;color:#17293f;border-color:#cfd8e3}
+  html[data-theme="light"] .btn{background:#fff;color:#17293f;border-color:#cfd8e3}
+  html[data-theme="light"] .chip{background:#fff;color:#17293f;border-color:#cfd8e3}
+  html[data-theme="light"] .chip.active{outline-color:#0b213f}
+  html[data-theme="light"] .count{color:#5a6f88}
+  html[data-theme="light"] #detail{background:#fff;border-color:#e0d9c6}
+  html[data-theme="light"] #detail p{color:#33475e}
+  html[data-theme="light"] #detail .d-no{color:#5a6f88}
+  html[data-theme="light"] #detail h2{color:#0b213f}
+  html[data-theme="light"] #detail .formula{background:#e8f4fd;border-color:#9fd0f5;color:#124d75}
+  html[data-theme="light"] #detail .lens{background:#fff8e1;border-color:#e5c15c;color:#6b5510}
+  html[data-theme="light"] .backbtn{background:#eef3fa;color:#17293f;border-color:#cfd8e3}
+  html[data-theme="light"] .hint{color:#5a6f88}
+  html[data-theme="light"] .card{background:#fff;border-color:#e0d9c6}
+  html[data-theme="light"] .card p,html[data-theme="light"] .card li{color:#33475e}
+  html[data-theme="light"] section.below h3{color:#0b213f}
+  html[data-theme="light"] .example{background:linear-gradient(135deg,#fff8e1,#fdf3d0);border-color:#e5c15c}
+  html[data-theme="light"] .example .big{color:#17293f}
+  html[data-theme="light"] footer{color:#5a6f88}
+  html[data-theme="light"] .theme-toggle{background:#fff;color:#d97706;border-color:#cfd8e3}
+  @media(max-width:900px){
+    main{grid-template-columns:1fr}
+    #detail{position:fixed;inset:auto 0 0 0;z-index:60;border-radius:18px 18px 0 0;max-height:72vh;overflow:auto;transform:translateY(105%);transition:transform .25s ease;box-shadow:0 -12px 40px rgba(0,0,0,.6)}
+    #detail.open{transform:translateY(0)}
+    #overlay{display:block;position:fixed;inset:0;background:rgba(0,0,0,.55);z-index:55;opacity:0;pointer-events:none;transition:opacity .25s}
+    #overlay.open{opacity:1;pointer-events:auto}
+    #grid{grid-template-columns:repeat(auto-fill,minmax(82px,1fr))}
+    .tile{min-height:86px}.tile .sym{font-size:20px}
+  }
+  /* Zoom reading view — same pattern as the Quantum / AI Deck cards (Oct 21) */
+  main{grid-template-columns:1fr}
+  #overlay{display:block;position:fixed;inset:0;background:rgba(3,10,20,.62);z-index:55;opacity:0;pointer-events:none;transition:opacity .22s ease}
+  #overlay.open{opacity:1;pointer-events:auto}
+  #detail{position:fixed;top:50%;left:50%;right:auto;bottom:auto;width:min(560px,92vw);max-width:92vw;max-height:86vh;overflow:auto;z-index:60;border-radius:18px;padding:26px;opacity:0;pointer-events:none;transform:translate(-50%,-47%) scale(.88);transition:transform .24s ease,opacity .24s ease;box-shadow:0 30px 80px rgba(0,0,0,.55)}
+  #detail.open{opacity:1;pointer-events:auto;transform:translate(-50%,-50%) scale(1)}
+  .zoom-close{position:absolute;top:12px;right:12px;width:38px;height:38px;border-radius:50%;border:1px solid var(--line);background:var(--panel2);color:var(--ink);font-size:15px;cursor:pointer;display:flex;align-items:center;justify-content:center;z-index:2}
+  .zoom-close:hover{border-color:#38bdf8;transform:scale(1.08)}
+  html[data-theme="light"] .zoom-close{background:#eef3fa;color:#17293f;border-color:#cfd8e3}
+  @media(max-width:900px){#detail{padding:22px 18px}}
+</style>
+</head>
+<body>
+<header>
+  <div style="text-align:left;max-width:1200px;margin:0 auto 14px"><a href="../../#learn" style="color:inherit;opacity:.75;text-decoration:none;font-size:13.5px;font-weight:600">← Back to Learning Spaces</a></div>
+  <button class="theme-toggle" id="themeToggle" type="button" aria-label="Switch light or dark theme" title="Switch light / dark theme">☀</button>
+  <div class="kicker">The Google Cloud Periodic Table</div>
+  <h1>Google Cloud for <span>Leaders</span></h1>
+  <p class="sub">The Google Cloud service map for leaders: 58 services and concepts, strongest where data, containers and AI meet, organised as clickable elements.</p>
+  <div class="principle"><strong>Core principle:</strong> Google Cloud wins where data analytics, Kubernetes heritage and AI converge; it rarely wins as a thoughtless default estate. Judge it workload by workload, anchor on two or three differentiators such as BigQuery, GKE or Spanner, and let those strengths, not habit, decide what runs here.</div>
+</header>
+
+<div class="toolbar">
+  <div class="toolbar-in">
+    <input id="search" type="search" placeholder="Search a term — try BigQuery, GKE, Vertex AI, Spanner…" aria-label="Search terms">
+    <span class="count" id="count"></span>
+    <button class="btn" id="resetBtn" type="button">Show all</button>
+  </div>
+  <div id="legend" aria-label="Category filter"></div>
+</div>
+
+<main>
+  <div id="grid" role="list"></div>
+  <aside id="detail" aria-live="polite">
+    <div class="d-no">Element detail</div>
+    <p class="hint" style="margin-top:12px">Click any element in the table to zoom into its full explanation.<br><br>Start with: <strong>BigQuery, GKE, Vertex, Spanner</strong>.</p>
+  </aside>
+</main>
+<div id="overlay"></div>
+
+<section class="below"><h3>Six things a leader should hold on to about Google Cloud</h3><div class="cards"><div class="card"><h4>Data gravity decides</h4><p>BigQuery, Spanner and Looker are the gravity wells of this cloud. Organisations rarely choose Google Cloud for generic hosting; they choose it because one analytical or global-data workload is decisively better here, and everything else follows that workload.</p></div><div class="card"><h4>Kubernetes is home turf</h4><p>Google created Kubernetes, and GKE reflects a decade of internal cluster experience. If your strategy is container-based and portability matters, Google Cloud starts the evaluation with a genuine home advantage.</p></div><div class="card"><h4>AI is woven in, not bolted on</h4><p>Gemini, Vertex AI and TPUs form one continuous stack from prototype to governed production. The advantage is integration: your data platform, security model and AI platform are the same platform, with the same controls.</p></div><div class="card"><h4>Judge it workload by workload</h4><p>Google Cloud is the third-largest hyperscaler and does not need to win everything. Score each significant workload on data, containers, AI, cost mechanics and local support, and let the strongest two or three workloads anchor the relationship.</p></div><div class="card"><h4>Pricing rewards commitment and steadiness</h4><p>Sustained use discounts arrive automatically, and committed use discounts reward honest forecasting with savings of more than half on eligible compute. The flip side: undisciplined BigQuery querying and over-commitment erase the advantage quickly, so FinOps discipline is part of the architecture.</p></div><div class="card"><h4>Sovereignty is a product line</h4><p>Assured Workloads, organisation policies, external key management and partner-operated sovereign offerings mean regulated workloads have a designed path here. Verify your exact regime early, because the details differ by country and sector.</p></div></div><h3>A leader's Google Cloud checklist</h3><div class="cards"><div class="card"><h4>Before you commit</h4><ul><li>Pick two or three anchor workloads where Google is demonstrably strongest, usually data, Kubernetes or AI</li><li>Design the organisation, folder and project hierarchy, and the VPC foundation, before the first workload lands</li><li>Turn on the detailed billing export to BigQuery and project-level budget alerts from day one</li><li>Confirm support tiers and partner coverage in the countries you actually operate in</li><li>Check regulated workloads against Assured Workloads and sovereign offerings before architects assume coverage</li></ul></div><div class="card"><h4>In the first year</h4><ul><li>Set organisation policies for regions, public access and service account keys as enforced guardrails</li><li>Standardise new builds on Cloud Run or GKE Autopilot unless a team can argue otherwise</li><li>Negotiate committed use discounts against measured baselines, committing to the floor of usage, not the peak</li><li>Put BigQuery cost guardrails in place: quotas, slot commitments and per-team cost visibility</li><li>Audit IAM from the top of the hierarchy down at least quarterly, and review the dormant-access report</li></ul></div><div class="card example"><h4>An honest note</h4><p>Google Cloud is typically the third estate in most enterprises: its partner network, local talent pool and enterprise hand-holding are thinner than the two larger rivals in many markets, and its catalogue, while deep in data and AI, is narrower elsewhere. None of that cancels its real strengths in analytics, containers and AI, but it does mean the workload-by-workload discipline in this table is not a slogan. Positions as of October 2026; verify services, tiers and regional availability before committing budget.</p></div></div></section>
+
+<footer>Educational overview of Google Cloud services and concepts. Service names, tiers and positions as of October 2026; verify current details, pricing and availability in your region before making procurement or architecture decisions.<div style="margin-top:12px;font-size:13px">Curated by Thillai Raj Thanam Jeya Veera Raj · <a href="https://www.linkedin.com/in/thillairaj" target="_blank" rel="noopener" style="color:inherit;text-decoration:underline">Follow on LinkedIn</a></div></footer>
+
+<script>
+const CATS = { compute:{name:"Compute & Containers",color:"#0284c7"}, data:{name:"Data & Analytics",color:"#4f46e5"}, ai:{name:"AI & Machine Learning",color:"#a21caf"}, network:{name:"Networking & CDN",color:"#0891b2"}, security:{name:"Security & Identity",color:"#dc2626"}, dev:{name:"Developer & Integration",color:"#65a30d"}, manage:{name:"Management, Cost & Strategy",color:"#d97706"} };
+const TERMS = [
+{s:"CE", n:"Compute Engine", c:"compute", d:"Google Cloud's infrastructure-as-a-service virtual machines, running on Google's global network with custom machine types, per-second billing and live migration that moves running VMs during host maintenance without downtime. It is the default landing zone for lift-and-shift migrations and for workloads that need specific CPU, memory or GPU shapes.", f:"Compute Engine popularised live migration at cloud scale: VMs keep running while Google maintains the underlying hardware underneath them.", l:"Treat Compute Engine as the migration bridge, not the destination architecture; the cost and agility advantages on Google Cloud usually sit one level up, in GKE or Cloud Run."},
+{s:"CR", n:"Cloud Run", c:"compute", d:"A fully managed serverless platform that runs containerised applications and scales them from zero to thousands of instances in seconds, billing only for the CPU and memory actually consumed. It removes clusters, patching and capacity planning entirely, making it the fastest route from code to production on Google Cloud.", f:"Cloud Run descends from Knative and Google's internal container infrastructure, and it scales to zero so idle services cost nothing.", l:"Default to Cloud Run for new stateless services unless you specifically need Kubernetes control; it is where Google Cloud's operational simplicity is most visible."},
+{s:"GKE", n:"GKE — Google Kubernetes Engine", c:"compute", d:"A managed Kubernetes service for running containerised applications, offered in Standard mode with node control or Autopilot mode where Google manages the nodes entirely. Because Kubernetes was created at Google, GKE typically receives upstream features early and is widely regarded as the most mature managed Kubernetes across the three clouds.", f:"Kubernetes was open-sourced by Google in 2014, drawing on a decade of experience with Borg, its internal cluster manager.", l:"Choose GKE when portability and the Kubernetes ecosystem matter more than the simplest operations; Autopilot closes most of the management gap with serverless."},
+{s:"AE", n:"App Engine", c:"compute", d:"Google's original platform-as-a-service, launched in 2008, where developers deploy code in standard languages and Google handles servers, scaling and load balancing completely. It remains a simple option for web applications and APIs, though most new builds now choose Cloud Run for its container flexibility.", f:"App Engine was one of the first public cloud platforms ever offered, predating most of what leaders now call PaaS.", l:"Fine for straightforward web workloads, but evaluate Cloud Run first for anything new; App Engine's constraints can surface late in a product's life."},
+{s:"CRF", n:"Cloud Run Functions", c:"compute", d:"Google Cloud's functions-as-a-service for event-driven code, rebranded from Cloud Functions and built on Cloud Run and Eventarc in its current generation. Functions trigger from storage uploads, Pub/Sub messages, HTTP calls and many other event sources, scaling automatically and charging per invocation.", f:"The second generation of Cloud Functions was rebuilt on Cloud Run, which is why the product now carries the Cloud Run Functions name.", l:"Excellent for glue code and automation; watch function sprawl, because hundreds of small unowned functions become un-auditable quickly."},
+{s:"TPU", n:"TPU — Tensor Processing Unit", c:"compute", d:"Google's custom chips designed exclusively for machine learning workloads, available on Google Cloud in pods that link many chips into a single training system. TPUs power the training and serving of Google's own Gemini models and are offered to customers as an alternative to GPU fleets.", f:"TPU pods interconnect large numbers of chips into one system, and Google trains its Gemini model family on TPU infrastructure.", l:"TPUs can beat GPUs on price-performance for large-scale training, but the ecosystem and hiring pool are narrower; benchmark your actual model before committing."},
+{s:"Tau", n:"Tau VM Family", c:"compute", d:"A family of Compute Engine virtual machines selected purely for price-performance rather than maximum specifications, aimed at scale-out web servers, media encoding and other throughput workloads. Tau made Google Cloud's value proposition explicit: commodity workloads should not pay flagship prices.", f:"The first Tau family, T2D, was built on third-generation AMD EPYC processors and targeted scale-out workloads specifically.", l:"Ask teams to justify every non-Tau instance type; defaulting commodity workloads to Tau is one of the simplest structural savings on Google Cloud."},
+{s:"SpV", n:"Spot VMs", c:"compute", d:"Deeply discounted Compute Engine capacity that Google can reclaim with short notice when it needs the machines back, sold for fault-tolerant, batch and stateless work. Spot VMs replaced the older Preemptible VM model with no maximum runtime and simpler pricing.", f:"Google advertises Spot VM savings in the range of 60 to 91 percent versus standard pricing, in exchange for accepting interruption.", l:"Perfect for CI pipelines, rendering and batch analytics; never let a team quietly depend on Spot capacity for anything a customer touches."},
+{s:"CS", n:"Cloud Storage", c:"data", d:"Google Cloud's unified object storage for everything from data lakes to backups, offered in Standard, Nearline, Coldline and Archive classes behind a single API. Its durability design and global buckets make it the default foundation for analytics estates.", f:"All Cloud Storage classes share one API and the same durability design; only access pricing and retrieval characteristics differ between hot and archive tiers.", l:"Set lifecycle policies on day one; the classic Google Cloud bill shock is petabytes of lake data still sitting in the Standard class years later."},
+{s:"PD", n:"Persistent Disk", c:"data", d:"Network block storage for Compute Engine and GKE, in balanced, SSD performance and extreme tiers, decoupled from the VM itself so data survives instance changes. Regional Persistent Disks replicate synchronously across two zones for workloads that cannot tolerate zonal failure.", f:"Because Persistent Disk is network-attached, disks can be resized and reattached without rebuilding the virtual machine.", l:"Prefer managed databases over self-run databases on Persistent Disk; the disk is reliable, but the operational burden lands on your team."},
+{s:"Fs", n:"Filestore", c:"data", d:"Fully managed NFS file storage for applications that need shared, POSIX-style file systems rather than object storage, including legacy enterprise applications and media workloads. It is the lift-and-shift answer when an application insists on seeing a traditional shared drive.", f:"Filestore exists largely for compatibility: it gives unmodified legacy applications the shared file system they were built against.", l:"Use it to unblock migrations, not as a strategic store; object storage and managed databases are cheaper and simpler at scale."},
+{s:"CSQ", n:"Cloud SQL", c:"data", d:"A fully managed relational database service for MySQL, PostgreSQL and SQL Server, handling backups, replication, patching and failover. It is the low-drama option for conventional application databases that do not need planetary scale.", f:"Cloud SQL supports the three database engines most enterprises already run, which makes it a common first step in database migration programmes.", l:"The right default for ordinary transactional databases; reach for Spanner only when you genuinely outgrow a single region, not before."},
+{s:"Spn", n:"Spanner — Global Relational Database", c:"data", d:"A globally distributed relational database that combines SQL and ACID transactions with horizontal scale across continents and strong external consistency. Spanner runs large parts of Google's own advertising and payments systems and is offered as a managed service no rival cloud truly matches.", f:"Spanner uses TrueTime, a globally synchronised clock system, to provide external consistency at global scale, a first among production database systems.", l:"Spanner is a differentiator workload: payments, inventory and global ledgers justify it; a departmental app does not, and its node-based pricing punishes small deployments."},
+{s:"BT", n:"Bigtable", c:"data", d:"A petabyte-scale, wide-column NoSQL database for high-throughput, low-latency workloads such as time series, telemetry, personalisation and fraud features. It is the managed form of the internal system that underpins Gmail, Maps and Search.", f:"Bigtable's published design influenced the wider industry: Apache HBase and Cassandra both trace their data models to Google's Bigtable.", l:"Choose Bigtable for massive, simple, fast lookups at scale; if your access patterns are relational or ad hoc, it will fight you."},
+{s:"Fst", n:"Firestore", c:"data", d:"A serverless, document-oriented NoSQL database with real-time synchronisation, offline support in mobile SDKs and automatic scaling, closely tied to the Firebase developer platform. It suits user-facing applications, profiles, catalogues and collaborative data more than analytical workloads.", f:"Firestore grew out of Google Cloud Datastore and became the default database behind Firebase applications.", l:"Beloved by product teams for speed of development; set data-modelling discipline early, because document sprawl makes later reporting painful."},
+{s:"BQ", n:"BigQuery", c:"data", d:"Google Cloud's flagship serverless data warehouse, which separates storage from compute so analysts can scan petabytes with SQL in seconds without provisioning any infrastructure. It is the single biggest reason many enterprises choose Google Cloud, and its per-query and flat-rate pricing models both reward query discipline.", f:"BigQuery descends from Dremel, Google's internal interactive query system, and its storage-compute separation is what makes ad hoc petabyte-scale queries practical.", l:"BigQuery wins evaluations on capability, then loses budgets on undisciplined querying; cost guardrails and capacity commitments belong in the architecture, not after the first bill."},
+{s:"Df", n:"Dataflow", c:"data", d:"A fully managed service for stream and batch data processing built on the Apache Beam programming model, so the same pipeline code handles real-time events and historical loads. It is Google Cloud's workhorse for ETL, clickstream processing and feeding machine learning features.", f:"Dataflow's Beam model unifies batch and streaming, ending the separate duplicate architectures many data teams still maintain.", l:"Streaming is where data costs quietly compound; require every Dataflow pipeline to carry an owner and a cost-per-event figure."},
+{s:"Dp", n:"Dataproc", c:"data", d:"A managed service for running Apache Spark, Hadoop, Presto and related open-source data tools on Google Cloud infrastructure, with clusters that spin up quickly and can use discounted Spot capacity. It exists mainly to let existing big-data estates migrate without rewriting pipelines.", f:"Dataproc clusters can be created per job and deleted on completion, replacing permanently running Hadoop clusters with ephemeral ones.", l:"A migration bridge for Spark and Hadoop teams; for new pipelines, Dataflow and BigQuery usually deliver more value with less machinery."},
+{s:"PS", n:"Pub/Sub", c:"data", d:"A global, fully managed messaging service for event-driven architectures, decoupling publishers from subscribers with at-least-once and exactly-once delivery options. It is the connective tissue of Google Cloud data estates, feeding Dataflow pipelines, functions and microservices in real time.", f:"Pub/Sub is built to operate at planetary scale on Google's private network, absorbing event spikes that would overwhelm self-hosted brokers.", l:"Adopt Pub/Sub as the standard event bus early; point-to-point integrations are the hidden tax that makes later change expensive."},
+{s:"Lk", n:"Looker", c:"data", d:"Google Cloud's enterprise business intelligence platform, built around LookML, a modelling layer that defines metrics once in code so every dashboard agrees on the numbers. Google acquired Looker to give its data stack a governed, developer-grade BI front end.", f:"Google acquired Looker in a deal announced in 2019 and completed in 2020, valuing the company at about 2.6 billion dollars.", l:"Looker's value is metric consistency across a large organisation; if your BI need is a few dashboards, lighter tools will serve you for less."},
+{s:"Mem", n:"Memorystore", c:"data", d:"A fully managed in-memory service for Redis and Memcached, used for caching, session stores, leaderboards and other sub-millisecond data needs. It removes the operational burden of running cache clusters while staying API-compatible with the open-source originals.", f:"Memorystore is protocol-compatible with open-source Redis and Memcached, so applications migrate without code changes.", l:"A small line item that prevents large ones: caching is usually the cheapest way to cut database load and repeat-query costs."},
+{s:"Vx", n:"Vertex AI", c:"ai", d:"Google Cloud's unified machine learning platform covering data preparation, training, tuning, deployment, monitoring and a Model Garden of first-party and open models. Its strategic role is to make Gemini and other models enterprise-usable, with the security, governance and MLOps controls large organisations require.", f:"Vertex AI consolidated Google's earlier fragmented AI services into one platform, and its Model Garden hosts models from Google, Anthropic and open-source communities.", l:"Vertex AI is the enterprise front door to Google's AI; prototype anywhere, but production AI should land here, where governance lives."},
+{s:"Gm", n:"Gemini Models on Vertex AI", c:"ai", d:"Google's flagship multimodal model family, available through Vertex AI with enterprise controls, in sizes from fast and economical to maximum reasoning depth, including very long context windows. Leaders meet Gemini mostly here: grounded on company data, behind their own security perimeter, billed through their cloud agreement.", f:"Gemini models are trained on Google's TPU infrastructure and are natively multimodal across text, image, audio, video and code.", l:"Evaluate Gemini against rival frontier models on your own tasks, not public benchmarks; on Vertex, grounding and data controls often matter more than small benchmark gaps."},
+{s:"GAS", n:"Google AI Studio", c:"ai", d:"Google's free, browser-based prototyping environment for the Gemini API, aimed at developers and product teams who want to experiment with prompts and models in minutes. It is the top of Google's AI funnel: experiments start here, then graduate to Vertex AI for production.", f:"AI Studio issues API keys for the Gemini Developer API, which shares models with Vertex AI but carries different terms and data handling.", l:"Encourage teams to prototype in AI Studio, but police the boundary: anything touching real customer data belongs on Vertex AI under enterprise terms."},
+{s:"ImV", n:"Imagen & Veo — Media Generation", c:"ai", d:"Google's media generation models on Vertex AI: Imagen for high-quality images and Veo for video generation from text and image prompts. They bring brand, marketing and product-visual workflows into the same governed platform as the rest of the AI estate.", f:"Generated images from Google's media models can carry SynthID watermarking, supporting provenance and authenticity checks.", l:"Useful and fast-moving; set brand and rights policies before marketing teams discover these tools, not after the first campaign."},
+{s:"Doc", n:"Document AI", c:"ai", d:"A suite of document-understanding services that extract structured data from invoices, receipts, contracts, forms and identity documents using pre-trained and custom processors. It is one of Google Cloud's most immediately bankable AI services, aimed squarely at back-office automation.", f:"Document AI processors are trained for specific document types, so invoice fields such as totals and tax IDs are extracted as structured data rather than raw text.", l:"A classic quick-win portfolio: pick one high-volume document flow, measure accuracy against your human baseline, then scale by document type."},
+{s:"ViS", n:"Vision AI & Speech APIs", c:"ai", d:"Pre-trained API services for image labelling, OCR, face and landmark detection, speech-to-text and text-to-speech across many languages. They let teams add perception capabilities in days without training models, and they are common components in contact-centre and media pipelines.", f:"Google's speech-to-text supports well over a hundred languages and variants, reflecting Google's consumer-scale speech data advantage.", l:"Buy these capabilities, do not build them; reserve model-building budget for problems where your data is genuinely differentiating."},
+{s:"Ag", n:"Google Agentspace", c:"ai", d:"Google's enterprise search and agent product that connects Gemini-powered assistants to company data across systems such as Drive, SharePoint, Jira and Salesforce, with a gallery of pre-built and custom agents. It is Google's answer to the enterprise AI assistant market, aimed at knowledge workers rather than developers.", f:"Agentspace unifies enterprise search and agents in one product, combining Google's search technology with Gemini reasoning over company data.", l:"Judge Agentspace on connector quality for your actual systems; the demo is always better than the messy-permissions reality, so pilot with real access controls."},
+{s:"VPC", n:"VPC — Virtual Private Cloud", c:"network", d:"The network that defines how Google Cloud resources connect, with a distinctive global design: one VPC can span every region, with subnets placed regionally inside it. Global VPCs simplify multi-region architecture compared with per-region networks, though they demand disciplined firewall and routing governance.", f:"Unlike the other hyperscalers, a Google Cloud VPC is global by default; subnets, not networks, are the regional unit.", l:"Design the network foundation before the first workload lands; retrofitting VPC topology around live systems is one of the most expensive forms of cloud technical debt."},
+{s:"CLB", n:"Cloud Load Balancing", c:"network", d:"Google's global and regional load balancing services, including the Application Load Balancer that fronts production systems with a single global anycast IP address. Built on the same infrastructure that fronts Google's own properties, it scales without pre-warming and absorbs traffic spikes invisibly.", f:"A single global anycast IP can front a service deployed across several continents, with traffic steered to the nearest healthy region automatically.", l:"Global load balancing is a genuine Google differentiator for latency-sensitive global products; use it as an architectural argument, not just a component choice."},
+{s:"CDN", n:"Cloud CDN — Content Delivery Network", c:"network", d:"A content delivery network that caches web and media content at Google's global edge locations, integrated with Cloud Load Balancing and signed URLs for private content. It reduces origin load and latency using the same edge footprint that serves YouTube and Google Search.", f:"Cloud CDN rides Google's global edge network of points of presence, shared with Google's own consumer services.", l:"For media and global web properties this is nearly free performance; verify cache hit ratios, because a misconfigured CDN silently becomes an expensive pass-through."},
+{s:"DNS", n:"Cloud DNS", c:"network", d:"A managed, authoritative DNS service running on Google's anycast network, integrated with VPC private zones and domain registration workflows. It is deliberately unglamorous infrastructure with an unusually strong availability commitment.", f:"Cloud DNS carries a 100 percent availability service-level agreement, a commitment very few DNS providers match.", l:"DNS is a single point of organisational failure hiding in plain sight; insist on change control and break-glass procedures whoever operates it."},
+{s:"Arm", n:"Cloud Armor", c:"network", d:"Google Cloud's DDoS protection and web application firewall service, attached at the load balancer to filter attacks at the edge before they reach applications. Its Adaptive Protection feature uses machine learning to learn normal traffic patterns and flag anomalies.", f:"Cloud Armor's protections draw on the same mitigation experience that defends Google's own properties against some of the largest recorded DDoS attacks.", l:"Edge protection belongs in the base platform design; bolting on a WAF after an incident is the most common and most avoidable pattern in cloud security."},
+{s:"CIn", n:"Cloud Interconnect", c:"network", d:"Private, dedicated connectivity between your data centres or offices and Google Cloud, in Dedicated form over physical circuits or Partner form through a service provider, with Cloud VPN for lighter needs. It provides the predictable bandwidth and latency that migrations and hybrid estates depend on.", f:"Dedicated Interconnect supports 10 Gbps and 100 Gbps circuits and pairs with Cloud Router's BGP sessions for dynamic hybrid routing.", l:"Connectivity lead times, not compute, set most migration timelines; order circuits in month one of any serious Google Cloud programme."},
+{s:"NIC", n:"Network Intelligence Center", c:"network", d:"A single console for network observability and troubleshooting, combining topology visualisation, connectivity tests, performance dashboards and firewall insights. It addresses the least loved part of cloud operations: proving whether the network is actually the problem.", f:"Its Connectivity Tests can verify reachability between endpoints by analysing configuration, without sending live traffic, shortening fault isolation dramatically.", l:"Underrated in evaluations, invaluable in incidents; make sure your network team knows it exists before they build parallel tooling."},
+{s:"PSC", n:"Private Service Connect", c:"network", d:"A networking capability that lets consumers reach Google APIs and third-party or internal services through private endpoints inside their own VPC, without exposing traffic to the public internet. It underpins how SaaS providers publish services on Google Cloud and how enterprises consume them privately.", f:"Private Service Connect lets service producers and consumers in entirely separate organisations connect over private addressing without VPC peering.", l:"This is the privacy-preserving pattern regulators like to see; standardise on it for consuming partner and SaaS services rather than public endpoints."},
+{s:"IAM", n:"IAM — Identity and Access Management", c:"security", d:"The control plane for who can do what on Google Cloud, organised around an organisation, folder and project hierarchy with policies inherited downward and a rich set of predefined and custom roles. Google's identity model is regarded as cleaner than its rivals, but its power means careless grants at high levels cascade everywhere.", f:"Google Cloud IAM policies are inherited down the resource hierarchy, so a single grant at organisation level can apply to every project beneath it.", l:"Audit IAM from the top of the hierarchy down; the dangerous grants are almost never in the project a team is looking at."},
+{s:"OrP", n:"Organization Policies", c:"security", d:"Guardrail constraints applied across the organisation, folders or projects, such as restricting which regions resources can be created in, blocking public IP addresses or enforcing uniform access controls. They turn security and compliance rules from documents into technically enforced boundaries.", f:"Organisation policy constraints are evaluated at resource creation time, preventing non-compliant deployments rather than merely reporting them afterwards.", l:"This is where data-residency and sovereignty promises become real; if a rule is not an organisation policy, it is a hope."},
+{s:"SM", n:"Secret Manager", c:"security", d:"A managed service for storing, versioning and controlling access to API keys, passwords, certificates and other secrets, with rotation support and full audit logging. It exists to end the quiet scandal of credentials embedded in code, images and configuration files.", f:"Access to secrets in Secret Manager can be fully audit-logged, giving security teams a record of which workload read which credential and when.", l:"Mandate Secret Manager in engineering standards and scan repositories for embedded secrets; the tool only helps if the old copies are actually deleted."},
+{s:"KMS", n:"Cloud KMS — Key Management Service", c:"security", d:"A managed key management service for creating, rotating and governing encryption keys, with options for software keys, Cloud HSM hardware-backed keys and external keys held outside Google. Customer-managed keys give regulated organisations the control and revocation leverage that default encryption does not.", f:"Cloud KMS supports envelope encryption across most Google Cloud services, and its external key manager option lets keys remain in your own hardware security module.", l:"Decide your key strategy per data classification, not per project; inconsistent key adoption creates audit pain that surfaces at the worst moment."},
+{s:"SCC", n:"Security Command Center", c:"security", d:"Google Cloud's central security and risk management platform, aggregating findings on misconfigurations, vulnerabilities and threats, with attack path simulation in its premium tiers. It gives security leadership a single risk picture across the estate instead of dozens of tool consoles.", f:"Its attack exposure simulation models how an attacker could chain misconfigurations to reach high-value assets, prioritising fixes by real risk rather than raw severity counts.", l:"Judge it against third-party cloud security platforms on finding quality for your estate; whichever wins, one risk console must be the single source of truth."},
+{s:"Chr", n:"Chronicle Security Operations", c:"security", d:"Google's cloud-native security operations platform for ingesting and searching petabytes of security telemetry at speed, paired with threat intelligence from Mandiant and VirusTotal. It is the SIEM and SOAR foundation of Google's security portfolio and a credible challenger to incumbent platforms.", f:"Google strengthened Chronicle by acquiring Mandiant in 2022, adding world-class threat intelligence and incident response expertise to the platform.", l:"Chronicle's economics favour very large telemetry volumes; run the maths on your log ingestion honestly, because SIEM cost surprises are legendary."},
+{s:"AW", n:"Assured Workloads", c:"security", d:"A set of controls that create regulated workload folders on Google Cloud with enforced data residency, personnel access restrictions and sovereignty constraints for regimes such as FedRAMP and European public-sector requirements. It packages compliance boundaries as configuration rather than as a separate cloud.", f:"Assured Workloads enforces controls through organisation policy and access transparency, including restrictions on which Google personnel can access customer data, and from where.", l:"The fastest route to regulated workloads on Google Cloud; confirm your specific regime is supported before architects assume it."},
+{s:"BCE", n:"BeyondCorp Enterprise", c:"security", d:"Google's zero trust access product, built on the BeyondCorp model Google developed for its own workforce, giving users secure access to internal applications based on identity and device context without a traditional VPN. It turns a decade of Google's internal practice into a purchasable product.", f:"BeyondCorp began as Google's internal programme to eliminate the privileged corporate intranet, and its published design reshaped industry thinking on zero trust.", l:"Strategically important beyond Google Cloud itself: it can front applications anywhere, making it a plausible enterprise-wide zero trust standard."},
+{s:"Apg", n:"Apigee — API Management", c:"dev", d:"Google Cloud's full-lifecycle API management platform for designing, securing, publishing and analysing APIs, used by enterprises to productise integrations and partner ecosystems. Apigee is the heavyweight option, aimed at organisations where APIs are a business channel rather than plumbing.", f:"Google acquired Apigee in 2016, and the platform is a fixture in large banking, retail and telecom API programmes.", l:"Justify Apigee on API-as-product ambitions; for internal service plumbing, lighter gateways cost a fraction as much."},
+{s:"CB", n:"Cloud Build", c:"dev", d:"Google Cloud's serverless continuous integration service that executes build pipelines in containers on demand, with triggers from source repositories and private pool options for protected environments. It removes CI infrastructure management while integrating tightly with Artifact Registry and Cloud Deploy.", f:"Cloud Build pipelines are defined as containerised steps, so any tool that runs in a container can become a build step.", l:"A perfectly capable default CI on Google Cloud; consolidate here unless your existing enterprise CI estate is a deliberate standard."},
+{s:"CD", n:"Cloud Deploy", c:"dev", d:"A managed continuous delivery service that promotes container images through environments such as test, staging and production on GKE or Cloud Run, with approvals, rollbacks and delivery pipelines defined as code using Skaffold.", f:"Cloud Deploy separates the delivery pipeline from the build, so one verified image is promoted unchanged across environments.", l:"Promotion discipline is where release risk actually lives; Cloud Deploy's approval gates are a governance feature, not bureaucracy."},
+{s:"Fb", n:"Firebase", c:"dev", d:"Google's application development platform for mobile and web apps, bundling authentication, Firestore, hosting, cloud functions, analytics and crash reporting into a developer-friendly package. Many consumer apps start on Firebase and only later meet the wider Google Cloud platform it is built on.", f:"Google acquired Firebase in 2014; its services run on Google Cloud infrastructure, and its projects are visible in both consoles.", l:"Superb for product velocity; watch the moment a Firebase app becomes strategically important, because enterprise controls and cost visibility need deliberate attention then."},
+{s:"CW", n:"Cloud Workstations", c:"dev", d:"Managed, preconfigured cloud development environments that give engineers consistent, policy-controlled workstations accessible from a browser or local IDE. They address security and onboarding at once: code stays in the cloud, and a new engineer's environment is ready in minutes.", f:"Cloud Workstations environments are defined as container images, so teams can version and standardise their entire toolchain.", l:"A quiet productivity and security win for distributed teams; measure it on onboarding time and endpoint risk, not licence cost alone."},
+{s:"AR", n:"Artifact Registry", c:"dev", d:"Google Cloud's managed repository for container images and language packages, with vulnerability scanning and regional storage, succeeding the older Container Registry. It is a small service with an outsized security role as the gate through which production artefacts pass.", f:"Artifact Registry integrates with binary authorisation, so clusters can refuse to run images that were not built and scanned through approved pipelines.", l:"Treat the registry as a control point, not a filing cabinet; admission rules here are among the cheapest supply-chain security wins available."},
+{s:"CMn", n:"Cloud Monitoring", c:"manage", d:"Google Cloud's observability service for metrics, dashboards, uptime checks and SLO-based alerting across cloud and hybrid workloads, descended from the Stackdriver platform Google acquired. Its SLO tooling connects monitoring directly to the reliability language executives already use.", f:"Cloud Monitoring originated as Stackdriver, a startup Google acquired in 2014, and its error-budget alerting helped popularise SLO practice across the industry.", l:"Standardise on SLO-based alerts and retire noisy threshold alerts; alert quality determines whether on-call teams trust the platform."},
+{s:"CLg", n:"Cloud Logging", c:"manage", d:"A fully managed log management service that ingests application, system and audit logs in real time, with log-based metrics, sinks and BigQuery-backed analysis. Audit logs in particular are a compliance foundation, recording administrative activity and data access across the estate.", f:"Cloud Logging can route logs into BigQuery through Log Analytics, letting teams query operational history with the same SQL they use for business data.", l:"Decide log retention by compliance need and cost, in that order; unlimited hot log retention is a silent budget line that grows with every service."},
+{s:"Bil", n:"Cloud Billing & Cost Management", c:"manage", d:"The set of billing reports, budgets, alerts, cost tables and BigQuery billing exports through which Google Cloud spending is observed and governed. Its most important feature is the detailed billing export to BigQuery, which lets finance and engineering analyse cost with the same rigour as product data.", f:"Google Cloud's detailed billing export lands in BigQuery, so cost can be joined with deployment and usage data to produce true unit economics.", l:"Turn on the BigQuery billing export on day one and assign every project a business owner; cost governance fails socially before it fails technically."},
+{s:"CUD", n:"Committed Use Discounts", c:"manage", d:"Discounts earned by committing to use a defined amount of compute or spend for one or three years, in resource-based form for specific machine resources or spend-based form across a billing account. They are the primary structural saving on Google Cloud and the main way disciplined buyers beat list price.", f:"Committed use discounts can reduce eligible compute costs by more than half on three-year commitments, and spend-based commitments apply flexibly across projects.", l:"Commit to the floor of your usage, never the peak; an over-commitment converts a discount programme into a multi-year penalty."},
+{s:"SUD", n:"Sustained Use Discounts", c:"manage", d:"Automatic discounts applied when Compute Engine instances run for a significant portion of the month, with no commitment or action required. They are a distinctly Google pricing behaviour that rewards steady-state workloads simply for existing.", f:"Sustained use discounts apply incrementally and automatically, reaching their maximum once an instance runs for most of the billing month.", l:"A genuine Google pricing advantage for always-on workloads; make sure your cost models credit it before comparing instance prices with rival clouds."},
+{s:"Ant", n:"GKE Enterprise (Anthos)", c:"manage", d:"The enterprise tier of Google's Kubernetes platform, formerly branded Anthos, adding fleet management, centralised policy and security controls, service mesh and unified operations across GKE clusters wherever they run. It is aimed at organisations operating many clusters across clouds and data centres as one estate.", f:"GKE Enterprise is the evolution of Anthos, Google's earlier hybrid and multi-cloud platform brand, folded into the GKE family in 2023.", l:"Only large, multi-cluster estates extract its value; a single GKE cluster does not need an enterprise fleet layer on top."},
+{s:"Mkt", n:"Google Cloud Marketplace", c:"manage", d:"The catalogue of third-party and Google software and services purchasable through your Google Cloud agreement, from security tools to databases and AI models. Beyond convenience, marketplace purchasing consolidates procurement into one contract and one invoice.", f:"Eligible Marketplace purchases can count toward committed spend agreements, which turns routine software buying into commitment fulfilment.", l:"Route third-party purchases here deliberately; finance will value the consolidated commitment credit more than engineering values the convenience."},
+{s:"Sov", n:"Google Sovereign Cloud Offerings", c:"manage", d:"Google's portfolio of sovereignty solutions, including Google Distributed Cloud in connected and air-gapped forms and partner-operated sovereign clouds in several countries, designed to meet data residency, operational control and jurisdictional requirements. They let regulated and public-sector organisations use Google technology under local control.", f:"Some European sovereign offerings are operated by local partners, so operational control sits inside the jurisdiction rather than with Google alone.", l:"Sovereign requirements vary enormously by country and sector; validate the exact operating model and support chain, because the word sovereign on a slide covers very different realities."}
+];
+const grid=document.getElementById('grid');
+const detail=document.getElementById('detail');
+const overlay=document.getElementById('overlay');
+const countEl=document.getElementById('count');
+let activeCat=null, selected=null;
+function render(){
+  grid.innerHTML='';
+  TERMS.forEach((t,i)=>{
+    const b=document.createElement('button');
+    b.className='tile'; b.type='button'; b.setAttribute('role','listitem');
+    b.style.background=CATS[t.c].color; b.dataset.cat=t.c;
+    b.dataset.search=(t.n+' '+t.s+' '+t.d+' '+CATS[t.c].name).toLowerCase();
+    b.innerHTML='<span class="no">'+(i+1)+'</span><span class="sym">'+t.s+'</span><span class="nm">'+t.n+'</span>';
+    b.addEventListener('click',()=>show(t,i,b));
+    grid.appendChild(b);
+  });
+  updateCount(TERMS.length);
+}
+function updateCount(n){countEl.textContent=n+' of '+TERMS.length+' terms shown';}
+function closeDetail(){
+  const el=selected;
+  if(selected)selected.classList.remove('selected');
+  selected=null; selectedIdx=-1;
+  detail.classList.remove('open'); overlay.classList.remove('open');
+  document.body.style.overflow='';
+  if(el && el.focus)el.focus({preventScroll:true});
+}
+let selectedIdx=-1;
+function show(t,i,el){
+  if(selectedIdx===i){closeDetail();selectedIdx=-1;return;}
+  if(selected)selected.classList.remove('selected');
+  selected=el; selectedIdx=i; if(el)el.classList.add('selected');
+  let html='<button class="zoom-close" type="button" onclick="closeDetail()" aria-label="Close">✕</button>';
+  html+='<div class="d-no">Element '+(i+1)+' of '+TERMS.length+'</div>';
+  html+='<span class="d-sym" style="background:'+CATS[t.c].color+'">'+t.s+'</span>';
+  html+='<h2>'+t.n+'</h2><div class="d-cat" style="color:'+CATS[t.c].color+'">'+CATS[t.c].name+'</div>';
+  html+='<p>'+t.d+'</p>';
+  if(t.f)html+='<div class="box formula"><b>Key fact</b>'+t.f+'</div>';
+  if(t.l)html+='<div class="box lens"><b>Leader lens</b>'+t.l+'</div>';
+  detail.innerHTML=html;
+  detail.classList.add('open'); overlay.classList.add('open');
+  document.body.style.overflow='hidden';
+}
+overlay.addEventListener('click',closeDetail);
+const legend=document.getElementById('legend');
+Object.keys(CATS).forEach(k=>{
+  const c=document.createElement('button'); c.type='button'; c.className='chip'; c.dataset.cat=k;
+  c.innerHTML='<span class="dot" style="background:'+CATS[k].color+'"></span>'+CATS[k].name;
+  c.addEventListener('click',()=>{
+    activeCat = activeCat===k ? null : k;
+    document.querySelectorAll('.chip').forEach(x=>x.classList.toggle('active',x.dataset.cat===activeCat));
+    applyFilter();
+  });
+  legend.appendChild(c);
+});
+function applyFilter(){
+  const q=document.getElementById('search').value.trim().toLowerCase();
+  let n=0;
+  document.querySelectorAll('.tile').forEach(tile=>{
+    const matchQ=!q || tile.dataset.search.includes(q);
+    const matchC=!activeCat || tile.dataset.cat===activeCat;
+    tile.classList.toggle('hidden',!matchQ);
+    tile.classList.toggle('dim',!!activeCat && !matchC && matchQ);
+    if(matchQ)n++;
+  });
+  updateCount(n);
+}
+document.getElementById('search').addEventListener('input',applyFilter);
+document.getElementById('resetBtn').addEventListener('click',()=>{
+  document.getElementById('search').value=''; activeCat=null;
+  document.querySelectorAll('.chip').forEach(x=>x.classList.remove('active')); applyFilter();
+});
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeDetail();});
+/* Theme toggle: saved choice wins, otherwise dark (the original look) */
+const themeBtn=document.getElementById('themeToggle');
+function applyTheme(th){
+  document.documentElement.setAttribute('data-theme',th);
+  themeBtn.textContent = th==='light' ? '☾' : '☀';
+  try{localStorage.setItem('google_cloud_leaders_theme',th);}catch(e){}
+}
+let savedTheme='dark';
+try{savedTheme=localStorage.getItem('google_cloud_leaders_theme')||'dark';}catch(e){}
+applyTheme(savedTheme==='light'?'light':'dark');
+themeBtn.addEventListener('click',()=>{
+  const cur=document.documentElement.getAttribute('data-theme')==='light'?'light':'dark';
+  applyTheme(cur==='light'?'dark':'light');
+});
+render();
+</script>
+</body>
+</html>

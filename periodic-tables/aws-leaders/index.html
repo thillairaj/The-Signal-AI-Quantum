@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AWS for Leaders — The Periodic Table</title>
+<meta name="description" content="60 AWS services and concepts: EC2, S3, Lambda, EKS, Bedrock, Savings Plans and the Well-Architected Framework — the service map, cost mechanics and lock-in watch-outs.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="AWS for Leaders — The Periodic Table">
+<meta property="og:description" content="60 AWS services and concepts: EC2, S3, Lambda, EKS, Bedrock, Savings Plans and the Well-Architected Framework — the service map, cost mechanics and lock-in watch-outs.">
+<meta property="og:url" content="https://thillairaj.github.io/The-Signal-AI-Quantum/periodic-tables/aws-leaders/">
+<style>
+  :root{--bg:#071527;--panel:#0b213f;--panel2:#0e2a52;--ink:#eef4ff;--muted:#9db4d4;--line:rgba(255,255,255,.14)}
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:'Segoe UI',system-ui,-apple-system,Arial,sans-serif;background:radial-gradient(1200px 600px at 20% -10%,#12325e 0%,var(--bg) 55%);color:var(--ink);min-height:100vh}
+  header{padding:34px 22px 10px;text-align:center;max-width:1200px;margin:0 auto}
+  .kicker{letter-spacing:.35em;font-size:11px;color:#7dd3fc;text-transform:uppercase;font-weight:700}
+  h1{font-size:clamp(28px,5vw,48px);line-height:1.08;margin:10px 0 10px;font-weight:800}
+  h1 span{color:#fbbf24}
+  .sub{color:var(--muted);max-width:820px;margin:0 auto;font-size:15.5px;line-height:1.55}
+  .principle{margin:18px auto 4px;max-width:880px;background:rgba(251,191,36,.08);border:1px solid rgba(251,191,36,.35);border-radius:12px;padding:12px 16px;font-size:14px;line-height:1.55;color:#fde68a}
+  .toolbar{position:sticky;top:0;z-index:40;background:rgba(7,21,39,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line);padding:12px 16px}
+  .toolbar-in{max-width:1280px;margin:0 auto;display:flex;flex-wrap:wrap;gap:10px;align-items:center;justify-content:center}
+  #search{flex:1 1 260px;max-width:420px;padding:11px 14px;border-radius:10px;border:1px solid var(--line);background:var(--panel);color:var(--ink);font-size:15px;outline:none}
+  #search:focus{border-color:#38bdf8}
+  .count{color:var(--muted);font-size:13.5px}
+  .btn{padding:10px 14px;border-radius:10px;border:1px solid var(--line);background:var(--panel2);color:var(--ink);cursor:pointer;font-size:13.5px;font-weight:600}
+  .btn:hover{border-color:#38bdf8}
+  #legend{max-width:1280px;margin:14px auto 0;padding:0 16px;display:flex;flex-wrap:wrap;gap:8px;justify-content:center}
+  .chip{display:inline-flex;align-items:center;gap:7px;padding:7px 12px;border-radius:999px;border:1px solid var(--line);background:var(--panel);color:var(--ink);font-size:12.5px;cursor:pointer;font-weight:600;transition:all .15s}
+  .chip .dot{width:11px;height:11px;border-radius:3px}
+  .chip:hover{transform:translateY(-1px);border-color:#fff}
+  .chip.active{outline:2px solid #fff;outline-offset:1px}
+  main{max-width:1280px;margin:0 auto;padding:20px 16px 30px;display:grid;grid-template-columns:1fr 340px;gap:20px;align-items:start}
+  #grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(96px,1fr));gap:8px}
+  .tile{border:none;border-radius:10px;padding:8px 6px 7px;min-height:96px;color:#fff;cursor:pointer;text-align:left;position:relative;transition:transform .16s ease,filter .16s ease,box-shadow .16s ease,opacity .16s;display:flex;flex-direction:column;box-shadow:inset 0 0 0 1px rgba(255,255,255,.22)}
+  .tile .no{font-size:10.5px;font-weight:700;opacity:.85}
+  .tile .sym{font-size:24px;font-weight:800;line-height:1.05;margin:auto 0 2px;letter-spacing:.01em;word-break:break-word}
+  .tile .nm{font-size:10px;line-height:1.25;font-weight:600;opacity:.95}
+  .tile:hover,.tile:focus-visible{transform:scale(1.09) translateY(-4px);filter:brightness(1.28) saturate(1.25);box-shadow:0 12px 28px rgba(0,0,0,.5),0 0 0 2px #fff;z-index:5;outline:none}
+  .tile.selected{box-shadow:0 0 0 3px #fff,0 12px 28px rgba(0,0,0,.5);filter:brightness(1.2)}
+  .tile.dim{opacity:.13;filter:grayscale(.6)}
+  .tile.hidden{display:none}
+  #detail{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:22px;position:sticky;top:132px;min-height:300px}
+  #detail .d-no{font-size:12px;color:var(--muted);letter-spacing:.15em;text-transform:uppercase;font-weight:700}
+  #detail .d-sym{display:inline-flex;align-items:center;justify-content:center;min-width:74px;height:74px;padding:0 10px;border-radius:14px;font-size:30px;font-weight:800;color:#fff;margin:12px 0}
+  #detail h2{font-size:24px;line-height:1.2;margin-bottom:6px}
+  #detail .d-cat{font-size:12.5px;font-weight:700;text-transform:uppercase;letter-spacing:.12em;margin-bottom:14px}
+  #detail p{font-size:15px;line-height:1.65;color:#dbe7fa}
+  #detail .box{margin-top:14px;border-radius:10px;padding:12px 14px;font-size:14px;line-height:1.55}
+  #detail .formula{background:rgba(56,189,248,.1);border:1px solid rgba(56,189,248,.4);color:#bae6fd}
+  #detail .lens{background:rgba(251,191,36,.08);border:1px solid rgba(251,191,36,.35);color:#fde68a}
+  #detail .box b{display:block;font-size:11px;letter-spacing:.18em;text-transform:uppercase;margin-bottom:5px;opacity:.85}
+  .hint{color:var(--muted);font-size:14.5px;line-height:1.6}
+  section.below{max-width:1280px;margin:0 auto;padding:6px 16px 26px}
+  section.below h3{font-size:22px;margin:18px 0 12px}
+  .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:12px}
+  .card{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:16px}
+  .card h4{font-size:15px;margin-bottom:7px;color:#7dd3fc}
+  .card p,.card li{font-size:14px;line-height:1.6;color:#dbe7fa}
+  .card ul{padding-left:18px}
+  .example{background:linear-gradient(135deg,#0e2a52,#12325e);border:1px solid rgba(251,191,36,.4)}
+  .example h4{color:#fbbf24}
+  .big{font-size:19px;font-weight:800;color:#fff;margin:6px 0}
+  footer{max-width:1280px;margin:0 auto;padding:10px 16px 38px;color:var(--muted);font-size:12.5px;line-height:1.6;text-align:center}
+  #overlay{display:none}
+  /* placeholder, zoom view styles are at the end of this stylesheet */
+  /* Theme toggle + sticky legend + back button (added Oct 21) */
+  header{position:relative}
+  .theme-toggle{position:absolute;top:16px;right:16px;width:44px;height:44px;border-radius:50%;border:1px solid var(--line);background:var(--panel2);color:#fbbf24;font-size:19px;cursor:pointer;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 14px rgba(0,0,0,.35)}
+  .theme-toggle:hover{transform:scale(1.08)}
+  #legend{flex-wrap:nowrap;overflow-x:auto;justify-content:flex-start;padding:10px 2px 3px;scrollbar-width:thin}
+  .chip{white-space:nowrap;flex:0 0 auto}
+  .backbtn{display:inline-flex;align-items:center;gap:6px;padding:9px 14px;border-radius:999px;border:1px solid var(--line);background:var(--panel2);color:var(--ink);font-size:13.5px;font-weight:700;cursor:pointer;margin-bottom:14px}
+  .backbtn:hover{border-color:#38bdf8}
+  #detail{top:168px}
+  /* Light theme */
+  html[data-theme="light"] body{background:radial-gradient(1200px 600px at 20% -10%,#e8eefc 0%,#FAF9F6 55%);color:#17293f}
+  html[data-theme="light"] h1{color:#0b213f}
+  html[data-theme="light"] .sub{color:#4d6482}
+  html[data-theme="light"] .principle{background:#fff8e1;border-color:#e5c15c;color:#6b5510}
+  html[data-theme="light"] .toolbar{background:rgba(250,249,246,.95);border-color:#ddd5c0}
+  html[data-theme="light"] #search{background:#fff;color:#17293f;border-color:#cfd8e3}
+  html[data-theme="light"] .btn{background:#fff;color:#17293f;border-color:#cfd8e3}
+  html[data-theme="light"] .chip{background:#fff;color:#17293f;border-color:#cfd8e3}
+  html[data-theme="light"] .chip.active{outline-color:#0b213f}
+  html[data-theme="light"] .count{color:#5a6f88}
+  html[data-theme="light"] #detail{background:#fff;border-color:#e0d9c6}
+  html[data-theme="light"] #detail p{color:#33475e}
+  html[data-theme="light"] #detail .d-no{color:#5a6f88}
+  html[data-theme="light"] #detail h2{color:#0b213f}
+  html[data-theme="light"] #detail .formula{background:#e8f4fd;border-color:#9fd0f5;color:#124d75}
+  html[data-theme="light"] #detail .lens{background:#fff8e1;border-color:#e5c15c;color:#6b5510}
+  html[data-theme="light"] .backbtn{background:#eef3fa;color:#17293f;border-color:#cfd8e3}
+  html[data-theme="light"] .hint{color:#5a6f88}
+  html[data-theme="light"] .card{background:#fff;border-color:#e0d9c6}
+  html[data-theme="light"] .card p,html[data-theme="light"] .card li{color:#33475e}
+  html[data-theme="light"] section.below h3{color:#0b213f}
+  html[data-theme="light"] .example{background:linear-gradient(135deg,#fff8e1,#fdf3d0);border-color:#e5c15c}
+  html[data-theme="light"] .example .big{color:#17293f}
+  html[data-theme="light"] footer{color:#5a6f88}
+  html[data-theme="light"] .theme-toggle{background:#fff;color:#d97706;border-color:#cfd8e3}
+  @media(max-width:900px){
+    main{grid-template-columns:1fr}
+    #detail{position:fixed;inset:auto 0 0 0;z-index:60;border-radius:18px 18px 0 0;max-height:72vh;overflow:auto;transform:translateY(105%);transition:transform .25s ease;box-shadow:0 -12px 40px rgba(0,0,0,.6)}
+    #detail.open{transform:translateY(0)}
+    #overlay{display:block;position:fixed;inset:0;background:rgba(0,0,0,.55);z-index:55;opacity:0;pointer-events:none;transition:opacity .25s}
+    #overlay.open{opacity:1;pointer-events:auto}
+    #grid{grid-template-columns:repeat(auto-fill,minmax(82px,1fr))}
+    .tile{min-height:86px}.tile .sym{font-size:20px}
+  }
+  /* Zoom reading view — same pattern as the Quantum / AI Deck cards (Oct 21) */
+  main{grid-template-columns:1fr}
+  #overlay{display:block;position:fixed;inset:0;background:rgba(3,10,20,.62);z-index:55;opacity:0;pointer-events:none;transition:opacity .22s ease}
+  #overlay.open{opacity:1;pointer-events:auto}
+  #detail{position:fixed;top:50%;left:50%;right:auto;bottom:auto;width:min(560px,92vw);max-width:92vw;max-height:86vh;overflow:auto;z-index:60;border-radius:18px;padding:26px;opacity:0;pointer-events:none;transform:translate(-50%,-47%) scale(.88);transition:transform .24s ease,opacity .24s ease;box-shadow:0 30px 80px rgba(0,0,0,.55)}
+  #detail.open{opacity:1;pointer-events:auto;transform:translate(-50%,-50%) scale(1)}
+  .zoom-close{position:absolute;top:12px;right:12px;width:38px;height:38px;border-radius:50%;border:1px solid var(--line);background:var(--panel2);color:var(--ink);font-size:15px;cursor:pointer;display:flex;align-items:center;justify-content:center;z-index:2}
+  .zoom-close:hover{border-color:#38bdf8;transform:scale(1.08)}
+  html[data-theme="light"] .zoom-close{background:#eef3fa;color:#17293f;border-color:#cfd8e3}
+  @media(max-width:900px){#detail{padding:22px 18px}}
+</style>
+</head>
+<body>
+<header>
+  <div style="text-align:left;max-width:1200px;margin:0 auto 14px"><a href="../../#learn" style="color:inherit;opacity:.75;text-decoration:none;font-size:13.5px;font-weight:600">← Back to Learning Spaces</a></div>
+  <button class="theme-toggle" id="themeToggle" type="button" aria-label="Switch light or dark theme" title="Switch light / dark theme">☀</button>
+  <div class="kicker">The AWS Periodic Table</div>
+  <h1>AWS for <span>Leaders</span></h1>
+  <p class="sub">The Amazon Web Services map a leader actually buys from: the core services, the discount mechanics and the strategy decisions, in plain language.</p>
+  <div class="principle"><strong>Core principle:</strong> AWS rewards commitment and punishes sprawl. The catalogue is enormous, but most estates run on a small core of services; the leaders who get value know that core cold, commit to usage where demand is predictable to earn discounts, and stay clear-eyed about the lock-in every managed service creates. Breadth is not a strategy — disciplined standardisation is.</div>
+</header>
+
+<div class="toolbar">
+  <div class="toolbar-in">
+    <input id="search" type="search" placeholder="Search a term — try EC2, S3, Lambda, Bedrock, Savings Plans…" aria-label="Search terms">
+    <span class="count" id="count"></span>
+    <button class="btn" id="resetBtn" type="button">Show all</button>
+  </div>
+  <div id="legend" aria-label="Category filter"></div>
+</div>
+
+<main>
+  <div id="grid" role="list"></div>
+  <aside id="detail" aria-live="polite">
+    <div class="d-no">Element detail</div>
+    <p class="hint" style="margin-top:12px">Click any element in the table to zoom into its full explanation.<br><br>Start with: <strong>S3, Lambda, EC2, Bedrock</strong>.</p>
+  </aside>
+</main>
+<div id="overlay"></div>
+
+<section class="below"><h3>Six things a leader should hold on to about AWS</h3><div class="cards"><div class="card"><h4>Most estates run on a small core</h4><p>EC2, S3, VPC, IAM, RDS, Lambda and CloudWatch cover the majority of real workloads. Master the core before chasing the catalogue's long tail.</p></div><div class="card"><h4>Discounts are earned by commitment</h4><p>Savings Plans and reservations convert predictable usage into lower prices — up to 72% versus on-demand on AWS's published figures. Uncommitted, variable estates pay the premium rate forever.</p></div><div class="card"><h4>Every managed service is a lock-in decision</h4><p>Aurora, DynamoDB and Bedrock save real effort and deepen dependence in the same motion. Take those decisions explicitly, workload by workload.</p></div><div class="card"><h4>Identity is the perimeter</h4><p>IAM, Organizations and CloudTrail decide whether your estate is governable. Most AWS security failures are misconfigurations on the customer's side of the shared responsibility line.</p></div><div class="card"><h4>Tagging is a financial control</h4><p>Without enforced cost-allocation tags you cannot say who spent what, and every cost conversation becomes an argument. Tags are policy, not housekeeping.</p></div><div class="card"><h4>The bill is a management report</h4><p>Cost Explorer trends, budget alerts and Trusted Advisor findings together tell you how disciplined your engineering organisation is. Read them monthly.</p></div></div><h3>A leader's AWS checklist</h3><div class="cards"><div class="card"><h4>Monthly</h4><ul><li>Review Cost Explorer by account and service; explain the top three movements</li><li>Check Savings Plans coverage and utilisation against the stable baseline</li><li>Confirm every account has a budget alert with a named owner</li><li>Scan Trusted Advisor for new security and idle-resource findings</li></ul></div><div class="card"><h4>Quarterly</h4><ul><li>Audit IAM: no root usage, least privilege, stale access removed</li><li>Verify CloudTrail is on everywhere and GuardDuty has no suppressed accounts</li><li>Test a backup restore, not just a backup report</li><li>Re-run a Well-Architected review on one top workload and close high-risk items</li><li>Review the service inventory for sprawl: new services adopted, duplicates retired</li></ul></div><div class="card example"><h4>An honest note</h4><p>This table is a map, not a recommendation. AWS offers several ways to solve most problems, and the right choice depends on your team's skills, your existing commitments and your tolerance for lock-in. Positions are as of October 2026 and services evolve quickly — verify before you commit budget.</p></div></div></section>
+
+<footer>An educational map of the AWS catalogue for business and technology leaders. Service positions, names and capabilities as of October 2026; AWS changes services frequently, so verify current details before procurement or architecture decisions.<div style="margin-top:12px;font-size:13px">Curated by Thillai Raj Thanam Jeya Veera Raj · <a href="https://www.linkedin.com/in/thillairaj" target="_blank" rel="noopener" style="color:inherit;text-decoration:underline">Follow on LinkedIn</a></div></footer>
+
+<script>
+const CATS = { compute:{name:"Compute",color:"#ea580c"}, storage:{name:"Storage",color:"#65a30d"}, data:{name:"Databases & Analytics",color:"#4f46e5"}, network:{name:"Networking & Content Delivery",color:"#0284c7"}, security:{name:"Security & Identity",color:"#dc2626"}, ai:{name:"AI & Machine Learning",color:"#a21caf"}, dev:{name:"Developer, Integration & DevOps",color:"#0891b2"}, manage:{name:"Management, Cost & Strategy",color:"#d97706"} };
+const TERMS = [
+{s:"EC2", n:"EC2 — Elastic Compute Cloud", c:"compute", d:"Virtual servers in the cloud and the original AWS compute service: you choose the processor, memory and storage size, install your own operating system and software, and pay while the instance runs. EC2 is what a company rents instead of buying physical servers, and it remains the default home for migrated legacy workloads.", f:"EC2 launched in 2006 and offers hundreds of instance types; capacity bought on demand can be stopped, resized or moved far faster than any physical hardware.", l:"EC2 is the easiest service to over-buy. Untended instances running nights and weekends are the single most common source of AWS waste."},
+{s:"ASc", n:"Auto Scaling", c:"compute", d:"A capability that watches demand on your applications and automatically adds EC2 instances when traffic rises and removes them when it falls, keeping a target capacity you define. It replaces the old practice of buying servers for the busiest day of the year and replaces manual capacity planning with policy.", f:"Auto Scaling groups can scale on schedules as well as on live metrics such as CPU use or queue depth.", l:"Auto Scaling is where cloud elasticity becomes real money: without it you pay for peak capacity all year. Insist that production workloads have scaling policies, not fixed fleets."},
+{s:"Lam", n:"Lambda — Serverless Functions", c:"compute", d:"A compute service that runs small pieces of code in response to events — a file arriving, a button clicked, a message queued — with no server to provision or patch. You pay per request and per millisecond of execution, and nothing when the code is idle. It suits event-driven tasks, integrations and light APIs rather than long-running heavy processing.", f:"Lambda functions can run for a maximum of 15 minutes per invocation, and billing is per request plus duration used.", l:"Lambda removes server management but creates a web of small functions that can be hard to trace. Set naming, logging and ownership conventions early."},
+{s:"ECS", n:"ECS — Elastic Container Service", c:"compute", d:"AWS's own service for running software containers — standardised packages of an application and everything it needs — across a cluster of machines. ECS is simpler and more AWS-native than Kubernetes, and many organisations choose it when they want containers without operating a Kubernetes platform.", f:"ECS can run containers on EC2 instances you manage or on Fargate, where AWS manages the machines for you.", l:"The ECS-versus-Kubernetes choice is a skills decision as much as a technical one. ECS is cheaper to operate; Kubernetes skills are easier to hire and more portable."},
+{s:"EKS", n:"EKS — Elastic Kubernetes Service", c:"compute", d:"A managed Kubernetes service: AWS runs the Kubernetes control plane that schedules and heals containers, while your teams deploy applications in the industry-standard Kubernetes way. Leaders choose EKS for portability, ecosystem and hiring, accepting more platform complexity than ECS in exchange.", f:"EKS supports running container workloads on both EC2 and Fargate, and follows upstream Kubernetes versions with a managed upgrade path.", l:"Kubernetes is a platform commitment, not a product purchase. Budget for a platform team or a managed partner, or EKS estates decay into expensive snowflakes."},
+{s:"Far", n:"Fargate — Serverless Containers", c:"compute", d:"A serverless way to run containers on ECS or EKS: you specify the CPU and memory each task needs and AWS runs it without you managing the underlying instances. It trades a higher per-unit price for the removal of patching, scaling and capacity management of container hosts.", f:"With Fargate you pay for the vCPU and memory allocated to each task, for the time it runs — there are no idle servers to pay for.", l:"Fargate is the right default for small platform teams. The premium over EC2 is usually smaller than the engineering time it returns."},
+{s:"Lts", n:"Lightsail", c:"compute", d:"A simplified, fixed-price package of compute, storage and networking aimed at small websites, blogs and simple applications — the closest AWS comes to a traditional virtual private server. It deliberately hides most AWS complexity behind a flat monthly bundle.", f:"Lightsail instances start from a few dollars a month with bundled data transfer included.", l:"Lightsail is fine for small, isolated workloads, but it sits apart from your main AWS estate. Do not let business units build shadow IT estates on it outside your governance."},
+{s:"Grv", n:"Graviton Processors", c:"compute", d:"AWS-designed processors based on Arm architecture, offered across EC2, databases and many managed services, positioned on better price-performance and lower energy use than comparable x86 chips. Most modern applications can move to Graviton with little or no code change, and AWS steers new capacity toward it.", f:"AWS states Graviton-based instances can deliver up to 40% better price performance than comparable current-generation x86 instances for many workloads.", l:"Graviton is one of the few genuine free lunches in cloud cost: mandate a Graviton-first policy for new workloads and test existing ones at refresh time."},
+{s:"EBn", n:"Elastic Beanstalk", c:"compute", d:"A simplified deployment service for web applications: you upload code in common languages such as Java, .NET, Python or Node.js, and Beanstalk provisions the servers, load balancing and scaling underneath. It is the fastest route from code to a running application for teams without platform engineers.", l:"Beanstalk suits straightforward web apps and prototypes. Once an application needs fine-grained control, teams usually graduate to containers — plan that exit before it becomes urgent."},
+{s:"S3", n:"S3 — Simple Storage Service", c:"storage", d:"Object storage: files of any size stored as objects in containers called buckets, reached over the internet or privately inside AWS, and used for everything from backups and data lakes to hosting static websites. S3 is the default place data lands in AWS and the foundation most other services build on.", f:"S3 is designed for 99.999999999% (eleven nines) durability, achieved by storing data redundantly across multiple facilities.", l:"S3 is cheap to store and expensive to be careless with: public buckets and uncontrolled data growth are the two classic failures. Lifecycle rules and access reviews are leadership controls, not admin trivia."},
+{s:"EBS", n:"EBS — Elastic Block Store", c:"storage", d:"Block storage volumes that attach to EC2 instances like virtual hard drives, holding operating systems, databases and application data that must survive the instance being stopped. Different volume types trade price against speed, from cheap general-purpose disks to very fast provisioned storage.", f:"EBS volumes can be snapshotted to S3 for backup, and snapshots are incremental — only changed blocks are stored after the first copy.", l:"Orphaned EBS volumes — disks left behind when servers are deleted — quietly tax many estates. Require automated orphan detection in your cost reviews."},
+{s:"EFS", n:"EFS — Elastic File System", c:"storage", d:"A shared file system that many servers can read and write at the same time, using the standard NFS protocol familiar from on-premises storage. It fits shared content, home directories and applications that expect a traditional file share rather than object storage.", f:"EFS grows and shrinks automatically with the data stored, and offers a cheaper infrequent-access tier for files not touched for a period you set.", l:"EFS costs more per gigabyte than S3 or EBS, so use it only where genuine shared file access is needed — it is a scalpel, not a default."},
+{s:"S3G", n:"S3 Glacier — Archive Storage", c:"storage", d:"The very low-cost archive tiers of S3, designed for data that must be kept for years — backups, compliance records, media archives — but is rarely read. Retrieval is slower and priced separately, with the deepest tier intended for data accessed perhaps once a year.", f:"Glacier storage classes are among the cheapest ways to store data in AWS, with the trade-off that retrieval can take minutes to hours depending on the option chosen.", l:"Archive tiers are how you satisfy seven-year retention duties without paying hot-storage prices. The discipline is tagging what can be archived, automatically, from day one."},
+{s:"SGw", n:"Storage Gateway", c:"storage", d:"A hybrid service that connects your on-premises systems to S3 and other AWS storage, presenting cloud storage as a local file share, disk or tape library. It is a bridge technology for migrations and for factories, hospitals and offices that must keep local access while data moves to the cloud.", l:"Storage Gateway is a migration bridge, not a destination. Every gateway should have a retirement date in the migration plan, or the bridge becomes permanent rent."},
+{s:"Bk", n:"AWS Backup", c:"storage", d:"A central service for defining and automating backup policies across AWS services — EC2, databases, file systems and more — from one place instead of configuring backups service by service. It exists so that backup coverage is a policy a leader can audit, not a hope scattered across teams.", f:"AWS Backup supports scheduled, policy-driven backups with retention rules and reporting across many AWS services from a single console.", l:"Ask one question quarterly: show me the percentage of production data with a tested backup and a successful restore. AWS Backup's reports answer the first half; only restore drills answer the second."},
+{s:"RDS", n:"RDS — Relational Database Service", c:"data", d:"Managed traditional databases — MySQL, PostgreSQL, Oracle, SQL Server and MariaDB — where AWS handles installation, patching, backups and failover while your teams keep the data model and queries. RDS replaces running database servers yourself, and is the standard first step when database estates move to cloud.", f:"RDS Multi-AZ deployments maintain a synchronously replicated standby in another Availability Zone for automatic failover.", l:"RDS removes database administration toil but not database cost or design responsibility. Bad queries stay bad — they just run on a managed bill."},
+{s:"Aur", n:"Aurora", c:"data", d:"AWS's own re-engineered relational database, compatible with MySQL and PostgreSQL applications but rebuilt for the cloud with storage that grows automatically and replicates across zones. Aurora is positioned as combining the performance of high-end commercial databases with open-source economics, and is AWS's recommended default for new relational workloads.", f:"Aurora storage grows automatically in increments up to 128 teabytes per database cluster, and a serverless option scales capacity with demand.", l:"Aurora deepens AWS lock-in more than standard RDS: the storage layer is proprietary. That is usually a price worth paying, but take the decision explicitly, not by default."},
+{s:"DyD", n:"DynamoDB", c:"data", d:"AWS's fully managed key-value and document database, built for very large scale and predictably fast responses — shopping carts, user profiles, session data, game state. There are no servers to size and no joins like a relational database; applications are designed around fast lookups by key.", f:"DynamoDB can be billed on demand per request or with provisioned capacity, and offers global tables that replicate across regions.", l:"DynamoDB's simplicity is deceptive: the data model must be designed up-front around access patterns. Changing it later is painful, so fund proper design for anything business-critical."},
+{s:"Rds", n:"Redshift", c:"data", d:"AWS's data warehouse service for large-scale analytics: it stores data in columns and runs heavy SQL queries across terabytes to petabytes for dashboards and business intelligence. Where RDS runs the business, Redshift analyses it.", f:"Redshift uses massively parallel processing across a cluster of nodes, and a serverless option removes cluster sizing for variable analytics workloads.", l:"Before expanding Redshift, compare it honestly against Athena and third-party warehouses your teams may already prefer. Analytics is where multi-cloud quietly happens anyway."},
+{s:"ElC", n:"ElastiCache", c:"data", d:"A managed in-memory cache using Redis or Memcached technology, sitting in front of your databases to serve frequently read data in under a millisecond. Caching is how busy applications stay fast without endlessly enlarging the database beneath them.", f:"ElastiCache reduces database load by serving repeated reads from memory; Redis options add persistence, replication and failover.", l:"A cache is an admission that reads outnumber your database's capacity. It is a sound pattern, but every cache is also a consistency risk — make sure teams can explain what stale data is acceptable."},
+{s:"Ath", n:"Athena", c:"data", d:"A serverless analytics service that runs standard SQL queries directly against data sitting in S3 — no warehouse to load, no servers to run. Analysts point Athena at the data lake and pay per query based on the amount of data scanned.", f:"Athena charges per terabyte of data scanned, which makes file format and partitioning a direct cost control: columnar formats like Parquet scan far less data.", l:"Athena makes the data lake queryable on day one, which is strategically valuable. Its per-scan pricing also means sloppy data layout shows up directly on the bill — govern formats, not just access."},
+{s:"EMR", n:"EMR — Elastic MapReduce", c:"data", d:"A managed big-data platform for processing enormous datasets with open-source frameworks such as Apache Spark and Hadoop — log processing, machine-learning preparation, large-scale transformations. You rent a cluster by the hour, run the job, and shut it down.", f:"EMR clusters can run on low-cost Spot capacity for fault-tolerant batch jobs, which can cut processing costs substantially.", l:"EMR is powerful but operationally heavy. If your data engineers live in Spark it is the natural home; if they do not, serverless options like Athena and Glue-style services are usually better value."},
+{s:"Kin", n:"Kinesis", c:"data", d:"A family of services for collecting and processing streaming data in real time — clickstreams, sensor readings, application logs, video — as it arrives rather than in overnight batches. It is the plumbing behind live dashboards, fraud detection and monitoring.", f:"Kinesis Data Streams scales by adding shards, each providing a defined unit of write and read throughput.", l:"Real-time data is seductive and expensive. Require every streaming use case to name the decision that changes because data arrives in seconds rather than hours."},
+{s:"OSs", n:"OpenSearch Service", c:"data", d:"Managed search and log analytics based on the open-source OpenSearch project (forked from Elasticsearch): full-text search for applications, and searchable log and observability data at scale. If your teams need a search box or a log platform inside AWS, this is the standard choice.", l:"Log volume is the silent cost driver in observability. Set retention tiers on OpenSearch from the start, or you will pay premium prices to store logs nobody reads."},
+{s:"VPC", n:"VPC — Virtual Private Cloud", c:"network", d:"Your private, isolated section of the AWS network: you define the address ranges, subnets, routing and the rules for what can enter or leave, and almost every other service runs inside it. The VPC is the network boundary your security model is built on, the cloud equivalent of your own data-centre network.", f:"A VPC spans one region and can be divided into subnets across multiple Availability Zones; traffic between zones stays on the AWS network.", l:"VPC design is a decision you live with for a decade. Insist on a proper IP address plan and a landing-zone standard before teams start building — overlapping networks are the tax on rushed starts."},
+{s:"R53", n:"Route 53 — DNS Service", c:"network", d:"AWS's Domain Name System service: it registers domain names and translates names like yourcompany.com into the servers that answer them, and can route users to the healthiest or nearest copy of your application. DNS is invisible until it fails, at which point everything fails.", f:"Route 53 is backed by a 100% availability service-level commitment from AWS, unusual among cloud services.", l:"Route 53 is also where traffic can be shifted between regions or even providers in a crisis. Keep your DNS strategy documented — it is your fastest disaster-recovery lever."},
+{s:"CF", n:"CloudFront — Content Delivery Network", c:"network", d:"AWS's content delivery network: it copies your website's static content, video and application responses to edge locations around the world so users are served from nearby, not from one distant region. It speeds up global access and adds a layer of security filtering in front of your applications.", f:"CloudFront serves content from hundreds of points of presence worldwide and integrates with AWS WAF and S3 origin protection.", l:"CloudFront is usually the cheapest performance improvement available to a global business. It also becomes your public front door — its security settings deserve board-level policies, not defaults."},
+{s:"ELB", n:"ELB — Elastic Load Balancing", c:"network", d:"Managed load balancers that spread incoming traffic across your servers or containers, detect failures and stop sending users to unhealthy copies. The Application Load Balancer works at the web-request level; the Network Load Balancer handles very high-volume raw connections.", f:"Load balancers are a standard part of highly available designs: combined with Auto Scaling, failed instances are replaced while the balancer redirects traffic.", l:"Load balancers are inexpensive insurance. Any production application without one is a single server failure away from an outage and a difficult board conversation."},
+{s:"DX", n:"Direct Connect", c:"network", d:"A private, dedicated network connection from your data centre or office into AWS, bypassing the public internet for predictable speed, lower latency and more consistent security. Enterprises use it as the backbone of hybrid cloud, where some systems stay on-premises and others move to AWS.", f:"Direct Connect links are provisioned through AWS partners and colocation facilities, with options from sub-gigabit hosted connections to 100 Gbps dedicated links.", l:"Direct Connect is a long-term telco-style commitment with lead times measured in weeks. Order it early in any migration programme — it is frequently the critical path nobody planned for."},
+{s:"AGw", n:"API Gateway", c:"network", d:"A managed front door for your application programming interfaces: it receives API calls from apps, partners and other systems, checks who is calling, throttles abuse, and passes valid requests to Lambda, containers or servers behind it. It is how organisations expose services safely and measurably.", f:"API Gateway supports authentication, rate limiting, API keys and usage plans, so partner and customer APIs can be metered like products.", l:"Treat APIs as products with owners, versions and customers. API Gateway gives you the metering and control; the governance discipline has to come from you."},
+{s:"IAM", n:"IAM — Identity and Access Management", c:"security", d:"The service that decides who can do what in AWS: every person, application and service gets an identity with permissions, and every action is checked against them. There is no network perimeter strong enough to compensate for careless IAM — it is the control plane of AWS security.", f:"IAM itself carries no charge; its policies can grant or deny access at a very granular level, down to specific actions on specific resources.", l:"Root-account credentials and over-powerful admin roles are the original sins of AWS estates. Mandate least-privilege access, no shared accounts, and regular access reviews — this is the control your auditors and attackers both check first."},
+{s:"Org", n:"AWS Organizations", c:"security", d:"The service for governing many AWS accounts as one enterprise: you create a structure of accounts — for departments, products or environments — apply guardrail policies centrally, and consolidate billing. The account, not the server, is the real unit of isolation and ownership in a mature AWS estate.", f:"Service Control Policies in Organizations can set maximum permissions across accounts, so even account administrators cannot exceed enterprise guardrails.", l:"A deliberate multi-account strategy is the difference between an AWS estate and an AWS sprawl. Decide account boundaries by ownership and blast radius, not by org-chart convenience."},
+{s:"KMS", n:"KMS — Key Management Service", c:"security", d:"The service that creates and controls the encryption keys protecting your data across AWS: databases, storage and backups encrypt through keys you govern, with every use logged. Losing control of keys means losing control of data, so KMS is where encryption policy becomes enforceable.", f:"KMS keys can be AWS-managed or customer-managed with your own rotation and usage policies, and every key use is recorded in CloudTrail.", l:"Encryption is now a compliance expectation, not a feature. Your real decision is key governance: who can create, rotate and delete keys — and who would notice."},
+{s:"GD", n:"GuardDuty", c:"security", d:"A threat-detection service that continuously analyses AWS account activity, network flows and data-access patterns for signs of compromise — stolen credentials, cryptocurrency mining, unusual data access. It watches the estate so your security team can focus on the alerts that matter.", f:"GuardDuty uses machine learning and threat intelligence feeds, and can be enabled across all accounts in an organization from one console.", l:"GuardDuty is inexpensive, one-click detection with no agents to deploy. There is rarely a good reason for it to be off anywhere in the estate."},
+{s:"CTr", n:"CloudTrail", c:"security", d:"The audit log of AWS itself: it records who did what, when, from where, across your accounts — every console click and API call. Without CloudTrail you cannot investigate an incident, satisfy an auditor or prove what happened to your own estate.", f:"CloudTrail event history is retained for 90 days by default; serious estates stream events to protected S3 storage for long-term retention.", l:"CloudTrail should be on, everywhere, with logs stored in a separate account your administrators cannot alter. The time to discover it was off is not during an incident."},
+{s:"WAF", n:"WAF — Web Application Firewall", c:"security", d:"A firewall for web applications that filters incoming HTTP requests before they reach your sites and APIs, blocking common attacks such as SQL injection and cross-site scripting, bot abuse and sudden request floods. It typically sits on CloudFront or the Application Load Balancer at the edge of your estate.", f:"AWS provides managed rule groups for WAF covering common vulnerability classes, maintained and updated by AWS security teams.", l:"WAF is table stakes for anything public on the internet. Pair it with rate limits and bot controls, and review blocked-traffic reports monthly — they are a free threat-intelligence feed about who is probing you."},
+{s:"Bed", n:"Bedrock", c:"ai", d:"AWS's managed service for generative AI: one API giving access to foundation models from several providers — including Anthropic's Claude, Meta's Llama, Amazon's own Nova and Titan models and others — with your data kept private to your account. It is how AWS customers build chatbots, document processing and AI features without running model infrastructure.", f:"Bedrock is fully serverless and model-agnostic within its catalogue; customers can also fine-tune or evaluate models inside the service.", l:"Bedrock's value is optionality: swap models as the market moves without rebuilding your application. Insist your teams build against the API abstraction, not one model's quirks."},
+{s:"SM", n:"SageMaker", c:"ai", d:"AWS's platform for data scientists and ML engineers to build, train and deploy machine-learning models at scale, from data preparation through to monitored production endpoints. Where Bedrock serves ready-made foundation models, SageMaker is the workshop for models you develop yourself or adapt deeply.", f:"SageMaker covers the full ML lifecycle including managed training on large GPU clusters, model registries and production monitoring for drift.", l:"SageMaker earns its cost when you have genuine data-science depth. Without ML talent it becomes shelfware — hire or partner first, platform second."},
+{s:"AQ", n:"Amazon Q", c:"ai", d:"AWS's generative-AI assistant family for work: Amazon Q Business answers questions over company documents and systems for employees, while Amazon Q Developer assists engineers inside their coding tools and can help transform legacy applications. It is AWS's answer to enterprise copilots.", f:"Amazon Q Developer is positioned by AWS on software-development tasks including code generation, testing, and large modernisation jobs such as Java upgrades and mainframe analysis.", l:"Judge Q the way you judge any copilot: measure developer and employee hours actually saved in a pilot, not licences deployed. Watch data-boundary settings before connecting it to internal sources."},
+{s:"Rek", n:"Rekognition", c:"ai", d:"A managed image and video analysis service: it detects objects, faces, text and inappropriate content, and supports uses such as identity verification, media indexing and safety monitoring. Leaders meet it in onboarding checks, content moderation and security workflows.", f:"Rekognition is fully managed with per-image and per-minute-of-video pricing, and includes celebrity recognition, face comparison and text detection.", l:"Facial recognition carries real legal and reputational exposure that varies by country and state. Any Rekognition use case touching people's faces needs legal review and a documented purpose before launch."},
+{s:"Com", n:"Comprehend", c:"ai", d:"A natural-language processing service that extracts meaning from text: sentiment, topics, key phrases, entities such as people and organisations, and the language of a document. Typical uses are analysing customer feedback, routing support tickets and mining document archives.", f:"Comprehend can be trained on your own labelled examples for custom classification and entity recognition without building models from scratch.", l:"Comprehend is a commodity capability now largely overshadowed by large language models for complex text work. Use it for cheap, high-volume simple analysis; use Bedrock where judgement is needed."},
+{s:"BAg", n:"Bedrock AgentCore & Agents", c:"ai", d:"AWS's tooling for building AI agents — systems that reason over a request, call your APIs and data, and complete multi-step tasks. Agents for Bedrock provides the orchestration patterns, and AgentCore adds the runtime, memory, identity and tooling services to run agents securely in production.", f:"AgentCore is framework-agnostic: it can host agents built with popular open frameworks as well as AWS-native patterns, and provides built-in memory and observability services.", l:"Agents act with your systems' permissions, so the governance questions come first: what may an agent touch, what is logged, and where does a human approve? AWS gives you the harness; the accountability model is yours to design."},
+{s:"Tex", n:"Textract", c:"ai", d:"A managed document-understanding service that extracts text, tables and form fields from scanned documents and PDFs — invoices, applications, ID documents, claims forms — turning paper processes into structured data. It is one of the most quietly profitable AI services in the catalogue for document-heavy operations.", f:"Textract goes beyond basic OCR: it identifies key-value pairs in forms and reconstructs tables, and returns confidence scores so low-certainty fields can be routed to humans.", l:"Document automation pays back fast, but design the human-review path for low-confidence documents from the start. Straight-through processing rates, not demo accuracy, are the metric that matters."},
+{s:"SQS", n:"SQS — Simple Queue Service", c:"dev", d:"A managed message queue: components of a system leave messages for each other instead of calling directly, so a busy or temporarily failed component does not break the whole chain. Queues are the shock absorbers of cloud architecture, smoothing spikes and decoupling systems that run at different speeds.", f:"SQS was one of the first AWS services ever launched, and its standard queues offer effectively unlimited throughput with at-least-once delivery.", l:"Queues are cheap resilience. When a vendor or internal team proposes a fragile direct integration, asking 'where is the queue?' is a surprisingly effective leadership review question."},
+{s:"SNS", n:"SNS — Simple Notification Service", c:"dev", d:"A publish-and-subscribe messaging service: one event is fanned out to many subscribers at once — other systems, queues, email, SMS or mobile push notifications. It is how AWS systems broadcast 'something happened' to everything that cares, without the sender knowing the recipients.", f:"SNS can deliver to many endpoint types including SQS queues, Lambda functions, HTTP endpoints and mobile push platforms.", l:"SNS and SQS together are the classic event backbone of AWS estates. Standardising on them early prevents the point-to-point integration spaghetti that makes later change expensive."},
+{s:"EvB", n:"EventBridge", c:"dev", d:"A serverless event bus that routes events between AWS services, your applications and third-party software such as CRM and support tools, using rules you define. It is the more modern, schema-aware successor to simple pub/sub for building event-driven architectures.", f:"EventBridge maintains a schema registry describing event formats, and includes a scheduler that can trigger actions on cron-style timetables.", l:"EventBridge is where business events become enterprise plumbing. Govern event ownership — which system publishes what — or the bus becomes an undocumented tangle within two years."},
+{s:"StF", n:"Step Functions", c:"dev", d:"A visual workflow service that stitches Lambda functions and other services into multi-step processes with branching, retries and human-approval pauses — order processing, claims handling, data pipelines. The workflow is drawn and run as a state machine you can watch executing.", f:"Step Functions records the state of every execution, making long-running processes auditable step by step, and integrates with over two hundred AWS services.", l:"Any business process that lives in a chain of emails and spreadsheets is a Step Functions candidate. Its execution history also doubles as an audit trail, which compliance teams appreciate."},
+{s:"CFn", n:"CloudFormation", c:"dev", d:"AWS's infrastructure-as-code service: the entire environment — networks, servers, databases, permissions — is described in template files and deployed, copied or destroyed as a unit. It turns infrastructure from hand-built craft into repeatable, reviewable code.", f:"CloudFormation templates come in JSON or YAML; AWS CDK lets developers generate them from real programming languages instead.", l:"Hand-built consoles are unrepeatable and unauditable. Require infrastructure-as-code for anything production-bound, and treat the console as read-only for serious estates."},
+{s:"CPp", n:"CodePipeline", c:"dev", d:"A continuous-delivery service that automates the path from a developer committing code to that code being tested, approved and deployed, in a visible pipeline. Together with its companion build and deploy services, it is AWS's native answer to CI/CD.", f:"CodePipeline integrates with GitHub and other source providers, and can insert manual approval gates before production stages.", l:"Many teams prefer GitHub Actions or GitLab CI over the AWS-native tools. Either is defensible — what is not defensible is manual deployment. Pick one pipeline standard and enforce it."},
+{s:"CW", n:"CloudWatch", c:"manage", d:"The monitoring and observability service of AWS: it collects metrics, logs and events from virtually every service, raises alarms when thresholds break, and powers operational dashboards. When something fails at 3 a.m., CloudWatch is where the evidence lives.", f:"CloudWatch Logs can retain log data indefinitely, and its alarms can trigger Auto Scaling, notifications or automated remediation actions.", l:"Monitoring breadth is rarely the problem; alarm discipline is. If your teams get hundreds of alerts a week, CloudWatch is working and your operating model is not — fund alarm quality, not more dashboards."},
+{s:"CEx", n:"Cost Explorer", c:"manage", d:"AWS's built-in cost analysis tool: it breaks your bill down by service, account, team tag and time, forecasts next month's spend, and shows where money actually went. It is the first screen a leader should open when the AWS bill surprises them.", f:"Cost Explorer includes rightsizing and reservation recommendations, and its forecasts use your recent usage patterns to project near-term spend.", l:"Cost Explorer answers 'what did we spend', but only disciplined tagging answers 'who spent it and why'. Make cost allocation tags a launch requirement, not a cleanup project."},
+{s:"SP", n:"Savings Plans", c:"manage", d:"A discount programme: commit to a steady level of compute usage (measured in dollars per hour) for one or three years, and AWS discounts that usage substantially versus on-demand prices, across EC2, Fargate and Lambda. It is a financial commitment, not a technical change — the flexibility is why it largely replaced older reservation schemes.", f:"AWS states Compute Savings Plans can reduce costs by up to 72% compared with on-demand pricing, in exchange for the usage commitment.", l:"Savings Plans are the highest-value meeting in cloud finance: review coverage and utilisation quarterly. Under-commit and you overpay; over-commit and you have bought shelf capacity — aim for high coverage of your stable baseline only."},
+{s:"RI", n:"Reserved Instances & Capacity", c:"manage", d:"The original AWS discount mechanism: reserve specific instance capacity in a region for one or three years in exchange for a lower hourly rate, still used heavily for databases and steady EC2 fleets. A related concept, capacity reservations, guarantees that instances will be available when you need them, with or without the discount.", f:"Reserved Instances can reduce costs by up to 72% versus on-demand for the reserved configuration, but discounts do not transfer freely if your instance choices change.", l:"Reservations trade flexibility for price. In fast-changing estates prefer Savings Plans for compute, and reserve only the truly stable database and core fleets — with an owner accountable for utilisation."},
+{s:"TA", n:"Trusted Advisor", c:"manage", d:"An automated advisory service that scans your estate against AWS best practices across cost, security, performance, fault tolerance and service limits, and flags what it finds — idle resources, public storage, missing backups. Full checks require a business- or enterprise-level support plan.", f:"Trusted Advisor checks draw on the aggregated experience of the AWS estate; some checks refresh automatically and can trigger alerts when status changes.", l:"Trusted Advisor findings that sit unactioned for months are a governance smell. Route its security and cost checks into the same review rhythm as audit findings, with owners and deadlines."},
+{s:"WkA", n:"Well-Architected Framework", c:"manage", d:"AWS's codified set of design best practices, organised in six pillars — operational excellence, security, reliability, performance efficiency, cost optimisation and sustainability — against which workloads can be formally reviewed. It gives leaders a shared language for asking 'is this built well?' that does not depend on opinion.", f:"The Well-Architected Tool in the console runs structured reviews against the pillars and records improvement plans per workload.", l:"Run Well-Architected reviews on your top workloads annually and track the high-risk items to closure like audit points. The framework is free; the discipline is the investment."},
+{s:"SRM", n:"AWS Shared Responsibility Model", c:"manage", d:"The division of security duties between AWS and you: AWS secures the cloud itself — facilities, hardware, the core network — while you secure what you put in it: your data, identities, configurations and patching of what you run. Most AWS security failures are customer-side misconfigurations inside this model.", f:"The exact split shifts by service type: with serverless and managed services AWS takes more of the stack, with raw EC2 the customer keeps much more.", l:"Print this model on the wall of every cloud team. When a breach headline involves an open storage bucket, it is almost always the customer's side of the line that failed — your side is the one to govern."},
+{s:"Mig", n:"Migration Hub", c:"manage", d:"AWS's central tracking service for cloud migrations: it inventories servers and applications, groups dependencies, and follows each workload's migration progress across the tools doing the actual moving. Large migrations fail on coordination, not technology — this is the coordination layer.", f:"Migration Hub integrates with AWS discovery and migration services and provides a single dashboard across regions and migration tools.", l:"Treat migration as a programme with a factory rhythm — assess, mobilise, then migrate in waves — and Migration Hub as its scoreboard. If the scoreboard is not updated weekly, the programme is drifting."},
+{s:"Sup", n:"AWS Support Plans", c:"manage", d:"The tiered support offerings for AWS itself, from free basic support through Developer and Business tiers to Enterprise Support with a named Technical Account Manager and response times measured in minutes for critical failures. The tier you buy decides who answers, and how fast, on your worst day.", f:"Enterprise Support includes a designated Technical Account Manager and access to the full Trusted Advisor checks and Infrastructure Event Management for big launches.", l:"Match the support tier to the revenue that depends on the platform. If AWS hosts systems your business cannot afford to lose for hours, Business tier is the floor and Enterprise is a board-level insurance decision."},
+{s:"Mkt", n:"AWS Marketplace", c:"manage", d:"AWS's software store: thousands of third-party products — security tools, databases, AI software, data sets — bought on your AWS bill, often deployable in minutes and frequently countable against committed-spend agreements. It has quietly become a major enterprise software procurement channel.", f:"Marketplace purchases consolidate into the AWS invoice, and private offers let enterprises negotiate custom pricing and terms with sellers through the store.", l:"Marketplace is a procurement lever, not just a catalogue: purchases can draw down enterprise commitments and shorten contracting cycles. But every click-bought tool still needs security review — govern it like any other vendor onboarding."},
+{s:"Bud", n:"AWS Budgets", c:"manage", d:"The service that lets you set cost and usage budgets per account, project or cost centre and receive alerts — or even trigger actions — as actual or forecast spend crosses thresholds you choose. Where Cost Explorer explains the past, Budgets polices the future.", f:"AWS Budgets can send alerts at multiple thresholds and, with the right permissions, apply actions such as notifying owners or restricting further spend in an account.", l:"Every account should have a budget with a named human receiving the alert at 80% forecast. A budget alert nobody owns is just email noise — assign the name, not the team."}
+];
+const grid=document.getElementById('grid');
+const detail=document.getElementById('detail');
+const overlay=document.getElementById('overlay');
+const countEl=document.getElementById('count');
+let activeCat=null, selected=null;
+function render(){
+  grid.innerHTML='';
+  TERMS.forEach((t,i)=>{
+    const b=document.createElement('button');
+    b.className='tile'; b.type='button'; b.setAttribute('role','listitem');
+    b.style.background=CATS[t.c].color; b.dataset.cat=t.c;
+    b.dataset.search=(t.n+' '+t.s+' '+t.d+' '+CATS[t.c].name).toLowerCase();
+    b.innerHTML='<span class="no">'+(i+1)+'</span><span class="sym">'+t.s+'</span><span class="nm">'+t.n+'</span>';
+    b.addEventListener('click',()=>show(t,i,b));
+    grid.appendChild(b);
+  });
+  updateCount(TERMS.length);
+}
+function updateCount(n){countEl.textContent=n+' of '+TERMS.length+' terms shown';}
+function closeDetail(){
+  const el=selected;
+  if(selected)selected.classList.remove('selected');
+  selected=null; selectedIdx=-1;
+  detail.classList.remove('open'); overlay.classList.remove('open');
+  document.body.style.overflow='';
+  if(el && el.focus)el.focus({preventScroll:true});
+}
+let selectedIdx=-1;
+function show(t,i,el){
+  if(selectedIdx===i){closeDetail();selectedIdx=-1;return;}
+  if(selected)selected.classList.remove('selected');
+  selected=el; selectedIdx=i; if(el)el.classList.add('selected');
+  let html='<button class="zoom-close" type="button" onclick="closeDetail()" aria-label="Close">✕</button>';
+  html+='<div class="d-no">Element '+(i+1)+' of '+TERMS.length+'</div>';
+  html+='<span class="d-sym" style="background:'+CATS[t.c].color+'">'+t.s+'</span>';
+  html+='<h2>'+t.n+'</h2><div class="d-cat" style="color:'+CATS[t.c].color+'">'+CATS[t.c].name+'</div>';
+  html+='<p>'+t.d+'</p>';
+  if(t.f)html+='<div class="box formula"><b>Key fact</b>'+t.f+'</div>';
+  if(t.l)html+='<div class="box lens"><b>Leader lens</b>'+t.l+'</div>';
+  detail.innerHTML=html;
+  detail.classList.add('open'); overlay.classList.add('open');
+  document.body.style.overflow='hidden';
+}
+overlay.addEventListener('click',closeDetail);
+const legend=document.getElementById('legend');
+Object.keys(CATS).forEach(k=>{
+  const c=document.createElement('button'); c.type='button'; c.className='chip'; c.dataset.cat=k;
+  c.innerHTML='<span class="dot" style="background:'+CATS[k].color+'"></span>'+CATS[k].name;
+  c.addEventListener('click',()=>{
+    activeCat = activeCat===k ? null : k;
+    document.querySelectorAll('.chip').forEach(x=>x.classList.toggle('active',x.dataset.cat===activeCat));
+    applyFilter();
+  });
+  legend.appendChild(c);
+});
+function applyFilter(){
+  const q=document.getElementById('search').value.trim().toLowerCase();
+  let n=0;
+  document.querySelectorAll('.tile').forEach(tile=>{
+    const matchQ=!q || tile.dataset.search.includes(q);
+    const matchC=!activeCat || tile.dataset.cat===activeCat;
+    tile.classList.toggle('hidden',!matchQ);
+    tile.classList.toggle('dim',!!activeCat && !matchC && matchQ);
+    if(matchQ)n++;
+  });
+  updateCount(n);
+}
+document.getElementById('search').addEventListener('input',applyFilter);
+document.getElementById('resetBtn').addEventListener('click',()=>{
+  document.getElementById('search').value=''; activeCat=null;
+  document.querySelectorAll('.chip').forEach(x=>x.classList.remove('active')); applyFilter();
+});
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeDetail();});
+/* Theme toggle: saved choice wins, otherwise dark (the original look) */
+const themeBtn=document.getElementById('themeToggle');
+function applyTheme(th){
+  document.documentElement.setAttribute('data-theme',th);
+  themeBtn.textContent = th==='light' ? '☾' : '☀';
+  try{localStorage.setItem('aws_leaders_theme',th);}catch(e){}
+}
+let savedTheme='dark';
+try{savedTheme=localStorage.getItem('aws_leaders_theme')||'dark';}catch(e){}
+applyTheme(savedTheme==='light'?'light':'dark');
+themeBtn.addEventListener('click',()=>{
+  const cur=document.documentElement.getAttribute('data-theme')==='light'?'light':'dark';
+  applyTheme(cur==='light'?'dark':'light');
+});
+render();
+</script>
+</body>
+</html>

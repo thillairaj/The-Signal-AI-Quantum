@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cyber Threats & Attack Techniques — The Periodic Table</title>
+<meta name="description" content="60 threat terms across the attack lifecycle: MITRE ATT&CK, phishing, ransomware-as-a-service, lateral movement, exfiltration and AI-era threats — and the control that breaks each link.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Cyber Threats & Attack Techniques — The Periodic Table">
+<meta property="og:description" content="60 threat terms across the attack lifecycle: MITRE ATT&CK, phishing, ransomware-as-a-service, lateral movement, exfiltration and AI-era threats — and the control that breaks each link.">
+<meta property="og:url" content="https://thillairaj.github.io/The-Signal-AI-Quantum/periodic-tables/cyber-threats/">
+<style>
+  :root{--bg:#071527;--panel:#0b213f;--panel2:#0e2a52;--ink:#eef4ff;--muted:#9db4d4;--line:rgba(255,255,255,.14)}
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:'Segoe UI',system-ui,-apple-system,Arial,sans-serif;background:radial-gradient(1200px 600px at 20% -10%,#12325e 0%,var(--bg) 55%);color:var(--ink);min-height:100vh}
+  header{padding:34px 22px 10px;text-align:center;max-width:1200px;margin:0 auto}
+  .kicker{letter-spacing:.35em;font-size:11px;color:#7dd3fc;text-transform:uppercase;font-weight:700}
+  h1{font-size:clamp(28px,5vw,48px);line-height:1.08;margin:10px 0 10px;font-weight:800}
+  h1 span{color:#fbbf24}
+  .sub{color:var(--muted);max-width:820px;margin:0 auto;font-size:15.5px;line-height:1.55}
+  .principle{margin:18px auto 4px;max-width:880px;background:rgba(251,191,36,.08);border:1px solid rgba(251,191,36,.35);border-radius:12px;padding:12px 16px;font-size:14px;line-height:1.55;color:#fde68a}
+  .toolbar{position:sticky;top:0;z-index:40;background:rgba(7,21,39,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line);padding:12px 16px}
+  .toolbar-in{max-width:1280px;margin:0 auto;display:flex;flex-wrap:wrap;gap:10px;align-items:center;justify-content:center}
+  #search{flex:1 1 260px;max-width:420px;padding:11px 14px;border-radius:10px;border:1px solid var(--line);background:var(--panel);color:var(--ink);font-size:15px;outline:none}
+  #search:focus{border-color:#38bdf8}
+  .count{color:var(--muted);font-size:13.5px}
+  .btn{padding:10px 14px;border-radius:10px;border:1px solid var(--line);background:var(--panel2);color:var(--ink);cursor:pointer;font-size:13.5px;font-weight:600}
+  .btn:hover{border-color:#38bdf8}
+  #legend{max-width:1280px;margin:14px auto 0;padding:0 16px;display:flex;flex-wrap:wrap;gap:8px;justify-content:center}
+  .chip{display:inline-flex;align-items:center;gap:7px;padding:7px 12px;border-radius:999px;border:1px solid var(--line);background:var(--panel);color:var(--ink);font-size:12.5px;cursor:pointer;font-weight:600;transition:all .15s}
+  .chip .dot{width:11px;height:11px;border-radius:3px}
+  .chip:hover{transform:translateY(-1px);border-color:#fff}
+  .chip.active{outline:2px solid #fff;outline-offset:1px}
+  main{max-width:1280px;margin:0 auto;padding:20px 16px 30px;display:grid;grid-template-columns:1fr 340px;gap:20px;align-items:start}
+  #grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(96px,1fr));gap:8px}
+  .tile{border:none;border-radius:10px;padding:8px 6px 7px;min-height:96px;color:#fff;cursor:pointer;text-align:left;position:relative;transition:transform .16s ease,filter .16s ease,box-shadow .16s ease,opacity .16s;display:flex;flex-direction:column;box-shadow:inset 0 0 0 1px rgba(255,255,255,.22)}
+  .tile .no{font-size:10.5px;font-weight:700;opacity:.85}
+  .tile .sym{font-size:24px;font-weight:800;line-height:1.05;margin:auto 0 2px;letter-spacing:.01em;word-break:break-word}
+  .tile .nm{font-size:10px;line-height:1.25;font-weight:600;opacity:.95}
+  .tile:hover,.tile:focus-visible{transform:scale(1.09) translateY(-4px);filter:brightness(1.28) saturate(1.25);box-shadow:0 12px 28px rgba(0,0,0,.5),0 0 0 2px #fff;z-index:5;outline:none}
+  .tile.selected{box-shadow:0 0 0 3px #fff,0 12px 28px rgba(0,0,0,.5);filter:brightness(1.2)}
+  .tile.dim{opacity:.13;filter:grayscale(.6)}
+  .tile.hidden{display:none}
+  #detail{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:22px;position:sticky;top:132px;min-height:300px}
+  #detail .d-no{font-size:12px;color:var(--muted);letter-spacing:.15em;text-transform:uppercase;font-weight:700}
+  #detail .d-sym{display:inline-flex;align-items:center;justify-content:center;min-width:74px;height:74px;padding:0 10px;border-radius:14px;font-size:30px;font-weight:800;color:#fff;margin:12px 0}
+  #detail h2{font-size:24px;line-height:1.2;margin-bottom:6px}
+  #detail .d-cat{font-size:12.5px;font-weight:700;text-transform:uppercase;letter-spacing:.12em;margin-bottom:14px}
+  #detail p{font-size:15px;line-height:1.65;color:#dbe7fa}
+  #detail .box{margin-top:14px;border-radius:10px;padding:12px 14px;font-size:14px;line-height:1.55}
+  #detail .formula{background:rgba(56,189,248,.1);border:1px solid rgba(56,189,248,.4);color:#bae6fd}
+  #detail .lens{background:rgba(251,191,36,.08);border:1px solid rgba(251,191,36,.35);color:#fde68a}
+  #detail .box b{display:block;font-size:11px;letter-spacing:.18em;text-transform:uppercase;margin-bottom:5px;opacity:.85}
+  .hint{color:var(--muted);font-size:14.5px;line-height:1.6}
+  section.below{max-width:1280px;margin:0 auto;padding:6px 16px 26px}
+  section.below h3{font-size:22px;margin:18px 0 12px}
+  .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:12px}
+  .card{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:16px}
+  .card h4{font-size:15px;margin-bottom:7px;color:#7dd3fc}
+  .card p,.card li{font-size:14px;line-height:1.6;color:#dbe7fa}
+  .card ul{padding-left:18px}
+  .example{background:linear-gradient(135deg,#0e2a52,#12325e);border:1px solid rgba(251,191,36,.4)}
+  .example h4{color:#fbbf24}
+  .big{font-size:19px;font-weight:800;color:#fff;margin:6px 0}
+  footer{max-width:1280px;margin:0 auto;padding:10px 16px 38px;color:var(--muted);font-size:12.5px;line-height:1.6;text-align:center}
+  #overlay{display:none}
+  /* placeholder, zoom view styles are at the end of this stylesheet */
+  /* Theme toggle + sticky legend + back button (added Oct 21) */
+  header{position:relative}
+  .theme-toggle{position:absolute;top:16px;right:16px;width:44px;height:44px;border-radius:50%;border:1px solid var(--line);background:var(--panel2);color:#fbbf24;font-size:19px;cursor:pointer;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 14px rgba(0,0,0,.35)}
+  .theme-toggle:hover{transform:scale(1.08)}
+  #legend{flex-wrap:nowrap;overflow-x:auto;justify-content:flex-start;padding:10px 2px 3px;scrollbar-width:thin}
+  .chip{white-space:nowrap;flex:0 0 auto}
+  .backbtn{display:inline-flex;align-items:center;gap:6px;padding:9px 14px;border-radius:999px;border:1px solid var(--line);background:var(--panel2);color:var(--ink);font-size:13.5px;font-weight:700;cursor:pointer;margin-bottom:14px}
+  .backbtn:hover{border-color:#38bdf8}
+  #detail{top:168px}
+  /* Light theme */
+  html[data-theme="light"] body{background:radial-gradient(1200px 600px at 20% -10%,#e8eefc 0%,#FAF9F6 55%);color:#17293f}
+  html[data-theme="light"] h1{color:#0b213f}
+  html[data-theme="light"] .sub{color:#4d6482}
+  html[data-theme="light"] .principle{background:#fff8e1;border-color:#e5c15c;color:#6b5510}
+  html[data-theme="light"] .toolbar{background:rgba(250,249,246,.95);border-color:#ddd5c0}
+  html[data-theme="light"] #search{background:#fff;color:#17293f;border-color:#cfd8e3}
+  html[data-theme="light"] .btn{background:#fff;color:#17293f;border-color:#cfd8e3}
+  html[data-theme="light"] .chip{background:#fff;color:#17293f;border-color:#cfd8e3}
+  html[data-theme="light"] .chip.active{outline-color:#0b213f}
+  html[data-theme="light"] .count{color:#5a6f88}
+  html[data-theme="light"] #detail{background:#fff;border-color:#e0d9c6}
+  html[data-theme="light"] #detail p{color:#33475e}
+  html[data-theme="light"] #detail .d-no{color:#5a6f88}
+  html[data-theme="light"] #detail h2{color:#0b213f}
+  html[data-theme="light"] #detail .formula{background:#e8f4fd;border-color:#9fd0f5;color:#124d75}
+  html[data-theme="light"] #detail .lens{background:#fff8e1;border-color:#e5c15c;color:#6b5510}
+  html[data-theme="light"] .backbtn{background:#eef3fa;color:#17293f;border-color:#cfd8e3}
+  html[data-theme="light"] .hint{color:#5a6f88}
+  html[data-theme="light"] .card{background:#fff;border-color:#e0d9c6}
+  html[data-theme="light"] .card p,html[data-theme="light"] .card li{color:#33475e}
+  html[data-theme="light"] section.below h3{color:#0b213f}
+  html[data-theme="light"] .example{background:linear-gradient(135deg,#fff8e1,#fdf3d0);border-color:#e5c15c}
+  html[data-theme="light"] .example .big{color:#17293f}
+  html[data-theme="light"] footer{color:#5a6f88}
+  html[data-theme="light"] .theme-toggle{background:#fff;color:#d97706;border-color:#cfd8e3}
+  @media(max-width:900px){
+    main{grid-template-columns:1fr}
+    #detail{position:fixed;inset:auto 0 0 0;z-index:60;border-radius:18px 18px 0 0;max-height:72vh;overflow:auto;transform:translateY(105%);transition:transform .25s ease;box-shadow:0 -12px 40px rgba(0,0,0,.6)}
+    #detail.open{transform:translateY(0)}
+    #overlay{display:block;position:fixed;inset:0;background:rgba(0,0,0,.55);z-index:55;opacity:0;pointer-events:none;transition:opacity .25s}
+    #overlay.open{opacity:1;pointer-events:auto}
+    #grid{grid-template-columns:repeat(auto-fill,minmax(82px,1fr))}
+    .tile{min-height:86px}.tile .sym{font-size:20px}
+  }
+  /* Zoom reading view — same pattern as the Quantum / AI Deck cards (Oct 21) */
+  main{grid-template-columns:1fr}
+  #overlay{display:block;position:fixed;inset:0;background:rgba(3,10,20,.62);z-index:55;opacity:0;pointer-events:none;transition:opacity .22s ease}
+  #overlay.open{opacity:1;pointer-events:auto}
+  #detail{position:fixed;top:50%;left:50%;right:auto;bottom:auto;width:min(560px,92vw);max-width:92vw;max-height:86vh;overflow:auto;z-index:60;border-radius:18px;padding:26px;opacity:0;pointer-events:none;transform:translate(-50%,-47%) scale(.88);transition:transform .24s ease,opacity .24s ease;box-shadow:0 30px 80px rgba(0,0,0,.55)}
+  #detail.open{opacity:1;pointer-events:auto;transform:translate(-50%,-50%) scale(1)}
+  .zoom-close{position:absolute;top:12px;right:12px;width:38px;height:38px;border-radius:50%;border:1px solid var(--line);background:var(--panel2);color:var(--ink);font-size:15px;cursor:pointer;display:flex;align-items:center;justify-content:center;z-index:2}
+  .zoom-close:hover{border-color:#38bdf8;transform:scale(1.08)}
+  html[data-theme="light"] .zoom-close{background:#eef3fa;color:#17293f;border-color:#cfd8e3}
+  @media(max-width:900px){#detail{padding:22px 18px}}
+</style>
+</head>
+<body>
+<header>
+  <div style="text-align:left;max-width:1200px;margin:0 auto 14px"><a href="../../#learn" style="color:inherit;opacity:.75;text-decoration:none;font-size:13.5px;font-weight:600">← Back to Learning Spaces</a></div>
+  <button class="theme-toggle" id="themeToggle" type="button" aria-label="Switch light or dark theme" title="Switch light / dark theme">☀</button>
+  <div class="kicker">The Cyber Threats Table</div>
+  <h1>Cyber Threats & <span>Attack Techniques</span></h1>
+  <p class="sub">How attacks actually unfold, stage by stage, in language a leader can act on.</p>
+  <div class="principle"><strong>Core principle:</strong> Attacks are chains, not single events: an intruder must get in, stay in, reach something valuable and get value out. Breaking any one link early collapses the whole chain, which is why detection speed and rehearsed response matter more than any single tool.</div>
+</header>
+
+<div class="toolbar">
+  <div class="toolbar-in">
+    <input id="search" type="search" placeholder="Search a term — try ransomware, ATT&CK, lateral movement, BEC…" aria-label="Search terms">
+    <span class="count" id="count"></span>
+    <button class="btn" id="resetBtn" type="button">Show all</button>
+  </div>
+  <div id="legend" aria-label="Category filter"></div>
+</div>
+
+<main>
+  <div id="grid" role="list"></div>
+  <aside id="detail" aria-live="polite">
+    <div class="d-no">Element detail</div>
+    <p class="hint" style="margin-top:12px">Click any element in the table to zoom into its full explanation.<br><br>Start with: <strong>ATT&CK, RaaS, BEC, C2</strong>.</p>
+  </aside>
+</main>
+<div id="overlay"></div>
+
+<section class="below"><h3>Six things a leader should hold on to</h3><div class="cards"><div class="card"><h4>Attacks are chains</h4><p>Every serious incident passes through stages: research, entry, persistence, movement, impact. Breaking any single link early collapses the whole attack, which is why stage-by-stage thinking beats tool collecting.</p></div><div class="card"><h4>Entry is usually ordinary</h4><p>Most intrusions begin with a phished password, an unpatched public system or a trusted supplier, not exotic hacking. Boring basics, done relentlessly, close the doors attackers actually use.</p></div><div class="card"><h4>Dwell time decides damage</h4><p>Attackers are usually inside for days or weeks before anything visible happens. The quiet period is your opportunity: measure how fast you detect and evict, and drive that number down.</p></div><div class="card"><h4>Identity is the new perimeter</h4><p>Escalation and lateral movement run on stolen credentials and excess privilege. MFA, least privilege and protected admin accounts break more attack chains than any perimeter upgrade.</p></div><div class="card"><h4>Backups are a target, not a given</h4><p>Competent attackers delete backups and stop services before detonating. Isolated, immutable, restore-tested backups are the difference between an incident and an existential crisis.</p></div><div class="card"><h4>Process beats panic</h4><p>BEC, deepfake fraud and extortion all exploit rushed human decisions. Verification steps that cannot be skipped, even for the CEO, quietly prevent the largest losses.</p></div></div><h3>A leader's threat-readiness checklist</h3><div class="cards"><div class="card"><h4>Know your exposure</h4><ul><li>Current inventory of internet-facing systems, each with a named owner</li><li>Patch times for public systems measured in hours and days</li><li>MFA on email, VPN, cloud consoles and finance systems, with no silent exceptions</li><li>Critical suppliers named in the risk register, with their security questioned</li><li>Logs shipped off devices to a protected central store</li></ul></div><div class="card"><h4>Be ready to respond</h4><ul><li>Backups isolated and immutable, with full restores actually tested</li><li>An incident plan with named decision-makers, legal counsel and communications drafts</li><li>Payment-change and payment-approval verification that no seniority can bypass</li><li>Tabletop exercises run with executives, including a ransomware and a deepfake scenario</li><li>Detection metrics reviewed regularly: time to detect, time to contain</li></ul></div><div class="card example"><h4>The honest assumption</h4><p>Plan on the assumption that an attacker will get in eventually — through a person, a patch gap or a supplier. That is not pessimism; it is the design brief. Organisations that assume breach detect faster, lose less and recover in days instead of months, because the rehearsal happened before the deadline did.</p></div></div></section>
+
+<footer>Educational only, written for defenders. Understanding how attacks work is the first step to stopping them; nothing here is a how-to guide.<div style="margin-top:12px;font-size:13px">Curated by Thillai Raj Thanam Jeya Veera Raj · <a href="https://www.linkedin.com/in/thillairaj" target="_blank" rel="noopener" style="color:inherit;text-decoration:underline">Follow on LinkedIn</a></div></footer>
+
+<script>
+const CATS = { landscape:{name:"Threat Landscape",color:"#7c3aed"}, access:{name:"Recon & Initial Access",color:"#dc2626"}, social:{name:"Social Engineering",color:"#ea580c"}, malware:{name:"Malware & Ransomware",color:"#b91c1c"}, evasion:{name:"Persistence & Evasion",color:"#0891b2"}, lateral:{name:"Escalation & Lateral Movement",color:"#4f46e5"}, impact:{name:"Exfiltration & Impact",color:"#a21caf"}, emerging:{name:"Emerging & AI Threats",color:"#0d9488"} };
+const TERMS = [
+{s:"ATTK", n:"MITRE ATT&CK Framework", c:"landscape", d:"A public knowledge base that catalogues how real attackers behave, organised as tactics (the attacker's goal at each stage) and techniques (how they achieve it). Defenders use it as a shared map: detection, testing and security investment can all be checked against the techniques attackers actually use.", f:"ATT&CK is maintained by the MITRE Corporation and is free for any organisation to use.", l:"Ask your security team which ATT&CK techniques you can detect today and which you cannot. The honest gaps are your investment list."},
+{s:"KC", n:"Cyber Kill Chain", c:"landscape", d:"A model that breaks an intrusion into sequential stages, from reconnaissance through delivery and exploitation to actions on the target. Its value for leaders is the chain logic: the earlier a stage is detected and broken, the cheaper and smaller the incident.", f:"The Kill Chain model was developed at Lockheed Martin and popularised the idea of disrupting attacks stage by stage.", l:"Fund detection at the early stages, not only at the point of damage. A chain broken at delivery never becomes a breach headline."},
+{s:"TAc", n:"Threat Actors", c:"landscape", d:"The people and groups behind attacks, ranging from financially motivated criminal gangs to state-sponsored espionage teams and malicious insiders. Each type wants different things, uses different methods and tolerates different levels of noise, so defence priorities depend on which actors plausibly target you.", l:"Ask which actor types realistically target your sector and size. Defending against everyone equally usually means defending against no one well."},
+{s:"APT", n:"APT — Advanced Persistent Threat", c:"landscape", d:"A well-resourced, usually state-backed attacker who gains access quietly and stays for months or years to steal information rather than cause immediate damage. APTs are patient and tailored: they research specific people and systems, and they expect standard defences, so they plan around them.", f:"The term APT comes from military usage and implies persistence and resourcing, not just technical sophistication.", l:"For espionage-style threats, assume quiet presence is possible and hunt for it. Long dwell time is the real enemy, so measure detection time honestly."},
+{s:"TTP", n:"TTPs — Tactics, Techniques & Procedures", c:"landscape", d:"The behaviour patterns of an attacker: tactics are their goals, techniques are their methods, procedures are the specific ways they carry them out. Defending against TTPs is more durable than chasing individual malicious files, because behaviour is harder for attackers to change than tools.", l:"Judge your defences against behaviours, not just known malware names. Tools change weekly; attacker habits change slowly."},
+{s:"IOC", n:"IOCs — Indicators of Compromise", c:"landscape", d:"Observable traces that suggest a system has been compromised, such as malicious file hashes, suspicious domains, unusual IP addresses or unexpected registry changes. IOCs are fast to share and check, but they age quickly because attackers rotate infrastructure constantly.", l:"IOCs are a smoke alarm, not a fire strategy. Make sure someone is tasked with acting on them, not just collecting feeds."},
+{s:"TI", n:"Threat Intelligence", c:"landscape", d:"Curated information about who is attacking organisations like yours, how they operate and what to look for, turned into decisions and detections. Good intelligence is specific and actionable; generic warning feeds that no one reads are shelfware.", l:"Ask what your intelligence sources changed in your defences this quarter. If the answer is nothing, the feed is decoration."},
+{s:"AS", n:"Attack Surface", c:"landscape", d:"Everything an attacker can reach or probe: internet-facing systems, cloud services, employee accounts, suppliers, forgotten test servers and exposed data. Attackers scan the whole surface continuously, while defenders often only catalogue the parts they remember building.", f:"Forgotten and shadow systems are a recurring root cause in breach investigations, precisely because nobody owned them.", l:"Demand a current inventory of what is exposed to the internet. You cannot defend what you do not know you run."},
+{s:"Rec", n:"Reconnaissance", c:"access", d:"The research phase, where attackers gather information about targets: employee names and roles, technologies in use, email formats, suppliers and public documents. Most of it uses entirely public sources, which is why it is hard to detect and why limiting unnecessary public detail helps.", f:"Job adverts are a classic reconnaissance source, because they list the exact technologies and tools an organisation runs.", l:"Review what your own job posts, tender documents and staff profiles reveal. Make the attacker's research harder and less rewarding."},
+{s:"OSI", n:"OSINT — Open-Source Intelligence", c:"access", d:"Intelligence gathered from publicly available sources: social media, public records, code repositories, leaked documents and company websites. Attackers use OSINT to build convincing lures and pick the right victims; defenders use the same sources to see themselves as an attacker would.", l:"Commission an OSINT review of your own organisation once a year. What a stranger can assemble in a day is what your attacker starts with."},
+{s:"AVS", n:"Attacker Vulnerability Scanning", c:"access", d:"Attackers continuously scan the internet for systems with known, unpatched weaknesses, using the same vulnerability databases defenders rely on. When a serious flaw is published, scanning for exposed systems typically begins within hours, which turns patching speed into a race.", f:"For major published vulnerabilities, mass scanning by attackers often starts the same day the flaw is disclosed.", l:"Measure your patch time for internet-facing systems in hours and days, not months. That single number predicts a large share of breach risk."},
+{s:"EPA", n:"Exploit Public-Facing Applications", c:"access", d:"Breaking in through software that is reachable from the internet by design: web applications, VPN gateways, email servers and remote-access portals. Because these systems must be exposed, they are scanned and attacked relentlessly, and one unpatched flaw can hand over the keys.", l:"Every internet-facing system needs an owner, a patch deadline and monitoring. Shared or unclear ownership is where exploitation thrives."},
+{s:"VA", n:"Valid Accounts Attack", c:"access", d:"Logging in with stolen or guessed credentials instead of breaking in, which makes the attacker look like a legitimate user. Credentials come from phishing, leaks, password reuse and brute force, and the technique defeats many perimeter defences because nothing technically breaks.", f:"Stolen credentials are consistently among the most common initial-access methods in breach investigations.", l:"MFA everywhere, unique passwords via a password manager, and alerts on impossible travel. Legitimate logins from the wrong continent should page someone."},
+{s:"DBC", n:"Drive-By Compromise", c:"access", d:"Infecting a visitor simply because they opened a compromised or malicious website, with no click on an attachment required. Attackers compromise legitimate sites or buy malicious adverts, then fingerprint the visitor's browser and deliver an exploit only to suitable targets.", l:"Browser patching and web filtering are unglamorous and highly effective here. Keep both current and treat browser versions as security inventory."},
+{s:"SSC", n:"Software Supply Chain Compromise", c:"access", d:"Tampering with software, updates or components from a trusted supplier so the malicious code arrives through a channel the victim already trusts. One compromised vendor can cascade into thousands of downstream organisations, including ones with strong internal security.", f:"The SolarWinds incident, disclosed in 2020, reached thousands of organisations through a single compromised software update.", l:"Know your critical software suppliers and ask how their update pipelines are secured. Your risk register should name them explicitly."},
+{s:"ZDE", n:"Zero-Day Exploitation", c:"access", d:"Attacking a software flaw before the vendor knows about it or has released a fix, so no patch exists to apply. Zero-days are rare and valuable, mostly used by well-resourced actors against high-value targets, but once disclosed they quickly become everyone's problem.", l:"You cannot patch what has no patch, so compensate: segment critical systems, monitor behaviour, and be able to isolate fast when news breaks."},
+{s:"Ph", n:"Phishing", c:"social", d:"Fraudulent messages, usually email, that imitate trusted senders to trick people into revealing credentials, approving payments or running malicious files. Phishing works at scale: even a small success rate across thousands of messages yields working access, which is why it remains the most common way in.", f:"Phishing is consistently the most reported initial-access vector in industry breach data year after year.", l:"Make reporting a phish one click and celebrated, not blamed. Your staff are sensors; a fast report can kill a campaign for the whole company."},
+{s:"SPh", n:"Spear Phishing", c:"social", d:"Phishing aimed at a specific person, researched and written for them: correct name, role, projects, writing style and plausible context. The personalisation defeats the usual tell-tale signs of mass phishing, so even security-aware staff can be caught by a well-built spear.", l:"Give executives and finance staff extra verification habits, because they are the spear's usual targets. Authority plus urgency is the attacker's favourite combination."},
+{s:"Wh", n:"Whaling", c:"social", d:"Spear phishing aimed at senior executives, whose authority can unlock large payments, confidential data or board-level information. Whaling messages often impersonate board members, lawyers or regulators, and exploit the fact that senior people are busy, mobile and rarely challenged.", l:"Agree a rule at the top: no payment or data release on a single message, however senior the apparent sender. The rule protects executives from being impersonated and from being rushed."},
+{s:"SmV", n:"Smishing & Vishing", c:"social", d:"Phishing moved to other channels: smishing uses text messages, vishing uses voice calls, often impersonating banks, delivery firms or IT help desks. These channels bypass email security tools entirely and reach people on personal devices, outside working hours and defences.", l:"Teach one rule that works on every channel: hang up or ignore, then contact the organisation through its official number or app. Legitimate callers accept verification."},
+{s:"BEC", n:"BEC — Business Email Compromise", c:"social", d:"Fraud where an attacker impersonates an executive, supplier or lawyer by email to redirect a payment or extract sensitive data, often using a real compromised mailbox or a look-alike domain. There is usually no malware at all, so technical filters see only a plausible business conversation.", f:"The FBI's Internet Crime Complaint Center has reported BEC losses in the tens of billions of dollars over the past decade.", l:"Payment changes need out-of-band verification to a known number, every time, with no exceptions for seniority. Most BEC losses are process failures, not technology failures."},
+{s:"CH", n:"Credential Harvesting", c:"social", d:"Collecting usernames and passwords through fake login pages, malicious attachments or impersonated services, so the attacker can simply log in later. Modern harvest pages proxy the real service in real time, even relaying MFA prompts, which makes them look completely genuine.", l:"Phishing-resistant MFA such as passkeys or hardware keys defeats most harvest pages. Where staff still use codes or push approvals, train them to check the address bar."},
+{s:"Prx", n:"Pretexting", c:"social", d:"Inventing a believable story — a pretext — to manipulate someone into giving access or information: a fake auditor, a new starter who lost their badge, an urgent engineer from head office. It is the script behind many phone and in-person attacks, and it targets helpfulness, which organisations also depend on.", l:"Give staff permission and a script to slow down and verify, even when the story is urgent and the requester seems senior. Verification is professionalism, not rudeness."},
+{s:"Bai", n:"Baiting — Lures & USB Drops", c:"social", d:"Tempting a victim with something attractive — a labelled USB drive in the car park, a free download, a QR code on a poster — that delivers malware when used. It exploits curiosity and helpfulness, and it still works because the lure is physical, local and plausible.", f:"In a well-known experiment, researchers dropped USB drives at a university and a large share were plugged in within hours.", l:"Set a simple rule: unknown media never goes into a work device, and found drives go to IT. Back it with technical controls that block or scan removable media."},
+{s:"MFa", n:"MFA Fatigue — Push Bombing", c:"social", d:"Flooding a victim with repeated MFA approval requests, often late at night, until they approve one just to make the phone stop, sometimes followed by a call posing as IT support. The attacker already has the password; the victim's tap completes the login for them.", f:"Push bombing was a documented factor in the 2022 Uber breach, after which major platforms added number-matching approvals.", l:"Turn on number-matching MFA and limit prompt attempts. Tell staff plainly: IT will never ask you to approve a login you did not start."},
+{s:"Trj", n:"Trojan", c:"malware", d:"Malicious software disguised as something legitimate: a cracked app, a fake invoice tool, a useful-looking utility. The victim installs the attacker's programme voluntarily, which is why Trojans ride on social engineering and pirated software rather than technical exploits.", f:"The name comes from the Trojan Horse of Greek myth: something that looks like a gift and carries the enemy inside.", l:"Restrict what staff can install and source software only from approved channels. Most Trojan infections begin with a download someone chose."},
+{s:"Wrm", n:"Worm", c:"malware", d:"Self-spreading malware that copies itself from machine to machine without needing a victim to click anything, exploiting network weaknesses as it goes. Worms turn a single infection into an organisation-wide event in minutes, which is why network segmentation matters so much.", f:"The WannaCry worm in 2017 spread across unpatched systems worldwide within a day, disrupting hospitals, factories and transport.", l:"Segment the network so one infected machine cannot see everything. Flat networks are what turn a worm from an incident into a shutdown."},
+{s:"Rtk", n:"Rootkit", c:"malware", d:"Malware designed to hide deep inside a system, concealing the attacker's presence, files and other tools from security software and administrators. A rootkit's whole purpose is invisibility, so systems known to host one are generally rebuilt rather than cleaned and trusted again.", l:"Treat confirmed deep compromise as a rebuild, not a cleanup. If you cannot trust what the system reports about itself, you cannot trust the system."},
+{s:"FlM", n:"Fileless Malware", c:"malware", d:"Attacks that operate mainly in memory and misuse legitimate system tools, leaving few or no malicious files on disk for antivirus to find. Because nothing obvious is written to the drive, detection depends on watching behaviour rather than scanning files.", l:"Ask whether your endpoint tooling watches behaviour and memory, not just files. Fileless techniques are specifically designed to beat file scanning."},
+{s:"LotL", n:"LotL — Living off the Land", c:"malware", d:"Using the powerful tools already built into the operating system — scripting engines, management utilities, remote administration features — to carry out an attack. To basic monitoring it looks like normal administration, which is exactly why attackers favour it.", l:"Restrict and log powerful admin tools for ordinary users. Legitimate tools doing unusual things at unusual hours is a high-value alert."},
+{s:"Ran", n:"Ransomware", c:"malware", d:"Malware that encrypts an organisation's files and systems and demands payment for the decryption key, usually after weeks of quiet intrusion to maximise damage. Modern ransomware is a human-run operation, not an automated accident: attackers choose the moment, target backups first and negotiate like a business.", f:"Most major ransomware incidents involve hands-on intruders who were inside the network well before encryption began.", l:"Your real ransomware defences are segmentation, protected backups and fast detection during the quiet weeks before detonation. The ransom demand is the last stage, not the first."},
+{s:"RaaS", n:"RaaS — Ransomware-as-a-Service", c:"malware", d:"A business model where ransomware developers lease their malware and infrastructure to affiliate criminals for a share of the ransom. It industrialised extortion: skilled developers scale through unskilled affiliates, which is why attack volumes rose and target sizes fell to include small firms.", f:"Law-enforcement operations disrupted the LockBit group, a leading RaaS operation, in 2024, though its affiliates and rivals continued elsewhere.", l:"Do not assume your organisation is too small to be worth attacking. In the RaaS economy, small and mid-sized firms are the volume business."},
+{s:"DbE", n:"Double Extortion", c:"malware", d:"Attackers steal data before encrypting it, then threaten to publish the data if the ransom is not paid, so even perfect backups do not end the crisis. The incident becomes a data-breach and regulatory problem as well as an availability problem.", l:"Plan for the leak threat, not just the lockout: know your regulatory duties, legal counsel and communications plan before you ever need them."},
+{s:"DLS", n:"Data Leak Sites", c:"malware", d:"Websites, usually on anonymising networks, where ransomware groups publish stolen data from victims who refuse to pay, sometimes releasing it in stages to increase pressure. The threat of publication is aimed at boards and customers as much as at IT teams.", l:"Decisions about payment, disclosure and negotiation belong at executive level with legal advice, rehearsed in a tabletop exercise before a real deadline exists."},
+{s:"Wip", n:"Wiper Malware", c:"malware", d:"Malware built purely to destroy data and systems, with no ransom and no recovery key, often disguised as ransomware to mislead responders. Wipers are associated with state conflict and sabotage, and they change the recovery question from negotiation to full rebuild from backups.", f:"The NotPetya outbreak in 2017, a wiper disguised as ransomware, caused billions of dollars of damage to global firms including shipping and pharmaceutical companies.", l:"Backups that survive total destruction of the primary environment are the only real answer. Test full rebuilds, not just file restores."},
+{s:"Per", n:"Persistence Mechanisms", c:"evasion", d:"The collection of tricks attackers use to survive reboots, logoffs and password changes: hidden accounts, startup entries, scheduled jobs and modified services. Persistence is what turns a one-time intrusion into an ongoing presence the attacker can return to at will.", l:"After any incident, ask explicitly what persistence was found and removed. Evicting an attacker who kept a spare key is a recurring failure."},
+{s:"STS", n:"Scheduled Tasks & Services", c:"evasion", d:"Attackers commonly hide persistence inside the operating system's own scheduling and service mechanisms, so malicious code restarts automatically disguised as routine system work. Because every healthy system has hundreds of legitimate tasks and services, the malicious ones blend into the noise.", l:"Baseline your normal tasks and services so new ones stand out. Unexpected additions to that list deserve investigation, not a shrug."},
+{s:"Obf", n:"Obfuscation", c:"evasion", d:"Deliberately scrambling code, commands or traffic so humans and security tools cannot easily tell what they do: encoding, packing, renaming and encrypting the payload until the moment it runs. Obfuscation buys the attacker time by turning a quick automated verdict into a slow manual investigation.", l:"Invest in tooling and people who can look past packaging to behaviour. If every verdict requires manual analysis, the queue becomes the vulnerability."},
+{s:"ImD", n:"Impair Defences", c:"evasion", d:"Deliberately disabling or weakening security controls once inside: stopping antivirus, clearing policies, uninstalling monitoring agents or opening firewall rules. It usually happens shortly before the main attack, so a security tool going quiet can itself be the loudest alarm available.", f:"Attackers frequently target backup and security agents first, in the hours before ransomware detonation.", l:"Alert on silence: a workstation or server whose security agent stops reporting is an incident trigger, not an IT housekeeping ticket."},
+{s:"BFI", n:"Bootkits & Firmware Implants", c:"evasion", d:"Malware that lodges in the boot process or device firmware, below the operating system, so it loads before security software and can survive disk replacement and reinstallation. These are advanced, targeted techniques, but they defeat the standard response of wiping and rebuilding the machine.", l:"Keep firmware patched and secure-boot enabled on critical systems. For suspected firmware compromise, involve the hardware vendor rather than rebuilding blindly."},
+{s:"IRL", n:"Indicator Removal & Log Tampering", c:"evasion", d:"Deleting or altering logs and other evidence to hide what happened, delay detection and frustrate the investigation that follows an incident. It is the attacker's clean-up stage, and it is why logs need to live somewhere the attacker cannot reach.", l:"Ship logs off the device to a protected central store in near real time. Logs that only exist on the compromised machine are evidence the attacker controls."},
+{s:"PE", n:"Privilege Escalation", c:"lateral", d:"Moving from an ordinary compromised account to one with administrative power, by exploiting flaws, misconfigurations or stored credentials. Escalation is the pivot of most serious breaches: it converts a foothold on one machine into control over many.", l:"Shrink standing admin rights and separate admin accounts from daily-use accounts. Every unnecessary administrator is a pre-built bridge for an attacker."},
+{s:"PtH", n:"Pass-the-Hash", c:"lateral", d:"A technique for reusing a stored cryptographic fingerprint of a password to log in elsewhere, without ever knowing the actual password. It works because many systems accept the fingerprint as proof of identity, so one compromised machine can unlock its neighbours.", l:"Limit where admin credentials are ever used, since their fingerprints linger on machines they touch. Modern Windows protections reduce this risk but only when actually enabled."},
+{s:"Krb", n:"Kerberoasting", c:"lateral", d:"Extracting encrypted service-account credentials from a Windows domain and cracking them offline at the attacker's leisure. Service accounts often have weak, old passwords and high privileges, which makes them a quiet and reliable escalation route in many organisations.", l:"Set long, random passwords on service accounts and review their privileges. A service account from a decade ago should not hold domain-level power."},
+{s:"GT", n:"Golden Ticket", c:"lateral", d:"Forging the master authentication tickets of a Windows domain after stealing its most guarded secret, granting the attacker access as almost anyone, for a very long time. It is effectively a counterfeit master key to the whole estate, and recovery requires changing that core secret twice under expert guidance.", f:"It is named in contrast to the Silver Ticket, a forged ticket for one service rather than the whole domain.", l:"Protect the domain's core secrets as crown jewels and rehearse the recovery procedure. A golden ticket found late means assuming long, deep access."},
+{s:"LM", n:"Lateral Movement", c:"lateral", d:"The stage where an attacker moves from the first compromised machine sideways through the network toward servers, data and domain controllers. Each hop gathers more credentials and access, so the speed and reach of lateral movement largely determine the size of the final incident.", f:"Incident investigations consistently find that attackers spend most of their dwell time moving laterally and escalating, not on the initial break-in.", l:"Segmentation and unique local passwords per machine turn lateral movement from a walk into a climb. Ask how many machines one stolen password can open today."},
+{s:"RS", n:"Remote Services — RDP & SMB Abuse", c:"lateral", d:"Attackers move between machines using the same remote-access and file-sharing services administrators use, logging in with harvested credentials. Because the tools are legitimate and necessary, the movement hides inside normal IT traffic unless someone watches for unusual patterns.", l:"Restrict remote administration to dedicated jump hosts and alert on first-time access patterns. An accountant's PC administering servers at 3 a.m. should never look normal."},
+{s:"DD", n:"Domain Dominance", c:"lateral", d:"Achieving control of the central identity system — usually the Windows domain — so the attacker can create accounts, change policies and reach every joined machine. At this point the incident is no longer about individual systems; the organisation's master controls are in hostile hands.", l:"Tier your administration so domain controllers and identity systems are managed only from hardened, dedicated machines. Compromise of identity is compromise of everything."},
+{s:"C2", n:"C2 — Command & Control", c:"lateral", d:"The communication channel between malware on a victim machine and the attacker's infrastructure, used to send instructions and receive stolen data. Modern C2 hides inside ordinary-looking web traffic and trusted cloud services, which makes spotting it a matter of patterns rather than obvious bad addresses.", f:"Many intrusions are first spotted by their C2 patterns, such as machines contacting rare domains at perfectly regular intervals, known as beaconing.", l:"Egress control matters as much as entry control: know which systems may talk to the internet, and investigate rhythmic or unusual outbound traffic."},
+{s:"DNST", n:"DNS — Domain Name System Tunnelling", c:"lateral", d:"Smuggling commands and stolen data inside DNS lookups, the internet's address-book traffic, which many networks allow everywhere without inspection. Because DNS is essential and usually open, it offers attackers a quiet channel straight past otherwise strong perimeter controls.", l:"Route DNS through monitored resolvers and block direct external DNS from ordinary devices. Free, uninspected DNS is an open side door."},
+{s:"Exf", n:"Data Exfiltration", c:"impact", d:"Quietly copying an organisation's data out to attacker-controlled storage, using cloud uploads, file-transfer tools or the C2 channel itself. Exfiltration often happens days before any visible attack, and it is what converts an IT incident into a legal, regulatory and reputational one.", l:"Watch for large or unusual outbound transfers, especially to new cloud storage. Knowing what left, and when, is what your regulators and customers will ask first."},
+{s:"EFI", n:"Encryption for Impact", c:"impact", d:"The detonation stage of a ransomware attack, where intruders trigger encryption across as many systems as possible at once, often at night or on a weekend when response is slowest. By the time encryption starts, the intrusion has usually been running for days or weeks; detonation is the end of the chain, not the beginning.", l:"The best ransomware plan is early detection, but rehearse detonation day too: isolation steps, decision rights and communications agreed in advance, on paper."},
+{s:"BkD", n:"Backup Destruction", c:"impact", d:"Before encrypting, competent attackers hunt down backups, snapshots and recovery systems and delete or corrupt them, so the victim cannot simply restore and refuse the ransom. It is a deliberate attack on the organisation's plan B, carried out with the victim's own admin credentials.", f:"Backup targeting is a standard playbook step for major ransomware groups, not an improvisation.", l:"Backups need separate credentials, immutability and isolation from the main network — and restore tests. A backup the attacker can delete is not a backup."},
+{s:"SSS", n:"Service Stop & Sabotage", c:"impact", d:"Attackers deliberately stop databases, security tools and business services before encryption, both to unlock files for encryption and to maximise disruption and pressure. In sabotage-motivated attacks, stopping or corrupting services is the entire objective, without any extortion at all.", l:"Know your true recovery order: which services must return first, who decides, and how long each step honestly takes. Discover it in a test, not a crisis."},
+{s:"DDoS", n:"DDoS — Distributed Denial of Service Extortion", c:"impact", d:"Flooding a service with traffic from many sources to take it offline, combined with a demand for payment to stop or to prevent a larger attack. Sometimes the flood is real and sustained; sometimes the threat alone, backed by a short demonstration, is used to pressure payment.", f:"Extortion DDoS campaigns often impersonate famous attack groups to borrow credibility for the threat.", l:"Agree in advance who decides on extortion demands and involve law enforcement early. A demonstration attack is a negotiation tactic, not proof of capability."},
+{s:"DpF", n:"Deepfake Fraud", c:"emerging", d:"Using AI-generated video or audio of a real person — an executive on a video call, a finance director on the phone — to authorise payments or extract information. The fraud weaponises trust in faces and voices that people have relied on their whole careers, and it targets finance processes specifically.", f:"In a widely reported 2024 Hong Kong case, a finance worker was deceived by a video call in which the other participants were deepfakes, leading to a transfer of roughly 25 million US dollars.", l:"Payment approvals need a verification step that does not depend on recognising a face or voice: a callback to a known number or a second channel the requester does not control."},
+{s:"VCl", n:"Voice Cloning", c:"emerging", d:"Creating a realistic copy of someone's voice from a short sample of real audio, then using it in calls to impersonate executives, family members or officials. Short public clips — earnings calls, interviews, social videos — provide ample raw material for senior, visible people.", f:"Modern voice cloning can work from only a few seconds of sample audio.", l:"Adopt a family-and-office code word or callback habit for urgent money requests. If a voice alone can move money in your process, the process is the vulnerability."},
+{s:"AIPh", n:"AI-Generated Phishing", c:"emerging", d:"Phishing written or personalised by AI, removing the spelling errors and awkward phrasing people were trained to spot, and tailoring each message to its victim at scale. The old advice to look for bad grammar is obsolete; the defence shifts to verification habits and technical controls.", l:"Retire grammar-spotting from your training and replace it with behaviour: verify requests through a second channel, especially anything involving money, credentials or secrecy."},
+{s:"SIF", n:"Synthetic Identity Fraud", c:"emerging", d:"Building a fake person from a mixture of real and invented details — a genuine identity number paired with a fabricated name and AI-generated face — then patiently building credit and trust before cashing out. Because no single real victim complains, synthetic fraud can run for years before detection.", l:"If your business onboards customers or hires remotely, ask how identity proofing handles fabricated people, not just stolen documents. Verification must test that the person exists and is present."},
+{s:"AIDV", n:"AI-Driven Vulnerability Discovery", c:"emerging", d:"Attackers and researchers alike now use AI systems to read code, hunt for flaws and generate exploit ideas far faster than manual review allowed. The same capability accelerates defenders' patching, so the advantage goes to whichever side shortens its cycle: discovery is getting cheaper, and slow remediation is getting more dangerous.", f:"Google has publicly reported its AI agent Big Sleep finding real, previously unknown vulnerabilities in widely used software, showing the defensive potential as well as the risk.", l:"Assume flaws in your exposed systems will be found quickly once known to anyone. The durable defence is a patch cycle measured in days and an attack surface you have already shrunk."}
+];
+const grid=document.getElementById('grid');
+const detail=document.getElementById('detail');
+const overlay=document.getElementById('overlay');
+const countEl=document.getElementById('count');
+let activeCat=null, selected=null;
+function render(){
+  grid.innerHTML='';
+  TERMS.forEach((t,i)=>{
+    const b=document.createElement('button');
+    b.className='tile'; b.type='button'; b.setAttribute('role','listitem');
+    b.style.background=CATS[t.c].color; b.dataset.cat=t.c;
+    b.dataset.search=(t.n+' '+t.s+' '+t.d+' '+CATS[t.c].name).toLowerCase();
+    b.innerHTML='<span class="no">'+(i+1)+'</span><span class="sym">'+t.s+'</span><span class="nm">'+t.n+'</span>';
+    b.addEventListener('click',()=>show(t,i,b));
+    grid.appendChild(b);
+  });
+  updateCount(TERMS.length);
+}
+function updateCount(n){countEl.textContent=n+' of '+TERMS.length+' terms shown';}
+function closeDetail(){
+  const el=selected;
+  if(selected)selected.classList.remove('selected');
+  selected=null; selectedIdx=-1;
+  detail.classList.remove('open'); overlay.classList.remove('open');
+  document.body.style.overflow='';
+  if(el && el.focus)el.focus({preventScroll:true});
+}
+let selectedIdx=-1;
+function show(t,i,el){
+  if(selectedIdx===i){closeDetail();selectedIdx=-1;return;}
+  if(selected)selected.classList.remove('selected');
+  selected=el; selectedIdx=i; if(el)el.classList.add('selected');
+  let html='<button class="zoom-close" type="button" onclick="closeDetail()" aria-label="Close">✕</button>';
+  html+='<div class="d-no">Element '+(i+1)+' of '+TERMS.length+'</div>';
+  html+='<span class="d-sym" style="background:'+CATS[t.c].color+'">'+t.s+'</span>';
+  html+='<h2>'+t.n+'</h2><div class="d-cat" style="color:'+CATS[t.c].color+'">'+CATS[t.c].name+'</div>';
+  html+='<p>'+t.d+'</p>';
+  if(t.f)html+='<div class="box formula"><b>Key fact</b>'+t.f+'</div>';
+  if(t.l)html+='<div class="box lens"><b>Leader lens</b>'+t.l+'</div>';
+  detail.innerHTML=html;
+  detail.classList.add('open'); overlay.classList.add('open');
+  document.body.style.overflow='hidden';
+}
+overlay.addEventListener('click',closeDetail);
+const legend=document.getElementById('legend');
+Object.keys(CATS).forEach(k=>{
+  const c=document.createElement('button'); c.type='button'; c.className='chip'; c.dataset.cat=k;
+  c.innerHTML='<span class="dot" style="background:'+CATS[k].color+'"></span>'+CATS[k].name;
+  c.addEventListener('click',()=>{
+    activeCat = activeCat===k ? null : k;
+    document.querySelectorAll('.chip').forEach(x=>x.classList.toggle('active',x.dataset.cat===activeCat));
+    applyFilter();
+  });
+  legend.appendChild(c);
+});
+function applyFilter(){
+  const q=document.getElementById('search').value.trim().toLowerCase();
+  let n=0;
+  document.querySelectorAll('.tile').forEach(tile=>{
+    const matchQ=!q || tile.dataset.search.includes(q);
+    const matchC=!activeCat || tile.dataset.cat===activeCat;
+    tile.classList.toggle('hidden',!matchQ);
+    tile.classList.toggle('dim',!!activeCat && !matchC && matchQ);
+    if(matchQ)n++;
+  });
+  updateCount(n);
+}
+document.getElementById('search').addEventListener('input',applyFilter);
+document.getElementById('resetBtn').addEventListener('click',()=>{
+  document.getElementById('search').value=''; activeCat=null;
+  document.querySelectorAll('.chip').forEach(x=>x.classList.remove('active')); applyFilter();
+});
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeDetail();});
+/* Theme toggle: saved choice wins, otherwise dark (the original look) */
+const themeBtn=document.getElementById('themeToggle');
+function applyTheme(th){
+  document.documentElement.setAttribute('data-theme',th);
+  themeBtn.textContent = th==='light' ? '☾' : '☀';
+  try{localStorage.setItem('cyber_threats_theme',th);}catch(e){}
+}
+let savedTheme='dark';
+try{savedTheme=localStorage.getItem('cyber_threats_theme')||'dark';}catch(e){}
+applyTheme(savedTheme==='light'?'light':'dark');
+themeBtn.addEventListener('click',()=>{
+  const cur=document.documentElement.getAttribute('data-theme')==='light'?'light':'dark';
+  applyTheme(cur==='light'?'dark':'light');
+});
+render();
+</script>
+</body>
+</html>

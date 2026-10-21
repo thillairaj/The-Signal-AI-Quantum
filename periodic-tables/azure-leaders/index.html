@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Microsoft Azure for Leaders — The Periodic Table</title>
+<meta name="description" content="60 Azure services and concepts: AKS, Entra ID, Azure OpenAI, Cosmos DB, landing zones and enterprise agreements — Azure for Microsoft-centric organisations.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Microsoft Azure for Leaders — The Periodic Table">
+<meta property="og:description" content="60 Azure services and concepts: AKS, Entra ID, Azure OpenAI, Cosmos DB, landing zones and enterprise agreements — Azure for Microsoft-centric organisations.">
+<meta property="og:url" content="https://thillairaj.github.io/The-Signal-AI-Quantum/periodic-tables/azure-leaders/">
+<style>
+  :root{--bg:#071527;--panel:#0b213f;--panel2:#0e2a52;--ink:#eef4ff;--muted:#9db4d4;--line:rgba(255,255,255,.14)}
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:'Segoe UI',system-ui,-apple-system,Arial,sans-serif;background:radial-gradient(1200px 600px at 20% -10%,#12325e 0%,var(--bg) 55%);color:var(--ink);min-height:100vh}
+  header{padding:34px 22px 10px;text-align:center;max-width:1200px;margin:0 auto}
+  .kicker{letter-spacing:.35em;font-size:11px;color:#7dd3fc;text-transform:uppercase;font-weight:700}
+  h1{font-size:clamp(28px,5vw,48px);line-height:1.08;margin:10px 0 10px;font-weight:800}
+  h1 span{color:#fbbf24}
+  .sub{color:var(--muted);max-width:820px;margin:0 auto;font-size:15.5px;line-height:1.55}
+  .principle{margin:18px auto 4px;max-width:880px;background:rgba(251,191,36,.08);border:1px solid rgba(251,191,36,.35);border-radius:12px;padding:12px 16px;font-size:14px;line-height:1.55;color:#fde68a}
+  .toolbar{position:sticky;top:0;z-index:40;background:rgba(7,21,39,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line);padding:12px 16px}
+  .toolbar-in{max-width:1280px;margin:0 auto;display:flex;flex-wrap:wrap;gap:10px;align-items:center;justify-content:center}
+  #search{flex:1 1 260px;max-width:420px;padding:11px 14px;border-radius:10px;border:1px solid var(--line);background:var(--panel);color:var(--ink);font-size:15px;outline:none}
+  #search:focus{border-color:#38bdf8}
+  .count{color:var(--muted);font-size:13.5px}
+  .btn{padding:10px 14px;border-radius:10px;border:1px solid var(--line);background:var(--panel2);color:var(--ink);cursor:pointer;font-size:13.5px;font-weight:600}
+  .btn:hover{border-color:#38bdf8}
+  #legend{max-width:1280px;margin:14px auto 0;padding:0 16px;display:flex;flex-wrap:wrap;gap:8px;justify-content:center}
+  .chip{display:inline-flex;align-items:center;gap:7px;padding:7px 12px;border-radius:999px;border:1px solid var(--line);background:var(--panel);color:var(--ink);font-size:12.5px;cursor:pointer;font-weight:600;transition:all .15s}
+  .chip .dot{width:11px;height:11px;border-radius:3px}
+  .chip:hover{transform:translateY(-1px);border-color:#fff}
+  .chip.active{outline:2px solid #fff;outline-offset:1px}
+  main{max-width:1280px;margin:0 auto;padding:20px 16px 30px;display:grid;grid-template-columns:1fr 340px;gap:20px;align-items:start}
+  #grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(96px,1fr));gap:8px}
+  .tile{border:none;border-radius:10px;padding:8px 6px 7px;min-height:96px;color:#fff;cursor:pointer;text-align:left;position:relative;transition:transform .16s ease,filter .16s ease,box-shadow .16s ease,opacity .16s;display:flex;flex-direction:column;box-shadow:inset 0 0 0 1px rgba(255,255,255,.22)}
+  .tile .no{font-size:10.5px;font-weight:700;opacity:.85}
+  .tile .sym{font-size:24px;font-weight:800;line-height:1.05;margin:auto 0 2px;letter-spacing:.01em;word-break:break-word}
+  .tile .nm{font-size:10px;line-height:1.25;font-weight:600;opacity:.95}
+  .tile:hover,.tile:focus-visible{transform:scale(1.09) translateY(-4px);filter:brightness(1.28) saturate(1.25);box-shadow:0 12px 28px rgba(0,0,0,.5),0 0 0 2px #fff;z-index:5;outline:none}
+  .tile.selected{box-shadow:0 0 0 3px #fff,0 12px 28px rgba(0,0,0,.5);filter:brightness(1.2)}
+  .tile.dim{opacity:.13;filter:grayscale(.6)}
+  .tile.hidden{display:none}
+  #detail{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:22px;position:sticky;top:132px;min-height:300px}
+  #detail .d-no{font-size:12px;color:var(--muted);letter-spacing:.15em;text-transform:uppercase;font-weight:700}
+  #detail .d-sym{display:inline-flex;align-items:center;justify-content:center;min-width:74px;height:74px;padding:0 10px;border-radius:14px;font-size:30px;font-weight:800;color:#fff;margin:12px 0}
+  #detail h2{font-size:24px;line-height:1.2;margin-bottom:6px}
+  #detail .d-cat{font-size:12.5px;font-weight:700;text-transform:uppercase;letter-spacing:.12em;margin-bottom:14px}
+  #detail p{font-size:15px;line-height:1.65;color:#dbe7fa}
+  #detail .box{margin-top:14px;border-radius:10px;padding:12px 14px;font-size:14px;line-height:1.55}
+  #detail .formula{background:rgba(56,189,248,.1);border:1px solid rgba(56,189,248,.4);color:#bae6fd}
+  #detail .lens{background:rgba(251,191,36,.08);border:1px solid rgba(251,191,36,.35);color:#fde68a}
+  #detail .box b{display:block;font-size:11px;letter-spacing:.18em;text-transform:uppercase;margin-bottom:5px;opacity:.85}
+  .hint{color:var(--muted);font-size:14.5px;line-height:1.6}
+  section.below{max-width:1280px;margin:0 auto;padding:6px 16px 26px}
+  section.below h3{font-size:22px;margin:18px 0 12px}
+  .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:12px}
+  .card{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:16px}
+  .card h4{font-size:15px;margin-bottom:7px;color:#7dd3fc}
+  .card p,.card li{font-size:14px;line-height:1.6;color:#dbe7fa}
+  .card ul{padding-left:18px}
+  .example{background:linear-gradient(135deg,#0e2a52,#12325e);border:1px solid rgba(251,191,36,.4)}
+  .example h4{color:#fbbf24}
+  .big{font-size:19px;font-weight:800;color:#fff;margin:6px 0}
+  footer{max-width:1280px;margin:0 auto;padding:10px 16px 38px;color:var(--muted);font-size:12.5px;line-height:1.6;text-align:center}
+  #overlay{display:none}
+  /* placeholder, zoom view styles are at the end of this stylesheet */
+  /* Theme toggle + sticky legend + back button (added Oct 21) */
+  header{position:relative}
+  .theme-toggle{position:absolute;top:16px;right:16px;width:44px;height:44px;border-radius:50%;border:1px solid var(--line);background:var(--panel2);color:#fbbf24;font-size:19px;cursor:pointer;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 14px rgba(0,0,0,.35)}
+  .theme-toggle:hover{transform:scale(1.08)}
+  #legend{flex-wrap:nowrap;overflow-x:auto;justify-content:flex-start;padding:10px 2px 3px;scrollbar-width:thin}
+  .chip{white-space:nowrap;flex:0 0 auto}
+  .backbtn{display:inline-flex;align-items:center;gap:6px;padding:9px 14px;border-radius:999px;border:1px solid var(--line);background:var(--panel2);color:var(--ink);font-size:13.5px;font-weight:700;cursor:pointer;margin-bottom:14px}
+  .backbtn:hover{border-color:#38bdf8}
+  #detail{top:168px}
+  /* Light theme */
+  html[data-theme="light"] body{background:radial-gradient(1200px 600px at 20% -10%,#e8eefc 0%,#FAF9F6 55%);color:#17293f}
+  html[data-theme="light"] h1{color:#0b213f}
+  html[data-theme="light"] .sub{color:#4d6482}
+  html[data-theme="light"] .principle{background:#fff8e1;border-color:#e5c15c;color:#6b5510}
+  html[data-theme="light"] .toolbar{background:rgba(250,249,246,.95);border-color:#ddd5c0}
+  html[data-theme="light"] #search{background:#fff;color:#17293f;border-color:#cfd8e3}
+  html[data-theme="light"] .btn{background:#fff;color:#17293f;border-color:#cfd8e3}
+  html[data-theme="light"] .chip{background:#fff;color:#17293f;border-color:#cfd8e3}
+  html[data-theme="light"] .chip.active{outline-color:#0b213f}
+  html[data-theme="light"] .count{color:#5a6f88}
+  html[data-theme="light"] #detail{background:#fff;border-color:#e0d9c6}
+  html[data-theme="light"] #detail p{color:#33475e}
+  html[data-theme="light"] #detail .d-no{color:#5a6f88}
+  html[data-theme="light"] #detail h2{color:#0b213f}
+  html[data-theme="light"] #detail .formula{background:#e8f4fd;border-color:#9fd0f5;color:#124d75}
+  html[data-theme="light"] #detail .lens{background:#fff8e1;border-color:#e5c15c;color:#6b5510}
+  html[data-theme="light"] .backbtn{background:#eef3fa;color:#17293f;border-color:#cfd8e3}
+  html[data-theme="light"] .hint{color:#5a6f88}
+  html[data-theme="light"] .card{background:#fff;border-color:#e0d9c6}
+  html[data-theme="light"] .card p,html[data-theme="light"] .card li{color:#33475e}
+  html[data-theme="light"] section.below h3{color:#0b213f}
+  html[data-theme="light"] .example{background:linear-gradient(135deg,#fff8e1,#fdf3d0);border-color:#e5c15c}
+  html[data-theme="light"] .example .big{color:#17293f}
+  html[data-theme="light"] footer{color:#5a6f88}
+  html[data-theme="light"] .theme-toggle{background:#fff;color:#d97706;border-color:#cfd8e3}
+  @media(max-width:900px){
+    main{grid-template-columns:1fr}
+    #detail{position:fixed;inset:auto 0 0 0;z-index:60;border-radius:18px 18px 0 0;max-height:72vh;overflow:auto;transform:translateY(105%);transition:transform .25s ease;box-shadow:0 -12px 40px rgba(0,0,0,.6)}
+    #detail.open{transform:translateY(0)}
+    #overlay{display:block;position:fixed;inset:0;background:rgba(0,0,0,.55);z-index:55;opacity:0;pointer-events:none;transition:opacity .25s}
+    #overlay.open{opacity:1;pointer-events:auto}
+    #grid{grid-template-columns:repeat(auto-fill,minmax(82px,1fr))}
+    .tile{min-height:86px}.tile .sym{font-size:20px}
+  }
+  /* Zoom reading view — same pattern as the Quantum / AI Deck cards (Oct 21) */
+  main{grid-template-columns:1fr}
+  #overlay{display:block;position:fixed;inset:0;background:rgba(3,10,20,.62);z-index:55;opacity:0;pointer-events:none;transition:opacity .22s ease}
+  #overlay.open{opacity:1;pointer-events:auto}
+  #detail{position:fixed;top:50%;left:50%;right:auto;bottom:auto;width:min(560px,92vw);max-width:92vw;max-height:86vh;overflow:auto;z-index:60;border-radius:18px;padding:26px;opacity:0;pointer-events:none;transform:translate(-50%,-47%) scale(.88);transition:transform .24s ease,opacity .24s ease;box-shadow:0 30px 80px rgba(0,0,0,.55)}
+  #detail.open{opacity:1;pointer-events:auto;transform:translate(-50%,-50%) scale(1)}
+  .zoom-close{position:absolute;top:12px;right:12px;width:38px;height:38px;border-radius:50%;border:1px solid var(--line);background:var(--panel2);color:var(--ink);font-size:15px;cursor:pointer;display:flex;align-items:center;justify-content:center;z-index:2}
+  .zoom-close:hover{border-color:#38bdf8;transform:scale(1.08)}
+  html[data-theme="light"] .zoom-close{background:#eef3fa;color:#17293f;border-color:#cfd8e3}
+  @media(max-width:900px){#detail{padding:22px 18px}}
+</style>
+</head>
+<body>
+<header>
+  <div style="text-align:left;max-width:1200px;margin:0 auto 14px"><a href="../../#learn" style="color:inherit;opacity:.75;text-decoration:none;font-size:13.5px;font-weight:600">← Back to Learning Spaces</a></div>
+  <button class="theme-toggle" id="themeToggle" type="button" aria-label="Switch light or dark theme" title="Switch light / dark theme">☀</button>
+  <div class="kicker">The Azure Periodic Table</div>
+  <h1>Microsoft Azure for <span>Leaders</span></h1>
+  <p class="sub">The Azure map for organisations invested in the Microsoft ecosystem: the core services, what each one is for, and where the money and the lock-in sit.</p>
+  <div class="principle"><strong>Core principle:</strong> Azure's centre of gravity is the enterprise agreement and the Microsoft stack you already own: Windows, SQL Server, Microsoft 365 and Active Directory. The value comes from that integration — one identity, one vendor, one bill. The cost comes from neglecting governance: without policy, budgets and landing zones, an Azure estate sprawls exactly as fast as the old data centre did.</div>
+</header>
+
+<div class="toolbar">
+  <div class="toolbar-in">
+    <input id="search" type="search" placeholder="Search a term — try AKS, Entra ID, Azure OpenAI, Cosmos DB…" aria-label="Search terms">
+    <span class="count" id="count"></span>
+    <button class="btn" id="resetBtn" type="button">Show all</button>
+  </div>
+  <div id="legend" aria-label="Category filter"></div>
+</div>
+
+<main>
+  <div id="grid" role="list"></div>
+  <aside id="detail" aria-live="polite">
+    <div class="d-no">Element detail</div>
+    <p class="hint" style="margin-top:12px">Click any element in the table to zoom into its full explanation.<br><br>Start with: <strong>AKS, Entra, OpenAI, Cosmos</strong>.</p>
+  </aside>
+</main>
+<div id="overlay"></div>
+
+<section class="below"><h3>Six things a leader should hold on to about Azure</h3><div class="cards"><div class="card"><h4>Integration is the product</h4><p>Azure rarely wins a feature-by-feature shootout; it wins because Entra ID, Microsoft 365, Windows and SQL Server already run your business. Judge it as an ecosystem decision, not a hosting decision.</p></div><div class="card"><h4>Licences are money</h4><p>Hybrid Benefit, reservations and enterprise agreement terms move the Azure bill more than most engineering choices. Your licensing position deserves the same rigour as your architecture.</p></div><div class="card"><h4>Governance before scale</h4><p>Landing zones, Azure Policy and RBAC cost little at the start and a fortune to retrofit. Estates that skip them do not move faster for long — they sprawl faster.</p></div><div class="card"><h4>Identity is the perimeter</h4><p>With Entra ID, the old network boundary matters less than who can sign in and under what conditions. MFA and conditional access protect more value than any firewall rule.</p></div><div class="card"><h4>Managed beats lifted</h4><p>Every workload moved from a VM to a managed service — App Service, Azure SQL, Functions — removes patching, backup and babysitting from your team permanently. The migration premium pays for itself in operations.</p></div><div class="card"><h4>AI rides the same rails</h4><p>Azure OpenAI, AI Search and Copilot Studio plug into the same identity, network and compliance controls as the rest of the estate. That is the real enterprise AI advantage: governed by default, not by exception.</p></div></div><h3>A leader's Azure checklist</h3><div class="cards"><div class="card"><h4>Foundation and money</h4><ul><li>Is an Azure landing zone in place before workloads scale?</li><li>Has the licensing team certified our Hybrid Benefit entitlements?</li><li>Are reservations covering the always-on baseline — and nothing speculative?</li><li>Does every resource carry an owner and cost-centre tag?</li><li>Is there a monthly per-team cost review using Azure Cost Management?</li></ul></div><div class="card"><h4>Security and operations</h4><ul><li>Is MFA with conditional access enforced for every user and admin?</li><li>How many people hold Owner or Contributor at subscription level?</li><li>Are Azure Policy guardrails in deny mode for the non-negotiables?</li><li>Is Defender for Cloud's backlog being cleared within agreed SLAs?</li><li>Does Sentinel ingest only the logs the SOC actually watches?</li></ul></div><div class="card example"><h4>The honest note</h4><p>Azure is the natural cloud for a Microsoft estate, and that gravity is both the value and the risk. The integration is real, the licensing leverage is real, and so is the lock-in: Entra ID, the enterprise agreement and a decade of Microsoft skills make leaving expensive by design. Go in with eyes open — negotiate the agreement like the multi-year commitment it is, keep data and skills as portable as you sensibly can, and let governance, not enthusiasm, set the pace of adoption.</p></div></div></section>
+
+<footer>An educational map of Microsoft Azure for leaders. Service names, tiers and positions as of October 2026; verify current details in Microsoft's documentation before procurement decisions.<div style="margin-top:12px;font-size:13px">Curated by Thillai Raj Thanam Jeya Veera Raj · <a href="https://www.linkedin.com/in/thillairaj" target="_blank" rel="noopener" style="color:inherit;text-decoration:underline">Follow on LinkedIn</a></div></footer>
+
+<script>
+const CATS = { compute:{name:"Compute & Containers",color:"#0284c7"}, storage:{name:"Storage & Data",color:"#4f46e5"}, ai:{name:"AI & Cognitive Services",color:"#a21caf"}, network:{name:"Networking",color:"#0891b2"}, security:{name:"Identity, Security & Governance",color:"#dc2626"}, dev:{name:"Developer & Integration",color:"#65a30d"}, manage:{name:"Management, Cost & Strategy",color:"#d97706"} };
+const TERMS = [
+{s:"AVM",n:"Azure Virtual Machines",c:"compute",d:"The core infrastructure service: virtual servers running Windows or Linux in Microsoft's data centres, in hundreds of size combinations tuned for general, compute, memory or GPU workloads. It is the lift-and-shift destination for existing servers and the closest Azure equivalent to your current estate.",f:"VM sizes are grouped in families (general purpose, compute-optimised, memory-optimised, GPU) and the family letter in the size name tells you what the machine is built for.",l:"VMs are the most expensive way to run steady workloads if left on around the clock. Ask for right-sizing and shutdown schedules before anything is migrated."},
+{s:"VSc",n:"Virtual Machine Scale Sets",c:"compute",d:"A way to run a group of identical VMs as one unit that automatically grows and shrinks with demand, spreading instances across fault zones for resilience. It suits web tiers, batch fleets and any workload whose load rises and falls through the day.",f:"Scale sets can scale on schedules as well as metrics, so a business-hours workload can shrink to a skeleton fleet overnight.",l:"Autoscaling only saves money if the application tolerates instances appearing and disappearing. Confirm the app is stateless before promising the saving."},
+{s:"AFn",n:"Azure Functions",c:"compute",d:"Microsoft's serverless compute: small pieces of code that run in response to events such as a file arriving, a message landing or a timer firing, with no server to manage. Ideal for integrations, automation glue and spiky, short-lived tasks across the Microsoft estate.",f:"On the consumption plan you pay per execution and per second of run time, and an idle function costs nothing.",l:"Functions are cheap per call and expensive per surprise: a runaway trigger can execute millions of times. Set budgets and alerts from day one."},
+{s:"ACA",n:"Azure Container Apps",c:"compute",d:"A managed platform for running containers without operating a Kubernetes cluster yourself, built for microservices, APIs and background jobs that scale with demand, including down to zero. It sits between the simplicity of App Service and the full control of AKS.",l:"This is often the right default for new container workloads: most teams do not need to run Kubernetes themselves to get the benefits of containers."},
+{s:"AKS",n:"AKS — Azure Kubernetes Service",c:"compute",d:"Microsoft's managed Kubernetes: the platform for containerised applications at scale, with Azure handling the cluster control plane and integrating with Entra ID, networking and monitoring. It is the strategic container platform for enterprises standardising on Kubernetes skills.",f:"Microsoft manages the Kubernetes control plane; you pay for the worker nodes your containers actually run on.",l:"AKS gives you portability and an industry-standard skill set, but you own the upgrade treadmill. Budget for platform engineering, not just the cluster."},
+{s:"AAp",n:"Azure App Service",c:"compute",d:"A fully managed platform for hosting web applications and APIs in .NET, Java, Node.js, Python and PHP, with deployment slots, autoscaling and authentication built in. For the many organisations whose estate is web apps on Microsoft technology, this is the fastest route out of server management.",f:"Deployment slots let you stage a new version beside production and swap them in seconds, which makes rollbacks nearly instant.",l:"App Service quietly removes patching and server admin from your team. Count that operational saving when comparing it with cheaper raw VMs."},
+{s:"ACI",n:"Azure Container Instances",c:"compute",d:"The simplest way to run a single container in Azure: no cluster, no platform, just start a container and pay while it runs. Suited to short jobs, build agents, burst capacity alongside AKS and quick experiments.",f:"Billing is per second while the container runs, which makes it economical for short-lived tasks that would idle on a VM.",l:"ACI is a scalpel, not a platform. If a workload needs orchestration, load balancing and self-healing, it belongs on Container Apps or AKS instead."},
+{s:"ABa",n:"Azure Batch",c:"compute",d:"A service for running large-scale parallel and high-performance computing jobs — rendering, risk modelling, simulations — across pools of VMs that Azure creates, schedules and tears down for you. It turns occasional heavy computation into a utility instead of a capital purchase.",l:"Batch workloads are the classic case for spot and low-priority capacity. Ask what the job costs at full price before approving the cheap option."},
+{s:"ACR",n:"Azure Container Registry",c:"compute",d:"A private registry for your organisation's container images, integrated with AKS, Container Apps and Azure DevOps pipelines, with geo-replication for global teams. It is the controlled front door through which every container image enters production.",f:"Registries can scan images for known vulnerabilities, so the registry becomes a security checkpoint, not just storage.",l:"Insist all production images come from your registry, never pulled directly from public sources. That one rule closes a common supply-chain hole."},
+{s:"Blo",n:"Blob Storage",c:"storage",d:"Azure's object storage for unstructured data: documents, images, backups, logs and the raw material of data lakes and AI training sets. It is effectively limitless in scale and is the cheapest place in Azure to keep large volumes of data for a long time.",f:"Blob Storage tiers data by temperature — Hot, Cool and Archive — with archive retrieval taking hours in exchange for the lowest storage price.",l:"Storage is cheap; keeping everything in the Hot tier forever is not. A lifecycle policy that ages data into cooler tiers is one of the easiest savings in Azure."},
+{s:"AFi",n:"Azure Files",c:"storage",d:"Managed file shares in the cloud that behave like the shared drives staff already know, reachable over standard SMB and NFS protocols. The common use is lifting on-premises file servers into Azure without retraining users or rewriting applications.",l:"Azure Files is how you retire the ageing file server without a migration project for every department. Watch the performance tier, not just the capacity price."},
+{s:"MDk",n:"Managed Disks",c:"storage",d:"The virtual hard disks attached to Azure VMs, managed entirely by Microsoft so you never administer storage accounts for disks. Tiers run from standard HDD up to premium and ultra disks for latency-sensitive databases.",l:"Disk tier is a quiet budget line: premium disks on every VM, chosen by default, is a common overspend. Match the tier to the workload's real I/O need."},
+{s:"ASQ",n:"Azure SQL Database",c:"storage",d:"A fully managed relational database built on the SQL Server engine, with patching, backups, high availability and scaling handled by Microsoft. For the large installed base of SQL Server applications, this is the natural modernisation target inside Azure.",f:"It is the same SQL Server technology most Microsoft shops already run, offered as a service — existing skills, tools and queries largely carry over.",l:"Moving to the managed service is as much an operating-model decision as a technical one: your DBAs stop patching and start optimising. Plan their new role."},
+{s:"Cos",n:"Cosmos DB",c:"storage",d:"Microsoft's globally distributed, multi-model database for applications that need fast responses anywhere in the world — retail catalogues, IoT, gaming and personalisation. Data can be replicated across Azure regions and read locally by users on any continent.",f:"Cosmos DB is designed for single-digit-millisecond reads and offers several consistency models, letting you trade strict consistency for speed per workload.",l:"Cosmos DB bills on provisioned throughput, so an over-provisioned container charges you all month. Review RU consumption like you review VM sizes."},
+{s:"APg",n:"Azure Database for PostgreSQL",c:"storage",d:"A managed home for PostgreSQL, the open-source database many modern applications are built on, with Microsoft handling backups, patching and availability. Its presence signals Azure's dual strategy: first-class support for open-source stacks alongside Microsoft's own.",l:"Choosing PostgreSQL keeps a credible exit option open, since the same database runs anywhere. That portability has negotiating value at renewal time."},
+{s:"Syn",n:"Azure Synapse Analytics",c:"storage",d:"Microsoft's enterprise analytics service, combining data warehousing with big-data querying so analysts can work over the data lake and the warehouse in one place. It is the traditional centre of an Azure reporting estate, though newer estates increasingly look at Microsoft Fabric.",f:"Synapse began life as Azure SQL Data Warehouse before being renamed and broadened into a unified analytics platform.",l:"Analytics platforms overlap fast — Synapse, Fabric and Databricks can all end up in one estate. Decide the standard before teams buy all three."},
+{s:"ADL",n:"Data Lake Storage Gen2",c:"storage",d:"The storage foundation for Azure analytics: Blob Storage enhanced with a hierarchical file system so big-data engines can organise and process files like a real file system. Nearly every Azure data lake, Synapse workspace and AI training pipeline sits on top of it.",l:"The lake is cheap to fill and expensive to clean. Set folder, naming and retention conventions before the first team lands data, not after."},
+{s:"ReC",n:"Azure Cache for Redis",c:"storage",d:"A managed in-memory cache based on Redis that keeps frequently used data in memory so applications answer in microseconds instead of querying the database every time. Used for session stores, leaderboards, and taking read pressure off expensive databases.",l:"A cache in front of Azure SQL can be cheaper than scaling the database itself. Ask engineers to price both options when performance spending is proposed."},
+{s:"ATb",n:"Azure Table Storage",c:"storage",d:"A simple, very low-cost NoSQL store for structured key-attribute data — settings, device registries, reference tables — that does not need relational queries or joins. It is one of the oldest Azure services and still one of the cheapest ways to store simple data at scale.",l:"Table Storage is a reminder that not every dataset deserves a flagship database. Match the database bill to the data's actual complexity."},
+{s:"AOA",n:"Azure OpenAI Service",c:"ai",d:"OpenAI's models — the GPT family and related models — delivered inside Azure with enterprise controls: your data stays in your tenant, content filtering is built in, and capacity can be reserved by region. For most Microsoft-committed enterprises this is the default route to generative AI.",f:"Under Microsoft's terms, prompts and data sent to Azure OpenAI are not used to train the public models.",l:"Capacity is provisioned and rate-limited per region, and the bill follows usage relentlessly. Set quotas per team, or the pilot becomes the production bill."},
+{s:"AAS",n:"Azure AI Search",c:"ai",d:"Microsoft's search service for applications and, increasingly, for AI: it indexes documents and data, including vector embeddings, so retrieval-augmented generation (RAG) assistants answer from your content. It is the retrieval backbone of most Azure-based enterprise copilots.",f:"Azure AI Search was formerly called Azure Cognitive Search before Microsoft consolidated its AI branding.",l:"A copilot is only as good as what it retrieves. Fund the unglamorous work of cleaning and indexing content, not just the chat interface."},
+{s:"AIS",n:"Azure AI Services (Cognitive Services)",c:"ai",d:"A family of prebuilt AI capabilities sold as APIs — vision, speech, language, translation and document understanding — that add intelligence to applications without training models. They are the quick-win layer of Azure AI: days of integration instead of months of data science.",f:"These services began as Microsoft's Cognitive Services and were among the first enterprise AI APIs sold purely by the call.",l:"Per-call pricing looks trivial until an application succeeds. Model the cost at full production volume before approving the pilot's architecture."},
+{s:"AML",n:"Azure Machine Learning",c:"ai",d:"The platform where data science teams train, register and deploy their own machine learning models, with experiment tracking, managed compute and monitored production endpoints. It serves the workloads prebuilt APIs and OpenAI models cannot: your proprietary predictions on your data.",l:"Azure ML projects fail on data access and ownership, rarely on algorithms. Assign a business owner and a data owner before the workspace is created."},
+{s:"MCS",n:"Microsoft Copilot Studio",c:"ai",d:"The low-code studio for building copilots and agents on your business data, published into Microsoft 365, Teams and the web, drawing on the same ecosystem as the Power Platform. It puts agent-building in the hands of business teams, with IT governance around it.",f:"Copilot Studio evolved from Power Virtual Agents, Microsoft's earlier chatbot builder, and now builds agents on Azure OpenAI models.",l:"Low-code agents multiply fast and quietly. Decide who approves a new agent, who owns its data connections, and how it gets retired."},
+{s:"AIF",n:"Azure AI Foundry",c:"ai",d:"Microsoft's unified studio for building AI applications and agents: a catalogue of models from OpenAI, Microsoft, Meta and others, with evaluation, safety and deployment tooling in one place. It is where Azure's AI story is consolidating for builders who work in code.",f:"AI Foundry began as Azure AI Studio and was expanded into Microsoft's single portal for model selection, including a catalogue of thousands of models.",l:"A model catalogue invites model sprawl. Set an approved-models list so teams do not each adopt a different model for the same job."},
+{s:"ASp",n:"Azure AI Speech",c:"ai",d:"Speech-to-text, text-to-speech, translation and speaker recognition as APIs, used for call-centre transcription, meeting intelligence, voice assistants and accessibility. Contact-centre recordings are the most common enterprise entry point.",l:"Transcribing every call creates a sensitive data asset. Pair the speech project with a retention and access policy from the start."},
+{s:"VNt",n:"Virtual Network (VNet)",c:"network",d:"Your private network inside Azure: the address space where VMs, containers and databases live, segmented into subnets and connected to your offices and other VNets. Nearly every other Azure decision — security, routing, compliance — is expressed in how VNets are designed.",l:"VNet design is nearly free to do well on day one and painful to redo later. Fund the network design workshop before the first migration wave."},
+{s:"ADn",n:"Azure DNS",c:"network",d:"Microsoft's hosting service for DNS domains, running on Azure's global anycast network so name lookups resolve quickly worldwide. It also provides private DNS zones so internal Azure names resolve only inside your networks.",l:"DNS is a single point of failure dressed as a utility. Keep the registrar, the DNS host and the recovery credentials deliberately separated and documented."},
+{s:"AFD",n:"Azure Front Door",c:"network",d:"Microsoft's global entry point for web applications: it routes users to the nearest healthy copy of your application, absorbs traffic spikes and provides web application firewall protection at the edge. It is how Azure applications become genuinely global and resilient.",f:"Front Door is the evolution of Azure's earlier CDN and traffic services into a single global load-balancing and security layer.",l:"Front Door can mask a fragile application by routing around failures. Track how often it fails over — frequent failover is a symptom, not a success."},
+{s:"AGw",n:"Application Gateway",c:"network",d:"A regional load balancer for web traffic that understands HTTP: it routes by URL path, terminates encryption and can inspect traffic with its web application firewall before it reaches your servers. It is the standard front door for applications living in one Azure region.",l:"Front Door versus Application Gateway confuses every new Azure team. Rule of thumb: global audience, Front Door; single region, Application Gateway."},
+{s:"ALB",n:"Azure Load Balancer",c:"network",d:"The foundational traffic distributor of Azure: it spreads incoming connections across healthy VMs or containers at the network level, without inspecting content. It is simple, very fast, and sits underneath much of the platform's own machinery.",l:"Load balancers are cheap and invisible until misconfigured. The health probe settings decide whether users see an outage — review them in every design."},
+{s:"ExR",n:"ExpressRoute",c:"network",d:"A private, dedicated connection between your data centre or office and Azure that never crosses the public internet, bought through a connectivity provider. Banks, governments and latency-sensitive estates use it as their permanent hybrid link.",f:"ExpressRoute traffic bypasses the public internet entirely, which is why regulated industries treat it as a compliance feature, not just bandwidth.",l:"ExpressRoute is a long-lead, contractual purchase. Order it in parallel with design work, not after the migration date is already set."},
+{s:"AFw",n:"Azure Firewall",c:"network",d:"Microsoft's managed network firewall: a central checkpoint that inspects and controls traffic between your Azure networks, your offices and the internet, with rules and threat intelligence applied consistently. It replaces racks of self-managed firewall appliances in a cloud estate.",l:"Centralised firewalling concentrates both protection and risk. Change control on firewall rules should be as strict as on production code."},
+{s:"ABs",n:"Azure Bastion",c:"network",d:"A managed jump box that lets administrators connect securely to VMs through the Azure portal in a browser, without exposing any public IP address or RDP port to the internet. It removes one of the most commonly attacked openings in cloud estates.",l:"Exposed management ports are how Azure breaches begin. Bastion plus just-in-time access should be non-negotiable in your landing zone standard."},
+{s:"Ent",n:"Entra ID — Microsoft Identity Platform",c:"security",d:"The identity service at the centre of the Microsoft cloud — formerly Azure Active Directory — holding user accounts, groups and application identities for Azure and Microsoft 365. Single sign-on, multi-factor authentication and conditional access policies are all enforced here.",f:"Microsoft renamed Azure Active Directory to Microsoft Entra ID in 2023; contracts and older documentation still use both names.",l:"Entra ID is the front door to everything Microsoft you own. Its admin roles are your crown jewels: review who holds them every quarter, without exception."},
+{s:"AKV",n:"Azure Key Vault",c:"security",d:"The vault for the secrets of the estate: encryption keys, passwords, certificates and tokens, stored under strict access control and audit, with a hardware-backed premium tier. Applications fetch secrets from the vault instead of embedding them in code.",f:"Key Vault's premium tier keeps keys inside FIPS-validated hardware security modules, so the key material never leaves the hardware unencrypted.",l:"A vault only helps if secrets actually live there. Scan code repositories for embedded passwords — the findings usually justify the vault programme alone."},
+{s:"DfC",n:"Microsoft Defender for Cloud",c:"security",d:"Microsoft's security posture dashboard for Azure (and, via Arc, other clouds): it scores your configuration against benchmarks, flags exposed resources and prioritises fixes across servers, containers, databases and storage.",l:"Defender produces findings faster than teams fix them. Agree the remediation SLA by severity before switching it on everywhere, or the backlog becomes wallpaper."},
+{s:"Sen",n:"Microsoft Sentinel",c:"security",d:"Microsoft's cloud-native security operations platform — a SIEM and SOAR that collects logs from across the estate, detects attacks with analytics and automates response playbooks. It is the SOC's workbench in a Microsoft-centred security strategy.",f:"Sentinel is built on Azure's data platform and bills largely on the volume of logs ingested, which makes log discipline a direct cost control.",l:"Ingesting every log from every system is the fastest way to a shocking Sentinel bill. Decide what the SOC genuinely watches and tier the rest."},
+{s:"APo",n:"Azure Policy",c:"security",d:"The rule engine of Azure governance: policies that audit or outright block deployments breaking your standards — wrong region, unencrypted disk, missing tag — applied automatically across every subscription. It turns governance documents into enforced engineering reality.",f:"Policies can deny a deployment at creation time, which moves governance from after-the-fact auditing to prevention.",l:"Policy is where 'we should' becomes 'the platform will not let you'. Start in audit mode, fix the estate, then switch to deny — in that order."},
+{s:"RBA",n:"Azure RBAC — Role-Based Access Control",c:"security",d:"The permission system that decides who can do what to which Azure resources, using roles assigned at management group, subscription, resource group or individual resource level. It is how least-privilege access is actually implemented in an Azure estate.",f:"RBAC assignments inherit downwards: a role granted at subscription level applies to everything inside it, which is why broad grants are so consequential.",l:"The most common Azure security finding is too many people with Owner or Contributor at subscription level. Count yours this week; the number will focus minds."},
+{s:"ALZ",n:"Azure Landing Zones",c:"security",d:"Microsoft's reference blueprint for a well-governed Azure foundation: how subscriptions are organised, networks connected, identity and policy applied, before workloads arrive. Think of it as surveying and zoning the land before anyone builds on it.",f:"The landing zone accelerator ships as ready-made Bicep and Terraform templates, so the blueprint is deployable code, not just a document.",l:"Skipping the landing zone to save a month costs a year of retrofitting governance later. It is the single highest-leverage item on this whole table."},
+{s:"DDo",n:"Azure DDoS Protection",c:"security",d:"Protection against distributed denial-of-service attacks that flood your public applications with traffic until they fall over. A basic level is built into the platform; the network protection tier adds adaptive tuning, attack analytics and a rapid-response support team.",l:"DDoS cover is insurance: price it against the revenue and reputation of the public services it protects, not against the IT budget in isolation."},
+{s:"ADo",n:"Azure DevOps",c:"dev",d:"Microsoft's development collaboration suite — Boards for work tracking, Repos for Git, Pipelines for CI/CD, Artifacts and Test Plans — long the standard toolchain for .NET teams. It now sits alongside GitHub, which Microsoft also owns, in many estates.",f:"Azure DevOps descends from Team Foundation Server, Microsoft's on-premises development server, reborn as a cloud service.",l:"Many organisations now pay for both Azure DevOps and GitHub. Pick the strategic one per team and stop double-licensing the same developers."},
+{s:"LAp",n:"Logic Apps",c:"dev",d:"A low-code integration service for connecting applications and automating workflows — when an invoice lands in one system, update another, notify a person, file the document. It competes with the business-process sprawl that spreadsheets and email used to carry.",l:"Logic Apps are business processes written by whoever got there first. Register and own them centrally, or critical processes will depend on one person's account."},
+{s:"APM",n:"Azure API Management",c:"dev",d:"The gateway and catalogue for your organisation's APIs: it publishes interfaces securely, controls who can call them and how often, and gives leadership a single inventory of the integrations the business runs on.",l:"An API inventory is a strategic asset: it shows exactly which systems talk to which. Insist every new integration passes through it, no side doors."},
+{s:"SBu",n:"Service Bus",c:"dev",d:"Enterprise messaging for connecting systems reliably: orders, payments and commands travel as messages through queues and topics, delivered even when the receiving system is temporarily down. It is the shock absorber between systems that must not lose transactions.",f:"Service Bus supports features like duplicate detection and scheduled delivery that simpler queues lack, aimed squarely at financial-grade messaging.",l:"Messaging is how fragile point-to-point integrations become resilient architecture. If two critical systems talk directly, ask why there is no queue between them."},
+{s:"EHu",n:"Event Hubs",c:"dev",d:"A high-throughput event streaming service that ingests millions of events per second — telemetry, clickstreams, IoT readings — for real-time analytics and processing. Where Service Bus carries precious individual messages, Event Hubs carries rivers of data.",f:"Event Hubs offers a Kafka-compatible endpoint, so existing Kafka applications and skills can connect without rewriting.",l:"Streaming platforms charge by throughput around the clock. Size for the real event rate, and check what happens to the bill during your busiest hour."},
+{s:"Bic",n:"Bicep — Infrastructure as Code",c:"dev",d:"Microsoft's language for defining Azure infrastructure as code: networks, VMs and policies declared in files, reviewed like software and deployed identically every time. Bicep compiles to ARM templates, Azure's native deployment format, with far friendlier syntax.",f:"Unlike multi-cloud tools, Bicep is Azure-only by design — Microsoft bets that a purpose-built language beats a generic one on its own platform.",l:"Infrastructure as code is your audit trail and your disaster recovery in one. If an environment cannot be rebuilt from code, it does not really have a backup."},
+{s:"EGr",n:"Azure Event Grid",c:"dev",d:"The event router of Azure: it pushes notifications — a file arrived, a VM changed, a resource was created — to Functions, Logic Apps and webhooks the moment they happen. It is the wiring that makes an Azure estate reactive instead of polling and waiting.",l:"Event-driven design removes armies of polling scripts. When a team proposes a scheduled polling job, ask what event it could subscribe to instead."},
+{s:"AMo",n:"Azure Monitor",c:"manage",d:"The observability platform of Azure: it collects metrics and health signals from every service, raises alerts, and feeds the dashboards operations teams watch. In estates without it, the first monitoring tool is a customer complaint.",l:"Alerting without ownership is noise. Every alert should name the team that acts on it, or Monitor becomes an expensive wall of red dashboards."},
+{s:"LAn",n:"Log Analytics",c:"manage",d:"The log data warehouse behind Azure Monitor and Sentinel, queried in KQL, Microsoft's query language, to answer questions across millions of log records — what failed, who connected, what changed. Retention and ingestion choices here drive a large share of monitoring cost.",f:"KQL — Kusto Query Language — was built for exploring huge telemetry datasets interactively and is now a marketable analyst skill in its own right.",l:"Log retention is a cost-versus-forensics decision: 30 days is cheap, a year satisfies auditors. Decide per data source, never by default."},
+{s:"ACM",n:"Azure Cost Management",c:"manage",d:"Microsoft's built-in FinOps tooling: it breaks the Azure bill down by team, project and resource, sets budgets, and alerts owners before spend runs away. It is the starting point for any serious conversation about cloud value.",l:"Cost data only changes behaviour when someone owns it. Publish a per-team cost report monthly and review it like a sales number."},
+{s:"Arc",n:"Azure Arc",c:"manage",d:"Microsoft's bridge for everything outside Azure: servers in your data centre or on other clouds appear inside Azure's management plane, governed by the same policy, monitoring and Defender tooling. It is Microsoft's answer to a permanently hybrid world.",f:"Arc can even manage Kubernetes clusters and SQL Servers running on rival clouds from the Azure portal.",l:"Arc is how a Microsoft-committed estate governs the parts that will never move to Azure. It deserves a line in your strategy, not an afterthought."},
+{s:"AMi",n:"Azure Migrate",c:"manage",d:"The migration workhorse: it discovers your on-premises servers, assesses their readiness and likely Azure cost, then replicates and moves them with minimal downtime. Most enterprise journeys into Azure start with its assessment report.",f:"The assessment estimates Azure cost from actual observed utilisation, which usually reveals estates running far below their provisioned capacity.",l:"Migrate's assessment is also a truth serum about your estate — expect it to find forgotten servers. Budget the cleanup it exposes, not just the move."},
+{s:"CAF",n:"Cloud Adoption Framework",c:"manage",d:"Microsoft's official methodology for moving to the cloud: strategy, planning, landing zones, migration, governance and management, with assessments and templates for each stage. It is the programme-management skeleton underneath most enterprise Azure journeys.",l:"The framework is free and thorough; the failure mode is treating it as documentation. Assign named owners to its governance disciplines or it stays a PDF."},
+{s:"AHB",n:"Azure Hybrid Benefit",c:"manage",d:"A licensing benefit that lets you apply existing Windows Server and SQL Server licences — typically bought with Software Assurance — to Azure instead of paying for licences again in the cloud price. For Microsoft-heavy estates it is frequently the single largest saving available.",f:"Hybrid Benefit exists because Microsoft would rather you run your existing licensed estate on Azure than on a rival cloud where the benefit does not apply.",l:"Licence position is money: before any migration business case, have your licensing team certify exactly which Hybrid Benefit entitlements you hold."},
+{s:"ARs",n:"Azure Reservations",c:"manage",d:"A commitment discount: promise to use a VM, database or other resource for a one- or three-year term and Microsoft charges materially less than pay-as-you-go. Reservations suit the stable core of the estate that runs all day, every day.",f:"Reservations can be exchanged or cancelled under limits, which makes the commitment less rigid than it first appears — but scope mistakes still cost real money.",l:"Reserve the boring, always-on baseline and nothing more. Reserving for hoped-for growth converts a discount into a sunk cost."},
+{s:"AMk",n:"Azure Marketplace",c:"manage",d:"Microsoft's storefront for third-party software and services that run on Azure — security tools, databases, AI products — purchased on the same bill, often counting against your enterprise agreement commitment.",f:"Marketplace purchases from eligible vendors can count toward an organisation's committed Azure spend under its Microsoft agreement.",l:"Marketplace makes buying software almost frictionless, which is precisely the risk. Route purchases through procurement policy before shadow contracts accumulate."},
+{s:"MEA",n:"Microsoft Enterprise Agreement",c:"manage",d:"The multi-year volume licensing agreement through which most large organisations buy Microsoft 365, Azure and server licences together, with committed spend and periodic true-ups. It is the commercial gravity well that shapes every other Azure decision.",l:"The agreement renewal is the real negotiation, and it is won in the two years before it: track consumption, shelfware and Hybrid Benefit use continuously, not in the final quarter."},
+{s:"AAd",n:"Azure Advisor",c:"manage",d:"A built-in consultant that continuously scans your estate and recommends improvements across cost, security, reliability, operational excellence and performance — idle resources to delete, configurations to fix. Its recommendations list is a ready-made optimisation backlog.",l:"Advisor's cost recommendations are usually the fastest payback in Azure governance. Review them monthly; unimplemented savings are a choice, not a mystery."}
+];
+const grid=document.getElementById('grid');
+const detail=document.getElementById('detail');
+const overlay=document.getElementById('overlay');
+const countEl=document.getElementById('count');
+let activeCat=null, selected=null;
+function render(){
+  grid.innerHTML='';
+  TERMS.forEach((t,i)=>{
+    const b=document.createElement('button');
+    b.className='tile'; b.type='button'; b.setAttribute('role','listitem');
+    b.style.background=CATS[t.c].color; b.dataset.cat=t.c;
+    b.dataset.search=(t.n+' '+t.s+' '+t.d+' '+CATS[t.c].name).toLowerCase();
+    b.innerHTML='<span class="no">'+(i+1)+'</span><span class="sym">'+t.s+'</span><span class="nm">'+t.n+'</span>';
+    b.addEventListener('click',()=>show(t,i,b));
+    grid.appendChild(b);
+  });
+  updateCount(TERMS.length);
+}
+function updateCount(n){countEl.textContent=n+' of '+TERMS.length+' terms shown';}
+function closeDetail(){
+  const el=selected;
+  if(selected)selected.classList.remove('selected');
+  selected=null; selectedIdx=-1;
+  detail.classList.remove('open'); overlay.classList.remove('open');
+  document.body.style.overflow='';
+  if(el && el.focus)el.focus({preventScroll:true});
+}
+let selectedIdx=-1;
+function show(t,i,el){
+  if(selectedIdx===i){closeDetail();selectedIdx=-1;return;}
+  if(selected)selected.classList.remove('selected');
+  selected=el; selectedIdx=i; if(el)el.classList.add('selected');
+  let html='<button class="zoom-close" type="button" onclick="closeDetail()" aria-label="Close">✕</button>';
+  html+='<div class="d-no">Element '+(i+1)+' of '+TERMS.length+'</div>';
+  html+='<span class="d-sym" style="background:'+CATS[t.c].color+'">'+t.s+'</span>';
+  html+='<h2>'+t.n+'</h2><div class="d-cat" style="color:'+CATS[t.c].color+'">'+CATS[t.c].name+'</div>';
+  html+='<p>'+t.d+'</p>';
+  if(t.f)html+='<div class="box formula"><b>Key fact</b>'+t.f+'</div>';
+  if(t.l)html+='<div class="box lens"><b>Leader lens</b>'+t.l+'</div>';
+  detail.innerHTML=html;
+  detail.classList.add('open'); overlay.classList.add('open');
+  document.body.style.overflow='hidden';
+}
+overlay.addEventListener('click',closeDetail);
+const legend=document.getElementById('legend');
+Object.keys(CATS).forEach(k=>{
+  const c=document.createElement('button'); c.type='button'; c.className='chip'; c.dataset.cat=k;
+  c.innerHTML='<span class="dot" style="background:'+CATS[k].color+'"></span>'+CATS[k].name;
+  c.addEventListener('click',()=>{
+    activeCat = activeCat===k ? null : k;
+    document.querySelectorAll('.chip').forEach(x=>x.classList.toggle('active',x.dataset.cat===activeCat));
+    applyFilter();
+  });
+  legend.appendChild(c);
+});
+function applyFilter(){
+  const q=document.getElementById('search').value.trim().toLowerCase();
+  let n=0;
+  document.querySelectorAll('.tile').forEach(tile=>{
+    const matchQ=!q || tile.dataset.search.includes(q);
+    const matchC=!activeCat || tile.dataset.cat===activeCat;
+    tile.classList.toggle('hidden',!matchQ);
+    tile.classList.toggle('dim',!!activeCat && !matchC && matchQ);
+    if(matchQ)n++;
+  });
+  updateCount(n);
+}
+document.getElementById('search').addEventListener('input',applyFilter);
+document.getElementById('resetBtn').addEventListener('click',()=>{
+  document.getElementById('search').value=''; activeCat=null;
+  document.querySelectorAll('.chip').forEach(x=>x.classList.remove('active')); applyFilter();
+});
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeDetail();});
+/* Theme toggle: saved choice wins, otherwise dark (the original look) */
+const themeBtn=document.getElementById('themeToggle');
+function applyTheme(th){
+  document.documentElement.setAttribute('data-theme',th);
+  themeBtn.textContent = th==='light' ? '☾' : '☀';
+  try{localStorage.setItem('azure_leaders_theme',th);}catch(e){}
+}
+let savedTheme='dark';
+try{savedTheme=localStorage.getItem('azure_leaders_theme')||'dark';}catch(e){}
+applyTheme(savedTheme==='light'?'light':'dark');
+themeBtn.addEventListener('click',()=>{
+  const cur=document.documentElement.getAttribute('data-theme')==='light'?'light':'dark';
+  applyTheme(cur==='light'?'dark':'light');
+});
+render();
+</script>
+</body>
+</html>

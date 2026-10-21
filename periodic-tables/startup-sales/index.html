@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>B2B Sales Keywords for Founders — The Periodic Table</title>
+<meta name="description" content="55 sales terms for founders: discovery, MEDDPICC qualification, champions, procurement, closing and metrics — every term with a full explanation, a Founder Lens, and formulas where they exist.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="B2B Sales for Founders — Periodic Table of B2B Sales Keywords">
+<meta property="og:description" content="55 sales terms for founders: discovery, MEDDPICC qualification, champions, procurement, closing and metrics — every term with a full explanation, a Founder Lens, and formulas where they exist.">
+<meta property="og:url" content="https://thillairaj.github.io/The-Signal-AI-Quantum/periodic-tables/startup-sales/">
+<style>
+  :root{--bg:#071527;--panel:#0b213f;--panel2:#0e2a52;--ink:#eef4ff;--muted:#9db4d4;--line:rgba(255,255,255,.14)}
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:'Segoe UI',system-ui,-apple-system,Arial,sans-serif;background:radial-gradient(1200px 600px at 20% -10%,#12325e 0%,var(--bg) 55%);color:var(--ink);min-height:100vh}
+  header{padding:34px 22px 10px;text-align:center;max-width:1200px;margin:0 auto}
+  .kicker{letter-spacing:.35em;font-size:11px;color:#7dd3fc;text-transform:uppercase;font-weight:700}
+  h1{font-size:clamp(28px,5vw,48px);line-height:1.08;margin:10px 0 10px;font-weight:800}
+  h1 span{color:#fbbf24}
+  .sub{color:var(--muted);max-width:820px;margin:0 auto;font-size:15.5px;line-height:1.55}
+  .principle{margin:18px auto 4px;max-width:880px;background:rgba(251,191,36,.08);border:1px solid rgba(251,191,36,.35);border-radius:12px;padding:12px 16px;font-size:14px;line-height:1.55;color:#fde68a}
+  .toolbar{position:sticky;top:0;z-index:40;background:rgba(7,21,39,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line);padding:12px 16px}
+  .toolbar-in{max-width:1280px;margin:0 auto;display:flex;flex-wrap:wrap;gap:10px;align-items:center;justify-content:center}
+  #search{flex:1 1 260px;max-width:420px;padding:11px 14px;border-radius:10px;border:1px solid var(--line);background:var(--panel);color:var(--ink);font-size:15px;outline:none}
+  #search:focus{border-color:#38bdf8}
+  .count{color:var(--muted);font-size:13.5px}
+  .btn{padding:10px 14px;border-radius:10px;border:1px solid var(--line);background:var(--panel2);color:var(--ink);cursor:pointer;font-size:13.5px;font-weight:600}
+  .btn:hover{border-color:#38bdf8}
+  #legend{max-width:1280px;margin:14px auto 0;padding:0 16px;display:flex;flex-wrap:wrap;gap:8px;justify-content:center}
+  .chip{display:inline-flex;align-items:center;gap:7px;padding:7px 12px;border-radius:999px;border:1px solid var(--line);background:var(--panel);color:var(--ink);font-size:12.5px;cursor:pointer;font-weight:600;transition:all .15s}
+  .chip .dot{width:11px;height:11px;border-radius:3px}
+  .chip:hover{transform:translateY(-1px);border-color:#fff}
+  .chip.active{outline:2px solid #fff;outline-offset:1px}
+  main{max-width:1280px;margin:0 auto;padding:20px 16px 30px;display:grid;grid-template-columns:1fr 340px;gap:20px;align-items:start}
+  #grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(96px,1fr));gap:8px}
+  .tile{border:none;border-radius:10px;padding:8px 6px 7px;min-height:96px;color:#fff;cursor:pointer;text-align:left;position:relative;transition:transform .16s ease,filter .16s ease,box-shadow .16s ease,opacity .16s;display:flex;flex-direction:column;box-shadow:inset 0 0 0 1px rgba(255,255,255,.22)}
+  .tile .no{font-size:10.5px;font-weight:700;opacity:.85}
+  .tile .sym{font-size:24px;font-weight:800;line-height:1.05;margin:auto 0 2px;letter-spacing:.01em;word-break:break-word}
+  .tile .nm{font-size:10px;line-height:1.25;font-weight:600;opacity:.95}
+  .tile:hover,.tile:focus-visible{transform:scale(1.09) translateY(-4px);filter:brightness(1.28) saturate(1.25);box-shadow:0 12px 28px rgba(0,0,0,.5),0 0 0 2px #fff;z-index:5;outline:none}
+  .tile.selected{box-shadow:0 0 0 3px #fff,0 12px 28px rgba(0,0,0,.5);filter:brightness(1.2)}
+  .tile.dim{opacity:.13;filter:grayscale(.6)}
+  .tile.hidden{display:none}
+  #detail{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:22px;position:sticky;top:132px;min-height:300px}
+  #detail .d-no{font-size:12px;color:var(--muted);letter-spacing:.15em;text-transform:uppercase;font-weight:700}
+  #detail .d-sym{display:inline-flex;align-items:center;justify-content:center;min-width:74px;height:74px;padding:0 10px;border-radius:14px;font-size:30px;font-weight:800;color:#fff;margin:12px 0}
+  #detail h2{font-size:24px;line-height:1.2;margin-bottom:6px}
+  #detail .d-cat{font-size:12.5px;font-weight:700;text-transform:uppercase;letter-spacing:.12em;margin-bottom:14px}
+  #detail p{font-size:15px;line-height:1.65;color:#dbe7fa}
+  #detail .box{margin-top:14px;border-radius:10px;padding:12px 14px;font-size:14px;line-height:1.55}
+  #detail .formula{background:rgba(56,189,248,.1);border:1px solid rgba(56,189,248,.4);color:#bae6fd}
+  #detail .lens{background:rgba(251,191,36,.08);border:1px solid rgba(251,191,36,.35);color:#fde68a}
+  #detail .box b{display:block;font-size:11px;letter-spacing:.18em;text-transform:uppercase;margin-bottom:5px;opacity:.85}
+  .hint{color:var(--muted);font-size:14.5px;line-height:1.6}
+  section.below{max-width:1280px;margin:0 auto;padding:6px 16px 26px}
+  section.below h3{font-size:22px;margin:18px 0 12px}
+  .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:12px}
+  .card{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:16px}
+  .card h4{font-size:15px;margin-bottom:7px;color:#7dd3fc}
+  .card p,.card li{font-size:14px;line-height:1.6;color:#dbe7fa}
+  .card ul{padding-left:18px}
+  .example{background:linear-gradient(135deg,#0e2a52,#12325e);border:1px solid rgba(251,191,36,.4)}
+  .example h4{color:#fbbf24}
+  .big{font-size:19px;font-weight:800;color:#fff;margin:6px 0}
+  footer{max-width:1280px;margin:0 auto;padding:10px 16px 38px;color:var(--muted);font-size:12.5px;line-height:1.6;text-align:center}
+  #overlay{display:none}
+  /* placeholder, zoom view styles are at the end of this stylesheet */
+  /* Theme toggle + sticky legend + back button (added Oct 21) */
+  header{position:relative}
+  .theme-toggle{position:absolute;top:16px;right:16px;width:44px;height:44px;border-radius:50%;border:1px solid var(--line);background:var(--panel2);color:#fbbf24;font-size:19px;cursor:pointer;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 14px rgba(0,0,0,.35)}
+  .theme-toggle:hover{transform:scale(1.08)}
+  #legend{flex-wrap:nowrap;overflow-x:auto;justify-content:flex-start;padding:10px 2px 3px;scrollbar-width:thin}
+  .chip{white-space:nowrap;flex:0 0 auto}
+  .backbtn{display:inline-flex;align-items:center;gap:6px;padding:9px 14px;border-radius:999px;border:1px solid var(--line);background:var(--panel2);color:var(--ink);font-size:13.5px;font-weight:700;cursor:pointer;margin-bottom:14px}
+  .backbtn:hover{border-color:#38bdf8}
+  #detail{top:168px}
+  /* Light theme */
+  html[data-theme="light"] body{background:radial-gradient(1200px 600px at 20% -10%,#e8eefc 0%,#FAF9F6 55%);color:#17293f}
+  html[data-theme="light"] h1{color:#0b213f}
+  html[data-theme="light"] .sub{color:#4d6482}
+  html[data-theme="light"] .principle{background:#fff8e1;border-color:#e5c15c;color:#6b5510}
+  html[data-theme="light"] .toolbar{background:rgba(250,249,246,.95);border-color:#ddd5c0}
+  html[data-theme="light"] #search{background:#fff;color:#17293f;border-color:#cfd8e3}
+  html[data-theme="light"] .btn{background:#fff;color:#17293f;border-color:#cfd8e3}
+  html[data-theme="light"] .chip{background:#fff;color:#17293f;border-color:#cfd8e3}
+  html[data-theme="light"] .chip.active{outline-color:#0b213f}
+  html[data-theme="light"] .count{color:#5a6f88}
+  html[data-theme="light"] #detail{background:#fff;border-color:#e0d9c6}
+  html[data-theme="light"] #detail p{color:#33475e}
+  html[data-theme="light"] #detail .d-no{color:#5a6f88}
+  html[data-theme="light"] #detail h2{color:#0b213f}
+  html[data-theme="light"] #detail .formula{background:#e8f4fd;border-color:#9fd0f5;color:#124d75}
+  html[data-theme="light"] #detail .lens{background:#fff8e1;border-color:#e5c15c;color:#6b5510}
+  html[data-theme="light"] .backbtn{background:#eef3fa;color:#17293f;border-color:#cfd8e3}
+  html[data-theme="light"] .hint{color:#5a6f88}
+  html[data-theme="light"] .card{background:#fff;border-color:#e0d9c6}
+  html[data-theme="light"] .card p,html[data-theme="light"] .card li{color:#33475e}
+  html[data-theme="light"] section.below h3{color:#0b213f}
+  html[data-theme="light"] .example{background:linear-gradient(135deg,#fff8e1,#fdf3d0);border-color:#e5c15c}
+  html[data-theme="light"] .example .big{color:#17293f}
+  html[data-theme="light"] footer{color:#5a6f88}
+  html[data-theme="light"] .theme-toggle{background:#fff;color:#d97706;border-color:#cfd8e3}
+  @media(max-width:900px){
+    main{grid-template-columns:1fr}
+    #detail{position:fixed;inset:auto 0 0 0;z-index:60;border-radius:18px 18px 0 0;max-height:72vh;overflow:auto;transform:translateY(105%);transition:transform .25s ease;box-shadow:0 -12px 40px rgba(0,0,0,.6)}
+    #detail.open{transform:translateY(0)}
+    #overlay{display:block;position:fixed;inset:0;background:rgba(0,0,0,.55);z-index:55;opacity:0;pointer-events:none;transition:opacity .25s}
+    #overlay.open{opacity:1;pointer-events:auto}
+    #grid{grid-template-columns:repeat(auto-fill,minmax(82px,1fr))}
+    .tile{min-height:86px}.tile .sym{font-size:20px}
+  }
+  /* Zoom reading view — same pattern as the Quantum / AI Deck cards (Oct 21) */
+  main{grid-template-columns:1fr}
+  #overlay{display:block;position:fixed;inset:0;background:rgba(3,10,20,.62);z-index:55;opacity:0;pointer-events:none;transition:opacity .22s ease}
+  #overlay.open{opacity:1;pointer-events:auto}
+  #detail{position:fixed;top:50%;left:50%;right:auto;bottom:auto;width:min(560px,92vw);max-width:92vw;max-height:86vh;overflow:auto;z-index:60;border-radius:18px;padding:26px;opacity:0;pointer-events:none;transform:translate(-50%,-47%) scale(.88);transition:transform .24s ease,opacity .24s ease;box-shadow:0 30px 80px rgba(0,0,0,.55)}
+  #detail.open{opacity:1;pointer-events:auto;transform:translate(-50%,-50%) scale(1)}
+  .zoom-close{position:absolute;top:12px;right:12px;width:38px;height:38px;border-radius:50%;border:1px solid var(--line);background:var(--panel2);color:var(--ink);font-size:15px;cursor:pointer;display:flex;align-items:center;justify-content:center;z-index:2}
+  .zoom-close:hover{border-color:#38bdf8;transform:scale(1.08)}
+  html[data-theme="light"] .zoom-close{background:#eef3fa;color:#17293f;border-color:#cfd8e3}
+  @media(max-width:900px){#detail{padding:22px 18px}}
+</style>
+</head>
+<body>
+<header>
+  <div style="text-align:left;max-width:1200px;margin:0 auto 14px"><a href="../../#learn" style="color:inherit;opacity:.75;text-decoration:none;font-size:13.5px;font-weight:600">← Back to Learning Spaces</a></div>
+  <button class="theme-toggle" id="themeToggle" type="button" aria-label="Switch light or dark theme" title="Switch light / dark theme">☀</button>
+  <div class="kicker">The Founder Sales Periodic Table</div>
+  <h1>B2B Sales for <span>Founders</span></h1>
+  <p class="sub">The vocabulary of selling to businesses, in plain language — for founders who are their company's first salesperson.</p>
+  <div class="principle"><strong>Core principle:</strong> Early sales is learning, not theatre. The founder sells first to discover what the market will actually pay for, who feels the pain most, and why deals really close. Only once that pattern is clear should you build the machine — hires, playbooks, tooling — that repeats it without you.</div>
+</header>
+
+<div class="toolbar">
+  <div class="toolbar-in">
+    <input id="search" type="search" placeholder="Search a term — try MEDDPICC, champion, discovery, pipeline…" aria-label="Search terms">
+    <span class="count" id="count"></span>
+    <button class="btn" id="resetBtn" type="button">Show all</button>
+  </div>
+  <div id="legend" aria-label="Category filter"></div>
+</div>
+
+<main>
+  <div id="grid" role="list"></div>
+  <aside id="detail" aria-live="polite">
+    <div class="d-no">Element detail</div>
+    <p class="hint" style="margin-top:12px">Click any element in the table to zoom into its full explanation.<br><br>Start with: <strong>MEDDPICC, Champion, Discovery</strong>.</p>
+  </aside>
+</main>
+<div id="overlay"></div>
+
+<section class="below"><h3>Six things a founder should hold on to</h3><div class="cards"><div class="card"><h4>Sell before you hire</h4><p>The founder's first job is not managing a sales team; it is discovering, personally, who buys, why they buy and what the deal requires. A sales hire amplifies a pattern that exists — it cannot invent one.</p></div><div class="card"><h4>Qualification is kindness</h4><p>Every unqualified deal in your pipeline steals time from a qualified one and from your product. Frameworks like BANT and MEDDPICC exist to make 'no' arrive early, when it is cheap.</p></div><div class="card"><h4>Activity is not progress</h4><p>Meetings held and proposals sent feel like momentum. Progress is only what the customer has done: stakeholders met, criteria agreed, paper process started. Manage to their movement, not your motion.</p></div><div class="card"><h4>Price is a value conversation</h4><p>Discounts offered before the cost of the problem is established are pure donation. Anchor on the cost of inaction, trade concessions instead of giving them, and protect the price that funds your roadmap.</p></div><div class="card"><h4>Deals die in the paper, not the pitch</h4><p>Security reviews, legal redlines and procurement steps kill more late-stage deals than competitors do. Map the paper process early, with your champion, and work backwards from the signing date.</p></div><div class="card"><h4>Write the playbook from wins</h4><p>Your first ten wins contain your entire sales system in embryo — the ICP that actually bought, the questions that surfaced pain, the path each deal took. Document that truthfully and hiring becomes replication, not experimentation.</p></div></div><h3>A founder's sales checklist</h3><div class="cards"><div class="card"><h4>Pipeline & qualification</h4><ul><li>Can I describe my ICP as a list of named companies, not adjectives?</li><li>Does every opportunity have a named next step the customer agreed to?</li><li>Is my pipeline coverage at least 3x this period's target?</li><li>For each late-stage deal, have I met the economic buyer?</li><li>Do I know each big deal's decision process and paper process?</li></ul></div><div class="card"><h4>Deal discipline</h4><ul><li>Is the pain quantified in the customer's own numbers?</li><li>Do I have a tested champion, or only a friendly contact?</li><li>Am I multi-threaded — at least three relationships in the account?</li><li>Does every POC have written success criteria and an end date?</li><li>Have I traded every concession instead of giving it away?</li></ul></div><div class="card example"><h4>Worked example: pipeline coverage</h4><p>Your target for next quarter is ₹40 lakh in new bookings. Your honest win rate on qualified opportunities is 25 percent — one in four closes. Required pipeline = 40 lakh / 0.25 = ₹1.6 crore of qualified pipeline by the quarter's start, a coverage ratio of 4x. If today your qualified pipeline is ₹90 lakh (2.25x coverage), the maths — not optimism — says the quarter will likely land near ₹22 lakh unless you add roughly ₹70 lakh of qualified pipeline now. Coverage is a prospecting alarm that rings one quarter early.</p></div></div></section>
+
+<footer>An educational map of B2B sales vocabulary for founders. Frameworks are lenses, not laws — adapt them to your market, deal size and sales cycle.<div style="margin-top:12px;font-size:13px">Curated by Thillai Raj Thanam Jeya Veera Raj · <a href="https://www.linkedin.com/in/thillairaj" target="_blank" rel="noopener" style="color:inherit;text-decoration:underline">Follow on LinkedIn</a></div></footer>
+
+<script>
+const CATS = { found:{name:"Sales Foundations",color:"#0d9488"}, pipeline:{name:"Prospecting & Pipeline",color:"#0284c7"}, discovery:{name:"Discovery & Qualification",color:"#4f46e5"}, closing:{name:"Demos, Proposals & Closing",color:"#ea580c"}, enterprise:{name:"Enterprise Sales",color:"#a21caf"}, metrics:{name:"Sales Metrics",color:"#65a30d"}, methods:{name:"Methods & Mindset",color:"#d97706"} };
+const TERMS = [
+{s:"FLS",n:"Founder-Led Sales",c:"found",d:"The stage where the founder personally runs sales: prospecting, discovery, demos and closing. It is not a stopgap until hiring a salesperson — it is how the founder learns the customer's real problem, language and buying process first-hand.",l:"Do not rush to hire your way out of selling. The insights from your first twenty customer conversations are worth more than any sales hire's Rolodex."},
+{s:"SM",n:"Sales Motion",c:"found",d:"The overall pattern by which you win customers: self-serve, sales-assisted, outbound-led, partner-led, or a blend. The right motion follows from your price point and product complexity — a low-priced product cannot carry an expensive field-sales motion.",f:"Rough rule of economics: the cost of the sales motion must be recoverable from the contract value within a reasonable payback period, or the motion does not scale.",l:"Decide your motion from your ACV, not from ambition. A ₹5 lakh product with a six-month enterprise process is a broken model, whatever the pipeline looks like."},
+{s:"ICP",n:"Sales ICP — Ideal Customer Profile",c:"found",d:"The firmographic and behavioural description of the accounts most likely to buy, succeed and renew: industry, company size, geography, technology in place, and the trigger events that make them ready. For sales, the ICP is a targeting tool, not a marketing slogan.",f:"A practical test: if your last ten wins share a pattern your ICP does not describe, your ICP is wrong, not your customers.",l:"Write your ICP from your actual wins and losses, then tighten it. A narrow ICP you can name company-by-company beats a broad one you can only describe."},
+{s:"BP",n:"Buyer Personas",c:"found",d:"The distinct roles inside a buying organisation and what each one cares about: the user who feels the pain, the manager who owns the outcome, the executive who owns the budget, and the blockers in IT, security and procurement. Each persona needs a different conversation.",l:"Map the personas before your second meeting. Selling one message to every role in the account is why good products lose to average ones."},
+{s:"VP",n:"Value Proposition",c:"found",d:"The specific, measurable outcome a customer gets from your product, expressed in their terms: revenue gained, cost removed, risk reduced, or time saved. A feature list is not a value proposition; a business result is.",f:"Strong value propositions survive one question: 'By how much, for whom, measured how?' If you cannot answer, you have a description, not a proposition.",l:"Test your value proposition in discovery, not in your deck. When a prospect repeats your outcome back in their own words, you have one."},
+{s:"OBI",n:"Outbound vs Inbound",c:"found",d:"Outbound means you initiate contact with target accounts — email, calls, LinkedIn, events. Inbound means prospects arrive through content, referrals, search or word of mouth. Early B2B startups usually cannot wait for inbound and must run outbound to create their first pipeline.",l:"Founder outbound works because it comes from a person with authority and product knowledge. Do your own first outreach campaigns; the replies are market research."},
+{s:"SC",n:"Sales Cycle",c:"found",d:"The elapsed time from first meaningful contact with an account to a signed contract. Cycle length grows with deal size, number of stakeholders and procurement formality — days for small businesses, many months for enterprises.",f:"Sales Cycle Length is measured honestly from first meeting to signature, not from the opportunity's creation date in the CRM, which flatters the number.",l:"Track your real cycle length before promising revenue dates to anyone. Most founder forecasts fail on cycle length, not on win rate."},
+{s:"ACV",n:"ACV — Annual Contract Value",c:"found",d:"The annualised revenue value of a customer contract: a three-year deal worth nine lakh a year has an ACV of nine lakh, whatever the total contract value says. ACV is the unit that connects deal size, sales motion and quota maths.",f:"ACV = Total Contract Value / Contract Term in Years. Quotas, coverage and territory plans are all built in ACV, not headline deal size.",l:"Quote and plan in ACV, and be suspicious of multi-year headline numbers. A big TCV with a small ACV still pays small commissions and small salaries."},
+
+{s:"Pr",n:"Prospecting",c:"pipeline",d:"The disciplined work of identifying target accounts and people, then earning a first conversation. Prospecting is a daily activity with its own skills — list building, research, sequencing and follow-up — separate from running deals already in motion.",l:"Prospecting is a pipeline insurance policy: the meetings you need next quarter are created by the prospecting you do this week, not by hope."},
+{s:"CO",n:"Cold Outreach",c:"pipeline",d:"First contact with a prospect who has no prior relationship with you: email, phone, or social message. Effective cold outreach is short, specific to the prospect's world, and offers one clear next step — not a product brochure in disguise.",f:"The structural rule that survives every tactic cycle: relevance beats volume. A researched message to fifty right accounts outperforms a blast to five thousand wrong ones.",l:"Write your own cold emails until you know which lines earn replies. That knowledge becomes the template your first SDR inherits."},
+{s:"WI",n:"Warm Introductions",c:"pipeline",d:"Reaching a target account through a mutual connection — an investor, a customer, an advisor — who lends their credibility to the first meeting. Warm introductions convert far better than cold outreach because trust is transferred, not built from zero.",l:"Build your introduction map before you need it: for each top target account, know exactly who in your network can open the door, and ask specifically."},
+{s:"SP",n:"Sales Pipeline",c:"pipeline",d:"The set of active opportunities, organised by stage from first meeting to close, each with a value, a next step and a close date. The pipeline is a working tool for managing deals, not a forecast to impress investors.",f:"A pipeline stage should describe the customer's verified progress (for example, economic buyer met), not the seller's activity (for example, proposal sent).",l:"Review your pipeline by asking what the customer has done, not what you have sent. Activity is not progress, and stale stages hide it."},
+{s:"PC",n:"Pipeline Coverage",c:"pipeline",d:"The ratio of open pipeline value to the target it must deliver. Because not every opportunity closes, a healthy pipeline holds several times the quota it is expected to produce for the period.",f:"Pipeline Coverage = Open Pipeline Value / Quota for the Period. Healthy B2B coverage is commonly 3x to 4x, adjusted by your actual win rate.",l:"Calculate your coverage honestly every week. If coverage is thin, the correct move is more prospecting now — not pressuring the few deals you have."},
+{s:"LQ",n:"Lead vs Opportunity",c:"pipeline",d:"A lead is a person or account showing possible interest; an opportunity exists only when there is a qualified problem, an identified buyer and an agreed next step. Confusing the two inflates the pipeline and poisons every forecast built on it.",l:"Define, in writing, what earns the word 'opportunity' in your company. That single definition will improve your forecast more than any CRM tool."},
+{s:"SDR",n:"SDR — Sales Development Representative",c:"pipeline",d:"A role specialised in prospecting and qualifying: researching accounts, running outreach sequences and booking meetings for account executives or, in a young startup, for the founder. SDRs create pipeline; closers convert it.",l:"Hire an SDR only after you can do the job yourself and describe exactly what works. Otherwise you are paying someone to experiment with no map."},
+{s:"ABM",n:"ABM — Account-Based Marketing & Selling",c:"pipeline",d:"A strategy that treats individual high-value accounts as markets of one: sales and marketing align on a named account list and tailor outreach, content and campaigns to each account's people and priorities.",f:"ABM works when the account list is genuinely small and valuable — tens of accounts, not thousands relabelled. If every account is a target, none is.",l:"For enterprise ambitions, pick ten dream accounts and work them properly for two quarters before widening. Depth beats breadth at this stage."},
+{s:"CRM",n:"CRM — Customer Relationship Management",c:"pipeline",d:"The system of record for accounts, contacts, opportunities and activities — the software (and the discipline behind it) that makes pipeline visible and forecastable. A CRM's value is entirely in the honesty and currency of what gets entered.",l:"Your CRM rule from day one: if it is not in the CRM, it did not happen. Enforce it on yourself first, or no hire will ever follow it."},
+
+{s:"DC",n:"Discovery Call",c:"discovery",d:"The early conversation whose job is to understand the prospect's problem, its cost, who else is affected and how a decision would be made — not to pitch. Good discovery earns the right to every later step; skipping it produces demos that impress nobody.",f:"A working ratio from experienced sellers: in a good discovery call the prospect talks most of the time. If you did 80 percent of the talking, you pitched, not discovered.",l:"Prepare questions, not slides, for discovery. Your goal is to leave the call knowing their problem better than they articulated it themselves."},
+{s:"PP",n:"Pain Points & Cost of Inaction",c:"discovery",d:"The specific problems a prospect feels today and what those problems cost — in money, time, risk or missed opportunity — if nothing changes. Deals move when the cost of inaction is made explicit and owned by the buyer.",f:"Cost of Inaction is the number behind urgency: current-state cost per month x months of delay = the price of 'let us think about it'.",l:"Always quantify the pain with the prospect, in their numbers. A problem without a cost attached will lose to every competing priority."},
+{s:"BANT",n:"BANT — Budget, Authority, Need, Timeline",c:"discovery",d:"A classic qualification checklist: does the account have budget, are you talking to someone with authority, is there a real need, and is there a timeline to act? BANT is a useful minimum screen, though too rigid for complex enterprise deals.",l:"Use BANT as a floor, not a ceiling. If budget 'does not exist yet' but need and authority are strong, budget often gets created — that is your job to help shape."},
+{s:"MED",n:"MEDDPICC — Enterprise Qualification",c:"discovery",d:"A rigorous qualification framework for complex deals, examining the metrics the buyer will judge, the economic buyer, decision criteria and process, the identified pain, the internal champion, and the paper process needed to sign.",f:"MEDDPICC = Metrics, Economic buyer, Decision criteria, Decision process, Identified pain, Champion, Competition, Paper process. Each letter is a question you must be able to answer with evidence.",l:"Run MEDDPICC on any deal you would be devastated to lose. The letters you cannot answer are exactly where the deal will die."},
+{s:"Ch",n:"Champion",c:"discovery",d:"A person inside the customer's organisation who has power, influence and a personal stake in your success, and who sells internally on your behalf when you are not in the room. A champion is tested by what they do — sharing information, arranging access — not by how friendly they are.",f:"The champion test: a real champion gives you information you could not get publicly, introduces you upward, and warns you about internal obstacles before they hit.",l:"Never mistake an enthusiastic user for a champion. Ask for something small — an introduction, an internal document — and see whether they spend political capital for you."},
+{s:"EB",n:"Economic Buyer",c:"discovery",d:"The person who can release the money: the single individual with budget authority and accountability for the business outcome your product serves. In enterprise deals there is exactly one economic buyer per decision, whatever the org chart suggests.",l:"Until you have met the economic buyer, you do not have a deal — you have a hope with a contact list. Plan your path to that meeting from day one."},
+{s:"DPr",n:"Decision Process",c:"discovery",d:"The actual sequence of steps, people and approvals by which the customer will say yes: technical evaluation, business case, security review, legal, procurement and final sign-off. It is discovered by asking, and it differs in every account.",l:"Ask early and directly: 'When you bought something like this last time, what did the process look like?' The answer is your closing plan in embryo."},
+{s:"DCr",n:"Decision Criteria",c:"discovery",d:"The explicit factors the buyer will score the decision against: capabilities, integration, security, price, vendor viability, references. Criteria are often set early — by whoever educates the buyer first — and late sellers are scored against someone else's list.",l:"Try to shape the criteria while they are still forming. If you receive a finished scorecard from a competitor-shaped process, you are column fodder."},
+{s:"MT",n:"Multi-Threading",c:"discovery",d:"Building relationships with several stakeholders across the account — users, managers, IT, finance, executives — instead of depending on one contact. Single-threaded deals die quietly when the one contact leaves, loses influence or goes on leave.",f:"Practical standard for enterprise deals: active relationships with at least three threads in the account, at different levels, before the proposal stage.",l:"After every good meeting, ask: 'Who else feels this problem, and who else will live with the decision?' Then earn those introductions while goodwill is warm."},
+
+{s:"PD",n:"Product Demo",c:"closing",d:"A demonstration of the product framed around the prospect's discovered problems, not a tour of every feature. A strong demo shows the two or three workflows that remove their specific pain and lets the prospect picture their own team using it.",l:"Demo their problem, not your product. If a feature does not map to a pain they named in discovery, it does not belong in this demo."},
+{s:"POC",n:"POC — Proof of Concept",c:"closing",d:"A time-boxed technical trial in the customer's environment, run against success criteria agreed in advance, to prove the product works for their case. An unmanaged POC drifts; a managed one ends in a decision.",f:"A legitimate POC has four parts in writing: scope, success criteria, a deadline, and a named decision-maker who will judge the result.",l:"Never start a POC without agreed success criteria and an end date. Free, open-ended pilots are where founder time goes to die."},
+{s:"Pil",n:"Pilot Programme",c:"closing",d:"A limited real-world deployment — one team, one region, one use case — that precedes a wider rollout. Unlike a POC, a pilot is usually paid and operational, designed to produce the internal evidence a full purchase needs.",l:"Price the pilot, even modestly. A paying pilot filters for serious intent and funds the attention the customer's team will give it."},
+{s:"BC",n:"Business Case",c:"closing",d:"The documented argument connecting your product to financial outcomes: the problem's cost, your price, the expected return and the payback period, written so your champion can defend it in rooms you will never enter.",f:"Payback Period = Total Cost / Monthly Benefit. Business cases a finance head respects show the calculation conservatively, with the customer's own numbers.",l:"Co-write the business case with your champion rather than emailing them a generic ROI sheet. Their fingerprints on it are what get it defended."},
+{s:"OH",n:"Objection Handling",c:"closing",d:"Responding to a prospect's concerns — price, timing, risk, competition — by understanding the real issue underneath rather than arguing. An objection is usually a request for evidence, reassurance or internal cover.",l:"Welcome objections; silence is the real killer. The prospect raising concerns is negotiating — the one who goes quiet has already decided."},
+{s:"PPC",n:"Proposal & Pricing Conversation",c:"closing",d:"The stage where scope, commercials and terms are put in writing and discussed openly. Healthy pricing conversations anchor on the value and cost of inaction established in discovery, rather than descending immediately into discounts.",l:"Present price beside the cost of their problem, never alone. And present it live, where you can hear the reaction — never by cold email."},
+{s:"Ng",n:"Negotiation",c:"closing",d:"The exchange in which both sides adjust terms — price, term length, payment schedule, scope, commitments — to reach a signable agreement. In B2B, procurement often negotiates professionally and by process; preparation, not theatre, decides outcomes.",f:"The discipline of trading, never giving: every concession you make should be exchanged for something — a longer term, a reference, faster signature, prepayment.",l:"Decide your walk-away line and your tradeables before the call. Founders negotiating tired and unprepared donate margin they never recover."},
+{s:"DD",n:"Discounting Discipline",c:"closing",d:"The practice of protecting price integrity: discounts are rare, traded for value, time-bound and approved deliberately. Casual discounting teaches customers that the first price was fiction and destroys the margin that funds the product.",l:"When asked for a discount, first ask what problem it solves. Often it is budget timing or internal optics — both fixable without cutting price."},
+{s:"MCP",n:"Mutual Close Plan",c:"closing",d:"A shared, written plan between seller and buyer listing every step to signature — evaluations, reviews, approvals, owners and dates — agreed with the champion and the economic buyer. It turns 'closing' from the seller's hope into the customer's project plan.",f:"A close plan is only real if the customer edited it. If only your team has touched the document, it is a wish list, not a plan.",l:"Introduce the mutual close plan earlier than feels comfortable. Customers with genuine intent welcome structure; those who resist it are telling you something."},
+
+{s:"PrP",n:"Procurement Process",c:"enterprise",d:"The formal buying machinery of large organisations: vendor registration, purchase requisitions, purchase orders, payment terms and approved-supplier lists. Procurement optimises for process compliance and risk reduction, which is why it often engages after the business decision is made.",l:"Ask about procurement in your first enterprise meeting, not your last. The process is survivable when it is scheduled and fatal when it is a surprise."},
+{s:"VSR",n:"Vendor Security Review",c:"enterprise",d:"The customer's assessment of your security and privacy posture: questionnaires, certifications such as SOC 2 or ISO 27001, data-handling and sub-processor reviews. For software vendors it is a standard gate before signature in larger organisations.",f:"Preparation that pays: a ready security pack — certifications, pen-test summary, data-processing terms, sub-processor list — can cut weeks off the review cycle.",l:"Build your security pack before the first enterprise asks. Answering a 200-question questionnaire from scratch, mid-deal, stalls momentum you may not recover."},
+{s:"MSA",n:"MSA — Master Services Agreement",c:"enterprise",d:"The umbrella contract governing the overall relationship — liability, IP, confidentiality, data protection, termination — under which individual orders are placed. Negotiating the MSA is usually the longest legal step in an enterprise deal.",l:"Use your own clean, balanced MSA template and know which clauses you can flex. Sending a customer a one-sided contract invites a one-sided redline war."},
+{s:"PaP",n:"Paper Process",c:"enterprise",d:"The administrative path a deal travels to become a signed, payable contract: legal review, security approval, budget release, signature authority and purchase order issuance. In MEDDPICC terms, the P that kills more late-stage deals than any competitor.",l:"Map the paper process on a whiteboard with your champion: every step, every owner, every typical duration. Then work the deal backwards from the signing date."},
+{s:"ES",n:"Executive Sponsor",c:"enterprise",d:"A senior figure — on either side — who visibly backs the initiative and can unblock stalled approvals. On the customer side, an executive sponsor signals that the project matters above department level; on your side, founder involvement does the same.",l:"Match seniority: when their CIO joins the call, you join the call. Peer-to-peer executive contact unblocks what account managers cannot."},
+{s:"RC",n:"Reference Customers",c:"enterprise",d:"Existing customers who agree to speak with a prospect about their experience with your product. Enterprises buy safety as much as capability, and a comparable, credible reference is often the final evidence a deal needs.",l:"Recruit references deliberately after every success, and protect them — coordinate every call, never surprise them, and thank them like the asset they are."},
+{s:"LE",n:"Land and Expand",c:"enterprise",d:"A strategy of winning a small initial deployment (the land) and growing it across teams, use cases and geographies over time (the expand). It lowers the customer's first-decision risk and makes revenue growth from existing accounts a primary engine.",f:"Net Revenue Retention above 100 percent is the signature of land-and-expand working: existing accounts grow faster than churn shrinks them.",l:"Choose the landing wedge by expansion potential, not by ease alone. A tiny foothold in the right account beats a big one-off sale in a dead end."},
+{s:"ER",n:"Enterprise Rollout",c:"enterprise",d:"The phased deployment of your product across a large organisation after signature: onboarding waves, training, integrations, change management and success measurement. The rollout is where enterprise promises become renewals — or churn with a long fuse.",l:"Treat the rollout plan as part of the sale, not an afterthought. Customers renew implementations, not contracts."},
+
+{s:"WR",n:"Win Rate",c:"metrics",d:"The share of qualified opportunities that end in a signed deal, measured over a defined period and segment. Win rate is the truest single measure of qualification quality and competitive strength — and the most commonly flattered.",f:"Win Rate = Deals Won / (Deals Won + Deals Lost). Open and abandoned opportunities excluded from the denominator make the number meaningless.",l:"Compute your win rate only on genuinely qualified opportunities, and read it by segment. An aggregate win rate hides where you actually win."},
+{s:"PV",n:"Pipeline Velocity",c:"metrics",d:"The rate at which pipeline converts into revenue, combining opportunity count, deal size, win rate and cycle length. It shows whether growth will come from more opportunities, bigger deals, better conversion or faster cycles.",f:"Pipeline Velocity = (Number of Opportunities x Win Rate x Average ACV) / Sales Cycle Length in days. Each factor is a different lever a founder can pull.",l:"When growth stalls, decompose velocity before spending. Most early startups need more qualified opportunities, not more pressure on the same few deals."},
+{s:"QA",n:"Quota Attainment",c:"metrics",d:"The percentage of an assigned sales target actually achieved, by a rep, a team or the whole company, over the quota period. Consistently low attainment usually signals a planning or territory problem, not only a performance problem.",f:"Quota Attainment = Actual Revenue Booked / Quota for the Period x 100. Healthy planning expects a distribution, with the team average landing near plan.",l:"Set your first sales hire's quota from your own founder results, discounted honestly. A quota invented from a spreadsheet destroys good reps."},
+{s:"SF",n:"Sales Forecasting",c:"metrics",d:"The disciplined estimate of what will close in a period, built from opportunity stage, evidence and history — categorised as commit, likely or upside. A forecast is a probability judgement, and its quality is measured by how rarely it surprises.",l:"Forecast from evidence in the deal — buyer met, process mapped, paper started — not from stage labels or optimism. Then write down why each big deal will close."},
+{s:"SCR",n:"Stage Conversion Rates",c:"metrics",d:"The percentage of opportunities advancing from each pipeline stage to the next: meeting to discovery, discovery to proposal, proposal to close. Stage conversion exposes exactly where deals leak, which an overall win rate cannot.",f:"Stage Conversion = Opportunities Leaving a Stage Forward / Opportunities Entering That Stage. A collapse at one stage points to one fixable cause.",l:"Find your leakiest stage and fix only that for a quarter. Discovery-to-demo leakage means qualification; proposal-to-close leakage means buyer access."},
+{s:"MN",n:"Magic Number & Sales Efficiency",c:"metrics",d:"Measures of how efficiently sales and marketing spend becomes new recurring revenue. The Magic Number compares net new ARR in a period with the sales and marketing spend that produced it in the prior period.",f:"SaaS Magic Number = Net New ARR in a Quarter / Sales and Marketing Spend in the Previous Quarter. A result around 0.75 or above is generally read as efficient; below 0.5 signals spend is outpacing returns.",l:"Do not chase efficiency metrics before you have repeatability. But once you hire ahead of yourself, this number is how you know whether the machine works."},
+
+{s:"SPIN",n:"SPIN Selling",c:"methods",d:"A consultative method built on question craft, developed by Neil Rackham from research into large sales: Situation questions establish context, Problem questions surface difficulties, Implication questions deepen the cost of those problems, and Need-payoff questions let the buyer articulate the value of solving them.",f:"SPIN = Situation, Problem, Implication, Need-payoff. Rackham's research found top performers in major sales ask proportionally far more implication questions than average sellers.",l:"Practise implication questions until they are natural: 'If this keeps failing at month-end, what does that do to your board reporting?' That is where budgets are born."},
+{s:"CS",n:"Challenger Sale",c:"methods",d:"An approach from CEB research (now part of Gartner), described by Matthew Dixon and Brent Adamson, finding that the most successful B2B reps 'challenge': they teach the customer something new about their own business, tailor the message to each stakeholder, and take control of the conversation.",f:"The Challenger research profiled five rep types — Challenger, Relationship Builder, Hard Worker, Lone Wolf, Reactive Problem Solver — and found Challengers the strongest performers in complex sales, with Relationship Builders the weakest.",l:"Teaching beats befriending in complex deals. Bring one genuine insight about their business to every meeting and you change the dynamic of the room."},
+{s:"SS",n:"Solution Selling",c:"methods",d:"A methodology that sells outcomes rather than products: diagnose the customer's admitted pain, shape a vision of the solved state with the buyer, and position your capability as the route to that vision. It underpins much of modern enterprise selling language.",l:"Sell the solved state, not the software. If the prospect cannot describe life after your product in their own words, the vision work is not done."},
+{s:"VS",n:"Value Selling",c:"methods",d:"Selling anchored continuously on quantified business value: every conversation, proposal and negotiation connects back to the financial outcome the customer will realise, which protects price when procurement pushes for discounts.",l:"Value selling is a habit, not a slide: end every meeting by restating the outcome and its worth as the customer themselves confirmed it."},
+{s:"CnS",n:"Consultative Selling",c:"methods",d:"An advisory posture in which the seller acts as a trusted problem-solver: asking more than telling, diagnosing before prescribing, and being willing to say when the product is not the right answer. It is the foundation most other methods build on.",l:"The fastest way to be treated as an advisor is to occasionally advise against yourself when the fit is wrong. That honesty compounds into referrals."},
+{s:"PB",n:"Sales Playbook",c:"methods",d:"The documented system of your sales process: ICP, qualification criteria, discovery questions, demo narratives, objection responses, pricing guardrails and stage definitions. A playbook captures what the founder learned so new hires can repeat it.",f:"A playbook is earned, not written aspirationally: document only what has actually worked in real deals, then version it as you learn.",l:"Write your playbook after your first ten wins, from the deals themselves. It is the single artefact that turns founder-led sales into a company."}
+];
+const grid=document.getElementById('grid');
+const detail=document.getElementById('detail');
+const overlay=document.getElementById('overlay');
+const countEl=document.getElementById('count');
+let activeCat=null, selected=null;
+function render(){
+  grid.innerHTML='';
+  TERMS.forEach((t,i)=>{
+    const b=document.createElement('button');
+    b.className='tile'; b.type='button'; b.setAttribute('role','listitem');
+    b.style.background=CATS[t.c].color; b.dataset.cat=t.c;
+    b.dataset.search=(t.n+' '+t.s+' '+t.d+' '+CATS[t.c].name).toLowerCase();
+    b.innerHTML='<span class="no">'+(i+1)+'</span><span class="sym">'+t.s+'</span><span class="nm">'+t.n+'</span>';
+    b.addEventListener('click',()=>show(t,i,b));
+    grid.appendChild(b);
+  });
+  updateCount(TERMS.length);
+}
+function updateCount(n){countEl.textContent=n+' of '+TERMS.length+' terms shown';}
+function closeDetail(){
+  const el=selected;
+  if(selected)selected.classList.remove('selected');
+  selected=null; selectedIdx=-1;
+  detail.classList.remove('open'); overlay.classList.remove('open');
+  document.body.style.overflow='';
+  if(el && el.focus)el.focus({preventScroll:true});
+}
+let selectedIdx=-1;
+function show(t,i,el){
+  if(selectedIdx===i){closeDetail();selectedIdx=-1;return;}
+  if(selected)selected.classList.remove('selected');
+  selected=el; selectedIdx=i; if(el)el.classList.add('selected');
+  let html='<button class="zoom-close" type="button" onclick="closeDetail()" aria-label="Close">✕</button>';
+  html+='<div class="d-no">Element '+(i+1)+' of '+TERMS.length+'</div>';
+  html+='<span class="d-sym" style="background:'+CATS[t.c].color+'">'+t.s+'</span>';
+  html+='<h2>'+t.n+'</h2><div class="d-cat" style="color:'+CATS[t.c].color+'">'+CATS[t.c].name+'</div>';
+  html+='<p>'+t.d+'</p>';
+  if(t.f)html+='<div class="box formula"><b>Formula / Key fact</b>'+t.f+'</div>';
+  if(t.l)html+='<div class="box lens"><b>Founder lens</b>'+t.l+'</div>';
+  detail.innerHTML=html;
+  detail.classList.add('open'); overlay.classList.add('open');
+  document.body.style.overflow='hidden';
+}
+overlay.addEventListener('click',closeDetail);
+const legend=document.getElementById('legend');
+Object.keys(CATS).forEach(k=>{
+  const c=document.createElement('button'); c.type='button'; c.className='chip'; c.dataset.cat=k;
+  c.innerHTML='<span class="dot" style="background:'+CATS[k].color+'"></span>'+CATS[k].name;
+  c.addEventListener('click',()=>{
+    activeCat = activeCat===k ? null : k;
+    document.querySelectorAll('.chip').forEach(x=>x.classList.toggle('active',x.dataset.cat===activeCat));
+    applyFilter();
+  });
+  legend.appendChild(c);
+});
+function applyFilter(){
+  const q=document.getElementById('search').value.trim().toLowerCase();
+  let n=0;
+  document.querySelectorAll('.tile').forEach(tile=>{
+    const matchQ=!q || tile.dataset.search.includes(q);
+    const matchC=!activeCat || tile.dataset.cat===activeCat;
+    tile.classList.toggle('hidden',!matchQ);
+    tile.classList.toggle('dim',!!activeCat && !matchC && matchQ);
+    if(matchQ)n++;
+  });
+  updateCount(n);
+}
+document.getElementById('search').addEventListener('input',applyFilter);
+document.getElementById('resetBtn').addEventListener('click',()=>{
+  document.getElementById('search').value=''; activeCat=null;
+  document.querySelectorAll('.chip').forEach(x=>x.classList.remove('active')); applyFilter();
+});
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeDetail();});
+/* Theme toggle: saved choice wins, otherwise dark (the original look) */
+const themeBtn=document.getElementById('themeToggle');
+function applyTheme(th){
+  document.documentElement.setAttribute('data-theme',th);
+  themeBtn.textContent = th==='light' ? '☾' : '☀';
+  try{localStorage.setItem('startup_sales_theme',th);}catch(e){}
+}
+let savedTheme='dark';
+try{savedTheme=localStorage.getItem('startup_sales_theme')||'dark';}catch(e){}
+applyTheme(savedTheme==='light'?'light':'dark');
+themeBtn.addEventListener('click',()=>{
+  const cur=document.documentElement.getAttribute('data-theme')==='light'?'light':'dark';
+  applyTheme(cur==='light'?'dark':'light');
+});
+render();
+</script>
+</body>
+</html>
