@@ -452,24 +452,31 @@ body[data-view="research"] .feed-only { display: none; }
 /* Deck cards: a touch darker than the page background. */
 .learn-card.deck-quantum, .learn-card.deck-ai { background-color: #F3EDDE; border: 1px solid #D8C9A3; }
 .learn-card.deck-quantum:hover, .learn-card.deck-ai:hover { background-color: #E9DDC0; border-color: #B99F5F; }
-.learn-card.table-finance { background-color: #E7F3EC; border: 1px solid #A9CFBB; }
-.learn-card.table-finance:hover { background-color: #D5EBDD; border-color: #6FA98A; }
+/* Interactive Tables family colours (Thillai, Oct 21 2026): Founders & Leadership = gold, Quantum = violet, AI = blue, Other Technologies = slate */
+.table-family-legend { display: flex; flex-wrap: wrap; gap: 8px 18px; margin: 2px 0 14px; font-size: 13px; font-weight: 600; color: #44403c; }
+.table-family-legend .fam-dot { display: inline-block; width: 11px; height: 11px; border-radius: 3px; margin-right: 6px; vertical-align: -1px; }
+.fam-dot.fam-founders { background: #D9A92C; }
+.fam-dot.fam-quantum { background: #7C5CBF; }
+.fam-dot.fam-ai { background: #3B82C4; }
+.fam-dot.fam-tech { background: #64748B; }
+.learn-card.table-finance { background-color: #FBF3E2; border: 1px solid #E2CD9B; }
+.learn-card.table-finance:hover { background-color: #F5E7C3; border-color: #BE9E52; }
+.learn-card.table-growth { background-color: #FBF3E2; border: 1px solid #E2CD9B; }
+.learn-card.table-growth:hover { background-color: #F5E7C3; border-color: #BE9E52; }
+.learn-card.table-leadership { background-color: #FBF3E2; border: 1px solid #E2CD9B; }
+.learn-card.table-leadership:hover { background-color: #F5E7C3; border-color: #BE9E52; }
 .learn-card.table-quantum { background-color: #ECE9F7; border: 1px solid #BDB0DE; }
 .learn-card.table-quantum:hover { background-color: #DCD3F0; border-color: #8B76C4; }
 .learn-card.table-ai { background-color: #E8F1FB; border: 1px solid #A9C6E8; }
 .learn-card.table-ai:hover { background-color: #D3E4F7; border-color: #6F9FD8; }
-.learn-card.table-agentic { background-color: #E6F7F7; border: 1px solid #9FD8D8; }
-.learn-card.table-agentic:hover { background-color: #CDEEEE; border-color: #5FB3B3; }
-.learn-card.table-tools { background-color: #EEF1F5; border: 1px solid #B9C2CE; }
-.learn-card.table-tools:hover { background-color: #DDE4EC; border-color: #8494A7; }
-.learn-card.table-cloud { background-color: #E9F3FE; border: 1px solid #A8CCF5; }
-.learn-card.table-cloud:hover { background-color: #D2E7FD; border-color: #6FA8E8; }
-.learn-card.table-cyber { background-color: #FBEAEA; border: 1px solid #E3AEAE; }
-.learn-card.table-cyber:hover { background-color: #F5D5D5; border-color: #C47474; }
-.learn-card.table-leadership { background-color: #FBF3E2; border: 1px solid #E2CD9B; }
-.learn-card.table-leadership:hover { background-color: #F5E7C3; border-color: #BE9E52; }
-.learn-card.table-growth { background-color: #EDF7E8; border: 1px solid #B2D8A4; }
-.learn-card.table-growth:hover { background-color: #DBF0D0; border-color: #74AC5E; }
+.learn-card.table-agentic { background-color: #E8F1FB; border: 1px solid #A9C6E8; }
+.learn-card.table-agentic:hover { background-color: #D3E4F7; border-color: #6F9FD8; }
+.learn-card.table-tools { background-color: #E8F1FB; border: 1px solid #A9C6E8; }
+.learn-card.table-tools:hover { background-color: #D3E4F7; border-color: #6F9FD8; }
+.learn-card.table-cloud { background-color: #EEF1F5; border: 1px solid #B9C2CE; }
+.learn-card.table-cloud:hover { background-color: #DDE4EC; border-color: #8494A7; }
+.learn-card.table-cyber { background-color: #EEF1F5; border: 1px solid #B9C2CE; }
+.learn-card.table-cyber:hover { background-color: #DDE4EC; border-color: #8494A7; }
 .learn-play { font-size: 1.5rem; color: #a5761f; line-height: 1; }
 .learn-kicker { font-family: var(--font-mono); font-size: 0.66rem; letter-spacing: 0.08em; color: #232a35; opacity: 0.6; }
 .learn-title { font-family: var(--font-display); font-size: 1.35rem; font-weight: 600; color: #1a2030; }
