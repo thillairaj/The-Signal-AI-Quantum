@@ -1,0 +1,620 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Cloud &amp; DevOps Deck</title>
+<meta property="og:type" content="website">
+<meta property="og:title" content="The Cloud &amp; DevOps Deck — learn cloud and DevOps, one card at a time">
+<meta property="og:description" content="15-card visual lessons on cloud and DevOps: fundamentals, compute models, Kubernetes, CI/CD, infrastructure as code, observability, SRE and platform engineering. Read a card, flip it, prove you know it.">
+<meta property="og:url" content="https://thillairaj.github.io/The-Signal-AI-Quantum/cloud-deck/">
+<style>
+  :root{
+    --obsidian:#0d0f14; --obsidian2:#151923; --gold:#b08d3e; --gold-dim:rgba(176,141,62,.4);
+    --ivory:#faf7f0; --card:#ffffff; --ink:#171b24; --muted:#6b7280; --line:#e8e2d4;
+    --green:#1e7e46; --red:#b3261e;
+    --page:#faf9f6; --page-ink:#2b3542;
+    --header-bg:radial-gradient(1200px 400px at 50% -80px,#f1eee4 0%,#faf9f6 65%);
+    --header-ink:#171b24; --header-sub:#5b6470;
+    --bar:rgba(250,249,246,.97); --bar-border:#e0dccf;
+    --chip-bg:#ffffff; --chip-ink:#2b3542; --chip-small:#6b7280;
+    --nav-bg:#ffffff;
+    --title-ink:#171b24; --row-sub:#5b6470;
+    --foot-ink:#6b7280; --foot-border:#e0dccf;
+  }
+  :root[data-theme="dark"]{
+    --obsidian:#0d0f14; --obsidian2:#151923; --gold:#d4af6a; --gold-dim:rgba(212,175,106,.4);
+    --ivory:#faf7f0; --card:#ffffff; --ink:#171b24; --muted:#6b7280; --line:#e8e2d4;
+    --green:#1e7e46; --red:#b3261e;
+    --page:#2f353e; --page-ink:#e9e4d6;
+    --header-bg:radial-gradient(1200px 400px at 50% -80px,#454e5b 0%,#2b3038 65%);
+    --header-ink:#ffffff; --header-sub:#aeb8c8;
+    --bar:rgba(47,53,62,.97); --bar-border:#4a5260;
+    --chip-bg:#22272f; --chip-ink:#cfd6e2; --chip-small:#8a919c;
+    --nav-bg:rgba(70,78,90,.45);
+    --title-ink:#f2ede0; --row-sub:#a8adb5;
+    --foot-ink:#9aa0aa; --foot-border:#4a5260;
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --gold:#d4af6a; --gold-dim:rgba(212,175,106,.4);
+      --page:#2f353e; --page-ink:#e9e4d6;
+      --header-bg:radial-gradient(1200px 400px at 50% -80px,#454e5b 0%,#2b3038 65%);
+      --header-ink:#ffffff; --header-sub:#aeb8c8;
+      --bar:rgba(47,53,62,.97); --bar-border:#4a5260;
+      --chip-bg:#22272f; --chip-ink:#cfd6e2; --chip-small:#8a919c;
+      --nav-bg:rgba(70,78,90,.45);
+      --title-ink:#f2ede0; --row-sub:#a8adb5;
+      --foot-ink:#9aa0aa; --foot-border:#4a5260;
+    }
+  }
+  .theme-toggle{position:absolute;top:14px;right:14px;background:var(--chip-bg);
+    border:1px solid var(--bar-border);border-radius:50%;width:32px;height:32px;
+    font-size:.95rem;cursor:pointer;color:var(--chip-ink);z-index:60;line-height:1}
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--page);color:var(--page-ink);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;line-height:1.55}
+  header{position:relative;background:var(--header-bg);
+    color:var(--header-ink);padding:44px 20px 34px;text-align:center;border-bottom:3px solid var(--gold)}
+  header .kicker{color:var(--gold);letter-spacing:4px;font-size:12px;font-weight:700}
+  header h1{margin:12px 0 8px;font-size:34px;letter-spacing:.5px;font-weight:800}
+  header h1 .thin{font-weight:300;color:var(--gold)}
+  header p{margin:0 auto;color:var(--header-sub);font-size:15px;max-width:620px}
+  /* topic navigator: horizontal scroll strip + search */
+  .topicbar{position:sticky;top:0;z-index:20;background:var(--bar);backdrop-filter:blur(6px);
+    border-bottom:1px solid var(--bar-border);padding:12px 18px;display:flex;gap:10px;align-items:center}
+  .tsearch{flex:0 0 220px;display:flex;align-items:center;background:var(--chip-bg);border:1px solid var(--bar-border);
+    border-radius:9px;padding:7px 10px}
+  .tsearch input{flex:1;background:none;border:none;outline:none;color:var(--chip-ink);font-size:13.5px;min-width:0}
+  .tsearch input::placeholder{color:var(--chip-small)}
+  .tstrip-wrap{flex:1;min-width:0;overflow:hidden}
+  .tstrip{display:flex;gap:10px;overflow-x:auto;scrollbar-width:none;padding:2px;scroll-snap-type:x proximity}
+  .tstrip::-webkit-scrollbar{display:none}
+  .tlabel{flex:0 0 auto;color:var(--gold);font-size:11px;font-weight:800;letter-spacing:2.5px;white-space:nowrap}
+  .tchip{flex:0 0 auto;scroll-snap-align:start;border:1px solid var(--bar-border);background:var(--chip-bg);color:var(--chip-ink);
+    font-size:15px;font-weight:700;padding:11px 20px;border-radius:999px;cursor:pointer;white-space:nowrap}
+  .tchip small{color:var(--chip-small);font-weight:700;margin-right:8px;letter-spacing:1px;font-size:12px}
+  .tchip:hover{border-color:var(--gold-dim)}
+  .tchip.active{background:var(--gold);border-color:var(--gold);color:#171b24}
+  .tchip.active small{color:#5c4a1f}
+  .tchip.soon{opacity:.55;border-style:dashed;cursor:default}
+  .tchip.soon:hover{border-color:var(--bar-border)}
+  .tnav{flex:0 0 auto;width:34px;height:34px;border-radius:50%;border:1px solid var(--gold-dim);
+    background:var(--nav-bg);color:var(--gold);font-size:18px;cursor:pointer;line-height:1}
+  .tnav:hover{background:rgba(70,78,90,.72)}
+  main{max-width:1140px;margin:0 auto;padding:30px 18px 60px}
+  .topic-head{text-align:center;margin:6px 0 4px}
+  .topic-head .tnum{color:var(--gold);letter-spacing:4px;font-size:12px;font-weight:700}
+  .topic-head h2{margin:8px 0 0;font-size:30px;font-weight:800;color:var(--title-ink);font-family:Georgia,serif;letter-spacing:.3px}
+  .topic-head .tsub{margin:10px auto 0;max-width:640px;font-size:15px;color:var(--muted);line-height:1.55}
+  .topic-head .tdraft{display:inline-block;margin-top:8px;font-size:11px;letter-spacing:3px;font-weight:700;
+    color:var(--gold);border:1px dashed var(--gold-dim);border-radius:999px;padding:4px 14px}
+  .rowhead{display:flex;align-items:baseline;justify-content:space-between;margin:34px 0 6px}
+  .rowhead h2{margin:0;font-size:21px;letter-spacing:.3px;color:var(--title-ink)}
+  .rowhead h2 .n{color:var(--gold);font-size:13px;letter-spacing:2px;vertical-align:middle;margin-right:8px}
+  .rowhead p{margin:4px 0 0;color:var(--row-sub);font-size:13.5px}
+  .rail-wrap{position:relative}
+  .rail{display:flex;gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;
+    scrollbar-width:none;padding:14px 4px 18px;align-items:stretch}
+  .rail::-webkit-scrollbar{display:none}
+  .rail-btn{position:absolute;top:42%;transform:translateY(-50%);z-index:5;width:44px;height:44px;border-radius:50%;
+    border:1px solid var(--gold-dim);background:rgba(70,78,90,.45);color:var(--gold);font-size:22px;cursor:pointer;
+    box-shadow:0 2px 8px rgba(0,0,0,.18)}
+  .rail-btn:hover{background:rgba(70,78,90,.72)}
+  .rail-btn.prev{left:-8px}.rail-btn.next{right:-8px}
+  @keyframes wiggle{0%,100%{transform:rotate(0deg)}25%{transform:rotate(.7deg) translateY(-2px)}75%{transform:rotate(-.7deg)}}
+  @media(hover:hover) and (prefers-reduced-motion:no-preference){
+    .pcard:hover{animation:wiggle .45s ease-in-out}
+    .fcard:hover{animation:wiggle .45s ease-in-out}
+  }
+  .pcard{flex:0 0 320px;height:480px;scroll-snap-align:start;border-radius:16px;background:var(--card);
+    border:1px solid var(--line);box-shadow:0 6px 22px rgba(13,15,20,.08);
+    display:flex;flex-direction:column;padding:20px;position:relative;overflow:hidden}
+  .pcard::before{content:"";position:absolute;top:0;left:0;right:0;height:5px;
+    background:linear-gradient(90deg,var(--gold),#f0d9a0,var(--gold))}
+  .pnum{font-size:12px;font-weight:800;color:var(--gold);letter-spacing:2px}
+  .ptag{font-size:11px;font-weight:700;letter-spacing:2px;color:var(--muted);margin:2px 0 8px}
+  .pq{font-size:17.5px;font-weight:750;line-height:1.35;margin:0 0 10px;font-family:Georgia,serif;color:var(--ink)}
+  .pbody{flex:1;overflow-y:auto;font-size:13.5px;color:#2b3542;scrollbar-width:thin}
+  .pbody p{margin:0 0 9px}
+  .toolbar{border-top:1px dashed var(--line);padding-top:10px;margin-top:8px;display:flex;flex-wrap:wrap;gap:6px;align-items:center}
+  .toolbar select{font-size:11.5px;padding:6px 6px;border-radius:7px;border:1px solid var(--line);background:#f4f1e8;max-width:128px}
+  .toolbar button{font-size:11.5px;font-weight:700;padding:6px 10px;border-radius:7px;cursor:pointer;
+    border:1px solid var(--line);background:#f4f1e8;color:var(--ink)}
+  .toolbar button:hover{background:var(--gold);border-color:var(--gold);color:#fff}
+  .copied{font-size:11px;color:var(--green);font-weight:700;display:none}
+  /* click-to-zoom reading view */
+  .pcard[data-i]{cursor:pointer}
+  #zoom-ov{position:fixed;inset:0;background:rgba(10,12,16,.68);z-index:300;display:none;align-items:center;justify-content:center;padding:24px;box-sizing:border-box}
+  #zoom-ov.open{display:flex}
+  #zoom-card{position:relative;max-width:660px;width:100%;max-height:88vh;overflow-y:auto;background:var(--card);color:var(--ink);border:1px solid var(--line);border-radius:18px;padding:38px 42px 32px;box-shadow:0 24px 70px rgba(0,0,0,.35);box-sizing:border-box}
+  #zoom-card::before{content:"";position:absolute;top:0;left:0;right:0;height:6px;background:linear-gradient(90deg,var(--gold),#f0d9a0,var(--gold));border-radius:18px 18px 0 0}
+  #zoom-num{font-size:12px;font-weight:800;color:var(--gold);letter-spacing:2px;margin-bottom:8px}
+  #zoom-tag{font-size:12px;font-weight:700;letter-spacing:2.5px;color:var(--muted);margin-bottom:10px}
+  #zoom-q{font-size:26px;font-weight:750;line-height:1.35;margin:0 0 16px;font-family:Georgia,serif;color:var(--ink)}
+  #zoom-body{font-size:17px;line-height:1.7;color:var(--ink)}
+  #zoom-body p{margin:0 0 14px}
+  #zoom-close{position:absolute;top:14px;right:14px;width:36px;height:36px;border-radius:50%;border:1px solid var(--line);background:var(--card);color:var(--ink);font-size:18px;cursor:pointer;line-height:1;padding:0}
+  #zoom-close:hover{background:var(--gold);border-color:var(--gold);color:#fff}
+  @media(max-width:700px){#zoom-card{padding:30px 24px 24px}#zoom-q{font-size:22px}#zoom-body{font-size:16px}}
+  /* compact flashcards */
+  .fcard{flex:0 0 260px;height:215px;scroll-snap-align:start;perspective:1000px;cursor:pointer}
+  .finner{position:relative;width:100%;height:100%;transform-style:preserve-3d;transition:transform .55s}
+  .fcard.flipped .finner{transform:rotateY(180deg)}
+  .fface{position:absolute;inset:0;backface-visibility:hidden;-webkit-backface-visibility:hidden;border-radius:12px;
+    padding:16px 18px;display:flex;flex-direction:column;justify-content:flex-start;overflow:auto}
+  .ffront{background:linear-gradient(160deg,#3d444f 0%,#2c313a 72%);color:#fff;border:1px solid #545d6b}
+  .ffront .fnum{color:var(--gold);font-size:11px;font-weight:800;letter-spacing:2px;margin-bottom:6px}
+  .ffront .fq{font-size:13.5px;font-weight:700;line-height:1.45;font-family:Georgia,serif}
+  .ffront .fhint{margin-top:8px;font-size:9.5px;letter-spacing:2px;color:var(--gold);font-weight:700}
+  .fback{background:var(--card);transform:rotateY(180deg);border:1px solid var(--line);color:var(--ink);font-size:12px}
+  .fback .fnum{font-size:10.5px;font-weight:800;color:var(--gold);letter-spacing:2px;margin-bottom:5px}
+  /* quiz */
+  #quiz-box{max-width:700px;margin:6px auto 0;background:var(--card);border:1px solid var(--line);
+    border-radius:16px;padding:28px;box-shadow:0 6px 22px rgba(13,15,20,.08)}
+  #quiz-progress{font-size:11.5px;color:var(--muted);font-weight:700;letter-spacing:1.5px;margin-bottom:10px}
+  #quiz-q{font-size:18px;font-weight:700;margin:0 0 18px;font-family:Georgia,serif;
+    background:#2b3038;color:#fff;padding:18px 20px;border-radius:12px;border-left:5px solid var(--gold)}
+  .opt{display:block;width:100%;text-align:left;margin:0 0 10px;padding:13px 15px;font-size:14.5px;
+    border:1px solid var(--line);border-radius:10px;background:#fbfaf6;cursor:pointer;color:var(--ink)}
+  .opt:hover:not(:disabled){border-color:var(--gold)}
+  .opt:disabled{cursor:default}
+  .opt.correct{background:#e6f4ea;border-color:var(--green);font-weight:700}
+  .opt.wrong{background:#fbeae9;border-color:var(--red)}
+  #quiz-feedback{font-size:14px;font-weight:700;margin:6px 0 12px;min-height:22px}
+  #quiz-next{display:none;padding:10px 28px;font-size:14px;font-weight:700;border-radius:10px;border:none;
+    background:#2b3038;color:var(--gold);cursor:pointer}
+  #quiz-result{text-align:center}
+  #quiz-score{font-size:46px;font-weight:800;color:#2b3038}
+  #quiz-band{font-size:18px;font-weight:750;margin:8px 0 4px}
+  #quiz-sub{color:var(--muted);font-size:14px;margin-bottom:18px}
+  #quiz-restart{padding:10px 28px;font-size:14px;font-weight:700;border-radius:10px;border:none;
+    background:#2b3038;color:var(--gold);cursor:pointer}
+  .upgrid{display:flex;gap:14px;overflow-x:auto;scrollbar-width:none;padding:14px 4px 18px;
+    scroll-snap-type:x proximity;margin-top:10px}
+  .upgrid::-webkit-scrollbar{display:none}
+  .upcard{flex:0 0 230px;scroll-snap-align:start;border:1px dashed var(--gold-dim);border-radius:12px;padding:22px;background:#fff;text-align:center;color:var(--muted)}
+  .upcard b{display:block;color:#2b3038;font-size:16px;margin-bottom:6px}
+  .upcard span{font-size:11px;letter-spacing:2px;font-weight:700;color:var(--gold)}
+  .upcard.live{border-style:solid;cursor:pointer}
+  .upcard.live:hover{border-color:var(--gold)}
+  .upcard.live span{color:var(--green)}
+  footer{text-align:center;padding:28px 16px;color:var(--foot-ink);font-size:13px;border-top:1px solid var(--foot-border);margin-top:20px}
+  footer .rule{width:60px;height:2px;background:var(--gold);margin:0 auto 12px}
+  footer a{color:var(--gold);font-weight:700;text-decoration:none}
+  @media(max-width:700px){.pcard{flex-basis:80%}.fcard{flex-basis:62%}.rail-btn{display:none}
+    .topicbar{flex-wrap:wrap;row-gap:10px}
+    .tstrip-wrap{flex:1 1 auto}
+    .tnav{display:none}
+    .tsearch{flex:1 1 100%;order:5}}
+
+  /* Back link lives in the sticky topic bar (Thillai, Oct 21 2026) so it stays visible while scrolling. */
+  .topicbar .backlink{color:inherit;opacity:.78;text-decoration:none;font-size:13.5px;font-weight:600;white-space:nowrap;align-self:center}
+  .topicbar .backlink:hover{opacity:1;text-decoration:underline}
+
+  /* Frozen navigation cards (Thillai, Oct 21 2026): Back + sibling deck live inside the sticky topic bar. */
+  .topicbar .navcard{display:flex;flex-direction:column;gap:1px;justify-content:center;padding:6px 12px;border:1px solid var(--gold-dim);border-radius:12px;background:var(--card);color:var(--ink);text-decoration:none;min-width:0;transition:border-color .15s ease,transform .15s ease}
+  .topicbar .navcard:hover{border-color:var(--gold);transform:translateY(-1px)}
+  .topicbar .navcard.sib{margin-left:auto}
+  .nc-dir{font-size:9.5px;letter-spacing:1.8px;text-transform:uppercase;opacity:.62;font-weight:700;white-space:nowrap}
+  .nc-title{font-size:14px;font-weight:700;line-height:1.25;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:200px}
+  .topicbar .navcard.next{text-align:right}
+  /* LinkedIn follow button (Thillai, Oct 21 2026): coloured card-button, LinkedIn blue gradient. */
+  .li-btn{display:inline-flex;align-items:center;gap:10px;padding:8px 16px 8px 9px;border-radius:14px;background:linear-gradient(135deg,#0A66C2,#004182);color:#fff !important;text-decoration:none !important;box-shadow:0 4px 14px rgba(10,102,194,.35);vertical-align:middle;transition:transform .15s ease,box-shadow .15s ease}
+  .li-btn:hover{transform:translateY(-1px);box-shadow:0 8px 22px rgba(10,102,194,.45)}
+  .li-btn .li-badge{display:inline-flex;align-items:center;justify-content:center;width:30px;height:30px;border-radius:8px;background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.45);color:#fff;flex:0 0 auto}
+  .li-btn .li-badge svg{width:16px;height:16px;display:block}
+  .li-txt{display:flex;flex-direction:column;line-height:1.15;text-align:left}
+  .li-dir{font-size:9.5px;letter-spacing:1.8px;text-transform:uppercase;opacity:.85;font-weight:700}
+  .li-name{font-size:15.5px;font-weight:800;letter-spacing:.01em}
+</style>
+</head>
+<body>
+
+<header>
+  <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">☾</button>
+  <div class="kicker" id="deck-kicker">CLOUD &amp; DEVOPS, MADE VISUAL</div>
+  <h1>The <span class="thin">Cloud &amp; DevOps</span> Deck</h1>
+</header>
+<div class="topicbar">
+  <a class="navcard back" href="../#learn-decks"><span class="nc-dir">← Back to</span><span class="nc-title">Learning Spaces</span></a>
+  <span class="tlabel">SELECT TOPIC</span>
+  <button class="tnav" id="tstrip-prev" aria-label="Scroll topics left">‹</button>
+  <div class="tstrip-wrap"><div class="tstrip" id="topic-strip"></div></div>
+  <button class="tnav" id="tstrip-next" aria-label="Scroll topics right">›</button>
+  <label class="tsearch"><input id="topic-search" type="search" placeholder="Search topics…" aria-label="Search topics"></label>
+  <a class="navcard sib prev" href="../ai-deck/"><span class="nc-dir">← Previous</span><span class="nc-title">The AI Deck</span></a>
+</div>
+<main>
+  <div class="topic-head">
+    <div class="tnum" id="topic-num">DECK 01</div>
+    <h2 id="topic-title">The Cloud &amp; DevOps Deck</h2>
+    <p class="tsub" id="topic-tagline"></p>
+    <div><span class="tdraft" id="topic-draft" style="display:none">DRAFT · UNDER REVIEW</span></div>
+  </div>
+  <div class="rowhead"><div><h2><span class="n">01</span>Learn</h2><p>Scroll the rail — arrows move one card at a time. Share any card as an image, post, or text.</p></div></div>
+  <div class="rail-wrap">
+    <button class="rail-btn prev" data-rail="learn-rail" aria-label="Previous">‹</button>
+    <div class="rail" id="learn-rail"></div>
+    <button class="rail-btn next" data-rail="learn-rail" aria-label="Next">›</button>
+  </div>
+
+  <div class="rowhead"><div><h2><span class="n">02</span>Flashcards</h2><p>Read the question, think, tap to flip. Honest self-check — no scoring, no sharing.</p></div></div>
+  <div class="rail-wrap">
+    <button class="rail-btn prev" data-rail="flash-rail" aria-label="Previous">‹</button>
+    <div class="rail" id="flash-rail"></div>
+    <button class="rail-btn next" data-rail="flash-rail" aria-label="Next">›</button>
+  </div>
+
+  <div class="rowhead"><div><h2><span class="n">03</span>Quiz</h2><p>Ten questions, one at a time. Options shuffle every attempt.</p></div></div>
+  <div id="quiz-box"></div>
+
+  <div class="rowhead"><div><h2><span class="n">+</span>What's next</h2><p>One new topic goes live every Wednesday — scroll sideways.</p></div></div>
+  <div class="rail-wrap">
+    <button class="rail-btn prev" data-rail="upgrid" aria-label="Previous">‹</button>
+    <div class="upgrid" id="upgrid"></div>
+    <button class="rail-btn next" data-rail="upgrid" aria-label="Next">›</button>
+  </div>
+</main>
+
+<footer><div class="rule"></div>Curated by Thillai Raj Thanam Jeya Veera Raj · <a class="li-btn" href="https://www.linkedin.com/in/thillairaj" target="_blank" rel="noopener"><span class="li-badge" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.55V9h3.57v11.45z"/></svg></span><span class="li-txt"><span class="li-dir">Follow on</span><span class="li-name">LinkedIn</span></span></a></footer>
+<script>
+const FOOTER="Curated by Thillai Raj Thanam Jeya Veera Raj";
+const BRAND="The Cloud & DevOps Deck";
+const PUBLIC_URL="https://thillairaj.github.io/The-Signal-AI-Quantum/cloud-deck/";
+const THEMES={
+obsidian:{bg0:"#151923",bg1:"#0d0f14",accent:"#d4af6a",dim:"rgba(212,175,106,.5)",head:"#ffffff",body:"#c3ccd9",foot:"#8fa0b5"},
+ivory:{bg0:"#fffdf9",bg1:"#f0ebdf",accent:"#a8842f",dim:"rgba(168,132,47,.45)",head:"#171b24",body:"#334052",foot:"#6b7280"},
+midnight:{bg0:"#122c55",bg1:"#0b1f3b",accent:"#d4af6a",dim:"rgba(212,175,106,.5)",head:"#ffffff",body:"#c3ccd9",foot:"#8fa0b5"}};
+/* ---------- topics: one data block per deck; shared render below ---------- */
+/* ---------- Theme (same pattern as The Signal) ---------- */
+const THEME_KEY="deck_theme";
+const themeToggleBtn=document.getElementById("themeToggle");
+function applyTheme(theme){
+  if(theme==="dark"||theme==="light"){document.documentElement.setAttribute("data-theme",theme);}
+  else{document.documentElement.removeAttribute("data-theme");}
+  themeToggleBtn.textContent=(theme==="dark")?"\u2600":"\u263e";
+  if(!theme&&window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches){
+    themeToggleBtn.textContent="\u2600";
+  }
+}
+(function initTheme(){
+  let saved=null;try{saved=localStorage.getItem(THEME_KEY);}catch(e){}
+  applyTheme(saved);
+})();
+themeToggleBtn.addEventListener("click",()=>{
+  const cur=document.documentElement.getAttribute("data-theme")||
+    (window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light");
+  const next=cur==="dark"?"light":"dark";
+  try{localStorage.setItem(THEME_KEY,next);}catch(e){}
+  applyTheme(next);
+});
+
+const TOPICS=[
+{id:"cloud-fundamentals",num:"01",short:"Cloud Basics",title:"Cloud Fundamentals",status:"live",
+ tagline:"What the cloud actually is — models, responsibility, and economics, without the marketing.",
+ xTags:"#CloudComputing #CloudBasics",liTags:"#CloudComputing #CloudDeck #LearnInPublic",learn:[{n:"1",tag:"CLOUD COMPUTING",q:"What is cloud computing, in plain terms?",body:["Cloud computing is renting computing — servers, storage, databases, networking, software — over the internet, on demand, instead of buying and running your own. You provision in minutes through a console or an API, and you pay for what you actually use.","It is not just “someone else's computer.” The defining traits are self-service, pooled resources shared safely across customers, rapid elasticity, and measured billing. Remove those and you have ordinary hosting with a new label."]},{n:"2",tag:"SERVICE MODELS",q:"IaaS, PaaS, SaaS — what actually changes between them?",body:["The three models differ in where the management line falls. With IaaS (infrastructure as a service) the provider runs hardware and virtualization; you manage the operating system, runtime, and application. With PaaS (platform), the provider also runs the OS and runtime — you bring code and data. With SaaS (software), you bring users and configuration; the provider runs everything else.","Moving up the stack trades control for relief from undifferentiated work: less patching, less plumbing, fewer choices. None is “better” — the question is which layer your team should spend its skill on."]},{n:"3",tag:"SHARED RESPONSIBILITY",q:"Security in the cloud — whose job is it, exactly?",body:["Both parties', along a clear line. The provider secures the cloud itself: facilities, hardware, the virtualization layer, the physical network. You secure what you put in the cloud: your data, identities and access, configuration, and how you use the services. This is the shared-responsibility model.","In practice, most cloud breaches are customer-side failures — a storage bucket left public, an over-privileged account, an unpatched VM — not provider intrusions. The line moves with the service model, but it never reaches zero on your side."]},{n:"4",tag:"DEPLOYMENT MODELS",q:"Public, private, hybrid, multi-cloud — why so many shapes?",body:["Public cloud is the pooled, multi-tenant service anyone can rent. Private cloud is cloud-style infrastructure dedicated to one organisation — for control, regulation, or existing investment. Hybrid connects the two, so workloads can sit where constraints demand and burst where economics allow. Multi-cloud deliberately spreads across providers.","Choose by constraint, not fashion: data-residency law, latency, legacy dependencies, and negotiating leverage are legitimate reasons. “Everyone is doing it” is not."]},{n:"5",tag:"REGIONS & ZONES",q:"What are regions and availability zones?",body:["A region is a geographic cluster of data centres — “India (Mumbai)” is a region. Inside it, availability zones (AZs) are physically separate facilities with independent power, cooling, and networking, linked by fast private connections.","Two design rules follow: deploy across AZs so one facility's fire or flood is an inconvenience, not an outage; and choose regions deliberately, because location sets latency for users and legal residency for data. Region choice is an architecture decision, not an afterthought."]},{n:"6",tag:"ELASTICITY",q:"Elasticity vs scalability — what is the difference?",body:["Scalability is the ability to grow: up (a bigger machine) or out (more machines). Elasticity is scalability with a thermostat — capacity grows and shrinks automatically as demand rises and falls.","Elasticity is where the economic magic lives. A system sized permanently for its Friday peak wastes money all week; an elastic one rents the peak and hands it back. If your cloud bill never breathes, you are paying for idle capacity."]},{n:"7",tag:"THE COST MODEL",q:"Does moving to the cloud automatically save money?",body:["Cloud converts capital expense (buying servers) into operating expense (renting by the hour or second). That flexibility is real — but a lift-and-shift migration often costs more than the data centre it replaced: always-on rented VMs, priced like permanent servers, without the ownership.","The savings come from behaviour, not location: elasticity, rightsizing oversized instances, discount commitments for steady load, and ruthlessly switching off what nobody uses. Cloud rewards engineering discipline; it taxes neglect."]},{n:"8",tag:"VIRTUALIZATION",q:"What technology makes the cloud possible?",body:["Virtualization: a hypervisor carves one physical server into many isolated virtual machines, each believing it owns a computer. That pooling is what lets a provider rent slices of enormous fleets safely.","But virtualization alone is just efficient hosting. The cloud revolution is the layer on top: automation and APIs, so infrastructure is provisioned by software in seconds, billed by the second, and identical every time. Infrastructure became callable from code."]},{n:"9",tag:"CLOUD-NATIVE",q:"“Hosted in the cloud” vs “cloud-native” — what is the difference?",body:["A hosted application is an old design on rented machines: one big program, scaled by buying a bigger VM, assuming the server rarely fails. A cloud-native application is designed for the environment: small independent services, packaged in containers, automated deployment, and failure treated as normal rather than exceptional.","Same building, different architecture. Cloud-native is not a product you buy — it is how deliberately you design for elasticity, failure, and change."]},{n:"10",tag:"AVAILABILITY",q:"What do the “nines” actually promise?",body:["Availability is quoted in nines. 99.9% (“three nines”) allows roughly 43 minutes of downtime a month. 99.99% allows about 4 minutes. 99.999% allows about 26 seconds — and each additional nine costs disproportionately more to engineer.","Treat an SLA as a contract with service credits, not a guarantee of zero downtime. Real availability is an architecture property — redundancy across zones, tested failover — long before it is a line in a contract."]},{n:"11",tag:"BACKUP & RECOVERY",q:"RTO and RPO — the two numbers that define recovery",body:["Recovery is specified by two numbers. RPO (recovery point objective): how much data you can afford to lose, measured in time — an RPO of one hour means backups or replication at most one hour old. RTO (recovery time objective): how long the service may be down.","Backup is not disaster recovery. Copies you have never test-restored, with no stated RTO, are a hope, not a plan. Patterns run from cheap backup-and-restore to multi-site active-active, and cost rises steeply with speed."]},{n:"12",tag:"MULTI-TENANCY",q:"How can strangers share the same hardware safely?",body:["Pooling only works if tenants are isolated. Providers enforce it at every layer — hypervisor separation between VMs, virtual networks that cannot see each other, identity systems that scope every request. Your neighbour's workload is invisible to yours by construction.","The residual risk is performance, not access: a “noisy neighbour” consuming shared capacity. Quotas, dedicated hosts, and tier selection manage it. Pooling is not a corner cut — it is the economic engine of the cloud."]},{n:"13",tag:"MIGRATION",q:"What are the 6 Rs of cloud migration?",body:["The classic strategy menu: Rehost (lift-and-shift as-is), Replatform (small optimizations on the way), Repurchase (move to a SaaS product), Refactor (redesign cloud-native), Retain (keep on-premises for now), Retire (switch it off — every estate has workloads nobody needs).","Most real programmes mix several Rs, chosen per workload from a business case. Migration fails when it is treated as a copying exercise instead of a portfolio decision."]},{n:"14",tag:"GOVERNANCE",q:"Why does cloud need guardrails before the first workload?",body:["Cloud makes provisioning instant — which means mistakes are instant too. A landing zone is the governed starting structure: account layout, identity, network design, policies, tagging standards, and budget alerts, set before workloads land.","Ungoverned cloud predictably produces sprawl, surprise bills, and audit failures. Governance is not bureaucracy here; it is what makes speed safe enough to keep."]},{n:"15",tag:"THE OPERATING SHIFT",q:"The cloud changes the address — what else changes?",body:["Everything about how IT runs. Provisioning becomes self-service instead of tickets. Operations becomes software: APIs, pipelines, automation. Teams shift from guarding servers to owning services end to end, with DevOps and SRE skills at the centre.","Organisations that move servers but keep the old operating model get cloud prices with data-centre agility — the most expensive outcome available. The technology is the easy half of cloud; the operating model is the transformation."]}],
+flash:[{q:"A vendor says: “We're cloud-first — everything now runs on cloud VMs.” Is that cloud-native?",a:"No — that is hosted, not cloud-native. Lifted-and-shifted VMs keep the old architecture: one big program, scaled by buying bigger machines. Cloud-native means designed for the environment — small services, containers, automation, failure assumed."},{q:"A breach is traced to a storage bucket your team left public. The provider shrugs. Are they right to?",a:"Mostly, yes. Under shared responsibility the provider secures the cloud itself; configuration, data, and access on your side are yours. Most cloud breaches are customer-side misconfigurations, not provider intrusions."},{q:"Your team picked IaaS “for control” and now complains about patching operating systems every month. What happened?",a:"That is the IaaS bargain working as designed: you manage everything from the OS upward. If patching is undifferentiated toil for you, PaaS moves that line up — you bring code and data, the provider runs the platform."},{q:"Traffic triples every evening and is flat at night, yet the cloud bill is enormous. What is missing?",a:"Elasticity. The system is sized for the peak around the clock. Elastic design scales out for the evening surge and back in at night — a bill that never breathes means you are paying for idle capacity."},{q:"Your application sat in a single availability zone and went down when that facility flooded. What was the design error?",a:"Ignoring what AZs are for. Zones inside a region are physically isolated precisely so one facility's failure is survivable. Deploy across AZs; choose the region for latency and data-residency law."},{q:"Finance projected a 40% saving “from the migration itself.” Why should you push back?",a:"Migration alone often raises cost — always-on rented VMs are priced like permanent servers without the ownership. Savings come from behaviour: elasticity, rightsizing, commitments for steady load, and switching off waste."},{q:"Your SLA promised 99.95%, the provider breached it, and offered credits. Leadership feels cheated. What is the lesson?",a:"An SLA is a contract with credits, not a guarantee of zero downtime. Availability must be architected — redundancy across zones, tested failover — not purchased as a contract line."},{q:"The DR plan is “nightly backups.” Why is that not disaster recovery?",a:"Backup is copies; recovery is a tested capability with numbers attached — an RPO (how much data you may lose) and an RTO (how long you may be down). Untested restores with no objectives are a hope, not a plan."},{q:"One workload must keep data inside the country by law; another is a global consumer app. One cloud strategy for both?",a:"No — constraints decide. Residency pins the first workload to in-country regions; the second wants multi-region placement near users. Deployment models are chosen per workload, not by fashion."},{q:"A new cloud account is opened and workloads land before any policies exist. What predictably follows?",a:"Sprawl, surprise bills, and audit findings. A landing zone — account structure, identity, tagging, budgets, policies — comes first, because cloud mistakes provision as fast as cloud successes do."},{q:"A sceptic says the cloud is “just someone else's computer.” What is he missing?",a:"The layer on top of virtualization: automation and APIs. Infrastructure provisioned by software in seconds, billed by the second, identical every time — pooled, elastic, self-service. That is a different operating reality, not just a different landlord."},{q:"A workload runs flat out, 24×7, predictably, for five years. Is on-demand cloud obviously right for it?",a:"Not obviously. Pay-as-you-go on-demand is the most expensive way to run steady load. Compare discount commitments, reserved capacity — and honestly assess whether it belongs in the cloud at all. Spiky workloads are cloud's home turf; flat ones need arithmetic."},{q:"A team containerised its monolith and declared itself cloud-native. What would you check?",a:"Whether the design changed, not the packaging. Can parts scale and deploy independently? Is failure isolated? A single giant container that scales as one lump is a hosted monolith wearing a container costume."},{q:"Leadership wants five-nines availability “everywhere, to be safe.” Your response?",a:"Each nine multiplies cost and complexity — five nines allows ~26 seconds of downtime a month. Set availability per workload from business impact; five nines for a brochure site bankrupts the programme that funds the systems that matter."},{q:"Six months after migration, engineers still raise tickets to get a server. What went wrong?",a:"The address changed; the operating model didn't. Cloud value comes from self-service provisioning, automation, and service-owning teams. Ticket-based provisioning on rented infrastructure is the most expensive outcome available."}],
+quiz:[{q:"Under shared responsibility, a storage bucket your team configured is left public and data leaks. Whose failure is it?",opts:["The provider's — they run the platform, so all security is theirs","Yours — configuration, data, and access sit on the customer side of the line","Nobody's — storage buckets are public by design","The hypervisor vendor's — isolation is their layer"],c:1},{q:"What fundamentally distinguishes cloud computing from traditional hosting?",opts:["On-demand self-service, pooled resources, rapid elasticity, and API-driven automation","Larger servers than any company could buy alone","Monthly billing instead of yearly contracts","Data centres located in a different country"],c:0},{q:"An application must survive one data-centre fire and keep all data inside the country. Which design fits?",opts:["One availability zone, with strong nightly backups","Two regions on two different continents","Multiple availability zones within a single in-country region","Private cloud only — public cloud cannot do this"],c:2},{q:"Why do lift-and-shift migrations so often cost more than the data centre they replaced?",opts:["Cloud bandwidth is billed per user by law","Providers raise prices secretly after migration","Virtual machines are excluded from every discount","Always-on rented servers are paid like permanent ones — without elasticity, rightsizing, or switching off idle capacity, you pay rental rates for machines that sit unused"],c:3},{q:"What does elasticity add beyond plain scalability?",opts:["They are synonyms — vendors use both words for the same thing","Elasticity grows and shrinks capacity automatically with demand; scalability alone is only the ability to grow","Elasticity applies to storage, scalability to compute","Scalability is automatic; elasticity means an engineer resizes by hand"],c:1},{q:"A service has an RPO of 1 hour and an RTO of 4 hours. What has been promised?",opts:["Backups run every 4 hours and restores take 1 hour","At most about 4 hours of data loss, with service back within 1 hour","At most about 1 hour of data loss, with service restored within about 4 hours of a failure","Zero data loss and zero downtime, guaranteed"],c:2},{q:"How does the management line differ between IaaS and SaaS?",opts:["With IaaS you manage everything from the operating system upward; with SaaS you mainly manage users, configuration, and your data","SaaS customers are expected to patch the provider's servers","IaaS means the provider manages your application code for you","There is no difference — the three models are marketing labels"],c:0},{q:"Roughly how much downtime per month do 99.9% and 99.99% availability allow?",opts:["Both promise zero downtime — the numbers are decorative","About 4 minutes for 99.9% and about 43 minutes for 99.99%","99.99% actually allows more downtime than 99.9%","About 43 minutes for 99.9% and about 4 minutes for 99.99% — each nine is roughly ten times stricter, and far costlier"],c:3},{q:"What is a landing zone actually for?",opts:["A marketing launchpad for the cloud programme","A discount tier for the first year of spending","Account structure, identity, policies, tagging, and budgets established before workloads land — governance built in from the start","A faster class of virtual machine"],c:2},{q:"Which workload most challenges the claim that “the cloud always saves money”?",opts:["A marketing site with wild, unpredictable traffic spikes","A flat, predictable 24×7 workload run on-demand for years — steady load can cost more rented than owned without commitments or redesign","A development sandbox used eight hours a day","A seasonal reporting job that runs twice a year"],c:1}]},
+{id:"compute-containers-serverless",num:"02",short:"Compute",title:"Compute, Containers & Serverless",status:"live",
+ tagline:"Three answers to one question — where does the code run? VMs, containers, and functions, honestly compared.",
+ xTags:"#Containers #Serverless",liTags:"#Containers #Serverless #CloudDeck #LearnInPublic",learn:[{n:"1",tag:"THE CORE QUESTION",q:"Every workload starts with one question: where does the code run?",body:["Strip away the branding and modern compute offers three mainstream answers. A virtual machine: rent a whole computer. A container: rent a packaged process. A function: rent a single execution of your code. Each is a legitimate answer; each is wrong for some workloads.","The unit is what matters. The three models differ in what you deploy, what you scale, what you pay for, and how much of the machine is your problem. This topic is the honest comparison the vendor pages skip."]},{n:"2",tag:"VIRTUAL MACHINES",q:"What does a VM give you — and what does it charge you?",body:["A virtual machine gives you a complete computer: your choice of operating system, kernel-level control, any legacy stack, and the strongest mainstream isolation boundary — a separate OS per tenant.","The charges are real: minutes to provision and boot, an operating system that is yours to patch forever, and a meter that runs while the machine exists, busy or idle. VMs are rented responsibility."]},{n:"3",tag:"CONTAINERS",q:"What does a container actually package?",body:["A container packages an application with everything it needs — libraries, runtime, configuration — into a single image. Unlike a VM it carries no operating system of its own; it shares the host's kernel, which is why containers start in seconds and pack densely.","The image is the unit of shipping: built once, identical everywhere it runs. That one property quietly kills the oldest sentence in operations — “it worked on my machine.”"]},{n:"4",tag:"VM VS CONTAINER",q:"VMs versus containers — rivals, or layers?",body:["As isolation, the VM wins: separate kernels are a harder boundary than a shared one. As speed and density, containers win by an order of magnitude. Framed as a contest, the comparison misleads.","In real estates they are layers, not rivals: containers routinely run on top of virtual machines — the VM provides tenancy and isolation, the container provides packaging and speed. Choosing one does not exile the other."]},{n:"5",tag:"IMAGES & REGISTRIES",q:"Why do images change how software ships?",body:["An image is an immutable artefact: versioned, checksummed, and never edited after build — you replace it, you don't patch it in place. Registries store images and add the discipline around them: vulnerability scanning, signing, retention, and controlled promotion from test to production.","The consequence is reproducibility. The exact artefact that passed testing is the artefact that runs in production, and rollback means pointing back at the previous image. Deployment stops being a craft activity."]},{n:"6",tag:"WHY ORCHESTRATION",q:"Containers are easy — so why does anyone need an orchestrator?",body:["One container is easy. Three hundred are not: something must decide which machine each runs on, restart the ones that die, scale the busy ones, connect them, and roll out new versions without downtime.","That something is an orchestrator — Kubernetes is the standard — and automating that operational burden is its entire job. Topic 03 takes it apart properly."]},{n:"7",tag:"SERVERLESS",q:"“Serverless” does not mean there are no servers",body:["Serverless means no servers for you to manage. The provider provisions, patches, scales, and babysits the machines; you deliver code and configuration and think in events and requests instead of instances.","It is a transfer of operational responsibility, not a disappearance of computers. The servers exist — in the provider's fleet, on the provider's patch cycle, inside the provider's scaling decisions, for better and for worse."]},{n:"8",tag:"FUNCTIONS",q:"What is a function, operationally?",body:["A function (FaaS — functions as a service) is a small piece of stateless code that runs when triggered: an HTTP request, a message arriving, a file landing, a clock ticking. It lives for seconds or minutes at most, then the environment is frozen or discarded.","Billing follows the shape: per invocation plus per millisecond of execution. At zero traffic, the bill is zero — a property no always-on model can match."]},{n:"9",tag:"COLD STARTS",q:"Why is the first call to a function sometimes slow?",body:["Idle function environments are reclaimed. When a new request arrives and no warm environment exists, the platform must create one — load the runtime, load your code, run its initialisation — before your logic answers. That delay is the cold start.","Mitigations exist: smaller deployment packages, lighter runtimes, provisioned (pre-warmed) concurrency. Cold starts matter on latency-sensitive user paths and are irrelevant to batch jobs. Know which you are building."]},{n:"10",tag:"STATE",q:"Stateless is the rule — so where does state live?",body:["Functions and containers are treated as disposable: any instance may be killed and replaced at any moment, so nothing precious may live inside them. State is pushed out to managed services built for it — databases, object storage, queues, caches.","This is the enabling discipline of elastic compute. The moment state lives outside, instances become interchangeable, scaling becomes arithmetic, and failure becomes a non-event. Most “serverless problems” are state problems in disguise."]},{n:"11",tag:"SERVERLESS CONTAINERS",q:"The middle path: serverless containers",body:["Managed container platforms (AWS Fargate, Google Cloud Run and their peers) split the difference: you bring a container — full control of the environment inside it — and the provider runs it without giving you nodes to manage. Many can scale to zero when idle.","You trade away cluster-level control and some networking depth; you shed cluster upgrades, node patching, and capacity planning. For a large share of real workloads, this is the sweet spot of the whole spectrum."]},{n:"12",tag:"COST SHAPES",q:"How does each model actually bill?",body:["VMs bill for time provisioned — idle hours included. Containers bill for CPU and memory reserved or consumed while running. Functions bill per request and per millisecond of execution, with nothing charged at rest.","Workloads punish the wrong shape: a spiky service on always-on VMs pays for its quiet nights; a massive steady workload on per-call pricing can pay a premium for its predictability. Match the meter to the traffic."]},{n:"13",tag:"SCALING SHAPES",q:"How fast — and how far — does each model scale?",body:["VMs scale in minutes and usually with planning. Containers scale in seconds under an orchestrator. Functions scale almost instantly — but only up to concurrency limits, and the bottleneck then moves downstream.","A function fleet happily opening ten thousand database connections has not scaled your system; it has relocated the failure. Real scaling is end-to-end: compute is merely the easiest layer to multiply."]},{n:"14",tag:"CHOOSING",q:"A decision frame in four questions",body:["Ask, in order: How much control do I truly need — kernel, network, runtime? What shape is the workload — steady, spiky, or event-driven? What latency can I tolerate, cold starts included? What does my team already know how to operate at 3 a.m.?","The answers point at a model, and mixed estates are the normal result: VMs for the legacy core, containers for the services, functions for the glue. Purity is not a requirement; fit is."]},{n:"15",tag:"CONVERGENCE",q:"The models are blurring — the trade-offs are not",body:["The boundaries are dissolving: functions run from container images, container platforms scale to zero, managed Kubernetes hides its nodes. Packaging formats converge a little more every year.","What does not converge is the trade underneath: control versus convenience, cost shape versus traffic shape, your operational burden versus the provider's. Learn the trade, and every future rebrand of these models is just new vocabulary for an old decision."]}],
+flash:[{q:"Your security team demands kernel-level isolation per tenant; your developers want containers. Is that a contradiction?",a:"No — they compose. Run containers on top of dedicated VMs: the VM supplies the isolation boundary, the container supplies packaging and speed. Containers-on-VMs is the standard enterprise pattern, not a compromise."},{q:"A video-transcoding job runs for 40 minutes. A teammate proposes functions. What's wrong?",a:"Shape mismatch. Functions are short-lived, event-sized units with execution limits measured in minutes. Long batch work belongs on containers, VMs, or a managed batch service — the trigger-and-finish pattern doesn't stretch to 40 minutes."},{q:"The bill shows a VM costing money all weekend while traffic was zero. What model property caused that?",a:"VMs bill for time provisioned, busy or idle. Fixes: schedule stop/start for predictable quiet, or move spiky parts to containers or functions that scale to zero. Idle capacity is a billing shape problem."},{q:"A vendor pitch says serverless means “no servers, no patching, nothing to operate.” What's the honest version?",a:"The servers exist — the provider patches and operates them. Your burden shrinks to code, dependencies, and configuration. Serverless transfers operational responsibility; it doesn't abolish computers."},{q:"Your function-backed API scales beautifully — then the database falls over at peak. What actually happened?",a:"Compute scaled; the bottleneck moved. Thousands of concurrent function instances open thousands of database connections. End-to-end scaling needs pooling, queues, and downstream capacity — the ceiling is the slowest layer, not the fastest."},{q:"An image passes staging, but in production it fails on a missing library. What discipline was skipped?",a:"Immutability. If the artefact differs between environments, something was hand-installed instead of baked into the image, or configuration leaked inside it. Build once, keep config outside, promote the identical artefact."},{q:"Once an hour, your checkout API takes a 2-second cold-start hit. Users notice. Batch jobs on the same platform don't. Why the difference?",a:"Cold starts are a latency cost paid by the first request after idle. Interactive paths feel milliseconds; batch jobs don't care. Mitigate on the user path — smaller packages, provisioned concurrency — and ignore it for batch."},{q:"A two-person startup with three small services wants “Kubernetes, because containers.” Your advice?",a:"Orchestration solves fleet problems they don't have yet. Managed containers or functions give them the packaging benefits without operating a cluster. Adopt Kubernetes when service count and scale make its automation worth its complexity."},{q:"Users of your function-backed app get randomly logged out. The function stores sessions in local memory. Diagnose.",a:"Functions are stateless and disposable — the next request may land on a fresh environment with empty memory. Externalise session state to a managed store (cache or database). Most 'serverless problems' are state problems in disguise."},{q:"A GPU training job runs twice a month on a dedicated VM. Sensible — or waste?",a:"Sensible shape, wasteful schedule. Bursty batch on a VM is fine, but the machine should stop between runs — or the job should move to a managed training service. Always-on pricing for twice-a-month work is the error, not the VM."},{q:"“Containers share a kernel, so they're insecure. Ban them.” How do you answer?",a:"Isolation genuinely differs from VMs — that's the honest kernel of the claim. But risk is engineered down: minimal images, vulnerability scanning, runtime policies, and containers inside VMs where tenancy demands it. A ban ignores the standard controls."},{q:"At low traffic your functions cost almost nothing; a rival team's always-on service doing the same job costs more — yet at huge steady volume the ranking flips. Why?",a:"Per-call pricing wins when requests are sparse because idle costs zero. At sustained high volume, the per-call premium accumulates past the flat cost of capacity you would fully utilise anyway. Cost shape must match traffic shape."},{q:"A release process zips code onto a server and installs dependencies by hand each time. What does the image model fix?",a:"Reproducibility and rollback. Immutable images make the tested artefact the deployed artefact; rollback is pointing at the previous image. Hand-built servers drift, and drift is where 'worked in staging' mysteries are born."},{q:"Your team wants functions for a realtime app built on persistent WebSocket connections. Fit or fight?",a:"Fight. Functions are request-sized and short-lived; long-lived connections strain the model. Containers or VMs — or a managed realtime service — hold connections naturally. Match the compute shape to the interaction shape."},{q:"Your estate ends up with VMs, containers, and functions all in production. A consultant calls it inconsistent. Is he right?",a:"No — it's the normal outcome of fitting models to workloads: VMs for the legacy core, containers for services, functions for event-driven glue. Consistency of decision criteria matters; uniformity of compute model doesn't."}],
+quiz:[{q:"What is the deepest operational difference between a container and a virtual machine?",opts:["Containers are simply faster computers than VMs","VMs cannot run Linux workloads","A VM virtualises a whole machine with its own OS and kernel; a container packages an application that shares the host kernel — lighter and faster to start, with a weaker isolation boundary","There is no real difference — the terms are interchangeable"],c:2},{q:"Under the functions model, what does an idle application cost?",opts:["The full monthly price of the server it would have used","Per invocation and execution duration — and idle time costs nothing","A reservation fee for guaranteed capacity","Storage rent for the code package only"],c:1},{q:"Why do cold starts happen?",opts:["Providers throttle customers who pay late","Functions deliberately refuse the first request","Networks are measurably slower in the morning","Idle execution environments are reclaimed, so a fresh environment must load the runtime and code before it can answer"],c:3},{q:"Why do enterprise containers so often run on top of virtual machines?",opts:["They compose: the VM provides tenancy and isolation underneath, the container provides packaging and speed on top","A regulation requires every container to have a VM","Images can only be stored inside VMs","It makes containers free to run"],c:0},{q:"A workload is zero requests all night and 10,000 per second at noon. Which billing shape fits it best?",opts:["A large VM fleet sized for noon, running around the clock","One VM that an engineer resizes manually twice a day","Event-driven functions or scale-to-zero containers — you stop paying for the quiet night","A five-year reserved mainframe slot"],c:2},{q:"“Stateless compute” means what, precisely?",opts:["Any instance can be killed and replaced without losing anything, because state lives in managed stores outside the compute","The application stores no data anywhere at all","Users are never required to log in","Functions have no memory even while they are executing"],c:0},{q:"Your functions scale to a thousand concurrent runs and the database collapses. What is the correct lesson?",opts:["Functions do not really scale","Scaling compute moves the bottleneck — downstream limits like database connections become the real ceiling","Databases are incompatible with serverless","The fix is always to add more functions"],c:1},{q:"The same image that passed staging runs unchanged in production and behaves identically. What made that possible?",opts:["Luck, mostly","The production engineers were unusually careful","Production copied staging's configuration by hand, perfectly","The immutable image packages the application with its dependencies, so the artefact tested is the artefact run"],c:3},{q:"When is a plain virtual machine still the right answer?",opts:["Never — VMs are legacy technology","When you need full OS control, special kernels or drivers, or steady long-running workloads that amortise always-on cost","Only when the workload runs Windows","When the team dislikes writing YAML"],c:1},{q:"Why do managed container platforms (Fargate, Cloud Run and similar) exist?",opts:["Kubernetes was made illegal in several regions","Containers turned out to be a passing fad","Many teams want container packaging without operating clusters — trading some control for far less operational toil","Providers needed one more product category for the catalogue"],c:2}]},
+{id:"kubernetes",num:"03",short:"Kubernetes",title:"Kubernetes in Practice",status:"soon"},
+{id:"cloud-networking-security",num:"04",short:"Network & Security",title:"Cloud Networking & Security",status:"soon"},
+{id:"cicd-release",num:"05",short:"CI/CD",title:"CI/CD & Release Engineering",status:"soon"},
+{id:"infrastructure-as-code",num:"06",short:"IaC",title:"Infrastructure as Code",status:"soon"},
+{id:"observability-sre",num:"07",short:"Observability",title:"Observability & SRE",status:"soon"},
+{id:"platform-finops-aiops",num:"08",short:"Platform & FinOps",title:"Platform Engineering, FinOps & AIOps",status:"soon"}
+];
+let activeTopic=TOPICS[0];
+</script>
+<script>
+/* ---------- robust copy + download ---------- */
+function showCopied(i,msg){const s=document.getElementById("copied-"+i);
+  if(s){s.textContent=msg||"Copied ✓";s.style.display="inline";
+    setTimeout(()=>{s.style.display="none";s.textContent="Copied ✓";},2400);}}
+function copyText(t,i,msg){
+  const done=()=>showCopied(i,msg);
+  const legacy=()=>{const ta=document.createElement("textarea");
+    ta.value=t;ta.setAttribute("readonly","");ta.style.position="fixed";ta.style.opacity="0";
+    document.body.appendChild(ta);ta.select();
+    try{if(document.execCommand("copy")){done();}else{window.prompt("Copy this text:",t);}}
+    catch(e){window.prompt("Copy this text:",t);}
+    document.body.removeChild(ta);};
+  if(navigator.clipboard&&window.isSecureContext){navigator.clipboard.writeText(t).then(done).catch(()=>legacy());}
+  else{legacy();}
+}
+function triggerDownload(url,filename){
+  const a=document.createElement("a");a.download=filename;a.href=url;
+  document.body.appendChild(a);a.click();
+  setTimeout(()=>document.body.removeChild(a),400);
+}
+/* ---------- topic navigator ---------- */
+function renderStrip(filter){
+  const s=document.getElementById("topic-strip");s.innerHTML="";
+  const f=(filter||"").toLowerCase();
+  TOPICS.filter(t=>(t.title+" "+t.short+" "+t.num).toLowerCase().includes(f)).forEach(t=>{
+    const b=document.createElement("button");
+    b.className="tchip"+(t.id===activeTopic.id?" active":"")+(t.status!=="live"?" soon":"");
+    b.dataset.id=t.id;
+    b.innerHTML="<small>"+t.num+"</small>"+t.short+(t.status!=="live"?" · soon":"");
+    if(t.status==="live"){b.addEventListener("click",()=>selectTopic(t.id));}
+    else{b.disabled=true;b.title="Coming soon";}
+    s.appendChild(b);
+  });
+}
+function renderUpcoming(){
+  const g=document.getElementById("upgrid");g.innerHTML="";
+  TOPICS.filter(t=>t.status!=="live").forEach(t=>{
+    const d=document.createElement("div");
+    if(t.status==="live"){
+      d.className="upcard live";d.title="Open this deck";
+      d.innerHTML="<b>"+t.title+"</b><span>LIVE</span>";
+      d.addEventListener("click",()=>{selectTopic(t.id);window.scrollTo({top:0,behavior:"smooth"});});
+    }else{
+      d.className="upcard";
+      d.innerHTML="<b>"+t.title+"</b><span>COMING SOON</span>";
+    }
+    g.appendChild(d);
+  });
+}
+function selectTopic(id,skipHash){
+  const t=TOPICS.find(x=>x.id===id&&x.status==="live");if(!t)return;
+  activeTopic=t;
+  document.getElementById("topic-num").textContent="DECK "+t.num;
+  document.getElementById("topic-title").textContent=t.title;
+  document.getElementById("topic-tagline").textContent=t.tagline||"";
+  document.getElementById("topic-draft").style.display=t.draft?"inline-block":"none";
+  document.title="The Cloud & DevOps Deck — "+t.title;
+  document.querySelectorAll(".tchip").forEach(ch=>ch.classList.toggle("active",ch.dataset.id===id));
+  renderLearn();renderFlash();startQuiz();
+  document.getElementById("learn-rail").scrollLeft=0;
+  document.getElementById("flash-rail").scrollLeft=0;
+  if(!skipHash){try{history.replaceState(null,"","#"+t.id);}catch(e){}}
+}
+/* ---------- learn rail ---------- */
+function cardText(i){const c=activeTopic.learn[i];
+  return c.q+"\n\n"+c.body.join("\n\n");}
+/* social-media rewrites: text only, no URLs, no credentials needed (intent links) */
+function xText(i){const c=activeTopic.learn[i];
+  const first=c.body[0].split(/(?<=[.!?])\s+/)[0];
+  const tags="\n\n"+activeTopic.xTags;
+  let t=c.q+"\n\n"+first;
+  const max=280-tags.length;
+  if(t.length>max){t=t.slice(0,max-1).trimEnd()+"\u2026";}
+  return t+tags;}
+function liText(i){const c=activeTopic.learn[i];
+  return "\u201c"+c.q+"\u201d\n\n"+c.body.join("\n\n")+"\n\n"+activeTopic.liTags;}
+let learnBound=false;
+function renderLearn(){
+  const rail=document.getElementById("learn-rail");rail.innerHTML="";
+  const L=activeTopic.learn||[];
+  if(!L.length){
+    rail.innerHTML='<article class="pcard" style="justify-content:center;text-align:center"><div class="ptag">COMING SOON</div><h3 class="pq">Learn cards for this topic are in production.</h3><div class="pbody"><p>New topics go live every Wednesday.</p></div></article>';
+  }
+  L.forEach((c,i)=>{
+    const d=document.createElement("article");d.className="pcard";d.id="card-"+activeTopic.id+"-"+c.n;d.dataset.i=i;d.title="Click to read larger";
+    d.innerHTML='<div class="pnum">'+c.n+' / '+L.length+'</div><div class="ptag">'+c.tag+'</div>'
+      +'<h3 class="pq">'+c.q+'</h3>'
+      +'<div class="pbody">'+c.body.map(p=>"<p>"+p+"</p>").join("")+'</div>'
+      +'<div class="toolbar"><select id="size-'+i+'" aria-label="Image size">'
+      +'<option value="1080x1350">1080×1350</option><option value="1080x1080">1080×1080</option>'
+      +'</select><select id="theme-'+i+'" aria-label="Colour theme">'
+      +'<option value="obsidian">Obsidian Gold</option><option value="ivory">Ivory</option><option value="midnight">Deep Tech Blue</option>'
+      +'</select><button data-act="dl" data-i="'+i+'">PNG</button>'
+      +'<button data-act="x" data-i="'+i+'">X</button><button data-act="li" data-i="'+i+'">in</button>'
+      +'<button data-act="copy" data-i="'+i+'">Copy</button>'
+      +'<span class="copied" id="copied-'+i+'">Copied ✓</span></div>';
+    rail.appendChild(d);
+  });
+  if(!learnBound){learnBound=true;
+    rail.addEventListener("click",e=>{
+      const b=e.target.closest("button[data-act]");if(!b)return;
+      const i=+b.dataset.i,act=b.dataset.act;
+      if(act==="copy"){copyText(cardText(i),i);}
+      else if(act==="x"){window.open("https://twitter.com/intent/tweet?text="+encodeURIComponent(xText(i)),"_blank","width=560,height=460");}
+      else if(act==="li"){const t=liText(i);
+        copyText(t,i,"Copied \u2014 paste into the LinkedIn composer");
+        window.open("https://www.linkedin.com/sharing/share-offsite/?url="+encodeURIComponent(PUBLIC_URL),"_blank");}
+      else if(act==="dl"){downloadCard(i,document.getElementById("size-"+i).value,document.getElementById("theme-"+i).value);}
+    });
+    rail.addEventListener("click",e=>{
+      if(e.target.closest("button[data-act]"))return;
+      if(e.target.closest(".toolbar"))return;
+      if(window.getSelection&&window.getSelection().toString())return;
+      const card=e.target.closest(".pcard");if(!card)return;
+      if(card.dataset.i===undefined||card.dataset.i==="")return;
+      openZoom(+card.dataset.i);
+    });
+  }
+}
+/* ---------- card zoom: click a card to read it larger ---------- */
+let zoomReturnTo=null;
+function openZoom(i){
+  const c=activeTopic.learn[i];if(!c)return;
+  zoomReturnTo=document.querySelector('.pcard[data-i="'+i+'"]');
+  document.getElementById("zoom-num").textContent=c.n+" / "+activeTopic.learn.length;
+  document.getElementById("zoom-tag").textContent=c.tag;
+  document.getElementById("zoom-q").textContent=c.q;
+  document.getElementById("zoom-body").innerHTML=c.body.map(p=>"<p>"+p+"</p>").join("");
+  document.getElementById("zoom-ov").classList.add("open");
+  document.body.style.overflow="hidden";
+  document.getElementById("zoom-close").focus();
+}
+function closeZoom(){
+  document.getElementById("zoom-ov").classList.remove("open");
+  document.body.style.overflow="";
+  if(zoomReturnTo){zoomReturnTo.setAttribute("tabindex","-1");zoomReturnTo.focus({preventScroll:true});}
+}
+document.addEventListener("click",e=>{
+  if(e.target.id==="zoom-close"||e.target.id==="zoom-ov")closeZoom();
+});
+document.addEventListener("keydown",e=>{
+  if(e.key==="Escape"){const ov=document.getElementById("zoom-ov");if(ov&&ov.classList.contains("open"))closeZoom();}
+});
+/* ---------- card -> PNG (premium obsidian/gold) ---------- */
+function wrap(x,t,mw){const w=t.split(" "),L=[];let l="";w.forEach(s=>{const t2=l?l+" "+s:s;
+  if(x.measureText(t2).width>mw&&l){L.push(l);l=s;}else l=t2;});if(l)L.push(l);return L;}
+function downloadCard(i,size,theme){
+  const [W,H]=size.split("x").map(Number),c=activeTopic.learn[i],k=W/1080;
+  const T=THEMES[theme]||THEMES.obsidian;
+  const cv=document.createElement("canvas");cv.width=W;cv.height=H;const x=cv.getContext("2d");
+  const grd=x.createLinearGradient(0,0,0,H);grd.addColorStop(0,T.bg0);grd.addColorStop(1,T.bg1);
+  x.fillStyle=grd;x.fillRect(0,0,W,H);
+  x.fillStyle=T.accent;x.fillRect(0,0,W,8*k);
+  const pad=84*k,mw=W-2*pad,cx=W/2;
+  const topSafe=48*k,footTop=H-150*k;
+  x.textAlign="left";
+  x.fillStyle=T.head;x.font="700 "+Math.round(72*k)+"px Georgia,serif";
+  const headLines=wrap(x,c.tag,mw);
+  const headH=headLines.length*Math.round(86*k);
+  let bf=44;
+  const fit=()=>{x.font=Math.round(bf*k)+"px system-ui,sans-serif";const L=[];
+    c.body.forEach(p=>{wrap(x,p,mw).forEach(l=>L.push(l));L.push("");});return L;};
+  const measure=()=>{const L=fit();return{L,h:L.length*Math.round((bf+14)*k)};};
+  let m=measure();
+  const gapH=Math.round(34*k),divGap=Math.round(56*k);
+  while((headH+gapH+divGap+m.h)>(footTop-topSafe)&&bf>24){bf-=2;m=measure();}
+  const lines=m.L,lh=Math.round((bf+14)*k);
+  let y=topSafe+Math.round(66*k);
+  x.fillStyle=T.head;x.font="700 "+Math.round(72*k)+"px Georgia,serif";
+  headLines.forEach(l=>{x.fillText(l,pad,y);y+=Math.round(86*k);});
+  y+=gapH;
+  x.strokeStyle=T.dim;x.lineWidth=2*k;
+  x.beginPath();x.moveTo(pad,y);x.lineTo(pad+130*k,y);x.stroke();
+  const divY=y;
+  y=divY+divGap+Math.max(0,(footTop-(divY+divGap)-m.h)/2);
+  x.fillStyle=T.body;x.font=Math.round(bf*k)+"px system-ui,sans-serif";
+  lines.forEach(l=>{if(l&&y<footTop){x.fillText(l,pad,y);}y+=lh;});
+  x.textAlign="center";
+  x.strokeStyle=T.dim;x.lineWidth=2*k;
+  x.beginPath();x.moveTo(pad,H-116*k);x.lineTo(W-pad,H-116*k);x.stroke();
+  x.fillStyle=T.foot;x.font="600 "+Math.round(28*k)+"px system-ui,sans-serif";
+  x.fillText("THE AI DECK",cx,H-68*k);
+  x.fillStyle=T.accent;x.fillText(activeTopic.title,cx,H-30*k);
+  x.textAlign="left";
+  const bx=W-pad-Math.round(38*k),by=H-Math.round(62*k),br=Math.round(34*k);
+  x.strokeStyle=T.accent;x.lineWidth=Math.round(3*k);
+  x.beginPath();x.arc(bx,by,br,0,Math.PI*2);x.stroke();
+  x.fillStyle=T.accent;x.font="700 "+Math.round(26*k)+"px Georgia,'Times New Roman',serif";
+  x.textAlign="center";x.textBaseline="middle";
+  try{x.letterSpacing="3px";}catch(e){}
+  x.fillText("TRT",bx,by+Math.round(2*k));
+  try{x.letterSpacing="0px";}catch(e){}
+  x.textAlign="left";x.textBaseline="alphabetic";
+  const filename="cloud-deck-"+activeTopic.id+"-"+c.n+".png";
+  cv.toBlob(function(blob){
+    if(!blob){return;}
+    const file=new File([blob],filename,{type:"image/png"});
+    const mobile=/Android|iPhone|iPad|iPod/i.test(navigator.userAgent||"");
+    if(mobile&&navigator.canShare&&navigator.canShare({files:[file]})){
+      navigator.share({files:[file],title:filename}).catch(function(e){
+        if(e&&e.name!=="AbortError"){fallbackDownload(blob,filename);}
+      });
+    }else{fallbackDownload(blob,filename);}
+  },"image/png");
+}
+function fallbackDownload(blob,filename){
+  const url=URL.createObjectURL(blob);
+  triggerDownload(url,filename);
+  setTimeout(function(){URL.revokeObjectURL(url);},8000);
+}
+/* ---------- compact flashcard rail ---------- */
+function renderFlash(){
+  const rail=document.getElementById("flash-rail");rail.innerHTML="";
+  const F=activeTopic.flash;
+  if(!F||!F.length){
+    rail.innerHTML='<div class="fcard" style="cursor:default"><div class="finner"><div class="fface ffront" style="justify-content:center;align-items:center;text-align:center"><div class="fq">Flashcards unlock after the Learn cards pass review.</div></div></div></div>';
+    return;
+  }
+  F.forEach((f,i)=>{
+    const d=document.createElement("div");d.className="fcard";
+    d.innerHTML='<div class="finner"><div class="fface ffront"><div class="fnum">'+(i+1)+' / '+F.length+'</div>'
+      +'<div class="fq">'+f.q+'</div><div class="fhint">TAP TO FLIP</div></div>'
+      +'<div class="fface fback"><div class="fnum">'+(i+1)+' / '+F.length+' · ANSWER</div><div>'+f.a+'</div></div></div>';
+    d.addEventListener("click",()=>d.classList.toggle("flipped"));
+    rail.appendChild(d);
+  });
+}
+/* ---------- rail arrows: one card at a time ---------- */
+document.querySelectorAll(".rail-btn").forEach(b=>b.addEventListener("click",()=>{
+  const rail=document.getElementById(b.dataset.rail);
+  const card=rail.querySelector(".pcard,.fcard,.upcard");
+  const step=card?card.getBoundingClientRect().width+16:320;
+  rail.scrollBy({left:(b.classList.contains("next")?1:-1)*step,behavior:"smooth"});
+}));
+/* ---------- quiz ---------- */
+let qi=0,qscore=0,qorder=[];
+const shuffle=a=>{for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]];}return a;};
+function startQuiz(){
+  const box=document.getElementById("quiz-box");
+  if(!activeTopic.quiz||!activeTopic.quiz.length){
+    box.innerHTML='<div id="quiz-result"><div id="quiz-progress">DECK '+activeTopic.num+' · QUIZ</div><div id="quiz-band">Coming soon</div><div id="quiz-sub">The quiz unlocks after the Learn cards pass review.</div></div>';
+    return;
+  }
+  qi=0;qscore=0;qorder=activeTopic.quiz.map((_,i)=>i);renderQ();}
+function renderQ(){
+  const box=document.getElementById("quiz-box"),QZ=activeTopic.quiz;
+  if(qi>=QZ.length){
+    const band=qscore>=9?["Excellent","You have the fundamentals down cold."]:qscore>=7?["Solid","A strong foundation — skim the cards you missed."]:qscore>=5?["Keep going","Revisit the Learn cards, then retake."]:["Re-read the deck","Go through the 15 Learn cards once more, then try again."];
+    box.innerHTML='<div id="quiz-result"><div id="quiz-progress">DECK '+activeTopic.num+' · COMPLETE</div><div id="quiz-score">'
+      +qscore+' / '+QZ.length+'</div><div id="quiz-band">'+band[0]+'</div><div id="quiz-sub">'+band[1]
+      +'</div><button id="quiz-restart">Retake quiz</button></div>';
+    document.getElementById("quiz-restart").addEventListener("click",startQuiz);return;
+  }
+  const Q=QZ[qorder[qi]],order=shuffle(Q.opts.map((t,idx)=>({t,ok:idx===Q.c})));
+  box.innerHTML='<div id="quiz-progress">QUESTION '+(qi+1)+' OF '+QZ.length+' · SCORE '+qscore+'</div>'
+    +'<div id="quiz-q">'+Q.q+'</div>'
+    +order.map(o=>'<button class="opt" data-ok="'+(o.ok?1:0)+'">'+o.t+'</button>').join("")
+    +'<div id="quiz-feedback"></div><button id="quiz-next">Next →</button>';
+  const opts=[...box.querySelectorAll(".opt")],fb=box.querySelector("#quiz-feedback"),nx=box.querySelector("#quiz-next");
+  opts.forEach(b=>b.addEventListener("click",()=>{
+    const good=b.dataset.ok==="1";
+    opts.forEach(o=>{o.disabled=true;if(o.dataset.ok==="1")o.classList.add("correct");});
+    if(good){qscore++;fb.textContent="Correct ✓";fb.style.color="var(--green)";}
+    else{b.classList.add("wrong");fb.textContent="Not quite — the highlighted answer is correct.";fb.style.color="var(--red)";}
+    nx.style.display="inline-block";
+  }));
+  nx.addEventListener("click",()=>{qi++;renderQ();});
+}
+/* ---------- init ---------- */
+renderStrip();renderUpcoming();
+document.getElementById("topic-search").addEventListener("input",e=>renderStrip(e.target.value));
+document.getElementById("tstrip-prev").addEventListener("click",()=>document.getElementById("topic-strip").scrollBy({left:-240,behavior:"smooth"}));
+document.getElementById("tstrip-next").addEventListener("click",()=>document.getElementById("topic-strip").scrollBy({left:240,behavior:"smooth"}));
+(function(){
+  const live=TOPICS.filter(t=>t.status==="live");
+  const h=(location.hash||"").replace("#","");
+  const m=h.match(/^card-([a-z-]+)-(\d+)$/);
+  if(m&&TOPICS.some(t=>t.id===m[1]&&t.status==="live")){
+    selectTopic(m[1],true);
+    requestAnimationFrame(()=>{const el=document.getElementById(h);if(el)el.scrollIntoView({behavior:"smooth",block:"center"});});
+  }else if(h&&TOPICS.some(t=>t.id===h&&t.status==="live")){
+    selectTopic(h,true);
+  }else if(live.length){
+    selectTopic(live[0].id,true);
+  }else{
+    activeTopic=TOPICS[0];
+    document.getElementById("topic-num").textContent="IN CO-CREATION";
+    document.getElementById("topic-title").textContent="The Cloud & DevOps Deck";
+    document.getElementById("topic-tagline").textContent=activeTopic.tagline||"";
+    document.getElementById("topic-draft").style.display="none";
+    renderLearn();renderFlash();startQuiz();
+    document.getElementById("learn-rail").scrollLeft=0;
+    document.getElementById("flash-rail").scrollLeft=0;
+  }
+})();
+</script>
+<div id="zoom-ov" role="dialog" aria-modal="true" aria-label="Card reading view">
+  <div id="zoom-card">
+    <button id="zoom-close" aria-label="Close">×</button>
+    <div id="zoom-num"></div>
+    <div id="zoom-tag"></div>
+    <h3 id="zoom-q"></h3>
+    <div id="zoom-body"></div>
+  </div>
+</div>
+</body>
+</html>
