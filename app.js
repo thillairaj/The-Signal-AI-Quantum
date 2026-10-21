@@ -499,3 +499,6 @@ loadViews();
 setInterval(loadData, CLIENT_REFRESH_MS);
 setInterval(loadViews, CLIENT_REFRESH_MS);
 setInterval(updateStatusText, TICK_MS);
+/* Deep link: standalone pages use "Back to Learning Spaces" (index.html#learn) */
+if (location.hash === "#learn") showView("learn");
+window.addEventListener("hashchange", () => { if (location.hash === "#learn") showView("learn"); });
