@@ -476,7 +476,7 @@ body[data-view="research"] .feed-only { display: none; }
 .fam-dot.fam-quantum { background: #7C5CBF; }
 .fam-dot.fam-ai { background: #3B82C4; }
 .fam-dot.fam-tech { background: #64748B; }
-.fam-dot.fam-cloud { background: #4A90D9; }
+.fam-dot.fam-cloud { background: #2E8B7A; }
 .fam-dot.fam-cyber { background: #C25454; }
 .learn-card.table-finance { background-color: #FBF3E2; border: 1px solid #E2CD9B; }
 .learn-card.table-finance:hover { background-color: #F5E7C3; border-color: #BE9E52; }
@@ -492,13 +492,13 @@ body[data-view="research"] .feed-only { display: none; }
 .learn-card.table-agentic:hover { background-color: #D3E4F7; border-color: #6F9FD8; }
 .learn-card.table-tools { background-color: #E8F1FB; border: 1px solid #A9C6E8; }
 .learn-card.table-tools:hover { background-color: #D3E4F7; border-color: #6F9FD8; }
-.learn-card.table-cloud { background-color: #E9F3FE; border: 1px solid #A8CCF5; }
+.learn-card.table-cloud { background-color: #E2F2EE; border: 1px solid #9CCFC2; }
 .learn-card.table-cloud:hover { background-color: #D2E7FD; border-color: #6FA8E8; }
-.learn-card.table-aws { background-color: #E9F3FE; border: 1px solid #A8CCF5; }
+.learn-card.table-aws { background-color: #E2F2EE; border: 1px solid #9CCFC2; }
 .learn-card.table-aws:hover { background-color: #D2E7FD; border-color: #6FA8E8; }
-.learn-card.table-azure { background-color: #E9F3FE; border: 1px solid #A8CCF5; }
+.learn-card.table-azure { background-color: #E2F2EE; border: 1px solid #9CCFC2; }
 .learn-card.table-azure:hover { background-color: #D2E7FD; border-color: #6FA8E8; }
-.learn-card.table-gcp { background-color: #E9F3FE; border: 1px solid #A8CCF5; }
+.learn-card.table-gcp { background-color: #E2F2EE; border: 1px solid #9CCFC2; }
 .learn-card.table-gcp:hover { background-color: #D2E7FD; border-color: #6FA8E8; }
 .learn-card.table-cyber { background-color: #FBEAEA; border: 1px solid #E3AEAE; }
 .learn-card.table-cyber:hover { background-color: #F5D5D5; border-color: #C47474; }
