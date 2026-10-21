@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Quantum Keywords for Leaders — The Periodic Table</title>
+<meta name="description" content="85 quantum terms every leader should know, in plain business language, arranged as an interactive periodic table. Click any element for its meaning, key fact and leader takeaway.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Quantum Keywords for Leaders — The Periodic Table">
+<meta property="og:description" content="Qubits, entanglement, NISQ, error correction, PQC and quantum strategy — 85 essential terms in plain language for leaders, as an interactive periodic table.">
+<meta property="og:url" content="https://thillairaj.github.io/The-Signal-AI-Quantum/periodic-tables/quantum-keywords/">
+<style>
+  :root{--bg:#071527;--panel:#0b213f;--panel2:#0e2a52;--ink:#eef4ff;--muted:#9db4d4;--line:rgba(255,255,255,.14)}
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:'Segoe UI',system-ui,-apple-system,Arial,sans-serif;background:radial-gradient(1200px 600px at 20% -10%,#12325e 0%,var(--bg) 55%);color:var(--ink);min-height:100vh}
+  header{padding:34px 22px 10px;text-align:center;max-width:1200px;margin:0 auto}
+  .kicker{letter-spacing:.35em;font-size:11px;color:#7dd3fc;text-transform:uppercase;font-weight:700}
+  h1{font-size:clamp(28px,5vw,48px);line-height:1.08;margin:10px 0 10px;font-weight:800}
+  h1 span{color:#fbbf24}
+  .sub{color:var(--muted);max-width:820px;margin:0 auto;font-size:15.5px;line-height:1.55}
+  .principle{margin:18px auto 4px;max-width:880px;background:rgba(251,191,36,.08);border:1px solid rgba(251,191,36,.35);border-radius:12px;padding:12px 16px;font-size:14px;line-height:1.55;color:#fde68a}
+  .toolbar{position:sticky;top:0;z-index:40;background:rgba(7,21,39,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line);padding:12px 16px}
+  .toolbar-in{max-width:1280px;margin:0 auto;display:flex;flex-wrap:wrap;gap:10px;align-items:center;justify-content:center}
+  #search{flex:1 1 260px;max-width:420px;padding:11px 14px;border-radius:10px;border:1px solid var(--line);background:var(--panel);color:var(--ink);font-size:15px;outline:none}
+  #search:focus{border-color:#38bdf8}
+  .count{color:var(--muted);font-size:13.5px}
+  .btn{padding:10px 14px;border-radius:10px;border:1px solid var(--line);background:var(--panel2);color:var(--ink);cursor:pointer;font-size:13.5px;font-weight:600}
+  .btn:hover{border-color:#38bdf8}
+  #legend{max-width:1280px;margin:14px auto 0;padding:0 16px;display:flex;flex-wrap:wrap;gap:8px;justify-content:center}
+  .chip{display:inline-flex;align-items:center;gap:7px;padding:7px 12px;border-radius:999px;border:1px solid var(--line);background:var(--panel);color:var(--ink);font-size:12.5px;cursor:pointer;font-weight:600;transition:all .15s}
+  .chip .dot{width:11px;height:11px;border-radius:3px}
+  .chip:hover{transform:translateY(-1px);border-color:#fff}
+  .chip.active{outline:2px solid #fff;outline-offset:1px}
+  main{max-width:1280px;margin:0 auto;padding:20px 16px 30px;display:grid;grid-template-columns:1fr 340px;gap:20px;align-items:start}
+  #grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(96px,1fr));gap:8px}
+  .tile{border:none;border-radius:10px;padding:8px 6px 7px;min-height:96px;color:#fff;cursor:pointer;text-align:left;position:relative;transition:transform .16s ease,filter .16s ease,box-shadow .16s ease,opacity .16s;display:flex;flex-direction:column;box-shadow:inset 0 0 0 1px rgba(255,255,255,.22)}
+  .tile .no{font-size:10.5px;font-weight:700;opacity:.85}
+  .tile .sym{font-size:24px;font-weight:800;line-height:1.05;margin:auto 0 2px;letter-spacing:.01em;word-break:break-word}
+  .tile .nm{font-size:10px;line-height:1.25;font-weight:600;opacity:.95}
+  .tile:hover,.tile:focus-visible{transform:scale(1.09) translateY(-4px);filter:brightness(1.28) saturate(1.25);box-shadow:0 12px 28px rgba(0,0,0,.5),0 0 0 2px #fff;z-index:5;outline:none}
+  .tile.selected{box-shadow:0 0 0 3px #fff,0 12px 28px rgba(0,0,0,.5);filter:brightness(1.2)}
+  .tile.dim{opacity:.13;filter:grayscale(.6)}
+  .tile.hidden{display:none}
+  #detail{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:22px;position:sticky;top:132px;min-height:300px}
+  #detail .d-no{font-size:12px;color:var(--muted);letter-spacing:.15em;text-transform:uppercase;font-weight:700}
+  #detail .d-sym{display:inline-flex;align-items:center;justify-content:center;min-width:74px;height:74px;padding:0 10px;border-radius:14px;font-size:30px;font-weight:800;color:#fff;margin:12px 0}
+  #detail h2{font-size:24px;line-height:1.2;margin-bottom:6px}
+  #detail .d-cat{font-size:12.5px;font-weight:700;text-transform:uppercase;letter-spacing:.12em;margin-bottom:14px}
+  #detail p{font-size:15px;line-height:1.65;color:#dbe7fa}
+  #detail .box{margin-top:14px;border-radius:10px;padding:12px 14px;font-size:14px;line-height:1.55}
+  #detail .formula{background:rgba(56,189,248,.1);border:1px solid rgba(56,189,248,.4);color:#bae6fd}
+  #detail .lens{background:rgba(251,191,36,.08);border:1px solid rgba(251,191,36,.35);color:#fde68a}
+  #detail .box b{display:block;font-size:11px;letter-spacing:.18em;text-transform:uppercase;margin-bottom:5px;opacity:.85}
+  .hint{color:var(--muted);font-size:14.5px;line-height:1.6}
+  section.below{max-width:1280px;margin:0 auto;padding:6px 16px 26px}
+  section.below h3{font-size:22px;margin:18px 0 12px}
+  .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:12px}
+  .card{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:16px}
+  .card h4{font-size:15px;margin-bottom:7px;color:#7dd3fc}
+  .card p,.card li{font-size:14px;line-height:1.6;color:#dbe7fa}
+  .card ul{padding-left:18px}
+  .example{background:linear-gradient(135deg,#0e2a52,#12325e);border:1px solid rgba(251,191,36,.4)}
+  .example h4{color:#fbbf24}
+  .big{font-size:19px;font-weight:800;color:#fff;margin:6px 0}
+  footer{max-width:1280px;margin:0 auto;padding:10px 16px 38px;color:var(--muted);font-size:12.5px;line-height:1.6;text-align:center}
+  #overlay{display:none}
+  /* placeholder, zoom view styles are at the end of this stylesheet */
+  /* Theme toggle + sticky legend + back button (added Oct 21) */
+  header{position:relative}
+  .theme-toggle{position:absolute;top:16px;right:16px;width:44px;height:44px;border-radius:50%;border:1px solid var(--line);background:var(--panel2);color:#fbbf24;font-size:19px;cursor:pointer;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 14px rgba(0,0,0,.35)}
+  .theme-toggle:hover{transform:scale(1.08)}
+  #legend{flex-wrap:nowrap;overflow-x:auto;justify-content:flex-start;padding:10px 2px 3px;scrollbar-width:thin}
+  .chip{white-space:nowrap;flex:0 0 auto}
+  .backbtn{display:inline-flex;align-items:center;gap:6px;padding:9px 14px;border-radius:999px;border:1px solid var(--line);background:var(--panel2);color:var(--ink);font-size:13.5px;font-weight:700;cursor:pointer;margin-bottom:14px}
+  .backbtn:hover{border-color:#38bdf8}
+  #detail{top:168px}
+  /* Light theme */
+  html[data-theme="light"] body{background:radial-gradient(1200px 600px at 20% -10%,#e8eefc 0%,#FAF9F6 55%);color:#17293f}
+  html[data-theme="light"] h1{color:#0b213f}
+  html[data-theme="light"] .sub{color:#4d6482}
+  html[data-theme="light"] .principle{background:#fff8e1;border-color:#e5c15c;color:#6b5510}
+  html[data-theme="light"] .toolbar{background:rgba(250,249,246,.95);border-color:#ddd5c0}
+  html[data-theme="light"] #search{background:#fff;color:#17293f;border-color:#cfd8e3}
+  html[data-theme="light"] .btn{background:#fff;color:#17293f;border-color:#cfd8e3}
+  html[data-theme="light"] .chip{background:#fff;color:#17293f;border-color:#cfd8e3}
+  html[data-theme="light"] .chip.active{outline-color:#0b213f}
+  html[data-theme="light"] .count{color:#5a6f88}
+  html[data-theme="light"] #detail{background:#fff;border-color:#e0d9c6}
+  html[data-theme="light"] #detail p{color:#33475e}
+  html[data-theme="light"] #detail .d-no{color:#5a6f88}
+  html[data-theme="light"] #detail h2{color:#0b213f}
+  html[data-theme="light"] #detail .formula{background:#e8f4fd;border-color:#9fd0f5;color:#124d75}
+  html[data-theme="light"] #detail .lens{background:#fff8e1;border-color:#e5c15c;color:#6b5510}
+  html[data-theme="light"] .backbtn{background:#eef3fa;color:#17293f;border-color:#cfd8e3}
+  html[data-theme="light"] .hint{color:#5a6f88}
+  html[data-theme="light"] .card{background:#fff;border-color:#e0d9c6}
+  html[data-theme="light"] .card p,html[data-theme="light"] .card li{color:#33475e}
+  html[data-theme="light"] section.below h3{color:#0b213f}
+  html[data-theme="light"] .example{background:linear-gradient(135deg,#fff8e1,#fdf3d0);border-color:#e5c15c}
+  html[data-theme="light"] .example .big{color:#17293f}
+  html[data-theme="light"] footer{color:#5a6f88}
+  html[data-theme="light"] .theme-toggle{background:#fff;color:#d97706;border-color:#cfd8e3}
+  @media(max-width:900px){
+    main{grid-template-columns:1fr}
+    #detail{position:fixed;inset:auto 0 0 0;z-index:60;border-radius:18px 18px 0 0;max-height:72vh;overflow:auto;transform:translateY(105%);transition:transform .25s ease;box-shadow:0 -12px 40px rgba(0,0,0,.6)}
+    #detail.open{transform:translateY(0)}
+    #overlay{display:block;position:fixed;inset:0;background:rgba(0,0,0,.55);z-index:55;opacity:0;pointer-events:none;transition:opacity .25s}
+    #overlay.open{opacity:1;pointer-events:auto}
+    #grid{grid-template-columns:repeat(auto-fill,minmax(82px,1fr))}
+    .tile{min-height:86px}.tile .sym{font-size:20px}
+  }
+  /* Zoom reading view — same pattern as the Quantum / AI Deck cards (Oct 21) */
+  main{grid-template-columns:1fr}
+  #overlay{display:block;position:fixed;inset:0;background:rgba(3,10,20,.62);z-index:55;opacity:0;pointer-events:none;transition:opacity .22s ease}
+  #overlay.open{opacity:1;pointer-events:auto}
+  #detail{position:fixed;top:50%;left:50%;right:auto;bottom:auto;width:min(560px,92vw);max-width:92vw;max-height:86vh;overflow:auto;z-index:60;border-radius:18px;padding:26px;opacity:0;pointer-events:none;transform:translate(-50%,-47%) scale(.88);transition:transform .24s ease,opacity .24s ease;box-shadow:0 30px 80px rgba(0,0,0,.55)}
+  #detail.open{opacity:1;pointer-events:auto;transform:translate(-50%,-50%) scale(1)}
+  .zoom-close{position:absolute;top:12px;right:12px;width:38px;height:38px;border-radius:50%;border:1px solid var(--line);background:var(--panel2);color:var(--ink);font-size:15px;cursor:pointer;display:flex;align-items:center;justify-content:center;z-index:2}
+  .zoom-close:hover{border-color:#38bdf8;transform:scale(1.08)}
+  html[data-theme="light"] .zoom-close{background:#eef3fa;color:#17293f;border-color:#cfd8e3}
+  @media(max-width:900px){#detail{padding:22px 18px}}
+</style>
+</head>
+<body>
+<header>
+  <div style="text-align:left;max-width:1200px;margin:0 auto 14px"><a href="../../#learn" style="color:inherit;opacity:.75;text-decoration:none;font-size:13.5px;font-weight:600">← Back to Learning Spaces</a></div>
+  <button class="theme-toggle" id="themeToggle" type="button" aria-label="Switch light or dark theme" title="Switch light / dark theme">☀</button>
+  <div class="kicker">The Quantum Periodic Table</div>
+  <h1>Quantum Keywords for <span>Leaders</span></h1>
+  <p class="sub">85 essential quantum terms in plain business language, arranged like the periodic table. Each colour is one world of the field. Hover to explore, click any element to zoom in: what it means, the key fact, and what a leader should take from it.</p>
+  <div class="principle"><strong>Core principle:</strong> You do not need to become a quantum physicist. A leader needs enough vocabulary to follow the conversation, judge claims against the physics, protect the organisation from the one risk that is already live (cryptography), and spend proportionately while the technology matures.</div>
+</header>
+
+<div class="toolbar">
+  <div class="toolbar-in">
+    <input id="search" type="search" placeholder="Search a term — try qubit, entanglement, NISQ, PQC…" aria-label="Search terms">
+    <span class="count" id="count"></span>
+    <button class="btn" id="resetBtn" type="button">Show all</button>
+  </div>
+  <div id="legend" aria-label="Category filter"></div>
+</div>
+
+<main>
+  <div id="grid" role="list"></div>
+  <aside id="detail" aria-live="polite">
+    <div class="d-no">Element detail</div>
+    <p class="hint" style="margin-top:12px">Click any element in the table to zoom into its full explanation.<br><br>Start with the essentials every leader meets first: <strong>Qb</strong> Qubit, <strong>Sp</strong> Superposition, <strong>En</strong> Entanglement, <strong>NISQ</strong>, and <strong>PQC</strong>.</p>
+  </aside>
+</main>
+<div id="overlay"></div>
+
+<section class="below">
+  <h3>Six things a leader should hold on to</h3>
+  <div class="cards">
+    <div class="card"><h4>We are in the NISQ era</h4><p>Today's machines are small and noisy research instruments. Useful for learning and pilots, not for production workloads. Anyone selling transformation today is ahead of the physics.</p></div>
+    <div class="card"><h4>Advantage is problem-specific</h4><p>Quantum helps only where a known algorithm fits the problem's shape: simulation, factoring, some search and optimisation. Most business problems have no quantum shortcut.</p></div>
+    <div class="card"><h4>The crypto risk is present-day</h4><p>Harvest now, decrypt later makes long-lived data vulnerable today. NIST finalised post-quantum standards in August 2024. Migration planning is the one quantum action that cannot wait for the technology.</p></div>
+    <div class="card"><h4>Qubit counts mislead</h4><p>Ask for error rates, and how many logical (error-corrected) qubits a roadmap delivers. A smaller, cleaner machine beats a larger, noisier one on real circuits.</p></div>
+    <div class="card"><h4>Hybrid is the pattern</h4><p>Near-term quantum runs inside classical workflows: QPU as accelerator, classical systems in control. Your data, pipelines and people stay central.</p></div>
+    <div class="card"><h4>Sensing is nearer than computing</h4><p>Quantum sensing, navigation and QRNG are closer to deployment and revenue than universal quantum computing, and almost never make the headlines.</p></div>
+  </div>
+
+  <h3>A leader's quantum checklist</h3>
+  <div class="cards">
+    <div class="card"><ul>
+      <li>Inventory your cryptography: where RSA and ECC protect data, and how long that data must stay secret</li>
+      <li>Start PQC migration planning for long-lived data, following the NIST standards</li>
+      <li>Identify one or two candidate use cases worth a small, benchmarked pilot, simulation first</li>
+    </ul></div>
+    <div class="card"><ul>
+      <li>Build literacy in your leadership and architecture teams (this table is a start)</li>
+      <li>Track logical-qubit and error-rate milestones, not press-release qubit counts</li>
+      <li>Access hardware through cloud QaaS for experiments; do not buy machines</li>
+      <li>Budget quantum as R&amp;D learning and risk management, not transformation</li>
+    </ul></div>
+    <div class="card example"><h4>An honest note on timelines</h4>
+      <p>Expert estimates for a cryptographically relevant, fault-tolerant quantum computer range from years to decades, and the field's best roadmaps have slipped before.</p>
+      <p style="margin-top:8px">The leadership response is not to predict the date. It is to remove the risk that does not depend on the date (cryptography), and to buy cheap optionality (literacy, pilots, partnerships) on the upside.</p>
+    </div>
+  </div>
+</section>
+
+<footer>Part of the Periodic Tables series on The Signal — plain-language literacy for leaders, from an educational community of quantum explorers.<br>Educational only. Quantum timelines are genuinely uncertain; plan on risk and evidence, not on dates or hype.</footer>
+
+<script>
+const CATS = {
+  basics:{name:"The Basics", color:"#0d9488"},
+  phenom:{name:"Quantum Phenomena", color:"#0284c7"},
+  circuits:{name:"Gates & Circuits", color:"#4f46e5"},
+  hardware:{name:"Hardware & Platforms", color:"#ea580c"},
+  algo:{name:"Algorithms", color:"#15803d"},
+  error:{name:"Noise, Errors & Scale", color:"#dc2626"},
+  qai:{name:"Quantum + AI", color:"#a21caf"},
+  comms:{name:"Communication & Security", color:"#0891b2"},
+  apps:{name:"Sensing & Applications", color:"#65a30d"},
+  biz:{name:"Business & Leadership", color:"#d97706"}
+};
+const TERMS = [
+{s:"QMe",n:"Quantum Mechanics",c:"basics",d:"The physics theory describing how nature behaves at the smallest scales: particles can be in combinations of states, act like waves, and become linked in ways classical physics cannot explain.",l:"You do not need the mathematics to lead well here. You need the vocabulary to follow the conversation and to spot when a claim breaks the physics."},
+{s:"Qb",n:"Qubit",c:"basics",d:"The basic unit of quantum information. A classical bit is always 0 or 1; a qubit can be in a combination (superposition) of 0 and 1 until it is measured.",f:"A single qubit's state is described by two amplitudes, one for 0 and one for 1. n qubits together describe 2^n amplitudes.",l:"When a vendor quotes qubit counts, ask what kind of qubits and how reliable they are. Count alone is the industry's most misleading number."},
+{s:"Bit",n:"Classical Bit",c:"basics",d:"The unit inside every conventional computer: a switch that is definitively 0 or 1. Classical computers stay the better tool for most workloads today and for the foreseeable future.",l:"Quantum computers will not replace classical computers. They are specialised accelerators for specific problem shapes, used alongside classical systems."},
+{s:"Sp",n:"Superposition",c:"basics",d:"A qubit's ability to be in a combination of 0 and 1 at once, described by amplitudes. Measurement forces it to land on one outcome.",f:"Superposition is not trying every answer and reading them all. You get one outcome; good algorithms arrange for the useful outcome to be the likely one.",l:"Any pitch that says a quantum computer 'tries all answers simultaneously' is simplifying past the truth. That misunderstanding drives most quantum hype."},
+{s:"QS",n:"Quantum State",c:"basics",d:"The complete description of what a qubit or system of qubits is doing at a moment: the full set of amplitudes across all possible outcomes.",l:"The state is the asset and it is invisible. It cannot be inspected without destroying it, which is why quantum debugging and error correction are so unusual."},
+{s:"Ms",n:"Measurement",c:"basics",d:"The act of reading a qubit at the end of a computation. Measurement returns a single classical 0 or 1 and collapses the superposition that produced it.",f:"The probability of each outcome is the square of its amplitude. Algorithms run many times (shots) to build a reliable picture from probabilities.",l:"Quantum results are probabilistic, so quantum workflows always involve repetition and statistics, much like sampling, not a single deterministic answer."},
+{s:"Am",n:"Probability Amplitude",c:"basics",d:"The numbers describing a quantum state. Unlike ordinary probabilities, amplitudes can be negative or complex, so they can reinforce or cancel each other.",f:"Probability = amplitude x amplitude (its squared magnitude). Cancellation between amplitudes is what interference means.",l:"Amplitudes that cancel are the whole trick of quantum computing: cancelling wrong answers is as important as boosting right ones."},
+{s:"Co",n:"Coherence",c:"basics",d:"How long a qubit maintains its delicate quantum behaviour before the environment disturbs it. Measured in microseconds to milliseconds in today's machines.",l:"Coherence time is a hardware quality signal. Short coherence means only very short computations finish before the information dissolves."},
+{s:"Dc",n:"Decoherence",c:"basics",d:"The loss of quantum behaviour when a system interacts with its surroundings: heat, vibration, stray fields. It is the central engineering enemy of the field.",l:"Almost every design choice in quantum hardware, including refrigeration colder than deep space, exists to fight decoherence for a few microseconds longer."},
+{s:"Bl",n:"Bloch Sphere",c:"basics",d:"A visual map of a single qubit's state as a point on a sphere. The standard picture used to explain what gates do to a qubit.",l:"Worth five minutes of your time: the Bloch sphere is the one diagram that makes most quantum explanations click."},
+{s:"Qr",n:"Quantum Register",c:"basics",d:"A group of qubits working together as one unit of computation, the quantum analogue of a classical register, but holding amplitudes for every combination of its qubits.",f:"A 50-qubit register holds 2^50 amplitudes, over a quadrillion. That scale is why these machines cannot be exactly simulated on ordinary computers.",l:"Register size in amplitudes, not qubits, is the honest way to feel the scale: each added qubit doubles the state space."},
+{s:"En",n:"Entanglement",c:"phenom",d:"A link between qubits where their states are correlated more strongly than classical physics allows. Measuring one instantly fixes the partner's outcome, however far apart they are.",f:"Entanglement does not send usable messages faster than light. The correlation is real, but no information travels until a classical message is compared.",l:"Treat 'instant communication' claims as a red flag. Entanglement is a computational resource and a networking primitive, not a telephone."},
+{s:"In",n:"Quantum Interference",c:"phenom",d:"Amplitudes for wrong answers cancel each other while amplitudes for right answers add up. Quantum algorithms are essentially choreography for interference.",l:"If superposition is the raw material, interference is the craft. This is why only certain problems have quantum algorithms that help."},
+{s:"Tn",n:"Quantum Tunnelling",c:"phenom",d:"A particle can pass through an energy barrier it classically could not climb over. Used by some hardware designs and central to how quantum annealers explore solutions.",l:"Tunnelling is one of the few quantum effects already earning money elsewhere: it is also how flash memory in your phone works."},
+{s:"NC",n:"No-Cloning Theorem",c:"phenom",d:"A proven limit: an unknown quantum state cannot be perfectly copied. You cannot back up a qubit the way you copy a file.",f:"No-cloning is why eavesdropping on quantum key distribution leaves detectable traces, and why quantum error correction had to be invented differently from classical backup.",l:"This single theorem shapes the security story (QKD) and the cost story (error correction) of the whole industry."},
+{s:"Tp",n:"Quantum Teleportation",c:"phenom",d:"A protocol that transfers one qubit's state to a distant qubit using an entangled pair plus an ordinary classical message. The original is destroyed in the process.",f:"Teleportation moves information, never matter, and never faster than light, because the classical message is required to complete it.",l:"Despite the name, this is a data-transfer protocol for future quantum networks, not science fiction transport."},
+{s:"BP",n:"Bell Pair",c:"phenom",d:"Two qubits in a maximally entangled state, the standard shared resource consumed by teleportation, networking and many algorithms.",l:"Think of Bell pairs as the dial tone of the quantum internet: the resource everything else is built from, and still hard to distribute at scale."},
+{s:"UP",n:"Uncertainty Principle",c:"phenom",d:"Heisenberg's limit: certain pairs of properties cannot both be known with arbitrary precision at the same time. It is a property of nature, not a limit of instruments.",l:"Often misquoted in management writing as 'observing changes things'. The real principle is narrower, stranger, and not a leadership metaphor."},
+{s:"Wf",n:"Wave Function",c:"phenom",d:"The mathematical object describing a quantum state and how it evolves. Measurement is described as the wave function collapsing to one outcome.",l:"You will meet this term in every serious explainer. It is simply the full amplitude description of the system, the QS tile in equation form."},
+{s:"QG",n:"Quantum Gate",c:"circuits",d:"An operation that rotates or flips qubit states, the building block of quantum programs, analogous to logic gates in classical chips but reversible and smooth.",l:"Gate quality, quoted as fidelity, matters more than gate count. Ask vendors for error rates before roadmaps."},
+{s:"Hd",n:"Hadamard Gate",c:"circuits",d:"The gate that puts a qubit into an even superposition of 0 and 1. It is the usual first step of a quantum algorithm.",l:"If you ever see a quantum circuit diagram, the H near the start is this: opening the full state space before the real work begins."},
+{s:"Pa",n:"Pauli Gates",c:"circuits",d:"The three fundamental single-qubit operations, X, Y and Z, named after Wolfgang Pauli. X is the quantum cousin of the classical NOT gate.",l:"Background vocabulary only, but it appears in every technical deck. X flips, Z flips phase, Y does both."},
+{s:"CN",n:"CNOT Gate",c:"circuits",d:"A two-qubit gate that flips the second qubit only when the first is 1. It is the standard gate for creating entanglement.",f:"Single-qubit gates alone cannot entangle. A machine needs a two-qubit gate like CNOT to access the full power of quantum computing.",l:"Two-qubit gates are the hardest to make accurate, so their error rates are the number hardware teams are judged on."},
+{s:"QCi",n:"Quantum Circuit",c:"circuits",d:"A quantum program drawn as a score: horizontal lines are qubits, boxes are gates, read left to right, ending in measurement.",l:"Learning to read a simple circuit diagram is a realistic literacy goal for a leader. Most are far simpler than the word 'quantum' suggests."},
+{s:"CD",n:"Circuit Depth",c:"circuits",d:"The number of sequential steps in a circuit. Deeper circuits do more, but every step adds error, so today's machines can only run shallow ones.",l:"Depth is the practical budget of the NISQ era. When assessing a use case, ask how deep its circuits need to be."},
+{s:"GF",n:"Gate Fidelity",c:"circuits",d:"How accurately a gate performs its intended operation, expressed as a percentage. The best gates today sit around 99.9 percent and above.",f:"At 99.9 percent fidelity, roughly 1 operation in 1,000 goes wrong. A circuit with thousands of gates needs far better fidelity, or error correction, to survive.",l:"That arithmetic is the single most useful sanity check in quantum: multiply fidelity by circuit size before believing any demonstration."},
+{s:"QV",n:"Quantum Volume",c:"circuits",d:"A benchmark (from IBM) combining qubit count, gate quality, connectivity and software into one score, designed to reward usable machines over large ones.",l:"Prefer holistic benchmarks like this over raw qubit counts when comparing vendors. Each vendor promotes the metric it wins, so compare several."},
+{s:"QC",n:"Quantum Computer",c:"hardware",d:"A machine that processes information using qubits, gates and measurement. Today's systems are specialised research instruments, not general-purpose replacements for laptops or cloud servers.",l:"Budget and plan for quantum as an experimental accelerator accessed through the cloud, not as infrastructure you will buy and rack this decade."},
+{s:"QP",n:"QPU",c:"hardware",d:"Quantum Processing Unit: the quantum chip at the heart of the system, the analogue of a CPU or GPU, surrounded by control electronics and often cryogenics.",l:"The QPU is a small part of the full system cost. The supporting stack, control, cooling and software, is where most engineering effort sits."},
+{s:"SQ",n:"Superconducting Qubits",c:"hardware",d:"Tiny electrical circuits, cooled to near absolute zero, behaving as artificial atoms. The approach used by IBM and Google; fast gates, demanding refrigeration.",f:"These chips operate around 0.01 kelvin, roughly 250 times colder than deep space (about 2.7 kelvin).",l:"The current market leaders run this technology, which is why most cloud quantum access today means superconducting machines."},
+{s:"TI",n:"Trapped Ion Qubits",c:"hardware",d:"Individual charged atoms held in electromagnetic traps and controlled with lasers. Used by IonQ and Quantinuum; known for very high gate fidelity and full connectivity between qubits.",l:"Trapped-ion systems trade speed for accuracy and connectivity. In vendor comparisons, their fidelity numbers are the ones to study."},
+{s:"Ph",n:"Photonic Quantum Computing",c:"hardware",d:"Computing with photons, particles of light, as the information carriers. Pursued by PsiQuantum and Xanadu; some components can work without extreme cooling.",l:"Photonics is the manufacturing-friendly bet: it aims to reuse the chip industry's fabrication base rather than inventing a new one."},
+{s:"NA",n:"Neutral Atom Qubits",c:"hardware",d:"Uncharged atoms held in place by laser tweezers in large, reconfigurable arrays. Pursued by QuEra and Pasqal; strong at scaling qubit numbers and at simulating physics.",l:"Neutral atoms have scaled to thousands of qubits in research settings. Watch their error rates, not just their headcount."},
+{s:"TQ",n:"Topological Qubits",c:"hardware",d:"Microsoft's approach, aiming to store information in exotic states of matter (Majorana zero modes) that are naturally protected from many errors.",f:"Still a research-stage technology: the goal is hardware-level stability instead of correcting errors afterwards in software.",l:"Topological is the highest-risk, highest-payoff hardware bet. Treat its timelines with the most caution in the field."},
+{s:"QA",n:"Quantum Annealer",c:"hardware",d:"A special-purpose quantum machine designed for optimisation problems, built by D-Wave. It is not a general-purpose (gate-based) quantum computer and cannot run Shor's algorithm.",l:"Annealers are available and usable today for experiments in scheduling and logistics, but proven advantage over good classical solvers is still contested."},
+{s:"Cry",n:"Cryogenics",c:"hardware",d:"The refrigeration technology, usually a dilution refrigerator, that keeps superconducting chips near absolute zero so their quantum behaviour survives.",l:"The golden chandelier in quantum photos is this refrigerator. It is a reminder that quantum hardware is as much precision engineering as physics."},
+{s:"Spin",n:"Spin Qubits",c:"hardware",d:"Qubits stored in the spin of electrons in silicon, the approach Intel and several labs pursue because it can reuse semiconductor manufacturing.",l:"If spin qubits mature, the existing chip industry becomes a quantum supply chain. That strategic angle is why Intel invests here."},
+{s:"QAl",n:"Quantum Algorithm",c:"algo",d:"A procedure designed for a quantum computer that structures interference so correct answers become probable. Only a limited library of algorithms with real speedups is known.",l:"The known catalogue is short and specific. If a use case has no known quantum algorithm, no machine, however large, will help it."},
+{s:"Sh",n:"Shor's Algorithm",c:"algo",d:"A 1994 algorithm that factors large numbers exponentially faster than known classical methods. It is the reason quantum computing threatens RSA encryption.",f:"A large fault-tolerant quantum computer running Shor could break RSA-2048. No machine today is remotely large or reliable enough, which is why the risk is about data harvested now and timelines, not today.",l:"Shor is the board-level algorithm: it converts quantum progress into a deadline for your cryptography, even if you never buy a quantum computer."},
+{s:"Gv",n:"Grover's Algorithm",c:"algo",d:"A search algorithm that finds an item in an unsorted database with a quadratic speedup over classical search.",f:"Quadratic means searching 1 million items takes about 1,000 quantum steps instead of about 500,000 classical checks on average. Real, useful, and not exponential.",l:"Grover is the honest counterweight to Shor: many quantum speedups will be polynomial like this, valuable but not magical."},
+{s:"QFT",n:"Quantum Fourier Transform",c:"algo",d:"A core subroutine that finds hidden patterns and periods in data, exponentially faster than its classical counterpart. It sits inside Shor's algorithm and several others.",l:"You will never commission a QFT, but recognising it explains why period-finding problems, including factoring, are quantum's home ground."},
+{s:"VQE",n:"VQE",c:"algo",d:"Variational Quantum Eigensolver: a hybrid algorithm for chemistry and materials problems, splitting work between a small quantum chip and a classical optimiser.",l:"VQE is the workhorse pattern of the NISQ era and the most likely shape of any near-term quantum pilot in pharma or materials."},
+{s:"QAOA",n:"QAOA",c:"algo",d:"Quantum Approximate Optimisation Algorithm: a hybrid, near-term algorithm for optimisation problems such as scheduling, routing and portfolio construction.",l:"QAOA is the algorithm vendors will propose for your logistics problems. Insist on benchmarks against strong classical solvers before paying for conclusions."},
+{s:"QSim",n:"Quantum Simulation",c:"algo",d:"Using a controllable quantum system to model another quantum system, such as a molecule or material, that classical computers cannot model exactly.",f:"This was the original motivation for quantum computing, proposed by Richard Feynman in 1981: nature is quantum, so simulate it with a quantum machine.",l:"Simulation is the most scientifically credible route to early quantum value, in drug discovery, fertilisers, batteries and catalysts."},
+{s:"QAdv",n:"Quantum Advantage",c:"algo",d:"The point where a quantum computer solves a useful, real-world problem better than the best classical approach, on cost, speed or accuracy.",l:"Advantage is the only milestone your strategy should track: useful problem, best classical baseline, independently repeatable. Everything earlier is research progress."},
+{s:"QSup",n:"Quantum Supremacy",c:"algo",d:"A 2019 milestone claim (Google) that a quantum machine performed a specific sampling task beyond classical reach. The task itself had no practical use.",l:"Supremacy was a physics headline, not a business event. When a vendor cites it, ask what has been demonstrated on a problem anyone pays to solve."},
+{s:"Ns",n:"Noise",c:"error",d:"Unwanted disturbance from the environment that corrupts quantum states and operations. Heat, vibration, stray electromagnetic fields and imperfect control all contribute.",l:"Noise is why quantum computing is an engineering marathon. Every other term in this category exists because of this one."},
+{s:"QEr",n:"Quantum Error",c:"error",d:"A mistake in a qubit's state or a gate's action, caused by noise. Today's machines make errors at rates classical engineers would find shocking.",f:"Classical memory bits err roughly once in billions of operations or less. Good quantum gates today err about once in a thousand. Closing that gap is the field's central project.",l:"This gap is the single fact that separates quantum timelines in press releases from quantum timelines in engineering reviews."},
+{s:"NISQ",n:"NISQ",c:"error",d:"Noisy Intermediate-Scale Quantum: the current era, defined by John Preskill in 2018. Machines have tens to thousands of physical qubits, too noisy for full error correction.",l:"Every quantum claim you evaluate this decade sits inside the NISQ frame: small, noisy, experimental, occasionally useful for learning and pilots."},
+{s:"PQ",n:"Physical Qubit",c:"error",d:"An actual hardware qubit: real, imperfect and error-prone. This is the number in vendor headlines.",l:"Physical qubits are the raw material. Always ask the follow-up: how many logical qubits does that become, and when?"},
+{s:"LQ",n:"Logical Qubit",c:"error",d:"A protected, error-corrected qubit built by encoding information across many physical qubits. Logical qubits are what serious algorithms actually need.",f:"Depending on hardware quality, one good logical qubit may require hundreds to thousands of physical qubits. This ratio is the industry's most important conversion rate.",l:"Roadmap milestones quoted in logical qubits are meaningful. Milestones quoted only in physical qubits are marketing."},
+{s:"QEC",n:"Quantum Error Correction",c:"error",d:"Techniques that spread one qubit's information across many, continuously detecting and fixing errors without reading the protected data directly (which no-cloning forbids).",l:"Error correction is where most of the industry's cost and talent are headed. Its progress rate, more than qubit counts, sets the real timeline."},
+{s:"FT",n:"Fault Tolerance",c:"error",d:"The ability to compute reliably even though components keep failing, achieved when error rates fall below a threshold and correction outruns new errors.",l:"Fault tolerance is the finish line for large-scale quantum computing, including anything that threatens encryption. Milestones toward it deserve board attention."},
+{s:"GEr",n:"Gate Error Rate",c:"error",d:"The probability that an operation introduces an error, the inverse of fidelity. Lower is better; the best labs now report around 0.1 percent and below for key operations.",l:"If you remember one specification from vendor material, make it this one. It predicts what the machine can actually finish computing."},
+{s:"QCt",n:"Qubit Count",c:"error",d:"The headline number of physical qubits in a system. Easy to quote, easy to inflate in importance, and only meaningful alongside error rates and connectivity.",l:"A 100-qubit machine with low errors can outperform a 1,000-qubit machine with high errors on real circuits. Never compare counts alone."},
+{s:"QML",n:"Quantum Machine Learning",c:"qai",d:"Using quantum circuits to process data or accelerate parts of machine learning. An active research area where most proposed advantages are still unproven on real hardware.",l:"Treat QML as research, not roadmap. Classical AI is delivering value now; quantum enhancement is a hypothesis your team should test cheaply, not budget heavily."},
+{s:"Hyb",n:"Hybrid Quantum-Classical",c:"qai",d:"The near-term computing pattern: a quantum chip handles a small, hard kernel while classical computers do everything else, looping results back and forth. VQE and QAOA work this way.",l:"Hybrid is the architecture any real pilot will use this decade. Your classical infrastructure, data pipelines and people remain the centre of gravity."},
+{s:"QD",n:"Quantum Data",c:"qai",d:"Data that is itself quantum in origin, produced by quantum sensors, experiments or simulations, rather than ordinary classical records converted for a quantum machine.",l:"QML's most credible path runs on quantum data. Loading large classical datasets into quantum states is a known bottleneck that erases many claimed advantages."},
+{s:"QNN",n:"Quantum Neural Network",c:"qai",d:"A parameterised quantum circuit trained by adjusting its settings, analogous to training a small neural network. Experimental, and a common building block in QML papers.",l:"The name sounds like a product category. It is a research technique; ask any vendor using it for published, peer-reviewed benchmarks."},
+{s:"QK",n:"Quantum Kernel",c:"qai",d:"A method that uses a quantum circuit to map classical data into a feature space for a conventional machine learning classifier.",l:"Kernel methods are among the more testable QML ideas. A small internal experiment here is a reasonable, low-cost literacy investment for a data team."},
+{s:"QAI",n:"Quantum AI",c:"qai",d:"An umbrella term for combining quantum computing with artificial intelligence, used loosely in media and marketing for everything from QML research to quantum-inspired classical software.",l:"When this phrase appears in a pitch, ask which specific technique is meant and what was benchmarked against the best classical AI baseline. Vagueness here is a warning sign."},
+{s:"QCr",n:"Quantum Cryptography",c:"comms",d:"Security methods that use quantum physics itself, chiefly quantum key distribution, rather than mathematics alone, to protect communications.",l:"Quantum cryptography is a niche, hardware-based option for specific high-security links. For most organisations, post-quantum cryptography (software) is the relevant path."},
+{s:"QKD",n:"Quantum Key Distribution",c:"comms",d:"A method for sharing encryption keys where any eavesdropping disturbs the quantum states and reveals itself. It protects key exchange, not the data itself.",f:"QKD needs dedicated quantum links (fibre or satellite) and trusted endpoints, which is why it suits government and backbone networks more than general enterprise use.",l:"Interesting and real, but not your first move. Most enterprises should spend on PQC migration years before considering QKD hardware."},
+{s:"PQC",n:"Post-Quantum Cryptography",c:"comms",d:"New encryption and signature algorithms that run on ordinary computers but are designed to resist quantum attacks. This is the practical defence against Shor's algorithm.",f:"NIST finalised the first PQC standards in August 2024 (including ML-KEM for key exchange and ML-DSA for signatures). Migration is now a standards-based programme, not a research question.",l:"This is the one quantum topic with a present-day action for every organisation: inventory your cryptography and plan migration for long-lived data."},
+{s:"HNDL",n:"Harvest Now, Decrypt Later",c:"comms",d:"An attack strategy: collect encrypted data today, store it, and decrypt it later when a capable quantum computer exists.",l:"Any data that must stay secret for 10 or more years, health records, state secrets, core IP, is exposed today under this model. That urgency is real even though Q-Day is not dated."},
+{s:"QDy",n:"Q-Day",c:"comms",d:"The informal name for the day a cryptographically relevant quantum computer can break today's widely used encryption. Its timing is uncertain and debated.",l:"Plan on risk and data lifetime, not on a predicted date. Organisations that wait for a Q-Day announcement will have no migration runway left."},
+{s:"CAg",n:"Cryptographic Agility",c:"comms",d:"The organisational ability to swap cryptographic algorithms across systems quickly, through inventory, abstraction and testing, rather than emergency rewrites.",l:"Agility is the capability PQC migration actually builds, and it pays off beyond quantum: crypto needs change regularly for ordinary reasons too."},
+{s:"QInt",n:"Quantum Internet",c:"comms",d:"A future network that connects quantum devices by distributing entanglement, enabling teleportation, networked sensors and linked quantum processors.",l:"A research horizon, not a procurement category. National testbeds exist; commercial quantum internet services do not, yet."},
+{s:"QNet",n:"Quantum Network",c:"comms",d:"The infrastructure for moving quantum information between devices: entanglement sources, quantum repeaters and links. The building-block layer under the quantum internet vision.",l:"Watch repeater progress if you track this space. Repeaters are the unsolved component between laboratory links and real networks."},
+{s:"QSe",n:"Quantum Sensing",c:"apps",d:"Sensors that exploit quantum effects to measure time, gravity, magnetic fields or motion with extreme precision. Among the closest quantum technologies to real deployment.",l:"Sensing is the quiet commercial story of quantum: less hyped than computing, nearer to revenue, and relevant to defence, navigation, medical and resource industries."},
+{s:"QNav",n:"Quantum Navigation",c:"apps",d:"Positioning and timing using quantum clocks and inertial sensors, working without GPS signals, for submarines, aircraft and infrastructure.",l:"GPS-denied navigation is a live strategic priority for governments. If your sector depends on GPS timing, this is your quantum application to watch."},
+{s:"QRNG",n:"QRNG",c:"apps",d:"Quantum Random Number Generation: producing genuinely random numbers from quantum processes, used to strengthen keys and security systems. Already sold in commercial products, including some phones and cloud services.",f:"Classical random generators are algorithms (predictable in principle). QRNG randomness comes from physical quantum events, which is its security selling point.",l:"The most purchasable quantum technology today. For most organisations it is an incremental security upgrade, not a transformation."},
+{s:"QCh",n:"Quantum Chemistry",c:"apps",d:"Simulating molecules and reactions on quantum computers to design drugs, fertilisers, catalysts and chemicals that classical simulation cannot handle exactly.",l:"This is where fault-tolerant machines are expected to earn first: a single valuable molecule simulation can justify the programme."},
+{s:"QOp",n:"Quantum Optimisation",c:"apps",d:"Applying annealers and algorithms like QAOA to routing, scheduling, logistics and portfolio problems, seeking better solutions than classical solvers find.",l:"Optimisation claims need the toughest scrutiny: classical solvers are extremely good. Demand head-to-head benchmarks on your own problem instances."},
+{s:"QFin",n:"Quantum Finance",c:"apps",d:"Exploratory work by banks on risk analysis, pricing and portfolio optimisation using quantum algorithms, currently at research and pilot stage.",l:"Major banks run these teams mainly to build optionality and talent. Follow their published research, not their press releases, for signal."},
+{s:"QM",n:"Quantum Materials",c:"apps",d:"Using quantum simulation to design new materials: better batteries, superconductors, solar cells and industrial catalysts.",l:"Materials is a strategic race with state funding behind it. Supply-chain leaders should track it the way they tracked semiconductors a decade early."},
+{s:"QRe",n:"Quantum Readiness",c:"biz",d:"An organisation's preparedness for quantum's impact: knowing its cryptographic exposure, watching relevant use cases, and building basic literacy before the technology matures.",l:"Readiness is cheap now and expensive later. The assessment itself, especially the cryptography inventory, is valuable even if quantum timelines slip."},
+{s:"QSf",n:"Quantum-Safe",c:"biz",d:"Describes systems and data protected against quantum attack, usually by migrating to post-quantum cryptography. The goal state for your estate after PQC migration.",l:"Make quantum-safe a defined milestone in your security roadmap with an owner and a date range, not a slogan in a strategy deck."},
+{s:"QaaS",n:"Quantum as a Service",c:"biz",d:"Cloud access to quantum hardware, such as IBM Quantum, Microsoft Azure Quantum and Amazon Braket, billed by usage with no hardware to own.",l:"QaaS is how your team should experiment: small, metered, and reversible. Any proposal to buy quantum hardware this decade needs extraordinary justification."},
+{s:"QRm",n:"Quantum Roadmap",c:"biz",d:"A vendor or national plan describing milestones toward larger, error-corrected machines, usually over five to ten years.",l:"Read roadmaps for logical-qubit milestones and error-rate targets. Treat calendar dates as aspirations; this field slips, including at the best labs."},
+{s:"QTa",n:"Quantum Talent",c:"biz",d:"The scarce workforce spanning quantum physics, engineering, cryogenics, and quantum software. Universities produce few graduates relative to industry and state demand.",l:"You will not hire a quantum team off the shelf. Partner with vendors and universities, and grow literacy in your existing engineers instead."},
+{s:"QEc",n:"Quantum Ecosystem",c:"biz",d:"The network of hardware vendors, startups, software firms, standards bodies and national programmes shaping the technology's direction and supply chain.",l:"Ecosystem choices made early, cloud platform, vendor partnerships, standards, will compound. Diversify access through multi-vendor cloud platforms where you can."},
+{s:"QInv",n:"Quantum Investment",c:"biz",d:"The funding landscape: venture capital, corporate investment and large state programmes (the US, EU, China, UK and others have committed billions).",l:"State money signals strategic importance, not commercial readiness. Separate geopolitical momentum from revenue evidence when you brief your board."},
+{s:"QRk",n:"Quantum Risk",c:"biz",d:"The leadership view of quantum exposure: cryptographic vulnerability, long-lived data, vendor lock-in, and hype-driven spending, weighed against competitive upside.",l:"Frame quantum to your board as a risk-and-optionality topic, not a transformation programme. That framing survives timeline slippage and keeps funding proportionate."},
+{s:"QLit",n:"Quantum Literacy",c:"biz",d:"Leadership-level understanding of quantum concepts and vocabulary: enough to evaluate claims, ask the right questions and allocate attention proportionately. It is the purpose of this table.",l:"Literacy is the appropriate investment at this stage for almost every organisation, including yours. The goal is judgement, not expertise."}
+];
+
+const grid=document.getElementById('grid');
+const detail=document.getElementById('detail');
+const overlay=document.getElementById('overlay');
+const countEl=document.getElementById('count');
+let activeCat=null, selected=null;
+function render(){
+  grid.innerHTML='';
+  TERMS.forEach((t,i)=>{
+    const b=document.createElement('button');
+    b.className='tile'; b.type='button'; b.setAttribute('role','listitem');
+    b.style.background=CATS[t.c].color; b.dataset.cat=t.c;
+    b.dataset.search=(t.n+' '+t.s+' '+t.d+' '+CATS[t.c].name).toLowerCase();
+    b.innerHTML='<span class="no">'+(i+1)+'</span><span class="sym">'+t.s+'</span><span class="nm">'+t.n+'</span>';
+    b.addEventListener('click',()=>show(t,i,b));
+    grid.appendChild(b);
+  });
+  updateCount(TERMS.length);
+}
+function updateCount(n){countEl.textContent=n+' of '+TERMS.length+' terms shown';}
+function closeDetail(){
+  const el=selected;
+  if(selected)selected.classList.remove('selected');
+  selected=null; selectedIdx=-1;
+  detail.classList.remove('open'); overlay.classList.remove('open');
+  document.body.style.overflow='';
+  if(el && el.focus)el.focus({preventScroll:true});
+}
+let selectedIdx=-1;
+function show(t,i,el){
+  if(selectedIdx===i){closeDetail();selectedIdx=-1;return;}
+  if(selected)selected.classList.remove('selected');
+  selected=el; selectedIdx=i; if(el)el.classList.add('selected');
+  let html='<button class="zoom-close" type="button" onclick="closeDetail()" aria-label="Close">✕</button>';
+  html+='<div class="d-no">Element '+(i+1)+' of '+TERMS.length+'</div>';
+  html+='<span class="d-sym" style="background:'+CATS[t.c].color+'">'+t.s+'</span>';
+  html+='<h2>'+t.n+'</h2><div class="d-cat" style="color:'+CATS[t.c].color+'">'+CATS[t.c].name+'</div>';
+  html+='<p>'+t.d+'</p>';
+  if(t.f)html+='<div class="box formula"><b>Key fact</b>'+t.f+'</div>';
+  if(t.l)html+='<div class="box lens"><b>Leader lens</b>'+t.l+'</div>';
+  detail.innerHTML=html;
+  detail.classList.add('open'); overlay.classList.add('open');
+  document.body.style.overflow='hidden';
+}
+overlay.addEventListener('click',closeDetail);
+const legend=document.getElementById('legend');
+Object.keys(CATS).forEach(k=>{
+  const c=document.createElement('button'); c.type='button'; c.className='chip'; c.dataset.cat=k;
+  c.innerHTML='<span class="dot" style="background:'+CATS[k].color+'"></span>'+CATS[k].name;
+  c.addEventListener('click',()=>{
+    activeCat = activeCat===k ? null : k;
+    document.querySelectorAll('.chip').forEach(x=>x.classList.toggle('active',x.dataset.cat===activeCat));
+    applyFilter();
+  });
+  legend.appendChild(c);
+});
+function applyFilter(){
+  const q=document.getElementById('search').value.trim().toLowerCase();
+  let n=0;
+  document.querySelectorAll('.tile').forEach(tile=>{
+    const matchQ=!q || tile.dataset.search.includes(q);
+    const matchC=!activeCat || tile.dataset.cat===activeCat;
+    tile.classList.toggle('hidden',!matchQ);
+    tile.classList.toggle('dim',!!activeCat && !matchC && matchQ);
+    if(matchQ)n++;
+  });
+  updateCount(n);
+}
+document.getElementById('search').addEventListener('input',applyFilter);
+document.getElementById('resetBtn').addEventListener('click',()=>{
+  document.getElementById('search').value=''; activeCat=null;
+  document.querySelectorAll('.chip').forEach(x=>x.classList.remove('active')); applyFilter();
+});
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeDetail();});
+/* Theme toggle: saved choice wins, otherwise dark (the original look) */
+const themeBtn=document.getElementById('themeToggle');
+function applyTheme(th){
+  document.documentElement.setAttribute('data-theme',th);
+  themeBtn.textContent = th==='light' ? '☾' : '☀';
+  try{localStorage.setItem('quantum_table_theme',th);}catch(e){}
+}
+let savedTheme='dark';
+try{savedTheme=localStorage.getItem('quantum_table_theme')||'dark';}catch(e){}
+applyTheme(savedTheme==='light'?'light':'dark');
+themeBtn.addEventListener('click',()=>{
+  const cur=document.documentElement.getAttribute('data-theme')==='light'?'light':'dark';
+  applyTheme(cur==='light'?'dark':'light');
+});
+render();
+</script>
+</body>
+</html>

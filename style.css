@@ -454,6 +454,8 @@ body[data-view="research"] .feed-only { display: none; }
 .learn-card.deck-quantum:hover, .learn-card.deck-ai:hover { background-color: #E9DDC0; border-color: #B99F5F; }
 .learn-card.table-finance { background-color: #E7F3EC; border: 1px solid #A9CFBB; }
 .learn-card.table-finance:hover { background-color: #D5EBDD; border-color: #6FA98A; }
+.learn-card.table-quantum { background-color: #ECE9F7; border: 1px solid #BDB0DE; }
+.learn-card.table-quantum:hover { background-color: #DCD3F0; border-color: #8B76C4; }
 .learn-play { font-size: 1.5rem; color: #a5761f; line-height: 1; }
 .learn-kicker { font-family: var(--font-mono); font-size: 0.66rem; letter-spacing: 0.08em; color: #232a35; opacity: 0.6; }
 .learn-title { font-family: var(--font-display); font-size: 1.35rem; font-weight: 600; color: #1a2030; }
