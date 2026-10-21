@@ -1,0 +1,15 @@
+<p><em>Signal Research Notes is a weekly original-research series on The Signal. Each edition asks one question, works through it from primary sources, and keeps confirmed facts separate from analysis. Sources are linked at the end.</em></p>
+
+<p>On October 12, Meta Superintelligence Labs released Muse Wonder and Muse Wonder Full, the first models the company calls frontier. The pitch is behavioral, not raw capability: Active Memory carries user context across conversations, while Active Focus keeps an agent working through blockers, trying alternate approaches and checking in before consequential actions. Meta frames the series as its foundation for personal and professional agents doing long, multi-step work.</p>
+
+<p>Muse Wonder ships through the Meta Model API and Muse Code at $4 per million input tokens and $20 per million output tokens. Wonder Full, the stronger variant, is exclusive to Muse Code subscribers and is not sold through the API at all. Both were trained at Meta's gigawatt-scale Prometheus data center, with a one-million-token context window and multimodal input returning text.</p>
+
+<h3>What independent testing shows</h3>
+
+<p>Meta's own testing claims scores comparable to Claude Fable 5.1 and GPT-6 Astra, but it published no benchmark numbers. Independent evaluator Artificial Analysis scores Wonder at 52 and Wonder Full at 56 on its Intelligence Index v4.3, behind Claude Opus 5.5 at 58. The standout is agentic work: Wonder Full reaches 57% on Terminal-Bench 4.0, against 33% for Meta's own Muse Spark 1.3, and 13.1% on the passing-only version of Harvey's Legal Agent Benchmark, against 8.6% for GPT-6 Astra.</p>
+
+<p>Two caveats matter. The memory and persistence behaviors are demonstrated on Meta's own benchmarks, MemoryBench, FocusBench and SWE-Marathon, which await independent confirmation. The model card also admits its comparison runs of rival models were best-effort and may not have been optimally tuned.</p>
+
+<h3>Why it matters</h3>
+
+<p>This is a strategic pivot, not just a launch. Meta moves from an open-weights-only lab to a dual open-and-closed track, keeping its best variant inside a subscription. Artificial Analysis also prices Wonder at $4.52 per completed evaluation task, against $1.60 for Spark 1.3 and $1.99 for Gemini 4 Argon, so stronger benchmarks do not automatically mean cheaper work. The deeper question is institutional: persistent memory is powerful, and enterprises should demand explicit retention and deletion controls before switching it on.</p>
