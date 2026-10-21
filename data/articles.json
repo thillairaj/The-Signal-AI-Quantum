@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-21T17:59:56.846250+00:00",
+  "generated_at": "2026-10-21T22:00:01.835105+00:00",
   "sources_polled": [
     "The Verge \u2014 AI",
     "Simon Willison",
@@ -15,6 +15,83 @@
     "Quantum Intelligence"
   ],
   "articles": [
+    {
+      "id": "952285572a8e70b9",
+      "title": "Today's PHP Security Release, and How We're Strengthening PHP Security",
+      "link": "https://simonwillison.net/2026/Oct/21/php-security-release/",
+      "source": "Simon Willison",
+      "category": "AI",
+      "summary": "Today&#x27;s PHP Security Release, and How We&#x27;re Strengthening PHP Security If you're running anything on PHP it's vital you upgrade - today's updates (across the entire PHP 8.x line) address two remote code execution holes, and there have been exploits circulating since las",
+      "published": "2026-10-21T21:59:50.500675+00:00",
+      "audio_url": null,
+      "duration": ""
+    },
+    {
+      "id": "89a2c6e8757c1903",
+      "title": "Walmart is inviting AI agents to shop for you",
+      "link": "https://www.theverge.com/ai-artificial-intelligence/1015715/walmart-ai-shopping-agents",
+      "source": "The Verge \u2014 AI",
+      "category": "AI",
+      "summary": "Walmart will soon let AI agents shop on its website for you. Next month, the retail giant will allow you to use an AI agent on the site, with systems in place to let you approve and review purchases and set spending limits. The embrace of AI agents stands in stark contrast to Ama",
+      "published": "2026-10-21T21:59:49.950850+00:00",
+      "audio_url": null,
+      "duration": ""
+    },
+    {
+      "id": "0d8d033795840d49",
+      "title": "Anthropic takes on Muse with Claude Duet, its new AI agent",
+      "link": "https://www.theverge.com/ai-artificial-intelligence/1015843/anthropic-claude-duet-ai-agent",
+      "source": "The Verge \u2014 AI",
+      "category": "AI",
+      "summary": "Anthropic just announced an AI agent competitor to Meta's Muse and OpenAI's Dots: Claude Duet. The new agent, designed for professionals and small business owners, is launching as a \"research preview,\" according to Anthropic, and it's available as a standalone app on iOS and Andr",
+      "published": "2026-10-21T21:59:49.950797+00:00",
+      "audio_url": null,
+      "duration": ""
+    },
+    {
+      "id": "86bbef590f282368",
+      "title": "Meta to create a new class of shares to fund AI push",
+      "link": "https://www.theverge.com/tech/1015799/meta-shares-class-ai-q3-2026-earnings",
+      "source": "The Verge \u2014 AI",
+      "category": "AI",
+      "summary": "Meta says it's issuing a new class of shares to fund its AI initiatives. As part of its third-quarter earnings report released on Wednesday, the company says the non-voting stock will also go toward potential acquisitions and employee compensation, with trading beginning in 2027.",
+      "published": "2026-10-21T21:59:49.950728+00:00",
+      "audio_url": null,
+      "duration": ""
+    },
+    {
+      "id": "140d853f0e3f908f",
+      "title": "The new human-crafted Apple Music brand matters in an AI world",
+      "link": "https://arstechnica.com/culture/2026/10/the-new-human-crafted-apple-music-brand-matters-in-an-ai-world/",
+      "source": "Ars Technica AI",
+      "category": "AI",
+      "summary": "Opinion: In a world of AI slop, showing the human hands making things helps.",
+      "published": "2026-10-21T19:44:40+00:00",
+      "audio_url": null,
+      "duration": ""
+    },
+    {
+      "id": "53db5cc109270879",
+      "title": "OpenAI's latest AI models are coming to Google Cloud and Antigravity",
+      "link": "https://arstechnica.com/ai/2026/10/openais-latest-ai-models-are-coming-to-google-cloud-and-antigravity/",
+      "source": "Ars Technica AI",
+      "category": "AI",
+      "summary": "Google Cloud will have GPT 6.1 Astra, Sol, and Luna in the coming weeks.",
+      "published": "2026-10-21T18:51:42+00:00",
+      "audio_url": null,
+      "duration": ""
+    },
+    {
+      "id": "5cbd98ec79a60fdf",
+      "title": "Judge rejects Trump\u2019s wild claim EPA can dismiss data center pollution lawsuits",
+      "link": "https://arstechnica.com/tech-policy/2026/10/judge-rejects-trumps-wild-claim-epa-can-dismiss-data-center-pollution-lawsuits/",
+      "source": "Ars Technica AI",
+      "category": "AI",
+      "summary": "Trump\u2019s EPA can't unilaterally dismiss SpaceXAI pollution lawsuit, court rules.",
+      "published": "2026-10-21T18:20:40+00:00",
+      "audio_url": null,
+      "duration": ""
+    },
     {
       "id": "00c66b5eda27345f",
       "title": "sparqlite: SPARQL 1.1 inside SQLite, written in Rust",
@@ -45,6 +122,17 @@
       "category": "AI",
       "summary": "After introducing its Gemini AI assistant to Android Auto last year, Google is now bringing it to Apple CarPlay users. The conversational Gemini in navigation is available today for US drivers, with \"rollout happening globally too,\" according to Google (we've asked for specific r",
       "published": "2026-10-21T17:59:44.445253+00:00",
+      "audio_url": null,
+      "duration": ""
+    },
+    {
+      "id": "4ab93569e260b2b0",
+      "title": "How AT&T is rethinking in-house legal work with OpenAI",
+      "link": "https://openai.com/index/att-legal",
+      "source": "OpenAI Blog",
+      "category": "AI",
+      "summary": "AT&amp;T is working with OpenAI to make legal knowledge easier to access. Learn how its LegalEdge team is rethinking intake and scaling legal judgment.",
+      "published": "2026-10-21T17:00:00+00:00",
       "audio_url": null,
       "duration": ""
     },
@@ -234,6 +322,17 @@
       "published": "2026-10-21T01:08:41+00:00",
       "audio_url": "https://muse.ai/podcasts/media/1248297608376725/94f09345-ad4a-4981-83dd-e3206bbf5c4e/ep-63f07fa5-21da-424a-998d-c131c79710b1.mp3",
       "duration": "287"
+    },
+    {
+      "id": "b2deaf97c98cf0ff",
+      "title": "Democratic governance of frontier AI, part II: Empowering cyber defenders",
+      "link": "https://openai.com/index/empowering-cyber-defenders",
+      "source": "OpenAI Blog",
+      "category": "AI",
+      "summary": "OpenAI outlines a blueprint for empowering cyber defenders with frontier AI, stronger safeguards, modernized cybersecurity, and more resilient public institutions.",
+      "published": "2026-10-21T00:00:00+00:00",
+      "audio_url": null,
+      "duration": ""
     },
     {
       "id": "3b5ce86c8c402c8d",
@@ -1534,39 +1633,6 @@
       "duration": ""
     },
     {
-      "id": "24ef7cf40bd2766a",
-      "title": "Google finally releases Gemini 4 Argon",
-      "link": "https://www.theverge.com/ai-artificial-intelligence/1009862/google-releases-gemini-4-argon",
-      "source": "The Verge \u2014 AI",
-      "category": "AI",
-      "summary": "After months sitting on the sidelines of the frontier AI race, Google has finally launched its long-awaited Gemini 4 Argon model, claiming it can compete with the best the industry has to offer. Google says Argon delivers \"frontier reasoning and improved performance across comple",
-      "published": "2026-10-13T18:00:19.696477+00:00",
-      "audio_url": null,
-      "duration": ""
-    },
-    {
-      "id": "e8881f4e9b5e76a5",
-      "title": "Actress Mia Goth says it\u2019s \u2018incomprehensible\u2019 that Instagram allowed an AI image of her to spread",
-      "link": "https://www.theverge.com/ai-artificial-intelligence/1010277/mia-goth-instagram-ai-shirt-deepfake-divorce",
-      "source": "The Verge \u2014 AI",
-      "category": "AI",
-      "summary": "Earlier this month, news broke that actress Mia Goth had filed for divorce from actor and filmmaker Shia LaBeouf. An Instagram post from the account miagoth_ - marked with a blue verified checkmark - quickly spread. The post shows Goth in a T-shirt that reads \"MY EX IS MY BIGGEST",
-      "published": "2026-10-13T18:00:19.696444+00:00",
-      "audio_url": null,
-      "duration": ""
-    },
-    {
-      "id": "a3312401eb558d69",
-      "title": "Google makes it easier to launch your vibe-coded apps",
-      "link": "https://www.theverge.com/tech/1009066/google-play-vibe-coded-android-apps-launch",
-      "source": "The Verge \u2014 AI",
-      "category": "AI",
-      "summary": "The next time you vibe-code a custom app with Google's AI Studio, you won't have to connect your phone to a computer to install it. On Tuesday, Google announced a new feature in the US that will allow you to launch personal apps directly through the Play Store. Google first launc",
-      "published": "2026-10-13T18:00:19.696388+00:00",
-      "audio_url": null,
-      "duration": ""
-    },
-    {
       "id": "7e60f5237eddc095",
       "title": "Google wants to host your personal vibe-coded apps in the Play Store",
       "link": "https://arstechnica.com/google/2026/10/google-wants-to-host-your-personal-vibe-coded-apps-in-the-play-store/",
@@ -2436,17 +2502,6 @@
       "duration": ""
     },
     {
-      "id": "f5f88d08399f657b",
-      "title": "Using Parseable with Datasette for OpenTelemetry traces",
-      "link": "https://simonwillison.net/2026/Oct/6/datasette-parseable-opentelemetry/",
-      "source": "Simon Willison",
-      "category": "AI",
-      "summary": "TIL: Using Parseable with Datasette for OpenTelemetry traces I saw Parseable in a Show HN today - it's a new observability platform with both an open source (AGPL) Rust implementation (a single ~180MB binary), an \"Enterprise\" version with extra features and a cloud hosted option.",
-      "published": "2026-10-06T22:00:16.229099+00:00",
-      "audio_url": null,
-      "duration": ""
-    },
-    {
       "id": "11669444bfa3fd7b",
       "title": "OpenAI will watermark ChatGPT outputs by default\u2014but only in the EU",
       "link": "https://arstechnica.com/ai/2026/10/openai-will-watermark-chatgpt-outputs-by-default-but-only-in-the-eu/",
@@ -2887,17 +2942,6 @@
       "duration": ""
     },
     {
-      "id": "de8e231194157ca9",
-      "title": "Judge dismisses Chegg and Penske antitrust lawsuits targeting Google AI search",
-      "link": "https://arstechnica.com/google/2026/10/antitrust-lawsuits-targeting-google-ai-search-dismissed-by-federal-judge/",
-      "source": "Ars Technica AI",
-      "category": "AI",
-      "summary": "The court acknowledges AI search comes with consequences, but it's not an antitrust issue.",
-      "published": "2026-10-01T20:11:55+00:00",
-      "audio_url": null,
-      "duration": ""
-    },
-    {
       "id": "7e67b43cf9d0e609",
       "title": "The eternal complement",
       "link": "https://openai.com/index/the-eternal-complement",
@@ -2905,17 +2949,6 @@
       "category": "AI",
       "summary": "Advanced AI may matter most for the routine work behind breakthrough ideas. Explore why execution could shape the next economy and the pace of progress.",
       "published": "2026-10-01T17:00:00+00:00",
-      "audio_url": null,
-      "duration": ""
-    },
-    {
-      "id": "decb5d86e7448725",
-      "title": "With most information hidden, the game Stratego had stumped AI\u2014until now",
-      "link": "https://arstechnica.com/science/2026/10/ai-finally-beat-the-best-stratego-player-in-history-and-did-it-on-a-budget/",
-      "source": "Ars Technica AI",
-      "category": "AI",
-      "summary": "Adding in a second neural network that guesses the identity of hidden pieces was key.",
-      "published": "2026-10-01T16:28:04+00:00",
       "audio_url": null,
       "duration": ""
     },
@@ -2949,17 +2982,6 @@
       "category": "AI",
       "summary": "As it opens a new location, the social club prepares grant applications in 2 hours instead of 3 days and liquor-license materials in 3 hours instead of 4 days.",
       "published": "2026-10-01T00:00:00+00:00",
-      "audio_url": null,
-      "duration": ""
-    },
-    {
-      "id": "556e1e4b03fe94eb",
-      "title": "Google announces Gemini 4 Argon AI model, but you can't use it yet",
-      "link": "https://arstechnica.com/google/2026/09/google-announces-gemini-4-argon-ai-model-but-you-cant-use-it-yet/",
-      "source": "Ars Technica AI",
-      "category": "AI",
-      "summary": "So much for Gemini 3.5 Pro.",
-      "published": "2026-09-30T20:11:08+00:00",
       "audio_url": null,
       "duration": ""
     },
@@ -3070,28 +3092,6 @@
       "category": "AI",
       "summary": "Watch the winning trailer from the Future Vision XPRIZE, The Gifted.",
       "published": "2026-09-28T19:00:00+00:00",
-      "audio_url": null,
-      "duration": ""
-    },
-    {
-      "id": "216d56bba26ca458",
-      "title": "The Lenfest Institute grows landmark program with expanded OpenAI support",
-      "link": "https://openai.com/index/lenfest-ai-collaborative-expansion",
-      "source": "OpenAI Blog",
-      "category": "AI",
-      "summary": "OpenAI is expanding the Lenfest AI Collaborative and Fellowship Program with $5 million in funding and up to $5 million in software credits and engineering support.",
-      "published": "2026-09-28T07:00:00+00:00",
-      "audio_url": null,
-      "duration": ""
-    },
-    {
-      "id": "bf0fe8cc388a3447",
-      "title": "Basis completes a tax workbook 2x faster with GPT-6 Astra",
-      "link": "https://openai.com/index/basis-tax-workbook-with-astra",
-      "source": "OpenAI Blog",
-      "category": "AI",
-      "summary": "GPT-6 Astra completed a 50-tab tax workbook twice as fast as GPT-5.6 Sol, and its stronger understanding of user intent gives Basis more confidence in real-world use.",
-      "published": "2026-09-28T00:00:00+00:00",
       "audio_url": null,
       "duration": ""
     },
