@@ -139,6 +139,11 @@ body {
   grid-template-columns: 230px minmax(0, 1fr);
   align-items: start;
 }
+/* Explicit placement: sidebar pinned to column 1 across all rows, every view
+   block in column 2. Auto-placement alone put main#feed into row 2 column 1
+   once the feed view had two visible blocks (tools card + list), Oct 21 2026. */
+.layout > .panel { grid-column: 1; grid-row: 1 / span 99; }
+.layout > section, .layout > main { grid-column: 2; }
 
 .panel {
   padding: 2rem 1.5rem 2rem 2rem;
@@ -419,6 +424,8 @@ body[data-view="research"] .feed-only { display: none; }
 
 @media (max-width: 780px) {
   .layout { grid-template-columns: minmax(0, 1fr); }
+  .layout > .panel { grid-column: 1; grid-row: auto; }
+  .layout > section, .layout > main { grid-column: 1; }
   .panel { position: static; padding: 1.5rem 1.25rem 0; }
   .feed { border-left: none; padding: 0 1.25rem; }
   .article { grid-template-columns: 1fr; gap: 0.4rem; }
