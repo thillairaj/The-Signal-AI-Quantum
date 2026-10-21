@@ -187,16 +187,21 @@
     .tstrip-wrap{flex:1 1 auto}
     .tnav{display:none}
     .tsearch{flex:1 1 100%;order:5}}
+
+  /* Back link lives in the sticky topic bar (Thillai, Oct 21 2026) so it stays visible while scrolling. */
+  .topicbar .backlink{color:inherit;opacity:.78;text-decoration:none;font-size:13.5px;font-weight:600;white-space:nowrap;align-self:center}
+  .topicbar .backlink:hover{opacity:1;text-decoration:underline}
 </style>
 </head>
 <body>
-<div style="max-width:1180px;margin:0 auto;padding:14px 18px 0"><a href="../#learn" style="color:inherit;opacity:.72;text-decoration:none;font-size:13.5px;font-weight:600">← Back to Learning Spaces</a></div>
+
 <header>
   <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">☾</button>
   <div class="kicker" id="deck-kicker">QUANTUM COMPUTING, MADE VISUAL</div>
   <h1>The <span class="thin">Quantum</span> Deck</h1>
 </header>
 <div class="topicbar">
+  <a class="backlink" href="../#learn">← Back to Learning Spaces</a>
   <span class="tlabel">SELECT TOPIC</span>
   <button class="tnav" id="tstrip-prev" aria-label="Scroll topics left">‹</button>
   <div class="tstrip-wrap"><div class="tstrip" id="topic-strip"></div></div>

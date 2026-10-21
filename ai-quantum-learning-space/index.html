@@ -418,11 +418,15 @@
       *, *::before, *::after { transition: none !important; }
       .rail { scroll-behavior: auto; }
     }
-  </style>
+  
+  /* Frozen back bar (Thillai, Oct 21 2026): the way back to Learning Spaces stays at the top while scrolling. */
+  .backbar{position:sticky;top:0;z-index:70;background:var(--paper);padding:10px 2px 8px;border-bottom:1px solid rgba(90,75,40,.14)}
+  .backbar a{color:inherit;opacity:.75;text-decoration:none;font-size:13.5px;font-weight:600}
+</style>
 </head>
 <body>
   <div class="wrap">
-    <div style="padding:8px 0 2px"><a href="../#learn" style="color:inherit;opacity:.7;text-decoration:none;font-size:13.5px;font-weight:600">← Back to Learning Spaces</a></div>
+    <div class="backbar"><a href="../#learn">← Back to Learning Spaces</a></div>
     <header class="masthead">
       <p class="reader">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
