@@ -565,6 +565,9 @@ window.addEventListener("hashchange", openLearnTarget);
     if (t) t.innerHTML += t.innerHTML;
   });
 
+  var brand = document.querySelector(".brand-h");
+  if (brand) brand.addEventListener("click", function () { showView("home"); window.scrollTo({ top: 0 }); });
+
   document.querySelectorAll("[data-goto]").forEach(function (btn) {
     btn.addEventListener("click", function () {
       showView(btn.getAttribute("data-goto"));
