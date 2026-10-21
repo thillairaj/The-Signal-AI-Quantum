@@ -16,6 +16,7 @@ let bookmarks = new Set(JSON.parse(localStorage.getItem(BOOKMARK_KEY) || "[]"));
 let lastGeneratedAt = null;
 
 const feedEl = document.getElementById("feed");
+const feedToolsEl = document.getElementById("feed-tools");
 const learnViewEl = document.getElementById("learn-view");
 const podcastViewEl = document.getElementById("podcast-view");
 const researchViewEl = document.getElementById("research-view");
@@ -112,6 +113,7 @@ function showView(name) {
   document.body.dataset.view = name;
   homeViewEl.hidden = name !== "home";
   feedEl.hidden = name !== "feed";
+  feedToolsEl.hidden = name !== "feed";
   learnViewEl.hidden = name !== "learn";
   podcastViewEl.hidden = name !== "podcast";
   researchViewEl.hidden = name !== "research";

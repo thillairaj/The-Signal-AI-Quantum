@@ -16,7 +16,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,800;1,9..144,500;1,9..144,600&family=Inter:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css?v=20261021n">
+<link rel="stylesheet" href="style.css?v=20261021o">
 </head>
 <body data-view="home">
 
@@ -44,21 +44,6 @@
 <div class="layout">
   <aside class="panel">
     <div class="panel-block feed-only">
-      <label class="panel-label" for="search">Search</label>
-      <input type="text" id="search" class="search-input" placeholder="filter headlines…" autocomplete="off">
-    </div>
-
-    <div class="panel-block feed-only">
-      <p class="panel-label">Topic</p>
-      <div class="category-toggle" id="categoryToggle">
-        <button class="cat-btn active" data-category="">All</button>
-        <button class="cat-btn" data-category="AI">AI</button>
-        <button class="cat-btn" data-category="Quantum">Quantum</button>
-        <button class="cat-btn" data-category="__bookmarked">★ Saved</button>
-      </div>
-    </div>
-
-    <div class="panel-block feed-only">
       <button class="sources-header" id="sourcesToggle" aria-expanded="false" aria-controls="sourceList">
         <span>Sources&nbsp;<span class="count" id="sourcesCount"></span></span>
         <span class="chevron" aria-hidden="true"></span>
@@ -75,6 +60,11 @@
     <div class="panel-block panel-note">
       <p class="panel-note-label">Automated</p>
       <p>This site rebuilds itself. Bots poll the RSS feeds, refresh the video spaces and publish the podcasts and articles on schedule. Nothing on this site is typed by hand.</p>
+    </div>
+
+    <div class="panel-block cache-tip">
+      <p class="cache-tip-label">Seeing an older version?</p>
+      <p>This site updates often. If a page looks outdated or something is not working properly, your browser may be showing a cached copy of the previous version. Clear your browsing history and cache, then reload to get the latest updates.</p>
     </div>
   </aside>
 
@@ -183,6 +173,25 @@
         <div class="hm-day"><b>SUN</b><span>Daily AI Intelligence · 6:30 AM IST (01:00 GMT)</span><span>Wire refreshes ×6</span><span>A quiet day — catch up</span></div>
       </div></div>
     </div>
+  </section>
+
+  <section id="feed-tools" class="feed-tools" hidden>
+    <div class="ft-row">
+      <div class="ft-search">
+        <label class="ft-label" for="search">Search the wire</label>
+        <input type="text" id="search" class="search-input" placeholder="filter headlines…" autocomplete="off">
+      </div>
+      <div class="ft-topics">
+        <p class="ft-label">Topic</p>
+        <div class="category-toggle" id="categoryToggle">
+          <button class="cat-btn active" data-category="">All</button>
+          <button class="cat-btn" data-category="AI">AI</button>
+          <button class="cat-btn" data-category="Quantum">Quantum</button>
+          <button class="cat-btn" data-category="__bookmarked">★ Saved</button>
+        </div>
+      </div>
+    </div>
+    <p class="ft-tip">Two things you can do on every story: tap <b>★</b> to save it and find it later under ★ Saved, and tap <b>⧉</b> to copy the story link so you can paste it anywhere.</p>
   </section>
 
   <main class="feed" id="feed" hidden>
@@ -493,6 +502,6 @@
 </footer>
 
 <script data-goatcounter="https://trttech.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
-<script src="app.js?v=20261021m"></script>
+<script src="app.js?v=20261021n"></script>
 </body>
 </html>

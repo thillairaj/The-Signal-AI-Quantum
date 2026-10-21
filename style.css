@@ -245,14 +245,14 @@ body[data-view="research"] .feed-only { display: none; }
 .follow-link {
   display: flex;
   align-items: center;
-  gap: 8px;
-  font-size: 0.78rem;
+  gap: 7px;
+  font-size: 0.7rem;
   font-weight: 700;
   color: #F4EFE2;
   text-decoration: none;
   background: linear-gradient(135deg, #0B1F3B, #173863);
   border: 1px solid #0B1F3B;
-  padding: 0.45rem 0.65rem;
+  padding: 0.42rem 0.6rem;
   border-radius: 10px;
   margin-bottom: 0.45rem;
   box-shadow: 0 3px 10px rgba(11,31,59,.22);
@@ -260,7 +260,7 @@ body[data-view="research"] .feed-only { display: none; }
 }
 .follow-link:hover { transform: translateY(-1px); box-shadow: 0 7px 18px rgba(11,31,59,.32); }
 .follow-link .li-badge {
-  width: 22px; height: 22px; border-radius: 6px;
+  width: 20px; height: 20px; border-radius: 5px;
   background: rgba(255,255,255,.14);
   border: 1px solid rgba(255,255,255,.45);
   margin-right: 0;
@@ -869,3 +869,23 @@ body[data-view="research"] .feed-only { display: none; }
 .panel-block.panel-note { background: #0B1F3B; border: 1px solid #0B1F3B; border-radius: 14px; padding: 14px 16px; box-shadow: 0 8px 22px rgba(11,31,59,.28); }
 .panel-note p { color: #F7F2E4; font-size: 13.5px; line-height: 1.55; margin: 0; }
 .panel-note .panel-note-label { font-family: var(--font-mono); font-size: 10px; letter-spacing: .18em; text-transform: uppercase; color: #E9C766; margin: 0 0 6px; }
+
+/* Feed tools: search + topic moved to the top of the RSS view (Thillai, Oct 21 2026) */
+.feed-tools { background: var(--surface); border: 1px solid var(--border); border-radius: 16px; padding: 16px 18px 10px; margin: 2rem 2rem 0 0; box-shadow: 0 1px 2px rgba(20,24,15,.05), 0 10px 30px rgba(20,24,15,.05); }
+.feed-tools[hidden] { display: none; }
+.ft-row { display: flex; gap: 18px; flex-wrap: wrap; align-items: end; }
+.ft-search { flex: 1 1 260px; }
+.ft-label { display: block; font-family: var(--font-mono); font-size: 10px; letter-spacing: .16em; text-transform: uppercase; color: var(--muted); margin: 0 0 6px; }
+.feed-tools .search-input { background: var(--bg); border-radius: 10px; padding: .6rem .8rem; }
+.feed-tools .category-toggle { display: flex; gap: 6px; flex-wrap: wrap; }
+.feed-tools .cat-btn { flex: 0 0 auto; padding: .52rem .95rem; font-size: .72rem; border-radius: 999px; background: var(--bg); color: var(--muted); }
+.feed-tools .cat-btn:hover { border-color: #B8860B; color: var(--ink); }
+.feed-tools .cat-btn.active { background: #0B1F3B; border-color: #0B1F3B; color: #F7F2E4; }
+.ft-tip { margin: 12px 0 4px; padding-top: 10px; border-top: 1px dashed var(--border); font-size: 12.5px; line-height: 1.5; color: var(--muted); }
+.ft-tip b { color: #B8860B; }
+@media (max-width: 780px) { .feed-tools { margin: 1rem 1rem 0; } }
+
+/* Cache tip box, bottom of the sidebar (Thillai, Oct 21 2026) */
+.cache-tip { background: #FBF3E2; border: 1px solid #E2CD9B; border-radius: 14px; padding: 13px 15px; }
+.cache-tip p { color: #4A3D14; font-size: 12.5px; line-height: 1.55; margin: 0; }
+.cache-tip .cache-tip-label { font-family: var(--font-display); font-weight: 700; font-size: 14.5px; color: #0B1F3B; margin: 0 0 5px; }
