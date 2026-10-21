@@ -456,6 +456,20 @@ body[data-view="research"] .feed-only { display: none; }
 .learn-card.table-finance:hover { background-color: #D5EBDD; border-color: #6FA98A; }
 .learn-card.table-quantum { background-color: #ECE9F7; border: 1px solid #BDB0DE; }
 .learn-card.table-quantum:hover { background-color: #DCD3F0; border-color: #8B76C4; }
+.learn-card.table-ai { background-color: #E8F1FB; border: 1px solid #A9C6E8; }
+.learn-card.table-ai:hover { background-color: #D3E4F7; border-color: #6F9FD8; }
+.learn-card.table-agentic { background-color: #E6F7F7; border: 1px solid #9FD8D8; }
+.learn-card.table-agentic:hover { background-color: #CDEEEE; border-color: #5FB3B3; }
+.learn-card.table-tools { background-color: #EEF1F5; border: 1px solid #B9C2CE; }
+.learn-card.table-tools:hover { background-color: #DDE4EC; border-color: #8494A7; }
+.learn-card.table-cloud { background-color: #E9F3FE; border: 1px solid #A8CCF5; }
+.learn-card.table-cloud:hover { background-color: #D2E7FD; border-color: #6FA8E8; }
+.learn-card.table-cyber { background-color: #FBEAEA; border: 1px solid #E3AEAE; }
+.learn-card.table-cyber:hover { background-color: #F5D5D5; border-color: #C47474; }
+.learn-card.table-leadership { background-color: #FBF3E2; border: 1px solid #E2CD9B; }
+.learn-card.table-leadership:hover { background-color: #F5E7C3; border-color: #BE9E52; }
+.learn-card.table-growth { background-color: #EDF7E8; border: 1px solid #B2D8A4; }
+.learn-card.table-growth:hover { background-color: #DBF0D0; border-color: #74AC5E; }
 .learn-play { font-size: 1.5rem; color: #a5761f; line-height: 1; }
 .learn-kicker { font-family: var(--font-mono); font-size: 0.66rem; letter-spacing: 0.08em; color: #232a35; opacity: 0.6; }
 .learn-title { font-family: var(--font-display); font-size: 1.35rem; font-weight: 600; color: #1a2030; }

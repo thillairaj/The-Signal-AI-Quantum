@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Agentic AI Tools — The Periodic Table</title>
+<meta name="description" content="52 agentic AI tools and platforms mapped as a periodic table — frameworks, coding agents, computer-use agents, voice agents, eval tools and enterprise platforms. Positions as of October 2026.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Agentic AI Tools — The Periodic Table">
+<meta property="og:description" content="52 agentic AI tools and platforms mapped as a periodic table — frameworks, coding agents, computer-use agents, voice agents, eval tools and enterprise platforms. Positions as of October 2026.">
+<meta property="og:url" content="https://thillairaj.github.io/The-Signal-AI-Quantum/periodic-tables/agentic-ai-tools/">
+<style>
+  :root{--bg:#071527;--panel:#0b213f;--panel2:#0e2a52;--ink:#eef4ff;--muted:#9db4d4;--line:rgba(255,255,255,.14)}
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:'Segoe UI',system-ui,-apple-system,Arial,sans-serif;background:radial-gradient(1200px 600px at 20% -10%,#12325e 0%,var(--bg) 55%);color:var(--ink);min-height:100vh}
+  header{padding:34px 22px 10px;text-align:center;max-width:1200px;margin:0 auto}
+  .kicker{letter-spacing:.35em;font-size:11px;color:#7dd3fc;text-transform:uppercase;font-weight:700}
+  h1{font-size:clamp(28px,5vw,48px);line-height:1.08;margin:10px 0 10px;font-weight:800}
+  h1 span{color:#fbbf24}
+  .sub{color:var(--muted);max-width:820px;margin:0 auto;font-size:15.5px;line-height:1.55}
+  .principle{margin:18px auto 4px;max-width:880px;background:rgba(251,191,36,.08);border:1px solid rgba(251,191,36,.35);border-radius:12px;padding:12px 16px;font-size:14px;line-height:1.55;color:#fde68a}
+  .toolbar{position:sticky;top:0;z-index:40;background:rgba(7,21,39,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line);padding:12px 16px}
+  .toolbar-in{max-width:1280px;margin:0 auto;display:flex;flex-wrap:wrap;gap:10px;align-items:center;justify-content:center}
+  #search{flex:1 1 260px;max-width:420px;padding:11px 14px;border-radius:10px;border:1px solid var(--line);background:var(--panel);color:var(--ink);font-size:15px;outline:none}
+  #search:focus{border-color:#38bdf8}
+  .count{color:var(--muted);font-size:13.5px}
+  .btn{padding:10px 14px;border-radius:10px;border:1px solid var(--line);background:var(--panel2);color:var(--ink);cursor:pointer;font-size:13.5px;font-weight:600}
+  .btn:hover{border-color:#38bdf8}
+  #legend{max-width:1280px;margin:14px auto 0;padding:0 16px;display:flex;flex-wrap:wrap;gap:8px;justify-content:center}
+  .chip{display:inline-flex;align-items:center;gap:7px;padding:7px 12px;border-radius:999px;border:1px solid var(--line);background:var(--panel);color:var(--ink);font-size:12.5px;cursor:pointer;font-weight:600;transition:all .15s}
+  .chip .dot{width:11px;height:11px;border-radius:3px}
+  .chip:hover{transform:translateY(-1px);border-color:#fff}
+  .chip.active{outline:2px solid #fff;outline-offset:1px}
+  main{max-width:1280px;margin:0 auto;padding:20px 16px 30px;display:grid;grid-template-columns:1fr 340px;gap:20px;align-items:start}
+  #grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(96px,1fr));gap:8px}
+  .tile{border:none;border-radius:10px;padding:8px 6px 7px;min-height:96px;color:#fff;cursor:pointer;text-align:left;position:relative;transition:transform .16s ease,filter .16s ease,box-shadow .16s ease,opacity .16s;display:flex;flex-direction:column;box-shadow:inset 0 0 0 1px rgba(255,255,255,.22)}
+  .tile .no{font-size:10.5px;font-weight:700;opacity:.85}
+  .tile .sym{font-size:24px;font-weight:800;line-height:1.05;margin:auto 0 2px;letter-spacing:.01em;word-break:break-word}
+  .tile .nm{font-size:10px;line-height:1.25;font-weight:600;opacity:.95}
+  .tile:hover,.tile:focus-visible{transform:scale(1.09) translateY(-4px);filter:brightness(1.28) saturate(1.25);box-shadow:0 12px 28px rgba(0,0,0,.5),0 0 0 2px #fff;z-index:5;outline:none}
+  .tile.selected{box-shadow:0 0 0 3px #fff,0 12px 28px rgba(0,0,0,.5);filter:brightness(1.2)}
+  .tile.dim{opacity:.13;filter:grayscale(.6)}
+  .tile.hidden{display:none}
+  #detail{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:22px;position:sticky;top:132px;min-height:300px}
+  #detail .d-no{font-size:12px;color:var(--muted);letter-spacing:.15em;text-transform:uppercase;font-weight:700}
+  #detail .d-sym{display:inline-flex;align-items:center;justify-content:center;min-width:74px;height:74px;padding:0 10px;border-radius:14px;font-size:30px;font-weight:800;color:#fff;margin:12px 0}
+  #detail h2{font-size:24px;line-height:1.2;margin-bottom:6px}
+  #detail .d-cat{font-size:12.5px;font-weight:700;text-transform:uppercase;letter-spacing:.12em;margin-bottom:14px}
+  #detail p{font-size:15px;line-height:1.65;color:#dbe7fa}
+  #detail .box{margin-top:14px;border-radius:10px;padding:12px 14px;font-size:14px;line-height:1.55}
+  #detail .formula{background:rgba(56,189,248,.1);border:1px solid rgba(56,189,248,.4);color:#bae6fd}
+  #detail .lens{background:rgba(251,191,36,.08);border:1px solid rgba(251,191,36,.35);color:#fde68a}
+  #detail .box b{display:block;font-size:11px;letter-spacing:.18em;text-transform:uppercase;margin-bottom:5px;opacity:.85}
+  .hint{color:var(--muted);font-size:14.5px;line-height:1.6}
+  section.below{max-width:1280px;margin:0 auto;padding:6px 16px 26px}
+  section.below h3{font-size:22px;margin:18px 0 12px}
+  .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:12px}
+  .card{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:16px}
+  .card h4{font-size:15px;margin-bottom:7px;color:#7dd3fc}
+  .card p,.card li{font-size:14px;line-height:1.6;color:#dbe7fa}
+  .card ul{padding-left:18px}
+  .example{background:linear-gradient(135deg,#0e2a52,#12325e);border:1px solid rgba(251,191,36,.4)}
+  .example h4{color:#fbbf24}
+  .big{font-size:19px;font-weight:800;color:#fff;margin:6px 0}
+  footer{max-width:1280px;margin:0 auto;padding:10px 16px 38px;color:var(--muted);font-size:12.5px;line-height:1.6;text-align:center}
+  #overlay{display:none}
+  /* placeholder, zoom view styles are at the end of this stylesheet */
+  /* Theme toggle + sticky legend + back button (added Oct 21) */
+  header{position:relative}
+  .theme-toggle{position:absolute;top:16px;right:16px;width:44px;height:44px;border-radius:50%;border:1px solid var(--line);background:var(--panel2);color:#fbbf24;font-size:19px;cursor:pointer;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 14px rgba(0,0,0,.35)}
+  .theme-toggle:hover{transform:scale(1.08)}
+  #legend{flex-wrap:nowrap;overflow-x:auto;justify-content:flex-start;padding:10px 2px 3px;scrollbar-width:thin}
+  .chip{white-space:nowrap;flex:0 0 auto}
+  .backbtn{display:inline-flex;align-items:center;gap:6px;padding:9px 14px;border-radius:999px;border:1px solid var(--line);background:var(--panel2);color:var(--ink);font-size:13.5px;font-weight:700;cursor:pointer;margin-bottom:14px}
+  .backbtn:hover{border-color:#38bdf8}
+  #detail{top:168px}
+  /* Light theme */
+  html[data-theme="light"] body{background:radial-gradient(1200px 600px at 20% -10%,#e8eefc 0%,#FAF9F6 55%);color:#17293f}
+  html[data-theme="light"] h1{color:#0b213f}
+  html[data-theme="light"] .sub{color:#4d6482}
+  html[data-theme="light"] .principle{background:#fff8e1;border-color:#e5c15c;color:#6b5510}
+  html[data-theme="light"] .toolbar{background:rgba(250,249,246,.95);border-color:#ddd5c0}
+  html[data-theme="light"] #search{background:#fff;color:#17293f;border-color:#cfd8e3}
+  html[data-theme="light"] .btn{background:#fff;color:#17293f;border-color:#cfd8e3}
+  html[data-theme="light"] .chip{background:#fff;color:#17293f;border-color:#cfd8e3}
+  html[data-theme="light"] .chip.active{outline-color:#0b213f}
+  html[data-theme="light"] .count{color:#5a6f88}
+  html[data-theme="light"] #detail{background:#fff;border-color:#e0d9c6}
+  html[data-theme="light"] #detail p{color:#33475e}
+  html[data-theme="light"] #detail .d-no{color:#5a6f88}
+  html[data-theme="light"] #detail h2{color:#0b213f}
+  html[data-theme="light"] #detail .formula{background:#e8f4fd;border-color:#9fd0f5;color:#124d75}
+  html[data-theme="light"] #detail .lens{background:#fff8e1;border-color:#e5c15c;color:#6b5510}
+  html[data-theme="light"] .backbtn{background:#eef3fa;color:#17293f;border-color:#cfd8e3}
+  html[data-theme="light"] .hint{color:#5a6f88}
+  html[data-theme="light"] .card{background:#fff;border-color:#e0d9c6}
+  html[data-theme="light"] .card p,html[data-theme="light"] .card li{color:#33475e}
+  html[data-theme="light"] section.below h3{color:#0b213f}
+  html[data-theme="light"] .example{background:linear-gradient(135deg,#fff8e1,#fdf3d0);border-color:#e5c15c}
+  html[data-theme="light"] .example .big{color:#17293f}
+  html[data-theme="light"] footer{color:#5a6f88}
+  html[data-theme="light"] .theme-toggle{background:#fff;color:#d97706;border-color:#cfd8e3}
+  @media(max-width:900px){
+    main{grid-template-columns:1fr}
+    #detail{position:fixed;inset:auto 0 0 0;z-index:60;border-radius:18px 18px 0 0;max-height:72vh;overflow:auto;transform:translateY(105%);transition:transform .25s ease;box-shadow:0 -12px 40px rgba(0,0,0,.6)}
+    #detail.open{transform:translateY(0)}
+    #overlay{display:block;position:fixed;inset:0;background:rgba(0,0,0,.55);z-index:55;opacity:0;pointer-events:none;transition:opacity .25s}
+    #overlay.open{opacity:1;pointer-events:auto}
+    #grid{grid-template-columns:repeat(auto-fill,minmax(82px,1fr))}
+    .tile{min-height:86px}.tile .sym{font-size:20px}
+  }
+  /* Zoom reading view — same pattern as the Quantum / AI Deck cards (Oct 21) */
+  main{grid-template-columns:1fr}
+  #overlay{display:block;position:fixed;inset:0;background:rgba(3,10,20,.62);z-index:55;opacity:0;pointer-events:none;transition:opacity .22s ease}
+  #overlay.open{opacity:1;pointer-events:auto}
+  #detail{position:fixed;top:50%;left:50%;right:auto;bottom:auto;width:min(560px,92vw);max-width:92vw;max-height:86vh;overflow:auto;z-index:60;border-radius:18px;padding:26px;opacity:0;pointer-events:none;transform:translate(-50%,-47%) scale(.88);transition:transform .24s ease,opacity .24s ease;box-shadow:0 30px 80px rgba(0,0,0,.55)}
+  #detail.open{opacity:1;pointer-events:auto;transform:translate(-50%,-50%) scale(1)}
+  .zoom-close{position:absolute;top:12px;right:12px;width:38px;height:38px;border-radius:50%;border:1px solid var(--line);background:var(--panel2);color:var(--ink);font-size:15px;cursor:pointer;display:flex;align-items:center;justify-content:center;z-index:2}
+  .zoom-close:hover{border-color:#38bdf8;transform:scale(1.08)}
+  html[data-theme="light"] .zoom-close{background:#eef3fa;color:#17293f;border-color:#cfd8e3}
+  @media(max-width:900px){#detail{padding:22px 18px}}
+</style>
+</head>
+<body>
+<header>
+  <div style="text-align:left;max-width:1200px;margin:0 auto 14px"><a href="../../#learn" style="color:inherit;opacity:.75;text-decoration:none;font-size:13.5px;font-weight:600">← Back to Learning Spaces</a></div>
+  <button class="theme-toggle" id="themeToggle" type="button" aria-label="Switch light or dark theme" title="Switch light / dark theme">☀</button>
+  <div class="kicker">The Agentic AI Tools Table</div>
+  <h1>Agentic AI <span>Tools</span></h1>
+  <p class="sub">The agentic AI tool landscape, arranged as a periodic table: every tile a real tool or platform, grouped by the job it does in an agent system.</p>
+  <div class="principle"><strong>Core principle:</strong> Tools change monthly; categories endure. Learn the category map first, shortlist by the job you need done, and verify the specific tool's current state, pricing and ownership before buying. The durable skill is knowing which category a problem belongs to, not memorising this year's brand names.</div>
+</header>
+
+<div class="toolbar">
+  <div class="toolbar-in">
+    <input id="search" type="search" placeholder="Search a term — try LangGraph, Cursor, Copilot Studio, LangSmith…" aria-label="Search terms">
+    <span class="count" id="count"></span>
+    <button class="btn" id="resetBtn" type="button">Show all</button>
+  </div>
+  <div id="legend" aria-label="Category filter"></div>
+</div>
+
+<main>
+  <div id="grid" role="list"></div>
+  <aside id="detail" aria-live="polite">
+    <div class="d-no">Element detail</div>
+    <p class="hint" style="margin-top:12px">Click any element in the table to zoom into its full explanation.<br><br>Start with: <strong>LangGraph, Cursor, MCP tools, Agentforce</strong>.</p>
+  </aside>
+</main>
+<div id="overlay"></div>
+
+<section class="below">
+  <h3>How to read this landscape</h3>
+  <div class="cards">
+    <div class="card"><h4>Frameworks vs platforms</h4><p>Code frameworks (LangGraph, CrewAI, the vendor SDKs) give engineering teams control and portability. Enterprise platforms (Copilot Studio, Agentforce, ServiceNow) give governance and speed inside one ecosystem. Most large organisations end up with both: platforms for business-led agents, frameworks for product-critical ones.</p></div>
+    <div class="card"><h4>Open-source gravity</h4><p>Most of the builder layer is open-source or source-available: LangChain, AutoGen, Browser Use, Langfuse, Promptfoo. That lowers entry cost and raises your responsibility: you own upgrades, security patching and support. Price that ownership into comparisons with SaaS platforms.</p></div>
+    <div class="card"><h4>The MCP effect</h4><p>The Model Context Protocol standardised how agents connect to tools and data, so tool support is becoming a checklist item rather than a differentiator. When comparing frameworks and platforms, ask how each implements MCP for tools you already own, instead of counting raw integrations.</p></div>
+    <div class="card"><h4>Eval is the gap</h4><p>Almost every organisation can build an agent demo; few can prove the agent still works after a model or prompt change. The evaluation and observability category (LangSmith, Langfuse, Promptfoo and their peers) is where professional agent programmes are quietly decided.</p></div>
+    <div class="card"><h4>Consolidation is coming</h4><p>This table has over fifty tiles for a market barely three years old. Acquisitions, renames and shutdowns are certain: editors, frameworks and voice platforms are already changing owners and names. Prefer tools with clear ownership, export paths and standards support over feature-count winners.</p></div>
+    <div class="card"><h4>Models vs tools</h4><p>The tool is not the intelligence: most tiles here orchestrate models made by someone else. A tool's value is its workflow, integrations and controls. Judge the pairing separately: pick the tool category first, then check which models it lets you use and swap.</p></div>
+  </div>
+
+  <h3>A leader's tool-selection checklist</h3>
+  <div class="cards">
+    <div class="card"><ul>
+      <li>Which category is this, and is that the category our problem actually belongs to?</li>
+      <li>Build or buy: do we need framework control, or platform governance and speed?</li>
+      <li>What data and systems will the agent touch, and who approved those permissions?</li>
+      <li>How will we evaluate the agent before launch, and after every model or prompt change?</li>
+      <li>What is the exit path: can we export prompts, data, traces and workflows if we switch?</li>
+      <li>What does it cost at production volume, not at pilot volume?</li>
+    </ul></div>
+    <div class="card"><ul>
+      <li>Has security reviewed the tool's data handling, residency and retention?</li>
+      <li>Is the tool model-independent, or are we accepting single-vendor coupling on purpose?</li>
+      <li>Who owns the tool: a named internal owner for upgrades, incidents and vendor contact?</li>
+      <li>Does it expose traces and logs our observability stack can actually consume?</li>
+      <li>Where are the human approval points for actions that spend money or contact customers?</li>
+      <li>Is the pilot scoped to 4 to 6 weeks with success measures agreed in advance?</li>
+    </ul></div>
+    <div class="card example"><h4>An honest note on this market</h4>
+      <p>Positions in this table are stated as of October 2026, and some will already be stale within a quarter: products in this space are renamed, acquired or folded into larger platforms at unusual speed.</p>
+      <p style="margin-top:8px">Use the table to learn the categories and build a shortlist of two or three tools per job, then verify the current state of each shortlisted tool directly with the vendor before any commitment. Category knowledge ages in years; brand facts age in months.</p>
+    </div>
+  </div>
+</section>
+
+<footer>Positions as of October 2026. This market changes monthly; verify a tool's current state, pricing and ownership before any procurement decision. Educational only.<div style="margin-top:12px;font-size:13px">Curated by Thillai Raj Thanam Jeya Veera Raj · <a href="https://www.linkedin.com/in/thillairaj" target="_blank" rel="noopener" style="color:inherit;text-decoration:underline">Follow on LinkedIn</a></div></footer>
+
+<script>
+const CATS = { frameworks:{name:"Agent Frameworks (Code)",color:"#4f46e5"}, lowcode:{name:"Low-Code & Workflow Builders",color:"#0891b2"}, coding:{name:"Coding Agents",color:"#15803d"}, computeruse:{name:"Computer & Browser Agents",color:"#ea580c"}, voice:{name:"Voice Agents",color:"#a21caf"}, memory:{name:"Memory & Retrieval",color:"#0284c7"}, eval:{name:"Evaluation & Observability",color:"#65a30d"}, platforms:{name:"Enterprise Agent Platforms",color:"#d97706"}, automation:{name:"Automation Platforms with Agents",color:"#64748b"} };
+const TERMS = [
+{s:"LCn",n:"LangChain",c:"frameworks",d:"One of the earliest and largest open-source frameworks for building LLM applications, offering abstractions for prompts, models, retrievers, tools and agent loops. It is used widely for prototypes and for production retrieval and agent systems, though many teams graduate to LangGraph when they need tighter control over state and flow.",f:"Maker: LangChain. Open-source core (MIT) with the commercial LangSmith platform alongside it.",l:"Its strength is ecosystem breadth. Watch that its higher-level agent abstractions change quickly; teams often pin versions and keep their own agent logic thin and portable."},
+{s:"LGr",n:"LangGraph",c:"frameworks",d:"LangChain's graph-based framework for stateful, controllable agents: workflows are built as nodes and edges with explicit state, checkpoints, human-in-the-loop pauses and durable execution. It is designed for production multi-step and multi-agent systems that need reliability, not just demos.",f:"Maker: LangChain. Open-source (MIT), with commercial deployment available through the LangGraph Platform.",l:"The default shortlist choice when an agent must be auditable and resumable. The trade-off is more upfront design work than looser prompt-driven frameworks."},
+{s:"CrA",n:"CrewAI",c:"frameworks",d:"A Python framework for orchestrating role-based multi-agent crews, where agents receive roles, goals and tools and collaborate through defined processes. It is popular for business-workflow agents such as research, content and operations pipelines.",f:"Maker: CrewAI Inc. Open-source core with a commercial enterprise platform, CrewAI AMP.",l:"It fits process-style use cases very quickly. Validate that a crew actually outperforms one well-prompted agent with good tools before scaling the pattern across the organisation."},
+{s:"AuG",n:"Microsoft AutoGen",c:"frameworks",d:"Microsoft Research's framework for conversational multi-agent systems, where agents talk to each other and to humans in order to solve tasks. It is widely used in research and prototyping, and its ideas fed into Microsoft's broader agent framework work.",f:"Maker: Microsoft. Open-source. Its multi-agent conversation patterns influenced many later frameworks.",l:"Strong research lineage and community. Enterprise buyers should check how it lines up with Microsoft's currently supported agent frameworks before committing a platform decision to it."},
+{s:"SK",n:"Semantic Kernel",c:"frameworks",d:"Microsoft's software development kit for bringing LLMs and agents into enterprise applications, offering planners, plugins and connectors in .NET, Python and Java. It is positioned mainly for organisations already invested in the Microsoft and Azure stack.",f:"Maker: Microsoft. Open-source SDK, with enterprise paths running through Azure services.",l:"A natural fit for Microsoft-centric estates. Elsewhere, compare it honestly against LangGraph and each cloud vendor's native agent SDK before standardising."},
+{s:"LIn",n:"LlamaIndex",c:"frameworks",d:"A framework centred on the data side of LLM applications: ingestion, indexing and retrieval for RAG, extended into agent and workflow patterns. It is strongest when the real problem is connecting agents to private, messy enterprise data.",f:"Maker: LlamaIndex (formerly GPT Index). Open-source core with a commercial cloud platform.",l:"Choose it when data plumbing is the hard part of the project. Pair it with disciplined evaluation, because retrieval quality ultimately decides agent quality."},
+{s:"OAS",n:"OpenAI Agents SDK",c:"frameworks",d:"OpenAI's lightweight framework for building agents on its models, providing agents, tools, handoffs between agents, guardrails and built-in tracing. It is the production successor to OpenAI's earlier experimental Swarm project.",f:"Maker: OpenAI. Open-source SDK, designed first for OpenAI models.",l:"Clean, minimal and fast to adopt if you are OpenAI-first. The trade-off is tighter coupling to a single model provider, so keep an exit path in mind."},
+{s:"CAS",n:"Claude Agent SDK",c:"frameworks",d:"Anthropic's SDK for building agents on Claude, sharing harness ideas with Claude Code: structured tool use, context management and subagents. It suits developers building Claude-native agent products and internal tools.",f:"Maker: Anthropic. SDK for building on Claude models through the Anthropic API.",l:"Worth shortlisting when you want Claude's tool-use behaviour and safety posture by default. If strategy demands model portability, design for it from the start."},
+{s:"ADK",n:"Google ADK",c:"frameworks",d:"Agent Development Kit: Google's open-source framework for building and deploying agents, designed to work with Google's models and Vertex AI while also supporting others. It puts unusual emphasis on evaluation and deployment tooling alongside the agent code itself.",f:"Maker: Google. Open-source; launched in 2025 as part of Google's agent platform push.",l:"The natural framework choice inside Google Cloud estates. It is newer than its main rivals, so expect a faster-moving API and verify enterprise references."},
+{s:"PyA",n:"Pydantic AI",c:"frameworks",d:"A Python agent framework from the Pydantic team that brings type safety, structured outputs and validation to agent development. It is model-agnostic, with a developer experience closer to modern typed web frameworks than to notebook experiments.",f:"Maker: Pydantic, the team behind the validation library used across the Python ecosystem. Open-source.",l:"Attractive for engineering-led teams that value correctness and testability. The ecosystem is smaller than LangChain's, so expect to build more supporting pieces yourself."},
+{s:"LFl",n:"Langflow",c:"lowcode",d:"A visual, drag-and-drop builder for LangChain-based flows and agents, letting users wire components on a canvas and export them as deployable APIs. It is used to prototype, demonstrate and share LLM applications quickly with less technical audiences.",f:"Maker: Langflow (acquired by DataStax). Open-source.",l:"Good for making prototypes tangible for business users early. Production hardening, testing and version control still need a deliberate engineering process around it."},
+{s:"Flw",n:"Flowise",c:"lowcode",d:"An open-source visual builder for LLM flows and agents, similar in spirit to Langflow, placing a canvas over LangChain concepts with ready options for hosting chatbots and APIs. It is popular for self-hosted internal tools and departmental pilots.",f:"Maker: FlowiseAI. Open-source core with a commercial cloud offering.",l:"A pragmatic self-host choice for internal tooling. Assign a named owner for upgrades and security patching, as you would with any open-source platform in production."},
+{s:"n8n",n:"n8n",c:"lowcode",d:"A workflow automation platform with strong AI nodes that let users place agent steps inside broader automations spanning hundreds of business apps. It is source-available, self-hostable and especially popular with operations and IT teams.",f:"Maker: n8n GmbH (Berlin). Source-available under its fair-code licence, with cloud and enterprise editions.",l:"Fits best when the agent is one step inside a business workflow, not the whole product. Heavy agent reasoning and state usually still belong in a code framework."},
+{s:"Dst",n:"Dust",c:"lowcode",d:"A platform for building company-internal AI agents and assistants connected to internal knowledge and tools, aimed at enterprise teams rather than developers first. Its focus is secure, shared agents that employees across a company actually use daily.",f:"Maker: Dust (Paris). Commercial SaaS; its agents can draw on multiple frontier models.",l:"Consider it when the goal is employee-facing assistants over company knowledge. Test its retrieval quality against your messiest real documents before any rollout decision."},
+{s:"RAI",n:"Relevance AI",c:"lowcode",d:"A no-code and low-code platform for building an AI workforce of agents that automate business processes such as research, sales tasks and support operations. It targets operations teams who want automation without standing up an engineering project.",f:"Maker: Relevance AI (Sydney). Commercial SaaS with model-agnostic positioning.",l:"A fast route for operations-led automation. Validate the unit economics per task carefully, because per-run pricing, not licence cost, drives the total bill."},
+{s:"Lnd",n:"Lindy",c:"lowcode",d:"A platform for creating AI employees and agents that handle tasks such as email triage, meeting preparation, lead research and CRM updates, aimed squarely at business users rather than developers. It is one of the most consumer-friendly agent builders in the market.",f:"Maker: Lindy (US). Commercial SaaS.",l:"Useful for personal and small-team productivity agents. Keep data-access permissions tight, because convenience agents by design touch inboxes, calendars and customer records."},
+{s:"GCo",n:"GitHub Copilot",c:"coding",d:"Microsoft's AI coding assistant, which began as autocomplete inside the editor and has grown into agent modes that edit multiple files, carry out assigned tasks and review code. It is the most widely deployed coding AI across enterprises today.",f:"Maker: GitHub / Microsoft. Commercial, per-seat, working across VS Code, JetBrains and other editors.",l:"The safe enterprise default for coding assistance. Judge it by review quality, acceptance rates and escaped defects, not by licence counts."},
+{s:"Cur",n:"Cursor",c:"coding",d:"An AI-first code editor, built as a fork of VS Code, designed around agents that edit codebases, run commands and reason over repository context. It became extremely popular with startups and individual developers for its speed of iteration.",f:"Maker: Anysphere. Commercial editor; model choice includes frontier models from several providers.",l:"Developers value its flow highly. Enterprises should settle data handling, code indexing and procurement terms before standardising the whole organisation on it."},
+{s:"CCo",n:"Claude Code",c:"coding",d:"Anthropic's coding agent that works from the terminal and inside IDEs, reading an entire codebase, editing files, running tests and working through multi-step tasks largely autonomously. It is known for strong reasoning over long engineering tasks.",f:"Maker: Anthropic. Commercial, consumed through Claude plans or API usage.",l:"Excellent for experienced engineers doing deep repository work. Pair it with branch protection and CI gates, because it acts on the codebase rather than merely suggesting."},
+{s:"Cdx",n:"OpenAI Codex",c:"coding",d:"OpenAI's coding agent line: cloud agents that work on repositories in parallel sandboxes, alongside CLI and IDE forms, powered by code-specialised GPT models. It revives the Codex name from OpenAI's original 2021 code model in a fully agentic form.",f:"Maker: OpenAI. Commercial, bundled with ChatGPT plans and available through the API.",l:"Strong for delegating well-scoped, reviewable tickets. The management task shifts to writing precise task briefs and reviewing diffs carefully."},
+{s:"Wnd",n:"Windsurf",c:"coding",d:"An AI code editor built around its Cascade agent, offering agentic editing and codebase awareness for individuals and enterprise teams. It was built by the team formerly known as Codeium and competes directly with Cursor.",f:"Maker: Windsurf (formerly Codeium / Exafunction). Commercial editor with enterprise offerings.",l:"A credible direct alternative to Cursor. Run a head-to-head pilot on your own repositories rather than deciding from feature lists and launch videos."},
+{s:"Dvn",n:"Devin",c:"coding",d:"Cognition's autonomous software-engineering agent, positioned as an AI engineer that takes tickets end to end inside a cloud workspace, planning work, browsing documentation and running tests as it goes.",f:"Maker: Cognition. Commercial, usage-based, priced through its Agent Compute Units model.",l:"Treat Devin like a junior engineer with supervision: tightly scoped tasks, reviewed output, and honest internal tracking of how often the work is usable exactly as delivered."},
+{s:"RpA",n:"Replit Agent",c:"coding",d:"Replit's agent that builds working applications from natural-language descriptions inside its browser-based development and hosting platform. It is aimed as much at founders and non-specialists as at professional developers.",f:"Maker: Replit. Commercial platform; agent usage is tied to Replit plans and credits.",l:"Superb for prototypes, demos and internal tools. Plan an exit path to a conventional codebase before a quick prototype becomes a production dependency."},
+{s:"ACU",n:"Anthropic Computer Use",c:"computeruse",d:"A capability that lets Claude perceive screenshots and control a computer's mouse and keyboard, completing tasks inside real software interfaces. It became the reference implementation that much of the GUI-agent category now benchmarks itself against.",f:"Maker: Anthropic. First released in public beta in October 2024 alongside Claude 3.5 Sonnet.",l:"Powerful where legacy software has no API at all. It is slower, costlier and more error-prone than API integration, so reserve it for exactly those gaps."},
+{s:"Opr",n:"OpenAI Operator",c:"computeruse",d:"OpenAI's computer-using agent that browses and acts on websites, handling tasks such as bookings, ordering and form-filling in its own browser. It launched as a research preview for ChatGPT subscribers and signalled OpenAI's direction for consumer agents.",f:"Maker: OpenAI. Launched January 2025 as a research preview powered by its Computer-Using Agent model.",l:"Read it as a roadmap signal for where consumer agents are heading. For enterprise use, expect to build on computer-use capabilities with your own controls and approvals."},
+{s:"BrU",n:"Browser Use",c:"computeruse",d:"An open-source library that connects LLM agents to a real browser so they can navigate websites, fill forms and extract data. It became one of the most widely adopted open projects in the browser-agent category, with an optional hosted cloud around it.",f:"Maker: Browser Use. Open-source (MIT), with a commercial hosted offering.",l:"The pragmatic builder's choice for web automation agents. Budget honestly for website changes, captchas and anti-bot friction in any business case built on it."},
+{s:"Mar",n:"Google Project Mariner",c:"computeruse",d:"Google DeepMind's research prototype for browser agents that can understand and act across web pages to complete tasks such as shopping and research. It has been explored within the Gemini ecosystem rather than released as a general product.",f:"Maker: Google DeepMind. Research prototype, shown to limited testers, not a general commercial product.",l:"Track it as a signal of Google's agent roadmap, not as a procurable tool. Do not build delivery plans that depend on its availability or pricing."},
+{s:"ELv",n:"ElevenLabs",c:"voice",d:"A voice AI company known for highly natural text-to-speech and voice cloning, extended into a conversational agents platform for phone and web voice agents. Its technology is widely used across media, customer support and interactive products.",f:"Maker: ElevenLabs. Commercial APIs and agent platform; voice quality is its core differentiator.",l:"Choose it when voice quality itself is the product experience. Insist on clear consent and disclosure practices around cloned voices from day one, not as an afterthought."},
+{s:"Vap",n:"Vapi",c:"voice",d:"A developer platform for building voice agents that handle live phone and web calls with low latency, orchestrating speech-to-text, the language model and text-to-speech as interchangeable pieces. It is popular for support, scheduling and outbound calling agents.",f:"Maker: Vapi. Commercial, usage-based platform.",l:"Strong when phone calls are the workflow. Test real-world latency and interruption handling with your own callers and accents, because demos rarely expose either."},
+{s:"RtA",n:"Retell AI",c:"voice",d:"A platform for building and deploying AI phone agents for support, sales and operations, with testing tools, call analytics and telephony integrations aimed at business teams rather than infrastructure engineers.",f:"Maker: Retell AI. Commercial SaaS, using the per-minute pricing pattern typical of the voice category.",l:"Fits call-centre style use cases well. Let the buying decision rest on containment rate and escalation quality in production calls, not on demo polish."},
+{s:"LkT",n:"LiveKit",c:"voice",d:"An open-source infrastructure platform, built on WebRTC, for real-time voice and video, with an agents framework for building voice agents on top of it. A large share of the voice-agent ecosystem runs, directly or indirectly, on LiveKit.",f:"Maker: LiveKit. Open-source core with a commercial cloud offering.",l:"This is the build-your-own layer beneath many voice products. Choosing it means owning more of the stack in exchange for control, customisation and lower marginal cost."},
+{s:"Pin",n:"Pinecone",c:"memory",d:"A managed vector database for storing and searching embeddings, forming the retrieval backbone of many RAG pipelines and agent memory systems. Its fully hosted, serverless positioning made it a default enterprise choice for semantic search at scale.",f:"Maker: Pinecone. Commercial managed service; the database itself is not open-source.",l:"Reliable and low-operations. Costs scale with data and query volume, so model retrieval spend carefully before agents reach production traffic."},
+{s:"Wvt",n:"Weaviate",c:"memory",d:"An open-source vector database offering hybrid search that combines vectors with keyword search, plus built-in options for generating embeddings. It can be self-hosted or consumed as a managed cloud service.",f:"Maker: Weaviate (Netherlands). Open-source core (BSD licence) with cloud and enterprise editions.",l:"A good fit when you want open-source control together with hybrid search. If you self-host, assign clear ownership for operating and upgrading it."},
+{s:"Chr",n:"Chroma",c:"memory",d:"A lightweight open-source vector database designed for developer simplicity, making it a common first choice for prototypes, experiments and local agent memory. A managed cloud version extends the same experience to production workloads.",f:"Maker: Chroma. Open-source under Apache 2.0.",l:"Ideal for development and modest workloads. Re-evaluate the choice deliberately before it quietly becomes load-bearing production infrastructure."},
+{s:"Mm0",n:"Mem0",c:"memory",d:"A memory layer for AI agents and applications that extracts, stores and retrieves persistent memories about users and past interactions, so agents remember across sessions instead of replaying entire conversation histories every time.",f:"Maker: Mem0. Open-source core with a hosted commercial platform.",l:"Persistent memory is where agents start feeling personal, and where privacy obligations multiply. Design retention, consent and deletion rules before shipping memory features."},
+{s:"Zep",n:"Zep",c:"memory",d:"A memory and context platform for agents built around a temporal knowledge graph, its Graphiti engine, which tracks how facts about users and entities change over time rather than treating memory as flat text.",f:"Maker: Zep. Built on the open-source Graphiti library, with a commercial cloud service.",l:"Consider it when agent memory must handle facts that change, such as long-running customer relationships, instead of simply storing what was said in past chats."},
+{s:"LSm",n:"LangSmith",c:"eval",d:"LangChain's platform for tracing, evaluating and monitoring LLM and agent applications, bringing run traces, datasets, offline evaluations and production monitoring into one place. It works with LangChain applications and, through standard integrations, beyond them.",f:"Maker: LangChain. Commercial SaaS, with self-hosting options aimed at large enterprises.",l:"If you adopt one evaluation tool early, tracing plus evaluation in a single place pays off fastest. Make 'no production agent without traces' a team rule from the start."},
+{s:"LFu",n:"Langfuse",c:"eval",d:"An open-source LLM engineering platform covering tracing, prompt management, evaluations and product analytics for AI applications. It is widely adopted by teams that want observability without surrendering control of their telemetry data.",f:"Maker: Langfuse. Open-source core with a commercial cloud offering.",l:"The data-residency-friendly alternative to LangSmith. Self-hosting removes the SaaS concern but still needs an owner for upgrades, retention and scale."},
+{s:"APh",n:"Arize Phoenix",c:"eval",d:"An open-source observability and evaluation tool for LLM systems, strong at tracing, retrieval debugging and embedding analysis. It comes from Arize, a company whose main business is broader machine learning and AI observability.",f:"Maker: Arize AI. Phoenix is open-source; the wider Arize platform is commercial.",l:"Particularly valuable when retrieval quality is your main failure mode. It pairs naturally with OpenTelemetry-based engineering stacks."},
+{s:"BTr",n:"Braintrust",c:"eval",d:"A commercial platform for evaluating and steadily improving AI products: evaluations, datasets, prompt iteration, production logging and regression testing, aimed at product engineering teams shipping AI features.",f:"Maker: Braintrust. Commercial SaaS.",l:"It suits product teams iterating on AI features release by release. The discipline it enforces, golden datasets and repeatable scoring, matters more than the tool itself."},
+{s:"PFo",n:"Promptfoo",c:"eval",d:"An open-source command-line tool for testing and red-teaming prompts, RAG pipelines and agents, running evaluations in continuous integration much like unit tests. It is popular with security-conscious engineering teams for its local-first approach.",f:"Maker: Promptfoo. Open-source (MIT) with an enterprise offering.",l:"Probably the easiest first step into evaluation culture, because it lives in the repository and the CI pipeline where your engineers already work."},
+{s:"AgO",n:"AgentOps",c:"eval",d:"An observability platform focused specifically on agents rather than generic LLM calls, offering session replays, step-by-step traces, cost tracking and failure analysis across many agent frameworks.",f:"Maker: AgentOps. Commercial platform with an open-source Python SDK.",l:"Useful when multi-agent runs have become opaque and hard to debug. Verify its coverage of your exact framework versions before standardising on it."},
+{s:"MCS",n:"Microsoft Copilot Studio",c:"platforms",d:"Microsoft's platform for building and governing agents inside the Microsoft 365 and Power Platform ecosystem, ranging from simple declarative copilots to orchestrated agents connected to business data and enterprise systems.",f:"Maker: Microsoft. Commercial, licensed in connection with Microsoft 365 and Power Platform arrangements.",l:"The default choice for Microsoft estates. In practice, governance, data boundaries and licence modelling, not agent building, are where these projects get stuck."},
+{s:"AgF",n:"Salesforce Agentforce",c:"platforms",d:"Salesforce's platform for autonomous agents operating inside CRM workflows: service, sales and marketing agents grounded in Salesforce data and processes, powered by its Atlas reasoning engine.",f:"Maker: Salesforce. Commercial, with consumption-based pricing per conversation or action as its model.",l:"Compelling when the work already lives in Salesforce. Scrutinise the per-conversation economics at your real volumes before committing to scale."},
+{s:"SNA",n:"ServiceNow AI Agents",c:"platforms",d:"ServiceNow's agentic layer inside its workflow platform, orchestrating AI agents across IT service, HR and customer workflows on top of the platform's data model and governance.",f:"Maker: ServiceNow. Commercial, sold within the ServiceNow platform and its AI product tiers.",l:"Best value when ServiceNow already runs the underlying workflow. The agent layer inherits both the platform's governance strengths and its licence gravity."},
+{s:"BAg",n:"Amazon Bedrock Agents",c:"platforms",d:"AWS's managed service for building agents that plan multi-step tasks, call APIs through defined action groups and retrieve from knowledge bases, all inside the AWS security, identity and billing perimeter.",f:"Maker: Amazon Web Services. Commercial, consumption-based within AWS.",l:"The natural route for AWS-standardised estates. Genuinely complex multi-step agents often end up pairing it with a code framework for control."},
+{s:"VAB",n:"Google Vertex AI Agent Builder",c:"platforms",d:"Google Cloud's suite for building, deploying and managing agents, combining the Agent Engine managed runtime with ADK support, search and conversation tooling on Google Cloud infrastructure.",f:"Maker: Google Cloud. Commercial platform; Agent Engine provides its managed runtime for agents.",l:"The Google Cloud counterpart to Bedrock Agents. Evaluate its evaluation and governance tooling closely, since that is where Google has invested heavily."},
+{s:"WxO",n:"IBM watsonx Orchestrate",c:"platforms",d:"IBM's platform for building and managing agents and assistants across enterprise workflows, offering prebuilt agents for areas such as HR, procurement and customer service, integrated with IBM's watsonx AI and data stack.",f:"Maker: IBM. Commercial enterprise platform.",l:"Most relevant where IBM is already strategic, such as regulated and mainframe-adjacent estates. Verify partner depth and skills availability in your region before selecting it."},
+{s:"Zap",n:"Zapier",c:"automation",d:"The veteran no-code automation platform connecting thousands of business applications, now layering AI agents and chatbots that can act across that same integration catalogue. It remains the fastest route from an idea to a working small automation.",f:"Maker: Zapier. Commercial SaaS; its integration catalogue of more than 8,000 apps is its core asset.",l:"Ideal for useful, small-scale automations with agent steps. Watch per-task pricing as volumes grow, and govern the shadow automations that inevitably proliferate."},
+{s:"Mak",n:"Make",c:"automation",d:"A visual automation platform, formerly Integromat, for building multi-step scenarios across applications and APIs, increasingly used to wire LLM and agent steps into operational business processes.",f:"Maker: Make (Prague, owned by Celonis). Commercial SaaS, generally priced below Zapier at comparable volumes.",l:"Preferred by cost-sensitive operations teams who think in flows. Apply the same governance as any automation estate: document, own and review what gets built."},
+{s:"UiP",n:"UiPath",c:"automation",d:"The robotic process automation leader extending into agentic automation, combining software robots with AI agents that operate across user interfaces, documents and enterprise systems, backed by mature governance tooling.",f:"Maker: UiPath. Commercial enterprise platform; a public company listed on the NYSE under the ticker PATH.",l:"Most relevant where processes live in legacy interfaces with no APIs. Its governance model suits regulated industries that are rethinking large RPA estates."},
+{s:"Wrk",n:"Workato",c:"automation",d:"An enterprise integration and automation platform (iPaaS) with agent features delivered through its 'genies' and agent tooling, strong connectors and enterprise governance, sitting between classic automation suites and agent platforms.",f:"Maker: Workato. Commercial enterprise SaaS.",l:"Fits integration-led strategies where agents must act across many governed systems. Enterprise pricing means it needs a platform owner, not casual departmental adoption."}
+];
+const grid=document.getElementById('grid');
+const detail=document.getElementById('detail');
+const overlay=document.getElementById('overlay');
+const countEl=document.getElementById('count');
+let activeCat=null, selected=null;
+function render(){
+  grid.innerHTML='';
+  TERMS.forEach((t,i)=>{
+    const b=document.createElement('button');
+    b.className='tile'; b.type='button'; b.setAttribute('role','listitem');
+    b.style.background=CATS[t.c].color; b.dataset.cat=t.c;
+    b.dataset.search=(t.n+' '+t.s+' '+t.d+' '+CATS[t.c].name).toLowerCase();
+    b.innerHTML='<span class="no">'+(i+1)+'</span><span class="sym">'+t.s+'</span><span class="nm">'+t.n+'</span>';
+    b.addEventListener('click',()=>show(t,i,b));
+    grid.appendChild(b);
+  });
+  updateCount(TERMS.length);
+}
+function updateCount(n){countEl.textContent=n+' of '+TERMS.length+' terms shown';}
+function closeDetail(){
+  const el=selected;
+  if(selected)selected.classList.remove('selected');
+  selected=null; selectedIdx=-1;
+  detail.classList.remove('open'); overlay.classList.remove('open');
+  document.body.style.overflow='';
+  if(el && el.focus)el.focus({preventScroll:true});
+}
+let selectedIdx=-1;
+function show(t,i,el){
+  if(selectedIdx===i){closeDetail();selectedIdx=-1;return;}
+  if(selected)selected.classList.remove('selected');
+  selected=el; selectedIdx=i; if(el)el.classList.add('selected');
+  let html='<button class="zoom-close" type="button" onclick="closeDetail()" aria-label="Close">✕</button>';
+  html+='<div class="d-no">Element '+(i+1)+' of '+TERMS.length+'</div>';
+  html+='<span class="d-sym" style="background:'+CATS[t.c].color+'">'+t.s+'</span>';
+  html+='<h2>'+t.n+'</h2><div class="d-cat" style="color:'+CATS[t.c].color+'">'+CATS[t.c].name+'</div>';
+  html+='<p>'+t.d+'</p>';
+  if(t.f)html+='<div class="box formula"><b>Key facts</b>'+t.f+'</div>';
+  if(t.l)html+='<div class="box lens"><b>Leader lens</b>'+t.l+'</div>';
+  detail.innerHTML=html;
+  detail.classList.add('open'); overlay.classList.add('open');
+  document.body.style.overflow='hidden';
+}
+overlay.addEventListener('click',closeDetail);
+const legend=document.getElementById('legend');
+Object.keys(CATS).forEach(k=>{
+  const c=document.createElement('button'); c.type='button'; c.className='chip'; c.dataset.cat=k;
+  c.innerHTML='<span class="dot" style="background:'+CATS[k].color+'"></span>'+CATS[k].name;
+  c.addEventListener('click',()=>{
+    activeCat = activeCat===k ? null : k;
+    document.querySelectorAll('.chip').forEach(x=>x.classList.toggle('active',x.dataset.cat===activeCat));
+    applyFilter();
+  });
+  legend.appendChild(c);
+});
+function applyFilter(){
+  const q=document.getElementById('search').value.trim().toLowerCase();
+  let n=0;
+  document.querySelectorAll('.tile').forEach(tile=>{
+    const matchQ=!q || tile.dataset.search.includes(q);
+    const matchC=!activeCat || tile.dataset.cat===activeCat;
+    tile.classList.toggle('hidden',!matchQ);
+    tile.classList.toggle('dim',!!activeCat && !matchC && matchQ);
+    if(matchQ)n++;
+  });
+  updateCount(n);
+}
+document.getElementById('search').addEventListener('input',applyFilter);
+document.getElementById('resetBtn').addEventListener('click',()=>{
+  document.getElementById('search').value=''; activeCat=null;
+  document.querySelectorAll('.chip').forEach(x=>x.classList.remove('active')); applyFilter();
+});
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeDetail();});
+/* Theme toggle: saved choice wins, otherwise dark (the original look) */
+const themeBtn=document.getElementById('themeToggle');
+function applyTheme(th){
+  document.documentElement.setAttribute('data-theme',th);
+  themeBtn.textContent = th==='light' ? '☾' : '☀';
+  try{localStorage.setItem('agentic_ai_tools_theme',th);}catch(e){}
+}
+let savedTheme='dark';
+try{savedTheme=localStorage.getItem('agentic_ai_tools_theme')||'dark';}catch(e){}
+applyTheme(savedTheme==='light'?'light':'dark');
+themeBtn.addEventListener('click',()=>{
+  const cur=document.documentElement.getAttribute('data-theme')==='light'?'light':'dark';
+  applyTheme(cur==='light'?'dark':'light');
+});
+render();
+</script>
+</body>
+</html>

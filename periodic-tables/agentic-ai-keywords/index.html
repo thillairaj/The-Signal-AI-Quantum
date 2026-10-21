@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Agentic AI Keywords — The Periodic Table</title>
+<meta name="description" content="64 agentic AI terms in plain language — agent loops, MCP, A2A, tool use, memory, guardrails, evals and AgentOps — as an interactive periodic table.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Agentic AI Keywords — The Periodic Table">
+<meta property="og:description" content="64 agentic AI terms in plain language — agent loops, MCP, A2A, tool use, memory, guardrails, evals and AgentOps — as an interactive periodic table.">
+<meta property="og:url" content="https://thillairaj.github.io/The-Signal-AI-Quantum/periodic-tables/agentic-ai-keywords/">
+<style>
+  :root{--bg:#071527;--panel:#0b213f;--panel2:#0e2a52;--ink:#eef4ff;--muted:#9db4d4;--line:rgba(255,255,255,.14)}
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:'Segoe UI',system-ui,-apple-system,Arial,sans-serif;background:radial-gradient(1200px 600px at 20% -10%,#12325e 0%,var(--bg) 55%);color:var(--ink);min-height:100vh}
+  header{padding:34px 22px 10px;text-align:center;max-width:1200px;margin:0 auto}
+  .kicker{letter-spacing:.35em;font-size:11px;color:#7dd3fc;text-transform:uppercase;font-weight:700}
+  h1{font-size:clamp(28px,5vw,48px);line-height:1.08;margin:10px 0 10px;font-weight:800}
+  h1 span{color:#fbbf24}
+  .sub{color:var(--muted);max-width:820px;margin:0 auto;font-size:15.5px;line-height:1.55}
+  .principle{margin:18px auto 4px;max-width:880px;background:rgba(251,191,36,.08);border:1px solid rgba(251,191,36,.35);border-radius:12px;padding:12px 16px;font-size:14px;line-height:1.55;color:#fde68a}
+  .toolbar{position:sticky;top:0;z-index:40;background:rgba(7,21,39,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line);padding:12px 16px}
+  .toolbar-in{max-width:1280px;margin:0 auto;display:flex;flex-wrap:wrap;gap:10px;align-items:center;justify-content:center}
+  #search{flex:1 1 260px;max-width:420px;padding:11px 14px;border-radius:10px;border:1px solid var(--line);background:var(--panel);color:var(--ink);font-size:15px;outline:none}
+  #search:focus{border-color:#38bdf8}
+  .count{color:var(--muted);font-size:13.5px}
+  .btn{padding:10px 14px;border-radius:10px;border:1px solid var(--line);background:var(--panel2);color:var(--ink);cursor:pointer;font-size:13.5px;font-weight:600}
+  .btn:hover{border-color:#38bdf8}
+  #legend{max-width:1280px;margin:14px auto 0;padding:0 16px;display:flex;flex-wrap:wrap;gap:8px;justify-content:center}
+  .chip{display:inline-flex;align-items:center;gap:7px;padding:7px 12px;border-radius:999px;border:1px solid var(--line);background:var(--panel);color:var(--ink);font-size:12.5px;cursor:pointer;font-weight:600;transition:all .15s}
+  .chip .dot{width:11px;height:11px;border-radius:3px}
+  .chip:hover{transform:translateY(-1px);border-color:#fff}
+  .chip.active{outline:2px solid #fff;outline-offset:1px}
+  main{max-width:1280px;margin:0 auto;padding:20px 16px 30px;display:grid;grid-template-columns:1fr 340px;gap:20px;align-items:start}
+  #grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(96px,1fr));gap:8px}
+  .tile{border:none;border-radius:10px;padding:8px 6px 7px;min-height:96px;color:#fff;cursor:pointer;text-align:left;position:relative;transition:transform .16s ease,filter .16s ease,box-shadow .16s ease,opacity .16s;display:flex;flex-direction:column;box-shadow:inset 0 0 0 1px rgba(255,255,255,.22)}
+  .tile .no{font-size:10.5px;font-weight:700;opacity:.85}
+  .tile .sym{font-size:24px;font-weight:800;line-height:1.05;margin:auto 0 2px;letter-spacing:.01em;word-break:break-word}
+  .tile .nm{font-size:10px;line-height:1.25;font-weight:600;opacity:.95}
+  .tile:hover,.tile:focus-visible{transform:scale(1.09) translateY(-4px);filter:brightness(1.28) saturate(1.25);box-shadow:0 12px 28px rgba(0,0,0,.5),0 0 0 2px #fff;z-index:5;outline:none}
+  .tile.selected{box-shadow:0 0 0 3px #fff,0 12px 28px rgba(0,0,0,.5);filter:brightness(1.2)}
+  .tile.dim{opacity:.13;filter:grayscale(.6)}
+  .tile.hidden{display:none}
+  #detail{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:22px;position:sticky;top:132px;min-height:300px}
+  #detail .d-no{font-size:12px;color:var(--muted);letter-spacing:.15em;text-transform:uppercase;font-weight:700}
+  #detail .d-sym{display:inline-flex;align-items:center;justify-content:center;min-width:74px;height:74px;padding:0 10px;border-radius:14px;font-size:30px;font-weight:800;color:#fff;margin:12px 0}
+  #detail h2{font-size:24px;line-height:1.2;margin-bottom:6px}
+  #detail .d-cat{font-size:12.5px;font-weight:700;text-transform:uppercase;letter-spacing:.12em;margin-bottom:14px}
+  #detail p{font-size:15px;line-height:1.65;color:#dbe7fa}
+  #detail .box{margin-top:14px;border-radius:10px;padding:12px 14px;font-size:14px;line-height:1.55}
+  #detail .formula{background:rgba(56,189,248,.1);border:1px solid rgba(56,189,248,.4);color:#bae6fd}
+  #detail .lens{background:rgba(251,191,36,.08);border:1px solid rgba(251,191,36,.35);color:#fde68a}
+  #detail .box b{display:block;font-size:11px;letter-spacing:.18em;text-transform:uppercase;margin-bottom:5px;opacity:.85}
+  .hint{color:var(--muted);font-size:14.5px;line-height:1.6}
+  section.below{max-width:1280px;margin:0 auto;padding:6px 16px 26px}
+  section.below h3{font-size:22px;margin:18px 0 12px}
+  .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:12px}
+  .card{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:16px}
+  .card h4{font-size:15px;margin-bottom:7px;color:#7dd3fc}
+  .card p,.card li{font-size:14px;line-height:1.6;color:#dbe7fa}
+  .card ul{padding-left:18px}
+  .example{background:linear-gradient(135deg,#0e2a52,#12325e);border:1px solid rgba(251,191,36,.4)}
+  .example h4{color:#fbbf24}
+  .big{font-size:19px;font-weight:800;color:#fff;margin:6px 0}
+  footer{max-width:1280px;margin:0 auto;padding:10px 16px 38px;color:var(--muted);font-size:12.5px;line-height:1.6;text-align:center}
+  #overlay{display:none}
+  /* placeholder, zoom view styles are at the end of this stylesheet */
+  /* Theme toggle + sticky legend + back button (added Oct 21) */
+  header{position:relative}
+  .theme-toggle{position:absolute;top:16px;right:16px;width:44px;height:44px;border-radius:50%;border:1px solid var(--line);background:var(--panel2);color:#fbbf24;font-size:19px;cursor:pointer;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 14px rgba(0,0,0,.35)}
+  .theme-toggle:hover{transform:scale(1.08)}
+  #legend{flex-wrap:nowrap;overflow-x:auto;justify-content:flex-start;padding:10px 2px 3px;scrollbar-width:thin}
+  .chip{white-space:nowrap;flex:0 0 auto}
+  .backbtn{display:inline-flex;align-items:center;gap:6px;padding:9px 14px;border-radius:999px;border:1px solid var(--line);background:var(--panel2);color:var(--ink);font-size:13.5px;font-weight:700;cursor:pointer;margin-bottom:14px}
+  .backbtn:hover{border-color:#38bdf8}
+  #detail{top:168px}
+  /* Light theme */
+  html[data-theme="light"] body{background:radial-gradient(1200px 600px at 20% -10%,#e8eefc 0%,#FAF9F6 55%);color:#17293f}
+  html[data-theme="light"] h1{color:#0b213f}
+  html[data-theme="light"] .sub{color:#4d6482}
+  html[data-theme="light"] .principle{background:#fff8e1;border-color:#e5c15c;color:#6b5510}
+  html[data-theme="light"] .toolbar{background:rgba(250,249,246,.95);border-color:#ddd5c0}
+  html[data-theme="light"] #search{background:#fff;color:#17293f;border-color:#cfd8e3}
+  html[data-theme="light"] .btn{background:#fff;color:#17293f;border-color:#cfd8e3}
+  html[data-theme="light"] .chip{background:#fff;color:#17293f;border-color:#cfd8e3}
+  html[data-theme="light"] .chip.active{outline-color:#0b213f}
+  html[data-theme="light"] .count{color:#5a6f88}
+  html[data-theme="light"] #detail{background:#fff;border-color:#e0d9c6}
+  html[data-theme="light"] #detail p{color:#33475e}
+  html[data-theme="light"] #detail .d-no{color:#5a6f88}
+  html[data-theme="light"] #detail h2{color:#0b213f}
+  html[data-theme="light"] #detail .formula{background:#e8f4fd;border-color:#9fd0f5;color:#124d75}
+  html[data-theme="light"] #detail .lens{background:#fff8e1;border-color:#e5c15c;color:#6b5510}
+  html[data-theme="light"] .backbtn{background:#eef3fa;color:#17293f;border-color:#cfd8e3}
+  html[data-theme="light"] .hint{color:#5a6f88}
+  html[data-theme="light"] .card{background:#fff;border-color:#e0d9c6}
+  html[data-theme="light"] .card p,html[data-theme="light"] .card li{color:#33475e}
+  html[data-theme="light"] section.below h3{color:#0b213f}
+  html[data-theme="light"] .example{background:linear-gradient(135deg,#fff8e1,#fdf3d0);border-color:#e5c15c}
+  html[data-theme="light"] .example .big{color:#17293f}
+  html[data-theme="light"] footer{color:#5a6f88}
+  html[data-theme="light"] .theme-toggle{background:#fff;color:#d97706;border-color:#cfd8e3}
+  @media(max-width:900px){
+    main{grid-template-columns:1fr}
+    #detail{position:fixed;inset:auto 0 0 0;z-index:60;border-radius:18px 18px 0 0;max-height:72vh;overflow:auto;transform:translateY(105%);transition:transform .25s ease;box-shadow:0 -12px 40px rgba(0,0,0,.6)}
+    #detail.open{transform:translateY(0)}
+    #overlay{display:block;position:fixed;inset:0;background:rgba(0,0,0,.55);z-index:55;opacity:0;pointer-events:none;transition:opacity .25s}
+    #overlay.open{opacity:1;pointer-events:auto}
+    #grid{grid-template-columns:repeat(auto-fill,minmax(82px,1fr))}
+    .tile{min-height:86px}.tile .sym{font-size:20px}
+  }
+  /* Zoom reading view — same pattern as the Quantum / AI Deck cards (Oct 21) */
+  main{grid-template-columns:1fr}
+  #overlay{display:block;position:fixed;inset:0;background:rgba(3,10,20,.62);z-index:55;opacity:0;pointer-events:none;transition:opacity .22s ease}
+  #overlay.open{opacity:1;pointer-events:auto}
+  #detail{position:fixed;top:50%;left:50%;right:auto;bottom:auto;width:min(560px,92vw);max-width:92vw;max-height:86vh;overflow:auto;z-index:60;border-radius:18px;padding:26px;opacity:0;pointer-events:none;transform:translate(-50%,-47%) scale(.88);transition:transform .24s ease,opacity .24s ease;box-shadow:0 30px 80px rgba(0,0,0,.55)}
+  #detail.open{opacity:1;pointer-events:auto;transform:translate(-50%,-50%) scale(1)}
+  .zoom-close{position:absolute;top:12px;right:12px;width:38px;height:38px;border-radius:50%;border:1px solid var(--line);background:var(--panel2);color:var(--ink);font-size:15px;cursor:pointer;display:flex;align-items:center;justify-content:center;z-index:2}
+  .zoom-close:hover{border-color:#38bdf8;transform:scale(1.08)}
+  html[data-theme="light"] .zoom-close{background:#eef3fa;color:#17293f;border-color:#cfd8e3}
+  @media(max-width:900px){#detail{padding:22px 18px}}
+</style>
+</head>
+<body>
+<header>
+  <div style="text-align:left;max-width:1200px;margin:0 auto 14px"><a href="../../#learn" style="color:inherit;opacity:.75;text-decoration:none;font-size:13.5px;font-weight:600">← Back to Learning Spaces</a></div>
+  <button class="theme-toggle" id="themeToggle" type="button" aria-label="Switch light or dark theme" title="Switch light / dark theme">☀</button>
+  <div class="kicker">The Agentic AI Periodic Table</div>
+  <h1>Agentic AI <span>Keywords</span></h1>
+  <p class="sub">The essential agentic AI terms in plain language, for leaders who need to judge what agents can safely do, what they cost, and where the control points are.</p>
+  <div class="principle"><strong>Core principle:</strong> Core principle: an agent is not a chatbot with a new label. It is a system that perceives, decides and acts in the world, which means the vocabulary of control (permissions, guardrails, supervision, evaluation) matters as much as the vocabulary of capability. Leaders who only learn the capability words will buy demos; leaders who learn both sets will ship systems that survive contact with real work.</div>
+</header>
+
+<div class="toolbar">
+  <div class="toolbar-in">
+    <input id="search" type="search" placeholder="Search a term — try agent loop, MCP, guardrails, evals…" aria-label="Search terms">
+    <span class="count" id="count"></span>
+    <button class="btn" id="resetBtn" type="button">Show all</button>
+  </div>
+  <div id="legend" aria-label="Category filter"></div>
+</div>
+
+<main>
+  <div id="grid" role="list"></div>
+  <aside id="detail" aria-live="polite">
+    <div class="d-no">Element detail</div>
+    <p class="hint" style="margin-top:12px">Click any element in the table to zoom into its full explanation.<br><br>Start with: <strong>Agent, MCP, ReAct, Evals</strong>.</p>
+  </aside>
+</main>
+<div id="overlay"></div>
+
+<section class="below">
+  <h3>Six things a leader should hold on to</h3>
+  <div class="cards">
+    <div class="card"><h4>An agent is a system, not a model</h4><p>The language model is one component. Reliability comes from the loop, the tools, the context and the controls built around it, which is why two products using the same model behave completely differently.</p></div>
+    <div class="card"><h4>Start with workflows, graduate to agents</h4><p>If the steps are known in advance, a workflow is cheaper, faster and more predictable. Reserve agent autonomy for the steps that genuinely cannot be specified ahead of time.</p></div>
+    <div class="card"><h4>Verifiability decides what is deployable</h4><p>Coding agents lead adoption because tests verify their work automatically. Choose early use cases whose outputs can be checked by rules, data or fast human review.</p></div>
+    <div class="card"><h4>Control is enforced outside the model</h4><p>Permissions, sandboxes, budgets and approval gates live in code and infrastructure. A rule written only in a prompt is a request, and prompt injection is designed to talk agents out of requests.</p></div>
+    <div class="card"><h4>Success compounds downwards</h4><p>A step that works 95 percent of the time makes a 10-step task succeed about 60 percent of the time. Reliability engineering, decomposition, checks between steps, is the whole game.</p></div>
+    <div class="card"><h4>Unit economics include the failures</h4><p>Cost per completed, correct task, including retries, escalations and human cleanup, is the only cost number that should reach a business case.</p></div>
+  </div>
+  <h3>A leader's agentic AI checklist</h3>
+  <div class="cards">
+    <div class="card"><ul>
+      <li>Is there a named human owner, a defined job, and a written list of actions this agent may never take?</li>
+      <li>What are the loop limits: maximum steps, token budget, spend cap, actions per hour?</li>
+      <li>Which actions are irreversible (payments, deletions, external sends), and which of those require human approval?</li>
+      <li>Does the agent have its own identity and least-privilege credentials, separate from any human's?</li>
+      <li>Was it proven in a sandbox, and can we replay exactly what it saw and did on any run?</li>
+    </ul></div>
+    <div class="card"><ul>
+      <li>What is the end-to-end task success rate on our own eval set, including failure cases?</li>
+      <li>What is the cost per completed, correct task versus the current process, measured after deployment?</li>
+      <li>How is external content (web, email, documents) treated as untrusted, and what can a prompt injection still reach?</li>
+      <li>Where is the kill switch, who may pull it, and has it been rehearsed?</li>
+      <li>Is the agent in the register, with a review date, and does it follow MCP or standard interfaces where possible?</li>
+    </ul></div>
+    <div class="card example"><h4>An honest note: start narrow, supervised, measured</h4>
+      <p>The reliable path with agents is unglamorous: one narrow job, inside a sandbox, with human approval on irreversible steps, evaluated on your own tasks, and costed per completed task.</p>
+      <p style="margin-top:8px">Widen autonomy only where the evidence earns it: sustained success rates, clean trajectories and unit economics that survive honest accounting. Teams that follow this order get compounding value. Teams that start broad, autonomous and unmeasured get incidents, and then a ban.</p>
+    </div>
+  </div>
+</section>
+
+<footer>Educational only. Agentic AI is moving fast and vendor terminology varies; verify current framework and protocol details against primary documentation before making procurement or architecture decisions.<div style="margin-top:12px;font-size:13px">Curated by Thillai Raj Thanam Jeya Veera Raj · <a href="https://www.linkedin.com/in/thillairaj" target="_blank" rel="noopener" style="color:inherit;text-decoration:underline">Follow on LinkedIn</a></div></footer>
+
+<script>
+const CATS = { core:{name:"Core Concepts",color:"#0d9488"}, arch:{name:"Agent Architecture",color:"#4f46e5"}, reason:{name:"Reasoning & Planning",color:"#0284c7"}, tools:{name:"Tools & Actions",color:"#ea580c"}, context:{name:"Context & Memory",color:"#0891b2"}, safety:{name:"Safety & Control",color:"#dc2626"}, eval:{name:"Evaluation & Observability",color:"#65a30d"}, deploy:{name:"Deployment & Operations",color:"#d97706"}, biz:{name:"Business & Value",color:"#a21caf"} };
+const TERMS = [
+{s:"Ag",n:"Agentic AI",c:"core",d:"An umbrella term for AI systems built to pursue goals through sequences of decisions and actions, rather than answering a single prompt and stopping. Agentic systems typically combine a language model with tools, memory and a loop that keeps working until a task is done or a limit is reached.",f:"The term describes a design pattern, not a single product or model. The same underlying model can behave as a simple chatbot or as an agent depending on the system built around it.",l:"When a vendor says their product is agentic, ask what the system is allowed to do without asking a human first. That answer separates marketing from architecture."},
+{s:"Agt",n:"AI Agent",c:"core",d:"A software system that uses a model to decide its next steps, calls tools to act on the world, observes the results and repeats the cycle until its goal is met. An agent differs from a chatbot in one essential way: it does things, not just says things.",l:"Every agent you approve should have a named owner, a defined job and a list of actions it may never take. If any of those three is missing, it is a demo, not a deployment."},
+{s:"Au",n:"Autonomy",c:"core",d:"The degree of independence an agent has to choose and execute actions without human approval at each step. Autonomy is a dial, not a switch: the same agent can be autonomous on low-risk steps and approval-gated on anything involving money, data changes or external messages.",l:"Set autonomy per action, not per agent. Reading a document and sending a contract should never sit at the same autonomy level."},
+{s:"AL",n:"Agent Loop",c:"core",d:"The repeating cycle at the heart of every agent: perceive the current state, reason about what to do next, take an action through a tool, observe the outcome, and loop. The loop ends when the goal is achieved, an error stops progress, or a step or budget limit is hit.",f:"Loop design is where most agent reliability is won or lost. Production agent failures are more often loop failures (no stopping rule, no error handling) than model failures.",l:"Ask to see the loop's stopping conditions before you ask about the model. A loop without a hard stop is a cost and risk incident waiting for a trigger."},
+{s:"Go",n:"Goal",c:"core",d:"The outcome an agent is given to achieve, expressed clearly enough that progress and completion can be judged. Good goals are specific, bounded and testable; vague goals produce agents that wander, over-act or declare success early.",l:"Write agent goals the way you would write a good delegation brief: desired outcome, constraints, deadline or budget, and what 'done' looks like. Agents amplify brief quality, good or bad."},
+{s:"Pe",n:"Perception",c:"core",d:"How an agent takes in the state of its world: reading documents, querying databases, receiving tool results, seeing screenshots or hearing audio. Perception quality limits everything downstream, because reasoning over wrong or stale inputs produces confidently wrong actions.",l:"Most agent errors you will investigate start as perception errors: the wrong file, an outdated record, a misread screen. Audit the inputs before blaming the reasoning."},
+{s:"Ac",n:"Action",c:"core",d:"Anything an agent does that changes something outside itself: calling an API, writing to a database, sending a message, booking, buying or editing a file. Actions are where agent risk actually lives, because unlike generated text, actions are often hard or impossible to undo.",l:"Classify every action by reversibility. Reversible actions can be automated early; irreversible ones (payments, deletions, external sends) earn human approval until trust is earned with evidence."},
+{s:"DW",n:"Digital Worker",c:"core",d:"A business framing for an agent deployed to perform a defined role or set of tasks, like a research assistant, support agent or coding agent. The term is useful for workforce planning but can mislead if it implies human-like judgement, accountability or understanding.",l:"Digital workers do not carry accountability; your named human owner does. Budget for supervision and exception handling the way you would for any junior, fast, literal-minded hire."},
+{s:"UC",n:"Agent Use Cases",c:"core",d:"The recurring shapes of work where agents currently deliver value: research and summarisation across sources, coding assistance, customer support resolution, document processing, data analysis and workflow automation. The common thread is work that is high-volume, language-heavy and checkable.",l:"Start where output is easy to verify and errors are cheap. The best first use case is boring, frequent and measurable, not the most impressive one in the demo."},
+{s:"SAg",n:"Single-Agent System",c:"arch",d:"One agent with a set of tools handling a task end to end. Single-agent designs are simpler to build, debug and evaluate, and they cover far more real use cases than multi-agent designs do.",l:"Default to a single agent until you can name the specific failure it cannot fix. Complexity in agent systems is a cost you pay in reliability every day, not once."},
+{s:"MAg",n:"Multi-Agent System",c:"arch",d:"A system of several specialised agents that divide work, debate, check each other or operate in parallel under coordination. Specialisation can improve quality on complex tasks, but every agent-to-agent handoff adds latency, cost and a new place for context to be lost or distorted.",f:"Multi-agent designs multiply token usage, often several times over a single-agent design for the same task, because each agent re-reads shared context. The benefit must be proven per use case, not assumed.",l:"Treat multi-agent as an optimisation you adopt with benchmark evidence, not a starting architecture. If a vendor leads with 'a team of agents', ask what the single-agent baseline scored."},
+{s:"Or",n:"Orchestration",c:"arch",d:"The coordination layer that decides which agent or step runs when, passes context between them, enforces order and handles failures. Orchestration can be code-driven (a fixed graph of steps), model-driven (an agent deciding), or a hybrid of both.",l:"Orchestration is where production agent systems spend most of their engineering. Demo videos hide it; your architecture review should start with it."},
+{s:"WA",n:"Workflows vs Agents",c:"arch",d:"A workflow follows steps a developer defined in advance; an agent decides its own steps at runtime using a model. Workflows are predictable and cheaper; agents are flexible and handle open-ended tasks. Most production systems blend both: workflow structure with agent decisions at specific points.",f:"Anthropic's widely cited engineering guidance draws exactly this line: use workflows when the path is known, agents when the path must be discovered, and prefer the simplest design that works.",l:"The most expensive sentence in agentic AI is 'we built an agent' for a problem a workflow would solve reliably at a tenth of the cost. Match autonomy to genuine unpredictability."},
+{s:"Sup",n:"Supervisor Pattern",c:"arch",d:"A multi-agent design where one supervisor agent plans the work, delegates subtasks to worker agents, reviews their outputs and assembles the final result. It mirrors a human team structure, which makes it intuitive to design and to audit.",l:"The supervisor pattern gives you a natural control point: one place to log, limit and review everything. If you go multi-agent, this is usually the safest shape to start with."},
+{s:"Ho",n:"Handoff",c:"arch",d:"The moment control and context pass from one agent (or an agent and a human) to another. Handoffs are the weakest joint in multi-agent systems: summarised context loses detail, and responsibility for errors becomes ambiguous unless the transfer is explicit and logged.",l:"Require handoffs to be structured and recorded: what was asked, what was concluded, what remains open. Unlogged handoffs are where multi-agent incidents go to hide."},
+{s:"St",n:"State",c:"arch",d:"The recorded progress of an agent's work: what has been done, what is known, what is pending. State is what lets a long-running agent pause, resume, be audited or recover after a failure, instead of starting over or losing track of reality.",f:"Durable state is a dividing line between demos and systems. An agent whose state lives only in a conversation cannot be safely paused, resumed or audited.",l:"Ask where state lives and who can inspect it. If the answer is 'in the prompt', you are looking at a prototype."},
+{s:"Re",n:"Reasoning",c:"reason",d:"The model's process of working through a problem: weighing options, checking constraints and choosing a next step. In agents, reasoning happens at every loop iteration, so its quality and its cost compound across the whole task.",l:"Reasoning quality is model- and prompt-dependent, and it degrades quietly on long tasks. Evaluate your actual tasks, not the model's reputation on public tests."},
+{s:"Pl",n:"Planning",c:"reason",d:"An agent's ability to look ahead: break a goal into steps, order them, anticipate dependencies and revise when reality changes. Explicit plans, written before acting, make agent behaviour easier to inspect, cheaper to correct and less likely to drift mid-task.",l:"Make agents show their plan before they act on anything consequential. A plan a human can veto in ten seconds prevents most expensive agent behaviour."},
+{s:"TD",n:"Task Decomposition",c:"reason",d:"Breaking a large goal into smaller subtasks that can be executed, checked and retried independently. Good decomposition is the core skill behind reliable agents: each subtask is small enough to verify, and failures stay local instead of corrupting the whole run.",l:"If an agent fails a big task, the fix is usually smaller subtasks with checks between them, not a bigger model. Decomposition is a design discipline, not a model feature."},
+{s:"CoT",n:"Chain-of-Thought",c:"reason",d:"A technique where the model works through intermediate steps in text before answering or acting, which improves performance on multi-step problems. In agents, the reasoning trace also serves as an audit trail of why each action was chosen.",f:"Chain-of-thought improves results on reasoning-heavy tasks but costs tokens and time on every step. It is a tool to apply where errors are expensive, not a default for every call.",l:"Require reasoning traces to be logged for consequential agents. When something goes wrong at step 14, the trace is the difference between a fixable bug and a mystery."},
+{s:"ReA",n:"ReAct",c:"reason",d:"A foundational agent pattern (Reason + Act) where the model alternates between short reasoning steps and tool actions, using each observation to decide the next move. Published in 2022, it remains the template most agent frameworks implement under the hood.",f:"ReAct comes from a 2022 research paper (Yao et al.) and is notable because interleaving reasoning with action measurably reduced the hallucinated, ungrounded behaviour of purely reasoning-based approaches.",l:"Knowing the name matters less than recognising the pattern: almost every agent demo you see is ReAct with better packaging. Judge the wrapper by its tools, limits and logs."},
+{s:"Rf",n:"Reflection",c:"reason",d:"An agent reviewing its own output or plan, critiquing it against criteria, and revising before proceeding. Reflection can catch errors and improve quality, at the price of extra model calls and the risk that the reviewer shares the same blind spots as the author.",l:"Self-review helps, but it is not independent review. For high-stakes outputs, the checker should be a different mechanism: rules, tests, data validation or a human."},
+{s:"ER",n:"Error Recovery",c:"reason",d:"How an agent responds when a tool fails, data is missing or an action produces an unexpected result: retry with changes, choose an alternative path, ask for help, or stop safely. Error recovery behaviour, more than peak performance, determines whether an agent can be trusted unattended.",l:"Demo agents are tested on the happy path; your evaluation should be mostly failure cases. Ask vendors to show you the agent failing, and what happens next."},
+{s:"TU",n:"Tool Use / Function Calling",c:"tools",d:"The mechanism by which a model requests that external code run: it emits a structured call (a function name and arguments), the system executes it, and the result returns to the model as an observation. The model never executes anything itself; the host system does, which is where control lives.",f:"Function calling is supported natively by all major model APIs. Because the host system executes the call, it can validate arguments, check permissions and log everything before anything happens.",l:"This is your main control point. Every tool call can be validated, authorised and recorded before execution, so design as if it will be, because one day an auditor or an incident will require it."},
+{s:"Tl",n:"Tool",c:"tools",d:"A function an agent can invoke: search, read a file, query a database, send an email, run code, create a ticket. A tool has a name, a description the model reads, a defined input format and a real effect in the world, which is why tool quality makes or breaks agents.",l:"An agent is only as good as its worst tool description. Vague tools produce creative misuse; precise tools with narrow scope produce dependable behaviour."},
+{s:"TDe",n:"Tool Design",c:"tools",d:"The craft of building tools agents can use reliably: narrow scope, clear names, unambiguous descriptions, structured inputs, predictable outputs and errors a model can understand and recover from. Good tool design borrows from API design and adds one rule: the reader is a model, not a programmer.",f:"A common production finding: rewriting a tool's description and error messages improves agent success more than switching to a stronger model, because most tool failures are comprehension failures.",l:"Fund tool design as a first-class workstream. It is unglamorous, and it is where most of your agent reliability budget should go."},
+{s:"MCP",n:"MCP — Model Context Protocol",c:"tools",d:"An open protocol that standardises how AI systems connect to tools, data sources and services, so one integration can be reused across many agent platforms instead of rebuilding connectors for each. Think of it as a common plug shape between models and the systems they act on.",f:"MCP was introduced by Anthropic in November 2024 and has since been adopted across major platforms, including OpenAI's and Google's agent tooling.",l:"MCP support is becoming a reasonable procurement requirement for new tools and platforms. It reduces lock-in at exactly the layer where agent ecosystems change fastest."},
+{s:"A2A",n:"A2A — Agent2Agent Protocol",c:"tools",d:"An open protocol for agents built by different vendors to discover each other, delegate tasks and exchange results. Where MCP connects an agent to tools, A2A connects agents to agents, enabling multi-vendor agent systems without custom integration for every pair.",f:"A2A was announced by Google in 2025 with a broad group of enterprise partners, and complements rather than competes with MCP: tools below, agents beside.",l:"A2A matters if your future involves agents from several vendors cooperating. Today it is a standard to track and pilot, not yet a requirement to impose."},
+{s:"CU",n:"Computer Use",c:"tools",d:"An agent capability to operate software through its ordinary interface: seeing a screen, moving a pointer, clicking and typing, the way a person would. It opens up legacy and web applications that have no API, at the price of speed and fragility compared with direct tool calls.",f:"Major model providers shipped computer use capabilities from late 2024 onward. It is best treated as a bridge for systems without APIs, not a substitute for proper integration.",l:"Prefer APIs wherever they exist. Computer use is powerful for the long tail of un-integrated software, but every screen change is a potential failure you will maintain."},
+{s:"BA",n:"Browser Agent",c:"tools",d:"An agent that works through a web browser: navigating sites, filling forms, extracting information and completing transactions. Browser agents make the whole web a potential workspace, and also a potential attack surface, since web content can contain instructions planted to hijack the agent.",l:"Browser agents need the tightest supervision in your portfolio: allow-listed sites, no stored credentials beyond scope, and human approval before any purchase, submission or send."},
+{s:"CE",n:"Context Engineering",c:"context",d:"The discipline of deciding what information an agent sees at each step: instructions, history, retrieved documents, tool results and state, arranged and trimmed to fit the context window. As agents matured, this replaced prompt tweaking as the main craft, because most failures trace to wrong or missing context, not wrong wording.",f:"Context engineering subsumes prompt engineering for agents: the prompt is one component of a context that is mostly assembled dynamically from tools, memory and state at runtime.",l:"When an agent misbehaves, audit its context before its model. What it saw, in what order, and what was cut explains most behaviour you did not expect."},
+{s:"CW",n:"Context Window",c:"context",d:"The maximum amount of text (measured in tokens) a model can consider at once: its working memory for a single step. Everything the agent knows in that moment must fit inside it, so long tasks require summarising, retrieving and forgetting by design.",f:"Advertised window sizes have grown from thousands to over a million tokens on frontier models, but effective use lags the headline number: models attend least well to material buried in the middle of very long contexts.",l:"Do not let a million-token window retire your information architecture. Retrieval and structure still decide what the agent actually uses well."},
+{s:"STM",n:"Short-Term Memory",c:"context",d:"The agent's memory within a task or session: the conversation, intermediate results and current plan held in the context window or session state. It is fast and complete, but it vanishes or overflows when the session ends or grows too long.",l:"Anything that matters beyond the session must be written down deliberately into long-term storage. Agents forget exactly like a meeting with no minutes."},
+{s:"LTM",n:"Long-Term Memory",c:"context",d:"Information an agent persists across sessions: user preferences, facts learned, past outcomes and organisational knowledge, stored in databases or files and retrieved when relevant. Long-term memory is what lets an agent improve with use instead of starting cold every time.",l:"Long-term memory is also a liability register: wrong facts learned once get reused confidently forever. Build review and deletion into memory from the first version, not as a later cleanup."},
+{s:"EM",n:"Episodic Memory",c:"context",d:"Memory of specific past events and interactions: what happened, in what order, with what outcome. Episodic memory lets an agent recall how a similar case was handled, what a particular customer was promised, or which approach failed last time.",l:"Episodic memory is where agent value compounds in service and operations work, and where privacy questions concentrate. Decide explicitly what episodes may be kept, and for how long."},
+{s:"SM",n:"Semantic Memory",c:"context",d:"An agent's store of general facts and knowledge about its domain, organisation and users, abstracted from individual events: policies, product facts, definitions, preferences. It complements episodic memory the way knowledge complements experience in a human colleague.",l:"Semantic memory should be sourced from governed documents wherever possible, so an agent's 'knowledge' can be traced to an approved version, not to a chat it once had."},
+{s:"VM",n:"Vector Memory",c:"context",d:"A storage method where text is converted into embeddings (numeric representations of meaning) and stored in a vector database, so an agent can retrieve the most semantically relevant material for a query rather than searching by keywords. It is the usual machinery under long-term and episodic memory.",f:"Vector retrieval powers most retrieval-augmented generation (RAG) systems. It finds meaning-similar content well, but it is not a database of record: exact facts, dates and figures still belong in structured systems.",l:"Vector memory is a retrieval aid, not a source of truth. Keep systems of record authoritative, and make the agent cite or link what it retrieved."},
+{s:"CM",n:"Context Management",c:"context",d:"The operational side of context engineering: summarising history before it overflows, pruning stale tool results, caching stable material and deciding what to drop. Poor context management shows up as agents that slow down, cost more each step and quietly forget their instructions mid-task.",f:"Summarisation is lossy by definition: every compression of a long task discards detail the agent may later need. Well-designed systems keep the raw record in state and summarise only the model's view of it.",l:"Rising cost per task over time is usually a context management symptom, not a model pricing problem. It is diagnosable and fixable in the design."},
+{s:"Gd",n:"Guardrails",c:"safety",d:"Rules and mechanisms that constrain an agent's behaviour: input and output filters, action allow-lists, spending limits, content policies and validation checks that run regardless of what the model decides. Guardrails live outside the model, because instructions inside a prompt can be talked around.",f:"A reliable rule of thumb: if a constraint is enforced only by telling the model not to do something, it is a preference, not a guardrail. Enforcement belongs in code, permissions and infrastructure.",l:"Ask of every guardrail: where is it enforced, and can the agent route around it? The answers tell you whether you have a control or a hope."},
+{s:"Sb",n:"Sandbox",c:"safety",d:"An isolated environment where an agent can run code, browse or use tools without touching production systems, real credentials or live data. Sandboxes let agents experiment and fail safely, and let your team test behaviour before granting real access.",l:"No sandbox, no pilot. Any agent that can execute code or transact should earn production access by graduating from a sandbox with evidence, the way staff earn system privileges."},
+{s:"LP",n:"Least-Privilege Access",c:"safety",d:"Granting an agent only the permissions each task requires, for only as long as required: read before write, one system before many, scoped credentials instead of shared master keys. It is the oldest idea in security, applied to a new kind of user that never sleeps and can be manipulated by content.",l:"Give agents their own identities and credentials, never a human's. When an agent misbehaves, you must be able to see and revoke exactly its access."},
+{s:"HL",n:"Human-in-the-Loop",c:"safety",d:"A design where a person approves, edits or rejects an agent's proposed action before it executes, at least for defined categories of action. It trades some speed for control, and it produces the review data that later justifies safely widening autonomy.",l:"Place humans at the irreversible steps, not at every step. Approval fatigue is a real failure mode: people rubber-stamping queues are worse than a well-designed automatic check."},
+{s:"HoL",n:"Human-on-the-Loop",c:"safety",d:"A supervisory model where the agent acts autonomously but a human monitors live activity with the ability to pause, intervene or roll back. It suits high-volume, low-risk work where pre-approval would destroy the economics but oversight is still required.",f:"The model only counts as supervision if intervention is genuinely possible in time: live visibility, alerting and a tested pause or rollback mechanism. Monitoring that nobody watches is autonomy without the honesty.",l:"On-the-loop only works with real tooling: live visibility, a working pause button and alerts a person actually sees. Without those, it is autonomy with extra reassurance language."},
+{s:"PI",n:"Prompt Injection",c:"safety",d:"An attack where malicious instructions hidden in content an agent reads (a web page, email, document or tool result) try to override its real instructions and redirect its actions. It is the signature vulnerability of agents, because agents by design follow instructions found in their environment.",f:"Prompt injection has no complete technical fix today; it is managed by design: separating trusted instructions from untrusted content, limiting permissions, and gating consequential actions. This is why least-privilege and human approval matter so much for agents that read the open web or inboxes.",l:"Assume every agent that reads external content will eventually be targeted. Design so that a successful injection still cannot reach money, credentials or external sends."},
+{s:"KS",n:"Kill Switch",c:"safety",d:"A tested mechanism to halt an agent or a whole agent system immediately: revoking its credentials, pausing its queues or disabling its tools. A kill switch that has never been rehearsed is a hypothesis; in an incident it must work in minutes, by a named person's authority.",l:"Require a kill switch and a named human who can pull it without a meeting. Then rehearse it once, before you need it."},
+{s:"RL",n:"Runaway Loops",c:"safety",d:"A failure mode where an agent cycles without progressing: retrying the same failing action, calling itself or another agent endlessly, or refining forever. Runaway loops burn tokens, flood systems with actions and can trigger real-world effects at machine speed.",f:"The standard defences are unglamorous and effective: maximum step counts, token and cost budgets per task, duplicate-action detection, and timeouts. Every one of them belongs in the first version, not the incident review.",l:"Ask for the loop limits in writing: max steps, max spend, max actions per hour. Missing numbers here predict your first agent incident report."},
+{s:"Ev",n:"Agent Evals",c:"eval",d:"Systematic tests of an agent against representative tasks with scored outcomes, run before deployment and after every significant change. Agent evals differ from model benchmarks: they test your system, your tools and your data on your work, which is the only performance that matters commercially.",l:"No evals, no deployment. An agent without a scored test set is an opinion, and every model or prompt change silently rewrites its behaviour."},
+{s:"TE",n:"Trajectory Evaluation",c:"eval",d:"Judging an agent not only by its final answer but by the path it took: the steps chosen, tools called, detours, recoveries and near-misses. Two agents can reach the same answer, one cleanly and one by luck through three dangerous actions; trajectory evaluation is how you tell them apart.",l:"For agents that act in the world, the path is a safety property, not a detail. Require trajectory review in your evaluation reports, not just success rates."},
+{s:"LJ",n:"LLM-as-Judge",c:"eval",d:"Using a language model to grade agent outputs or trajectories against a rubric, enabling evaluation at a scale humans cannot match. It is fast and consistent enough for regression testing, but it inherits model biases and must itself be calibrated against human judgements.",f:"Used well, LLM judges grade the bulk of cases while humans audit samples and edge cases. Used alone, a system can drift into pleasing the judge rather than doing the work.",l:"Approve the rubric and the human audit rate, not just the judge's score. Evaluation quality is a governance decision disguised as a tooling choice."},
+{s:"TO",n:"Tracing & Observability",c:"eval",d:"Recording every step of an agent's work: prompts, context, model calls, tool calls, results, costs and timings, in a form engineers and auditors can replay. Observability turns agent behaviour from anecdote into evidence, and it is the precondition for debugging, evaluation and compliance.",l:"If you cannot replay exactly what an agent saw and did, you cannot run it in a regulated or customer-facing process. Make tracing a launch requirement, not a phase-two wish."},
+{s:"AB",n:"Agent Benchmarks",c:"eval",d:"Public test suites that measure agent capability on standardised tasks, such as software engineering, web navigation or office work. Benchmarks are useful for tracking the field's direction and shortlisting models, but scores rarely transfer directly to your tasks, tools and data.",f:"Well-known examples include SWE-bench for real-world coding tasks and WebArena for web tasks. Treat all of them as directional signals; the decisive benchmark is always your own eval set.",l:"Use public benchmarks to shortlist, never to decide. The gap between benchmark tasks and your workflow is where agent projects quietly fail."},
+{s:"Rel",n:"Reliability",c:"eval",d:"How consistently an agent completes tasks correctly across many runs, including unusual inputs and partial failures. Reliability, usually expressed as a success rate on your eval set, is the metric that determines how much supervision an agent needs and therefore whether it saves money at all.",f:"The arithmetic is unforgiving: a step that succeeds 95 percent of the time yields a 10-step task that succeeds only about 60 percent of the time. This compounding is the central engineering problem of agent design.",l:"Ask for end-to-end task success rates, never per-step accuracy. Compounding turns impressive step numbers into mediocre task numbers, and tasks are what you are buying."},
+{s:"AO",n:"AgentOps",c:"deploy",d:"The operational discipline of running agents in production: deployment, monitoring, cost control, incident response, version management and continuous evaluation. AgentOps extends DevOps and MLOps thinking to systems whose behaviour changes with every model update and every context they are fed.",l:"Budget AgentOps from day one. Teams consistently underfund the operating of agents relative to building them, and the bill arrives as incidents and unexplained costs."},
+{s:"AF",n:"Agent Frameworks",c:"deploy",d:"Software libraries and platforms that provide the building blocks for agents: loops, tool interfaces, memory, orchestration and integrations. Frameworks speed up development, but the reliability of the finished system still depends on your design, tools and evaluations far more than on framework choice.",l:"Choose frameworks for operability and exit cost, not demo speed. Your agent logic, evals and tool contracts should be portable enough that a framework change is a project, not a rewrite."},
+{s:"CA",n:"Coding Agents",c:"deploy",d:"Agents specialised in software work: writing and editing code, running tests, fixing bugs and preparing changes for human review inside development environments and repositories. They are the most commercially mature agent category today, because code has a built-in verifier: it compiles, and tests pass or fail.",f:"Coding agents lead adoption precisely because their work is checkable by machines (tests, type checks, builds) before a human ever reviews it. Verifiability, not raw intelligence, is what made them deployable first.",l:"Start coding agents on well-tested codebases with mandatory human review of merges. The productivity gains are real, and so is the risk of plausible, wrong code at scale."},
+{s:"VA",n:"Voice Agents",c:"deploy",d:"Agents that converse by phone or voice in real time, combining speech recognition, a language model, tool actions and speech synthesis. They are widely used in support, booking and collections, where latency, interruption handling and identity verification become first-class design problems.",l:"Voice raises the stakes on every safety topic in this table: callers can social-engineer an agent out loud. Recording, disclosure that the caller is speaking to an AI, and strict payment-data rules are baseline, not extras."},
+{s:"TB",n:"Token Budget",c:"deploy",d:"A cap on how many tokens (roughly, units of text) an agent may consume on a task, set in advance. Token budgets convert an open-ended reasoning process into a bounded economic unit, and they force design choices about when an agent should stop, summarise or ask for help.",l:"Every production agent should carry a token budget per task and per day. Unbounded reasoning is unbounded spend, and the bill is the most predictable agent incident of all."},
+{s:"CPT",n:"Cost per Task",c:"deploy",d:"The full unit cost of an agent completing one piece of work: model tokens, tool and API charges, infrastructure, plus the human review and exception handling it still requires. Cost per task, compared with the human or outsourced baseline, is the number that decides whether an agent creates value or theatre.",f:"Honest unit economics include the failure path: retries, escalations and rework. A task that costs little when it works and a great deal when it fails can average out worse than the manual process.",l:"Demand cost per completed, correct task, not cost per run. Vendors quoting per-run costs are hiding the retries and the human cleanup in your future budget."},
+{s:"ScA",n:"Scaling Agents",c:"deploy",d:"Running many agent instances in parallel across teams or workloads, with the queueing, rate limits, credential management and cost governance that requires. Scaling agents is less a model problem than an operations problem: concurrency limits at providers, shared tool capacity and runaway-cost controls dominate.",l:"Scale multiplies whatever you built, including the failure modes. Prove one agent's reliability and unit economics before you fund a hundred of them."},
+{s:"ROI",n:"ROI of Agents",c:"biz",d:"The return calculation for agent deployments: hours and costs removed, quality and speed gained, against build, licence, token, supervision and incident costs. Honest ROI is measured per use case after deployment, at task level, against the previous process, not projected from demo performance.",l:"Fund agents like operational investments with post-deployment audits at 90 days. The use cases that survive honest measurement become your platform case; the rest become tuition."},
+{s:"BvB",n:"Build vs Buy Agents",c:"biz",d:"The decision between assembling agents on frameworks and your own infrastructure, buying packaged agents from platform vendors, or a hybrid. The deciding factors are differentiation (is this process your competitive edge?), data sensitivity, integration depth and how much operational burden your team can honestly carry.",l:"Buy where the process is common and the vendor's data advantage is real; build where the workflow is your differentiation or your data cannot leave. Most portfolios end up hybrid, so plan the seams."},
+{s:"AGv",n:"Agent Governance",c:"biz",d:"The organisational system for agents: an inventory of what agents exist, who owns them, what they may access and do, how they are evaluated, and how they are retired. Governance is what lets a company scale from three enthusiastic pilots to three hundred agents without losing control of risk.",f:"A workable minimum is an agent register: name, owner, purpose, tools, permissions, autonomy level, eval score and review date for every agent, including the ones teams built themselves.",l:"Start the register while the count is small. Retrofitting governance onto a sprawl of unregistered agents is the enterprise AI cleanup project nobody wants to fund."},
+{s:"ARd",n:"Agent Readiness",c:"biz",d:"An organisation's preparedness to deploy agents well: clean and accessible data, API-ready systems, documented processes, evaluation habits and staff who understand supervision. Readiness, more than model choice, predicts which companies get value from agents and which get pilots that stall.",l:"Assess readiness before selecting platforms. The unglamorous prerequisites, process documentation and data quality, decide agent outcomes more than any model release this year."},
+{s:"AS",n:"Agent Strategy",c:"biz",d:"A deliberate plan for where agents will and will not be used across the organisation, sequenced by value, verifiability and risk, with shared platform choices and governance. Strategy is what prevents twenty teams from buying twenty incompatible agent tools for the same three problems.",l:"Write the strategy while pilots are few. It should name the first use-case class, the shared platform direction, the control standard, and the roles accountable, in that order."}
+];
+const grid=document.getElementById('grid');
+const detail=document.getElementById('detail');
+const overlay=document.getElementById('overlay');
+const countEl=document.getElementById('count');
+let activeCat=null, selected=null;
+function render(){
+  grid.innerHTML='';
+  TERMS.forEach((t,i)=>{
+    const b=document.createElement('button');
+    b.className='tile'; b.type='button'; b.setAttribute('role','listitem');
+    b.style.background=CATS[t.c].color; b.dataset.cat=t.c;
+    b.dataset.search=(t.n+' '+t.s+' '+t.d+' '+CATS[t.c].name).toLowerCase();
+    b.innerHTML='<span class="no">'+(i+1)+'</span><span class="sym">'+t.s+'</span><span class="nm">'+t.n+'</span>';
+    b.addEventListener('click',()=>show(t,i,b));
+    grid.appendChild(b);
+  });
+  updateCount(TERMS.length);
+}
+function updateCount(n){countEl.textContent=n+' of '+TERMS.length+' terms shown';}
+function closeDetail(){
+  const el=selected;
+  if(selected)selected.classList.remove('selected');
+  selected=null; selectedIdx=-1;
+  detail.classList.remove('open'); overlay.classList.remove('open');
+  document.body.style.overflow='';
+  if(el && el.focus)el.focus({preventScroll:true});
+}
+let selectedIdx=-1;
+function show(t,i,el){
+  if(selectedIdx===i){closeDetail();selectedIdx=-1;return;}
+  if(selected)selected.classList.remove('selected');
+  selected=el; selectedIdx=i; if(el)el.classList.add('selected');
+  let html='<button class="zoom-close" type="button" onclick="closeDetail()" aria-label="Close">✕</button>';
+  html+='<div class="d-no">Element '+(i+1)+' of '+TERMS.length+'</div>';
+  html+='<span class="d-sym" style="background:'+CATS[t.c].color+'">'+t.s+'</span>';
+  html+='<h2>'+t.n+'</h2><div class="d-cat" style="color:'+CATS[t.c].color+'">'+CATS[t.c].name+'</div>';
+  html+='<p>'+t.d+'</p>';
+  if(t.f)html+='<div class="box formula"><b>Key fact</b>'+t.f+'</div>';
+  if(t.l)html+='<div class="box lens"><b>Leader lens</b>'+t.l+'</div>';
+  detail.innerHTML=html;
+  detail.classList.add('open'); overlay.classList.add('open');
+  document.body.style.overflow='hidden';
+}
+overlay.addEventListener('click',closeDetail);
+const legend=document.getElementById('legend');
+Object.keys(CATS).forEach(k=>{
+  const c=document.createElement('button'); c.type='button'; c.className='chip'; c.dataset.cat=k;
+  c.innerHTML='<span class="dot" style="background:'+CATS[k].color+'"></span>'+CATS[k].name;
+  c.addEventListener('click',()=>{
+    activeCat = activeCat===k ? null : k;
+    document.querySelectorAll('.chip').forEach(x=>x.classList.toggle('active',x.dataset.cat===activeCat));
+    applyFilter();
+  });
+  legend.appendChild(c);
+});
+function applyFilter(){
+  const q=document.getElementById('search').value.trim().toLowerCase();
+  let n=0;
+  document.querySelectorAll('.tile').forEach(tile=>{
+    const matchQ=!q || tile.dataset.search.includes(q);
+    const matchC=!activeCat || tile.dataset.cat===activeCat;
+    tile.classList.toggle('hidden',!matchQ);
+    tile.classList.toggle('dim',!!activeCat && !matchC && matchQ);
+    if(matchQ)n++;
+  });
+  updateCount(n);
+}
+document.getElementById('search').addEventListener('input',applyFilter);
+document.getElementById('resetBtn').addEventListener('click',()=>{
+  document.getElementById('search').value=''; activeCat=null;
+  document.querySelectorAll('.chip').forEach(x=>x.classList.remove('active')); applyFilter();
+});
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeDetail();});
+/* Theme toggle: saved choice wins, otherwise dark (the original look) */
+const themeBtn=document.getElementById('themeToggle');
+function applyTheme(th){
+  document.documentElement.setAttribute('data-theme',th);
+  themeBtn.textContent = th==='light' ? '☾' : '☀';
+  try{localStorage.setItem('agentic_ai_keywords_theme',th);}catch(e){}
+}
+let savedTheme='dark';
+try{savedTheme=localStorage.getItem('agentic_ai_keywords_theme')||'dark';}catch(e){}
+applyTheme(savedTheme==='light'?'light':'dark');
+themeBtn.addEventListener('click',()=>{
+  const cur=document.documentElement.getAttribute('data-theme')==='light'?'light':'dark';
+  applyTheme(cur==='light'?'dark':'light');
+});
+render();
+</script>
+</body>
+</html>

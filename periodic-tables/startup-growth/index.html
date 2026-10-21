@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Startup Growth Keywords for Founders — The Periodic Table</title>
+<meta name="description" content="57 startup growth terms for founders — product-market fit, North Star, AARRR, growth loops, pricing, PLG and burn multiple — as an interactive periodic table.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Startup Growth Keywords for Founders — The Periodic Table">
+<meta property="og:description" content="57 startup growth terms for founders — product-market fit, North Star, AARRR, growth loops, pricing, PLG and burn multiple — as an interactive periodic table.">
+<meta property="og:url" content="https://thillairaj.github.io/The-Signal-AI-Quantum/periodic-tables/startup-growth/">
+<style>
+  :root{--bg:#071527;--panel:#0b213f;--panel2:#0e2a52;--ink:#eef4ff;--muted:#9db4d4;--line:rgba(255,255,255,.14)}
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:'Segoe UI',system-ui,-apple-system,Arial,sans-serif;background:radial-gradient(1200px 600px at 20% -10%,#12325e 0%,var(--bg) 55%);color:var(--ink);min-height:100vh}
+  header{padding:34px 22px 10px;text-align:center;max-width:1200px;margin:0 auto}
+  .kicker{letter-spacing:.35em;font-size:11px;color:#7dd3fc;text-transform:uppercase;font-weight:700}
+  h1{font-size:clamp(28px,5vw,48px);line-height:1.08;margin:10px 0 10px;font-weight:800}
+  h1 span{color:#fbbf24}
+  .sub{color:var(--muted);max-width:820px;margin:0 auto;font-size:15.5px;line-height:1.55}
+  .principle{margin:18px auto 4px;max-width:880px;background:rgba(251,191,36,.08);border:1px solid rgba(251,191,36,.35);border-radius:12px;padding:12px 16px;font-size:14px;line-height:1.55;color:#fde68a}
+  .toolbar{position:sticky;top:0;z-index:40;background:rgba(7,21,39,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line);padding:12px 16px}
+  .toolbar-in{max-width:1280px;margin:0 auto;display:flex;flex-wrap:wrap;gap:10px;align-items:center;justify-content:center}
+  #search{flex:1 1 260px;max-width:420px;padding:11px 14px;border-radius:10px;border:1px solid var(--line);background:var(--panel);color:var(--ink);font-size:15px;outline:none}
+  #search:focus{border-color:#38bdf8}
+  .count{color:var(--muted);font-size:13.5px}
+  .btn{padding:10px 14px;border-radius:10px;border:1px solid var(--line);background:var(--panel2);color:var(--ink);cursor:pointer;font-size:13.5px;font-weight:600}
+  .btn:hover{border-color:#38bdf8}
+  #legend{max-width:1280px;margin:14px auto 0;padding:0 16px;display:flex;flex-wrap:wrap;gap:8px;justify-content:center}
+  .chip{display:inline-flex;align-items:center;gap:7px;padding:7px 12px;border-radius:999px;border:1px solid var(--line);background:var(--panel);color:var(--ink);font-size:12.5px;cursor:pointer;font-weight:600;transition:all .15s}
+  .chip .dot{width:11px;height:11px;border-radius:3px}
+  .chip:hover{transform:translateY(-1px);border-color:#fff}
+  .chip.active{outline:2px solid #fff;outline-offset:1px}
+  main{max-width:1280px;margin:0 auto;padding:20px 16px 30px;display:grid;grid-template-columns:1fr 340px;gap:20px;align-items:start}
+  #grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(96px,1fr));gap:8px}
+  .tile{border:none;border-radius:10px;padding:8px 6px 7px;min-height:96px;color:#fff;cursor:pointer;text-align:left;position:relative;transition:transform .16s ease,filter .16s ease,box-shadow .16s ease,opacity .16s;display:flex;flex-direction:column;box-shadow:inset 0 0 0 1px rgba(255,255,255,.22)}
+  .tile .no{font-size:10.5px;font-weight:700;opacity:.85}
+  .tile .sym{font-size:24px;font-weight:800;line-height:1.05;margin:auto 0 2px;letter-spacing:.01em;word-break:break-word}
+  .tile .nm{font-size:10px;line-height:1.25;font-weight:600;opacity:.95}
+  .tile:hover,.tile:focus-visible{transform:scale(1.09) translateY(-4px);filter:brightness(1.28) saturate(1.25);box-shadow:0 12px 28px rgba(0,0,0,.5),0 0 0 2px #fff;z-index:5;outline:none}
+  .tile.selected{box-shadow:0 0 0 3px #fff,0 12px 28px rgba(0,0,0,.5);filter:brightness(1.2)}
+  .tile.dim{opacity:.13;filter:grayscale(.6)}
+  .tile.hidden{display:none}
+  #detail{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:22px;position:sticky;top:132px;min-height:300px}
+  #detail .d-no{font-size:12px;color:var(--muted);letter-spacing:.15em;text-transform:uppercase;font-weight:700}
+  #detail .d-sym{display:inline-flex;align-items:center;justify-content:center;min-width:74px;height:74px;padding:0 10px;border-radius:14px;font-size:30px;font-weight:800;color:#fff;margin:12px 0}
+  #detail h2{font-size:24px;line-height:1.2;margin-bottom:6px}
+  #detail .d-cat{font-size:12.5px;font-weight:700;text-transform:uppercase;letter-spacing:.12em;margin-bottom:14px}
+  #detail p{font-size:15px;line-height:1.65;color:#dbe7fa}
+  #detail .box{margin-top:14px;border-radius:10px;padding:12px 14px;font-size:14px;line-height:1.55}
+  #detail .formula{background:rgba(56,189,248,.1);border:1px solid rgba(56,189,248,.4);color:#bae6fd}
+  #detail .lens{background:rgba(251,191,36,.08);border:1px solid rgba(251,191,36,.35);color:#fde68a}
+  #detail .box b{display:block;font-size:11px;letter-spacing:.18em;text-transform:uppercase;margin-bottom:5px;opacity:.85}
+  .hint{color:var(--muted);font-size:14.5px;line-height:1.6}
+  section.below{max-width:1280px;margin:0 auto;padding:6px 16px 26px}
+  section.below h3{font-size:22px;margin:18px 0 12px}
+  .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:12px}
+  .card{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:16px}
+  .card h4{font-size:15px;margin-bottom:7px;color:#7dd3fc}
+  .card p,.card li{font-size:14px;line-height:1.6;color:#dbe7fa}
+  .card ul{padding-left:18px}
+  .example{background:linear-gradient(135deg,#0e2a52,#12325e);border:1px solid rgba(251,191,36,.4)}
+  .example h4{color:#fbbf24}
+  .big{font-size:19px;font-weight:800;color:#fff;margin:6px 0}
+  footer{max-width:1280px;margin:0 auto;padding:10px 16px 38px;color:var(--muted);font-size:12.5px;line-height:1.6;text-align:center}
+  #overlay{display:none}
+  /* placeholder, zoom view styles are at the end of this stylesheet */
+  /* Theme toggle + sticky legend + back button (added Oct 21) */
+  header{position:relative}
+  .theme-toggle{position:absolute;top:16px;right:16px;width:44px;height:44px;border-radius:50%;border:1px solid var(--line);background:var(--panel2);color:#fbbf24;font-size:19px;cursor:pointer;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 14px rgba(0,0,0,.35)}
+  .theme-toggle:hover{transform:scale(1.08)}
+  #legend{flex-wrap:nowrap;overflow-x:auto;justify-content:flex-start;padding:10px 2px 3px;scrollbar-width:thin}
+  .chip{white-space:nowrap;flex:0 0 auto}
+  .backbtn{display:inline-flex;align-items:center;gap:6px;padding:9px 14px;border-radius:999px;border:1px solid var(--line);background:var(--panel2);color:var(--ink);font-size:13.5px;font-weight:700;cursor:pointer;margin-bottom:14px}
+  .backbtn:hover{border-color:#38bdf8}
+  #detail{top:168px}
+  /* Light theme */
+  html[data-theme="light"] body{background:radial-gradient(1200px 600px at 20% -10%,#e8eefc 0%,#FAF9F6 55%);color:#17293f}
+  html[data-theme="light"] h1{color:#0b213f}
+  html[data-theme="light"] .sub{color:#4d6482}
+  html[data-theme="light"] .principle{background:#fff8e1;border-color:#e5c15c;color:#6b5510}
+  html[data-theme="light"] .toolbar{background:rgba(250,249,246,.95);border-color:#ddd5c0}
+  html[data-theme="light"] #search{background:#fff;color:#17293f;border-color:#cfd8e3}
+  html[data-theme="light"] .btn{background:#fff;color:#17293f;border-color:#cfd8e3}
+  html[data-theme="light"] .chip{background:#fff;color:#17293f;border-color:#cfd8e3}
+  html[data-theme="light"] .chip.active{outline-color:#0b213f}
+  html[data-theme="light"] .count{color:#5a6f88}
+  html[data-theme="light"] #detail{background:#fff;border-color:#e0d9c6}
+  html[data-theme="light"] #detail p{color:#33475e}
+  html[data-theme="light"] #detail .d-no{color:#5a6f88}
+  html[data-theme="light"] #detail h2{color:#0b213f}
+  html[data-theme="light"] #detail .formula{background:#e8f4fd;border-color:#9fd0f5;color:#124d75}
+  html[data-theme="light"] #detail .lens{background:#fff8e1;border-color:#e5c15c;color:#6b5510}
+  html[data-theme="light"] .backbtn{background:#eef3fa;color:#17293f;border-color:#cfd8e3}
+  html[data-theme="light"] .hint{color:#5a6f88}
+  html[data-theme="light"] .card{background:#fff;border-color:#e0d9c6}
+  html[data-theme="light"] .card p,html[data-theme="light"] .card li{color:#33475e}
+  html[data-theme="light"] section.below h3{color:#0b213f}
+  html[data-theme="light"] .example{background:linear-gradient(135deg,#fff8e1,#fdf3d0);border-color:#e5c15c}
+  html[data-theme="light"] .example .big{color:#17293f}
+  html[data-theme="light"] footer{color:#5a6f88}
+  html[data-theme="light"] .theme-toggle{background:#fff;color:#d97706;border-color:#cfd8e3}
+  @media(max-width:900px){
+    main{grid-template-columns:1fr}
+    #detail{position:fixed;inset:auto 0 0 0;z-index:60;border-radius:18px 18px 0 0;max-height:72vh;overflow:auto;transform:translateY(105%);transition:transform .25s ease;box-shadow:0 -12px 40px rgba(0,0,0,.6)}
+    #detail.open{transform:translateY(0)}
+    #overlay{display:block;position:fixed;inset:0;background:rgba(0,0,0,.55);z-index:55;opacity:0;pointer-events:none;transition:opacity .25s}
+    #overlay.open{opacity:1;pointer-events:auto}
+    #grid{grid-template-columns:repeat(auto-fill,minmax(82px,1fr))}
+    .tile{min-height:86px}.tile .sym{font-size:20px}
+  }
+  /* Zoom reading view — same pattern as the Quantum / AI Deck cards (Oct 21) */
+  main{grid-template-columns:1fr}
+  #overlay{display:block;position:fixed;inset:0;background:rgba(3,10,20,.62);z-index:55;opacity:0;pointer-events:none;transition:opacity .22s ease}
+  #overlay.open{opacity:1;pointer-events:auto}
+  #detail{position:fixed;top:50%;left:50%;right:auto;bottom:auto;width:min(560px,92vw);max-width:92vw;max-height:86vh;overflow:auto;z-index:60;border-radius:18px;padding:26px;opacity:0;pointer-events:none;transform:translate(-50%,-47%) scale(.88);transition:transform .24s ease,opacity .24s ease;box-shadow:0 30px 80px rgba(0,0,0,.55)}
+  #detail.open{opacity:1;pointer-events:auto;transform:translate(-50%,-50%) scale(1)}
+  .zoom-close{position:absolute;top:12px;right:12px;width:38px;height:38px;border-radius:50%;border:1px solid var(--line);background:var(--panel2);color:var(--ink);font-size:15px;cursor:pointer;display:flex;align-items:center;justify-content:center;z-index:2}
+  .zoom-close:hover{border-color:#38bdf8;transform:scale(1.08)}
+  html[data-theme="light"] .zoom-close{background:#eef3fa;color:#17293f;border-color:#cfd8e3}
+  @media(max-width:900px){#detail{padding:22px 18px}}
+</style>
+</head>
+<body>
+<header>
+  <div style="text-align:left;max-width:1200px;margin:0 auto 14px"><a href="../../#learn" style="color:inherit;opacity:.75;text-decoration:none;font-size:13.5px;font-weight:600">← Back to Learning Spaces</a></div>
+  <button class="theme-toggle" id="themeToggle" type="button" aria-label="Switch light or dark theme" title="Switch light / dark theme">☀</button>
+  <div class="kicker">The Startup Growth Periodic Table</div>
+  <h1>Startup Growth for <span>Founders</span></h1>
+  <p class="sub">57 growth terms every founder should know, from product-market fit and the North Star metric to AARRR, growth loops, pricing and efficient growth, as clickable elements in one periodic table.</p>
+  <div class="principle"><strong>Core principle:</strong> Growth is a system, not a bag of hacks: loops that feed themselves and users who stay are what compound over time. Retention comes before acquisition, because pouring sign-ups into a leaky product only buys churn at scale. Measure honestly, experiment every week, and let your own numbers, not tactics copied from other companies, decide where you push.</div>
+</header>
+
+<div class="toolbar">
+  <div class="toolbar-in">
+    <input id="search" type="search" placeholder="Search a term — try product-market fit, north star, AARRR, churn…" aria-label="Search terms">
+    <span class="count" id="count"></span>
+    <button class="btn" id="resetBtn" type="button">Show all</button>
+  </div>
+  <div id="legend" aria-label="Category filter"></div>
+</div>
+
+<main>
+  <div id="grid" role="list"></div>
+  <aside id="detail" aria-live="polite">
+    <div class="d-no">Element detail</div>
+    <p class="hint" style="margin-top:12px">Click any element in the table to zoom into its full explanation.<br><br>Start with: <strong>PMF, North Star, AARRR, PLG</strong>.</p>
+  </aside>
+</main>
+<div id="overlay"></div>
+
+<h3>Six things a founder should hold on to</h3>
+<div class="cards">
+<div class="card"><h4>Retention before acquisition</h4><p>A product that keeps users grows from a compounding base. A product that leaks them must rebuy its growth every month at auction prices. Fix the bucket before turning up the tap.</p></div>
+<div class="card"><h4>Growth is loops, not hacks</h4><p>Campaigns end; loops keep turning. The durable question for any growth idea is whether its output becomes the input of the next cycle: users making content, invitations, integrations or data that bring the next users.</p></div>
+<div class="card"><h4>One North Star, honestly measured</h4><p>Pick the metric that represents value delivered, review it weekly, and audit its definition yearly. A metric the team can game will be gamed, usually without anyone meaning harm.</p></div>
+<div class="card"><h4>Cohorts tell the truth</h4><p>Blended averages hide decay. Cohort retention and growth accounting show whether the product is actually improving or whether growth is just more new users covering the same old churn.</p></div>
+<div class="card"><h4>Efficiency is a growth metric</h4><p>Burn multiple, the Rule of 40 and default-alive status belong on the same dashboard as growth rate. Growth that cannot survive the next funding winter is a loan, not an achievement.</p></div>
+<div class="card"><h4>Frameworks are lenses</h4><p>AARRR, ICE, RICE and the rest organise thinking; they do not replace knowing your customer. Use them to structure experiments, then believe your own data over any framework, including the ones in this table.</p></div>
+</div>
+<h3>A founder's growth checklist</h3>
+<div class="cards">
+<div class="card"><ul>
+<li>Can you state your ICP and beachhead segment in one sentence each?</li>
+<li>Have you run the Sean Ellis PMF survey in the last two quarters?</li>
+<li>Is your North Star metric named, defined and reviewed weekly?</li>
+<li>Do you read retention by cohort every month, not just in aggregate?</li>
+<li>Do you know your activation rate and your time to value?</li>
+</ul></div>
+<div class="card"><ul>
+<li>Is at least one growth experiment running every single week?</li>
+<li>Do you know your blended CAC, LTV and CAC payback by channel?</li>
+<li>Have you computed the burn multiple for the last quarter?</li>
+<li>Are you default alive today, on paper, with no next fundraise assumed?</li>
+<li>Is expansion revenue measured separately from new-customer revenue?</li>
+</ul></div>
+<div class="card example"><h4>Worked example: is your virality an engine?</h4>
+<p class="big">4 invites per user x 25% acceptance = K of 1.0</p>
+<p>Suppose each user sends 4 invitations on average, and 1 in 4 invitees becomes an active user. K = 4 x 0.25 = 1.0, the break-even point of viral growth: every user exactly replaces themselves.</p>
+<p style="margin-top:8px">At 2 invites and the same 25% acceptance, K is 0.5. That is not an engine, but it still halves the new users your paid channels must buy. Both numbers are useful; only one of them is magic.</p>
+</div>
+</div>
+
+<footer>Educational only. Growth frameworks are lenses for thinking, not guarantees; every tactic here has to be validated against your own market, product and data before it deserves budget.<div style="margin-top:12px;font-size:13px">Curated by Thillai Raj Thanam Jeya Veera Raj · <a href="https://www.linkedin.com/in/thillairaj" target="_blank" rel="noopener" style="color:inherit;text-decoration:underline">Follow on LinkedIn</a></div></footer>
+
+<script>
+const CATS = { pmf:{name:"Product-Market Fit",color:"#0d9488"}, metrics:{name:"Growth Metrics",color:"#4f46e5"}, acquisition:{name:"Acquisition",color:"#0284c7"}, activation:{name:"Activation",color:"#15803d"}, retention:{name:"Retention",color:"#65a30d"}, referral:{name:"Referral & Loops",color:"#a21caf"}, revenue:{name:"Revenue & Pricing",color:"#d97706"}, gtm:{name:"Go-To-Market",color:"#ea580c"}, process:{name:"Growth Process & Efficiency",color:"#0891b2"} };
+const TERMS = [
+{s:"PMF",n:"Product-Market Fit",c:"pmf",d:"The state where a specific market wants your product strongly enough that demand starts pulling the company: users retain, recommend and would be genuinely disrupted if the product disappeared. Marc Andreessen coined the term, and it is the dividing line between pushing a product uphill and struggling to keep up with demand.",f:"Sean Ellis test: survey users and ask how they would feel if they could no longer use the product. If about 40% or more answer very disappointed, that is a strong product-market fit signal.",l:"Before fit, the only job is finding fit: narrow the audience, sharpen the promise, iterate with users. Growth spend before fit mostly burns cash to discover churn."},
+{s:"CD",n:"Customer Discovery",c:"pmf",d:"The structured process of interviewing and observing potential customers to learn their real problems, language and buying triggers before and while you build. Done well, it replaces founder assumptions with evidence about who hurts most and what they already pay to solve the problem.",l:"Talk about their past behaviour, not your idea. Ask what they did the last time the problem occurred and what it cost them; compliments about your concept are not data."},
+{s:"ICP",n:"Ideal Customer Profile",c:"pmf",d:"A precise description of the customer type that gets the most value from your product and is easiest to win and retain: industry, size, situation, budget owner and trigger event. A good ICP is built from who actually succeeded with the product, not from who the founder wishes would buy it.",l:"Your first ICP should be embarrassingly narrow. Winning one recognisable segment completely beats being vaguely relevant to everyone."},
+{s:"BH",n:"Beachhead Market",c:"pmf",d:"The single narrow segment you attack first to win a defensible foothold before expanding: one geography, one use case, one customer type. The concept comes from Geoffrey Moore's Crossing the Chasm, borrowed from military strategy. Win the beachhead and adjacent segments open up with credibility already earned.",l:"Choose the beachhead by pain intensity and reachability, not by market size. A small segment that desperately needs you beats a huge segment that mildly likes you."},
+{s:"TAM",n:"TAM SAM SOM",c:"pmf",d:"A three-layer sizing of your market. TAM is total demand if you served everyone; SAM is the portion your product and model can actually serve; SOM is the share you can realistically win in the near term given channels, geography and capacity.",f:"Investors trust bottom-up SOM maths: reachable customers x realistic price. A SOM quoted as a small percentage of a giant TAM is a red flag, not a plan.",l:"Size the market to plan, not to impress. Your SOM is the only layer that should appear in next year's targets."},
+{s:"Pos",n:"Positioning",c:"pmf",d:"The deliberate choice of how your product should be understood in the customer's mind: for whom it is, what problem it owns, and what alternative it replaces. Strong positioning makes the value obvious in seconds and sets the frame that pricing, messaging and category all inherit.",l:"If a prospect compares you to the wrong alternative, that is a positioning problem before it is a product problem. Reframe the comparison and the same product often wins."},
+{s:"Cat",n:"Category Design",c:"pmf",d:"The strategy of defining and leading a new category of product rather than competing inside an existing one, so the market evaluates rivals on your terms. It involves naming the problem differently, educating the market, and accepting responsibility for creating demand that did not exist before.",l:"Category design is expensive and slow; it suits companies with funding and patience. Most startups should first win inside an existing category and design one later, if ever."},
+{s:"NSM",n:"North Star Metric",c:"metrics",d:"The single metric that best captures the core value your product delivers to users, and that the whole company aligns growth work around. Sean Ellis popularised the concept: for a messaging product it might be active conversations, for a marketplace, completed transactions. It is a value metric first, and only indirectly a revenue metric.",f:"A good North Star sits upstream of revenue: if it grows sustainably, revenue follows. Revenue itself is usually a lagging and gameable choice for a North Star.",l:"Pick one, publish it internally, and review its input metrics weekly. If every team optimises a different number, you do not have a North Star, you have a dashboard."},
+{s:"AAR",n:"AARRR — Pirate Metrics",c:"metrics",d:"Dave McClure's 2007 framework for the five stages of the customer journey: Acquisition, Activation, Retention, Referral and Revenue. Named for the pirate sound, it gives founders a simple full-funnel checklist so no stage of growth is silently broken while attention sits on another.",f:"Acquisition, Activation, Retention, Referral, Revenue, in that order. McClure's point was diagnostic: find the stage where users leak, and fix that stage before scaling the ones above it.",l:"Use AARRR as a diagnostic map, not a strategy. Most early startups discover their real problem is Retention, which is why it sits in the middle of the funnel, not the top."},
+{s:"GAc",n:"Growth Accounting",c:"metrics",d:"A disciplined way of decomposing growth into its components: how much came from new users, how much was lost to churn, how much returned as resurrected users, and how much the retained base expanded or contracted. It replaces a single growth percentage with an honest anatomy of where growth actually came from.",f:"Quick Ratio = (New Users + Resurrected Users) / Churned Users. Above 1 the user base grows; growth teams often target well above 1 because churn compounds silently.",l:"Run growth accounting monthly. A growth rate propped up by ever-increasing new users while churn quietly grows is a warning, not a win."},
+{s:"Fun",n:"Funnel",c:"metrics",d:"The staged path users take from first awareness to the outcome you want, with drop-off measured at every step: visited, signed up, activated, purchased, retained. The funnel shape localises problems; a blockage at one stage makes spend on earlier stages wasteful.",f:"Overall conversion is the product of the stage-by-stage conversion rates. Five stages at 50% each do not average 50%: they multiply to about 3% end to end.",l:"Fix the worst leak before buying more traffic. Doubling a broken middle stage beats doubling the top of the funnel at a fraction of the cost."},
+{s:"CvR",n:"Conversion Rate",c:"metrics",d:"The share of people who take the desired action out of everyone who had the opportunity: visitors who sign up, trials who pay, prospects who buy. It is the basic efficiency number of every funnel stage and every page, campaign and sales step.",f:"Conversion Rate = Conversions / Visitors (or Opportunities) x 100. Always state the denominator; a conversion rate without one is meaningless.",l:"Small conversion gains compound across the whole funnel. Improving an existing step usually beats launching a new channel."},
+{s:"Coh",n:"Cohort Analysis",c:"metrics",d:"Grouping users by when they started (weekly or monthly cohorts) and tracking each group's behaviour over time, so you can see whether newer users retain, spend and engage better or worse than earlier ones. It separates product improvement from mix effects that blended averages hide.",l:"Averages lie politely; cohorts tell the truth rudely. If retention is not improving cohort over cohort, growth is decoration on a static product."},
+{s:"DAM",n:"DAU/MAU",c:"metrics",d:"The ratio of daily active users to monthly active users, read as how often the average monthly user shows up. A ratio near 1 means users engage almost daily; consumer social products often sit far higher than occasional-use B2B tools, where a lower ratio is normal.",f:"DAU/MAU = Daily Active Users / Monthly Active Users. Judge it against your product's natural usage frequency, never against a social network's number.",l:"Define active with a value action (a report viewed, a message sent), not a login. Vanity activity definitions inflate this ratio and every decision built on it."},
+{s:"Stk",n:"Stickiness",c:"metrics",d:"How habitually users return to the product, most commonly expressed through the DAU/MAU ratio. Sticky products become part of a routine or workflow, which protects retention and lowers the acquisition volume needed to keep growing.",f:"Stickiness = DAU / MAU. The same number as the DAU/MAU tile: two names, one measurement, seen from the product side rather than the reporting side.",l:"Stickiness is earned by frequency of value, not by notifications. Reminders can rent attention for a week; only repeated value owns it."},
+{s:"NPS",n:"NPS",c:"metrics",d:"Net Promoter Score: a loyalty measure from one question, how likely a user is to recommend the product, scored 0 to 10. Promoters (9-10) drive referrals, detractors (0-6) drive churn and negative word of mouth, and passives (7-8) sit between.",f:"NPS = % Promoters - % Detractors. Passives are counted in the base but add to neither side, so scores range from -100 to +100.",l:"The score matters less than the verbatim reasons behind it. Read fifty detractor comments and you will usually find your next quarter's product roadmap."},
+{s:"SEO",n:"SEO",c:"acquisition",d:"Search Engine Optimisation: earning traffic by matching the pages people already search for, with content and technical quality that search engines rank highly. It compounds slowly, because each well-ranked page keeps delivering visitors without per-click cost, but it rarely produces results in the first months.",l:"SEO is a six-to-eighteen-month asset, not a launch tactic. Start it early if your buyers search, but never let it be the only plan for this quarter's pipeline."},
+{s:"CoM",n:"Content Marketing",c:"acquisition",d:"Creating useful articles, guides, tools, videos or data that attract and educate your target customer, building trust and search presence before any sales conversation. In B2B it works by answering the exact questions buyers research while evaluating a problem.",l:"Write for the customer's problem in their words, not for your features in yours. One definitive guide usually outperforms ten thin posts written for a content calendar."},
+{s:"PfM",n:"Performance Marketing",c:"acquisition",d:"Paid acquisition across search, social and display platforms, bought and optimised against measurable cost per click, sign-up or customer. It is fast and controllable, which makes it the most common way founders test channels, and the fastest way to lose money when unit economics are unproven.",f:"The governing test: Lifetime Value (LTV) must clearly exceed Customer Acquisition Cost (CAC), and CAC must be recovered within a payback period your cash flow can fund.",l:"Paid spend is a magnifier, not a strategy. It scales whatever your funnel already does, including its leaks, at exactly the price the auction demands."},
+{s:"LPg",n:"Landing Page",c:"acquisition",d:"A focused page built for one audience and one promise, usually tied to a campaign or search intent, with a single primary call to action. By removing navigation and competing messages, it converts far better than sending campaign traffic to a general homepage.",l:"Match the page's headline to the ad or link that brought the visitor. Message mismatch is the silent killer of paid campaign conversion."},
+{s:"CLG",n:"Community-Led Growth",c:"acquisition",d:"Growth built by gathering your users and prospects into a community, events, groups, forums or ambassador circles, where value, trust and word of mouth compound. The community becomes a channel you own, and its members become your most credible salesforce.",l:"Community only works if members get value when you are not selling. Budget real time for it; a neglected community is worse than none, because it visibly proves indifference."},
+{s:"Par",n:"Partnerships",c:"acquisition",d:"Borrowing another company's distribution: integrations, resellers, affiliates, co-marketing and platform marketplaces that put your product in front of an audience someone else already earned. Often the highest-leverage early channel for B2B products selling into established ecosystems.",l:"Partnerships run on the partner's incentives, not your hopes. Design the offer so the partner's team wins visibly when you win, and put it in writing."},
+{s:"Kf",n:"Viral Coefficient (K-Factor)",c:"acquisition",d:"The average number of new users each existing user brings in through invitations and shares. It captures whether growth can become self-feeding: each generation of users produces the next, reducing dependence on paid acquisition.",f:"K-Factor = Invitations Sent per User x Conversion Rate of Invitations. K above 1 means each user more than replaces themselves; below 1, virality is a helpful discount on acquisition, not an engine.",l:"Do not chase K above 1 as a plan; very few products sustain it. A K of 0.3 or 0.4 steadily cutting your blended CAC is already a serious advantage."},
+{s:"Onb",n:"Onboarding",c:"activation",d:"The guided first-run experience that takes a new sign-up from registration to first real value: setup steps, sensible defaults, empty-state design, checklists and timely help. Onboarding is where most acquired users are silently lost, which makes it the highest-leverage stage most founders underinvest in.",f:"Activation Rate = New Users Who Complete the Key Setup or Value Action / New Sign-ups x 100. Track it per onboarding change, not just in aggregate.",l:"Audit onboarding by doing it yourself, fresh, every month. Steps that felt obvious when you designed them will embarrass you, and each one costs users."},
+{s:"Aha",n:"Aha Moment",c:"activation",d:"The specific moment a new user first experiences the product's core value and it clicks: the first useful report, the first reply, the first saved hour. Growth teams identify it by comparing what retained users did early that churned users did not.",l:"Find your aha moment from data, then rebuild onboarding to deliver it as early as possible. Everything before it is friction; everything after it is engagement."},
+{s:"TTV",n:"Time to Value",c:"activation",d:"How long it takes a new user to reach that first real value. Shorter time to value raises activation and retention, because users decide whether a product deserves a second visit within the first session, often within minutes.",l:"Measure TTV like a funnel with a clock. Templates, sample data and sensible defaults are usually worth more than any tutorial video."},
+{s:"FTr",n:"Free Trial",c:"activation",d:"Time-limited full or partial access before payment, letting the product sell itself. Trials convert on experienced value, so their success depends on activation inside the trial window, not on the window's length alone.",f:"Trial Conversion Rate = Trials That Convert to Paid / Trials Started x 100. Compare it by trial length and by whether users hit the aha moment during the trial.",l:"A trial without activation support is a countdown to churn. Spend the trial period engineering the first value moment, not sending discount emails."},
+{s:"Fre",n:"Freemium",c:"activation",d:"A permanent free tier alongside paid plans, trading some product value for distribution: free users spread the product and a minority upgrade. It suits products with low marginal cost per user and natural network or visibility effects, and punishes products where free users are expensive to serve.",f:"Freemium Conversion = Paid Users / Free Users x 100. In self-serve software it is commonly in the low single digits, so the free base must be large or the paid plans valuable, usually both.",l:"Draw the free line at awareness, not at value: free should prove the product works, paid should unlock scale, depth or collaboration. Giving away the core value kills the upgrade reason."},
+{s:"RtC",n:"Retention Curve",c:"retention",d:"A chart of what share of a cohort is still active after each week or month. Healthy curves fall early, then flatten at a level of users who stay for good; unhealthy curves keep sliding towards zero no matter how much acquisition is poured in.",f:"Retention at Period n = Users Still Active in Period n / Users in the Starting Cohort x 100. Plot it per cohort; a curve that flattens is the graph of product-market fit forming.",l:"Read the flattening point, not the first month. Where the curve levels off is your real retained base, and raising that level is worth more than any campaign."},
+{s:"Chn",n:"Churn",c:"retention",d:"The rate at which customers or recurring revenue are lost in a period. Customer churn counts accounts; revenue churn counts money, and the two diverge when larger customers behave differently from smaller ones. Churn is the silent term in every growth equation.",f:"Churn Rate = Customers Lost in Period / Customers at Start of Period x 100. Always say whether you mean customer churn or revenue churn; investors will ask.",l:"Exit-interview your churned customers personally while you are small. The reasons are rarely price; they are usually an unmet expectation set at sale or onboarding."},
+{s:"EgL",n:"Engagement Loop",c:"retention",d:"A repeating cycle inside the product where a trigger prompts an action, the action produces value or content, and that output prompts the next return: post, response, notification, post again. Well-designed loops make retention a property of the product rather than of marketing reminders.",l:"Design the loop around value the user already wants, then let notifications carry that value back. A loop that only serves the company's metrics gets uninstalled."},
+{s:"Hab",n:"Habit Formation",c:"retention",d:"Engineering repeat usage until the product attaches to an existing routine or internal trigger, so users return without being reminded. Nir Eyal's Hook model describes the mechanics: trigger, action, variable reward, and investment that makes the next visit easier or richer.",f:"Hook loop: Trigger, Action, Variable Reward, Investment (Nir Eyal, Hooked, 2014). Each completed loop should increase the user's stored value in the product: data, content, followers or configuration.",l:"Anchor the habit to a moment that already exists in the user's day or workflow. Habits that need a new slot in a busy calendar almost never form."},
+{s:"Res",n:"Resurrection",c:"retention",d:"Winning back users who had gone inactive or churned, through product improvements, targeted offers or changed circumstances. Resurrected users are valuable evidence: they show what was missing, and they often convert cheaper than cold acquisition because familiarity already exists.",l:"Segment the dormant base by why they left before spending on win-back. Users who left over a fixed problem are an asset; users who never activated are usually not."},
+{s:"GLp",n:"Growth Loop",c:"referral",d:"A self-reinforcing system where the output of one cycle becomes the input of the next: users create content that ranks in search, which brings users who create more content. Unlike a funnel, which must be refilled with spend, a loop compounds as long as each turn generates more than it consumes.",l:"Ask of every growth idea: does the output feed the input? If it only produces a spike, it is a campaign; valuable sometimes, but do not mistake it for an engine."},
+{s:"Fly",n:"Flywheel",c:"referral",d:"The metaphor, from Jim Collins and famously applied by Amazon, of growth as a heavy wheel: each push is small, but momentum accumulates until the system largely sustains its own motion. Lower prices drive volume, volume attracts sellers, sellers improve selection, selection drives volume.",l:"Write your flywheel as a loop of four or five concrete steps your team can push on. If a step cannot be acted on this quarter, it is a poster, not a flywheel."},
+{s:"Ref",n:"Referral Programme",c:"referral",d:"A structured incentive for existing users to invite others, usually rewarding both sides when the invited user converts. It works when the product is already recommendable and the invitation is a natural part of using it, not an unrelated bribe bolted on afterwards.",f:"Referral economics: the reward is justified while its cost per acquired customer is clearly below your paid CAC for an equivalent customer, and referred users should retain at least as well as average.",l:"Double-sided rewards outperform one-sided ones in most tests, because the inviter feels generous rather than paid. Test the framing before raising the reward."},
+{s:"NEf",n:"Network Effects",c:"referral",d:"The property where a product becomes more valuable as more people use it: marketplaces get more liquid, communication tools reach more contacts, platforms attract more integrations. Genuine network effects create defensibility that features cannot, because a rival must rebuild the network, not just the software.",f:"Metcalfe's framing: a network's value grows roughly with the square of its connected users, n squared. Treat it as an illustration of compounding value, not a valuation formula.",l:"Claim network effects only when the value visibly rises with each added user in the same network. A large user base by itself is scale, not a network effect."},
+{s:"PrS",n:"Pricing Strategy",c:"revenue",d:"The deliberate design of what you charge, to whom, and for what, based on the value customers perceive rather than your costs alone. Pricing decides which segment you serve, how the product is compared, and how much of the value you create you are allowed to keep.",l:"Underpricing is the most common early pricing error: it attracts the most price-sensitive customers, who churn fastest and demand most. Test higher on new cohorts before assuming the market said no."},
+{s:"VMt",n:"Value Metric",c:"revenue",d:"The unit you charge by: per user, per transaction, per report, per gigabyte. A good value metric scales with the value the customer receives, so as they succeed they naturally pay more, and pricing conversations become growth conversations instead of cost arguments.",l:"Audit your value metric yearly. If your best customers pay the same as your smallest, your pricing, not your product, is capping expansion revenue."},
+{s:"Mon",n:"Monetisation",c:"revenue",d:"The mechanisms that convert usage and value into revenue: subscriptions, transactions, commissions, advertising, licensing or services. Monetisation design is a product decision, because where and when you ask for money shapes activation, retention and the perceived fairness of the whole product.",l:"Monetise at the moment of value, not before it. Users pay willingly after the aha moment and resentfully before it."},
+{s:"UpX",n:"Upsell and Cross-sell",c:"revenue",d:"Growing revenue from existing customers: an upsell moves them to a higher tier or volume, a cross-sell adds an adjacent product or module. Both work because trust and context already exist, making expansion the cheapest revenue a company can earn.",l:"Trigger upsells on usage the customer can see, such as limits reached or seats added, never on your quarter-end. Customers accept expansion that follows their own growth."},
+{s:"ExR",n:"Expansion Revenue",c:"revenue",d:"Additional revenue generated from the existing customer base through upgrades, more seats, more usage or added products, net of contraction and churn in the same base. It is the revenue engine behind high net revenue retention in strong SaaS companies.",f:"Net Revenue Retention = (Starting MRR + Expansion - Contraction - Churned MRR) / Starting MRR x 100. Above 100% means the existing base grows even with zero new customers.",l:"Expansion is the growth you do not have to buy again. Instrument it separately from new sales, or you will never know which engine is actually working."},
+{s:"PrE",n:"Pricing Experiments",c:"revenue",d:"Structured tests of price levels, packaging and value metrics on new cohorts or segments, measured by conversion, revenue per customer and retention, not by opinion. Pricing is usually the highest-leverage variable a growth team can test, because a small change moves every future transaction.",l:"Test pricing on new customers first and grandfather existing ones where trust is at stake. Announce changes with reasons; surprise price moves read as opportunism."},
+{s:"GTM",n:"Go-To-Market Strategy",c:"gtm",d:"The integrated plan for reaching a defined segment and converting it: who you target, what you promise, which channels you use, how you price, and how product, marketing and sales divide the work. A GTM strategy is specific enough to be wrong, which is what makes it useful.",l:"One segment, one promise, one primary channel: that is a testable GTM. A strategy that lists five of each is a wish with headings."},
+{s:"PLG",n:"Product-Led Growth",c:"gtm",d:"A go-to-market motion where the product itself drives acquisition, activation and expansion: free entry, fast time to value, in-product sharing and usage-based upgrades, with sales assisting rather than gatekeeping. It suits products an individual can adopt without procurement approval.",l:"PLG is not the absence of sales. The strongest PLG companies add sales exactly where usage data shows an account ready to expand."},
+{s:"SLG",n:"Sales-Led Growth",c:"gtm",d:"The traditional motion where marketing generates pipeline and a sales team converts it through discovery, evaluation and negotiation. It fits high-value, complex or compliance-heavy products where buyers need assurance and multiple stakeholders must agree before anyone can adopt.",l:"Judge sales-led motions by payback and sales cycle honesty, not by pipeline theatre. A long pipeline of unqualified deals is inventory, not growth."},
+{s:"ChS",n:"Channel Strategy",c:"gtm",d:"Choosing and sequencing the routes to your customer: search, paid, partnerships, marketplaces, community, direct sales, and retiring what does not work. Channels saturate, prices rise and audiences shift, so a channel strategy is a portfolio under active management, not a one-time choice.",f:"A channel counts as working when it delivers repeatable volume at a CAC your economics can carry. A one-off spike, a launch day, a single mention, is distribution luck, not a channel.",l:"Master one channel before adding the second. Most young companies die of channel dabbling: five channels at 20% effort each beat by competitors doing one at 100%."},
+{s:"PLn",n:"Product Launch",c:"gtm",d:"The coordinated release of a product or major capability: preparing the story, the audience, the channels and the support capacity so first impressions convert into activated users. A launch is a spike of attention; its lasting value depends entirely on the retention of the users it brings.",l:"Treat launch day as the start of onboarding, not the finish line. Plan the week after launch, when support questions and drop-off data arrive, as carefully as the announcement."},
+{s:"GEx",n:"Growth Experiments",c:"process",d:"Short, structured tests of growth hypotheses, each with a prediction, a metric, a time box and a decision rule. Experimentation converts growth from opinion contests into a compounding library of what works in your market, at your stage, for your users.",l:"Volume and velocity beat brilliance. A team running four honest small tests a month learns more in a quarter than a team perfecting one big campaign."},
+{s:"ICE",n:"ICE Framework",c:"process",d:"A scoring method for ranking growth ideas by Impact, Confidence and Ease, each rated, commonly 1 to 10. Sean Ellis developed and popularised it while building growth processes, to stop teams from working on whoever argued loudest rather than whatever mattered most.",f:"ICE Score = Impact x Confidence x Ease, or their average, applied consistently within one team's backlog. The absolute scores do not matter; the ranking discipline does.",l:"Score as a team and argue about the scores, not the ideas. The conversation the framework forces is most of its value."},
+{s:"RICE",n:"RICE Framework",c:"process",d:"A prioritisation score developed at Intercom that adds Reach to the ICE idea: how many users an initiative affects, multiplied by impact and confidence, divided by the effort required. It suits product teams comparing initiatives of very different sizes.",f:"RICE Score = (Reach x Impact x Confidence) / Effort. Reach is users per period, Impact is scored per user, Confidence is a percentage, Effort is person-months.",l:"Use RICE when backlog items differ wildly in scale; use ICE for quick weekly growth backlogs. Pick one per team, because switching frameworks is itself a delay tactic."},
+{s:"GTm",n:"Growth Team",c:"process",d:"A small cross-functional team, typically product, engineering, design, data and marketing, that owns a growth metric and runs experiments against it end to end. It exists because growth work dies in hand-offs between departments that each own only one stage of the funnel.",l:"Give the growth team one metric and real engineering capacity. A growth team that must beg for developer time is a meeting, not a team."},
+{s:"BMu",n:"Burn Multiple",c:"process",d:"David Sacks' efficiency measure for startups: how much cash the company burns to generate each unit of new recurring revenue. It exposes growth bought at any cost, because a company can post impressive ARR growth while destroying cash at an unsustainable rate to get it.",f:"Burn Multiple = Net Burn / Net New ARR over the same period. At or below 1 is excellent efficiency; above 2, each new rupee of ARR is costing more than two rupees of burn, a clear warning.",l:"Compute it quarterly and show it next to the growth rate in every board update. Growth without its burn multiple is half a fact."},
+{s:"R40",n:"Rule of 40",c:"process",d:"A benchmark for software companies: revenue growth rate plus profit margin should total at least 40. It balances the two legitimate strategies, growing fast at a loss or growing slower profitably, and flags companies achieving neither.",f:"Rule of 40: Annual Revenue Growth % + Profit Margin % (usually EBITDA or free cash flow margin) at or above 40. Below it, neither speed nor efficiency is carrying the company.",l:"Apply it when you are at meaningful scale, not in year one. Early on it can punish exactly the deliberate investment phase a startup is supposed to be in."},
+{s:"DAl",n:"Default Alive",c:"process",d:"Paul Graham's survival test: assuming no further funding ever arrives, and holding revenue growth and expenses on their current paths, does the company reach profitability before the cash runs out? If yes, it is default alive; if no, it is default dead and living on borrowed time.",f:"The test: project current revenue growth forward, project expenses, and check whether the lines cross (profitability) before cash hits zero. Graham's point: many startups that believe they are fine are default dead.",l:"Run this calculation honestly every quarter, especially after a fundraise. Fundraising is the worst time to discover you were default dead at a higher burn."},
+{s:"EfG",n:"Efficient Growth",c:"process",d:"Growth pursued under a capital-efficiency constraint: every unit of new revenue should cost a defensible amount of burn, and growth plans should survive the absence of the next fundraise. It became the dominant operating philosophy for startups once cheap capital receded.",f:"Bessemer Efficiency Score = Net New ARR / Net Burn. It is the inverse view of the burn multiple: higher is better, and it rewards revenue gained per rupee of cash consumed.",l:"Efficient does not mean slow. It means every growth bet carries its cost next to its return, and the bets that fail that test are cut early."},
+{s:"Blz",n:"Blitzscaling",c:"process",d:"Reid Hoffman's term for prioritising speed over efficiency in the face of uncertainty, scaling a company at maximum pace to seize a winner-take-most market before rivals do. It deliberately accepts operational chaos, over-hiring and burning capital as the price of position.",l:"Blitzscaling is a strategy for markets with genuine network effects and abundant capital, which describes very few startups in very few years. Copying its burn without its market is how companies die efficiently at scale."}
+];
+const grid=document.getElementById('grid');
+const detail=document.getElementById('detail');
+const overlay=document.getElementById('overlay');
+const countEl=document.getElementById('count');
+let activeCat=null, selected=null;
+function render(){
+  grid.innerHTML='';
+  TERMS.forEach((t,i)=>{
+    const b=document.createElement('button');
+    b.className='tile'; b.type='button'; b.setAttribute('role','listitem');
+    b.style.background=CATS[t.c].color; b.dataset.cat=t.c;
+    b.dataset.search=(t.n+' '+t.s+' '+t.d+' '+CATS[t.c].name).toLowerCase();
+    b.innerHTML='<span class="no">'+(i+1)+'</span><span class="sym">'+t.s+'</span><span class="nm">'+t.n+'</span>';
+    b.addEventListener('click',()=>show(t,i,b));
+    grid.appendChild(b);
+  });
+  updateCount(TERMS.length);
+}
+function updateCount(n){countEl.textContent=n+' of '+TERMS.length+' terms shown';}
+function closeDetail(){
+  const el=selected;
+  if(selected)selected.classList.remove('selected');
+  selected=null; selectedIdx=-1;
+  detail.classList.remove('open'); overlay.classList.remove('open');
+  document.body.style.overflow='';
+  if(el && el.focus)el.focus({preventScroll:true});
+}
+let selectedIdx=-1;
+function show(t,i,el){
+  if(selectedIdx===i){closeDetail();selectedIdx=-1;return;}
+  if(selected)selected.classList.remove('selected');
+  selected=el; selectedIdx=i; if(el)el.classList.add('selected');
+  let html='<button class="zoom-close" type="button" onclick="closeDetail()" aria-label="Close">✕</button>';
+  html+='<div class="d-no">Element '+(i+1)+' of '+TERMS.length+'</div>';
+  html+='<span class="d-sym" style="background:'+CATS[t.c].color+'">'+t.s+'</span>';
+  html+='<h2>'+t.n+'</h2><div class="d-cat" style="color:'+CATS[t.c].color+'">'+CATS[t.c].name+'</div>';
+  html+='<p>'+t.d+'</p>';
+  if(t.f)html+='<div class="box formula"><b>Formula / Key fact</b>'+t.f+'</div>';
+  if(t.l)html+='<div class="box lens"><b>Founder lens</b>'+t.l+'</div>';
+  detail.innerHTML=html;
+  detail.classList.add('open'); overlay.classList.add('open');
+  document.body.style.overflow='hidden';
+}
+overlay.addEventListener('click',closeDetail);
+const legend=document.getElementById('legend');
+Object.keys(CATS).forEach(k=>{
+  const c=document.createElement('button'); c.type='button'; c.className='chip'; c.dataset.cat=k;
+  c.innerHTML='<span class="dot" style="background:'+CATS[k].color+'"></span>'+CATS[k].name;
+  c.addEventListener('click',()=>{
+    activeCat = activeCat===k ? null : k;
+    document.querySelectorAll('.chip').forEach(x=>x.classList.toggle('active',x.dataset.cat===activeCat));
+    applyFilter();
+  });
+  legend.appendChild(c);
+});
+function applyFilter(){
+  const q=document.getElementById('search').value.trim().toLowerCase();
+  let n=0;
+  document.querySelectorAll('.tile').forEach(tile=>{
+    const matchQ=!q || tile.dataset.search.includes(q);
+    const matchC=!activeCat || tile.dataset.cat===activeCat;
+    tile.classList.toggle('hidden',!matchQ);
+    tile.classList.toggle('dim',!!activeCat && !matchC && matchQ);
+    if(matchQ)n++;
+  });
+  updateCount(n);
+}
+document.getElementById('search').addEventListener('input',applyFilter);
+document.getElementById('resetBtn').addEventListener('click',()=>{
+  document.getElementById('search').value=''; activeCat=null;
+  document.querySelectorAll('.chip').forEach(x=>x.classList.remove('active')); applyFilter();
+});
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeDetail();});
+/* Theme toggle: saved choice wins, otherwise dark (the original look) */
+const themeBtn=document.getElementById('themeToggle');
+function applyTheme(th){
+  document.documentElement.setAttribute('data-theme',th);
+  themeBtn.textContent = th==='light' ? '☾' : '☀';
+  try{localStorage.setItem('startup_growth_theme',th);}catch(e){}
+}
+let savedTheme='dark';
+try{savedTheme=localStorage.getItem('startup_growth_theme')||'dark';}catch(e){}
+applyTheme(savedTheme==='light'?'light':'dark');
+themeBtn.addEventListener('click',()=>{
+  const cur=document.documentElement.getAttribute('data-theme')==='light'?'light':'dark';
+  applyTheme(cur==='light'?'dark':'light');
+});
+render();
+</script>
+</body>
+</html>

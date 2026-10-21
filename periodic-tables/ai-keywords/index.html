@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Keywords for Leaders — The Periodic Table</title>
+<meta name="description" content="70 essential AI terms for leaders in plain business language — machine learning, LLMs, RAG, fine-tuning, AI safety, governance and strategy — as an interactive periodic table.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="AI Keywords for Leaders — The Periodic Table">
+<meta property="og:description" content="70 essential AI terms for leaders in plain business language — machine learning, LLMs, RAG, fine-tuning, AI safety, governance and strategy — as an interactive periodic table.">
+<meta property="og:url" content="https://thillairaj.github.io/The-Signal-AI-Quantum/periodic-tables/ai-keywords/">
+<style>
+  :root{--bg:#071527;--panel:#0b213f;--panel2:#0e2a52;--ink:#eef4ff;--muted:#9db4d4;--line:rgba(255,255,255,.14)}
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:'Segoe UI',system-ui,-apple-system,Arial,sans-serif;background:radial-gradient(1200px 600px at 20% -10%,#12325e 0%,var(--bg) 55%);color:var(--ink);min-height:100vh}
+  header{padding:34px 22px 10px;text-align:center;max-width:1200px;margin:0 auto}
+  .kicker{letter-spacing:.35em;font-size:11px;color:#7dd3fc;text-transform:uppercase;font-weight:700}
+  h1{font-size:clamp(28px,5vw,48px);line-height:1.08;margin:10px 0 10px;font-weight:800}
+  h1 span{color:#fbbf24}
+  .sub{color:var(--muted);max-width:820px;margin:0 auto;font-size:15.5px;line-height:1.55}
+  .principle{margin:18px auto 4px;max-width:880px;background:rgba(251,191,36,.08);border:1px solid rgba(251,191,36,.35);border-radius:12px;padding:12px 16px;font-size:14px;line-height:1.55;color:#fde68a}
+  .toolbar{position:sticky;top:0;z-index:40;background:rgba(7,21,39,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line);padding:12px 16px}
+  .toolbar-in{max-width:1280px;margin:0 auto;display:flex;flex-wrap:wrap;gap:10px;align-items:center;justify-content:center}
+  #search{flex:1 1 260px;max-width:420px;padding:11px 14px;border-radius:10px;border:1px solid var(--line);background:var(--panel);color:var(--ink);font-size:15px;outline:none}
+  #search:focus{border-color:#38bdf8}
+  .count{color:var(--muted);font-size:13.5px}
+  .btn{padding:10px 14px;border-radius:10px;border:1px solid var(--line);background:var(--panel2);color:var(--ink);cursor:pointer;font-size:13.5px;font-weight:600}
+  .btn:hover{border-color:#38bdf8}
+  #legend{max-width:1280px;margin:14px auto 0;padding:0 16px;display:flex;flex-wrap:wrap;gap:8px;justify-content:center}
+  .chip{display:inline-flex;align-items:center;gap:7px;padding:7px 12px;border-radius:999px;border:1px solid var(--line);background:var(--panel);color:var(--ink);font-size:12.5px;cursor:pointer;font-weight:600;transition:all .15s}
+  .chip .dot{width:11px;height:11px;border-radius:3px}
+  .chip:hover{transform:translateY(-1px);border-color:#fff}
+  .chip.active{outline:2px solid #fff;outline-offset:1px}
+  main{max-width:1280px;margin:0 auto;padding:20px 16px 30px;display:grid;grid-template-columns:1fr 340px;gap:20px;align-items:start}
+  #grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(96px,1fr));gap:8px}
+  .tile{border:none;border-radius:10px;padding:8px 6px 7px;min-height:96px;color:#fff;cursor:pointer;text-align:left;position:relative;transition:transform .16s ease,filter .16s ease,box-shadow .16s ease,opacity .16s;display:flex;flex-direction:column;box-shadow:inset 0 0 0 1px rgba(255,255,255,.22)}
+  .tile .no{font-size:10.5px;font-weight:700;opacity:.85}
+  .tile .sym{font-size:24px;font-weight:800;line-height:1.05;margin:auto 0 2px;letter-spacing:.01em;word-break:break-word}
+  .tile .nm{font-size:10px;line-height:1.25;font-weight:600;opacity:.95}
+  .tile:hover,.tile:focus-visible{transform:scale(1.09) translateY(-4px);filter:brightness(1.28) saturate(1.25);box-shadow:0 12px 28px rgba(0,0,0,.5),0 0 0 2px #fff;z-index:5;outline:none}
+  .tile.selected{box-shadow:0 0 0 3px #fff,0 12px 28px rgba(0,0,0,.5);filter:brightness(1.2)}
+  .tile.dim{opacity:.13;filter:grayscale(.6)}
+  .tile.hidden{display:none}
+  #detail{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:22px;position:sticky;top:132px;min-height:300px}
+  #detail .d-no{font-size:12px;color:var(--muted);letter-spacing:.15em;text-transform:uppercase;font-weight:700}
+  #detail .d-sym{display:inline-flex;align-items:center;justify-content:center;min-width:74px;height:74px;padding:0 10px;border-radius:14px;font-size:30px;font-weight:800;color:#fff;margin:12px 0}
+  #detail h2{font-size:24px;line-height:1.2;margin-bottom:6px}
+  #detail .d-cat{font-size:12.5px;font-weight:700;text-transform:uppercase;letter-spacing:.12em;margin-bottom:14px}
+  #detail p{font-size:15px;line-height:1.65;color:#dbe7fa}
+  #detail .box{margin-top:14px;border-radius:10px;padding:12px 14px;font-size:14px;line-height:1.55}
+  #detail .formula{background:rgba(56,189,248,.1);border:1px solid rgba(56,189,248,.4);color:#bae6fd}
+  #detail .lens{background:rgba(251,191,36,.08);border:1px solid rgba(251,191,36,.35);color:#fde68a}
+  #detail .box b{display:block;font-size:11px;letter-spacing:.18em;text-transform:uppercase;margin-bottom:5px;opacity:.85}
+  .hint{color:var(--muted);font-size:14.5px;line-height:1.6}
+  section.below{max-width:1280px;margin:0 auto;padding:6px 16px 26px}
+  section.below h3{font-size:22px;margin:18px 0 12px}
+  .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:12px}
+  .card{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:16px}
+  .card h4{font-size:15px;margin-bottom:7px;color:#7dd3fc}
+  .card p,.card li{font-size:14px;line-height:1.6;color:#dbe7fa}
+  .card ul{padding-left:18px}
+  .example{background:linear-gradient(135deg,#0e2a52,#12325e);border:1px solid rgba(251,191,36,.4)}
+  .example h4{color:#fbbf24}
+  .big{font-size:19px;font-weight:800;color:#fff;margin:6px 0}
+  footer{max-width:1280px;margin:0 auto;padding:10px 16px 38px;color:var(--muted);font-size:12.5px;line-height:1.6;text-align:center}
+  #overlay{display:none}
+  /* placeholder, zoom view styles are at the end of this stylesheet */
+  /* Theme toggle + sticky legend + back button (added Oct 21) */
+  header{position:relative}
+  .theme-toggle{position:absolute;top:16px;right:16px;width:44px;height:44px;border-radius:50%;border:1px solid var(--line);background:var(--panel2);color:#fbbf24;font-size:19px;cursor:pointer;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 14px rgba(0,0,0,.35)}
+  .theme-toggle:hover{transform:scale(1.08)}
+  #legend{flex-wrap:nowrap;overflow-x:auto;justify-content:flex-start;padding:10px 2px 3px;scrollbar-width:thin}
+  .chip{white-space:nowrap;flex:0 0 auto}
+  .backbtn{display:inline-flex;align-items:center;gap:6px;padding:9px 14px;border-radius:999px;border:1px solid var(--line);background:var(--panel2);color:var(--ink);font-size:13.5px;font-weight:700;cursor:pointer;margin-bottom:14px}
+  .backbtn:hover{border-color:#38bdf8}
+  #detail{top:168px}
+  /* Light theme */
+  html[data-theme="light"] body{background:radial-gradient(1200px 600px at 20% -10%,#e8eefc 0%,#FAF9F6 55%);color:#17293f}
+  html[data-theme="light"] h1{color:#0b213f}
+  html[data-theme="light"] .sub{color:#4d6482}
+  html[data-theme="light"] .principle{background:#fff8e1;border-color:#e5c15c;color:#6b5510}
+  html[data-theme="light"] .toolbar{background:rgba(250,249,246,.95);border-color:#ddd5c0}
+  html[data-theme="light"] #search{background:#fff;color:#17293f;border-color:#cfd8e3}
+  html[data-theme="light"] .btn{background:#fff;color:#17293f;border-color:#cfd8e3}
+  html[data-theme="light"] .chip{background:#fff;color:#17293f;border-color:#cfd8e3}
+  html[data-theme="light"] .chip.active{outline-color:#0b213f}
+  html[data-theme="light"] .count{color:#5a6f88}
+  html[data-theme="light"] #detail{background:#fff;border-color:#e0d9c6}
+  html[data-theme="light"] #detail p{color:#33475e}
+  html[data-theme="light"] #detail .d-no{color:#5a6f88}
+  html[data-theme="light"] #detail h2{color:#0b213f}
+  html[data-theme="light"] #detail .formula{background:#e8f4fd;border-color:#9fd0f5;color:#124d75}
+  html[data-theme="light"] #detail .lens{background:#fff8e1;border-color:#e5c15c;color:#6b5510}
+  html[data-theme="light"] .backbtn{background:#eef3fa;color:#17293f;border-color:#cfd8e3}
+  html[data-theme="light"] .hint{color:#5a6f88}
+  html[data-theme="light"] .card{background:#fff;border-color:#e0d9c6}
+  html[data-theme="light"] .card p,html[data-theme="light"] .card li{color:#33475e}
+  html[data-theme="light"] section.below h3{color:#0b213f}
+  html[data-theme="light"] .example{background:linear-gradient(135deg,#fff8e1,#fdf3d0);border-color:#e5c15c}
+  html[data-theme="light"] .example .big{color:#17293f}
+  html[data-theme="light"] footer{color:#5a6f88}
+  html[data-theme="light"] .theme-toggle{background:#fff;color:#d97706;border-color:#cfd8e3}
+  @media(max-width:900px){
+    main{grid-template-columns:1fr}
+    #detail{position:fixed;inset:auto 0 0 0;z-index:60;border-radius:18px 18px 0 0;max-height:72vh;overflow:auto;transform:translateY(105%);transition:transform .25s ease;box-shadow:0 -12px 40px rgba(0,0,0,.6)}
+    #detail.open{transform:translateY(0)}
+    #overlay{display:block;position:fixed;inset:0;background:rgba(0,0,0,.55);z-index:55;opacity:0;pointer-events:none;transition:opacity .25s}
+    #overlay.open{opacity:1;pointer-events:auto}
+    #grid{grid-template-columns:repeat(auto-fill,minmax(82px,1fr))}
+    .tile{min-height:86px}.tile .sym{font-size:20px}
+  }
+  /* Zoom reading view — same pattern as the Quantum / AI Deck cards (Oct 21) */
+  main{grid-template-columns:1fr}
+  #overlay{display:block;position:fixed;inset:0;background:rgba(3,10,20,.62);z-index:55;opacity:0;pointer-events:none;transition:opacity .22s ease}
+  #overlay.open{opacity:1;pointer-events:auto}
+  #detail{position:fixed;top:50%;left:50%;right:auto;bottom:auto;width:min(560px,92vw);max-width:92vw;max-height:86vh;overflow:auto;z-index:60;border-radius:18px;padding:26px;opacity:0;pointer-events:none;transform:translate(-50%,-47%) scale(.88);transition:transform .24s ease,opacity .24s ease;box-shadow:0 30px 80px rgba(0,0,0,.55)}
+  #detail.open{opacity:1;pointer-events:auto;transform:translate(-50%,-50%) scale(1)}
+  .zoom-close{position:absolute;top:12px;right:12px;width:38px;height:38px;border-radius:50%;border:1px solid var(--line);background:var(--panel2);color:var(--ink);font-size:15px;cursor:pointer;display:flex;align-items:center;justify-content:center;z-index:2}
+  .zoom-close:hover{border-color:#38bdf8;transform:scale(1.08)}
+  html[data-theme="light"] .zoom-close{background:#eef3fa;color:#17293f;border-color:#cfd8e3}
+  @media(max-width:900px){#detail{padding:22px 18px}}
+</style>
+</head>
+<body>
+<header>
+  <div style="text-align:left;max-width:1200px;margin:0 auto 14px"><a href="../../#learn" style="color:inherit;opacity:.75;text-decoration:none;font-size:13.5px;font-weight:600">← Back to Learning Spaces</a></div>
+  <button class="theme-toggle" id="themeToggle" type="button" aria-label="Switch light or dark theme" title="Switch light / dark theme">☀</button>
+  <div class="kicker">The AI Periodic Table</div>
+  <h1>AI Keywords for <span>Leaders</span></h1>
+  <p class="sub">70 essential AI terms in plain business language, arranged like the periodic table for leaders who need to judge AI claims, vendors and investments.</p>
+  <div class="principle"><strong>Core principle:</strong> AI rewards leaders who understand what the technology actually does, not what the demo suggests. Learn the vocabulary, insist on evidence from your own data and your own workflows, and treat every confident AI claim as a hypothesis to be tested. That discipline, not any single tool, is the durable advantage.</div>
+</header>
+
+<div class="toolbar">
+  <div class="toolbar-in">
+    <input id="search" type="search" placeholder="Search a term — try prompt, RAG, hallucination, GPU…" aria-label="Search terms">
+    <span class="count" id="count"></span>
+    <button class="btn" id="resetBtn" type="button">Show all</button>
+  </div>
+  <div id="legend" aria-label="Category filter"></div>
+</div>
+
+<main>
+  <div id="grid" role="list"></div>
+  <aside id="detail" aria-live="polite">
+    <div class="d-no">Element detail</div>
+    <p class="hint" style="margin-top:12px">Click any element in the table to zoom into its full explanation.<br><br>Start with: <strong>AI, ML, LLM, RAG</strong>.</p>
+  </aside>
+</main>
+<div id="overlay"></div>
+
+<section class="below">
+  <h3>Six things a leader should hold on to</h3>
+  <div class="cards">
+    <div class="card"><h4>Fluency is not competence</h4><p>LLMs produce confident, polished language because that is what they are trained to produce. Correctness is a separate property that must be engineered with grounding, retrieval and verification, and tested on your own material.</p></div>
+    <div class="card"><h4>Your data is the moat</h4><p>Models are rented and increasingly similar. What competitors cannot copy is your proprietary data, your workflow integration and your customers' trust. AI strategy is mostly data and workflow strategy wearing a new name.</p></div>
+    <div class="card"><h4>Demos lie by omission</h4><p>Every demo runs on material chosen to succeed. The only evidence that matters is an evaluation on your documents, your customers and your edge cases, with failures counted, not explained away.</p></div>
+    <div class="card"><h4>Cost lives at inference</h4><p>Training makes headlines, but the bill that repeats forever is per-request inference: tokens in, tokens out, at your real volumes. Model the unit economics of a completed task, not a single chat.</p></div>
+    <div class="card"><h4>Agents multiply errors</h4><p>Each autonomous step is a chance to go wrong, and errors compound across steps. Autonomy should be granted per workflow, where steps are verifiable and mistakes are recoverable, never by product label.</p></div>
+    <div class="card"><h4>Governance enables speed</h4><p>Clear rules, a model inventory and a fast approval path let good teams move quickly without gambling the company. Governance that arrives after deployment is archaeology, not management.</p></div>
+  </div>
+  <h3>A leader's AI checklist</h3>
+  <div class="cards">
+    <div class="card"><ul>
+      <li>Name the business outcome and baseline metric before any pilot starts</li>
+      <li>Evaluate on your own data and edge cases, with failures counted and reviewed</li>
+      <li>Choose RAG for facts that change, fine-tuning for format and behaviour</li>
+      <li>Contract clearly on data: training use, retention, region and exit rights</li>
+      <li>Set latency and cost budgets per completed task, not per demo</li>
+    </ul></div>
+    <div class="card"><ul>
+      <li>Keep a human accountable for every consequential AI output</li>
+      <li>Red-team systems before launch and after major changes</li>
+      <li>Maintain an inventory of models and AI uses, with owners</li>
+      <li>Map your uses against the EU AI Act risk tiers and your local rules</li>
+      <li>Give staff an approved tool and a clear data rule, in that order</li>
+      <li>Review ROI against the baseline on a fixed date, then scale or stop</li>
+    </ul></div>
+    <div class="card example"><h4>An honest note on hype</h4>
+      <p>AI is genuinely transformative and persistently oversold, at the same time. Capabilities improve fast, demos outrun reliability, and timelines from every direction, boosters and critics alike, have been wrong in both directions.</p>
+      <p>The durable response is boring and effective: small funded experiments, evidence on your own ground, and scaling only what survives measurement. Leaders who run that loop will not need to predict the future of AI; they will profit from whichever version arrives.</p>
+    </div>
+  </div>
+</section>
+
+<footer>Educational only, for leadership literacy. AI capabilities and product claims change quickly, so verify current vendor statements before making investment or procurement decisions.<div style="margin-top:12px;font-size:13px">Curated by Thillai Raj Thanam Jeya Veera Raj · <a href="https://www.linkedin.com/in/thillairaj" target="_blank" rel="noopener" style="color:inherit;text-decoration:underline">Follow on LinkedIn</a></div></footer>
+
+<script>
+const CATS = { found:{name:"Foundations",color:"#0d9488"}, learn:{name:"How Machines Learn",color:"#15803d"}, types:{name:"Types of AI Systems",color:"#0284c7"}, neural:{name:"Neural Networks & Compute",color:"#4f46e5"}, genai:{name:"Generative AI & LLMs",color:"#a21caf"}, work:{name:"Working with LLMs",color:"#0891b2"}, practice:{name:"AI in Practice",color:"#ea580c"}, risk:{name:"Risks & Limits",color:"#dc2626"}, govbiz:{name:"Governance, Business & Strategy",color:"#d97706"} };
+const TERMS = [
+{s:"AI",n:"Artificial Intelligence",c:"found",d:"The broad field of building systems that perform tasks associated with human intelligence: understanding language, recognising images, making predictions and generating content. AI is the umbrella term; most of what is sold today is one specific technique inside it, machine learning.",f:"AI is an umbrella term: machine learning is one approach inside AI, and deep learning is one approach inside machine learning.",l:"When a vendor says AI, ask which technique, trained on what data, doing exactly which task. The umbrella word hides everything that matters."},
+{s:"ML",n:"Machine Learning",c:"found",d:"A way of building software that learns patterns from examples instead of following hand-written rules. You show it many past cases with known outcomes, and it builds a model that predicts outcomes for new cases.",f:"A model's quality is bounded by its training data: biased, narrow or poor data produces biased, narrow or poor behaviour.",l:"ML shifts the management problem from writing rules to owning data quality. Your data assets and data discipline become the product."},
+{s:"DL",n:"Deep Learning",c:"found",d:"Machine learning using large neural networks with many layers, trained on big datasets with powerful hardware. It is the technique behind modern speech recognition, image understanding and large language models.",f:"Deep refers to many layers of computation, not to deep understanding. These systems find statistical patterns; they do not comprehend like people do.",l:"Deep learning is why AI leapt forward after 2012, and why it is hungry: it needs large data volumes and serious compute to beat simpler methods."},
+{s:"NAI",n:"Narrow AI",c:"found",d:"AI designed for one specific task or a narrow range of tasks: approving loans, transcribing speech, recommending products. It can be superhuman at its task and useless outside it.",f:"Every AI system in commercial use today is narrow AI, however fluent or general it appears in a demo.",l:"Budget and plan around narrow AI. Any roadmap that assumes general intelligence is speculation, not planning."},
+{s:"AGI",n:"AGI",c:"found",d:"Artificial General Intelligence: a hypothetical system that could learn and perform any intellectual task a human can, across domains, without being retrained from scratch for each one. No such system exists today.",f:"There is no agreed test or timeline for AGI; confident claims about its arrival date are opinion, not measurement.",l:"Let AGI debates inform long-range thinking, never this year's budget. Strategy built on a guessed arrival date is fragile either way."},
+{s:"Alg",n:"Algorithm",c:"found",d:"A defined procedure a computer follows to turn inputs into outputs: a recipe of steps. In AI, the algorithm is the learning or prediction method, separate from the data it learns from and the model it produces.",l:"Algorithms are largely commoditised and published openly. Competitive advantage rarely comes from the algorithm itself; it comes from data, workflow and distribution."},
+{s:"Mdl",n:"Model",c:"found",d:"The trained artefact that an algorithm produces from data: the thing that actually makes predictions or generates text in production. Training creates the model; using it is called inference.",f:"A model is not the product. The product is the model plus data pipelines, interfaces, guardrails, evaluation and the workflow around it.",l:"Ask vendors what model they use, whether you can switch it, and what happens to your data and costs if you do. Lock-in lives at this layer."},
+{s:"TT",n:"Turing Test",c:"found",d:"A test proposed by Alan Turing in 1950: if a human judge, chatting by text, cannot reliably tell the machine from a person, the machine is said to pass. Modern chatbots can appear to pass casually while still failing at reasoning and reliability.",f:"Turing called it the imitation game. Passing a chat test measures how convincing a system is, not how correct or trustworthy it is.",l:"Fluency is not competence. The Turing Test is exactly the trap of the LLM era: systems that sound human invite trust their accuracy has not earned."},
+{s:"Tr",n:"Training",c:"learn",d:"The phase where a model learns from data: it makes predictions, measures its errors, and adjusts its internal weights to do better, repeated millions or billions of times. Training happens before deployment and is the expensive, compute-heavy phase.",f:"Training a frontier model can take weeks to months on large GPU clusters; training a small business model can take minutes on one machine.",l:"Training cost is a one-time or occasional cost. When evaluating AI economics, separate it from the per-request cost of running the model."},
+{s:"Inf",n:"Inference",c:"learn",d:"Using a trained model to make a prediction or generate an answer on new data. Every chatbot reply, image classification and forecast your systems produce is inference.",f:"Inference is where AI products spend most of their lifetime cost, because it happens on every single request, at scale, forever.",l:"Unit economics live here: cost per query, per document, per ticket. Ask for inference costs at your expected volumes, not demo volumes."},
+{s:"DS",n:"Dataset",c:"learn",d:"The collection of examples used to train or evaluate a model: documents, images, transactions, recordings, usually with labels or correct answers attached. Dataset quality, coverage and freshness largely determine what the model can and cannot do.",l:"Your proprietary dataset is often your only defensible AI asset. Protect it contractually in every vendor agreement, especially what the vendor may train on."},
+{s:"Pa",n:"Parameters",c:"learn",d:"The internal numerical settings of a model, learned during training, that define how it transforms inputs into outputs. Large models are described by parameter count: a 70B model has 70 billion of them.",f:"Parameter counts are quoted in billions for large models; one billion parameters is written as 1B. Bigger is not automatically better for a given task.",l:"Do not buy on parameter count. A smaller, well-matched model often beats a giant one on cost, speed and accuracy for a specific business task."},
+{s:"Wt",n:"Weights",c:"learn",d:"The most important parameters in a neural network: numbers that set how strongly each connection influences the result. Training is essentially the process of finding good weights; the trained weights are the model's learned knowledge, in numerical form.",f:"Weights are learned during training and then stay fixed in use, unless the model is fine-tuned or retrained. A model does not learn from your conversations by default.",l:"This corrects a common fear and a common hope: the public model does not absorb your data or improve itself overnight. Both change only through deliberate retraining."},
+{s:"Ov",n:"Overfitting",c:"learn",d:"When a model memorises its training examples instead of learning patterns that transfer, so it performs brilliantly on data it has seen and poorly on new data. It is the machine learning version of teaching to the test.",f:"The classic symptom: excellent results on training data, poor results on a held-back test set the model never saw during training.",l:"Always ask how results were measured and on what test data. A vendor demo on familiar examples is overfitting until proven otherwise."},
+{s:"Gn",n:"Generalisation",c:"learn",d:"A model's ability to perform well on new, unseen cases, not just its training examples. It is the whole point of machine learning: the value appears only when the model meets the real world.",l:"Judge AI only on generalisation: your customers, your documents, your edge cases. Insist on evaluation with your data before any commitment."},
+{s:"SL",n:"Supervised Learning",c:"learn",d:"Learning from examples that come with the correct answers attached, called labels: emails marked spam or not, loans marked repaid or defaulted. The model learns to predict the label for new examples.",f:"Most commercial AI today is supervised learning on labelled data, which is why labelling quality and cost shape so many AI projects.",l:"Labelling is hidden labour and hidden cost. Ask who labelled the training data, how accuracy was checked, and whether your use needs your own labelled set."},
+{s:"UL",n:"Unsupervised Learning",c:"learn",d:"Learning from data without labels, by finding structure on its own: grouping similar customers, flagging unusual transactions, compressing data into useful patterns. There is no single correct answer to check against.",l:"Unsupervised methods are good for exploration and anomaly detection, but their output needs human judgement. A cluster is a suggestion, not a fact."},
+{s:"RL",n:"Reinforcement Learning",c:"learn",d:"Learning by trial and error: an agent takes actions, receives rewards or penalties, and gradually learns a strategy that maximises reward. It powers game-playing AI, some robotics and parts of how chatbots are refined.",f:"RL produced headline results such as AlphaGo in 2016, and a related technique, RLHF, later shaped the behaviour of modern chatbots.",l:"RL works where success is clearly measurable and mistakes are cheap or simulated. Most business processes meet neither condition, so expect it at the margins, not the core."},
+{s:"Cls",n:"Classification",c:"types",d:"An AI task where the output is a category: fraud or legitimate, urgent or routine, which product, which language. It is the most common form of business machine learning.",f:"Classification output is one of a fixed set of categories. If the categories are wrong or incomplete, accuracy numbers are meaningless.",l:"Classification is where AI quietly pays in operations: triage, routing, tagging, screening. Start AI portfolios here, where success is measurable in weeks."},
+{s:"Rg",n:"Regression",c:"types",d:"An AI task where the output is a number: next month's demand, a delivery time, a credit risk score, a price. Despite the name shared with statistics, here it simply means predicting a continuous value.",f:"Regression output is a number on a scale, for example a house price or a demand forecast, and it should always come with an error range.",l:"A forecast without a confidence range is a guess in a suit. Require error bars and back-testing before forecasts drive inventory or staffing decisions."},
+{s:"Clu",n:"Clustering",c:"types",d:"Grouping items by similarity without predefined categories: customers who behave alike, documents on similar topics, machines with similar sensor patterns. The groups emerge from the data rather than from your org chart.",l:"Clustering is a discovery tool for segmentation and exploration. Validate segments commercially before rebuilding marketing or service around them."},
+{s:"NLP",n:"Natural Language Processing",c:"types",d:"The branch of AI that works with human language: understanding, searching, summarising, translating and generating text and speech. Large language models are its most powerful current form.",l:"NLP is the AI most employees meet first, through documents, email, support and search. Prioritise language workflows when scanning for quick, broad wins."},
+{s:"CV",n:"Computer Vision",c:"types",d:"AI that interprets images and video: inspecting products on a line, reading documents, counting inventory, monitoring safety compliance. It turns cameras and image archives into structured, usable data.",l:"Vision projects live or die on image conditions: lighting, angles, consistency. Pilot with real production images, not the vendor's curated gallery."},
+{s:"SR",n:"Speech Recognition",c:"types",d:"Technology that converts spoken language into text, also called speech-to-text. It underpins call transcription, voice assistants, meeting notes and hands-free data entry.",f:"Accuracy is reported as word error rate: lower is better, and accents, noise and domain vocabulary raise it sharply.",l:"Test speech systems on your accents, your call quality and your vocabulary. Published accuracy figures come from clean benchmark audio, not your call centre."},
+{s:"Rec",n:"Recommendation Systems",c:"types",d:"AI that predicts what a user will value next: products, content, people, actions. It drives e-commerce suggestions, media feeds and next-best-action tools in sales and service.",l:"Recommenders optimise whatever metric you give them, usually engagement or conversion. Audit what yours is really maximising; it may not be customer value."},
+{s:"NN",n:"Neural Network",c:"neural",d:"A computing structure loosely inspired by the brain: layers of simple units, each combining inputs with learned weights and passing a signal onward. Stacks of these layers, trained on enough data, can learn remarkably complex patterns.",f:"Early layers tend to catch simple patterns and later layers combine them into complex ones, which is how a vision network builds from edges to faces.",l:"Neural networks are the engine, not the strategy. You do not need to design them, but you should know they are pattern machines: powerful, opaque and only as good as their data."},
+{s:"Trf",n:"Transformer",c:"neural",d:"The neural network architecture behind virtually all modern language models, introduced in 2017. Its attention mechanism lets it weigh the relevance of every part of the input against every other part, which is why it handles long, complex text so well.",f:"Introduced in the 2017 paper 'Attention Is All You Need'. Nearly every major LLM today, from GPT-class models to open models, is a transformer.",l:"One architecture won. That concentration means advances, costs and risks across vendors move together; multi-model strategies hedge less than they appear to."},
+{s:"Att",n:"Attention",c:"neural",d:"The mechanism that lets a transformer decide which parts of the input matter most for each word it processes: in a long contract, linking a pronoun to the right company name pages earlier. It is the core invention of the transformer era.",f:"Attention is why transformers handle long text well: every token can directly weigh every other token, regardless of distance.",l:"Attention explains both the power and the cost of LLMs: considering everything against everything is powerful and computationally expensive, which is why long inputs cost more."},
+{s:"GPU",n:"GPU",c:"neural",d:"Graphics Processing Unit: a chip built to do many simple calculations in parallel, originally for video games and graphics. That parallelism matches neural network mathematics almost perfectly, making GPUs the default engine of AI.",f:"GPUs were designed for graphics. Their strength at parallel matrix mathematics, the core operation of neural networks, made them the foundation of the AI boom and of NVIDIA's rise.",l:"GPUs are the supply chain of AI: scarce, expensive and concentrated. Cloud GPU pricing and availability belong in every serious AI business case."},
+{s:"Acc",n:"AI Accelerator",c:"neural",d:"Any specialised hardware designed to run AI workloads faster or more cheaply than general-purpose chips: GPUs, Google's TPUs, and dedicated AI chips in cloud servers, laptops and phones. The category exists because AI mathematics is repetitive and parallel, so purpose-built silicon wins on speed and energy per result.",f:"Examples include Google's TPU family and AI silicon from NVIDIA, AMD and the major cloud providers, each optimised for slightly different trade-offs.",l:"Hardware choice is an economics decision: training speed, inference cost per query and vendor dependence. Let workload numbers, not brand, decide."},
+{s:"FM",n:"Foundation Model",c:"neural",d:"A very large model trained on broad data that can be adapted to many different tasks: writing, coding, analysis, image work. GPT-class models and other frontier models are foundation models; most organisations use them rather than build them.",f:"The term was popularised by Stanford researchers in 2021 for large models trained on broad data at scale, then adapted downstream to many tasks.",l:"Foundation models invert the old build logic: capabilities now arrive from outside, pre-trained. Your differentiation is data, workflow, trust and distribution, not owning a giant model."},
+{s:"Gen",n:"Generative AI",c:"genai",d:"AI that creates new content: text, images, audio, video, code. Instead of only labelling or predicting, it produces original output in response to a prompt, which is why it reached every employee's desk so quickly after 2022.",f:"Generative AI produces new content; discriminative AI classifies existing content. Most business AI before 2022 was discriminative.",l:"Generative AI's gift is draft speed, not truth. Build workflows where a human reviews output in proportion to the cost of being wrong."},
+{s:"LLM",n:"Large Language Model",c:"genai",d:"A foundation model trained on enormous amounts of text to predict and generate language. ChatGPT-class assistants, summarisation, drafting and code helpers are LLMs at work, often combined with other tools.",f:"An LLM is trained primarily to predict the next token. Fluent conversation, reasoning-like behaviour and coding ability emerge from that single task performed at very large scale.",l:"An LLM is a language engine, not a knowledge base or a database. Design systems that give it facts to work from instead of trusting its memory."},
+{s:"Tk",n:"Token",c:"genai",d:"The unit of text an LLM reads and writes: a chunk that may be a word, part of a word, or punctuation. Pricing, speed limits and context limits for LLMs are all measured in tokens, not words or characters.",f:"As a rough guide for English, 1 token is about 0.75 words, so 100 tokens is roughly 75 words. Other languages tokenise less efficiently and can cost more.",l:"Tokens are the currency of LLM economics. Long documents, chatty prompts and verbose answers all spend them; measure cost per completed task, not per chat."},
+{s:"CW",n:"Context Window",c:"genai",d:"The maximum amount of text, measured in tokens, that a model can consider at once: your prompt, the documents you attach, the conversation history and its own reply all share this space. Anything outside the window effectively does not exist for that reply.",f:"Context windows have grown from a few thousand tokens in early chatbots to hundreds of thousands in leading current models, but a bigger window does not guarantee the model uses distant information well.",l:"A big context window is not a filing cabinet. Critical facts buried in the middle of a huge prompt get missed; structure and retrieval still matter."},
+{s:"Pr",n:"Prompt",c:"genai",d:"The instruction and material you give a model: the question, context, examples and format you want back. The prompt is the user interface of the LLM era and the cheapest performance lever most teams have.",f:"The same model can give very different quality answers to the same question asked differently. Prompting is a real, testable skill, not a trick.",l:"Treat prompts in production systems like code: versioned, tested and reviewed. A casual prompt edit can quietly change business behaviour."},
+{s:"Temp",n:"Temperature",c:"genai",d:"A setting that controls how random a model's word choices are. Low temperature makes output focused and consistent; high temperature makes it varied and creative, and more likely to wander or invent.",f:"In common tools temperature runs roughly from 0 to 2: near 0 for factual consistency, higher for brainstorming and drafting alternatives.",l:"For business-critical outputs, keep temperature low and verify anyway. Creativity settings and compliance settings are opposites; choose per use case."},
+{s:"MM",n:"Multimodal",c:"genai",d:"Describes a model that works across more than one type of input or output: text with images, audio, video or documents. A multimodal assistant can read a chart, listen to a call and draft the summary in one flow.",l:"Multimodality collapses separate tools into one workflow: the scanned form, the photo and the note become one input. That is where much of the practical office value sits."},
+{s:"Dif",n:"Diffusion Model",c:"genai",d:"The technique behind most modern image and video generators. It learns by adding noise to images until they are unrecognisable, then learns to reverse the process, building a clean image from noise guided by your text description.",f:"Diffusion models power most leading image generators. The reverse-from-noise process is why generation takes a series of refinement steps rather than one pass.",l:"For image use cases, budget for iteration and brand review: ten generations to get one usable image is normal, and likeness and IP questions need explicit policy."},
+{s:"PE",n:"Prompt Engineering",c:"work",d:"The craft of designing prompts and surrounding instructions so a model reliably produces the format, tone and reasoning a task needs: clear instructions, examples, structure and constraints. In production it extends to templates, system prompts and testing prompt changes like software releases.",l:"Prompt engineering is the highest-ROI skill in applied AI: days of work, no new software. But it has limits; it cannot give a model facts it does not have or fix a broken process."},
+{s:"RAG",n:"RAG",c:"work",d:"Retrieval-Augmented Generation: before answering, the system searches your own documents or data, retrieves the relevant passages, and gives them to the model as source material. The model then answers from supplied evidence instead of memory alone.",f:"RAG was introduced as a named technique in a 2020 research paper from Meta AI, and it is now the standard architecture for enterprise chatbots over company documents.",l:"RAG is how enterprise AI becomes trustworthy enough to deploy: answers can cite sources, permissions can be enforced, and content stays current without retraining. Most serious internal AI projects are RAG projects."},
+{s:"Emb",n:"Embedding",c:"work",d:"A way of converting text (or images and other data) into a list of numbers, called a vector, that captures meaning: similar meanings get similar numbers. Embeddings are what make semantic search and RAG retrieval possible.",f:"Similar meanings produce close vectors: the embedding for 'invoice' sits nearer to 'billing' than to 'banana' in that numerical space.",l:"Embeddings are why modern search finds meaning, not keywords. If your knowledge search is still keyword-only, this is the upgrade that changes user experience."},
+{s:"VDB",n:"Vector Database",c:"work",d:"A database specialised in storing embeddings and finding the closest matches to a query's embedding extremely fast, across millions of documents. It is the retrieval engine inside most RAG systems.",l:"A vector database is infrastructure, not intelligence: it finds candidates, the model does the reasoning. Judge the pair together in pilots, because retrieval failures look like model failures."},
+{s:"FT",n:"Fine-tuning",c:"work",d:"Taking a pre-trained model and training it further on your specific examples so it adopts your formats, terminology and behaviour. It changes the model itself, unlike RAG, which changes what the model can look up.",f:"Fine-tuning changes the model; RAG changes its source material. Many production systems use both: RAG for facts, fine-tuning for format and style.",l:"Fine-tune for behaviour and format, not for knowledge that changes often. Facts belong in retrieval, where they can be updated and cited."},
+{s:"RLHF",n:"RLHF",c:"work",d:"Reinforcement Learning from Human Feedback: humans rank model answers, those rankings train a reward signal, and the model is optimised to produce answers humans prefer. It is a major reason raw LLMs became helpful, polite assistants.",f:"RLHF shaped the assistant personality the world met in ChatGPT-class products: the base model predicts text, RLHF steers it toward answers people rate as helpful and safe.",l:"RLHF optimises for answers people like, which is not identical to answers that are correct. Pleasant, confident and wrong is a designed-in failure mode to manage."},
+{s:"Grd",n:"Grounding",c:"work",d:"Anchoring a model's output in verifiable source material: retrieved documents, database records, tool results. A grounded answer can be checked against its sources; an ungrounded one rests on the model's memory of training data.",l:"Make grounding a procurement requirement: answers over company or customer data should show their sources, or the system is not ready for serious use."},
+{s:"Hal",n:"Hallucination",c:"work",d:"When a model produces fluent, confident output that is false: invented citations, wrong figures, non-existent policies. It happens because the model optimises for plausible language, not verified truth, and it cannot reliably signal its own uncertainty.",f:"Grounding, retrieval and better models reduce hallucination rates, but no general-purpose LLM has eliminated them. Any design that assumes zero hallucination is unsafe.",l:"Plan for hallucination as a permanent property, not a bug awaiting a patch: verification steps, citations and human review scaled to the cost of error."},
+{s:"API",n:"API",c:"practice",d:"Application Programming Interface: the standard way software systems request services from each other. Most organisations consume AI through APIs, sending prompts or data to a provider's model and receiving results inside their own applications.",l:"API access is where AI becomes a product feature instead of a chat window. Insist on clarity about data retention, training use and regional processing in every API contract."},
+{s:"Lat",n:"Latency",c:"practice",d:"The delay between sending a request and receiving a usable response. For LLMs it has two parts: time to the first token, and the speed of generation after that, both shaped by model size, load and output length.",f:"Latency should be tested on your own workload: long inputs and long outputs are slower and costlier than the short demos vendors optimise for.",l:"Latency is user experience. A brilliant answer in 40 seconds loses to a good answer in 3 in most workflows; set response-time budgets per use case."},
+{s:"BM",n:"Benchmark",c:"practice",d:"A standardised test used to compare models: exam-style questions, coding tasks, reasoning problems. Benchmarks help shortlisting, but high scores can reflect training on similar material and rarely predict performance on your specific work.",f:"A benchmark score is only comparable when the test, version and conditions match. Vendors routinely headline the benchmark they happen to win.",l:"Use benchmarks to shortlist, never to select. The only benchmark that decides a purchase is an evaluation on your own tasks and data."},
+{s:"Ev",n:"Evaluation",c:"practice",d:"The discipline of measuring whether an AI system actually works: testing on representative examples, scoring quality, tracking failures and re-testing after every change. Often shortened to evals, it is the least glamorous and most decisive part of applied AI.",l:"Teams that evaluate well can safely improve fast; teams that do not are flying on anecdotes. Fund evals like you fund the model itself."},
+{s:"Agt",n:"AI Agent",c:"practice",d:"An AI system that goes beyond answering: it plans steps, uses tools such as search, databases and software actions, and works toward a goal with limited human direction. Agents promise automation of multi-step knowledge work, with reliability that drops as tasks lengthen.",f:"Agent reliability multiplies step by step: a workflow of 20 steps at 95 percent success per step completes only about 36 percent of the time end to end.",l:"Deploy agents where steps are verifiable and errors are recoverable, with checkpoints a human can audit. Autonomy is earned per workflow, not granted by a product name."},
+{s:"Cop",n:"Copilot",c:"practice",d:"An AI assistant embedded inside a tool a person already uses: drafting in documents, suggesting code in an editor, summarising in a CRM. The human stays in charge; the copilot accelerates drafting, searching and routine work.",l:"Copilots are the lowest-risk, fastest-payback form of AI adoption. Measure them on cycle time and quality of final work, not on licences deployed."},
+{s:"HITL",n:"Human-in-the-Loop",c:"practice",d:"A design where a person reviews, approves or corrects AI output at defined points before consequences happen: payments released, letters sent, records changed. It trades some automation speed for control and accountability.",l:"Human-in-the-loop is not a lack of ambition; it is how regulated and high-stakes work adopts AI safely. Design the loop well and it also generates the feedback data that improves the system."},
+{s:"Bia",n:"Bias",c:"risk",d:"Systematic unfairness or skew in AI outputs, usually inherited from training data, labels or the way a problem was framed: who was represented, whose outcomes were recorded, what was optimised. Bias in a model quietly scales yesterday's patterns into tomorrow's decisions.",f:"Bias usually enters through data, labels and problem framing long before it shows up in outputs, which is why output testing alone cannot clear a system.",l:"Ask every vendor and every internal team the same question: tested for bias on which groups, with what results. No answer is an answer."},
+{s:"Fair",n:"Fairness",c:"risk",d:"Whether an AI system treats people and groups equitably in its decisions and errors: who gets approved, flagged, served or mistaken. Fairness is partly technical measurement and partly a values and policy choice about what equitable means in context.",f:"There are multiple mathematical definitions of fairness and they can conflict with each other in the same system. Choosing among them is a policy decision, not a technical fix.",l:"Do not let fairness be settled by default inside a vendor's product. It is a governance decision that belongs to accountable business owners."},
+{s:"Exp",n:"Explainability",c:"risk",d:"The ability to describe why a model produced a particular output in terms a human can inspect: which factors mattered, what would change the result. Deep learning models are inherently opaque, so explanations are usually approximations and post-hoc tools.",l:"In regulated decisions, an unexplainable model may be unusable regardless of accuracy. Test explainability requirements with your compliance team before, not after, deployment."},
+{s:"Aln",n:"Alignment",c:"risk",d:"The problem of making AI systems pursue the goals their creators actually intend, rather than literal, gamed or unintended interpretations of those goals. In everyday business use it shows up as systems optimising the measured proxy while missing the real objective.",l:"Alignment is already a management problem: any metric you hand an AI (or a team) will be optimised, including its loopholes. Design objectives and oversight together."},
+{s:"Saf",n:"AI Safety",c:"risk",d:"The field and practice of ensuring AI systems behave reliably and do not cause harm: through testing, monitoring, access controls and limits on use. It spans mundane reliability, misuse prevention and long-term research on more capable systems.",l:"For your organisation, safety is mostly operational: evaluations, guardrails, incident response and clear ownership when the AI is wrong. Own those before debating distant scenarios."},
+{s:"Gr",n:"Guardrails",c:"risk",d:"Controls placed around a model to keep behaviour within bounds: input and output filters, topic restrictions, format enforcement, escalation to humans. They reduce harmful or off-policy output but are themselves imperfect and can be bypassed.",f:"Guardrails are probabilistic too: they reduce harmful outputs substantially, they do not make them impossible. Defence in depth, not a single filter, is the working pattern.",l:"Ask how guardrails are tested and how failures are logged and reviewed. A guardrail nobody monitors is a hope, not a control."},
+{s:"RT",n:"Red Teaming",c:"risk",d:"Deliberately attacking your own AI system before others do: crafting prompts and scenarios that try to extract data, bypass guardrails or produce harmful output, then fixing what breaks. Borrowed from military and security practice, now standard for serious AI deployments.",l:"Commission red teaming before launch and after major changes, ideally by people who did not build the system. If nobody has tried to break it, you do not know it works."},
+{s:"DP",n:"Data Privacy",c:"risk",d:"Protecting personal and confidential information across the AI lifecycle: what data is collected, sent to providers, stored in logs, used for training and surfaced in other users' answers. LLM systems create new leak paths, including prompts themselves.",l:"The most common enterprise AI privacy failure is employees pasting sensitive data into unapproved tools. Give them an approved path and a clear rule, in that order."},
+{s:"Reg",n:"AI Regulation (EU AI Act)",c:"govbiz",d:"Laws governing how AI is built and used. The EU AI Act is the most comprehensive: it classifies AI uses by risk, bans a few, imposes strict duties on high-risk uses such as hiring and credit, and adds transparency duties for generative AI.",f:"The EU AI Act was adopted in 2024 and phases in over several years, with obligations arriving in stages. It can apply to companies outside the EU that serve EU users.",l:"Map which of your AI uses would count as high-risk now, even if you are outside the EU. Customers and partners will ask, and similar regimes are spreading."},
+{s:"Gov",n:"AI Governance",c:"govbiz",d:"The organisational system for deciding which AI is used, for what, with what data, under whose accountability: policies, approval paths, model inventories, monitoring and incident handling. It is what turns scattered experiments into managed capability.",l:"Governance that only says no will be routed around. Build a fast, clear approval path for low-risk uses and strict review for high-risk ones."},
+{s:"BvB",n:"Build vs Buy",c:"govbiz",d:"The decision between developing AI capability in-house and consuming it from vendors or platforms. In the foundation-model era, most firms buy the model and build the differentiating layers: data integration, workflow, evaluation and user experience.",l:"Build what differentiates you, buy what does not. Owning a model is rarely the moat; owning the data, workflow and customer trust usually is."},
+{s:"DSt",n:"Data Strategy",c:"govbiz",d:"The plan for what data the organisation collects, cleans, governs and makes usable, treated as a strategic asset. For AI it decides everything downstream: a model cannot retrieve, learn from or cite data that is scattered, stale or ungoverned.",l:"Most failed AI projects are data projects in disguise. Fund the unglamorous work: quality, access, permissions and ownership of key datasets."},
+{s:"ASt",n:"AI Strategy",c:"govbiz",d:"A deliberate plan linking AI investments to business outcomes: which problems, in which order, build or buy, with what data, talent, governance and measures of success. Without it, organisations collect pilots that never compound into capability.",l:"A good AI strategy is short and sequenced: two or three value pools, the data and workflow changes they need, and the evidence that will justify scaling."},
+{s:"ROI",n:"Measuring AI ROI",c:"govbiz",d:"Evaluating whether AI pays: time saved, quality improved, revenue created or risk reduced, against the full cost of licences, integration, data preparation, evaluation and change management. The hardest part is defining the baseline honestly before the tool arrives.",f:"Measure AI ROI like any automation: value created per period minus total cost of ownership, where total cost includes integration, data work, evaluation and ongoing monitoring, not just subscription price.",l:"Insist on a baseline and a review date for every AI investment. Pilots without a pre-agreed success measure always succeed anecdotally and rarely get funded properly."},
+{s:"Lit",n:"AI Literacy",c:"govbiz",d:"The working understanding of AI across an organisation: what it does, where it fails, how to use it well and what the rules are. For leaders it means judging claims and investments; for staff it means effective, safe everyday use. This table exists to build exactly that.",l:"Literacy is the cheapest high-leverage AI investment: it raises the return on every tool you buy and lowers misuse risk at the same time."},
+{s:"Eth",n:"AI Ethics",c:"govbiz",d:"The principles and choices about how AI should be used: fairness, transparency, accountability, human oversight and respect for the people affected by automated decisions. In practice it becomes real through governance, procurement questions and design choices, not statements of values.",l:"Ethics that never changes a decision is decoration. Give it teeth: named owners, review points, and the authority to stop a deployment."}
+];
+const grid=document.getElementById('grid');
+const detail=document.getElementById('detail');
+const overlay=document.getElementById('overlay');
+const countEl=document.getElementById('count');
+let activeCat=null, selected=null;
+function render(){
+  grid.innerHTML='';
+  TERMS.forEach((t,i)=>{
+    const b=document.createElement('button');
+    b.className='tile'; b.type='button'; b.setAttribute('role','listitem');
+    b.style.background=CATS[t.c].color; b.dataset.cat=t.c;
+    b.dataset.search=(t.n+' '+t.s+' '+t.d+' '+CATS[t.c].name).toLowerCase();
+    b.innerHTML='<span class="no">'+(i+1)+'</span><span class="sym">'+t.s+'</span><span class="nm">'+t.n+'</span>';
+    b.addEventListener('click',()=>show(t,i,b));
+    grid.appendChild(b);
+  });
+  updateCount(TERMS.length);
+}
+function updateCount(n){countEl.textContent=n+' of '+TERMS.length+' terms shown';}
+function closeDetail(){
+  const el=selected;
+  if(selected)selected.classList.remove('selected');
+  selected=null; selectedIdx=-1;
+  detail.classList.remove('open'); overlay.classList.remove('open');
+  document.body.style.overflow='';
+  if(el && el.focus)el.focus({preventScroll:true});
+}
+let selectedIdx=-1;
+function show(t,i,el){
+  if(selectedIdx===i){closeDetail();selectedIdx=-1;return;}
+  if(selected)selected.classList.remove('selected');
+  selected=el; selectedIdx=i; if(el)el.classList.add('selected');
+  let html='<button class="zoom-close" type="button" onclick="closeDetail()" aria-label="Close">✕</button>';
+  html+='<div class="d-no">Element '+(i+1)+' of '+TERMS.length+'</div>';
+  html+='<span class="d-sym" style="background:'+CATS[t.c].color+'">'+t.s+'</span>';
+  html+='<h2>'+t.n+'</h2><div class="d-cat" style="color:'+CATS[t.c].color+'">'+CATS[t.c].name+'</div>';
+  html+='<p>'+t.d+'</p>';
+  if(t.f)html+='<div class="box formula"><b>Key fact</b>'+t.f+'</div>';
+  if(t.l)html+='<div class="box lens"><b>Leader lens</b>'+t.l+'</div>';
+  detail.innerHTML=html;
+  detail.classList.add('open'); overlay.classList.add('open');
+  document.body.style.overflow='hidden';
+}
+overlay.addEventListener('click',closeDetail);
+const legend=document.getElementById('legend');
+Object.keys(CATS).forEach(k=>{
+  const c=document.createElement('button'); c.type='button'; c.className='chip'; c.dataset.cat=k;
+  c.innerHTML='<span class="dot" style="background:'+CATS[k].color+'"></span>'+CATS[k].name;
+  c.addEventListener('click',()=>{
+    activeCat = activeCat===k ? null : k;
+    document.querySelectorAll('.chip').forEach(x=>x.classList.toggle('active',x.dataset.cat===activeCat));
+    applyFilter();
+  });
+  legend.appendChild(c);
+});
+function applyFilter(){
+  const q=document.getElementById('search').value.trim().toLowerCase();
+  let n=0;
+  document.querySelectorAll('.tile').forEach(tile=>{
+    const matchQ=!q || tile.dataset.search.includes(q);
+    const matchC=!activeCat || tile.dataset.cat===activeCat;
+    tile.classList.toggle('hidden',!matchQ);
+    tile.classList.toggle('dim',!!activeCat && !matchC && matchQ);
+    if(matchQ)n++;
+  });
+  updateCount(n);
+}
+document.getElementById('search').addEventListener('input',applyFilter);
+document.getElementById('resetBtn').addEventListener('click',()=>{
+  document.getElementById('search').value=''; activeCat=null;
+  document.querySelectorAll('.chip').forEach(x=>x.classList.remove('active')); applyFilter();
+});
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeDetail();});
+/* Theme toggle: saved choice wins, otherwise dark (the original look) */
+const themeBtn=document.getElementById('themeToggle');
+function applyTheme(th){
+  document.documentElement.setAttribute('data-theme',th);
+  themeBtn.textContent = th==='light' ? '☾' : '☀';
+  try{localStorage.setItem('ai_keywords_theme',th);}catch(e){}
+}
+let savedTheme='dark';
+try{savedTheme=localStorage.getItem('ai_keywords_theme')||'dark';}catch(e){}
+applyTheme(savedTheme==='light'?'light':'dark');
+themeBtn.addEventListener('click',()=>{
+  const cur=document.documentElement.getAttribute('data-theme')==='light'?'light':'dark';
+  applyTheme(cur==='light'?'dark':'light');
+});
+render();
+</script>
+</body>
+</html>

@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cloud & DevOps Keywords for Leaders — The Periodic Table</title>
+<meta name="description" content="72 cloud and DevOps terms for leaders — Kubernetes, CI/CD, Terraform, SRE, SLOs, FinOps and cloud strategy — as an interactive periodic table.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Cloud & DevOps Keywords for Leaders — The Periodic Table">
+<meta property="og:description" content="72 cloud and DevOps terms for leaders — Kubernetes, CI/CD, Terraform, SRE, SLOs, FinOps and cloud strategy — as an interactive periodic table.">
+<meta property="og:url" content="https://thillairaj.github.io/The-Signal-AI-Quantum/periodic-tables/cloud-devops/">
+<style>
+  :root{--bg:#071527;--panel:#0b213f;--panel2:#0e2a52;--ink:#eef4ff;--muted:#9db4d4;--line:rgba(255,255,255,.14)}
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:'Segoe UI',system-ui,-apple-system,Arial,sans-serif;background:radial-gradient(1200px 600px at 20% -10%,#12325e 0%,var(--bg) 55%);color:var(--ink);min-height:100vh}
+  header{padding:34px 22px 10px;text-align:center;max-width:1200px;margin:0 auto}
+  .kicker{letter-spacing:.35em;font-size:11px;color:#7dd3fc;text-transform:uppercase;font-weight:700}
+  h1{font-size:clamp(28px,5vw,48px);line-height:1.08;margin:10px 0 10px;font-weight:800}
+  h1 span{color:#fbbf24}
+  .sub{color:var(--muted);max-width:820px;margin:0 auto;font-size:15.5px;line-height:1.55}
+  .principle{margin:18px auto 4px;max-width:880px;background:rgba(251,191,36,.08);border:1px solid rgba(251,191,36,.35);border-radius:12px;padding:12px 16px;font-size:14px;line-height:1.55;color:#fde68a}
+  .toolbar{position:sticky;top:0;z-index:40;background:rgba(7,21,39,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line);padding:12px 16px}
+  .toolbar-in{max-width:1280px;margin:0 auto;display:flex;flex-wrap:wrap;gap:10px;align-items:center;justify-content:center}
+  #search{flex:1 1 260px;max-width:420px;padding:11px 14px;border-radius:10px;border:1px solid var(--line);background:var(--panel);color:var(--ink);font-size:15px;outline:none}
+  #search:focus{border-color:#38bdf8}
+  .count{color:var(--muted);font-size:13.5px}
+  .btn{padding:10px 14px;border-radius:10px;border:1px solid var(--line);background:var(--panel2);color:var(--ink);cursor:pointer;font-size:13.5px;font-weight:600}
+  .btn:hover{border-color:#38bdf8}
+  #legend{max-width:1280px;margin:14px auto 0;padding:0 16px;display:flex;flex-wrap:wrap;gap:8px;justify-content:center}
+  .chip{display:inline-flex;align-items:center;gap:7px;padding:7px 12px;border-radius:999px;border:1px solid var(--line);background:var(--panel);color:var(--ink);font-size:12.5px;cursor:pointer;font-weight:600;transition:all .15s}
+  .chip .dot{width:11px;height:11px;border-radius:3px}
+  .chip:hover{transform:translateY(-1px);border-color:#fff}
+  .chip.active{outline:2px solid #fff;outline-offset:1px}
+  main{max-width:1280px;margin:0 auto;padding:20px 16px 30px;display:grid;grid-template-columns:1fr 340px;gap:20px;align-items:start}
+  #grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(96px,1fr));gap:8px}
+  .tile{border:none;border-radius:10px;padding:8px 6px 7px;min-height:96px;color:#fff;cursor:pointer;text-align:left;position:relative;transition:transform .16s ease,filter .16s ease,box-shadow .16s ease,opacity .16s;display:flex;flex-direction:column;box-shadow:inset 0 0 0 1px rgba(255,255,255,.22)}
+  .tile .no{font-size:10.5px;font-weight:700;opacity:.85}
+  .tile .sym{font-size:24px;font-weight:800;line-height:1.05;margin:auto 0 2px;letter-spacing:.01em;word-break:break-word}
+  .tile .nm{font-size:10px;line-height:1.25;font-weight:600;opacity:.95}
+  .tile:hover,.tile:focus-visible{transform:scale(1.09) translateY(-4px);filter:brightness(1.28) saturate(1.25);box-shadow:0 12px 28px rgba(0,0,0,.5),0 0 0 2px #fff;z-index:5;outline:none}
+  .tile.selected{box-shadow:0 0 0 3px #fff,0 12px 28px rgba(0,0,0,.5);filter:brightness(1.2)}
+  .tile.dim{opacity:.13;filter:grayscale(.6)}
+  .tile.hidden{display:none}
+  #detail{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:22px;position:sticky;top:132px;min-height:300px}
+  #detail .d-no{font-size:12px;color:var(--muted);letter-spacing:.15em;text-transform:uppercase;font-weight:700}
+  #detail .d-sym{display:inline-flex;align-items:center;justify-content:center;min-width:74px;height:74px;padding:0 10px;border-radius:14px;font-size:30px;font-weight:800;color:#fff;margin:12px 0}
+  #detail h2{font-size:24px;line-height:1.2;margin-bottom:6px}
+  #detail .d-cat{font-size:12.5px;font-weight:700;text-transform:uppercase;letter-spacing:.12em;margin-bottom:14px}
+  #detail p{font-size:15px;line-height:1.65;color:#dbe7fa}
+  #detail .box{margin-top:14px;border-radius:10px;padding:12px 14px;font-size:14px;line-height:1.55}
+  #detail .formula{background:rgba(56,189,248,.1);border:1px solid rgba(56,189,248,.4);color:#bae6fd}
+  #detail .lens{background:rgba(251,191,36,.08);border:1px solid rgba(251,191,36,.35);color:#fde68a}
+  #detail .box b{display:block;font-size:11px;letter-spacing:.18em;text-transform:uppercase;margin-bottom:5px;opacity:.85}
+  .hint{color:var(--muted);font-size:14.5px;line-height:1.6}
+  section.below{max-width:1280px;margin:0 auto;padding:6px 16px 26px}
+  section.below h3{font-size:22px;margin:18px 0 12px}
+  .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:12px}
+  .card{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:16px}
+  .card h4{font-size:15px;margin-bottom:7px;color:#7dd3fc}
+  .card p,.card li{font-size:14px;line-height:1.6;color:#dbe7fa}
+  .card ul{padding-left:18px}
+  .example{background:linear-gradient(135deg,#0e2a52,#12325e);border:1px solid rgba(251,191,36,.4)}
+  .example h4{color:#fbbf24}
+  .big{font-size:19px;font-weight:800;color:#fff;margin:6px 0}
+  footer{max-width:1280px;margin:0 auto;padding:10px 16px 38px;color:var(--muted);font-size:12.5px;line-height:1.6;text-align:center}
+  #overlay{display:none}
+  /* placeholder, zoom view styles are at the end of this stylesheet */
+  /* Theme toggle + sticky legend + back button (added Oct 21) */
+  header{position:relative}
+  .theme-toggle{position:absolute;top:16px;right:16px;width:44px;height:44px;border-radius:50%;border:1px solid var(--line);background:var(--panel2);color:#fbbf24;font-size:19px;cursor:pointer;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 14px rgba(0,0,0,.35)}
+  .theme-toggle:hover{transform:scale(1.08)}
+  #legend{flex-wrap:nowrap;overflow-x:auto;justify-content:flex-start;padding:10px 2px 3px;scrollbar-width:thin}
+  .chip{white-space:nowrap;flex:0 0 auto}
+  .backbtn{display:inline-flex;align-items:center;gap:6px;padding:9px 14px;border-radius:999px;border:1px solid var(--line);background:var(--panel2);color:var(--ink);font-size:13.5px;font-weight:700;cursor:pointer;margin-bottom:14px}
+  .backbtn:hover{border-color:#38bdf8}
+  #detail{top:168px}
+  /* Light theme */
+  html[data-theme="light"] body{background:radial-gradient(1200px 600px at 20% -10%,#e8eefc 0%,#FAF9F6 55%);color:#17293f}
+  html[data-theme="light"] h1{color:#0b213f}
+  html[data-theme="light"] .sub{color:#4d6482}
+  html[data-theme="light"] .principle{background:#fff8e1;border-color:#e5c15c;color:#6b5510}
+  html[data-theme="light"] .toolbar{background:rgba(250,249,246,.95);border-color:#ddd5c0}
+  html[data-theme="light"] #search{background:#fff;color:#17293f;border-color:#cfd8e3}
+  html[data-theme="light"] .btn{background:#fff;color:#17293f;border-color:#cfd8e3}
+  html[data-theme="light"] .chip{background:#fff;color:#17293f;border-color:#cfd8e3}
+  html[data-theme="light"] .chip.active{outline-color:#0b213f}
+  html[data-theme="light"] .count{color:#5a6f88}
+  html[data-theme="light"] #detail{background:#fff;border-color:#e0d9c6}
+  html[data-theme="light"] #detail p{color:#33475e}
+  html[data-theme="light"] #detail .d-no{color:#5a6f88}
+  html[data-theme="light"] #detail h2{color:#0b213f}
+  html[data-theme="light"] #detail .formula{background:#e8f4fd;border-color:#9fd0f5;color:#124d75}
+  html[data-theme="light"] #detail .lens{background:#fff8e1;border-color:#e5c15c;color:#6b5510}
+  html[data-theme="light"] .backbtn{background:#eef3fa;color:#17293f;border-color:#cfd8e3}
+  html[data-theme="light"] .hint{color:#5a6f88}
+  html[data-theme="light"] .card{background:#fff;border-color:#e0d9c6}
+  html[data-theme="light"] .card p,html[data-theme="light"] .card li{color:#33475e}
+  html[data-theme="light"] section.below h3{color:#0b213f}
+  html[data-theme="light"] .example{background:linear-gradient(135deg,#fff8e1,#fdf3d0);border-color:#e5c15c}
+  html[data-theme="light"] .example .big{color:#17293f}
+  html[data-theme="light"] footer{color:#5a6f88}
+  html[data-theme="light"] .theme-toggle{background:#fff;color:#d97706;border-color:#cfd8e3}
+  @media(max-width:900px){
+    main{grid-template-columns:1fr}
+    #detail{position:fixed;inset:auto 0 0 0;z-index:60;border-radius:18px 18px 0 0;max-height:72vh;overflow:auto;transform:translateY(105%);transition:transform .25s ease;box-shadow:0 -12px 40px rgba(0,0,0,.6)}
+    #detail.open{transform:translateY(0)}
+    #overlay{display:block;position:fixed;inset:0;background:rgba(0,0,0,.55);z-index:55;opacity:0;pointer-events:none;transition:opacity .25s}
+    #overlay.open{opacity:1;pointer-events:auto}
+    #grid{grid-template-columns:repeat(auto-fill,minmax(82px,1fr))}
+    .tile{min-height:86px}.tile .sym{font-size:20px}
+  }
+  /* Zoom reading view — same pattern as the Quantum / AI Deck cards (Oct 21) */
+  main{grid-template-columns:1fr}
+  #overlay{display:block;position:fixed;inset:0;background:rgba(3,10,20,.62);z-index:55;opacity:0;pointer-events:none;transition:opacity .22s ease}
+  #overlay.open{opacity:1;pointer-events:auto}
+  #detail{position:fixed;top:50%;left:50%;right:auto;bottom:auto;width:min(560px,92vw);max-width:92vw;max-height:86vh;overflow:auto;z-index:60;border-radius:18px;padding:26px;opacity:0;pointer-events:none;transform:translate(-50%,-47%) scale(.88);transition:transform .24s ease,opacity .24s ease;box-shadow:0 30px 80px rgba(0,0,0,.55)}
+  #detail.open{opacity:1;pointer-events:auto;transform:translate(-50%,-50%) scale(1)}
+  .zoom-close{position:absolute;top:12px;right:12px;width:38px;height:38px;border-radius:50%;border:1px solid var(--line);background:var(--panel2);color:var(--ink);font-size:15px;cursor:pointer;display:flex;align-items:center;justify-content:center;z-index:2}
+  .zoom-close:hover{border-color:#38bdf8;transform:scale(1.08)}
+  html[data-theme="light"] .zoom-close{background:#eef3fa;color:#17293f;border-color:#cfd8e3}
+  @media(max-width:900px){#detail{padding:22px 18px}}
+</style>
+</head>
+<body>
+<header>
+  <div style="text-align:left;max-width:1200px;margin:0 auto 14px"><a href="../../#learn" style="color:inherit;opacity:.75;text-decoration:none;font-size:13.5px;font-weight:600">← Back to Learning Spaces</a></div>
+  <button class="theme-toggle" id="themeToggle" type="button" aria-label="Switch light or dark theme" title="Switch light / dark theme">☀</button>
+  <div class="kicker">The Cloud & DevOps Periodic Table</div>
+  <h1>Cloud & DevOps for <span>Leaders</span></h1>
+  <p class="sub">72 essential cloud and DevOps terms in plain business language, arranged like the periodic table — click any element for a fuller explanation, the key formula or fact, and what a leader should take from it.</p>
+  <div class="principle"><strong>Core principle:</strong> Cloud is an operating model, not a data centre rented by the month: it changes how you provision, pay for, secure and run technology, from capital spending to pay-as-you-go operations. DevOps is likewise culture plus automation, not a tool purchase — shared ownership of delivery and reliability, made repeatable by pipelines. Leaders who treat either one as a procurement exercise get the costs of both and the benefits of neither.</div>
+</header>
+
+<div class="toolbar">
+  <div class="toolbar-in">
+    <input id="search" type="search" placeholder="Search a term — try Kubernetes, SLO, FinOps, Terraform…" aria-label="Search terms">
+    <span class="count" id="count"></span>
+    <button class="btn" id="resetBtn" type="button">Show all</button>
+  </div>
+  <div id="legend" aria-label="Category filter"></div>
+</div>
+
+<main>
+  <div id="grid" role="list"></div>
+  <aside id="detail" aria-live="polite">
+    <div class="d-no">Element detail</div>
+    <p class="hint" style="margin-top:12px">Click any element in the table to zoom into its full explanation.<br><br>Start with: <strong>Kubernetes, SLO, IaC, FinOps</strong>.</p>
+  </aside>
+</main>
+<div id="overlay"></div>
+
+<h3>Six things a leader should hold on to</h3><div class="cards"><div class="card"><h4>Cloud is an operating model</h4><p>The technology is rented; the transformation is organisational. Provisioning, security, cost and reliability all become continuous, software-driven disciplines, and the operating model, not the platform contract, decides whether you get them.</p></div><div class="card"><h4>Reliability is a chosen, priced level</h4><p>SLOs and error budgets turn 'as reliable as possible' into arithmetic: 99.9% allows about 44 minutes of downtime a month, 99.99% about 4. Each nine costs disproportionately more, so let the business choose the level and pay for exactly that.</p></div><div class="card"><h4>Identity is the perimeter</h4><p>In cloud, APIs and identities are the front door. Least privilege, few standing administrators and continuous posture scanning prevent more incidents than any network appliance.</p></div><div class="card"><h4>Automation is the safety mechanism</h4><p>Pipelines, infrastructure as code and GitOps are not developer fashions: they make change small, reviewed, repeatable and reversible, which is why fast delivery and stability arrive together.</p></div><div class="card"><h4>Cost is an engineering variable</h4><p>The cloud bill responds to architecture and daily decisions, not just negotiation. FinOps makes unit cost visible per team and product so engineers can optimise it like performance.</p></div><div class="card"><h4>Untested recovery is a hypothesis</h4><p>Backups, DR plans and availability claims mean little until a restore or failover has been rehearsed and timed. RTO and RPO set by business owners convert hope into a priced, testable design.</p></div></div><h3>A leader's cloud checklist</h3><div class="cards"><div class="card"><ul><li>Every critical system has an SLO, and every customer SLA is backed by SLO evidence</li><li>Error budgets exist and visibly govern release pace when they run low</li><li>Production infrastructure is defined as code; console changes to production are exceptions, not routine</li><li>CI/CD pipelines include automated testing and security scanning on every change</li><li>Identity is reviewed regularly: minimal standing admin access, stale keys removed</li><li>A landing zone with guardrails exists, and new accounts start inside it</li></ul></div><div class="card"><ul><li>Cloud spend is reported as unit cost per team and product, reviewed monthly with engineering in the room</li><li>Commitments (reserved capacity) cover only the proven, stable usage floor</li><li>Every critical system names its RTO and RPO, set by its business owner</li><li>Restore and failover tests run on a schedule, with measured results reported</li><li>Blameless postmortems follow major incidents, and their actions are tracked to closure</li><li>Observability covers user experience end to end, not just server metrics</li></ul></div><div class="card example"><h4>An honest note on scope</h4><p>Cloud and DevOps reward sequencing over scale of ambition. Estates that fix identity, pipelines and cost visibility early compound the gains; programmes that migrate everything first and govern later recreate their old problems at higher hourly prices.</p><p>The leadership discipline is modest and continuous: choose reliability levels deliberately, automate the path to production, rehearse failure, and review unit costs like revenue. None of it requires betting the company on any single platform fashion.</p></div></div>
+
+<footer>Educational only. Cloud platforms, prices and service names change frequently; verify specific capabilities, discounts and commitments against current provider documentation before making decisions.<div style="margin-top:12px;font-size:13px">Curated by Thillai Raj Thanam Jeya Veera Raj · <a href="https://www.linkedin.com/in/thillairaj" target="_blank" rel="noopener" style="color:inherit;text-decoration:underline">Follow on LinkedIn</a></div></footer>
+
+<script>
+const CATS = { found:{name:"Cloud Foundations",color:"#0d9488"}, models:{name:"Service Models",color:"#0284c7"}, compute:{name:"Compute & Containers",color:"#4f46e5"}, data:{name:"Storage & Data",color:"#a21caf"}, network:{name:"Networking",color:"#0891b2"}, devops:{name:"DevOps & Delivery",color:"#15803d"}, sre:{name:"Reliability & Observability",color:"#ea580c"}, security:{name:"Cloud Security & Governance",color:"#dc2626"}, resilience:{name:"Resilience",color:"#7c3aed"}, cost:{name:"Cost & Strategy",color:"#d97706"} };
+const TERMS = [
+{s:"CC",n:"Cloud Computing",c:"found",d:"Delivering computing — servers, storage, databases, networking and software — over the internet from a provider's data centres, instead of owning and running your own hardware. You rent capacity on demand, scale it up or down as needs change, and pay for what you use rather than buying for peak load in advance.",f:"The economic shift is CapEx to OpEx: large upfront hardware purchases become a variable operating cost that follows actual usage, for better and for worse.",l:"Cloud does not remove the need for engineering discipline; it moves it. The skills change from maintaining hardware to managing consumption, architecture and vendors."},
+{s:"PuC",n:"Public Cloud",c:"found",d:"Cloud services offered over the public internet by providers such as AWS, Microsoft Azure and Google Cloud, where the underlying infrastructure is shared securely between many customers. Each customer's workloads and data are isolated logically, not by separate physical machines.",l:"Public cloud is the default starting point for most organisations. Choosing it is less a decision than an inheritance: most modern software already assumes it."},
+{s:"PrC",n:"Private Cloud",c:"found",d:"Cloud infrastructure operated for a single organisation, either in its own data centre or hosted by a provider, giving cloud-style self-service and automation with dedicated hardware. It is usually chosen for regulatory, latency or data-sovereignty reasons rather than cost.",l:"Private cloud carries cloud discipline without public cloud economics. Be clear about which specific constraint — regulation, latency, sovereignty — justifies it, because 'control' alone rarely does."},
+{s:"HyC",n:"Hybrid Cloud",c:"found",d:"An environment combining private infrastructure (or on-premises systems) with public cloud, connected so workloads and data can move or cooperate between them. Many large organisations are hybrid by necessity, because core legacy systems cannot move quickly, or cannot move at all.",l:"Hybrid is a legitimate long-term architecture, not only a transition state. But every boundary between environments adds networking, security and operational complexity that must be staffed."},
+{s:"MuC",n:"Multi-Cloud",c:"found",d:"Using services from more than one public cloud provider, deliberately — for example analytics on one provider and core systems on another. It differs from simply ending up with several providers through acquisitions or individual team choices, which is multi-cloud by accident.",l:"Deliberate multi-cloud buys negotiating leverage and best-of-breed services, at the price of duplicated skills, tooling and security models. Accidental multi-cloud buys only the price."},
+{s:"Rg",n:"Region",c:"found",d:"A geographic area where a cloud provider operates one or more data centres, such as a region centred on Mumbai, Frankfurt or Virginia. You choose regions to be near your users, to meet data-residency law, and to keep latency low.",f:"Data stored in a region stays there unless you configure replication elsewhere — region choice is therefore a legal and compliance decision, not only a performance one.",l:"Region decisions made casually on day one become expensive to reverse. Involve compliance early wherever customer data is regulated or must remain in-country."},
+{s:"AZ",n:"Availability Zone",c:"found",d:"One or more physically separate data centres within a region, each with independent power, cooling and networking, connected by fast low-latency links. Applications spread across zones keep running if one zone fails.",f:"Design rule of thumb: a single zone is a single point of failure; serious production systems run across at least two, preferably three, availability zones.",l:"Ask every critical system's owner one question: 'What happens if a whole zone goes down?' The answer reveals whether your availability claims are architecture or hope."},
+{s:"Edg",n:"Edge Computing",c:"found",d:"Processing data physically close to where it is created — in factories, retail stores, vehicles or telecom sites — instead of sending everything to a distant central cloud. It reduces latency and bandwidth use, and keeps local systems working if the connection to the centre fails.",l:"Edge is justified by physics and connectivity, not fashion: response times measured in single-digit milliseconds, or sites with unreliable links. Otherwise central cloud is simpler and cheaper to run."},
+{s:"IA",n:"IaaS",c:"models",d:"Infrastructure as a Service: the provider supplies raw computing building blocks — virtual machines, storage and networks — and you manage everything above them, including operating systems, patching and applications. It is the closest cloud model to running your own data centre, with the hardware removed.",f:"Shared responsibility at IaaS level: the provider secures the physical facilities and hypervisor; you secure the operating system, applications and data on top.",l:"IaaS gives maximum control and maximum work. Most organisations should climb one level up (to PaaS or managed services) unless they can name the specific control they need."},
+{s:"PA",n:"PaaS",c:"models",d:"Platform as a Service: the provider manages the infrastructure and the runtime platform — operating system, patching, scaling — and your teams deploy only code and configuration. App services, managed Kubernetes platforms and serverless platforms are common examples.",l:"PaaS trades some flexibility for a large reduction in operational burden. For most business applications that is the right trade; reserve IaaS for cases where the platform genuinely cannot do what you need."},
+{s:"SA",n:"SaaS",c:"models",d:"Software as a Service: a complete application delivered over the internet on subscription, such as email, CRM or HR systems. The provider runs everything; you configure the product, manage your users and own your data and its classification.",f:"In SaaS, your remaining responsibilities are identity, access, configuration and data — most SaaS breaches trace back to customer-side misconfiguration or weak access control, not provider failure.",l:"SaaS sprawl is the quiet cost problem: dozens of overlapping subscriptions, each with its own data and risk. Audit the portfolio annually, not just the price list."},
+{s:"Sls",n:"Serverless",c:"models",d:"A model where you deploy code (functions) or services without provisioning or managing servers at all; the provider runs, scales and bills them per use. The servers still exist — they are simply no longer your problem, including when demand drops to zero and cost drops with it.",f:"Serverless pricing is typically per request and per millisecond of execution: idle costs approach zero, which inverts the usual economics of always-on servers.",l:"Serverless suits event-driven and spiky workloads beautifully and steady high-volume workloads less so. Watch unit economics at scale, and the debugging and vendor lock-in that come with it."},
+{s:"MgS",n:"Managed Services",c:"models",d:"Provider-operated versions of common components — databases, message queues, Kubernetes, search — where the provider handles patching, backups, scaling and availability for a premium over the raw infrastructure. Your teams consume the service through an API or console instead of operating it.",l:"Managed services convert scarce engineering hours into a predictable bill. For undifferentiated heavy lifting like database operations, that is usually the best money in the cloud budget."},
+{s:"VM",n:"Virtual Machine",c:"compute",d:"A software emulation of a physical computer, running its own full operating system on shared hardware through a hypervisor. Virtual machines were the original unit of cloud computing and remain the right fit for legacy applications and anything needing a specific operating system.",l:"VMs are familiar and flexible but heavyweight: each carries a whole operating system to patch and pay for. New workloads should justify why they are not containers or managed services instead."},
+{s:"Ct",n:"Container",c:"compute",d:"A lightweight, standard package containing an application and everything it needs to run, sharing the host operating system kernel instead of carrying its own. Containers start in seconds, use far fewer resources than virtual machines, and run identically on a laptop and in production.",f:"Key contrast: a virtual machine virtualises hardware and boots a full OS (minutes, gigabytes); a container virtualises the operating system and starts a process (seconds, megabytes).",l:"Containers solved the 'works on my machine' problem and made applications portable. That portability is what the rest of this category — Docker, Kubernetes — is built on."},
+{s:"Dk",n:"Docker",c:"compute",d:"The tooling that made containers mainstream: a format for packaging applications into container images and an engine for running them. A Docker image is a read-only template; a container is a running instance of it.",l:"Docker is a means, not a strategy. The strategic decisions sit one level up: orchestration, platform standards and how images are secured and updated."},
+{s:"K8s",n:"Kubernetes",c:"compute",d:"The open-source platform (originally from Google) that orchestrates containers at scale: it schedules them across machines, restarts failures, balances load and rolls out updates automatically. It is the de facto standard for running containerised systems in production.",f:"Kubernetes works on desired state: you declare what should be running, and its controllers continuously reconcile reality with that declaration — the same principle as a thermostat.",l:"Kubernetes is powerful and genuinely complex. Adopt it through a managed service, staff it as a platform capability, and do not let every application team run its own cluster."},
+{s:"Pd",n:"Pod",c:"compute",d:"The smallest deployable unit in Kubernetes: one or more containers that share networking and storage and are always scheduled together on the same machine. Applications in Kubernetes are deployed, scaled and restarted as pods, not as individual containers.",l:"Pod is vocabulary, not strategy — but understanding it explains Kubernetes diagrams and incident conversations. When a service is 'crash-looping', a pod is failing to start, repeatedly."},
+{s:"Mic",n:"Microservices",c:"compute",d:"An architecture style that splits an application into small, independently deployable services, each owning one business capability and communicating over a network, usually by APIs. Teams can develop, deploy and scale each service without coordinating a single large release.",l:"Microservices trade code complexity for organisational complexity: more services mean more networking, observability and failure modes. Adopt them to solve a scaling or team problem you actually have."},
+{s:"Mn",n:"Monolith",c:"compute",d:"An application built and deployed as a single unified unit, with all functions running in one process and usually sharing one database. Monoliths are simpler to build, test and operate, and many successful companies ran them far longer than fashion suggests.",l:"A well-structured monolith is a legitimate architecture, often the right one for a young product. The failure mode is the neglected, tangled monolith — the problem is discipline, not the pattern."},
+{s:"AS",n:"Auto Scaling",c:"compute",d:"Automatically adding or removing computing capacity in response to demand signals such as CPU use, request queues or schedules. It matches cost to real load — more capacity for the morning peak, less overnight — and absorbs unexpected surges without manual intervention.",f:"The two directions matter equally: scaling out handles growth, but scaling in is where the money is saved. A system that only grows is a cost incident on a timer.",l:"Auto scaling is where cloud economics are won or lost daily. Review scaling policies like pricing decisions, because that is what they are."},
+{s:"ObS",n:"Object Storage",c:"data",d:"Storage that manages data as discrete objects — a file plus metadata plus a unique address — accessed over HTTP APIs, exemplified by Amazon S3. It scales to effectively unlimited volumes at very low cost, and is the default home for backups, media, data lakes and archived content.",l:"Object storage is the cheapest, most durable place most data will ever live. Set lifecycle policies on day one so ageing data moves automatically to colder, cheaper tiers."},
+{s:"BlS",n:"Block Storage",c:"data",d:"Storage presented to a server as a raw virtual disk, divided into fixed-size blocks, used for operating systems and databases that need fast, low-latency access. It behaves like the hard drive inside a physical machine, including needing a file system on top.",l:"Block storage performance tiers map directly to cost. Databases justify premium tiers; general workloads usually do not — audit disk performance classes like any other recurring spend."},
+{s:"SQL",n:"SQL Database",c:"data",d:"A relational database (PostgreSQL, MySQL, SQL Server and similar) that stores data in structured tables with defined relationships and guarantees transactions through SQL queries. It remains the default choice for systems of record: orders, payments, accounts.",f:"The defining guarantee is ACID: transactions are Atomic, Consistent, Isolated and Durable, so a payment either completes fully or not at all.",l:"Relational databases are mature, well understood and increasingly available as managed services. Choose them by default; require a specific reason — scale shape, data model — to do otherwise."},
+{s:"NoS",n:"NoSQL Database",c:"data",d:"A family of non-relational databases — document, key-value, wide-column and graph stores — designed for flexible data models and very large scale, trading some relational guarantees for speed and elasticity. They suit product catalogues, sessions, feeds, events and connected data.",l:"NoSQL is a set of tools for specific data shapes, not a modern replacement for SQL. Most estates end up with both; the skill is matching the store to the access pattern."},
+{s:"Ca",n:"Cache",c:"data",d:"A fast, usually in-memory layer (such as Redis or Memcached) holding copies of frequently requested data so applications stop asking the database the same questions repeatedly. It is the standard fix for read-heavy bottlenecks and a common source of dramatic latency improvements.",l:"Caching buys performance cheaply but introduces a consistency question: how stale may the copy be? Make sure someone can answer that for every cache in a critical path."},
+{s:"CDN",n:"CDN",c:"data",d:"Content Delivery Network: a globally distributed set of servers that caches your content — images, video, scripts, downloads — close to users and serves it from the nearest location. It cuts latency for distant users and absorbs traffic spikes before they reach your origin systems.",l:"For any public digital property with a wide geography of users, a CDN is basic hygiene, not an upgrade. It also quietly becomes part of your security perimeter, which argues for governing it as one."},
+{s:"Bk",n:"Backup",c:"data",d:"Copies of data (and the system configuration needed to use it) kept separately so service can be restored after failure, corruption, deletion or ransomware. A backup only counts as real when its restore has been tested: untested backups are a hope, not a control.",f:"The classic 3-2-1 rule: keep 3 copies of important data, on 2 different types of media or storage, with 1 copy off-site or isolated (increasingly, immutable and offline against ransomware).",l:"Ask two questions of every critical system: when was the last successful restore test, and how long did it take? The answers are your real resilience position."},
+{s:"VPC",n:"VPC",c:"network",d:"Virtual Private Cloud: your own isolated section of a public cloud, with private IP ranges and network rules that you define, inside which your resources run. It is the network boundary where most cloud security design begins.",l:"VPC design — segmentation, private subnets for data, controlled entry points — is the concrete form 'network security' takes in cloud. Review it like a building plan, before tenants move in."},
+{s:"Sb",n:"Subnet",c:"network",d:"A subdivision of a network (such as a VPC) with its own IP address range, typically used to separate tiers: public subnets hold load balancers, private subnets hold applications and databases with no direct internet route. Subnets are the basic unit of network segmentation in the cloud.",l:"The pattern to insist on is simple: the internet touches the public tier only, and databases sit in private subnets reachable only through the application tier."},
+{s:"LB",n:"Load Balancer",c:"network",d:"A service that distributes incoming traffic across multiple healthy copies of an application, so no single instance is overwhelmed and failed instances stop receiving requests automatically. It is what makes running several copies of a service usable as one reliable endpoint.",l:"Load balancers are also a change-management tool: they enable zero-downtime deployment patterns like blue-green and canary releases, which reduce the risk of every release."},
+{s:"APIG",n:"API Gateway",c:"network",d:"A managed entry point for APIs that handles authentication, rate limiting, request routing and logging before traffic reaches backend services. It centralises the cross-cutting concerns every API needs, instead of each service team reinventing them.",l:"If partners or customers consume your APIs, the gateway is your control point for security, quotas and monetisation. Treat its policies as product decisions, not plumbing."},
+{s:"DNS",n:"DNS",c:"network",d:"The Domain Name System: the internet's directory, translating names people remember (such as your website address) into the IP addresses machines use. Cloud DNS services also steer traffic between regions and fail over between endpoints based on health checks.",f:"DNS is also a recovery lever: because names can be repointed, DNS failover can move users to a healthy region, limited by the record's TTL (time to live) — how long clients cache the old answer.",l:"DNS failures have taken down major platforms, and DNS is a common attack surface. Keep registrations, renewals and change control under the same rigour as production systems."},
+{s:"VPN",n:"VPN",c:"network",d:"Virtual Private Network: an encrypted tunnel over a public network that connects offices, data centres or individual users privately to a cloud network. In cloud estates it commonly links on-premises systems to a VPC during and after migration.",l:"VPNs solve connectivity, not identity. Modern access design increasingly pairs or replaces them with per-user, per-application controls under zero trust — know which model your estate actually runs."},
+{s:"DvO",n:"DevOps",c:"devops",d:"A working culture and set of practices where the teams who build software share responsibility for running it, joined by automation across building, testing and deployment. Its goal is to release changes quickly and safely at the same time, rather than trading speed against stability.",f:"The loop most diagrams show — plan, code, build, test, release, deploy, operate, monitor — is a circle on purpose: production feedback is an input to planning, not an afterthought.",l:"DevOps fails as a rebranding exercise: renaming the operations team changes nothing. It works when incentives change — one team accountable for a service's delivery and its behaviour in production."},
+{s:"CICD",n:"CI/CD",c:"devops",d:"Continuous Integration and Continuous Delivery (or Deployment): automatically building, testing and packaging every code change (CI), then releasing it to production through automated stages, either on approval (delivery) or fully automatically (deployment). Small, frequent, automated releases replace rare, manual, risky ones.",l:"CI/CD is the single highest-leverage engineering investment for delivery speed and safety together. Fund the pipeline and its test automation before funding more delivery headcount."},
+{s:"Pl",n:"Pipeline",c:"devops",d:"The automated sequence a code change travels: build, unit tests, security scans, staging deployment, further checks, and release, with each stage able to stop the change if it fails. A pipeline is the delivery process written as code: visible, repeatable and auditable.",l:"Ask to see the pipeline, not a status report, when reviewing delivery health. Lead time per stage and failure rates show exactly where work queues and where quality leaks."},
+{s:"GtO",n:"GitOps",c:"devops",d:"Operating infrastructure and applications by declaring their desired state in a Git repository and letting automation continuously converge the live environment to match it. Every change is a reviewed commit, and the repository becomes the auditable source of truth for what should be running.",l:"GitOps gives leaders something rare in infrastructure: a complete, human-readable audit trail of every change and an instant answer to 'how do we roll back?' — revert the commit."},
+{s:"IaC",n:"Infrastructure as Code",c:"devops",d:"Defining infrastructure — servers, networks, databases, permissions — in machine-readable files that are versioned, reviewed and applied by tools, instead of assembled by hand through consoles. Environments become reproducible: the same code builds development, test and production identically.",f:"The payoff relationship: manual configuration scales with effort per environment and drifts over time; code scales by copying, and drift becomes detectable because reality can be compared with the declared state.",l:"Hand-built production infrastructure ('ClickOps') is uninsurable technical debt. IaC adoption, and eliminating console changes to production, is a measurable maturity goal you can set and track."},
+{s:"Tf",n:"Terraform",c:"devops",d:"The most widely used infrastructure-as-code tool (by HashiCorp), which provisions resources across AWS, Azure, Google Cloud and hundreds of other providers from declarative configuration files. It plans changes before applying them, showing exactly what will be created, altered or destroyed.",f:"The working rhythm is three steps: write the configuration, preview it with a plan, then apply. The plan step is the control: nothing changes until a human or pipeline has seen exactly what will change.",l:"Terraform skills are a market standard, which makes hiring and training easier — factor that into tool choices. Its plan-before-apply discipline is a governance control worth mandating, whichever tool you choose."},
+{s:"CfM",n:"Configuration Management",c:"devops",d:"Tools (such as Ansible, Chef or Puppet) that define and enforce the desired state of servers themselves — installed packages, settings, users and services — repeatedly and automatically. It complements provisioning tools: one builds the machines, the other keeps their insides consistent.",l:"Configuration drift between supposedly identical servers is a classic source of 'impossible' incidents. If servers are still configured by hand, you have drift — the only question is whether you can see it."},
+{s:"ArR",n:"Artifact Repository",c:"devops",d:"A controlled store for the built outputs of your pipeline — container images, packages and libraries — with versions, metadata and security scan results. Production deploys pull approved artifacts from here, guaranteeing that what was tested is byte-for-byte what runs.",l:"The artifact repository is a supply-chain control point: signed, scanned, approved builds in; nothing else deploys. In an era of software supply-chain attacks, this is a board-relevant control, not a developer convenience."},
+{s:"SRE",n:"SRE — Site Reliability Engineering",c:"sre",d:"An engineering discipline (originated at Google) that applies software engineering to operations: reliability is treated as a feature with a measurable target and a budget, and repetitive manual work is systematically replaced by automation. SRE teams typically split time between reliability engineering and operational response.",f:"Google's rule of thumb: an SRE should spend at most 50% of time on manual operational work ('toil'); the rest goes to engineering that reduces future toil.",l:"SRE is a staffing model with a philosophy attached: reliability work competes for engineering capacity on evidence (error budgets), instead of reliability being whoever shouts loudest after an outage."},
+{s:"Obv",n:"Observability",c:"sre",d:"The ability to understand what a system is doing internally from the evidence it emits — metrics, logs and traces — including questions nobody predicted in advance. It goes beyond checking known failure conditions: it is how teams debug novel problems in distributed systems.",l:"In a microservices world, 'the system is down' is the start of the question, not the answer. Observability investment is what turns a three-hour bridge call into a twenty-minute diagnosis."},
+{s:"Mon",n:"Monitoring",c:"sre",d:"Continuously collecting and alerting on predefined indicators of system health — CPU, memory, error rates, queue lengths — against known thresholds. Monitoring answers the questions you already knew to ask and pages humans when known-bad conditions occur.",f:"Google SRE's four golden signals are the standard minimal set for a user-facing system: latency, traffic, errors and saturation. If you can only watch four things, watch these.",l:"Good monitoring alerts on user impact, not on every noisy metric. If your on-call team drowns in alerts that need no action, the monitoring is producing fatigue, which is itself a reliability risk."},
+{s:"Log",n:"Logging",c:"sre",d:"Recording timestamped events from applications and infrastructure into a searchable central store, so incidents can be reconstructed and patterns found across many machines. Structured logs (consistent fields rather than free text) are what make logs usable at scale.",l:"Log volumes grow into a real cost line and a compliance surface (logs contain personal data more often than anyone admits). Retention policy is a business decision; make it deliberately."},
+{s:"Trc",n:"Tracing",c:"sre",d:"Recording the path of a single request as it travels through many services, with the time spent in each, so bottlenecks and failures in distributed systems can be pinpointed. A trace connects the dots that individual services' logs and metrics cannot.",l:"Tracing is what makes microservices operable beyond a handful of services. If your architecture is distributed but your tracing is absent, incident diagnosis will stay guesswork."},
+{s:"SLI",n:"SLI",c:"sre",d:"Service Level Indicator: a precise quantitative measure of some aspect of service quality, always expressed as a ratio of good outcomes to total outcomes. Examples include the fraction of requests served successfully, or served within 300 milliseconds.",f:"SLI = good events / total events, over a defined window. Example: 99,950 of 100,000 requests served without error gives an availability SLI of 99.95%.",l:"Insist SLIs measure the user's experience (requests succeeding, pages loading) rather than internal machine states. A green dashboard over a service users cannot use is the classic SLI failure."},
+{s:"SLO",n:"SLO",c:"sre",d:"Service Level Objective: the internal target set for an SLI over a period, such as 99.9% of requests succeeding over 30 days. SLOs are chosen by the organisation itself, balancing user expectations against the cost of greater reliability.",f:"SLO is the target, SLI is the measurement, SLA is the contract: choose the SLO first from user needs, then never promise an SLA tighter than the SLO you can actually hold.",l:"Setting SLOs is a leadership act: it converts 'as reliable as possible' (unbounded cost) into an explicit, priced level of reliability the business chooses and can defend."},
+{s:"SLA",n:"SLA",c:"sre",d:"Service Level Agreement: the external, contractual commitment made to customers about service levels, usually with financial consequences — credits or penalties — when missed. An SLA is a promise with money attached, unlike the internal SLO that guides engineering.",f:"Availability maths worth memorising: 99.9% ('three nines') allows about 43.8 minutes of downtime a month; 99.95% allows about 21.9 minutes; 99.99% ('four nines') allows about 4.38 minutes; 99.999% allows about 26 seconds.",l:"Every additional nine costs disproportionately more than the previous one. Negotiate SLAs commercially with that curve in the room, and never let a sales commitment outrun the SLO evidence behind it."},
+{s:"ErB",n:"Error Budget",c:"sre",d:"The amount of unreliability an SLO permits over a period: if the target is 99.9% availability, the budget is the remaining 0.1% of requests that may fail. Teams may spend the budget on change and experimentation; when it is exhausted, releases slow until reliability recovers.",f:"Error budget = 100% − SLO target. At a 99.9% SLO over 30 days the budget is roughly 43.8 minutes of downtime-equivalent — a finite, spendable allowance, not an aspiration.",l:"Error budgets end the oldest argument in technology — delivery speed versus stability — with arithmetic both sides agreed in advance. If your organisation lacks them, reliability debates are running on opinion."},
+{s:"InM",n:"Incident Management",c:"sre",d:"The organised process for responding to service failures: declaring an incident, assigning a commander, coordinating responders, communicating status, and restoring service before analysing causes. Its first discipline is separation of roles: the people fixing, the person coordinating, and the person communicating are not always the same.",l:"Judge an incident process by communication quality during the event, not by its slide deck. Stakeholders forgive outages faster than silence; rehearsed status updates are a leadership practice."},
+{s:"PoM",n:"Blameless Postmortem",c:"sre",d:"A written review after an incident that reconstructs the timeline, identifies systemic contributing factors, and agrees corrective actions — explicitly without blaming individuals. The premise is that people acted reasonably with the information and systems they had, so the system is what gets fixed.",l:"Postmortems only work if the blameless part is real and enforced from the top. The moment one review becomes a hunt for a culprit, every future incident report gets quieter and less honest."},
+{s:"IAM",n:"IAM — Identity & Access",c:"security",d:"Identity and Access Management: the controls deciding who (person or machine) can do what to which cloud resources, through accounts, roles and policies. In cloud environments identity is the primary security perimeter, because networks are soft and APIs are everywhere.",f:"The governing principle is least privilege: every identity gets the minimum permissions its task needs, for the minimum time — standing broad access (permanent administrator rights) is the finding behind most major cloud breaches.",l:"Ask for two numbers regularly: how many identities hold administrator-level access, and how many access keys have not been used in 90 days. Both should be small, known and shrinking."},
+{s:"CSPM",n:"CSPM — Cloud Security Posture",c:"security",d:"Cloud Security Posture Management: tools that continuously scan cloud accounts for misconfiguration — public storage, unencrypted databases, excessive permissions, missing logging — and rank the findings by risk. They exist because cloud estates change too fast for manual review to keep up.",l:"Most cloud incidents begin as configuration mistakes, not sophisticated attacks. CSPM turns those mistakes into a visible, countable backlog; assign it an owner and a burn-down target like any other debt."},
+{s:"LdZ",n:"Landing Zone",c:"security",d:"A pre-configured, secure foundation environment into which cloud workloads are deployed: account structure, network design, logging, identity and guardrails already in place, following the provider's best practice. New teams start inside the guardrails instead of building their own from scratch.",l:"Build the landing zone before the migration wave, not during it. Retrofitting governance onto fifty accounts built ad hoc is one of the most expensive sentences in cloud programmes."},
+{s:"WAr",n:"Well-Architected Framework",c:"security",d:"The major providers' published design frameworks (AWS, Azure and Google each maintain one) assessing systems against pillars such as operational excellence, security, reliability, performance efficiency, cost optimisation and sustainability. Reviews against the framework surface risks before they become incidents.",l:"Use framework reviews as a scheduled governance rhythm for important workloads, not as audit theatre. Their value is in the remediation list and whether it actually closes."},
+{s:"CGv",n:"Cloud Governance",c:"security",d:"The policies, guardrails and accountabilities that keep a growing cloud estate secure, compliant and affordable: who may create resources, where data may live, what must be tagged, logged and encrypted. Good governance is automated into the platform (policies that prevent violations) rather than enforced by committees after the fact.",l:"Governance that lives in documents fails at cloud speed; governance that lives in the platform (policy as code) scales. Review the balance between the two in your own estate."},
+{s:"ShR",n:"Shared Responsibility Model",c:"security",d:"The division of security duties between cloud provider and customer: the provider secures the cloud itself (facilities, hardware, core network), while the customer secures what they put in it — their data, identities, configurations and applications. The dividing line moves with the service model: the more managed the service, the more the provider carries.",f:"The classic failure pattern: every major category of cloud breach — exposed storage, stolen credentials, unpatched guest systems — sits on the customer side of the line, in duties teams assumed the provider owned.",l:"Print this model and walk your top ten services through it with owners named for each duty on your side. Ambiguity about who patches, who monitors and who backs up is where cloud risk actually lives."},
+{s:"HA",n:"High Availability",c:"resilience",d:"Designing a system to remain operational despite component failures, by removing single points of failure and automating recovery, measured as the percentage of time the service is usable. Availability is achieved architecturally — redundancy across zones, health checks, automatic failover — not by hoping hardware behaves.",f:"Availability = MTBF / (MTBF + MTTR): you improve it by failing less often (higher mean time between failures) or by recovering faster (lower mean time to repair). Automation attacks the second term, usually more cheaply.",l:"Availability targets belong in commercial conversations, because each step up (say 99.9% to 99.99%) shrinks allowed monthly downtime from about 44 minutes to about 4 and costs real architecture. Price the promise."},
+{s:"DR",n:"Disaster Recovery",c:"resilience",d:"The plans, architecture and rehearsed procedures for restoring services after a major loss — a region failure, destructive attack or catastrophic error. Strategies range from restoring backups (cheap, slow) to running continuously in two regions (expensive, fast), chosen per system by business impact.",l:"A DR plan that has never been rehearsed is a hypothesis. Schedule recovery exercises like fire drills, measure actual recovery times against the plan, and let the gaps set the investment."},
+{s:"RTO",n:"RTO",c:"resilience",d:"Recovery Time Objective: the maximum acceptable time between a disaster striking and the service being usable again. It is set by business impact — how long the organisation can tolerate the system being down — and it drives how much recovery automation and standby capacity you must pay for.",f:"Read RTO in clock time: an RTO of 4 hours means users must be back within 4 hours of the incident, so detection, decision and restore must all fit inside it — the restore alone cannot take 4 hours.",l:"Set RTOs from business cost per hour of outage, per system. A uniform company-wide RTO over-insures trivia and under-insures the systems that actually carry revenue."},
+{s:"RPO",n:"RPO",c:"resilience",d:"Recovery Point Objective: the maximum acceptable amount of data loss, expressed as time — how far back to the last good copy you may have to go when restoring. An RPO of 1 hour means up to one hour of the newest transactions may be lost and must be tolerated or reconstructed.",f:"RPO is bought with backup or replication frequency: continuous replication approaches an RPO of near zero (and continuous cost), while nightly backups accept an RPO of up to 24 hours of data.",l:"RTO and RPO are the two numbers that convert 'we need good DR' into a priced design. If a system has neither number assigned by its business owner, its recovery expectations are fiction."},
+{s:"ChE",n:"Chaos Engineering",c:"resilience",d:"Deliberately injecting controlled failures into systems — killing instances, adding latency, simulating zone loss — to verify that resilience mechanisms actually work before a real incident tests them. Experiments start small, in safe conditions, with a hypothesis and an abort switch.",f:"A chaos experiment is structured like a science experiment: define the steady state, state a hypothesis ('the service stays within its SLO'), inject one failure variable, and measure whether the hypothesis survives.",l:"Chaos engineering is institutionalised honesty about resilience. It is a later-stage practice: it pays off once observability and incident response are solid enough to learn from the failures it creates."},
+{s:"FnO",n:"FinOps",c:"cost",d:"The operating discipline that brings financial accountability to cloud spending: engineering, finance and business teams jointly owning cloud costs, with costs visible per team and product and decisions made on unit economics. Its motto in practice: everyone takes ownership of what they consume.",f:"The core metric is unit cost: cloud spend divided by a business unit that matters (per order, per customer, per transaction). Total spend rising while unit cost falls is usually healthy growth, not waste.",l:"FinOps fails as a finance-only reporting exercise and works as an engineering habit: show teams their costs where they work, in near real time, and celebrate optimisation like feature delivery."},
+{s:"CCO",n:"Cloud Cost Optimisation",c:"cost",d:"The ongoing practice of matching cloud spend to actual need: rightsizing over-provisioned resources, deleting the unused, scheduling non-production systems off outside working hours, moving storage to cheaper tiers, and buying commitments for steady workloads. It is a continuous discipline because estates drift back toward waste as they change.",f:"The quick-win sequence in most estates: find idle and orphaned resources first (pure saving, zero risk), then rightsize, then schedule, then commit. Commitment discounts come last, once usage is understood.",l:"Treat the cloud bill like a P&L line with an owner per team, not a utility bill paid centrally in silence. The first optimisation pass commonly finds waste nobody believed existed."},
+{s:"RI",n:"Reserved Instances",c:"cost",d:"A commitment to use a defined amount of compute capacity for a one- or three-year term in exchange for a significantly lower hourly price than pay-as-you-go (on-demand) rates. Savings plans from some providers apply the same idea more flexibly across instance types.",f:"The trade is flexibility for price: the discount grows with term length and upfront payment, but the commitment is owed whether or not the workload still exists — buy them against proven, stable baselines, not forecasts.",l:"Commitments are a portfolio decision: aim to cover the predictable floor of usage and leave peaks on-demand. Over-commitment quietly converts cloud back into a fixed cost with worse terms."},
+{s:"SpI",n:"Spot Instances",c:"cost",d:"Spare provider capacity sold at deep discounts because the provider may reclaim it at short notice when paying customers need it. Ideal for work that can pause, resume or be redone cheaply: batch processing, rendering, testing and fault-tolerant data pipelines.",f:"The contract in one line: the cheapest compute in the cloud, with availability guaranteed for zero minutes — design the workload to checkpoint and continue after interruption.",l:"Spot is a genuine arbitrage most estates underuse. Identify the interruption-tolerant workloads (often a large share of batch and analytics) and set a target percentage for them."},
+{s:"CMg",n:"Cloud Migration",c:"cost",d:"Moving applications, data and operations from on-premises (or another cloud) to a cloud platform, including the surrounding changes to operating model, skills and cost management. A migration is a programme, not a data transfer: the workloads are the visible part, the operating model is the hard part.",l:"Migrations fail on sequencing: moving everything first and fixing the operating model later recreates the old data centre at cloud prices. Decide the target operating model early and migrate in business-value waves."},
+{s:"LnS",n:"Lift and Shift",c:"cost",d:"Migrating systems to the cloud with minimal change — the same software, moved onto cloud virtual machines (also called rehosting). It is the fastest exit from a data centre and preserves existing behaviour, including existing inefficiencies.",l:"Lift and shift is a legitimate tactic under deadline pressure, such as a data centre exit, provided the optimisation phase is funded and scheduled. Without it, you have rented the same problems at a higher hourly rate."},
+{s:"RpL",n:"Replatforming",c:"cost",d:"Migrating with targeted, limited changes to exploit cloud services without redesigning the application — for example moving a self-managed database to a managed database service, or a server fleet to a managed container platform. Sometimes called 'lift, tinker and shift'.",l:"Replatforming is usually the value sweet spot: modest effort during migration, real operational savings after it. Choose the few highest-burden components to convert, and resist converting everything."},
+{s:"RfC",n:"Refactoring",c:"cost",d:"Redesigning and substantially rewriting an application to be cloud-native — decomposed into services, using managed and serverless components, built for elasticity and resilience. It carries the highest effort and risk of the migration strategies, and the largest long-term payoff when the application justifies it.",l:"Refactor flagship products with a growth case, not the whole estate. The business case must rest on agility and scale the business will actually use, not on architectural elegance."}
+];
+const grid=document.getElementById('grid');
+const detail=document.getElementById('detail');
+const overlay=document.getElementById('overlay');
+const countEl=document.getElementById('count');
+let activeCat=null, selected=null;
+function render(){
+  grid.innerHTML='';
+  TERMS.forEach((t,i)=>{
+    const b=document.createElement('button');
+    b.className='tile'; b.type='button'; b.setAttribute('role','listitem');
+    b.style.background=CATS[t.c].color; b.dataset.cat=t.c;
+    b.dataset.search=(t.n+' '+t.s+' '+t.d+' '+CATS[t.c].name).toLowerCase();
+    b.innerHTML='<span class="no">'+(i+1)+'</span><span class="sym">'+t.s+'</span><span class="nm">'+t.n+'</span>';
+    b.addEventListener('click',()=>show(t,i,b));
+    grid.appendChild(b);
+  });
+  updateCount(TERMS.length);
+}
+function updateCount(n){countEl.textContent=n+' of '+TERMS.length+' terms shown';}
+function closeDetail(){
+  const el=selected;
+  if(selected)selected.classList.remove('selected');
+  selected=null; selectedIdx=-1;
+  detail.classList.remove('open'); overlay.classList.remove('open');
+  document.body.style.overflow='';
+  if(el && el.focus)el.focus({preventScroll:true});
+}
+let selectedIdx=-1;
+function show(t,i,el){
+  if(selectedIdx===i){closeDetail();selectedIdx=-1;return;}
+  if(selected)selected.classList.remove('selected');
+  selected=el; selectedIdx=i; if(el)el.classList.add('selected');
+  let html='<button class="zoom-close" type="button" onclick="closeDetail()" aria-label="Close">✕</button>';
+  html+='<div class="d-no">Element '+(i+1)+' of '+TERMS.length+'</div>';
+  html+='<span class="d-sym" style="background:'+CATS[t.c].color+'">'+t.s+'</span>';
+  html+='<h2>'+t.n+'</h2><div class="d-cat" style="color:'+CATS[t.c].color+'">'+CATS[t.c].name+'</div>';
+  html+='<p>'+t.d+'</p>';
+  if(t.f)html+='<div class="box formula"><b>Formula / Key fact</b>'+t.f+'</div>';
+  if(t.l)html+='<div class="box lens"><b>Leader lens</b>'+t.l+'</div>';
+  detail.innerHTML=html;
+  detail.classList.add('open'); overlay.classList.add('open');
+  document.body.style.overflow='hidden';
+}
+overlay.addEventListener('click',closeDetail);
+const legend=document.getElementById('legend');
+Object.keys(CATS).forEach(k=>{
+  const c=document.createElement('button'); c.type='button'; c.className='chip'; c.dataset.cat=k;
+  c.innerHTML='<span class="dot" style="background:'+CATS[k].color+'"></span>'+CATS[k].name;
+  c.addEventListener('click',()=>{
+    activeCat = activeCat===k ? null : k;
+    document.querySelectorAll('.chip').forEach(x=>x.classList.toggle('active',x.dataset.cat===activeCat));
+    applyFilter();
+  });
+  legend.appendChild(c);
+});
+function applyFilter(){
+  const q=document.getElementById('search').value.trim().toLowerCase();
+  let n=0;
+  document.querySelectorAll('.tile').forEach(tile=>{
+    const matchQ=!q || tile.dataset.search.includes(q);
+    const matchC=!activeCat || tile.dataset.cat===activeCat;
+    tile.classList.toggle('hidden',!matchQ);
+    tile.classList.toggle('dim',!!activeCat && !matchC && matchQ);
+    if(matchQ)n++;
+  });
+  updateCount(n);
+}
+document.getElementById('search').addEventListener('input',applyFilter);
+document.getElementById('resetBtn').addEventListener('click',()=>{
+  document.getElementById('search').value=''; activeCat=null;
+  document.querySelectorAll('.chip').forEach(x=>x.classList.remove('active')); applyFilter();
+});
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeDetail();});
+/* Theme toggle: saved choice wins, otherwise dark (the original look) */
+const themeBtn=document.getElementById('themeToggle');
+function applyTheme(th){
+  document.documentElement.setAttribute('data-theme',th);
+  themeBtn.textContent = th==='light' ? '☾' : '☀';
+  try{localStorage.setItem('cloud_devops_theme',th);}catch(e){}
+}
+let savedTheme='dark';
+try{savedTheme=localStorage.getItem('cloud_devops_theme')||'dark';}catch(e){}
+applyTheme(savedTheme==='light'?'light':'dark');
+themeBtn.addEventListener('click',()=>{
+  const cur=document.documentElement.getAttribute('data-theme')==='light'?'light':'dark';
+  applyTheme(cur==='light'?'dark':'light');
+});
+render();
+</script>
+</body>
+</html>
