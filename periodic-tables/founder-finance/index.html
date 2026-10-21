@@ -64,6 +64,41 @@
   .big{font-size:19px;font-weight:800;color:#fff;margin:6px 0}
   footer{max-width:1280px;margin:0 auto;padding:10px 16px 38px;color:var(--muted);font-size:12.5px;line-height:1.6;text-align:center}
   #overlay{display:none}
+  /* Theme toggle + sticky legend + back button (added Oct 21) */
+  header{position:relative}
+  .theme-toggle{position:absolute;top:16px;right:16px;width:44px;height:44px;border-radius:50%;border:1px solid var(--line);background:var(--panel2);color:#fbbf24;font-size:19px;cursor:pointer;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 14px rgba(0,0,0,.35)}
+  .theme-toggle:hover{transform:scale(1.08)}
+  #legend{flex-wrap:nowrap;overflow-x:auto;justify-content:flex-start;padding:10px 2px 3px;scrollbar-width:thin}
+  .chip{white-space:nowrap;flex:0 0 auto}
+  .backbtn{display:inline-flex;align-items:center;gap:6px;padding:9px 14px;border-radius:999px;border:1px solid var(--line);background:var(--panel2);color:var(--ink);font-size:13.5px;font-weight:700;cursor:pointer;margin-bottom:14px}
+  .backbtn:hover{border-color:#38bdf8}
+  #detail{top:168px}
+  /* Light theme */
+  html[data-theme="light"] body{background:radial-gradient(1200px 600px at 20% -10%,#e8eefc 0%,#FAF9F6 55%);color:#17293f}
+  html[data-theme="light"] h1{color:#0b213f}
+  html[data-theme="light"] .sub{color:#4d6482}
+  html[data-theme="light"] .principle{background:#fff8e1;border-color:#e5c15c;color:#6b5510}
+  html[data-theme="light"] .toolbar{background:rgba(250,249,246,.95);border-color:#ddd5c0}
+  html[data-theme="light"] #search{background:#fff;color:#17293f;border-color:#cfd8e3}
+  html[data-theme="light"] .btn{background:#fff;color:#17293f;border-color:#cfd8e3}
+  html[data-theme="light"] .chip{background:#fff;color:#17293f;border-color:#cfd8e3}
+  html[data-theme="light"] .chip.active{outline-color:#0b213f}
+  html[data-theme="light"] .count{color:#5a6f88}
+  html[data-theme="light"] #detail{background:#fff;border-color:#e0d9c6}
+  html[data-theme="light"] #detail p{color:#33475e}
+  html[data-theme="light"] #detail .d-no{color:#5a6f88}
+  html[data-theme="light"] #detail h2{color:#0b213f}
+  html[data-theme="light"] #detail .formula{background:#e8f4fd;border-color:#9fd0f5;color:#124d75}
+  html[data-theme="light"] #detail .lens{background:#fff8e1;border-color:#e5c15c;color:#6b5510}
+  html[data-theme="light"] .backbtn{background:#eef3fa;color:#17293f;border-color:#cfd8e3}
+  html[data-theme="light"] .hint{color:#5a6f88}
+  html[data-theme="light"] .card{background:#fff;border-color:#e0d9c6}
+  html[data-theme="light"] .card p,html[data-theme="light"] .card li{color:#33475e}
+  html[data-theme="light"] section.below h3{color:#0b213f}
+  html[data-theme="light"] .example{background:linear-gradient(135deg,#fff8e1,#fdf3d0);border-color:#e5c15c}
+  html[data-theme="light"] .example .big{color:#17293f}
+  html[data-theme="light"] footer{color:#5a6f88}
+  html[data-theme="light"] .theme-toggle{background:#fff;color:#d97706;border-color:#cfd8e3}
   @media(max-width:900px){
     main{grid-template-columns:1fr}
     #detail{position:fixed;inset:auto 0 0 0;z-index:60;border-radius:18px 18px 0 0;max-height:72vh;overflow:auto;transform:translateY(105%);transition:transform .25s ease;box-shadow:0 -12px 40px rgba(0,0,0,.6)}
@@ -77,7 +112,8 @@
 </head>
 <body>
 <header>
-  <div style="text-align:left;max-width:1200px;margin:0 auto 14px"><a href="../../" style="color:#9db4d4;text-decoration:none;font-size:13.5px;font-weight:600">← Back to The Signal</a></div>
+  <div style="text-align:left;max-width:1200px;margin:0 auto 14px"><a href="../../" style="color:inherit;opacity:.75;text-decoration:none;font-size:13.5px;font-weight:600">← Back to The Signal</a></div>
+  <button class="theme-toggle" id="themeToggle" type="button" aria-label="Switch light or dark theme" title="Switch light / dark theme">☀</button>
   <div class="kicker">The Founder Finance Periodic Table</div>
   <h1>Financial Terms Every <span>Startup Founder</span> Should Know</h1>
   <p class="sub">154 essential terms from the founder's guide, arranged like the periodic table. Each colour is a financial world. Hover to explore, click any element to learn what it means, why it matters, and how it is calculated.</p>
@@ -90,8 +126,8 @@
     <span class="count" id="count"></span>
     <button class="btn" id="resetBtn" type="button">Show all</button>
   </div>
+  <div id="legend" aria-label="Category filter"></div>
 </div>
-<div id="legend" aria-label="Category filter"></div>
 
 <main>
   <div id="grid" role="list"></div>
@@ -361,10 +397,20 @@ function render(){
   updateCount(TERMS.length);
 }
 function updateCount(n){countEl.textContent=n+' of '+TERMS.length+' terms shown';}
-function show(t,i,el){
+const DEFAULT_DETAIL=detail.innerHTML;
+function closeDetail(){
   if(selected)selected.classList.remove('selected');
-  selected=el; if(el)el.classList.add('selected');
-  let html='<div class="d-no">Element '+(i+1)+' of '+TERMS.length+'</div>';
+  selected=null; selectedIdx=-1;
+  detail.classList.remove('open'); overlay.classList.remove('open');
+  if(window.innerWidth>900)detail.innerHTML=DEFAULT_DETAIL;
+}
+let selectedIdx=-1;
+function show(t,i,el){
+  if(selectedIdx===i){closeDetail();selectedIdx=-1;return;}
+  if(selected)selected.classList.remove('selected');
+  selected=el; selectedIdx=i; if(el)el.classList.add('selected');
+  let html='<button class="backbtn" type="button" onclick="closeDetail()">← Back to table</button>';
+  html+='<div class="d-no">Element '+(i+1)+' of '+TERMS.length+'</div>';
   html+='<span class="d-sym" style="background:'+CATS[t.c].color+'">'+t.s+'</span>';
   html+='<h2>'+t.n+'</h2><div class="d-cat" style="color:'+CATS[t.c].color+'">'+CATS[t.c].name+'</div>';
   html+='<p>'+t.d+'</p>';
@@ -373,7 +419,7 @@ function show(t,i,el){
   detail.innerHTML=html;
   detail.classList.add('open'); overlay.classList.add('open');
 }
-overlay.addEventListener('click',()=>{detail.classList.remove('open');overlay.classList.remove('open');});
+overlay.addEventListener('click',closeDetail);
 const legend=document.getElementById('legend');
 Object.keys(CATS).forEach(k=>{
   const c=document.createElement('button'); c.type='button'; c.className='chip'; c.dataset.cat=k;
@@ -402,7 +448,21 @@ document.getElementById('resetBtn').addEventListener('click',()=>{
   document.getElementById('search').value=''; activeCat=null;
   document.querySelectorAll('.chip').forEach(x=>x.classList.remove('active')); applyFilter();
 });
-document.addEventListener('keydown',e=>{if(e.key==='Escape'){detail.classList.remove('open');overlay.classList.remove('open');}});
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeDetail();});
+/* Theme toggle: saved choice wins, otherwise dark (the original look) */
+const themeBtn=document.getElementById('themeToggle');
+function applyTheme(th){
+  document.documentElement.setAttribute('data-theme',th);
+  themeBtn.textContent = th==='light' ? '☾' : '☀';
+  try{localStorage.setItem('founder_table_theme',th);}catch(e){}
+}
+let savedTheme='dark';
+try{savedTheme=localStorage.getItem('founder_table_theme')||'dark';}catch(e){}
+applyTheme(savedTheme==='light'?'light':'dark');
+themeBtn.addEventListener('click',()=>{
+  const cur=document.documentElement.getAttribute('data-theme')==='light'?'light':'dark';
+  applyTheme(cur==='light'?'dark':'light');
+});
 render();
 </script>
 </body>
