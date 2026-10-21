@@ -615,8 +615,28 @@ document.querySelectorAll("[data-door-btn]").forEach(btn => {
     else { body.hidden = true; btn.setAttribute("aria-expanded", "false"); }
   });
 });
+/* Family sub-doors inside the Tables door (Oct 21 2026): one open at a time,
+   all closed by default; deep links open the family they name. */
+const FAM_OF = { "learn-tables-founders": "founders", "learn-tables-quantum": "quantum", "learn-tables-ai": "ai", "learn-tables-cloud": "cloud", "learn-tables-cyber": "cyber" };
+function openFamDoor(name) {
+  document.querySelectorAll(".fam-door").forEach(d => {
+    const open = d.dataset.famdoor === name;
+    d.querySelector(".fam-door-body").hidden = !open;
+    d.querySelector(".fam-door-head").setAttribute("aria-expanded", String(open));
+  });
+  requestAnimationFrame(() => document.querySelectorAll(".rail-wrap").forEach(refreshRail));
+}
+document.querySelectorAll("[data-fam-btn]").forEach(btn => {
+  btn.addEventListener("click", () => {
+    const door = btn.closest(".fam-door");
+    const body = door.querySelector(".fam-door-body");
+    if (body.hidden) openFamDoor(door.dataset.famdoor);
+    else { body.hidden = true; btn.setAttribute("aria-expanded", "false"); }
+  });
+});
 function scrollToLearnId(id) {
   openDoorForTarget(id);
+  if (FAM_OF[id]) openFamDoor(FAM_OF[id]);
   requestAnimationFrame(() => requestAnimationFrame(() => {
     const el = document.getElementById(id);
     if (el) el.scrollIntoView({ block: "start" });
