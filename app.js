@@ -19,6 +19,7 @@ const feedEl = document.getElementById("feed");
 const learnViewEl = document.getElementById("learn-view");
 const podcastViewEl = document.getElementById("podcast-view");
 const researchViewEl = document.getElementById("research-view");
+const homeViewEl = document.getElementById("home-view");
 const researchGridEl = document.getElementById("researchGrid");
 const researchArticleEl = document.getElementById("researchArticle");
 let researchItems = [];
@@ -106,6 +107,7 @@ async function loadViews() {
 /* ---------- Views: feed / learn / podcast ---------- */
 function showView(name) {
   document.body.dataset.view = name;
+  homeViewEl.hidden = name !== "home";
   feedEl.hidden = name !== "feed";
   learnViewEl.hidden = name !== "learn";
   podcastViewEl.hidden = name !== "podcast";
@@ -216,6 +218,7 @@ async function loadResearch() {
     console.error("Failed to load research.json", err);
   }
   renderResearch();
+  fillHomeArticles();
 }
 
 function renderResearch() {
@@ -435,6 +438,7 @@ async function loadData() {
     allArticles = data.articles || [];
     renderSources();
     renderFeed();
+    fillHomeWire();
     if (!podcastViewEl.hidden) renderPodcast();
 
     if (data.generated_at) {
@@ -548,3 +552,98 @@ function openLearnTarget() {
 }
 openLearnTarget();
 window.addEventListener("hashchange", openLearnTarget);
+
+/* ---------- Home view: auto-rails, live counts (Oct 21 2026 redesign) ---------- */
+(function initHome() {
+  var reduce = false;
+  try { reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches; } catch (e) {}
+
+  ["hmTickerTrack", "hmWeekTrack"].forEach(function (id) {
+    var t = document.getElementById(id);
+    if (t) t.innerHTML += t.innerHTML;
+  });
+
+  document.querySelectorAll("[data-goto]").forEach(function (btn) {
+    btn.addEventListener("click", function () {
+      showView(btn.getAttribute("data-goto"));
+      window.scrollTo({ top: 0 });
+    });
+  });
+
+  document.querySelectorAll("[data-hm-rail]").forEach(function (rail) {
+    var track = rail.querySelector(".hm-rtrack");
+    var items = track.children.length;
+    var dotsBox = rail.querySelector(".hm-dots");
+    var count = rail.querySelector(".hm-count");
+    var idx = 0, timer = null;
+    for (var i = 0; i < items; i++) {
+      var b = document.createElement("button");
+      b.type = "button";
+      b.setAttribute("aria-label", "Go to item " + (i + 1));
+      (function (n) { b.addEventListener("click", function () { go(n); restart(); }); })(i);
+      dotsBox.appendChild(b);
+    }
+    function render() {
+      track.style.transform = "translateX(" + (-idx * 100) + "%)";
+      count.textContent = (idx + 1) + " / " + items;
+      Array.prototype.forEach.call(dotsBox.children, function (d, j) { d.classList.toggle("on", j === idx); });
+    }
+    function go(n) { idx = (n + items) % items; render(); }
+    function start() { if (!reduce && !timer) timer = setInterval(function () { if (rail.offsetParent !== null && !document.hidden) go(idx + 1); }, 4200); }
+    function stop() { if (timer) { clearInterval(timer); timer = null; } }
+    function restart() { stop(); start(); }
+    rail.querySelector("[data-hm-prev]").addEventListener("click", function () { go(idx - 1); restart(); });
+    rail.querySelector("[data-hm-next]").addEventListener("click", function () { go(idx + 1); restart(); });
+    rail.addEventListener("pointerenter", stop);
+    rail.addEventListener("pointerleave", start);
+    rail.addEventListener("focusin", stop);
+    rail.addEventListener("focusout", start);
+    render(); start();
+  });
+
+  var bars = document.querySelectorAll(".hm-bar i[data-hm-fill]");
+  if ("IntersectionObserver" in window) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) { e.target.style.width = e.target.getAttribute("data-hm-fill") + "%"; io.unobserve(e.target); }
+      });
+    }, { threshold: .4 });
+    bars.forEach(function (el) { io.observe(el); });
+  } else {
+    bars.forEach(function (el) { el.style.width = el.getAttribute("data-hm-fill") + "%"; });
+  }
+})();
+
+function hmFmtDate(iso) {
+  var d = new Date(String(iso || "") + "T00:00:00");
+  if (isNaN(d)) return String(iso || "");
+  return d.toLocaleDateString("en-GB", { day: "numeric", month: "short", year: "numeric" });
+}
+
+function fillHomeWire() {
+  if (!allArticles.length) return;
+  document.querySelectorAll("[data-hm-wire-count]").forEach(function (el) { el.textContent = allArticles.length; });
+  var own = /Technology Learnings|Daily AI Intelligence|Quantum Intelligence|Tech Learning/i;
+  var ext = allArticles.filter(function (a) { return !own.test(String(a.source || "")); });
+  document.querySelectorAll("[data-hm-wire]").forEach(function (slot, i) {
+    var a = ext[i];
+    if (!a) return;
+    slot.querySelector(".hm-meta").textContent = "On the wire · " + (a.source || "");
+    slot.querySelector("h4").textContent = a.title || "";
+    var chip = slot.querySelector(".hm-chip");
+    if (chip) chip.textContent = "Source · " + (a.source || "");
+  });
+}
+
+function fillHomeArticles() {
+  if (!researchItems.length) return;
+  document.querySelectorAll("[data-hm-art-count]").forEach(function (el) { el.textContent = researchItems.length; });
+  document.querySelectorAll("[data-hm-art]").forEach(function (slot, i) {
+    var a = researchItems[i];
+    if (!a) return;
+    slot.querySelector(".hm-meta").textContent = (a.kind || "") + " · " + hmFmtDate(a.date);
+    slot.querySelector("h4").textContent = a.title || "";
+    var chip = slot.querySelector(".hm-chip");
+    if (chip) chip.textContent = "Edition " + String(researchItems.length - i).padStart(2, "0");
+  });
+}
