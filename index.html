@@ -16,7 +16,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,800;1,9..144,500;1,9..144,600&family=Inter:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css?v=20261021p">
+<link rel="stylesheet" href="style.css?v=20261021q">
 </head>
 <body data-view="home">
 
@@ -43,14 +43,6 @@
 
 <div class="layout">
   <aside class="panel">
-    <div class="panel-block feed-only">
-      <button class="sources-header" id="sourcesToggle" aria-expanded="false" aria-controls="sourceList">
-        <span>Sources&nbsp;<span class="count" id="sourcesCount"></span></span>
-        <span class="chevron" aria-hidden="true"></span>
-      </button>
-      <ul class="source-list is-collapsed" id="sourceList"><!-- populated by app.js --></ul>
-    </div>
-
     <div class="panel-block">
       <p class="panel-label">Follow</p>
       <a class="follow-link" href="https://www.linkedin.com/showcase/qu-bits/" target="_blank" rel="noopener"><span class="li-badge" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.55V9h3.57v11.45z"/></svg></span><span class="fl-name">QuBits - Quantum &amp; AI</span><span class="fl-arrow" aria-hidden="true">↗</span></a>
@@ -190,6 +182,13 @@
           <button class="cat-btn" data-category="__bookmarked">★ Saved</button>
         </div>
       </div>
+    </div>
+    <div class="ft-sources">
+      <button class="sources-header" id="sourcesToggle" aria-expanded="false" aria-controls="sourceList">
+        <span>Sources&nbsp;<span class="count" id="sourcesCount"></span></span>
+        <span class="chevron" aria-hidden="true"></span>
+      </button>
+      <ul class="source-list is-collapsed" id="sourceList"><!-- populated by app.js --></ul>
     </div>
     <p class="ft-tip">Two things you can do on every story: tap <b>★</b> to save it and find it later under ★ Saved, and tap <b>⧉</b> to copy the story link so you can paste it anywhere.</p>
   </section>

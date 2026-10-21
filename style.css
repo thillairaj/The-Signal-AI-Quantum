@@ -896,3 +896,14 @@ body[data-view="research"] .feed-only { display: none; }
 .cache-tip { background: #FBF3E2; border: 1px solid #E2CD9B; border-radius: 14px; padding: 13px 15px; }
 .cache-tip p { color: #4A3D14; font-size: 12.5px; line-height: 1.55; margin: 0; }
 .cache-tip .cache-tip-label { font-family: var(--font-display); font-weight: 700; font-size: 14.5px; color: #0B1F3B; margin: 0 0 5px; }
+
+/* Sources inside the feed tools card: a collapsible chip row (Thillai, Oct 21 2026) */
+.ft-sources { margin-top: 12px; padding-top: 10px; border-top: 1px dashed var(--border); }
+.feed-tools .sources-header { font-family: var(--font-mono); font-size: 11px; letter-spacing: .14em; text-transform: uppercase; color: var(--ink); cursor: pointer; padding: 2px 0; }
+.feed-tools .source-list { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 10px; }
+.feed-tools .source-list.is-collapsed { display: none; }
+.feed-tools .source-list li { margin: 0; }
+.feed-tools .source-toggle { display: inline-flex; align-items: center; gap: 6px; width: auto; padding: .38rem .7rem; border: 1px solid var(--border); border-radius: 999px; background: var(--bg); font-size: 12px; color: var(--muted); cursor: pointer; }
+.feed-tools .source-toggle:hover { border-color: #B8860B; color: var(--ink); }
+.feed-tools .source-toggle.active { background: #0B1F3B; border-color: #0B1F3B; color: #F7F2E4; }
+.feed-tools .source-toggle .count { opacity: .75; font-size: 11px; }
