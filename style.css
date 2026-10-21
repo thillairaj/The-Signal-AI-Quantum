@@ -824,3 +824,21 @@ body[data-view="research"] .feed-only { display: none; }
   .hm-ticker-track, .hm-week-track { animation: none; }
   .hm-rtrack { transition: none; }
 }
+
+/* ---------- Learning Spaces: three doors (Thillai, Oct 21 2026) ---------- */
+.learn-door { border: 1px solid var(--border); border-radius: 18px; background: var(--bg); margin-bottom: 14px; overflow: hidden; scroll-margin-top: 12px; box-shadow: 0 1px 2px rgba(20,24,15,.05),0 10px 30px rgba(20,24,15,.05); }
+.learn-door-head { display: flex; align-items: center; gap: 12px; width: 100%; padding: 14px 18px; background: var(--surface); border: none; cursor: pointer; font: inherit; text-align: left; color: var(--ink); }
+.learn-door-head:hover { background: var(--border); }
+.learn-door-no { font-family: var(--font-display); font-weight: 800; font-size: 26px; line-height: 1; color: #B8860B; }
+.learn-door-name { font-family: var(--font-display); font-weight: 800; font-size: 20px; }
+.learn-door-count { margin-left: auto; color: var(--muted); font-size: 13px; text-align: right; }
+.learn-door-chev { color: #B8860B; font-size: 15px; transition: transform .25s ease; flex: 0 0 auto; }
+.learn-door-head[aria-expanded="false"] .learn-door-chev { transform: rotate(-90deg); }
+.learn-door-body { padding: 14px 16px 6px; }
+.learn-door-body[hidden] { display: none; }
+
+/* Home rail items are links (Thillai, Oct 21 2026) */
+.hm-ritem[data-goto], .hm-ritem[data-ext] { cursor: pointer; }
+.hm-ritem[data-goto]:hover, .hm-ritem[data-ext]:hover { background: rgba(184,134,11,.06); }
+.hm-ritem[data-goto]:hover h4, .hm-ritem[data-ext]:hover h4 { text-decoration: underline; text-decoration-color: #B8860B; text-underline-offset: 3px; }
+.hm-ritem[data-goto]:focus-visible, .hm-ritem[data-ext]:focus-visible { outline: 2px solid #B8860B; outline-offset: -2px; }

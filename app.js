@@ -540,16 +540,39 @@ setInterval(updateStatusText, TICK_MS);
 /* Deep link: standalone pages link back to a specific part of the Learning Spaces view
    ("Back to Learning Spaces" -> index.html#learn-tables-quantum etc., Thillai, Oct 21 2026). */
 const LEARN_TARGETS = ["learn-videos", "learn-decks", "learn-tables", "learn-tables-founders", "learn-tables-quantum", "learn-tables-ai", "learn-tables-cloud", "learn-tables-cyber"];
+/* Learning Spaces doors (Oct 21 2026): three groups, one open at a time. */
+const DOOR_OF = { "learn-videos": "videos", "learn-decks": "decks", "learn-tables": "tables", "learn-tables-founders": "tables", "learn-tables-quantum": "tables", "learn-tables-ai": "tables", "learn-tables-cloud": "tables", "learn-tables-cyber": "tables" };
+function openDoor(name) {
+  document.querySelectorAll(".learn-door").forEach(d => {
+    const open = d.dataset.door === name;
+    d.querySelector(".learn-door-body").hidden = !open;
+    d.querySelector(".learn-door-head").setAttribute("aria-expanded", String(open));
+  });
+  requestAnimationFrame(() => document.querySelectorAll(".rail-wrap").forEach(refreshRail));
+}
+function openDoorForTarget(id) { const n = DOOR_OF[id]; if (n) openDoor(n); }
+document.querySelectorAll("[data-door-btn]").forEach(btn => {
+  btn.addEventListener("click", () => {
+    const door = btn.closest(".learn-door");
+    const body = door.querySelector(".learn-door-body");
+    if (body.hidden) openDoor(door.dataset.door);
+    else { body.hidden = true; btn.setAttribute("aria-expanded", "false"); }
+  });
+});
+function scrollToLearnId(id) {
+  openDoorForTarget(id);
+  requestAnimationFrame(() => requestAnimationFrame(() => {
+    const el = document.getElementById(id);
+    if (el) el.scrollIntoView({ block: "start" });
+  }));
+}
 function openLearnTarget() {
   const h = location.hash;
   if (h === "#learn") { showView("learn"); return; }
   const id = h.startsWith("#") ? h.slice(1) : "";
   if (LEARN_TARGETS.includes(id)) {
     showView("learn");
-    requestAnimationFrame(() => {
-      const el = document.getElementById(id);
-      if (el) el.scrollIntoView({ block: "start" });
-    });
+    scrollToLearnId(id);
   }
 }
 openLearnTarget();
@@ -568,10 +591,31 @@ window.addEventListener("hashchange", openLearnTarget);
   var brand = document.querySelector(".brand-h");
   if (brand) brand.addEventListener("click", function () { showView("home"); window.scrollTo({ top: 0 }); });
 
-  document.querySelectorAll("[data-goto]").forEach(function (btn) {
+  document.querySelectorAll(".hm-go[data-goto]").forEach(function (btn) {
     btn.addEventListener("click", function () {
-      showView(btn.getAttribute("data-goto"));
+      var view = btn.getAttribute("data-goto");
+      if (view === "podcast") { activeSeries = ""; podcastPage = 0; }
+      if (view === "research") { openResearchId = null; }
+      showView(view);
       window.scrollTo({ top: 0 });
+    });
+  });
+
+  /* Rail items are links: each rotating card navigates to what it shows. */
+  document.querySelectorAll(".hm-ritem[data-goto], .hm-ritem[data-ext]").forEach(function (item) {
+    item.setAttribute("tabindex", "0");
+    function nav() {
+      if (item.dataset.ext) { window.open(item.dataset.ext, "_blank", "noopener"); return; }
+      var view = item.dataset.goto;
+      if (view === "podcast") { activeSeries = item.dataset.series || ""; podcastPage = 0; }
+      if (view === "research") { openResearchId = item.dataset.artId || null; }
+      showView(view);
+      if (view === "learn" && item.dataset.scroll) scrollToLearnId(item.dataset.scroll);
+      else window.scrollTo({ top: 0 });
+    }
+    item.addEventListener("click", nav);
+    item.addEventListener("keydown", function (e) {
+      if (e.key === "Enter" || e.key === " ") { e.preventDefault(); nav(); }
     });
   });
 
@@ -636,6 +680,7 @@ function fillHomeWire() {
     slot.querySelector("h4").textContent = a.title || "";
     var chip = slot.querySelector(".hm-chip");
     if (chip) chip.textContent = "Source · " + (a.source || "");
+    if (a.link) slot.dataset.ext = a.link;
   });
 }
 
@@ -649,5 +694,6 @@ function fillHomeArticles() {
     slot.querySelector("h4").textContent = a.title || "";
     var chip = slot.querySelector(".hm-chip");
     if (chip) chip.textContent = "Edition " + String(researchItems.length - i).padStart(2, "0");
+    if (a.id) slot.dataset.artId = a.id;
   });
 }
