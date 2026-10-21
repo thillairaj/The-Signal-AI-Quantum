@@ -64,6 +64,7 @@
   .big{font-size:19px;font-weight:800;color:#fff;margin:6px 0}
   footer{max-width:1280px;margin:0 auto;padding:10px 16px 38px;color:var(--muted);font-size:12.5px;line-height:1.6;text-align:center}
   #overlay{display:none}
+  /* placeholder, zoom view styles are at the end of this stylesheet */
   /* Theme toggle + sticky legend + back button (added Oct 21) */
   header{position:relative}
   .theme-toggle{position:absolute;top:16px;right:16px;width:44px;height:44px;border-radius:50%;border:1px solid var(--line);background:var(--panel2);color:#fbbf24;font-size:19px;cursor:pointer;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 14px rgba(0,0,0,.35)}
@@ -108,6 +109,16 @@
     #grid{grid-template-columns:repeat(auto-fill,minmax(82px,1fr))}
     .tile{min-height:86px}.tile .sym{font-size:20px}
   }
+  /* Zoom reading view — same pattern as the Quantum / AI Deck cards (Oct 21) */
+  main{grid-template-columns:1fr}
+  #overlay{display:block;position:fixed;inset:0;background:rgba(3,10,20,.62);z-index:55;opacity:0;pointer-events:none;transition:opacity .22s ease}
+  #overlay.open{opacity:1;pointer-events:auto}
+  #detail{position:fixed;top:50%;left:50%;right:auto;bottom:auto;width:min(560px,92vw);max-width:92vw;max-height:86vh;overflow:auto;z-index:60;border-radius:18px;padding:26px;opacity:0;pointer-events:none;transform:translate(-50%,-47%) scale(.88);transition:transform .24s ease,opacity .24s ease;box-shadow:0 30px 80px rgba(0,0,0,.55)}
+  #detail.open{opacity:1;pointer-events:auto;transform:translate(-50%,-50%) scale(1)}
+  .zoom-close{position:absolute;top:12px;right:12px;width:38px;height:38px;border-radius:50%;border:1px solid var(--line);background:var(--panel2);color:var(--ink);font-size:15px;cursor:pointer;display:flex;align-items:center;justify-content:center;z-index:2}
+  .zoom-close:hover{border-color:#38bdf8;transform:scale(1.08)}
+  html[data-theme="light"] .zoom-close{background:#eef3fa;color:#17293f;border-color:#cfd8e3}
+  @media(max-width:900px){#detail{padding:22px 18px}}
 </style>
 </head>
 <body>
@@ -397,19 +408,20 @@ function render(){
   updateCount(TERMS.length);
 }
 function updateCount(n){countEl.textContent=n+' of '+TERMS.length+' terms shown';}
-const DEFAULT_DETAIL=detail.innerHTML;
 function closeDetail(){
+  const el=selected;
   if(selected)selected.classList.remove('selected');
   selected=null; selectedIdx=-1;
   detail.classList.remove('open'); overlay.classList.remove('open');
-  if(window.innerWidth>900)detail.innerHTML=DEFAULT_DETAIL;
+  document.body.style.overflow='';
+  if(el && el.focus)el.focus({preventScroll:true});
 }
 let selectedIdx=-1;
 function show(t,i,el){
   if(selectedIdx===i){closeDetail();selectedIdx=-1;return;}
   if(selected)selected.classList.remove('selected');
   selected=el; selectedIdx=i; if(el)el.classList.add('selected');
-  let html='<button class="backbtn" type="button" onclick="closeDetail()">← Back to table</button>';
+  let html='<button class="zoom-close" type="button" onclick="closeDetail()" aria-label="Close">✕</button>';
   html+='<div class="d-no">Element '+(i+1)+' of '+TERMS.length+'</div>';
   html+='<span class="d-sym" style="background:'+CATS[t.c].color+'">'+t.s+'</span>';
   html+='<h2>'+t.n+'</h2><div class="d-cat" style="color:'+CATS[t.c].color+'">'+CATS[t.c].name+'</div>';
@@ -418,6 +430,7 @@ function show(t,i,el){
   if(t.l)html+='<div class="box lens"><b>Founder lens</b>'+t.l+'</div>';
   detail.innerHTML=html;
   detail.classList.add('open'); overlay.classList.add('open');
+  document.body.style.overflow='hidden';
 }
 overlay.addEventListener('click',closeDetail);
 const legend=document.getElementById('legend');
