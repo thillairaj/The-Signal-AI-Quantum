@@ -16,7 +16,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,800;1,9..144,500;1,9..144,600&family=Inter:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css?v=20261021k">
+<link rel="stylesheet" href="style.css?v=20261021l">
 </head>
 <body data-view="home">
 
@@ -433,6 +433,10 @@
       <h2>Podcasts</h2>
       <p>Daily AI Intelligence, the Tech Learning series and Quantum Intelligence — listen right here.</p>
       <div class="series-toggle" id="podcastSeries"><!-- populated by app.js --></div>
+      <div class="track-row" id="podcastTracks" hidden>
+        <span class="track-label">Track</span>
+        <div class="rail-wrap track-wrap"><button class="rail-btn prev" type="button" aria-label="Previous tracks">‹</button><div class="track-rail" id="trackRail"><!-- populated by app.js --></div><button class="rail-btn next" type="button" aria-label="Next tracks">›</button></div>
+      </div>
       <input type="search" id="podcastSearch" class="podcast-search" placeholder="Search episodes… (e.g. cloud)" autocomplete="off" aria-label="Search podcast episodes">
     </div>
     <div id="podcast-featured"></div>
@@ -455,6 +459,6 @@
 </footer>
 
 <script data-goatcounter="https://trttech.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
-<script src="app.js?v=20261021k"></script>
+<script src="app.js?v=20261021l"></script>
 </body>
 </html>

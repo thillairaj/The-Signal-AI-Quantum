@@ -842,3 +842,14 @@ body[data-view="research"] .feed-only { display: none; }
 .hm-ritem[data-goto]:hover, .hm-ritem[data-ext]:hover { background: rgba(184,134,11,.06); }
 .hm-ritem[data-goto]:hover h4, .hm-ritem[data-ext]:hover h4 { text-decoration: underline; text-decoration-color: #B8860B; text-underline-offset: 3px; }
 .hm-ritem[data-goto]:focus-visible, .hm-ritem[data-ext]:focus-visible { outline: 2px solid #B8860B; outline-offset: -2px; }
+
+/* Podcast track sub-tabs (Thillai, Oct 21 2026): a pill rail under the series row,
+   arrows appear only when the row overflows (more tracks in future). */
+.track-row { display: flex; align-items: center; gap: 0.7rem; margin-top: 0.7rem; }
+.track-row[hidden] { display: none; }
+.track-label { font-family: var(--font-mono); font-size: 0.7rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); flex: 0 0 auto; }
+.track-wrap { display: flex; align-items: center; gap: 6px; flex: 1; min-width: 0; }
+.track-rail { display: flex; gap: 0.4rem; overflow-x: auto; scrollbar-width: none; flex: 1; min-width: 0; padding: 2px; scroll-behavior: smooth; }
+.track-rail::-webkit-scrollbar { display: none; }
+.track-btn { white-space: nowrap; flex: 0 0 auto; }
+.track-wrap .rail-btn { position: static; transform: none; width: 30px; height: 30px; font-size: 18px; flex: 0 0 auto; padding: 0 0 2px; }

@@ -27,7 +27,10 @@ let openResearchId = null;
 const topTabsEl = document.getElementById("topTabs");
 const podcastFeaturedEl = document.getElementById("podcast-featured");
 const podcastListEl = document.getElementById("podcast-list");
+const podcastTracksEl = document.getElementById("podcastTracks");
+const trackRailEl = document.getElementById("trackRail");
 let activeSeries = "";
+let activeTrack = "";
 let podcastQuery = "";
 let podcastPage = 0;
 const POD_PAGE_SIZE = 10;
@@ -128,6 +131,46 @@ function fmtDur(s) {
   return Math.floor(s / 60) + ":" + String(s % 60).padStart(2, "0");
 }
 
+/* Tech Learning tracks (Oct 21 2026): the track is named in the episode title
+   ("Tech Learning: <Track> — Ep N"); the first four episodes predate that format
+   and are all Infrastructure. New tracks in future titles appear automatically. */
+const TRACK_ORDER = ["IT Infrastructure & Cloud", "Cybersecurity & SOC", "Data Engineering & Analytics"];
+function episodeTrack(a) {
+  const t = String(a.title || "");
+  const m = t.match(/^Tech Learning:\s*(.+?)\s*—\s*Ep\s*\d+/);
+  if (m) return m[1].trim();
+  if (/^Tech Learning Series\s*—\s*Ep\s*\d+/.test(t)) return "IT Infrastructure & Cloud";
+  return "";
+}
+function refreshTrackRail() {
+  if (!podcastTracksEl || !trackRailEl) return;
+  const wrap = podcastTracksEl.querySelector(".track-wrap");
+  const max = trackRailEl.scrollWidth - trackRailEl.clientWidth;
+  wrap.classList.toggle("no-overflow", max <= 2);
+  const prev = wrap.querySelector(".rail-btn.prev");
+  const next = wrap.querySelector(".rail-btn.next");
+  if (prev) prev.disabled = trackRailEl.scrollLeft <= 2;
+  if (next) next.disabled = trackRailEl.scrollLeft >= max - 2;
+}
+function renderTracks(eps) {
+  if (activeSeries !== "Technology Learnings") { podcastTracksEl.hidden = true; return; }
+  const seriesEps = eps.filter(e => e.source === "Technology Learnings");
+  const counts = {};
+  seriesEps.forEach(e => { const t = episodeTrack(e); if (t) counts[t] = (counts[t] || 0) + 1; });
+  const names = Object.keys(counts).sort((a, b) => {
+    const ia = TRACK_ORDER.indexOf(a), ib = TRACK_ORDER.indexOf(b);
+    return (ia === -1 ? 99 : ia) - (ib === -1 ? 99 : ib);
+  });
+  if (activeTrack && !counts[activeTrack]) activeTrack = "";
+  trackRailEl.innerHTML =
+    `<button class="series-btn track-btn${!activeTrack ? " active" : ""}" data-track="">All tracks (${seriesEps.length})</button>` +
+    names.map(n => `<button class="series-btn track-btn${activeTrack === n ? " active" : ""}" data-track="${escapeHtml(n)}">${escapeHtml(n)} (${counts[n]})</button>`).join("");
+  trackRailEl.querySelectorAll(".track-btn").forEach(b =>
+    b.addEventListener("click", () => { activeTrack = b.dataset.track; podcastPage = 0; renderPodcast(); }));
+  podcastTracksEl.hidden = false;
+  requestAnimationFrame(refreshTrackRail);
+}
+
 function renderPodcast() {
   const eps = allArticles
     .filter(a => a.category === "Podcast" && a.audio_url)
@@ -143,8 +186,10 @@ function renderPodcast() {
       `<button class="series-btn${activeSeries === s ? " active" : ""}" data-series="${s}">${s} (${countOf(s)})</button>`
     ).join("");
   seriesEl.querySelectorAll(".series-btn").forEach(b =>
-    b.addEventListener("click", () => { activeSeries = b.dataset.series; podcastPage = 0; renderPodcast(); }));
+    b.addEventListener("click", () => { activeSeries = b.dataset.series; activeTrack = ""; podcastPage = 0; renderPodcast(); }));
+  renderTracks(eps);
   let list = activeSeries ? eps.filter(e => e.source === activeSeries) : eps;
+  if (activeTrack) list = list.filter(e => episodeTrack(e) === activeTrack);
   const q = podcastQuery.trim().toLowerCase();
   if (q) list = list.filter(e => (e.title || "").toLowerCase().includes(q));
 
@@ -529,6 +574,17 @@ function initRails() {
   });
 }
 window.addEventListener("resize", () => document.querySelectorAll(".rail-wrap").forEach(refreshRail));
+
+(function initTrackRail() {
+  if (!podcastTracksEl || !trackRailEl) return;
+  const wrap = podcastTracksEl.querySelector(".track-wrap");
+  const prev = wrap.querySelector(".rail-btn.prev");
+  const next = wrap.querySelector(".rail-btn.next");
+  if (prev) prev.addEventListener("click", () => trackRailEl.scrollBy({ left: -220, behavior: "smooth" }));
+  if (next) next.addEventListener("click", () => trackRailEl.scrollBy({ left: 220, behavior: "smooth" }));
+  trackRailEl.addEventListener("scroll", refreshTrackRail, { passive: true });
+  window.addEventListener("resize", refreshTrackRail);
+})();
 
 initRails();
 loadData();
