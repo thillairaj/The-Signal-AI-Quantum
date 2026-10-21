@@ -139,6 +139,25 @@ h1,h2,h3{font-family:"Fraunces",serif}
   .legend-wrap .rail-btn.next{right:-6px}
   .legend-wrap .rail-btn:disabled{opacity:.25;cursor:default}
   .legend-wrap.no-overflow .rail-btn{display:none}
+
+  /* Sibling navigation: move within this group without returning to the landing page (Thillai, Oct 21 2026). */
+  .sibwrap{max-width:1280px;margin:30px auto 4px;padding:0 16px}
+  .sibcap{font-size:11px;letter-spacing:2px;text-transform:uppercase;opacity:.6;font-weight:700;margin:0 0 10px}
+  .sibnav{display:flex;gap:12px;justify-content:space-between}
+  .sib{flex:0 1 46%;display:flex;flex-direction:column;gap:3px;padding:13px 16px;border-radius:14px;text-decoration:none;transition:border-color .15s ease,transform .15s ease;border:1px solid var(--line);background:var(--panel);color:inherit}
+  .sib:hover{border-color:#38bdf8;transform:translateY(-1px)}
+  .sib-dir{font-size:11px;letter-spacing:1.6px;text-transform:uppercase;opacity:.65;font-weight:700}
+  .sib-title{font-size:16px;font-weight:700;line-height:1.3}
+  .sib.next{text-align:right;margin-left:auto}
+  .sib.empty{visibility:hidden;border:none;background:transparent}
+  @media(max-width:640px){.sibnav{flex-direction:column}.sib{flex:1 1 auto}.sib.next{text-align:left;margin-left:0}.sib.empty{display:none}}
+
+  /* LinkedIn follow button (Thillai, Oct 21 2026): pill with the LinkedIn badge, fills blue on hover. */
+  .li-btn{display:inline-flex;align-items:center;gap:8px;padding:6px 14px 6px 7px;border:1px solid #0A66C2;border-radius:999px;background:#EAF3FC;color:#0A66C2 !important;text-decoration:none !important;font-weight:700;font-size:13.5px;letter-spacing:.01em;vertical-align:middle;transition:background .15s ease,color .15s ease}
+  .li-btn:hover{background:#0A66C2;color:#fff !important}
+  .li-badge{display:inline-flex;align-items:center;justify-content:center;width:20px;height:20px;border-radius:5px;background:#0A66C2;color:#fff;flex:0 0 auto}
+  .li-badge svg{width:12px;height:12px;display:block}
+  .li-btn:hover .li-badge{background:#fff;color:#0A66C2}
 </style>
 </head>
 <body>
@@ -152,7 +171,7 @@ h1,h2,h3{font-family:"Fraunces",serif}
 </header>
 
 <div class="toolbar">
-  <div style="text-align:left;max-width:1280px;margin:0 auto 6px;height:26px;display:flex;align-items:center"><a href="../../#learn" style="color:inherit;opacity:.75;text-decoration:none;font-size:13.5px;font-weight:600">← Back to Learning Spaces</a></div>
+  <div style="text-align:left;max-width:1280px;margin:0 auto 6px;height:26px;display:flex;align-items:center"><a href="../../#learn-tables-quantum" style="color:inherit;opacity:.75;text-decoration:none;font-size:13.5px;font-weight:600">← Back to Learning Spaces</a></div>
   <div class="toolbar-in">
     <input id="search" type="search" placeholder="Search a term — try superconducting, trapped ion, Willow, dilution…" aria-label="Search terms">
     <span class="count" id="count"></span>
@@ -172,7 +191,9 @@ h1,h2,h3{font-family:"Fraunces",serif}
 
 <section class="below"><h3>Six things a leader should hold on to</h3><div class="cards"><div class="card"><h4>1. Counts are marketing; errors are reality</h4><p>A qubit count tells you almost nothing by itself. Error rates, fidelities and logical-qubit progress tell you whether a machine is a milestone or a prop.</p></div><div class="card"><h4>2. No modality has won</h4><p>Superconducting, ion, atom, photon and spin platforms each lead on different dimensions. Anyone certain about the winner in 2026 is selling something.</p></div><div class="card"><h4>3. The machine is mostly not the chip</h4><p>Refrigeration, wiring, control electronics and calibration dominate cost, size and scaling limits. Hardware due diligence that stops at the processor is incomplete.</p></div><div class="card"><h4>4. Below-threshold is the line that matters</h4><p>Error correction only works when physical error rates fall under a threshold. Willow crossed it on real hardware in 2024; every roadmap is implicitly about that crossing.</p></div><div class="card"><h4>5. Benchmarks are arguments, not verdicts</h4><p>Supremacy claims, Quantum Volume and CLOPS each measure something real and omit something real. Read what a benchmark leaves out before repeating what it claims.</p></div><div class="card"><h4>6. Fabrication is the moat</h4><p>Useful machines need millions of nearly identical qubits. The winners will be decided as much in fabs as in physics papers.</p></div></div><h3>A leader's hardware checklist</h3><div class="cards"><div class="card"><h4>Questions for any hardware vendor</h4><ul><li>Are your quoted qubits physical or logical, and what is the logical roadmap?</li><li>What are your two-qubit gate fidelity and readout fidelity — typical, not best-day?</li><li>Is your physical error rate below your code's threshold, with data?</li><li>How do wiring, control electronics and heat budget scale to your next machine?</li><li>What is your fabrication yield, and on what wafer size?</li></ul></div><div class="card"><h4>Reading a hardware announcement</h4><ul><li>Separate the peer-reviewed result from the press release around it.</li><li>Check whether classical simulations have since narrowed the claim.</li><li>Look for logical-qubit and error-rate numbers before qubit counts.</li><li>Note who else has replicated or independently benchmarked the result.</li><li>Ask what a customer can actually run on the system today.</li></ul></div><div class="card example"><h4>An honest note on timelines</h4><p>No vendor can currently sell you a fault-tolerant quantum computer, and honest roadmaps put broadly useful machines years away, behind error-correction milestones that are only beginning to be demonstrated. Buy hardware access today for learning, benchmarking and team readiness — priced as research — and treat any promise of near-term quantum advantage for your specific workload as a claim to be tested, never a plan to be funded.</p></div></div></section>
 
-<footer>Educational content for leaders and practitioners. Platform positions, specifications and vendor claims are as reported publicly as of October 2026 and change quickly; verify current figures with the vendor before any decision.<div style="margin-top:12px;font-size:13px">Curated by Thillai Raj Thanam Jeya Veera Raj · <a href="https://www.linkedin.com/in/thillairaj" target="_blank" rel="noopener" style="color:inherit;text-decoration:underline">Follow on LinkedIn</a></div></footer>
+
+<div class="sibwrap"><p class="sibcap">Quantum · 3 of 4</p><nav class="sibnav" aria-label="More in this group"><a class="sib prev" href="../quantum-algorithms/"><span class="sib-dir">← Previous</span><span class="sib-title">Quantum Algorithms</span></a><a class="sib next" href="../quantum-security/"><span class="sib-dir">Next →</span><span class="sib-title">Quantum Security &amp; Post-Quantum Crypto</span></a></nav></div>
+<footer>Educational content for leaders and practitioners. Platform positions, specifications and vendor claims are as reported publicly as of October 2026 and change quickly; verify current figures with the vendor before any decision.<div style="margin-top:12px;font-size:13px">Curated by Thillai Raj Thanam Jeya Veera Raj · <a class="li-btn" href="https://www.linkedin.com/in/thillairaj" target="_blank" rel="noopener"><span class="li-badge" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.55V9h3.57v11.45z"/></svg></span>Follow on LinkedIn</a></div></footer>
 
 <script>
 const CATS = { tech:{name:"Qubit Technologies",color:"#4f46e5"}, super:{name:"Superconducting",color:"#0284c7"}, ion:{name:"Trapped Ions & Neutral Atoms",color:"#0d9488"}, photon:{name:"Photonic & Silicon",color:"#0891b2"}, exotic:{name:"Exotic Approaches",color:"#a21caf"}, infra:{name:"Cryogenics & Control",color:"#ea580c"}, metrics:{name:"Metrics That Matter",color:"#65a30d"}, platforms:{name:"Platforms & Vendors",color:"#d97706"} };

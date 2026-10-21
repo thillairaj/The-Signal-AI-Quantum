@@ -139,6 +139,25 @@ h1,h2,h3{font-family:"Fraunces",serif}
   .legend-wrap .rail-btn.next{right:-6px}
   .legend-wrap .rail-btn:disabled{opacity:.25;cursor:default}
   .legend-wrap.no-overflow .rail-btn{display:none}
+
+  /* Sibling navigation: move within this group without returning to the landing page (Thillai, Oct 21 2026). */
+  .sibwrap{max-width:1280px;margin:30px auto 4px;padding:0 16px}
+  .sibcap{font-size:11px;letter-spacing:2px;text-transform:uppercase;opacity:.6;font-weight:700;margin:0 0 10px}
+  .sibnav{display:flex;gap:12px;justify-content:space-between}
+  .sib{flex:0 1 46%;display:flex;flex-direction:column;gap:3px;padding:13px 16px;border-radius:14px;text-decoration:none;transition:border-color .15s ease,transform .15s ease;border:1px solid var(--line);background:var(--panel);color:inherit}
+  .sib:hover{border-color:#38bdf8;transform:translateY(-1px)}
+  .sib-dir{font-size:11px;letter-spacing:1.6px;text-transform:uppercase;opacity:.65;font-weight:700}
+  .sib-title{font-size:16px;font-weight:700;line-height:1.3}
+  .sib.next{text-align:right;margin-left:auto}
+  .sib.empty{visibility:hidden;border:none;background:transparent}
+  @media(max-width:640px){.sibnav{flex-direction:column}.sib{flex:1 1 auto}.sib.next{text-align:left;margin-left:0}.sib.empty{display:none}}
+
+  /* LinkedIn follow button (Thillai, Oct 21 2026): pill with the LinkedIn badge, fills blue on hover. */
+  .li-btn{display:inline-flex;align-items:center;gap:8px;padding:6px 14px 6px 7px;border:1px solid #0A66C2;border-radius:999px;background:#EAF3FC;color:#0A66C2 !important;text-decoration:none !important;font-weight:700;font-size:13.5px;letter-spacing:.01em;vertical-align:middle;transition:background .15s ease,color .15s ease}
+  .li-btn:hover{background:#0A66C2;color:#fff !important}
+  .li-badge{display:inline-flex;align-items:center;justify-content:center;width:20px;height:20px;border-radius:5px;background:#0A66C2;color:#fff;flex:0 0 auto}
+  .li-badge svg{width:12px;height:12px;display:block}
+  .li-btn:hover .li-badge{background:#fff;color:#0A66C2}
 </style>
 </head>
 <body>
@@ -152,7 +171,7 @@ h1,h2,h3{font-family:"Fraunces",serif}
 </header>
 
 <div class="toolbar">
-  <div style="text-align:left;max-width:1280px;margin:0 auto 6px;height:26px;display:flex;align-items:center"><a href="../../#learn" style="color:inherit;opacity:.75;text-decoration:none;font-size:13.5px;font-weight:600">← Back to Learning Spaces</a></div>
+  <div style="text-align:left;max-width:1280px;margin:0 auto 6px;height:26px;display:flex;align-items:center"><a href="../../#learn-tables-quantum" style="color:inherit;opacity:.75;text-decoration:none;font-size:13.5px;font-weight:600">← Back to Learning Spaces</a></div>
   <div class="toolbar-in">
     <input id="search" type="search" placeholder="Search a term — try ML-KEM, FIPS 203, harvest now, crypto-agility…" aria-label="Search terms">
     <span class="count" id="count"></span>
@@ -172,7 +191,9 @@ h1,h2,h3{font-family:"Fraunces",serif}
 
 <section class="below"><h3>Six things a leader should hold on to</h3><div class="cards"><div class="card"><h4>The threat is already running</h4><p>Harvest-now-decrypt-later collection does not wait for a quantum computer. Every day of delay adds intercepted traffic to someone else's archive, and the data with the longest secrecy life is the data already at risk.</p></div><div class="card"><h4>The standards are finished</h4><p>NIST finalised FIPS 203, 204 and 205 in August 2024. The question is no longer which algorithms to adopt, but how fast your estate can inventory, prioritise and migrate to them.</p></div><div class="card"><h4>Inventory before action</h4><p>You cannot migrate what you cannot list. A cryptographic inventory and CBOM come first in every credible programme, and discovery always finds more than the architecture diagrams promised.</p></div><div class="card"><h4>Prioritise by data lifetime</h4><p>Mosca's inequality turns an unknowable date into arithmetic: secrecy lifetime plus migration time versus time to a quantum computer. Sequence the programme by that arithmetic, not by which system shouts loudest.</p></div><div class="card"><h4>Hybrid first</h4><p>Running classical and post-quantum cryptography together protects you if either one holds. Browsers and CDNs already default to hybrid key exchange, so your external connections can move this quarter.</p></div><div class="card"><h4>Agility is the real deliverable</h4><p>Algorithms will change again. A migration that leaves inventory, abstraction and automation behind has bought a permanent capability; one that hard-codes the new algorithms has only rented time.</p></div></div><h3>A leader's PQC migration checklist</h3><div class="cards"><div class="card"><h4>Start this year</h4><ul><li>Commission a cryptographic inventory and CBOM</li><li>Classify data by required secrecy lifetime</li><li>Enable hybrid PQC key exchange on external TLS through your CDN or load balancer</li><li>Get PKI and HSM vendor roadmaps in writing</li><li>Name the programme owner and stand up a Crypto Centre of Excellence</li><li>Add PQC and crypto-agility clauses to procurement templates</li></ul></div><div class="card"><h4>Run the programme</h4><ul><li>Migrate code signing first if you ship firmware</li><li>Sequence PKI and certificate migration ahead of dependent systems</li><li>Pilot PQC on one partner VPN tunnel and measure everything</li><li>Adopt 2030 deprecation as the internal deadline for exposed systems</li><li>Test interoperability before each phase, with rollback ready</li><li>Report inventory coverage, long-life data protected and milestones to the board annually</li></ul></div><div class="card example"><h4>An honest note</h4><p>Nobody knows when a cryptographically relevant quantum computer arrives, and anyone selling certainty, in either direction, is selling. The case for acting now does not need the date: harvested data plus multi-year migration lead times make the arithmetic work on their own. Two cautions in closing. QKD is not a shortcut around this programme, as the major security agencies keep pointing out. And a vendor quantum-safe label means nothing until it names a FIPS standard, a parameter set and a certification.</p></div></div></section>
 
-<footer>Educational content. Standards and regulatory positions as of October 2026; verify current status before acting on procurement or compliance decisions.<div style="margin-top:12px;font-size:13px">Curated by Thillai Raj Thanam Jeya Veera Raj · <a href="https://www.linkedin.com/in/thillairaj" target="_blank" rel="noopener" style="color:inherit;text-decoration:underline">Follow on LinkedIn</a></div></footer>
+
+<div class="sibwrap"><p class="sibcap">Quantum · 4 of 4</p><nav class="sibnav" aria-label="More in this group"><a class="sib prev" href="../quantum-hardware/"><span class="sib-dir">← Previous</span><span class="sib-title">Quantum Hardware</span></a><span class="sib empty" aria-hidden="true"></span></nav></div>
+<footer>Educational content. Standards and regulatory positions as of October 2026; verify current status before acting on procurement or compliance decisions.<div style="margin-top:12px;font-size:13px">Curated by Thillai Raj Thanam Jeya Veera Raj · <a class="li-btn" href="https://www.linkedin.com/in/thillairaj" target="_blank" rel="noopener"><span class="li-badge" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.55V9h3.57v11.45z"/></svg></span>Follow on LinkedIn</a></div></footer>
 
 <script>
 const CATS = { threat:{name:"The Quantum Threat",color:"#dc2626"}, standards:{name:"NIST Standards & Algorithms",color:"#4f46e5"}, migration:{name:"Migration in Practice",color:"#0284c7"}, agility:{name:"Crypto-Agility & Inventory",color:"#0d9488"}, infra:{name:"Infrastructure & Protocols",color:"#0891b2"}, qkd:{name:"QKD & Quantum Communications",color:"#a21caf"}, gov:{name:"Governance, Regulation & Claims",color:"#d97706"} };

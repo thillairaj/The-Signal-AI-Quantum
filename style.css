@@ -713,3 +713,13 @@ body[data-view="research"] .feed-only { display: none; }
   .top-tabs { order: 3; width: 100%; margin-top: 0.8rem; }
   .top-tab { flex: 1; text-align: center; }
 }
+
+/* Landing targets for section-specific back links (Thillai, Oct 21 2026) */
+.learn-group-label[id], .table-rail-group[id] { scroll-margin-top: 12px; }
+/* LinkedIn follow button (Thillai, Oct 21 2026): pill with the LinkedIn badge, fills blue on hover. */
+.li-btn { display: inline-flex; align-items: center; gap: 8px; padding: 6px 14px 6px 7px; border: 1px solid #0A66C2; border-radius: 999px; background: #EAF3FC; color: #0A66C2 !important; text-decoration: none !important; font-weight: 700; font-size: 13.5px; letter-spacing: .01em; vertical-align: middle; transition: background .15s ease, color .15s ease; }
+.li-btn:hover { background: #0A66C2; color: #fff !important; }
+.li-badge { display: inline-flex; align-items: center; justify-content: center; width: 20px; height: 20px; border-radius: 5px; background: #0A66C2; color: #fff; flex: 0 0 auto; vertical-align: middle; }
+.li-badge svg { width: 12px; height: 12px; display: block; }
+.li-btn:hover .li-badge { background: #fff; color: #0A66C2; }
+.follow-link .li-badge { margin-right: 2px; }

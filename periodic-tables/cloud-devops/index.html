@@ -139,6 +139,25 @@ h1,h2,h3{font-family:"Fraunces",serif}
   .legend-wrap .rail-btn.next{right:-6px}
   .legend-wrap .rail-btn:disabled{opacity:.25;cursor:default}
   .legend-wrap.no-overflow .rail-btn{display:none}
+
+  /* Sibling navigation: move within this group without returning to the landing page (Thillai, Oct 21 2026). */
+  .sibwrap{max-width:1280px;margin:30px auto 4px;padding:0 16px}
+  .sibcap{font-size:11px;letter-spacing:2px;text-transform:uppercase;opacity:.6;font-weight:700;margin:0 0 10px}
+  .sibnav{display:flex;gap:12px;justify-content:space-between}
+  .sib{flex:0 1 46%;display:flex;flex-direction:column;gap:3px;padding:13px 16px;border-radius:14px;text-decoration:none;transition:border-color .15s ease,transform .15s ease;border:1px solid var(--line);background:var(--panel);color:inherit}
+  .sib:hover{border-color:#38bdf8;transform:translateY(-1px)}
+  .sib-dir{font-size:11px;letter-spacing:1.6px;text-transform:uppercase;opacity:.65;font-weight:700}
+  .sib-title{font-size:16px;font-weight:700;line-height:1.3}
+  .sib.next{text-align:right;margin-left:auto}
+  .sib.empty{visibility:hidden;border:none;background:transparent}
+  @media(max-width:640px){.sibnav{flex-direction:column}.sib{flex:1 1 auto}.sib.next{text-align:left;margin-left:0}.sib.empty{display:none}}
+
+  /* LinkedIn follow button (Thillai, Oct 21 2026): pill with the LinkedIn badge, fills blue on hover. */
+  .li-btn{display:inline-flex;align-items:center;gap:8px;padding:6px 14px 6px 7px;border:1px solid #0A66C2;border-radius:999px;background:#EAF3FC;color:#0A66C2 !important;text-decoration:none !important;font-weight:700;font-size:13.5px;letter-spacing:.01em;vertical-align:middle;transition:background .15s ease,color .15s ease}
+  .li-btn:hover{background:#0A66C2;color:#fff !important}
+  .li-badge{display:inline-flex;align-items:center;justify-content:center;width:20px;height:20px;border-radius:5px;background:#0A66C2;color:#fff;flex:0 0 auto}
+  .li-badge svg{width:12px;height:12px;display:block}
+  .li-btn:hover .li-badge{background:#fff;color:#0A66C2}
 </style>
 </head>
 <body>
@@ -152,7 +171,7 @@ h1,h2,h3{font-family:"Fraunces",serif}
 </header>
 
 <div class="toolbar">
-  <div style="text-align:left;max-width:1280px;margin:0 auto 6px;height:26px;display:flex;align-items:center"><a href="../../#learn" style="color:inherit;opacity:.75;text-decoration:none;font-size:13.5px;font-weight:600">← Back to Learning Spaces</a></div>
+  <div style="text-align:left;max-width:1280px;margin:0 auto 6px;height:26px;display:flex;align-items:center"><a href="../../#learn-tables-cloud" style="color:inherit;opacity:.75;text-decoration:none;font-size:13.5px;font-weight:600">← Back to Learning Spaces</a></div>
   <div class="toolbar-in">
     <input id="search" type="search" placeholder="Search a term — try Kubernetes, SLO, FinOps, Terraform…" aria-label="Search terms">
     <span class="count" id="count"></span>
@@ -172,7 +191,9 @@ h1,h2,h3{font-family:"Fraunces",serif}
 
 <h3>Six things a leader should hold on to</h3><div class="cards"><div class="card"><h4>Cloud is an operating model</h4><p>The technology is rented; the transformation is organisational. Provisioning, security, cost and reliability all become continuous, software-driven disciplines, and the operating model, not the platform contract, decides whether you get them.</p></div><div class="card"><h4>Reliability is a chosen, priced level</h4><p>SLOs and error budgets turn 'as reliable as possible' into arithmetic: 99.9% allows about 44 minutes of downtime a month, 99.99% about 4. Each nine costs disproportionately more, so let the business choose the level and pay for exactly that.</p></div><div class="card"><h4>Identity is the perimeter</h4><p>In cloud, APIs and identities are the front door. Least privilege, few standing administrators and continuous posture scanning prevent more incidents than any network appliance.</p></div><div class="card"><h4>Automation is the safety mechanism</h4><p>Pipelines, infrastructure as code and GitOps are not developer fashions: they make change small, reviewed, repeatable and reversible, which is why fast delivery and stability arrive together.</p></div><div class="card"><h4>Cost is an engineering variable</h4><p>The cloud bill responds to architecture and daily decisions, not just negotiation. FinOps makes unit cost visible per team and product so engineers can optimise it like performance.</p></div><div class="card"><h4>Untested recovery is a hypothesis</h4><p>Backups, DR plans and availability claims mean little until a restore or failover has been rehearsed and timed. RTO and RPO set by business owners convert hope into a priced, testable design.</p></div></div><h3>A leader's cloud checklist</h3><div class="cards"><div class="card"><ul><li>Every critical system has an SLO, and every customer SLA is backed by SLO evidence</li><li>Error budgets exist and visibly govern release pace when they run low</li><li>Production infrastructure is defined as code; console changes to production are exceptions, not routine</li><li>CI/CD pipelines include automated testing and security scanning on every change</li><li>Identity is reviewed regularly: minimal standing admin access, stale keys removed</li><li>A landing zone with guardrails exists, and new accounts start inside it</li></ul></div><div class="card"><ul><li>Cloud spend is reported as unit cost per team and product, reviewed monthly with engineering in the room</li><li>Commitments (reserved capacity) cover only the proven, stable usage floor</li><li>Every critical system names its RTO and RPO, set by its business owner</li><li>Restore and failover tests run on a schedule, with measured results reported</li><li>Blameless postmortems follow major incidents, and their actions are tracked to closure</li><li>Observability covers user experience end to end, not just server metrics</li></ul></div><div class="card example"><h4>An honest note on scope</h4><p>Cloud and DevOps reward sequencing over scale of ambition. Estates that fix identity, pipelines and cost visibility early compound the gains; programmes that migrate everything first and govern later recreate their old problems at higher hourly prices.</p><p>The leadership discipline is modest and continuous: choose reliability levels deliberately, automate the path to production, rehearse failure, and review unit costs like revenue. None of it requires betting the company on any single platform fashion.</p></div></div>
 
-<footer>Educational only. Cloud platforms, prices and service names change frequently; verify specific capabilities, discounts and commitments against current provider documentation before making decisions.<div style="margin-top:12px;font-size:13px">Curated by Thillai Raj Thanam Jeya Veera Raj · <a href="https://www.linkedin.com/in/thillairaj" target="_blank" rel="noopener" style="color:inherit;text-decoration:underline">Follow on LinkedIn</a></div></footer>
+
+<div class="sibwrap"><p class="sibcap">Cloud · 1 of 4</p><nav class="sibnav" aria-label="More in this group"><span class="sib empty" aria-hidden="true"></span><a class="sib next" href="../aws-leaders/"><span class="sib-dir">Next →</span><span class="sib-title">AWS for Leaders</span></a></nav></div>
+<footer>Educational only. Cloud platforms, prices and service names change frequently; verify specific capabilities, discounts and commitments against current provider documentation before making decisions.<div style="margin-top:12px;font-size:13px">Curated by Thillai Raj Thanam Jeya Veera Raj · <a class="li-btn" href="https://www.linkedin.com/in/thillairaj" target="_blank" rel="noopener"><span class="li-badge" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.55V9h3.57v11.45z"/></svg></span>Follow on LinkedIn</a></div></footer>
 
 <script>
 const CATS = { found:{name:"Cloud Foundations",color:"#0d9488"}, models:{name:"Service Models",color:"#0284c7"}, compute:{name:"Compute & Containers",color:"#4f46e5"}, data:{name:"Storage & Data",color:"#a21caf"}, network:{name:"Networking",color:"#0891b2"}, devops:{name:"DevOps & Delivery",color:"#15803d"}, sre:{name:"Reliability & Observability",color:"#ea580c"}, security:{name:"Cloud Security & Governance",color:"#dc2626"}, resilience:{name:"Resilience",color:"#7c3aed"}, cost:{name:"Cost & Strategy",color:"#d97706"} };

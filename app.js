@@ -531,6 +531,20 @@ loadViews();
 setInterval(loadData, CLIENT_REFRESH_MS);
 setInterval(loadViews, CLIENT_REFRESH_MS);
 setInterval(updateStatusText, TICK_MS);
-/* Deep link: standalone pages use "Back to Learning Spaces" (index.html#learn) */
-if (location.hash === "#learn") showView("learn");
-window.addEventListener("hashchange", () => { if (location.hash === "#learn") showView("learn"); });
+/* Deep link: standalone pages link back to a specific part of the Learning Spaces view
+   ("Back to Learning Spaces" -> index.html#learn-tables-quantum etc., Thillai, Oct 21 2026). */
+const LEARN_TARGETS = ["learn-videos", "learn-decks", "learn-tables", "learn-tables-founders", "learn-tables-quantum", "learn-tables-ai", "learn-tables-cloud", "learn-tables-cyber"];
+function openLearnTarget() {
+  const h = location.hash;
+  if (h === "#learn") { showView("learn"); return; }
+  const id = h.startsWith("#") ? h.slice(1) : "";
+  if (LEARN_TARGETS.includes(id)) {
+    showView("learn");
+    requestAnimationFrame(() => {
+      const el = document.getElementById(id);
+      if (el) el.scrollIntoView({ block: "start" });
+    });
+  }
+}
+openLearnTarget();
+window.addEventListener("hashchange", openLearnTarget);

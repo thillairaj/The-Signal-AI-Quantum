@@ -139,6 +139,25 @@ h1,h2,h3{font-family:"Fraunces",serif}
   .legend-wrap .rail-btn.next{right:-6px}
   .legend-wrap .rail-btn:disabled{opacity:.25;cursor:default}
   .legend-wrap.no-overflow .rail-btn{display:none}
+
+  /* Sibling navigation: move within this group without returning to the landing page (Thillai, Oct 21 2026). */
+  .sibwrap{max-width:1280px;margin:30px auto 4px;padding:0 16px}
+  .sibcap{font-size:11px;letter-spacing:2px;text-transform:uppercase;opacity:.6;font-weight:700;margin:0 0 10px}
+  .sibnav{display:flex;gap:12px;justify-content:space-between}
+  .sib{flex:0 1 46%;display:flex;flex-direction:column;gap:3px;padding:13px 16px;border-radius:14px;text-decoration:none;transition:border-color .15s ease,transform .15s ease;border:1px solid var(--line);background:var(--panel);color:inherit}
+  .sib:hover{border-color:#38bdf8;transform:translateY(-1px)}
+  .sib-dir{font-size:11px;letter-spacing:1.6px;text-transform:uppercase;opacity:.65;font-weight:700}
+  .sib-title{font-size:16px;font-weight:700;line-height:1.3}
+  .sib.next{text-align:right;margin-left:auto}
+  .sib.empty{visibility:hidden;border:none;background:transparent}
+  @media(max-width:640px){.sibnav{flex-direction:column}.sib{flex:1 1 auto}.sib.next{text-align:left;margin-left:0}.sib.empty{display:none}}
+
+  /* LinkedIn follow button (Thillai, Oct 21 2026): pill with the LinkedIn badge, fills blue on hover. */
+  .li-btn{display:inline-flex;align-items:center;gap:8px;padding:6px 14px 6px 7px;border:1px solid #0A66C2;border-radius:999px;background:#EAF3FC;color:#0A66C2 !important;text-decoration:none !important;font-weight:700;font-size:13.5px;letter-spacing:.01em;vertical-align:middle;transition:background .15s ease,color .15s ease}
+  .li-btn:hover{background:#0A66C2;color:#fff !important}
+  .li-badge{display:inline-flex;align-items:center;justify-content:center;width:20px;height:20px;border-radius:5px;background:#0A66C2;color:#fff;flex:0 0 auto}
+  .li-badge svg{width:12px;height:12px;display:block}
+  .li-btn:hover .li-badge{background:#fff;color:#0A66C2}
 </style>
 </head>
 <body>
@@ -152,7 +171,7 @@ h1,h2,h3{font-family:"Fraunces",serif}
 </header>
 
 <div class="toolbar">
-  <div style="text-align:left;max-width:1280px;margin:0 auto 6px;height:26px;display:flex;align-items:center"><a href="../../#learn" style="color:inherit;opacity:.75;text-decoration:none;font-size:13.5px;font-weight:600">← Back to Learning Spaces</a></div>
+  <div style="text-align:left;max-width:1280px;margin:0 auto 6px;height:26px;display:flex;align-items:center"><a href="../../#learn-tables-founders" style="color:inherit;opacity:.75;text-decoration:none;font-size:13.5px;font-weight:600">← Back to Learning Spaces</a></div>
   <div class="toolbar-in">
     <input id="search" type="search" placeholder="Search a term — try trust, delegation, OKRs, feedback…" aria-label="Search terms">
     <span class="count" id="count"></span>
@@ -172,7 +191,9 @@ h1,h2,h3{font-family:"Fraunces",serif}
 
 <h3>Six things to hold on to</h3><div class="cards"><div class="card"><h4>Leadership is behaviour, not position</h4><p>People follow what you repeatedly do — what you attend to, reward, tolerate and finish. The title only rents attention; behaviour is what converts it into trust.</p></div><div class="card"><h4>Trust is the operating system</h4><p>Credibility, reliability and low self-orientation compound quietly. Every kept promise is a deposit; every gap between words and action is a withdrawal the whole team notices.</p></div><div class="card"><h4>Clarity is a kindness</h4><p>Clear priorities, clear ownership and clear feedback respect people's time and dignity. Vagueness feels gentle to the leader and is experienced as anxiety by the team.</p></div><div class="card"><h4>Safety and standards together</h4><p>Psychological safety without standards becomes comfort; standards without safety become silence. The learning zone — where performance actually grows — needs both at once.</p></div><div class="card"><h4>Decide at the right speed</h4><p>Slow down for the irreversible, speed up for the reversible, and record why. Most leadership time is wasted by applying the wrong speed to the wrong class of decision.</p></div><div class="card"><h4>You are the ceiling</h4><p>Your self-awareness, energy and willingness to grow set the limit for your team's. Development is not a reward for spare time; it is maintenance on the instrument everything else runs through.</p></div></div><h3>A weekly leadership practice checklist</h3><div class="cards"><div class="card"><ul><li>Hold every one-on-one, and let the agenda be theirs</li><li>Give one piece of specific feedback close to the event, and one genuine recognition</li><li>Restate the top three priorities and say no to one thing that competes with them</li><li>Review your commitments list and close or renegotiate anything slipping</li><li>Ask one question you genuinely do not know the answer to, in the room</li></ul></div><div class="card"><ul><li>Protect two blocks of deep work, and defend your team's as visibly as your own</li><li>Bring one piece of bad news upward early, with a plan attached</li><li>Put one person's name forward in a room they cannot access</li><li>Check workload reality on your most committed person, including yourself</li><li>Write one lesson from the week and the rule you will test from it</li></ul></div><div class="card example"><h4>A note on using this table</h4><p>No leader is strong on all 62 tiles, and the table is not a scorecard. Pick two or three tiles a quarter — ideally the ones your team would pick for you — and practise them deliberately until the behaviour is boring. That is how every tile on this table was ever built.</p></div></div>
 
-<footer>Educational only — a vocabulary for reflection and practice, not a certification or a substitute for experience, coaching or organisational context.<div style="margin-top:12px;font-size:13px">Curated by Thillai Raj Thanam Jeya Veera Raj · <a href="https://www.linkedin.com/in/thillairaj" target="_blank" rel="noopener" style="color:inherit;text-decoration:underline">Follow on LinkedIn</a></div></footer>
+
+<div class="sibwrap"><p class="sibcap">Founders &amp; Leadership · 3 of 4</p><nav class="sibnav" aria-label="More in this group"><a class="sib prev" href="../startup-growth/"><span class="sib-dir">← Previous</span><span class="sib-title">Startup Growth for Founders</span></a><a class="sib next" href="../startup-sales/"><span class="sib-dir">Next →</span><span class="sib-title">B2B Sales for Founders</span></a></nav></div>
+<footer>Educational only — a vocabulary for reflection and practice, not a certification or a substitute for experience, coaching or organisational context.<div style="margin-top:12px;font-size:13px">Curated by Thillai Raj Thanam Jeya Veera Raj · <a class="li-btn" href="https://www.linkedin.com/in/thillairaj" target="_blank" rel="noopener"><span class="li-badge" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.55V9h3.57v11.45z"/></svg></span>Follow on LinkedIn</a></div></footer>
 
 <script>
 const CATS = { self:{name:"Self-Leadership",color:"#0d9488"}, character:{name:"Mindset & Character",color:"#7c3aed"}, people:{name:"People & Teams",color:"#15803d"}, comm:{name:"Communication",color:"#0284c7"}, decision:{name:"Decision-Making",color:"#ea580c"}, strategy:{name:"Strategy",color:"#4f46e5"}, execution:{name:"Execution",color:"#0891b2"}, change:{name:"Change & Innovation",color:"#a21caf"}, coaching:{name:"Coaching & Development",color:"#65a30d"} };

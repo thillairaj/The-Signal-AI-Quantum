@@ -493,11 +493,30 @@
   /* Frozen back bar (Thillai, Oct 21 2026): the way back to Learning Spaces stays at the top while scrolling. */
   .backbar{position:sticky;top:0;z-index:70;background:var(--paper);padding:10px 2px 8px;border-bottom:1px solid rgba(90,75,40,.14)}
   .backbar a{color:inherit;opacity:.75;text-decoration:none;font-size:13.5px;font-weight:600}
+
+  /* Sibling navigation: move within this group without returning to the landing page (Thillai, Oct 21 2026). */
+  .sibwrap{margin:30px 0 4px}
+  .sibcap{font-size:11px;letter-spacing:2px;text-transform:uppercase;opacity:.6;font-weight:700;margin:0 0 10px}
+  .sibnav{display:flex;gap:12px;justify-content:space-between}
+  .sib{flex:0 1 46%;display:flex;flex-direction:column;gap:3px;padding:13px 16px;border-radius:14px;text-decoration:none;transition:border-color .15s ease,transform .15s ease;border:1px solid var(--line);color:inherit}
+  .sib:hover{border-color:var(--accent);transform:translateY(-1px)}
+  .sib-dir{font-size:11px;letter-spacing:1.6px;text-transform:uppercase;opacity:.65;font-weight:700}
+  .sib-title{font-size:16px;font-weight:700;line-height:1.3}
+  .sib.next{text-align:right;margin-left:auto}
+  .sib.empty{visibility:hidden;border:none;background:transparent}
+  @media(max-width:640px){.sibnav{flex-direction:column}.sib{flex:1 1 auto}.sib.next{text-align:left;margin-left:0}.sib.empty{display:none}}
+
+  /* LinkedIn follow button (Thillai, Oct 21 2026): pill with the LinkedIn badge, fills blue on hover. */
+  .li-btn{display:inline-flex;align-items:center;gap:8px;padding:6px 14px 6px 7px;border:1px solid #0A66C2;border-radius:999px;background:#EAF3FC;color:#0A66C2 !important;text-decoration:none !important;font-weight:700;font-size:13.5px;letter-spacing:.01em;vertical-align:middle;transition:background .15s ease,color .15s ease}
+  .li-btn:hover{background:#0A66C2;color:#fff !important}
+  .li-badge{display:inline-flex;align-items:center;justify-content:center;width:20px;height:20px;border-radius:5px;background:#0A66C2;color:#fff;flex:0 0 auto}
+  .li-badge svg{width:12px;height:12px;display:block}
+  .li-btn:hover .li-badge{background:#fff;color:#0A66C2}
 </style>
 </head>
 <body>
   <div class="wrap">
-    <div class="backbar"><a href="../#learn">← Back to Learning Spaces</a></div>
+    <div class="backbar"><a href="../#learn-videos">← Back to Learning Spaces</a></div>
     <header class="masthead">
       <p class="reader">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
@@ -770,10 +789,12 @@
         </div>
       </section>
 
-      <footer class="page-foot">
+      
+<div class="sibwrap"><p class="sibcap">Video Learning · 1 of 2</p><nav class="sibnav" aria-label="More in this group"><span class="sib empty" aria-hidden="true"></span><a class="sib next" href="../ai-quantum-learning-space/"><span class="sib-dir">Next →</span><span class="sib-title">AI + Quantum Learning Space</span></a></nav></div>
+<footer class="page-foot">
         <p>Agentic AI · Grok Bot, Meta Muse, OpenAI dots, Claude &amp; Copilot Autopilot hub</p>
         <p>Videos via YouTube · Curated 5 Oct 2026 · Titles and channels as listed by their creators</p>
-        <p class="curator">Curated by Thillai Raj Thanam Jeya Veera Raj <span class="sep" aria-hidden="true">·</span> <a href="https://www.linkedin.com/in/thillairaj" target="_blank" rel="noopener">Follow on LinkedIn</a></p>
+        <p class="curator">Curated by Thillai Raj Thanam Jeya Veera Raj <span class="sep" aria-hidden="true">·</span> <a class="li-btn" href="https://www.linkedin.com/in/thillairaj" target="_blank" rel="noopener"><span class="li-badge" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.55V9h3.57v11.45z"/></svg></span>Follow on LinkedIn</a></p>
       </footer>
     </main>
   </div>
