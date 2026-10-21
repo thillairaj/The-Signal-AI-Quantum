@@ -309,6 +309,7 @@ async function renderResearchArticle(id) {
 function getFiltered() {
   const term = searchTerm.trim().toLowerCase();
   return allArticles.filter(a => {
+    if (a.category === "Podcast") return false; /* episodes live in the Podcast tab only (Oct 21 2026) */
     if (activeCategory === "__bookmarked") {
       if (!bookmarks.has(a.id)) return false;
     } else if (activeCategory && a.category !== activeCategory) {
@@ -330,6 +331,7 @@ function renderSources() {
     scoped = allArticles;
   }
 
+  scoped = scoped.filter(a => a.category !== "Podcast");
   const counts = {};
   scoped.forEach(a => { counts[a.source] = (counts[a.source] || 0) + 1; });
   const sources = Object.keys(counts).sort();
@@ -622,9 +624,8 @@ function hmFmtDate(iso) {
 
 function fillHomeWire() {
   if (!allArticles.length) return;
-  document.querySelectorAll("[data-hm-wire-count]").forEach(function (el) { el.textContent = allArticles.length; });
-  var own = /Technology Learnings|Daily AI Intelligence|Quantum Intelligence|Tech Learning/i;
-  var ext = allArticles.filter(function (a) { return !own.test(String(a.source || "")); });
+  var ext = allArticles.filter(function (a) { return a.category !== "Podcast"; });
+  document.querySelectorAll("[data-hm-wire-count]").forEach(function (el) { el.textContent = ext.length; });
   document.querySelectorAll("[data-hm-wire]").forEach(function (slot, i) {
     var a = ext[i];
     if (!a) return;

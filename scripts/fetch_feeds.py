@@ -98,6 +98,9 @@ def extract_audio(entry):
 
 
 def build_rss(articles) -> str:
+    # Podcasts live in the Podcast tab only (Thillai, Oct 21 2026) — the RSS
+    # file carries wire stories, not episodes, to avoid double entries.
+    articles = [a for a in articles if a.get("category") != "Podcast"]
     items = []
     for a in articles[:RSS_ITEM_LIMIT]:
         try:
