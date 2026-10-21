@@ -1,9 +1,8 @@
 {
-  "generated_at": "2026-10-21T10:28:34.627621+00:00",
+  "generated_at": "2026-10-21T14:01:55.640510+00:00",
   "sources_polled": [
     "The Verge \u2014 AI",
     "Simon Willison",
-    "Ars Technica AI",
     "OpenAI Blog",
     "Google AI Blog",
     "Anthropic/Claude News",
@@ -15,6 +14,28 @@
     "Quantum Intelligence"
   ],
   "articles": [
+    {
+      "id": "c55b4c3c8ca25718",
+      "title": "OpenAI says an AI agent lied about disabling its safety monitoring system",
+      "link": "https://www.theverge.com/ai-artificial-intelligence/1015316/openai-ai-agent-disabling-monitoring-systems",
+      "source": "The Verge \u2014 AI",
+      "category": "AI",
+      "summary": "OpenAI disclosed a pair of safety incidents that involved AI agents weakening their safety monitoring systems during internal coding tasks. In one incident, OpenAI says its GPT-6 Astra agent disabled its safety monitor when copying reference code - and then lied about it. \"The re",
+      "published": "2026-10-21T14:01:46.092828+00:00",
+      "audio_url": null,
+      "duration": ""
+    },
+    {
+      "id": "61f4d0141ff303c0",
+      "title": "OpenAI models are coming to Google Cloud",
+      "link": "https://openai.com/index/openai-models-google-cloud",
+      "source": "OpenAI Blog",
+      "category": "AI",
+      "summary": "OpenAI and Google Cloud are bringing frontier models and Codex workflows to Gemini\u2019s Model Garden, available through Google Cloud Marketplace.",
+      "published": "2026-10-21T12:00:00+00:00",
+      "audio_url": null,
+      "duration": ""
+    },
     {
       "id": "dd5059aae09af56c",
       "title": "Google SynthID Detector Simplifies Watermark Detection and Expands Support to Other AI Providers",
@@ -1534,17 +1555,6 @@
       "duration": ""
     },
     {
-      "id": "17822a6c9063e726",
-      "title": "Character.AI files for bankruptcy",
-      "link": "https://www.theverge.com/ai-artificial-intelligence/1009802/character-ai-files-for-bankruptcy-disney",
-      "source": "The Verge \u2014 AI",
-      "category": "AI",
-      "summary": "Character.AI, one of the first breakout startups of the generative AI boom, has filed for bankruptcy and is selling some of its assets to Disney. The company, which builds various online bots for users to chat or roleplay with, has faced mounting scrutiny and lawsuits over the sa",
-      "published": "2026-10-13T13:59:49.830693+00:00",
-      "audio_url": null,
-      "duration": ""
-    },
-    {
       "id": "ffc748cb8d88a919",
       "title": "Higgsfield takes AI video from 1 minute to over 10",
       "link": "https://openai.com/index/higgsfield-longer-videos-voice",
@@ -2183,23 +2193,23 @@
       "duration": ""
     },
     {
-      "id": "22643d6fcb195220",
-      "title": "Introducing Playground: Create and play custom games",
-      "link": "https://blog.google/innovation-and-ai/technology/ai/playground-experimental-gaming-platform/",
-      "source": "Google AI Blog",
-      "category": "AI",
-      "summary": "Overview of Playground",
-      "published": "2026-10-07T12:00:00+00:00",
-      "audio_url": null,
-      "duration": ""
-    },
-    {
       "id": "ad4e14640e358f44",
       "title": "Helping teens learn, plan, and shape the future of AI",
       "link": "https://openai.com/index/teens-learn-and-plan",
       "source": "OpenAI Blog",
       "category": "AI",
       "summary": "College Planner is coming to ChatGPT for Teens to help students manage college applications, alongside new flashcards, quizzes, and a teen AI council.",
+      "published": "2026-10-07T12:00:00+00:00",
+      "audio_url": null,
+      "duration": ""
+    },
+    {
+      "id": "22643d6fcb195220",
+      "title": "Introducing Playground: Create and play custom games",
+      "link": "https://blog.google/innovation-and-ai/technology/ai/playground-experimental-gaming-platform/",
+      "source": "Google AI Blog",
+      "category": "AI",
+      "summary": "Overview of Playground",
       "published": "2026-10-07T12:00:00+00:00",
       "audio_url": null,
       "duration": ""
@@ -2986,17 +2996,6 @@
       "duration": ""
     },
     {
-      "id": "1eadd5627184a89f",
-      "title": "Watch the winning trailer from the Future Vision XPRIZE, The Gifted.",
-      "link": "https://blog.google/innovation-and-ai/technology/ai/winner-future-vision-xprize/",
-      "source": "Google AI Blog",
-      "category": "AI",
-      "summary": "Watch the winning trailer from the Future Vision XPRIZE, The Gifted.",
-      "published": "2026-09-28T19:00:00+00:00",
-      "audio_url": null,
-      "duration": ""
-    },
-    {
       "id": "cfe8e900401f31bb",
       "title": "How we will do better for Australia",
       "link": "https://openai.com/index/how-we-will-do-better-for-australia",
@@ -3014,6 +3013,17 @@
       "source": "OpenAI Blog",
       "category": "AI",
       "summary": "Our early guidelines for safety cases in frontier AI training cover technical safeguards, operational practices, and investigating misalignment incidents",
+      "published": "2026-09-28T19:00:00+00:00",
+      "audio_url": null,
+      "duration": ""
+    },
+    {
+      "id": "1eadd5627184a89f",
+      "title": "Watch the winning trailer from the Future Vision XPRIZE, The Gifted.",
+      "link": "https://blog.google/innovation-and-ai/technology/ai/winner-future-vision-xprize/",
+      "source": "Google AI Blog",
+      "category": "AI",
+      "summary": "Watch the winning trailer from the Future Vision XPRIZE, The Gifted.",
       "published": "2026-09-28T19:00:00+00:00",
       "audio_url": null,
       "duration": ""
@@ -3092,17 +3102,6 @@
       "category": "AI",
       "summary": "Google Beam promotional animation",
       "published": "2026-09-23T18:00:00+00:00",
-      "audio_url": null,
-      "duration": ""
-    },
-    {
-      "id": "9d02eeb8cef10808",
-      "title": "Two years of OpenAI Academy",
-      "link": "https://openai.com/index/two-years-of-openai-academy",
-      "source": "OpenAI Blog",
-      "category": "AI",
-      "summary": "Marking two years of OpenAI Academy and bringing AI skills to even more communities.",
-      "published": "2026-09-23T16:00:00+00:00",
       "audio_url": null,
       "duration": ""
     },
