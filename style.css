@@ -458,13 +458,13 @@ body[data-view="research"] .feed-only { display: none; }
 .fam-dot { display: inline-block; width: 11px; height: 11px; border-radius: 3px; margin-right: 6px; vertical-align: -1px; }
 .table-rail-group { margin-bottom: 16px; min-width: 0; max-width: 100%; }
 .table-rail-head { font-size: 13.5px; font-weight: 700; letter-spacing: .04em; text-transform: uppercase; color: #44403c; margin: 12px 0 8px; }
-.table-rail { --cardw: 302px; display: flex; gap: 14px; overflow-x: auto; overflow-y: hidden; max-width: 100%; min-width: 0; padding: 6px 4px 14px; scroll-snap-type: x mandatory; scroll-behavior: smooth; -webkit-overflow-scrolling: touch; scrollbar-width: none; }
+.table-rail { --cardw: 302px; display: flex; gap: 14px; overflow-x: auto; overflow-y: hidden; max-width: 100%; min-width: 0; padding: 14px 4px 18px; scroll-snap-type: x mandatory; scroll-behavior: smooth; -webkit-overflow-scrolling: touch; scrollbar-width: none; }
 .table-rail::-webkit-scrollbar { display: none; }
 .table-rail .learn-card { flex: 0 0 var(--cardw); max-width: var(--cardw); scroll-snap-align: start; }
 @media (max-width: 640px) { .table-rail { --cardw: 78vw; } }
 /* Rail arrows (Thillai, Oct 21 2026): deck-style ‹ › buttons on every Learning Space rail — visible and working on mobile too, greyed at the ends, hidden when a rail has nothing to scroll. */
 .rail-wrap { position: relative; }
-.rail-btn { position: absolute; top: 50%; transform: translateY(-50%); z-index: 5; width: 44px; height: 44px; border-radius: 50%; border: 1px solid rgba(35,42,53,.25); background: rgba(35,42,53,.55); color: #F5EFE0; font-size: 26px; line-height: 1; padding: 0 0 3px; cursor: pointer; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 8px rgba(0,0,0,.18); transition: background .15s ease, opacity .15s ease; }
+.rail-btn { position: absolute; top: 42%; transform: translateY(-50%); z-index: 5; width: 44px; height: 44px; border-radius: 50%; border: 1px solid rgba(35,42,53,.25); background: rgba(35,42,53,.55); color: #F5EFE0; font-size: 26px; line-height: 1; padding: 0 0 3px; cursor: pointer; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 8px rgba(0,0,0,.18); transition: background .15s ease, opacity .15s ease; }
 .rail-btn:hover:not(:disabled) { background: rgba(35,42,53,.82); }
 .rail-btn:focus-visible { outline: 2px solid #8a5f16; outline-offset: 2px; }
 .rail-btn.prev { left: -8px; }
