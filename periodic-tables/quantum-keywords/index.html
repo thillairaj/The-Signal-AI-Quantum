@@ -128,6 +128,17 @@ body{font-family:"Inter",-apple-system,sans-serif}
 h1,h2,h3{font-family:"Fraunces",serif}
 .kicker{font-family:"IBM Plex Mono",monospace}
 .sym,.d-sym{font-family:"Fraunces",serif}
+
+  /* Rail arrows for the category legend (Thillai, Oct 21 2026) — same pattern as the decks and the main site: no native scrollbar, prev/next buttons, greyed at the ends, hidden when every chip fits. */
+  .legend-wrap{position:relative;max-width:1280px;margin:14px auto 0}
+  .legend-wrap #legend{max-width:none;margin:0;scrollbar-width:none;padding-left:6px;padding-right:6px}
+  .legend-wrap #legend::-webkit-scrollbar{display:none}
+  .legend-wrap .rail-btn{position:absolute;top:50%;transform:translateY(-50%);z-index:6;width:36px;height:36px;border-radius:50%;border:1px solid rgba(128,128,128,.5);background:rgba(24,32,48,.72);color:#F5EFE0;font-size:21px;line-height:1;padding:0 0 2px;cursor:pointer;display:flex;align-items:center;justify-content:center;box-shadow:0 2px 8px rgba(0,0,0,.35)}
+  .legend-wrap .rail-btn:hover:not(:disabled){background:rgba(24,32,48,.92)}
+  .legend-wrap .rail-btn.prev{left:-6px}
+  .legend-wrap .rail-btn.next{right:-6px}
+  .legend-wrap .rail-btn:disabled{opacity:.25;cursor:default}
+  .legend-wrap.no-overflow .rail-btn{display:none}
 </style>
 </head>
 <body>
@@ -146,7 +157,7 @@ h1,h2,h3{font-family:"Fraunces",serif}
     <span class="count" id="count"></span>
     <button class="btn" id="resetBtn" type="button">Show all</button>
   </div>
-  <div id="legend" aria-label="Category filter"></div>
+  <div class="legend-wrap"><button class="rail-btn prev" type="button" aria-label="Scroll categories back">‹</button><div id="legend" aria-label="Category filter"></div><button class="rail-btn next" type="button" aria-label="Scroll categories forward">›</button></div>
 </div>
 
 <main>
@@ -381,6 +392,33 @@ themeBtn.addEventListener('click',()=>{
   applyTheme(cur==='light'?'dark':'light');
 });
 render();
+</script>
+<script>
+/* Category legend rail arrows */
+(function(){
+  var wrap=document.querySelector('.legend-wrap');
+  if(!wrap) return;
+  var rail=document.getElementById('legend');
+  var prev=wrap.querySelector('.rail-btn.prev');
+  var next=wrap.querySelector('.rail-btn.next');
+  if(!rail||!prev||!next) return;
+  function refresh(){
+    var max=rail.scrollWidth-rail.clientWidth;
+    wrap.classList.toggle('no-overflow', max<=2);
+    prev.disabled = rail.scrollLeft<=2;
+    next.disabled = rail.scrollLeft>=max-2;
+  }
+  function step(){
+    var chip=rail.querySelector('.chip');
+    return chip ? (chip.offsetWidth+8)*2 : 240;
+  }
+  prev.addEventListener('click',function(){ rail.scrollBy({left:-step(),behavior:'smooth'}); });
+  next.addEventListener('click',function(){ rail.scrollBy({left:step(),behavior:'smooth'}); });
+  rail.addEventListener('scroll',refresh,{passive:true});
+  rail.addEventListener('click',function(){ setTimeout(refresh,60); });
+  window.addEventListener('resize',refresh);
+  refresh();
+})();
 </script>
 </body>
 </html>
