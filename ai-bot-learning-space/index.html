@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
   <meta name="color-scheme" content="light dark" />
-  <meta name="description" content="Agentic AI — a curated hub for learning the new always-on agents: Grok Bot, Meta Muse, OpenAI dots, Claude Duet and Copilot Autopilot. Watch hand-picked YouTube tutorials, ordered beginner to advanced." />
+  <meta name="description" content="Agentic AI — a curated hub for learning the new always-on agents: Grok Bot, Meta Muse, OpenAI dots, Claude Duet, Copilot Autopilot and Gemini Spark. Watch hand-picked YouTube tutorials, ordered beginner to advanced." />
   <link rel="icon" href="data:," />
   <title>AI Bot Learning Space</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -527,7 +527,7 @@
       </p>
       <h1>AI Bot <em>Learning</em> Space</h1>
       <p class="deck">
-        A hand-picked hub for the new always-on agents — Grok Bot, Meta Muse, OpenAI dots, Claude Duet and Copilot Autopilot.
+        A hand-picked hub for the new always-on agents — Grok Bot, Meta Muse, OpenAI dots, Claude Duet, Copilot Autopilot and Gemini Spark.
         Meet the agents, see how they differ, and watch tutorials ordered beginner to advanced.
       </p>
       <div class="meta-row">
@@ -566,6 +566,10 @@
         <button class="track-tab" role="tab" id="tab-copilot" aria-selected="false" aria-controls="room" data-track="copilot">
           <span class="n" id="count-copilot">0</span>
           <span class="tcol">Copilot Autopilot (Microsoft) <small>Persistent M365 coworker</small></span>
+        </button>
+        <button class="track-tab" role="tab" id="tab-spark" aria-selected="false" aria-controls="room" data-track="spark">
+          <span class="n" id="count-spark">0</span>
+          <span class="tcol">Gemini Spark (Google) <small>24/7 personal agent</small></span>
         </button>
       </nav>
 
@@ -634,7 +638,7 @@
       <section class="agents" aria-label="Meet the Agents">
         <div class="agents-head">
           <h2>Meet the Agents</h2>
-          <p>Five always-on agents, five different bets — hover or tap a name for details.</p>
+          <p>Six always-on agents, six different bets — hover or tap a name for details.</p>
         </div>
         <div class="agents-grid">
           <article class="agent-card" tabindex="0" aria-expanded="false" aria-controls="agent-details-grok">
@@ -721,13 +725,29 @@
               <a class="agent-link" href="https://blogs.microsoft.com/blog/2026/09/25/introducing-the-new-copilot-with-home-code-and-autopilot/" target="_blank" rel="noopener">Official product page →</a>
             </div>
           </article>
+
+          <article class="agent-card" tabindex="0" aria-expanded="false" aria-controls="agent-details-spark">
+            <div class="agent-head-row">
+              <h3>Gemini Spark</h3>
+              <button class="agent-toggle" type="button" aria-expanded="false" aria-controls="agent-details-spark">More</button>
+            </div>
+            <div class="agent-details" id="agent-details-spark">
+              <p class="co">Google</p>
+              <p class="one">Google's 24/7 personal agent — it keeps working on Google's cloud while your devices are off.</p>
+              <dl class="agent-facts"><div><dt>Launched</dt><dd>Announced at Google I/O, May 2026</dd></div>
+              <div><dt>Access</dt><dd>Google AI Pro and Ultra subscriptions (US first)</dd></div>
+              <div><dt>Best for</dt><dd>Individuals deep in Google Workspace</dd></div></dl>
+              <div class="agent-more"><p>Spark runs on dedicated cloud virtual machines, so scheduled jobs, monitors and multi-step tasks keep running with your phone and laptop off. You shape it with Tasks, Skills and Schedules; it works natively across Gmail, Calendar, Drive, Docs and Tasks, and asks before high-stakes actions such as spending money or sending messages.</p>
+              <p>Personal: inbox triage, calendar wrangling, recurring reports. Its enterprise sibling, Gemini Agent for Workspace (shown Oct 2026, in private preview), gives coworker agents their own work email and calendar.</p></div>
+            </div>
+          </article>
         </div>
       </section>
 
       <section class="diff" aria-label="How they differ">
         <div class="diff-head">
           <h2>How they differ</h2>
-          <p>The five agents at a glance — who they are for, what shape they take, and the one-line pitch.</p>
+          <p>The six agents at a glance — who they are for, what shape they take, and the one-line pitch.</p>
         </div>
         <div class="diff-card">
           <div class="diff-row head" aria-hidden="true">
@@ -763,6 +783,12 @@
             <div data-label="Agent shape">Governed corporate coworker with Entra identity</div>
             <div class="diff-pitch" data-label="The pitch">&ldquo;The agent your IT department will actually allow.&rdquo;</div>
           </div>
+          <div class="diff-row">
+            <div class="diff-name" data-label="Agent">Gemini Spark</div>
+            <div data-label="Who it's for">Individuals on Google Workspace</div>
+            <div data-label="Agent shape">One 24/7 personal agent on Google's cloud</div>
+            <div class="diff-pitch" data-label="The pitch">&ldquo;The agent that keeps working when your devices are off.&rdquo;</div>
+          </div>
         </div>
       </section>
 
@@ -790,7 +816,7 @@
 
       
 <footer class="page-foot">
-        <p>Agentic AI · Grok Bot, Meta Muse, OpenAI dots, Claude Duet &amp; Copilot Autopilot hub</p>
+        <p>Agentic AI · Grok Bot, Meta Muse, OpenAI dots, Claude Duet, Copilot Autopilot &amp; Gemini Spark hub</p>
         <p>Videos via YouTube · Curated 5 Oct 2026 · Titles and channels as listed by their creators</p>
         <p class="curator">Curated by Thillai Raj Thanam Jeya Veera Raj <span class="sep" aria-hidden="true">·</span> <a class="li-btn" href="https://www.linkedin.com/in/thillairaj" target="_blank" rel="noopener"><span class="li-badge" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.55V9h3.57v11.45z"/></svg></span><span class="li-txt"><span class="li-dir">Follow on</span><span class="li-name">LinkedIn</span></span></a></p>
       </footer>
@@ -1341,6 +1367,43 @@
               desc: "New arrival — What Is In Microsoft's New Copilot Super App?."
             }
           ]
+        },
+        spark: {
+          label: "Gemini Spark lessons",
+          videos: [
+            {
+              isNew: true,
+              id: "7JHUbC8sW2M",
+              title: "Gemini Spark Is Google's Most Powerful AI Tool Yet",
+              channel: "Skill Leap AI",
+              level: "Beginner",
+              desc: "An explainer of what Gemini Spark is and how it works across Gmail, Calendar, Drive and YouTube, covering its always-on background execution, teachable Skills system, and scheduled task automation."
+            },
+            {
+              isNew: true,
+              id: "R6sTIXTq4vI",
+              title: "How to Use Gemini Spark: Google's 24/7 AI Agent Explained | KeshavTechy",
+              channel: "KeshavTechy",
+              level: "Beginner",
+              desc: "A setup and features guide to Spark — how to get started, connect it to Gmail, Drive and Workspace, and automate daily tasks such as inbox handling and recurring scheduled jobs."
+            },
+            {
+              isNew: true,
+              id: "7GkIWPPC9i0",
+              title: "Gemini Spark: Google’s Most Powerful Personal Agent",
+              channel: "Jeff Su",
+              level: "Beginner",
+              desc: "A beginner-friendly walkthrough of Spark doing real work — automatically organising Drive files, generating reports on a schedule, and triaging email using reusable templates and skills, with an honest look at its limits."
+            },
+            {
+              isNew: true,
+              id: "GJFYzzMhg7I",
+              title: "Gemini Task (Spark) Full Tutorial: Automate Gmail, Docs, Sheets & Chrome with AI Agent",
+              channel: "Hongzhao",
+              level: "Intermediate",
+              desc: "A step-by-step real-world test of Spark automating Gmail replies, Docs, Sheets and Slides creation, Calendar events, scheduled email briefings, custom Skills, and Chrome tasks such as booking a hotel."
+            }
+          ]
         }
       };
 
@@ -1348,6 +1411,11 @@
 
       /* Newest additions first — the order the New arrivals band shows. */
       var NEW_ARRIVALS = [
+        { track: "spark", id: "7JHUbC8sW2M" },
+        { track: "spark", id: "R6sTIXTq4vI" },
+        { track: "spark", id: "7GkIWPPC9i0" },
+        { track: "spark", id: "GJFYzzMhg7I" },
+        { track: "claude", id: "Fb-68zqcSVs" },
         { track: "claude", id: "qI6S-dRz1sQ" },
         { track: "claude", id: "T734TI5V2lg" },
         { track: "claude", id: "OKtIy-dZ5wA" },
@@ -1375,7 +1443,7 @@
           prevBtn = $("prevBtn"), nextBtn = $("nextBtn");
       var arrPrev = $("arrPrev"), arrNext = $("arrNext"), arrDots = $("arrDots"), arrCounter = $("arrCounter");
 
-      var totalLessons = TRACKS.grok.videos.length + TRACKS.muse.videos.length + TRACKS.openai.videos.length + TRACKS.claude.videos.length + TRACKS.copilot.videos.length;
+      var totalLessons = TRACKS.grok.videos.length + TRACKS.muse.videos.length + TRACKS.openai.videos.length + TRACKS.claude.videos.length + TRACKS.copilot.videos.length + TRACKS.spark.videos.length;
       $("metaCount").textContent = totalLessons + " lessons";
       $("metaDate").textContent = AS_OF;
       $("count-grok").textContent = TRACKS.grok.videos.length;
@@ -1383,6 +1451,7 @@
       $("count-openai").textContent = TRACKS.openai.videos.length;
       $("count-claude").textContent = TRACKS.claude.videos.length;
       $("count-copilot").textContent = TRACKS.copilot.videos.length;
+      $("count-spark").textContent = TRACKS.spark.videos.length;
 
       function watchUrl(id) { return "https://www.youtube.com/watch?v=" + id; }
       function embedUrl(id) { return "https://www.youtube-nocookie.com/embed/" + id; }
@@ -1626,7 +1695,7 @@
           top.className = "a-top";
           var trackLabel = document.createElement("span");
           trackLabel.className = "a-track";
-          trackLabel.textContent = entry.track === "grok" ? "Grok Bot" : (entry.track === "muse" ? "Meta Muse" : (entry.track === "openai" ? "OpenAI dots" : (entry.track === "claude" ? "Claude" : (entry.track === "copilot" ? "Copilot Autopilot" : entry.track))));
+          trackLabel.textContent = entry.track === "grok" ? "Grok Bot" : (entry.track === "muse" ? "Meta Muse" : (entry.track === "openai" ? "OpenAI dots" : (entry.track === "claude" ? "Claude Duet" : (entry.track === "copilot" ? "Copilot Autopilot" : (entry.track === "spark" ? "Gemini Spark" : entry.track)))));
           var pill = document.createElement("span");
           pill.className = "newpill";
           pill.textContent = "New";
