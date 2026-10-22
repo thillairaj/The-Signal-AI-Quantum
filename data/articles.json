@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-22T14:00:53.071496+00:00",
+  "generated_at": "2026-10-22T18:00:00.626405+00:00",
   "sources_polled": [
     "The Verge \u2014 AI",
     "Simon Willison",
@@ -15,6 +15,83 @@
     "Quantum Intelligence"
   ],
   "articles": [
+    {
+      "id": "0acbee798fb21bdf",
+      "title": "Quoting Armin Ronacher",
+      "link": "https://simonwillison.net/2026/Oct/22/armin-ronacher/",
+      "source": "Simon Willison",
+      "category": "AI",
+      "summary": "As fun as AI is, we built so much bad software over the last 30 years, and now the universe is punishing us for our sins. &mdash; Armin Ronacher Tags: security , generative-ai , armin-ronacher , ai , ai-security-research , llms",
+      "published": "2026-10-22T17:59:46.843906+00:00",
+      "audio_url": null,
+      "duration": ""
+    },
+    {
+      "id": "12686626013b51e1",
+      "title": "Bill Gates says to prepare for 20 years of \u2018tumultuous\u2019 AI disruption",
+      "link": "https://www.theverge.com/podcast/1015408/bill-gates-ai-interview-microsoft-openai-anthropic-risk-policy-regulation",
+      "source": "The Verge \u2014 AI",
+      "category": "AI",
+      "summary": "Today, I\u2019m talking to Bill Gates, cofounder and former CEO of Microsoft and chairman of the Gates Foundation. You may have noticed Bill in the news more lately \u2014 he\u2019s been on something of a tour for the past few months, ever since publishing an essay in late August titled \u201cThe tu",
+      "published": "2026-10-22T17:59:46.033501+00:00",
+      "audio_url": null,
+      "duration": ""
+    },
+    {
+      "id": "7faddebfff09c3d3",
+      "title": "PHP: The three little letters wreaking havoc across the web",
+      "link": "https://www.theverge.com/tech/1016574/php2shell-security-vulnerability-websites-down",
+      "source": "The Verge \u2014 AI",
+      "category": "AI",
+      "summary": "Two vulnerabilities found in the programming language PHP put enormous swaths of the internet in danger. By some accounts, up to 70 percent of websites use PHP in some capacity. It powers Wikipedia, WordPress, Drupal, and a host of other popular sites and platforms, including Dev",
+      "published": "2026-10-22T17:59:46.033462+00:00",
+      "audio_url": null,
+      "duration": ""
+    },
+    {
+      "id": "540e896edf86465f",
+      "title": "OpenAI, Anthropic, and Nvidia had record lobbying quarters",
+      "link": "https://www.theverge.com/policy/1016585/openai-anthropic-nvidia-lobbying-records",
+      "source": "The Verge \u2014 AI",
+      "category": "AI",
+      "summary": "It was a busy summer for AI lobbyists. Anthropic, OpenAI, and Nvidia each had their highest-spending lobbying quarter between July and September, federal disclosures show. Nvidia spent the most of the group at $2.2 million, followed by Anthropic's $2.1 million and OpenAI's $1.5 m",
+      "published": "2026-10-22T17:59:46.033428+00:00",
+      "audio_url": null,
+      "duration": ""
+    },
+    {
+      "id": "2a8e11324f4e3ec3",
+      "title": "Wildwood\u2019s director says AI is \u2018antithetical to everything that we are at this studio\u2019",
+      "link": "https://www.theverge.com/entertainment/1016647/wildwood-travis-knight-interview-ai-laika-stop-motion",
+      "source": "The Verge \u2014 AI",
+      "category": "AI",
+      "summary": "Wildwood is the most ambitious film yet from Laika, the stop-motion studio best known for the likes of Coraline and ParaNorman. It's a sprawling fantasy adventure that took five years to complete. The process involved more 230 puppets - including 36 of the main character Prue alo",
+      "published": "2026-10-22T17:59:46.033388+00:00",
+      "audio_url": null,
+      "duration": ""
+    },
+    {
+      "id": "7b213ad205a3643b",
+      "title": "Someone hacked the Switch 2 by using an old game and AI",
+      "link": "https://www.theverge.com/games/1016862/nintendo-switch-2-jailbreak-ai",
+      "source": "The Verge \u2014 AI",
+      "category": "AI",
+      "summary": "The Nintendo Switch 2 has apparently been jailbroken, and a modder has already shown the console running a custom version of Mario Kart World featuring new playable characters like Cinnamoroll, the red Angry Bird, Peter Griffin, and Steve from Minecraft. OpenAI's Codex helped mak",
+      "published": "2026-10-22T17:59:46.033314+00:00",
+      "audio_url": null,
+      "duration": ""
+    },
+    {
+      "id": "c625905b3719c2e1",
+      "title": "Hackers got a four-day head start on epic PHP2Shell vulnerability",
+      "link": "https://arstechnica.com/security/2026/10/hackers-got-a-four-day-head-start-on-epic-php2shell-vulnerability/",
+      "source": "Ars Technica AI",
+      "category": "AI",
+      "summary": "Hackers were already probing the bug before defenders were told it existed.",
+      "published": "2026-10-22T15:25:02+00:00",
+      "audio_url": null,
+      "duration": ""
+    },
     {
       "id": "e106504eaeceb2e8",
       "title": "Eiliko maker says it&#8217;s hiring an \u2018independent security firm\u2019 after Verge report on its insecure robots",
@@ -89,6 +166,17 @@
       "category": "AI",
       "summary": "A rush of new data centers could bring air pollution roaring back to levels not seen since the 2000s in Texas, which has become ground zero for the physical infrastructure behind generative AI. New and proposed data centers are demanding a tremendous amount of electricity. How de",
       "published": "2026-10-22T01:59:38.210852+00:00",
+      "audio_url": null,
+      "duration": ""
+    },
+    {
+      "id": "ba6fa07d677a8221",
+      "title": "Uber brings ChatGPT Work to all employees with OpenAI",
+      "link": "https://openai.com/index/uber-chatgpt-work-rollout",
+      "source": "OpenAI Blog",
+      "category": "AI",
+      "summary": "Uber is rolling out ChatGPT Work to more than 30,000 employees, helping teams research, analyze data, create presentations, and complete complex workflows.",
+      "published": "2026-10-22T00:00:00+00:00",
       "audio_url": null,
       "duration": ""
     },
@@ -1402,50 +1490,6 @@
       "duration": ""
     },
     {
-      "id": "d4118e30020d4980",
-      "title": "Square\u2019s new kiosk lets you talk to AI for help with your order",
-      "link": "https://www.theverge.com/tech/1009086/square-kiosk",
-      "source": "The Verge \u2014 AI",
-      "category": "AI",
-      "summary": "Square is launching new hardware: a big kiosk for ordering things that has a touchscreen and lets you talk to an AI. It's called the Square Kiosk. Square says the Kiosk, which has a large pill shape, has an \"agentic, conversational voice layer\" that \"fully understands a seller's ",
-      "published": "2026-10-14T18:09:54.087153+00:00",
-      "audio_url": null,
-      "duration": ""
-    },
-    {
-      "id": "0784a13f079d0316",
-      "title": "Microsoft has a new machine learning tool to improve weather forecasts",
-      "link": "https://www.theverge.com/science/1011127/ai-weather-forecast-microsoft",
-      "source": "The Verge \u2014 AI",
-      "category": "AI",
-      "summary": "Old-school physics-based weather forecasting and even new AI models typically become less reliable beyond two weeks, a problem Microsoft claims to have solved using machine learning. Researchers with the company say they've found a new, cost-effective way to make more accurate we",
-      "published": "2026-10-14T18:09:54.087119+00:00",
-      "audio_url": null,
-      "duration": ""
-    },
-    {
-      "id": "524e699ebac35a59",
-      "title": "OpenAI claims an ex-employee took its product plans and presented them to Apple",
-      "link": "https://www.theverge.com/ai-artificial-intelligence/1011276/openai-employee-unreleased-product-plans",
-      "source": "The Verge \u2014 AI",
-      "category": "AI",
-      "summary": "OpenAI claims a former employee took more than 100 files related to its product plans before joining Apple. In a document filed on Wednesday, OpenAI accuses the unnamed employee of sending this information to a personal account and then presenting it to Apple leadership, includin",
-      "published": "2026-10-14T18:09:54.087078+00:00",
-      "audio_url": null,
-      "duration": ""
-    },
-    {
-      "id": "bba11107a8fb9839",
-      "title": "My AI doppelganger tells me what to eat",
-      "link": "https://www.theverge.com/column/1011264/digital-twin-metabolism-ai-twin-health",
-      "source": "The Verge \u2014 AI",
-      "category": "AI",
-      "summary": "This is Optimizer, a weekly newsletter sent from Verge senior reviewer Victoria Song that dissects and discusses the latest gizmos and potions that swear they're going to change your life. Opt in for Optimizer here. For the past 100 days or so, my mornings have had a new rhythm. ",
-      "published": "2026-10-14T18:09:54.087006+00:00",
-      "audio_url": null,
-      "duration": ""
-    },
-    {
       "id": "224ee0818768ef5f",
       "title": "Researchers use AI to design proteins that cut up other proteins",
       "link": "https://arstechnica.com/science/2026/10/researchers-use-ai-to-design-proteins-that-cut-up-other-proteins/",
@@ -1464,17 +1508,6 @@
       "category": "AI",
       "summary": "OpenAI engineer faces 5 years and $250K fine as FBI lobs foreign spy charges.",
       "published": "2026-10-14T16:41:49+00:00",
-      "audio_url": null,
-      "duration": ""
-    },
-    {
-      "id": "08495a955cc82e8d",
-      "title": "Epic&#8217;s new games launcher is \u2018vibe coded\u2019",
-      "link": "https://www.theverge.com/games/1010751/epic-games-launcher-vibe-coded-ai-linux",
-      "source": "The Verge \u2014 AI",
-      "category": "AI",
-      "summary": "Epic Games is announcing a big refresh of its PC games launcher today in preview, saying that the new version is \"way faster\" and now supports Linux. But the company, which has been publicly making a big push into AI-assisted development, also notes that the refresh was \"vibe cod",
-      "published": "2026-10-14T14:05:13.762123+00:00",
       "audio_url": null,
       "duration": ""
     },
@@ -2535,17 +2568,6 @@
       "duration": ""
     },
     {
-      "id": "ec56094036c906f8",
-      "title": "Mistral Large 4",
-      "link": "https://simonwillison.net/2026/Oct/6/hn-49982139/",
-      "source": "Simon Willison",
-      "category": "AI",
-      "summary": "My comment on Mistral Large 4 &mdash; Hacker News. wren6991 : The benchmark is saturated. Frontier models are tested with an armadillo in fishnet tights jaywalking on Mars. OK well I couldn't resist this one: llm -m claude-opus-5.5 'Generate an SVG of an armadillo in fishnet tigh",
-      "published": "2026-10-06T22:00:16.229155+00:00",
-      "audio_url": null,
-      "duration": ""
-    },
-    {
       "id": "11669444bfa3fd7b",
       "title": "OpenAI will watermark ChatGPT outputs by default\u2014but only in the EU",
       "link": "https://arstechnica.com/ai/2026/10/openai-will-watermark-chatgpt-outputs-by-default-but-only-in-the-eu/",
@@ -2887,17 +2909,6 @@
       "duration": ""
     },
     {
-      "id": "d3446779ff0f63d4",
-      "title": "The 7-year-old Nvidia Shield TV is now $100 more expensive due to AI",
-      "link": "https://arstechnica.com/gadgets/2026/10/the-7-year-old-nvidia-shield-tv-is-now-100-more-expensive-thanks-to-ai/",
-      "source": "Ars Technica AI",
-      "category": "AI",
-      "summary": "Initially launched in 2019, the Nvidia Shield TV Pro now retails for $299.99.",
-      "published": "2026-10-02T14:52:16+00:00",
-      "audio_url": null,
-      "duration": ""
-    },
-    {
       "id": "97775957c995561f",
       "title": "Tech Learning Series \u2014 Ep 4: Real Scenario: Containerizing a Legacy Application",
       "link": "https://muse.ai/podcasts/media/1248297608376725/4720f1e9-8c94-4958-8367-c455f31c5edc/ep-1614d474-03cb-4964-8e11-250230399664.mp3",
@@ -3080,17 +3091,6 @@
       "source": "OpenAI Blog",
       "category": "AI",
       "summary": "Explore more than 20 announcements from OpenAI DevDay 2026, including GPT-6 Astra, ChatGPT, Codex, APIs, security, and new tools for builders.",
-      "published": "2026-09-29T10:00:00+00:00",
-      "audio_url": null,
-      "duration": ""
-    },
-    {
-      "id": "dd66acaed2a04b44",
-      "title": "Introducing GPT-6.1 Sol",
-      "link": "https://openai.com/index/introducing-gpt-6-1-sol",
-      "source": "OpenAI Blog",
-      "category": "AI",
-      "summary": "Meet GPT-6.1 Sol: near-Astra intelligence for coding, computer use, and professional work at one-fifth of Astra\u2019s standard API input and output token prices.",
       "published": "2026-09-29T10:00:00+00:00",
       "audio_url": null,
       "duration": ""
