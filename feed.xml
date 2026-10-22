@@ -4,7 +4,47 @@
     <title>The Signal</title>
     <link>https://thillairaj.github.io/The-Signal-AI-Quantum/</link>
     <description>A self-updating feed of AI, quantum computing, and podcast updates.</description>
-    <lastBuildDate>Thu, 22 Oct 2026 10:00:07 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 22 Oct 2026 14:00:53 +0000</lastBuildDate>
+    <item>
+      <title>Eiliko maker says it&amp;#8217;s hiring an ‘independent security firm’ after Verge report on its insecure robots</title>
+      <link>https://www.theverge.com/news/1015824/eiliko-energize-lab-statement-on-robot-hack-breach</link>
+      <guid isPermaLink="false">e106504eaeceb2e8</guid>
+      <description>Eiliko, a cute robot charm you can hang on your bag with built-in AI conversations, turned out to be a security nightmare. It told owners that "your secrets are safe with me," but hackers could easily read complete transcripts of everything we told the toy, and that was just the </description>
+      <category>The Verge — AI</category>
+      <pubDate>Thu, 22 Oct 2026 14:00:37 +0000</pubDate>
+    </item>
+    <item>
+      <title>Claude did not invent scorpion antivenom</title>
+      <link>https://www.theverge.com/ai-artificial-intelligence/1016443/anthropic-claude-citrini-vibecoding-scorpion-antivenom</link>
+      <guid isPermaLink="false">ff67e4725a210245</guid>
+      <description>An investment research firm wanted to prove AI could revolutionize drug development. So they teamed up with Anthropic to see whether an unreleased version of Claude could make scorpion antivenom. It couldn't. It came up with some promising starting points, but nothing close to an</description>
+      <category>The Verge — AI</category>
+      <pubDate>Thu, 22 Oct 2026 14:00:37 +0000</pubDate>
+    </item>
+    <item>
+      <title>AI agents are ready to shop. Some retailers are wary.</title>
+      <link>https://www.theverge.com/report/1015811/ai-shopping-agents-blocked-amazon-the-realreal-target-meta-muse</link>
+      <guid isPermaLink="false">c24876b37e469f74</guid>
+      <description>Using an AI agent to shop for you is a strange experience. Tech companies have marketed them as personal assistants - the democratizing of labor that ordinarily would only be available to the rich and powerful. In practice, at least for buying things, it's more like sending an an</description>
+      <category>The Verge — AI</category>
+      <pubDate>Thu, 22 Oct 2026 14:00:37 +0000</pubDate>
+    </item>
+    <item>
+      <title>1Password lets AI agents use your passwords without seeing them</title>
+      <link>https://www.theverge.com/ai-artificial-intelligence/1016399/1password-ai-agent-password-sign-in</link>
+      <guid isPermaLink="false">633b64365941d14c</guid>
+      <description>1Password is introducing a new feature that allows AI agents to sign into your accounts without actually seeing or handling your passwords. The aptly named 1Password for Agents doesn't give bots free reign to access all of your connected accounts - you'll still need to grant appr</description>
+      <category>The Verge — AI</category>
+      <pubDate>Thu, 22 Oct 2026 14:00:37 +0000</pubDate>
+    </item>
+    <item>
+      <title>What FDE means at OpenAI</title>
+      <link>https://openai.com/index/forward-deployed-engineering-means</link>
+      <guid isPermaLink="false">63c31ca523f91ccf</guid>
+      <description>What forward deployed engineering means at OpenAI</description>
+      <category>OpenAI Blog</category>
+      <pubDate>Thu, 22 Oct 2026 06:00:00 +0000</pubDate>
+    </item>
     <item>
       <title>Data centers could erase decades of air quality gains</title>
       <link>https://www.theverge.com/ai-artificial-intelligence/1015958/data-center-pollution-rising-report</link>
@@ -444,46 +484,6 @@
       <description>Release: web-edit 0.1a2 web-edit ( previously ) is my tiny web app for browsing and editing files in a folder. I mainly built it for editing files on different machines via Tailscale. I added a "copy to clipboard" option for both text and image data. I needed this because I was r</description>
       <category>Simon Willison</category>
       <pubDate>Sun, 18 Oct 2026 05:59:42 +0000</pubDate>
-    </item>
-    <item>
-      <title>Inline rendering with document​.currentScript</title>
-      <link>https://simonwillison.net/2026/Oct/17/document-currentscript/</link>
-      <guid isPermaLink="false">69ead926e6899b5e</guid>
-      <description>Inline rendering with document​.currentScript Lean Rada describes a neat trick that takes advantage of the document.currentScript property. You can use that to drop in a tiny inline &amp;lt;script&amp;gt; element that replaces itself when the page loads: The year is &amp;lt;script&amp;gt; docume</description>
-      <category>Simon Willison</category>
-      <pubDate>Sun, 18 Oct 2026 05:59:42 +0000</pubDate>
-    </item>
-    <item>
-      <title>Meta removes language that may have allowed it to scrape news sites</title>
-      <link>https://www.theverge.com/tech/1013409/meta-removes-language-that-may-have-allowed-it-to-scrape-news-sites</link>
-      <guid isPermaLink="false">ac0eba5f39915c21</guid>
-      <description>After backlash, Meta is updating its terms again to remove language that suggested it could scrape content from sites, including news sites, to train its AI. Specifically, the following language no longer appears on the commercial terms page: … Meta may use any content from such </description>
-      <category>The Verge — AI</category>
-      <pubDate>Sat, 17 Oct 2026 17:59:52 +0000</pubDate>
-    </item>
-    <item>
-      <title>Websites are closing their doors to AI agents</title>
-      <link>https://www.theverge.com/ai-artificial-intelligence/1013195/ai-agents-blocked-web</link>
-      <guid isPermaLink="false">79619743255e89a1</guid>
-      <description>Autonomous agents are the hottest thing in AI. OpenAI, Meta, Google, Instinct, and others promise their agents can scour the internet on your behalf, doing anything from booking a dinner reservation and cleaning out your inbox to buying new shoes. But what happens when the rest o</description>
-      <category>The Verge — AI</category>
-      <pubDate>Sat, 17 Oct 2026 13:59:47 +0000</pubDate>
-    </item>
-    <item>
-      <title>Game decompilation hub freezes leaderboard after AI turns progress into a hollow numbers game amid explosion of 'AI slop'</title>
-      <link>https://www.tomshardware.com/video-games/retro-gaming/game-decompilation-tracker-decomp-dev-shuts-its-public-leaderboard-saying-ai-has-broken-the-community-its-creator-blames-forks-that-use-ai-to-finish-other-teams-projects-and-races-to-ship-rough-pc-ports</link>
-      <guid isPermaLink="false">9f87c7b56c7d43e8</guid>
-      <description>decomp.dev has closed its public index of game decompilation projects, saying AI-driven forks and ports broke the community.</description>
-      <category>Anthropic/Claude News</category>
-      <pubDate>Sat, 17 Oct 2026 11:30:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>LaTeX renderer</title>
-      <link>https://simonwillison.net/2026/Oct/15/latex/</link>
-      <guid isPermaLink="false">e3274600bfe5739a</guid>
-      <description>Tool: LaTeX renderer Inspired by Paul Ford and Aboard Foundary's new web app Tiny Little Office , which provides a suite of web app content editors (a Word Processor, Outliner, Presentation Builder, Spreadsheet, Calculator, Drawing Tool, Diagram Maker, Animator, Calendar, and Tri</description>
-      <category>Simon Willison</category>
-      <pubDate>Sat, 17 Oct 2026 01:59:42 +0000</pubDate>
     </item>
   </channel>
 </rss>

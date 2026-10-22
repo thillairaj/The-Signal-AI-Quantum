@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-22T10:00:07.705793+00:00",
+  "generated_at": "2026-10-22T14:00:53.071496+00:00",
   "sources_polled": [
     "The Verge \u2014 AI",
     "Simon Willison",
@@ -15,6 +15,61 @@
     "Quantum Intelligence"
   ],
   "articles": [
+    {
+      "id": "e106504eaeceb2e8",
+      "title": "Eiliko maker says it&#8217;s hiring an \u2018independent security firm\u2019 after Verge report on its insecure robots",
+      "link": "https://www.theverge.com/news/1015824/eiliko-energize-lab-statement-on-robot-hack-breach",
+      "source": "The Verge \u2014 AI",
+      "category": "AI",
+      "summary": "Eiliko, a cute robot charm you can hang on your bag with built-in AI conversations, turned out to be a security nightmare. It told owners that \"your secrets are safe with me,\" but hackers could easily read complete transcripts of everything we told the toy, and that was just the ",
+      "published": "2026-10-22T14:00:37.219125+00:00",
+      "audio_url": null,
+      "duration": ""
+    },
+    {
+      "id": "ff67e4725a210245",
+      "title": "Claude did not invent scorpion antivenom",
+      "link": "https://www.theverge.com/ai-artificial-intelligence/1016443/anthropic-claude-citrini-vibecoding-scorpion-antivenom",
+      "source": "The Verge \u2014 AI",
+      "category": "AI",
+      "summary": "An investment research firm wanted to prove AI could revolutionize drug development. So they teamed up with Anthropic to see whether an unreleased version of Claude could make scorpion antivenom. It couldn't. It came up with some promising starting points, but nothing close to an",
+      "published": "2026-10-22T14:00:37.219091+00:00",
+      "audio_url": null,
+      "duration": ""
+    },
+    {
+      "id": "c24876b37e469f74",
+      "title": "AI agents are ready to shop. Some retailers are wary.",
+      "link": "https://www.theverge.com/report/1015811/ai-shopping-agents-blocked-amazon-the-realreal-target-meta-muse",
+      "source": "The Verge \u2014 AI",
+      "category": "AI",
+      "summary": "Using an AI agent to shop for you is a strange experience. Tech companies have marketed them as personal assistants - the democratizing of labor that ordinarily would only be available to the rich and powerful. In practice, at least for buying things, it's more like sending an an",
+      "published": "2026-10-22T14:00:37.219052+00:00",
+      "audio_url": null,
+      "duration": ""
+    },
+    {
+      "id": "633b64365941d14c",
+      "title": "1Password lets AI agents use your passwords without seeing them",
+      "link": "https://www.theverge.com/ai-artificial-intelligence/1016399/1password-ai-agent-password-sign-in",
+      "source": "The Verge \u2014 AI",
+      "category": "AI",
+      "summary": "1Password is introducing a new feature that allows AI agents to sign into your accounts without actually seeing or handling your passwords. The aptly named 1Password for Agents doesn't give bots free reign to access all of your connected accounts - you'll still need to grant appr",
+      "published": "2026-10-22T14:00:37.218974+00:00",
+      "audio_url": null,
+      "duration": ""
+    },
+    {
+      "id": "63c31ca523f91ccf",
+      "title": "What FDE means at OpenAI",
+      "link": "https://openai.com/index/forward-deployed-engineering-means",
+      "source": "OpenAI Blog",
+      "category": "AI",
+      "summary": "What forward deployed engineering means at OpenAI",
+      "published": "2026-10-22T06:00:00+00:00",
+      "audio_url": null,
+      "duration": ""
+    },
     {
       "id": "52d0a68d1d474a14",
       "title": "Daily AI Intelligence \u2014 Episode 21 (Thu Oct 22, 2026): AI-found critical PHP flaws, Claude Duet launch, Nvidia container AI factories",
@@ -1611,50 +1666,6 @@
       "duration": ""
     },
     {
-      "id": "64be3d764257b9ff",
-      "title": "I don\u2019t miss the camera on the Ray-Ban Meta Audio glasses",
-      "link": "https://www.theverge.com/tech/1009128/ray-ban-meta-audio-glasses-review-smart-glasses-headphones-wearables",
-      "source": "The Verge \u2014 AI",
-      "category": "AI",
-      "summary": "The other day I whizzed past several people while running in the park, my playlist blasting at full volume. The next morning, I smiled at a barista while ordering a caramel apple-flavored matcha latte. Afterward, I sat on a park bench reading a book, called up a pal to chat about",
-      "published": "2026-10-13T21:59:55.759710+00:00",
-      "audio_url": null,
-      "duration": ""
-    },
-    {
-      "id": "ffb4af635c9ec6ee",
-      "title": "Xbox is officially embracing the chaos of AI-powered game ports",
-      "link": "https://www.theverge.com/news/1010406/xbox-labs-game-decompiling-emulation-exploration",
-      "source": "The Verge \u2014 AI",
-      "category": "AI",
-      "summary": "Retro gaming is going through a wild time at the moment, thanks to decompilations and recompilations that are letting gamers port classic titles to new devices, or merge code from two different games into a single new experience. Microsoft has witnessed skateboarding being modded",
-      "published": "2026-10-13T21:59:55.759676+00:00",
-      "audio_url": null,
-      "duration": ""
-    },
-    {
-      "id": "c839b9474faef6c7",
-      "title": "Shopify opens its catalog up to more AI agents",
-      "link": "https://www.theverge.com/news/1010365/shopify-opens-its-catalog-up-to-more-ai-agents",
-      "source": "The Verge \u2014 AI",
-      "category": "AI",
-      "summary": "More AI agents will soon be able to browse and purchase from Shopify listings, marking an expansion of the company's agentic commerce ambitions. Shopify announced Tuesday it will let shoppers configure their AI agents to purchase products on their behalf, giving more agents acces",
-      "published": "2026-10-13T21:59:55.759637+00:00",
-      "audio_url": null,
-      "duration": ""
-    },
-    {
-      "id": "082a179fcd588810",
-      "title": "OpenAI employee arrested for allegedly planting a bug in a conference room",
-      "link": "https://www.theverge.com/ai-artificial-intelligence/1010642/openai-employee-arrested-recording-device",
-      "source": "The Verge \u2014 AI",
-      "category": "AI",
-      "summary": "An OpenAI engineer was arrested after the company said it discovered a \"sophisticated recording device\" hidden in one of its offices. The employee was identified as Abdulrahman Alfozan, a 35-year-old Saudi national. Alfozan is charged with using or endeavoring to use a device to ",
-      "published": "2026-10-13T21:59:55.759566+00:00",
-      "audio_url": null,
-      "duration": ""
-    },
-    {
       "id": "63b1605b51b19bf5",
       "title": "Disney offers $20M for Character.AI\u2019s scandal-plagued chatbot tech",
       "link": "https://arstechnica.com/tech-policy/2026/10/disney-offers-20m-for-character-ais-scandal-plagued-chatbot-tech/",
@@ -3081,17 +3092,6 @@
       "category": "AI",
       "summary": "Meet GPT-6.1 Sol: near-Astra intelligence for coding, computer use, and professional work at one-fifth of Astra\u2019s standard API input and output token prices.",
       "published": "2026-09-29T10:00:00+00:00",
-      "audio_url": null,
-      "duration": ""
-    },
-    {
-      "id": "884977ecb8004cb3",
-      "title": "Introducing dots",
-      "link": "https://openai.com/index/introducing-dots",
-      "source": "OpenAI Blog",
-      "category": "AI",
-      "summary": "Dots by OpenAI are proactive assistants that can keep working across complex projects and everyday tasks. Learn how dots help you stay in control while work moves forward.",
-      "published": "2026-09-29T00:00:00+00:00",
       "audio_url": null,
       "duration": ""
     },
