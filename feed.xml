@@ -4,7 +4,15 @@
     <title>The Signal</title>
     <link>https://thillairaj.github.io/The-Signal-AI-Quantum/</link>
     <description>A self-updating feed of AI, quantum computing, and podcast updates.</description>
-    <lastBuildDate>Wed, 21 Oct 2026 22:00:01 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 22 Oct 2026 01:59:50 +0000</lastBuildDate>
+    <item>
+      <title>Data centers could erase decades of air quality gains</title>
+      <link>https://www.theverge.com/ai-artificial-intelligence/1015958/data-center-pollution-rising-report</link>
+      <guid isPermaLink="false">eaa3fbf80042951c</guid>
+      <description>A rush of new data centers could bring air pollution roaring back to levels not seen since the 2000s in Texas, which has become ground zero for the physical infrastructure behind generative AI. New and proposed data centers are demanding a tremendous amount of electricity. How de</description>
+      <category>The Verge — AI</category>
+      <pubDate>Thu, 22 Oct 2026 01:59:38 +0000</pubDate>
+    </item>
     <item>
       <title>Today's PHP Security Release, and How We're Strengthening PHP Security</title>
       <link>https://simonwillison.net/2026/Oct/21/php-security-release/</link>
@@ -36,6 +44,14 @@
       <description>Meta says it's issuing a new class of shares to fund its AI initiatives. As part of its third-quarter earnings report released on Wednesday, the company says the non-voting stock will also go toward potential acquisitions and employee compensation, with trading beginning in 2027.</description>
       <category>The Verge — AI</category>
       <pubDate>Wed, 21 Oct 2026 21:59:49 +0000</pubDate>
+    </item>
+    <item>
+      <title>Broad access through consistent standards</title>
+      <link>https://openai.com/index/broad-access-through-consistent-standards</link>
+      <guid isPermaLink="false">2ed22a61b2f19a0c</guid>
+      <description>How OpenAI works with distribution partners to uphold consistent safeguards, support responsible access, and clarify expectations in our Usage Policies.</description>
+      <category>OpenAI Blog</category>
+      <pubDate>Wed, 21 Oct 2026 21:00:00 +0000</pubDate>
     </item>
     <item>
       <title>The new human-crafted Apple Music brand matters in an AI world</title>
@@ -194,6 +210,14 @@
       <link>https://openai.com/index/empowering-cyber-defenders</link>
       <guid isPermaLink="false">b2deaf97c98cf0ff</guid>
       <description>OpenAI outlines a blueprint for empowering cyber defenders with frontier AI, stronger safeguards, modernized cybersecurity, and more resilient public institutions.</description>
+      <category>OpenAI Blog</category>
+      <pubDate>Wed, 21 Oct 2026 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>Cloudflare links vulnerability discovery to defense with OpenAI</title>
+      <link>https://openai.com/index/cloudflare-cyber</link>
+      <guid isPermaLink="false">9201054eeb4c743a</guid>
+      <description>Cloudflare uses OpenAI Daybreak to investigate vulnerabilities and propose fixes for review. Its developers use Codex to build faster and improve code quality.</description>
       <category>OpenAI Blog</category>
       <pubDate>Wed, 21 Oct 2026 00:00:00 +0000</pubDate>
     </item>
@@ -460,30 +484,6 @@
       <description>Tool: LaTeX renderer Inspired by Paul Ford and Aboard Foundary's new web app Tiny Little Office , which provides a suite of web app content editors (a Word Processor, Outliner, Presentation Builder, Spreadsheet, Calculator, Drawing Tool, Diagram Maker, Animator, Calendar, and Tri</description>
       <category>Simon Willison</category>
       <pubDate>Sat, 17 Oct 2026 01:59:42 +0000</pubDate>
-    </item>
-    <item>
-      <title>Quoting Addy Osmani, Morgan Westlee Lunt, and Qing Wang</title>
-      <link>https://simonwillison.net/2026/Oct/16/code-review/</link>
-      <guid isPermaLink="false">e946af68fd7dbe0e</guid>
-      <description>We think "did a human read the code?" is an imprecise proxy for "what could go wrong with this change, and which check—automated or human—is the right one to catch it?" Asking that question also changed when review happens. Before, review was a gate at the end of the road: write </description>
-      <category>Simon Willison</category>
-      <pubDate>Sat, 17 Oct 2026 01:59:42 +0000</pubDate>
-    </item>
-    <item>
-      <title>OpenAI models hacked a crypto wallet and breached more websites</title>
-      <link>https://arstechnica.com/security/2026/10/openai-models-hacked-a-crypto-wallet-and-breached-more-websites/</link>
-      <guid isPermaLink="false">b140e0bf691ca144</guid>
-      <description>The actions could have resulted in criminal charges had humans been behind the keyboard.</description>
-      <category>Ars Technica AI</category>
-      <pubDate>Fri, 16 Oct 2026 20:59:01 +0000</pubDate>
-    </item>
-    <item>
-      <title>“thegentlemanpervert” producing AI CSAM is a NJ prosecutor, say cops</title>
-      <link>https://arstechnica.com/tech-policy/2026/10/thegentlemanpervert-producing-ai-csam-is-a-nj-prosecutor-say-cops/</link>
-      <guid isPermaLink="false">5a8a8cf37871920c</guid>
-      <description>Discord user flagged AI CSAM, triggering arrest of New Jersey deputy AG.</description>
-      <category>Ars Technica AI</category>
-      <pubDate>Fri, 16 Oct 2026 20:20:07 +0000</pubDate>
     </item>
   </channel>
 </rss>

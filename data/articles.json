@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-21T22:00:01.835105+00:00",
+  "generated_at": "2026-10-22T01:59:50.765169+00:00",
   "sources_polled": [
     "The Verge \u2014 AI",
     "Simon Willison",
@@ -15,6 +15,17 @@
     "Quantum Intelligence"
   ],
   "articles": [
+    {
+      "id": "eaa3fbf80042951c",
+      "title": "Data centers could erase decades of air quality gains",
+      "link": "https://www.theverge.com/ai-artificial-intelligence/1015958/data-center-pollution-rising-report",
+      "source": "The Verge \u2014 AI",
+      "category": "AI",
+      "summary": "A rush of new data centers could bring air pollution roaring back to levels not seen since the 2000s in Texas, which has become ground zero for the physical infrastructure behind generative AI. New and proposed data centers are demanding a tremendous amount of electricity. How de",
+      "published": "2026-10-22T01:59:38.210852+00:00",
+      "audio_url": null,
+      "duration": ""
+    },
     {
       "id": "952285572a8e70b9",
       "title": "Today's PHP Security Release, and How We're Strengthening PHP Security",
@@ -56,6 +67,17 @@
       "category": "AI",
       "summary": "Meta says it's issuing a new class of shares to fund its AI initiatives. As part of its third-quarter earnings report released on Wednesday, the company says the non-voting stock will also go toward potential acquisitions and employee compensation, with trading beginning in 2027.",
       "published": "2026-10-21T21:59:49.950728+00:00",
+      "audio_url": null,
+      "duration": ""
+    },
+    {
+      "id": "2ed22a61b2f19a0c",
+      "title": "Broad access through consistent standards",
+      "link": "https://openai.com/index/broad-access-through-consistent-standards",
+      "source": "OpenAI Blog",
+      "category": "AI",
+      "summary": "How OpenAI works with distribution partners to uphold consistent safeguards, support responsible access, and clarify expectations in our Usage Policies.",
+      "published": "2026-10-21T21:00:00+00:00",
       "audio_url": null,
       "duration": ""
     },
@@ -330,6 +352,17 @@
       "source": "OpenAI Blog",
       "category": "AI",
       "summary": "OpenAI outlines a blueprint for empowering cyber defenders with frontier AI, stronger safeguards, modernized cybersecurity, and more resilient public institutions.",
+      "published": "2026-10-21T00:00:00+00:00",
+      "audio_url": null,
+      "duration": ""
+    },
+    {
+      "id": "9201054eeb4c743a",
+      "title": "Cloudflare links vulnerability discovery to defense with OpenAI",
+      "link": "https://openai.com/index/cloudflare-cyber",
+      "source": "OpenAI Blog",
+      "category": "AI",
+      "summary": "Cloudflare uses OpenAI Daybreak to investigate vulnerabilities and propose fixes for review. Its developers use Codex to build faster and improve code quality.",
       "published": "2026-10-21T00:00:00+00:00",
       "audio_url": null,
       "duration": ""
@@ -1618,17 +1651,6 @@
       "category": "AI",
       "summary": "Disney may acquire tech from one of the first chatbot makers linked to child suicide.",
       "published": "2026-10-13T18:23:33+00:00",
-      "audio_url": null,
-      "duration": ""
-    },
-    {
-      "id": "d8f2c178c0c6c59d",
-      "title": "Epic shifts to &#8216;AI-accelerated development&#8217; for upcoming Disney game",
-      "link": "https://www.theverge.com/games/1010097/epic-games-disney-project-ai-coding-art",
-      "source": "The Verge \u2014 AI",
-      "category": "AI",
-      "summary": "Epic Games plans to use AI to generate code and art for an unannounced Disney game, which is now delayed from its original March release window, according to a report from Bloomberg. The project's developers have been given an \"AI-first\" mandate directing them to use tools like A",
-      "published": "2026-10-13T18:00:19.696508+00:00",
       "audio_url": null,
       "duration": ""
     },
@@ -3059,28 +3081,6 @@
       "category": "AI",
       "summary": "Dots by OpenAI are proactive assistants that can keep working across complex projects and everyday tasks. Learn how dots help you stay in control while work moves forward.",
       "published": "2026-09-29T00:00:00+00:00",
-      "audio_url": null,
-      "duration": ""
-    },
-    {
-      "id": "cfe8e900401f31bb",
-      "title": "How we will do better for Australia",
-      "link": "https://openai.com/index/how-we-will-do-better-for-australia",
-      "source": "OpenAI Blog",
-      "category": "AI",
-      "summary": "OpenAI apologises for incidents involving Australian government websites and outlines stronger safeguards and support to strengthen Australia\u2019s cyber defences.",
-      "published": "2026-09-28T19:00:00+00:00",
-      "audio_url": null,
-      "duration": ""
-    },
-    {
-      "id": "cf468ec39dd67f09",
-      "title": "Towards safety cases for frontier AI training",
-      "link": "https://openai.com/index/towards-safety-cases-for-frontier-ai-training",
-      "source": "OpenAI Blog",
-      "category": "AI",
-      "summary": "Our early guidelines for safety cases in frontier AI training cover technical safeguards, operational practices, and investigating misalignment incidents",
-      "published": "2026-09-28T19:00:00+00:00",
       "audio_url": null,
       "duration": ""
     },
