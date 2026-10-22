@@ -483,8 +483,8 @@ body[data-view="research"] .feed-only { display: none; }
 }
 .learn-card:hover { transform: translateY(-3px); box-shadow: 0 14px 30px rgba(0,0,0,0.25); }
 /* Video cards: a whisper lighter than the page background. */
-.learn-card.video-bot, .learn-card.video-quantum, .learn-card.video-cloud { background-color: #FEFDFB; border: 1px solid #E6DFCC; }
-.learn-card.video-bot:hover, .learn-card.video-quantum:hover, .learn-card.video-cloud:hover { background-color: #F5EFE0; border-color: #CFBE93; }
+.learn-card.video-bot, .learn-card.video-quantum, .learn-card.video-cloud, .learn-card.video-assistants { background-color: #FEFDFB; border: 1px solid #E6DFCC; }
+.learn-card.video-bot:hover, .learn-card.video-quantum:hover, .learn-card.video-cloud:hover, .learn-card.video-assistants:hover { background-color: #F5EFE0; border-color: #CFBE93; }
 /* Deck cards: a touch darker than the page background. */
 .learn-card.deck-quantum, .learn-card.deck-ai, .learn-card.deck-cloud { background-color: #F3EDDE; border: 1px solid #D8C9A3; }
 .learn-card.deck-quantum:hover, .learn-card.deck-ai:hover, .learn-card.deck-cloud:hover { background-color: #E9DDC0; border-color: #B99F5F; }
