@@ -781,7 +781,7 @@ function fillHomeArticles() {
 /* Play and Learn launch pop up (Thillai, Oct 23 2026): shown once per visitor;
    the go button opens Learning Spaces with the games door expanded. */
 (function initGamesPopup() {
-  var KEY = "signalPlayLearnPopupV1";
+  var KEY = "signalPlayLearnPopupV2";
   var seen = false;
   try { seen = !!localStorage.getItem(KEY); } catch (e) {}
   var popup = document.getElementById("gamesPopup");

@@ -932,4 +932,5 @@ body[data-view="research"] .feed-only { display: none; }
 .games-popup-later:hover { border-color: #0B1F3B; color: #0B1F3B; }
 @media (max-width: 640px) { .games-popup { padding: 22px 18px 18px; } .games-popup h3 { font-size: 21px; } }
 /* Door enter cue (Thillai, Oct 23 2026): all doors closed by default */
-.learn-door-enter { font-family: var(--font-mono); font-size: 11px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: #6B5B2E; border: 1px solid #C9B77E; border-radius: 999px; padding: 4px 10px; white-space: nowrap; }
+.learn-door-head { flex-wrap: wrap; }
+.learn-door-enter { order: 5; flex: 0 0 100%; text-align: right; font-family: var(--font-mono); font-size: 11px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: #B8860B; padding: 3px 2px 0; }
