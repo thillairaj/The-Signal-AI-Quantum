@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-23T14:00:45.704886+00:00",
+  "generated_at": "2026-10-23T18:00:07.329270+00:00",
   "sources_polled": [
     "The Verge \u2014 AI",
     "Simon Willison",
@@ -15,6 +15,61 @@
     "Quantum Intelligence"
   ],
   "articles": [
+    {
+      "id": "d34a3f37bdd35ae5",
+      "title": "Meta delays new business terms after publisher pushback on AI scraping",
+      "link": "https://www.theverge.com/tech/1017450/meta-business-terms-delayed-ai-scraping",
+      "source": "The Verge \u2014 AI",
+      "category": "AI",
+      "summary": "Meta is delaying the enforcement of its new business terms after publishers raised concerns that they could allow the company to scrape news sites for AI training, as reported earlier by Fast Company. In a statement to The Verge, Meta spokesperson Daniel Roberts says the terms wi",
+      "published": "2026-10-23T17:59:53.521006+00:00",
+      "audio_url": null,
+      "duration": ""
+    },
+    {
+      "id": "55f38e2b0de99dce",
+      "title": "Now Google says it might use your Gmail and Google Photos data to target ads",
+      "link": "https://www.theverge.com/tech/1017600/google-personal-intelligence-privacy-policy-ads-update",
+      "source": "The Verge \u2014 AI",
+      "category": "AI",
+      "summary": "Google has updated its privacy policy in a way that could mean you'll start seeing targeted ads based on your personal data if you're using personalized AI features. The update, spotted by Android Authority, adds an exception to its promise about not using your Drive, Gmail, or G",
+      "published": "2026-10-23T17:59:53.520969+00:00",
+      "audio_url": null,
+      "duration": ""
+    },
+    {
+      "id": "9ecaeb5e863007f7",
+      "title": "The iPhone Duo should have been an iPad",
+      "link": "https://www.theverge.com/podcast/1017447/iphone-duo-ipad-review-score-vergecast",
+      "source": "The Verge \u2014 AI",
+      "category": "AI",
+      "summary": "We gave the iPhone Duo a 7 /10. But that wasn't always the score we planned, and it might not be the right score forever. Such are the challenges of reviewing - and assessing - a big, new idea about the most popular smartphone in history. On this episode of The Vergecast, David a",
+      "published": "2026-10-23T17:59:53.520900+00:00",
+      "audio_url": null,
+      "duration": ""
+    },
+    {
+      "id": "e44aee2d4402241c",
+      "title": "Intel gets waiver after worries fuzzy US ban on foreign-made robots may hit fabs",
+      "link": "https://arstechnica.com/ai/2026/10/intel-gets-waiver-after-worries-fuzzy-us-ban-on-foreign-made-robots-may-hit-fabs/",
+      "source": "Ars Technica AI",
+      "category": "AI",
+      "summary": "Company says foreign-made robotic vehicles are crucial to US chip production.",
+      "published": "2026-10-23T17:18:31+00:00",
+      "audio_url": null,
+      "duration": ""
+    },
+    {
+      "id": "298c8de07d18f423",
+      "title": "Rapidly scaling online storage to serve over 1 billion ChatGPT users (Part II)",
+      "link": "https://openai.com/index/scaling-storage-one-billion-users-part-two",
+      "source": "OpenAI Blog",
+      "category": "AI",
+      "summary": "Learn how OpenAI scaled Habitat with reliable multi-tenancy, global caching, and Azure Cosmos DB to deliver 12\u00d7 faster reads for ChatGPT.",
+      "published": "2026-10-23T17:00:00+00:00",
+      "audio_url": null,
+      "duration": ""
+    },
     {
       "id": "fa80f1a6b4b706ff",
       "title": "Retro gaming is being overrun with AI",
@@ -1457,17 +1512,6 @@
       "duration": ""
     },
     {
-      "id": "1b6257d35772528f",
-      "title": "Friends don&#8217;t let friends feed their data to AI agents",
-      "link": "https://www.theverge.com/tech/1011938/muse-ai-data-friends-consent",
-      "source": "The Verge \u2014 AI",
-      "category": "AI",
-      "summary": "There's a growing trend in the consumer tech world: gadgets designed to spy on everything and everyone around you, regardless of whether or not anyone else actually consented to it. Now, with the advent of \"AI personal assistants\" like Meta's Muse, you're being cheerfully asked n",
-      "published": "2026-10-15T17:59:58.790352+00:00",
-      "audio_url": null,
-      "duration": ""
-    },
-    {
       "id": "1cc24ddce8a425aa",
       "title": "Report: FTC probes Anthropic, OpenAI after Trump dismissed AI fears as \u201choax\u201d",
       "link": "https://arstechnica.com/tech-policy/2026/10/ftc-probes-if-openai-anthropic-security-incidents-harmed-americans-report-says/",
@@ -1497,28 +1541,6 @@
       "category": "AI",
       "summary": "Anthropic tells investors quarterly revenue up nearly 50% to $16.8bn ahead of IPO The phrase \"told investors\" appears four times in this FT article, which reports on Anthropic's day of hosting investors on Wednesday. Lots of details in here from \" people with knowledge of the mat",
       "published": "2026-10-15T14:00:02.547821+00:00",
-      "audio_url": null,
-      "duration": ""
-    },
-    {
-      "id": "faf4d5dfcd6c5d73",
-      "title": "Your secrets aren\u2019t safe with this cute robot toy \u2014 they\u2019re on Chinese servers ready to be hacked",
-      "link": "https://www.theverge.com/tech/1010727/eiliko-robot-hack-energize-lab",
-      "source": "The Verge \u2014 AI",
-      "category": "AI",
-      "summary": "There's a new digital pet in town - a cute little marshmallow of a robot that can change its cartoony expressions to match your mood. But if you or your kids talk to \"Eiliko\" over Wi-Fi, it'll phone home to China. Its AI companion can store literally everything you tell it on Chi",
-      "published": "2026-10-15T14:00:01.901592+00:00",
-      "audio_url": null,
-      "duration": ""
-    },
-    {
-      "id": "b6af0c3578bc7e52",
-      "title": "Amazon\u2019s always-listening Bee wearable can now help you buy stuff",
-      "link": "https://www.theverge.com/tech/1011475/amazon-bee-frontier-eclipse-price-specs",
-      "source": "The Verge \u2014 AI",
-      "category": "AI",
-      "summary": "Last year, Amazon bought Bee, a relatively unknown startup with a $50 always-listening AI wearable that summarized every conversation you had. Today, the e-commerce giant is announcing two new Bee devices - and a new subscription to go with them. First is the $74.99 Bee Frontier,",
-      "published": "2026-10-15T14:00:01.901553+00:00",
       "audio_url": null,
       "duration": ""
     },
@@ -2953,17 +2975,6 @@
       "duration": ""
     },
     {
-      "id": "d3db30efe56f6be9",
-      "title": "US arrests tech CEO accused of smuggling $300M in Nvidia chips into China",
-      "link": "https://arstechnica.com/tech-policy/2026/10/us-arrests-tech-ceo-accused-of-smuggling-300m-in-nvidia-chips-into-china/",
-      "source": "Ars Technica AI",
-      "category": "AI",
-      "summary": "Nvidia\u2019s chip-smuggling problem won\u2019t go away as arrests continue.",
-      "published": "2026-10-02T18:39:36+00:00",
-      "audio_url": null,
-      "duration": ""
-    },
-    {
       "id": "8e206c4d9ed6ea5b",
       "title": "A model guide for the GPT-6 family",
       "link": "https://openai.com/index/practical-guide-building-gpt-6",
@@ -3125,17 +3136,6 @@
       "category": "AI",
       "summary": "Anthropic has released a frontier red teaming report, claiming that Zhipu AI's GLM-5.3 has weak safeguarding, and can easily be used to generate harmful content.",
       "published": "2026-09-30T14:40:00+00:00",
-      "audio_url": null,
-      "duration": ""
-    },
-    {
-      "id": "6a91381a429232e7",
-      "title": "Disrupting a coordinated model-distillation campaign",
-      "link": "https://openai.com/index/disrupting-a-coordinated-model-distillation-campaign",
-      "source": "OpenAI Blog",
-      "category": "AI",
-      "summary": "Learn how OpenAI disrupted a campaign to extract protected model reasoning and is strengthening defenses against adversarial distillation.",
-      "published": "2026-09-30T10:30:00+00:00",
       "audio_url": null,
       "duration": ""
     },
