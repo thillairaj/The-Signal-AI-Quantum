@@ -1,6 +1,37 @@
 {
   "articles": [
     {
+      "id": "2026-10-23-hybrid-tls-handshake",
+      "title": "How Does a Hybrid Handshake Make TLS Quantum Safe?",
+      "subtitle": "One TLS handshake, two key exchanges, and the harvest now, decrypt later problem",
+      "date": "2026-10-23",
+      "kind": "Brief",
+      "card": "research/cards/edition-04.webp",
+      "body": "research/articles/2026-10-23-hybrid-tls-handshake.html",
+      "sources": [
+        {
+          "label": "Imperva: Harvest Now, Decrypt Later: End-to-End PQC TLS (Oct 5, 2026)",
+          "url": "https://www.imperva.com/blog/harvest-now-decrypt-later-post-quantum-tls/"
+        },
+        {
+          "label": "Medium: Post-Quantum TLS Is Here. Your Web Stack Isn't Quantum-Safe Yet. (Oct 2026)",
+          "url": "https://medium.com/@odeniyimichael1/post-quantum-tls-is-here-your-web-stack-isnt-quantum-safe-yet-0caed77e1ce8"
+        },
+        {
+          "label": "Pacific Technology Group: NCSC TLS guidance on hybrid ML-KEM key exchange (Oct 19, 2026)",
+          "url": "https://www.pacific.london/insights/ncsc-post-quantum-cryptography-tls-guidance-rfc-10024-ml-kem-hybrid-encryption-2028-deadline-uk-mid-market-cryptographic-migration"
+        },
+        {
+          "label": "TechUpscale: NCSC issues updated TLS guidance for post-quantum cryptography (Oct 2026)",
+          "url": "https://techupscale.com/ncsc-issues-updated-tls-guidance-for-post-quantum-cryptography/"
+        },
+        {
+          "label": "shattered.io: ML-KEM vs X25519 TLS 1.3 adoption and overhead (2026)",
+          "url": "https://shattered.io/ml-kem-vs-x25519-tls-1-3-2026/"
+        }
+      ]
+    },
+    {
       "id": "2026-10-21-meta-muse-wonder",
       "title": "Meta Ships Muse Wonder: Its First Frontier Model, Built for Agents That Remember",
       "subtitle": "Active Memory and Active Focus move the frontier pitch from raw capability to persistent behavior",
@@ -162,5 +193,5 @@
       "title": "Where Does Value Accrue in the AI Stack?"
     }
   ],
-  "generated_at": "2026-10-21T04:20:26+00:00"
+  "generated_at": "2026-10-23T04:16:39+00:00"
 }
