@@ -907,3 +907,27 @@ body[data-view="research"] .feed-only { display: none; }
 .feed-tools .source-toggle:hover { border-color: #B8860B; color: var(--ink); }
 .feed-tools .source-toggle.active { background: #0B1F3B; border-color: #0B1F3B; color: #F7F2E4; }
 .feed-tools .source-toggle .count { opacity: .75; font-size: 11px; }
+
+/* Game cards in the Play and Learn door (Oct 23 2026) */
+.learn-card.game-duel { background-color: #ECE7F7; border: 1px solid #B9A8DE; }
+.learn-card.game-duel:hover { background-color: #DCD2F2; border-color: #7C63C0; }
+.learn-card.game-run { background-color: #FDECEA; border: 1px solid #E8A9A0; }
+.learn-card.game-run:hover { background-color: #FBDCD6; border-color: #D96A57; }
+.learn-card.game-soon { background-color: #F4F1EA; border: 1px dashed #C9C0AB; }
+.learn-card.game-soon:hover { transform: none; box-shadow: none; }
+
+/* Play and Learn launch pop up (Thillai, Oct 23 2026): shown once per visitor */
+.games-popup-backdrop { position: fixed; inset: 0; z-index: 200; background: rgba(11,31,59,.55); display: flex; align-items: center; justify-content: center; padding: 18px; }
+.games-popup-backdrop[hidden] { display: none; }
+.games-popup { position: relative; max-width: 430px; width: 100%; background: #FFFCF4; border: 1px solid #D8C9A3; border-radius: 18px; padding: 26px 24px 22px; box-shadow: 0 24px 60px rgba(0,0,0,.35); text-align: left; }
+.games-popup-kicker { font-family: var(--font-mono); font-size: 11px; letter-spacing: .14em; text-transform: uppercase; color: #7C63C0; font-weight: 700; }
+.games-popup h3 { font-family: var(--font-display); font-size: 24px; color: #0B1F3B; margin: 8px 0; }
+.games-popup p { font-size: 14.5px; line-height: 1.6; color: #3D4451; margin: 0 0 18px; }
+.games-popup-close { position: absolute; top: 10px; right: 12px; width: 36px; height: 36px; border: none; border-radius: 50%; background: transparent; color: #8A8272; font-size: 24px; line-height: 1; cursor: pointer; }
+.games-popup-close:hover { background: #F1EAD6; color: #0B1F3B; }
+.games-popup-actions { display: flex; gap: 10px; flex-wrap: wrap; }
+.games-popup-go { background: #4C2E9E; color: #FFF8E7; border: none; border-radius: 999px; padding: 11px 20px; font-size: 14px; font-weight: 700; cursor: pointer; }
+.games-popup-go:hover { background: #3D2480; }
+.games-popup-later { background: transparent; color: #4A4232; border: 1px solid #C9C0AB; border-radius: 999px; padding: 11px 18px; font-size: 14px; cursor: pointer; }
+.games-popup-later:hover { border-color: #0B1F3B; color: #0B1F3B; }
+@media (max-width: 640px) { .games-popup { padding: 22px 18px 18px; } .games-popup h3 { font-size: 21px; } }

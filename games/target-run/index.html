@@ -1,0 +1,1622 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="color-scheme" content="light dark" />
+    <link rel="icon" href="data:," />
+    <title>Target Run</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Nunito:wght@700;800;900&display=swap" rel="stylesheet" />
+    <style>
+      /* Target Run identity: a neon fairground gallery at night. Deep teal
+         night backdrop, warm amber string lights as the dressing accent,
+         coral as the action accent, wooden shelves kept as gallery rails.
+         Deliberately unlike Answer Duel's violet and gold card arena. */
+      :root{
+        --page: linear-gradient(162deg,#04272e 0%,#07403d 46%,#082f42 100%);
+        --panel:#fff6e9; --panel2:#ffeeda; --ink:#38220f; --inkSoft:#7a5b3d;
+        --felt1:#0e8a6d; --felt2:#075f4a;
+        --coral:#ff5964; --gold:#ffc53d; --teal:#12b5a5; --pink:#ef5da8; --orange:#ff8c42; --violet:#8b5cf6; --blue:#3a7bd5;
+        --p1:#ff8c42; --p2:#ef5da8;
+        --shadow:rgba(0,10,12,.45);
+        color-scheme:light;
+      }
+      @media (prefers-color-scheme:dark){
+        :root{
+          --page: linear-gradient(162deg,#02161a 0%,#04282a 48%,#03141f 100%);
+          --panel:#123332; --panel2:#1a423f; --ink:#ffeedd; --inkSoft:#cfe3d8;
+          --felt1:#0d7a5c; --felt2:#07503c;
+          --shadow:rgba(0,0,0,.6);
+          color-scheme:dark;
+        }
+      }
+      /* Ambient fairground layer: fixed behind everything, in the page
+         background and margins only. It never enters the play area, never
+         covers a target, call or text, and adds no scroll. */
+      #ambient{position:fixed; inset:0; z-index:0; pointer-events:none; overflow:hidden;
+        background:
+          radial-gradient(120% 90% at 50% 0%, rgba(255,176,58,.14), rgba(255,176,58,0) 55%),
+          radial-gradient(90% 70% at 85% 100%, rgba(18,181,165,.12), rgba(18,181,165,0) 60%);
+        animation:ambientBreath 14s ease-in-out infinite alternate;
+      }
+      @keyframes ambientBreath{ from{opacity:.82} to{opacity:1} }
+      #ambient .bulb{position:absolute; width:7px; height:7px; border-radius:50%;
+        background:#ffd98a; box-shadow:0 0 8px 2px rgba(255,176,58,.55);
+        animation:bulbTwinkle 3.6s ease-in-out infinite;
+      }
+      #ambient .bulb.alt{background:#ff9d7a; box-shadow:0 0 8px 2px rgba(255,140,66,.5)}
+      @keyframes bulbTwinkle{ 0%,100%{opacity:.45} 50%{opacity:1} }
+      #ambient .spark{position:absolute; width:4px; height:4px; border-radius:50%;
+        background:rgba(255,240,200,.85); box-shadow:0 0 6px 1px rgba(255,220,150,.5);
+        animation:sparkDrift 11s ease-in-out infinite alternate;
+      }
+      @keyframes sparkDrift{ from{transform:translate(0,0); opacity:.25} 50%{opacity:.8} to{transform:translate(10px,-16px); opacity:.35} }
+      /* While a call is live the margin life stays slow and quiet. */
+      body.inplay #ambient .bulb{animation-duration:6.5s}
+      body.inplay #ambient .spark{animation-duration:16s}
+      body.inplay #ambient{animation-duration:22s}
+      /* Stage win: a brighter bulb chase runs around the frame edge, in the
+         margin only, for a few seconds. */
+      body.chase #ambient .bulb{animation:bulbChase .45s ease-in-out infinite alternate; background:#ffe9a8}
+      @keyframes bulbChase{ from{opacity:.35; box-shadow:0 0 5px 1px rgba(255,176,58,.4)} to{opacity:1; box-shadow:0 0 13px 4px rgba(255,190,80,.85)} }
+      .wrap{position:relative; z-index:1}
+      @media (prefers-reduced-motion:reduce){
+        #ambient, #ambient .bulb, #ambient .spark{animation:none}
+      }
+      *{box-sizing:border-box}
+      html,body{margin:0;padding:0}
+      body{
+        min-height:100vh; background:var(--page); background-attachment:fixed;
+        color:var(--ink); font-family:Nunito,"Trebuchet MS",system-ui,sans-serif;
+        padding:14px 12px 26px;
+      }
+      .wrap{max-width:1020px;margin:0 auto}
+      h1,h2,.disp{font-family:Fredoka,"Trebuchet MS",system-ui,sans-serif}
+      button{font:inherit}
+      :focus-visible{outline:3px solid var(--gold);outline-offset:2px;border-radius:8px}
+      .panel{
+        background:var(--panel); border-radius:22px; padding:18px 16px 20px;
+        box-shadow:0 14px 0 var(--shadow); max-width:640px; margin:20px auto 0;
+      }
+      .panel h1{margin:0 0 4px;font-size:clamp(28px,6.5vw,40px);font-weight:700;color:var(--coral);line-height:1.05;text-align:center}
+      .panel h2{margin:0 0 6px;font-size:clamp(21px,5vw,29px);font-weight:700;color:var(--coral);line-height:1.1;text-align:center}
+      .tagline{text-align:center;font-weight:800;color:var(--inkSoft);margin:0 0 12px;font-size:13.5px;line-height:1.45}
+      .rules{margin:0 0 14px;padding-left:20px;line-height:1.5;font-size:13.5px;font-weight:700}
+      .rules li{margin:5px 0}
+      .rules b{color:var(--coral)}
+      .setLabel{font-family:Fredoka,sans-serif;font-weight:600;font-size:14.5px;margin:13px 0 6px;color:var(--ink)}
+      .seg{display:flex;gap:8px;flex-wrap:wrap}
+      .seg button{
+        border:3px solid var(--inkSoft); background:var(--panel2); color:var(--ink);
+        border-radius:999px; padding:7px 14px; font-weight:900; font-size:13.5px; cursor:pointer;
+        transition:transform .12s, background .12s, border-color .12s;
+      }
+      .seg button[aria-pressed="true"]{background:var(--coral); border-color:var(--coral); color:#fff; transform:scale(1.04)}
+      .seg button:disabled{opacity:.55; cursor:default; transform:none}
+      .seg button .soon{display:block; font-size:10.5px; font-weight:800; color:var(--inkSoft)}
+      .seg button[aria-pressed="true"] .soon{color:#ffe9a8}
+      .names{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+      @media (max-width:560px){.names{grid-template-columns:1fr}}
+      .names label{display:block;font-weight:900;font-size:13px;color:var(--inkSoft);margin-bottom:4px}
+      .names input{
+        width:100%;font:inherit;font-weight:800;font-size:15px;color:var(--ink);
+        background:var(--panel2);border:3px solid var(--inkSoft);border-radius:12px;padding:8px 11px;
+      }
+      .names input:focus{border-color:var(--coral);outline:none}
+      .sampleBox{background:var(--panel2);border-radius:14px;padding:10px 13px;font-weight:800;font-size:13.5px;line-height:1.45}
+      .ladder{display:flex;gap:6px;flex-wrap:wrap;margin-top:7px}
+      .ladder span{border-radius:999px;padding:4px 10px;font-weight:900;font-size:12.5px;background:var(--panel);box-shadow:inset 0 0 0 2px var(--inkSoft);color:var(--inkSoft)}
+      .ladder span.play{background:var(--teal);color:#fff;box-shadow:inset 0 0 0 2px var(--teal)}
+      .startRow{display:flex;justify-content:center;margin-top:18px}
+      .btn{
+        border:0;border-radius:14px;padding:11px 20px;font-weight:900;font-size:15.5px;cursor:pointer;color:#fff;
+        background:var(--coral);box-shadow:0 5px 0 rgba(0,0,0,.25);transition:transform .1s, box-shadow .1s;
+      }
+      .btn:active{transform:translateY(3px);box-shadow:0 2px 0 rgba(0,0,0,.25)}
+      .btn.ghost{background:var(--panel2);color:var(--ink);box-shadow:0 5px 0 var(--shadow)}
+      .fineprint{text-align:center;color:var(--inkSoft);font-weight:700;font-size:13px;margin:12px 0 0;line-height:1.45}
+
+      #game{display:none;position:relative}
+      #hud{display:grid;grid-template-columns:1fr auto 1fr;gap:10px;align-items:stretch;margin-top:6px}
+      .pl{
+        border-radius:12px;padding:5px 9px;background:rgba(0,0,0,.22);color:#fff;opacity:.62;
+        transition:opacity .2s, transform .2s;box-shadow:inset 0 0 0 3px rgba(255,255,255,.25);
+      }
+      .pl.on{opacity:1;transform:scale(1.02);background:rgba(0,0,0,.38)}
+      #pl1{text-align:right}
+      .pl .nm{font-family:Fredoka,sans-serif;font-weight:600;font-size:clamp(12.5px,3.2vw,16px);line-height:1.1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+      .pl .row2{display:flex;gap:7px;align-items:baseline;flex-wrap:wrap}
+      #pl1 .row2{flex-direction:row-reverse}
+      .pl .sc{font-size:clamp(14px,3.6vw,18px);font-weight:900;line-height:1.05}
+      .pl .sc small{font-size:.55em;font-weight:800;opacity:.85}
+      .pl .lv{font-size:12px;font-weight:800;opacity:.92;white-space:nowrap}
+      .midHud{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;color:#fff;min-width:92px}
+      #dots{display:flex;gap:4px;justify-content:center}
+      #dots span{width:11px;height:11px;border-radius:50%;border:2px solid #fff;background:transparent;transition:background .2s}
+      #dots span.f{background:var(--gold);border-color:var(--gold)}
+      #dots span.m{background:var(--teal);border-color:var(--teal)}
+      #dots span.x{background:var(--coral);border-color:var(--coral)}
+      #hearts{display:flex;gap:3px;justify-content:center;font-size:16px;line-height:1;color:#ff5964;text-shadow:0 2px 0 rgba(0,0,0,.3)}
+      #hearts span.lost{opacity:.25;color:#fff}
+      #dotsLabel{font-size:12px;font-weight:900;color:#fff;text-shadow:0 2px 0 rgba(0,0,0,.25);text-align:center;line-height:1.25}
+      .hudBtns{display:flex;gap:8px}
+      .iconBtn{
+        background:rgba(0,0,0,.3);border:0;border-radius:10px;color:#fff;cursor:pointer;
+        width:34px;height:30px;display:flex;align-items:center;justify-content:center;padding:0;
+      }
+      .iconBtn svg{width:18px;height:18px;fill:#fff}
+      .iconBtn .wave{display:block}
+      .iconBtn.muted .wave{display:none}
+      .iconBtn .xmark{display:none}
+      .iconBtn.muted .xmark{display:block}
+
+      #stage{
+        margin-top:8px;border-radius:24px;padding:10px 10px 12px;position:relative;
+        background:linear-gradient(170deg,var(--felt1),var(--felt2));
+        box-shadow:0 14px 0 var(--shadow), inset 0 0 0 4px rgba(255,255,255,.18);
+      }
+      #famLabel{
+        display:inline-block;background:rgba(0,0,0,.3);color:#ffe9a8;border-radius:999px;
+        padding:3px 11px;font-size:12.5px;font-weight:900;letter-spacing:.02em;
+      }
+      #callBox{
+        margin-top:8px;background:rgba(0,0,0,.28);border-radius:16px;padding:9px 12px;color:#fff;
+      }
+      #callLabel{font-size:12px;font-weight:900;letter-spacing:.08em;color:var(--gold)}
+      #callMeta{font-size:12px;font-weight:900;color:#ffe9a8;margin-top:3px}
+      #callText{font-family:Fredoka,sans-serif;font-weight:600;font-size:clamp(14px,3.6vw,18px);line-height:1.28;margin-top:2px}
+      #readWrap{display:none;margin-top:8px}
+      #readWrap.on{display:block}
+      #readLabel{font-weight:900;font-size:13px;color:var(--gold);line-height:1.3}
+      #readTrack{margin-top:4px;height:8px;border-radius:999px;background:rgba(255,255,255,.25);overflow:hidden}
+      #readFill{height:100%;width:100%;background:var(--gold);border-radius:999px}
+      #cvWrap{position:relative;margin-top:10px;border-radius:18px;overflow:hidden;box-shadow:inset 0 0 0 4px rgba(255,255,255,.22);height:320px}
+      #cv{display:block;width:100%;height:100%;cursor:crosshair;touch-action:manipulation}
+      #fact{
+        margin:10px auto 0;max-width:760px;background:var(--panel);color:var(--ink);
+        border-radius:14px;padding:8px 12px;font-weight:800;font-size:13.5px;line-height:1.4;
+        box-shadow:0 6px 0 var(--shadow);opacity:0;transform:translateY(8px);
+        transition:opacity .25s, transform .25s;min-height:40px;
+      }
+      #fact.show{opacity:1;transform:translateY(0)}
+      #fact b{color:var(--coral)}
+      /* Slim announcement strip: docked at the top edge of the play area,
+         never centred, never covering the call or the lanes. */
+      #strip{
+        position:absolute;top:8px;left:50%;transform:translate(-50%,-6px);z-index:5;
+        background:rgba(24,10,22,.85);color:#fff;border-radius:999px;padding:5px 14px;
+        display:flex;gap:7px;align-items:baseline;justify-content:center;flex-wrap:nowrap;
+        max-width:94%;white-space:nowrap;overflow:hidden;
+        box-shadow:0 4px 10px rgba(0,0,0,.28);
+        opacity:0;pointer-events:none;transition:opacity .2s, transform .2s;
+      }
+      #strip.show{opacity:1;transform:translate(-50%,0)}
+      #strip .who{font-family:Fredoka,sans-serif;font-weight:600;font-size:14px;line-height:1.2}
+      #strip .sub{font-weight:800;color:#ffe9a8;font-size:12.5px;line-height:1.2}
+      #strip.p1 .who{color:var(--p1)} #strip.p2 .who{color:var(--p2)}
+      .gameFoot{display:flex;justify-content:center;margin-top:14px}
+      .linkBtn{background:none;border:0;color:#fff;font-weight:900;font-size:13px;cursor:pointer;text-decoration:underline;text-underline-offset:3px;text-shadow:0 2px 0 rgba(0,0,0,.25);padding:6px 10px}
+
+      #end{display:none}
+      #levelEnd{display:none}
+      #gate{display:none}
+      #gateTitle{margin-bottom:2px}
+      #gateWhy{margin-bottom:8px}
+      .tally{margin:14px 0 4px;display:grid;gap:9px}
+      .trow{
+        display:flex;align-items:center;justify-content:space-between;gap:10px;
+        background:var(--panel2);border-radius:14px;padding:10px 13px;font-weight:900;
+      }
+      .trow .tn{font-family:Fredoka,sans-serif;font-weight:600;font-size:16px}
+      .trow .ts{font-size:20px}
+      .trow .tf{display:block;font-size:12.5px;color:var(--inkSoft);font-weight:800}
+      .trow.win1{box-shadow:inset 0 0 0 3px var(--p1)} .trow.win2{box-shadow:inset 0 0 0 3px var(--p2)}
+      .endBtns{display:flex;gap:10px;justify-content:center;margin-top:18px;flex-wrap:wrap}
+      #bestLine{text-align:center;font-weight:900;color:var(--inkSoft);margin-top:10px;font-size:13.5px}
+      footer{margin-top:26px;text-align:center;line-height:1.6}
+      .backBar{margin:0 0 4px}
+      .backLink{display:inline-block;color:var(--gold);font-weight:900;font-size:14px;text-decoration:none;text-shadow:0 2px 0 rgba(0,0,0,.35);padding:4px 2px}
+      .backLink:hover,.backLink:focus-visible{text-decoration:underline;text-underline-offset:3px}
+      footer .credit{display:inline-block;background:rgba(40,10,25,.55);color:#fff;font-weight:800;font-size:13px;padding:7px 16px;border-radius:999px;text-shadow:0 1px 0 rgba(0,0,0,.35)}
+      footer a{color:var(--gold);text-decoration:underline;text-underline-offset:3px}
+      @media (prefers-reduced-motion:reduce){
+        .pl,.seg button{transition:none}
+        #fact{transition:none}
+      }
+    </style>
+  </head>
+  <body>
+    <div id="ambient" aria-hidden="true"></div>
+    <div class="wrap">
+      <nav class="backBar"><a class="backLink" href="https://thillairaj.github.io/The-Signal-AI-Quantum/#learn">← Back to Learning Spaces</a></nav>
+
+      <section id="setup">
+        <div class="panel">
+          <h1>Target Run</h1>
+          <p class="tagline">The shooting gallery recall game from Play and Learn. Learn first on the cards, decks and tables, then come here to play it back from memory while the answers are moving.</p>
+          <h2 style="text-align:left;font-size:18px;margin-bottom:7px">How a run works</h2>
+          <ul class="rules">
+            <li>A stage is a <b>short round of five questions</b> for each player. Every question is scored on its own: nothing needs to run in a row.</li>
+            <li>A call at the top tells you what to find: the <b>term that matches a meaning</b>, or the <b>full form of an abbreviation</b>.</li>
+            <li>Questions are <b>graded stage by stage from stage one onwards</b> so the round stays fair and the challenge grows as you climb. Stages one to three are <b>Simple</b>, stages four to six are <b>A little complex</b>, stages seven to nine are <b>More complex</b>, and stage ten is <b>Most complex</b>. Nobody meets a harder question before its stage arrives.</li>
+            <li>The two formats <b>taper as the stages rise</b>. Stages one to three carry <b>three meaning questions and two abbreviation questions</b> in each round of five. Stages four and five carry <b>four meaning questions and one abbreviation question</b>. Stages six to ten carry <b>meaning questions only</b>, because abbreviations cannot grow more complex the way questions can.</li>
+            <li>Both players face the <b>same shape of round</b> at every stage. The five question slots follow <b>one shared plan</b> for the stage, and the plan is mirrored slot by slot: whatever format and difficulty the first player meets in a slot, the second player meets the same format and the same difficulty in that slot, with a different question. <b>No question repeats</b> anywhere in a match.</li>
+            <li>A small label above each call names the <b>stage, the difficulty and the format</b> of the question in play, so both players can see the round is balanced.</li>
+            <li>The wrong answers are <b>built to resist guessing</b>. Meaning questions sit beside near neighbours of the same kind and the same category, alike in length and shape, and the decoys grow closer in the later slots of a stage. Abbreviation questions use <b>near miss expansions</b>: each wrong bubble keeps the shape of the correct expansion with one word swapped for a close cousin from the same field, and every near miss is checked so it is never the true expansion of another abbreviation.</li>
+            <li>Every question opens with a <b>fifteen second quick answer window</b>: the call and all four answers stand still, fully on screen, and can be tapped from the first second. Solve inside the window and you earn the solve points <b>plus a quick bonus of two points for every second left</b> on the clock. A wrong burst inside the window still costs a heart, and the window keeps running. When the window ends, the targets start to move and the bonus is gone.</li>
+            <li>Answer targets glide across <b>two lanes</b>. Tap the right target to burst it. At most <b>four answers</b> for one question are in play at once, and the four answer bubbles in every call <b>each carry a different bright colour</b>, so the four choices are always easy to tell apart.</li>
+            <li>Targets glide <b>faster at every stage</b> and grow slightly smaller as you climb, and <b>from stage five onward the targets hop</b> as they move.</li>
+            <li>Burst the right target with no mistake on that question and it is a <b>first attempt solve, worth 100 points</b>. A wrong burst costs <b>one heart</b> and marks the question; burst the right target after that and it still solves, for <b>50 points</b>.</li>
+            <li>If the right target glides off the edge, the question counts as <b>missed</b> and costs one heart. You hold <b>three hearts</b> each turn; lose the last one and your turn ends at once, with unplayed questions counted as missed.</li>
+            <li><b>Both players always play their full turn</b> in a stage before any winner is worked out, so the comparison is equal.</li>
+            <li>The game <b>pauses and waits</b> before every turn: before the first turn of a match, and at every hand over in a two player game. A card names the player to play, and their turn begins only when they tap the <b>Start</b> button carrying their name. Nothing moves and no clock runs while the game waits.</li>
+            <li>The <b>stage winner</b> is decided by most first attempt solves, then most questions solved, then most points. Five first attempt solves is a <b>perfect round</b>; if both players are perfect, the stage is a tie.</li>
+            <li>After every stage the winner is announced, and you choose: <b>continue to the next stage</b>, or <b>finish there</b>. Finishing announces the match winner from stages won, with total points as the tiebreak. Completing stage ten completes the full ladder, and the final screen confirms that <b>all ten stages were played</b>.</li>
+            <li>A tap that hits nothing costs nothing but the moment. There is <b>no deadline</b> on answers once targets are moving: the pressure is target speed and your hearts.</li>
+          </ul>
+
+          <div class="setLabel">Players</div>
+          <div class="seg" role="group" aria-label="Number of players">
+            <button type="button" id="mode1" aria-pressed="false">One player</button>
+            <button type="button" id="mode2" aria-pressed="true">Two players</button>
+          </div>
+
+          <div class="setLabel">Player names</div>
+          <div class="names">
+            <div>
+              <label for="name1">Player One</label>
+              <input id="name1" type="text" maxlength="20" value="Player One" autocomplete="off" />
+            </div>
+            <div id="name2Wrap">
+              <label for="name2">Player Two</label>
+              <input id="name2" type="text" maxlength="20" value="Player Two" autocomplete="off" />
+            </div>
+          </div>
+
+          <div class="setLabel">Families in the question pool</div>
+          <div class="sampleBox">
+            Questions are drawn <b>only from the families switched on</b>: one family, a pair such as AI and Quantum, or every built family at once. Your choice is <b>saved on this device</b>.
+            <div class="seg" role="group" aria-label="Family picker" id="famPicker" style="margin-top:8px">
+              <button type="button" data-fam="ai" aria-pressed="true">AI</button>
+              <button type="button" data-fam="quantum" aria-pressed="false" disabled>Quantum<span class="soon">Arriving in a later build</span></button>
+              <button type="button" data-fam="cloud" aria-pressed="false" disabled>Cloud and DevOps<span class="soon">Arriving in a later build</span></button>
+              <button type="button" data-fam="cyber" aria-pressed="false" disabled>Cybersecurity<span class="soon">Arriving in a later build</span></button>
+              <button type="button" data-fam="founders" aria-pressed="false" disabled>Founders and Leadership<span class="soon">Arriving in a later build</span></button>
+            </div>
+            <div class="seg" style="margin-top:8px">
+              <button type="button" id="famAll" aria-pressed="true">All families</button>
+            </div>
+            <p id="famNote" style="margin:8px 0 0">In the pool now: AI. The AI family is fully built, with all ten stages playable. The Quantum family follows at ten stages, and the Cloud and DevOps, Cybersecurity and Founders and Leadership families at five stages each; each joins this picker as its build lands, and families that are not built yet cannot be switched on.</p>
+            <div class="ladder" aria-label="Stage ladder">
+              <span class="play">Stage 1</span><span class="play">Stage 2</span><span class="play">Stage 3</span><span class="play">Stage 4</span><span class="play">Stage 5</span><span class="play">Stage 6</span><span class="play">Stage 7</span><span class="play">Stage 8</span><span class="play">Stage 9</span><span class="play">Stage 10</span>
+            </div>
+          </div>
+
+          <div class="startRow">
+            <button type="button" class="btn" id="startBtn">Start the run</button>
+          </div>
+          <p class="fineprint">Every stage announces its own winner, and you may finish after any stage. Playing solo, your best rounds are saved on this device.</p>
+        </div>
+      </section>
+
+      <section id="game" aria-live="off">
+        <div id="hud">
+          <div class="pl" id="pl0">
+            <div class="nm" id="nm0">Player One</div>
+            <div class="row2"><span class="sc"><span id="sc0">0</span> <small>points</small></span><span class="lv" id="lv0">Stage 1 of 10</span></div>
+          </div>
+          <div class="midHud">
+            <div id="dots" aria-hidden="true"></div>
+            <div id="dotsLabel">Five questions in this stage</div>
+            <div id="hearts" aria-label="Hearts left this turn"></div>
+            <div class="hudBtns">
+              <button type="button" class="iconBtn" id="muteBtn" aria-label="Sound on or off">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 9v6h4l5 5V4L7 9H3z"/><path class="wave" d="M16 8.8a4.6 4.6 0 0 1 0 6.4l-1.2-1.4a3 3 0 0 0 0-3.6L16 8.8zm2.4-3.2a8.4 8.4 0 0 1 0 11.8l-1.2-1.4a6.8 6.8 0 0 0 0-8.8l1.2-1.6z"/><path class="xmark" d="M16.6 9.4l5 5-1.4 1.4-5-5-5 5-1.4-1.4 5-5-5-5L10.2 2.8l5 5 5-5 1.4 1.4-5 5.2z" transform="translate(1.5 4) scale(0.82)"/></svg>
+              </button>
+            </div>
+          </div>
+          <div class="pl" id="pl1">
+            <div class="nm" id="nm1">Player Two</div>
+            <div class="row2"><span class="sc"><span id="sc1">0</span> <small>points</small></span><span class="lv" id="lv1">Stage 1 of 10</span></div>
+          </div>
+        </div>
+
+        <div id="stage">
+          <span id="famLabel">Content set: AI family</span>
+          <div id="callBox">
+            <div id="callLabel">YOUR CALL</div>
+            <div id="callMeta">Stage 1 · Simple · Meaning format</div>
+            <div id="callText">Get ready.</div>
+            <div id="readWrap"><div id="readLabel">Quick answer time: 15 seconds left. Answer now for bonus points.</div><div id="readTrack"><div id="readFill"></div></div></div>
+          </div>
+          <div id="cvWrap">
+            <canvas id="cv"></canvas>
+            <div id="strip" aria-hidden="true"><span class="who"></span><span class="sub"></span></div>
+          </div>
+          <div id="fact" role="status"></div>
+        </div>
+
+        <div class="gameFoot">
+          <button type="button" class="linkBtn" id="quitBtn">End the run and go back to the rules</button>
+        </div>
+      </section>
+
+      <section id="gate">
+        <div class="panel">
+          <p class="tagline" id="gateWhy"></p>
+          <h2 id="gateTitle">Your turn</h2>
+          <p class="tagline" id="gateSub"></p>
+          <div class="startRow">
+            <button type="button" class="btn" id="gateBtn">Start!</button>
+          </div>
+          <p class="fineprint">The game is paused. Nothing moves and no clock runs until the named player taps Start.</p>
+        </div>
+      </section>
+
+      <section id="levelEnd">
+        <div class="panel">
+          <h2 id="lvTitle">Stage result</h2>
+          <p class="tagline" id="lvSub"></p>
+          <div class="tally" id="lvTally"></div>
+          <div class="endBtns">
+            <button type="button" class="btn" id="continueBtn">Continue to the next stage</button>
+            <button type="button" class="btn ghost" id="finishBtn">Finish here</button>
+          </div>
+        </div>
+      </section>
+
+      <section id="end">
+        <div class="panel">
+          <h2 id="endTitle">Match complete</h2>
+          <p class="tagline" id="endSub"></p>
+          <div class="tally" id="tally"></div>
+          <p id="bestLine"></p>
+          <div class="endBtns">
+            <button type="button" class="btn" id="againBtn">Play again</button>
+            <button type="button" class="btn ghost" id="settingsBtn">Change settings</button>
+          </div>
+        </div>
+      </section>
+
+      <footer>
+        <span class="credit">Curated by Thillai Raj Thanam Jeya Veera Raj · <a href="https://www.linkedin.com/in/thillairaj" target="_blank" rel="noopener">Follow on LinkedIn</a></span>
+      </footer>
+    </div>
+
+    <script>
+"use strict";
+/* Real AI family terms from the validated Play and Learn pool.
+   Meaning calls pair a term name with its table meaning.
+   Expansion calls pair a real abbreviation with its full form. */
+/* The full AI family from the validated Play and Learn pool: 232 unique
+   terms drawn from the 238 AI entries, with meanings and expansions
+   exactly as the pool carries them. Every term is graded into one of
+   ten stages by transparent signals: name length, meaning length and
+   how deep its category sits in the family tables, so stage one holds
+   the short, widely known terms and stage ten the longest, most
+   specialised ones. Abbreviation pairs are the pool pairs only,
+   deduplicated by abbreviation and by expansion. */
+var MEANING = [
+ {"n": "Algorithm", "d": "A defined procedure a computer follows to turn inputs into outputs: a recipe of steps.", "c": "Foundations", "tier": 1},
+ {"n": "Inference", "d": "Using a trained model to make a prediction or generate an answer on new data.", "c": "How Machines Learn", "tier": 1},
+ {"n": "Generalisation", "d": "A model's ability to perform well on new, unseen cases, not just its training examples.", "c": "How Machines Learn", "tier": 1},
+ {"n": "Model", "d": "The trained artefact that an algorithm produces from data: the thing that actually makes predictions or generates text in production.", "c": "Foundations", "tier": 1},
+ {"n": "Parameters", "d": "The internal numerical settings of a model, learned during training, that define how it transforms inputs into outputs.", "c": "How Machines Learn", "tier": 1},
+ {"n": "Weights", "d": "The most important parameters in a neural network: numbers that set how strongly each connection influences the result.", "c": "How Machines Learn", "tier": 1},
+ {"n": "Machine Learning", "d": "A way of building software that learns patterns from examples instead of following hand written rules.", "c": "Foundations", "tier": 1},
+ {"n": "Regression", "d": "An AI task where the output is a number: next month's demand, a delivery time, a credit risk score, a price.", "c": "Types of AI Systems", "tier": 1},
+ {"n": "Deep Learning", "d": "Machine learning using large neural networks with many layers, trained on big datasets with powerful hardware.", "c": "Foundations", "tier": 1},
+ {"n": "Classification", "d": "An AI task where the output is a category: fraud or legitimate, urgent or routine, which product, which language.", "c": "Types of AI Systems", "tier": 1},
+ {"n": "Dataset", "d": "The collection of examples used to train or evaluate a model: documents, images, transactions, recordings, usually with labels or correct answers attached.", "c": "How Machines Learn", "tier": 1},
+ {"n": "Overfitting", "d": "When a model memorises its training examples instead of learning patterns that transfer, so it performs brilliantly on data it has seen and poorly on new data.", "c": "How Machines Learn", "tier": 1},
+ {"n": "Narrow AI", "d": "AI designed for one specific task or a narrow range of tasks: approving loans, transcribing speech, recommending products.", "c": "Foundations", "tier": 1},
+ {"n": "Training", "d": "The phase where a model learns from data: it makes predictions, measures its errors, and adjusts its internal weights to do better, repeated millions or billions of times.", "c": "How Machines Learn", "tier": 1},
+ {"n": "Transformer", "d": "The neural network architecture behind virtually all modern language models, introduced in 2017.", "c": "Neural Networks & Compute", "tier": 1},
+ {"n": "Temperature", "d": "A setting that controls how random a model's word choices are.", "c": "Generative AI & LLMs", "tier": 1},
+ {"n": "Turing Test", "d": "A test proposed by Alan Turing in 1950: if a human judge, chatting by text, cannot reliably tell the machine from a person, the machine is said to pass.", "c": "Foundations", "tier": 1},
+ {"n": "Speech Recognition", "d": "Technology that converts spoken language into text, also called speech to text.", "c": "Types of AI Systems", "tier": 1},
+ {"n": "Clustering", "d": "Grouping items by similarity without predefined categories: customers who behave alike, documents on similar topics, machines with similar sensor patterns.", "c": "Types of AI Systems", "tier": 1},
+ {"n": "Recommendation Systems", "d": "AI that predicts what a user will value next: products, content, people, actions.", "c": "Types of AI Systems", "tier": 1},
+ {"n": "Reinforcement Learning", "d": "Learning by trial and error: an agent takes actions, receives rewards or penalties, and gradually learns a strategy that maximises reward.", "c": "How Machines Learn", "tier": 1},
+ {"n": "Token", "d": "The unit of text an LLM reads and writes: a chunk that may be a word, part of a word, or punctuation.", "c": "Generative AI & LLMs", "tier": 1},
+ {"n": "Artificial Intelligence", "d": "The broad field of building systems that perform tasks associated with human intelligence: understanding language, recognising images, making predictions and generating content.", "c": "Foundations", "tier": 1},
+ {"n": "Prompt", "d": "The instruction and material you give a model: the question, context, examples and format you want back.", "c": "Generative AI & LLMs", "tier": 1},
+ {"n": "Supervised Learning", "d": "Learning from examples that come with the correct answers attached, called labels: emails marked spam or not, loans marked repaid or defaulted.", "c": "How Machines Learn", "tier": 2},
+ {"n": "Multimodal", "d": "Describes a model that works across more than one type of input or output: text with images, audio, video or documents.", "c": "Generative AI & LLMs", "tier": 2},
+ {"n": "Unsupervised Learning", "d": "Learning from data without labels, by finding structure on its own: grouping similar customers, flagging unusual transactions, compressing data into useful patterns.", "c": "How Machines Learn", "tier": 2},
+ {"n": "Diffusion Model", "d": "The technique behind most modern image and video generators.", "c": "Generative AI & LLMs", "tier": 2},
+ {"n": "Computer Vision", "d": "AI that interprets images and video: inspecting products on a line, reading documents, counting inventory, monitoring safety compliance.", "c": "Types of AI Systems", "tier": 2},
+ {"n": "Generative AI", "d": "AI that creates new content: text, images, audio, video, code.", "c": "Generative AI & LLMs", "tier": 2},
+ {"n": "Latency", "d": "The delay between sending a request and receiving a usable response.", "c": "AI in Practice", "tier": 2},
+ {"n": "Grounding", "d": "Anchoring a model's output in verifiable source material: retrieved documents, database records, tool results.", "c": "Working with LLMs", "tier": 2},
+ {"n": "Attention", "d": "The mechanism that lets a transformer decide which parts of the input matter most for each word it processes: in a long contract, linking a pronoun to the right company name pages earlier.", "c": "Neural Networks & Compute", "tier": 2},
+ {"n": "Hallucination", "d": "When a model produces fluent, confident output that is false: invented citations, wrong figures, non existent policies.", "c": "Working with LLMs", "tier": 2},
+ {"n": "Foundation Model", "d": "A very large model trained on broad data that can be adapted to many different tasks: writing, coding, analysis, image work.", "c": "Neural Networks & Compute", "tier": 2},
+ {"n": "Benchmark", "d": "A standardised test used to compare models: exam style questions, coding tasks, reasoning problems.", "c": "AI in Practice", "tier": 2},
+ {"n": "Artificial General Intelligence", "d": "Artificial General Intelligence: a hypothetical system that could learn and perform any intellectual task a human can, across domains, without being retrained from scratch for each one.", "c": "Foundations", "tier": 2},
+ {"n": "Neural Network", "d": "A computing structure loosely inspired by the brain: layers of simple units, each combining inputs with learned weights and passing a signal onward.", "c": "Neural Networks & Compute", "tier": 2},
+ {"n": "Embedding", "d": "A way of converting text (or images and other data) into a list of numbers, called a vector, that captures meaning: similar meanings get similar numbers.", "c": "Working with LLMs", "tier": 2},
+ {"n": "Natural Language Processing", "d": "The branch of AI that works with human language: understanding, searching, summarising, translating and generating text and speech.", "c": "Types of AI Systems", "tier": 2},
+ {"n": "Copilot", "d": "An AI assistant embedded inside a tool a person already uses: drafting in documents, suggesting code in an editor, summarising in a CRM.", "c": "AI in Practice", "tier": 2},
+ {"n": "AI Accelerator", "d": "Any specialised hardware designed to run AI workloads faster or more cheaply than general purpose chips: GPUs, Google's TPUs, and dedicated AI chips in cloud servers, laptops and phones.", "c": "Neural Networks & Compute", "tier": 2},
+ {"n": "Graphics Processing Unit", "d": "Graphics Processing Unit: a chip built to do many simple calculations in parallel, originally for video games and graphics.", "c": "Neural Networks & Compute", "tier": 2},
+ {"n": "Large Language Model", "d": "A foundation model trained on enormous amounts of text to predict and generate language.", "c": "Generative AI & LLMs", "tier": 2},
+ {"n": "Fine tuning", "d": "Taking a pre trained model and training it further on your specific examples so it adopts your formats, terminology and behaviour.", "c": "Working with LLMs", "tier": 2},
+ {"n": "Fairness", "d": "Whether an AI system treats people and groups equitably in its decisions and errors: who gets approved, flagged, served or mistaken.", "c": "Risks & Limits", "tier": 2},
+ {"n": "Evaluation", "d": "The discipline of measuring whether an AI system actually works: testing on representative examples, scoring quality, tracking failures and re testing after every change.", "c": "AI in Practice", "tier": 2},
+ {"n": "Autonomy", "d": "The degree of independence an agent has to choose and execute actions without human approval at each step.", "c": "Core Concepts", "tier": 3},
+ {"n": "Vector Database", "d": "A database specialised in storing embeddings and finding the closest matches to a query's embedding extremely fast, across millions of documents.", "c": "Working with LLMs", "tier": 3},
+ {"n": "Goal", "d": "The outcome an agent is given to achieve, expressed clearly enough that progress and completion can be judged.", "c": "Core Concepts", "tier": 3},
+ {"n": "Explainability", "d": "The ability to describe why a model produced a particular output in terms a human can inspect: which factors mattered, what would change the result.", "c": "Risks & Limits", "tier": 3},
+ {"n": "Context Window", "d": "The maximum amount of text, measured in tokens, that a model can consider at once: your prompt, the documents you attach, the conversation history and its own reply all share this space.", "c": "Generative AI & LLMs", "tier": 3},
+ {"n": "Guardrails", "d": "Controls placed around a model to keep behaviour within bounds: input and output filters, topic restrictions, format enforcement, escalation to humans.", "c": "Risks & Limits", "tier": 3},
+ {"n": "Alignment", "d": "The problem of making AI systems pursue the goals their creators actually intend, rather than literal, gamed or unintended interpretations of those goals.", "c": "Risks & Limits", "tier": 3},
+ {"n": "Handoff", "d": "The moment control and context pass from one agent (or an agent and a human) to another.", "c": "Agent Architecture", "tier": 3},
+ {"n": "State", "d": "The recorded progress of an agent's work: what has been done, what is known, what is pending.", "c": "Agent Architecture", "tier": 3},
+ {"n": "Perception", "d": "How an agent takes in the state of its world: reading documents, querying databases, receiving tool results, seeing screenshots or hearing audio.", "c": "Core Concepts", "tier": 3},
+ {"n": "Prompt Engineering", "d": "The craft of designing prompts and surrounding instructions so a model reliably produces the format, tone and reasoning a task needs: clear instructions, examples, structure and constraints.", "c": "Working with LLMs", "tier": 3},
+ {"n": "Action", "d": "Anything an agent does that changes something outside itself: calling an API, writing to a database, sending a message, booking, buying or editing a file.", "c": "Core Concepts", "tier": 3},
+ {"n": "Bias", "d": "Systematic unfairness or skew in AI outputs, usually inherited from training data, labels or the way a problem was framed: who was represented, whose outcomes were recorded, what was optimised.", "c": "Risks & Limits", "tier": 3},
+ {"n": "AI Agent", "d": "An AI system that goes beyond answering: it plans steps, uses tools such as search, databases and software actions, and works toward a goal with limited human direction.", "c": "AI in Practice", "tier": 3},
+ {"n": "Orchestration", "d": "The coordination layer that decides which agent or step runs when, passes context between them, enforces order and handles failures.", "c": "Agent Architecture", "tier": 3},
+ {"n": "Application Programming Interface", "d": "Application Programming Interface: the standard way software systems request services from each other.", "c": "AI in Practice", "tier": 3},
+ {"n": "Reflection", "d": "An agent reviewing its own output or plan, critiquing it against criteria, and revising before proceeding.", "c": "Reasoning & Planning", "tier": 3},
+ {"n": "AI Safety", "d": "The field and practice of ensuring AI systems behave reliably and do not cause harm: through testing, monitoring, access controls and limits on use.", "c": "Risks & Limits", "tier": 3},
+ {"n": "Data Strategy", "d": "The plan for what data the organisation collects, cleans, governs and makes usable, treated as a strategic asset.", "c": "Governance, Business & Strategy", "tier": 3},
+ {"n": "Reasoning", "d": "The model's process of working through a problem: weighing options, checking constraints and choosing a next step.", "c": "Reasoning & Planning", "tier": 3},
+ {"n": "Planning", "d": "An agent's ability to look ahead: break a goal into steps, order them, anticipate dependencies and revise when reality changes.", "c": "Reasoning & Planning", "tier": 3},
+ {"n": "AI Literacy", "d": "The working understanding of AI across an organisation: what it does, where it fails, how to use it well and what the rules are.", "c": "Governance, Business & Strategy", "tier": 3},
+ {"n": "Retrieval Augmented Generation", "d": "Retrieval Augmented Generation: before answering, the system searches your own documents or data, retrieves the relevant passages, and gives them to the model as source material.", "c": "Working with LLMs", "tier": 3},
+ {"n": "Digital Worker", "d": "A business framing for an agent deployed to perform a defined role or set of tasks, like a research assistant, support agent or coding agent.", "c": "Core Concepts", "tier": 4},
+ {"n": "Red Teaming", "d": "Deliberately attacking your own AI system before others do: crafting prompts and scenarios that try to extract data, bypass guardrails or produce harmful output, then fixing what breaks.", "c": "Risks & Limits", "tier": 4},
+ {"n": "Agentic AI", "d": "An umbrella term for AI systems built to pursue goals through sequences of decisions and actions, rather than answering a single prompt and stopping.", "c": "Core Concepts", "tier": 4},
+ {"n": "Tool", "d": "A function an agent can invoke: search, read a file, query a database, send an email, run code, create a ticket.", "c": "Tools & Actions", "tier": 4},
+ {"n": "Data Privacy", "d": "Protecting personal and confidential information across the AI lifecycle: what data is collected, sent to providers, stored in logs, used for training and surfaced in other users' answers.", "c": "Risks & Limits", "tier": 4},
+ {"n": "ReAct", "d": "A foundational agent pattern (Reason + Act) where the model alternates between short reasoning steps and tool actions, using each observation to decide the next move.", "c": "Reasoning & Planning", "tier": 4},
+ {"n": "AI Strategy", "d": "A deliberate plan linking AI investments to business outcomes: which problems, in which order, build or buy, with what data, talent, governance and measures of success.", "c": "Governance, Business & Strategy", "tier": 4},
+ {"n": "Agent Loop", "d": "The repeating cycle at the heart of every agent: perceive the current state, reason about what to do next, take an action through a tool, observe the outcome, and loop.", "c": "Core Concepts", "tier": 4},
+ {"n": "Single Agent System", "d": "One agent with a set of tools handling a task end to end.", "c": "Agent Architecture", "tier": 4},
+ {"n": "AI Ethics", "d": "The principles and choices about how AI should be used: fairness, transparency, accountability, human oversight and respect for the people affected by automated decisions.", "c": "Governance, Business & Strategy", "tier": 4},
+ {"n": "Build vs Buy", "d": "The decision between developing AI capability in house and consuming it from vendors or platforms.", "c": "Governance, Business & Strategy", "tier": 4},
+ {"n": "Task Decomposition", "d": "Breaking a large goal into smaller subtasks that can be executed, checked and retried independently.", "c": "Reasoning & Planning", "tier": 4},
+ {"n": "AI Governance", "d": "The organisational system for deciding which AI is used, for what, with what data, under whose accountability: policies, approval paths, model inventories, monitoring and incident handling.", "c": "Governance, Business & Strategy", "tier": 4},
+ {"n": "Supervisor Pattern", "d": "A multi agent design where one supervisor agent plans the work, delegates subtasks to worker agents, reviews their outputs and assembles the final result.", "c": "Agent Architecture", "tier": 4},
+ {"n": "Workflows vs Agents", "d": "A workflow follows steps a developer defined in advance; an agent decides its own steps at runtime using a model.", "c": "Agent Architecture", "tier": 4},
+ {"n": "Agent2Agent Protocol", "d": "An open protocol for agents built by different vendors to discover each other, delegate tasks and exchange results.", "c": "Tools & Actions", "tier": 4},
+ {"n": "Human in the Loop", "d": "A design where a person reviews, approves or corrects AI output at defined points before consequences happen: payments released, letters sent, records changed.", "c": "AI in Practice", "tier": 4},
+ {"n": "Multi Agent System", "d": "A system of several specialised agents that divide work, debate, check each other or operate in parallel under coordination.", "c": "Agent Architecture", "tier": 4},
+ {"n": "Browser Agent", "d": "An agent that works through a web browser: navigating sites, filling forms, extracting information and completing transactions.", "c": "Tools & Actions", "tier": 4},
+ {"n": "Episodic Memory", "d": "Memory of specific past events and interactions: what happened, in what order, with what outcome.", "c": "Context & Memory", "tier": 4},
+ {"n": "Sandbox", "d": "An isolated environment where an agent can run code, browse or use tools without touching production systems, real credentials or live data.", "c": "Safety & Control", "tier": 4},
+ {"n": "Error Recovery", "d": "How an agent responds when a tool fails, data is missing or an action produces an unexpected result: retry with changes, choose an alternative path, ask for help, or stop safely.", "c": "Reasoning & Planning", "tier": 4},
+ {"n": "Computer Use", "d": "An agent capability to operate software through its ordinary interface: seeing a screen, moving a pointer, clicking and typing, the way a person would.", "c": "Tools & Actions", "tier": 4},
+ {"n": "AI Regulation (EU AI Act)", "d": "Laws governing how AI is built and used.", "c": "Governance, Business & Strategy", "tier": 5},
+ {"n": "Measuring AI ROI", "d": "Evaluating whether AI pays: time saved, quality improved, revenue created or risk reduced, against the full cost of licences, integration, data preparation, evaluation and change management.", "c": "Governance, Business & Strategy", "tier": 5},
+ {"n": "Reliability", "d": "How consistently an agent completes tasks correctly across many runs, including unusual inputs and partial failures.", "c": "Evaluation & Observability", "tier": 5},
+ {"n": "Reinforcement Learning from Human Feedback", "d": "Reinforcement Learning from Human Feedback: humans rank model answers, those rankings train a reward signal, and the model is optimised to produce answers humans prefer.", "c": "Working with LLMs", "tier": 5},
+ {"n": "Agent Use Cases", "d": "The recurring shapes of work where agents currently deliver value: research and summarisation across sources, coding assistance, customer support resolution, document processing, data analysis and workflow automation.", "c": "Core Concepts", "tier": 5},
+ {"n": "Chain of Thought", "d": "A technique where the model works through intermediate steps in text before answering or acting, which improves performance on multi step problems.", "c": "Reasoning & Planning", "tier": 5},
+ {"n": "Tool Design", "d": "The craft of building tools agents can use reliably: narrow scope, clear names, unambiguous descriptions, structured inputs, predictable outputs and errors a model can understand and recover from.", "c": "Tools & Actions", "tier": 5},
+ {"n": "Context Management", "d": "The operational side of context engineering: summarising history before it overflows, pruning stale tool results, caching stable material and deciding what to drop.", "c": "Context & Memory", "tier": 5},
+ {"n": "Semantic Memory", "d": "An agent's store of general facts and knowledge about its domain, organisation and users, abstracted from individual events: policies, product facts, definitions, preferences.", "c": "Context & Memory", "tier": 5},
+ {"n": "Kill Switch", "d": "A tested mechanism to halt an agent or a whole agent system immediately: revoking its credentials, pausing its queues or disabling its tools.", "c": "Safety & Control", "tier": 5},
+ {"n": "Context Engineering", "d": "The discipline of deciding what information an agent sees at each step: instructions, history, retrieved documents, tool results and state, arranged and trimmed to fit the context window.", "c": "Context & Memory", "tier": 5},
+ {"n": "Runaway Loops", "d": "A failure mode where an agent cycles without progressing: retrying the same failing action, calling itself or another agent endlessly, or refining forever.", "c": "Safety & Control", "tier": 5},
+ {"n": "AgentOps", "d": "The operational discipline of running agents in production: deployment, monitoring, cost control, incident response, version management and continuous evaluation.", "c": "Deployment & Operations", "tier": 5},
+ {"n": "Agent Benchmarks", "d": "Public test suites that measure agent capability on standardised tasks, such as software engineering, web navigation or office work.", "c": "Evaluation & Observability", "tier": 5},
+ {"n": "Token Budget", "d": "A cap on how many tokens (roughly, units of text) an agent may consume on a task, set in advance.", "c": "Deployment & Operations", "tier": 5},
+ {"n": "Agent Evals", "d": "Systematic tests of an agent against representative tasks with scored outcomes, run before deployment and after every significant change.", "c": "Evaluation & Observability", "tier": 5},
+ {"n": "Trajectory Evaluation", "d": "Judging an agent not only by its final answer but by the path it took: the steps chosen, tools called, detours, recoveries and near misses.", "c": "Evaluation & Observability", "tier": 5},
+ {"n": "Prompt Injection", "d": "An attack where malicious instructions hidden in content an agent reads (a web page, email, document or tool result) try to override its real instructions and redirect its actions.", "c": "Safety & Control", "tier": 5},
+ {"n": "LlamaIndex", "d": "A framework centred on the data side of LLM applications: ingestion, indexing and retrieval for RAG, extended into agent and workflow patterns.", "c": "Agent Frameworks (Code)", "tier": 5},
+ {"n": "Short Term Memory", "d": "The agent's memory within a task or session: the conversation, intermediate results and current plan held in the context window or session state.", "c": "Context & Memory", "tier": 5},
+ {"n": "CrewAI", "d": "A Python framework for orchestrating role based multi agent crews, where agents receive roles, goals and tools and collaborate through defined processes.", "c": "Agent Frameworks (Code)", "tier": 5},
+ {"n": "Model Context Protocol", "d": "An open protocol that standardises how AI systems connect to tools, data sources and services, so one integration can be reused across many agent platforms instead of rebuilding connectors for each.", "c": "Tools & Actions", "tier": 5},
+ {"n": "Vector Memory", "d": "A storage method where text is converted into embeddings (numeric representations of meaning) and stored in a vector database, so an agent can retrieve the most semantically relevant material for a query rather than searching by keywords.", "c": "Context & Memory", "tier": 5},
+ {"n": "LangChain", "d": "One of the earliest and largest open source frameworks for building LLM applications, offering abstractions for prompts, models, retrievers, tools and agent loops.", "c": "Agent Frameworks (Code)", "tier": 6},
+ {"n": "Voice Agents", "d": "Agents that converse by phone or voice in real time, combining speech recognition, a language model, tool actions and speech synthesis.", "c": "Deployment & Operations", "tier": 6},
+ {"n": "Agent Frameworks", "d": "Software libraries and platforms that provide the building blocks for agents: loops, tool interfaces, memory, orchestration and integrations.", "c": "Deployment & Operations", "tier": 6},
+ {"n": "Long Term Memory", "d": "Information an agent persists across sessions: user preferences, facts learned, past outcomes and organisational knowledge, stored in databases or files and retrieved when relevant.", "c": "Context & Memory", "tier": 6},
+ {"n": "Langflow", "d": "A visual, drag and drop builder for LangChain based flows and agents, letting users wire components on a canvas and export them as deployable APIs.", "c": "Low Code & Workflow Builders", "tier": 6},
+ {"n": "n8n", "d": "A workflow automation platform with strong AI nodes that let users place agent steps inside broader automations spanning hundreds of business apps.", "c": "Low Code & Workflow Builders", "tier": 6},
+ {"n": "LangGraph", "d": "LangChain's graph based framework for stateful, controllable agents: workflows are built as nodes and edges with explicit state, checkpoints, human in the loop pauses and durable execution.", "c": "Agent Frameworks (Code)", "tier": 6},
+ {"n": "Scaling Agents", "d": "Running many agent instances in parallel across teams or workloads, with the queueing, rate limits, credential management and cost governance that requires.", "c": "Deployment & Operations", "tier": 6},
+ {"n": "Dust", "d": "A platform for building company internal AI agents and assistants connected to internal knowledge and tools, aimed at enterprise teams rather than developers first.", "c": "Low Code & Workflow Builders", "tier": 6},
+ {"n": "Pydantic AI", "d": "A Python agent framework from the Pydantic team that brings type safety, structured outputs and validation to agent development.", "c": "Agent Frameworks (Code)", "tier": 6},
+ {"n": "LLM as Judge", "d": "Using a language model to grade agent outputs or trajectories against a rubric, enabling evaluation at a scale humans cannot match.", "c": "Evaluation & Observability", "tier": 6},
+ {"n": "Windsurf", "d": "An AI code editor built around its Cascade agent, offering agentic editing and codebase awareness for individuals and enterprise teams.", "c": "Coding Agents", "tier": 6},
+ {"n": "Flowise", "d": "An open source visual builder for LLM flows and agents, similar in spirit to Langflow, placing a canvas over LangChain concepts with ready options for hosting chatbots and APIs.", "c": "Low Code & Workflow Builders", "tier": 6},
+ {"n": "Coding Agents", "d": "Agents specialised in software work: writing and editing code, running tests, fixing bugs and preparing changes for human review inside development environments and repositories.", "c": "Deployment & Operations", "tier": 6},
+ {"n": "Microsoft AutoGen", "d": "Microsoft Research's framework for conversational multi agent systems, where agents talk to each other and to humans in order to solve tasks.", "c": "Agent Frameworks (Code)", "tier": 6},
+ {"n": "Least Privilege Access", "d": "Granting an agent only the permissions each task requires, for only as long as required: read before write, one system before many, scoped credentials instead of shared master keys.", "c": "Safety & Control", "tier": 6},
+ {"n": "Cursor", "d": "An AI first code editor, built as a fork of VS Code, designed around agents that edit codebases, run commands and reason over repository context.", "c": "Coding Agents", "tier": 6},
+ {"n": "Tracing & Observability", "d": "Recording every step of an agent's work: prompts, context, model calls, tool calls, results, costs and timings, in a form engineers and auditors can replay.", "c": "Evaluation & Observability", "tier": 6},
+ {"n": "Lindy", "d": "A platform for creating AI employees and agents that handle tasks such as email triage, meeting preparation, lead research and CRM updates, aimed squarely at business users rather than developers.", "c": "Low Code & Workflow Builders", "tier": 6},
+ {"n": "Semantic Kernel", "d": "Microsoft's software development kit for bringing LLMs and agents into enterprise applications, offering planners, plugins and connectors in.NET, Python and Java.", "c": "Agent Frameworks (Code)", "tier": 6},
+ {"n": "Agent Governance", "d": "The organisational system for agents: an inventory of what agents exist, who owns them, what they may access and do, how they are evaluated, and how they are retired.", "c": "Business & Value", "tier": 6},
+ {"n": "Google ADK", "d": "Agent Development Kit: Google's open source framework for building and deploying agents, designed to work with Google's models and Vertex AI while also supporting others.", "c": "Agent Frameworks (Code)", "tier": 6},
+ {"n": "Agent Strategy", "d": "A deliberate plan for where agents will and will not be used across the organisation, sequenced by value, verifiability and risk, with shared platform choices and governance.", "c": "Business & Value", "tier": 6},
+ {"n": "Human on the Loop", "d": "A supervisory model where the agent acts autonomously but a human monitors live activity with the ability to pause, intervene or roll back.", "c": "Safety & Control", "tier": 6},
+ {"n": "Agent Readiness", "d": "An organisation's preparedness to deploy agents well: clean and accessible data, API ready systems, documented processes, evaluation habits and staff who understand supervision.", "c": "Business & Value", "tier": 7},
+ {"n": "Relevance AI", "d": "A no code and low code platform for building an AI workforce of agents that automate business processes such as research, sales tasks and support operations.", "c": "Low Code & Workflow Builders", "tier": 7},
+ {"n": "Devin", "d": "Cognition's autonomous software engineering agent, positioned as an AI engineer that takes tickets end to end inside a cloud workspace, planning work, browsing documentation and running tests as it goes.", "c": "Coding Agents", "tier": 7},
+ {"n": "Cost per Task", "d": "The full unit cost of an agent completing one piece of work: model tokens, tool and API charges, infrastructure, plus the human review and exception handling it still requires.", "c": "Deployment & Operations", "tier": 7},
+ {"n": "Claude Agent SDK", "d": "Anthropic's SDK for building agents on Claude, sharing harness ideas with Claude Code: structured tool use, context management and subagents.", "c": "Agent Frameworks (Code)", "tier": 7},
+ {"n": "Replit Agent", "d": "Replit's agent that builds working applications from natural language descriptions inside its browser based development and hosting platform.", "c": "Coding Agents", "tier": 7},
+ {"n": "OpenAI Agents SDK", "d": "OpenAI's lightweight framework for building agents on its models, providing agents, tools, handoffs between agents, guardrails and built in tracing.", "c": "Agent Frameworks (Code)", "tier": 7},
+ {"n": "LiveKit", "d": "An open source infrastructure platform, built on WebRTC, for real time voice and video, with an agents framework for building voice agents on top of it.", "c": "Voice Agents", "tier": 7},
+ {"n": "ElevenLabs", "d": "A voice AI company known for highly natural text to speech and voice cloning, extended into a conversational agents platform for phone and web voice agents.", "c": "Voice Agents", "tier": 7},
+ {"n": "OpenAI Codex", "d": "OpenAI's coding agent line: cloud agents that work on repositories in parallel sandboxes, alongside CLI and IDE forms, powered by code specialised GPT models.", "c": "Coding Agents", "tier": 7},
+ {"n": "ROI of Agents", "d": "The return calculation for agent deployments: hours and costs removed, quality and speed gained, against build, licence, token, supervision and incident costs.", "c": "Business & Value", "tier": 7},
+ {"n": "Browser Use", "d": "An open source library that connects LLM agents to a real browser so they can navigate websites, fill forms and extract data.", "c": "Computer & Browser Agents", "tier": 7},
+ {"n": "Tool Use / Function Calling", "d": "The mechanism by which a model requests that external code run: it emits a structured call (a function name and arguments), the system executes it, and the result returns to the model as an observation.", "c": "Tools & Actions", "tier": 7},
+ {"n": "GitHub Copilot", "d": "Microsoft's AI coding assistant, which began as autocomplete inside the editor and has grown into agent modes that edit multiple files, carry out assigned tasks and review code.", "c": "Coding Agents", "tier": 7},
+ {"n": "Pinecone", "d": "A managed vector database for storing and searching embeddings, forming the retrieval backbone of many RAG pipelines and agent memory systems.", "c": "Memory & Retrieval", "tier": 7},
+ {"n": "OpenAI Operator", "d": "OpenAI's computer using agent that browses and acts on websites, handling tasks such as bookings, ordering and form filling in its own browser.", "c": "Computer & Browser Agents", "tier": 7},
+ {"n": "Weaviate", "d": "An open source vector database offering hybrid search that combines vectors with keyword search, plus built in options for generating embeddings.", "c": "Memory & Retrieval", "tier": 7},
+ {"n": "Claude Code", "d": "Anthropic's coding agent that works from the terminal and inside IDEs, reading an entire codebase, editing files, running tests and working through multi step tasks largely autonomously.", "c": "Coding Agents", "tier": 7},
+ {"n": "Vapi", "d": "A developer platform for building voice agents that handle live phone and web calls with low latency, orchestrating speech to text, the language model and text to speech as interchangeable pieces.", "c": "Voice Agents", "tier": 7},
+ {"n": "Chroma", "d": "A lightweight open source vector database designed for developer simplicity, making it a common first choice for prototypes, experiments and local agent memory.", "c": "Memory & Retrieval", "tier": 7},
+ {"n": "Langfuse", "d": "An open source LLM engineering platform covering tracing, prompt management, evaluations and product analytics for AI applications.", "c": "Evaluation & Observability", "tier": 7},
+ {"n": "Build vs Buy Agents", "d": "The decision between assembling agents on frameworks and your own infrastructure, buying packaged agents from platform vendors, or a hybrid.", "c": "Business & Value", "tier": 7},
+ {"n": "Promptfoo", "d": "An open source command line tool for testing and red teaming prompts, RAG pipelines and agents, running evaluations in continuous integration much like unit tests.", "c": "Evaluation & Observability", "tier": 7},
+ {"n": "Zep", "d": "A memory and context platform for agents built around a temporal knowledge graph, its Graphiti engine, which tracks how facts about users and entities change over time rather than treating memory as flat text.", "c": "Memory & Retrieval", "tier": 8},
+ {"n": "ChatGPT", "d": "OpenAI's general purpose AI assistant and the product that brought generative AI to the mainstream.", "c": "AI Assistants & Chatbots", "tier": 8},
+ {"n": "LangSmith", "d": "LangChain's platform for tracing, evaluating and monitoring LLM and agent applications, bringing run traces, datasets, offline evaluations and production monitoring into one place.", "c": "Evaluation & Observability", "tier": 8},
+ {"n": "Anthropic Computer Use", "d": "A capability that lets Claude perceive screenshots and control a computer's mouse and keyboard, completing tasks inside real software interfaces.", "c": "Computer & Browser Agents", "tier": 8},
+ {"n": "Google Project Mariner", "d": "Google DeepMind's research prototype for browser agents that can understand and act across web pages to complete tasks such as shopping and research.", "c": "Computer & Browser Agents", "tier": 8},
+ {"n": "DeepSeek", "d": "A Chinese AI lab whose open weight models drew global attention for delivering strong reasoning at unusually low cost.", "c": "AI Assistants & Chatbots", "tier": 8},
+ {"n": "Claude", "d": "Anthropic's AI assistant, known for careful long form writing, nuanced reasoning and strong handling of long documents.", "c": "AI Assistants & Chatbots", "tier": 8},
+ {"n": "Mem0", "d": "A memory layer for AI agents and applications that extracts, stores and retrieves persistent memories about users and past interactions, so agents remember across sessions instead of replaying entire conversation histories every time.", "c": "Memory & Retrieval", "tier": 8},
+ {"n": "Arize Phoenix", "d": "An open source observability and evaluation tool for LLM systems, strong at tracing, retrieval debugging and embedding analysis.", "c": "Evaluation & Observability", "tier": 8},
+ {"n": "Perplexity", "d": "An AI answer engine that responds to questions with cited sources gathered live from the web.", "c": "AI Search & Research", "tier": 8},
+ {"n": "Grok", "d": "xAI's AI assistant, integrated with the X platform and known for real time access to X posts and a less filtered conversational style.", "c": "AI Assistants & Chatbots", "tier": 8},
+ {"n": "Retell AI", "d": "A platform for building and deploying AI phone agents for support, sales and operations, with testing tools, call analytics and telephony integrations aimed at business teams rather than infrastructure engineers.", "c": "Voice Agents", "tier": 8},
+ {"n": "Braintrust", "d": "A commercial platform for evaluating and steadily improving AI products: evaluations, datasets, prompt iteration, production logging and regression testing, aimed at product engineering teams shipping AI features.", "c": "Evaluation & Observability", "tier": 8},
+ {"n": "Poe", "d": "Quora's multi model platform: one subscription and one interface giving access to models from OpenAI, Anthropic, Google and others, plus millions of user created bots.", "c": "AI Assistants & Chatbots", "tier": 8},
+ {"n": "Zapier", "d": "The veteran no code automation platform connecting thousands of business applications, now layering AI agents and chatbots that can act across that same integration catalogue.", "c": "Automation Platforms with Agents", "tier": 8},
+ {"n": "Jasper", "d": "A marketing focused AI writing platform with brand voice controls, campaign templates and team workflows.", "c": "Writing & Productivity", "tier": 8},
+ {"n": "Consensus", "d": "An AI search engine over peer reviewed research that answers questions by synthesising study findings, and even gauges how far the evidence agrees.", "c": "AI Search & Research", "tier": 8},
+ {"n": "Google Gemini", "d": "Google's flagship AI assistant, deeply integrated with Google Search, Android and the Google account ecosystem.", "c": "AI Assistants & Chatbots", "tier": 8},
+ {"n": "Meta AI", "d": "Meta's AI assistant, built into WhatsApp, Instagram, Facebook and Messenger, and powered by the open weight Llama models.", "c": "AI Assistants & Chatbots", "tier": 8},
+ {"n": "QuillBot", "d": "A paraphrasing and rewriting tool used heavily by students and professionals to rephrase text, adjust tone and summarise.", "c": "Writing & Productivity", "tier": 8},
+ {"n": "Make", "d": "A visual automation platform, formerly Integromat, for building multi step scenarios across applications and APIs, increasingly used to wire LLM and agent steps into operational business processes.", "c": "Automation Platforms with Agents", "tier": 8},
+ {"n": "NotebookLM", "d": "Google's research notebook: you upload documents, recordings or links, and it answers strictly from those sources with citations, even turning them into an audio discussion.", "c": "AI Search & Research", "tier": 8},
+ {"n": "SciSpace", "d": "A research platform for reading and understanding scientific papers: it explains dense passages in plain language, extracts data from PDFs and searches a large scholarly corpus.", "c": "AI Search & Research", "tier": 8},
+ {"n": "Elicit", "d": "A research assistant built for evidence based work: it searches academic literature, extracts methods and findings into structured tables, and supports systematic literature reviews.", "c": "AI Search & Research", "tier": 9},
+ {"n": "UiPath", "d": "The robotic process automation leader extending into agentic automation, combining software robots with AI agents that operate across user interfaces, documents and enterprise systems, backed by mature governance tooling.", "c": "Automation Platforms with Agents", "tier": 9},
+ {"n": "Grammarly", "d": "The most widely adopted AI writing layer: it checks grammar, tone and clarity everywhere you type, and now generates and rewrites text in context.", "c": "Writing & Productivity", "tier": 9},
+ {"n": "Salesforce Agentforce", "d": "Salesforce's platform for autonomous agents operating inside CRM workflows: service, sales and marketing agents grounded in Salesforce data and processes, powered by its Atlas reasoning engine.", "c": "Enterprise Agent Platforms", "tier": 9},
+ {"n": "Workato", "d": "An enterprise integration and automation platform (iPaaS) with agent features delivered through its 'genies' and agent tooling, strong connectors and enterprise governance, sitting between classic automation suites and agent platforms.", "c": "Automation Platforms with Agents", "tier": 9},
+ {"n": "Otter.ai", "d": "An AI meeting assistant that joins calls, records, transcribes and summarises them, and answers questions across your meeting history.", "c": "Meetings & Communication", "tier": 9},
+ {"n": "Fathom", "d": "A free AI notetaker for Zoom, Meet and Teams that records, transcribes and summarises calls, with highlight clipping for sharing key moments.", "c": "Meetings & Communication", "tier": 9},
+ {"n": "Fireflies.ai", "d": "A meeting assistant that records and transcribes calls across Zoom, Meet and Teams, then generates summaries, action items and searchable conversation analytics.", "c": "Meetings & Communication", "tier": 9},
+ {"n": "Microsoft Copilot (Consumer)", "d": "Microsoft's free consumer AI assistant, built into Windows, Edge and a standalone app, and powered largely by OpenAI models.", "c": "AI Assistants & Chatbots", "tier": 9},
+ {"n": "Sudowrite", "d": "An AI writing tool built specifically for fiction: it helps novelists brainstorm, expand scenes, generate description and push through blocks, with features tuned to story rather than business prose.", "c": "Writing & Productivity", "tier": 9},
+ {"n": "ServiceNow AI Agents", "d": "ServiceNow's agentic layer inside its workflow platform, orchestrating AI agents across IT service, HR and customer workflows on top of the platform's data model and governance.", "c": "Enterprise Agent Platforms", "tier": 9},
+ {"n": "Suno", "d": "An AI music generator that turns text prompts into complete songs with vocals, lyrics and instrumentation.", "c": "Video & Audio Creation", "tier": 9},
+ {"n": "Granola", "d": "A meeting notes app that enhances your own rough notes instead of sending a bot into the call: it transcribes from your device and blends your jottings with the transcript into clean notes.", "c": "Meetings & Communication", "tier": 9},
+ {"n": "Notion AI", "d": "AI built into the Notion workspace: it drafts and edits pages, summarises meeting notes and documents, and answers questions across the whole workspace.", "c": "Writing & Productivity", "tier": 9},
+ {"n": "Recraft", "d": "A design focused image platform strong on vector graphics, icons, illustrations and brand style control, generating editable SVG as well as raster images.", "c": "Image Generation & Design", "tier": 9},
+ {"n": "Ideogram", "d": "An image generator known for accurate text rendering and strong graphic design output: posters, logos, memes and marketing visuals with legible typography.", "c": "Image Generation & Design", "tier": 9},
+ {"n": "Midjourney", "d": "The benchmark AI image generator for aesthetic quality: it produces striking, art directed images from text prompts, through Discord and its own web editor.", "c": "Image Generation & Design", "tier": 9},
+ {"n": "Amazon Bedrock Agents", "d": "AWS's managed service for building agents that plan multi step tasks, call APIs through defined action groups and retrieve from knowledge bases, all inside the AWS security, identity and billing perimeter.", "c": "Enterprise Agent Platforms", "tier": 9},
+ {"n": "IBM watsonx Orchestrate", "d": "IBM's platform for building and managing agents and assistants across enterprise workflows, offering prebuilt agents for areas such as HR, procurement and customer service, integrated with IBM's watsonx AI and data stack.", "c": "Enterprise Agent Platforms", "tier": 9},
+ {"n": "ChatGPT Deep Research", "d": "OpenAI's agentic research mode: give it a question and it plans, browses many sources over several minutes and returns a structured, cited report.", "c": "AI Search & Research", "tier": 9},
+ {"n": "Microsoft Copilot Studio", "d": "Microsoft's platform for building and governing agents inside the Microsoft 365 and Power Platform ecosystem, ranging from simple declarative copilots to orchestrated agents connected to business data and enterprise systems.", "c": "Enterprise Agent Platforms", "tier": 9},
+ {"n": "Pika", "d": "A friendly AI video generator known for playful effects: its Pikaffects squash, melt, inflate or transform objects in a clip, popular for social content.", "c": "Video & Audio Creation", "tier": 9},
+ {"n": "Runway", "d": "A leading AI video platform: text to video and image to video generation plus a full editing toolkit for background removal, inpainting and motion control.", "c": "Video & Audio Creation", "tier": 9},
+ {"n": "Read AI", "d": "A meeting intelligence platform that transcribes and summarises calls and adds engagement and sentiment analytics, coaching speakers on clarity and inclusion.", "c": "Meetings & Communication", "tier": 10},
+ {"n": "HeyGen", "d": "An AI avatar platform: presenters generated from a short recording deliver scripts in many languages, used for training, marketing and internal communications.", "c": "Video & Audio Creation", "tier": 10},
+ {"n": "Descript", "d": "An audio and video editor that works like a document: edit the transcript and the media edits with it, with AI voices, filler word removal and studio quality cleanup.", "c": "Video & Audio Creation", "tier": 10},
+ {"n": "AI Writing Tool", "d": "A minimalist AI word processor built for serious writers: a clean page, with AI help summoned on demand for edits, rewrites and unsticking a draft.", "c": "Writing & Productivity", "tier": 10},
+ {"n": "Adobe Firefly", "d": "Adobe's generative AI family, built into Photoshop, Illustrator and Express, and trained on licensed and public domain content to be commercially safer.", "c": "Image Generation & Design", "tier": 10},
+ {"n": "Gemini Deep Research", "d": "Google's agentic research feature inside Gemini: it builds a research plan, browses the web extensively and produces a multi page cited report, which can also be turned into an audio overview.", "c": "AI Search & Research", "tier": 10},
+ {"n": "Leonardo AI", "d": "A creative platform for generating and refining images with fine control: custom model training on your own assets, canvas editing and game/asset production workflows.", "c": "Image Generation & Design", "tier": 10},
+ {"n": "Zoom AI Companion", "d": "AI features built into Zoom: meeting summaries, in meeting questions, chat and email drafting, and whiteboard help, included for paid Zoom accounts.", "c": "Meetings & Communication", "tier": 10},
+ {"n": "Google Video", "d": "Google's video generation model family, available through Gemini and Google's creative tools, producing high definition clips with increasingly native audio.", "c": "Video & Audio Creation", "tier": 10},
+ {"n": "OpenAI Video", "d": "OpenAI's video generation model and app: it creates short, physically plausible video clips from text or images, with a social app built around remixing creations.", "c": "Video & Audio Creation", "tier": 10},
+ {"n": "Julius AI", "d": "An AI data analyst: upload a spreadsheet or connect data, ask questions in plain language, and get charts, summaries and statistical analysis back.", "c": "Data & Analysis", "tier": 10},
+ {"n": "Google Vertex AI Agent Builder", "d": "Google Cloud's suite for building, deploying and managing agents, combining the Agent Engine managed runtime with ADK support, search and conversation tooling on Google Cloud infrastructure.", "c": "Enterprise Agent Platforms", "tier": 10},
+ {"n": "Slack AI", "d": "AI inside Slack: channel and thread summaries, catch up recaps, search answers drawn from your conversations and huddle notes.", "c": "Workplace AI Suites", "tier": 10},
+ {"n": "ChatGPT Image Generation", "d": "OpenAI's image generation built directly into ChatGPT: describe an image in conversation, then refine it with follow up instructions, including reliable rendered text.", "c": "Image Generation & Design", "tier": 10},
+ {"n": "AI Spreadsheets", "d": "A spreadsheet rebuilt with AI and live integrations at its centre: pull data from business tools, enrich and analyse it with AI functions, and share as clean web style reports.", "c": "Data & Analysis", "tier": 10},
+ {"n": "Canva Magic Studio", "d": "Canva's suite of AI design features: text to image, background removal, Magic Write copy generation and one click design resizing, inside the design tool non designers already use.", "c": "Image Generation & Design", "tier": 10},
+ {"n": "FLUX: Black Forest Labs", "d": "A family of high quality image models from the team behind Stable Diffusion, offered through an API and partner platforms rather than one consumer app.", "c": "Image Generation & Design", "tier": 10},
+ {"n": "Claude with Analysis Tool", "d": "Claude's analysis capability: it writes and runs JavaScript in the conversation to compute over uploaded data, producing accurate calculations and charts.", "c": "Data & Analysis", "tier": 10},
+ {"n": "ServiceNow Now Assist", "d": "ServiceNow's generative AI layer for IT and enterprise service workflows: case summarisation, resolution note generation, virtual agent conversations and developer assistance inside the Now Platform.", "c": "Workplace AI Suites", "tier": 10},
+ {"n": "ChatGPT Advanced Data Analysis", "d": "ChatGPT's built in data analysis capability: upload spreadsheets or data files and it writes and runs Python to clean, analyse and chart them, explaining each step.", "c": "Data & Analysis", "tier": 10},
+ {"n": "Microsoft 365 Copilot", "d": "Microsoft's enterprise AI layer across Word, Excel, PowerPoint, Outlook and Teams: it drafts, summarises and analyses using your organisation's documents, emails and meetings, under enterprise data protection.", "c": "Workplace AI Suites", "tier": 10},
+ {"n": "Gemini for Google Workspace", "d": "Google's enterprise AI across Gmail, Docs, Sheets, Slides and Meet: drafting, summarising, meeting notes and the Gemini assistant grounded in your workspace content.", "c": "Workplace AI Suites", "tier": 10},
+ {"n": "Salesforce Einstein & Agentforce", "d": "Salesforce's AI layer for CRM: Einstein provides predictions, scoring and generative drafting inside sales and service workflows, while Agentforce builds autonomous agents that act on customer data.", "c": "Workplace AI Suites", "tier": 10}
+];
+var EXPAND = [
+ {"a": "AI", "e": "Artificial Intelligence", "c": "Foundations", "tier": 1},
+ {"a": "DL", "e": "Deep Learning", "c": "Foundations", "tier": 1},
+ {"a": "DS", "e": "Dataset", "c": "How Machines Learn", "tier": 1},
+ {"a": "ML", "e": "Machine Learning", "c": "Foundations", "tier": 1},
+ {"a": "NAI", "e": "Narrow AI", "c": "Foundations", "tier": 1},
+ {"a": "RL", "e": "Reinforcement Learning", "c": "How Machines Learn", "tier": 1},
+ {"a": "SR", "e": "Speech Recognition", "c": "Types of AI Systems", "tier": 1},
+ {"a": "TT", "e": "Turing Test", "c": "Foundations", "tier": 1},
+ {"a": "AGI", "e": "Artificial General Intelligence", "c": "Foundations", "tier": 2},
+ {"a": "BM", "e": "Benchmark", "c": "AI in Practice", "tier": 2},
+ {"a": "CV", "e": "Computer Vision", "c": "Types of AI Systems", "tier": 2},
+ {"a": "FM", "e": "Foundation Model", "c": "Neural Networks & Compute", "tier": 2},
+ {"a": "FT", "e": "Fine tuning", "c": "Working with LLMs", "tier": 2},
+ {"a": "GPU", "e": "Graphics Processing Unit", "c": "Neural Networks & Compute", "tier": 2},
+ {"a": "LLM", "e": "Large Language Model", "c": "Generative AI & LLMs", "tier": 2},
+ {"a": "MM", "e": "Multimodal", "c": "Generative AI & LLMs", "tier": 2},
+ {"a": "NLP", "e": "Natural Language Processing", "c": "Types of AI Systems", "tier": 2},
+ {"a": "NN", "e": "Neural Network", "c": "Neural Networks & Compute", "tier": 2},
+ {"a": "SL", "e": "Supervised Learning", "c": "How Machines Learn", "tier": 2},
+ {"a": "UL", "e": "Unsupervised Learning", "c": "How Machines Learn", "tier": 2},
+ {"a": "API", "e": "Application Programming Interface", "c": "AI in Practice", "tier": 3},
+ {"a": "CW", "e": "Context Window", "c": "Generative AI & LLMs", "tier": 3},
+ {"a": "PE", "e": "Prompt Engineering", "c": "Working with LLMs", "tier": 3},
+ {"a": "RAG", "e": "Retrieval Augmented Generation", "c": "Working with LLMs", "tier": 3},
+ {"a": "VDB", "e": "Vector Database", "c": "Working with LLMs", "tier": 3},
+ {"a": "A2A", "e": "Agent2Agent Protocol", "c": "Tools & Actions", "tier": 4},
+ {"a": "AL", "e": "Agent Loop", "c": "Core Concepts", "tier": 4},
+ {"a": "BA", "e": "Browser Agent", "c": "Tools & Actions", "tier": 4},
+ {"a": "CU", "e": "Computer Use", "c": "Tools & Actions", "tier": 4},
+ {"a": "DP", "e": "Data Privacy", "c": "Risks & Limits", "tier": 4},
+ {"a": "DW", "e": "Digital Worker", "c": "Core Concepts", "tier": 4},
+ {"a": "EM", "e": "Episodic Memory", "c": "Context & Memory", "tier": 4},
+ {"a": "ER", "e": "Error Recovery", "c": "Reasoning & Planning", "tier": 4},
+ {"a": "HITL", "e": "Human in the Loop", "c": "AI in Practice", "tier": 4},
+ {"a": "RT", "e": "Red Teaming", "c": "Risks & Limits", "tier": 4},
+ {"a": "TD", "e": "Task Decomposition", "c": "Reasoning & Planning", "tier": 4},
+ {"a": "WA", "e": "Workflows vs Agents", "c": "Agent Architecture", "tier": 4},
+ {"a": "AB", "e": "Agent Benchmarks", "c": "Evaluation & Observability", "tier": 5},
+ {"a": "AO", "e": "AgentOps", "c": "Deployment & Operations", "tier": 5},
+ {"a": "CE", "e": "Context Engineering", "c": "Context & Memory", "tier": 5},
+ {"a": "CM", "e": "Context Management", "c": "Context & Memory", "tier": 5},
+ {"a": "KS", "e": "Kill Switch", "c": "Safety & Control", "tier": 5},
+ {"a": "MCP", "e": "Model Context Protocol", "c": "Tools & Actions", "tier": 5},
+ {"a": "PI", "e": "Prompt Injection", "c": "Safety & Control", "tier": 5},
+ {"a": "RLHF", "e": "Reinforcement Learning from Human Feedback", "c": "Working with LLMs", "tier": 5},
+ {"a": "ROI", "e": "Measuring AI ROI", "c": "Governance, Business & Strategy", "tier": 5},
+ {"a": "SM", "e": "Semantic Memory", "c": "Context & Memory", "tier": 5},
+ {"a": "STM", "e": "Short Term Memory", "c": "Context & Memory", "tier": 5},
+ {"a": "TB", "e": "Token Budget", "c": "Deployment & Operations", "tier": 5},
+ {"a": "TE", "e": "Trajectory Evaluation", "c": "Evaluation & Observability", "tier": 5},
+ {"a": "UC", "e": "Agent Use Cases", "c": "Core Concepts", "tier": 5},
+ {"a": "VM", "e": "Vector Memory", "c": "Context & Memory", "tier": 5},
+ {"a": "ADK", "e": "Agent Development Kit", "c": "Agent Frameworks (Code)", "tier": 6},
+ {"a": "AF", "e": "Agent Frameworks", "c": "Deployment & Operations", "tier": 6},
+ {"a": "AS", "e": "Agent Strategy", "c": "Business & Value", "tier": 6},
+ {"a": "CA", "e": "Coding Agents", "c": "Deployment & Operations", "tier": 6},
+ {"a": "LJ", "e": "LLM as Judge", "c": "Evaluation & Observability", "tier": 6},
+ {"a": "LP", "e": "Least Privilege Access", "c": "Safety & Control", "tier": 6},
+ {"a": "LTM", "e": "Long Term Memory", "c": "Context & Memory", "tier": 6},
+ {"a": "SK", "e": "Semantic Kernel", "c": "Agent Frameworks (Code)", "tier": 6},
+ {"a": "TO", "e": "Tracing & Observability", "c": "Evaluation & Observability", "tier": 6},
+ {"a": "VA", "e": "Voice Agents", "c": "Deployment & Operations", "tier": 6},
+ {"a": "CAS", "e": "Claude Agent SDK", "c": "Agent Frameworks (Code)", "tier": 7},
+ {"a": "CPT", "e": "Cost per Task", "c": "Deployment & Operations", "tier": 7},
+ {"a": "OAS", "e": "OpenAI Agents SDK", "c": "Agent Frameworks (Code)", "tier": 7},
+ {"a": "RAI", "e": "Relevance AI", "c": "Low Code & Workflow Builders", "tier": 7},
+ {"a": "TU", "e": "Tool Use / Function Calling", "c": "Tools & Actions", "tier": 7},
+ {"a": "ACU", "e": "Anthropic Computer Use", "c": "Computer & Browser Agents", "tier": 8},
+ {"a": "CDR", "e": "ChatGPT Deep Research", "c": "AI Search & Research", "tier": 9},
+ {"a": "MCS", "e": "Microsoft Copilot Studio", "c": "Enterprise Agent Platforms", "tier": 9},
+ {"a": "SNA", "e": "ServiceNow AI Agents", "c": "Enterprise Agent Platforms", "tier": 9},
+ {"a": "CAT", "e": "Claude with Analysis Tool", "c": "Data & Analysis", "tier": 10},
+ {"a": "CDA", "e": "ChatGPT Advanced Data Analysis", "c": "Data & Analysis", "tier": 10},
+ {"a": "CIG", "e": "ChatGPT Image Generation", "c": "Image Generation & Design", "tier": 10},
+ {"a": "CMS", "e": "Canva Magic Studio", "c": "Image Generation & Design", "tier": 10},
+ {"a": "GDR", "e": "Gemini Deep Research", "c": "AI Search & Research", "tier": 10},
+ {"a": "M365", "e": "Microsoft 365 Copilot", "c": "Workplace AI Suites", "tier": 10},
+ {"a": "VAB", "e": "Google Vertex AI Agent Builder", "c": "Enterprise Agent Platforms", "tier": 10},
+ {"a": "ZAC", "e": "Zoom AI Companion", "c": "Meetings & Communication", "tier": 10}
+];
+var NEED = 5, MAX_STAGE = 10;
+/* Motion pressure rises stage by stage: faster glide, slightly smaller
+   targets, and hopping from stage five onward. */
+var STAGE_CFG = {
+ 1:{speed:60, scale:1.00},
+ 2:{speed:84, scale:0.97},
+ 3:{speed:110, scale:0.94},
+ 4:{speed:122, scale:0.92},
+ 5:{speed:134, scale:0.90},
+ 6:{speed:146, scale:0.88},
+ 7:{speed:158, scale:0.86},
+ 8:{speed:170, scale:0.85},
+ 9:{speed:182, scale:0.83},
+ 10:{speed:194, scale:0.82}
+};
+/* The fixed set of four bubble colours: in every call the four answer
+   bubbles each carry a different one of these, shuffled per call, so the
+   four choices are always visually distinct and the correct bubble is
+   never the same colour twice in a row by position. */
+var BUBBLE_COLORS = ["#ff5964","#ffc53d","#12b5a5","#3a7bd5"];
+function bandName(st){ return st<=3 ? "Simple" : st<=6 ? "A little complex" : st<=9 ? "More complex" : "Most complex"; }
+function diffName(){ return state ? bandName(state.level) : "Simple"; }
+/* One shared slot plan per stage, mirrored for both players: slot k holds
+   the same format for the first player and the second player. Stages one
+   to three carry two abbreviation slots, stages four and five carry one,
+   and stages six to ten carry meaning questions only, because
+   abbreviations cannot grow more complex the way questions can. Every
+   stage from one to five was checked against the real abbreviation
+   supply of its stage: stages hold 8, 12, 5, 12 and 15 distinct pool pairs,
+   each enough for distinct questions for both players plus same stage
+   decoys, so no stage needed its abbreviation slots dropped. */
+var SLOT_PLANS = {
+ 1:["M","E","M","E","M"],
+ 2:["E","M","M","E","M"],
+ 3:["M","M","E","M","E"],
+ 4:["M","E","M","M","M"],
+ 5:["M","M","E","M","M"],
+ 6:["M","M","M","M","M"],
+ 7:["M","M","M","M","M"],
+ 8:["M","M","M","M","M"],
+ 9:["M","M","M","M","M"],
+ 10:["M","M","M","M","M"]
+};
+
+/* Family combination picker, the pack standard selection model. Every
+   family registers its data in FAMILY_DATA under its id; the question pool
+   for a match is the union of the families switched on, and only those.
+   Later family builds join by adding one FAMILIES entry and one FAMILY_DATA
+   entry: no picker or draw code changes. Families without data are shown in
+   the picker as arriving in a later build and cannot be switched on, and
+   the selection always keeps at least one built family. The selection is
+   saved on this device. */
+var FAMILIES = [
+ {id:"ai", label:"AI", built:true},
+ {id:"quantum", label:"Quantum", built:false},
+ {id:"cloud", label:"Cloud and DevOps", built:false},
+ {id:"cyber", label:"Cybersecurity", built:false},
+ {id:"founders", label:"Founders and Leadership", built:false}
+];
+var FAMILY_DATA = { ai: {meaning: MEANING, expand: EXPAND} };
+function famById(id){ for(var i=0;i<FAMILIES.length;i++) if(FAMILIES[i].id===id) return FAMILIES[i]; return null; }
+function builtFamIds(){ return FAMILIES.filter(function(f){ return f.built && FAMILY_DATA[f.id]; }).map(function(f){ return f.id; }); }
+function loadFamSel(){
+  try{
+    var s=JSON.parse(localStorage.getItem("targetRun.families")||"null");
+    if(s && s.length){
+      var built=builtFamIds();
+      var f=s.filter(function(id){ return built.indexOf(id)>=0; });
+      if(f.length) return f;
+    }
+  }catch(e){}
+  return builtFamIds().slice(0,1);
+}
+var selFams = loadFamSel();
+var POOLM = [], POOLE = [];
+function rebuildPools(){
+  POOLM=[]; POOLE=[];
+  selFams.forEach(function(id){
+    var d=FAMILY_DATA[id]; if(!d) return;
+    d.meaning.forEach(function(x){ x.fam=id; POOLM.push(x); });
+    d.expand.forEach(function(x){ x.fam=id; POOLE.push(x); });
+  });
+}
+rebuildPools();
+function famLabelText(){ return selFams.map(function(id){ var f=famById(id); return f?f.label:id; }).join(" + "); }
+function $(s){return document.querySelector(s);}
+function shuffle(arr){var a=arr.slice();for(var i=a.length-1;i>0;i--){var j=Math.floor(Math.random()*(i+1));var t=a[i];a[i]=a[j];a[j]=t;}return a;}
+function pick(arr){return arr[Math.floor(Math.random()*arr.length)];}
+
+/* sound, generated with Web Audio only */
+var AC=null, muted=false;
+function audioInit(){ if(!AC){ try{ AC=new (window.AudioContext||window.webkitAudioContext)(); }catch(e){} } if(AC&&AC.state==="suspended")AC.resume(); }
+function tone(f,d,type,v,t0,f2){ if(!AC||muted)return; type=type||"sine"; v=v||0.18; t0=t0||0;
+  var t=AC.currentTime+t0, o=AC.createOscillator(), g=AC.createGain();
+  o.type=type; o.frequency.setValueAtTime(f,t); if(f2)o.frequency.exponentialRampToValueAtTime(Math.max(30,f2),t+d);
+  g.gain.setValueAtTime(v,t); g.gain.exponentialRampToValueAtTime(0.001,t+d);
+  o.connect(g); g.connect(AC.destination); o.start(t); o.stop(t+d+0.03); }
+function noiseS(d,v,fc){ if(!AC||muted)return; var len=Math.floor(AC.sampleRate*d), b=AC.createBuffer(1,len,AC.sampleRate), ch=b.getChannelData(0);
+  for(var i=0;i<len;i++)ch[i]=(Math.random()*2-1)*(1-i/len);
+  var s=AC.createBufferSource(), f=AC.createBiquadFilter(), g=AC.createGain();
+  s.buffer=b; f.type="bandpass"; f.frequency.value=fc; g.gain.value=v; s.connect(f); f.connect(g); g.connect(AC.destination); s.start(); }
+function sfx(n){ switch(n){
+  case "shot": noiseS(0.08,0.5,1600); break;
+  case "burst": tone(880,0.14,"triangle",0.16); tone(1320,0.18,"triangle",0.12,0.04); noiseS(0.16,0.3,4200); break;
+  case "wrong": tone(300,0.32,"sawtooth",0.11,0,95); break;
+  case "heart": tone(196,0.3,"square",0.12,0,70); noiseS(0.12,0.25,500); break;
+  case "level": [523,659,784,1047].forEach(function(f,i){tone(f,0.18,"triangle",0.15,i*0.09);}); break;
+  case "win": [523,659,784,1047,784,1047,1319].forEach(function(f,i){tone(f,0.26,"triangle",0.15,i*0.13);}); break;
+}}
+
+/* canvas */
+var cv=$("#cv"), ctx=cv.getContext("2d");
+var W=0,H=0,DPR=1;
+function resize(){ var r=cv.getBoundingClientRect(); W=r.width; H=r.height; DPR=Math.min(2,window.devicePixelRatio||1);
+  cv.width=Math.round(W*DPR); cv.height=Math.round(H*DPR); ctx.setTransform(DPR,0,0,DPR,0,0); layoutTargets(); }
+/* Size the play area to the space left on the screen so the whole game, HUD,
+   call banner, both lanes and every target, fits one phone screen with no
+   page scroll during play. */
+function fitCanvas(){
+  var g=$("#game"); if(!g || g.style.display!=="block") return;
+  var wrap=$("#cvWrap"); if(!wrap) return;
+  var viewTop=wrap.getBoundingClientRect().top;
+  var fact=$("#fact"), foot=document.querySelector(".gameFoot"), footer=document.querySelector("footer");
+  var below=(fact?fact.offsetHeight+12:58)+(foot?foot.offsetHeight+16:44)+(footer?footer.offsetHeight+30:64)+64;
+  var h=window.innerHeight - viewTop - below;
+  h=Math.max(200, Math.min(470, h));
+  if(Math.abs(wrap.offsetHeight-h)>2) wrap.style.height=h+"px";
+}
+function laneY(lane){ return H*(0.30+lane*0.40); }
+function laneDir(lane){ return lane===1 ? -1 : 1; }
+
+function wrapText(text, maxW, font){ ctx.font=font; var words=text.split(" "), lines=[], line="";
+  for(var i=0;i<words.length;i++){ var test=line?line+" "+words[i]:words[i];
+    if(ctx.measureText(test).width>maxW && line){ lines.push(line); line=words[i]; } else line=test; }
+  if(line)lines.push(line); return lines; }
+
+var state=null;
+function freshPlayer(name){ return {name:name, score:0, level:1, levelsWon:0, levelResult:null}; }
+function newState(mode, n1, n2){
+  return { mode:mode, players:[freshPlayer(n1), freshPlayer(n2||"Player Two")], cur:0, level:1,
+    hearts:3, qIndex:0, qMessy:false, slots:["pending","pending","pending","pending","pending"],
+    turnStats:{first:0, solved:0, points:0}, levelsPlayed:0, levelsCleared:0, bestFirst:0, maxStage:0,
+    targets:[], queue:[], spawnT:0, parts:[], holes:[],
+    phase:"banner", pauseT:0, used:[], turnUsed:[], plan:null, planLevel:0, call:null, shake:0, over:false };
+}
+function curP(){ return state.players[state.cur]; }
+function cfg(){ return STAGE_CFG[state.level]; }
+
+function layoutTargets(){ if(!state)return; state.targets.forEach(function(t){ sizeTarget(t); t.y=laneY(t.lane);
+  if(W>0) t.x=Math.max(t.w/2+4, Math.min(W-t.w/2-4, t.x)); }); }
+/* Size a target so its FULL label always fits: the pill grows up to a lane slot
+   width and the label font shrinks step by step until every word fits on at
+   most three lines. No word is ever dropped. */
+function sizeTarget(t){ var c=cfg();
+  var maxTextW=Math.max(104, Math.min(W>0?W*0.44:170, 200*c.scale+30));
+  var startPx=Math.round(13*c.scale)+1, minPx=10, chosen=null;
+  for(var px=startPx; px>=minPx && !chosen; px--){
+    var font="900 "+px+"px Nunito, sans-serif";
+    var lines=wrapText(t.text, maxTextW, font);
+    var ok=lines.length<=3;
+    if(ok){ ctx.font=font; for(var i=0;i<lines.length;i++){ if(ctx.measureText(lines[i]).width>maxTextW+1){ ok=false; break; } } }
+    if(ok) chosen={font:font, lines:lines, px:px};
+  }
+  if(!chosen){ var f2="900 "+minPx+"px Nunito, sans-serif"; chosen={font:f2, lines:wrapText(t.text, maxTextW, f2), px:minPx}; }
+  ctx.font=chosen.font; var tw=0; chosen.lines.forEach(function(l){ tw=Math.max(tw, ctx.measureText(l).width); });
+  t.font=chosen.font; t.lines=chosen.lines; t.px=chosen.px;
+  t.w=(W>0?Math.min(W-12, Math.max(92, tw+26)):Math.max(92, tw+26));
+  t.h=chosen.lines.length*(chosen.px+3)+18; }
+
+/* calls */
+/* The pool for one format at the current difficulty stage: only entries of
+   this stage that have not been asked yet. When a small stage pool runs out,
+   entries from earlier turns of the match may return, but never an entry
+   already asked in the current turn. */
+function freshPool(list, prefix, keyOf){
+  function avail(){ return list.filter(function(x){ return x.tier===state.level && state.used.indexOf(prefix+keyOf(x))<0; }); }
+  var p=avail();
+  if(!p.length){
+    state.used=state.used.filter(function(u){ return u.indexOf(prefix)!==0 || state.turnUsed.indexOf(u)>=0; });
+    p=avail();
+  }
+  return p;
+}
+/* Anti guess decoys. The four bubbles of a call are the same kind and
+   confusable: candidates come from the same stage first and the same
+   category first inside the stage, and within each group they are ordered
+   by closeness to the correct answer: alike in character length and word
+   count. When the correct answer shares a distinctive word with the call
+   text, decoys that also share a word with the call are preferred, so no
+   bubble is identifiable only by that shared word. Later slots of a stage
+   draw from a narrower window of the closest candidates, so decoys grow
+   progressively closer slot by slot. */
+function sigWords(s){ return String(s).toLowerCase().replace(/[^a-z0-9 ]/g," ").split(/\s+/).filter(function(w){ return w.length>3; }); }
+function sharesWord(text, callText){
+  if(!callText) return false;
+  var call={}; sigWords(callText).forEach(function(w){ call[w]=true; });
+  return sigWords(text).some(function(w){ return !!call[w]; });
+}
+function pickDecoys(list, correct, keyOf, textOf, callText){
+  var cText=textOf(correct);
+  var correctShares=sharesWord(cText, callText);
+  function closeness(x){
+    var t=textOf(x);
+    var s=Math.abs(t.length-cText.length) + 4*Math.abs(t.split(" ").length - cText.split(" ").length);
+    if(correctShares && sharesWord(t, callText)) s-=6;
+    return s;
+  }
+  function byClose(g){ return g.slice().sort(function(a,b){ return closeness(a)-closeness(b); }); }
+  var others=list.filter(function(x){ return keyOf(x)!==keyOf(correct); });
+  var ordered=byClose(others.filter(function(x){ return x.c===correct.c && x.tier===state.level; }))
+    .concat(byClose(others.filter(function(x){ return x.c!==correct.c && x.tier===state.level; })))
+    .concat(byClose(others.filter(function(x){ return x.c===correct.c && x.tier!==state.level; })))
+    .concat(byClose(others.filter(function(x){ return x.c!==correct.c && x.tier!==state.level; })));
+  var windowN = 3 + (NEED-1-(state?state.qIndex:0)) * 1;
+  var win = ordered.slice(0, Math.max(3, windowN));
+  return shuffle(win).slice(0,3);
+}
+/* Near miss decoys for abbreviation questions, the pattern Thillai set with
+   his worked examples: each decoy keeps the correct expansion's own word
+   pattern with exactly one word swapped for a plausible cousin drawn from
+   the words the pool itself uses in expansions and in same category term
+   names. Decoys are never borrowed expansions of other abbreviations.
+   Collision guard: every generated decoy is checked against the full
+   expansion list of every family in the data, and against the correct
+   expansion; a collision is discarded and generation tries another swap.
+   Returns null when the pattern cannot yield three clean decoys (a one
+   word expansion, for example), and the caller falls back to sibling
+   expansions ordered by closeness. */
+function fullExpansionSet(){
+  var s={};
+  Object.keys(FAMILY_DATA).forEach(function(id){
+    FAMILY_DATA[id].expand.forEach(function(x){ s[x.e.toLowerCase()]=true; });
+  });
+  return s;
+}
+function cousinPools(correct){
+  var words=correct.e.split(" ");
+  var pools=words.map(function(){ return []; });
+  var seen=words.map(function(){ return {}; });
+  /* One word expansions are thing names, never plausible cousin words in a
+     multi word pattern, so they are excluded as swap material. */
+  var nounOnly={};
+  Object.keys(FAMILY_DATA).forEach(function(id){
+    FAMILY_DATA[id].expand.forEach(function(x){
+      var ws=x.e.split(" "); if(ws.length===1) nounOnly[ws[0]]=true;
+    });
+  });
+  /* Function words hold the skeleton together (from, of, the, and, for):
+     their positions are never swapped, exactly as in the worked examples,
+     where only content words change. */
+  var fixed={}; var FUNC={of:1, from:1, the:1, and:1, for:1, in:1, on:1, to:1, a:1, an:1, vs:1, per:1, with:1};
+  words.forEach(function(w,i){ if(FUNC[w.toLowerCase()]) fixed[i]=true; });
+  function offer(i, w){
+    if(!w || fixed[i] || FUNC[w.toLowerCase()] || w===words[i] || nounOnly[w]) return;
+    if(!seen[i][w]){ seen[i][w]=true; pools[i].push(w); }
+  }
+  function scanExpansions(sameCountOnly){
+    Object.keys(FAMILY_DATA).forEach(function(id){
+      FAMILY_DATA[id].expand.forEach(function(x){
+        var ws=x.e.split(" ");
+        if(sameCountOnly && ws.length!==words.length) return;
+        if(!sameCountOnly && ws.length<2) return;
+        for(var i=0;i<words.length && i<ws.length;i++){
+          if(!sameCountOnly && pools[i].length) continue;
+          offer(i, ws[i]);
+        }
+      });
+    });
+  }
+  /* Closest cousins first: words other expansions of the same word count
+     carry at the same position. Wider passes fill only the positions the
+     close pass left empty. */
+  scanExpansions(true);
+  scanExpansions(false);
+  Object.keys(FAMILY_DATA).forEach(function(id){
+    FAMILY_DATA[id].meaning.forEach(function(x){
+      if(x.c!==correct.c) return;
+      var ws=x.n.split(" ");
+      for(var i=0;i<words.length && i<ws.length;i++) if(!pools[i].length) offer(i, ws[i]);
+    });
+  });
+  return pools;
+}
+function nearMissDecoys(correct){
+  var words=correct.e.split(" ");
+  if(words.length<2) return null;
+  var banned=fullExpansionSet();
+  var pools=cousinPools(correct);
+  var combos=[];
+  for(var i=0;i<words.length;i++){
+    for(var j=0;j<pools[i].length;j++){
+      var cand=words.slice(); cand[i]=pools[i][j];
+      /* A near miss never repeats a word inside itself. */
+      var low=cand.map(function(w){ return w.toLowerCase(); });
+      var dup=false;
+      for(var a=0;a<low.length && !dup;a++) for(var b=a+1;b<low.length;b++) if(low[a]===low[b]) dup=true;
+      if(dup) continue;
+      cand=cand.join(" ");
+      if(!banned[cand.toLowerCase()]) combos.push(cand);
+    }
+  }
+  combos=shuffle(combos.filter(function(c,idx){ return combos.indexOf(c)===idx; }));
+  if(combos.length<3) return null;
+  return combos.slice(0,3);
+}
+function buildCall(){
+  var fmt = state.plan && state.plan[state.qIndex] ? state.plan[state.qIndex] : "M";
+  var useExpand = fmt==="E";
+  var correct, answerText, decoyTexts, callText, cat;
+  if(useExpand){
+    var pool=freshPool(POOLE, "E:", function(x){return x.fam+"|"+x.a;});
+    correct=pick(pool); state.used.push("E:"+correct.fam+"|"+correct.a); state.turnUsed.push("E:"+correct.fam+"|"+correct.a);
+    answerText=correct.e; cat=correct.c;
+    /* Abbreviation decoys are near misses built on the correct expansion's
+       own word pattern; sibling expansions are only a fallback for the rare
+       expansion whose pattern cannot yield three clean near misses. */
+    var nm=nearMissDecoys(correct);
+    decoyTexts = nm ? nm : pickDecoys(POOLE, correct, function(x){return x.fam+"|"+x.a;}, function(x){return x.e;}, null).map(function(x){return x.e;});
+    callText="What does "+correct.a+" stand for?";
+    state.callFact="<b>"+correct.a+"</b> stands for <b>"+correct.e+"</b>.";
+  } else {
+    var pool2=freshPool(POOLM, "M:", function(x){return x.fam+"|"+x.n;});
+    correct=pick(pool2); state.used.push("M:"+correct.fam+"|"+correct.n); state.turnUsed.push("M:"+correct.fam+"|"+correct.n);
+    answerText=correct.n; cat=correct.c;
+    decoyTexts=pickDecoys(POOLM, correct, function(x){return x.fam+"|"+x.n;}, function(x){return x.n;}, correct.d).map(function(x){return x.n;});
+    callText=correct.d;
+    state.callFact="That was <b>"+correct.n+"</b>. "+correct.d;
+  }
+  state.call={answer:answerText, cat:cat, format:useExpand?"Abbreviation":"Meaning", tier:state.level};
+  $("#callText").textContent=callText;
+  $("#callMeta").textContent="Stage "+state.level+" · "+diffName()+" · "+(useExpand?"Abbreviation":"Meaning")+" format";
+  var choices=shuffle([{text:answerText, correct:true}].concat(decoyTexts.map(function(t){return {text:t, correct:false};})));
+  var lanes=shuffle([0,0,1,1]);
+  var cols=shuffle(BUBBLE_COLORS);
+  state.queue=[];
+  state.targets=choices.map(function(ch,i){
+    var t={text:ch.text, correct:ch.correct, lane:lanes[i], dir:laneDir(lanes[i]), color:cols[i%cols.length], v:cfg().speed, ph:Math.random()*6, fade:1};
+    sizeTarget(t);
+    t.y=laneY(t.lane);
+    return t;
+  });
+  [0,1].forEach(function(ln){
+    placeLane(state.targets.filter(function(t){return t.lane===ln;}));
+  });
+}
+function clampC(t, cx){ return Math.max(t.w/2+6, Math.min(W-t.w/2-6, cx)); }
+function placeLane(list){
+  if(!list.length)return;
+  if(list.length===1){ list[0].x=clampC(list[0], W/2); return; }
+  var a=list[0], b=list[1];
+  a.x=clampC(a, W*0.26); b.x=clampC(b, W*0.74);
+  var need=(a.w+b.w)/2+10;
+  if(b.x-a.x<need){ var mid=(a.x+b.x)/2; a.x=clampC(a, mid-need/2); b.x=clampC(b, mid+need/2); }
+  if(b.x-a.x<need){ a.x=a.w/2+6; b.x=W-b.w/2-6; }
+  for(var i=2;i<list.length;i++){ list[i].x=clampC(list[i], W/2); }
+}
+function entryBlocked(item){
+  var probe={text:item.text}; sizeTarget(probe);
+  var dir=laneDir(item.lane);
+  var x0 = dir>0 ? probe.w/2+6 : W-probe.w/2-6;
+  for(var i=0;i<state.targets.length;i++){ var t=state.targets[i];
+    if(t.lane===item.lane && Math.abs(t.x-x0) < (t.w+probe.w)/2 + 30) return true;
+  }
+  return false;
+}
+function spawnFromQueue(item){
+  var c=cfg(), dir=laneDir(item.lane);
+  var t={text:item.text, correct:item.correct, lane:item.lane, dir:dir, color:item.color, v:c.speed, ph:Math.random()*6, fade:0};
+  sizeTarget(t);
+  t.x = dir>0 ? t.w/2+6 : W-t.w/2-6;
+  t.y = laneY(item.lane);
+  state.targets.push(t);
+  return t;
+}
+
+/* HUD */
+function updateHUD(){
+  if(!state)return;
+  state.players.forEach(function(p,i){
+    $("#nm"+i).textContent=p.name;
+    $("#sc"+i).textContent=p.score;
+    $("#lv"+i).textContent="Stage "+state.level+" of "+MAX_STAGE;
+    $("#pl"+i).classList.toggle("on", i===state.cur && !state.over);
+  });
+  if(state.mode===1){ $("#pl1").style.display="none"; } else { $("#pl1").style.display=""; }
+  $("#dots").innerHTML="";
+  for(var i=0;i<NEED;i++){ var s=document.createElement("span"); var st=state.slots?state.slots[i]:"pending";
+    if(st==="clean")s.className="f"; else if(st==="messy")s.className="m"; else if(st==="missed")s.className="x";
+    $("#dots").appendChild(s); }
+  $("#dotsLabel").textContent="Question "+Math.min(state.qIndex+1,NEED)+" of "+NEED+" in this stage";
+  var hh="";
+  for(var j=0;j<3;j++){ hh+='<span class="'+(j<state.hearts?"":"lost")+'">♥</span>'; }
+  $("#hearts").innerHTML=hh;
+}
+function showFact(html){ var f=$("#fact"); f.innerHTML=html; f.classList.add("show"); fitCanvas(); }
+function esc(s){ return String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;"); }
+function hideFact(){ $("#fact").classList.remove("show"); }
+var stripTimer=null;
+function showStrip(who, sub, cls, ms){
+  var b=$("#strip"); b.className=cls||""; b.querySelector(".who").textContent=who; b.querySelector(".sub").textContent=sub||"";
+  b.classList.add("show");
+  if(stripTimer)clearTimeout(stripTimer);
+  stripTimer=setTimeout(function(){ b.classList.remove("show"); }, ms||1300);
+}
+function hideStrip(){ var b=$("#strip"); if(stripTimer)clearTimeout(stripTimer); b.classList.remove("show"); }
+
+/* Paused ready gate between turns in a two player game, in the spirit of the
+   reference game: play stops fully, a card names whose turn is next, and only
+   that player's tap on Start begins the turn. The gate phase is never
+   advanced by the loop, so nothing runs behind the card, however long it
+   waits. The gate only ever appears between turns, never during a call. */
+function showGate(why, player){
+  if(!state)return;
+  state.phase="gate"; state.afterPause=null; state.targets=[]; state.queue=[];
+  hideStrip(); hideReadUI();
+  $("#game").style.display="none"; $("#levelEnd").style.display="none"; $("#end").style.display="none";
+  $("#gateWhy").textContent=why;
+  var title=$("#gateTitle");
+  title.textContent=player.name+", your turn";
+  title.style.color = state.cur===0 ? "#dd6210" : "#dd2f8b";
+  $("#gateSub").textContent="Stage "+state.level+" · "+diffName()+" · five questions · three hearts";
+  $("#gateBtn").textContent="Start, "+player.name+"!";
+  $("#gate").style.display="block";
+  window.scrollTo({top:0, behavior:"smooth"});
+}
+
+/* particles */
+function burstFX(t, bigText){
+  var cols=[t.color,"#ffc53d","#ffffff"];
+  for(var i=0;i<18;i++){ var a=Math.random()*Math.PI*2, s=110+Math.random()*250;
+    state.parts.push({x:t.x, y:t.y, vx:Math.cos(a)*s, vy:Math.sin(a)*s-130, life:1, sz:4+Math.random()*7, rot:Math.random()*6, vr:(Math.random()-0.5)*12, col:cols[i%3]});
+  }
+  if(bigText) state.parts.push({x:t.x, y:t.y-30, vx:0, vy:-85, life:1.15, text:bigText, col:"#ffc53d"});
+}
+function confettiFX(){
+  var cols=["#ff5964","#ffc53d","#12b5a5","#3a7bd5","#ef5da8","#ff8c42"];
+  for(var i=0;i<150;i++) state.parts.push({x:Math.random()*W, y:-20-Math.random()*H*0.6, vx:(Math.random()-0.5)*80, vy:60+Math.random()*120, life:3+Math.random()*2, sz:5+Math.random()*6, rot:Math.random()*6, vr:(Math.random()-0.5)*8, col:cols[i%6], conf:true});
+}
+
+/* flow */
+/* Ambient life control: the margin bulbs and sparks live outside the play
+   area at all times. During a live call the page carries the inplay class
+   and the ambient motion slows further; a stage win fires a short bulb
+   chase around the frame edge. */
+function setInplay(on){ document.body.classList.toggle("inplay", !!on); }
+var chaseTimer=null;
+function celebrate(){
+  document.body.classList.add("chase");
+  if(chaseTimer) clearTimeout(chaseTimer);
+  chaseTimer=setTimeout(function(){ document.body.classList.remove("chase"); }, 2800);
+}
+function buildAmbient(){
+  var box=$("#ambient"); if(!box) return;
+  var w=window.innerWidth, h=window.innerHeight, html="", i, n;
+  n=Math.max(6, Math.floor(w/34));
+  for(i=0;i<n;i++){ var x=(i+0.5)*(w/n); html+='<span class="bulb'+(i%2?' alt':'')+'" style="left:'+(x-3.5)+'px;top:4px;animation-delay:'+(i*0.22)+'s"></span>'; }
+  n=Math.max(6, Math.floor(h/52));
+  for(i=0;i<n;i++){ var y=(i+0.5)*(h/n); html+='<span class="bulb'+(i%2?'':' alt')+'" style="left:4px;top:'+(y-3.5)+'px;animation-delay:'+(i*0.31+0.4)+'s"></span>'; html+='<span class="bulb'+(i%2?' alt':'')+'" style="right:4px;top:'+(y-3.5)+'px;animation-delay:'+(i*0.31+0.9)+'s"></span>'; }
+  var sparks=[[6,18],[92,12],[10,64],[88,72],[4,40],[95,44],[14,88],[84,90]];
+  for(i=0;i<sparks.length;i++){ html+='<span class="spark" style="left:'+sparks[i][0]+'%;top:'+sparks[i][1]+'%;animation-delay:'+(i*1.3)+'s"></span>'; }
+  box.innerHTML=html;
+}
+function startTurn(stripMs){
+  state.hearts=3; state.qIndex=0; state.qMessy=false;
+  state.slots=["pending","pending","pending","pending","pending"];
+  state.turnStats={first:0, solved:0, points:0};
+  state.parts=[]; state.holes=[]; state.targets=[]; state.queue=[];
+  state.turnUsed=[];
+  if(state.planLevel!==state.level){ state.plan=SLOT_PLANS[state.level].slice(); state.planLevel=state.level; }
+  updateHUD(); hideFact(); hideReadUI();
+  var p=curP();
+  showStrip(p.name+" to play", "Stage "+state.level+" · "+diffName(), state.cur===0?"p1":"p2", Math.max(900,(stripMs||1300)-250));
+  state.phase="banner"; state.pauseT=(stripMs||1300)/1000;
+}
+var READ_SECONDS=15;
+function beginCall(){
+  buildCall();
+  setInplay(true);
+  state.phase="quick"; state.readT=READ_SECONDS;
+  showReadUI();
+}
+function showReadUI(){ $("#readWrap").classList.add("on"); updateReadUI(); }
+function hideReadUI(){ $("#readWrap").classList.remove("on"); }
+function updateReadUI(){
+  if(!state)return;
+  var s=Math.max(0, Math.ceil(state.readT));
+  $("#readLabel").textContent="Quick answer time: "+s+" second"+(s===1?"":"s")+" left. Answer now for bonus points.";
+  $("#readFill").style.width=(Math.max(0,state.readT)/READ_SECONDS*100)+"%";
+}
+function loseHeartFX(){ state.shake=0.4; }
+function nextQuestionOrEndTurn(){
+  if(state.qIndex>=NEED-1){ endTurn("All five questions of the stage are done."); return; }
+  state.qIndex+=1; state.qMessy=false;
+  state.phase="pause"; state.pauseT=1.0; state.afterPause="call";
+  updateHUD();
+}
+function endTurn(why){
+  state.targets=[]; state.queue=[];
+  setInplay(false);
+  hideReadUI();
+  for(var i=0;i<NEED;i++){ if(state.slots[i]==="pending") state.slots[i]="missed"; }
+  var p=curP();
+  p.levelResult={first:state.turnStats.first, solved:state.turnStats.solved, points:state.turnStats.points};
+  updateHUD();
+  if(state.mode===2 && state.cur===0){
+    var other=state.players[1];
+    var whyLine=p.name+" finished stage "+state.level+" with "+state.turnStats.first+" first attempt solves and "+state.turnStats.solved+" of five questions solved. "+why;
+    state.cur=1;
+    state.phase="gate"; state.afterPause=null;
+    updateHUD();
+    /* Play stops here. After a short beat so the last result can be read, the
+       gate card appears and stays until the next player taps Start. */
+    setTimeout(function(){ if(state && state.phase==="gate") showGate(whyLine, other); }, 450);
+    return;
+  }
+  showLevelEnd();
+}
+function onCorrect(t){
+  var clean=!state.qMessy;
+  var pts=clean?100:50;
+  /* Quick answer window: a solve while the targets stand still also earns
+     two bonus points for every second left on the countdown. */
+  var bonus = state.phase==="quick" ? 2*Math.max(0, Math.ceil(state.readT)) : 0;
+  var total=pts+bonus;
+  state.lastBase=pts; state.lastBonus=bonus;
+  burstFX(t, "+"+total); sfx("burst");
+  curP().score+=total;
+  state.slots[state.qIndex]=clean?"clean":"messy";
+  state.turnStats.solved+=1; if(clean)state.turnStats.first+=1; state.turnStats.points+=total;
+  showFact(state.callFact+" <b>Plus "+pts+" points"+(bonus>0?", plus "+bonus+" quick bonus":"")+".</b> "+(clean?"Solved at the first attempt.":"Solved after a mistake on this question, so it pays less."));
+  state.targets=[]; state.queue=[];
+  hideReadUI();
+  updateHUD();
+  nextQuestionOrEndTurn();
+}
+function onWrong(t){
+  burstFX(t, null); sfx("wrong"); sfx("heart"); loseHeartFX();
+  state.hearts-=1; state.qMessy=true;
+  showFact("That target was <b>"+t.text+"</b>. One heart lost, and this question can no longer count as a first attempt solve. The right answer is still gliding, and landing it pays 50 points.");
+  state.targets=state.targets.filter(function(x){return x!==t;});
+  updateHUD();
+  if(state.hearts<=0){ endTurn("A wrong target took the last heart, so the turn ended early."); }
+}
+function onCorrectEscape(){
+  sfx("heart"); loseHeartFX();
+  state.hearts-=1;
+  state.slots[state.qIndex]="missed";
+  state.targets=[]; state.queue=[];
+  showFact("The right target, <b>"+state.call.answer+"</b>, glided away. This question counts as missed and one heart is lost.");
+  updateHUD();
+  if(state.hearts<=0){ endTurn("The right target escaped on the last heart, so the turn ended early."); return; }
+  nextQuestionOrEndTurn();
+}
+function levelWinnerIdx(r0, r1){
+  if(r0.first!==r1.first) return r0.first>r1.first?0:1;
+  if(r0.solved!==r1.solved) return r0.solved>r1.solved?0:1;
+  if(r0.points!==r1.points) return r0.points>r1.points?0:1;
+  return -1;
+}
+function resultLine(r){ return "First attempt solves: "+r.first+" of 5 · Questions solved: "+r.solved+" of 5 · Points this stage: "+r.points; }
+function showLevelEnd(){
+  state.phase="over"; state.over=true; state.targets=[]; state.queue=[];
+  state.levelsPlayed+=1;
+  var lv=state.level;
+  if(lv>state.maxStage) state.maxStage=lv;
+  var winner=null;
+  if(state.mode===2){
+    var r0=state.players[0].levelResult, r1=state.players[1].levelResult;
+    var winIdx=levelWinnerIdx(r0, r1);
+    if(winIdx>=0){ winner=state.players[winIdx]; winner.levelsWon+=1; if(winner.levelResult.first>=NEED)sfx("level"); }
+  } else {
+    var rs=state.players[0].levelResult;
+    if(rs.solved>=NEED) state.levelsCleared+=1;
+    if(rs.first>state.bestFirst) state.bestFirst=rs.first;
+    if(rs.first>=NEED) sfx("level");
+  }
+  if(winner || (state.mode===1 && state.players[0].levelResult && state.players[0].levelResult.solved>=NEED)) celebrate();
+  setTimeout(function(){
+    $("#game").style.display="none"; $("#end").style.display="none"; $("#levelEnd").style.display="block";
+    var tally=$("#lvTally"); tally.innerHTML="";
+    if(state.mode===2){
+      var w0=state.players[0].levelResult, w1=state.players[1].levelResult;
+      $("#lvTitle").textContent = winner ? winner.name+" wins stage "+lv : "Stage "+lv+" is a tie";
+      var bits=[];
+      bits.push("Stage "+lv+" questions were "+diffName().toLowerCase()+" for both players, drawn in the same mirrored slot plan.");
+      if(w0.first>=NEED && w1.first>=NEED) bits.push("Both players played a perfect round, five first attempt solves each, so the stage is shared.");
+      else if(winner && winner.levelResult.first>=NEED) bits.push(winner.name+" played a perfect round: five first attempt solves.");
+      if(winner){
+        if(w0.first!==w1.first) bits.push("Decided on first attempt solves, "+Math.max(w0.first,w1.first)+" to "+Math.min(w0.first,w1.first)+".");
+        else if(w0.solved!==w1.solved) bits.push("First attempt solves were equal, so questions solved decided it.");
+        else bits.push("First attempt solves and questions solved were equal, so points this stage decided it.");
+      } else if(!(w0.first>=NEED && w1.first>=NEED)) bits.push("First attempt solves, questions solved and points all finished equal.");
+      bits.push("Stages won so far: "+state.players[0].name+" "+state.players[0].levelsWon+", "+state.players[1].name+" "+state.players[1].levelsWon+".");
+      $("#lvSub").textContent=bits.join(" ");
+      state.players.forEach(function(pl,i){
+        var row=document.createElement("div"); row.className="trow"+(winner===pl?(i===0?" win1":" win2"):"");
+        row.innerHTML='<span class="tn"></span><span><span class="ts"></span><span class="tf"></span></span>';
+        row.querySelector(".tn").textContent=pl.name;
+        row.querySelector(".ts").textContent=pl.levelResult.points+" points";
+        row.querySelector(".tf").textContent=resultLine(pl.levelResult)+" · Stages won: "+pl.levelsWon;
+        tally.appendChild(row);
+      });
+    } else {
+      var r=state.players[0].levelResult;
+      var cleared=r.solved>=NEED;
+      $("#lvTitle").textContent="Stage "+lv+(cleared?" cleared":" complete");
+      var sBits=[];
+      sBits.push("Stage "+lv+" questions were "+diffName().toLowerCase()+", in the shared slot plan for this stage.");
+      if(r.first>=NEED) sBits.push("A perfect round: all five questions solved at the first attempt.");
+      sBits.push("You solved "+r.solved+" of five questions, "+r.first+" of them at the first attempt.");
+      sBits.push(cleared?"The stage counts as cleared because every question was solved.":"A stage counts as cleared when all five questions are solved.");
+      sBits.push("Stages cleared so far: "+state.levelsCleared+" of "+state.levelsPlayed+". Highest stage reached: "+state.maxStage+" of "+MAX_STAGE+".");
+      $("#lvSub").textContent=sBits.join(" ");
+      var pl0=state.players[0];
+      var row=document.createElement("div"); row.className="trow";
+      row.innerHTML='<span class="tn"></span><span><span class="ts"></span><span class="tf"></span></span>';
+      row.querySelector(".tn").textContent=pl0.name;
+      row.querySelector(".ts").textContent=pl0.score+" points in total";
+      row.querySelector(".tf").textContent=resultLine(r);
+      tally.appendChild(row);
+    }
+    $("#continueBtn").textContent = lv>=MAX_STAGE ? "Finish the match" : "Continue to stage "+(lv+1);
+    window.scrollTo({top:0, behavior:"smooth"});
+  }, 450);
+  updateHUD();
+}
+function finishMatch(){
+  state.over=true; state.phase="over"; state.targets=[]; state.queue=[];
+  $("#levelEnd").style.display="none"; $("#game").style.display="none";
+  var title, sub, winner=null;
+  if(state.mode===2){
+    var a=state.players[0], b=state.players[1];
+    if(a.levelsWon!==b.levelsWon) winner=a.levelsWon>b.levelsWon?a:b;
+    else if(a.score!==b.score) winner=a.score>b.score?a:b;
+    if(winner){ sfx("win");
+      title=winner.name+" wins the match";
+      sub = a.levelsWon!==b.levelsWon
+        ? "Stages won "+a.levelsWon+" to "+b.levelsWon+" across "+state.levelsPlayed+" stage"+(state.levelsPlayed===1?"":"s")+" played."
+        : "Stages won finished equal at "+a.levelsWon+" each, so total points decided the match, "+a.score+" to "+b.score+".";
+    } else {
+      title="The match is a shared win";
+      sub="Stages won finished at "+a.levelsWon+" each and total points finished equal at "+a.score+". Nothing separates the players.";
+    }
+    if(state.maxStage>=MAX_STAGE) sub+=" All ten stages were played.";
+  } else {
+    var p=state.players[0];
+    title="Your match in numbers";
+    sub="Stages played: "+state.levelsPlayed+". Stages cleared: "+state.levelsCleared+" of "+state.levelsPlayed+". Highest stage reached: "+state.maxStage+" of "+MAX_STAGE+". Best first attempt round: "+state.bestFirst+" of 5. Total points: "+p.score+".";
+    if(state.maxStage>=MAX_STAGE) sub+=" All ten stages were played.";
+    saveBest();
+  }
+  $("#end").style.display="block";
+  $("#endTitle").textContent=title; $("#endSub").textContent=sub;
+  var tally=$("#tally"); tally.innerHTML="";
+  var shown = state.mode===2 ? state.players : [state.players[0]];
+  shown.forEach(function(pl,i){
+    var row=document.createElement("div"); row.className="trow"+(winner===pl?(i===0?" win1":" win2"):"");
+    row.innerHTML='<span class="tn"></span><span><span class="ts"></span><span class="tf"></span></span>';
+    row.querySelector(".tn").textContent=pl.name;
+    row.querySelector(".ts").textContent=pl.score+" points";
+    row.querySelector(".tf").textContent = state.mode===2 ? "Stages won: "+pl.levelsWon+" of "+state.levelsPlayed : "Stages cleared: "+state.levelsCleared+" of "+state.levelsPlayed+" · Highest stage reached: "+state.maxStage+" of "+MAX_STAGE+" · Best first attempt round: "+state.bestFirst+" of 5";
+    tally.appendChild(row);
+  });
+  var best=loadBest();
+  $("#bestLine").textContent = state.mode===1 && (best.first||best.cleared) ? "Saved on this device: best first attempt round "+best.first+" of 5 · most stages cleared in one run "+best.cleared : "";
+  window.scrollTo({top:0, behavior:"smooth"});
+  updateHUD();
+}
+function loadBest(){ try{ return { first:parseInt(localStorage.getItem("targetRun.bestFirst")||"0",10)||0, cleared:parseInt(localStorage.getItem("targetRun.bestCleared")||"0",10)||0 }; }catch(e){ return {first:0, cleared:0}; } }
+function saveBest(){ if(!state||state.mode!==1)return; try{ var b=loadBest(); if(state.bestFirst>b.first)localStorage.setItem("targetRun.bestFirst", String(state.bestFirst)); if(state.levelsCleared>b.cleared)localStorage.setItem("targetRun.bestCleared", String(state.levelsCleared)); }catch(e){} }
+
+/* shooting */
+cv.addEventListener("pointerdown", function(e){
+  if(!state||(state.phase!=="play"&&state.phase!=="quick"))return;
+  audioInit();
+  var r=cv.getBoundingClientRect(), px=e.clientX-r.left, py=e.clientY-r.top;
+  sfx("shot");
+  for(var i=state.targets.length-1;i>=0;i--){ var t=state.targets[i];
+    if(Math.abs(px-t.x)<=t.w/2+4 && Math.abs(py-t.y)<=t.h/2+4){
+      if(t.correct) onCorrect(t); else onWrong(t);
+      return;
+    }
+  }
+  state.holes.push({x:px, y:py, a:1});
+});
+
+/* drawing */
+function rr(x,y,w,h,r){ ctx.beginPath(); ctx.moveTo(x+r,y); ctx.arcTo(x+w,y,x+w,y+h,r); ctx.arcTo(x+w,y+h,x,y+h,r); ctx.arcTo(x,y+h,x,y,r); ctx.arcTo(x,y,x+w,y,r); ctx.closePath(); }
+function drawTarget(t){
+  if(!t.lines || !t.lines.length) sizeTarget(t);
+  ctx.save(); ctx.globalAlpha=(t.fade==null?1:Math.max(0,Math.min(1,t.fade))); ctx.translate(t.x, t.y);
+  ctx.fillStyle="rgba(0,0,0,.25)"; rr(-t.w/2+3, -t.h/2+5, t.w, t.h, 16); ctx.fill();
+  ctx.fillStyle=t.color; rr(-t.w/2, -t.h/2, t.w, t.h, 16); ctx.fill();
+  ctx.fillStyle="rgba(255,255,255,.94)"; rr(-t.w/2+5, -t.h/2+5, t.w-10, t.h-10, 12); ctx.fill();
+  ctx.beginPath(); ctx.arc(0, -t.h/2+13, 3.2, 0, 7); ctx.fillStyle=t.color; ctx.fill();
+  ctx.fillStyle="#33241a"; ctx.font=t.font; ctx.textAlign="center"; ctx.textBaseline="middle";
+  var lh=(t.px||16)+3, total=t.lines.length*lh;
+  t.lines.forEach(function(line,idx){ ctx.fillText(line, 0, -total/2+lh*(idx+0.5)+2); });
+  ctx.restore();
+}
+function draw(){
+  ctx.save();
+  if(state&&state.shake>0) ctx.translate((Math.random()-0.5)*16*state.shake, (Math.random()-0.5)*7*state.shake);
+  var g=ctx.createLinearGradient(0,0,0,H); g.addColorStop(0,"#0f9b78"); g.addColorStop(1,"#075f4a");
+  ctx.fillStyle=g; ctx.fillRect(-20,-20,W+40,H+40);
+  ctx.fillStyle="rgba(255,255,255,.06)";
+  for(var x=0;x<W+40;x+=46) ctx.fillRect(x,0,3,H);
+  for(var lane=0; lane<2; lane++){ var y=laneY(lane)+46;
+    ctx.fillStyle="#c08043"; ctx.fillRect(-20, y, W+40, 11);
+    ctx.fillStyle="#7c4a20"; ctx.fillRect(-20, y+11, W+40, 5);
+  }
+  if(state){
+    state.targets.forEach(drawTarget);
+    state.holes.forEach(function(h){ ctx.globalAlpha=h.a; ctx.fillStyle="#1a0f08"; ctx.beginPath(); ctx.arc(h.x,h.y,6,0,7); ctx.fill();
+      ctx.strokeStyle="#ffc53d"; ctx.lineWidth=2; ctx.beginPath(); ctx.arc(h.x,h.y,(1-h.a)*28+8,0,7); ctx.stroke(); });
+    ctx.globalAlpha=1;
+    state.parts.forEach(function(p){ ctx.globalAlpha=Math.max(0,Math.min(1,p.life));
+      if(p.text){ ctx.fillStyle=p.col; ctx.font="700 21px Fredoka, sans-serif"; ctx.textAlign="center"; ctx.fillText(p.text,p.x,p.y); return; }
+      ctx.save(); ctx.translate(p.x,p.y); ctx.rotate(p.rot); ctx.fillStyle=p.col; ctx.fillRect(-p.sz/2,-p.sz/4,p.sz,p.sz/2); ctx.restore();
+    });
+    ctx.globalAlpha=1;
+  }
+  ctx.restore();
+}
+var lastT=performance.now();
+function loop(now){
+  var dt=Math.min(0.05,(now-lastT)/1000); lastT=now;
+  if(state && !state.over){
+    if(state.phase==="banner" || state.phase==="pause"){
+      state.pauseT-=dt;
+      if(state.pauseT<=0){
+        if(state.afterPause==="turn"){ state.afterPause=null; startTurn(1300); }
+        else { state.afterPause=null; beginCall(); }
+      }
+    } else if(state.phase==="quick"){
+      /* Quick answer window: targets stand still and can be tapped, nothing
+         can escape; the countdown runs and the bonus shrinks with it. */
+      state.readT-=dt;
+      updateReadUI();
+      if(state.readT<=0){
+        hideReadUI();
+        state.phase="play";
+        showStrip("Run", "", "", 1200);
+      }
+    } else if(state.phase==="play"){
+      state.spawnT-=dt;
+      for(var qi=state.queue.length-1; qi>=0; qi--){
+        var item=state.queue[qi];
+        item.delay-=dt;
+        if(item.delay<=0){
+          if(entryBlocked(item)){ item.delay=0.25; }
+          else { spawnFromQueue(item); state.queue.splice(qi,1); }
+        }
+      }
+      var escapedCorrect=false;
+      state.targets.forEach(function(t){ t.x+=t.dir*t.v*dt; t.ph+=dt*6; if(t.fade<1)t.fade=Math.min(1, t.fade+dt/0.35);
+        /* From stage five onward the targets hop as they glide. */
+        t.y=laneY(t.lane)+(state.level>=5 ? Math.sin(t.ph)*9 : 0); });
+      for(var i=state.targets.length-1;i>=0;i--){ var tt=state.targets[i];
+        var off = tt.dir>0 ? (tt.x-tt.w/2>W+8) : (tt.x+tt.w/2<-8);
+        if(off){
+          if(tt.correct){ escapedCorrect=true; }
+          else {
+            /* a decoy that glides off is queued to fade back in fully formed at its entry edge, so the call stays in play */
+            state.targets.splice(i,1);
+            state.queue.push({text:tt.text, correct:false, lane:tt.lane, delay:0.45, color:tt.color});
+          }
+        }
+      }
+      if(escapedCorrect) onCorrectEscape();
+    }
+    state.parts.forEach(function(p){ p.x+=p.vx*dt; p.y+=p.vy*dt; if(!p.text)p.vy+=(p.conf?30:700)*dt; p.rot+=(p.vr||0)*dt; p.life-=dt*(p.conf?0.35:1.4); });
+    state.parts=state.parts.filter(function(p){return p.life>0 && p.y<H+50;});
+    state.holes.forEach(function(h){h.a-=dt*0.8;});
+    state.holes=state.holes.filter(function(h){return h.a>0;});
+    state.shake=Math.max(0, state.shake-dt*1.6);
+  }
+  draw();
+  requestAnimationFrame(loop);
+}
+
+/* setup wiring */
+var mode=2;
+function setMode(m){ mode=m; $("#mode1").setAttribute("aria-pressed", m===1?"true":"false"); $("#mode2").setAttribute("aria-pressed", m===2?"true":"false"); $("#name2Wrap").style.display = m===2?"":"none"; }
+$("#mode1").addEventListener("click", function(){ setMode(1); });
+$("#mode2").addEventListener("click", function(){ setMode(2); });
+
+/* Family picker wiring: built families toggle freely but the selection can
+   never fall to zero; the All families toggle selects every built family,
+   or, when every built family is already on, keeps the first built family
+   so the pool is never empty. The choice is saved on this device and the
+   pool is rebuilt from it. Unbuilt families render disabled in the markup
+   and cannot be switched on. */
+function saveFamSel(){ try{ localStorage.setItem("targetRun.families", JSON.stringify(selFams)); }catch(e){} }
+function renderFamPicker(){
+  var btns=document.querySelectorAll("#famPicker button");
+  for(var i=0;i<btns.length;i++){
+    var id=btns[i].getAttribute("data-fam");
+    btns[i].setAttribute("aria-pressed", selFams.indexOf(id)>=0 ? "true" : "false");
+  }
+  var built=builtFamIds();
+  var allOn=built.length>0 && built.every(function(id){ return selFams.indexOf(id)>=0; });
+  $("#famAll").setAttribute("aria-pressed", allOn ? "true" : "false");
+  $("#famNote").textContent="In the pool now: "+famLabelText()+". Questions come only from the families switched on. Families that are not built yet cannot be switched on; each joins this picker as its build lands.";
+}
+document.querySelector("#famPicker").addEventListener("click", function(e){
+  var b=e.target.closest ? e.target.closest("button") : null;
+  if(!b || b.disabled) return;
+  var id=b.getAttribute("data-fam");
+  var fam=famById(id);
+  if(!fam || !fam.built || !FAMILY_DATA[id]) return;
+  var at=selFams.indexOf(id);
+  if(at>=0){ if(selFams.length<=1) return; selFams.splice(at,1); }
+  else selFams.push(id);
+  saveFamSel(); rebuildPools(); renderFamPicker();
+});
+$("#famAll").addEventListener("click", function(){
+  var built=builtFamIds();
+  var allOn=built.every(function(id){ return selFams.indexOf(id)>=0; });
+  selFams = allOn ? built.slice(0,1) : built.slice();
+  saveFamSel(); rebuildPools(); renderFamPicker();
+});
+renderFamPicker();
+function startMatch(){
+  audioInit();
+  rebuildPools();
+  $("#famLabel").textContent="Content set: "+famLabelText();
+  var n1=($("#name1").value||"").trim()||"Player One";
+  var n2=($("#name2").value||"").trim()||"Player Two";
+  if(mode===2 && n2.toLowerCase()===n1.toLowerCase()) n2=n2+" Two";
+  state=newState(mode, n1, n2);
+  $("#setup").style.display="none"; $("#end").style.display="none"; $("#levelEnd").style.display="none"; $("#game").style.display="block";
+  fitCanvas(); resize(); updateHUD();
+  showGate(mode===2 ? "The match is ready. "+state.players[0].name+" plays the first turn." : "The match is ready. Your first turn is set.", state.players[0]);
+  window.scrollTo({top:0, behavior:"smooth"});
+}
+$("#startBtn").addEventListener("click", startMatch);
+$("#againBtn").addEventListener("click", function(){ if(state){ var m=state.mode, a=state.players[0].name, b=state.players[1].name; state=newState(m,a,b); $("#end").style.display="none"; $("#levelEnd").style.display="none"; $("#game").style.display="block"; fitCanvas(); resize(); updateHUD(); showGate(m===2 ? "A fresh match is ready. "+a+" plays the first turn." : "A fresh match is ready. Your first turn is set.", state.players[0]); window.scrollTo({top:0,behavior:"smooth"}); } });
+$("#continueBtn").addEventListener("click", function(){ if(!state)return;
+  if(state.level>=MAX_STAGE){ finishMatch(); return; }
+  var prevLevel=state.level;
+  state.level+=1;
+  state.players.forEach(function(pl){ pl.level=state.level; pl.levelResult=null; });
+  state.over=false; state.cur=0;
+  $("#levelEnd").style.display="none";
+  if(state.mode===2){ showGate("Stage "+prevLevel+" is decided. The match moves on to stage "+state.level+".", state.players[0]); return; }
+  $("#game").style.display="block";
+  fitCanvas(); resize(); updateHUD(); startTurn(1400);
+  window.scrollTo({top:0,behavior:"smooth"});
+});
+$("#gateBtn").addEventListener("click", function(){
+  if(!state || state.phase!=="gate")return;
+  audioInit();
+  $("#gate").style.display="none"; $("#game").style.display="block";
+  fitCanvas(); resize(); updateHUD();
+  startTurn(900);
+  window.scrollTo({top:0, behavior:"smooth"});
+});
+$("#finishBtn").addEventListener("click", function(){ if(state) finishMatch(); });
+$("#settingsBtn").addEventListener("click", function(){ $("#end").style.display="none"; $("#setup").style.display="block"; state=null; setInplay(false); window.scrollTo({top:0,behavior:"smooth"}); });
+$("#quitBtn").addEventListener("click", function(){ $("#game").style.display="none"; $("#setup").style.display="block"; state=null; setInplay(false); window.scrollTo({top:0,behavior:"smooth"}); });
+$("#muteBtn").addEventListener("click", function(){ muted=!muted; this.classList.toggle("muted", muted); if(!muted)audioInit(); });
+
+buildAmbient();
+var ambT=null;
+window.addEventListener("resize", function(){ fitCanvas(); resize(); if(ambT)clearTimeout(ambT); ambT=setTimeout(buildAmbient, 250); });
+new ResizeObserver(function(){ fitCanvas(); resize(); }).observe(cv);
+if(document.fonts && document.fonts.ready){ document.fonts.ready.then(function(){ resize(); }); }
+resize();
+requestAnimationFrame(loop);
+
+/* hooks for review and testing */
+window.__TR = {
+  getState: function(){ if(!state)return null; return { mode:state.mode, cur:state.cur, phase:state.phase, readT:state.readT, quickLeft:(state.phase==="quick"?state.readT:null), lastBase:state.lastBase||0, lastBonus:state.lastBonus||0, fact:$("#fact").textContent, hearts:state.hearts, level:state.level, stage:state.level, band:bandName(state.level), maxStage:state.maxStage, hop:state.level>=5, speed:cfg().speed, usedCount:state.used.length, qIndex:state.qIndex, qMessy:state.qMessy, slots:state.slots.slice(), turnStats:{first:state.turnStats.first, solved:state.turnStats.solved, points:state.turnStats.points}, levelsPlayed:state.levelsPlayed, levelsCleared:state.levelsCleared, bestFirst:state.bestFirst, over:state.over,
+    players: state.players.map(function(p){return {name:p.name, score:p.score, level:p.level, levelsWon:p.levelsWon, levelResult:p.levelResult};}),
+    call: state.call ? state.call.answer : null,
+    plan: state.plan ? state.plan.slice() : null,
+    callFormat: state.call ? state.call.format : null,
+    callTier: state.call ? state.call.tier : null,
+    callText: $("#callText").textContent,
+    callMeta: $("#callMeta").textContent,
+    screens: { setup: $("#setup").style.display, game: $("#game").style.display, levelEnd: $("#levelEnd").style.display, end: $("#end").style.display, gate: $("#gate").style.display },
+    gate: { why: $("#gateWhy").textContent, title: $("#gateTitle").textContent, sub: $("#gateSub").textContent, btn: $("#gateBtn").textContent },
+    lvTitle: $("#lvTitle").textContent, lvSub: $("#lvSub").textContent, endTitle: $("#endTitle").textContent, endSub: $("#endSub").textContent }; },
+  start: function(m){ setMode(m||2); startMatch(); },
+  targets: function(){ if(!state)return []; var r=cv.getBoundingClientRect(); return state.targets.map(function(t){ return {text:t.text, label:t.text, lines:t.lines?t.lines.length:0, lane:t.lane, correct:t.correct, color:t.color, x:t.x, y:t.y, w:t.w, h:t.h, pageX:r.left+t.x, pageY:r.top+t.y}; }); },
+  pools: function(){ var out={}; for(var st=1; st<=10; st++){ out[st]={ meaning: POOLM.filter(function(x){return x.tier===st;}).length, expand: POOLE.filter(function(x){return x.tier===st;}).length, plan: SLOT_PLANS[st].slice() }; } return { stages: out, meaningTotal: POOLM.length, expandTotal: POOLE.length, families: selFams.slice() }; },
+  famSel: function(){ return { selected: selFams.slice(), built: builtFamIds(), saved: (function(){ try{ return localStorage.getItem("targetRun.families"); }catch(e){ return null; } })() }; },
+  nearMissFor: function(abbr){ var c=null; for(var i=0;i<EXPAND.length;i++) if(EXPAND[i].a===abbr) c=EXPAND[i]; if(!c) return null; return { correct: c.e, decoys: nearMissDecoys(c) }; },
+  setStage: function(n){ if(!state)return false; state.level=Math.max(1, Math.min(MAX_STAGE, n)); state.planLevel=0; state.players.forEach(function(pl){ pl.level=state.level; pl.levelResult=null; }); state.over=false; state.cur=0; return true; },
+  tapCanvas: function(x,y){ var ev=new PointerEvent("pointerdown",{bubbles:true}); Object.defineProperty(ev,"clientX",{value:cv.getBoundingClientRect().left+x}); Object.defineProperty(ev,"clientY",{value:cv.getBoundingClientRect().top+y}); cv.dispatchEvent(ev); },
+  tapTarget: function(correct){ if(!state)return false; var t=state.targets.filter(function(x){return x.correct===correct;})[0]; if(!t)return false; window.__TR.tapCanvas(t.x, t.y); return true; },
+  forceEscapeCorrect: function(){ if(!state)return false; var t=state.targets.filter(function(x){return x.correct;})[0]; if(!t)return false; t.x = t.dir>0 ? W+t.w : -t.w; return true; },
+  beginNow: function(){ if(!state)return;
+    if(state.phase==="gate"){ $("#gateBtn").click(); return; }
+    if(state.afterPause==="turn"){ state.afterPause=null; startTurn(60); state.pauseT=0.01; return; }
+    state.pauseT=0;
+    if(state.phase==="banner"||state.phase==="pause"){ state.afterPause=null; beginCall(); }
+    else if(state.phase==="quick"){ state.readT=0; hideReadUI(); state.phase="play"; } },
+  clickContinue: function(){ $("#continueBtn").click(); },
+  clickFinish: function(){ $("#finishBtn").click(); },
+  clickGate: function(){ $("#gateBtn").click(); },
+  setQuickLeft: function(s){ if(state && state.phase==="quick"){ state.readT=s; updateReadUI(); } }
+};
+    </script>
+  </body>
+</html>

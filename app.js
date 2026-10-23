@@ -597,9 +597,9 @@ setInterval(loadViews, CLIENT_REFRESH_MS);
 setInterval(updateStatusText, TICK_MS);
 /* Deep link: standalone pages link back to a specific part of the Learning Spaces view
    ("Back to Learning Spaces" -> index.html#learn-tables-quantum etc., Thillai, Oct 21 2026). */
-const LEARN_TARGETS = ["learn-videos", "learn-decks", "learn-tables", "learn-tables-founders", "learn-tables-quantum", "learn-tables-ai", "learn-tables-cloud", "learn-tables-cyber"];
+const LEARN_TARGETS = ["learn-videos", "learn-decks", "learn-tables", "learn-games", "learn-tables-founders", "learn-tables-quantum", "learn-tables-ai", "learn-tables-cloud", "learn-tables-cyber"];
 /* Learning Spaces doors (Oct 21 2026): three groups, one open at a time. */
-const DOOR_OF = { "learn-videos": "videos", "learn-decks": "decks", "learn-tables": "tables", "learn-tables-founders": "tables", "learn-tables-quantum": "tables", "learn-tables-ai": "tables", "learn-tables-cloud": "tables", "learn-tables-cyber": "tables" };
+const DOOR_OF = { "learn-videos": "videos", "learn-decks": "decks", "learn-games": "games", "learn-tables": "tables", "learn-tables-founders": "tables", "learn-tables-quantum": "tables", "learn-tables-ai": "tables", "learn-tables-cloud": "tables", "learn-tables-cyber": "tables" };
 function openDoor(name) {
   document.querySelectorAll(".learn-door").forEach(d => {
     const open = d.dataset.door === name;
@@ -775,3 +775,29 @@ function fillHomeArticles() {
     if (a.id) slot.dataset.artId = a.id;
   });
 }
+
+/* Play and Learn launch pop up (Thillai, Oct 23 2026): shown once per visitor;
+   the go button opens Learning Spaces with the games door expanded. */
+(function initGamesPopup() {
+  var KEY = "signalPlayLearnPopupV1";
+  var seen = false;
+  try { seen = !!localStorage.getItem(KEY); } catch (e) {}
+  var popup = document.getElementById("gamesPopup");
+  if (!popup || seen) return;
+  if (location.hash && location.hash !== "#home") return;
+  function mark() { try { localStorage.setItem(KEY, "1"); } catch (e) {} }
+  function hide() { popup.hidden = true; }
+  document.getElementById("gamesPopupClose").addEventListener("click", function () { mark(); hide(); });
+  document.getElementById("gamesPopupLater").addEventListener("click", function () { mark(); hide(); });
+  popup.addEventListener("click", function (ev) { if (ev.target === popup) { mark(); hide(); } });
+  document.getElementById("gamesPopupGo").addEventListener("click", function () {
+    mark(); hide();
+    showView("learn");
+    openDoor("games");
+    requestAnimationFrame(function () {
+      var el = document.getElementById("learn-games");
+      if (el) el.scrollIntoView({ block: "start" });
+    });
+  });
+  setTimeout(function () { popup.hidden = false; }, 900);
+})();

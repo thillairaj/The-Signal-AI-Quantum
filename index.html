@@ -16,7 +16,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,800;1,9..144,500;1,9..144,600&family=Inter:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css?v=20261021r">
+<link rel="stylesheet" href="style.css?v=20261023a">
 </head>
 <body data-view="home">
 
@@ -69,7 +69,7 @@
       </div>
       <div class="hm-ticker" aria-label="Key numbers">
         <div class="hm-ticker-track" id="hmTickerTrack">
-          <span class="hm-tick"><b>27</b><span>learning pages</span></span>
+          <span class="hm-tick"><b>29</b><span>learning pages</span></span>
           <span class="hm-tick"><b>1,316</b><span>terms in the periodic tables</span></span>
           <span class="hm-tick"><b>24</b><span>deck topics — 14 live, 10 to come</span></span>
           <span class="hm-tick"><b>3</b><span>podcast series</span></span>
@@ -202,7 +202,7 @@
   <section id="learn-view" class="view-section" hidden>
     <div class="view-intro">
       <h2>Learning Spaces</h2>
-      <p>Three doors — videos, interactive decks and periodic tables. Open one to start.</p>
+      <p>Four doors: videos, interactive decks, periodic tables and games. Open one to start.</p>
     </div>
     <div class="learn-door" id="learn-videos" data-door="videos">
       <button class="learn-door-head" type="button" data-door-btn aria-expanded="true">
@@ -491,6 +491,41 @@
       </div>
     </div>
     </div>
+    <div class="learn-door" id="learn-games" data-door="games">
+      <button class="learn-door-head" type="button" data-door-btn aria-expanded="false">
+        <span class="learn-door-no">04</span>
+        <span class="learn-door-name">Play &amp; Learn: Interactive Games</span>
+        <span class="learn-door-count">2 games · more coming</span>
+        <span class="learn-door-chev" aria-hidden="true">▾</span>
+      </button>
+      <div class="learn-door-body" hidden>
+
+    <div class="rail-wrap"><button class="rail-btn prev" type="button" aria-label="Previous cards">‹</button><div class="table-rail">
+      <a class="learn-card game-duel" href="games/answer-duel/">
+        <span class="learn-play" aria-hidden="true">♠</span>
+        <span class="learn-kicker">Interactive Game · Throwing</span>
+        <span class="learn-title">Answer Duel</span>
+        <span class="learn-desc">One question, four answer cards: throw the right card to score, with points falling on every wrong throw.</span>
+        <span class="learn-open">Play game ↗</span>
+      </a>
+      <a class="learn-card game-run" href="games/target-run/">
+        <span class="learn-play" aria-hidden="true">◎</span>
+        <span class="learn-kicker">Interactive Game · Bursting</span>
+        <span class="learn-title">Target Run</span>
+        <span class="learn-desc">Burst the right answers as they glide by: stages of questions rising in complexity, starting with the AI family.</span>
+        <span class="learn-open">Play game ↗</span>
+      </a>
+      <div class="learn-card game-soon">
+        <span class="learn-play" aria-hidden="true">✦</span>
+        <span class="learn-kicker">Interactive Games · Coming</span>
+        <span class="learn-title">Two More Games</span>
+        <span class="learn-desc">Two more games are being decided and will join this door in a later part.</span>
+        <span class="learn-open">Coming soon</span>
+      </div>
+    </div><button class="rail-btn next" type="button" aria-label="Next cards">›</button></div>
+
+      </div>
+    </div>
   </section>
 
   <section id="podcast-view" class="view-section" hidden>
@@ -523,7 +558,20 @@
   <span class="credit">Curated by Thillai Raj Thanam Jeya Veera Raj · <a class="li-btn" href="https://www.linkedin.com/in/thillairaj" target="_blank" rel="noopener"><span class="li-badge" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.55V9h3.57v11.45z"/></svg></span><span class="li-txt"><span class="li-dir">Follow on</span><span class="li-name">LinkedIn</span></span></a></span>
 </footer>
 
+  <div class="games-popup-backdrop" id="gamesPopup" hidden>
+    <div class="games-popup" role="dialog" aria-modal="true" aria-labelledby="gamesPopupTitle">
+      <button class="games-popup-close" type="button" id="gamesPopupClose" aria-label="Close announcement">×</button>
+      <span class="games-popup-kicker">Play &amp; Learn · New</span>
+      <h3 id="gamesPopupTitle">Introducing Play and Learn</h3>
+      <p>Game based learning has arrived at The Signal. Two interactive games, Answer Duel and Target Run, are now live in Learning Spaces. Pick a game and play a quick round.</p>
+      <div class="games-popup-actions">
+        <button class="games-popup-go" type="button" id="gamesPopupGo">Take me to the games</button>
+        <button class="games-popup-later" type="button" id="gamesPopupLater">Close</button>
+      </div>
+    </div>
+  </div>
+
 <script data-goatcounter="https://trttech.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
-<script src="app.js?v=20261021n"></script>
+<script src="app.js?v=20261023a"></script>
 </body>
 </html>
