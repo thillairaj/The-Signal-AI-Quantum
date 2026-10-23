@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-22T21:59:56.431804+00:00",
+  "generated_at": "2026-10-23T02:00:01.943844+00:00",
   "sources_polled": [
     "The Verge \u2014 AI",
     "Simon Willison",
@@ -15,6 +15,61 @@
     "Quantum Intelligence"
   ],
   "articles": [
+    {
+      "id": "efdfc541dbc4b3f5",
+      "title": "Tech Learning: Data Engineering & Analytics \u2014 Ep 16: Real Scenario: A DAG Fails at 2 AM",
+      "link": "https://muse.ai/podcasts/media/1248297608376725/4720f1e9-8c94-4958-8367-c455f31c5edc/ep-b82608bd-db5b-4692-827f-4bf5e4ce4202.mp3",
+      "source": "Technology Learnings",
+      "category": "Podcast",
+      "summary": "Data Engineering & Analytics track: on-call triage when the nightly pipeline fails \u2014 rerun, backfill, or escalate AI Generated",
+      "published": "2026-10-23T01:45:56+00:00",
+      "audio_url": "https://muse.ai/podcasts/media/1248297608376725/4720f1e9-8c94-4958-8367-c455f31c5edc/ep-b82608bd-db5b-4692-827f-4bf5e4ce4202.mp3",
+      "duration": "651"
+    },
+    {
+      "id": "0187439c27652bac",
+      "title": "Tech Learning: Data Engineering & Analytics \u2014 Ep 15: Airflow and DAGs for Beginners",
+      "link": "https://muse.ai/podcasts/media/1248297608376725/4720f1e9-8c94-4958-8367-c455f31c5edc/ep-b8664513-75f8-4758-a671-ec41b600e1fc.mp3",
+      "source": "Technology Learnings",
+      "category": "Podcast",
+      "summary": "Data Engineering & Analytics track: how modern pipelines get scheduled, ordered, and kept alive with Airflow DAGs AI Generated",
+      "published": "2026-10-23T01:45:48+00:00",
+      "audio_url": "https://muse.ai/podcasts/media/1248297608376725/4720f1e9-8c94-4958-8367-c455f31c5edc/ep-b8664513-75f8-4758-a671-ec41b600e1fc.mp3",
+      "duration": "525"
+    },
+    {
+      "id": "8c2d1f6f19f3b8b3",
+      "title": "Tech Learning: Data Engineering & Analytics \u2014 Ep 14: Real Scenario: Bad Data Reaches the Dashboard",
+      "link": "https://muse.ai/podcasts/media/1248297608376725/4720f1e9-8c94-4958-8367-c455f31c5edc/ep-6b45b330-ea54-46ab-8001-4d51b8d9b5e6.mp3",
+      "source": "Technology Learnings",
+      "category": "Podcast",
+      "summary": "Data Engineering & Analytics track: a real-time incident walkthrough \u2014 join fanout inflates revenue, and the blameless review that follows AI Generated",
+      "published": "2026-10-23T01:45:42+00:00",
+      "audio_url": "https://muse.ai/podcasts/media/1248297608376725/4720f1e9-8c94-4958-8367-c455f31c5edc/ep-6b45b330-ea54-46ab-8001-4d51b8d9b5e6.mp3",
+      "duration": "448"
+    },
+    {
+      "id": "d88bc590570017de",
+      "title": "Tech Learning: Data Engineering & Analytics \u2014 Ep 13: Tests, Lineage and Trust in Data",
+      "link": "https://muse.ai/podcasts/media/1248297608376725/4720f1e9-8c94-4958-8367-c455f31c5edc/ep-c2d81403-9b8b-4dd3-adf5-979cc7412d94.mp3",
+      "source": "Technology Learnings",
+      "category": "Podcast",
+      "summary": "Data Engineering & Analytics track: why data quality is an engineering discipline \u2014 tests, lineage, and governance AI Generated",
+      "published": "2026-10-23T01:45:35+00:00",
+      "audio_url": "https://muse.ai/podcasts/media/1248297608376725/4720f1e9-8c94-4958-8367-c455f31c5edc/ep-c2d81403-9b8b-4dd3-adf5-979cc7412d94.mp3",
+      "duration": "540"
+    },
+    {
+      "id": "4f79800b2fd6a3e0",
+      "title": "Daily AI Intelligence \u2014 Episode 22: DeepSeek's 5B raise, Agent Skills goes vendor-neutral, Uber rolls out ChatGPT Work (Fri Oct 23, 2026)",
+      "link": "https://muse.ai/podcasts/media/1248297608376725/94f09345-ad4a-4981-83dd-e3206bbf5c4e/ep-cee5c979-d955-4670-a30a-c9007f9d57d6.mp3",
+      "source": "Daily AI Intelligence",
+      "category": "Podcast",
+      "summary": "DeepSeek reportedly raises 5B days after the US federal removal order; Anthropic donates Agent Skills to the Linux Foundation; Uber deploys ChatGPT Work to 30,000 staff; SpaceXSI launches the Grok Partner Network; Meta falls on AI-capex fears; Supermicro's 256-CPU Vera rack for a",
+      "published": "2026-10-23T01:04:28+00:00",
+      "audio_url": "https://muse.ai/podcasts/media/1248297608376725/94f09345-ad4a-4981-83dd-e3206bbf5c4e/ep-cee5c979-d955-4670-a30a-c9007f9d57d6.mp3",
+      "duration": "260"
+    },
     {
       "id": "09776931f4659a5d",
       "title": "Donating Agent Skills to the Agentic AI Foundation",
