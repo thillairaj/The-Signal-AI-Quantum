@@ -605,6 +605,8 @@ function openDoor(name) {
     const open = d.dataset.door === name;
     d.querySelector(".learn-door-body").hidden = !open;
     d.querySelector(".learn-door-head").setAttribute("aria-expanded", String(open));
+    const chip = d.querySelector(".learn-door-enter");
+    if (chip) chip.textContent = open ? "Close" : "Click to enter";
   });
   requestAnimationFrame(() => document.querySelectorAll(".rail-wrap").forEach(refreshRail));
 }
@@ -614,7 +616,7 @@ document.querySelectorAll("[data-door-btn]").forEach(btn => {
     const door = btn.closest(".learn-door");
     const body = door.querySelector(".learn-door-body");
     if (body.hidden) openDoor(door.dataset.door);
-    else { body.hidden = true; btn.setAttribute("aria-expanded", "false"); }
+    else { body.hidden = true; btn.setAttribute("aria-expanded", "false"); const chip = door.querySelector(".learn-door-enter"); if (chip) chip.textContent = "Click to enter"; }
   });
 });
 /* Family sub-doors inside the Tables door (Oct 21 2026): one open at a time,
