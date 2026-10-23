@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-23T18:00:07.329270+00:00",
+  "generated_at": "2026-10-23T22:00:01.362079+00:00",
   "sources_polled": [
     "The Verge \u2014 AI",
     "Simon Willison",
@@ -15,6 +15,50 @@
     "Quantum Intelligence"
   ],
   "articles": [
+    {
+      "id": "2e71264ea893e482",
+      "title": "Introducing Kimi K3.1 Pro",
+      "link": "https://simonwillison.net/2026/Oct/23/kimi-k31-pro/",
+      "source": "Simon Willison",
+      "category": "AI",
+      "summary": "Introducing Kimi K3.1 Pro Kimi K3.1 Pro landed on the Kimi API today - it's not yet open weights, but Moonshot promise \"Full model weights will be released by Nov 4, 2026\". They're also offering a \"Highspeed\" version that's 2-3x faster, at twice the price (except for input token ",
+      "published": "2026-10-23T21:59:49.087164+00:00",
+      "audio_url": null,
+      "duration": ""
+    },
+    {
+      "id": "f490e9c8ed30cee3",
+      "title": "Jack Dorsey\u2019s Block made an AI model that talks to you like an awkward new friend",
+      "link": "https://www.theverge.com/ai-artificial-intelligence/1017906/jack-dorsey-block-dessa-ai-voice-speech",
+      "source": "The Verge \u2014 AI",
+      "category": "AI",
+      "summary": "Jack Dorsey's Block announced an AI model called Dessa that's trained \"from scratch on nothing but human conversation,\" and to show off the model, Block shared chats it has had with humans that can occasionally be a little awkward and uncanny. Take this one, for example, shared b",
+      "published": "2026-10-23T21:59:48.619971+00:00",
+      "audio_url": null,
+      "duration": ""
+    },
+    {
+      "id": "f9113fa394af665d",
+      "title": "OpenAI now trains its frontier AI models with no internet access",
+      "link": "https://www.theverge.com/ai-artificial-intelligence/1018021/openai-training-top-ai-models-no-internet",
+      "source": "The Verge \u2014 AI",
+      "category": "AI",
+      "summary": "OpenAI is now training its most advanced AI models without internet access following a string of rogue hacking incidents. In a blog post on Friday, OpenAI says it built an offline testing environment where AI models can interact with indexed and cached web content \"without risk o",
+      "published": "2026-10-23T21:59:48.619901+00:00",
+      "audio_url": null,
+      "duration": ""
+    },
+    {
+      "id": "3e249e7fc631b679",
+      "title": "Updated Google privacy policy says your Gmail might be used for advertising",
+      "link": "https://arstechnica.com/gadgets/2026/10/updated-google-privacy-policy-says-your-gmail-might-be-used-for-advertising/",
+      "source": "Ars Technica AI",
+      "category": "AI",
+      "summary": "Turning on Personal Intelligence gives the company more data for ad targeting.",
+      "published": "2026-10-23T20:19:55+00:00",
+      "audio_url": null,
+      "duration": ""
+    },
     {
       "id": "d34a3f37bdd35ae5",
       "title": "Meta delays new business terms after publisher pushback on AI scraping",
@@ -78,6 +122,17 @@
       "category": "AI",
       "summary": "Retro video games are everywhere lately - especially in places where they aren't supposed to be. Halo in a web browser, Wind Waker on the iPhone, Super Smash Bros. in mixed reality. Over the past month or so, these kinds of unexpected projects have gone viral with incredible freq",
       "published": "2026-10-23T14:00:32.384052+00:00",
+      "audio_url": null,
+      "duration": ""
+    },
+    {
+      "id": "48e2274fdf2ba9fe",
+      "title": "Securing our frontier model training environment",
+      "link": "https://openai.com/index/securing-our-frontier-model-training-environment",
+      "source": "OpenAI Blog",
+      "category": "AI",
+      "summary": "OpenAI explains how we strengthened containment for frontier model training and evaluation, including offline environments and high-compute red-teaming.",
+      "published": "2026-10-23T10:00:00+00:00",
       "audio_url": null,
       "duration": ""
     },
@@ -1490,28 +1545,6 @@
       "duration": ""
     },
     {
-      "id": "f616628c1389da33",
-      "title": "Nobody is safe from celebrity AI deepfakes",
-      "link": "https://www.theverge.com/report/1011927/instagram-celebrity-ai-slop-likeness-taylor-swift-mia-goth",
-      "source": "The Verge \u2014 AI",
-      "category": "AI",
-      "summary": "In hindsight, the post on Instagram should have raised more red flags. The image purported to show actress Mia Goth, just days after filing for divorce from actor and filmmaker Shia LaBeouf, posing in a T-shirt with a pointed message: MY EX IS MY BIGGEST FAN. To really drive home",
-      "published": "2026-10-15T17:59:58.790466+00:00",
-      "audio_url": null,
-      "duration": ""
-    },
-    {
-      "id": "97f8573c584b7784",
-      "title": "How Windows is being optimized for Nvidia\u2019s RTX Spark laptops",
-      "link": "https://www.theverge.com/tech/1011996/microsoft-windows-rtx-spark-platform-changes-notepad",
-      "source": "The Verge \u2014 AI",
-      "category": "AI",
-      "summary": "Microsoft and Nvidia held a launch party for the first wave of RTX Spark laptops last week in San Francisco, where a new wave of AI PCs took center stage amid a packed crowd and a lively hands-on area. A day after the media event, I was invited to a quieter Nvidia event to hear [",
-      "published": "2026-10-15T17:59:58.790426+00:00",
-      "audio_url": null,
-      "duration": ""
-    },
-    {
       "id": "1cc24ddce8a425aa",
       "title": "Report: FTC probes Anthropic, OpenAI after Trump dismissed AI fears as \u201choax\u201d",
       "link": "https://arstechnica.com/tech-policy/2026/10/ftc-probes-if-openai-anthropic-security-incidents-harmed-americans-report-says/",
@@ -2612,17 +2645,6 @@
       "duration": ""
     },
     {
-      "id": "c41d88164f839288",
-      "title": "Quoting Victoria Kim",
-      "link": "https://simonwillison.net/2026/Oct/6/victoria-kim/",
-      "source": "Simon Willison",
-      "category": "AI",
-      "summary": "Since the Medicare breach, OpenAI has put in place additional monitoring to allow \u201cimmediate intervention\u201d by staff to stop training if the company\u2019s models access the internet in ways they\u2019re not supposed to, Mr. Kwon [chief strategy officer at OpenAI] said. &mdash; Victoria Kim",
-      "published": "2026-10-07T02:02:27.635321+00:00",
-      "audio_url": null,
-      "duration": ""
-    },
-    {
       "id": "1a1052f124153d49",
       "title": "Tech Learning: IT Infrastructure & Cloud \u2014 Ep 6: Real Scenario: Debugging a CrashLoopBackOff in Production",
       "link": "https://muse.ai/podcasts/media/1248297608376725/4720f1e9-8c94-4958-8367-c455f31c5edc/ep-ff223bbf-3c16-42fb-978a-d6226abb8dc9.mp3",
@@ -2964,17 +2986,6 @@
       "duration": ""
     },
     {
-      "id": "f10ac2fa6ec29335",
-      "title": "Amazon\u2019s $1B plan to combat data center backlash draws more backlash",
-      "link": "https://arstechnica.com/tech-policy/2026/10/amazons-1b-plan-to-combat-data-center-backlash-draws-more-backlash/",
-      "source": "Ars Technica AI",
-      "category": "AI",
-      "summary": "Amazon praised for ending NDAs but slammed for downplaying data center pollution.",
-      "published": "2026-10-02T20:30:27+00:00",
-      "audio_url": null,
-      "duration": ""
-    },
-    {
       "id": "8e206c4d9ed6ea5b",
       "title": "A model guide for the GPT-6 family",
       "link": "https://openai.com/index/practical-guide-building-gpt-6",
@@ -3114,17 +3125,6 @@
       "category": "AI",
       "summary": "A call center consultancy rented four Nvidia H200s to run DeepSeek V4.1 Flash for Claude Code and found DeepSeek's API cheaper.",
       "published": "2026-10-01T10:30:00+00:00",
-      "audio_url": null,
-      "duration": ""
-    },
-    {
-      "id": "3bba527585738108",
-      "title": "The Den frees up 10-15 hours a week to grow with ChatGPT Work",
-      "link": "https://openai.com/index/the-den-family-social",
-      "source": "OpenAI Blog",
-      "category": "AI",
-      "summary": "As it opens a new location, the social club prepares grant applications in 2 hours instead of 3 days and liquor-license materials in 3 hours instead of 4 days.",
-      "published": "2026-10-01T00:00:00+00:00",
       "audio_url": null,
       "duration": ""
     },

@@ -4,7 +4,39 @@
     <title>The Signal</title>
     <link>https://thillairaj.github.io/The-Signal-AI-Quantum/</link>
     <description>A self-updating feed of AI, quantum computing, and podcast updates.</description>
-    <lastBuildDate>Fri, 23 Oct 2026 18:00:07 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 23 Oct 2026 22:00:01 +0000</lastBuildDate>
+    <item>
+      <title>Introducing Kimi K3.1 Pro</title>
+      <link>https://simonwillison.net/2026/Oct/23/kimi-k31-pro/</link>
+      <guid isPermaLink="false">2e71264ea893e482</guid>
+      <description>Introducing Kimi K3.1 Pro Kimi K3.1 Pro landed on the Kimi API today - it's not yet open weights, but Moonshot promise "Full model weights will be released by Nov 4, 2026". They're also offering a "Highspeed" version that's 2-3x faster, at twice the price (except for input token </description>
+      <category>Simon Willison</category>
+      <pubDate>Fri, 23 Oct 2026 21:59:49 +0000</pubDate>
+    </item>
+    <item>
+      <title>Jack Dorsey’s Block made an AI model that talks to you like an awkward new friend</title>
+      <link>https://www.theverge.com/ai-artificial-intelligence/1017906/jack-dorsey-block-dessa-ai-voice-speech</link>
+      <guid isPermaLink="false">f490e9c8ed30cee3</guid>
+      <description>Jack Dorsey's Block announced an AI model called Dessa that's trained "from scratch on nothing but human conversation," and to show off the model, Block shared chats it has had with humans that can occasionally be a little awkward and uncanny. Take this one, for example, shared b</description>
+      <category>The Verge — AI</category>
+      <pubDate>Fri, 23 Oct 2026 21:59:48 +0000</pubDate>
+    </item>
+    <item>
+      <title>OpenAI now trains its frontier AI models with no internet access</title>
+      <link>https://www.theverge.com/ai-artificial-intelligence/1018021/openai-training-top-ai-models-no-internet</link>
+      <guid isPermaLink="false">f9113fa394af665d</guid>
+      <description>OpenAI is now training its most advanced AI models without internet access following a string of rogue hacking incidents. In a blog post on Friday, OpenAI says it built an offline testing environment where AI models can interact with indexed and cached web content "without risk o</description>
+      <category>The Verge — AI</category>
+      <pubDate>Fri, 23 Oct 2026 21:59:48 +0000</pubDate>
+    </item>
+    <item>
+      <title>Updated Google privacy policy says your Gmail might be used for advertising</title>
+      <link>https://arstechnica.com/gadgets/2026/10/updated-google-privacy-policy-says-your-gmail-might-be-used-for-advertising/</link>
+      <guid isPermaLink="false">3e249e7fc631b679</guid>
+      <description>Turning on Personal Intelligence gives the company more data for ad targeting.</description>
+      <category>Ars Technica AI</category>
+      <pubDate>Fri, 23 Oct 2026 20:19:55 +0000</pubDate>
+    </item>
     <item>
       <title>Meta delays new business terms after publisher pushback on AI scraping</title>
       <link>https://www.theverge.com/tech/1017450/meta-business-terms-delayed-ai-scraping</link>
@@ -52,6 +84,14 @@
       <description>Retro video games are everywhere lately - especially in places where they aren't supposed to be. Halo in a web browser, Wind Waker on the iPhone, Super Smash Bros. in mixed reality. Over the past month or so, these kinds of unexpected projects have gone viral with incredible freq</description>
       <category>The Verge — AI</category>
       <pubDate>Fri, 23 Oct 2026 14:00:32 +0000</pubDate>
+    </item>
+    <item>
+      <title>Securing our frontier model training environment</title>
+      <link>https://openai.com/index/securing-our-frontier-model-training-environment</link>
+      <guid isPermaLink="false">48e2274fdf2ba9fe</guid>
+      <description>OpenAI explains how we strengthened containment for frontier model training and evaluation, including offline environments and high-compute red-teaming.</description>
+      <category>OpenAI Blog</category>
+      <pubDate>Fri, 23 Oct 2026 10:00:00 +0000</pubDate>
     </item>
     <item>
       <title>OpenAI and Poland’s NASK partner to advance AI safety and security</title>
@@ -444,46 +484,6 @@
       <description>On Tuesday, US District Judge Zachary Bluestone dismissed the lawsuit Ann Altman filed last year alleging that her brother, OpenAI CEO Sam Altman, had sexually abused her throughout her childhood. As reported earlier by The Guardian, the judge wrote that over the past year, Ann h</description>
       <category>The Verge — AI</category>
       <pubDate>Wed, 21 Oct 2026 01:59:37 +0000</pubDate>
-    </item>
-    <item>
-      <title>Democratic governance of frontier AI, part II: Empowering cyber defenders</title>
-      <link>https://openai.com/index/empowering-cyber-defenders</link>
-      <guid isPermaLink="false">b2deaf97c98cf0ff</guid>
-      <description>OpenAI outlines a blueprint for empowering cyber defenders with frontier AI, stronger safeguards, modernized cybersecurity, and more resilient public institutions.</description>
-      <category>OpenAI Blog</category>
-      <pubDate>Wed, 21 Oct 2026 00:00:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>Cloudflare links vulnerability discovery to defense with OpenAI</title>
-      <link>https://openai.com/index/cloudflare-cyber</link>
-      <guid isPermaLink="false">9201054eeb4c743a</guid>
-      <description>Cloudflare uses OpenAI Daybreak to investigate vulnerabilities and propose fixes for review. Its developers use Codex to build faster and improve code quality.</description>
-      <category>OpenAI Blog</category>
-      <pubDate>Wed, 21 Oct 2026 00:00:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>Battle Drones - a vibe coded RTS with audio-based multiplayer</title>
-      <link>https://simonwillison.net/2026/Oct/20/battledrones/</link>
-      <guid isPermaLink="false">3b5ce86c8c402c8d</guid>
-      <description>My latest vibe coded game experiment is a Command &amp;amp; Conquer style RTS (Real Time Strategy) game called Battle Drones ( play it here ). Unlike my previous experiments , this one is actually fun to play . I'm somewhat embarrassed to admit that I got there by telling Claude to "</description>
-      <category>Simon Willison</category>
-      <pubDate>Tue, 20 Oct 2026 21:59:54 +0000</pubDate>
-    </item>
-    <item>
-      <title>Meta pauses Muse sharing after researchers find AI chats on the web</title>
-      <link>https://www.theverge.com/tech/1014627/meta-muse-ai-sharing-ai-chats</link>
-      <guid isPermaLink="false">f52190a49967b68d</guid>
-      <description>Meta says it paused a Muse feature that lets you share conversations with the AI assistant after researchers found the URLs publicly available on the web, as reported by Ars Technica. In a report published this week, researchers at the security firm Claroc say they found more tha</description>
-      <category>The Verge — AI</category>
-      <pubDate>Tue, 20 Oct 2026 21:59:53 +0000</pubDate>
-    </item>
-    <item>
-      <title>Meta drops the word "train" from its commercial TOS after AI backlash</title>
-      <link>https://arstechnica.com/tech-policy/2026/10/meta-drops-the-word-train-from-its-commercial-tos-after-ai-backlash/</link>
-      <guid isPermaLink="false">165cb15531466377</guid>
-      <description>Meta changes AI scraping policy but won’t add language respecting robots.txt.</description>
-      <category>Ars Technica AI</category>
-      <pubDate>Tue, 20 Oct 2026 20:07:58 +0000</pubDate>
     </item>
   </channel>
 </rss>
