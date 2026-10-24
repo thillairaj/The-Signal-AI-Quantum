@@ -4,7 +4,23 @@
     <title>The Signal</title>
     <link>https://thillairaj.github.io/The-Signal-AI-Quantum/</link>
     <description>A self-updating feed of AI, quantum computing, and podcast updates.</description>
-    <lastBuildDate>Sat, 24 Oct 2026 17:59:50 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 24 Oct 2026 21:59:56 +0000</lastBuildDate>
+    <item>
+      <title>Pennsylvania will require labels on AI-generated ads</title>
+      <link>https://www.theverge.com/ai-artificial-intelligence/1018187/pennsylvania-ai-deceptive-advertising-act</link>
+      <guid isPermaLink="false">09a5dda451583962</guid>
+      <description>On Thursday, Pennsylvania Governor Josh Shapiro signed the Artificial Intelligence Deceptive Advertising Act into law, requiring disclosures on AI-generated ads. The law requires any ad - whether it's a still image, video, audio, or text - that "has been significantly modified or</description>
+      <category>The Verge — AI</category>
+      <pubDate>Sat, 24 Oct 2026 21:59:44 +0000</pubDate>
+    </item>
+    <item>
+      <title>Blue Planet III is keeping the rough edges in the age of AI</title>
+      <link>https://www.theverge.com/ai-artificial-intelligence/1018205/blue-planet-iii-authentic-organic-ai</link>
+      <guid isPermaLink="false">0509c80e85fbace7</guid>
+      <description>BBC's Blue Planet III is looking to prove its authenticity by leaving in the less-than-perfect shots. Previous incarnations of the nature series were defined by their gorgeous, crystal-clear footage that seemed almost too good to be real. But one dead giveaway of AI is when thing</description>
+      <category>The Verge — AI</category>
+      <pubDate>Sat, 24 Oct 2026 21:59:44 +0000</pubDate>
+    </item>
     <item>
       <title>battledrones v14: Compass Rose, a four player map</title>
       <link>https://simonwillison.net/2026/Oct/24/battledrones/</link>
@@ -468,22 +484,6 @@
       <description>See how OpenAI, PerturbAI, and Scripps Research used distributed AI agents to uncover promising research leads in data from millions of brain cells.</description>
       <category>OpenAI Blog</category>
       <pubDate>Wed, 21 Oct 2026 04:50:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>Southeast Asia’s digital economy to hit $368 billion</title>
-      <link>https://blog.google/company-news/inside-google/around-the-globe/google-asia/e-conomy-sea-report-2026/</link>
-      <guid isPermaLink="false">1778fb273dbb6c0b</guid>
-      <description>Cover image for the e-Conomy SEA 2026 report titled Building the intelligent economy by Google, Temasek, and Bain and Company. A 3D illustration features a glowing yellow star surrounded by miniature scenes representing digital sectors, including data cen</description>
-      <category>Google AI Blog</category>
-      <pubDate>Wed, 21 Oct 2026 04:00:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>eMudhra Intermediate CA Compromise</title>
-      <link>https://simonwillison.net/2026/Oct/20/emudhra-certificates/</link>
-      <guid isPermaLink="false">aac036aa8666576a</guid>
-      <description>eMudhra Intermediate CA Compromise This is very, very bad news: The private keys of eight eMudhra intermediate CA certificates have been compromised. They chain to roots trusted by the Mozilla, Microsoft, Apple and Chrome root programs and by many downstream trust stores. Any sof</description>
-      <category>Simon Willison</category>
-      <pubDate>Wed, 21 Oct 2026 01:59:38 +0000</pubDate>
     </item>
   </channel>
 </rss>
