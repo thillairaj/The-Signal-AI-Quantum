@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-24T13:59:53.758473+00:00",
+  "generated_at": "2026-10-24T17:59:50.274215+00:00",
   "sources_polled": [
     "The Verge \u2014 AI",
     "Simon Willison",
@@ -15,6 +15,17 @@
     "Quantum Intelligence"
   ],
   "articles": [
+    {
+      "id": "3812b4d599bb7adb",
+      "title": "battledrones v14: Compass Rose, a four player map",
+      "link": "https://simonwillison.net/2026/Oct/24/battledrones/",
+      "source": "Simon Willison",
+      "category": "AI",
+      "summary": "Release: battledrones v14: Compass Rose, a four player map I added four player online mode to Battledrones - previous maps were limited to two. Here's the initial prompt I used: Add a new map for a four player battle - four way rotational symmetry, up to four AI players, works wi",
+      "published": "2026-10-24T17:59:37.558346+00:00",
+      "audio_url": null,
+      "duration": ""
+    },
     {
       "id": "ece6c921b830e7e3",
       "title": "Quick Study",
@@ -2619,17 +2630,6 @@
       "category": "AI",
       "summary": "Radisson partnered with Accenture to build a ChatGPT plugin using OpenAI technology, helping travelers find, compare, and book hotels while planning their trips.",
       "published": "2026-10-07T07:00:00+00:00",
-      "audio_url": null,
-      "duration": ""
-    },
-    {
-      "id": "544da1e9a61fc2a9",
-      "title": "Quoting Jake Boggan",
-      "link": "https://simonwillison.net/2026/Oct/7/jake-boggan/",
-      "source": "Simon Willison",
-      "category": "AI",
-      "summary": "I was a graph theory junkie long ago and even moved to Budapest for awhile to study among the greats. While I was there I started working on Barnette's Conjecture which came to occupy my thoughts over the next 24 years of my life, on and off as I worked in many different fields. ",
-      "published": "2026-10-07T05:59:40.790734+00:00",
       "audio_url": null,
       "duration": ""
     },
