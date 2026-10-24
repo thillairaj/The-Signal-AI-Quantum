@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-23T22:00:01.362079+00:00",
+  "generated_at": "2026-10-24T01:59:53.852363+00:00",
   "sources_polled": [
     "The Verge \u2014 AI",
     "Simon Willison",
@@ -15,6 +15,28 @@
     "Quantum Intelligence"
   ],
   "articles": [
+    {
+      "id": "ece6c921b830e7e3",
+      "title": "Quick Study",
+      "link": "https://simonwillison.net/2026/Oct/23/quick-study-painter/",
+      "source": "Simon Willison",
+      "category": "AI",
+      "summary": "Tool: Quick Study Prompt to Claude Opus 5.5 High : Build an artifact where you open a photo and it rapidly (in a few seconds) paints a version of that photo using a canvas element and simulated paintbrush See also my previous experiment getting Claude Fable to simulate a watercol",
+      "published": "2026-10-24T01:59:41.968978+00:00",
+      "audio_url": null,
+      "duration": ""
+    },
+    {
+      "id": "3bcecd788d7079c7",
+      "title": "Daily AI Intelligence \u2014 Episode 23: UK's AI Biosecurity Lab, OpenAI resumes training, MiniMax open weights",
+      "link": "https://muse.ai/podcasts/media/1248297608376725/94f09345-ad4a-4981-83dd-e3206bbf5c4e/ep-a3ac0290-e345-48da-bf8c-fc52687f2dd8.mp3",
+      "source": "Daily AI Intelligence",
+      "category": "Podcast",
+      "summary": "UK launches the world's first AI Biosecurity Lab with OpenAI, Anthropic and Google DeepMind; OpenAI resumes frontier training after its September security pause; Anthropic's managed Claude goes GA on Google Cloud; Gemini Notebook as a Connected App; Grok Bot app controls; MiniMax",
+      "published": "2026-10-24T01:02:58+00:00",
+      "audio_url": "https://muse.ai/podcasts/media/1248297608376725/94f09345-ad4a-4981-83dd-e3206bbf5c4e/ep-a3ac0290-e345-48da-bf8c-fc52687f2dd8.mp3",
+      "duration": "254"
+    },
     {
       "id": "2e71264ea893e482",
       "title": "Introducing Kimi K3.1 Pro",
@@ -2632,17 +2654,6 @@
       "published": "2026-10-07T02:04:01+00:00",
       "audio_url": "https://muse.ai/podcasts/media/1248297608376725/4720f1e9-8c94-4958-8367-c455f31c5edc/ep-958ee95a-dfcc-4771-83ae-139807dcfb6e.mp3",
       "duration": "449"
-    },
-    {
-      "id": "bc657e1acdd70771",
-      "title": "llm-openai-decisions 0.1a0",
-      "link": "https://simonwillison.net/2026/Oct/6/llm-openai-decisions/",
-      "source": "Simon Willison",
-      "category": "AI",
-      "summary": "Release: llm-openai-decisions 0.1a0 OpenAI released their new Jev-style Decisions API , as previously announced at last week's DevDay. Since I already have an llm-typesafe plugin for talking to Jev, I had GPT-6 Astra read the new OpenAI API documentation and build an llm-openai-d",
-      "published": "2026-10-07T02:02:27.635413+00:00",
-      "audio_url": null,
-      "duration": ""
     },
     {
       "id": "1a1052f124153d49",
