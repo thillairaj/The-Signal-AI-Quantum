@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-25T22:00:00.215855+00:00",
+  "generated_at": "2026-10-26T02:00:09.152762+00:00",
   "sources_polled": [
     "The Verge \u2014 AI",
     "Simon Willison",
@@ -15,6 +15,61 @@
     "Quantum Intelligence"
   ],
   "articles": [
+    {
+      "id": "9abde9d955d53f33",
+      "title": "Tech Learning: Cybersecurity & SOC \u2014 Ep 16: Real Scenario: A Critical CVE Drops on Friday Evening",
+      "link": "https://muse.ai/podcasts/media/1248297608376725/4720f1e9-8c94-4958-8367-c455f31c5edc/ep-3dc40e3c-1aba-42a1-ad4a-bccf5a24fda2.mp3",
+      "source": "Technology Learnings",
+      "category": "Podcast",
+      "summary": "Cybersecurity & SOC track: Emergency patching when a critical CVE drops on a Friday evening. AI Generated",
+      "published": "2026-10-26T01:45:41+00:00",
+      "audio_url": "https://muse.ai/podcasts/media/1248297608376725/4720f1e9-8c94-4958-8367-c455f31c5edc/ep-3dc40e3c-1aba-42a1-ad4a-bccf5a24fda2.mp3",
+      "duration": "431"
+    },
+    {
+      "id": "42886d75a7e255bc",
+      "title": "Tech Learning: Cybersecurity & SOC \u2014 Ep 15: CVEs, Scanning and Patching Priorities",
+      "link": "https://muse.ai/podcasts/media/1248297608376725/4720f1e9-8c94-4958-8367-c455f31c5edc/ep-ff426fa6-3ccd-4bab-93c6-0edad87a4c9c.mp3",
+      "source": "Technology Learnings",
+      "category": "Podcast",
+      "summary": "Cybersecurity & SOC track: CVE scores, scanning, and how to prioritise patching. AI Generated",
+      "published": "2026-10-26T01:45:32+00:00",
+      "audio_url": "https://muse.ai/podcasts/media/1248297608376725/4720f1e9-8c94-4958-8367-c455f31c5edc/ep-ff426fa6-3ccd-4bab-93c6-0edad87a4c9c.mp3",
+      "duration": "450"
+    },
+    {
+      "id": "58c0a0ab11f60a73",
+      "title": "Tech Learning: Cybersecurity & SOC \u2014 Ep 14: Real Scenario: Ransomware Tabletop Exercise",
+      "link": "https://muse.ai/podcasts/media/1248297608376725/4720f1e9-8c94-4958-8367-c455f31c5edc/ep-d9810c4b-dd71-4e73-9542-c8c272c76572.mp3",
+      "source": "Technology Learnings",
+      "category": "Podcast",
+      "summary": "Cybersecurity & SOC track: A ransomware tabletop exercise, from declaration to debrief. AI Generated",
+      "published": "2026-10-26T01:45:24+00:00",
+      "audio_url": "https://muse.ai/podcasts/media/1248297608376725/4720f1e9-8c94-4958-8367-c455f31c5edc/ep-d9810c4b-dd71-4e73-9542-c8c272c76572.mp3",
+      "duration": "453"
+    },
+    {
+      "id": "1f3337f0b72d9919",
+      "title": "Tech Learning: Cybersecurity & SOC \u2014 Ep 13: The NIST Incident Response Lifecycle",
+      "link": "https://muse.ai/podcasts/media/1248297608376725/4720f1e9-8c94-4958-8367-c455f31c5edc/ep-8cfae0a7-c3e6-460c-8a5c-d5674ef1ac20.mp3",
+      "source": "Technology Learnings",
+      "category": "Podcast",
+      "summary": "Cybersecurity & SOC track: The NIST incident response lifecycle, from preparation to lessons learned. AI Generated",
+      "published": "2026-10-26T01:45:14+00:00",
+      "audio_url": "https://muse.ai/podcasts/media/1248297608376725/4720f1e9-8c94-4958-8367-c455f31c5edc/ep-8cfae0a7-c3e6-460c-8a5c-d5674ef1ac20.mp3",
+      "duration": "460"
+    },
+    {
+      "id": "a54165da5d3a1bd4",
+      "title": "Daily AI Intelligence \u2014 Episode 25: Sweden blocks ChatGPT and Claude, Grok Bot starts making calls (Mon Oct 26, 2026)",
+      "link": "https://muse.ai/podcasts/media/1248297608376725/94f09345-ad4a-4981-83dd-e3206bbf5c4e/ep-55e1a1cf-8194-454d-8386-afea6afb2f0e.mp3",
+      "source": "Daily AI Intelligence",
+      "category": "Podcast",
+      "summary": "Sweden's Government Offices block ChatGPT and Claude on staff PCs from today and direct staff to Copilot; Grok Bot can now phone businesses for you; OpenAI's Decisions API goes GA; Copilot Studio declarative agents reach GA; AWS open-sources the Infinity agent runtime; Mistral La",
+      "published": "2026-10-26T01:00:32+00:00",
+      "audio_url": "https://muse.ai/podcasts/media/1248297608376725/94f09345-ad4a-4981-83dd-e3206bbf5c4e/ep-55e1a1cf-8194-454d-8386-afea6afb2f0e.mp3",
+      "duration": "255"
+    },
     {
       "id": "99c99157c7fa1579",
       "title": "Google\u2019s AI search changes upended online publishing",
