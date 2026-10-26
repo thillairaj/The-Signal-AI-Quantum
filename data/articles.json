@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-26T09:59:52.409397+00:00",
+  "generated_at": "2026-10-26T14:01:05.252544+00:00",
   "sources_polled": [
     "The Verge \u2014 AI",
     "Simon Willison",
@@ -15,6 +15,28 @@
     "Quantum Intelligence"
   ],
   "articles": [
+    {
+      "id": "9c0a98fa46a8163e",
+      "title": "Can AI help solve the COBOL code crisis?",
+      "link": "https://www.theverge.com/ai-artificial-intelligence/1018434/cobol-migration-legacy-code-openai-anthropic",
+      "source": "The Verge \u2014 AI",
+      "category": "AI",
+      "summary": "What do the IRS, banks, airlines, and government infrastructure around the world have in common? They're all running on systems propped up by antique computer code that nobody dares touch, lest everything come crashing down. OpenAI thinks it may have a solution. On October 19th, ",
+      "published": "2026-10-26T14:00:19.388169+00:00",
+      "audio_url": null,
+      "duration": ""
+    },
+    {
+      "id": "a0064ee100f0c0b3",
+      "title": "Anthropic\u2019s IPO filing lays out a plan to &#8216;revolutionize every area of human endeavor&#8217; with AI",
+      "link": "https://www.theverge.com/ai-artificial-intelligence/1018476/anthropic-ipo-details-s1-filed-sec",
+      "source": "The Verge \u2014 AI",
+      "category": "AI",
+      "summary": "Anthropic has filed its S-1 prospectus with the Securities and Exchange Commission, preparing the company behind Claude to beat OpenAI to the punch with an IPO. In a filing with the SEC, Anthropic said it plans to list on the Nasdaq exchange under the ticker symbol \"ANT.\" The AI ",
+      "published": "2026-10-26T14:00:19.388099+00:00",
+      "audio_url": null,
+      "duration": ""
+    },
     {
       "id": "0c0ce1d91251a58f",
       "title": "Seam Cutter",
@@ -1545,17 +1567,6 @@
       "duration": ""
     },
     {
-      "id": "924ca13842a36839",
-      "title": "ChatGPT can peek at your Chrome tabs now",
-      "link": "https://www.theverge.com/ai-artificial-intelligence/1012510/openai-chatgpt-google-chrome-tabs",
-      "source": "The Verge \u2014 AI",
-      "category": "AI",
-      "summary": "OpenAI's ChatGPT Atlas browser is gone, but now ChatGPT's Google Chrome extension is getting some upgrades that allow it to use the browser tabs you already have open. With the extension installed, OpenAI says ChatGPT can now view your browser tabs when you tag Chrome in ChatGPT'",
-      "published": "2026-10-16T01:59:52.202328+00:00",
-      "audio_url": null,
-      "duration": ""
-    },
-    {
       "id": "1ec9fe0226287d9d",
       "title": "Tech Learning: Data Engineering & Analytics \u2014 Ep 11: Kafka and Real-Time Thinking",
       "link": "https://muse.ai/podcasts/media/1248297608376725/4720f1e9-8c94-4958-8367-c455f31c5edc/ep-c522d6a6-849e-43e5-a921-a6bc9255761b.mp3",
@@ -1640,17 +1651,6 @@
       "category": "AI",
       "summary": "Tool: Chirp Pong Another game experiment - I wanted to see if it was feasible to have a two player game on two separate phones running in static HTML where the networking code uses chirps sent via the microphone. It seems to work! Build a two player competitive pong like game whe",
       "published": "2026-10-15T21:59:44.528685+00:00",
-      "audio_url": null,
-      "duration": ""
-    },
-    {
-      "id": "c7cea461bd6d67da",
-      "title": "Meta and Apple team up to make Muse AI models run better on Macs",
-      "link": "https://www.theverge.com/news/1012293/meta-apple-muse-spark-open-ai-model-mlx",
-      "source": "The Verge \u2014 AI",
-      "category": "AI",
-      "summary": "Meta announced the Muse Spark Open AI model today, claiming that it's the \"most capable US open-weight model to date.\" But the company also says that it's the \"the first model in its class\" that can \"run on your desktop using two Apple M5 Ultra Mac Studios with the latest MLX fra",
-      "published": "2026-10-15T21:59:43.967854+00:00",
       "audio_url": null,
       "duration": ""
     },
