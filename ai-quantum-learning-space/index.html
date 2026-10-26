@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
   <meta name="color-scheme" content="light dark" />
   <meta name="referrer" content="strict-origin-when-cross-origin" />
-  <meta name="description" content="AI + Quantum Learning Space — 22 hand-picked videos from the official labs (Google DeepMind, OpenAI, Anthropic, Meta, IBM, Microsoft, Qiskit), beginner to intermediate." />
+  <meta name="description" content="AI + Quantum Learning Space — 45 hand-picked videos from the official labs (Google DeepMind, OpenAI, Anthropic, Meta, IBM, Microsoft, Qiskit), beginner to intermediate." />
   <link rel="icon" href="data:," />
   <title>AI + Quantum Learning Space</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -456,13 +456,13 @@
       </p>
       <h1 id="mastTitle">AI <em>+</em> Quantum</h1>
       <p class="deck" id="mastDeck">
-        Forty-three videos straight from the labs building the frontier — Google DeepMind, OpenAI,
-        Anthropic, Meta, IBM, Microsoft and Qiskit. Twenty-two on AI, twenty-one on quantum, with the
+        Forty-five videos straight from the labs building the frontier — Google DeepMind, OpenAI,
+        Anthropic, Meta, IBM, Microsoft and Qiskit. Twenty-three on AI, twenty-two on quantum, with the
         newest drops leading each rail. Tap any lesson and it plays in the player up top —
         one video at a time, never two at once.
       </p>
       <div class="meta-row">
-        <span><strong id="mastCount">43 lessons</strong></span>
+        <span><strong id="mastCount">45 lessons</strong></span>
         <span class="dot-sep">Beginner to intermediate</span>
         <span class="dot-sep">Official lab channels only</span>
         <span class="dot-sep">Updated <strong>26 Oct 2026</strong></span>
@@ -473,8 +473,8 @@
       <div class="jumpbar">
         <div class="viewseg" role="group" aria-label="Choose which track to view">
           <button class="seg" type="button" data-track="all" aria-pressed="true">Everything</button>
-          <button class="seg" type="button" data-track="ai" aria-pressed="false">Artificial intelligence <span class="n">22</span></button>
-          <button class="seg" type="button" data-track="quantum" aria-pressed="false">Quantum computing <span class="n">21</span></button>
+          <button class="seg" type="button" data-track="ai" aria-pressed="false">Artificial intelligence <span class="n">23</span></button>
+          <button class="seg" type="button" data-track="quantum" aria-pressed="false">Quantum computing <span class="n">22</span></button>
         </div>
         <div class="filters" role="group" aria-label="Filter by level">
           <button class="chip" type="button" data-filter="All" aria-pressed="true">All levels</button>
@@ -746,12 +746,20 @@
       };
 
       /* ------------------------------------------------------------------
-       * NEW ARRIVALS — added 5, 8, 15, 19 and 22 Oct 2026, newest first. Rendered into each
+       * NEW ARRIVALS — added 5, 8, 15, 19, 22 and 26 Oct 2026, newest first. Rendered into each
        * section's "New arrivals" area, above the main grid. Levels sit
        * inside the two existing levels so the level filter keeps working.
        * ------------------------------------------------------------------ */
       var NEW_VIDEOS = {
         ai: [
+          {
+            id: "LVEfFyijQ2c",
+            title: "Applying Gemini 4 for large-scale codebase maintenance in Chromium",
+            channel: "Google DeepMind",
+            date: "Oct 2026",
+            level: "Intermediate",
+            desc: "Google DeepMind shows how Gemini 4 Argon untangles Chromium's decades-old codebase, with several agents refactoring in parallel and every change checked by the project's test suites and human code review."
+          },
           {
             id: "Fb-68zqcSVs",
             title: "Introducing Claude Duet",
@@ -866,6 +874,14 @@
           }
         ],
         quantum: [
+          {
+            id: "D4OV8Y_8OwI",
+            title: "Optimized quantum workflow | Tools for Quantum Advantage | Ep6",
+            channel: "Qiskit",
+            date: "Oct 2026",
+            level: "Intermediate",
+            desc: "The final lesson of the Tools for Quantum Advantage series pulls the error-handling techniques together into ready-made workflows for suppression, mitigation, detection and correction on today's noisy hardware."
+          },
           {
             id: "QFF7KX6Lqvs",
             title: "Introducing Anderon: America's first pure-play quantum foundry",
@@ -1162,18 +1178,18 @@
       var MAST = {
         all: {
           title: "AI <em>+</em> Quantum",
-          count: "43 lessons",
-          deck: "Forty-three videos straight from the labs building the frontier — Google DeepMind, OpenAI, Anthropic, Meta, IBM, Microsoft and Qiskit. Twenty-two on AI, twenty-one on quantum, with the newest drops leading each rail. Tap any lesson and it plays in the player up top — one video at a time, never two at once."
+          count: "45 lessons",
+          deck: "Forty-five videos straight from the labs building the frontier — Google DeepMind, OpenAI, Anthropic, Meta, IBM, Microsoft and Qiskit. Twenty-three on AI, twenty-two on quantum, with the newest drops leading each rail. Tap any lesson and it plays in the player up top — one video at a time, never two at once."
         },
         ai: {
           title: "Artificial <em>intelligence</em>",
-          count: "11 lessons",
-          deck: "Twenty-two videos from the teams building the frontier — Google DeepMind, OpenAI, Anthropic and Meta. Frontier model launches, agents and developer tooling, with the newest drops leading the rail. Tap any lesson and it plays in the player at the top — one video at a time."
+          count: "23 lessons",
+          deck: "Twenty-three videos from the teams building the frontier — Google DeepMind, OpenAI, Anthropic and Meta. Frontier model launches, agents and developer tooling, with the newest drops leading the rail. Tap any lesson and it plays in the player at the top — one video at a time."
         },
         quantum: {
           title: "Quantum <em>computing</em>",
-          count: "11 lessons",
-          deck: "Twenty-one videos from IBM, Google Quantum AI, Microsoft and Qiskit. From first circuits to fault-tolerance roadmaps — how fragile qubits are becoming machines that solve real problems, with the newest drops leading the rail. Tap any lesson and it plays in the player at the top — one video at a time."
+          count: "22 lessons",
+          deck: "Twenty-two videos from IBM, Google Quantum AI, Microsoft and Qiskit. From first circuits to fault-tolerance roadmaps — how fragile qubits are becoming machines that solve real problems, with the newest drops leading the rail. Tap any lesson and it plays in the player at the top — one video at a time."
         }
       };
 
