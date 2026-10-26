@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-26T17:59:52.059982+00:00",
+  "generated_at": "2026-10-26T21:59:59.116224+00:00",
   "sources_polled": [
     "The Verge \u2014 AI",
     "Simon Willison",
@@ -15,6 +15,50 @@
     "Quantum Intelligence"
   ],
   "articles": [
+    {
+      "id": "34adadfb171aaca1",
+      "title": "Quoting Jason Koebler",
+      "link": "https://simonwillison.net/2026/Oct/26/jason-koebler/",
+      "source": "Simon Willison",
+      "category": "AI",
+      "summary": "Because big tech platforms essentially do not have customer support and make it impossible for their users to contact a human, many people experiencing run-of-the-mill tech problems have turned to ChatGPT. And, increasingly, ChatGPT is telling people that have normal tech support",
+      "published": "2026-10-26T21:59:44.617619+00:00",
+      "audio_url": null,
+      "duration": ""
+    },
+    {
+      "id": "96b9f45bb2e6d933",
+      "title": "Anthropic is burning gas to feed the AI boom",
+      "link": "https://www.theverge.com/ai-artificial-intelligence/1018994/anthropic-ipo-ai-data-center-energy-climate-risk",
+      "source": "The Verge \u2014 AI",
+      "category": "AI",
+      "summary": "As it prepares to go public, Anthropic's S-1 filing makes generative AI's methane dependency glaringly obvious. \"Competition for access to electrical supply and data center locations with adequate power availability is intense.\" In documents filed with the US Securities and Excha",
+      "published": "2026-10-26T21:59:43.954364+00:00",
+      "audio_url": null,
+      "duration": ""
+    },
+    {
+      "id": "5d5ff332a0b6b5ff",
+      "title": "Apple releases iOS and macOS 27.2 with new Siri AI features, new Music logo",
+      "link": "https://arstechnica.com/apple/2026/10/apple-releases-ios-and-macos-27-2-with-new-siri-ai-features-new-music-logo/",
+      "source": "Ars Technica AI",
+      "category": "AI",
+      "summary": "Included is the ability to limit which applications Siri can directly access.",
+      "published": "2026-10-26T20:04:16+00:00",
+      "audio_url": null,
+      "duration": ""
+    },
+    {
+      "id": "830f46d3a8fd49bc",
+      "title": "ICE plan to buy robot dogs spurs protest from hundreds of Boston Dynamics employees",
+      "link": "https://arstechnica.com/ai/2026/10/boston-dynamics-employees-want-to-block-sale-of-robot-dogs-to-ice/",
+      "source": "Ars Technica AI",
+      "category": "AI",
+      "summary": "US robotics company stands by ICE deal as more than 300 employees warn of risk.",
+      "published": "2026-10-26T18:50:41+00:00",
+      "audio_url": null,
+      "duration": ""
+    },
     {
       "id": "df88ce95d957f878",
       "title": "Kevin Roose is AGI-pilled. Why aren\u2019t you?",
@@ -115,12 +159,45 @@
       "duration": ""
     },
     {
+      "id": "1a1d4bf2fc111eb8",
+      "title": "GPT-6.1 Sol helps CodeRabbit strengthen security across complex codebases",
+      "link": "https://openai.com/index/gpt-6-1-sol-coderabbit-code-security",
+      "source": "OpenAI Blog",
+      "category": "AI",
+      "summary": "CodeRabbit uses GPT-6.1 Sol to investigate security risks across complex codebases. Its security agent helps developers review findings and proposed fixes.",
+      "published": "2026-10-26T13:45:00+00:00",
+      "audio_url": null,
+      "duration": ""
+    },
+    {
+      "id": "64d59b55a8fb8666",
+      "title": "ChatGPT\u2019s expanding world of work",
+      "link": "https://openai.com/index/chatgpt-expanding-world-of-work",
+      "source": "OpenAI Blog",
+      "category": "AI",
+      "summary": "Explore OpenAI Signals data on 165 work activities across nearly 100 countries, revealing how people use ChatGPT for work and how usage changes over time.",
+      "published": "2026-10-26T10:00:00+00:00",
+      "audio_url": null,
+      "duration": ""
+    },
+    {
       "id": "eb7708c5f537ab79",
       "title": "How Fanatics and OpenAI streamline the fan experience",
       "link": "https://openai.com/index/fanatics-streamline-fan-experience",
       "source": "OpenAI Blog",
       "category": "AI",
       "summary": "Fanatics uses OpenAI to help fans complete their game-day outfits with Shop the Look. Testing across roughly 30,000 MLB products showed 10% higher engagement.",
+      "published": "2026-10-26T07:00:00+00:00",
+      "audio_url": null,
+      "duration": ""
+    },
+    {
+      "id": "8f2f08b6e197805b",
+      "title": "How Ultrafast cut incident investigation from hours to minutes at OpenAI",
+      "link": "https://openai.com/index/openai-cut-incident-investigation",
+      "source": "OpenAI Blog",
+      "category": "AI",
+      "summary": "See how OpenAI engineers use Codex Ultrafast to investigate incidents in minutes. Explore faster security analysis, code refactoring, and daily workflows.",
       "published": "2026-10-26T07:00:00+00:00",
       "audio_url": null,
       "duration": ""
@@ -201,6 +278,28 @@
       "published": "2026-10-26T01:00:32+00:00",
       "audio_url": "https://muse.ai/podcasts/media/1248297608376725/94f09345-ad4a-4981-83dd-e3206bbf5c4e/ep-55e1a1cf-8194-454d-8386-afea6afb2f0e.mp3",
       "duration": "255"
+    },
+    {
+      "id": "f16aefe89a6e3f3b",
+      "title": "Working with academic communities to build scientific understanding",
+      "link": "https://openai.com/index/building-scientific-understanding-with-academic-communities",
+      "source": "OpenAI Blog",
+      "category": "AI",
+      "summary": "OpenAI shares model results on the Kakeya conjecture, Exponential Time Hypothesis, and quantum chromodynamics\u2014and how researchers can verify and build on them.",
+      "published": "2026-10-26T00:00:00+00:00",
+      "audio_url": null,
+      "duration": ""
+    },
+    {
+      "id": "1758535ac6be3e6b",
+      "title": "Introducing GPT-6.1 Terra",
+      "link": "https://openai.com/index/introducing-gpt-6-1-terra",
+      "source": "OpenAI Blog",
+      "category": "AI",
+      "summary": "Bringing fast and capable computer use to everyone",
+      "published": "2026-10-26T00:00:00+00:00",
+      "audio_url": null,
+      "duration": ""
     },
     {
       "id": "99c99157c7fa1579",
@@ -1501,17 +1600,6 @@
       "duration": "285"
     },
     {
-      "id": "ac0eba5f39915c21",
-      "title": "Meta removes language that may have allowed it to scrape news sites",
-      "link": "https://www.theverge.com/tech/1013409/meta-removes-language-that-may-have-allowed-it-to-scrape-news-sites",
-      "source": "The Verge \u2014 AI",
-      "category": "AI",
-      "summary": "After backlash, Meta is updating its terms again to remove language that suggested it could scrape content from sites, including news sites, to train its AI. Specifically, the following language no longer appears on the commercial terms page: \u2026 Meta may use any content from such ",
-      "published": "2026-10-17T17:59:52.973953+00:00",
-      "audio_url": null,
-      "duration": ""
-    },
-    {
       "id": "9f87c7b56c7d43e8",
       "title": "Game decompilation hub freezes leaderboard after AI turns progress into a hollow numbers game amid explosion of 'AI slop'",
       "link": "https://www.tomshardware.com/video-games/retro-gaming/game-decompilation-tracker-decomp-dev-shuts-its-public-leaderboard-saying-ai-has-broken-the-community-its-creator-blames-forks-that-use-ai-to-finish-other-teams-projects-and-races-to-ship-rough-pc-ports",
@@ -2667,17 +2755,6 @@
       "duration": ""
     },
     {
-      "id": "6dcb3088ac59686b",
-      "title": "Claude Haiku 5.5",
-      "link": "https://simonwillison.net/2026/Oct/7/claude-haiku-5-5/",
-      "source": "Simon Willison",
-      "category": "AI",
-      "summary": "As previously promised , here's Anthropic's new fast, low cost model: Introducing Claude Haiku 5.5 . The previous Haiku, 4.5, was very much showing its age. It came out almost a year ago , and was priced at $1/million input and $5/million output - relatively expensive even back t",
-      "published": "2026-10-07T21:59:47.547481+00:00",
-      "audio_url": null,
-      "duration": ""
-    },
-    {
       "id": "0598a3e5bb11bf63",
       "title": "\u201cSoftware is over\u201d: Bold AI developer takes aim at Adobe with open source clones",
       "link": "https://arstechnica.com/ai/2026/10/software-is-over-bold-ai-developer-takes-aim-at-adobe-with-open-source-clones/",
@@ -2722,23 +2799,23 @@
       "duration": ""
     },
     {
-      "id": "ad4e14640e358f44",
-      "title": "Helping teens learn, plan, and shape the future of AI",
-      "link": "https://openai.com/index/teens-learn-and-plan",
-      "source": "OpenAI Blog",
-      "category": "AI",
-      "summary": "College Planner is coming to ChatGPT for Teens to help students manage college applications, alongside new flashcards, quizzes, and a teen AI council.",
-      "published": "2026-10-07T12:00:00+00:00",
-      "audio_url": null,
-      "duration": ""
-    },
-    {
       "id": "22643d6fcb195220",
       "title": "Introducing Playground: Create and play custom games",
       "link": "https://blog.google/innovation-and-ai/technology/ai/playground-experimental-gaming-platform/",
       "source": "Google AI Blog",
       "category": "AI",
       "summary": "Overview of Playground",
+      "published": "2026-10-07T12:00:00+00:00",
+      "audio_url": null,
+      "duration": ""
+    },
+    {
+      "id": "ad4e14640e358f44",
+      "title": "Helping teens learn, plan, and shape the future of AI",
+      "link": "https://openai.com/index/teens-learn-and-plan",
+      "source": "OpenAI Blog",
+      "category": "AI",
+      "summary": "College Planner is coming to ChatGPT for Teens to help students manage college applications, alongside new flashcards, quizzes, and a teen AI council.",
       "published": "2026-10-07T12:00:00+00:00",
       "audio_url": null,
       "duration": ""
@@ -2898,50 +2975,6 @@
       "duration": "283"
     },
     {
-      "id": "aaf1cc502a6b1603",
-      "title": "MCP for agent-to-agent comms may be the riskiest protocol you've never heard of",
-      "link": "https://arstechnica.com/security/2026/10/vulnerability-in-agents-from-google-and-others-exposes-structural-flaw-in-mcp/",
-      "source": "Ars Technica AI",
-      "category": "AI",
-      "summary": "Trust gaps in the new protocol spread malicious prompts from one agent to another.",
-      "published": "2026-10-05T22:26:35+00:00",
-      "audio_url": null,
-      "duration": ""
-    },
-    {
-      "id": "04277ae7314bbae1",
-      "title": "Command-line tool quickly removes Apple Intelligence from macOS 27",
-      "link": "https://arstechnica.com/apple/2026/10/command-line-tool-quickly-removes-apple-intelligence-from-macos-27/",
-      "source": "Ars Technica AI",
-      "category": "AI",
-      "summary": "The tool can free up over 12GB of storage.",
-      "published": "2026-10-05T19:14:44+00:00",
-      "audio_url": null,
-      "duration": ""
-    },
-    {
-      "id": "78ad53815846c15c",
-      "title": "Our approach to EU text provenance rules",
-      "link": "https://openai.com/index/eu-text-provenance",
-      "source": "OpenAI Blog",
-      "category": "AI",
-      "summary": "How OpenAI is approaching text watermarking under EU rules. Learn where watermarks apply, how detection works, and why access starts with researchers.",
-      "published": "2026-10-05T15:00:00+00:00",
-      "audio_url": null,
-      "duration": ""
-    },
-    {
-      "id": "3cbec84de8bf6155",
-      "title": "Building advertising for the way people use AI",
-      "link": "https://openai.com/index/new-chatgpt-ads-format-and-measurement",
-      "source": "OpenAI Blog",
-      "category": "AI",
-      "summary": "OpenAI introduces a new visual ad format in ChatGPT and expands measurement tools, attribution partnerships, and brand suitability for advertisers.",
-      "published": "2026-10-05T10:00:00+00:00",
-      "audio_url": null,
-      "duration": ""
-    },
-    {
       "id": "e9864d099c8c0051",
       "title": "Anthropic reports Florida woman\u2019s Claude \u2018diary\u2019 threat to shoot up sheriff\u2019s office, felony charge follows",
       "link": "https://www.tomshardware.com/tech-industry/artificial-intelligence/anthropic-reports-florida-womans-claude-diary-threat-to-shoot-up-sheriffs-office-felony-charge-follows-its-at-least-the-third-such-conversation-to-reach-police-since-august",
@@ -3096,17 +3129,6 @@
       "duration": "266"
     },
     {
-      "id": "8e206c4d9ed6ea5b",
-      "title": "A model guide for the GPT-6 family",
-      "link": "https://openai.com/index/practical-guide-building-gpt-6",
-      "source": "OpenAI Blog",
-      "category": "AI",
-      "summary": "Learn how startups can choose GPT-6 models, tune reasoning effort, improve prompts and skills, coordinate tools, and prepare workflows for production.",
-      "published": "2026-10-02T16:15:00+00:00",
-      "audio_url": null,
-      "duration": ""
-    },
-    {
       "id": "1122627a66dfc215",
       "title": "The latest AI news we announced in September 2026",
       "link": "https://blog.google/innovation-and-ai/technology/ai/google-ai-updates-september-2026/",
@@ -3193,28 +3215,6 @@
       "published": "2026-10-02T09:34:07+00:00",
       "audio_url": "https://muse.ai/podcasts/media/1248297608376725/94f09345-ad4a-4981-83dd-e3206bbf5c4e/ep-2fa94f03-d1e6-4d56-a3fd-30b4ec99c725.mp3",
       "duration": "1082"
-    },
-    {
-      "id": "a97398f76ee518bf",
-      "title": "Chatham scales its capital markets expertise with OpenAI",
-      "link": "https://openai.com/index/chatham-financial",
-      "source": "OpenAI Blog",
-      "category": "AI",
-      "summary": "Chatham Financial uses Codex and GPT-5.6 to build technology and redesign workflows, cutting trade validation from 30 minutes to under 4.",
-      "published": "2026-10-02T00:00:00+00:00",
-      "audio_url": null,
-      "duration": ""
-    },
-    {
-      "id": "7e67b43cf9d0e609",
-      "title": "The eternal complement",
-      "link": "https://openai.com/index/the-eternal-complement",
-      "source": "OpenAI Blog",
-      "category": "AI",
-      "summary": "Advanced AI may matter most for the routine work behind breakthrough ideas. Explore why execution could shape the next economy and the pace of progress.",
-      "published": "2026-10-01T17:00:00+00:00",
-      "audio_url": null,
-      "duration": ""
     },
     {
       "id": "bb7b9a3b03df3ee3",

@@ -4,7 +4,39 @@
     <title>The Signal</title>
     <link>https://thillairaj.github.io/The-Signal-AI-Quantum/</link>
     <description>A self-updating feed of AI, quantum computing, and podcast updates.</description>
-    <lastBuildDate>Mon, 26 Oct 2026 17:59:52 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 26 Oct 2026 21:59:59 +0000</lastBuildDate>
+    <item>
+      <title>Quoting Jason Koebler</title>
+      <link>https://simonwillison.net/2026/Oct/26/jason-koebler/</link>
+      <guid isPermaLink="false">34adadfb171aaca1</guid>
+      <description>Because big tech platforms essentially do not have customer support and make it impossible for their users to contact a human, many people experiencing run-of-the-mill tech problems have turned to ChatGPT. And, increasingly, ChatGPT is telling people that have normal tech support</description>
+      <category>Simon Willison</category>
+      <pubDate>Mon, 26 Oct 2026 21:59:44 +0000</pubDate>
+    </item>
+    <item>
+      <title>Anthropic is burning gas to feed the AI boom</title>
+      <link>https://www.theverge.com/ai-artificial-intelligence/1018994/anthropic-ipo-ai-data-center-energy-climate-risk</link>
+      <guid isPermaLink="false">96b9f45bb2e6d933</guid>
+      <description>As it prepares to go public, Anthropic's S-1 filing makes generative AI's methane dependency glaringly obvious. "Competition for access to electrical supply and data center locations with adequate power availability is intense." In documents filed with the US Securities and Excha</description>
+      <category>The Verge — AI</category>
+      <pubDate>Mon, 26 Oct 2026 21:59:43 +0000</pubDate>
+    </item>
+    <item>
+      <title>Apple releases iOS and macOS 27.2 with new Siri AI features, new Music logo</title>
+      <link>https://arstechnica.com/apple/2026/10/apple-releases-ios-and-macos-27-2-with-new-siri-ai-features-new-music-logo/</link>
+      <guid isPermaLink="false">5d5ff332a0b6b5ff</guid>
+      <description>Included is the ability to limit which applications Siri can directly access.</description>
+      <category>Ars Technica AI</category>
+      <pubDate>Mon, 26 Oct 2026 20:04:16 +0000</pubDate>
+    </item>
+    <item>
+      <title>ICE plan to buy robot dogs spurs protest from hundreds of Boston Dynamics employees</title>
+      <link>https://arstechnica.com/ai/2026/10/boston-dynamics-employees-want-to-block-sale-of-robot-dogs-to-ice/</link>
+      <guid isPermaLink="false">830f46d3a8fd49bc</guid>
+      <description>US robotics company stands by ICE deal as more than 300 employees warn of risk.</description>
+      <category>Ars Technica AI</category>
+      <pubDate>Mon, 26 Oct 2026 18:50:41 +0000</pubDate>
+    </item>
     <item>
       <title>Kevin Roose is AGI-pilled. Why aren’t you?</title>
       <link>https://www.theverge.com/podcast/1018264/kevin-roose-the-agi-chronicles-machine-gods-podcast-youtube-openai-anthropic</link>
@@ -78,10 +110,34 @@
       <pubDate>Mon, 26 Oct 2026 14:00:19 +0000</pubDate>
     </item>
     <item>
+      <title>GPT-6.1 Sol helps CodeRabbit strengthen security across complex codebases</title>
+      <link>https://openai.com/index/gpt-6-1-sol-coderabbit-code-security</link>
+      <guid isPermaLink="false">1a1d4bf2fc111eb8</guid>
+      <description>CodeRabbit uses GPT-6.1 Sol to investigate security risks across complex codebases. Its security agent helps developers review findings and proposed fixes.</description>
+      <category>OpenAI Blog</category>
+      <pubDate>Mon, 26 Oct 2026 13:45:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>ChatGPT’s expanding world of work</title>
+      <link>https://openai.com/index/chatgpt-expanding-world-of-work</link>
+      <guid isPermaLink="false">64d59b55a8fb8666</guid>
+      <description>Explore OpenAI Signals data on 165 work activities across nearly 100 countries, revealing how people use ChatGPT for work and how usage changes over time.</description>
+      <category>OpenAI Blog</category>
+      <pubDate>Mon, 26 Oct 2026 10:00:00 +0000</pubDate>
+    </item>
+    <item>
       <title>How Fanatics and OpenAI streamline the fan experience</title>
       <link>https://openai.com/index/fanatics-streamline-fan-experience</link>
       <guid isPermaLink="false">eb7708c5f537ab79</guid>
       <description>Fanatics uses OpenAI to help fans complete their game-day outfits with Shop the Look. Testing across roughly 30,000 MLB products showed 10% higher engagement.</description>
+      <category>OpenAI Blog</category>
+      <pubDate>Mon, 26 Oct 2026 07:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>How Ultrafast cut incident investigation from hours to minutes at OpenAI</title>
+      <link>https://openai.com/index/openai-cut-incident-investigation</link>
+      <guid isPermaLink="false">8f2f08b6e197805b</guid>
+      <description>See how OpenAI engineers use Codex Ultrafast to investigate incidents in minutes. Explore faster security analysis, code refactoring, and daily workflows.</description>
       <category>OpenAI Blog</category>
       <pubDate>Mon, 26 Oct 2026 07:00:00 +0000</pubDate>
     </item>
@@ -92,6 +148,22 @@
       <description>Tool: Seam Cutter I built this weird and very specific cropping tool - it lets you create a horizontal or vertical cut across an image, then slide the two sides relative to each other. Effectively it lets you crop out a section in the middle of an image. I wanted this because I o</description>
       <category>Simon Willison</category>
       <pubDate>Mon, 26 Oct 2026 05:59:49 +0000</pubDate>
+    </item>
+    <item>
+      <title>Working with academic communities to build scientific understanding</title>
+      <link>https://openai.com/index/building-scientific-understanding-with-academic-communities</link>
+      <guid isPermaLink="false">f16aefe89a6e3f3b</guid>
+      <description>OpenAI shares model results on the Kakeya conjecture, Exponential Time Hypothesis, and quantum chromodynamics—and how researchers can verify and build on them.</description>
+      <category>OpenAI Blog</category>
+      <pubDate>Mon, 26 Oct 2026 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>Introducing GPT-6.1 Terra</title>
+      <link>https://openai.com/index/introducing-gpt-6-1-terra</link>
+      <guid isPermaLink="false">1758535ac6be3e6b</guid>
+      <description>Bringing fast and capable computer use to everyone</description>
+      <category>OpenAI Blog</category>
+      <pubDate>Mon, 26 Oct 2026 00:00:00 +0000</pubDate>
     </item>
     <item>
       <title>Google’s AI search changes upended online publishing</title>
@@ -412,78 +484,6 @@
       <description>What forward deployed engineering means at OpenAI</description>
       <category>OpenAI Blog</category>
       <pubDate>Thu, 22 Oct 2026 06:00:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>Data centers could erase decades of air quality gains</title>
-      <link>https://www.theverge.com/ai-artificial-intelligence/1015958/data-center-pollution-rising-report</link>
-      <guid isPermaLink="false">eaa3fbf80042951c</guid>
-      <description>A rush of new data centers could bring air pollution roaring back to levels not seen since the 2000s in Texas, which has become ground zero for the physical infrastructure behind generative AI. New and proposed data centers are demanding a tremendous amount of electricity. How de</description>
-      <category>The Verge — AI</category>
-      <pubDate>Thu, 22 Oct 2026 01:59:38 +0000</pubDate>
-    </item>
-    <item>
-      <title>Uber brings ChatGPT Work to all employees with OpenAI</title>
-      <link>https://openai.com/index/uber-chatgpt-work-rollout</link>
-      <guid isPermaLink="false">ba6fa07d677a8221</guid>
-      <description>Uber is rolling out ChatGPT Work to more than 30,000 employees, helping teams research, analyze data, create presentations, and complete complex workflows.</description>
-      <category>OpenAI Blog</category>
-      <pubDate>Thu, 22 Oct 2026 00:00:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>Today's PHP Security Release, and How We're Strengthening PHP Security</title>
-      <link>https://simonwillison.net/2026/Oct/21/php-security-release/</link>
-      <guid isPermaLink="false">952285572a8e70b9</guid>
-      <description>Today&amp;#x27;s PHP Security Release, and How We&amp;#x27;re Strengthening PHP Security If you're running anything on PHP it's vital you upgrade - today's updates (across the entire PHP 8.x line) address two remote code execution holes, and there have been exploits circulating since las</description>
-      <category>Simon Willison</category>
-      <pubDate>Wed, 21 Oct 2026 21:59:50 +0000</pubDate>
-    </item>
-    <item>
-      <title>Walmart is inviting AI agents to shop for you</title>
-      <link>https://www.theverge.com/ai-artificial-intelligence/1015715/walmart-ai-shopping-agents</link>
-      <guid isPermaLink="false">89a2c6e8757c1903</guid>
-      <description>Walmart will soon let AI agents shop on its website for you. Next month, the retail giant will allow you to use an AI agent on the site, with systems in place to let you approve and review purchases and set spending limits. The embrace of AI agents stands in stark contrast to Ama</description>
-      <category>The Verge — AI</category>
-      <pubDate>Wed, 21 Oct 2026 21:59:49 +0000</pubDate>
-    </item>
-    <item>
-      <title>Anthropic takes on Muse with Claude Duet, its new AI agent</title>
-      <link>https://www.theverge.com/ai-artificial-intelligence/1015843/anthropic-claude-duet-ai-agent</link>
-      <guid isPermaLink="false">0d8d033795840d49</guid>
-      <description>Anthropic just announced an AI agent competitor to Meta's Muse and OpenAI's Dots: Claude Duet. The new agent, designed for professionals and small business owners, is launching as a "research preview," according to Anthropic, and it's available as a standalone app on iOS and Andr</description>
-      <category>The Verge — AI</category>
-      <pubDate>Wed, 21 Oct 2026 21:59:49 +0000</pubDate>
-    </item>
-    <item>
-      <title>Meta to create a new class of shares to fund AI push</title>
-      <link>https://www.theverge.com/tech/1015799/meta-shares-class-ai-q3-2026-earnings</link>
-      <guid isPermaLink="false">86bbef590f282368</guid>
-      <description>Meta says it's issuing a new class of shares to fund its AI initiatives. As part of its third-quarter earnings report released on Wednesday, the company says the non-voting stock will also go toward potential acquisitions and employee compensation, with trading beginning in 2027.</description>
-      <category>The Verge — AI</category>
-      <pubDate>Wed, 21 Oct 2026 21:59:49 +0000</pubDate>
-    </item>
-    <item>
-      <title>Broad access through consistent standards</title>
-      <link>https://openai.com/index/broad-access-through-consistent-standards</link>
-      <guid isPermaLink="false">2ed22a61b2f19a0c</guid>
-      <description>How OpenAI works with distribution partners to uphold consistent safeguards, support responsible access, and clarify expectations in our Usage Policies.</description>
-      <category>OpenAI Blog</category>
-      <pubDate>Wed, 21 Oct 2026 21:00:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>The new human-crafted Apple Music brand matters in an AI world</title>
-      <link>https://arstechnica.com/culture/2026/10/the-new-human-crafted-apple-music-brand-matters-in-an-ai-world/</link>
-      <guid isPermaLink="false">140d853f0e3f908f</guid>
-      <description>Opinion: In a world of AI slop, showing the human hands making things helps.</description>
-      <category>Ars Technica AI</category>
-      <pubDate>Wed, 21 Oct 2026 19:44:40 +0000</pubDate>
-    </item>
-    <item>
-      <title>OpenAI's latest AI models are coming to Google Cloud and Antigravity</title>
-      <link>https://arstechnica.com/ai/2026/10/openais-latest-ai-models-are-coming-to-google-cloud-and-antigravity/</link>
-      <guid isPermaLink="false">53db5cc109270879</guid>
-      <description>Google Cloud will have GPT 6.1 Astra, Sol, and Luna in the coming weeks.</description>
-      <category>Ars Technica AI</category>
-      <pubDate>Wed, 21 Oct 2026 18:51:42 +0000</pubDate>
     </item>
   </channel>
 </rss>
