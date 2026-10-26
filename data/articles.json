@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-26T14:01:05.252544+00:00",
+  "generated_at": "2026-10-26T17:59:52.059982+00:00",
   "sources_polled": [
     "The Verge \u2014 AI",
     "Simon Willison",
@@ -15,6 +15,83 @@
     "Quantum Intelligence"
   ],
   "articles": [
+    {
+      "id": "df88ce95d957f878",
+      "title": "Kevin Roose is AGI-pilled. Why aren\u2019t you?",
+      "link": "https://www.theverge.com/podcast/1018264/kevin-roose-the-agi-chronicles-machine-gods-podcast-youtube-openai-anthropic",
+      "source": "The Verge \u2014 AI",
+      "category": "AI",
+      "summary": "Today, I\u2019m talking to Kevin Roose, journalist and author of the new book The AGI Chronicles, which details the recent and explosive transformation of the AI industry. Kevin was a longtime New York Times reporter and host of the popular podcast Hard Fork, but he and friend of the ",
+      "published": "2026-10-26T17:59:37.486365+00:00",
+      "audio_url": null,
+      "duration": ""
+    },
+    {
+      "id": "b8f740314eab2229",
+      "title": "Microsoft offers buyouts to 60,000 employees",
+      "link": "https://www.theverge.com/tech/1018666/microsoft-expands-buyouts-60000-employees-eligible",
+      "source": "The Verge \u2014 AI",
+      "category": "AI",
+      "summary": "Microsoft is offering voluntary buyouts to up to 60,000 employees across the US, UK, Canada, and India. In a message to employees, Microsoft chief people officer Amy Coleman writes that this gives staff members \"the opportunity to leave Microsoft with financial support and career",
+      "published": "2026-10-26T17:59:37.486325+00:00",
+      "audio_url": null,
+      "duration": ""
+    },
+    {
+      "id": "4a8f41d180d7e408",
+      "title": "Five weird details from Anthropic\u2019s IPO filing",
+      "link": "https://www.theverge.com/ai-artificial-intelligence/1018738/anthropic-ipo-s1-filing-weird-details",
+      "source": "The Verge \u2014 AI",
+      "category": "AI",
+      "summary": "Anthropic has finally filed its S-1 prospectus with the SEC, a document designed to give investors a look under the hood of its business, from how much its executives are making and plans for spending its IPO billions to the risks that could derail its ambitions. At more than 300",
+      "published": "2026-10-26T17:59:37.486288+00:00",
+      "audio_url": null,
+      "duration": ""
+    },
+    {
+      "id": "2500a6aad8741c76",
+      "title": "The RealReal won\u2019t let AI agents hog designer clothing",
+      "link": "https://www.theverge.com/news/1018713/meta-muse-agentic-shopping-ai-the-realreal",
+      "source": "The Verge \u2014 AI",
+      "category": "AI",
+      "summary": "The RealReal, a secondhand luxury fashion consignment retailer, said it's updating its bot defense system, effectively making it harder for AI agents to shop on its site. The change comes days after The Verge reported that an AI agent could be used to take advantage of The RealRe",
+      "published": "2026-10-26T17:59:37.486216+00:00",
+      "audio_url": null,
+      "duration": ""
+    },
+    {
+      "id": "71784ce3534e69e4",
+      "title": "Highway thieves are spoofing GPS to steal millions in data center-bound cargo",
+      "link": "https://arstechnica.com/tech-policy/2026/10/highway-thieves-are-spoofing-gps-to-steal-millions-in-data-center-bound-cargo/",
+      "source": "Ars Technica AI",
+      "category": "AI",
+      "summary": "Investigators explain how highway thieves stole $100M in data center equipment.",
+      "published": "2026-10-26T17:26:36+00:00",
+      "audio_url": null,
+      "duration": ""
+    },
+    {
+      "id": "be77c96c39b4ea3e",
+      "title": "Our newest AI Quest: Mapping the human brain",
+      "link": "https://blog.google/products-and-platforms/products/education/ai-quests-polar-peaks/",
+      "source": "Google AI Blog",
+      "category": "AI",
+      "summary": "An illustration of a planet rotating to show various cartoon figures waving. At the top is the text \"AI Quests\"",
+      "published": "2026-10-26T16:00:00+00:00",
+      "audio_url": null,
+      "duration": ""
+    },
+    {
+      "id": "6a47f3e0c8812311",
+      "title": "Tesla gave up the EV crown. Now it wants to win the autonomy race.",
+      "link": "https://arstechnica.com/cars/2026/10/tesla-wants-ai-and-software-to-be-its-next-profit-engine/",
+      "source": "Ars Technica AI",
+      "category": "AI",
+      "summary": "Tesla hopes autonomy subscriptions can deliver the margins car sales cannot.",
+      "published": "2026-10-26T14:30:27+00:00",
+      "audio_url": null,
+      "duration": ""
+    },
     {
       "id": "9c0a98fa46a8163e",
       "title": "Can AI help solve the COBOL code crisis?",
@@ -34,6 +111,17 @@
       "category": "AI",
       "summary": "Anthropic has filed its S-1 prospectus with the Securities and Exchange Commission, preparing the company behind Claude to beat OpenAI to the punch with an IPO. In a filing with the SEC, Anthropic said it plans to list on the Nasdaq exchange under the ticker symbol \"ANT.\" The AI ",
       "published": "2026-10-26T14:00:19.388099+00:00",
+      "audio_url": null,
+      "duration": ""
+    },
+    {
+      "id": "eb7708c5f537ab79",
+      "title": "How Fanatics and OpenAI streamline the fan experience",
+      "link": "https://openai.com/index/fanatics-streamline-fan-experience",
+      "source": "OpenAI Blog",
+      "category": "AI",
+      "summary": "Fanatics uses OpenAI to help fans complete their game-day outfits with Shop the Look. Testing across roughly 30,000 MLB products showed 10% higher engagement.",
+      "published": "2026-10-26T07:00:00+00:00",
       "audio_url": null,
       "duration": ""
     },
@@ -1424,17 +1512,6 @@
       "duration": ""
     },
     {
-      "id": "79619743255e89a1",
-      "title": "Websites are closing their doors to AI agents",
-      "link": "https://www.theverge.com/ai-artificial-intelligence/1013195/ai-agents-blocked-web",
-      "source": "The Verge \u2014 AI",
-      "category": "AI",
-      "summary": "Autonomous agents are the hottest thing in AI. OpenAI, Meta, Google, Instinct, and others promise their agents can scour the internet on your behalf, doing anything from booking a dinner reservation and cleaning out your inbox to buying new shoes. But what happens when the rest o",
-      "published": "2026-10-17T13:59:47.947453+00:00",
-      "audio_url": null,
-      "duration": ""
-    },
-    {
       "id": "9f87c7b56c7d43e8",
       "title": "Game decompilation hub freezes leaderboard after AI turns progress into a hollow numbers game amid explosion of 'AI slop'",
       "link": "https://www.tomshardware.com/video-games/retro-gaming/game-decompilation-tracker-decomp-dev-shuts-its-public-leaderboard-saying-ai-has-broken-the-community-its-creator-blames-forks-that-use-ai-to-finish-other-teams-projects-and-races-to-ship-rough-pc-ports",
@@ -1512,28 +1589,6 @@
       "duration": ""
     },
     {
-      "id": "ad3a47861a304e90",
-      "title": "Meta\u2019s new terms may allow it to train AI on news sites for free",
-      "link": "https://www.theverge.com/tech/1012846/meta-business-terms-scrape-news-publishers",
-      "source": "The Verge \u2014 AI",
-      "category": "AI",
-      "summary": "Meta's new terms appear to give it permission to crawl and scrape websites \"associated\" with the businesses that use its platforms - including online publishers, according to a report from Nieman Lab. The new terms, which go into effect on October 30th, say Meta can use this outs",
-      "published": "2026-10-16T18:44:19.050644+00:00",
-      "audio_url": null,
-      "duration": ""
-    },
-    {
-      "id": "3d6f16cf09a8486c",
-      "title": "A week with RTX Spark: everything we\u2019ve learned using Nvidia\u2019s new laptops",
-      "link": "https://www.theverge.com/tech/1012748/nvidia-rtx-spark-windows-arm-laptops-asus-hp-lenovo-impressions",
-      "source": "The Verge \u2014 AI",
-      "category": "AI",
-      "summary": "Nvidia's RTX Spark N1X processor is finally here, and we've been collectively testing a small fortune's worth of powerful laptops sporting this new \"superchip.\" RTX Spark is designed to be a high-performing Arm-based SoC for laptops and small desktop computers, rivaling the best ",
-      "published": "2026-10-16T18:44:19.050571+00:00",
-      "audio_url": null,
-      "duration": ""
-    },
-    {
       "id": "ae8741fad8038911",
       "title": "Meta may use sweeping new commercial TOS to avoid millions in AI licensing fees",
       "link": "https://arstechnica.com/tech-policy/2026/10/meta-may-use-sweeping-new-commercial-tos-to-avoid-millions-in-ai-licensing-fees/",
@@ -1552,17 +1607,6 @@
       "category": "AI",
       "summary": "Watch an exclusive clip from Super Scam Me where a victim tracks down her scammer.",
       "published": "2026-10-16T14:00:59+00:00",
-      "audio_url": null,
-      "duration": ""
-    },
-    {
-      "id": "b78fa0f3af3a7b6b",
-      "title": "Sega pulls Total War: Shogun 2 remaster from sale following disastrous launch",
-      "link": "https://www.theverge.com/games/1012512/sega-total-war-shogun-2-remaster-pulled",
-      "source": "The Verge \u2014 AI",
-      "category": "AI",
-      "summary": "Sega is removing Total War: Shogun 2 - Complete Edition from storefronts following a disastrous launch where users complained about issues like bugs and upscaling that appears to have been done by AI. Complete Edition, a remaster of the 2011 strategy game, launched on Tuesday, an",
-      "published": "2026-10-16T01:59:52.202451+00:00",
       "audio_url": null,
       "duration": ""
     },
@@ -2887,17 +2931,6 @@
       "duration": ""
     },
     {
-      "id": "fdcf6b49e5f5916c",
-      "title": "AI glasses face their first major government crackdown",
-      "link": "https://arstechnica.com/ai/2026/10/ai-glasses-face-their-first-major-government-crackdown/",
-      "source": "Ars Technica AI",
-      "category": "AI",
-      "summary": "Norway wants time to write permanent rules for glasses that can record bystanders.",
-      "published": "2026-10-05T13:39:30+00:00",
-      "audio_url": null,
-      "duration": ""
-    },
-    {
       "id": "3cbec84de8bf6155",
       "title": "Building advertising for the way people use AI",
       "link": "https://openai.com/index/new-chatgpt-ads-format-and-measurement",
@@ -3063,17 +3096,6 @@
       "duration": "266"
     },
     {
-      "id": "6ee8ae0821d338b7",
-      "title": "Apple changes full-disk access permissions to curb abuse from AI agents",
-      "link": "https://arstechnica.com/security/2026/10/apple-changes-full-disk-access-permissions-to-curb-abuse-from-ai-agents/",
-      "source": "Ars Technica AI",
-      "category": "AI",
-      "summary": "Meta says FDA isn't sufficient to Muse reading messages. Apple begs to differ.",
-      "published": "2026-10-02T23:03:16+00:00",
-      "audio_url": null,
-      "duration": ""
-    },
-    {
       "id": "8e206c4d9ed6ea5b",
       "title": "A model guide for the GPT-6 family",
       "link": "https://openai.com/index/practical-guide-building-gpt-6",
@@ -3191,17 +3213,6 @@
       "category": "AI",
       "summary": "Advanced AI may matter most for the routine work behind breakthrough ideas. Explore why execution could shape the next economy and the pace of progress.",
       "published": "2026-10-01T17:00:00+00:00",
-      "audio_url": null,
-      "duration": ""
-    },
-    {
-      "id": "a80484c2d5849bdb",
-      "title": "How Albertsons Companies is reimagining retail from the inside out",
-      "link": "https://openai.com/index/albertsons-reimagining-retail",
-      "source": "OpenAI Blog",
-      "category": "AI",
-      "summary": "Albertsons Cos. is using ChatGPT Enterprise and the OpenAI API to help teams work faster and make grocery shopping easier for millions of customers.",
-      "published": "2026-10-01T16:00:00+00:00",
       "audio_url": null,
       "duration": ""
     },
