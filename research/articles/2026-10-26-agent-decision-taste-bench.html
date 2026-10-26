@@ -1,0 +1,35 @@
+<p><em>Signal Research Notes is an original-research series on The Signal, published three times a week. Each edition asks one question, works through it from primary sources, and keeps confirmed facts separate from analysis. Sources are linked at the end.</em></p>
+
+<p>An AI agent that finishes the job is not necessarily an agent that did the job well. October 2026 put that distinction on the record. A benchmark from Microsoft and City University of Hong Kong researchers, a security benchmark from Simbian, and an enterprise test from Nanonets agree: completion scores flatter agents, because they grade the destination and ignore the decisions along the way.</p>
+
+<p>The most rigorous of the three is Taste-Bench, from "The Tasteful Agent: Measuring and Improving Taste in Long-Horizon Tasks" by Wenbo Pan and colleagues, revised on September 23, 2026. The authors define "taste" as the ability to make good long horizon decisions, such as which hypothesis to test or which implementation to build on, when the payoff comes much later. No existing benchmark measures taste. The method avoids asking humans to grade every step: agent runs already contain decision points, where parallel attempts diverged or a single run detoured and later corrected itself. Since the final outcome shows which branch worked better, each fork becomes a test question, with the later trajectory hidden.</p>
+
+<h3>1. The headline number is 59.7 percent, and the method makes it worse, not better</h3>
+
+<p>Taste-Bench contains 502 binary decision fork questions drawn from scored coding and AI research runs, including SWE-bench Pro and METR's MALT transcripts. The model is frozen at the fork and asked to pick the better direction, without seeing what happens after. Each question is asked twice, once per order, counting only double correct answers, so guessing scores 25 percent, not 50 percent. Against that bar, the best of 14 frontier models scored 59.7 percent, with GPT-5.5 close behind at 59.5 percent. (secondary reporting names GPT-5.6 Sol; the paper itself does not name it).</p>
+
+<p>Two further findings sharpen the point. Forks whose deciding evidence appears later were much harder for every model, the situation that matters in real deployments, where a wrong choice only reveals itself after the budget is spent. And a larger reasoning budget did not improve accuracy: thinking longer does not buy better judgment.</p>
+
+<p>One caveat: the fork labels are generated automatically, with human review confirming almost all, so the ground truth is strong but not perfect. Still, a 59.7 percent ceiling is serious: the best agent picks the wrong branch roughly two times in five when the future is hidden, the normal condition of real work.</p>
+
+<h3>2. Two vendor benchmarks point the same way, with a conflict attached</h3>
+
+<p>Simbian's October 2026 Cyber Defense Benchmark tested 32 large language models as security operations agents, giving each a threat briefing, a SQL database of real Windows attack telemetry, and a 50 query budget. None cleared 50 percent coverage on every MITRE ATT&amp;CK tactic, and the leader, Opus 5, averaged 45.1 percent of each attack's steps. More telling was the behavior: nearly every trace ended because the model chose to stop early. Simbian's fix is architectural, not a bigger model: a coverage based stopping rule held outside the model, so the agent cannot declare itself finished while evidence remains unchecked.</p>
+
+<p>Nanonets' TRACE test makes the same point in enterprise work. Each sample is a record to report conversation from a month end close, about 100,000 tokens long, with company rules dropped mid conversation. Five samples carry 47 questions graded on 388 criteria, all or nothing: a task passes only if the answer is right and every applicable rule is honored. The best system finished just 38 percent of the process tasks fully correctly, even though the same models score in the 80s on document reading.</p>
+
+<p>Both vendor results carry a conflict to hold in mind. Simbian sells a security operations agent, and Nanonets sells document processing and agent products, and each grades a field it competes in. That does not invalidate the numbers, but neither is a neutral industry verdict. Two independent test designs thus found the same failure mode the academic benchmark isolated: weak judgment mid task rather than failure to produce an answer.</p>
+
+<h3>3. Why completion is the wrong contract for long running agents</h3>
+
+<p>Here is the wrong assumption to challenge directly: that a high completion rate means an agent can be trusted with a long running job. Completion rewards recovery. An agent that picks a poor branch, wastes hours of compute, backtracks, and eventually succeeds looks identical in the final score to an agent that chose well from the start. The costs that differ, compute spent, time lost, a security lead closed as benign, are invisible to the headline metric.</p>
+
+<p>The controls that matter are therefore also mid task: human review at forks where the cost of a wrong choice is high or delayed, such as architecture decisions; a stopping rule enforced outside the model, as Simbian proposes, rather than left to the model's own sense of done; and run records kept in full, because Taste-Bench only works thanks to recorded trajectories that reveal, in hindsight, which branch was better. The paper offers one constructive result: taste can be trained, since distilling a teacher that has seen the outcome into a student improved decisions on unseen tasks and success on held out SWE-bench Pro tasks.</p>
+
+<p>Three things to watch:</p>
+
+<ul>
+<li>Whether vendors publish step level or fork level scores alongside completion rates.</li>
+<li>Whether coverage based stopping rules, enforced outside the model, reach production agents.</li>
+<li>Whether benchmarks adopt decision fork methods, and whether the 59.7 percent ceiling moves when taste is trained rather than prompted.</li>
+</ul>

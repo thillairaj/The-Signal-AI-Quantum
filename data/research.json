@@ -1,6 +1,33 @@
 {
   "articles": [
     {
+      "id": "2026-10-26-agent-decision-taste-bench",
+      "title": "Why Does Finishing the Task No Longer Prove an AI Agent Works?",
+      "subtitle": "Taste-Bench and the judgment gap in long running agents",
+      "date": "2026-10-26",
+      "kind": "Deep Dive",
+      "card": "research/cards/edition-05.webp",
+      "body": "research/articles/2026-10-26-agent-decision-taste-bench.html",
+      "sources": [
+        {
+          "label": "Pan et al.: The Tasteful Agent: Measuring and Improving Taste in Long-Horizon Tasks (arXiv, revised Sep 23, 2026)",
+          "url": "https://arxiv.org/abs/2609.25804"
+        },
+        {
+          "label": "The Decoder: AI agents have bad taste in long-term decisions and a new benchmark proves it (Oct 2026)",
+          "url": "https://the-decoder.com/ai-agents-have-bad-taste-in-long-term-decisions-and-a-new-benchmark-proves-it/"
+        },
+        {
+          "label": "Simbian: AI SOC Agents Stop Too Soon, October 2026 Cyber Defense Benchmark",
+          "url": "https://simbian.ai/blog/ai-soc-agents-give-up-early"
+        },
+        {
+          "label": "The Inference: Nanonets' TRACE, best AI agent finishes just 38% of multi-step enterprise tasks (Oct 2026)",
+          "url": "https://theinference.org/article/nanonets-own-benchmark-says-the-best-ai-agent-finishes-just-38-of-multi-step-enterprise-tasks"
+        }
+      ]
+    },
+    {
       "id": "2026-10-23-hybrid-tls-handshake",
       "title": "How Does a Hybrid Handshake Make TLS Quantum Safe?",
       "subtitle": "One TLS handshake, two key exchanges, and the harvest now, decrypt later problem",
@@ -193,5 +220,5 @@
       "title": "Where Does Value Accrue in the AI Stack?"
     }
   ],
-  "generated_at": "2026-10-23T04:16:39+00:00"
+  "generated_at": "2026-10-26T04:18:01+00:00"
 }
