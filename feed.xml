@@ -4,7 +4,39 @@
     <title>The Signal</title>
     <link>https://thillairaj.github.io/The-Signal-AI-Quantum/</link>
     <description>A self-updating feed of AI, quantum computing, and podcast updates.</description>
-    <lastBuildDate>Mon, 26 Oct 2026 21:59:59 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 27 Oct 2026 02:00:08 +0000</lastBuildDate>
+    <item>
+      <title>webframe: evaluated as a scraper and a sandbox</title>
+      <link>https://simonwillison.net/2026/Oct/26/webframe-evaluation/</link>
+      <guid isPermaLink="false">d4fc15392e5cfcdd</guid>
+      <description>Research: webframe: evaluated as a scraper and a sandbox webframe is a neat little project from Jeff Lindsay which lets you "run a web page like a program" - you point it at a URL or file and it executes it in a hidden headless web view and outputs console.log() to standard outpu</description>
+      <category>Simon Willison</category>
+      <pubDate>Tue, 27 Oct 2026 01:59:53 +0000</pubDate>
+    </item>
+    <item>
+      <title>GPT-6.1 Terra</title>
+      <link>https://simonwillison.net/2026/Oct/26/gpt-61-terra/</link>
+      <guid isPermaLink="false">51b6dc021077f16c</guid>
+      <description>GPT-6.1 Terra It's always interesting to note which aspects of a new model are emphasized in the release announcement. In the case of GPT-6.1 Terra, OpenAI went with visual reasoning and computer use: We’re introducing GPT-6.1 Terra , a fast, efficient model that combines detaile</description>
+      <category>Simon Willison</category>
+      <pubDate>Tue, 27 Oct 2026 01:59:53 +0000</pubDate>
+    </item>
+    <item>
+      <title>OpenAI announces three big science discoveries and a new way to work with academics</title>
+      <link>https://www.theverge.com/ai-artificial-intelligence/1019143/openai-eth-kaseya-science-math-physics</link>
+      <guid isPermaLink="false">bba291662c45fb8c</guid>
+      <description>Less than a month after its mass release of hundreds of manuscripts that it said contained solutions to long-standing mathematics questions, OpenAI is back with three more "major" discoveries in math, computer science, and physics. What's different this time is the choice to have</description>
+      <category>The Verge — AI</category>
+      <pubDate>Tue, 27 Oct 2026 01:59:52 +0000</pubDate>
+    </item>
+    <item>
+      <title>Greptile takes bug detection beyond code review with GPT-6 Astra</title>
+      <link>https://openai.com/index/greptile-code-review-codex-astra</link>
+      <guid isPermaLink="false">250e5d8f302445e7</guid>
+      <description>How Greptile uses GPT-6 Astra to test user workflows, Daybreak to strengthen security, and Codex to reduce rework.</description>
+      <category>OpenAI Blog</category>
+      <pubDate>Mon, 26 Oct 2026 22:00:00 +0000</pubDate>
+    </item>
     <item>
       <title>Quoting Jason Koebler</title>
       <link>https://simonwillison.net/2026/Oct/26/jason-koebler/</link>
@@ -452,38 +484,6 @@
       <description>Eiliko, a cute robot charm you can hang on your bag with built-in AI conversations, turned out to be a security nightmare. It told owners that "your secrets are safe with me," but hackers could easily read complete transcripts of everything we told the toy, and that was just the </description>
       <category>The Verge — AI</category>
       <pubDate>Thu, 22 Oct 2026 14:00:37 +0000</pubDate>
-    </item>
-    <item>
-      <title>Claude did not invent scorpion antivenom</title>
-      <link>https://www.theverge.com/ai-artificial-intelligence/1016443/anthropic-claude-citrini-vibecoding-scorpion-antivenom</link>
-      <guid isPermaLink="false">ff67e4725a210245</guid>
-      <description>An investment research firm wanted to prove AI could revolutionize drug development. So they teamed up with Anthropic to see whether an unreleased version of Claude could make scorpion antivenom. It couldn't. It came up with some promising starting points, but nothing close to an</description>
-      <category>The Verge — AI</category>
-      <pubDate>Thu, 22 Oct 2026 14:00:37 +0000</pubDate>
-    </item>
-    <item>
-      <title>AI agents are ready to shop. Some retailers are wary.</title>
-      <link>https://www.theverge.com/report/1015811/ai-shopping-agents-blocked-amazon-the-realreal-target-meta-muse</link>
-      <guid isPermaLink="false">c24876b37e469f74</guid>
-      <description>Using an AI agent to shop for you is a strange experience. Tech companies have marketed them as personal assistants - the democratizing of labor that ordinarily would only be available to the rich and powerful. In practice, at least for buying things, it's more like sending an an</description>
-      <category>The Verge — AI</category>
-      <pubDate>Thu, 22 Oct 2026 14:00:37 +0000</pubDate>
-    </item>
-    <item>
-      <title>1Password lets AI agents use your passwords without seeing them</title>
-      <link>https://www.theverge.com/ai-artificial-intelligence/1016399/1password-ai-agent-password-sign-in</link>
-      <guid isPermaLink="false">633b64365941d14c</guid>
-      <description>1Password is introducing a new feature that allows AI agents to sign into your accounts without actually seeing or handling your passwords. The aptly named 1Password for Agents doesn't give bots free reign to access all of your connected accounts - you'll still need to grant appr</description>
-      <category>The Verge — AI</category>
-      <pubDate>Thu, 22 Oct 2026 14:00:37 +0000</pubDate>
-    </item>
-    <item>
-      <title>What FDE means at OpenAI</title>
-      <link>https://openai.com/index/forward-deployed-engineering-means</link>
-      <guid isPermaLink="false">63c31ca523f91ccf</guid>
-      <description>What forward deployed engineering means at OpenAI</description>
-      <category>OpenAI Blog</category>
-      <pubDate>Thu, 22 Oct 2026 06:00:00 +0000</pubDate>
     </item>
   </channel>
 </rss>
