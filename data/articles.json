@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-27T18:00:12.381825+00:00",
+  "generated_at": "2026-10-27T22:00:20.847030+00:00",
   "sources_polled": [
     "The Verge \u2014 AI",
     "Simon Willison",
@@ -15,6 +15,61 @@
     "Quantum Intelligence"
   ],
   "articles": [
+    {
+      "id": "a9c65cb8282253c6",
+      "title": "Game Boy Color on My Conference Badge",
+      "link": "https://simonwillison.net/2026/Oct/27/game-boy-color-on-my-conference-badge/",
+      "source": "Simon Willison",
+      "category": "AI",
+      "summary": "Game Boy Color on My Conference Badge I'm at GitHub Universe this week and, similar to last year , the conference badge is a full-blown color screen computer. I've been hacking around with it again, and then I ran into with Steve Francia... who worked with Gemini to get a full NE",
+      "published": "2026-10-27T22:00:08.670675+00:00",
+      "audio_url": null,
+      "duration": ""
+    },
+    {
+      "id": "ba3cece69efb7bc0",
+      "title": "Researchers are getting tired of OpenAI gatekeeping its breakthroughs",
+      "link": "https://www.theverge.com/ai-artificial-intelligence/1019921/openai-breakthrough-math-computer-science-physics",
+      "source": "The Verge \u2014 AI",
+      "category": "AI",
+      "summary": "On Monday, OpenAI announced impressive breakthroughs in mathematics, computer science, and physics, along with what the company says is an evolving approach to communicating its findings. But despite its apparent course correction, researchers who spoke to The Verge are growing i",
+      "published": "2026-10-27T22:00:07.987435+00:00",
+      "audio_url": null,
+      "duration": ""
+    },
+    {
+      "id": "6849d36ab61f28e0",
+      "title": "\"No human at the helm\": Delaware plan would let AI agents run entire businesses",
+      "link": "https://arstechnica.com/tech-policy/2026/10/no-human-at-the-helm-delaware-plan-would-let-ai-agents-run-entire-businesses/",
+      "source": "Ars Technica AI",
+      "category": "AI",
+      "summary": "Owners of AI-run firms would evade liability for \"reckless\" AI, US Rep. Comer says.",
+      "published": "2026-10-27T21:50:04+00:00",
+      "audio_url": null,
+      "duration": ""
+    },
+    {
+      "id": "78aca7aaafb2150d",
+      "title": "Anthropic IPO warns its AI could blackmail people, become sentient, end humanity",
+      "link": "https://arstechnica.com/ai/2026/10/anthropic-ipo-warns-its-ai-could-blackmail-people-become-sentient-end-humanity/",
+      "source": "Ars Technica AI",
+      "category": "AI",
+      "summary": "Seven potential AI nightmares pulled from Anthropic's 93-page \"Risk Factor\" tome.",
+      "published": "2026-10-27T21:31:14+00:00",
+      "audio_url": null,
+      "duration": ""
+    },
+    {
+      "id": "a6a1f4abbd10c813",
+      "title": "Vibe genes? Natural(ish) language comes to protein, genome design software",
+      "link": "https://arstechnica.com/science/2026/10/vibe-genes-naturalish-language-comes-to-protein-genome-design-software/",
+      "source": "Ars Technica AI",
+      "category": "AI",
+      "summary": "You can apparently now tell AI tools what sort of protein you want them to make.",
+      "published": "2026-10-27T18:49:08+00:00",
+      "audio_url": null,
+      "duration": ""
+    },
     {
       "id": "0d516a24ee36aa2d",
       "title": "Apple is adding an AI chatbot to Pages, Keynote, and Numbers",
@@ -157,6 +212,17 @@
       "published": "2026-10-27T01:01:41+00:00",
       "audio_url": "https://muse.ai/podcasts/media/1248297608376725/94f09345-ad4a-4981-83dd-e3206bbf5c4e/ep-e8c440b6-96a6-4b0a-9e9c-91e4acaa576f.mp3",
       "duration": "242"
+    },
+    {
+      "id": "8cb333260a17a324",
+      "title": "How Check Point accelerates vulnerability research with Daybreak",
+      "link": "https://openai.com/index/check-point-daybreak",
+      "source": "OpenAI Blog",
+      "category": "AI",
+      "summary": "With OpenAI Daybreak, Check Point speeds up the research behind new security protections, enabling its analysts to turn vulnerability intelligence into customer defenses faster.",
+      "published": "2026-10-27T00:00:00+00:00",
+      "audio_url": null,
+      "duration": ""
     },
     {
       "id": "250e5d8f302445e7",
@@ -1409,17 +1475,6 @@
       "category": "AI",
       "summary": "Ukraine\u2019s latest drone innovation may boost bleak odds of evacuating casualties.",
       "published": "2026-10-20T18:22:54+00:00",
-      "audio_url": null,
-      "duration": ""
-    },
-    {
-      "id": "e85a4c5da2af52ae",
-      "title": "Spotify pulled 50 million AI slop and spam tracks from its recommendations",
-      "link": "https://www.theverge.com/entertainment/1014284/spotify-ai-slop-spam-songs-removed",
-      "source": "The Verge \u2014 AI",
-      "category": "AI",
-      "summary": "Spotify says it has removed more than 50 million songs considered AI-generated slop or spam from user recommendations over the past year. That's according to an announcement on Tuesday that says Spotify has also made changes to its recommendation system to highlight more music ma",
-      "published": "2026-10-20T17:59:45.324349+00:00",
       "audio_url": null,
       "duration": ""
     },
@@ -2678,17 +2733,6 @@
       "duration": ""
     },
     {
-      "id": "e0a9b95e17641063",
-      "title": "ttok 0.4",
-      "link": "https://simonwillison.net/2026/Oct/8/ttok/",
-      "source": "Simon Willison",
-      "category": "AI",
-      "summary": "Release: ttok 0.4 ttok is my CLI tool for counting tokens, using OpenAI's open source tiktoken library. It hasn't been in updated in a couple of years, but I finally fixed a Click warning, updated CI, and added a --list-models command to list available models. It works with uvx ,",
-      "published": "2026-10-09T01:59:44.968750+00:00",
-      "audio_url": null,
-      "duration": ""
-    },
-    {
       "id": "9e8de5d12da311b9",
       "title": "Tech Learning: Data Engineering & Analytics \u2014 Ep 8: Real Scenario: Designing a Star Schema",
       "link": "https://muse.ai/podcasts/media/1248297608376725/4720f1e9-8c94-4958-8367-c455f31c5edc/ep-1d45ef13-f1a0-443a-9c30-17b276ce2f30.mp3",
@@ -2843,28 +2887,6 @@
       "duration": ""
     },
     {
-      "id": "e1ff572449c9001b",
-      "title": "Mistral says \"Le Chonk\" can challenge the best AI models",
-      "link": "https://arstechnica.com/ai/2026/10/mistral-says-le-chonk-can-challenge-the-best-ai-models/",
-      "source": "Ars Technica AI",
-      "category": "AI",
-      "summary": "Mistral says Le Chonk can rival top closed models while remaining open-weight.",
-      "published": "2026-10-07T14:12:37+00:00",
-      "audio_url": null,
-      "duration": ""
-    },
-    {
-      "id": "eba1d42227099159",
-      "title": "Google rolls out improved SynthID AI content detector, now available globally",
-      "link": "https://arstechnica.com/ai/2026/10/google-rolls-out-improved-synthid-ai-content-detector-now-available-globally/",
-      "source": "Ars Technica AI",
-      "category": "AI",
-      "summary": "The new SynthID website can now identify AI content from Google, OpenAI, and more.",
-      "published": "2026-10-07T14:00:08+00:00",
-      "audio_url": null,
-      "duration": ""
-    },
-    {
       "id": "ad4e14640e358f44",
       "title": "Helping teens learn, plan, and shape the future of AI",
       "link": "https://openai.com/index/teens-learn-and-plan",
@@ -2960,28 +2982,6 @@
       "category": "AI",
       "summary": "GPT\u20116 is rolling out globally in ChatGPT with Intelligent UI, delivering faster responses with visuals and interactive experiences you can explore and use directly.",
       "published": "2026-10-07T00:00:00+00:00",
-      "audio_url": null,
-      "duration": ""
-    },
-    {
-      "id": "11669444bfa3fd7b",
-      "title": "OpenAI will watermark ChatGPT outputs by default\u2014but only in the EU",
-      "link": "https://arstechnica.com/ai/2026/10/openai-will-watermark-chatgpt-outputs-by-default-but-only-in-the-eu/",
-      "source": "Ars Technica AI",
-      "category": "AI",
-      "summary": "Like other solutions, it is not especially reliable, and it's easy to circumvent.",
-      "published": "2026-10-06T20:50:32+00:00",
-      "audio_url": null,
-      "duration": ""
-    },
-    {
-      "id": "60ef2af305e795fe",
-      "title": "Atlassian and OpenAI expand partnership to turn enterprise knowledge into action",
-      "link": "https://openai.com/index/atlassian-partnership",
-      "source": "OpenAI Blog",
-      "category": "AI",
-      "summary": "Atlassian and OpenAI are expanding their partnership to connect frontier models with enterprise knowledge and help teams plan, build, and deliver work.",
-      "published": "2026-10-06T16:00:00+00:00",
       "audio_url": null,
       "duration": ""
     },
