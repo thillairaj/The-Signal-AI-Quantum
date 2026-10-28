@@ -16,6 +16,9 @@
 :root {
   --bg: #F2F3EE; --surface: #EAEBE3; --ink: #14180F; --muted: #63695E; --border: #D7D9CD;
   --accent: #2F6B4F; --accent-dim: #B6C9BC; --gold: #B8860B; --navy: #14253F;
+  --header-bg: radial-gradient(1200px 400px at 50% -80px, #f1eee4 0%, #faf9f6 65%); --header-ink: #171b24; --header-sub: #5b6470;
+  --bar: rgba(250,249,246,.97); --bar-border: #e0dccf; --chip-bg: #ffffff; --chip-ink: #2b3542; --card: #ffffff;
+  --gold-dim: rgba(176,141,62,.4); --foot-ink: #6b7280; --foot-border: #e0dccf;
   --font-display: "Fraunces", Georgia, serif;
   --font-body: "Inter", -apple-system, "Segoe UI", sans-serif;
   --font-mono: "IBM Plex Mono", ui-monospace, monospace;
@@ -24,12 +27,18 @@
 :root[data-theme="dark"] {
   --bg: #15170F; --surface: #1D1F16; --ink: #ECEDE4; --muted: #9AA08D; --border: #33362A;
   --accent: #6FBE94; --accent-dim: #2B4838; --navy: #ECEDE4; --gold: #D9A93A;
+  --header-bg: radial-gradient(1200px 400px at 50% -80px, #454e5b 0%, #2b3038 65%); --header-ink: #ffffff; --header-sub: #aeb8c8;
+  --bar: rgba(47,53,62,.97); --bar-border: #4a5260; --chip-bg: #22272f; --chip-ink: #cfd6e2; --card: #ffffff;
+  --gold-dim: rgba(212,175,106,.4); --foot-ink: #9aa0aa; --foot-border: #4a5260;
   color-scheme: dark;
 }
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) {
     --bg: #15170F; --surface: #1D1F16; --ink: #ECEDE4; --muted: #9AA08D; --border: #33362A;
     --accent: #6FBE94; --accent-dim: #2B4838; --navy: #ECEDE4; --gold: #D9A93A;
+    --header-bg: radial-gradient(1200px 400px at 50% -80px, #454e5b 0%, #2b3038 65%); --header-ink: #ffffff; --header-sub: #aeb8c8;
+    --bar: rgba(47,53,62,.97); --bar-border: #4a5260; --chip-bg: #22272f; --chip-ink: #cfd6e2; --card: #ffffff;
+    --gold-dim: rgba(212,175,106,.4); --foot-ink: #9aa0aa; --foot-border: #4a5260;
     color-scheme: dark;
   }
 }
@@ -38,20 +47,18 @@ body { margin: 0; background: var(--bg); color: var(--ink); font-family: var(--f
 a { color: var(--accent); }
 button { font: inherit; color: inherit; }
 :focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
-.masthead { display: flex; justify-content: space-between; align-items: center; gap: .8rem 1.2rem; flex-wrap: wrap;
-  max-width: 1200px; margin: 0 auto; padding: .85rem 2rem .75rem; border-bottom: 1px solid var(--border); }
-.brand { font-family: var(--font-display); font-weight: 800; font-size: 1.6rem; color: var(--navy); text-decoration: none; letter-spacing: -.01em; }
-.brand em { font-style: italic; font-weight: 600; color: var(--gold); }
-.mast-right { display: flex; align-items: center; gap: .9rem; }
-.back { font-size: .85rem; color: var(--muted); text-decoration: none; }
-.back:hover { color: var(--ink); }
-.theme-toggle { background: none; border: 1px solid var(--border); border-radius: 999px; width: 34px; height: 34px; cursor: pointer; color: var(--muted); }
-main { max-width: 1200px; margin: 0 auto; padding: 0 2rem 4rem; }
-.intro { padding: 2.4rem 0 1.6rem; display: grid; gap: .7rem; max-width: 62rem; }
-.crumb { font-family: var(--font-mono); font-size: .78rem; color: var(--accent); margin: 0; }
-.intro h1 { font-family: var(--font-display); font-weight: 600; font-size: clamp(2rem, 4.6vw, 3.4rem); line-height: 1.05; letter-spacing: -.02em; margin: 0; color: var(--navy); }
-.intro h1 i { font-weight: 500; color: var(--gold); }
-.lead { margin: 0; font-size: 1.08rem; color: var(--muted); max-width: 46rem; }
+header { position: relative; background: var(--header-bg); color: var(--header-ink); padding: 44px 20px 34px; text-align: center; border-bottom: 3px solid var(--gold); }
+header .kicker { color: var(--gold); letter-spacing: 4px; font-size: 12px; font-weight: 700; text-transform: uppercase; }
+header h1 { margin: 12px 0 8px; font-size: 34px; letter-spacing: .5px; font-weight: 800; color: var(--header-ink); }
+header h1 .thin { font-weight: 300; color: var(--gold); }
+header p { margin: 0 auto; color: var(--header-sub); font-size: 15px; max-width: 620px; }
+.theme-toggle { position: absolute; top: 14px; right: 14px; background: var(--chip-bg); border: 1px solid var(--bar-border); border-radius: 50%; width: 32px; height: 32px; font-size: .95rem; cursor: pointer; color: var(--chip-ink); z-index: 60; line-height: 1; }
+.topicbar { position: sticky; top: 0; z-index: 50; background: var(--bar); backdrop-filter: blur(6px); border-bottom: 1px solid var(--bar-border); padding: 12px 18px; display: flex; gap: 10px; align-items: center; }
+.topicbar .navcard { display: flex; flex-direction: column; gap: 1px; justify-content: center; padding: 6px 12px; border: 1px solid var(--gold-dim); border-radius: 12px; background: var(--card); color: var(--ink); text-decoration: none; min-width: 0; transition: border-color .15s ease, transform .15s ease; }
+.topicbar .navcard:hover { border-color: var(--gold); transform: translateY(-1px); }
+.nc-dir { font-size: 9.5px; letter-spacing: 1.8px; text-transform: uppercase; opacity: .62; font-weight: 700; white-space: nowrap; }
+.nc-title { font-size: 14px; font-weight: 700; line-height: 1.25; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 200px; }
+main { max-width: 1200px; margin: 0 auto; padding: 2.2rem 2rem 4rem; }
 .cards { display: grid; gap: 1.2rem; grid-template-columns: repeat(auto-fit, minmax(min(100%, 22rem), 1fr)); max-width: 62rem; }
 .card { display: grid; gap: .45rem; background: #ECE9F7; border: 1px solid #BDB0DE; border-radius: 14px; padding: 1.3rem 1.4rem; text-decoration: none; color: var(--ink); transition: transform .15s ease, background .15s ease; }
 .card:hover { transform: translateY(-3px); background: #DCD3F0; }
@@ -62,28 +69,37 @@ main { max-width: 1200px; margin: 0 auto; padding: 0 2rem 4rem; }
 .date { font-family: var(--font-mono); font-size: .78rem; color: #63695E; }
 .open { font-size: .88rem; font-weight: 600; color: #2F6B4F; }
 .note { margin: 2rem 0 0; color: var(--muted); font-size: .95rem; max-width: 46rem; }
-footer { max-width: 1200px; margin: 0 auto; padding: 1.4rem 2rem 2.4rem; border-top: 1px solid var(--border); color: var(--muted); font-size: .85rem; }
-footer a { color: var(--ink); }
-@media (max-width: 640px) { .masthead, main, footer { padding-left: 1rem; padding-right: 1rem; } .intro { padding-top: 1.6rem; } }
+footer { text-align: center; padding: 28px 16px; color: var(--foot-ink); font-size: 13px; border-top: 1px solid var(--foot-border); margin-top: 20px; }
+footer .rule { width: 60px; height: 2px; background: var(--gold); margin: 0 auto 12px; }
+footer a { color: var(--gold); font-weight: 700; text-decoration: none; }
+.li-btn { display: inline-flex; align-items: center; gap: 10px; padding: 8px 16px 8px 9px; border-radius: 14px; background: linear-gradient(135deg, #0A66C2, #004182); color: #fff !important; text-decoration: none !important; box-shadow: 0 4px 14px rgba(10,102,194,.35); vertical-align: middle; transition: transform .15s ease, box-shadow .15s ease; }
+.li-btn:hover { transform: translateY(-1px); box-shadow: 0 8px 22px rgba(10,102,194,.45); }
+.li-btn .li-badge { display: inline-flex; align-items: center; justify-content: center; width: 30px; height: 30px; border-radius: 8px; background: rgba(255,255,255,.16); border: 1px solid rgba(255,255,255,.45); color: #fff; flex: 0 0 auto; }
+.li-btn .li-badge svg { width: 16px; height: 16px; display: block; }
+.li-txt { display: flex; flex-direction: column; line-height: 1.15; text-align: left; }
+.li-dir { font-size: 9.5px; letter-spacing: 1.8px; text-transform: uppercase; opacity: .85; font-weight: 700; }
+.li-name { font-size: 15.5px; font-weight: 800; letter-spacing: .01em; }
+@media (max-width: 640px) {
+  main { padding-left: 1rem; padding-right: 1rem; }
+  header { padding: 34px 16px 26px; }
+  header h1 { font-size: 27px; }
+  .topicbar { padding: 10px 12px; }
+}
 </style>
 </head>
 <body>
 
-<header class="masthead">
-  <a class="brand" href="../#learn-explainers" title="Back to The Signal">The <em>Signal</em></a>
-  <div class="mast-right">
-    <a class="back" href="../#learn-explainers">← Back to Learning Spaces</a>
-    <button class="theme-toggle" id="themeToggle" type="button" aria-label="Toggle dark mode">☾</button>
-  </div>
+<header>
+  <button class="theme-toggle" id="themeToggle" type="button" aria-label="Toggle dark mode">☾</button>
+  <div class="kicker">Learning Spaces · Door 03</div>
+  <h1>Interactive <span class="thin">Explainers</span></h1>
+  <p>Tap through real machines and systems, part by part, with a simple and a deeper explanation for every part.</p>
 </header>
+<div class="topicbar">
+  <a class="navcard back" href="../#learn-explainers"><span class="nc-dir">← Back to</span><span class="nc-title">Learning Spaces</span></a>
+</div>
 
 <main>
-  <section class="intro">
-    <p class="crumb">Learning Spaces · Door 03</p>
-    <h1>Interactive <i>Explainers</i></h1>
-    <p class="lead">Tap through real machines and systems, part by part, with a simple and a deeper explanation for every part.</p>
-  </section>
-
   <div class="cards">
     <a class="card" href="quantum-hardware.html">
       <span class="tag">Quantum</span>
@@ -96,9 +112,7 @@ footer a { color: var(--ink); }
   <p class="note">New explainers arrive in rotation across Quantum, AI, Cybersecurity and Cloud. Each one is checked against its sources before it joins this page.</p>
 </main>
 
-<footer>
-  Part of the Learning Spaces on <a href="../#learn-explainers">The Signal</a>. Curated by Thillai Raj Thanam Jeya Veera Raj · <a href="https://www.linkedin.com/in/thillairaj" target="_blank" rel="noopener">Follow on LinkedIn</a>
-</footer>
+<footer><div class="rule"></div>Curated by Thillai Raj Thanam Jeya Veera Raj · <a class="li-btn" href="https://www.linkedin.com/in/thillairaj" target="_blank" rel="noopener"><span class="li-badge" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.55V9h3.57v11.45z"/></svg></span><span class="li-txt"><span class="li-dir">Follow on</span><span class="li-name">LinkedIn</span></span></a></footer>
 
 <script>
 (() => {
