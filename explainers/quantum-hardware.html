@@ -136,8 +136,14 @@ main { max-width: 1200px; margin: 0 auto; padding: 0 2rem 4rem; }
 .journey-bar { height: 3px; background: var(--border); border-radius: 3px; overflow: hidden; }
 .journey-bar span { display: block; height: 100%; background: var(--accent); width: 0; transition: width .4s ease; }
 
-.parts-list { display: flex; flex-wrap: wrap; gap: .4rem; margin: .8rem .1rem .3rem; padding: 0; list-style: none; }
-.parts-list button { border: 1px solid var(--border); background: var(--bg); border-radius: 999px; padding: .28rem .7rem; font-size: .8rem; cursor: pointer; color: var(--muted); display: inline-flex; align-items: center; gap: .4rem; }
+.parts-rail-wrap { display: flex; align-items: center; gap: .35rem; margin: .8rem .1rem .3rem; }
+.parts-list { display: flex; flex-wrap: nowrap; overflow-x: auto; gap: .4rem; margin: 0; padding: .15rem .05rem; list-style: none; flex: 1; min-width: 0; scroll-snap-type: x proximity; scrollbar-width: none; -webkit-overflow-scrolling: touch; }
+.parts-list::-webkit-scrollbar { display: none; }
+.parts-list li { flex: 0 0 auto; scroll-snap-align: start; }
+.parts-rail-btn { flex: 0 0 auto; width: 34px; height: 34px; border-radius: 50%; border: 1px solid var(--gold-dim); background: var(--chip-bg); color: var(--gold); font-size: 18px; cursor: pointer; line-height: 1; padding: 0; }
+.parts-rail-btn:hover { border-color: var(--gold); }
+.parts-rail-btn:disabled { opacity: .35; cursor: default; }
+.parts-list button { border: 1px solid var(--border); background: var(--bg); border-radius: 999px; padding: .28rem .7rem; font-size: .8rem; cursor: pointer; color: var(--muted); display: inline-flex; align-items: center; gap: .4rem; white-space: nowrap; }
 .parts-list button:hover { color: var(--ink); border-color: var(--metal-edge); }
 .parts-list button[aria-current="true"] { color: var(--ink); border-color: var(--accent); background: var(--accent-dim); }
 .parts-list .t { width: 7px; height: 7px; border-radius: 50%; display: inline-block; }
@@ -582,7 +588,11 @@ footer a { color: var(--gold); font-weight: 700; text-decoration: none; }
         <p class="journey-text" id="jText"></p>
       </div>
 
-      <ul class="parts-list" id="partsList" aria-label="All parts in this view"></ul>
+      <div class="parts-rail-wrap">
+        <button class="parts-rail-btn" id="partsRailPrev" type="button" aria-label="Scroll parts list back">‹</button>
+        <ul class="parts-list" id="partsList" aria-label="All parts in this view"></ul>
+        <button class="parts-rail-btn" id="partsRailNext" type="button" aria-label="Scroll parts list forward">›</button>
+      </div>
       <p class="hint" id="hint" data-fridge="Tap a part, or pick one from the list. Use “Follow a signal” to trace one instruction down to the chip and back." data-chip="Tap a part of the chip, or pick one from the list.">Tap a part, or pick one from the list. Use “Follow a signal” to trace one instruction down to the chip and back.</p>
     </div>
 
@@ -962,7 +972,31 @@ footer a { color: var(--gold); font-weight: 700; text-decoration: none; }
       b.addEventListener('click', () => select(id, { scroll: true }));
       li.appendChild(b); list.appendChild(li);
     });
+    list.scrollLeft = 0;
+    requestAnimationFrame(updateRail);
   };
+
+  /* ---------- Parts rail ---------- */
+  const railPrev = $('partsRailPrev'), railNext = $('partsRailNext');
+  const updateRail = () => {
+    const max = list.scrollWidth - list.clientWidth;
+    const show = max > 4;
+    railPrev.style.display = show ? '' : 'none';
+    railNext.style.display = show ? '' : 'none';
+    if (!show) return;
+    railPrev.disabled = list.scrollLeft <= 2;
+    railNext.disabled = list.scrollLeft >= max - 2;
+  };
+  const scrollChipIntoView = () => {
+    const b = list.querySelector('button[aria-current="true"]'); if (!b) return;
+    const lr = list.getBoundingClientRect(), br = b.getBoundingClientRect();
+    const delta = (br.left + br.width / 2) - (lr.left + lr.width / 2);
+    if (Math.abs(delta) > 2) list.scrollBy({ left: delta, behavior: reduce() ? 'auto' : 'smooth' });
+  };
+  railPrev.addEventListener('click', () => list.scrollBy({ left: -list.clientWidth * .75, behavior: 'smooth' }));
+  railNext.addEventListener('click', () => list.scrollBy({ left: list.clientWidth * .75, behavior: 'smooth' }));
+  list.addEventListener('scroll', () => requestAnimationFrame(updateRail), { passive: true });
+  window.addEventListener('resize', updateRail);
 
   /* ---------- Selection ---------- */
   const panelBody = $('panelBody');
@@ -987,6 +1021,7 @@ footer a { color: var(--gold); font-weight: 700; text-decoration: none; }
     document.querySelectorAll('.part').forEach((g) => g.classList.toggle('is-sel', g.dataset.id === id));
     document.querySelectorAll('.art').forEach((a) => a.classList.add('dimmed'));
     list.querySelectorAll('button').forEach((b) => b.setAttribute('aria-current', String(b.dataset.id === id)));
+    scrollChipIntoView();
     render(id);
     if (!opts.noHash) history.replaceState(null, '', '#' + id);
     if (opts.scroll && window.innerWidth < 960) {
