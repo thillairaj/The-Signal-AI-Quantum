@@ -4,7 +4,55 @@
     <title>The Signal</title>
     <link>https://thillairaj.github.io/The-Signal-AI-Quantum/</link>
     <description>A self-updating feed of AI, quantum computing, and podcast updates.</description>
-    <lastBuildDate>Wed, 28 Oct 2026 10:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 28 Oct 2026 14:00:45 +0000</lastBuildDate>
+    <item>
+      <title>Quoting Terk Terkowitz</title>
+      <link>https://simonwillison.net/2026/Oct/28/terk-terkowitz/</link>
+      <guid isPermaLink="false">5d9615019ec259be</guid>
+      <description>If your work does not benefit from current AI tooling, that is a finding, not a failing. Document why, share it with your community of peers, bring it to your manager, and work to find solutions. An engineer who can explain where AI does not yet help their work is demonstrating t</description>
+      <category>Simon Willison</category>
+      <pubDate>Wed, 28 Oct 2026 14:00:26 +0000</pubDate>
+    </item>
+    <item>
+      <title>The October inflection point for vibe game development</title>
+      <link>https://simonwillison.net/2026/Oct/28/vibe-game-development/</link>
+      <guid isPermaLink="false">93b9dc1d31289278</guid>
+      <description>I've written before about how November 2025 was an inflection point for coding agents - the point where Opus 4.5 and GPT-5.1 crossed a tipping point that meant their respective coding agents became reliable daily drivers for software engineers. I think we've reached a new inflect</description>
+      <category>Simon Willison</category>
+      <pubDate>Wed, 28 Oct 2026 14:00:26 +0000</pubDate>
+    </item>
+    <item>
+      <title>Meta quietly launched an &amp;#8216;AI pet journal&amp;#8217; app</title>
+      <link>https://www.theverge.com/ai-artificial-intelligence/1020410/meta-launched-ai-pet-journal-app-waddle-world</link>
+      <guid isPermaLink="false">6da995572c9c0a77</guid>
+      <description>Meta has launched a "tamagotchi-style" pet game called Waddle World, with virtual creatures that chat with users and create doodles to illustrate conversations. According to its Apple and Play Store listings, the "16-bit pet care game" is not really a game, but "a daily journal d</description>
+      <category>The Verge — AI</category>
+      <pubDate>Wed, 28 Oct 2026 14:00:26 +0000</pubDate>
+    </item>
+    <item>
+      <title>Voters in Texas agree: They hate data centers</title>
+      <link>https://www.theverge.com/ai-artificial-intelligence/1018676/data-center-midterm-election-energy-water-texas</link>
+      <guid isPermaLink="false">8030d1b5c63548db</guid>
+      <description>Ask Texas NAACP president Gary Bledsoe what it's been like to see data center developers descend upon Austin and its surrounding suburbs and he can rattle off project after project facing opposition from locals. There's the fight in Taylor over plans to build a data center at a s</description>
+      <category>The Verge — AI</category>
+      <pubDate>Wed, 28 Oct 2026 14:00:26 +0000</pubDate>
+    </item>
+    <item>
+      <title>Microsoft's October Security Update Fixes 1,400+ Vulnerabilities, One Exploited in the Wild</title>
+      <link>https://www.infoq.com/news/2026/10/microsoft-october-2026-patch/?utm_campaign=infoq_content&amp;utm_source=infoq&amp;utm_medium=feed&amp;utm_term=Microsoft</link>
+      <guid isPermaLink="false">e03ab3ca4d6573ef</guid>
+      <description>Microsoft's latest monthly security update addresses 1415 vulnerabilities across multiple products. One vulnerability affecting Windows Shell has been exploited in the wild, while 85 are classified as critical. Affected products include Windows OS, Office, Exchange, .NET, Edge, a</description>
+      <category>InfoQ — Microsoft</category>
+      <pubDate>Wed, 28 Oct 2026 10:30:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>Legora is building the agentic operating system for legal work</title>
+      <link>https://openai.com/index/legora-agentic-operating-system-for-legal-work</link>
+      <guid isPermaLink="false">2fc8e689e413caad</guid>
+      <description>See how Legora uses OpenAI models, ChatGPT, and Codex to accelerate legal workflows, expand contract analysis, and free lawyers to focus on higher-value work.</description>
+      <category>OpenAI Blog</category>
+      <pubDate>Wed, 28 Oct 2026 09:30:00 +0000</pubDate>
+    </item>
     <item>
       <title>Game Boy Color on My Conference Badge</title>
       <link>https://simonwillison.net/2026/Oct/27/game-boy-color-on-my-conference-badge/</link>
@@ -436,54 +484,6 @@
       <description>Company says foreign-made robotic vehicles are crucial to US chip production.</description>
       <category>Ars Technica AI</category>
       <pubDate>Fri, 23 Oct 2026 17:18:31 +0000</pubDate>
-    </item>
-    <item>
-      <title>Rapidly scaling online storage to serve over 1 billion ChatGPT users (Part II)</title>
-      <link>https://openai.com/index/scaling-storage-one-billion-users-part-two</link>
-      <guid isPermaLink="false">298c8de07d18f423</guid>
-      <description>Learn how OpenAI scaled Habitat with reliable multi-tenancy, global caching, and Azure Cosmos DB to deliver 12× faster reads for ChatGPT.</description>
-      <category>OpenAI Blog</category>
-      <pubDate>Fri, 23 Oct 2026 17:00:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>Retro gaming is being overrun with AI</title>
-      <link>https://www.theverge.com/ai-artificial-intelligence/1015430/ai-retro-games-decomp-recomp-port</link>
-      <guid isPermaLink="false">fa80f1a6b4b706ff</guid>
-      <description>Retro video games are everywhere lately - especially in places where they aren't supposed to be. Halo in a web browser, Wind Waker on the iPhone, Super Smash Bros. in mixed reality. Over the past month or so, these kinds of unexpected projects have gone viral with incredible freq</description>
-      <category>The Verge — AI</category>
-      <pubDate>Fri, 23 Oct 2026 14:00:32 +0000</pubDate>
-    </item>
-    <item>
-      <title>Securing our frontier model training environment</title>
-      <link>https://openai.com/index/securing-our-frontier-model-training-environment</link>
-      <guid isPermaLink="false">48e2274fdf2ba9fe</guid>
-      <description>OpenAI explains how we strengthened containment for frontier model training and evaluation, including offline environments and high-compute red-teaming.</description>
-      <category>OpenAI Blog</category>
-      <pubDate>Fri, 23 Oct 2026 10:00:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>OpenAI and Poland’s NASK partner to advance AI safety and security</title>
-      <link>https://openai.com/index/openai-nask-ai-safety-security-partnership</link>
-      <guid isPermaLink="false">15c1f8ef7a582594</guid>
-      <description>OpenAI and Poland’s NASK are partnering on AI safety, security, and technical research to strengthen safeguards and support a more resilient digital ecosystem.</description>
-      <category>OpenAI Blog</category>
-      <pubDate>Fri, 23 Oct 2026 00:00:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>Anima helps clinics cut call waits by 75% with GPT-6 and GPT-Live</title>
-      <link>https://openai.com/index/anima</link>
-      <guid isPermaLink="false">c6099fc8919f3d54</guid>
-      <description>Anima expands what care teams can do with OpenAI models, giving them more capacity to respond to patients.</description>
-      <category>OpenAI Blog</category>
-      <pubDate>Fri, 23 Oct 2026 00:00:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>Donating Agent Skills to the Agentic AI Foundation</title>
-      <link>https://simonwillison.net/2026/Oct/22/donating-agent-skills/</link>
-      <guid isPermaLink="false">09776931f4659a5d</guid>
-      <description>Donating Agent Skills to the Agentic AI Foundation News today from Anthropic: We’re committed to keeping Agent Skills open, community-driven, and vendor-neutral. Today, we are donating the standard to the Agentic AI Foundation (AAIF) under the Linux Foundation, which we co-founde</description>
-      <category>Simon Willison</category>
-      <pubDate>Thu, 22 Oct 2026 21:59:44 +0000</pubDate>
     </item>
   </channel>
 </rss>
