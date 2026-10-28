@@ -1,0 +1,1119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Inside a superconducting quantum computer · The Signal</title>
+<meta name="description" content="An interactive, part-by-part explainer of the hardware inside a superconducting quantum computer, from the room-temperature racks down to the 10 millikelvin chip.">
+<meta property="og:title" content="Inside a superconducting quantum computer">
+<meta property="og:description" content="Tap through the dilution refrigerator, the wiring and the chip, with a simple and a deeper explanation for every part.">
+<meta property="og:type" content="article">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>❄️</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,800;1,9..144,500;1,9..144,600&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<script>
+  /* Same theme key as the main site, so the choice carries over. */
+  try { const t = localStorage.getItem('aisignal_theme'); if (t === 'dark' || t === 'light') document.documentElement.setAttribute('data-theme', t); } catch (e) {}
+</script>
+<style>
+:root {
+  --bg: #F2F3EE; --surface: #EAEBE3; --ink: #14180F; --muted: #63695E; --border: #D7D9CD;
+  --accent: #2F6B4F; --accent-dim: #B6C9BC; --gold: #B8860B; --navy: #14253F;
+  --brass: #C9A44C; --brass-edge: #8F6E22; --metal: #C7CABD; --metal-edge: #8D9184;
+  --warm: #C26A2E; --cold: #2F7FB5; --frost: #DDEBF2; --panel: #FBFBF7;
+  --font-display: "Fraunces", Georgia, serif;
+  --font-body: "Inter", -apple-system, "Segoe UI", sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, monospace;
+  color-scheme: light;
+}
+:root[data-theme="dark"] {
+  --bg: #15170F; --surface: #1D1F16; --ink: #ECEDE4; --muted: #9AA08D; --border: #33362A;
+  --accent: #6FBE94; --accent-dim: #2B4838; --navy: #ECEDE4; --gold: #D9A93A;
+  --brass: #B8933F; --brass-edge: #E0C077; --metal: #3A3D31; --metal-edge: #6B7062;
+  --warm: #E08A4E; --cold: #6CB4E2; --frost: #1E2A30; --panel: #1A1C14;
+  color-scheme: dark;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #15170F; --surface: #1D1F16; --ink: #ECEDE4; --muted: #9AA08D; --border: #33362A;
+    --accent: #6FBE94; --accent-dim: #2B4838; --navy: #ECEDE4; --gold: #D9A93A;
+    --brass: #B8933F; --brass-edge: #E0C077; --metal: #3A3D31; --metal-edge: #6B7062;
+    --warm: #E08A4E; --cold: #6CB4E2; --frost: #1E2A30; --panel: #1A1C14;
+    color-scheme: dark;
+  }
+}
+* { box-sizing: border-box; }
+html { -webkit-font-smoothing: antialiased; scroll-padding-top: env(safe-area-inset-top, 0px); }
+body { margin: 0; background: var(--bg); color: var(--ink); font-family: var(--font-body); line-height: 1.55;
+  padding-bottom: env(safe-area-inset-bottom, 0px); }
+a { color: var(--accent); }
+button { font: inherit; color: inherit; }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+.masthead { display: flex; justify-content: space-between; align-items: center; gap: .8rem 1.2rem; flex-wrap: wrap;
+  max-width: 1200px; margin: 0 auto; padding: calc(.85rem + env(safe-area-inset-top, 0px)) 2rem .75rem; border-bottom: 1px solid var(--border); }
+.brand { font-family: var(--font-display); font-weight: 800; font-size: 1.6rem; color: var(--navy); text-decoration: none; letter-spacing: -.01em; }
+.brand em { font-style: italic; font-weight: 600; color: var(--gold); }
+.mast-right { display: flex; align-items: center; gap: .9rem; }
+.back { font-size: .85rem; color: var(--muted); text-decoration: none; }
+.back:hover { color: var(--ink); }
+.theme-toggle { background: none; border: 1px solid var(--border); border-radius: 999px; width: 34px; height: 34px; cursor: pointer; color: var(--muted); }
+
+main { max-width: 1200px; margin: 0 auto; padding: 0 2rem 4rem; }
+.intro { padding: 2.4rem 0 1.6rem; display: grid; gap: .7rem; max-width: 62rem; }
+.crumb { font-family: var(--font-mono); font-size: .78rem; color: var(--accent); margin: 0; }
+.intro h1 { font-family: var(--font-display); font-weight: 600; font-size: clamp(2rem, 4.6vw, 3.4rem); line-height: 1.05; letter-spacing: -.02em; margin: 0; color: var(--navy); }
+.intro h1 i { font-weight: 500; color: var(--gold); }
+.lead { margin: 0; font-size: 1.08rem; color: var(--muted); max-width: 46rem; }
+.lead b { color: var(--ink); font-weight: 600; }
+
+.stage { display: grid; gap: 1.4rem; grid-template-columns: minmax(0, 1fr); align-items: start; }
+@media (min-width: 960px) { .stage { grid-template-columns: minmax(0, 1.25fr) minmax(330px, .9fr); } .panel { position: sticky; top: 1rem; } }
+
+.viewer { background: var(--surface); border: 1px solid var(--border); border-radius: 14px; padding: 1rem 1rem .6rem; min-width: 0; }
+.viewer-bar { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: .6rem; margin-bottom: .4rem; }
+.tabs { display: inline-flex; padding: 3px; border: 1px solid var(--border); border-radius: 999px; background: var(--bg); }
+.tab { border: 0; background: transparent; padding: .38rem .9rem; border-radius: 999px; cursor: pointer; font-size: .88rem; color: var(--muted); }
+.tab[aria-selected="true"] { background: var(--ink); color: var(--bg); font-weight: 500; }
+.journey-btn { border: 1px solid var(--accent); color: var(--accent); background: transparent; border-radius: 999px; padding: .38rem .9rem; cursor: pointer; font-size: .88rem; font-weight: 500; }
+.journey-btn[aria-pressed="true"] { background: var(--accent); color: var(--bg); }
+
+.art { position: relative; }
+.art svg { display: block; width: 100%; height: auto; }
+.art svg text { font-family: var(--font-body); }
+.svg-label { font-size: 12px; fill: var(--muted); }
+.svg-temp { font-family: var(--font-mono) !important; font-size: 12px; font-weight: 500; }
+.svg-note { font-size: 11px; fill: var(--muted); font-style: italic; }
+@media (max-width: 640px) {
+  .svg-label { font-size: 18px; }
+  .svg-temp { font-size: 17px; }
+  .svg-note { font-size: 15px; }
+}
+.part { cursor: pointer; outline: none; }
+.part .hit { fill: transparent; stroke: transparent; }
+.part .shape { transition: filter .2s ease, opacity .2s ease; }
+.part:hover .shape, .part:focus-visible .shape { filter: brightness(1.08) drop-shadow(0 0 3px var(--accent)); }
+.part.is-sel .shape { filter: drop-shadow(0 0 4px var(--accent)) drop-shadow(0 0 1px var(--accent)); }
+.part .marker { fill: var(--accent); stroke: var(--bg); stroke-width: 2; opacity: 0; transition: opacity .2s; }
+.part.is-sel .marker { opacity: 1; }
+.art.dimmed .part:not(.is-sel) .shape { opacity: .45; }
+.pulse-dot { fill: var(--accent); stroke: var(--bg); stroke-width: 2; }
+.pulse-trail { fill: none; stroke: var(--accent); stroke-width: 2.5; stroke-linecap: round; stroke-dasharray: 4 6; opacity: .0; transition: opacity .3s; }
+.journey-on .pulse-trail { opacity: .55; }
+@media (prefers-reduced-motion: no-preference) {
+  .led { animation: blink 2.4s infinite steps(2); }
+  .led:nth-child(3n) { animation-delay: .7s; } .led:nth-child(3n+1) { animation-delay: 1.3s; }
+  .pt-gas { animation: breathe 1.6s ease-in-out infinite; }
+}
+@keyframes blink { 50% { opacity: .25; } }
+@keyframes breathe { 50% { opacity: .35; } }
+
+.hint { margin: .4rem .2rem 0; font-size: .82rem; color: var(--muted); }
+.journey { display: none; margin-top: .6rem; padding: .8rem .9rem; border-radius: 10px; background: var(--bg); border: 1px solid var(--border); gap: .6rem; }
+.journey.is-on { display: grid; }
+.journey-top { display: flex; justify-content: space-between; align-items: baseline; gap: .6rem; }
+.journey-step { font-family: var(--font-mono); font-size: .78rem; color: var(--accent); }
+.journey-title { font-family: var(--font-display); font-weight: 600; font-size: 1.1rem; margin: 0; }
+.journey-text { margin: 0; color: var(--muted); font-size: .94rem; }
+.journey-nav { display: flex; gap: .5rem; }
+.btn { border: 1px solid var(--border); background: var(--bg); border-radius: 8px; padding: .4rem .8rem; cursor: pointer; font-size: .86rem; }
+.btn:hover { border-color: var(--accent); }
+.btn-primary { background: var(--accent); color: var(--bg); border-color: var(--accent); font-weight: 500; }
+.btn:disabled { opacity: .4; cursor: default; }
+.journey-bar { height: 3px; background: var(--border); border-radius: 3px; overflow: hidden; }
+.journey-bar span { display: block; height: 100%; background: var(--accent); width: 0; transition: width .4s ease; }
+
+.parts-list { display: flex; flex-wrap: wrap; gap: .4rem; margin: .8rem .1rem .3rem; padding: 0; list-style: none; }
+.parts-list button { border: 1px solid var(--border); background: var(--bg); border-radius: 999px; padding: .28rem .7rem; font-size: .8rem; cursor: pointer; color: var(--muted); display: inline-flex; align-items: center; gap: .4rem; }
+.parts-list button:hover { color: var(--ink); border-color: var(--metal-edge); }
+.parts-list button[aria-current="true"] { color: var(--ink); border-color: var(--accent); background: var(--accent-dim); }
+.parts-list .t { width: 7px; height: 7px; border-radius: 50%; display: inline-block; }
+
+.panel { background: var(--panel); border: 1px solid var(--border); border-radius: 14px; padding: 1.4rem 1.4rem 1.2rem; min-width: 0; }
+.panel-top { display: flex; justify-content: space-between; align-items: center; gap: .6rem; }
+.where { font-family: var(--font-mono); font-size: .78rem; color: var(--muted); margin: 0; }
+.temp-chip { font-family: var(--font-mono); font-size: .78rem; font-weight: 600; padding: .18rem .55rem; border-radius: 999px; color: #fff; white-space: nowrap; }
+.panel h2 { font-family: var(--font-display); font-weight: 600; font-size: clamp(1.5rem, 2.6vw, 2rem); line-height: 1.12; margin: .5rem 0 1rem; color: var(--navy); }
+.level { margin: 0 0 1rem; }
+.level h3 { font-size: .8rem; font-weight: 600; margin: 0 0 .25rem; color: var(--accent); }
+.level.deep h3 { color: var(--gold); }
+.level p { margin: 0; font-size: .98rem; }
+.level.deep p { color: var(--ink); opacity: .88; font-size: .94rem; }
+.facts { display: grid; grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); gap: .5rem; margin: 1.1rem 0 .3rem; padding: 0; list-style: none; }
+.facts li { border-top: 2px solid var(--accent-dim); padding-top: .45rem; }
+.facts b { display: block; font-family: var(--font-display); font-weight: 600; font-size: 1.25rem; line-height: 1.15; font-variant-numeric: tabular-nums; }
+.facts span { font-size: .78rem; color: var(--muted); line-height: 1.35; display: block; }
+.panel-src { font-size: .78rem; color: var(--muted); margin: .7rem 0 0; }
+.panel-actions { display: flex; flex-wrap: wrap; gap: .5rem; margin-top: 1.1rem; padding-top: 1rem; border-top: 1px solid var(--border); }
+.panel-actions .spacer { flex: 1; }
+.copied { font-size: .8rem; color: var(--accent); align-self: center; opacity: 0; transition: opacity .2s; }
+.copied.on { opacity: 1; }
+.open-chip { margin-top: .4rem; }
+@media (prefers-reduced-motion: no-preference) { .panel-body.swap { animation: swapIn .35s ease; } }
+@keyframes swapIn { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: none; } }
+
+section.block { margin-top: 3.4rem; }
+.block h2 { font-family: var(--font-display); font-weight: 600; font-size: clamp(1.5rem, 3vw, 2.1rem); margin: 0 0 .3rem; color: var(--navy); letter-spacing: -.01em; }
+.block .sub { margin: 0 0 1.4rem; color: var(--muted); max-width: 48rem; }
+
+.cold-scale { display: grid; gap: .55rem; }
+.cs-row { display: grid; grid-template-columns: 8.5rem minmax(0, 1fr) 6.5rem; gap: .8rem; align-items: center; }
+.cs-name { font-size: .9rem; }
+.cs-track { height: 12px; background: var(--surface); border-radius: 6px; position: relative; overflow: hidden; border: 1px solid var(--border); }
+.cs-fill { position: absolute; inset: 0 auto 0 0; border-radius: 6px; }
+.cs-val { font-family: var(--font-mono); font-size: .82rem; text-align: right; color: var(--muted); }
+.cs-row.space .cs-name { font-style: italic; color: var(--muted); }
+.cs-row.here .cs-name { font-weight: 600; }
+@media (max-width: 560px) { .cs-row { grid-template-columns: 6.2rem minmax(0,1fr) 4.8rem; gap: .5rem; } .cs-name { font-size: .8rem; } }
+.cs-note { font-size: .82rem; color: var(--muted); margin: .8rem 0 0; }
+
+.machines { display: grid; gap: 1.2rem 2rem; grid-template-columns: repeat(auto-fit, minmax(min(100%, 22rem), 1fr)); }
+.machine { border-top: 3px solid var(--ink); padding-top: .9rem; }
+.machine h3 { font-family: var(--font-display); font-weight: 600; font-size: 1.35rem; margin: 0; }
+.machine .maker { font-size: .85rem; color: var(--muted); margin: 0 0 .8rem; }
+.machine dl { display: grid; grid-template-columns: auto 1fr; gap: .35rem 1rem; margin: 0 0 .9rem; font-size: .92rem; }
+.machine dt { color: var(--muted); }
+.machine dd { margin: 0; font-weight: 500; font-variant-numeric: tabular-nums; }
+.machine ul { margin: 0; padding-left: 1.1rem; font-size: .92rem; }
+.machine li { margin-bottom: .35rem; }
+.machine time { font-family: var(--font-mono); font-size: .78rem; color: var(--accent); }
+
+.quiz { display: grid; gap: 1rem; max-width: 52rem; }
+.q { border: 1px solid var(--border); border-radius: 12px; padding: 1rem 1.1rem; background: var(--surface); }
+.q p.qq { margin: 0 0 .7rem; font-weight: 600; }
+.q .opts { display: grid; gap: .45rem; }
+.q .opts button { text-align: left; border: 1px solid var(--border); background: var(--bg); border-radius: 8px; padding: .55rem .75rem; cursor: pointer; font-size: .93rem; }
+.q .opts button:hover:not(:disabled) { border-color: var(--accent); }
+.q .opts button.right { border-color: var(--accent); background: var(--accent-dim); }
+.q .opts button.wrong { border-color: var(--warm); text-decoration: line-through; opacity: .75; }
+.q .opts button:disabled { cursor: default; }
+.q .why { margin: .7rem 0 0; font-size: .9rem; color: var(--muted); }
+.score { font-family: var(--font-display); font-size: 1.2rem; margin: .4rem 0 0; }
+.reset-quiz { margin-top: .4rem; }
+
+.sources ol { padding-left: 1.2rem; margin: 0; display: grid; gap: .45rem; font-size: .9rem; max-width: 60rem; }
+.sources li span { color: var(--muted); }
+.checked { font-size: .85rem; color: var(--muted); margin: 1rem 0 0; }
+footer { max-width: 1200px; margin: 0 auto; padding: 1.4rem 2rem 2.4rem; border-top: 1px solid var(--border); color: var(--muted); font-size: .85rem; }
+footer a { color: var(--ink); }
+
+@media (max-width: 640px) {
+  .masthead, main, footer { padding-left: 1rem; padding-right: 1rem; }
+  .viewer { padding: .6rem .5rem .5rem; border-radius: 12px; }
+  .panel { padding: 1.1rem 1rem 1rem; }
+  .intro { padding-top: 1.6rem; }
+}
+.sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+</style>
+</head>
+<body>
+
+<header class="masthead">
+  <a class="brand" href="../#learn-explainers" title="Back to The Signal">The <em>Signal</em></a>
+  <div class="mast-right">
+    <a class="back" href="../#learn-explainers">← Back to Learning Spaces</a>
+    <button class="theme-toggle" id="themeToggle" type="button" aria-label="Toggle dark mode">☾</button>
+  </div>
+</header>
+
+<main>
+  <section class="intro">
+    <p class="crumb">Interactive explainer · Quantum hardware</p>
+    <h1>Inside a superconducting <i>quantum computer</i></h1>
+    <p class="lead">The famous golden “chandelier” is not the computer. It is a refrigerator and its wiring, built to keep one small chip <b>colder than outer space</b> and to whisper instructions to it. Tap any part to see what it does, in simple words first and then in more depth.</p>
+  </section>
+
+  <div class="stage">
+    <div class="viewer">
+      <div class="viewer-bar">
+        <div class="tabs" role="tablist" aria-label="View">
+          <button class="tab" role="tab" id="tab-fridge" aria-selected="true" aria-controls="view-fridge" data-view="fridge">The fridge</button>
+          <button class="tab" role="tab" id="tab-chip" aria-selected="false" aria-controls="view-chip" data-view="chip">The chip</button>
+        </div>
+        <button class="journey-btn" id="journeyBtn" type="button" aria-pressed="false">Follow a signal</button>
+      </div>
+
+      <!-- FRIDGE VIEW -->
+      <div class="art" id="view-fridge" role="tabpanel" aria-labelledby="tab-fridge">
+        <svg viewBox="0 0 720 900" id="fridgeSvg" aria-label="Cutaway of a dilution refrigerator with its wiring and quantum chip">
+          <defs>
+            <linearGradient id="rail" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0" stop-color="var(--warm)"/>
+              <stop offset=".35" stop-color="#B9A15A"/>
+              <stop offset=".6" stop-color="#6FA7B8"/>
+              <stop offset="1" stop-color="var(--cold)"/>
+            </linearGradient>
+            <linearGradient id="brass" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0" stop-color="var(--brass-edge)"/>
+              <stop offset=".35" stop-color="var(--brass)"/>
+              <stop offset="1" stop-color="var(--brass-edge)"/>
+            </linearGradient>
+            <linearGradient id="can" x1="0" y1="0" x2="1" y2="0">
+              <stop offset="0" stop-color="var(--metal)"/>
+              <stop offset=".5" stop-color="var(--panel)"/>
+              <stop offset="1" stop-color="var(--metal)"/>
+            </linearGradient>
+          </defs>
+
+          <!-- Room-temperature zone -->
+          <text x="18" y="12" class="svg-note">room temperature</text>
+
+          <!-- temperature rail -->
+          <g aria-hidden="true">
+            <rect x="158" y="125" width="6" height="540" rx="3" fill="url(#rail)"/>
+            <text x="150" y="132" text-anchor="end" class="svg-temp" fill="var(--warm)">300 K</text>
+            <text x="150" y="242" text-anchor="end" class="svg-temp" fill="#A87F3A">50 K</text>
+            <text x="150" y="352" text-anchor="end" class="svg-temp" fill="#8E8F57">4 K</text>
+            <line x1="136" x2="166" y1="392" y2="392" stroke="var(--muted)" stroke-dasharray="3 3"/>
+            <text x="132" y="396" text-anchor="end" class="svg-note">space 2.7 K</text>
+            <text x="150" y="462" text-anchor="end" class="svg-temp" fill="#5F98A9">0.8 K</text>
+            <text x="150" y="562" text-anchor="end" class="svg-temp" fill="#4C8DB0">100 mK</text>
+            <text x="150" y="662" text-anchor="end" class="svg-temp" fill="var(--cold)">10 mK</text>
+          </g>
+
+          <!-- Vacuum can and shields -->
+          <g class="part" data-id="ovc" tabindex="0" role="button" aria-label="Vacuum can and radiation shields">
+            <rect class="shape" x="176" y="108" width="412" height="770" rx="22" fill="var(--metal)" fill-opacity=".18" stroke="var(--metal-edge)" stroke-width="2" stroke-dasharray="7 5"/>
+            <rect class="shape" x="190" y="236" width="384" height="632" rx="16" fill="none" stroke="var(--metal-edge)" stroke-opacity=".6" stroke-width="1.2" stroke-dasharray="3 4"/>
+            <rect class="hit" x="176" y="108" width="14" height="770"/>
+            <rect class="hit" x="574" y="108" width="14" height="770"/>
+            <rect class="hit" x="176" y="864" width="412" height="14"/>
+            <circle class="marker" cx="582" cy="800" r="6"/>
+          </g>
+
+          <!-- support rods (decor) -->
+          <g stroke="var(--metal-edge)" stroke-width="2" aria-hidden="true" opacity=".7">
+            <line x1="214" y1="134" x2="214" y2="230"/><line x1="546" y1="134" x2="546" y2="230"/>
+            <line x1="228" y1="244" x2="228" y2="340"/><line x1="532" y1="244" x2="532" y2="340"/>
+            <line x1="244" y1="354" x2="244" y2="450"/><line x1="516" y1="354" x2="516" y2="450"/>
+            <line x1="262" y1="464" x2="262" y2="550"/><line x1="498" y1="464" x2="498" y2="550"/>
+            <line x1="276" y1="564" x2="276" y2="650"/><line x1="484" y1="564" x2="484" y2="650"/>
+          </g>
+
+          <!-- Plates -->
+          <g class="part" data-id="p300" tabindex="0" role="button" aria-label="Top flange, room temperature">
+            <rect class="shape" x="190" y="118" width="380" height="14" rx="3" fill="url(#brass)"/>
+            <text x="594" y="130" class="svg-label">Top flange</text>
+            <rect class="hit" x="190" y="112" width="490" height="26"/>
+            <circle class="marker" cx="190" cy="125" r="6"/>
+          </g>
+          <g class="part" data-id="p50" tabindex="0" role="button" aria-label="50 kelvin stage">
+            <rect class="shape" x="205" y="228" width="350" height="14" rx="3" fill="url(#brass)"/>
+            <text x="594" y="240" class="svg-label">50 K stage</text>
+            <rect class="hit" x="205" y="222" width="475" height="26"/>
+            <circle class="marker" cx="205" cy="235" r="6"/>
+          </g>
+          <g class="part" data-id="p4" tabindex="0" role="button" aria-label="4 kelvin stage">
+            <rect class="shape" x="220" y="338" width="320" height="14" rx="3" fill="url(#brass)"/>
+            <text x="594" y="350" class="svg-label">4 K stage</text>
+            <rect class="hit" x="220" y="332" width="460" height="26"/>
+            <circle class="marker" cx="220" cy="345" r="6"/>
+          </g>
+          <g class="part" data-id="still" tabindex="0" role="button" aria-label="Still plate, about 0.8 kelvin">
+            <rect class="shape" x="240" y="448" width="280" height="14" rx="3" fill="url(#brass)"/>
+            <rect class="shape" x="384" y="462" width="40" height="22" rx="5" fill="var(--metal)" stroke="var(--metal-edge)"/>
+            <text x="594" y="460" class="svg-label">Still</text>
+            <rect class="hit" x="240" y="442" width="440" height="44"/>
+            <circle class="marker" cx="240" cy="455" r="6"/>
+          </g>
+          <g class="part" data-id="cold" tabindex="0" role="button" aria-label="Cold plate, about 100 millikelvin">
+            <rect class="shape" x="255" y="548" width="250" height="14" rx="3" fill="url(#brass)"/>
+            <text x="594" y="560" class="svg-label">Cold plate</text>
+            <rect class="hit" x="255" y="542" width="425" height="26"/>
+            <circle class="marker" cx="255" cy="555" r="6"/>
+          </g>
+          <g class="part" data-id="mxc" tabindex="0" role="button" aria-label="Mixing chamber plate, about 10 millikelvin">
+            <rect class="shape" x="265" y="648" width="230" height="14" rx="3" fill="url(#brass)"/>
+            <rect class="shape" x="364" y="662" width="34" height="24" rx="6" fill="var(--frost)" stroke="var(--cold)"/>
+            <text x="594" y="660" class="svg-label">Mixing chamber</text>
+            <rect class="hit" x="265" y="642" width="415" height="46"/>
+            <circle class="marker" cx="265" cy="655" r="6"/>
+          </g>
+
+          <!-- Pulse tube -->
+          <g class="part" data-id="pulse" tabindex="0" role="button" aria-label="Pulse tube cryocooler">
+            <rect class="shape" x="492" y="40" width="44" height="34" rx="6" fill="var(--metal)" stroke="var(--metal-edge)" stroke-width="1.5"/>
+            <rect class="shape" x="503" y="74" width="22" height="154" fill="var(--metal)" stroke="var(--metal-edge)"/>
+            <rect class="shape" x="507" y="242" width="14" height="96" fill="var(--metal)" stroke="var(--metal-edge)"/>
+            <rect class="pt-gas" x="509" y="80" width="10" height="140" rx="3" fill="var(--warm)" opacity=".5"/>
+            <rect class="pt-gas" x="511" y="248" width="6" height="84" rx="2" fill="var(--cold)" opacity=".5"/>
+            <text x="514" y="32" text-anchor="middle" class="svg-label">Pulse tube</text>
+            <rect class="hit" x="486" y="20" width="56" height="320"/>
+            <circle class="marker" cx="536" cy="56" r="6"/>
+          </g>
+
+          <!-- Gas handling system -->
+          <g class="part" data-id="gas" tabindex="0" role="button" aria-label="Gas handling system">
+            <rect class="shape" x="582" y="20" width="104" height="72" rx="8" fill="var(--surface)" stroke="var(--metal-edge)" stroke-width="1.5"/>
+            <circle cx="606" cy="46" r="9" fill="none" stroke="var(--muted)"/><line x1="606" y1="46" x2="612" y2="40" stroke="var(--muted)"/>
+            <circle cx="634" cy="46" r="9" fill="none" stroke="var(--muted)"/><line x1="634" y1="46" x2="628" y2="40" stroke="var(--muted)"/>
+            <rect x="652" y="36" width="22" height="22" rx="3" fill="none" stroke="var(--muted)"/>
+            <text x="634" y="80" text-anchor="middle" class="svg-label">Gas handling</text>
+            <path class="shape" d="M 600 92 C 600 108 560 104 552 118" fill="none" stroke="var(--metal-edge)" stroke-width="3"/>
+            <rect class="hit" x="550" y="16" width="140" height="104"/>
+            <circle class="marker" cx="686" cy="28" r="6"/>
+          </g>
+
+          <!-- Control rack -->
+          <g class="part" data-id="rack" tabindex="0" role="button" aria-label="Room-temperature control electronics">
+            <rect class="shape" x="18" y="20" width="132" height="78" rx="8" fill="var(--ink)" fill-opacity=".9"/>
+            <g>
+              <rect x="28" y="32" width="112" height="12" rx="2" fill="var(--bg)" fill-opacity=".12"/>
+              <rect x="28" y="50" width="112" height="12" rx="2" fill="var(--bg)" fill-opacity=".12"/>
+              <rect x="28" y="68" width="112" height="12" rx="2" fill="var(--bg)" fill-opacity=".12"/>
+              <g fill="var(--accent)">
+                <circle class="led" cx="36" cy="38" r="2.4"/><circle class="led" cx="44" cy="38" r="2.4"/><circle class="led" cx="52" cy="38" r="2.4"/>
+                <circle class="led" cx="36" cy="56" r="2.4"/><circle class="led" cx="44" cy="56" r="2.4"/><circle class="led" cx="52" cy="56" r="2.4"/>
+                <circle class="led" cx="36" cy="74" r="2.4"/><circle class="led" cx="44" cy="74" r="2.4"/><circle class="led" cx="52" cy="74" r="2.4"/>
+              </g>
+              <path d="M70 38 q6 -6 12 0 t12 0 t12 0 t12 0" fill="none" stroke="var(--gold)" stroke-width="1.5"/>
+              <path d="M70 56 q6 -6 12 0 t12 0 t12 0 t12 0" fill="none" stroke="var(--gold)" stroke-width="1.5"/>
+            </g>
+            <text x="84" y="112" text-anchor="middle" class="svg-label">Control electronics</text>
+            <rect class="hit" x="12" y="14" width="146" height="104"/>
+            <circle class="marker" cx="18" cy="20" r="6"/>
+          </g>
+
+          <!-- Decoder -->
+          <g class="part" data-id="decoder" tabindex="0" role="button" aria-label="Classical decoder">
+            <rect class="shape" x="196" y="30" width="96" height="50" rx="8" fill="var(--surface)" stroke="var(--accent)" stroke-width="1.5"/>
+            <g fill="var(--accent)" opacity=".75">
+              <rect x="206" y="40" width="8" height="8"/><rect x="218" y="40" width="8" height="8" opacity=".4"/><rect x="230" y="40" width="8" height="8"/><rect x="242" y="40" width="8" height="8" opacity=".4"/>
+              <rect x="206" y="52" width="8" height="8" opacity=".4"/><rect x="218" y="52" width="8" height="8"/><rect x="230" y="52" width="8" height="8" opacity=".4"/><rect x="242" y="52" width="8" height="8"/>
+              <rect x="206" y="64" width="8" height="8"/><rect x="218" y="64" width="8" height="8" opacity=".4"/><rect x="230" y="64" width="8" height="8"/><rect x="242" y="64" width="8" height="8" opacity=".4"/>
+            </g>
+            <text x="270" y="60" text-anchor="middle" font-size="16" fill="var(--accent)" font-family="var(--font-mono)">0/1</text>
+            <text x="244" y="22" text-anchor="middle" class="svg-label">Decoder</text>
+            <line x1="150" y1="55" x2="196" y2="55" stroke="var(--accent)" stroke-width="1.5" stroke-dasharray="3 3"/>
+            <rect class="hit" x="190" y="8" width="108" height="78"/>
+            <circle class="marker" cx="292" cy="30" r="6"/>
+          </g>
+
+          <!-- Coax drive lines with attenuators -->
+          <g class="part" data-id="coax" tabindex="0" role="button" aria-label="Coaxial wiring and attenuators">
+            <g class="shape" fill="none" stroke-width="2.2">
+              <path d="M150 84 C 230 100 290 96 298 118 L 298 236 C 300 300 304 320 304 345 C 306 420 314 430 316 455 C 320 500 322 520 322 555 C 324 600 324 630 324 655 L 324 744" stroke="var(--gold)"/>
+              <path d="M150 90 C 230 108 306 104 316 118 L 316 236 C 318 300 320 320 320 345 C 322 420 328 430 330 455 C 334 500 336 520 336 555 C 338 600 338 630 338 655 L 338 744" stroke="var(--gold)" stroke-opacity=".75"/>
+              <path d="M150 96 C 240 116 326 112 334 118 L 334 236 C 336 300 336 320 336 345 C 338 420 342 430 344 455 C 348 500 350 520 350 555 L 350 655 L 352 744" stroke="var(--gold)" stroke-opacity=".55"/>
+            </g>
+            <g class="shape" fill="var(--ink)">
+              <rect x="299" y="356" width="10" height="16" rx="2"/><rect x="315" y="356" width="10" height="16" rx="2"/><rect x="331" y="356" width="10" height="16" rx="2"/>
+              <rect x="311" y="466" width="10" height="16" rx="2"/><rect x="325" y="466" width="10" height="16" rx="2"/><rect x="339" y="466" width="10" height="16" rx="2"/>
+              <rect x="317" y="566" width="10" height="14" rx="2"/><rect x="331" y="566" width="10" height="14" rx="2"/><rect x="345" y="566" width="10" height="14" rx="2"/>
+              <rect x="319" y="668" width="10" height="14" rx="2"/><rect x="333" y="668" width="10" height="14" rx="2"/>
+            </g>
+            <rect class="hit" x="292" y="118" width="66" height="620"/>
+            <rect class="hit" x="150" y="80" width="160" height="40"/>
+            <circle class="marker" cx="298" cy="290" r="6"/>
+          </g>
+
+          <!-- Readout line (decor path, components are separate parts) -->
+          <path d="M 404 760 L 446 760 L 446 128 C 446 108 300 104 150 76" fill="none" stroke="var(--cold)" stroke-width="2.2" aria-hidden="true" opacity=".85"/>
+
+          <!-- HEMT -->
+          <g class="part" data-id="hemt" tabindex="0" role="button" aria-label="HEMT amplifier at 4 kelvin">
+            <polygon class="shape" points="434,388 458,388 446,366" fill="var(--panel)" stroke="var(--cold)" stroke-width="2"/>
+            <text x="466" y="384" class="svg-label">HEMT amp</text>
+            <rect class="hit" x="428" y="360" width="100" height="34"/>
+            <circle class="marker" cx="434" cy="377" r="6"/>
+          </g>
+
+          <!-- Quantum-limited amplifier -->
+          <g class="part" data-id="twpa" tabindex="0" role="button" aria-label="Quantum-limited amplifier">
+            <rect class="shape" x="432" y="688" width="28" height="22" rx="4" fill="var(--frost)" stroke="var(--cold)" stroke-width="2"/>
+            <path d="M436 700 q3 -5 6 0 t6 0 t6 0" fill="none" stroke="var(--cold)" stroke-width="1.4"/>
+            <text x="468" y="704" class="svg-label">TWPA</text>
+            <rect class="hit" x="426" y="684" width="90" height="30"/>
+            <circle class="marker" cx="460" cy="688" r="6"/>
+          </g>
+
+          <!-- Circulators -->
+          <g class="part" data-id="circ" tabindex="0" role="button" aria-label="Circulators and isolators">
+            <circle class="shape" cx="446" cy="732" r="10" fill="var(--panel)" stroke="var(--cold)" stroke-width="2"/>
+            <path d="M440 728 a7 7 0 1 1 1 9" fill="none" stroke="var(--cold)" stroke-width="1.4"/>
+            <circle class="shape" cx="446" cy="670" r="8" fill="var(--panel)" stroke="var(--cold)" stroke-width="2"/>
+            <path d="M441 667 a5 5 0 1 1 1 7" fill="none" stroke="var(--cold)" stroke-width="1.2"/>
+            <text x="468" y="736" class="svg-label">Circulators</text>
+            <rect class="hit" x="430" y="718" width="100" height="28"/>
+            <circle class="marker" cx="436" cy="732" r="5"/>
+          </g>
+
+          <!-- Cold finger + magnetic shield + chip -->
+          <rect x="374" y="686" width="14" height="58" fill="url(#brass)" aria-hidden="true"/>
+          <g class="part" data-id="shield" tabindex="0" role="button" aria-label="Magnetic and infrared shielding">
+            <rect class="shape" x="292" y="744" width="122" height="112" rx="14" fill="url(#can)" stroke="var(--metal-edge)" stroke-width="2"/>
+            <rect class="shape" x="302" y="756" width="102" height="90" rx="10" fill="none" stroke="var(--metal-edge)" stroke-opacity=".7" stroke-dasharray="4 3"/>
+            <text x="353" y="876" text-anchor="middle" class="svg-label">Shield can</text>
+            <rect class="hit" x="286" y="740" width="134" height="16"/>
+            <rect class="hit" x="286" y="740" width="16" height="122"/>
+            <rect class="hit" x="404" y="740" width="16" height="122"/>
+            <circle class="marker" cx="292" cy="852" r="6"/>
+          </g>
+          <g class="part" data-id="chip" tabindex="0" role="button" aria-label="Quantum processor chip">
+            <rect class="shape" x="320" y="784" width="66" height="44" rx="4" fill="var(--panel)" stroke="var(--ink)" stroke-width="1.5"/>
+            <rect class="shape" x="336" y="792" width="34" height="28" rx="2" fill="var(--navy)" fill-opacity=".85"/>
+            <g fill="var(--gold)">
+              <circle cx="344" cy="800" r="2"/><circle cx="353" cy="800" r="2"/><circle cx="362" cy="800" r="2"/>
+              <circle cx="344" cy="806" r="2"/><circle cx="353" cy="806" r="2"/><circle cx="362" cy="806" r="2"/>
+              <circle cx="344" cy="812" r="2"/><circle cx="353" cy="812" r="2"/><circle cx="362" cy="812" r="2"/>
+            </g>
+            <rect class="hit" x="316" y="780" width="74" height="52"/>
+            <circle class="marker" cx="386" cy="784" r="6"/>
+          </g>
+
+          <path id="signalPath" class="pulse-trail" d="M 150 84 C 230 100 290 96 298 118 L 298 236 C 300 300 304 320 304 345 C 306 420 314 430 316 455 C 320 500 322 520 322 555 C 324 600 324 630 324 655 L 324 790 L 353 806 L 404 760 L 446 760 L 446 128 C 446 108 300 104 150 76 L 196 55 L 244 55"/>
+          <circle id="pulseDot" class="pulse-dot" r="7" cx="-20" cy="-20"/>
+        </svg>
+      </div>
+
+      <!-- CHIP VIEW -->
+      <div class="art" id="view-chip" role="tabpanel" aria-labelledby="tab-chip" hidden>
+        <svg viewBox="0 0 700 520" id="chipSvg" aria-label="Diagram of a superconducting processor chip with a zoomed-in qubit">
+          <defs>
+            <pattern id="wafer" width="10" height="10" patternUnits="userSpaceOnUse">
+              <path d="M0 10 L10 0" stroke="var(--border)" stroke-width=".6"/>
+            </pattern>
+          </defs>
+          <!-- substrate -->
+          <rect x="30" y="40" width="400" height="400" rx="10" fill="var(--frost)" stroke="var(--metal-edge)" stroke-width="2"/>
+          <rect x="30" y="40" width="400" height="400" rx="10" fill="url(#wafer)" opacity=".7"/>
+          <text x="230" y="470" text-anchor="middle" class="svg-label">Processor chip (drawing simplified)</text>
+          <!-- feedline -->
+          <path d="M30 56 L430 56" stroke="var(--cold)" stroke-width="3" aria-hidden="true"/>
+          <!-- grid of couplers (decor) -->
+          <g stroke="var(--metal-edge)" stroke-width="3" opacity=".55" aria-hidden="true" id="couplerGrid"></g>
+          <!-- qubits (decor) -->
+          <g id="qubitGrid" aria-hidden="true"></g>
+
+          <g class="part" data-id="resonator" tabindex="0" role="button" aria-label="Readout resonator">
+            <path class="shape" d="M160 56 L160 62 L148 62 L148 70 L172 70 L172 78 L148 78 L148 86 L160 86 L160 94" fill="none" stroke="var(--cold)" stroke-width="2.6"/>
+            <rect class="hit" x="140" y="56" width="40" height="42"/>
+            <circle class="marker" cx="182" cy="74" r="6"/>
+          </g>
+
+          <g class="part" data-id="coupler" tabindex="0" role="button" aria-label="Tunable coupler">
+            <rect class="shape" x="260" y="234" width="22" height="12" rx="3" fill="var(--gold)" stroke="var(--brass-edge)"/>
+            <rect class="hit" x="256" y="226" width="30" height="28"/>
+            <circle class="marker" cx="271" cy="224" r="6"/>
+          </g>
+
+          <g class="part" data-id="transmon" tabindex="0" role="button" aria-label="Transmon qubit">
+            <g class="shape">
+              <rect x="226" y="214" width="12" height="52" rx="3" fill="var(--accent)"/>
+              <rect x="206" y="234" width="52" height="12" rx="3" fill="var(--accent)"/>
+            </g>
+            <rect class="hit" x="204" y="212" width="56" height="56"/>
+            <circle class="marker" cx="214" cy="218" r="6"/>
+          </g>
+
+          <g class="part" data-id="lines" tabindex="0" role="button" aria-label="Drive and flux lines">
+            <path class="shape" d="M30 272 L190 272 L205 246" fill="none" stroke="var(--gold)" stroke-width="2.4"/>
+            <path class="shape" d="M268 440 L268 274 L238 268" fill="none" stroke="var(--warm)" stroke-width="2.4"/>
+            <rect class="hit" x="30" y="262" width="176" height="20"/>
+            <rect class="hit" x="258" y="266" width="20" height="174"/>
+            <circle class="marker" cx="60" cy="272" r="6"/>
+          </g>
+
+          <g class="part" data-id="radiation" tabindex="0" role="button" aria-label="Radiation and quasiparticles">
+            <g class="shape">
+              <circle cx="372" cy="380" r="26" fill="var(--warm)" opacity=".18"/>
+              <circle cx="372" cy="380" r="14" fill="var(--warm)" opacity=".3"/>
+              <path d="M410 300 L374 378" stroke="var(--warm)" stroke-width="2.4" stroke-dasharray="6 4"/>
+              <path d="M372 380 l12 -4 M372 380 l-11 -6 M372 380 l2 13 M372 380 l-10 8" stroke="var(--warm)" stroke-width="2"/>
+            </g>
+            <rect class="hit" x="340" y="290" width="80" height="120"/>
+            <circle class="marker" cx="398" cy="402" r="6"/>
+          </g>
+
+          <!-- Inset: zoomed transmon & junction -->
+          <g aria-hidden="true">
+            <line x1="258" y1="216" x2="470" y2="90" stroke="var(--muted)" stroke-dasharray="3 4"/>
+            <line x1="258" y1="264" x2="470" y2="350" stroke="var(--muted)" stroke-dasharray="3 4"/>
+            <rect x="470" y="60" width="210" height="300" rx="12" fill="var(--panel)" stroke="var(--border)" stroke-width="1.5"/>
+            <text x="575" y="84" text-anchor="middle" class="svg-label">One qubit, zoomed in</text>
+            <rect x="563" y="100" width="24" height="180" rx="5" fill="var(--accent)" opacity=".9"/>
+            <rect x="490" y="178" width="170" height="24" rx="5" fill="var(--accent)" opacity=".9"/>
+            <text x="575" y="346" text-anchor="middle" class="svg-note">cross-shaped capacitor pads</text>
+          </g>
+          <g class="part" data-id="junction" tabindex="0" role="button" aria-label="Josephson junction">
+            <g class="shape">
+              <rect x="568" y="280" width="14" height="18" fill="var(--accent)" opacity=".9"/>
+              <rect x="556" y="298" width="38" height="4" fill="var(--gold)"/>
+              <rect x="568" y="302" width="14" height="18" fill="var(--metal-edge)"/>
+              <circle cx="575" cy="300" r="20" fill="none" stroke="var(--gold)" stroke-width="2"/>
+            </g>
+            <text x="604" y="304" class="svg-label">Junction</text>
+            <rect class="hit" x="550" y="276" width="110" height="50"/>
+            <circle class="marker" cx="552" cy="282" r="6"/>
+          </g>
+        </svg>
+      </div>
+
+      <div class="journey" id="journey" aria-live="polite">
+        <div class="journey-top">
+          <span class="journey-step" id="jStep">Step 1 of 10</span>
+          <div class="journey-nav">
+            <button class="btn" id="jPrev" type="button">Back</button>
+            <button class="btn btn-primary" id="jNext" type="button">Next step</button>
+          </div>
+        </div>
+        <div class="journey-bar"><span id="jBar"></span></div>
+        <h3 class="journey-title" id="jTitle"></h3>
+        <p class="journey-text" id="jText"></p>
+      </div>
+
+      <ul class="parts-list" id="partsList" aria-label="All parts in this view"></ul>
+      <p class="hint" id="hint" data-fridge="Tap a part, or pick one from the list. Use “Follow a signal” to trace one instruction down to the chip and back." data-chip="Tap a part of the chip, or pick one from the list.">Tap a part, or pick one from the list. Use “Follow a signal” to trace one instruction down to the chip and back.</p>
+    </div>
+
+    <aside class="panel" id="panel" aria-live="polite">
+      <div class="panel-body" id="panelBody">
+        <div class="panel-top">
+          <p class="where" id="pWhere"></p>
+          <span class="temp-chip" id="pTemp"></span>
+        </div>
+        <h2 id="pName"></h2>
+        <div class="level">
+          <h3>In simple words</h3>
+          <p id="pSimple"></p>
+        </div>
+        <div class="level deep">
+          <h3>Going deeper</h3>
+          <p id="pDeep"></p>
+        </div>
+        <ul class="facts" id="pFacts"></ul>
+        <p class="panel-src" id="pSrc"></p>
+        <button class="btn open-chip" id="openChip" type="button" hidden>Open the chip view</button>
+      </div>
+      <div class="panel-actions">
+        <button class="btn" id="pPrev" type="button">Previous part</button>
+        <button class="btn" id="pNext" type="button">Next part</button>
+        <span class="spacer"></span>
+        <span class="copied" id="copied">Link copied</span>
+        <button class="btn" id="pShare" type="button">Copy link to this part</button>
+      </div>
+    </aside>
+  </div>
+
+  <section class="block" id="how-cold">
+    <h2>How cold is 10 millikelvin?</h2>
+    <p class="sub">The bars use a logarithmic scale: each equal step along them is ten times colder.</p>
+    <div class="cold-scale" id="coldScale"></div>
+    <p class="cs-note">The chip runs about 270 times colder than the cosmic microwave background that fills deep space.</p>
+  </section>
+
+  <section class="block" id="machines">
+    <h2>Two machines built this way</h2>
+    <p class="sub">The fridge-and-chip design above is shared by the leading superconducting systems. Figures are as each company published them; last checked 28 October 2026.</p>
+    <div class="machines">
+      <article class="machine">
+        <h3>Willow</h3>
+        <p class="maker">Google Quantum AI</p>
+        <dl>
+          <dt>Qubits</dt><dd>105 transmons, square grid</dd>
+          <dt>Two-qubit error</dt><dd>0.33% on average</dd>
+          <dt>Qubit lifetime (T1)</dt><dd>68 µs (error-correction chip), 98 µs (benchmark chip)</dd>
+          <dt>Error-correction cycles</dt><dd>909,000 per second</dd>
+        </dl>
+        <ul>
+          <li><time>Dec 2024</time> Showed errors falling as the error-correcting code grew from 3×3 to 7×7, the “below threshold” result.</li>
+          <li><time>Oct 2025</time> Announced “Quantum Echoes”, which Google describes as the first verifiable quantum advantage on hardware.</li>
+          <li><time>Oct 2026</time> Demonstrated magic-state cultivation, cutting errors about 40-fold compared with uncultivated states (published in Science).</li>
+        </ul>
+      </article>
+      <article class="machine">
+        <h3>Nighthawk and Loon</h3>
+        <p class="maker">IBM Quantum</p>
+        <dl>
+          <dt>Nighthawk qubits</dt><dd>120, each linked to four neighbours</dd>
+          <dt>Tunable couplers</dt><dd>218</dd>
+          <dt>Circuit size</dt><dd>Up to 5,000 two-qubit gates</dd>
+          <dt>Decoding speed</dt><dd>Under 480 ns (real-time qLDPC)</dd>
+        </dl>
+        <ul>
+          <li><time>Nov 2025</time> Nighthawk introduced as IBM’s chip for showing quantum advantage by the end of 2026.</li>
+          <li><time>Nov 2025</time> Loon, an experimental processor, demonstrated the building blocks IBM needs for fault tolerance.</li>
+          <li><time>Roadmap</time> A large-scale, fault-tolerant system called Starling targeted for 2029; chip wafers now made in a 300 mm fab in Albany, New York.</li>
+        </ul>
+      </article>
+    </div>
+  </section>
+
+  <section class="block" id="quiz">
+    <h2>Check yourself</h2>
+    <p class="sub">Five questions on what you just explored.</p>
+    <div class="quiz" id="quizBox"></div>
+    <p class="score" id="score" hidden></p>
+    <button class="btn reset-quiz" id="resetQuiz" type="button" hidden>Try again</button>
+  </section>
+
+  <section class="block sources" id="sources">
+    <h2>Sources</h2>
+    <p class="sub">Temperatures and component values are typical ranges; individual fridges and labs differ.</p>
+    <ol>
+      <li><a href="https://quantumai.google/static/site-assets/downloads/willow-spec-sheet.pdf" target="_blank" rel="noopener">Willow spec sheet</a> <span>Google Quantum AI, Dec 2024</span></li>
+      <li><a href="https://blog.google/technology/research/google-willow-quantum-chip/" target="_blank" rel="noopener">Meet Willow, our state-of-the-art quantum chip</a> <span>Google, Dec 2024</span></li>
+      <li><a href="https://blog.google/innovation-and-ai/models-and-research/quantum-computing/magic-state-cultivation-quantum-computing/" target="_blank" rel="noopener">Bringing the magic: magic state cultivation on Willow</a> <span>Google, Oct 2026</span></li>
+      <li><a href="https://blog.google/technology/research/quantum-echoes-willow-verifiable-quantum-advantage/" target="_blank" rel="noopener">Our Quantum Echoes algorithm</a> <span>Google, Oct 2025</span></li>
+      <li><a href="https://research.google/blog/resolving-high-energy-impacts-on-quantum-processors/" target="_blank" rel="noopener">Resolving high-energy impacts on quantum processors</a> <span>Google Research, 2022; paper in Nature Physics 18, 107 (2022)</span></li>
+      <li><a href="https://arxiv.org/abs/1904.06560" target="_blank" rel="noopener">A quantum engineer’s guide to superconducting qubits</a> <span>Krantz et al., Applied Physics Reviews 6, 021318 (2019)</span></li>
+      <li><a href="https://insidehpc.com/2025/11/ibm-announces-quantum-processors-software-and-algorithms-expects-to-deliver-quantum-advantage-in-end-of-2026/" target="_blank" rel="noopener">IBM announces quantum processors, software and algorithms</a> <span>IBM announcement, Nov 2025</span></li>
+      <li><a href="https://rfessentials.com/resources/rf-glossary/cold-plate/" target="_blank" rel="noopener">Dilution refrigerator stage temperatures and cooling power</a> <span>RF Essentials engineering glossary</span></li>
+      <li><a href="https://rfessentials.com/industry-news/quantum-computing/qubit-readout-chains/" target="_blank" rel="noopener">Qubit readout chains</a> <span>RF Essentials</span></li>
+      <li><a href="https://arxiv.org/pdf/2310.08612" target="_blank" rel="noopener">Example attenuation plan for cryogenic drive lines</a> <span>arXiv:2310.08612 (thesis)</span></li>
+      <li><a href="https://arxiv.org/pdf/2601.11303" target="_blank" rel="noopener">Example readout chain: circulators, TWPA, 4 K HEMT</a> <span>arXiv:2601.11303</span></li>
+      <li><a href="https://www.pulse.bot/science/video/what-is-a-dilution-fridge-47b10187-643b-49ab-8511-6d98cf36fa6d" target="_blank" rel="noopener">What is a dilution fridge?</a> <span>Fermilab video summary</span></li>
+    </ol>
+    <p class="checked">Researched and compiled for The Signal. Figures last checked 28 October 2026.</p>
+  </section>
+</main>
+
+<footer>
+  Part of the Learning Spaces on <a href="../#learn-explainers">The Signal</a>. Curated by Thillai Raj Thanam Jeya Veera Raj · <a href="https://www.linkedin.com/in/thillairaj" target="_blank" rel="noopener">Follow on LinkedIn</a>
+</footer>
+
+<script>
+(() => {
+  /* ---------- Content ---------- */
+  const T = { room: '#C26A2E', k50: '#A87F3A', k4: '#8E8F57', still: '#5F98A9', cold: '#4C8DB0', mxc: '#2F7FB5' };
+  const PARTS = {
+    rack: {
+      view: 'fridge', name: 'Control electronics', where: 'Room temperature, beside the fridge', temp: '300 K', tc: T.room,
+      simple: 'Racks of ordinary electronics compose the “music” the qubits follow: microwave pulses only billionths of a second long. The same racks listen for each qubit’s faint reply and turn it into a 0 or a 1.',
+      deep: 'Waveform generators and mixers shape pulses at the qubits’ own frequencies, typically 4–8 GHz, while fast digital logic (FPGAs) times every pulse and digitises the returning readout tones. Each qubit needs its own drive line and often a tuning line, so the cabling grows with every qubit added. That is why engineers are working to move control electronics into the fridge itself.',
+      facts: [['4–8 GHz', 'typical qubit frequencies'], ['Nanoseconds', 'length of a single pulse']],
+      src: 'Krantz et al. 2019; RF Essentials'
+    },
+    decoder: {
+      view: 'fridge', name: 'Classical decoder', where: 'Room temperature', temp: '300 K', tc: T.room,
+      simple: 'Error correction constantly checks the qubits for mistakes. A fast ordinary computer reads those checks and works out which error happened, before the next round arrives.',
+      deep: 'In an error-correcting code, “syndrome” measurements report symptoms, not the error itself. The decoder infers the most likely error from the pattern of symptoms. It must keep pace in real time, or a backlog builds up and the computation stalls. Willow ran a surface-code cycle every 1.1 µs; IBM reported real-time decoding of its qLDPC codes in under 480 ns.',
+      facts: [['909,000', 'error-correction cycles per second on Willow'], ['< 480 ns', 'IBM real-time decoding latency']],
+      src: 'Google Willow spec sheet; IBM, Nov 2025'
+    },
+    gas: {
+      view: 'fridge', name: 'Gas handling system', where: 'Room temperature, beside the fridge', temp: '300 K', tc: T.room,
+      simple: 'A cabinet of pumps and valves that keeps a special mix of helium-3 and helium-4 flowing in a sealed loop. That flowing mixture is what reaches the final, coldest temperatures.',
+      deep: 'Helium-3 is a rare isotope, so the mixture is precious and never vented. Pumps draw helium-3 vapour off the still, push it back to room temperature, then return it, pre-cooled, into the fridge. Once cold, a fridge typically runs without stopping for one to twelve months; a power or cooling-water failure ends the experiment and starts a slow warm-up.',
+      facts: [['He-3 + He-4', 'the two helium isotopes used'], ['1–12 months', 'typical continuous run']],
+      src: 'Fermilab; US patent 11,913,714'
+    },
+    pulse: {
+      view: 'fridge', name: 'Pulse tube cryocooler', where: 'From the top flange down to 4 K', temp: '→ 4 K', tc: T.k4,
+      simple: 'The fridge’s first cooling engine. It pushes helium gas back and forth in a tube and, with no liquid helium bath needed, pulls the upper stages down to about 50 K and then 4 K.',
+      deep: 'A two-stage pulse tube cools the 50 K plate and the 4 K plate. Fridges built this way are called “dry” because they use a closed gas cycle rather than buckets of liquid helium. It handles the heaviest heat load: tens of watts at 50 K but only about one watt at 4 K. Below 4 K a completely different trick, the dilution cycle, takes over.',
+      facts: [['30–40 W', 'cooling power at 50 K'], ['≈ 1 W', 'cooling power at 4 K']],
+      src: 'RF Essentials; US patent 11,913,714'
+    },
+    ovc: {
+      view: 'fridge', name: 'Vacuum can and shields', where: 'Around the whole fridge', temp: '300 K → 4 K', tc: T.k50,
+      simple: 'The shiny outer cylinder in photos is a giant vacuum flask. Pumping out the air stops heat leaking in, and nested shields inside block heat radiation, like the layers of a thermos.',
+      deep: 'The outer vacuum can is pumped to a high vacuum, and each cold stage carries its own radiation shield, so every layer only “sees” a slightly warmer neighbour. The famous gold colour is plating on copper: gold reflects most heat radiation, with an emissivity of only 1–2%. The dashed outlines in this drawing show where the cans sit; in photos they are usually removed to reveal the chandelier.',
+      facts: [['1–2%', 'emissivity of gold plating'], ['Vacuum', 'stops heat flowing through air']],
+      src: 'Fermilab'
+    },
+    p300: {
+      view: 'fridge', name: 'Top flange', where: 'Stage 1 of 6', temp: '300 K', tc: T.room,
+      simple: 'The lid of the fridge, at room temperature. Everything hangs from it, and every cable, pump line and sensor enters the cold world through sealed ports here.',
+      deep: 'The flange carries hermetic feedthroughs for hundreds of coaxial cables, the helium lines and the pulse tube. Its plates below hang from thin supports made of materials that conduct heat poorly, so the cold stages are held up without letting much warmth trickle down.',
+      facts: [['300 K', 'about 27 °C'], ['Hundreds', 'of cable feedthroughs on large systems']],
+      src: 'Hardware Secrets; US patent 11,913,714'
+    },
+    p50: {
+      view: 'fridge', name: '50 K stage', where: 'Stage 2 of 6', temp: '50 K', tc: T.k50,
+      simple: 'The first step down, about −223 °C. It catches most of the heat that flows down the wires and supports, so the colder stages below don’t have to.',
+      deep: 'Cooled by the pulse tube’s first stage, this plate has by far the most cooling power in the fridge. Every cable is clamped (“heat-sunk”) here so warmth from room temperature is dumped where removing it is cheap. The outer radiation shield and infrared filters hang from this plate.',
+      facts: [['50 K', 'about −223 °C'], ['30–40 W', 'cooling power']],
+      src: 'RF Essentials'
+    },
+    p4: {
+      view: 'fridge', name: '4 K stage', where: 'Stage 3 of 6', temp: '4 K', tc: T.k4,
+      simple: 'Around the temperature of liquid helium. Here the instructions going down are deliberately weakened, and the qubits’ replies coming up get their main boost.',
+      deep: 'The pulse tube’s second stage holds this plate near 4 K with roughly one watt of cooling. Drive lines usually get about 20 dB of attenuation here, and the HEMT amplifier for readout is mounted here. Below this plate many labs switch to superconducting niobium-titanium cables, which carry signals with almost no loss and little heat.',
+      facts: [['≈ 1 W', 'cooling power'], ['20 dB', 'typical attenuation on each drive line']],
+      src: 'RF Essentials; arXiv:2310.08612'
+    },
+    still: {
+      view: 'fridge', name: 'Still', where: 'Stage 4 of 6', temp: '0.8 K', tc: T.still,
+      simple: 'Where the dilution trick begins. Helium-3 is gently evaporated off the helium mixture here and pumped away, and that evaporation drags this plate below one kelvin.',
+      deep: 'The still sits at about 0.7–0.9 K with tens of milliwatts of cooling power. Pumping helium-3 vapour from the still is the engine of the whole dilution cycle: it keeps pulling helium-3 up from the mixing chamber below. More attenuators and filters are mounted on this plate.',
+      facts: [['0.7–0.9 K', 'operating temperature'], ['20–30 mW', 'cooling power']],
+      src: 'RF Essentials'
+    },
+    cold: {
+      view: 'fridge', name: 'Cold plate', where: 'Stage 5 of 6', temp: '100 mK', tc: T.cold,
+      simple: 'A last checkpoint before the coldest stage. It soaks up remaining heat from the wires so as little as possible reaches the chip.',
+      deep: 'Held at about 50–100 mK by the cold mixture returning through heat exchangers, this plate has only hundreds of microwatts of cooling. It is used to thermalise cables and mount further attenuators and DC filters, intercepting heat that the tiny cooling power of the mixing chamber could not handle.',
+      facts: [['50–100 mK', 'operating temperature'], ['200–500 µW', 'cooling power']],
+      src: 'RF Essentials'
+    },
+    mxc: {
+      view: 'fridge', name: 'Mixing chamber', where: 'Stage 6 of 6, the coldest', temp: '10 mK', tc: T.mxc,
+      simple: 'The coldest place in the machine, about ten thousandths of a degree above absolute zero and far colder than deep space. The quantum chip is bolted beneath this plate.',
+      deep: 'Inside, the helium mixture splits into a helium-3-rich layer and a helium-4-rich layer. Forcing helium-3 atoms across the boundary absorbs heat, much as evaporation cools your skin. Base temperature is about 7–15 mK, or 10–20 mK with wiring installed, and cooling power is only tens of microwatts, so every wire counts. It has to be this cold: at 5 GHz, stray thermal microwave photons only become rare below roughly 50 mK.',
+      facts: [['10–20 mK', 'in operation'], ['10–25 µW', 'cooling power at 20 mK']],
+      src: 'RF Essentials; Hardware Secrets'
+    },
+    coax: {
+      view: 'fridge', name: 'Coax lines and attenuators', where: 'Running through every stage', temp: '300 K → 10 mK', tc: T.k50,
+      simple: 'Bundles of thin cables carry instructions down to the chip. At several stages the signal is deliberately made weaker, because that also strips out the heat “noise” it picked up at room temperature.',
+      deep: 'A typical drive line passes through attenuators totalling around 60 dB, such as 20 dB at 4 K, 20 dB at the still and more below. The pulse arrives a million times weaker but far quieter. Above 4 K the cables are stainless steel, which conducts little heat; below, superconducting NbTi carries signals almost without loss. A few hundred qubits can need several hundred coax lines, which is the part of the design that scales worst.',
+      facts: [['≈ 60 dB', 'total attenuation on many drive lines'], ['Hundreds', 'of coax lines for a few hundred qubits']],
+      src: 'arXiv:2310.08612; RF Essentials; Hardware Secrets'
+    },
+    hemt: {
+      view: 'fridge', name: 'HEMT amplifier', where: 'Mounted at the 4 K stage', temp: '4 K', tc: T.k4,
+      simple: 'The second amplifier on the way out. It is a rugged transistor amplifier that boosts the qubits’ replies enough to survive the long trip back to room temperature.',
+      deep: 'A high-electron-mobility transistor gives about 35–40 dB of gain across a wide band. Its added noise is several kelvin, around 20 times the quantum limit, which is why it cannot be the first amplifier in line. Because the quantum-limited amplifier below has already boosted the signal, the HEMT’s noise matters much less.',
+      facts: [['35–40 dB', 'gain'], ['≈ 20×', 'the quantum noise limit']],
+      src: 'RF Essentials; arXiv:2601.11303'
+    },
+    twpa: {
+      view: 'fridge', name: 'Quantum-limited amplifier', where: 'Next to the chip, at the mixing chamber', temp: '10 mK', tc: T.mxc,
+      simple: 'A qubit’s reply is only a handful of microwave photons. This superconducting amplifier boosts it while adding almost no noise of its own, the least that physics allows.',
+      deep: 'Josephson parametric amplifiers use the same junctions as the qubits. A travelling-wave version (TWPA) gives around 20 dB of gain over several gigahertz, so one amplifier can serve many qubits whose readout signals share a single line at different frequencies. Its near-zero added noise is what makes fast, single-shot readout reliable enough for error correction.',
+      facts: [['≈ 20 dB', 'gain'], ['GHz-wide', 'bandwidth, for many qubits at once']],
+      src: 'Krantz et al. 2019; RF Essentials'
+    },
+    circ: {
+      view: 'fridge', name: 'Circulators and isolators', where: 'Next to the chip, at the mixing chamber', temp: '10 mK', tc: T.mxc,
+      simple: 'One-way valves for microwaves. They let the qubit’s reply travel out to the amplifiers but stop noise from the amplifiers travelling back down to the qubits.',
+      deep: 'These ferrite devices use permanent magnets to send signals around in only one direction, with about 20 dB of isolation. They are bulky, and their magnets must be kept away from the qubits, whose superconducting circuits are sensitive to stray fields. Replacing them with on-chip alternatives is an active research area.',
+      facts: [['≈ 20 dB', 'isolation'], ['1 way', 'signal flow only']],
+      src: 'RF Essentials; arXiv:2006.01918'
+    },
+    shield: {
+      view: 'fridge', name: 'Magnetic and infrared shielding', where: 'Around the chip', temp: '10 mK', tc: T.mxc,
+      simple: 'The chip sits inside nested cans that keep out stray magnetic fields and stray heat light. Even the Earth’s magnetic field would disturb the qubits.',
+      deep: 'Outer cans of high-permeability alloy guide external magnetic fields around the chip, while inner superconducting cans expel fields entirely (the Meissner effect). Blackened, infrared-absorbing surfaces and filters stop stray radiation, which can break the electron pairs that carry supercurrent and create disruptive “quasiparticles”.',
+      facts: [['2 layers', 'magnetic + superconducting cans'], ['Meissner', 'effect expels magnetic fields']],
+      src: 'RF Essentials; Google Research 2022'
+    },
+    chip: {
+      view: 'fridge', name: 'Quantum processor', where: 'Inside the shield, under the mixing chamber', temp: '10 mK', tc: T.mxc,
+      simple: 'The actual computer: a chip somewhere between a fingernail and a postage stamp in size. Everything above it exists to keep it cold, quiet and talking to the outside world.',
+      deep: 'The chip is a thin patterned film of superconducting metal, such as aluminium, on a silicon or sapphire base, mounted in a package that carries signals in and out. Google’s Willow has 105 transmon qubits, each linked to about 3.5 neighbours on average; IBM’s Nighthawk has 120 qubits joined by 218 tunable couplers. Open the chip view to see what is on it.',
+      facts: [['105', 'qubits on Google Willow'], ['120', 'qubits on IBM Nighthawk']],
+      src: 'Google Willow spec sheet; IBM, Nov 2025', chipLink: true
+    },
+
+    transmon: {
+      view: 'chip', name: 'Transmon qubit', where: 'On the chip', temp: '10 mK', tc: T.mxc,
+      simple: 'An “artificial atom” made of a tiny superconducting circuit. Its two lowest energy states act as 0 and 1, and it can also sit in a mix of both.',
+      deep: 'A transmon is a Josephson junction connected to a large capacitor, here the cross-shaped pads. The junction makes the energy levels unevenly spaced, so a microwave tuned to the 0↔1 gap does not accidentally push the qubit into higher levels. Willow’s qubits keep their excitation (T1) for 68 µs on average on its error-correction chip and 98 µs on its benchmark chip.',
+      facts: [['68–98 µs', 'average T1 on Willow'], ['0.035%', 'single-qubit gate error on Willow']],
+      src: 'Google Willow spec sheet; Krantz et al. 2019'
+    },
+    junction: {
+      view: 'chip', name: 'Josephson junction', where: 'Inside each qubit', temp: '10 mK', tc: T.mxc,
+      simple: 'The heart of every qubit: two layers of superconductor separated by an insulating barrier only a few atoms thick. Pairs of electrons tunnel straight through the barrier.',
+      deep: 'Usually aluminium–aluminium oxide–aluminium, the junction behaves like an inductor that loses no energy but responds nonlinearly to current. Without that nonlinearity the circuit would be a plain oscillator with evenly spaced levels and could not be controlled as a qubit. Junction size sets the qubit’s frequency, so fabrication precision matters enormously.',
+      facts: [['Nanometres', 'barrier thickness'], ['Zero', 'electrical resistance below its critical current']],
+      src: 'Krantz et al. 2019; Google Research 2022'
+    },
+    coupler: {
+      view: 'chip', name: 'Tunable coupler', where: 'Between neighbouring qubits', temp: '10 mK', tc: T.mxc,
+      simple: 'A switch between two neighbouring qubits. Turned on, it lets them interact and become entangled; turned off, it keeps them from disturbing each other.',
+      deep: 'Two-qubit gates are made by briefly switching on the coupling. Fast, clean switching is a big reason error rates have fallen. Willow’s average two-qubit (CZ) gate error is 0.33%, with qubits linked to about 3.5 neighbours on average; IBM’s Nighthawk uses 218 tunable couplers so each of its 120 qubits reaches four neighbours.',
+      facts: [['0.33%', 'two-qubit gate error on Willow'], ['218', 'couplers on IBM Nighthawk']],
+      src: 'Google Willow spec sheet; IBM, Nov 2025'
+    },
+    resonator: {
+      view: 'chip', name: 'Readout resonator', where: 'Beside each qubit', temp: '10 mK', tc: T.mxc,
+      simple: 'A tiny microwave “bell” next to each qubit. Its pitch shifts slightly depending on whether the qubit is 0 or 1, so ringing it tells you the answer without touching the qubit directly.',
+      deep: 'This is called dispersive readout. Each resonator, a meandering superconducting line, has its own frequency, so many resonators can share one feedline and be read at the same time. The reply then travels to the circulators and amplifiers in the fridge. Willow’s average measurement error is 0.77%.',
+      facts: [['0.77%', 'measurement error on Willow'], ['Many', 'qubits read on one shared line']],
+      src: 'Google Willow spec sheet; Krantz et al. 2019'
+    },
+    lines: {
+      view: 'chip', name: 'Drive and flux lines', where: 'From the chip’s edge to each qubit', temp: '10 mK', tc: T.mxc,
+      simple: 'The control wires on the chip. The drive line sends microwave pulses that rotate a qubit’s state; the flux line nudges its frequency up or down.',
+      deep: 'A drive pulse tuned to the qubit frequency performs single-qubit gates; its length and phase set the rotation. Flux lines carry small currents that tune the qubit or coupler, which is how two-qubit gates are timed. Keeping these lines from leaking signal into neighbouring qubits (crosstalk) is a constant design challenge.',
+      facts: [['Drive', 'rotates the qubit state'], ['Flux', 'tunes the frequency']],
+      src: 'Krantz et al. 2019'
+    },
+    radiation: {
+      view: 'chip', name: 'Radiation and quasiparticles', where: 'The hidden enemy', temp: 'Any time', tc: T.room,
+      simple: 'Cosmic rays and natural radioactivity pass through everything, including the chip. A single hit can briefly scramble many qubits at once.',
+      deep: 'A high-energy particle deposits energy in the substrate as vibrations (phonons). These break up the paired electrons in the superconductor into “quasiparticles”, raising error rates across the whole chip until it settles. Google measured these chip-wide bursts in 2021; because so many qubits fail together, ordinary error correction cannot fix them. Mitigations include chip designs that trap quasiparticles and shielded or underground labs.',
+      facts: [['Chip-wide', 'correlated error bursts'], ['2021', 'Google study in Nature Physics']],
+      src: 'Google Research 2022; Nature Physics 18, 107'
+    }
+  };
+
+  const ORDER = {
+    fridge: ['rack', 'decoder', 'gas', 'pulse', 'ovc', 'p300', 'p50', 'p4', 'still', 'cold', 'mxc', 'coax', 'hemt', 'twpa', 'circ', 'shield', 'chip'],
+    chip: ['transmon', 'junction', 'coupler', 'resonator', 'lines', 'radiation']
+  };
+
+  const JOURNEY = [
+    { part: 'rack', at: [150, 84], title: 'A pulse is born', text: 'The control rack shapes a microwave pulse at the qubit’s frequency, a few billionths of a second long. This is one instruction, such as “rotate qubit 12 halfway”.' },
+    { part: 'p300', at: [298, 125], title: 'Into the fridge', text: 'The pulse enters through a sealed port in the top flange and starts its trip down a thin coaxial cable.' },
+    { part: 'coax', at: [304, 360], title: 'Made quieter at 4 K', text: 'An attenuator cuts the pulse’s strength about 100-fold. That also removes most of the thermal noise it carried from room temperature.' },
+    { part: 'still', at: [322, 555], title: 'Quieter still', text: 'More attenuators at the still and cold plate strip out what noise is left. By now the pulse is about a million times weaker, but very clean.' },
+    { part: 'chip', at: [324, 790], title: 'The qubit turns', text: 'Inside the shield can, the pulse reaches its qubit through the drive line and rotates the qubit’s state.' },
+    { part: 'chip', at: [404, 760], title: 'Asking for the answer', text: 'To read the qubit, a tone is sent to its readout resonator. The tone comes back slightly changed depending on whether the qubit is 0 or 1.' },
+    { part: 'twpa', at: [446, 700], title: 'First boost, almost no noise', text: 'Circulators route the faint reply to the quantum-limited amplifier, which boosts it about 100-fold while adding almost no noise.' },
+    { part: 'hemt', at: [446, 378], title: 'Second boost at 4 K', text: 'The HEMT amplifier adds another large boost so the signal can survive the trip back up to room temperature.' },
+    { part: 'rack', at: [150, 76], title: 'Back to the rack', text: 'The rack digitises the returning tone and decides: this qubit read 0 or 1.' },
+    { part: 'decoder', at: [244, 55], title: 'The decoder decides', text: 'For error correction, results from many qubits feed the decoder, which works out what went wrong in time for the next round, about a million times a second.' }
+  ];
+
+  const COLD = [
+    { name: 'Room temperature', v: 300, label: '300 K' },
+    { name: 'Liquid nitrogen', v: 77, label: '77 K' },
+    { name: '50 K stage', v: 50, label: '50 K' },
+    { name: 'Liquid helium, 4 K stage', v: 4, label: '4 K' },
+    { name: 'Deep space', v: 2.7, label: '2.7 K', cls: 'space' },
+    { name: 'Still', v: 0.8, label: '0.8 K' },
+    { name: 'Cold plate', v: 0.1, label: '100 mK' },
+    { name: 'Mixing chamber and chip', v: 0.01, label: '10 mK', cls: 'here' }
+  ];
+
+  const QUIZ = [
+    { q: 'Where in the fridge is the quantum chip mounted?', a: ['On the top flange', 'At the 4 K stage', 'Below the mixing chamber, around 10 mK', 'Inside the pulse tube'], c: 2, why: 'The chip hangs under the mixing chamber, the coldest stage, inside a shield can.' },
+    { q: 'Why are drive signals deliberately weakened on the way down?', a: ['To save electricity', 'To strip out thermal noise picked up at warmer stages', 'Because qubits prefer weak signals for speed', 'To stop the cables melting'], c: 1, why: 'Each attenuator absorbs room-temperature noise and re-emits only the much smaller noise of its own cold stage.' },
+    { q: 'What turns a transmon into a qubit rather than a plain oscillator?', a: ['The silicon base', 'The Josephson junction’s nonlinearity', 'The gold plating', 'The readout resonator'], c: 1, why: 'The junction makes the energy levels unevenly spaced, so the 0↔1 transition can be driven on its own.' },
+    { q: 'Which amplifier comes first when reading a qubit?', a: ['The HEMT at 4 K', 'An amplifier in the control rack', 'A quantum-limited amplifier such as a TWPA', 'There is no amplifier'], c: 2, why: 'The first amplifier sets the noise floor, so it must add almost no noise. The HEMT follows at 4 K.' },
+    { q: 'The golden “chandelier” in photos is mostly…', a: ['The processor itself', 'Cooling stages and wiring', 'Decoration for press photos', 'Memory for the qubits'], c: 1, why: 'The chandelier is the refrigerator and its wiring; the processor is a small chip at the bottom.' }
+  ];
+
+  /* ---------- Elements ---------- */
+  const $ = (id) => document.getElementById(id);
+  const reduce = () => matchMedia('(prefers-reduced-motion: reduce)').matches;
+  let view = 'fridge';
+  let current = null;
+
+  /* ---------- Theme ---------- */
+  const themeBtn = $('themeToggle');
+  const isDark = () => (document.documentElement.getAttribute('data-theme') || (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light')) === 'dark';
+  const syncThemeBtn = () => { themeBtn.textContent = isDark() ? '☀' : '☾'; };
+  syncThemeBtn();
+  themeBtn.addEventListener('click', () => {
+    const next = isDark() ? 'light' : 'dark';
+    document.documentElement.setAttribute('data-theme', next);
+    try { localStorage.setItem('aisignal_theme', next); } catch (e) {}
+    syncThemeBtn();
+  });
+
+  /* ---------- Chip grid (decor) ---------- */
+  (() => {
+    const ns = 'http://www.w3.org/2000/svg';
+    const cols = [88, 160, 232, 304, 376], rows = [112, 176, 240, 304, 368];
+    const qg = $('qubitGrid'), cg = $('couplerGrid');
+    rows.forEach((y) => { const l = document.createElementNS(ns, 'line'); l.setAttribute('x1', 88); l.setAttribute('x2', 376); l.setAttribute('y1', y); l.setAttribute('y2', y); cg.appendChild(l); });
+    cols.forEach((x) => { const l = document.createElementNS(ns, 'line'); l.setAttribute('x1', x); l.setAttribute('x2', x); l.setAttribute('y1', 112); l.setAttribute('y2', 368); cg.appendChild(l); });
+    rows.forEach((y) => cols.forEach((x) => {
+      if (x === 232 && y === 240) return;
+      const g = document.createElementNS(ns, 'g');
+      g.innerHTML = `<rect x="${x - 4}" y="${y - 18}" width="8" height="36" rx="2" fill="var(--accent)" opacity=".5"/><rect x="${x - 18}" y="${y - 4}" width="36" height="8" rx="2" fill="var(--accent)" opacity=".5"/>`;
+      qg.appendChild(g);
+    }));
+  })();
+
+  /* ---------- Cold scale ---------- */
+  (() => {
+    const box = $('coldScale');
+    const lo = Math.log10(0.005), hi = Math.log10(400);
+    COLD.forEach((r) => {
+      const pct = ((Math.log10(r.v) - lo) / (hi - lo)) * 100;
+      const t = (Math.log10(r.v) - lo) / (hi - lo);
+      const color = t > .75 ? 'var(--warm)' : t > .5 ? '#B9A15A' : t > .3 ? '#6FA7B8' : 'var(--cold)';
+      const row = document.createElement('div');
+      row.className = 'cs-row' + (r.cls ? ' ' + r.cls : '');
+      row.innerHTML = `<span class="cs-name"></span><span class="cs-track"><span class="cs-fill" style="width:${pct.toFixed(1)}%;background:${color}"></span></span><span class="cs-val"></span>`;
+      row.querySelector('.cs-name').textContent = r.name;
+      row.querySelector('.cs-val').textContent = r.label;
+      box.appendChild(row);
+    });
+  })();
+
+  /* ---------- Parts list ---------- */
+  const list = $('partsList');
+  const buildList = () => {
+    list.replaceChildren();
+    ORDER[view].forEach((id) => {
+      const p = PARTS[id];
+      const li = document.createElement('li');
+      const b = document.createElement('button');
+      b.type = 'button'; b.dataset.id = id;
+      const dot = document.createElement('span'); dot.className = 't'; dot.style.background = p.tc;
+      b.append(dot, document.createTextNode(p.name));
+      b.addEventListener('click', () => select(id, { scroll: true }));
+      li.appendChild(b); list.appendChild(li);
+    });
+  };
+
+  /* ---------- Selection ---------- */
+  const panelBody = $('panelBody');
+  function render(id) {
+    const p = PARTS[id];
+    $('pWhere').textContent = p.where;
+    const chip = $('pTemp'); chip.textContent = p.temp; chip.style.background = p.tc;
+    $('pName').textContent = p.name;
+    $('pSimple').textContent = p.simple;
+    $('pDeep').textContent = p.deep;
+    const facts = $('pFacts'); facts.replaceChildren();
+    p.facts.forEach(([b, s]) => { const li = document.createElement('li'); const bb = document.createElement('b'); bb.textContent = b; const ss = document.createElement('span'); ss.textContent = s; li.append(bb, ss); facts.appendChild(li); });
+    $('pSrc').textContent = 'Sources: ' + p.src;
+    $('openChip').hidden = !p.chipLink;
+    panelBody.classList.remove('swap'); void panelBody.offsetWidth; panelBody.classList.add('swap');
+  }
+
+  function select(id, opts = {}) {
+    const p = PARTS[id]; if (!p) return;
+    if (p.view !== view) setView(p.view, { keep: true });
+    current = id;
+    document.querySelectorAll('.part').forEach((g) => g.classList.toggle('is-sel', g.dataset.id === id));
+    document.querySelectorAll('.art').forEach((a) => a.classList.add('dimmed'));
+    list.querySelectorAll('button').forEach((b) => b.setAttribute('aria-current', String(b.dataset.id === id)));
+    render(id);
+    if (!opts.noHash) history.replaceState(null, '', '#' + id);
+    if (opts.scroll && window.innerWidth < 960) {
+      const r = $('panel').getBoundingClientRect();
+      if (r.top > window.innerHeight * .75 || r.top < 0) $('panel').scrollIntoView({ behavior: reduce() ? 'auto' : 'smooth', block: 'start' });
+    }
+  }
+
+  function setView(v, opts = {}) {
+    view = v;
+    document.querySelectorAll('.tab').forEach((t) => t.setAttribute('aria-selected', String(t.dataset.view === v)));
+    $('view-fridge').hidden = v !== 'fridge';
+    $('view-chip').hidden = v !== 'chip';
+    $('journeyBtn').hidden = v !== 'fridge';
+    $('hint').textContent = $('hint').dataset[v];
+    if (v !== 'fridge') stopJourney();
+    buildList();
+    if (!opts.keep) select(ORDER[v][0]);
+  }
+
+  document.querySelectorAll('.part').forEach((g) => {
+    g.addEventListener('click', () => { if (journeyOn) stopJourney(); select(g.dataset.id, { scroll: true }); });
+    g.addEventListener('keydown', (e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); select(g.dataset.id, { scroll: true }); } });
+  });
+  document.querySelectorAll('.tab').forEach((t) => t.addEventListener('click', () => setView(t.dataset.view)));
+  $('openChip').addEventListener('click', () => setView('chip'));
+
+  const step = (d) => { const o = ORDER[view]; const i = o.indexOf(current); select(o[(i + d + o.length) % o.length]); };
+  $('pPrev').addEventListener('click', () => step(-1));
+  $('pNext').addEventListener('click', () => step(1));
+
+  $('pShare').addEventListener('click', async () => {
+    const url = location.href.split('#')[0] + '#' + current;
+    try {
+      if (navigator.share && matchMedia('(pointer: coarse)').matches) { await navigator.share({ title: PARTS[current].name + ' · The Signal', url }); return; }
+      await navigator.clipboard.writeText(url);
+    } catch (e) {
+      const ta = document.createElement('textarea'); ta.value = url; document.body.appendChild(ta); ta.select();
+      try { document.execCommand('copy'); } catch (_) {} ta.remove();
+    }
+    const c = $('copied'); c.classList.add('on'); setTimeout(() => c.classList.remove('on'), 1600);
+  });
+
+  /* ---------- Journey ---------- */
+  const path = $('signalPath'), dot = $('pulseDot');
+  const total = path.getTotalLength();
+  const lenAt = JOURNEY.map(({ at }) => {
+    let best = 0, bestD = Infinity;
+    for (let s = 0; s <= total; s += 2) {
+      const pt = path.getPointAtLength(s);
+      const d = (pt.x - at[0]) ** 2 + (pt.y - at[1]) ** 2;
+      if (d < bestD) { bestD = d; best = s; }
+    }
+    return best;
+  });
+  for (let i = 1; i < lenAt.length; i++) if (lenAt[i] < lenAt[i - 1]) lenAt[i] = lenAt[i - 1];
+  let journeyOn = false, jIndex = 0, raf = 0, dotLen = 0;
+
+  function moveDot(to) {
+    cancelAnimationFrame(raf);
+    const from = dotLen, start = performance.now();
+    const dur = reduce() ? 0 : Math.min(1400, 300 + Math.abs(to - from) * 1.4);
+    const tick = (now) => {
+      const t = dur ? Math.min(1, (now - start) / dur) : 1;
+      const e = t < .5 ? 2 * t * t : 1 - Math.pow(-2 * t + 2, 2) / 2;
+      dotLen = from + (to - from) * e;
+      const pt = path.getPointAtLength(dotLen);
+      dot.setAttribute('cx', pt.x); dot.setAttribute('cy', pt.y);
+      if (t < 1) raf = requestAnimationFrame(tick);
+    };
+    raf = requestAnimationFrame(tick);
+  }
+  function showStep(i) {
+    jIndex = Math.max(0, Math.min(JOURNEY.length - 1, i));
+    const s = JOURNEY[jIndex];
+    $('jStep').textContent = `Step ${jIndex + 1} of ${JOURNEY.length}`;
+    $('jTitle').textContent = s.title;
+    $('jText').textContent = s.text;
+    $('jBar').style.width = ((jIndex + 1) / JOURNEY.length * 100) + '%';
+    $('jPrev').disabled = jIndex === 0;
+    $('jNext').textContent = jIndex === JOURNEY.length - 1 ? 'Start again' : 'Next step';
+    select(s.part, { noHash: true });
+    moveDot(lenAt[jIndex]);
+  }
+  function startJourney() {
+    journeyOn = true;
+    $('journeyBtn').setAttribute('aria-pressed', 'true');
+    $('journeyBtn').textContent = 'Stop the signal';
+    $('journey').classList.add('is-on');
+    $('view-fridge').classList.add('journey-on');
+    dotLen = 0; showStep(0);
+  }
+  function stopJourney() {
+    if (!journeyOn) return;
+    journeyOn = false;
+    cancelAnimationFrame(raf);
+    $('journeyBtn').setAttribute('aria-pressed', 'false');
+    $('journeyBtn').textContent = 'Follow a signal';
+    $('journey').classList.remove('is-on');
+    $('view-fridge').classList.remove('journey-on');
+    dot.setAttribute('cx', -20); dot.setAttribute('cy', -20);
+  }
+  $('journeyBtn').addEventListener('click', () => (journeyOn ? stopJourney() : startJourney()));
+  $('jPrev').addEventListener('click', () => showStep(jIndex - 1));
+  $('jNext').addEventListener('click', () => (jIndex === JOURNEY.length - 1 ? (dotLen = 0, showStep(0)) : showStep(jIndex + 1)));
+
+  /* ---------- Quiz ---------- */
+  const quizBox = $('quizBox');
+  let answered = 0, right = 0;
+  function buildQuiz() {
+    answered = 0; right = 0; quizBox.replaceChildren();
+    $('score').hidden = true; $('resetQuiz').hidden = true;
+    QUIZ.forEach((item, qi) => {
+      const box = document.createElement('div'); box.className = 'q';
+      const q = document.createElement('p'); q.className = 'qq'; q.textContent = `${qi + 1}. ${item.q}`;
+      const opts = document.createElement('div'); opts.className = 'opts';
+      const why = document.createElement('p'); why.className = 'why'; why.hidden = true; why.textContent = item.why;
+      item.a.forEach((txt, ai) => {
+        const b = document.createElement('button'); b.type = 'button'; b.textContent = txt;
+        b.addEventListener('click', () => {
+          opts.querySelectorAll('button').forEach((x, xi) => { x.disabled = true; if (xi === item.c) x.classList.add('right'); });
+          if (ai !== item.c) b.classList.add('wrong'); else right++;
+          answered++; why.hidden = false;
+          if (answered === QUIZ.length) {
+            $('score').hidden = false; $('resetQuiz').hidden = false;
+            $('score').textContent = `You got ${right} of ${QUIZ.length}.`;
+          }
+        });
+        opts.appendChild(b);
+      });
+      box.append(q, opts, why); quizBox.appendChild(box);
+    });
+  }
+  $('resetQuiz').addEventListener('click', buildQuiz);
+  buildQuiz();
+
+  /* ---------- Start ---------- */
+  const fromHash = () => {
+    const id = location.hash.slice(1);
+    if (PARTS[id]) { setView(PARTS[id].view, { keep: true }); select(id, { noHash: true }); return true; }
+    return false;
+  };
+  buildList();
+  if (!fromHash()) select('chip', { noHash: true });
+  window.addEventListener('hashchange', fromHash);
+})();
+</script>
+</body>
+</html>

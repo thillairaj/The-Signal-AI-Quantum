@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Interactive Explainers · The Signal</title>
+<meta name="description" content="Tap through real machines and systems, part by part, with a simple and a deeper explanation for every part.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>❄️</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,800;1,9..144,500;1,9..144,600&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<script>
+  try { const t = localStorage.getItem('aisignal_theme'); if (t === 'dark' || t === 'light') document.documentElement.setAttribute('data-theme', t); } catch (e) {}
+</script>
+<style>
+:root {
+  --bg: #F2F3EE; --surface: #EAEBE3; --ink: #14180F; --muted: #63695E; --border: #D7D9CD;
+  --accent: #2F6B4F; --accent-dim: #B6C9BC; --gold: #B8860B; --navy: #14253F;
+  --font-display: "Fraunces", Georgia, serif;
+  --font-body: "Inter", -apple-system, "Segoe UI", sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, monospace;
+  color-scheme: light;
+}
+:root[data-theme="dark"] {
+  --bg: #15170F; --surface: #1D1F16; --ink: #ECEDE4; --muted: #9AA08D; --border: #33362A;
+  --accent: #6FBE94; --accent-dim: #2B4838; --navy: #ECEDE4; --gold: #D9A93A;
+  color-scheme: dark;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #15170F; --surface: #1D1F16; --ink: #ECEDE4; --muted: #9AA08D; --border: #33362A;
+    --accent: #6FBE94; --accent-dim: #2B4838; --navy: #ECEDE4; --gold: #D9A93A;
+    color-scheme: dark;
+  }
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--bg); color: var(--ink); font-family: var(--font-body); line-height: 1.55; }
+a { color: var(--accent); }
+button { font: inherit; color: inherit; }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.masthead { display: flex; justify-content: space-between; align-items: center; gap: .8rem 1.2rem; flex-wrap: wrap;
+  max-width: 1200px; margin: 0 auto; padding: .85rem 2rem .75rem; border-bottom: 1px solid var(--border); }
+.brand { font-family: var(--font-display); font-weight: 800; font-size: 1.6rem; color: var(--navy); text-decoration: none; letter-spacing: -.01em; }
+.brand em { font-style: italic; font-weight: 600; color: var(--gold); }
+.mast-right { display: flex; align-items: center; gap: .9rem; }
+.back { font-size: .85rem; color: var(--muted); text-decoration: none; }
+.back:hover { color: var(--ink); }
+.theme-toggle { background: none; border: 1px solid var(--border); border-radius: 999px; width: 34px; height: 34px; cursor: pointer; color: var(--muted); }
+main { max-width: 1200px; margin: 0 auto; padding: 0 2rem 4rem; }
+.intro { padding: 2.4rem 0 1.6rem; display: grid; gap: .7rem; max-width: 62rem; }
+.crumb { font-family: var(--font-mono); font-size: .78rem; color: var(--accent); margin: 0; }
+.intro h1 { font-family: var(--font-display); font-weight: 600; font-size: clamp(2rem, 4.6vw, 3.4rem); line-height: 1.05; letter-spacing: -.02em; margin: 0; color: var(--navy); }
+.intro h1 i { font-weight: 500; color: var(--gold); }
+.lead { margin: 0; font-size: 1.08rem; color: var(--muted); max-width: 46rem; }
+.cards { display: grid; gap: 1.2rem; grid-template-columns: repeat(auto-fit, minmax(min(100%, 22rem), 1fr)); max-width: 62rem; }
+.card { display: grid; gap: .45rem; background: #ECE9F7; border: 1px solid #BDB0DE; border-radius: 14px; padding: 1.3rem 1.4rem; text-decoration: none; color: var(--ink); transition: transform .15s ease, background .15s ease; }
+.card:hover { transform: translateY(-3px); background: #DCD3F0; }
+.tag { font-family: var(--font-mono); font-size: .75rem; font-weight: 600; color: #5B4B9E; text-transform: uppercase; letter-spacing: .05em; }
+.card h2 { font-family: var(--font-display); font-weight: 600; font-size: 1.45rem; line-height: 1.15; margin: 0; color: #14253F; }
+.card p { margin: 0; font-size: .95rem; color: #3E3A52; }
+.meta { display: flex; justify-content: space-between; align-items: baseline; gap: 1rem; margin-top: .5rem; }
+.date { font-family: var(--font-mono); font-size: .78rem; color: #63695E; }
+.open { font-size: .88rem; font-weight: 600; color: #2F6B4F; }
+.note { margin: 2rem 0 0; color: var(--muted); font-size: .95rem; max-width: 46rem; }
+footer { max-width: 1200px; margin: 0 auto; padding: 1.4rem 2rem 2.4rem; border-top: 1px solid var(--border); color: var(--muted); font-size: .85rem; }
+footer a { color: var(--ink); }
+@media (max-width: 640px) { .masthead, main, footer { padding-left: 1rem; padding-right: 1rem; } .intro { padding-top: 1.6rem; } }
+</style>
+</head>
+<body>
+
+<header class="masthead">
+  <a class="brand" href="../#learn-explainers" title="Back to The Signal">The <em>Signal</em></a>
+  <div class="mast-right">
+    <a class="back" href="../#learn-explainers">← Back to Learning Spaces</a>
+    <button class="theme-toggle" id="themeToggle" type="button" aria-label="Toggle dark mode">☾</button>
+  </div>
+</header>
+
+<main>
+  <section class="intro">
+    <p class="crumb">Learning Spaces · Door 03</p>
+    <h1>Interactive <i>Explainers</i></h1>
+    <p class="lead">Tap through real machines and systems, part by part, with a simple and a deeper explanation for every part.</p>
+  </section>
+
+  <div class="cards">
+    <a class="card" href="quantum-hardware.html">
+      <span class="tag">Quantum</span>
+      <h2>Inside a superconducting quantum computer</h2>
+      <p>Tap through the dilution refrigerator, the wiring and the chip, from the room temperature racks down to the 10 millikelvin chip.</p>
+      <span class="meta"><span class="date">Published 28 October 2026</span><span class="open">Open explainer ↗</span></span>
+    </a>
+  </div>
+
+  <p class="note">New explainers arrive in rotation across Quantum, AI, Cybersecurity and Cloud. Each one is checked against its sources before it joins this page.</p>
+</main>
+
+<footer>
+  Part of the Learning Spaces on <a href="../#learn-explainers">The Signal</a>. Curated by Thillai Raj Thanam Jeya Veera Raj · <a href="https://www.linkedin.com/in/thillairaj" target="_blank" rel="noopener">Follow on LinkedIn</a>
+</footer>
+
+<script>
+(() => {
+  const btn = document.getElementById('themeToggle');
+  const isDark = () => (document.documentElement.getAttribute('data-theme') || (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light')) === 'dark';
+  const sync = () => { btn.textContent = isDark() ? '☀' : '☾'; };
+  sync();
+  btn.addEventListener('click', () => {
+    const next = isDark() ? 'light' : 'dark';
+    document.documentElement.setAttribute('data-theme', next);
+    try { localStorage.setItem('aisignal_theme', next); } catch (e) {}
+    sync();
+  });
+})();
+</script>
+</body>
+</html>

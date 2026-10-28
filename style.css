@@ -488,6 +488,10 @@ body[data-view="research"] .feed-only { display: none; }
 /* Deck cards: a touch darker than the page background. */
 .learn-card.deck-quantum, .learn-card.deck-ai, .learn-card.deck-cloud { background-color: #F3EDDE; border: 1px solid #D8C9A3; }
 .learn-card.deck-quantum:hover, .learn-card.deck-ai:hover, .learn-card.deck-cloud:hover { background-color: #E9DDC0; border-color: #B99F5F; }
+.learn-card.explainer-all { background-color: #F3EDDE; border: 1px solid #D8C9A3; }
+.learn-card.explainer-all:hover { background-color: #E9DDC0; border-color: #B99F5F; }
+.learn-card.explainer-quantum { background-color: #ECE9F7; border: 1px solid #BDB0DE; }
+.learn-card.explainer-quantum:hover { background-color: #DCD3F0; border-color: #8B76C4; }
 /* Interactive Tables family colours (Thillai, Oct 21 2026): Founders & Leadership = gold, Quantum = violet, AI = blue, Other Technologies = slate */
 .table-family-legend { display: flex; flex-wrap: wrap; gap: 8px 18px; margin: 2px 0 14px; font-size: 13px; font-weight: 600; color: #44403c; }
 .table-family-legend .fam-dot { display: inline-block; width: 11px; height: 11px; border-radius: 3px; margin-right: 6px; vertical-align: -1px; }

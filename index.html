@@ -16,7 +16,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,800;1,9..144,500;1,9..144,600&family=Inter:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css?v=20261023c">
+<link rel="stylesheet" href="style.css?v=20261028a">
 </head>
 <body data-view="home">
 
@@ -203,7 +203,7 @@
   <section id="learn-view" class="view-section" hidden>
     <div class="view-intro">
       <h2>Learning Spaces</h2>
-      <p>Four doors: videos, interactive decks, periodic tables and games. Open one to start.</p>
+      <p>Five doors: videos, interactive decks, interactive explainers, periodic tables and games. Open one to start.</p>
     </div>
     <div class="learn-door" id="learn-videos" data-door="videos">
       <button class="learn-door-head" type="button" data-door-btn aria-expanded="false">
@@ -284,9 +284,38 @@
         
       </div>
     </div>
-    <div class="learn-door" id="learn-tables" data-door="tables">
+    <div class="learn-door" id="learn-explainers" data-door="explainers">
       <button class="learn-door-head" type="button" data-door-btn aria-expanded="false">
         <span class="learn-door-no">03</span>
+        <span class="learn-door-name">Interactive Explainers</span>
+        <span class="learn-door-count">1 explainer · more coming</span>
+        <span class="learn-door-enter">Click to enter</span>
+        <span class="learn-door-chev" aria-hidden="true">▾</span>
+      </button>
+      <div class="learn-door-body" hidden>
+
+    <div class="rail-wrap"><button class="rail-btn prev" type="button" aria-label="Previous cards">‹</button><div class="table-rail">
+      <a class="learn-card explainer-all" href="explainers/">
+        <span class="learn-play" aria-hidden="true">▦</span>
+        <span class="learn-kicker">Interactive Explainers · All topics</span>
+        <span class="learn-title">Interactive Explainers</span>
+        <span class="learn-desc">Tap through real machines and systems, part by part, with a simple and a deeper explanation for every part.</span>
+        <span class="learn-open">Browse explainers ↗</span>
+      </a>
+      <a class="learn-card explainer-quantum" href="explainers/quantum-hardware.html">
+        <span class="learn-play" aria-hidden="true">❄</span>
+        <span class="learn-kicker">Interactive Explainer · Quantum</span>
+        <span class="learn-title">Inside a Superconducting Quantum Computer</span>
+        <span class="learn-desc">Tap through the dilution refrigerator, the wiring and the chip, from the room temperature racks down to the 10 millikelvin chip.</span>
+        <span class="learn-open">Open explainer ↗</span>
+      </a>
+    </div><button class="rail-btn next" type="button" aria-label="Next cards">›</button></div>
+
+      </div>
+    </div>
+    <div class="learn-door" id="learn-tables" data-door="tables">
+      <button class="learn-door-head" type="button" data-door-btn aria-expanded="false">
+        <span class="learn-door-no">04</span>
         <span class="learn-door-name">Interactive Tables</span>
         <span class="learn-door-count">20 tables · 5 families · 1,316 terms</span>
         <span class="learn-door-enter">Click to enter</span>
@@ -500,7 +529,7 @@
     </div>
     <div class="learn-door" id="learn-games" data-door="games">
       <button class="learn-door-head" type="button" data-door-btn aria-expanded="false">
-        <span class="learn-door-no">04</span>
+        <span class="learn-door-no">05</span>
         <span class="learn-door-name">Interactive Games</span>
         <span class="learn-door-count">2 games · more coming</span>
         <span class="learn-door-enter">Click to enter</span>
@@ -580,6 +609,6 @@
   </div>
 
 <script data-goatcounter="https://trttech.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
-<script src="app.js?v=20261023c"></script>
+<script src="app.js?v=20261028a"></script>
 </body>
 </html>
