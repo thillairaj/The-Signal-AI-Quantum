@@ -485,6 +485,9 @@ body[data-view="research"] .feed-only { display: none; }
 /* Video cards: a whisper lighter than the page background. */
 .learn-card.video-bot, .learn-card.video-quantum, .learn-card.video-cloud, .learn-card.video-assistants { background-color: #FEFDFB; border: 1px solid #E6DFCC; }
 .learn-card.video-bot:hover, .learn-card.video-quantum:hover, .learn-card.video-cloud:hover, .learn-card.video-assistants:hover { background-color: #F5EFE0; border-color: #CFBE93; }
+.learn-card.video-quantum { background-color: #ECE7F7; border-color: #C9BCE8; }
+.learn-card.video-ai { background-color: #E8F1FB; border-color: #B9D2EC; }
+.learn-card.video-cloud { background-color: #E6F4F1; border-color: #B7DDD5; }
 /* Deck cards: a touch darker than the page background. */
 .learn-card.deck-quantum, .learn-card.deck-ai, .learn-card.deck-cloud { background-color: #F3EDDE; border: 1px solid #D8C9A3; }
 .learn-card.deck-quantum:hover, .learn-card.deck-ai:hover, .learn-card.deck-cloud:hover { background-color: #E9DDC0; border-color: #B99F5F; }
