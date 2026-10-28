@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-28T14:00:45.171364+00:00",
+  "generated_at": "2026-10-28T17:59:59.216444+00:00",
   "sources_polled": [
     "The Verge \u2014 AI",
     "Simon Willison",
@@ -15,6 +15,61 @@
     "Quantum Intelligence"
   ],
   "articles": [
+    {
+      "id": "d8f853e661d65a1d",
+      "title": "GitHub Octoverse 2026",
+      "link": "https://simonwillison.net/2026/Oct/28/github-octoverse-2026/",
+      "source": "Simon Willison",
+      "category": "AI",
+      "summary": "GitHub Octoverse 2026 I'm at GitHub Universe today (GitHub gave me a free ticket through their \"GitHub Stars\" program). EVP Jay Parikh just announced this year's Octoverse report, and highlighted these numbers in particular: This is a pretty stark representation of the impact of ",
+      "published": "2026-10-28T17:59:45.235771+00:00",
+      "audio_url": null,
+      "duration": ""
+    },
+    {
+      "id": "5283652bd524be85",
+      "title": "xAI is buying out homeowners who promise not to sue over data center noise",
+      "link": "https://www.theverge.com/ai-artificial-intelligence/1020596/xai-mississippi-neighborhood-data-center-lawsuit",
+      "source": "The Verge \u2014 AI",
+      "category": "AI",
+      "summary": "A subsidiary of Elon Musk's xAI is offering to buy up homes in a Mississippi neighborhood, as long as residents don't join a lawsuit targeting the company's nearby data center and power plant, according to a report from The Guardian. A realtor going door-to-door in the Southaven ",
+      "published": "2026-10-28T17:59:44.523215+00:00",
+      "audio_url": null,
+      "duration": ""
+    },
+    {
+      "id": "1739307690c34a28",
+      "title": "Meta says it&#8217;ll probably delay its controversial new business terms again",
+      "link": "https://www.theverge.com/tech/1020769/meta-updated-business-terms-delay-indefinitely",
+      "source": "The Verge \u2014 AI",
+      "category": "AI",
+      "summary": "Meta says it may push the implementation of its new business terms past November 20th as it faces backlash from publishers over concerns about AI training. In a post on X, Meta communications head Andy Stone said the company does \"not plan to make policy changes without a full co",
+      "published": "2026-10-28T17:59:44.523167+00:00",
+      "audio_url": null,
+      "duration": ""
+    },
+    {
+      "id": "c802108aab79694f",
+      "title": "Chrome\u2019s enhanced autofill can now pull info from Gmail to help you fill out forms",
+      "link": "https://www.theverge.com/tech/1020626/chrome-enhanced-autofill-gmail-forms-gemini-personal-intelligence",
+      "source": "The Verge \u2014 AI",
+      "category": "AI",
+      "summary": "Following improvements made to Chrome's enhanced autofill last year that included your name, passport number, email address, and physical addresses sourced from your Google Accounts and services like Google Wallet, the feature is now expanding. Starting today, Chrome's enhanced a",
+      "published": "2026-10-28T17:59:44.523097+00:00",
+      "audio_url": null,
+      "duration": ""
+    },
+    {
+      "id": "0676def7896cb16a",
+      "title": "Google AI gets cagey when asked who won the 2020 elections",
+      "link": "https://arstechnica.com/ai/2026/10/google-ai-gets-cagey-when-asked-who-won-the-2020-elections/",
+      "source": "Ars Technica AI",
+      "category": "AI",
+      "summary": "But the AI responses get more forthright when asked outside the US.",
+      "published": "2026-10-28T17:46:32+00:00",
+      "audio_url": null,
+      "duration": ""
+    },
     {
       "id": "5d9615019ec259be",
       "title": "Quoting Terk Terkowitz",
@@ -71,9 +126,31 @@
       "duration": ""
     },
     {
+      "id": "0dc3cf0b7c98dcde",
+      "title": "The future of the firm",
+      "link": "https://openai.com/index/the-future-of-the-firm",
+      "source": "OpenAI Blog",
+      "category": "AI",
+      "summary": "How AI might enter the org chart\u2014beneath, beside, and between us.",
+      "published": "2026-10-28T10:00:00+00:00",
+      "audio_url": null,
+      "duration": ""
+    },
+    {
       "id": "2fc8e689e413caad",
       "title": "Legora is building the agentic operating system for legal work",
       "link": "https://openai.com/index/legora-agentic-operating-system-for-legal-work",
+      "source": "OpenAI Blog",
+      "category": "AI",
+      "summary": "See how Legora uses OpenAI models, ChatGPT, and Codex to accelerate legal workflows, expand contract analysis, and free lawyers to focus on higher-value work.",
+      "published": "2026-10-28T09:30:00+00:00",
+      "audio_url": null,
+      "duration": ""
+    },
+    {
+      "id": "41c97fe8dc29ac4a",
+      "title": "Legora is building the agentic operating system for legal work",
+      "link": "https://openai.com/index/legora",
       "source": "OpenAI Blog",
       "category": "AI",
       "summary": "See how Legora uses OpenAI models, ChatGPT, and Codex to accelerate legal workflows, expand contract analysis, and free lawyers to focus on higher-value work.",
@@ -1325,17 +1402,6 @@
       "duration": ""
     },
     {
-      "id": "1bbb4f6fc3d14211",
-      "title": "Conversational Gemini navigation comes to Apple CarPlay",
-      "link": "https://www.theverge.com/transportation/1015281/gemini-ai-apple-carplay-voice-google-maps",
-      "source": "The Verge \u2014 AI",
-      "category": "AI",
-      "summary": "After introducing its Gemini AI assistant to Android Auto last year, Google is now bringing it to Apple CarPlay users. The conversational Gemini in navigation is available today for US drivers, with \"rollout happening globally too,\" according to Google (we've asked for specific r",
-      "published": "2026-10-21T17:59:44.445253+00:00",
-      "audio_url": null,
-      "duration": ""
-    },
-    {
       "id": "4ab93569e260b2b0",
       "title": "How AT&T is rethinking in-house legal work with OpenAI",
       "link": "https://openai.com/index/att-legal",
@@ -1354,17 +1420,6 @@
       "category": "AI",
       "summary": "OpenEvidence is booming despite questions about accuracy and ads.",
       "published": "2026-10-21T15:14:07+00:00",
-      "audio_url": null,
-      "duration": ""
-    },
-    {
-      "id": "c55b4c3c8ca25718",
-      "title": "OpenAI says an AI agent lied about disabling its safety monitoring system",
-      "link": "https://www.theverge.com/ai-artificial-intelligence/1015316/openai-ai-agent-disabling-monitoring-systems",
-      "source": "The Verge \u2014 AI",
-      "category": "AI",
-      "summary": "OpenAI disclosed a pair of safety incidents that involved AI agents weakening their safety monitoring systems during internal coding tasks. In one incident, OpenAI says its GPT-6 Astra agent disabled its safety monitor when copying reference code - and then lied about it. \"The re",
-      "published": "2026-10-21T14:01:46.092828+00:00",
       "audio_url": null,
       "duration": ""
     },
@@ -1497,17 +1552,6 @@
       "category": "AI",
       "summary": "eMudhra Intermediate CA Compromise This is very, very bad news: The private keys of eight eMudhra intermediate CA certificates have been compromised. They chain to roots trusted by the Mozilla, Microsoft, Apple and Chrome root programs and by many downstream trust stores. Any sof",
       "published": "2026-10-21T01:59:38.672835+00:00",
-      "audio_url": null,
-      "duration": ""
-    },
-    {
-      "id": "7f6bb9c0aa5027ea",
-      "title": "Google\u2019s more personalized Gemini AI is heading to your car",
-      "link": "https://www.theverge.com/tech/1014999/google-gemini-ai-cars-android-auto",
-      "source": "The Verge \u2014 AI",
-      "category": "AI",
-      "summary": "Google is bringing Personal Intelligence to Gemini AI in your car. With this update, Gemini in Android Auto and cars with Google built-in can tap into your information across Google apps, including Gmail, Calendar, Maps, Photos, YouTube, and Search. As an example, Google says you",
-      "published": "2026-10-21T01:59:37.918285+00:00",
       "audio_url": null,
       "duration": ""
     },
@@ -2810,17 +2854,6 @@
       "duration": ""
     },
     {
-      "id": "95fd0fb1a7d9fd74",
-      "title": "A new feature for my blog, built using my voice",
-      "link": "https://simonwillison.net/2026/Oct/9/built-using-my-voice/",
-      "source": "Simon Willison",
-      "category": "AI",
-      "summary": "I shipped a new feature for my blog today: the Newsletters page, which offers an index of all of the newsletters I've sent out, both my free weekly Substack and my monthly sponsors-only updates. I built the feature almost entirely using my voice, chatting away to my laptop while ",
-      "published": "2026-10-09T13:59:46.674646+00:00",
-      "audio_url": null,
-      "duration": ""
-    },
-    {
       "id": "edd58468d564448f",
       "title": "Sophos cuts threat investigation time by 96% with OpenAI Daybreak",
       "link": "https://openai.com/index/sophos",
@@ -2909,28 +2942,6 @@
       "duration": ""
     },
     {
-      "id": "ca1ec6c6a1a1314d",
-      "title": "Pollo AI turns creative ideas into campaigns with OpenAI",
-      "link": "https://openai.com/index/pollo-ai",
-      "source": "OpenAI Blog",
-      "category": "AI",
-      "summary": "With GPT-5.6, GPT-6 Astra, and GPT\u2011Image\u20112.5, Pollo AI helps creators turn bold ideas into detailed images and cinematic video ads.",
-      "published": "2026-10-08T12:00:00+00:00",
-      "audio_url": null,
-      "duration": ""
-    },
-    {
-      "id": "f6d3626eb7c890d9",
-      "title": "LegalOn halves Codex costs while maintaining development speed",
-      "link": "https://openai.com/index/legalon-halves-codex-costs",
-      "source": "OpenAI Blog",
-      "category": "AI",
-      "summary": "LegalOn cut estimated daily Codex costs by 65% while maintaining development speed. It matched Astra, Sol, and Luna to tasks and managed budgets strategically.",
-      "published": "2026-10-08T12:00:00+00:00",
-      "audio_url": null,
-      "duration": ""
-    },
-    {
       "id": "5387f8e8d5e8c2a4",
       "title": "Nvidia's big bet on physical AI aims for safer robotaxis, humanoid robots",
       "link": "https://arstechnica.com/ai/2026/10/nvidias-big-bet-on-physical-ai-aims-for-safer-robotaxis-humanoid-robots/",
@@ -2971,17 +2982,6 @@
       "category": "AI",
       "summary": "Opus-built Creative Cloud alternatives are ambitious, free, and nowhere near finished.",
       "published": "2026-10-07T21:56:42+00:00",
-      "audio_url": null,
-      "duration": ""
-    },
-    {
-      "id": "2943f19100563cde",
-      "title": "Outstreaming Taylor Swift is easy with 10K bots and AI songs, fraudster admits",
-      "link": "https://arstechnica.com/tech-policy/2026/10/outstreaming-taylor-swift-is-easy-with-10k-bots-and-ai-songs-fraudster-admits/",
-      "source": "Ars Technica AI",
-      "category": "AI",
-      "summary": "Man gets 18 months for AI scheme stealing $8M in music streaming royalties.",
-      "published": "2026-10-07T17:57:39+00:00",
       "audio_url": null,
       "duration": ""
     },
