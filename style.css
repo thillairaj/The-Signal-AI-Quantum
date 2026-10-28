@@ -489,6 +489,9 @@ body[data-view="research"] .feed-only { display: none; }
 .learn-card.deck-quantum, .learn-card.deck-ai, .learn-card.deck-cloud { background-color: #F3EDDE; border: 1px solid #D8C9A3; }
 .learn-card.deck-quantum:hover, .learn-card.deck-ai:hover, .learn-card.deck-cloud:hover { background-color: #E9DDC0; border-color: #B99F5F; }
 .learn-card.explainer-all { background-color: #F3EDDE; border: 1px solid #D8C9A3; }
+.learn-card.guide-card { background-color: #F3EDDE; border: 1px solid #D8C9A3; cursor: default; }
+.door-guide { display: flex; flex-direction: column; gap: 0.35rem; background-color: #F3EDDE; border: 1px solid #D8C9A3; border-radius: 14px; padding: 16px 18px; margin: 2px 0 14px; }
+.door-guide .learn-desc { flex: none; }
 .learn-card.explainer-all:hover { background-color: #E9DDC0; border-color: #B99F5F; }
 .learn-card.explainer-quantum { background-color: #ECE9F7; border: 1px solid #BDB0DE; }
 .learn-card.explainer-quantum:hover { background-color: #DCD3F0; border-color: #8B76C4; }
