@@ -1,6 +1,25 @@
 {
   "articles": [
     {
+      "id": "2026-10-28-genie-4-world-model",
+      "title": "What Changes When an AI World Can Talk Back?",
+      "subtitle": "Genie 4 adds native audio and live steering to real time simulation",
+      "date": "2026-10-28",
+      "kind": "Brief",
+      "card": "research/cards/edition-06.webp",
+      "body": "research/articles/2026-10-28-genie-4-world-model.html",
+      "sources": [
+        {
+          "label": "Google DeepMind: Genie 4: A new generation of world simulation (Oct 27, 2026)",
+          "url": "https://deepmind.google/blog/genie-4-a-new-generation-of-world-simulation/"
+        },
+        {
+          "label": "SiliconANGLE: Google introduces cutting-edge Genie 4 world model (Oct 27, 2026)",
+          "url": "https://siliconangle.com/2026/10/27/google-introduces-cutting-edge-genie-4-world-model/"
+        }
+      ]
+    },
+    {
       "id": "2026-10-26-agent-decision-taste-bench",
       "title": "Why Does Finishing the Task No Longer Prove an AI Agent Works?",
       "subtitle": "Taste-Bench and the judgment gap in long running agents",
@@ -220,5 +239,5 @@
       "title": "Where Does Value Accrue in the AI Stack?"
     }
   ],
-  "generated_at": "2026-10-26T04:18:01+00:00"
+  "generated_at": "2026-10-28T04:16:25+00:00"
 }
