@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-27T22:00:20.847030+00:00",
+  "generated_at": "2026-10-28T02:00:01.327433+00:00",
   "sources_polled": [
     "The Verge \u2014 AI",
     "Simon Willison",
@@ -15,6 +15,61 @@
     "Quantum Intelligence"
   ],
   "articles": [
+    {
+      "id": "dd7819fea52fbd46",
+      "title": "Tech Learning: IT Infrastructure & Cloud \u2014 Ep 20: Real Scenario: A Failed Deployment and the Rollback",
+      "link": "https://muse.ai/podcasts/media/1248297608376725/4720f1e9-8c94-4958-8367-c455f31c5edc/ep-9a71f052-3b63-4aee-b185-827011c0e638.mp3",
+      "source": "Technology Learnings",
+      "category": "Podcast",
+      "summary": "IT Infrastructure & Cloud track: a failed checkout deployment and the rollback that saved the day. AI Generated",
+      "published": "2026-10-28T01:45:01+00:00",
+      "audio_url": "https://muse.ai/podcasts/media/1248297608376725/4720f1e9-8c94-4958-8367-c455f31c5edc/ep-9a71f052-3b63-4aee-b185-827011c0e638.mp3",
+      "duration": "458"
+    },
+    {
+      "id": "84a72d3ab5315f48",
+      "title": "Tech Learning: IT Infrastructure & Cloud \u2014 Ep 19: Terraform and Pipelines: Infrastructure as Code",
+      "link": "https://muse.ai/podcasts/media/1248297608376725/4720f1e9-8c94-4958-8367-c455f31c5edc/ep-0cdf9433-b972-47e4-9beb-e65eef0232d8.mp3",
+      "source": "Technology Learnings",
+      "category": "Podcast",
+      "summary": "IT Infrastructure & Cloud track: declarative infrastructure, pipelines, and policy as code for beginners. AI Generated",
+      "published": "2026-10-28T01:42:30+00:00",
+      "audio_url": "https://muse.ai/podcasts/media/1248297608376725/4720f1e9-8c94-4958-8367-c455f31c5edc/ep-0cdf9433-b972-47e4-9beb-e65eef0232d8.mp3",
+      "duration": "443"
+    },
+    {
+      "id": "61317251a05ef840",
+      "title": "Tech Learning: IT Infrastructure & Cloud \u2014 Ep 18: Real Scenario: Responding to a Leaked Access Key",
+      "link": "https://muse.ai/podcasts/media/1248297608376725/4720f1e9-8c94-4958-8367-c455f31c5edc/ep-46853861-bbfc-44e1-864a-81ec77b2aa21.mp3",
+      "source": "Technology Learnings",
+      "category": "Podcast",
+      "summary": "IT Infrastructure & Cloud track: a 30-minute lockdown playbook for a leaked cloud access key. AI Generated",
+      "published": "2026-10-28T01:38:54+00:00",
+      "audio_url": "https://muse.ai/podcasts/media/1248297608376725/4720f1e9-8c94-4958-8367-c455f31c5edc/ep-46853861-bbfc-44e1-864a-81ec77b2aa21.mp3",
+      "duration": "430"
+    },
+    {
+      "id": "f0a37e0bdcaab592",
+      "title": "Tech Learning: IT Infrastructure & Cloud \u2014 Ep 17: IAM and Zero Trust for Beginners",
+      "link": "https://muse.ai/podcasts/media/1248297608376725/4720f1e9-8c94-4958-8367-c455f31c5edc/ep-daddcc97-a192-4487-bf1c-7aaa059e4f35.mp3",
+      "source": "Technology Learnings",
+      "category": "Podcast",
+      "summary": "IT Infrastructure & Cloud track: identity, least privilege, and zero trust explained for beginners. AI Generated",
+      "published": "2026-10-28T01:36:19+00:00",
+      "audio_url": "https://muse.ai/podcasts/media/1248297608376725/4720f1e9-8c94-4958-8367-c455f31c5edc/ep-daddcc97-a192-4487-bf1c-7aaa059e4f35.mp3",
+      "duration": "448"
+    },
+    {
+      "id": "f7cbbdfa4fda525b",
+      "title": "Daily AI Intelligence \u2014 Episode 27 (Wed Oct 28, 2026): Google's Genie 4 world model, Anthropic's government deal, Nvidia backs Meta's Muse",
+      "link": "https://muse.ai/podcasts/media/1248297608376725/94f09345-ad4a-4981-83dd-e3206bbf5c4e/ep-f8fe2ed7-da38-485b-a4bd-2ccbb59faf4d.mp3",
+      "source": "Daily AI Intelligence",
+      "category": "Podcast",
+      "summary": "Google DeepMind unveils Genie 4, a talking world model; Anthropic expands its 40% government discount on Claude; Nvidia invests $3B in Meta as Muse work deepens; Oracle diversifies its AI chips with Google TPUs. AI Generated",
+      "published": "2026-10-28T01:02:02+00:00",
+      "audio_url": "https://muse.ai/podcasts/media/1248297608376725/94f09345-ad4a-4981-83dd-e3206bbf5c4e/ep-f8fe2ed7-da38-485b-a4bd-2ccbb59faf4d.mp3",
+      "duration": "266"
+    },
     {
       "id": "a9c65cb8282253c6",
       "title": "Game Boy Color on My Conference Badge",
@@ -133,6 +188,17 @@
       "category": "AI",
       "summary": "Genie 4 will roll out to developers and Google AI Ultra subscribers soon.",
       "published": "2026-10-27T16:00:22+00:00",
+      "audio_url": null,
+      "duration": ""
+    },
+    {
+      "id": "d42fb1eb3362412f",
+      "title": "Retell uses OpenAI models to help power 100M monthly calls",
+      "link": "https://openai.com/index/retell-ai",
+      "source": "OpenAI Blog",
+      "category": "AI",
+      "summary": "GPT-6 Astra tops Retell\u2019s voice agent benchmark, while Codex helps it reach a $1.6M annual revenue run rate per employee.",
+      "published": "2026-10-27T15:00:00+00:00",
       "audio_url": null,
       "duration": ""
     },
@@ -1919,6 +1985,28 @@
       "duration": ""
     },
     {
+      "id": "1d7d75b47c31f4d0",
+      "title": "How Grupo Botic\u00e1rio uses AI to strengthen human connections",
+      "link": "https://openai.com/index/grupo-boticario",
+      "source": "OpenAI Blog",
+      "category": "AI",
+      "summary": "Almost 50 years after starting in a compounding pharmacy in Paran\u00e1, the group operates a proprietary agent platform that autonomously resolves up to 80% of resellers\u2019 operational requests\u2014enabling the sales force to take on an advisory role.",
+      "published": "2026-10-16T00:00:00+00:00",
+      "audio_url": null,
+      "duration": ""
+    },
+    {
+      "id": "827221925d8dc2bc",
+      "title": "How Localiza reorganized work around generative AI",
+      "link": "https://openai.com/index/localiza-generative-ai",
+      "source": "OpenAI Blog",
+      "category": "AI",
+      "summary": "See how Localiza uses ChatGPT Enterprise, the OpenAI API, Codex, and 60+ specialized agents to reorganize work and build AI-native mobility experiences.",
+      "published": "2026-10-16T00:00:00+00:00",
+      "audio_url": null,
+      "duration": ""
+    },
+    {
       "id": "08c79764230e6e3c",
       "title": "Chirp Pong",
       "link": "https://simonwillison.net/2026/Oct/15/chirp-pong/",
@@ -2887,17 +2975,6 @@
       "duration": ""
     },
     {
-      "id": "ad4e14640e358f44",
-      "title": "Helping teens learn, plan, and shape the future of AI",
-      "link": "https://openai.com/index/teens-learn-and-plan",
-      "source": "OpenAI Blog",
-      "category": "AI",
-      "summary": "College Planner is coming to ChatGPT for Teens to help students manage college applications, alongside new flashcards, quizzes, and a teen AI council.",
-      "published": "2026-10-07T12:00:00+00:00",
-      "audio_url": null,
-      "duration": ""
-    },
-    {
       "id": "22643d6fcb195220",
       "title": "Introducing Playground: Create and play custom games",
       "link": "https://blog.google/innovation-and-ai/technology/ai/playground-experimental-gaming-platform/",
@@ -2905,17 +2982,6 @@
       "category": "AI",
       "summary": "Overview of Playground",
       "published": "2026-10-07T12:00:00+00:00",
-      "audio_url": null,
-      "duration": ""
-    },
-    {
-      "id": "04e9dc3828b5420c",
-      "title": "Radisson Hotel Group brings hotel discovery into ChatGPT",
-      "link": "https://openai.com/index/radisson",
-      "source": "OpenAI Blog",
-      "category": "AI",
-      "summary": "Radisson partnered with Accenture to build a ChatGPT plugin using OpenAI technology, helping travelers find, compare, and book hotels while planning their trips.",
-      "published": "2026-10-07T07:00:00+00:00",
       "audio_url": null,
       "duration": ""
     },
@@ -2973,17 +3039,6 @@
       "published": "2026-10-07T01:30:47+00:00",
       "audio_url": "https://muse.ai/podcasts/media/1248297608376725/94f09345-ad4a-4981-83dd-e3206bbf5c4e/ep-a58582d7-d10a-4815-b9ac-199980dcdbee.mp3",
       "duration": "283"
-    },
-    {
-      "id": "0ca1450969b5beb5",
-      "title": "GPT-6 and Intelligent UI for everyone",
-      "link": "https://openai.com/index/gpt-6-for-everyone",
-      "source": "OpenAI Blog",
-      "category": "AI",
-      "summary": "GPT\u20116 is rolling out globally in ChatGPT with Intelligent UI, delivering faster responses with visuals and interactive experiences you can explore and use directly.",
-      "published": "2026-10-07T00:00:00+00:00",
-      "audio_url": null,
-      "duration": ""
     },
     {
       "id": "0285defcd58f71ae",
@@ -3182,28 +3237,6 @@
       "published": "2026-10-02T14:18:51+00:00",
       "audio_url": "https://muse.ai/podcasts/media/1248297608376725/4720f1e9-8c94-4958-8367-c455f31c5edc/ep-39aea924-dc88-49b7-b637-fc1b06b3a0e0.mp3",
       "duration": "452"
-    },
-    {
-      "id": "fc8c60fd8723bb17",
-      "title": "Tech Learning Series \u2014 Ep 2: Real Scenario: Lifting an On-Prem App to the Cloud",
-      "link": "https://muse.ai/podcasts/media/1248297608376725/4720f1e9-8c94-4958-8367-c455f31c5edc/ep-0fdf819f-8537-4021-985e-3102ae06ffc9.mp3",
-      "source": "Technology Learnings",
-      "category": "Podcast",
-      "summary": "A realistic lift-and-shift walkthrough: discovery, hidden risks, and how to think about rollback before you need it. AI Generated",
-      "published": "2026-10-02T14:18:43+00:00",
-      "audio_url": "https://muse.ai/podcasts/media/1248297608376725/4720f1e9-8c94-4958-8367-c455f31c5edc/ep-0fdf819f-8537-4021-985e-3102ae06ffc9.mp3",
-      "duration": "541"
-    },
-    {
-      "id": "04df6270573324f4",
-      "title": "Tech Learning Series \u2014 Ep 1: Cloud Models Explained: IaaS vs PaaS vs SaaS",
-      "link": "https://muse.ai/podcasts/media/1248297608376725/4720f1e9-8c94-4958-8367-c455f31c5edc/ep-35f36e24-f394-4e61-931e-12633efd2a7b.mp3",
-      "source": "Technology Learnings",
-      "category": "Podcast",
-      "summary": "Sobana and Sudhan unpack IaaS, PaaS and SaaS: what each model means, who manages what, and how to pick the right one. AI Generated",
-      "published": "2026-10-02T14:18:34+00:00",
-      "audio_url": "https://muse.ai/podcasts/media/1248297608376725/4720f1e9-8c94-4958-8367-c455f31c5edc/ep-35f36e24-f394-4e61-931e-12633efd2a7b.mp3",
-      "duration": "527"
     },
     {
       "id": "e9e8edc324aee0e5",
