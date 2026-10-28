@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-28T17:59:59.216444+00:00",
+  "generated_at": "2026-10-28T22:00:43.274652+00:00",
   "sources_polled": [
     "The Verge \u2014 AI",
     "Simon Willison",
@@ -15,6 +15,50 @@
     "Quantum Intelligence"
   ],
   "articles": [
+    {
+      "id": "d0753be868cc7807",
+      "title": "Microsoft is ending Copilot support on smart TVs",
+      "link": "https://www.theverge.com/tech/1021143/microsoft-lg-samsung-copilot-ai-assistant-smart-tvs-ending",
+      "source": "The Verge \u2014 AI",
+      "category": "AI",
+      "summary": "Nearly two years after LG and Samsung announced at CES 2025 that their latest smart TVs would include access to Microsoft's Copilot, the company is ending support for the AI assistant's functionality on all TVs this year, according to a report by Windows Central. The news comes n",
+      "published": "2026-10-28T22:00:30.270207+00:00",
+      "audio_url": null,
+      "duration": ""
+    },
+    {
+      "id": "fc7d1d71bde9a18e",
+      "title": "Google launches Gemini 4 Carbon with a \u2018significant leap\u2019 in cybersecurity",
+      "link": "https://www.theverge.com/tech/1021339/google-gemini-4-carbon-cybersecurity-frontier",
+      "source": "The Verge \u2014 AI",
+      "category": "AI",
+      "summary": "Google has released its latest frontier model, Gemini 4 Carbon, offering \"significant gains\" in coding, agentic tasks, and cybersecurity. In an announcement on Wednesday, Google highlights Carbon's top spot on the Artificial Analysis Intelligence Index (v5.0) benchmark, with Clau",
+      "published": "2026-10-28T22:00:30.270168+00:00",
+      "audio_url": null,
+      "duration": ""
+    },
+    {
+      "id": "e4867209a9cdfe0b",
+      "title": "Akai is embracing vibe-coded mods with an open-source MPC",
+      "link": "https://www.theverge.com/gadgets/1021405/akai-open-source-mpc-sample-key",
+      "source": "The Verge \u2014 AI",
+      "category": "AI",
+      "summary": "The MPC Sample Key isn't even formally announced yet, but Akai is already showing off what the modding community is cooking up through vibe coding. Akai has decided to embrace the explosion of hackers and custom firmware developers by giving them early access to the device, which",
+      "published": "2026-10-28T22:00:30.270092+00:00",
+      "audio_url": null,
+      "duration": ""
+    },
+    {
+      "id": "bfd6acefc1fbf840",
+      "title": "Google announces Gemini 4 Carbon, its latest frontier AI model that you can't use",
+      "link": "https://arstechnica.com/ai/2026/10/google-announces-gemini-4-carbon-its-latest-frontier-ai-model-that-you-cant-use/",
+      "source": "Ars Technica AI",
+      "category": "AI",
+      "summary": "Gemini 4 Carbon is essentially a slightly better version of Argon.",
+      "published": "2026-10-28T18:47:27+00:00",
+      "audio_url": null,
+      "duration": ""
+    },
     {
       "id": "d8f853e661d65a1d",
       "title": "GitHub Octoverse 2026",
@@ -111,6 +155,17 @@
       "category": "AI",
       "summary": "Ask Texas NAACP president Gary Bledsoe what it's been like to see data center developers descend upon Austin and its surrounding suburbs and he can rattle off project after project facing opposition from locals. There's the fight in Taylor over plans to build a data center at a s",
       "published": "2026-10-28T14:00:26.321060+00:00",
+      "audio_url": null,
+      "duration": ""
+    },
+    {
+      "id": "75e2017ed4c5a2ec",
+      "title": "OpenAI and ServiceNow expand partnership across enterprise workflows",
+      "link": "https://openai.com/index/openai-servicenow-partnership-expansion",
+      "source": "OpenAI Blog",
+      "category": "AI",
+      "summary": "OpenAI and ServiceNow expand their partnership to bring OpenAI models and agents into ServiceNow and ServiceNow workflows into ChatGPT and Codex.",
+      "published": "2026-10-28T13:15:00+00:00",
       "audio_url": null,
       "duration": ""
     },
@@ -1299,39 +1354,6 @@
       "category": "AI",
       "summary": "Today&#x27;s PHP Security Release, and How We&#x27;re Strengthening PHP Security If you're running anything on PHP it's vital you upgrade - today's updates (across the entire PHP 8.x line) address two remote code execution holes, and there have been exploits circulating since las",
       "published": "2026-10-21T21:59:50.500675+00:00",
-      "audio_url": null,
-      "duration": ""
-    },
-    {
-      "id": "89a2c6e8757c1903",
-      "title": "Walmart is inviting AI agents to shop for you",
-      "link": "https://www.theverge.com/ai-artificial-intelligence/1015715/walmart-ai-shopping-agents",
-      "source": "The Verge \u2014 AI",
-      "category": "AI",
-      "summary": "Walmart will soon let AI agents shop on its website for you. Next month, the retail giant will allow you to use an AI agent on the site, with systems in place to let you approve and review purchases and set spending limits. The embrace of AI agents stands in stark contrast to Ama",
-      "published": "2026-10-21T21:59:49.950850+00:00",
-      "audio_url": null,
-      "duration": ""
-    },
-    {
-      "id": "0d8d033795840d49",
-      "title": "Anthropic takes on Muse with Claude Duet, its new AI agent",
-      "link": "https://www.theverge.com/ai-artificial-intelligence/1015843/anthropic-claude-duet-ai-agent",
-      "source": "The Verge \u2014 AI",
-      "category": "AI",
-      "summary": "Anthropic just announced an AI agent competitor to Meta's Muse and OpenAI's Dots: Claude Duet. The new agent, designed for professionals and small business owners, is launching as a \"research preview,\" according to Anthropic, and it's available as a standalone app on iOS and Andr",
-      "published": "2026-10-21T21:59:49.950797+00:00",
-      "audio_url": null,
-      "duration": ""
-    },
-    {
-      "id": "86bbef590f282368",
-      "title": "Meta to create a new class of shares to fund AI push",
-      "link": "https://www.theverge.com/tech/1015799/meta-shares-class-ai-q3-2026-earnings",
-      "source": "The Verge \u2014 AI",
-      "category": "AI",
-      "summary": "Meta says it's issuing a new class of shares to fund its AI initiatives. As part of its third-quarter earnings report released on Wednesday, the company says the non-voting stock will also go toward potential acquisitions and employee compensation, with trading beginning in 2027.",
-      "published": "2026-10-21T21:59:49.950728+00:00",
       "audio_url": null,
       "duration": ""
     },
@@ -2931,17 +2953,6 @@
       "duration": "280"
     },
     {
-      "id": "112b5f00879d4fef",
-      "title": "How Oracle turns days of work into minutes with ChatGPT and Codex",
-      "link": "https://openai.com/index/oracle",
-      "source": "OpenAI Blog",
-      "category": "AI",
-      "summary": "Across recruiting, engineering, and operations, Oracle turns specialist knowledge into fast, repeatable workflows with ChatGPT Work and Codex.",
-      "published": "2026-10-08T16:00:00+00:00",
-      "audio_url": null,
-      "duration": ""
-    },
-    {
       "id": "5387f8e8d5e8c2a4",
       "title": "Nvidia's big bet on physical AI aims for safer robotaxis, humanoid robots",
       "link": "https://arstechnica.com/ai/2026/10/nvidias-big-bet-on-physical-ai-aims-for-safer-robotaxis-humanoid-robots/",
@@ -2971,17 +2982,6 @@
       "category": "AI",
       "summary": "Get ready for more AI in your Windows and more AI on the desktop.",
       "published": "2026-10-08T00:00:24+00:00",
-      "audio_url": null,
-      "duration": ""
-    },
-    {
-      "id": "0598a3e5bb11bf63",
-      "title": "\u201cSoftware is over\u201d: Bold AI developer takes aim at Adobe with open source clones",
-      "link": "https://arstechnica.com/ai/2026/10/software-is-over-bold-ai-developer-takes-aim-at-adobe-with-open-source-clones/",
-      "source": "Ars Technica AI",
-      "category": "AI",
-      "summary": "Opus-built Creative Cloud alternatives are ambitious, free, and nowhere near finished.",
-      "published": "2026-10-07T21:56:42+00:00",
       "audio_url": null,
       "duration": ""
     },
