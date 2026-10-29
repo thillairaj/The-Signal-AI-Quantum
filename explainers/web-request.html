@@ -98,9 +98,9 @@ main { max-width: 1200px; margin: 0 auto; padding: 0 2rem 4rem; }
 .svg-temp { font-family: var(--font-mono) !important; font-size: 12px; font-weight: 500; }
 .svg-note { font-size: 11px; fill: var(--muted); font-style: italic; }
 @media (max-width: 640px) {
-  .svg-label { font-size: 18px; }
-  .svg-temp { font-size: 17px; }
-  .svg-note { font-size: 15px; }
+  .svg-label { font-size: 24px; }
+  .svg-temp { font-size: 24px; }
+  .svg-note { font-size: 20px; }
 }
 .part { cursor: pointer; outline: none; }
 .part .hit { fill: transparent; stroke: transparent; }
@@ -236,6 +236,7 @@ footer a { color: var(--gold); font-weight: 700; text-decoration: none; }
   .topicbar { position: static; }
   .kicker { padding-left: 48px; padding-right: 48px; }
   body { overflow-x: clip; }
+  .ts-label { display: none; }
   .tabs { margin-left: 0; }
 }
 .sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
@@ -288,6 +289,7 @@ footer a { color: var(--gold); font-weight: 700; text-decoration: none; }
         <svg viewBox="0 0 720 640" id="fridgeSvg" aria-label="Diagram of a web request journey, from your browser across the network to the server and its database">
           <path id="signalPath" class="pulse-trail" d="M 110 100 L 610 100 L 610 215 L 100 215 L 100 330 L 625 330 L 625 560 L 100 560"/>
           <circle id="pulseDot" class="pulse-dot" r="7" cx="-20" cy="-20"/>
+          <g class="dir-arrows" fill="var(--gold)" opacity="0.85" pointer-events="none"><path d="M 228 94 L 243 100 L 228 106 Z"/><path d="M 478 94 L 493 100 L 478 106 Z"/><path d="M 604 161 L 616 161 L 610 176 Z"/><path d="M 362 209 L 347 215 L 362 221 Z"/><path d="M 94 255 L 106 255 L 100 270 Z"/><path d="M 180 324 L 195 330 L 180 336 Z"/><path d="M 355 324 L 370 330 L 355 336 Z"/><path d="M 530 324 L 545 330 L 530 336 Z"/><path d="M 619 438 L 631 438 L 625 453 Z"/><path d="M 544 554 L 529 560 L 544 566 Z"/><path d="M 369 554 L 354 560 L 369 566 Z"/><path d="M 194 554 L 179 560 L 194 566 Z"/></g>
           <text x="20" y="40" class="svg-note">YOUR DEVICE</text>
           <g class="part" data-id="browser" tabindex="0" role="button" aria-label="Browser">
             <g class="shape"><rect x="20" y="68" width="180" height="64" rx="12" fill="var(--panel)" stroke="var(--border)" stroke-width="1.5"/></g>
@@ -349,7 +351,7 @@ footer a { color: var(--gold); font-weight: 700; text-decoration: none; }
           </g>
           <g class="part" data-id="balancer" tabindex="0" role="button" aria-label="Load balancer">
             <g class="shape"><rect x="380" y="528" width="140" height="64" rx="12" fill="var(--panel)" stroke="var(--border)" stroke-width="1.5"/></g>
-            <text x="450.0" y="557.0" text-anchor="middle" class="svg-label">Load balancer</text>
+            <text x="450.0" y="557.0" text-anchor="middle" class="svg-label">Balancer</text>
             <text x="450.0" y="576.0" text-anchor="middle" class="svg-note">sharing the work</text>
             <rect class="hit" x="376" y="524" width="148" height="72"/>
             <circle class="marker" cx="512" cy="536" r="6"/>
@@ -376,7 +378,7 @@ footer a { color: var(--gold); font-weight: 700; text-decoration: none; }
         <svg viewBox="0 0 700 460" id="chipSvg" aria-label="Diagram of the return trip of a web page, from the response to the rendered page">
           <g class="part" data-id="response" tabindex="0" role="button" aria-label="The response">
             <g class="shape"><rect x="20" y="100" width="150" height="64" rx="12" fill="var(--panel)" stroke="var(--border)" stroke-width="1.5"/></g>
-            <text x="95.0" y="129.0" text-anchor="middle" class="svg-label">The response</text>
+            <text x="95.0" y="129.0" text-anchor="middle" class="svg-label">Response</text>
             <text x="95.0" y="148.0" text-anchor="middle" class="svg-note">200 OK, and the page</text>
             <rect class="hit" x="16" y="96" width="158" height="72"/>
             <circle class="marker" cx="162" cy="108" r="6"/>

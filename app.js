@@ -288,6 +288,7 @@ function renderResearch() {
   researchGridEl.querySelectorAll(".research-card").forEach(c =>
     c.addEventListener("click", () => {
       openResearchId = c.dataset.id;
+      try { history.pushState(null, "", "#research/" + openResearchId); } catch (e) {}
       renderResearch();
       researchViewEl.scrollIntoView();
     }));
@@ -334,6 +335,7 @@ async function renderResearchArticle(id) {
     </div>`;
   document.getElementById("researchBack").addEventListener("click", () => {
     openResearchId = null;
+    try { history.pushState(null, "", "#research"); } catch (e) {}
     renderResearch();
   });
   const thumb = document.getElementById("researchThumb");
@@ -656,7 +658,19 @@ function openLearnTarget() {
   }
 }
 openLearnTarget();
-window.addEventListener("hashchange", openLearnTarget);
+function openResearchTarget() {
+  const h = location.hash;
+  if (h.startsWith("#research/")) {
+    const id = h.slice("#research/".length);
+    if (id && id !== openResearchId) {
+      openResearchId = id;
+      showView("research");
+      if (researchItems.length) renderResearch();
+    }
+  }
+}
+openResearchTarget();
+window.addEventListener("hashchange", function () { openLearnTarget(); openResearchTarget(); });
 
 /* ---------- Home view: auto-rails, live counts (Oct 21 2026 redesign) ---------- */
 (function initHome() {
@@ -688,7 +702,10 @@ window.addEventListener("hashchange", openLearnTarget);
       if (item.dataset.ext) { window.open(item.dataset.ext, "_blank", "noopener"); return; }
       var view = item.dataset.goto;
       if (view === "podcast") { activeSeries = item.dataset.series || ""; podcastPage = 0; }
-      if (view === "research") { openResearchId = item.dataset.artId || null; }
+      if (view === "research") {
+        openResearchId = item.dataset.artId || null;
+        try { history.pushState(null, "", openResearchId ? "#research/" + openResearchId : "#research"); } catch (e) {}
+      }
       showView(view);
       if (view === "learn" && item.dataset.scroll) scrollToLearnId(item.dataset.scroll);
       else window.scrollTo({ top: 0 });
@@ -778,10 +795,10 @@ function fillHomeArticles() {
   });
 }
 
-/* Play and Learn launch pop up (Thillai, Oct 23 2026): shown once per visitor;
-   the go button opens Learning Spaces with the games door expanded. */
+/* Interactive Explainers launch pop up: shown once per visitor;
+   the go button opens Learning Spaces with the explainers door expanded. */
 (function initGamesPopup() {
-  var KEY = "signalPlayLearnPopupV2";
+  var KEY = "signalExplainersPopupV1";
   var seen = false;
   try { seen = !!localStorage.getItem(KEY); } catch (e) {}
   var popup = document.getElementById("gamesPopup");
@@ -795,9 +812,9 @@ function fillHomeArticles() {
   document.getElementById("gamesPopupGo").addEventListener("click", function () {
     mark(); hide();
     showView("learn");
-    openDoor("games");
+    openDoor("explainers");
     requestAnimationFrame(function () {
-      var el = document.getElementById("learn-games");
+      var el = document.getElementById("learn-explainers");
       if (el) el.scrollIntoView({ block: "start" });
     });
   });

@@ -98,9 +98,9 @@ main { max-width: 1200px; margin: 0 auto; padding: 0 2rem 4rem; }
 .svg-temp { font-family: var(--font-mono) !important; font-size: 12px; font-weight: 500; }
 .svg-note { font-size: 11px; fill: var(--muted); font-style: italic; }
 @media (max-width: 640px) {
-  .svg-label { font-size: 18px; }
-  .svg-temp { font-size: 17px; }
-  .svg-note { font-size: 15px; }
+  .svg-label { font-size: 24px; }
+  .svg-temp { font-size: 24px; }
+  .svg-note { font-size: 20px; }
 }
 .part { cursor: pointer; outline: none; }
 .part .hit { fill: transparent; stroke: transparent; }
@@ -236,6 +236,7 @@ footer a { color: var(--gold); font-weight: 700; text-decoration: none; }
   .topicbar { position: static; }
   .kicker { padding-left: 48px; padding-right: 48px; }
   body { overflow-x: clip; }
+  .ts-label { display: none; }
   .tabs { margin-left: 0; }
 }
 .sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
@@ -419,7 +420,7 @@ footer a { color: var(--gold); font-weight: 700; text-decoration: none; }
           </g>
           <g class="part" data-id="mlp" tabindex="0" role="button" aria-label="Feed forward network">
             <g class="shape"><rect x="215" y="322" width="240" height="56" rx="12" fill="var(--panel)" stroke="var(--border)" stroke-width="1.5"/></g>
-            <text x="335.0" y="347.0" text-anchor="middle" class="svg-label">Feed forward network</text>
+            <text x="335.0" y="347.0" text-anchor="middle" class="svg-label">Feed forward</text>
             <text x="335.0" y="366.0" text-anchor="middle" class="svg-note">each token processed on its own</text>
             <rect class="hit" x="211" y="318" width="248" height="64"/>
             <circle class="marker" cx="447" cy="330" r="6"/>

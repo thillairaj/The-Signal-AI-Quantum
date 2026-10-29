@@ -4,6 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>The Quantum Deck</title>
+<meta name="description" content="The Quantum Deck on The Signal: eight topics from quantum fundamentals to sensing, each with Learn cards, flashcards and a ten question quiz.">
 <meta property="og:type" content="website">
 <meta property="og:title" content="The Quantum Deck — learn quantum computing, one card at a time">
 <meta property="og:description" content="15-card visual lessons on quantum computing: fundamentals, networks, cryptography, machine learning, error correction, algorithms and more. Read a card, flip it, prove you know it.">
@@ -93,15 +94,15 @@
   .rowhead h2{margin:0;font-size:21px;letter-spacing:.3px;color:var(--title-ink)}
   .rowhead h2 .n{color:var(--gold);font-size:13px;letter-spacing:2px;vertical-align:middle;margin-right:8px}
   .rowhead p{margin:4px 0 0;color:var(--row-sub);font-size:13.5px}
-  .rail-wrap{position:relative}
+  .rail-wrap{position:relative;display:flex;align-items:center;gap:8px}.rail{flex:1;min-width:0}
   .rail{display:flex;gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;
     scrollbar-width:none;padding:14px 4px 18px;align-items:stretch}
   .rail::-webkit-scrollbar{display:none}
-  .rail-btn{position:absolute;top:42%;transform:translateY(-50%);z-index:5;width:44px;height:44px;border-radius:50%;
+  .rail-btn{position:static;transform:none;flex:0 0 auto;z-index:5;width:44px;height:44px;border-radius:50%;
     border:1px solid var(--gold-dim);background:rgba(70,78,90,.45);color:var(--gold);font-size:22px;cursor:pointer;
     box-shadow:0 2px 8px rgba(0,0,0,.18)}
   .rail-btn:hover{background:rgba(70,78,90,.72)}
-  .rail-btn.prev{left:-8px}.rail-btn.next{right:-8px}
+  
   @keyframes wiggle{0%,100%{transform:rotate(0deg)}25%{transform:rotate(.7deg) translateY(-2px)}75%{transform:rotate(-.7deg)}}
   @media(hover:hover) and (prefers-reduced-motion:no-preference){
     .pcard:hover{animation:wiggle .45s ease-in-out}
@@ -207,6 +208,9 @@
   .li-txt{display:flex;flex-direction:column;line-height:1.15;text-align:left}
   .li-dir{font-size:9.5px;letter-spacing:1.8px;text-transform:uppercase;opacity:.85;font-weight:700}
   .li-name{font-size:15.5px;font-weight:800;letter-spacing:.01em}
+
+:root[data-theme="dark"] .tsub, :root[data-theme="dark"] .ptag, :root[data-theme="dark"] .quiz-progress, :root[data-theme="dark"] .quiz-sub, :root[data-theme="dark"] .zoom-tag { color: #a8b0ba; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .tsub, :root:not([data-theme="light"]) .ptag, :root:not([data-theme="light"]) .quiz-progress, :root:not([data-theme="light"]) .quiz-sub, :root:not([data-theme="light"]) .zoom-tag { color: #a8b0ba; } }
 </style>
 </head>
 <body>
