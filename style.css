@@ -498,6 +498,10 @@ body[data-view="research"] .feed-only { display: none; }
 .learn-card.explainer-all:hover { background-color: #E9DDC0; border-color: #B99F5F; }
 .learn-card.explainer-quantum { background-color: #ECE9F7; border: 1px solid #BDB0DE; }
 .learn-card.explainer-quantum:hover { background-color: #DCD3F0; border-color: #8B76C4; }
+.learn-card.explainer-ai { background-color: #E7F0FA; border: 1px solid #A9C6E8; }
+.learn-card.explainer-ai:hover { background-color: #D6E6F7; border-color: #5B8DBF; }
+.learn-card.explainer-cloud { background-color: #E6F2F0; border: 1px solid #A8CCC6; }
+.learn-card.explainer-cloud:hover { background-color: #D7ECE8; border-color: #4C9A94; }
 /* Interactive Tables family colours (Thillai, Oct 21 2026): Founders & Leadership = gold, Quantum = violet, AI = blue, Other Technologies = slate */
 .table-family-legend { display: flex; flex-wrap: wrap; gap: 8px 18px; margin: 2px 0 14px; font-size: 13px; font-weight: 600; color: #44403c; }
 .table-family-legend .fam-dot { display: inline-block; width: 11px; height: 11px; border-radius: 3px; margin-right: 6px; vertical-align: -1px; }
