@@ -219,7 +219,7 @@
 [hidden] { display: none !important; }
 #learn-rail .pcard { height: 300px; flex-basis: 300px; }
 .rowhead { margin-top: 20px; }
-.open-explainer { margin-top: 14px; }
+.open-explainer { margin: 2px 0 4px; }
 @media (max-width: 700px) { #learn-rail .pcard { height: 320px; flex-basis: 80%; } }
 </style>
 </head>
@@ -249,12 +249,6 @@
   </div>
 
   <div id="live-block">
-    <div class="rowhead"><div><h2><span class="n">01</span>Inside this explainer</h2><p>Scroll the rail, arrows move one card at a time. Then open the explainer and tap through the machine itself.</p></div></div>
-    <div class="rail-wrap">
-      <button class="rail-btn prev" data-rail="learn-rail" aria-label="Previous">‹</button>
-      <div class="rail" id="learn-rail"></div>
-      <button class="rail-btn next" data-rail="learn-rail" aria-label="Next">›</button>
-    </div>
     <a class="open-explainer" id="open-explainer" href="../../explainers/quantum-hardware.html">
       <span><span class="oe-dir">Open explainer</span><br><span class="oe-title" id="open-title"></span></span>
       <span class="oe-arrow">→</span>
@@ -262,6 +256,12 @@
     <div class="open-explainer" id="open-demo" hidden style="border-style: dashed;">
       <span><span class="oe-dir">Demo panel</span><br><span class="oe-title" id="open-demo-title"></span><br><span style="font-size:13.5px; opacity:.75;">This explainer is not built yet. In the full build, this block opens its page.</span></span>
       <span class="oe-arrow">→</span>
+    </div>
+    <div class="rowhead"><div><h2><span class="n">01</span>Inside this explainer</h2><p>Scroll the rail, arrows move one card at a time. Each card previews one part of the explainer above.</p></div></div>
+    <div class="rail-wrap">
+      <button class="rail-btn prev" data-rail="learn-rail" aria-label="Previous">‹</button>
+      <div class="rail" id="learn-rail"></div>
+      <button class="rail-btn next" data-rail="learn-rail" aria-label="Next">›</button>
     </div>
   </div>
 
