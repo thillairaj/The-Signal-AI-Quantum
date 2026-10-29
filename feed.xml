@@ -4,7 +4,63 @@
     <title>The Signal</title>
     <link>https://thillairaj.github.io/The-Signal-AI-Quantum/</link>
     <description>A self-updating feed of AI, quantum computing, and podcast updates.</description>
-    <lastBuildDate>Thu, 29 Oct 2026 14:00:17 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 29 Oct 2026 18:00:15 +0000</lastBuildDate>
+    <item>
+      <title>Quoting Ben Hylak</title>
+      <link>https://simonwillison.net/2026/Oct/29/ben-hylak/</link>
+      <guid isPermaLink="false">18c36f7241d29e16</guid>
+      <description>every product i use should just be a headless mcp, that feeds into an agent, where i never have to think about anything underneath. except for our product, of course. in our product, customers love the ui and love us very much. we're special that way. &amp;mdash; Ben Hylak Tags: mode</description>
+      <category>Simon Willison</category>
+      <pubDate>Thu, 29 Oct 2026 18:00:02 +0000</pubDate>
+    </item>
+    <item>
+      <title>Building a multiplayer game world with autonomous Fable-class models</title>
+      <link>https://simonwillison.net/2026/Oct/29/how-i-built-the-most-ai-pilled-company-in-the-world/</link>
+      <guid isPermaLink="false">672400a4a73efc0d</guid>
+      <description>How I Built the Most AI-Pilled Company in the World Don't be put off by the clickbait headline, this piece by Jacob Sansbury describing how they are building Spawn is a fascinating exploration of the bleeding edge of what's possible with agentic engineering against frontier model</description>
+      <category>Simon Willison</category>
+      <pubDate>Thu, 29 Oct 2026 18:00:02 +0000</pubDate>
+    </item>
+    <item>
+      <title>Anthropic is asking Wall Street to believe in AGI</title>
+      <link>https://www.theverge.com/podcast/1021322/anthropic-ipo-filing-s-1-claude-semianalysis-joey-brookhart-interview</link>
+      <guid isPermaLink="false">079251699e8ed6ea</guid>
+      <description>Today on Decoder, I’m joined by Joey Brookhart, an analyst at the chip and AI research firm SemiAnalysis, to help me dig into the story inside the numbers of the Anthropic IPO filing — a document known as an S-1. Anthropic just filed its S-1 to go public on the Nasdaq, and it cou</description>
+      <category>The Verge — AI</category>
+      <pubDate>Thu, 29 Oct 2026 18:00:01 +0000</pubDate>
+    </item>
+    <item>
+      <title>The NYT Cooking app is testing AI recipe modifications</title>
+      <link>https://www.theverge.com/ai-artificial-intelligence/1022193/nyt-cooking-app-ai-recipe-modification-tool</link>
+      <guid isPermaLink="false">9d92d4ec6e5e3635</guid>
+      <description>The New York Times is testing a new AI feature for its Cooking app that helps users to modify recipes, and it has sparked some drama among users. Last Friday, NYT Cooking senior editor Genevieve Ko announced the feature, which can be used to recommend substitutions for ingredient</description>
+      <category>The Verge — AI</category>
+      <pubDate>Thu, 29 Oct 2026 18:00:01 +0000</pubDate>
+    </item>
+    <item>
+      <title>Microsoft’s AI future has fewer jobs</title>
+      <link>https://www.theverge.com/tech/1022023/microsoft-exit-offer-layoffs-notepad</link>
+      <guid isPermaLink="false">45b4ef0b726f6d16</guid>
+      <description>To anyone listening closely to what Microsoft CEO Satya Nadella has been saying over the past couple of years, this week felt like the clearest sign yet that AI is about to fundamentally change the size of Microsoft's workforce. Microsoft is now offering voluntary buyouts to arou</description>
+      <category>The Verge — AI</category>
+      <pubDate>Thu, 29 Oct 2026 18:00:01 +0000</pubDate>
+    </item>
+    <item>
+      <title>An updated Model Spec for more capable and beneficial AI</title>
+      <link>https://openai.com/index/updated-model-spec</link>
+      <guid isPermaLink="false">7bf0065ceb1646f5</guid>
+      <description>OpenAI’s updated Model Spec outlines five core values to guide more capable AI toward sound judgment, human agency, and faithfulness to human intent.</description>
+      <category>OpenAI Blog</category>
+      <pubDate>Thu, 29 Oct 2026 17:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>Google admits AI search makes less money, but it's fixing that with more ads</title>
+      <link>https://arstechnica.com/gadgets/2026/10/google-admits-ai-search-makes-less-money-but-its-fixing-that-with-more-ads/</link>
+      <guid isPermaLink="false">4fecc0fbd4dea111</guid>
+      <description>Google's negative cash flow balloons to -$9.06 billion, and stock price tumbles following Q3 earnings.</description>
+      <category>Ars Technica AI</category>
+      <pubDate>Thu, 29 Oct 2026 16:24:55 +0000</pubDate>
+    </item>
     <item>
       <title>AI has come for Arizona’s water</title>
       <link>https://www.theverge.com/cs/features/1016650/arizona-water-data-center-tsmc</link>
@@ -28,6 +84,22 @@
       <description>Anthropic’s S-1 splits its $8.9 billion H1 compute bill: most went to R&amp;amp;D, with less than a third estimated to serve Claude customers.</description>
       <category>Anthropic/Claude News</category>
       <pubDate>Thu, 29 Oct 2026 11:30:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>How we detect frontier model misalignment</title>
+      <link>https://openai.com/index/how-we-detect-frontier-model-misalignment</link>
+      <guid isPermaLink="false">d28967fce9c692cd</guid>
+      <description>OpenAI uses layered monitoring to detect frontier model misalignment and unauthorized agent behavior so responders can intervene before incidents escalate.</description>
+      <category>OpenAI Blog</category>
+      <pubDate>Thu, 29 Oct 2026 09:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>How Ropes &amp; Gray is developing AI for transactional diligence</title>
+      <link>https://openai.com/index/ropes-gray-ai-diligence</link>
+      <guid isPermaLink="false">2d9928289658e986</guid>
+      <description>Ropes &amp; Gray is developing AI for transactional diligence with OpenAI. Lawyers review grouped documents, summaries, and reports before advising clients.</description>
+      <category>OpenAI Blog</category>
+      <pubDate>Thu, 29 Oct 2026 07:00:00 +0000</pubDate>
     </item>
     <item>
       <title>Quoting Ted Sanders</title>
@@ -412,78 +484,6 @@
       <description>The RealReal, a secondhand luxury fashion consignment retailer, said it's updating its bot defense system, effectively making it harder for AI agents to shop on its site. The change comes days after The Verge reported that an AI agent could be used to take advantage of The RealRe</description>
       <category>The Verge — AI</category>
       <pubDate>Mon, 26 Oct 2026 17:59:37 +0000</pubDate>
-    </item>
-    <item>
-      <title>Highway thieves are spoofing GPS to steal millions in data center-bound cargo</title>
-      <link>https://arstechnica.com/tech-policy/2026/10/highway-thieves-are-spoofing-gps-to-steal-millions-in-data-center-bound-cargo/</link>
-      <guid isPermaLink="false">71784ce3534e69e4</guid>
-      <description>Investigators explain how highway thieves stole $100M in data center equipment.</description>
-      <category>Ars Technica AI</category>
-      <pubDate>Mon, 26 Oct 2026 17:26:36 +0000</pubDate>
-    </item>
-    <item>
-      <title>Our newest AI Quest: Mapping the human brain</title>
-      <link>https://blog.google/products-and-platforms/products/education/ai-quests-polar-peaks/</link>
-      <guid isPermaLink="false">be77c96c39b4ea3e</guid>
-      <description>An illustration of a planet rotating to show various cartoon figures waving. At the top is the text "AI Quests"</description>
-      <category>Google AI Blog</category>
-      <pubDate>Mon, 26 Oct 2026 16:00:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>Tesla gave up the EV crown. Now it wants to win the autonomy race.</title>
-      <link>https://arstechnica.com/cars/2026/10/tesla-wants-ai-and-software-to-be-its-next-profit-engine/</link>
-      <guid isPermaLink="false">6a47f3e0c8812311</guid>
-      <description>Tesla hopes autonomy subscriptions can deliver the margins car sales cannot.</description>
-      <category>Ars Technica AI</category>
-      <pubDate>Mon, 26 Oct 2026 14:30:27 +0000</pubDate>
-    </item>
-    <item>
-      <title>Can AI help solve the COBOL code crisis?</title>
-      <link>https://www.theverge.com/ai-artificial-intelligence/1018434/cobol-migration-legacy-code-openai-anthropic</link>
-      <guid isPermaLink="false">9c0a98fa46a8163e</guid>
-      <description>What do the IRS, banks, airlines, and government infrastructure around the world have in common? They're all running on systems propped up by antique computer code that nobody dares touch, lest everything come crashing down. OpenAI thinks it may have a solution. On October 19th, </description>
-      <category>The Verge — AI</category>
-      <pubDate>Mon, 26 Oct 2026 14:00:19 +0000</pubDate>
-    </item>
-    <item>
-      <title>Anthropic’s IPO filing lays out a plan to &amp;#8216;revolutionize every area of human endeavor&amp;#8217; with AI</title>
-      <link>https://www.theverge.com/ai-artificial-intelligence/1018476/anthropic-ipo-details-s1-filed-sec</link>
-      <guid isPermaLink="false">a0064ee100f0c0b3</guid>
-      <description>Anthropic has filed its S-1 prospectus with the Securities and Exchange Commission, preparing the company behind Claude to beat OpenAI to the punch with an IPO. In a filing with the SEC, Anthropic said it plans to list on the Nasdaq exchange under the ticker symbol "ANT." The AI </description>
-      <category>The Verge — AI</category>
-      <pubDate>Mon, 26 Oct 2026 14:00:19 +0000</pubDate>
-    </item>
-    <item>
-      <title>GPT-6.1 Sol helps CodeRabbit strengthen security across complex codebases</title>
-      <link>https://openai.com/index/gpt-6-1-sol-coderabbit-code-security</link>
-      <guid isPermaLink="false">1a1d4bf2fc111eb8</guid>
-      <description>CodeRabbit uses GPT-6.1 Sol to investigate security risks across complex codebases. Its security agent helps developers review findings and proposed fixes.</description>
-      <category>OpenAI Blog</category>
-      <pubDate>Mon, 26 Oct 2026 13:45:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>ChatGPT’s expanding world of work</title>
-      <link>https://openai.com/index/chatgpt-expanding-world-of-work</link>
-      <guid isPermaLink="false">64d59b55a8fb8666</guid>
-      <description>Explore OpenAI Signals data on 165 work activities across nearly 100 countries, revealing how people use ChatGPT for work and how usage changes over time.</description>
-      <category>OpenAI Blog</category>
-      <pubDate>Mon, 26 Oct 2026 10:00:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>How Fanatics and OpenAI streamline the fan experience</title>
-      <link>https://openai.com/index/fanatics-streamline-fan-experience</link>
-      <guid isPermaLink="false">eb7708c5f537ab79</guid>
-      <description>Fanatics uses OpenAI to help fans complete their game-day outfits with Shop the Look. Testing across roughly 30,000 MLB products showed 10% higher engagement.</description>
-      <category>OpenAI Blog</category>
-      <pubDate>Mon, 26 Oct 2026 07:00:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>How Ultrafast cut incident investigation from hours to minutes at OpenAI</title>
-      <link>https://openai.com/index/openai-cut-incident-investigation</link>
-      <guid isPermaLink="false">8f2f08b6e197805b</guid>
-      <description>See how OpenAI engineers use Codex Ultrafast to investigate incidents in minutes. Explore faster security analysis, code refactoring, and daily workflows.</description>
-      <category>OpenAI Blog</category>
-      <pubDate>Mon, 26 Oct 2026 07:00:00 +0000</pubDate>
     </item>
   </channel>
 </rss>

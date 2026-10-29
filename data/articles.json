@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-29T14:00:17.717501+00:00",
+  "generated_at": "2026-10-29T18:00:15.868936+00:00",
   "sources_polled": [
     "The Verge \u2014 AI",
     "Simon Willison",
@@ -15,6 +15,83 @@
     "Quantum Intelligence"
   ],
   "articles": [
+    {
+      "id": "18c36f7241d29e16",
+      "title": "Quoting Ben Hylak",
+      "link": "https://simonwillison.net/2026/Oct/29/ben-hylak/",
+      "source": "Simon Willison",
+      "category": "AI",
+      "summary": "every product i use should just be a headless mcp, that feeds into an agent, where i never have to think about anything underneath. except for our product, of course. in our product, customers love the ui and love us very much. we're special that way. &mdash; Ben Hylak Tags: mode",
+      "published": "2026-10-29T18:00:02.811306+00:00",
+      "audio_url": null,
+      "duration": ""
+    },
+    {
+      "id": "672400a4a73efc0d",
+      "title": "Building a multiplayer game world with autonomous Fable-class models",
+      "link": "https://simonwillison.net/2026/Oct/29/how-i-built-the-most-ai-pilled-company-in-the-world/",
+      "source": "Simon Willison",
+      "category": "AI",
+      "summary": "How I Built the Most AI-Pilled Company in the World Don't be put off by the clickbait headline, this piece by Jacob Sansbury describing how they are building Spawn is a fascinating exploration of the bleeding edge of what's possible with agentic engineering against frontier model",
+      "published": "2026-10-29T18:00:02.811241+00:00",
+      "audio_url": null,
+      "duration": ""
+    },
+    {
+      "id": "079251699e8ed6ea",
+      "title": "Anthropic is asking Wall Street to believe in AGI",
+      "link": "https://www.theverge.com/podcast/1021322/anthropic-ipo-filing-s-1-claude-semianalysis-joey-brookhart-interview",
+      "source": "The Verge \u2014 AI",
+      "category": "AI",
+      "summary": "Today on Decoder, I\u2019m joined by Joey Brookhart, an analyst at the chip and AI research firm SemiAnalysis, to help me dig into the story inside the numbers of the Anthropic IPO filing \u2014 a document known as an S-1. Anthropic just filed its S-1 to go public on the Nasdaq, and it cou",
+      "published": "2026-10-29T18:00:01.935549+00:00",
+      "audio_url": null,
+      "duration": ""
+    },
+    {
+      "id": "9d92d4ec6e5e3635",
+      "title": "The NYT Cooking app is testing AI recipe modifications",
+      "link": "https://www.theverge.com/ai-artificial-intelligence/1022193/nyt-cooking-app-ai-recipe-modification-tool",
+      "source": "The Verge \u2014 AI",
+      "category": "AI",
+      "summary": "The New York Times is testing a new AI feature for its Cooking app that helps users to modify recipes, and it has sparked some drama among users. Last Friday, NYT Cooking senior editor Genevieve Ko announced the feature, which can be used to recommend substitutions for ingredient",
+      "published": "2026-10-29T18:00:01.935503+00:00",
+      "audio_url": null,
+      "duration": ""
+    },
+    {
+      "id": "45b4ef0b726f6d16",
+      "title": "Microsoft\u2019s AI future has fewer jobs",
+      "link": "https://www.theverge.com/tech/1022023/microsoft-exit-offer-layoffs-notepad",
+      "source": "The Verge \u2014 AI",
+      "category": "AI",
+      "summary": "To anyone listening closely to what Microsoft CEO Satya Nadella has been saying over the past couple of years, this week felt like the clearest sign yet that AI is about to fundamentally change the size of Microsoft's workforce. Microsoft is now offering voluntary buyouts to arou",
+      "published": "2026-10-29T18:00:01.935411+00:00",
+      "audio_url": null,
+      "duration": ""
+    },
+    {
+      "id": "7bf0065ceb1646f5",
+      "title": "An updated Model Spec for more capable and beneficial AI",
+      "link": "https://openai.com/index/updated-model-spec",
+      "source": "OpenAI Blog",
+      "category": "AI",
+      "summary": "OpenAI\u2019s updated Model Spec outlines five core values to guide more capable AI toward sound judgment, human agency, and faithfulness to human intent.",
+      "published": "2026-10-29T17:00:00+00:00",
+      "audio_url": null,
+      "duration": ""
+    },
+    {
+      "id": "4fecc0fbd4dea111",
+      "title": "Google admits AI search makes less money, but it's fixing that with more ads",
+      "link": "https://arstechnica.com/gadgets/2026/10/google-admits-ai-search-makes-less-money-but-its-fixing-that-with-more-ads/",
+      "source": "Ars Technica AI",
+      "category": "AI",
+      "summary": "Google's negative cash flow balloons to -$9.06 billion, and stock price tumbles following Q3 earnings.",
+      "published": "2026-10-29T16:24:55+00:00",
+      "audio_url": null,
+      "duration": ""
+    },
     {
       "id": "9cd5509199bff926",
       "title": "AI has come for Arizona\u2019s water",
@@ -45,6 +122,28 @@
       "category": "AI",
       "summary": "Anthropic\u2019s S-1 splits its $8.9 billion H1 compute bill: most went to R&amp;D, with less than a third estimated to serve Claude customers.",
       "published": "2026-10-29T11:30:00+00:00",
+      "audio_url": null,
+      "duration": ""
+    },
+    {
+      "id": "d28967fce9c692cd",
+      "title": "How we detect frontier model misalignment",
+      "link": "https://openai.com/index/how-we-detect-frontier-model-misalignment",
+      "source": "OpenAI Blog",
+      "category": "AI",
+      "summary": "OpenAI uses layered monitoring to detect frontier model misalignment and unauthorized agent behavior so responders can intervene before incidents escalate.",
+      "published": "2026-10-29T09:00:00+00:00",
+      "audio_url": null,
+      "duration": ""
+    },
+    {
+      "id": "2d9928289658e986",
+      "title": "How Ropes & Gray is developing AI for transactional diligence",
+      "link": "https://openai.com/index/ropes-gray-ai-diligence",
+      "source": "OpenAI Blog",
+      "category": "AI",
+      "summary": "Ropes & Gray is developing AI for transactional diligence with OpenAI. Lawyers review grouped documents, summaries, and reports before advising clients.",
+      "published": "2026-10-29T07:00:00+00:00",
       "audio_url": null,
       "duration": ""
     },
@@ -1303,17 +1402,6 @@
       "duration": ""
     },
     {
-      "id": "7b213ad205a3643b",
-      "title": "Someone hacked the Switch 2 by using an old game and AI",
-      "link": "https://www.theverge.com/games/1016862/nintendo-switch-2-jailbreak-ai",
-      "source": "The Verge \u2014 AI",
-      "category": "AI",
-      "summary": "The Nintendo Switch 2 has apparently been jailbroken, and a modder has already shown the console running a custom version of Mario Kart World featuring new playable characters like Cinnamoroll, the red Angry Bird, Peter Griffin, and Steve from Minecraft. OpenAI's Codex helped mak",
-      "published": "2026-10-22T17:59:46.033314+00:00",
-      "audio_url": null,
-      "duration": ""
-    },
-    {
       "id": "c625905b3719c2e1",
       "title": "Hackers got a four-day head start on epic PHP2Shell vulnerability",
       "link": "https://arstechnica.com/security/2026/10/hackers-got-a-four-day-head-start-on-epic-php2shell-vulnerability/",
@@ -1321,28 +1409,6 @@
       "category": "AI",
       "summary": "Hackers were already probing the bug before defenders were told it existed.",
       "published": "2026-10-22T15:25:02+00:00",
-      "audio_url": null,
-      "duration": ""
-    },
-    {
-      "id": "e106504eaeceb2e8",
-      "title": "Eiliko maker says it&#8217;s hiring an \u2018independent security firm\u2019 after Verge report on its insecure robots",
-      "link": "https://www.theverge.com/news/1015824/eiliko-energize-lab-statement-on-robot-hack-breach",
-      "source": "The Verge \u2014 AI",
-      "category": "AI",
-      "summary": "Eiliko, a cute robot charm you can hang on your bag with built-in AI conversations, turned out to be a security nightmare. It told owners that \"your secrets are safe with me,\" but hackers could easily read complete transcripts of everything we told the toy, and that was just the ",
-      "published": "2026-10-22T14:00:37.219125+00:00",
-      "audio_url": null,
-      "duration": ""
-    },
-    {
-      "id": "ff67e4725a210245",
-      "title": "Claude did not invent scorpion antivenom",
-      "link": "https://www.theverge.com/ai-artificial-intelligence/1016443/anthropic-claude-citrini-vibecoding-scorpion-antivenom",
-      "source": "The Verge \u2014 AI",
-      "category": "AI",
-      "summary": "An investment research firm wanted to prove AI could revolutionize drug development. So they teamed up with Anthropic to see whether an unreleased version of Claude could make scorpion antivenom. It couldn't. It came up with some promising starting points, but nothing close to an",
-      "published": "2026-10-22T14:00:37.219091+00:00",
       "audio_url": null,
       "duration": ""
     },
@@ -2557,17 +2623,6 @@
       "duration": ""
     },
     {
-      "id": "ffc748cb8d88a919",
-      "title": "Higgsfield takes AI video from 1 minute to over 10",
-      "link": "https://openai.com/index/higgsfield-longer-videos-voice",
-      "source": "OpenAI Blog",
-      "category": "AI",
-      "summary": "Higgsfield brings creators longer videos with GPT-6 Astra, precise visuals with GPT-Image-2.5, and a path to voice filmmaking with GPT-Live.",
-      "published": "2026-10-13T12:00:00+00:00",
-      "audio_url": null,
-      "duration": ""
-    },
-    {
       "id": "93062c67d6f00e76",
       "title": "web-edit 0.1a0",
       "link": "https://simonwillison.net/2026/Oct/12/web-edit/",
@@ -2876,50 +2931,6 @@
       "duration": ""
     },
     {
-      "id": "da9bc33d3feb59e4",
-      "title": "Rex's Dino Store",
-      "link": "https://simonwillison.net/2026/Oct/2/rex-s-dino-store/",
-      "source": "Simon Willison",
-      "category": "AI",
-      "summary": "Museum: Rex&#x27;s Dino Store Located just before the turnstiles in the Grand Army Plaza subway station at the north end of Brooklyn's Prospect Park is this former newsstand which is now operated by a dinosaur. The density of dinosaur puns is exceptional . Tags: art , new-york",
-      "published": "2026-10-09T17:59:57.369831+00:00",
-      "audio_url": null,
-      "duration": ""
-    },
-    {
-      "id": "8c9077e7ebaff493",
-      "title": "Quoting Matthew Green",
-      "link": "https://simonwillison.net/2026/Oct/9/matthew-green/",
-      "source": "Simon Willison",
-      "category": "AI",
-      "summary": "Everyone is very concerned about being respectable, so I\u2019m going to be the goofball who raises worst-case possibilities. I think there is a 1% chance we live in Minicrypt, and a 15% chance we functionally lose confidence in our existing public-key encryption algorithms. [...] The",
-      "published": "2026-10-09T17:59:57.369649+00:00",
-      "audio_url": null,
-      "duration": ""
-    },
-    {
-      "id": "edd58468d564448f",
-      "title": "Sophos cuts threat investigation time by 96% with OpenAI Daybreak",
-      "link": "https://openai.com/index/sophos",
-      "source": "OpenAI Blog",
-      "category": "AI",
-      "summary": "Discover how Sophos uses OpenAI\u2019s Daybreak to cut cyber-threat investigation time by 96% and automate 52% of MDR cases while preserving human oversight.",
-      "published": "2026-10-09T07:00:00+00:00",
-      "audio_url": null,
-      "duration": ""
-    },
-    {
-      "id": "90995f7dbc9c2674",
-      "title": "Asana cuts model costs 76x in browser tests with GPT-6.1 Sol",
-      "link": "https://openai.com/index/asana-browser-agent",
-      "source": "OpenAI Blog",
-      "category": "AI",
-      "summary": "Using GPT-6 Astra in Codex, Asana made its browser agent 76x cheaper and 5x faster in tests to offer customers more capable models.",
-      "published": "2026-10-09T07:00:00+00:00",
-      "audio_url": null,
-      "duration": ""
-    },
-    {
       "id": "9e8de5d12da311b9",
       "title": "Tech Learning: Data Engineering & Analytics \u2014 Ep 8: Real Scenario: Designing a Star Schema",
       "link": "https://muse.ai/podcasts/media/1248297608376725/4720f1e9-8c94-4958-8367-c455f31c5edc/ep-1d45ef13-f1a0-443a-9c30-17b276ce2f30.mp3",
@@ -2995,17 +3006,6 @@
       "published": "2026-10-08T01:03:59+00:00",
       "audio_url": "https://muse.ai/podcasts/media/1248297608376725/94f09345-ad4a-4981-83dd-e3206bbf5c4e/ep-abaf2db9-b377-4f2e-96bf-2e95b444b1d4.mp3",
       "duration": "275"
-    },
-    {
-      "id": "3a0428350fd02b1e",
-      "title": "Microsoft event debuts new AI-friendly hardware and Windows changes",
-      "link": "https://arstechnica.com/gadgets/2026/10/microsoft-event-debuts-new-ai-friendly-hardware-and-windows-changes/",
-      "source": "Ars Technica AI",
-      "category": "AI",
-      "summary": "Get ready for more AI in your Windows and more AI on the desktop.",
-      "published": "2026-10-08T00:00:24+00:00",
-      "audio_url": null,
-      "duration": ""
     },
     {
       "id": "22643d6fcb195220",
