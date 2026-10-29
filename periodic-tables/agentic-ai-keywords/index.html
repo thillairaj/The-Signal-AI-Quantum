@@ -148,7 +148,7 @@ h1,h2,h3{font-family:"Fraunces",serif}
   .nc-dir{font-size:9.5px;letter-spacing:1.8px;text-transform:uppercase;opacity:.62;font-weight:700;white-space:nowrap}
   .nc-title{font-size:14.5px;font-weight:700;line-height:1.25;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:230px}
   .navcard.next{text-align:right}
-  @media(max-width:640px){.nc-title{max-width:150px}.navside{margin-left:0}}
+  @media(max-width:640px){.toolbar{position:static}.nc-title{max-width:150px}.navside{margin-left:0}}
   /* LinkedIn follow button (Thillai, Oct 21 2026): coloured card-button, LinkedIn blue gradient. */
   .li-btn{display:inline-flex;align-items:center;gap:10px;padding:8px 16px 8px 9px;border-radius:14px;background:linear-gradient(135deg,#0A66C2,#004182);color:#fff !important;text-decoration:none !important;box-shadow:0 4px 14px rgba(10,102,194,.35);vertical-align:middle;transition:transform .15s ease,box-shadow .15s ease}
   .li-btn:hover{transform:translateY(-1px);box-shadow:0 8px 22px rgba(10,102,194,.45)}
@@ -304,8 +304,8 @@ function render(){
     const b=document.createElement('button');
     b.className='tile'; b.type='button'; b.setAttribute('role','listitem');
     b.style.background=CATS[t.c].color; b.dataset.cat=t.c;
-    b.dataset.search=(t.n+' '+t.s+' '+t.d+' '+CATS[t.c].name).toLowerCase();
-    b.innerHTML='<span class="no">'+(i+1)+'</span><span class="sym">'+t.s+'</span><span class="nm">'+t.n+'</span>';
+    b.dataset.search=(t.n+' '+(t.t||'')+' '+t.s+' '+t.d+' '+CATS[t.c].name).toLowerCase();
+    b.innerHTML='<span class="no">'+(i+1)+'</span><span class="sym">'+t.s+'</span><span class="nm">'+(t.t||t.n)+'</span>';
     b.addEventListener('click',()=>show(t,i,b));
     grid.appendChild(b);
   });
