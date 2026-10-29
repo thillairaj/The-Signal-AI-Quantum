@@ -1,0 +1,1289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Journey of a web request · The Signal</title>
+<meta name="description" content="An interactive, part by part explainer of what happens between pressing enter and the page appearing: DNS, connections, TLS, servers, databases and the trip back.">
+<meta property="og:title" content="Journey of a web request">
+<meta property="og:description" content="Follow one web request across the internet and back, with a simple and a deeper explanation for every part.">
+<meta property="og:type" content="article">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>☁️</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,800;1,9..144,500;1,9..144,600&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<script>
+  /* Same theme key as the main site, so the choice carries over. */
+  try { const t = localStorage.getItem('aisignal_theme'); if (t === 'dark' || t === 'light') document.documentElement.setAttribute('data-theme', t); } catch (e) {}
+</script>
+<style>
+:root {
+  --bg: #F2F3EE; --surface: #EAEBE3; --ink: #14180F; --muted: #63695E; --border: #D7D9CD;
+  --accent: #2F6B4F; --accent-dim: #B6C9BC; --gold: #B8860B; --navy: #14253F;
+  --brass: #C9A44C; --brass-edge: #8F6E22; --metal: #C7CABD; --metal-edge: #8D9184;
+  --warm: #C26A2E; --cold: #2F7FB5; --frost: #DDEBF2; --panel: #FBFBF7;
+  --font-display: "Fraunces", Georgia, serif;
+  --font-body: "Inter", -apple-system, "Segoe UI", sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, monospace;
+  --header-bg: radial-gradient(1200px 400px at 50% -80px, #f1eee4 0%, #faf9f6 65%); --header-ink: #171b24; --header-sub: #5b6470;
+  --bar: rgba(250,249,246,.97); --bar-border: #e0dccf; --chip-bg: #ffffff; --chip-ink: #2b3542; --card: #ffffff;
+  --gold-dim: rgba(176,141,62,.4); --foot-ink: #6b7280; --foot-border: #e0dccf;
+  color-scheme: light;
+}
+:root[data-theme="dark"] {
+  --bg: #15170F; --surface: #1D1F16; --ink: #ECEDE4; --muted: #9AA08D; --border: #33362A;
+  --accent: #6FBE94; --accent-dim: #2B4838; --navy: #ECEDE4; --gold: #D9A93A;
+  --brass: #B8933F; --brass-edge: #E0C077; --metal: #3A3D31; --metal-edge: #6B7062;
+  --warm: #E08A4E; --cold: #6CB4E2; --frost: #1E2A30; --panel: #1A1C14;
+  --header-bg: radial-gradient(1200px 400px at 50% -80px, #454e5b 0%, #2b3038 65%); --header-ink: #ffffff; --header-sub: #aeb8c8;
+  --bar: rgba(47,53,62,.97); --bar-border: #4a5260; --chip-bg: #22272f; --chip-ink: #cfd6e2; --card: #ffffff;
+  --gold-dim: rgba(212,175,106,.4); --foot-ink: #9aa0aa; --foot-border: #4a5260;
+  color-scheme: dark;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #15170F; --surface: #1D1F16; --ink: #ECEDE4; --muted: #9AA08D; --border: #33362A;
+    --accent: #6FBE94; --accent-dim: #2B4838; --navy: #ECEDE4; --gold: #D9A93A;
+    --brass: #B8933F; --brass-edge: #E0C077; --metal: #3A3D31; --metal-edge: #6B7062;
+    --warm: #E08A4E; --cold: #6CB4E2; --frost: #1E2A30; --panel: #1A1C14;
+    --header-bg: radial-gradient(1200px 400px at 50% -80px, #454e5b 0%, #2b3038 65%); --header-ink: #ffffff; --header-sub: #aeb8c8;
+    --bar: rgba(47,53,62,.97); --bar-border: #4a5260; --chip-bg: #22272f; --chip-ink: #cfd6e2; --card: #ffffff;
+    --gold-dim: rgba(212,175,106,.4); --foot-ink: #9aa0aa; --foot-border: #4a5260;
+    color-scheme: dark;
+  }
+}
+* { box-sizing: border-box; }
+html { -webkit-font-smoothing: antialiased; scroll-padding-top: 92px; }
+body { margin: 0; background: var(--bg); color: var(--ink); font-family: var(--font-body); line-height: 1.55;
+  padding-bottom: env(safe-area-inset-bottom, 0px); }
+a { color: var(--accent); }
+button { font: inherit; color: inherit; }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+header { position: relative; background: var(--header-bg); color: var(--header-ink); padding: 44px 20px 34px; text-align: center; border-bottom: 3px solid var(--gold); }
+header .kicker { color: var(--gold); letter-spacing: 4px; font-size: 12px; font-weight: 700; text-transform: uppercase; }
+header h1 { margin: 12px 0 8px; font-size: 34px; letter-spacing: .5px; font-weight: 800; color: var(--header-ink); }
+header h1 .thin { font-weight: 300; color: var(--gold); }
+header p { margin: 0 auto; color: var(--header-sub); font-size: 15px; max-width: 620px; }
+header p b { color: var(--header-ink); font-weight: 600; }
+.theme-toggle { position: absolute; top: 14px; right: 14px; background: var(--chip-bg); border: 1px solid var(--bar-border); border-radius: 50%; width: 32px; height: 32px; font-size: .95rem; cursor: pointer; color: var(--chip-ink); z-index: 60; line-height: 1; }
+.topicbar { position: sticky; top: 0; z-index: 50; background: var(--bar); backdrop-filter: blur(6px); border-bottom: 1px solid var(--bar-border); padding: 12px 18px; display: flex; gap: 10px; align-items: center; }
+.topicbar .navcard { display: flex; flex-direction: column; gap: 1px; justify-content: center; padding: 6px 12px; border: 1px solid var(--gold-dim); border-radius: 12px; background: var(--card); color: var(--ink); text-decoration: none; min-width: 0; transition: border-color .15s ease, transform .15s ease; }
+.topicbar .navcard:hover { border-color: var(--gold); transform: translateY(-1px); }
+.nc-dir { font-size: 9.5px; letter-spacing: 1.8px; text-transform: uppercase; opacity: .62; font-weight: 700; white-space: nowrap; }
+.nc-title { font-size: 14px; font-weight: 700; line-height: 1.25; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 200px; }
+
+main { max-width: 1200px; margin: 0 auto; padding: 0 2rem 4rem; }
+.intro { padding: 2.4rem 0 1.6rem; display: grid; gap: .7rem; max-width: 62rem; }
+.crumb { font-family: var(--font-mono); font-size: .78rem; color: var(--accent); margin: 0; }
+.intro h1 { font-family: var(--font-display); font-weight: 600; font-size: clamp(2rem, 4.6vw, 3.4rem); line-height: 1.05; letter-spacing: -.02em; margin: 0; color: var(--navy); }
+.intro h1 i { font-weight: 500; color: var(--gold); }
+.lead { margin: 0; font-size: 1.08rem; color: var(--muted); max-width: 46rem; }
+.lead b { color: var(--ink); font-weight: 600; }
+
+.stage { display: grid; gap: 1.4rem; grid-template-columns: minmax(0, 1fr); align-items: start; }
+@media (min-width: 960px) { .stage { grid-template-columns: minmax(0, 1.25fr) minmax(330px, .9fr); } .panel { position: sticky; top: 86px; } }
+
+.viewer { background: var(--surface); border: 1px solid var(--border); border-radius: 14px; padding: 1rem 1rem .6rem; min-width: 0; }
+.tabs { display: inline-flex; padding: 3px; border: 1px solid var(--bar-border); border-radius: 999px; background: var(--chip-bg); margin-left: auto; }
+.tab { border: 0; background: transparent; padding: .38rem .9rem; border-radius: 999px; cursor: pointer; font-size: .88rem; color: var(--muted); }
+.tab[aria-selected="true"] { background: var(--gold); color: #171b24; font-weight: 700; }
+.journey-btn { border: 1px solid var(--gold-dim); color: var(--gold); background: var(--chip-bg); border-radius: 999px; padding: .45rem .95rem; cursor: pointer; font-size: .88rem; font-weight: 600; }
+.journey-btn[aria-pressed="true"] { background: var(--gold); color: #171b24; border-color: var(--gold); font-weight: 700; }
+
+.art { position: relative; }
+.art svg { display: block; width: 100%; height: auto; }
+.art svg text { font-family: var(--font-body); }
+.svg-label { font-size: 12px; fill: var(--muted); }
+.svg-temp { font-family: var(--font-mono) !important; font-size: 12px; font-weight: 500; }
+.svg-note { font-size: 11px; fill: var(--muted); font-style: italic; }
+@media (max-width: 640px) {
+  .svg-label { font-size: 18px; }
+  .svg-temp { font-size: 17px; }
+  .svg-note { font-size: 15px; }
+}
+.part { cursor: pointer; outline: none; }
+.part .hit { fill: transparent; stroke: transparent; }
+.part .shape { transition: filter .2s ease, opacity .2s ease; }
+.part:hover .shape, .part:focus-visible .shape { filter: brightness(1.08) drop-shadow(0 0 3px var(--accent)); }
+.part.is-sel .shape { filter: drop-shadow(0 0 4px var(--accent)) drop-shadow(0 0 1px var(--accent)); }
+.part .marker { fill: var(--accent); stroke: var(--bg); stroke-width: 2; opacity: 0; transition: opacity .2s; }
+.part.is-sel .marker { opacity: 1; }
+.art.dimmed .part:not(.is-sel) .shape { opacity: .45; }
+.pulse-dot { fill: var(--accent); stroke: var(--bg); stroke-width: 2; }
+.pulse-trail { fill: none; stroke: var(--accent); stroke-width: 2.5; stroke-linecap: round; stroke-dasharray: 4 6; opacity: .0; transition: opacity .3s; }
+.journey-on .pulse-trail { opacity: .55; }
+@media (prefers-reduced-motion: no-preference) {
+  .led { animation: blink 2.4s infinite steps(2); }
+  .led:nth-child(3n) { animation-delay: .7s; } .led:nth-child(3n+1) { animation-delay: 1.3s; }
+  .pt-gas { animation: breathe 1.6s ease-in-out infinite; }
+}
+@keyframes blink { 50% { opacity: .25; } }
+@keyframes breathe { 50% { opacity: .35; } }
+
+.hint { margin: .4rem .2rem 0; font-size: .82rem; color: var(--muted); }
+.journey { display: none; margin-top: .6rem; padding: .8rem .9rem; border-radius: 10px; background: var(--bg); border: 1px solid var(--border); gap: .6rem; }
+.journey.is-on { display: grid; }
+.journey-top { display: flex; justify-content: space-between; align-items: baseline; gap: .6rem; }
+.journey-step { font-family: var(--font-mono); font-size: .78rem; color: var(--accent); }
+.journey-title { font-family: var(--font-display); font-weight: 600; font-size: 1.1rem; margin: 0; }
+.journey-text { margin: 0; color: var(--muted); font-size: .94rem; }
+.journey-nav { display: flex; gap: .5rem; }
+.btn { border: 1px solid var(--border); background: var(--bg); border-radius: 8px; padding: .4rem .8rem; cursor: pointer; font-size: .86rem; }
+.btn:hover { border-color: var(--accent); }
+.btn-primary { background: var(--accent); color: var(--bg); border-color: var(--accent); font-weight: 500; }
+.btn:disabled { opacity: .4; cursor: default; }
+.journey-bar { height: 3px; background: var(--border); border-radius: 3px; overflow: hidden; }
+.journey-bar span { display: block; height: 100%; background: var(--accent); width: 0; transition: width .4s ease; }
+
+.parts-rail-wrap { display: flex; align-items: center; gap: .35rem; margin: .8rem .1rem .3rem; }
+.parts-list { display: flex; flex-wrap: nowrap; overflow-x: auto; gap: .4rem; margin: 0; padding: .15rem .05rem; list-style: none; flex: 1; min-width: 0; scroll-snap-type: x proximity; scrollbar-width: none; -webkit-overflow-scrolling: touch; }
+.parts-list::-webkit-scrollbar { display: none; }
+.parts-list li { flex: 0 0 auto; scroll-snap-align: start; }
+.parts-rail-btn { flex: 0 0 auto; width: 34px; height: 34px; border-radius: 50%; border: 1px solid var(--gold-dim); background: var(--chip-bg); color: var(--gold); font-size: 18px; cursor: pointer; line-height: 1; padding: 0; }
+.parts-rail-btn:hover { border-color: var(--gold); }
+.parts-rail-btn:disabled { opacity: .35; cursor: default; }
+.parts-list button { border: 1px solid var(--border); background: var(--bg); border-radius: 999px; padding: .28rem .7rem; font-size: .8rem; cursor: pointer; color: var(--muted); display: inline-flex; align-items: center; gap: .4rem; white-space: nowrap; }
+.parts-list button:hover { color: var(--ink); border-color: var(--metal-edge); }
+.parts-list button[aria-current="true"] { color: var(--ink); border-color: var(--accent); background: var(--accent-dim); }
+.parts-list .t { width: 7px; height: 7px; border-radius: 50%; display: inline-block; }
+
+.panel { background: var(--panel); border: 1px solid var(--border); border-radius: 14px; padding: 1.4rem 1.4rem 1.2rem; min-width: 0; }
+.panel-top { display: flex; justify-content: space-between; align-items: center; gap: .6rem; }
+.where { font-family: var(--font-mono); font-size: .78rem; color: var(--muted); margin: 0; }
+.temp-chip { font-family: var(--font-mono); font-size: .78rem; font-weight: 600; padding: .18rem .55rem; border-radius: 999px; color: #fff; white-space: nowrap; }
+.panel h2 { font-family: var(--font-display); font-weight: 600; font-size: clamp(1.5rem, 2.6vw, 2rem); line-height: 1.12; margin: .5rem 0 1rem; color: var(--navy); }
+.level { margin: 0 0 1rem; }
+.level h3 { font-size: .8rem; font-weight: 600; margin: 0 0 .25rem; color: var(--accent); }
+.level.deep h3 { color: var(--gold); }
+.level p { margin: 0; font-size: .98rem; }
+.level.deep p { color: var(--ink); opacity: .88; font-size: .94rem; }
+.facts { display: grid; grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); gap: .5rem; margin: 1.1rem 0 .3rem; padding: 0; list-style: none; }
+.facts li { border-top: 2px solid var(--accent-dim); padding-top: .45rem; }
+.facts b { display: block; font-family: var(--font-display); font-weight: 600; font-size: 1.25rem; line-height: 1.15; font-variant-numeric: tabular-nums; }
+.facts span { font-size: .78rem; color: var(--muted); line-height: 1.35; display: block; }
+.panel-src { font-size: .78rem; color: var(--muted); margin: .7rem 0 0; }
+.panel-nav { display: flex; gap: .5rem; margin-bottom: 1rem; padding-bottom: .9rem; border-bottom: 1px solid var(--border); }
+.panel-nav .btn { flex: 1; padding: .55rem .8rem; font-weight: 600; }
+.panel-actions { display: flex; flex-wrap: wrap; gap: .5rem; margin-top: 1.1rem; padding-top: 1rem; border-top: 1px solid var(--border); }
+.panel-actions .spacer { flex: 1; }
+.copied { font-size: .8rem; color: var(--accent); align-self: center; opacity: 0; transition: opacity .2s; }
+.copied.on { opacity: 1; }
+.open-chip { margin-top: .4rem; }
+@media (prefers-reduced-motion: no-preference) { .panel-body.swap { animation: swapIn .35s ease; } }
+@keyframes swapIn { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: none; } }
+
+section.block { margin-top: 3.4rem; }
+.block h2 { font-family: var(--font-display); font-weight: 600; font-size: clamp(1.5rem, 3vw, 2.1rem); margin: 0 0 .3rem; color: var(--navy); letter-spacing: -.01em; }
+.block .sub { margin: 0 0 1.4rem; color: var(--muted); max-width: 48rem; }
+
+.cold-scale { display: grid; gap: .55rem; }
+.cs-row { display: grid; grid-template-columns: 8.5rem minmax(0, 1fr) 6.5rem; gap: .8rem; align-items: center; }
+.cs-name { font-size: .9rem; }
+.cs-track { height: 12px; background: var(--surface); border-radius: 6px; position: relative; overflow: hidden; border: 1px solid var(--border); }
+.cs-fill { position: absolute; inset: 0 auto 0 0; border-radius: 6px; }
+.cs-val { font-family: var(--font-mono); font-size: .82rem; text-align: right; color: var(--muted); }
+.cs-row.space .cs-name { font-style: italic; color: var(--muted); }
+.cs-row.here .cs-name { font-weight: 600; }
+@media (max-width: 560px) { .cs-row { grid-template-columns: 6.2rem minmax(0,1fr) 4.8rem; gap: .5rem; } .cs-name { font-size: .8rem; } }
+.cs-note { font-size: .82rem; color: var(--muted); margin: .8rem 0 0; }
+
+.machines { display: grid; gap: 1.2rem 2rem; grid-template-columns: repeat(auto-fit, minmax(min(100%, 22rem), 1fr)); }
+.machine { border-top: 3px solid var(--ink); padding-top: .9rem; }
+.machine h3 { font-family: var(--font-display); font-weight: 600; font-size: 1.35rem; margin: 0; }
+.machine .maker { font-size: .85rem; color: var(--muted); margin: 0 0 .8rem; }
+.machine dl { display: grid; grid-template-columns: auto 1fr; gap: .35rem 1rem; margin: 0 0 .9rem; font-size: .92rem; }
+.machine dt { color: var(--muted); }
+.machine dd { margin: 0; font-weight: 500; font-variant-numeric: tabular-nums; }
+.machine ul { margin: 0; padding-left: 1.1rem; font-size: .92rem; }
+.machine li { margin-bottom: .35rem; }
+.machine time { font-family: var(--font-mono); font-size: .78rem; color: var(--accent); }
+
+.quiz { display: grid; gap: 1rem; max-width: 52rem; }
+.q { border: 1px solid var(--border); border-radius: 12px; padding: 1rem 1.1rem; background: var(--surface); }
+.q p.qq { margin: 0 0 .7rem; font-weight: 600; }
+.q .opts { display: grid; gap: .45rem; }
+.q .opts button { text-align: left; border: 1px solid var(--border); background: var(--bg); border-radius: 8px; padding: .55rem .75rem; cursor: pointer; font-size: .93rem; }
+.q .opts button:hover:not(:disabled) { border-color: var(--accent); }
+.q .opts button.right { border-color: var(--accent); background: var(--accent-dim); }
+.q .opts button.wrong { border-color: var(--warm); text-decoration: line-through; opacity: .75; }
+.q .opts button:disabled { cursor: default; }
+.q .why { margin: .7rem 0 0; font-size: .9rem; color: var(--muted); }
+.score { font-family: var(--font-display); font-size: 1.2rem; margin: .4rem 0 0; }
+.reset-quiz { margin-top: .4rem; }
+
+.sources ol { padding-left: 1.2rem; margin: 0; display: grid; gap: .45rem; font-size: .9rem; max-width: 60rem; }
+.sources li span { color: var(--muted); }
+.checked { font-size: .85rem; color: var(--muted); margin: 1rem 0 0; }
+footer { text-align: center; padding: 28px 16px; color: var(--foot-ink); font-size: 13px; border-top: 1px solid var(--foot-border); margin-top: 20px; }
+footer .rule { width: 60px; height: 2px; background: var(--gold); margin: 0 auto 12px; }
+footer a { color: var(--gold); font-weight: 700; text-decoration: none; }
+.li-btn { display: inline-flex; align-items: center; gap: 10px; padding: 8px 16px 8px 9px; border-radius: 14px; background: linear-gradient(135deg, #0A66C2, #004182); color: #fff !important; text-decoration: none !important; box-shadow: 0 4px 14px rgba(10,102,194,.35); vertical-align: middle; transition: transform .15s ease, box-shadow .15s ease; }
+.li-btn:hover { transform: translateY(-1px); box-shadow: 0 8px 22px rgba(10,102,194,.45); }
+.li-btn .li-badge { display: inline-flex; align-items: center; justify-content: center; width: 30px; height: 30px; border-radius: 8px; background: rgba(255,255,255,.16); border: 1px solid rgba(255,255,255,.45); color: #fff; flex: 0 0 auto; }
+.li-btn .li-badge svg { width: 16px; height: 16px; display: block; }
+.li-txt { display: flex; flex-direction: column; line-height: 1.15; text-align: left; }
+.li-dir { font-size: 9.5px; letter-spacing: 1.8px; text-transform: uppercase; opacity: .85; font-weight: 700; }
+.li-name { font-size: 15.5px; font-weight: 800; letter-spacing: .01em; }
+
+@media (max-width: 640px) {
+  main { padding-left: 1rem; padding-right: 1rem; }
+  .viewer { padding: .6rem .5rem .5rem; border-radius: 12px; }
+  .panel { padding: 1.1rem 1rem 1rem; }
+  header { padding: 34px 16px 26px; }
+  header h1 { font-size: 27px; }
+  .topicbar { flex-wrap: wrap; row-gap: 10px; padding: 10px 12px; }
+  .tabs { margin-left: 0; }
+}
+.sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+</style>
+
+<style>
+.topicbar { flex-wrap: wrap; }
+[hidden] { display: none !important; }
+.tstrip-row { flex: 1 1 100%; display: flex; align-items: center; gap: 8px; border-top: 1px solid var(--bar-border, var(--border)); padding-top: 10px; }
+.ts-label { flex: 0 0 auto; color: var(--gold); font-size: 11px; font-weight: 800; letter-spacing: 2.5px; white-space: nowrap; }
+.ts-scroll { flex: 1; min-width: 0; display: flex; gap: 8px; overflow-x: auto; scrollbar-width: none; padding: 2px; }
+.ts-scroll::-webkit-scrollbar { display: none; }
+.ts-chip { flex: 0 0 auto; border: 1px solid var(--bar-border, var(--border)); background: var(--chip-bg, var(--surface)); color: var(--muted); font-size: 13.5px; font-weight: 700; padding: 7px 14px; border-radius: 999px; white-space: nowrap; }
+.ts-chip small { color: var(--gold); font-weight: 700; margin-right: 7px; letter-spacing: 1px; }
+.ts-chip.active { background: var(--gold); border-color: var(--gold); color: #fff; }
+.ts-chip.active small { color: #ffe9b0; }
+.ts-chip.soon { border-style: dashed; cursor: default; opacity: .75; }
+.ts-btn { flex: 0 0 auto; width: 30px; height: 30px; border-radius: 50%; border: 1px solid var(--gold-dim, var(--border)); background: var(--chip-bg, var(--surface)); color: var(--gold); font-size: 16px; cursor: pointer; line-height: 1; padding: 0; }
+</style>
+</head>
+<body>
+
+<header>
+  <button class="theme-toggle" id="themeToggle" type="button" aria-label="Toggle dark mode">☾</button>
+  <div class="kicker">Interactive Explainer · Cloud &amp; DevOps</div>
+  <h1>Journey of a <span class="thin">Web Request</span></h1>
+  <p>You press enter and a page appears, usually in less than a second. In that blink, your request crosses the planet and back, passes through a dozen specialised systems, and returns as a page your browser assembles on the fly. Tap any part to follow it, in simple words first and then in more depth.</p>
+</header>
+<div class="topicbar">
+  <a class="navcard back" href="../#learn-explainers"><span class="nc-dir">← Back to</span><span class="nc-title">Learning Spaces</span></a>
+  <div class="tabs" role="tablist" aria-label="View">
+    <button class="tab" role="tab" id="tab-fridge" aria-selected="true" aria-controls="view-fridge" data-view="fridge">The way out</button>
+    <button class="tab" role="tab" id="tab-chip" aria-selected="false" aria-controls="view-chip" data-view="chip">The way back</button>
+  </div>
+  <button class="journey-btn" id="journeyBtn" type="button" aria-pressed="false">Follow a request</button>
+  <div class="tstrip-row">
+    <span class="ts-label">CLOUD &amp; DEVOPS EXPLAINERS</span>
+    <button class="ts-btn" id="tsPrev" type="button" aria-label="Scroll topics back">‹</button>
+    <div class="ts-scroll" id="tsScroll"><span class="ts-chip active"><small>01</small>Web request journey</span><span class="ts-chip soon"><small>02</small>Cloud data centre</span><span class="ts-chip soon"><small>03</small>Kubernetes cluster</span></div>
+    <button class="ts-btn" id="tsNext" type="button" aria-label="Scroll topics forward">›</button>
+  </div>
+</div>
+
+<main>
+
+  <div class="stage">
+    <div class="viewer">
+      <!-- FRIDGE VIEW -->
+      <div class="art" id="view-fridge" role="tabpanel" aria-labelledby="tab-fridge">
+        <svg viewBox="0 0 720 640" id="fridgeSvg" aria-label="Diagram of a web request journey, from your browser across the network to the server and its database">
+          <path id="signalPath" class="pulse-trail" d="M 110 100 L 610 100 L 610 330 L 100 330 L 100 560 L 625 560"/>
+          <circle id="pulseDot" class="pulse-dot" r="7" cx="-20" cy="-20"/>
+          <text x="20" y="40" class="svg-note">YOUR DEVICE</text>
+          <g class="part" data-id="browser" tabindex="0" role="button" aria-label="Browser">
+            <g class="shape"><rect x="20" y="68" width="180" height="64" rx="12" fill="var(--panel)" stroke="var(--border)" stroke-width="1.5"/></g>
+            <text x="110.0" y="97.0" text-anchor="middle" class="svg-label">Browser</text>
+            <text x="110.0" y="116.0" text-anchor="middle" class="svg-note">you type an address</text>
+            <rect class="hit" x="16" y="64" width="188" height="72"/>
+            <circle class="marker" cx="192" cy="76" r="6"/>
+          </g>
+          <g class="part" data-id="url" tabindex="0" role="button" aria-label="The address">
+            <g class="shape"><rect x="270" y="68" width="180" height="64" rx="12" fill="var(--panel)" stroke="var(--border)" stroke-width="1.5"/></g>
+            <text x="360.0" y="97.0" text-anchor="middle" class="svg-label">The address</text>
+            <text x="360.0" y="116.0" text-anchor="middle" class="svg-note">https · a name · a path</text>
+            <rect class="hit" x="266" y="64" width="188" height="72"/>
+            <circle class="marker" cx="442" cy="76" r="6"/>
+          </g>
+          <g class="part" data-id="dns" tabindex="0" role="button" aria-label="DNS lookup">
+            <g class="shape"><rect x="520" y="68" width="180" height="64" rx="12" fill="var(--panel)" stroke="var(--border)" stroke-width="1.5"/></g>
+            <text x="610.0" y="97.0" text-anchor="middle" class="svg-label">DNS lookup</text>
+            <text x="610.0" y="116.0" text-anchor="middle" class="svg-note">name → number</text>
+            <rect class="hit" x="516" y="64" width="188" height="72"/>
+            <circle class="marker" cx="692" cy="76" r="6"/>
+          </g>
+          <text x="20" y="272" class="svg-note">THE NETWORK</text>
+          <g class="part" data-id="request" tabindex="0" role="button" aria-label="HTTP request">
+            <g class="shape"><rect x="30" y="298" width="140" height="64" rx="12" fill="var(--panel)" stroke="var(--border)" stroke-width="1.5"/></g>
+            <text x="100.0" y="327.0" text-anchor="middle" class="svg-label">HTTP request</text>
+            <text x="100.0" y="346.0" text-anchor="middle" class="svg-note">GET /orders</text>
+            <rect class="hit" x="26" y="294" width="148" height="72"/>
+            <circle class="marker" cx="162" cy="306" r="6"/>
+          </g>
+          <g class="part" data-id="tls" tabindex="0" role="button" aria-label="TLS">
+            <g class="shape"><rect x="205" y="298" width="140" height="64" rx="12" fill="var(--panel)" stroke="var(--border)" stroke-width="1.5"/></g>
+            <text x="275.0" y="327.0" text-anchor="middle" class="svg-label">TLS</text>
+            <text x="275.0" y="346.0" text-anchor="middle" class="svg-note">the padlock step</text>
+            <rect class="hit" x="201" y="294" width="148" height="72"/>
+            <circle class="marker" cx="337" cy="306" r="6"/>
+          </g>
+          <g class="part" data-id="tcp" tabindex="0" role="button" aria-label="TCP">
+            <g class="shape"><rect x="380" y="298" width="140" height="64" rx="12" fill="var(--panel)" stroke="var(--border)" stroke-width="1.5"/></g>
+            <text x="450.0" y="327.0" text-anchor="middle" class="svg-label">TCP</text>
+            <text x="450.0" y="346.0" text-anchor="middle" class="svg-note">the handshake</text>
+            <rect class="hit" x="376" y="294" width="148" height="72"/>
+            <circle class="marker" cx="512" cy="306" r="6"/>
+          </g>
+          <g class="part" data-id="caches" tabindex="0" role="button" aria-label="Caches">
+            <g class="shape"><rect x="555" y="298" width="140" height="64" rx="12" fill="var(--panel)" stroke="var(--border)" stroke-width="1.5"/></g>
+            <text x="625.0" y="327.0" text-anchor="middle" class="svg-label">Caches</text>
+            <text x="625.0" y="346.0" text-anchor="middle" class="svg-note">answers kept nearby</text>
+            <rect class="hit" x="551" y="294" width="148" height="72"/>
+            <circle class="marker" cx="687" cy="306" r="6"/>
+          </g>
+          <text x="20" y="502" class="svg-note">THE SITE, IN A DATA CENTRE</text>
+          <g class="part" data-id="cdn" tabindex="0" role="button" aria-label="CDN edge">
+            <g class="shape"><rect x="30" y="528" width="140" height="64" rx="12" fill="var(--panel)" stroke="var(--border)" stroke-width="1.5"/></g>
+            <text x="100.0" y="557.0" text-anchor="middle" class="svg-label">CDN edge</text>
+            <text x="100.0" y="576.0" text-anchor="middle" class="svg-note">copies near you</text>
+            <rect class="hit" x="26" y="524" width="148" height="72"/>
+            <circle class="marker" cx="162" cy="536" r="6"/>
+          </g>
+          <g class="part" data-id="balancer" tabindex="0" role="button" aria-label="Load balancer">
+            <g class="shape"><rect x="205" y="528" width="140" height="64" rx="12" fill="var(--panel)" stroke="var(--border)" stroke-width="1.5"/></g>
+            <text x="275.0" y="557.0" text-anchor="middle" class="svg-label">Load balancer</text>
+            <text x="275.0" y="576.0" text-anchor="middle" class="svg-note">sharing the work</text>
+            <rect class="hit" x="201" y="524" width="148" height="72"/>
+            <circle class="marker" cx="337" cy="536" r="6"/>
+          </g>
+          <g class="part" data-id="server" tabindex="0" role="button" aria-label="Server">
+            <g class="shape"><rect x="380" y="528" width="140" height="64" rx="12" fill="var(--panel)" stroke="var(--border)" stroke-width="1.5"/></g>
+            <text x="450.0" y="557.0" text-anchor="middle" class="svg-label">Server</text>
+            <text x="450.0" y="576.0" text-anchor="middle" class="svg-note">builds the page</text>
+            <rect class="hit" x="376" y="524" width="148" height="72"/>
+            <circle class="marker" cx="512" cy="536" r="6"/>
+          </g>
+          <g class="part" data-id="database" tabindex="0" role="button" aria-label="Database">
+            <g class="shape"><rect x="555" y="528" width="140" height="64" rx="12" fill="var(--panel)" stroke="var(--border)" stroke-width="1.5"/></g>
+            <text x="625.0" y="557.0" text-anchor="middle" class="svg-label">Database</text>
+            <text x="625.0" y="576.0" text-anchor="middle" class="svg-note">the facts</text>
+            <rect class="hit" x="551" y="524" width="148" height="72"/>
+            <circle class="marker" cx="687" cy="536" r="6"/>
+          </g>
+        </svg>
+      </div>
+
+      <!-- CHIP VIEW -->
+      <div class="art" id="view-chip" role="tabpanel" aria-labelledby="tab-chip" hidden>
+        <svg viewBox="0 0 700 460" id="chipSvg" aria-label="Diagram of the return trip of a web page, from the response to the rendered page">
+          <g class="part" data-id="response" tabindex="0" role="button" aria-label="The response">
+            <g class="shape"><rect x="20" y="100" width="150" height="64" rx="12" fill="var(--panel)" stroke="var(--border)" stroke-width="1.5"/></g>
+            <text x="95.0" y="129.0" text-anchor="middle" class="svg-label">The response</text>
+            <text x="95.0" y="148.0" text-anchor="middle" class="svg-note">200 OK, and the page</text>
+            <rect class="hit" x="16" y="96" width="158" height="72"/>
+            <circle class="marker" cx="162" cy="108" r="6"/>
+          </g>
+          <text x="176" y="140" class="svg-label">→</text>
+          <g class="part" data-id="html" tabindex="0" role="button" aria-label="HTML first">
+            <g class="shape"><rect x="190" y="100" width="150" height="64" rx="12" fill="var(--panel)" stroke="var(--border)" stroke-width="1.5"/></g>
+            <text x="265.0" y="129.0" text-anchor="middle" class="svg-label">HTML first</text>
+            <text x="265.0" y="148.0" text-anchor="middle" class="svg-note">the skeleton arrives</text>
+            <rect class="hit" x="186" y="96" width="158" height="72"/>
+            <circle class="marker" cx="332" cy="108" r="6"/>
+          </g>
+          <text x="346" y="140" class="svg-label">→</text>
+          <g class="part" data-id="assets" tabindex="0" role="button" aria-label="The extras">
+            <g class="shape"><rect x="360" y="100" width="150" height="64" rx="12" fill="var(--panel)" stroke="var(--border)" stroke-width="1.5"/></g>
+            <text x="435.0" y="129.0" text-anchor="middle" class="svg-label">The extras</text>
+            <text x="435.0" y="148.0" text-anchor="middle" class="svg-note">styles, scripts, images</text>
+            <rect class="hit" x="356" y="96" width="158" height="72"/>
+            <circle class="marker" cx="502" cy="108" r="6"/>
+          </g>
+          <text x="516" y="140" class="svg-label">→</text>
+          <g class="part" data-id="render" tabindex="0" role="button" aria-label="Rendering">
+            <g class="shape"><rect x="530" y="100" width="150" height="64" rx="12" fill="var(--panel)" stroke="var(--border)" stroke-width="1.5"/></g>
+            <text x="605.0" y="129.0" text-anchor="middle" class="svg-label">Rendering</text>
+            <text x="605.0" y="148.0" text-anchor="middle" class="svg-note">pixels on screen</text>
+            <rect class="hit" x="526" y="96" width="158" height="72"/>
+            <circle class="marker" cx="672" cy="108" r="6"/>
+          </g>
+          <g class="part" data-id="stored" tabindex="0" role="button" aria-label="Stored">
+            <g class="shape"><rect x="190" y="300" width="150" height="64" rx="12" fill="var(--panel)" stroke="var(--border)" stroke-width="1.5"/></g>
+            <text x="265.0" y="329.0" text-anchor="middle" class="svg-label">Stored</text>
+            <text x="265.0" y="348.0" text-anchor="middle" class="svg-note">second visits fly</text>
+            <rect class="hit" x="186" y="296" width="158" height="72"/>
+            <circle class="marker" cx="332" cy="308" r="6"/>
+          </g>
+          <g class="part" data-id="cookies" tabindex="0" role="button" aria-label="Cookies">
+            <g class="shape"><rect x="360" y="300" width="150" height="64" rx="12" fill="var(--panel)" stroke="var(--border)" stroke-width="1.5"/></g>
+            <text x="435.0" y="329.0" text-anchor="middle" class="svg-label">Cookies</text>
+            <text x="435.0" y="348.0" text-anchor="middle" class="svg-note">how sites remember you</text>
+            <rect class="hit" x="356" y="296" width="158" height="72"/>
+            <circle class="marker" cx="502" cy="308" r="6"/>
+          </g>
+          <path d="M 265 300 L 265 210" fill="none" stroke="var(--gold)" stroke-width="2" stroke-dasharray="6 4"/>
+          <path d="M 265 210 L 110 210 L 110 170" fill="none" stroke="var(--gold)" stroke-width="2" stroke-dasharray="6 4"/>
+          <text x="150" y="200" class="svg-note">kept for next time</text>
+          <text x="380" y="250" class="svg-note">the reply also carries small notes to keep</text>
+        </svg>
+      </div>
+
+      <div class="journey" id="journey" aria-live="polite">
+        <div class="journey-top">
+          <span class="journey-step" id="jStep">Step 1 of 10</span>
+          <div class="journey-nav">
+            <button class="btn" id="jPrev" type="button">Back</button>
+            <button class="btn btn-primary" id="jNext" type="button">Next step</button>
+          </div>
+        </div>
+        <div class="journey-bar"><span id="jBar"></span></div>
+        <h3 class="journey-title" id="jTitle"></h3>
+        <p class="journey-text" id="jText"></p>
+      </div>
+
+      <div class="parts-rail-wrap">
+        <button class="parts-rail-btn" id="partsRailPrev" type="button" aria-label="Scroll parts list back">‹</button>
+        <ul class="parts-list" id="partsList" aria-label="All parts in this view"></ul>
+        <button class="parts-rail-btn" id="partsRailNext" type="button" aria-label="Scroll parts list forward">›</button>
+      </div>
+      <p class="hint" id="hint" data-fridge="Tap a part of the journey, or pick one from the list. Use Follow a request to trace one page load end to end." data-chip="Tap a part of the return trip, or pick one from the list.">Tap a part of the journey, or pick one from the list. Use Follow a request to trace one page load end to end.</p>
+    </div>
+
+    <aside class="panel" id="panel" aria-live="polite">
+      <div class="panel-nav">
+        <button class="btn" id="pPrev" type="button">Previous part</button>
+        <button class="btn" id="pNext" type="button">Next part</button>
+      </div>
+      <div class="panel-body" id="panelBody">
+        <div class="panel-top">
+          <p class="where" id="pWhere"></p>
+          <span class="temp-chip" id="pTemp"></span>
+        </div>
+        <h2 id="pName"></h2>
+        <div class="level">
+          <h3>In simple words</h3>
+          <p id="pSimple"></p>
+        </div>
+        <div class="level deep">
+          <h3>Going deeper</h3>
+          <p id="pDeep"></p>
+        </div>
+        <ul class="facts" id="pFacts"></ul>
+        <p class="panel-src" id="pSrc"></p>
+        <button class="btn open-chip" id="openChip" type="button" hidden>Open the way back</button>
+      </div>
+      <div class="panel-actions">
+        <span class="spacer"></span>
+        <span class="copied" id="copied">Link copied</span>
+        <button class="btn" id="pShare" type="button">Copy link to this part</button>
+      </div>
+    </aside>
+  </div>
+
+  
+  <section class="block" id="how-long">
+    <h2>Where the time goes</h2>
+    <p class="sub">A first visit, broken into its costs. Round trips are bounded by distance, which is the whole reason caches and edge servers exist. The ranges are typical, from the sources below; every path differs.</p>
+    <div class="cold-scale">
+      <div class="cs-row"><span class="cs-name">DNS lookup</span><span class="cs-track"><span class="cs-fill" style="width:15%;background:var(--accent)"></span></span><span class="cs-val">often near 0, cached</span></div>
+      <div class="cs-row"><span class="cs-name">Opening the connection</span><span class="cs-track"><span class="cs-fill" style="width:25%;background:var(--accent)"></span></span><span class="cs-val">1 round trip</span></div>
+      <div class="cs-row"><span class="cs-name">TLS 1.3 handshake</span><span class="cs-track"><span class="cs-fill" style="width:25%;background:var(--accent)"></span></span><span class="cs-val">1 round trip</span></div>
+      <div class="cs-row"><span class="cs-name">Server work</span><span class="cs-track"><span class="cs-fill" style="width:55%;background:var(--accent)"></span></span><span class="cs-val">50 to 300 ms, typical</span></div>
+      <div class="cs-row"><span class="cs-name">Download and rendering</span><span class="cs-track"><span class="cs-fill" style="width:85%;background:var(--accent)"></span></span><span class="cs-val">the rest</span></div>
+    </div>
+    <p class="cs-note">HTTP/3 merges the connection and locking steps into one setup, which is why the newest sites feel a beat quicker on mobile networks.</p>
+  </section>
+
+  <section class="block" id="machines">
+    <h2>The web at real scale</h2>
+    <p class="sub">The same journey, hardened by three decades of growth. Figures last checked 29 October 2026.</p>
+    <div class="machines">
+      <article class="machine">
+        <h3>Content delivery networks</h3>
+        <p class="maker">Cloudflare · Akamai · Fastly</p>
+        <dl>
+          <dt>Job</dt><dd>Cache content close to every visitor</dd>
+          <dt>Traffic</dt><dd>Most web traffic now passes through CDNs</dd>
+          <dt>Bonus</dt><dd>Attack filtering and load balancing at the edge</dd>
+        </dl>
+        <ul>
+          <li>Major sites such as Facebook, Netflix and Amazon are served through CDNs.</li>
+          <li>If one edge location fails, routing sends traffic to the next healthy one.</li>
+        </ul>
+      </article>
+      <article class="machine">
+        <h3>HTTP/3 and QUIC</h3>
+        <p class="maker">The newest road</p>
+        <dl>
+          <dt>Runs on</dt><dd>QUIC over UDP, not TCP</dd>
+          <dt>Setup</dt><dd>Transport and encryption negotiated together</dd>
+          <dt>Streams</dt><dd>Independent: one stalled file blocks nothing else</dd>
+        </dl>
+        <ul>
+          <li>HTTP/3 keeps the same requests and responses, on a faster road underneath (RFC 9114).</li>
+          <li>TLS 1.3 is built into QUIC, so the locking step and the connection step merge.</li>
+        </ul>
+      </article>
+    </div>
+  </section>
+
+  <section class="block" id="quiz">
+    <h2>Check yourself</h2>
+    <p class="sub">Five questions on what you just explored.</p>
+    <div class="quiz" id="quizBox"></div>
+    <p class="score" id="score" hidden></p>
+    <button class="btn reset-quiz" id="resetQuiz" type="button" hidden>Try again</button>
+  </section>
+
+  <section class="block sources" id="sources">
+    <h2>Sources</h2>
+    <p class="sub">Timings are typical ranges, not promises; every network path differs.</p>
+    <ol>
+      <li><a href="https://www.cloudflare.com/learning/dns/what-is-dns/" target="_blank" rel="noopener">What is DNS?</a> <span>Cloudflare Learning Center</span></li>
+      <li><a href="https://www.cloudflare.com/learning/cdn/what-is-a-cdn/" target="_blank" rel="noopener">What is a CDN?</a> <span>Cloudflare Learning Center</span></li>
+      <li><a href="https://www.rfc-editor.org/rfc/rfc8446" target="_blank" rel="noopener">RFC 8446: TLS version 1.3</a> <span>IETF, August 2018</span></li>
+      <li><a href="https://www.rfc-editor.org/rfc/rfc9114" target="_blank" rel="noopener">RFC 9114: HTTP/3</a> <span>IETF, June 2022</span></li>
+    </ol>
+    <p class="checked">Researched and compiled for The Signal. Figures last checked 29 October 2026.</p>
+  </section>
+
+</main>
+
+<footer><div class="rule"></div>Curated by Thillai Raj Thanam Jeya Veera Raj · <a class="li-btn" href="https://www.linkedin.com/in/thillairaj" target="_blank" rel="noopener"><span class="li-badge" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.55V9h3.57v11.45z"/></svg></span><span class="li-txt"><span class="li-dir">Follow on</span><span class="li-name">LinkedIn</span></span></a></footer>
+
+<script>
+(() => {
+  /* ---------- Content ---------- */
+    const PARTS = {
+  "browser": {
+    "view": "fridge",
+    "name": "Your browser",
+    "where": "On your device",
+    "temp": "Your side",
+    "tc": "#4C9A94",
+    "simple": "The journey starts in your browser. It reads the address you typed, works out what to fetch first, and checks its own shelves, the cache, before troubling the network at all.",
+    "deep": "A modern browser is part librarian: it keeps a cache of pages, images and DNS answers from earlier visits, each with an expiry set by the site. If the page and everything it needs are still fresh, the journey can end here in milliseconds. Anything missing or stale starts the trip below.",
+    "facts": [
+      [
+        "First check",
+        "the browser cache, before any network call"
+      ],
+      [
+        "Milliseconds",
+        "for a fully cached page"
+      ]
+    ],
+    "src": "Cloudflare, What is DNS?"
+  },
+  "url": {
+    "view": "fridge",
+    "name": "The address, taken apart",
+    "where": "On your device",
+    "temp": "Your side",
+    "tc": "#4C9A94",
+    "simple": "The address is taken apart: the scheme (https), the name of the site, and the path to the page or file you asked for. The name is for humans; the network needs a number, so finding that number comes next.",
+    "deep": "An address like https://shop.example.com/orders/42 breaks into scheme, host and path, plus maybe a port and a query string. The scheme decides the rules: https means the connection will be encrypted and use port 443 by default. Nothing has left your device yet; this is bookkeeping before the first lookup.",
+    "facts": [
+      [
+        "443",
+        "the default port for https"
+      ],
+      [
+        "3 parts",
+        "scheme, host and path at minimum"
+      ]
+    ],
+    "src": "Cloudflare, What is DNS?"
+  },
+  "dns": {
+    "view": "fridge",
+    "name": "DNS lookup",
+    "where": "The internet's phone book",
+    "temp": "Network",
+    "tc": "#3E8E8A",
+    "simple": "DNS is the internet's phone book. Your browser asks: what number belongs to this name? A helper called a resolver hunts the answer down through a chain of specialised servers.",
+    "deep": "If nobody nearby knows, the resolver asks a root server, which points to the servers for the ending (.com, .in and so on), which point to the site's own authoritative server, which finally gives the address. Cloudflare describes DNS as the phonebook of the Internet, and the full hunt takes eight steps when nothing is cached. The answer comes back with a lifetime, its TTL, so the hunt is rarely repeated.",
+    "facts": [
+      [
+        "8 steps",
+        "in a full lookup with nothing cached"
+      ],
+      [
+        "TTL",
+        "the lifetime stamped on each answer"
+      ]
+    ],
+    "src": "Cloudflare, What is DNS?"
+  },
+  "caches": {
+    "view": "fridge",
+    "name": "Caches",
+    "where": "At every level of the network",
+    "temp": "Network",
+    "tc": "#3E8E8A",
+    "simple": "Copies of answers are kept at every level: in your browser, in your operating system, and at your provider's resolver. Most lookups end at one of these shelves, not at the full hunt, which is why the web feels instant.",
+    "deep": "Caching is the web's main speed trick, and DNS is its first example: each copy is kept only for the TTL the site chose, a balance between freshness and speed. The same idea returns later at much bigger scale in the CDN, and again in your browser for whole files. When a site seems to ignore an update, a not yet expired copy somewhere is the usual suspect.",
+    "facts": [
+      [
+        "3 levels",
+        "browser, operating system, resolver"
+      ],
+      [
+        "TTL bound",
+        "every copy expires on schedule"
+      ]
+    ],
+    "src": "Cloudflare, What is DNS?"
+  },
+  "tcp": {
+    "view": "fridge",
+    "name": "TCP connection",
+    "where": "Between your device and the server",
+    "temp": "Network",
+    "tc": "#3E8E8A",
+    "simple": "Armed with the number, your browser opens a connection to the server. TCP introduces the two machines with a three way handshake: hello, hello back, let us begin. Only then can anything real be sent.",
+    "deep": "TCP promises a reliable, ordered stream over an unreliable network: lost pieces are resent, and pieces arriving out of order are reassembled. The handshake costs one round trip before any data flows, and that trip is bounded by distance and the speed of light, which is why where a server sits matters. Newer HTTP/3 folds this step into its own faster setup, covered in the real systems section below.",
+    "facts": [
+      [
+        "3 messages",
+        "in the opening handshake"
+      ],
+      [
+        "1 round trip",
+        "before the first byte of data"
+      ]
+    ],
+    "src": "RFC 9114 (HTTP/3)"
+  },
+  "tls": {
+    "view": "fridge",
+    "name": "TLS handshake",
+    "where": "Locking the connection",
+    "temp": "Network",
+    "tc": "#3E8E8A",
+    "simple": "Before your request travels, the connection is locked. In the TLS handshake the server proves its identity with a certificate, and the two sides agree on secret keys. From here on, everything is encrypted.",
+    "deep": "TLS 1.3, the current version, completes this handshake in a single round trip, down from two in the version before, and can resume recent connections even faster. The certificate is checked against the name you asked for and a chain of trusted authorities; a mismatch stops the page with a warning. This handshake is what the padlock in the address bar reports: identity checked, eavesdroppers shut out.",
+    "facts": [
+      [
+        "1 round trip",
+        "for the TLS 1.3 handshake"
+      ],
+      [
+        "Certificate",
+        "proves the server's identity"
+      ]
+    ],
+    "src": "RFC 8446 (TLS 1.3)"
+  },
+  "request": {
+    "view": "fridge",
+    "name": "The HTTP request",
+    "where": "The actual ask",
+    "temp": "Network",
+    "tc": "#3E8E8A",
+    "simple": "Now the actual ask travels: a short text message saying GET and naming the page's path. With it go headers: who is asking, what formats it accepts, and any cookies the site gave it earlier.",
+    "deep": "An HTTP request is a method, a path and headers; the method here is GET, fetch me this. With HTTP/2 and HTTP/3, many requests can share one connection at once, each on its own stream. And the request you are following is one of dozens a typical page triggers, because the first answer will name images, styles and scripts to fetch next.",
+    "facts": [
+      [
+        "GET",
+        "the method that fetches a page"
+      ],
+      [
+        "Dozens",
+        "of requests behind one typical page"
+      ]
+    ],
+    "src": "RFC 9114 (HTTP/3); Cloudflare, What is a CDN?"
+  },
+  "cdn": {
+    "view": "fridge",
+    "name": "CDN edge",
+    "where": "A warehouse of copies near you",
+    "temp": "Server side",
+    "tc": "#2F7E79",
+    "simple": "Your request usually lands first at an edge server of a content delivery network, a warehouse of copies placed in cities around the world. If a fresh copy of the page or file is on its shelves, it answers at once, and the trip ends early.",
+    "deep": "A CDN is a geographically distributed group of servers that caches content close to end users, in Cloudflare's words. Most web traffic is now served through CDNs, including traffic for major sites like Facebook, Netflix and Amazon. Only when the edge has no fresh copy does the request travel on to the site's own machines, the origin, and the reply restocks the shelf for the next visitor.",
+    "facts": [
+      [
+        "Close to you",
+        "edge servers sit in cities worldwide"
+      ],
+      [
+        "Most web traffic",
+        "is served through CDNs today"
+      ]
+    ],
+    "src": "Cloudflare, What is a CDN?"
+  },
+  "balancer": {
+    "view": "fridge",
+    "name": "Load balancer",
+    "where": "At the site's front door",
+    "temp": "Server side",
+    "tc": "#2F7E79",
+    "simple": "At the site's door, a load balancer shares incoming work across many identical servers, sending your request to one that is healthy and not overloaded. Nobody queues behind a single machine.",
+    "deep": "Load balancing distributes traffic evenly across several servers, so the site can grow by adding machines and can survive one failing: its share is simply handed to the others. Balancers watch health and steer around failures, and CDNs build the same trick into their edges, where one address is answered by the nearest healthy location. This is also where a site absorbs sudden crowds and most attacks.",
+    "facts": [
+      [
+        "Many servers",
+        "share one site's traffic"
+      ],
+      [
+        "Failover",
+        "work moves when a server dies"
+      ]
+    ],
+    "src": "Cloudflare, What is a CDN?"
+  },
+  "server": {
+    "view": "fridge",
+    "name": "The server",
+    "where": "Where the page is built",
+    "temp": "Server side",
+    "tc": "#2F7E79",
+    "chipLink": true,
+    "simple": "A server program takes your request, works out what the page should contain, and assembles the answer: often a template filled with fresh data. Open the way back to follow the answer home.",
+    "deep": "For a static file, this step is just a read from disk or memory. For a signed in page, an application server runs code: checking who you are, applying the site's rules, and composing HTML for this exact request. This is usually the slowest single step on the trip, and the one the site's own engineers can optimise, which is why it gets its own name in their dashboards: server time, or time to first byte.",
+    "facts": [
+      [
+        "Slowest step",
+        "on many trips, the server's own work"
+      ],
+      [
+        "HTML out",
+        "a page assembled for this request"
+      ]
+    ],
+    "src": "Cloudflare, What is a CDN?"
+  },
+  "database": {
+    "view": "fridge",
+    "name": "The database",
+    "where": "The site's memory",
+    "temp": "Server side",
+    "tc": "#2F7E79",
+    "simple": "Most pages need facts: your orders, your messages, the price right now. The application asks a database, a system built to find and update records in milliseconds, and waits for the answer before finishing the page.",
+    "deep": "Databases keep the site's state so servers can stay interchangeable: any server can answer any request because the truth lives here. To keep reads fast, hot data is also held in memory caches, and busy sites split reads across copies of the database. When a page is slow at scale, this is the usual bottleneck, and the hardest one to grow, because every copy must agree on the truth.",
+    "facts": [
+      [
+        "Milliseconds",
+        "a typical record lookup"
+      ],
+      [
+        "1 truth",
+        "shared by every server"
+      ]
+    ],
+    "src": "Cloudflare, What is a CDN?"
+  },
+  "response": {
+    "view": "chip",
+    "name": "The response",
+    "where": "Leaving the server",
+    "temp": "Return",
+    "tc": "#5B8DBF",
+    "simple": "The answer travels back as an HTTP response: a status line (200 means all good), headers describing the content, and the page itself. It rides the same encrypted connection, in pieces that are reassembled at your end.",
+    "deep": "Responses carry instructions as well as content: how long this file may be cached, whether it is compressed, and what the browser may do with it. The first bytes matter most, because the browser starts work the moment they arrive rather than waiting for the whole file. That is why engineers watch time to first byte: everything before it is travel and waiting.",
+    "facts": [
+      [
+        "200",
+        "the status code for success"
+      ],
+      [
+        "First byte",
+        "starts the browser working"
+      ]
+    ],
+    "src": "RFC 9114 (HTTP/3)"
+  },
+  "html": {
+    "view": "chip",
+    "name": "HTML first",
+    "where": "The skeleton of the page",
+    "temp": "Return",
+    "tc": "#5B8DBF",
+    "simple": "The HTML arrives first: the skeleton of the page, its text and structure, plus a list of everything else it needs. Your browser reads it top to bottom and starts fetching the named extras at once.",
+    "deep": "HTML is a tree in text form: headings, paragraphs, images and scripts as nested tags. The browser builds its internal copy of that tree, the DOM, as the bytes stream in, and a scanner races ahead to discover the extra files early. Until the styles arrive, the browser holds back from painting, because styling text twice looks worse than a brief wait.",
+    "facts": [
+      [
+        "The skeleton",
+        "text and structure, extras named"
+      ],
+      [
+        "DOM",
+        "the browser's live copy of the page"
+      ]
+    ],
+    "src": "Cloudflare, What is a CDN?"
+  },
+  "assets": {
+    "view": "chip",
+    "name": "The extras",
+    "where": "Everything the page named",
+    "temp": "Return",
+    "tc": "#5B8DBF",
+    "simple": "Now the extras pour in: stylesheets that dress the page, scripts that make it respond, images and video. Many come from the CDN's shelves rather than the origin, and modern connections fetch several at once.",
+    "deep": "HTTP/2 introduced multiplexing: many files share one connection in interleaved streams. HTTP/3 goes further, giving each stream independent delivery over QUIC, so one lost packet stalls only its own file. This is also where most of a page's weight lives; the HTML is small next to its images and scripts, which is why compressing and caching these files matters so much.",
+    "facts": [
+      [
+        "Many at once",
+        "streams share one connection"
+      ],
+      [
+        "Most weight",
+        "sits in images and scripts"
+      ]
+    ],
+    "src": "RFC 9114 (HTTP/3); Cloudflare, What is a CDN?"
+  },
+  "render": {
+    "view": "chip",
+    "name": "Rendering",
+    "where": "On your screen",
+    "temp": "Return",
+    "tc": "#5B8DBF",
+    "simple": "The browser now builds what you see: it works out the size and place of every element, paints the pixels, and puts text and images together on screen. The page becomes readable before every last file has arrived.",
+    "deep": "Rendering runs layout, then paint, then compositing: the document tree is combined with its styles, geometry is computed for your screen size, and layers are drawn and merged, much of it on the graphics processor. Scripts can block this pipeline while they run, which is why heavy pages feel sluggish even on fast connections: the bottleneck has moved from the network to your own device.",
+    "facts": [
+      [
+        "3 stages",
+        "layout, paint, composite"
+      ],
+      [
+        "Your device",
+        "does this final work"
+      ]
+    ],
+    "src": "Cloudflare, What is a CDN?"
+  },
+  "stored": {
+    "view": "chip",
+    "name": "Stored for next time",
+    "where": "In your browser's cache",
+    "temp": "Return",
+    "tc": "#5B8DBF",
+    "simple": "As files arrive, the browser files copies away with their expiry instructions. Your next visit to the same page starts by raiding these shelves, which is why second visits feel so much faster.",
+    "deep": "Each stored response carries caching headers set by the server: how long it stays fresh, and how to check cheaply after that, by asking whether the copy changed rather than downloading it again. Sites version their file names, like app.v2.js, so a new release can be cached for a long time under a new name while the old copy expires. This is the same caching idea as DNS, one level up.",
+    "facts": [
+      [
+        "Expiry set",
+        "by the server, per file"
+      ],
+      [
+        "Cheap checks",
+        "ask if it changed, not for the file"
+      ]
+    ],
+    "src": "Cloudflare, What is a CDN?; Cloudflare, What is DNS?"
+  },
+  "cookies": {
+    "view": "chip",
+    "name": "Cookies",
+    "where": "Small notes, kept by the browser",
+    "temp": "Return",
+    "tc": "#5B8DBF",
+    "simple": "The response may also carry cookies: small notes the browser stores and hands back on the next request. They are how a forgetful web remembers you: your sign in, your basket, your settings.",
+    "deep": "HTTP itself forgets every request the moment it is answered. Cookies bolt memory onto it: the server asks the browser to store a value, and the browser returns it with each later request to that site, so the server can find your session in its own records. Cookies marked secure travel only over encrypted connections, and the ones scripts cannot read are the ones guarding your sign in.",
+    "facts": [
+      [
+        "Small notes",
+        "stored by the browser, returned per request"
+      ],
+      [
+        "Sessions",
+        "how sites remember who you are"
+      ]
+    ],
+    "src": "Cloudflare Learning Center"
+  }
+};
+
+  const ORDER = {"fridge": ["browser", "url", "dns", "caches", "tcp", "tls", "request", "cdn", "balancer", "server", "database"], "chip": ["response", "html", "assets", "render", "stored", "cookies"]};
+
+  const JOURNEY = [
+  {
+    "part": "browser",
+    "at": [
+      110,
+      100
+    ],
+    "title": "You press enter",
+    "text": "The browser takes the address apart and checks its cache. Nothing fresh enough is stored, so the journey begins."
+  },
+  {
+    "part": "dns",
+    "at": [
+      610,
+      100
+    ],
+    "title": "Finding the number",
+    "text": "A resolver hunts through the DNS chain: a root server, then the servers for the ending, then the site's own server."
+  },
+  {
+    "part": "caches",
+    "at": [
+      610,
+      330
+    ],
+    "title": "Copies along the way",
+    "text": "In practice a cached answer at your provider usually cuts the hunt short. The address arrives with a lifetime attached."
+  },
+  {
+    "part": "tcp",
+    "at": [
+      450,
+      330
+    ],
+    "title": "Opening the connection",
+    "text": "Your browser says hello to the machine at that address, and the three way handshake opens a reliable connection."
+  },
+  {
+    "part": "tls",
+    "at": [
+      275,
+      330
+    ],
+    "title": "Locking the connection",
+    "text": "The server shows its certificate, keys are agreed, and the padlock comes on: one round trip with TLS 1.3."
+  },
+  {
+    "part": "request",
+    "at": [
+      100,
+      330
+    ],
+    "title": "The ask travels",
+    "text": "GET, the path, and your headers ride the encrypted connection toward the site."
+  },
+  {
+    "part": "cdn",
+    "at": [
+      100,
+      560
+    ],
+    "title": "The edge answers or passes",
+    "text": "A nearby edge server checks its shelves. A fresh copy would end the trip here; this page is personal, so the request passes on."
+  },
+  {
+    "part": "balancer",
+    "at": [
+      275,
+      560
+    ],
+    "title": "Shared at the door",
+    "text": "The load balancer picks a healthy server with room to spare and hands it your request."
+  },
+  {
+    "part": "server",
+    "at": [
+      450,
+      560
+    ],
+    "title": "The page is built",
+    "text": "The application assembles your page, asking the database for the fresh facts it needs."
+  },
+  {
+    "part": "database",
+    "at": [
+      610,
+      560
+    ],
+    "title": "And back again",
+    "text": "With the facts in hand the reply is completed, and it retraces the whole path in reverse. Open the way back to follow it home."
+  }
+];
+
+  const QUIZ = [
+  {
+    "q": "What does DNS do?",
+    "a": [
+      "Encrypts the connection",
+      "Turns a site's name into its numeric address",
+      "Stores copies of pages near you",
+      "Checks the server's certificate"
+    ],
+    "c": 1,
+    "why": "DNS is the phone book: name in, IP address out, usually via a cached answer."
+  },
+  {
+    "q": "What happens in the TLS handshake?",
+    "a": [
+      "The page is downloaded",
+      "The server proves its identity and both sides agree on encryption keys",
+      "The load balancer picks a server",
+      "The browser renders the page"
+    ],
+    "c": 1,
+    "why": "Identity first, then keys; everything after the handshake is encrypted. TLS 1.3 does it in one round trip."
+  },
+  {
+    "q": "Why is the second visit to a site usually faster?",
+    "a": [
+      "The server remembers your computer",
+      "DNS answers and files are already cached on or near your device",
+      "The connection stays open forever",
+      "The page is smaller the second time"
+    ],
+    "c": 1,
+    "why": "Caches at the browser, the resolver and the edge skip whole legs of the journey."
+  },
+  {
+    "q": "What does a load balancer do?",
+    "a": [
+      "Compresses images",
+      "Translates names to addresses",
+      "Shares requests across many servers and steers around failures",
+      "Signs certificates"
+    ],
+    "c": 2,
+    "why": "It spreads work evenly and keeps the site up when individual servers fail."
+  },
+  {
+    "q": "A CDN edge server holds a fresh copy of the file you asked for. What happens?",
+    "a": [
+      "It asks the origin anyway",
+      "It answers you directly, and the journey ends early",
+      "It sends you to another city",
+      "It waits for the copy to expire"
+    ],
+    "c": 1,
+    "why": "Serving from the edge is the point of a CDN: less distance, less waiting, no work for the origin."
+  }
+];
+
+  /* ---------- Elements ---------- */
+  const $ = (id) => document.getElementById(id);
+  const reduce = () => matchMedia('(prefers-reduced-motion: reduce)').matches;
+  let view = 'fridge';
+  let current = null;
+
+  /* ---------- Theme ---------- */
+  const themeBtn = $('themeToggle');
+  const isDark = () => (document.documentElement.getAttribute('data-theme') || (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light')) === 'dark';
+  const syncThemeBtn = () => { themeBtn.textContent = isDark() ? '☀' : '☾'; };
+  syncThemeBtn();
+  themeBtn.addEventListener('click', () => {
+    const next = isDark() ? 'light' : 'dark';
+    document.documentElement.setAttribute('data-theme', next);
+    try { localStorage.setItem('aisignal_theme', next); } catch (e) {}
+    syncThemeBtn();
+  });
+
+  /* ---------- Parts list ---------- */
+  const list = $('partsList');
+  const buildList = () => {
+    list.replaceChildren();
+    ORDER[view].forEach((id) => {
+      const p = PARTS[id];
+      const li = document.createElement('li');
+      const b = document.createElement('button');
+      b.type = 'button'; b.dataset.id = id;
+      const dot = document.createElement('span'); dot.className = 't'; dot.style.background = p.tc;
+      b.append(dot, document.createTextNode(p.name));
+      b.addEventListener('click', () => select(id, { scroll: true }));
+      li.appendChild(b); list.appendChild(li);
+    });
+    list.scrollLeft = 0;
+    requestAnimationFrame(updateRail);
+  };
+
+  /* ---------- Parts rail ---------- */
+  const railPrev = $('partsRailPrev'), railNext = $('partsRailNext');
+  const updateRail = () => {
+    const max = list.scrollWidth - list.clientWidth;
+    const show = max > 4;
+    railPrev.style.display = show ? '' : 'none';
+    railNext.style.display = show ? '' : 'none';
+    if (!show) return;
+    railPrev.disabled = list.scrollLeft <= 2;
+    railNext.disabled = list.scrollLeft >= max - 2;
+  };
+  const scrollChipIntoView = () => {
+    const b = list.querySelector('button[aria-current="true"]'); if (!b) return;
+    const lr = list.getBoundingClientRect(), br = b.getBoundingClientRect();
+    const delta = (br.left + br.width / 2) - (lr.left + lr.width / 2);
+    if (Math.abs(delta) > 2) list.scrollBy({ left: delta, behavior: reduce() ? 'auto' : 'smooth' });
+  };
+  railPrev.addEventListener('click', () => list.scrollBy({ left: -list.clientWidth * .75, behavior: 'smooth' }));
+  railNext.addEventListener('click', () => list.scrollBy({ left: list.clientWidth * .75, behavior: 'smooth' }));
+  list.addEventListener('scroll', () => requestAnimationFrame(updateRail), { passive: true });
+  window.addEventListener('resize', updateRail);
+
+  /* ---------- Selection ---------- */
+  const panelBody = $('panelBody');
+  function render(id) {
+    const p = PARTS[id];
+    $('pWhere').textContent = p.where;
+    const chip = $('pTemp'); chip.textContent = p.temp; chip.style.background = p.tc;
+    $('pName').textContent = p.name;
+    $('pSimple').textContent = p.simple;
+    $('pDeep').textContent = p.deep;
+    const facts = $('pFacts'); facts.replaceChildren();
+    p.facts.forEach(([b, s]) => { const li = document.createElement('li'); const bb = document.createElement('b'); bb.textContent = b; const ss = document.createElement('span'); ss.textContent = s; li.append(bb, ss); facts.appendChild(li); });
+    $('pSrc').textContent = 'Sources: ' + p.src;
+    $('openChip').hidden = !p.chipLink;
+    panelBody.classList.remove('swap'); void panelBody.offsetWidth; panelBody.classList.add('swap');
+  }
+
+  function select(id, opts = {}) {
+    const p = PARTS[id]; if (!p) return;
+    if (p.view !== view) setView(p.view, { keep: true });
+    current = id;
+    document.querySelectorAll('.part').forEach((g) => g.classList.toggle('is-sel', g.dataset.id === id));
+    document.querySelectorAll('.art').forEach((a) => a.classList.add('dimmed'));
+    list.querySelectorAll('button').forEach((b) => b.setAttribute('aria-current', String(b.dataset.id === id)));
+    scrollChipIntoView();
+    render(id);
+    if (!opts.noHash) history.replaceState(null, '', '#' + id);
+    if (opts.scroll && window.innerWidth < 960) {
+      const r = $('panel').getBoundingClientRect();
+      if (r.top > window.innerHeight * .75 || r.top < 0) $('panel').scrollIntoView({ behavior: reduce() ? 'auto' : 'smooth', block: 'start' });
+    }
+  }
+
+  function setView(v, opts = {}) {
+    view = v;
+    document.querySelectorAll('.tab').forEach((t) => t.setAttribute('aria-selected', String(t.dataset.view === v)));
+    $('view-fridge').hidden = v !== 'fridge';
+    $('view-chip').hidden = v !== 'chip';
+    $('journeyBtn').hidden = v !== 'fridge';
+    $('hint').textContent = $('hint').dataset[v];
+    if (v !== 'fridge') stopJourney();
+    buildList();
+    if (!opts.keep) select(ORDER[v][0]);
+  }
+
+  document.querySelectorAll('.part').forEach((g) => {
+    g.addEventListener('click', () => { if (journeyOn) stopJourney(); select(g.dataset.id, { scroll: true }); });
+    g.addEventListener('keydown', (e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); select(g.dataset.id, { scroll: true }); } });
+  });
+  document.querySelectorAll('.tab').forEach((t) => t.addEventListener('click', () => setView(t.dataset.view)));
+  $('openChip').addEventListener('click', () => setView('chip'));
+
+  const step = (d) => { const o = ORDER[view]; const i = o.indexOf(current); select(o[(i + d + o.length) % o.length]); };
+  $('pPrev').addEventListener('click', () => step(-1));
+  $('pNext').addEventListener('click', () => step(1));
+
+  $('pShare').addEventListener('click', async () => {
+    const url = location.href.split('#')[0] + '#' + current;
+    try {
+      if (navigator.share && matchMedia('(pointer: coarse)').matches) { await navigator.share({ title: PARTS[current].name + ' · The Signal', url }); return; }
+      await navigator.clipboard.writeText(url);
+    } catch (e) {
+      const ta = document.createElement('textarea'); ta.value = url; document.body.appendChild(ta); ta.select();
+      try { document.execCommand('copy'); } catch (_) {} ta.remove();
+    }
+    const c = $('copied'); c.classList.add('on'); setTimeout(() => c.classList.remove('on'), 1600);
+  });
+
+  /* ---------- Journey ---------- */
+  const path = $('signalPath'), dot = $('pulseDot');
+  const total = path.getTotalLength();
+  const lenAt = JOURNEY.map(({ at }) => {
+    let best = 0, bestD = Infinity;
+    for (let s = 0; s <= total; s += 2) {
+      const pt = path.getPointAtLength(s);
+      const d = (pt.x - at[0]) ** 2 + (pt.y - at[1]) ** 2;
+      if (d < bestD) { bestD = d; best = s; }
+    }
+    return best;
+  });
+  for (let i = 1; i < lenAt.length; i++) if (lenAt[i] < lenAt[i - 1]) lenAt[i] = lenAt[i - 1];
+  let journeyOn = false, jIndex = 0, raf = 0, dotLen = 0;
+
+  function moveDot(to) {
+    cancelAnimationFrame(raf);
+    const from = dotLen, start = performance.now();
+    const dur = reduce() ? 0 : Math.min(1400, 300 + Math.abs(to - from) * 1.4);
+    const tick = (now) => {
+      const t = dur ? Math.min(1, (now - start) / dur) : 1;
+      const e = t < .5 ? 2 * t * t : 1 - Math.pow(-2 * t + 2, 2) / 2;
+      dotLen = from + (to - from) * e;
+      const pt = path.getPointAtLength(dotLen);
+      dot.setAttribute('cx', pt.x); dot.setAttribute('cy', pt.y);
+      if (t < 1) raf = requestAnimationFrame(tick);
+    };
+    raf = requestAnimationFrame(tick);
+  }
+  function showStep(i) {
+    jIndex = Math.max(0, Math.min(JOURNEY.length - 1, i));
+    const s = JOURNEY[jIndex];
+    $('jStep').textContent = `Step ${jIndex + 1} of ${JOURNEY.length}`;
+    $('jTitle').textContent = s.title;
+    $('jText').textContent = s.text;
+    $('jBar').style.width = ((jIndex + 1) / JOURNEY.length * 100) + '%';
+    $('jPrev').disabled = jIndex === 0;
+    $('jNext').textContent = jIndex === JOURNEY.length - 1 ? 'Start again' : 'Next step';
+    select(s.part, { noHash: true });
+    moveDot(lenAt[jIndex]);
+  }
+  function startJourney() {
+    journeyOn = true;
+    $('journeyBtn').setAttribute('aria-pressed', 'true');
+    $('journeyBtn').textContent = 'Stop the request';
+    $('journey').classList.add('is-on');
+    $('view-fridge').classList.add('journey-on');
+    dotLen = 0; showStep(0);
+  }
+  function stopJourney() {
+    if (!journeyOn) return;
+    journeyOn = false;
+    cancelAnimationFrame(raf);
+    $('journeyBtn').setAttribute('aria-pressed', 'false');
+    $('journeyBtn').textContent = 'Follow a request';
+    $('journey').classList.remove('is-on');
+    $('view-fridge').classList.remove('journey-on');
+    dot.setAttribute('cx', -20); dot.setAttribute('cy', -20);
+  }
+  $('journeyBtn').addEventListener('click', () => (journeyOn ? stopJourney() : startJourney()));
+  $('jPrev').addEventListener('click', () => showStep(jIndex - 1));
+  $('jNext').addEventListener('click', () => (jIndex === JOURNEY.length - 1 ? (dotLen = 0, showStep(0)) : showStep(jIndex + 1)));
+
+  /* ---------- Quiz ---------- */
+  const quizBox = $('quizBox');
+  let answered = 0, right = 0;
+  function buildQuiz() {
+    answered = 0; right = 0; quizBox.replaceChildren();
+    $('score').hidden = true; $('resetQuiz').hidden = true;
+    QUIZ.forEach((item, qi) => {
+      const box = document.createElement('div'); box.className = 'q';
+      const q = document.createElement('p'); q.className = 'qq'; q.textContent = `${qi + 1}. ${item.q}`;
+      const opts = document.createElement('div'); opts.className = 'opts';
+      const why = document.createElement('p'); why.className = 'why'; why.hidden = true; why.textContent = item.why;
+      item.a.forEach((txt, ai) => {
+        const b = document.createElement('button'); b.type = 'button'; b.textContent = txt;
+        b.addEventListener('click', () => {
+          opts.querySelectorAll('button').forEach((x, xi) => { x.disabled = true; if (xi === item.c) x.classList.add('right'); });
+          if (ai !== item.c) b.classList.add('wrong'); else right++;
+          answered++; why.hidden = false;
+          if (answered === QUIZ.length) {
+            $('score').hidden = false; $('resetQuiz').hidden = false;
+            $('score').textContent = `You got ${right} of ${QUIZ.length}.`;
+          }
+        });
+        opts.appendChild(b);
+      });
+      box.append(q, opts, why); quizBox.appendChild(box);
+    });
+  }
+  $('resetQuiz').addEventListener('click', buildQuiz);
+  buildQuiz();
+
+  /* ---------- Start ---------- */
+  const fromHash = () => {
+    const id = location.hash.slice(1);
+    if (PARTS[id]) { setView(PARTS[id].view, { keep: true }); select(id, { noHash: true }); return true; }
+    return false;
+  };
+  buildList();
+  if (!fromHash()) select('server', { noHash: true });
+  window.addEventListener('hashchange', fromHash);
+})();
+</script>
+
+<script>
+(() => {
+  const sc = document.getElementById('tsScroll');
+  if (!sc) return;
+  document.getElementById('tsPrev').addEventListener('click', () => sc.scrollBy({ left: -sc.clientWidth * .7, behavior: 'smooth' }));
+  document.getElementById('tsNext').addEventListener('click', () => sc.scrollBy({ left: sc.clientWidth * .7, behavior: 'smooth' }));
+})();
+</script>
+
+</body>
+</html>

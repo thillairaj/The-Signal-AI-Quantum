@@ -1,0 +1,1292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>How an LLM answers a prompt · The Signal</title>
+<meta name="description" content="An interactive, part by part explainer of how a large language model turns your prompt into an answer: tokens, embeddings, attention and the next word choice.">
+<meta property="og:title" content="How an LLM answers a prompt">
+<meta property="og:description" content="Tap through the pipeline of a large language model, with a simple and a deeper explanation for every part.">
+<meta property="og:type" content="article">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🤖</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,800;1,9..144,500;1,9..144,600&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<script>
+  /* Same theme key as the main site, so the choice carries over. */
+  try { const t = localStorage.getItem('aisignal_theme'); if (t === 'dark' || t === 'light') document.documentElement.setAttribute('data-theme', t); } catch (e) {}
+</script>
+<style>
+:root {
+  --bg: #F2F3EE; --surface: #EAEBE3; --ink: #14180F; --muted: #63695E; --border: #D7D9CD;
+  --accent: #2F6B4F; --accent-dim: #B6C9BC; --gold: #B8860B; --navy: #14253F;
+  --brass: #C9A44C; --brass-edge: #8F6E22; --metal: #C7CABD; --metal-edge: #8D9184;
+  --warm: #C26A2E; --cold: #2F7FB5; --frost: #DDEBF2; --panel: #FBFBF7;
+  --font-display: "Fraunces", Georgia, serif;
+  --font-body: "Inter", -apple-system, "Segoe UI", sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, monospace;
+  --header-bg: radial-gradient(1200px 400px at 50% -80px, #f1eee4 0%, #faf9f6 65%); --header-ink: #171b24; --header-sub: #5b6470;
+  --bar: rgba(250,249,246,.97); --bar-border: #e0dccf; --chip-bg: #ffffff; --chip-ink: #2b3542; --card: #ffffff;
+  --gold-dim: rgba(176,141,62,.4); --foot-ink: #6b7280; --foot-border: #e0dccf;
+  color-scheme: light;
+}
+:root[data-theme="dark"] {
+  --bg: #15170F; --surface: #1D1F16; --ink: #ECEDE4; --muted: #9AA08D; --border: #33362A;
+  --accent: #6FBE94; --accent-dim: #2B4838; --navy: #ECEDE4; --gold: #D9A93A;
+  --brass: #B8933F; --brass-edge: #E0C077; --metal: #3A3D31; --metal-edge: #6B7062;
+  --warm: #E08A4E; --cold: #6CB4E2; --frost: #1E2A30; --panel: #1A1C14;
+  --header-bg: radial-gradient(1200px 400px at 50% -80px, #454e5b 0%, #2b3038 65%); --header-ink: #ffffff; --header-sub: #aeb8c8;
+  --bar: rgba(47,53,62,.97); --bar-border: #4a5260; --chip-bg: #22272f; --chip-ink: #cfd6e2; --card: #ffffff;
+  --gold-dim: rgba(212,175,106,.4); --foot-ink: #9aa0aa; --foot-border: #4a5260;
+  color-scheme: dark;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #15170F; --surface: #1D1F16; --ink: #ECEDE4; --muted: #9AA08D; --border: #33362A;
+    --accent: #6FBE94; --accent-dim: #2B4838; --navy: #ECEDE4; --gold: #D9A93A;
+    --brass: #B8933F; --brass-edge: #E0C077; --metal: #3A3D31; --metal-edge: #6B7062;
+    --warm: #E08A4E; --cold: #6CB4E2; --frost: #1E2A30; --panel: #1A1C14;
+    --header-bg: radial-gradient(1200px 400px at 50% -80px, #454e5b 0%, #2b3038 65%); --header-ink: #ffffff; --header-sub: #aeb8c8;
+    --bar: rgba(47,53,62,.97); --bar-border: #4a5260; --chip-bg: #22272f; --chip-ink: #cfd6e2; --card: #ffffff;
+    --gold-dim: rgba(212,175,106,.4); --foot-ink: #9aa0aa; --foot-border: #4a5260;
+    color-scheme: dark;
+  }
+}
+* { box-sizing: border-box; }
+html { -webkit-font-smoothing: antialiased; scroll-padding-top: 92px; }
+body { margin: 0; background: var(--bg); color: var(--ink); font-family: var(--font-body); line-height: 1.55;
+  padding-bottom: env(safe-area-inset-bottom, 0px); }
+a { color: var(--accent); }
+button { font: inherit; color: inherit; }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+header { position: relative; background: var(--header-bg); color: var(--header-ink); padding: 44px 20px 34px; text-align: center; border-bottom: 3px solid var(--gold); }
+header .kicker { color: var(--gold); letter-spacing: 4px; font-size: 12px; font-weight: 700; text-transform: uppercase; }
+header h1 { margin: 12px 0 8px; font-size: 34px; letter-spacing: .5px; font-weight: 800; color: var(--header-ink); }
+header h1 .thin { font-weight: 300; color: var(--gold); }
+header p { margin: 0 auto; color: var(--header-sub); font-size: 15px; max-width: 620px; }
+header p b { color: var(--header-ink); font-weight: 600; }
+.theme-toggle { position: absolute; top: 14px; right: 14px; background: var(--chip-bg); border: 1px solid var(--bar-border); border-radius: 50%; width: 32px; height: 32px; font-size: .95rem; cursor: pointer; color: var(--chip-ink); z-index: 60; line-height: 1; }
+.topicbar { position: sticky; top: 0; z-index: 50; background: var(--bar); backdrop-filter: blur(6px); border-bottom: 1px solid var(--bar-border); padding: 12px 18px; display: flex; gap: 10px; align-items: center; }
+.topicbar .navcard { display: flex; flex-direction: column; gap: 1px; justify-content: center; padding: 6px 12px; border: 1px solid var(--gold-dim); border-radius: 12px; background: var(--card); color: var(--ink); text-decoration: none; min-width: 0; transition: border-color .15s ease, transform .15s ease; }
+.topicbar .navcard:hover { border-color: var(--gold); transform: translateY(-1px); }
+.nc-dir { font-size: 9.5px; letter-spacing: 1.8px; text-transform: uppercase; opacity: .62; font-weight: 700; white-space: nowrap; }
+.nc-title { font-size: 14px; font-weight: 700; line-height: 1.25; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 200px; }
+
+main { max-width: 1200px; margin: 0 auto; padding: 0 2rem 4rem; }
+.intro { padding: 2.4rem 0 1.6rem; display: grid; gap: .7rem; max-width: 62rem; }
+.crumb { font-family: var(--font-mono); font-size: .78rem; color: var(--accent); margin: 0; }
+.intro h1 { font-family: var(--font-display); font-weight: 600; font-size: clamp(2rem, 4.6vw, 3.4rem); line-height: 1.05; letter-spacing: -.02em; margin: 0; color: var(--navy); }
+.intro h1 i { font-weight: 500; color: var(--gold); }
+.lead { margin: 0; font-size: 1.08rem; color: var(--muted); max-width: 46rem; }
+.lead b { color: var(--ink); font-weight: 600; }
+
+.stage { display: grid; gap: 1.4rem; grid-template-columns: minmax(0, 1fr); align-items: start; }
+@media (min-width: 960px) { .stage { grid-template-columns: minmax(0, 1.25fr) minmax(330px, .9fr); } .panel { position: sticky; top: 86px; } }
+
+.viewer { background: var(--surface); border: 1px solid var(--border); border-radius: 14px; padding: 1rem 1rem .6rem; min-width: 0; }
+.tabs { display: inline-flex; padding: 3px; border: 1px solid var(--bar-border); border-radius: 999px; background: var(--chip-bg); margin-left: auto; }
+.tab { border: 0; background: transparent; padding: .38rem .9rem; border-radius: 999px; cursor: pointer; font-size: .88rem; color: var(--muted); }
+.tab[aria-selected="true"] { background: var(--gold); color: #171b24; font-weight: 700; }
+.journey-btn { border: 1px solid var(--gold-dim); color: var(--gold); background: var(--chip-bg); border-radius: 999px; padding: .45rem .95rem; cursor: pointer; font-size: .88rem; font-weight: 600; }
+.journey-btn[aria-pressed="true"] { background: var(--gold); color: #171b24; border-color: var(--gold); font-weight: 700; }
+
+.art { position: relative; }
+.art svg { display: block; width: 100%; height: auto; }
+.art svg text { font-family: var(--font-body); }
+.svg-label { font-size: 12px; fill: var(--muted); }
+.svg-temp { font-family: var(--font-mono) !important; font-size: 12px; font-weight: 500; }
+.svg-note { font-size: 11px; fill: var(--muted); font-style: italic; }
+@media (max-width: 640px) {
+  .svg-label { font-size: 18px; }
+  .svg-temp { font-size: 17px; }
+  .svg-note { font-size: 15px; }
+}
+.part { cursor: pointer; outline: none; }
+.part .hit { fill: transparent; stroke: transparent; }
+.part .shape { transition: filter .2s ease, opacity .2s ease; }
+.part:hover .shape, .part:focus-visible .shape { filter: brightness(1.08) drop-shadow(0 0 3px var(--accent)); }
+.part.is-sel .shape { filter: drop-shadow(0 0 4px var(--accent)) drop-shadow(0 0 1px var(--accent)); }
+.part .marker { fill: var(--accent); stroke: var(--bg); stroke-width: 2; opacity: 0; transition: opacity .2s; }
+.part.is-sel .marker { opacity: 1; }
+.art.dimmed .part:not(.is-sel) .shape { opacity: .45; }
+.pulse-dot { fill: var(--accent); stroke: var(--bg); stroke-width: 2; }
+.pulse-trail { fill: none; stroke: var(--accent); stroke-width: 2.5; stroke-linecap: round; stroke-dasharray: 4 6; opacity: .0; transition: opacity .3s; }
+.journey-on .pulse-trail { opacity: .55; }
+@media (prefers-reduced-motion: no-preference) {
+  .led { animation: blink 2.4s infinite steps(2); }
+  .led:nth-child(3n) { animation-delay: .7s; } .led:nth-child(3n+1) { animation-delay: 1.3s; }
+  .pt-gas { animation: breathe 1.6s ease-in-out infinite; }
+}
+@keyframes blink { 50% { opacity: .25; } }
+@keyframes breathe { 50% { opacity: .35; } }
+
+.hint { margin: .4rem .2rem 0; font-size: .82rem; color: var(--muted); }
+.journey { display: none; margin-top: .6rem; padding: .8rem .9rem; border-radius: 10px; background: var(--bg); border: 1px solid var(--border); gap: .6rem; }
+.journey.is-on { display: grid; }
+.journey-top { display: flex; justify-content: space-between; align-items: baseline; gap: .6rem; }
+.journey-step { font-family: var(--font-mono); font-size: .78rem; color: var(--accent); }
+.journey-title { font-family: var(--font-display); font-weight: 600; font-size: 1.1rem; margin: 0; }
+.journey-text { margin: 0; color: var(--muted); font-size: .94rem; }
+.journey-nav { display: flex; gap: .5rem; }
+.btn { border: 1px solid var(--border); background: var(--bg); border-radius: 8px; padding: .4rem .8rem; cursor: pointer; font-size: .86rem; }
+.btn:hover { border-color: var(--accent); }
+.btn-primary { background: var(--accent); color: var(--bg); border-color: var(--accent); font-weight: 500; }
+.btn:disabled { opacity: .4; cursor: default; }
+.journey-bar { height: 3px; background: var(--border); border-radius: 3px; overflow: hidden; }
+.journey-bar span { display: block; height: 100%; background: var(--accent); width: 0; transition: width .4s ease; }
+
+.parts-rail-wrap { display: flex; align-items: center; gap: .35rem; margin: .8rem .1rem .3rem; }
+.parts-list { display: flex; flex-wrap: nowrap; overflow-x: auto; gap: .4rem; margin: 0; padding: .15rem .05rem; list-style: none; flex: 1; min-width: 0; scroll-snap-type: x proximity; scrollbar-width: none; -webkit-overflow-scrolling: touch; }
+.parts-list::-webkit-scrollbar { display: none; }
+.parts-list li { flex: 0 0 auto; scroll-snap-align: start; }
+.parts-rail-btn { flex: 0 0 auto; width: 34px; height: 34px; border-radius: 50%; border: 1px solid var(--gold-dim); background: var(--chip-bg); color: var(--gold); font-size: 18px; cursor: pointer; line-height: 1; padding: 0; }
+.parts-rail-btn:hover { border-color: var(--gold); }
+.parts-rail-btn:disabled { opacity: .35; cursor: default; }
+.parts-list button { border: 1px solid var(--border); background: var(--bg); border-radius: 999px; padding: .28rem .7rem; font-size: .8rem; cursor: pointer; color: var(--muted); display: inline-flex; align-items: center; gap: .4rem; white-space: nowrap; }
+.parts-list button:hover { color: var(--ink); border-color: var(--metal-edge); }
+.parts-list button[aria-current="true"] { color: var(--ink); border-color: var(--accent); background: var(--accent-dim); }
+.parts-list .t { width: 7px; height: 7px; border-radius: 50%; display: inline-block; }
+
+.panel { background: var(--panel); border: 1px solid var(--border); border-radius: 14px; padding: 1.4rem 1.4rem 1.2rem; min-width: 0; }
+.panel-top { display: flex; justify-content: space-between; align-items: center; gap: .6rem; }
+.where { font-family: var(--font-mono); font-size: .78rem; color: var(--muted); margin: 0; }
+.temp-chip { font-family: var(--font-mono); font-size: .78rem; font-weight: 600; padding: .18rem .55rem; border-radius: 999px; color: #fff; white-space: nowrap; }
+.panel h2 { font-family: var(--font-display); font-weight: 600; font-size: clamp(1.5rem, 2.6vw, 2rem); line-height: 1.12; margin: .5rem 0 1rem; color: var(--navy); }
+.level { margin: 0 0 1rem; }
+.level h3 { font-size: .8rem; font-weight: 600; margin: 0 0 .25rem; color: var(--accent); }
+.level.deep h3 { color: var(--gold); }
+.level p { margin: 0; font-size: .98rem; }
+.level.deep p { color: var(--ink); opacity: .88; font-size: .94rem; }
+.facts { display: grid; grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); gap: .5rem; margin: 1.1rem 0 .3rem; padding: 0; list-style: none; }
+.facts li { border-top: 2px solid var(--accent-dim); padding-top: .45rem; }
+.facts b { display: block; font-family: var(--font-display); font-weight: 600; font-size: 1.25rem; line-height: 1.15; font-variant-numeric: tabular-nums; }
+.facts span { font-size: .78rem; color: var(--muted); line-height: 1.35; display: block; }
+.panel-src { font-size: .78rem; color: var(--muted); margin: .7rem 0 0; }
+.panel-nav { display: flex; gap: .5rem; margin-bottom: 1rem; padding-bottom: .9rem; border-bottom: 1px solid var(--border); }
+.panel-nav .btn { flex: 1; padding: .55rem .8rem; font-weight: 600; }
+.panel-actions { display: flex; flex-wrap: wrap; gap: .5rem; margin-top: 1.1rem; padding-top: 1rem; border-top: 1px solid var(--border); }
+.panel-actions .spacer { flex: 1; }
+.copied { font-size: .8rem; color: var(--accent); align-self: center; opacity: 0; transition: opacity .2s; }
+.copied.on { opacity: 1; }
+.open-chip { margin-top: .4rem; }
+@media (prefers-reduced-motion: no-preference) { .panel-body.swap { animation: swapIn .35s ease; } }
+@keyframes swapIn { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: none; } }
+
+section.block { margin-top: 3.4rem; }
+.block h2 { font-family: var(--font-display); font-weight: 600; font-size: clamp(1.5rem, 3vw, 2.1rem); margin: 0 0 .3rem; color: var(--navy); letter-spacing: -.01em; }
+.block .sub { margin: 0 0 1.4rem; color: var(--muted); max-width: 48rem; }
+
+.cold-scale { display: grid; gap: .55rem; }
+.cs-row { display: grid; grid-template-columns: 8.5rem minmax(0, 1fr) 6.5rem; gap: .8rem; align-items: center; }
+.cs-name { font-size: .9rem; }
+.cs-track { height: 12px; background: var(--surface); border-radius: 6px; position: relative; overflow: hidden; border: 1px solid var(--border); }
+.cs-fill { position: absolute; inset: 0 auto 0 0; border-radius: 6px; }
+.cs-val { font-family: var(--font-mono); font-size: .82rem; text-align: right; color: var(--muted); }
+.cs-row.space .cs-name { font-style: italic; color: var(--muted); }
+.cs-row.here .cs-name { font-weight: 600; }
+@media (max-width: 560px) { .cs-row { grid-template-columns: 6.2rem minmax(0,1fr) 4.8rem; gap: .5rem; } .cs-name { font-size: .8rem; } }
+.cs-note { font-size: .82rem; color: var(--muted); margin: .8rem 0 0; }
+
+.machines { display: grid; gap: 1.2rem 2rem; grid-template-columns: repeat(auto-fit, minmax(min(100%, 22rem), 1fr)); }
+.machine { border-top: 3px solid var(--ink); padding-top: .9rem; }
+.machine h3 { font-family: var(--font-display); font-weight: 600; font-size: 1.35rem; margin: 0; }
+.machine .maker { font-size: .85rem; color: var(--muted); margin: 0 0 .8rem; }
+.machine dl { display: grid; grid-template-columns: auto 1fr; gap: .35rem 1rem; margin: 0 0 .9rem; font-size: .92rem; }
+.machine dt { color: var(--muted); }
+.machine dd { margin: 0; font-weight: 500; font-variant-numeric: tabular-nums; }
+.machine ul { margin: 0; padding-left: 1.1rem; font-size: .92rem; }
+.machine li { margin-bottom: .35rem; }
+.machine time { font-family: var(--font-mono); font-size: .78rem; color: var(--accent); }
+
+.quiz { display: grid; gap: 1rem; max-width: 52rem; }
+.q { border: 1px solid var(--border); border-radius: 12px; padding: 1rem 1.1rem; background: var(--surface); }
+.q p.qq { margin: 0 0 .7rem; font-weight: 600; }
+.q .opts { display: grid; gap: .45rem; }
+.q .opts button { text-align: left; border: 1px solid var(--border); background: var(--bg); border-radius: 8px; padding: .55rem .75rem; cursor: pointer; font-size: .93rem; }
+.q .opts button:hover:not(:disabled) { border-color: var(--accent); }
+.q .opts button.right { border-color: var(--accent); background: var(--accent-dim); }
+.q .opts button.wrong { border-color: var(--warm); text-decoration: line-through; opacity: .75; }
+.q .opts button:disabled { cursor: default; }
+.q .why { margin: .7rem 0 0; font-size: .9rem; color: var(--muted); }
+.score { font-family: var(--font-display); font-size: 1.2rem; margin: .4rem 0 0; }
+.reset-quiz { margin-top: .4rem; }
+
+.sources ol { padding-left: 1.2rem; margin: 0; display: grid; gap: .45rem; font-size: .9rem; max-width: 60rem; }
+.sources li span { color: var(--muted); }
+.checked { font-size: .85rem; color: var(--muted); margin: 1rem 0 0; }
+footer { text-align: center; padding: 28px 16px; color: var(--foot-ink); font-size: 13px; border-top: 1px solid var(--foot-border); margin-top: 20px; }
+footer .rule { width: 60px; height: 2px; background: var(--gold); margin: 0 auto 12px; }
+footer a { color: var(--gold); font-weight: 700; text-decoration: none; }
+.li-btn { display: inline-flex; align-items: center; gap: 10px; padding: 8px 16px 8px 9px; border-radius: 14px; background: linear-gradient(135deg, #0A66C2, #004182); color: #fff !important; text-decoration: none !important; box-shadow: 0 4px 14px rgba(10,102,194,.35); vertical-align: middle; transition: transform .15s ease, box-shadow .15s ease; }
+.li-btn:hover { transform: translateY(-1px); box-shadow: 0 8px 22px rgba(10,102,194,.45); }
+.li-btn .li-badge { display: inline-flex; align-items: center; justify-content: center; width: 30px; height: 30px; border-radius: 8px; background: rgba(255,255,255,.16); border: 1px solid rgba(255,255,255,.45); color: #fff; flex: 0 0 auto; }
+.li-btn .li-badge svg { width: 16px; height: 16px; display: block; }
+.li-txt { display: flex; flex-direction: column; line-height: 1.15; text-align: left; }
+.li-dir { font-size: 9.5px; letter-spacing: 1.8px; text-transform: uppercase; opacity: .85; font-weight: 700; }
+.li-name { font-size: 15.5px; font-weight: 800; letter-spacing: .01em; }
+
+@media (max-width: 640px) {
+  main { padding-left: 1rem; padding-right: 1rem; }
+  .viewer { padding: .6rem .5rem .5rem; border-radius: 12px; }
+  .panel { padding: 1.1rem 1rem 1rem; }
+  header { padding: 34px 16px 26px; }
+  header h1 { font-size: 27px; }
+  .topicbar { flex-wrap: wrap; row-gap: 10px; padding: 10px 12px; }
+  .tabs { margin-left: 0; }
+}
+.sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+</style>
+
+<style>
+.topicbar { flex-wrap: wrap; }
+[hidden] { display: none !important; }
+.tstrip-row { flex: 1 1 100%; display: flex; align-items: center; gap: 8px; border-top: 1px solid var(--bar-border, var(--border)); padding-top: 10px; }
+.ts-label { flex: 0 0 auto; color: var(--gold); font-size: 11px; font-weight: 800; letter-spacing: 2.5px; white-space: nowrap; }
+.ts-scroll { flex: 1; min-width: 0; display: flex; gap: 8px; overflow-x: auto; scrollbar-width: none; padding: 2px; }
+.ts-scroll::-webkit-scrollbar { display: none; }
+.ts-chip { flex: 0 0 auto; border: 1px solid var(--bar-border, var(--border)); background: var(--chip-bg, var(--surface)); color: var(--muted); font-size: 13.5px; font-weight: 700; padding: 7px 14px; border-radius: 999px; white-space: nowrap; }
+.ts-chip small { color: var(--gold); font-weight: 700; margin-right: 7px; letter-spacing: 1px; }
+.ts-chip.active { background: var(--gold); border-color: var(--gold); color: #fff; }
+.ts-chip.active small { color: #ffe9b0; }
+.ts-chip.soon { border-style: dashed; cursor: default; opacity: .75; }
+.ts-btn { flex: 0 0 auto; width: 30px; height: 30px; border-radius: 50%; border: 1px solid var(--gold-dim, var(--border)); background: var(--chip-bg, var(--surface)); color: var(--gold); font-size: 16px; cursor: pointer; line-height: 1; padding: 0; }
+</style>
+</head>
+<body>
+
+<header>
+  <button class="theme-toggle" id="themeToggle" type="button" aria-label="Toggle dark mode">☾</button>
+  <div class="kicker">Interactive Explainer · AI</div>
+  <h1>How an LLM <span class="thin">Answers a Prompt</span></h1>
+  <p>You type a question and an answer appears, token by token, as if someone were writing it. Nobody is. A large language model is doing one thing, over and over: working out what token comes next. Tap any part to see how, in simple words first and then in more depth.</p>
+</header>
+<div class="topicbar">
+  <a class="navcard back" href="../#learn-explainers"><span class="nc-dir">← Back to</span><span class="nc-title">Learning Spaces</span></a>
+  <div class="tabs" role="tablist" aria-label="View">
+    <button class="tab" role="tab" id="tab-fridge" aria-selected="true" aria-controls="view-fridge" data-view="fridge">The pipeline</button>
+    <button class="tab" role="tab" id="tab-chip" aria-selected="false" aria-controls="view-chip" data-view="chip">Inside a layer</button>
+  </div>
+  <button class="journey-btn" id="journeyBtn" type="button" aria-pressed="false">Follow a token</button>
+  <div class="tstrip-row">
+    <span class="ts-label">AI EXPLAINERS</span>
+    <button class="ts-btn" id="tsPrev" type="button" aria-label="Scroll topics back">‹</button>
+    <div class="ts-scroll" id="tsScroll"><span class="ts-chip active"><small>01</small>LLM answers a prompt</span><span class="ts-chip soon"><small>02</small>Inside a GPU</span><span class="ts-chip soon"><small>03</small>Training cluster</span></div>
+    <button class="ts-btn" id="tsNext" type="button" aria-label="Scroll topics forward">›</button>
+  </div>
+</div>
+
+<main>
+
+  <div class="stage">
+    <div class="viewer">
+      <!-- FRIDGE VIEW -->
+      <div class="art" id="view-fridge" role="tabpanel" aria-labelledby="tab-fridge">
+        <svg viewBox="0 0 720 800" id="fridgeSvg" aria-label="Diagram of a language model pipeline, from your prompt to the growing answer">
+          <path id="signalPath" class="pulse-trail" d="M 360 71 L 360 761 L 96 761 L 96 448"/>
+          <circle id="pulseDot" class="pulse-dot" r="7" cx="-20" cy="-20"/>
+          <g class="part" data-id="context" tabindex="0" role="button" aria-label="Context window">
+            <g class="shape"><rect x="150" y="20" width="420" height="330" rx="14" fill="none" stroke="var(--gold)" stroke-width="1.5" stroke-dasharray="7 5"/></g>
+            <text x="556" y="44" text-anchor="end" class="svg-label">Context window</text>
+            <rect class="hit" x="150" y="20" width="420" height="330"/>
+            <circle class="marker" cx="556" cy="60" r="6"/>
+          </g>
+          <g class="part" data-id="prompt" tabindex="0" role="button" aria-label="Your prompt">
+            <g class="shape"><rect x="200" y="44" width="320" height="54" rx="12" fill="var(--panel)" stroke="var(--border)" stroke-width="1.5"/></g>
+            <text x="360.0" y="68.0" text-anchor="middle" class="svg-label">Your prompt</text>
+            <text x="360.0" y="87.0" text-anchor="middle" class="svg-note">“Why is the sky blue?”</text>
+            <rect class="hit" x="196" y="40" width="328" height="62"/>
+            <circle class="marker" cx="512" cy="52" r="6"/>
+          </g>
+          <g class="part" data-id="tokenizer" tabindex="0" role="button" aria-label="Tokenizer">
+            <g class="shape"><rect x="200" y="122" width="320" height="54" rx="12" fill="var(--panel)" stroke="var(--border)" stroke-width="1.5"/></g>
+            <text x="360.0" y="146.0" text-anchor="middle" class="svg-label">Tokenizer</text>
+            <text x="360.0" y="165.0" text-anchor="middle" class="svg-note">Why · is · the · sky · blue · ?</text>
+            <rect class="hit" x="196" y="118" width="328" height="62"/>
+            <circle class="marker" cx="512" cy="130" r="6"/>
+          </g>
+          <g class="part" data-id="embedding" tabindex="0" role="button" aria-label="Embeddings">
+            <g class="shape"><rect x="200" y="200" width="320" height="54" rx="12" fill="var(--panel)" stroke="var(--border)" stroke-width="1.5"/></g>
+            <text x="360.0" y="224.0" text-anchor="middle" class="svg-label">Embeddings</text>
+            <text x="360.0" y="243.0" text-anchor="middle" class="svg-note">blue → 0.21, 0.47, 0.03, …</text>
+            <rect class="hit" x="196" y="196" width="328" height="62"/>
+            <circle class="marker" cx="512" cy="208" r="6"/>
+          </g>
+          <g class="part" data-id="position" tabindex="0" role="button" aria-label="Positions">
+            <g class="shape"><rect x="200" y="278" width="320" height="54" rx="12" fill="var(--panel)" stroke="var(--border)" stroke-width="1.5"/></g>
+            <text x="360.0" y="302.0" text-anchor="middle" class="svg-label">Positions</text>
+            <text x="360.0" y="321.0" text-anchor="middle" class="svg-note">1 · 2 · 3 · 4 · 5 · 6</text>
+            <rect class="hit" x="196" y="274" width="328" height="62"/>
+            <circle class="marker" cx="512" cy="286" r="6"/>
+          </g>
+          <g class="part" data-id="layers" tabindex="0" role="button" aria-label="Transformer layers">
+            <g class="shape">
+              <rect x="216" y="382" width="320" height="84" rx="12" fill="var(--panel)" stroke="var(--border)" stroke-width="1.5" opacity=".45"/>
+              <rect x="206" y="394" width="320" height="84" rx="12" fill="var(--panel)" stroke="var(--border)" stroke-width="1.5" opacity=".7"/>
+              <rect x="196" y="406" width="320" height="84" rx="12" fill="var(--panel)" stroke="var(--border)" stroke-width="1.5"/>
+            </g>
+            <text x="356" y="445" text-anchor="middle" class="svg-label">Transformer layers</text>
+            <text x="356" y="464" text-anchor="middle" class="svg-note">attention, then feed forward, many times</text>
+            <rect class="hit" x="192" y="378" width="348" height="116"/>
+            <circle class="marker" cx="508" cy="414" r="6"/>
+          </g>
+          <g class="part" data-id="scores" tabindex="0" role="button" aria-label="Next word scores">
+            <g class="shape"><rect x="200" y="520" width="320" height="50" rx="12" fill="var(--panel)" stroke="var(--border)" stroke-width="1.5"/></g>
+            <text x="360.0" y="542.0" text-anchor="middle" class="svg-label">Next word scores</text>
+            <text x="360.0" y="561.0" text-anchor="middle" class="svg-note">one score for every token there is</text>
+            <rect class="hit" x="196" y="516" width="328" height="58"/>
+            <circle class="marker" cx="512" cy="528" r="6"/>
+          </g>
+          <g class="part" data-id="probs" tabindex="0" role="button" aria-label="Probabilities">
+            <g class="shape"><rect x="200" y="592" width="320" height="50" rx="12" fill="var(--panel)" stroke="var(--border)" stroke-width="1.5"/></g>
+            <text x="360.0" y="614.0" text-anchor="middle" class="svg-label">Probabilities</text>
+            <text x="360.0" y="633.0" text-anchor="middle" class="svg-note">the scores, squeezed to add up to 100%</text>
+            <rect class="hit" x="196" y="588" width="328" height="58"/>
+            <circle class="marker" cx="512" cy="600" r="6"/>
+          </g>
+          <g class="part" data-id="choice" tabindex="0" role="button" aria-label="The choice">
+            <g class="shape"><rect x="200" y="664" width="320" height="50" rx="12" fill="var(--panel)" stroke="var(--border)" stroke-width="1.5"/></g>
+            <text x="360.0" y="686.0" text-anchor="middle" class="svg-label">The choice</text>
+            <text x="360.0" y="705.0" text-anchor="middle" class="svg-note">one token is picked</text>
+            <rect class="hit" x="196" y="660" width="328" height="58"/>
+            <circle class="marker" cx="512" cy="672" r="6"/>
+          </g>
+          <g class="part" data-id="answer" tabindex="0" role="button" aria-label="The answer, growing">
+            <g class="shape"><rect x="200" y="736" width="320" height="50" rx="12" fill="var(--panel)" stroke="var(--border)" stroke-width="1.5"/></g>
+            <text x="360.0" y="758.0" text-anchor="middle" class="svg-label">The answer, growing</text>
+            <text x="360.0" y="777.0" text-anchor="middle" class="svg-note">the · …</text>
+            <rect class="hit" x="196" y="732" width="328" height="58"/>
+            <circle class="marker" cx="512" cy="744" r="6"/>
+          </g>
+          <g class="part" data-id="loop" tabindex="0" role="button" aria-label="The loop">
+            <g class="shape"><path d="M 196 761 L 120 761 L 120 470" fill="none" stroke="var(--gold)" stroke-width="2.5" stroke-dasharray="6 4"/></g>
+            <text x="104" y="620" text-anchor="middle" class="svg-note" transform="rotate(-90 104 620)">the loop: the new token joins the input</text>
+            <rect class="hit" x="88" y="440" width="60" height="346"/>
+            <circle class="marker" cx="120" cy="462" r="6"/>
+          </g>
+        </svg>
+      </div>
+
+      <!-- CHIP VIEW -->
+      <div class="art" id="view-chip" role="tabpanel" aria-labelledby="tab-chip" hidden>
+        <svg viewBox="0 0 700 520" id="chipSvg" aria-label="Diagram of one transformer layer, with attention, the feed forward network and the residual stream">
+          <rect x="20" y="24" width="660" height="468" rx="16" fill="none" stroke="var(--border)" stroke-width="1.5"/>
+          <text x="44" y="54" class="svg-label">One transformer layer</text>
+          <g class="part" data-id="qkv" tabindex="0" role="button" aria-label="Queries, keys, values">
+            <g class="shape"><rect x="120" y="66" width="330" height="46" rx="12" fill="var(--panel)" stroke="var(--border)" stroke-width="1.5"/></g>
+            <text x="285.0" y="86.0" text-anchor="middle" class="svg-label">Queries, keys, values</text>
+            <text x="285.0" y="105.0" text-anchor="middle" class="svg-note">three vectors per token</text>
+            <rect class="hit" x="116" y="62" width="338" height="54"/>
+            <circle class="marker" cx="442" cy="74" r="6"/>
+          </g>
+          <g class="part" data-id="attention" tabindex="0" role="button" aria-label="Attention">
+            <g class="shape"><rect x="215" y="146" width="240" height="56" rx="12" fill="var(--panel)" stroke="var(--border)" stroke-width="1.5"/></g>
+            <text x="335.0" y="171.0" text-anchor="middle" class="svg-label">Attention</text>
+            <text x="335.0" y="190.0" text-anchor="middle" class="svg-note">tokens gather from tokens</text>
+            <rect class="hit" x="211" y="142" width="248" height="64"/>
+            <circle class="marker" cx="447" cy="154" r="6"/>
+          </g>
+          <g class="part" data-id="weights" tabindex="0" role="button" aria-label="Attention weights">
+            <g class="shape">
+              <rect x="516" y="66" width="26" height="26" fill="var(--accent)" opacity=".15"/><rect x="544" y="66" width="26" height="26" fill="var(--accent)" opacity=".3"/><rect x="572" y="66" width="26" height="26" fill="var(--accent)" opacity=".55"/><rect x="600" y="66" width="26" height="26" fill="var(--accent)" opacity=".9"/>
+              <rect x="516" y="94" width="26" height="26" fill="var(--accent)" opacity=".5"/><rect x="544" y="94" width="26" height="26" fill="var(--accent)" opacity=".2"/><rect x="572" y="94" width="26" height="26" fill="var(--accent)" opacity=".35"/><rect x="600" y="94" width="26" height="26" fill="var(--accent)" opacity=".6"/>
+              <rect x="516" y="122" width="26" height="26" fill="var(--accent)" opacity=".25"/><rect x="544" y="122" width="26" height="26" fill="var(--accent)" opacity=".65"/><rect x="572" y="122" width="26" height="26" fill="var(--accent)" opacity=".3"/><rect x="600" y="122" width="26" height="26" fill="var(--accent)" opacity=".45"/>
+              <rect x="516" y="150" width="26" height="26" fill="var(--accent)" opacity=".7"/><rect x="544" y="150" width="26" height="26" fill="var(--accent)" opacity=".4"/><rect x="572" y="150" width="26" height="26" fill="var(--accent)" opacity=".85"/><rect x="600" y="150" width="26" height="26" fill="var(--accent)" opacity=".2"/>
+            </g>
+            <text x="571" y="200" text-anchor="middle" class="svg-note">attention weights: it → the animal</text>
+            <rect class="hit" x="510" y="60" width="122" height="150"/>
+            <circle class="marker" cx="620" cy="72" r="6"/>
+          </g>
+          <g class="part" data-id="norm" tabindex="0" role="button" aria-label="Layer normalisation">
+            <g class="shape">
+              <rect x="52" y="152" width="96" height="34" rx="17" fill="var(--panel)" stroke="var(--border)" stroke-width="1.5"/>
+              <rect x="52" y="330" width="96" height="34" rx="17" fill="var(--panel)" stroke="var(--border)" stroke-width="1.5"/>
+            </g>
+            <text x="100" y="174" text-anchor="middle" class="svg-label">Norm</text>
+            <text x="100" y="352" text-anchor="middle" class="svg-label">Norm</text>
+            <rect class="hit" x="48" y="148" width="104" height="42"/>
+            <rect class="hit" x="48" y="326" width="104" height="42"/>
+            <circle class="marker" cx="140" cy="158" r="6"/>
+          </g>
+          <g class="part" data-id="residual" tabindex="0" role="button" aria-label="Residual stream">
+            <g class="shape"><rect x="60" y="238" width="580" height="40" rx="20" fill="var(--gold)" opacity=".18" stroke="var(--gold)" stroke-width="1.5"/></g>
+            <text x="350" y="263" text-anchor="middle" class="svg-label">Residual stream: every token, carried through</text>
+            <rect class="hit" x="60" y="234" width="580" height="48"/>
+            <circle class="marker" cx="628" cy="246" r="6"/>
+          </g>
+          <g class="part" data-id="mlp" tabindex="0" role="button" aria-label="Feed forward network">
+            <g class="shape"><rect x="215" y="322" width="240" height="56" rx="12" fill="var(--panel)" stroke="var(--border)" stroke-width="1.5"/></g>
+            <text x="335.0" y="347.0" text-anchor="middle" class="svg-label">Feed forward network</text>
+            <text x="335.0" y="366.0" text-anchor="middle" class="svg-note">each token processed on its own</text>
+            <rect class="hit" x="211" y="318" width="248" height="64"/>
+            <circle class="marker" cx="447" cy="330" r="6"/>
+          </g>
+          <text x="44" y="452" class="svg-note">in from the layer below</text>
+          <text x="656" y="452" text-anchor="end" class="svg-note">out to the layer above</text>
+        </svg>
+      </div>
+
+      <div class="journey" id="journey" aria-live="polite">
+        <div class="journey-top">
+          <span class="journey-step" id="jStep">Step 1 of 10</span>
+          <div class="journey-nav">
+            <button class="btn" id="jPrev" type="button">Back</button>
+            <button class="btn btn-primary" id="jNext" type="button">Next step</button>
+          </div>
+        </div>
+        <div class="journey-bar"><span id="jBar"></span></div>
+        <h3 class="journey-title" id="jTitle"></h3>
+        <p class="journey-text" id="jText"></p>
+      </div>
+
+      <div class="parts-rail-wrap">
+        <button class="parts-rail-btn" id="partsRailPrev" type="button" aria-label="Scroll parts list back">‹</button>
+        <ul class="parts-list" id="partsList" aria-label="All parts in this view"></ul>
+        <button class="parts-rail-btn" id="partsRailNext" type="button" aria-label="Scroll parts list forward">›</button>
+      </div>
+      <p class="hint" id="hint" data-fridge="Tap a part of the pipeline, or pick one from the list. Use Follow a token to trace one piece of your prompt through the model." data-chip="Tap a part of the layer, or pick one from the list.">Tap a part of the pipeline, or pick one from the list. Use Follow a token to trace one piece of your prompt through the model.</p>
+    </div>
+
+    <aside class="panel" id="panel" aria-live="polite">
+      <div class="panel-nav">
+        <button class="btn" id="pPrev" type="button">Previous part</button>
+        <button class="btn" id="pNext" type="button">Next part</button>
+      </div>
+      <div class="panel-body" id="panelBody">
+        <div class="panel-top">
+          <p class="where" id="pWhere"></p>
+          <span class="temp-chip" id="pTemp"></span>
+        </div>
+        <h2 id="pName"></h2>
+        <div class="level">
+          <h3>In simple words</h3>
+          <p id="pSimple"></p>
+        </div>
+        <div class="level deep">
+          <h3>Going deeper</h3>
+          <p id="pDeep"></p>
+        </div>
+        <ul class="facts" id="pFacts"></ul>
+        <p class="panel-src" id="pSrc"></p>
+        <button class="btn open-chip" id="openChip" type="button" hidden>Open the layer view</button>
+      </div>
+      <div class="panel-actions">
+        <span class="spacer"></span>
+        <span class="copied" id="copied">Link copied</span>
+        <button class="btn" id="pShare" type="button">Copy link to this part</button>
+      </div>
+    </aside>
+  </div>
+
+  
+  <section class="block" id="how-chosen">
+    <h2>Watch one word get chosen</h2>
+    <p class="sub">The prompt is: The cat sat on the… and the model must pick the next token. These numbers are an illustration, invented for this example in the pattern a real model produces; real probabilities come from the model itself.</p>
+    <div class="cold-scale">
+      <div class="cs-row"><span class="cs-name">mat</span><span class="cs-track"><span class="cs-fill" style="width:46%;background:var(--accent)"></span></span><span class="cs-val">46%</span></div>
+      <div class="cs-row"><span class="cs-name">floor</span><span class="cs-track"><span class="cs-fill" style="width:18%;background:var(--accent)"></span></span><span class="cs-val">18%</span></div>
+      <div class="cs-row"><span class="cs-name">chair</span><span class="cs-track"><span class="cs-fill" style="width:11%;background:var(--accent)"></span></span><span class="cs-val">11%</span></div>
+      <div class="cs-row"><span class="cs-name">roof</span><span class="cs-track"><span class="cs-fill" style="width:7%;background:var(--accent)"></span></span><span class="cs-val">7%</span></div>
+      <div class="cs-row"><span class="cs-name">sofa</span><span class="cs-track"><span class="cs-fill" style="width:6%;background:var(--accent)"></span></span><span class="cs-val">6%</span></div>
+      <div class="cs-row"><span class="cs-name">everything else</span><span class="cs-track"><span class="cs-fill" style="width:12%;background:var(--muted)"></span></span><span class="cs-val">12%</span></div>
+    </div>
+    <p class="cs-note">At a low temperature the model takes mat almost every time. Turn the temperature up and floor, chair and even roof get their turn, which is why the same prompt can answer differently twice.</p>
+  </section>
+
+  <section class="block" id="machines">
+    <h2>The assistants you already use</h2>
+    <p class="sub">Different products, the same engine: a transformer stack choosing one token at a time. Figures last checked 29 October 2026.</p>
+    <div class="machines">
+      <article class="machine">
+        <h3>Chat assistants</h3>
+        <p class="maker">ChatGPT · Claude · Gemini</p>
+        <dl>
+          <dt>Architecture</dt><dd>The transformer, as set out in the 2017 paper</dd>
+          <dt>Unit of work</dt><dd>The token, about 4 characters of English</dd>
+          <dt>Answers</dt><dd>Generated one token at a time, then streamed</dd>
+        </dl>
+        <ul>
+          <li>The assistants differ in training data, tuning and tools, not in the basic loop this page traces.</li>
+          <li>One app can offer several models; the pipeline is identical, the stack is bigger or smaller.</li>
+        </ul>
+      </article>
+      <article class="machine">
+        <h3>Open weight models</h3>
+        <p class="maker">Meta Llama and others</p>
+        <dl>
+          <dt>Weights</dt><dd>Published for anyone to run</dd>
+          <dt>Same recipe</dt><dd>Tokenizer, embeddings, transformer stack</dd>
+          <dt>Trade off</dt><dd>You control the machine; you also supply the computers</dd>
+        </dl>
+        <ul>
+          <li>Open models made the pipeline on this page something you can run on your own hardware.</li>
+          <li>Their tokenizers and layer counts are public, which is why the internals here can be described so concretely.</li>
+        </ul>
+      </article>
+    </div>
+  </section>
+
+  <section class="block" id="quiz">
+    <h2>Check yourself</h2>
+    <p class="sub">Five questions on what you just explored.</p>
+    <div class="quiz" id="quizBox"></div>
+    <p class="score" id="score" hidden></p>
+    <button class="btn reset-quiz" id="resetQuiz" type="button" hidden>Try again</button>
+  </section>
+
+  <section class="block sources" id="sources">
+    <h2>Sources</h2>
+    <p class="sub">Architecture claims trace to the original transformer paper. Token figures are published rules of thumb; individual models differ.</p>
+    <ol>
+      <li><a href="https://arxiv.org/abs/1706.03762" target="_blank" rel="noopener">Attention is all you need</a> <span>Vaswani et al., 2017: the transformer paper</span></li>
+      <li><a href="https://developers.google.com/machine-learning/crash-course/llm" target="_blank" rel="noopener">Introduction to Large Language Models</a> <span>Google Machine Learning Crash Course</span></li>
+      <li><a href="https://developers.openai.com/api/docs/guides/advanced-usage" target="_blank" rel="noopener">Tokens and the rule of thumb</a> <span>OpenAI developer documentation</span></li>
+    </ol>
+    <p class="checked">Researched and compiled for The Signal. Figures last checked 29 October 2026.</p>
+  </section>
+
+</main>
+
+<footer><div class="rule"></div>Curated by Thillai Raj Thanam Jeya Veera Raj · <a class="li-btn" href="https://www.linkedin.com/in/thillairaj" target="_blank" rel="noopener"><span class="li-badge" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.55V9h3.57v11.45z"/></svg></span><span class="li-txt"><span class="li-dir">Follow on</span><span class="li-name">LinkedIn</span></span></a></footer>
+
+<script>
+(() => {
+  /* ---------- Content ---------- */
+    const PARTS = {
+  "prompt": {
+    "view": "fridge",
+    "name": "Your prompt",
+    "where": "Where you start",
+    "temp": "Input",
+    "tc": "#3B82C4",
+    "simple": "Everything begins with text: your question, plus the conversation so far and any instructions the app adds. The model never sees your words as words. First, they are chopped into tokens.",
+    "deep": "The full input is assembled by the app: a system prompt that sets the model's role, the visible conversation history, anything fetched for the question, and your new message. All of it becomes one long token sequence. The model itself has no memory of earlier chats; whatever is not in this sequence does not exist for it.",
+    "facts": [
+      [
+        "1 sequence",
+        "everything the model sees, in order"
+      ],
+      [
+        "0",
+        "memory of past chats inside the model"
+      ]
+    ],
+    "src": "Google ML Crash Course; OpenAI developer docs"
+  },
+  "tokenizer": {
+    "view": "fridge",
+    "name": "Tokenizer",
+    "where": "First step inside the pipeline",
+    "temp": "Input",
+    "tc": "#3B82C4",
+    "simple": "The tokenizer chops text into tokens: chunks that can be a whole word, part of a word, or a single character. Each token is then swapped for a number, its ID in the model's vocabulary.",
+    "deep": "Most models tokenize by subwords, learned from training text by merging frequent pairs of pieces. Common words stay whole; rare words split, so a word like unwatched can become un, watch and ed. As a rule of thumb for English, one token is about 4 characters, or three quarters of a word. The vocabulary holds tens of thousands of tokens, and every later step works on their IDs, never on letters.",
+    "facts": [
+      [
+        "≈ 4 chars",
+        "per token in English, on average"
+      ],
+      [
+        "Tens of thousands",
+        "of tokens in the vocabulary"
+      ]
+    ],
+    "src": "Google ML Crash Course; OpenAI developer docs"
+  },
+  "embedding": {
+    "view": "fridge",
+    "name": "Embeddings",
+    "where": "Turning IDs into meaning",
+    "temp": "Input",
+    "tc": "#3B82C4",
+    "simple": "Each token ID is looked up in a giant table that turns it into a long list of numbers, called an embedding. Tokens used in similar ways end up with similar lists, which is how the model keeps a sense of meaning.",
+    "deep": "The embedding table has one row per token, and each row is a vector of hundreds to thousands of numbers, learned in training. Similar contexts pull vectors together, so the geometry of the table encodes relationships between words and ideas. From here on, the model only ever manipulates these vectors; the text is gone until the very end.",
+    "facts": [
+      [
+        "100s to 1000s",
+        "of numbers in each token vector"
+      ],
+      [
+        "1 row",
+        "in the table for every token"
+      ]
+    ],
+    "src": "Vaswani et al. 2017; Google ML Crash Course"
+  },
+  "position": {
+    "view": "fridge",
+    "name": "Position information",
+    "where": "Marking the order",
+    "temp": "Input",
+    "tc": "#3B82C4",
+    "simple": "A list of numbers alone does not say which token came first. So a second signal is added to each vector marking its position: first, second, third, and so on through your prompt.",
+    "deep": "The original transformer added a fixed pattern of sine and cosine waves, a different fingerprint for each position. Many modern models instead rotate the vectors in a scheme called RoPE, which encodes the relative distance between tokens. Either way, position is information the attention step can use, because attention on its own treats the input as a set, not a sequence.",
+    "facts": [
+      [
+        "1 pattern",
+        "added per position"
+      ],
+      [
+        "Order",
+        "is invisible without it"
+      ]
+    ],
+    "src": "Vaswani et al. 2017"
+  },
+  "context": {
+    "view": "fridge",
+    "name": "Context window",
+    "where": "The whole input, held at once",
+    "temp": "Memory",
+    "tc": "#5B8DBF",
+    "simple": "The context window is the model's whole desk: your prompt, the conversation so far and, as the answer grows, the words it has already written. The model can look at all of it at once, but at nothing outside it.",
+    "deep": "Window sizes are counted in tokens and have grown from a few thousand to hundreds of thousands and beyond on current models. Anything that falls outside the window, because the chat grew too long, is simply gone from the model's view, which is why long conversations can lose their beginning. Inside the window, every token can attend to every earlier token in a single step.",
+    "facts": [
+      [
+        "Tokens",
+        "the unit the window is counted in"
+      ],
+      [
+        "All at once",
+        "the whole window is evaluated together"
+      ]
+    ],
+    "src": "Google ML Crash Course; OpenAI developer docs"
+  },
+  "layers": {
+    "view": "fridge",
+    "name": "Transformer layers",
+    "where": "The stack at the model's heart",
+    "temp": "Core",
+    "tc": "#2F6DA3",
+    "chipLink": true,
+    "simple": "The vectors now pass through a tall stack of identical blocks called transformer layers, one after another. Each layer refines what every token's vector says, using the tokens around it. Open the layer view to look inside one block.",
+    "deep": "A layer has two main sub steps: attention, which moves information between tokens, and a feed forward network, which processes each token on its own. The original 2017 design stacked 6 layers; large modern models stack dozens, and each pass makes the representations more about meaning and less about surface text. Almost all of the model's parameters, and almost all of the computing cost, live in this stack.",
+    "facts": [
+      [
+        "Dozens",
+        "of layers in large modern models"
+      ],
+      [
+        "2 sub steps",
+        "in every layer: attention, then feed forward"
+      ]
+    ],
+    "src": "Vaswani et al. 2017"
+  },
+  "scores": {
+    "view": "fridge",
+    "name": "Next word scores",
+    "where": "After the last layer",
+    "temp": "Output",
+    "tc": "#1E7E46",
+    "simple": "At the top of the stack, the final vector for the next position is compared with every token in the vocabulary. Each token gets a score, called a logit: how plausible it is as the next piece of text.",
+    "deep": "This step uses the same embedding table as the input, run in reverse: the model's final vector is scored against every token's row, producing one raw number per token, tens of thousands of them. High scores go to tokens that fit the grammar, the topic and the style of everything so far. Nothing has been chosen yet; the scores only rank the candidates.",
+    "facts": [
+      [
+        "1 score",
+        "for every token in the vocabulary"
+      ],
+      [
+        "Raw numbers",
+        "not yet probabilities"
+      ]
+    ],
+    "src": "Google ML Crash Course"
+  },
+  "probs": {
+    "view": "fridge",
+    "name": "Probabilities",
+    "where": "Scores become odds",
+    "temp": "Output",
+    "tc": "#1E7E46",
+    "simple": "The scores are squeezed through a function called softmax, which turns them into probabilities that add up to one. Now the model has a proper shortlist: this token at 40 percent, that one at 15 percent, and so on.",
+    "deep": "Softmax exaggerates differences: a slightly higher score becomes a clearly higher probability, and every token, however unlikely, keeps a small share. A language model is, in the end, exactly this: a machine that estimates the probability of the next token given everything before it. All the fluency of the final answer is built from this one repeated judgement.",
+    "facts": [
+      [
+        "100%",
+        "the probabilities always add up to"
+      ],
+      [
+        "1 judgement",
+        "repeated for every token of the answer"
+      ]
+    ],
+    "src": "Google ML Crash Course"
+  },
+  "choice": {
+    "view": "fridge",
+    "name": "The choice",
+    "where": "One token is picked",
+    "temp": "Output",
+    "tc": "#1E7E46",
+    "simple": "One token is now picked from the shortlist. It might be the favourite, or a sampled one. A setting called temperature controls the daring: low temperature almost always takes the favourite, high temperature gives the long shots more chances.",
+    "deep": "Picking the top token every time, called greedy decoding, is predictable but can sound flat and repetitive. Sampling with temperature reshapes the probabilities before the draw: below 1 the favourite grows stronger, above 1 the field levels out. Apps also trim the shortlist, keeping only the top handful of tokens or the smallest set covering most of the probability, so true nonsense stays out.",
+    "facts": [
+      [
+        "Temperature",
+        "the daring dial on the choice"
+      ],
+      [
+        "Top token",
+        "only one of several picking rules"
+      ]
+    ],
+    "src": "OpenAI developer docs; Google ML Crash Course"
+  },
+  "loop": {
+    "view": "fridge",
+    "name": "The loop",
+    "where": "Back to the top, with one more token",
+    "temp": "Output",
+    "tc": "#1E7E46",
+    "simple": "The chosen token is added to the end of the sequence, and the whole machine runs again to pick the next one. The answer is written the way a ticker prints: one token, then the next, each conditioned on all the ones before.",
+    "deep": "This loop is called autoregressive generation, and it is why answers stream in gradually and why a long answer takes more time than a short one: every token needs a full pass through the stack. It is also why a model can drift: each new token becomes part of the context, so an early wrong turn steers everything after it. The loop stops at a special end token, or at a length limit set by the app.",
+    "facts": [
+      [
+        "1 pass",
+        "through the stack per token written"
+      ],
+      [
+        "End token",
+        "or a length limit stops the loop"
+      ]
+    ],
+    "src": "Google ML Crash Course"
+  },
+  "answer": {
+    "view": "fridge",
+    "name": "The answer",
+    "where": "Back into words",
+    "temp": "Output",
+    "tc": "#1E7E46",
+    "simple": "Token by token, the reply becomes text again: the IDs are translated back into words and streamed to your screen. What feels like someone typing is the loop, running fast enough to read along with.",
+    "deep": "Decoding is the exact reverse of the tokenizer's work, so the text you see is the token stream put back together. The speed you experience is measured in tokens per second and depends on the model size, the hardware and how long the context has grown. If the answer seems to pause before it starts, that delay is the first pass: the whole prompt being processed before the first token can be chosen.",
+    "facts": [
+      [
+        "Tokens per second",
+        "how answer speed is measured"
+      ],
+      [
+        "First token",
+        "waits for the full prompt pass"
+      ]
+    ],
+    "src": "OpenAI developer docs"
+  },
+  "qkv": {
+    "view": "chip",
+    "name": "Queries, keys and values",
+    "where": "Inside every layer, first sub step",
+    "temp": "Layer",
+    "tc": "#2F6DA3",
+    "simple": "Each token's vector is turned into three smaller vectors: a query (what am I looking for), a key (what do I offer) and a value (what I will pass on if picked). Think of every word writing a question, a label and a note.",
+    "deep": "Three learned matrices produce the query, key and value for every token, and this is done in parallel by several attention heads, each watching for a different kind of relationship: one might track grammar, another who did what to whom. Because the matrices are learned, the model itself decides what is worth looking for; nobody programs the questions.",
+    "facts": [
+      [
+        "3 vectors",
+        "made from every token: query, key, value"
+      ],
+      [
+        "Several heads",
+        "run this in parallel per layer"
+      ]
+    ],
+    "src": "Vaswani et al. 2017"
+  },
+  "attention": {
+    "view": "chip",
+    "name": "Attention",
+    "where": "Where tokens talk to each other",
+    "temp": "Layer",
+    "tc": "#2F6DA3",
+    "simple": "Attention compares every token's query with every other token's key and scores the matches. A token then gathers a weighted mix of the values from the tokens that matter to it. This is how the word it can pick up meaning from the animal it refers to, however far back it sits.",
+    "deep": "The scores are scaled and passed through softmax, so each token distributes one unit of attention across the sequence, and tokens may only look backwards, never at tokens still to come. The result is added into each token's vector, so after attention the vector for bank in river bank carries river with it. This single mechanism replaced recurrence in 2017 and is why the whole context can be processed at once.",
+    "facts": [
+      [
+        "Backwards only",
+        "a token never sees the future"
+      ],
+      [
+        "1 unit",
+        "of attention shared out per token"
+      ]
+    ],
+    "src": "Vaswani et al. 2017"
+  },
+  "weights": {
+    "view": "chip",
+    "name": "Attention weights",
+    "where": "A picture of one decision",
+    "temp": "Layer",
+    "tc": "#2F6DA3",
+    "simple": "This grid sketches the attention pattern for a tiny sentence: The animal did not cross the street because it was too tired. When the model reaches it, most of its attention lands on animal. That is the model resolving what it refers to, in numbers.",
+    "deep": "Attention maps like this are drawn from the original transformer paper, whose examples show heads linking pronouns to their nouns and verbs to their subjects. The maps are not explanations the model writes; they are the actual weights it used, which is why researchers read them to understand what a layer has learned. In a real model there are thousands of such maps, one per head per layer.",
+    "facts": [
+      [
+        "1 map",
+        "per head, per layer"
+      ],
+      [
+        "Thousands",
+        "of maps inside a large model"
+      ]
+    ],
+    "src": "Vaswani et al. 2017"
+  },
+  "mlp": {
+    "view": "chip",
+    "name": "Feed forward network",
+    "where": "Inside every layer, second sub step",
+    "temp": "Layer",
+    "tc": "#2F6DA3",
+    "simple": "After attention has mixed information between tokens, each token is processed on its own by a small neural network called the feed forward network. It is where much of the model's stored knowledge is applied to what attention gathered.",
+    "deep": "The feed forward network expands each vector to a wider size, applies a nonlinearity, and projects it back down. It holds roughly two thirds of a layer's parameters, and research suggests its units act partly like a memory of patterns and facts from training. Attention routes the information; this network does most of the per token computation.",
+    "facts": [
+      [
+        "≈ 2/3",
+        "of a layer's parameters live here"
+      ],
+      [
+        "Per token",
+        "it never mixes tokens"
+      ]
+    ],
+    "src": "Vaswani et al. 2017"
+  },
+  "residual": {
+    "view": "chip",
+    "name": "Residual stream",
+    "where": "Running through the whole layer",
+    "temp": "Layer",
+    "tc": "#2F6DA3",
+    "simple": "Around both sub steps runs a shortcut: the token's original vector is added back to whatever the sub step produced. Information is refined, never replaced, and a clear path runs from the bottom of the stack to the top.",
+    "deep": "These skip connections are why very deep stacks can be trained at all: gradients flow down the shortcut instead of fading through dozens of transformations. They also turn the stack into a shared stream that each layer reads from and writes to, rather than a chain of handovers, an idea later work calls the residual stream.",
+    "facts": [
+      [
+        "Added back",
+        "the input joins every sub step's output"
+      ],
+      [
+        "Dozens deep",
+        "stacks train because of this path"
+      ]
+    ],
+    "src": "Vaswani et al. 2017"
+  },
+  "norm": {
+    "view": "chip",
+    "name": "Layer normalisation",
+    "where": "Before each sub step",
+    "temp": "Layer",
+    "tc": "#2F6DA3",
+    "simple": "Before each sub step, the vectors are normalised: rescaled so their size stays in a healthy range. It is unglamorous plumbing that keeps the numbers stable through dozens of layers.",
+    "deep": "Layer normalisation rescales each vector using its own mean and variance, then applies a learned scale and shift. The 2017 design placed it after each sub step; most modern models place it before, which trains more smoothly at great depth. Without it, activations would drift and grow as they climb the stack, and training large models becomes impractical.",
+    "facts": [
+      [
+        "Per vector",
+        "rescaled by its own statistics"
+      ],
+      [
+        "Before or after",
+        "each sub step, by design"
+      ]
+    ],
+    "src": "Vaswani et al. 2017"
+  }
+};
+
+  const ORDER = {"fridge": ["prompt", "tokenizer", "embedding", "position", "context", "layers", "scores", "probs", "choice", "loop", "answer"], "chip": ["qkv", "attention", "weights", "mlp", "residual", "norm"]};
+
+  const JOURNEY = [
+  {
+    "part": "prompt",
+    "at": [
+      360,
+      71
+    ],
+    "title": "You press send",
+    "text": "Your question, the conversation so far and the app's instructions are gathered into one sequence of text."
+  },
+  {
+    "part": "tokenizer",
+    "at": [
+      360,
+      149
+    ],
+    "title": "Chopped into tokens",
+    "text": "The tokenizer splits the text into chunks and swaps each for its ID number. Follow one token: the word blue."
+  },
+  {
+    "part": "embedding",
+    "at": [
+      360,
+      227
+    ],
+    "title": "A token becomes numbers",
+    "text": "The ID is looked up in the embedding table and becomes a long list of numbers that carries its meaning."
+  },
+  {
+    "part": "position",
+    "at": [
+      360,
+      305
+    ],
+    "title": "Its place is marked",
+    "text": "A position signal is added, so the model knows blue came fifth in the sentence, not first."
+  },
+  {
+    "part": "layers",
+    "at": [
+      360,
+      448
+    ],
+    "title": "Into the stack",
+    "text": "The vector enters the first transformer layer, where attention lets it gather context from every earlier token."
+  },
+  {
+    "part": "layers",
+    "at": [
+      360,
+      448
+    ],
+    "title": "Layer after layer",
+    "text": "Dozens of layers refine every vector in turn. By the top, each one encodes meaning, not just wording."
+  },
+  {
+    "part": "scores",
+    "at": [
+      360,
+      545
+    ],
+    "title": "Every word is scored",
+    "text": "The final vector is compared with the whole vocabulary, and each candidate next token gets a score."
+  },
+  {
+    "part": "probs",
+    "at": [
+      360,
+      617
+    ],
+    "title": "Scores become odds",
+    "text": "Softmax turns the scores into probabilities: perhaps the at 40 percent, a at 15 percent, and a long tail behind."
+  },
+  {
+    "part": "choice",
+    "at": [
+      360,
+      689
+    ],
+    "title": "One token is chosen",
+    "text": "A token is picked, guided by the temperature setting. Say the winner is the."
+  },
+  {
+    "part": "loop",
+    "at": [
+      96,
+      600
+    ],
+    "title": "And again",
+    "text": "The chosen token joins the sequence and the whole machine runs again. Your answer is this loop, repeated until the end token."
+  }
+];
+
+  const QUIZ = [
+  {
+    "q": "What is a token?",
+    "a": [
+      "A whole sentence",
+      "A chunk of text: a word, part of a word, or a character",
+      "A password for the model",
+      "One training example"
+    ],
+    "c": 1,
+    "why": "Models read and write tokens. For English, one token is roughly 4 characters."
+  },
+  {
+    "q": "What does attention let a token do?",
+    "a": [
+      "See the tokens that come after it",
+      "Gather information from earlier tokens that matter to it",
+      "Skip the transformer layers",
+      "Choose the final answer directly"
+    ],
+    "c": 1,
+    "why": "Attention mixes in a weighted share of earlier tokens' values, guided by query and key matches."
+  },
+  {
+    "q": "Why can a model lose the start of a very long chat?",
+    "a": [
+      "It runs out of electricity",
+      "The start fell outside the context window",
+      "The tokenizer deleted it",
+      "Attention stops working"
+    ],
+    "c": 1,
+    "why": "The model can only use what is inside the context window. Older text that no longer fits is out of view."
+  },
+  {
+    "q": "What does a higher temperature do?",
+    "a": [
+      "Makes the model faster",
+      "Makes unlikely tokens more likely to be picked",
+      "Lengthens the context window",
+      "Improves the model's memory"
+    ],
+    "c": 1,
+    "why": "Temperature reshapes the probabilities before the draw, levelling the field between the favourite and the long shots."
+  },
+  {
+    "q": "How is the answer produced?",
+    "a": [
+      "Written all at once, then revealed slowly",
+      "One token at a time, each pass using everything so far",
+      "Copied from the training data",
+      "Assembled by the tokenizer"
+    ],
+    "c": 1,
+    "why": "Generation is a loop: pick a token, add it to the sequence, run the whole model again."
+  }
+];
+
+  /* ---------- Elements ---------- */
+  const $ = (id) => document.getElementById(id);
+  const reduce = () => matchMedia('(prefers-reduced-motion: reduce)').matches;
+  let view = 'fridge';
+  let current = null;
+
+  /* ---------- Theme ---------- */
+  const themeBtn = $('themeToggle');
+  const isDark = () => (document.documentElement.getAttribute('data-theme') || (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light')) === 'dark';
+  const syncThemeBtn = () => { themeBtn.textContent = isDark() ? '☀' : '☾'; };
+  syncThemeBtn();
+  themeBtn.addEventListener('click', () => {
+    const next = isDark() ? 'light' : 'dark';
+    document.documentElement.setAttribute('data-theme', next);
+    try { localStorage.setItem('aisignal_theme', next); } catch (e) {}
+    syncThemeBtn();
+  });
+
+  /* ---------- Parts list ---------- */
+  const list = $('partsList');
+  const buildList = () => {
+    list.replaceChildren();
+    ORDER[view].forEach((id) => {
+      const p = PARTS[id];
+      const li = document.createElement('li');
+      const b = document.createElement('button');
+      b.type = 'button'; b.dataset.id = id;
+      const dot = document.createElement('span'); dot.className = 't'; dot.style.background = p.tc;
+      b.append(dot, document.createTextNode(p.name));
+      b.addEventListener('click', () => select(id, { scroll: true }));
+      li.appendChild(b); list.appendChild(li);
+    });
+    list.scrollLeft = 0;
+    requestAnimationFrame(updateRail);
+  };
+
+  /* ---------- Parts rail ---------- */
+  const railPrev = $('partsRailPrev'), railNext = $('partsRailNext');
+  const updateRail = () => {
+    const max = list.scrollWidth - list.clientWidth;
+    const show = max > 4;
+    railPrev.style.display = show ? '' : 'none';
+    railNext.style.display = show ? '' : 'none';
+    if (!show) return;
+    railPrev.disabled = list.scrollLeft <= 2;
+    railNext.disabled = list.scrollLeft >= max - 2;
+  };
+  const scrollChipIntoView = () => {
+    const b = list.querySelector('button[aria-current="true"]'); if (!b) return;
+    const lr = list.getBoundingClientRect(), br = b.getBoundingClientRect();
+    const delta = (br.left + br.width / 2) - (lr.left + lr.width / 2);
+    if (Math.abs(delta) > 2) list.scrollBy({ left: delta, behavior: reduce() ? 'auto' : 'smooth' });
+  };
+  railPrev.addEventListener('click', () => list.scrollBy({ left: -list.clientWidth * .75, behavior: 'smooth' }));
+  railNext.addEventListener('click', () => list.scrollBy({ left: list.clientWidth * .75, behavior: 'smooth' }));
+  list.addEventListener('scroll', () => requestAnimationFrame(updateRail), { passive: true });
+  window.addEventListener('resize', updateRail);
+
+  /* ---------- Selection ---------- */
+  const panelBody = $('panelBody');
+  function render(id) {
+    const p = PARTS[id];
+    $('pWhere').textContent = p.where;
+    const chip = $('pTemp'); chip.textContent = p.temp; chip.style.background = p.tc;
+    $('pName').textContent = p.name;
+    $('pSimple').textContent = p.simple;
+    $('pDeep').textContent = p.deep;
+    const facts = $('pFacts'); facts.replaceChildren();
+    p.facts.forEach(([b, s]) => { const li = document.createElement('li'); const bb = document.createElement('b'); bb.textContent = b; const ss = document.createElement('span'); ss.textContent = s; li.append(bb, ss); facts.appendChild(li); });
+    $('pSrc').textContent = 'Sources: ' + p.src;
+    $('openChip').hidden = !p.chipLink;
+    panelBody.classList.remove('swap'); void panelBody.offsetWidth; panelBody.classList.add('swap');
+  }
+
+  function select(id, opts = {}) {
+    const p = PARTS[id]; if (!p) return;
+    if (p.view !== view) setView(p.view, { keep: true });
+    current = id;
+    document.querySelectorAll('.part').forEach((g) => g.classList.toggle('is-sel', g.dataset.id === id));
+    document.querySelectorAll('.art').forEach((a) => a.classList.add('dimmed'));
+    list.querySelectorAll('button').forEach((b) => b.setAttribute('aria-current', String(b.dataset.id === id)));
+    scrollChipIntoView();
+    render(id);
+    if (!opts.noHash) history.replaceState(null, '', '#' + id);
+    if (opts.scroll && window.innerWidth < 960) {
+      const r = $('panel').getBoundingClientRect();
+      if (r.top > window.innerHeight * .75 || r.top < 0) $('panel').scrollIntoView({ behavior: reduce() ? 'auto' : 'smooth', block: 'start' });
+    }
+  }
+
+  function setView(v, opts = {}) {
+    view = v;
+    document.querySelectorAll('.tab').forEach((t) => t.setAttribute('aria-selected', String(t.dataset.view === v)));
+    $('view-fridge').hidden = v !== 'fridge';
+    $('view-chip').hidden = v !== 'chip';
+    $('journeyBtn').hidden = v !== 'fridge';
+    $('hint').textContent = $('hint').dataset[v];
+    if (v !== 'fridge') stopJourney();
+    buildList();
+    if (!opts.keep) select(ORDER[v][0]);
+  }
+
+  document.querySelectorAll('.part').forEach((g) => {
+    g.addEventListener('click', () => { if (journeyOn) stopJourney(); select(g.dataset.id, { scroll: true }); });
+    g.addEventListener('keydown', (e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); select(g.dataset.id, { scroll: true }); } });
+  });
+  document.querySelectorAll('.tab').forEach((t) => t.addEventListener('click', () => setView(t.dataset.view)));
+  $('openChip').addEventListener('click', () => setView('chip'));
+
+  const step = (d) => { const o = ORDER[view]; const i = o.indexOf(current); select(o[(i + d + o.length) % o.length]); };
+  $('pPrev').addEventListener('click', () => step(-1));
+  $('pNext').addEventListener('click', () => step(1));
+
+  $('pShare').addEventListener('click', async () => {
+    const url = location.href.split('#')[0] + '#' + current;
+    try {
+      if (navigator.share && matchMedia('(pointer: coarse)').matches) { await navigator.share({ title: PARTS[current].name + ' · The Signal', url }); return; }
+      await navigator.clipboard.writeText(url);
+    } catch (e) {
+      const ta = document.createElement('textarea'); ta.value = url; document.body.appendChild(ta); ta.select();
+      try { document.execCommand('copy'); } catch (_) {} ta.remove();
+    }
+    const c = $('copied'); c.classList.add('on'); setTimeout(() => c.classList.remove('on'), 1600);
+  });
+
+  /* ---------- Journey ---------- */
+  const path = $('signalPath'), dot = $('pulseDot');
+  const total = path.getTotalLength();
+  const lenAt = JOURNEY.map(({ at }) => {
+    let best = 0, bestD = Infinity;
+    for (let s = 0; s <= total; s += 2) {
+      const pt = path.getPointAtLength(s);
+      const d = (pt.x - at[0]) ** 2 + (pt.y - at[1]) ** 2;
+      if (d < bestD) { bestD = d; best = s; }
+    }
+    return best;
+  });
+  for (let i = 1; i < lenAt.length; i++) if (lenAt[i] < lenAt[i - 1]) lenAt[i] = lenAt[i - 1];
+  let journeyOn = false, jIndex = 0, raf = 0, dotLen = 0;
+
+  function moveDot(to) {
+    cancelAnimationFrame(raf);
+    const from = dotLen, start = performance.now();
+    const dur = reduce() ? 0 : Math.min(1400, 300 + Math.abs(to - from) * 1.4);
+    const tick = (now) => {
+      const t = dur ? Math.min(1, (now - start) / dur) : 1;
+      const e = t < .5 ? 2 * t * t : 1 - Math.pow(-2 * t + 2, 2) / 2;
+      dotLen = from + (to - from) * e;
+      const pt = path.getPointAtLength(dotLen);
+      dot.setAttribute('cx', pt.x); dot.setAttribute('cy', pt.y);
+      if (t < 1) raf = requestAnimationFrame(tick);
+    };
+    raf = requestAnimationFrame(tick);
+  }
+  function showStep(i) {
+    jIndex = Math.max(0, Math.min(JOURNEY.length - 1, i));
+    const s = JOURNEY[jIndex];
+    $('jStep').textContent = `Step ${jIndex + 1} of ${JOURNEY.length}`;
+    $('jTitle').textContent = s.title;
+    $('jText').textContent = s.text;
+    $('jBar').style.width = ((jIndex + 1) / JOURNEY.length * 100) + '%';
+    $('jPrev').disabled = jIndex === 0;
+    $('jNext').textContent = jIndex === JOURNEY.length - 1 ? 'Start again' : 'Next step';
+    select(s.part, { noHash: true });
+    moveDot(lenAt[jIndex]);
+  }
+  function startJourney() {
+    journeyOn = true;
+    $('journeyBtn').setAttribute('aria-pressed', 'true');
+    $('journeyBtn').textContent = 'Stop the token';
+    $('journey').classList.add('is-on');
+    $('view-fridge').classList.add('journey-on');
+    dotLen = 0; showStep(0);
+  }
+  function stopJourney() {
+    if (!journeyOn) return;
+    journeyOn = false;
+    cancelAnimationFrame(raf);
+    $('journeyBtn').setAttribute('aria-pressed', 'false');
+    $('journeyBtn').textContent = 'Follow a token';
+    $('journey').classList.remove('is-on');
+    $('view-fridge').classList.remove('journey-on');
+    dot.setAttribute('cx', -20); dot.setAttribute('cy', -20);
+  }
+  $('journeyBtn').addEventListener('click', () => (journeyOn ? stopJourney() : startJourney()));
+  $('jPrev').addEventListener('click', () => showStep(jIndex - 1));
+  $('jNext').addEventListener('click', () => (jIndex === JOURNEY.length - 1 ? (dotLen = 0, showStep(0)) : showStep(jIndex + 1)));
+
+  /* ---------- Quiz ---------- */
+  const quizBox = $('quizBox');
+  let answered = 0, right = 0;
+  function buildQuiz() {
+    answered = 0; right = 0; quizBox.replaceChildren();
+    $('score').hidden = true; $('resetQuiz').hidden = true;
+    QUIZ.forEach((item, qi) => {
+      const box = document.createElement('div'); box.className = 'q';
+      const q = document.createElement('p'); q.className = 'qq'; q.textContent = `${qi + 1}. ${item.q}`;
+      const opts = document.createElement('div'); opts.className = 'opts';
+      const why = document.createElement('p'); why.className = 'why'; why.hidden = true; why.textContent = item.why;
+      item.a.forEach((txt, ai) => {
+        const b = document.createElement('button'); b.type = 'button'; b.textContent = txt;
+        b.addEventListener('click', () => {
+          opts.querySelectorAll('button').forEach((x, xi) => { x.disabled = true; if (xi === item.c) x.classList.add('right'); });
+          if (ai !== item.c) b.classList.add('wrong'); else right++;
+          answered++; why.hidden = false;
+          if (answered === QUIZ.length) {
+            $('score').hidden = false; $('resetQuiz').hidden = false;
+            $('score').textContent = `You got ${right} of ${QUIZ.length}.`;
+          }
+        });
+        opts.appendChild(b);
+      });
+      box.append(q, opts, why); quizBox.appendChild(box);
+    });
+  }
+  $('resetQuiz').addEventListener('click', buildQuiz);
+  buildQuiz();
+
+  /* ---------- Start ---------- */
+  const fromHash = () => {
+    const id = location.hash.slice(1);
+    if (PARTS[id]) { setView(PARTS[id].view, { keep: true }); select(id, { noHash: true }); return true; }
+    return false;
+  };
+  buildList();
+  if (!fromHash()) select('layers', { noHash: true });
+  window.addEventListener('hashchange', fromHash);
+})();
+</script>
+
+<script>
+(() => {
+  const sc = document.getElementById('tsScroll');
+  if (!sc) return;
+  document.getElementById('tsPrev').addEventListener('click', () => sc.scrollBy({ left: -sc.clientWidth * .7, behavior: 'smooth' }));
+  document.getElementById('tsNext').addEventListener('click', () => sc.scrollBy({ left: sc.clientWidth * .7, behavior: 'smooth' }));
+})();
+</script>
+
+</body>
+</html>
