@@ -107,6 +107,14 @@ footer a { color: var(--gold); font-weight: 700; text-decoration: none; }
 .card.cyber p { color: #523838; }
 .card.soon { background: transparent; border-style: dashed; opacity: .78; }
 .card.soon:hover { transform: none; background: transparent; }
+.fam-rail-wrap { display: flex; align-items: stretch; gap: .5rem; }
+.fam-rail { display: flex; gap: 1.2rem; overflow-x: auto; scroll-snap-type: x mandatory; padding: .2rem .1rem .6rem; scrollbar-width: none; flex: 1 1 auto; }
+.fam-rail::-webkit-scrollbar { display: none; }
+.fam-rail .card { flex: 0 0 302px; scroll-snap-align: start; }
+.fam-rail-btn { flex: 0 0 auto; align-self: center; width: 38px; height: 38px; border-radius: 50%; border: 1px solid var(--gold-dim); background: var(--chip-bg); color: var(--gold); font-size: 19px; cursor: pointer; line-height: 1; padding: 0; }
+.fam-rail-btn[disabled] { opacity: .35; cursor: default; }
+.fam-rail-btn[hidden] { display: none; }
+@media (max-width: 640px) { .fam-rail .card { flex-basis: 80vw; } }
 </style>
 </head>
 <body>
@@ -124,7 +132,7 @@ footer a { color: var(--gold); font-weight: 700; text-decoration: none; }
 <main>
   <section class="fam" id="quantum">
     <div class="fam-head" style="--fam:#7C5CBF"><span class="fam-name">Quantum</span><span class="fam-count">1 topic live · more in the topic bank</span></div>
-    <div class="cards">
+    <div class="fam-rail-wrap"><button class="fam-rail-btn" type="button" data-dir="prev" aria-label="Scroll Quantum topics back">‹</button><div class="fam-rail">
     <a class="card" href="../../explainers/quantum-hardware.html">
       <span class="tag">Quantum</span>
       <h2>Inside a superconducting quantum computer</h2>
@@ -146,11 +154,11 @@ footer a { color: var(--gold); font-weight: 700; text-decoration: none; }
       <h2>Surface code error correction</h2>
       <p>How many imperfect physical qubits combine into one reliable logical qubit.</p>
     </div>
-    </div>
+    </div><button class="fam-rail-btn" type="button" data-dir="next" aria-label="Scroll Quantum topics forward">›</button></div>
   </section>
   <section class="fam" id="ai">
     <div class="fam-head" style="--fam:#3B82C4"><span class="fam-name">AI</span><span class="fam-count">Opens next in the build rotation</span></div>
-    <div class="cards">
+    <div class="fam-rail-wrap"><button class="fam-rail-btn" type="button" data-dir="prev" aria-label="Scroll AI topics back">‹</button><div class="fam-rail">
     <div class="card soon ai">
       <span class="tag">AI · Coming soon</span>
       <h2>How an LLM answers a prompt</h2>
@@ -166,11 +174,11 @@ footer a { color: var(--gold); font-weight: 700; text-decoration: none; }
       <h2>Inside an AI training cluster</h2>
       <p>How thousands of GPUs train one model together without wasting a cycle.</p>
     </div>
-    </div>
+    </div><button class="fam-rail-btn" type="button" data-dir="next" aria-label="Scroll AI topics forward">›</button></div>
   </section>
   <section class="fam" id="cloud-devops">
     <div class="fam-head" style="--fam:#3E9C8C"><span class="fam-name">Cloud &amp; DevOps</span><span class="fam-count">Coming in the rotation</span></div>
-    <div class="cards">
+    <div class="fam-rail-wrap"><button class="fam-rail-btn" type="button" data-dir="prev" aria-label="Scroll Cloud &amp; DevOps topics back">‹</button><div class="fam-rail">
     <div class="card soon cloud">
       <span class="tag">Cloud &amp; DevOps · Coming soon</span>
       <h2>Journey of a web request</h2>
@@ -186,11 +194,11 @@ footer a { color: var(--gold); font-weight: 700; text-decoration: none; }
       <h2>Kubernetes cluster explorer</h2>
       <p>Pods, nodes and the scheduler: how a cluster decides where your app runs.</p>
     </div>
-    </div>
+    </div><button class="fam-rail-btn" type="button" data-dir="next" aria-label="Scroll Cloud &amp; DevOps topics forward">›</button></div>
   </section>
   <section class="fam" id="cybersecurity">
     <div class="fam-head" style="--fam:#C45555"><span class="fam-name">Cybersecurity</span><span class="fam-count">Coming in the rotation</span></div>
-    <div class="cards">
+    <div class="fam-rail-wrap"><button class="fam-rail-btn" type="button" data-dir="prev" aria-label="Scroll Cybersecurity topics back">‹</button><div class="fam-rail">
     <div class="card soon cyber">
       <span class="tag">Cybersecurity · Coming soon</span>
       <h2>Anatomy of a ransomware attack</h2>
@@ -206,7 +214,7 @@ footer a { color: var(--gold); font-weight: 700; text-decoration: none; }
       <h2>Zero Trust architecture</h2>
       <p>No implicit trust: verify every user, device and request, every time.</p>
     </div>
-    </div>
+    </div><button class="fam-rail-btn" type="button" data-dir="next" aria-label="Scroll Cybersecurity topics forward">›</button></div>
   </section>
 
   <p class="note">New explainers arrive in rotation across Quantum, AI, Cloud &amp; DevOps and Cybersecurity. Each one is checked against its sources before it joins this page.</p>
@@ -227,6 +235,26 @@ footer a { color: var(--gold); font-weight: 700; text-decoration: none; }
     sync();
   });
 })();
+</script>
+
+<script>
+document.querySelectorAll('.fam-rail-wrap').forEach((wrap) => {
+  const rail = wrap.querySelector('.fam-rail');
+  const prev = wrap.querySelector('[data-dir="prev"]');
+  const next = wrap.querySelector('[data-dir="next"]');
+  const sync = () => {
+    const fits = rail.scrollWidth <= rail.clientWidth + 2;
+    prev.hidden = next.hidden = fits;
+    if (fits) return;
+    prev.disabled = rail.scrollLeft <= 2;
+    next.disabled = rail.scrollLeft + rail.clientWidth >= rail.scrollWidth - 2;
+  };
+  prev.addEventListener('click', () => rail.scrollBy({ left: -rail.clientWidth * .8, behavior: 'smooth' }));
+  next.addEventListener('click', () => rail.scrollBy({ left: rail.clientWidth * .8, behavior: 'smooth' }));
+  rail.addEventListener('scroll', sync, { passive: true });
+  addEventListener('resize', sync);
+  sync();
+});
 </script>
 </body>
 </html>
