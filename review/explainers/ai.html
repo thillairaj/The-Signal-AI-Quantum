@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>AI Explainers · The Signal</title>
+<meta name="description" content="Tap through real machines and systems, part by part, with a simple and a deeper explanation for every part.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>❄️</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,800;1,9..144,500;1,9..144,600&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<script>
+  try { const t = localStorage.getItem('aisignal_theme'); if (t === 'dark' || t === 'light') document.documentElement.setAttribute('data-theme', t); } catch (e) {}
+</script>
+<style>
+:root {
+  --bg: #F2F3EE; --surface: #EAEBE3; --ink: #14180F; --muted: #63695E; --border: #D7D9CD;
+  --accent: #2F6B4F; --accent-dim: #B6C9BC; --gold: #B8860B; --navy: #14253F;
+  --header-bg: radial-gradient(1200px 400px at 50% -80px, #f1eee4 0%, #faf9f6 65%); --header-ink: #171b24; --header-sub: #5b6470;
+  --bar: rgba(250,249,246,.97); --bar-border: #e0dccf; --chip-bg: #ffffff; --chip-ink: #2b3542; --card: #ffffff;
+  --gold-dim: rgba(176,141,62,.4); --foot-ink: #6b7280; --foot-border: #e0dccf;
+  --font-display: "Fraunces", Georgia, serif;
+  --font-body: "Inter", -apple-system, "Segoe UI", sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, monospace;
+  color-scheme: light;
+}
+:root[data-theme="dark"] {
+  --bg: #15170F; --surface: #1D1F16; --ink: #ECEDE4; --muted: #9AA08D; --border: #33362A;
+  --accent: #6FBE94; --accent-dim: #2B4838; --navy: #ECEDE4; --gold: #D9A93A;
+  --header-bg: radial-gradient(1200px 400px at 50% -80px, #454e5b 0%, #2b3038 65%); --header-ink: #ffffff; --header-sub: #aeb8c8;
+  --bar: rgba(47,53,62,.97); --bar-border: #4a5260; --chip-bg: #22272f; --chip-ink: #cfd6e2; --card: #ffffff;
+  --gold-dim: rgba(212,175,106,.4); --foot-ink: #9aa0aa; --foot-border: #4a5260;
+  color-scheme: dark;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #15170F; --surface: #1D1F16; --ink: #ECEDE4; --muted: #9AA08D; --border: #33362A;
+    --accent: #6FBE94; --accent-dim: #2B4838; --navy: #ECEDE4; --gold: #D9A93A;
+    --header-bg: radial-gradient(1200px 400px at 50% -80px, #454e5b 0%, #2b3038 65%); --header-ink: #ffffff; --header-sub: #aeb8c8;
+    --bar: rgba(47,53,62,.97); --bar-border: #4a5260; --chip-bg: #22272f; --chip-ink: #cfd6e2; --card: #ffffff;
+    --gold-dim: rgba(212,175,106,.4); --foot-ink: #9aa0aa; --foot-border: #4a5260;
+    color-scheme: dark;
+  }
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--bg); color: var(--ink); font-family: var(--font-body); line-height: 1.55; }
+a { color: var(--accent); }
+button { font: inherit; color: inherit; }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+header { position: relative; background: var(--header-bg); color: var(--header-ink); padding: 44px 20px 34px; text-align: center; border-bottom: 3px solid var(--gold); }
+header .kicker { color: var(--gold); letter-spacing: 4px; font-size: 12px; font-weight: 700; text-transform: uppercase; }
+header h1 { margin: 12px 0 8px; font-size: 34px; letter-spacing: .5px; font-weight: 800; color: var(--header-ink); }
+header h1 .thin { font-weight: 300; color: var(--gold); }
+header p { margin: 0 auto; color: var(--header-sub); font-size: 15px; max-width: 620px; }
+.theme-toggle { position: absolute; top: 14px; right: 14px; background: var(--chip-bg); border: 1px solid var(--bar-border); border-radius: 50%; width: 32px; height: 32px; font-size: .95rem; cursor: pointer; color: var(--chip-ink); z-index: 60; line-height: 1; }
+.topicbar { position: sticky; top: 0; z-index: 50; background: var(--bar); backdrop-filter: blur(6px); border-bottom: 1px solid var(--bar-border); padding: 12px 18px; display: flex; gap: 10px; align-items: center; }
+.topicbar .navcard { display: flex; flex-direction: column; gap: 1px; justify-content: center; padding: 6px 12px; border: 1px solid var(--gold-dim); border-radius: 12px; background: var(--card); color: var(--ink); text-decoration: none; min-width: 0; transition: border-color .15s ease, transform .15s ease; }
+.topicbar .navcard:hover { border-color: var(--gold); transform: translateY(-1px); }
+.nc-dir { font-size: 9.5px; letter-spacing: 1.8px; text-transform: uppercase; opacity: .62; font-weight: 700; white-space: nowrap; }
+.nc-title { font-size: 14px; font-weight: 700; line-height: 1.25; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 200px; }
+main { max-width: 1200px; margin: 0 auto; padding: 2.2rem 2rem 4rem; }
+.cards { display: grid; gap: 1.2rem; grid-template-columns: repeat(auto-fit, minmax(min(100%, 22rem), 1fr)); max-width: 62rem; }
+.card { display: grid; gap: .45rem; background: #ECE9F7; border: 1px solid #BDB0DE; border-radius: 14px; padding: 1.3rem 1.4rem; text-decoration: none; color: var(--ink); transition: transform .15s ease, background .15s ease; }
+.card:hover { transform: translateY(-3px); background: #DCD3F0; }
+.tag { font-family: var(--font-mono); font-size: .75rem; font-weight: 600; color: #5B4B9E; text-transform: uppercase; letter-spacing: .05em; }
+.card h2 { font-family: var(--font-display); font-weight: 600; font-size: 1.45rem; line-height: 1.15; margin: 0; color: #14253F; }
+.card p { margin: 0; font-size: .95rem; color: #3E3A52; }
+.meta { display: flex; justify-content: space-between; align-items: baseline; gap: 1rem; margin-top: .5rem; }
+.date { font-family: var(--font-mono); font-size: .78rem; color: #63695E; }
+.open { font-size: .88rem; font-weight: 600; color: #2F6B4F; }
+.note { margin: 2rem 0 0; color: var(--muted); font-size: .95rem; max-width: 46rem; }
+footer { text-align: center; padding: 28px 16px; color: var(--foot-ink); font-size: 13px; border-top: 1px solid var(--foot-border); margin-top: 20px; }
+footer .rule { width: 60px; height: 2px; background: var(--gold); margin: 0 auto 12px; }
+footer a { color: var(--gold); font-weight: 700; text-decoration: none; }
+.li-btn { display: inline-flex; align-items: center; gap: 10px; padding: 8px 16px 8px 9px; border-radius: 14px; background: linear-gradient(135deg, #0A66C2, #004182); color: #fff !important; text-decoration: none !important; box-shadow: 0 4px 14px rgba(10,102,194,.35); vertical-align: middle; transition: transform .15s ease, box-shadow .15s ease; }
+.li-btn:hover { transform: translateY(-1px); box-shadow: 0 8px 22px rgba(10,102,194,.45); }
+.li-btn .li-badge { display: inline-flex; align-items: center; justify-content: center; width: 30px; height: 30px; border-radius: 8px; background: rgba(255,255,255,.16); border: 1px solid rgba(255,255,255,.45); color: #fff; flex: 0 0 auto; }
+.li-btn .li-badge svg { width: 16px; height: 16px; display: block; }
+.li-txt { display: flex; flex-direction: column; line-height: 1.15; text-align: left; }
+.li-dir { font-size: 9.5px; letter-spacing: 1.8px; text-transform: uppercase; opacity: .85; font-weight: 700; }
+.li-name { font-size: 15.5px; font-weight: 800; letter-spacing: .01em; }
+@media (max-width: 640px) {
+  main { padding-left: 1rem; padding-right: 1rem; }
+  header { padding: 34px 16px 26px; }
+  header h1 { font-size: 27px; }
+  .topicbar { padding: 10px 12px; }
+}
+
+.fam { margin: 0 0 2.6rem; }
+.fam-head { display: flex; align-items: baseline; gap: 14px; flex-wrap: wrap; border-bottom: 2px solid var(--fam); padding-bottom: 7px; margin-bottom: 1.15rem; }
+.fam-name { font-family: var(--font-display); font-size: 1.45rem; font-weight: 700; color: var(--fam); }
+.fam-count { color: var(--muted); font-size: .87rem; }
+.card.ai { background: #E8F1FB; border-color: #B9D2EC; }
+.card.ai:hover { background: #D6E6F8; }
+.card.ai .tag { color: #2F5E8F; }
+.card.ai h2 { color: #173A5E; }
+.card.ai p { color: #33475E; }
+.card.cloud { background: #E6F4F1; border-color: #B7DDD5; }
+.card.cloud:hover { background: #D2EAE4; }
+.card.cloud .tag { color: #256B5E; }
+.card.cloud h2 { color: #14423A; }
+.card.cloud p { color: #33524C; }
+.card.cyber { background: #F9E8E8; border-color: #E3B7B7; }
+.card.cyber:hover { background: #F3D7D7; }
+.card.cyber .tag { color: #9E3B3B; }
+.card.cyber h2 { color: #571F1F; }
+.card.cyber p { color: #523838; }
+.card.soon { background: transparent; border-style: dashed; opacity: .78; }
+.card.soon:hover { transform: none; background: transparent; }
+.fam-rail-wrap { display: flex; align-items: stretch; gap: .5rem; }
+.fam-rail { display: flex; gap: 1.2rem; overflow-x: auto; scroll-snap-type: x mandatory; padding: .2rem .1rem .6rem; scrollbar-width: none; flex: 1 1 auto; }
+.fam-rail::-webkit-scrollbar { display: none; }
+.fam-rail .card { flex: 0 0 302px; scroll-snap-align: start; }
+.fam-rail-btn { flex: 0 0 auto; align-self: center; width: 38px; height: 38px; border-radius: 50%; border: 1px solid var(--gold-dim); background: var(--chip-bg); color: var(--gold); font-size: 19px; cursor: pointer; line-height: 1; padding: 0; }
+.fam-rail-btn[disabled] { opacity: .35; cursor: default; }
+.fam-rail-btn[hidden] { display: none; }
+@media (max-width: 640px) { .fam-rail .card { flex-basis: 80vw; } }
+</style>
+</head>
+<body>
+
+<header>
+  <button class="theme-toggle" id="themeToggle" type="button" aria-label="Toggle dark mode">☾</button>
+  <div class="kicker">Learning Spaces · Door 03 · AI</div>
+  <h1>AI <span class="thin">Explainers</span></h1>
+  <p>How AI systems work from the inside, part by part.</p>
+</header>
+<div class="topicbar">
+  <a class="navcard back" href="../../#learn-explainers"><span class="nc-dir">← Back to</span><span class="nc-title">Learning Spaces</span></a>
+</div>
+
+<main>
+  <section class="fam" id="ai">
+    <div class="fam-head" style="--fam:#3B82C4"><span class="fam-name">AI</span><span class="fam-count">Opens next in the build rotation</span></div>
+    <div class="fam-rail-wrap"><button class="fam-rail-btn" type="button" data-dir="prev" aria-label="Scroll AI topics back">‹</button><div class="fam-rail">
+    <div class="card soon ai">
+      <span class="tag">AI · Coming soon</span>
+      <h2>How an LLM answers a prompt</h2>
+      <p>From the words you type to the words it answers with: tokens, attention and the next word choice, step by step.</p>
+    </div>
+    <div class="card soon ai">
+      <span class="tag">AI · Coming soon</span>
+      <h2>Inside a GPU</h2>
+      <p>Thousands of small cores working at once: why graphics chips became the engines of AI.</p>
+    </div>
+    <div class="card soon ai">
+      <span class="tag">AI · Coming soon</span>
+      <h2>Inside an AI training cluster</h2>
+      <p>How thousands of GPUs train one model together without wasting a cycle.</p>
+    </div>
+    </div><button class="fam-rail-btn" type="button" data-dir="next" aria-label="Scroll AI topics forward">›</button></div>
+  </section>
+  <p class="note">The AI deck opens next in the build rotation, with how an LLM answers a prompt. Each explainer is checked against its sources before it joins this page.</p>
+</main>
+
+<footer><div class="rule"></div>Curated by Thillai Raj Thanam Jeya Veera Raj · <a class="li-btn" href="https://www.linkedin.com/in/thillairaj" target="_blank" rel="noopener"><span class="li-badge" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.55V9h3.57v11.45z"/></svg></span><span class="li-txt"><span class="li-dir">Follow on</span><span class="li-name">LinkedIn</span></span></a></footer>
+
+<script>
+(() => {
+  const btn = document.getElementById('themeToggle');
+  const isDark = () => (document.documentElement.getAttribute('data-theme') || (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light')) === 'dark';
+  const sync = () => { btn.textContent = isDark() ? '☀' : '☾'; };
+  sync();
+  btn.addEventListener('click', () => {
+    const next = isDark() ? 'light' : 'dark';
+    document.documentElement.setAttribute('data-theme', next);
+    try { localStorage.setItem('aisignal_theme', next); } catch (e) {}
+    sync();
+  });
+})();
+</script>
+
+<script>
+document.querySelectorAll('.fam-rail-wrap').forEach((wrap) => {
+  const rail = wrap.querySelector('.fam-rail');
+  const prev = wrap.querySelector('[data-dir="prev"]');
+  const next = wrap.querySelector('[data-dir="next"]');
+  const sync = () => {
+    const fits = rail.scrollWidth <= rail.clientWidth + 2;
+    prev.hidden = next.hidden = fits;
+    if (fits) return;
+    prev.disabled = rail.scrollLeft <= 2;
+    next.disabled = rail.scrollLeft + rail.clientWidth >= rail.scrollWidth - 2;
+  };
+  prev.addEventListener('click', () => rail.scrollBy({ left: -rail.clientWidth * .8, behavior: 'smooth' }));
+  next.addEventListener('click', () => rail.scrollBy({ left: rail.clientWidth * .8, behavior: 'smooth' }));
+  rail.addEventListener('scroll', sync, { passive: true });
+  addEventListener('resize', sync);
+  sync();
+});
+</script>
+</body>
+</html>
