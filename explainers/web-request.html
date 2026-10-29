@@ -243,6 +243,7 @@ footer a { color: var(--gold); font-weight: 700; text-decoration: none; }
 </style>
 
 <style>
+/* tstrip:style:start */
 .topicbar { flex-wrap: wrap; }
 [hidden] { display: none !important; }
 .tstrip-row { flex: 1 1 100%; min-width: 0; max-width: 100%; display: flex; align-items: center; gap: 8px; border-top: 1px solid var(--bar-border, var(--border)); padding-top: 10px; }
@@ -254,7 +255,13 @@ footer a { color: var(--gold); font-weight: 700; text-decoration: none; }
 .ts-chip.active { background: var(--gold); border-color: var(--gold); color: #fff; }
 .ts-chip.active small { color: #ffe9b0; }
 .ts-chip.soon { border-style: dashed; cursor: default; opacity: .75; }
+.ts-chip.next { border-style: dashed; cursor: default; opacity: .75; }
+.ts-state { font-size: 10.5px; font-weight: 800; letter-spacing: 1.5px; text-transform: uppercase; color: var(--gold); margin-left: 8px; }
+a.ts-chip { text-decoration: none; cursor: pointer; }
+a.ts-chip:hover { border-color: var(--gold); }
 .ts-btn { flex: 0 0 auto; width: 30px; height: 30px; border-radius: 50%; border: 1px solid var(--gold-dim, var(--border)); background: var(--chip-bg, var(--surface)); color: var(--gold); font-size: 16px; cursor: pointer; line-height: 1; padding: 0; }
+@media (max-width: 640px) { .ts-label { display: none; } }
+/* tstrip:style:end */
 </style>
 </head>
 <body>
@@ -272,12 +279,14 @@ footer a { color: var(--gold); font-weight: 700; text-decoration: none; }
     <button class="tab" role="tab" id="tab-chip" aria-selected="false" aria-controls="view-chip" data-view="chip">The way back</button>
   </div>
   <button class="journey-btn" id="journeyBtn" type="button" aria-pressed="false">Follow a request</button>
+  <!-- tstrip:start -->
   <div class="tstrip-row">
     <span class="ts-label">CLOUD &amp; DEVOPS EXPLAINERS</span>
     <button class="ts-btn" id="tsPrev" type="button" aria-label="Scroll topics back">‹</button>
-    <div class="ts-scroll" id="tsScroll"><span class="ts-chip active"><small>01</small>Web request journey</span><span class="ts-chip soon"><small>02</small>Cloud data centre</span><span class="ts-chip soon"><small>03</small>Kubernetes cluster</span></div>
+    <div class="ts-scroll" id="tsScroll"><span class="ts-chip active" aria-current="true"><small>01</small>Web request journey</span><span class="ts-chip soon"><small>02</small>Cloud data centre<span class="ts-state">soon</span></span><span class="ts-chip soon"><small>03</small>Kubernetes cluster<span class="ts-state">soon</span></span></div>
     <button class="ts-btn" id="tsNext" type="button" aria-label="Scroll topics forward">›</button>
   </div>
+<!-- tstrip:end -->
 </div>
 
 <main>

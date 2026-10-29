@@ -238,6 +238,27 @@ footer a { color: var(--gold); font-weight: 700; text-decoration: none; }
 }
 .sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
 </style>
+<style>
+/* tstrip:style:start */
+.topicbar { flex-wrap: wrap; }
+[hidden] { display: none !important; }
+.tstrip-row { flex: 1 1 100%; min-width: 0; max-width: 100%; display: flex; align-items: center; gap: 8px; border-top: 1px solid var(--bar-border, var(--border)); padding-top: 10px; }
+.ts-label { flex: 0 0 auto; color: var(--gold); font-size: 11px; font-weight: 800; letter-spacing: 2.5px; white-space: nowrap; }
+.ts-scroll { flex: 1; min-width: 0; display: flex; gap: 8px; overflow-x: auto; scrollbar-width: none; padding: 2px; }
+.ts-scroll::-webkit-scrollbar { display: none; }
+.ts-chip { flex: 0 0 auto; border: 1px solid var(--bar-border, var(--border)); background: var(--chip-bg, var(--surface)); color: var(--muted); font-size: 13.5px; font-weight: 700; padding: 7px 14px; border-radius: 999px; white-space: nowrap; }
+.ts-chip small { color: var(--gold); font-weight: 700; margin-right: 7px; letter-spacing: 1px; }
+.ts-chip.active { background: var(--gold); border-color: var(--gold); color: #fff; }
+.ts-chip.active small { color: #ffe9b0; }
+.ts-chip.soon { border-style: dashed; cursor: default; opacity: .75; }
+.ts-chip.next { border-style: dashed; cursor: default; opacity: .75; }
+.ts-state { font-size: 10.5px; font-weight: 800; letter-spacing: 1.5px; text-transform: uppercase; color: var(--gold); margin-left: 8px; }
+a.ts-chip { text-decoration: none; cursor: pointer; }
+a.ts-chip:hover { border-color: var(--gold); }
+.ts-btn { flex: 0 0 auto; width: 30px; height: 30px; border-radius: 50%; border: 1px solid var(--gold-dim, var(--border)); background: var(--chip-bg, var(--surface)); color: var(--gold); font-size: 16px; cursor: pointer; line-height: 1; padding: 0; }
+@media (max-width: 640px) { .ts-label { display: none; } }
+/* tstrip:style:end */
+</style>
 </head>
 <body>
 
@@ -254,6 +275,14 @@ footer a { color: var(--gold); font-weight: 700; text-decoration: none; }
     <button class="tab" role="tab" id="tab-chip" aria-selected="false" aria-controls="view-chip" data-view="chip">The chip</button>
   </div>
   <button class="journey-btn" id="journeyBtn" type="button" aria-pressed="false">Follow a signal</button>
+  <!-- tstrip:start -->
+  <div class="tstrip-row">
+    <span class="ts-label">QUANTUM EXPLAINERS</span>
+    <button class="ts-btn" id="tsPrev" type="button" aria-label="Scroll topics back">‹</button>
+    <div class="ts-scroll" id="tsScroll"><span class="ts-chip active" aria-current="true"><small>01</small>Superconducting</span><span class="ts-chip next"><small>02</small>Trapped ion<span class="ts-state">coming next</span></span><span class="ts-chip next"><small>03</small>Neutral atom<span class="ts-state">coming next</span></span><span class="ts-chip soon"><small>04</small>Surface code<span class="ts-state">soon</span></span></div>
+    <button class="ts-btn" id="tsNext" type="button" aria-label="Scroll topics forward">›</button>
+  </div>
+<!-- tstrip:end -->
 </div>
 
 <main>
@@ -1170,5 +1199,14 @@ footer a { color: var(--gold); font-weight: 700; text-decoration: none; }
   window.addEventListener('hashchange', fromHash);
 })();
 </script>
+<script>
+(() => {
+  const sc = document.getElementById('tsScroll');
+  if (!sc) return;
+  document.getElementById('tsPrev').addEventListener('click', () => sc.scrollBy({ left: -sc.clientWidth * .7, behavior: 'smooth' }));
+  document.getElementById('tsNext').addEventListener('click', () => sc.scrollBy({ left: sc.clientWidth * .7, behavior: 'smooth' }));
+})();
+</script>
+
 </body>
 </html>
