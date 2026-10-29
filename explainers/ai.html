@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AI Explainers · The Signal</title>
+<meta property="og:type" content="website">
+<meta property="og:title" content="AI Explainers">
+<meta property="og:description" content="Interactive explainers on AI systems, part by part.">
+<meta property="og:url" content="https://thillairaj.github.io/The-Signal-AI-Quantum/ai-deck/">
+<style>
+  :root{
+    --obsidian:#0d0f14; --obsidian2:#151923; --gold:#b08d3e; --gold-dim:rgba(176,141,62,.4);
+    --ivory:#faf7f0; --card:#ffffff; --ink:#171b24; --muted:#6b7280; --line:#e8e2d4;
+    --green:#1e7e46; --red:#b3261e;
+    --page:#faf9f6; --page-ink:#2b3542;
+    --header-bg:radial-gradient(1200px 400px at 50% -80px,#f1eee4 0%,#faf9f6 65%);
+    --header-ink:#171b24; --header-sub:#5b6470;
+    --bar:rgba(250,249,246,.97); --bar-border:#e0dccf;
+    --chip-bg:#ffffff; --chip-ink:#2b3542; --chip-small:#6b7280;
+    --nav-bg:#ffffff;
+    --title-ink:#171b24; --row-sub:#5b6470;
+    --foot-ink:#6b7280; --foot-border:#e0dccf;
+  }
+  :root[data-theme="dark"]{
+    --obsidian:#0d0f14; --obsidian2:#151923; --gold:#d4af6a; --gold-dim:rgba(212,175,106,.4);
+    --ivory:#faf7f0; --card:#ffffff; --ink:#171b24; --muted:#6b7280; --line:#e8e2d4;
+    --green:#1e7e46; --red:#b3261e;
+    --page:#2f353e; --page-ink:#e9e4d6;
+    --header-bg:radial-gradient(1200px 400px at 50% -80px,#454e5b 0%,#2b3038 65%);
+    --header-ink:#ffffff; --header-sub:#aeb8c8;
+    --bar:rgba(47,53,62,.97); --bar-border:#4a5260;
+    --chip-bg:#22272f; --chip-ink:#cfd6e2; --chip-small:#8a919c;
+    --nav-bg:rgba(70,78,90,.45);
+    --title-ink:#f2ede0; --row-sub:#a8adb5;
+    --foot-ink:#9aa0aa; --foot-border:#4a5260;
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --gold:#d4af6a; --gold-dim:rgba(212,175,106,.4);
+      --page:#2f353e; --page-ink:#e9e4d6;
+      --header-bg:radial-gradient(1200px 400px at 50% -80px,#454e5b 0%,#2b3038 65%);
+      --header-ink:#ffffff; --header-sub:#aeb8c8;
+      --bar:rgba(47,53,62,.97); --bar-border:#4a5260;
+      --chip-bg:#22272f; --chip-ink:#cfd6e2; --chip-small:#8a919c;
+      --nav-bg:rgba(70,78,90,.45);
+      --title-ink:#f2ede0; --row-sub:#a8adb5;
+      --foot-ink:#9aa0aa; --foot-border:#4a5260;
+    }
+  }
+  .theme-toggle{position:absolute;top:14px;right:14px;background:var(--chip-bg);
+    border:1px solid var(--bar-border);border-radius:50%;width:32px;height:32px;
+    font-size:.95rem;cursor:pointer;color:var(--chip-ink);z-index:60;line-height:1}
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--page);color:var(--page-ink);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;line-height:1.55}
+  header{position:relative;background:var(--header-bg);
+    color:var(--header-ink);padding:44px 20px 34px;text-align:center;border-bottom:3px solid var(--gold)}
+  header .kicker{color:var(--gold);letter-spacing:4px;font-size:12px;font-weight:700}
+  header h1{margin:12px 0 8px;font-size:34px;letter-spacing:.5px;font-weight:800}
+  header h1 .thin{font-weight:300;color:var(--gold)}
+  header p{margin:0 auto;color:var(--header-sub);font-size:15px;max-width:620px}
+  /* topic navigator: horizontal scroll strip + search */
+  .topicbar{position:sticky;top:0;z-index:20;background:var(--bar);backdrop-filter:blur(6px);
+    border-bottom:1px solid var(--bar-border);padding:12px 18px;display:flex;gap:10px;align-items:center}
+  .tsearch{flex:0 0 220px;display:flex;align-items:center;background:var(--chip-bg);border:1px solid var(--bar-border);
+    border-radius:9px;padding:7px 10px}
+  .tsearch input{flex:1;background:none;border:none;outline:none;color:var(--chip-ink);font-size:13.5px;min-width:0}
+  .tsearch input::placeholder{color:var(--chip-small)}
+  .tstrip-wrap{flex:1;min-width:0;overflow:hidden}
+  .tstrip{display:flex;gap:10px;overflow-x:auto;scrollbar-width:none;padding:2px;scroll-snap-type:x proximity}
+  .tstrip::-webkit-scrollbar{display:none}
+  .tlabel{flex:0 0 auto;color:var(--gold);font-size:11px;font-weight:800;letter-spacing:2.5px;white-space:nowrap}
+  .tchip{flex:0 0 auto;scroll-snap-align:start;border:1px solid var(--bar-border);background:var(--chip-bg);color:var(--chip-ink);
+    font-size:15px;font-weight:700;padding:11px 20px;border-radius:999px;cursor:pointer;white-space:nowrap}
+  .tchip small{color:var(--chip-small);font-weight:700;margin-right:8px;letter-spacing:1px;font-size:12px}
+  .tchip:hover{border-color:var(--gold-dim)}
+  .tchip.active{background:var(--gold);border-color:var(--gold);color:#171b24}
+  .tchip.active small{color:#5c4a1f}
+  .tchip.soon{opacity:.55;border-style:dashed;cursor:default}
+  .tchip.soon:hover{border-color:var(--bar-border)}
+  .tnav{flex:0 0 auto;width:34px;height:34px;border-radius:50%;border:1px solid var(--gold-dim);
+    background:var(--nav-bg);color:var(--gold);font-size:18px;cursor:pointer;line-height:1}
+  .tnav:hover{background:rgba(70,78,90,.72)}
+  main{max-width:1140px;margin:0 auto;padding:30px 18px 60px}
+  .topic-head{text-align:center;margin:6px 0 4px}
+  .topic-head .tnum{color:var(--gold);letter-spacing:4px;font-size:12px;font-weight:700}
+  .topic-head h2{margin:8px 0 0;font-size:30px;font-weight:800;color:var(--title-ink);font-family:Georgia,serif;letter-spacing:.3px}
+  .topic-head .tsub{margin:10px auto 0;max-width:640px;font-size:15px;color:var(--muted);line-height:1.55}
+  .topic-head .tdraft{display:inline-block;margin-top:8px;font-size:11px;letter-spacing:3px;font-weight:700;
+    color:var(--gold);border:1px dashed var(--gold-dim);border-radius:999px;padding:4px 14px}
+  .rowhead{display:flex;align-items:baseline;justify-content:space-between;margin:34px 0 6px}
+  .rowhead h2{margin:0;font-size:21px;letter-spacing:.3px;color:var(--title-ink)}
+  .rowhead h2 .n{color:var(--gold);font-size:13px;letter-spacing:2px;vertical-align:middle;margin-right:8px}
+  .rowhead p{margin:4px 0 0;color:var(--row-sub);font-size:13.5px}
+  .rail-wrap{position:relative}
+  .rail{display:flex;gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;
+    scrollbar-width:none;padding:14px 4px 18px;align-items:stretch}
+  .rail::-webkit-scrollbar{display:none}
+  .rail-btn{position:absolute;top:42%;transform:translateY(-50%);z-index:5;width:44px;height:44px;border-radius:50%;
+    border:1px solid var(--gold-dim);background:rgba(70,78,90,.45);color:var(--gold);font-size:22px;cursor:pointer;
+    box-shadow:0 2px 8px rgba(0,0,0,.18)}
+  .rail-btn:hover{background:rgba(70,78,90,.72)}
+  .rail-btn.prev{left:-8px}.rail-btn.next{right:-8px}
+  @keyframes wiggle{0%,100%{transform:rotate(0deg)}25%{transform:rotate(.7deg) translateY(-2px)}75%{transform:rotate(-.7deg)}}
+  @media(hover:hover) and (prefers-reduced-motion:no-preference){
+    .pcard:hover{animation:wiggle .45s ease-in-out}
+    .fcard:hover{animation:wiggle .45s ease-in-out}
+  }
+  .pcard{flex:0 0 320px;height:480px;scroll-snap-align:start;border-radius:16px;background:var(--card);
+    border:1px solid var(--line);box-shadow:0 6px 22px rgba(13,15,20,.08);
+    display:flex;flex-direction:column;padding:20px;position:relative;overflow:hidden}
+  .pcard::before{content:"";position:absolute;top:0;left:0;right:0;height:5px;
+    background:linear-gradient(90deg,var(--gold),#f0d9a0,var(--gold))}
+  .pnum{font-size:12px;font-weight:800;color:var(--gold);letter-spacing:2px}
+  .ptag{font-size:11px;font-weight:700;letter-spacing:2px;color:var(--muted);margin:2px 0 8px}
+  .pq{font-size:17.5px;font-weight:750;line-height:1.35;margin:0 0 10px;font-family:Georgia,serif;color:var(--ink)}
+  .pbody{flex:1;overflow-y:auto;font-size:13.5px;color:#2b3542;scrollbar-width:thin}
+  .pbody p{margin:0 0 9px}
+  .toolbar{border-top:1px dashed var(--line);padding-top:10px;margin-top:8px;display:flex;flex-wrap:wrap;gap:6px;align-items:center}
+  .toolbar select{font-size:11.5px;padding:6px 6px;border-radius:7px;border:1px solid var(--line);background:#f4f1e8;max-width:128px}
+  .toolbar button{font-size:11.5px;font-weight:700;padding:6px 10px;border-radius:7px;cursor:pointer;
+    border:1px solid var(--line);background:#f4f1e8;color:var(--ink)}
+  .toolbar button:hover{background:var(--gold);border-color:var(--gold);color:#fff}
+  .copied{font-size:11px;color:var(--green);font-weight:700;display:none}
+  /* click-to-zoom reading view */
+  .pcard[data-i]{cursor:pointer}
+  #zoom-ov{position:fixed;inset:0;background:rgba(10,12,16,.68);z-index:300;display:none;align-items:center;justify-content:center;padding:24px;box-sizing:border-box}
+  #zoom-ov.open{display:flex}
+  #zoom-card{position:relative;max-width:660px;width:100%;max-height:88vh;overflow-y:auto;background:var(--card);color:var(--ink);border:1px solid var(--line);border-radius:18px;padding:38px 42px 32px;box-shadow:0 24px 70px rgba(0,0,0,.35);box-sizing:border-box}
+  #zoom-card::before{content:"";position:absolute;top:0;left:0;right:0;height:6px;background:linear-gradient(90deg,var(--gold),#f0d9a0,var(--gold));border-radius:18px 18px 0 0}
+  #zoom-num{font-size:12px;font-weight:800;color:var(--gold);letter-spacing:2px;margin-bottom:8px}
+  #zoom-tag{font-size:12px;font-weight:700;letter-spacing:2.5px;color:var(--muted);margin-bottom:10px}
+  #zoom-q{font-size:26px;font-weight:750;line-height:1.35;margin:0 0 16px;font-family:Georgia,serif;color:var(--ink)}
+  #zoom-body{font-size:17px;line-height:1.7;color:var(--ink)}
+  #zoom-body p{margin:0 0 14px}
+  #zoom-close{position:absolute;top:14px;right:14px;width:36px;height:36px;border-radius:50%;border:1px solid var(--line);background:var(--card);color:var(--ink);font-size:18px;cursor:pointer;line-height:1;padding:0}
+  #zoom-close:hover{background:var(--gold);border-color:var(--gold);color:#fff}
+  @media(max-width:700px){#zoom-card{padding:30px 24px 24px}#zoom-q{font-size:22px}#zoom-body{font-size:16px}}
+  /* compact flashcards */
+  .fcard{flex:0 0 260px;height:215px;scroll-snap-align:start;perspective:1000px;cursor:pointer}
+  .finner{position:relative;width:100%;height:100%;transform-style:preserve-3d;transition:transform .55s}
+  .fcard.flipped .finner{transform:rotateY(180deg)}
+  .fface{position:absolute;inset:0;backface-visibility:hidden;-webkit-backface-visibility:hidden;border-radius:12px;
+    padding:16px 18px;display:flex;flex-direction:column;justify-content:flex-start;overflow:auto}
+  .ffront{background:linear-gradient(160deg,#3d444f 0%,#2c313a 72%);color:#fff;border:1px solid #545d6b}
+  .ffront .fnum{color:var(--gold);font-size:11px;font-weight:800;letter-spacing:2px;margin-bottom:6px}
+  .ffront .fq{font-size:13.5px;font-weight:700;line-height:1.45;font-family:Georgia,serif}
+  .ffront .fhint{margin-top:8px;font-size:9.5px;letter-spacing:2px;color:var(--gold);font-weight:700}
+  .fback{background:var(--card);transform:rotateY(180deg);border:1px solid var(--line);color:var(--ink);font-size:12px}
+  .fback .fnum{font-size:10.5px;font-weight:800;color:var(--gold);letter-spacing:2px;margin-bottom:5px}
+  /* quiz */
+  #quiz-box{max-width:700px;margin:6px auto 0;background:var(--card);border:1px solid var(--line);
+    border-radius:16px;padding:28px;box-shadow:0 6px 22px rgba(13,15,20,.08)}
+  #quiz-progress{font-size:11.5px;color:var(--muted);font-weight:700;letter-spacing:1.5px;margin-bottom:10px}
+  #quiz-q{font-size:18px;font-weight:700;margin:0 0 18px;font-family:Georgia,serif;
+    background:#2b3038;color:#fff;padding:18px 20px;border-radius:12px;border-left:5px solid var(--gold)}
+  .opt{display:block;width:100%;text-align:left;margin:0 0 10px;padding:13px 15px;font-size:14.5px;
+    border:1px solid var(--line);border-radius:10px;background:#fbfaf6;cursor:pointer;color:var(--ink)}
+  .opt:hover:not(:disabled){border-color:var(--gold)}
+  .opt:disabled{cursor:default}
+  .opt.correct{background:#e6f4ea;border-color:var(--green);font-weight:700}
+  .opt.wrong{background:#fbeae9;border-color:var(--red)}
+  #quiz-feedback{font-size:14px;font-weight:700;margin:6px 0 12px;min-height:22px}
+  #quiz-next{display:none;padding:10px 28px;font-size:14px;font-weight:700;border-radius:10px;border:none;
+    background:#2b3038;color:var(--gold);cursor:pointer}
+  #quiz-result{text-align:center}
+  #quiz-score{font-size:46px;font-weight:800;color:#2b3038}
+  #quiz-band{font-size:18px;font-weight:750;margin:8px 0 4px}
+  #quiz-sub{color:var(--muted);font-size:14px;margin-bottom:18px}
+  #quiz-restart{padding:10px 28px;font-size:14px;font-weight:700;border-radius:10px;border:none;
+    background:#2b3038;color:var(--gold);cursor:pointer}
+  .upgrid{display:flex;gap:14px;overflow-x:auto;scrollbar-width:none;padding:14px 4px 18px;
+    scroll-snap-type:x proximity;margin-top:10px}
+  .upgrid::-webkit-scrollbar{display:none}
+  .upcard{flex:0 0 230px;scroll-snap-align:start;border:1px dashed var(--gold-dim);border-radius:12px;padding:22px;background:#fff;text-align:center;color:var(--muted)}
+  .upcard b{display:block;color:#2b3038;font-size:16px;margin-bottom:6px}
+  .upcard span{font-size:11px;letter-spacing:2px;font-weight:700;color:var(--gold)}
+  .upcard.live{border-style:solid;cursor:pointer}
+  .upcard.live:hover{border-color:var(--gold)}
+  .upcard.live span{color:var(--green)}
+  footer{text-align:center;padding:28px 16px;color:var(--foot-ink);font-size:13px;border-top:1px solid var(--foot-border);margin-top:20px}
+  footer .rule{width:60px;height:2px;background:var(--gold);margin:0 auto 12px}
+  footer a{color:var(--gold);font-weight:700;text-decoration:none}
+  @media(max-width:700px){.pcard{flex-basis:80%}.fcard{flex-basis:62%}.rail-btn{display:none}
+    .topicbar{flex-wrap:wrap;row-gap:10px}
+    .tstrip-wrap{flex:1 1 auto}
+    .tnav{display:none}
+    .tsearch{flex:1 1 100%;order:5}}
+
+  /* Back link lives in the sticky topic bar (Thillai, Oct 21 2026) so it stays visible while scrolling. */
+  .topicbar .backlink{color:inherit;opacity:.78;text-decoration:none;font-size:13.5px;font-weight:600;white-space:nowrap;align-self:center}
+  .topicbar .backlink:hover{opacity:1;text-decoration:underline}
+
+  /* Frozen navigation cards (Thillai, Oct 21 2026): Back + sibling deck live inside the sticky topic bar. */
+  .topicbar .navcard{display:flex;flex-direction:column;gap:1px;justify-content:center;padding:6px 12px;border:1px solid var(--gold-dim);border-radius:12px;background:var(--card);color:var(--ink);text-decoration:none;min-width:0;transition:border-color .15s ease,transform .15s ease}
+  .topicbar .navcard:hover{border-color:var(--gold);transform:translateY(-1px)}
+  .topicbar .navcard.sib{margin-left:auto}
+  .nc-dir{font-size:9.5px;letter-spacing:1.8px;text-transform:uppercase;opacity:.62;font-weight:700;white-space:nowrap}
+  .nc-title{font-size:14px;font-weight:700;line-height:1.25;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:200px}
+  .topicbar .navcard.next{text-align:right}
+  /* LinkedIn follow button (Thillai, Oct 21 2026): coloured card-button, LinkedIn blue gradient. */
+  .li-btn{display:inline-flex;align-items:center;gap:10px;padding:8px 16px 8px 9px;border-radius:14px;background:linear-gradient(135deg,#0A66C2,#004182);color:#fff !important;text-decoration:none !important;box-shadow:0 4px 14px rgba(10,102,194,.35);vertical-align:middle;transition:transform .15s ease,box-shadow .15s ease}
+  .li-btn:hover{transform:translateY(-1px);box-shadow:0 8px 22px rgba(10,102,194,.45)}
+  .li-btn .li-badge{display:inline-flex;align-items:center;justify-content:center;width:30px;height:30px;border-radius:8px;background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.45);color:#fff;flex:0 0 auto}
+  .li-btn .li-badge svg{width:16px;height:16px;display:block}
+  .li-txt{display:flex;flex-direction:column;line-height:1.15;text-align:left}
+  .li-dir{font-size:9.5px;letter-spacing:1.8px;text-transform:uppercase;opacity:.85;font-weight:700}
+  .li-name{font-size:15.5px;font-weight:800;letter-spacing:.01em}
+</style>
+
+<style>
+.open-explainer { display: flex; align-items: center; justify-content: space-between; gap: 14px; margin: 22px 0 6px; padding: 16px 20px; border: 1px solid var(--gold); border-radius: 14px; background: var(--card); color: var(--ink); text-decoration: none; transition: transform .15s ease, border-color .15s ease; }
+.open-explainer:hover { transform: translateY(-1px); border-color: var(--gold-dim); }
+.oe-dir { color: var(--gold); letter-spacing: 3px; font-size: 11px; font-weight: 700; text-transform: uppercase; }
+.oe-title { font-size: 19px; font-weight: 700; }
+.oe-arrow { color: var(--gold); font-size: 22px; }
+.soon-note { margin: 20px 0 6px; padding: 16px 20px; border: 1px dashed var(--gold-dim); border-radius: 14px; color: var(--muted); font-size: 15px; }
+[hidden] { display: none !important; }
+#learn-rail .pcard { height: 300px; flex-basis: 300px; }
+.rowhead { margin-top: 20px; }
+.open-explainer { margin: 2px 0 4px; }
+@media (max-width: 700px) { #learn-rail .pcard { height: 320px; flex-basis: 80%; } }
+</style>
+</head>
+<body>
+
+<header>
+  <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">☾</button>
+  <div class="kicker" id="deck-kicker">AI SYSTEMS, MADE VISUAL</div>
+  <h1>The <span class="thin">AI</span> Explainers</h1>
+</header>
+
+<div class="topicbar">
+  <a class="navcard back" href="../#learn-explainers"><span class="nc-dir">← Back to</span><span class="nc-title">Learning Spaces</span></a>
+  <span class="tlabel">SELECT TOPIC</span>
+  <button class="tnav" id="tstrip-prev" aria-label="Scroll topics left">‹</button>
+  <div class="tstrip-wrap"><div class="tstrip" id="topic-strip"></div></div>
+  <button class="tnav" id="tstrip-next" aria-label="Scroll topics right">›</button>
+  <label class="tsearch"><input id="topic-search" type="search" placeholder="Search topics…" aria-label="Search topics"></label>
+  <a class="navcard sib prev" href="quantum.html"><span class="nc-dir">← Previous</span><span class="nc-title">Quantum Explainers</span></a>
+  <a class="navcard sib next" href="cloud-devops.html"><span class="nc-dir">Next →</span><span class="nc-title">Cloud &amp; DevOps Explainers</span></a>
+</div>
+
+<main>
+  <div class="topic-head">
+    <div class="tnum" id="topic-num">TOPIC 01</div>
+    <h2 id="topic-title"></h2>
+    <p class="tsub" id="topic-tagline"></p>
+  </div>
+
+  <div id="live-block">
+    <a class="open-explainer" id="open-explainer" href="#">
+      <span><span class="oe-dir">Open explainer</span><br><span class="oe-title" id="open-title"></span></span>
+      <span class="oe-arrow">→</span>
+    </a>
+    <div class="open-explainer" id="open-demo" hidden style="border-style: dashed;">
+      <span><span class="oe-dir">Demo panel</span><br><span class="oe-title" id="open-demo-title"></span><br><span style="font-size:13.5px; opacity:.75;">This explainer is not built yet. In the full build, this block opens its page.</span></span>
+      <span class="oe-arrow">→</span>
+    </div>
+    <div class="rowhead"><div><h2><span class="n">01</span>Inside this explainer</h2><p>Scroll the rail, arrows move one card at a time. Each card previews one part of the explainer above.</p></div></div>
+    <div class="rail-wrap">
+      <button class="rail-btn prev" data-rail="learn-rail" aria-label="Previous">‹</button>
+      <div class="rail" id="learn-rail"></div>
+      <button class="rail-btn next" data-rail="learn-rail" aria-label="Next">›</button>
+    </div>
+  </div>
+
+  <div class="soon-note" id="soon-note" hidden>This explainer is in the AI topic bank. It arrives in the build rotation, and this deck is where it will open.</div>
+</main>
+
+<footer><div class="rule"></div>Curated by Thillai Raj Thanam Jeya Veera Raj · <a class="li-btn" href="https://www.linkedin.com/in/thillairaj" target="_blank" rel="noopener"><span class="li-badge" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.55V9h3.57v11.45z"/></svg></span><span class="li-txt"><span class="li-dir">Follow on</span><span class="li-name">LinkedIn</span></span></a></footer>
+
+<script>
+const TOPICS = [
+  {
+    "chip": "LLM answers a prompt",
+    "num": "01",
+    "status": "live",
+    "title": "How an LLM answers a prompt",
+    "tagline": "From the words you type to the words it answers with: tokens, attention and the next word choice, step by step.",
+    "href": "llm-answers.html",
+    "cards": [
+      {
+        "tag": "The machine",
+        "q": "One prompt, start to finish",
+        "body": [
+          "The explainer follows a single prompt through the whole model, part by part, from the text box to the finished answer.",
+          "Each part of the pipeline gets its own simple explanation first, then the deeper one."
+        ]
+      },
+      {
+        "tag": "The journey",
+        "q": "Follow a token",
+        "body": [
+          "A guided mode follows one token on its full journey: split from your words, turned into numbers, carried through the layers and out as the next word."
+        ]
+      },
+      {
+        "tag": "The key idea",
+        "q": "Attention does the heavy lifting",
+        "body": [
+          "Attention is how the model decides which earlier words matter for the next one. The explainer shows it on a short sentence you can follow word by word."
+        ]
+      },
+      {
+        "tag": "Real systems",
+        "q": "The models you already use",
+        "body": [
+          "The real systems section grounds the walkthrough in the assistants people use every day, with every claim checked against its sources when the explainer is built."
+        ]
+      },
+      {
+        "tag": "Check yourself",
+        "q": "A five question quiz",
+        "body": [
+          "The explainer closes with five questions on the parts and the journey, so the reading turns into recall."
+        ]
+      }
+    ]
+  },
+  {
+    "chip": "Inside a GPU",
+    "num": "02",
+    "status": "soon",
+    "title": "Inside a GPU",
+    "tagline": "Thousands of small cores working at once: the engine under modern AI."
+  },
+  {
+    "chip": "Training cluster",
+    "num": "03",
+    "status": "soon",
+    "title": "Inside an AI training cluster",
+    "tagline": "Racks of machines trained as one: how a model learns from data at scale."
+  }
+];
+
+const strip = document.getElementById('topic-strip');
+let active = 0;
+
+function renderChips(filter) {
+  strip.innerHTML = '';
+  TOPICS.forEach((t, i) => {
+    if (filter && !(t.chip + ' ' + t.title).toLowerCase().includes(filter)) return;
+    const b = document.createElement('button');
+    b.type = 'button';
+    b.className = 'tchip' + (t.status === 'soon' ? ' soon' : '') + (i === active ? ' active' : '');
+    b.innerHTML = '<small>' + t.num + '</small>' + t.chip;
+    if (t.status !== 'soon') b.addEventListener('click', () => selectTopic(i));
+    strip.appendChild(b);
+  });
+}
+
+function selectTopic(i) {
+  active = i;
+  const t = TOPICS[i];
+  document.getElementById('topic-num').textContent = 'TOPIC ' + t.num;
+  document.getElementById('topic-title').textContent = t.title;
+  document.getElementById('topic-tagline').textContent = t.tagline;
+  const live = t.status === 'live' || t.status === 'demo';
+  document.getElementById('live-block').hidden = !live;
+  document.getElementById('soon-note').hidden = live;
+  if (live) {
+    const rail = document.getElementById('learn-rail');
+    rail.innerHTML = '';
+    t.cards.forEach((c, j) => {
+      const d = document.createElement('article');
+      d.className = 'pcard';
+      d.innerHTML = '<div class="pnum">' + (j + 1) + ' / ' + t.cards.length + '</div><div class="ptag">' + c.tag + '</div>'
+        + '<h3 class="pq">' + c.q + '</h3>'
+        + '<div class="pbody">' + c.body.map(p => '<p>' + p + '</p>').join('') + '</div>';
+      rail.appendChild(d);
+    });
+    const open = document.getElementById('open-explainer');
+    const demo = document.getElementById('open-demo');
+    open.hidden = t.status !== 'live';
+    demo.hidden = t.status !== 'demo';
+    if (t.status === 'live') {
+      open.href = t.href;
+      document.getElementById('open-title').textContent = t.title;
+    } else {
+      document.getElementById('open-demo-title').textContent = t.title;
+    }
+  }
+  renderChips(document.getElementById('topic-search').value.trim().toLowerCase());
+}
+
+document.getElementById('topic-search').addEventListener('input', (e) => {
+  renderChips(e.target.value.trim().toLowerCase());
+});
+document.getElementById('tstrip-prev').addEventListener('click', () => strip.scrollBy({ left: -strip.clientWidth * .7, behavior: 'smooth' }));
+document.getElementById('tstrip-next').addEventListener('click', () => strip.scrollBy({ left: strip.clientWidth * .7, behavior: 'smooth' }));
+document.querySelectorAll('.rail-btn').forEach((btn) => {
+  btn.addEventListener('click', () => {
+    const rail = document.getElementById(btn.dataset.rail);
+    const card = rail.querySelector('.pcard');
+    const w = card ? card.getBoundingClientRect().width + 14 : rail.clientWidth * .8;
+    rail.scrollBy({ left: (btn.classList.contains('next') ? 1 : -1) * w, behavior: 'smooth' });
+  });
+});
+
+selectTopic(0);
+
+const tt = document.getElementById('themeToggle');
+const isDark = () => (document.documentElement.getAttribute('data-theme') || ((window.matchMedia && matchMedia('(prefers-color-scheme: dark)').matches) ? 'dark' : 'light')) === 'dark';
+const syncIcon = () => { tt.textContent = isDark() ? '☀' : '☾'; };
+syncIcon();
+tt.addEventListener('click', () => {
+  const next = isDark() ? 'light' : 'dark';
+  document.documentElement.setAttribute('data-theme', next);
+  try { localStorage.setItem('deck_theme', next); } catch (e) {}
+  syncIcon();
+});
+</script>
+</body>
+</html>
