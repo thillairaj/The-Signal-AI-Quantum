@@ -254,6 +254,10 @@
       <span><span class="oe-dir">Open explainer</span><br><span class="oe-title" id="open-title"></span></span>
       <span class="oe-arrow">→</span>
     </a>
+    <div class="open-explainer" id="open-demo" hidden style="border-style: dashed;">
+      <span><span class="oe-dir">Demo panel</span><br><span class="oe-title" id="open-demo-title"></span><br><span style="font-size:13.5px; opacity:.75;">This explainer is not built yet. In the full build, this block opens its page.</span></span>
+      <span class="oe-arrow">→</span>
+    </div>
   </div>
 
   <div class="soon-note" id="soon-note" hidden>This explainer is in the Quantum topic bank. It arrives in the build rotation, and this deck is where it will open.</div>
@@ -276,8 +280,30 @@ const TOPICS = [
       { tag: "Check yourself", q: "A five question quiz", body: ["The explainer closes with five questions on the parts and the journey, so the reading turns into recall."] }
     ]
   },
-  { chip: "Trapped ion", num: "02", status: "soon", title: "Inside a Trapped Ion Quantum Computer", tagline: "Single charged atoms held in traps and steered with lasers: the precision route to a quantum computer." },
-  { chip: "Neutral atom", num: "03", status: "soon", title: "Inside a Neutral Atom Quantum Computer", tagline: "Hundreds of neutral atoms arranged by light into a computing grid." },
+  {
+    chip: "Trapped ion", num: "02", status: "demo",
+    title: "Inside a Trapped Ion Quantum Computer",
+    tagline: "Single charged atoms held in traps and steered with lasers: the precision route to a quantum computer.",
+    cards: [
+      { tag: "The machine", q: "A chain of atoms, held by fields", body: ["The trap view shows the vacuum chamber, the trap chip and the line of ions it holds, part by part.", "A second view follows the laser bench: the beams that cool the ions, drive the gates and read the results."] },
+      { tag: "The journey", q: "Follow a gate", body: ["A guided mode follows one gate from start to finish: the laser pulses, the shared vibration of the chain, and the entanglement it creates between two ions."] },
+      { tag: "The readout", q: "Reading a glowing chain", body: ["Qubits are read by fluorescence: the ions in one state shine under the laser and the ones in the other state stay dark, and a camera counts the light."] },
+      { tag: "Real machines", q: "IonQ and Quantinuum", body: ["The real machines section grounds the diagram in the best known trapped ion systems, with every figure checked against its sources when the explainer is built."] },
+      { tag: "Check yourself", q: "A five question quiz", body: ["The explainer closes with five questions on the parts and the journey, so the reading turns into recall."] }
+    ]
+  },
+  {
+    chip: "Neutral atom", num: "03", status: "demo",
+    title: "Inside a Neutral Atom Quantum Computer",
+    tagline: "Hundreds of neutral atoms arranged by light into a computing grid.",
+    cards: [
+      { tag: "The machine", q: "A grid made of light", body: ["The cell view shows the glass vacuum cell and the array of optical tweezers that hold one atom each, part by part.", "A second view follows the lasers and optics that load the atoms, arrange the grid and take the final picture."] },
+      { tag: "The journey", q: "Follow an atom", body: ["A guided mode follows one atom on its path: loaded from the vapour, caught by a tweezer, moved into the grid, entangled with its neighbour and read out."] },
+      { tag: "The gate", q: "The Rydberg blockade", body: ["Gates use the Rydberg blockade: an excited atom stops its neighbours from being excited too, and that shared rule is what links the qubits together."] },
+      { tag: "Real machines", q: "Pasqal, QuEra and Atom Computing", body: ["The real machines section grounds the diagram in the best known neutral atom systems, with every figure checked against its sources when the explainer is built."] },
+      { tag: "Check yourself", q: "A five question quiz", body: ["The explainer closes with five questions on the parts and the journey, so the reading turns into recall."] }
+    ]
+  },
   { chip: "Surface code", num: "04", status: "soon", title: "Surface Code Error Correction", tagline: "How many imperfect physical qubits combine into one reliable logical qubit." }
 ];
 
@@ -292,7 +318,7 @@ function renderChips(filter) {
     b.type = 'button';
     b.className = 'tchip' + (t.status === 'soon' ? ' soon' : '') + (i === active ? ' active' : '');
     b.innerHTML = '<small>' + t.num + '</small>' + t.chip;
-    if (t.status === 'live') b.addEventListener('click', () => selectTopic(i));
+    if (t.status !== 'soon') b.addEventListener('click', () => selectTopic(i));
     strip.appendChild(b);
   });
 }
@@ -303,7 +329,7 @@ function selectTopic(i) {
   document.getElementById('topic-num').textContent = 'TOPIC ' + t.num;
   document.getElementById('topic-title').textContent = t.title;
   document.getElementById('topic-tagline').textContent = t.tagline;
-  const live = t.status === 'live';
+  const live = t.status === 'live' || t.status === 'demo';
   document.getElementById('live-block').hidden = !live;
   document.getElementById('soon-note').hidden = live;
   if (live) {
@@ -318,8 +344,15 @@ function selectTopic(i) {
       rail.appendChild(d);
     });
     const open = document.getElementById('open-explainer');
-    open.href = t.href;
-    document.getElementById('open-title').textContent = t.title;
+    const demo = document.getElementById('open-demo');
+    open.hidden = t.status !== 'live';
+    demo.hidden = t.status !== 'demo';
+    if (t.status === 'live') {
+      open.href = t.href;
+      document.getElementById('open-title').textContent = t.title;
+    } else {
+      document.getElementById('open-demo-title').textContent = t.title;
+    }
   }
   renderChips(document.getElementById('topic-search').value.trim().toLowerCase());
 }
