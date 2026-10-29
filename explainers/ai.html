@@ -210,17 +210,20 @@
 </style>
 
 <style>
-.open-explainer { display: flex; align-items: center; justify-content: space-between; gap: 14px; margin: 22px 0 6px; padding: 16px 20px; border: 1px solid var(--gold); border-radius: 14px; background: var(--card); color: var(--ink); text-decoration: none; transition: transform .15s ease, border-color .15s ease; }
-.open-explainer:hover { transform: translateY(-1px); border-color: var(--gold-dim); }
+.open-explainer { display: flex; flex-direction: column; align-items: center; text-align: center; gap: 9px; margin: 22px 0 6px; padding: 30px 22px 26px; border: 2px solid var(--gold); border-radius: 16px; background: var(--card); color: var(--ink); text-decoration: none; box-shadow: 0 0 0 0 rgba(201, 162, 39, .45); animation: oeGlow 2.2s ease-in-out infinite; transition: transform .15s ease; }
+.open-explainer:hover { transform: translateY(-2px); }
+@keyframes oeGlow { 0%, 100% { box-shadow: 0 0 0 0 rgba(201, 162, 39, .45); } 50% { box-shadow: 0 0 0 12px rgba(201, 162, 39, 0); } }
 .oe-dir { color: var(--gold); letter-spacing: 3px; font-size: 11px; font-weight: 700; text-transform: uppercase; }
-.oe-title { font-size: 19px; font-weight: 700; }
-.oe-arrow { color: var(--gold); font-size: 22px; }
+.oe-title { font-size: 23px; font-weight: 700; line-height: 1.25; }
+.oe-sub { font-size: 14.5px; opacity: .78; max-width: 520px; }
+.oe-pill { display: inline-flex; align-items: center; gap: 9px; margin-top: 8px; padding: 12px 22px; border-radius: 999px; background: var(--gold); color: #1d2733; font-size: 15.5px; font-weight: 800; letter-spacing: .4px; animation: oePulse 1.6s ease-in-out infinite; }
+@keyframes oePulse { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.045); } }
+.oe-arrow { font-size: 18px; font-weight: 800; }
+.prep-note { margin: 22px 0 6px; padding: 22px; border: 1px dashed var(--gold-dim); border-radius: 16px; color: var(--muted); text-align: center; }
+.prep-note .oe-title { color: var(--ink); font-size: 20px; }
 .soon-note { margin: 20px 0 6px; padding: 16px 20px; border: 1px dashed var(--gold-dim); border-radius: 14px; color: var(--muted); font-size: 15px; }
 [hidden] { display: none !important; }
-#learn-rail .pcard { height: 300px; flex-basis: 300px; }
-.rowhead { margin-top: 20px; }
-.open-explainer { margin: 2px 0 4px; }
-@media (max-width: 700px) { #learn-rail .pcard { height: 320px; flex-basis: 80%; } }
+@media (prefers-reduced-motion: reduce) { .open-explainer, .oe-pill { animation: none; } }
 </style>
 </head>
 <body>
@@ -251,18 +254,15 @@
 
   <div id="live-block">
     <a class="open-explainer" id="open-explainer" href="#">
-      <span><span class="oe-dir">Open explainer</span><br><span class="oe-title" id="open-title"></span></span>
-      <span class="oe-arrow">→</span>
+      <span class="oe-dir">The interactive explainer</span>
+      <span class="oe-title" id="open-title"></span>
+      <span class="oe-sub">Tap through it part by part, with a simple and a deeper explanation for every part, a guided journey and a short quiz.</span>
+      <span class="oe-pill">Click here to open the explainer <span class="oe-arrow">→</span></span>
     </a>
-    <div class="open-explainer" id="open-demo" hidden style="border-style: dashed;">
-      <span><span class="oe-dir">Demo panel</span><br><span class="oe-title" id="open-demo-title"></span><br><span style="font-size:13.5px; opacity:.75;">This explainer is not built yet. In the full build, this block opens its page.</span></span>
-      <span class="oe-arrow">→</span>
-    </div>
-    <div class="rowhead"><div><h2><span class="n">01</span>Inside this explainer</h2><p>Scroll the rail, arrows move one card at a time. Each card previews one part of the explainer above.</p></div></div>
-    <div class="rail-wrap">
-      <button class="rail-btn prev" data-rail="learn-rail" aria-label="Previous">‹</button>
-      <div class="rail" id="learn-rail"></div>
-      <button class="rail-btn next" data-rail="learn-rail" aria-label="Next">›</button>
+    <div class="prep-note" id="open-demo" hidden>
+      <span class="oe-dir">Explainer in preparation</span><br>
+      <span class="oe-title" id="open-demo-title"></span><br>
+      <span class="oe-sub">This explainer is being built. When it is ready, its opening block will stand here, and this page is where it will open.</span>
     </div>
   </div>
 
@@ -361,16 +361,6 @@ function selectTopic(i) {
   document.getElementById('live-block').hidden = !live;
   document.getElementById('soon-note').hidden = live;
   if (live) {
-    const rail = document.getElementById('learn-rail');
-    rail.innerHTML = '';
-    t.cards.forEach((c, j) => {
-      const d = document.createElement('article');
-      d.className = 'pcard';
-      d.innerHTML = '<div class="pnum">' + (j + 1) + ' / ' + t.cards.length + '</div><div class="ptag">' + c.tag + '</div>'
-        + '<h3 class="pq">' + c.q + '</h3>'
-        + '<div class="pbody">' + c.body.map(p => '<p>' + p + '</p>').join('') + '</div>';
-      rail.appendChild(d);
-    });
     const open = document.getElementById('open-explainer');
     const demo = document.getElementById('open-demo');
     open.hidden = t.status !== 'live';
@@ -390,14 +380,6 @@ document.getElementById('topic-search').addEventListener('input', (e) => {
 });
 document.getElementById('tstrip-prev').addEventListener('click', () => strip.scrollBy({ left: -strip.clientWidth * .7, behavior: 'smooth' }));
 document.getElementById('tstrip-next').addEventListener('click', () => strip.scrollBy({ left: strip.clientWidth * .7, behavior: 'smooth' }));
-document.querySelectorAll('.rail-btn').forEach((btn) => {
-  btn.addEventListener('click', () => {
-    const rail = document.getElementById(btn.dataset.rail);
-    const card = rail.querySelector('.pcard');
-    const w = card ? card.getBoundingClientRect().width + 14 : rail.clientWidth * .8;
-    rail.scrollBy({ left: (btn.classList.contains('next') ? 1 : -1) * w, behavior: 'smooth' });
-  });
-});
 
 selectTopic(0);
 
