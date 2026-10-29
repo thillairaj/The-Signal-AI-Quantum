@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-29T10:00:07.554804+00:00",
+  "generated_at": "2026-10-29T14:00:17.717501+00:00",
   "sources_polled": [
     "The Verge \u2014 AI",
     "Simon Willison",
@@ -15,6 +15,39 @@
     "Quantum Intelligence"
   ],
   "articles": [
+    {
+      "id": "9cd5509199bff926",
+      "title": "AI has come for Arizona\u2019s water",
+      "link": "https://www.theverge.com/cs/features/1016650/arizona-water-data-center-tsmc",
+      "source": "The Verge \u2014 AI",
+      "category": "AI",
+      "summary": "A hulking gray giant rises from the desert. Inside, engineers create the force behind our phones and computers and appliances, our streaming services and search engines and chatbots and vibe-coded apps and websites. The complex is simultaneously massive and squat, dwarfed by the ",
+      "published": "2026-10-29T13:59:58.625734+00:00",
+      "audio_url": null,
+      "duration": ""
+    },
+    {
+      "id": "0b3918620b863475",
+      "title": "Anthropic\u2019s business plan: Build God or die trying",
+      "link": "https://www.theverge.com/ai-artificial-intelligence/1021476/anthropic-s-1-compute-recursive",
+      "source": "The Verge \u2014 AI",
+      "category": "AI",
+      "summary": "The Anthropic S-1 seems to have provided the financial justification for the company to spend as much as it possibly can on compute. If you are the kind of person who wonders if Anthropic is doing its level best to build a machine god while convincing Wall Street it's in the busi",
+      "published": "2026-10-29T13:59:58.625658+00:00",
+      "audio_url": null,
+      "duration": ""
+    },
+    {
+      "id": "b53378954f7facf4",
+      "title": "Anthropic\u2019s IPO filing shows most of its compute goes to R&D, not serving customers",
+      "link": "https://www.tomshardware.com/tech-industry/artificial-intelligence/anthropics-ipo-filing-shows-most-of-its-compute-goes-to-r-and-d-not-serving-customers-company-details-massive-usd800-billion-in-tpu-and-gpu-contracts",
+      "source": "Anthropic/Claude News",
+      "category": "AI",
+      "summary": "Anthropic\u2019s S-1 splits its $8.9 billion H1 compute bill: most went to R&amp;D, with less than a third estimated to serve Claude customers.",
+      "published": "2026-10-29T11:30:00+00:00",
+      "audio_url": null,
+      "duration": ""
+    },
     {
       "id": "b0fbfced4c005ad4",
       "title": "Quoting Ted Sanders",
@@ -1310,28 +1343,6 @@
       "category": "AI",
       "summary": "An investment research firm wanted to prove AI could revolutionize drug development. So they teamed up with Anthropic to see whether an unreleased version of Claude could make scorpion antivenom. It couldn't. It came up with some promising starting points, but nothing close to an",
       "published": "2026-10-22T14:00:37.219091+00:00",
-      "audio_url": null,
-      "duration": ""
-    },
-    {
-      "id": "c24876b37e469f74",
-      "title": "AI agents are ready to shop. Some retailers are wary.",
-      "link": "https://www.theverge.com/report/1015811/ai-shopping-agents-blocked-amazon-the-realreal-target-meta-muse",
-      "source": "The Verge \u2014 AI",
-      "category": "AI",
-      "summary": "Using an AI agent to shop for you is a strange experience. Tech companies have marketed them as personal assistants - the democratizing of labor that ordinarily would only be available to the rich and powerful. In practice, at least for buying things, it's more like sending an an",
-      "published": "2026-10-22T14:00:37.219052+00:00",
-      "audio_url": null,
-      "duration": ""
-    },
-    {
-      "id": "633b64365941d14c",
-      "title": "1Password lets AI agents use your passwords without seeing them",
-      "link": "https://www.theverge.com/ai-artificial-intelligence/1016399/1password-ai-agent-password-sign-in",
-      "source": "The Verge \u2014 AI",
-      "category": "AI",
-      "summary": "1Password is introducing a new feature that allows AI agents to sign into your accounts without actually seeing or handling your passwords. The aptly named 1Password for Agents doesn't give bots free reign to access all of your connected accounts - you'll still need to grant appr",
-      "published": "2026-10-22T14:00:37.218974+00:00",
       "audio_url": null,
       "duration": ""
     },
@@ -4049,17 +4060,6 @@
       "category": "Quantum",
       "summary": "CAS Cold Atom Technology, a Wuhan-based firm affiliated with the Chinese Academy of Sciences (CAS), unveiled what it calls the world's first dual-core quantum computer.",
       "published": "2026-05-10T13:31:55+00:00",
-      "audio_url": null,
-      "duration": ""
-    },
-    {
-      "id": "af2a165af71b0010",
-      "title": "Chinese grey market sells Claude API access at 90% off by using stolen credentials, model substitution, and harvesting users' prompts and outputs for resale as AI training data",
-      "link": "https://www.tomshardware.com/tech-industry/artificial-intelligence/chinese-grey-market-sells-claude-api-access-at-90-percent-off-through-proxy-networks-that-harvest-user-data",
-      "source": "Anthropic/Claude News",
-      "category": "AI",
-      "summary": "A grey-market economy of API proxy services in China is reselling access to Anthropic's Claude models at as little as 10% of the official price.",
-      "published": "2026-05-09T10:20:00+00:00",
       "audio_url": null,
       "duration": ""
     },
