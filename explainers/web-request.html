@@ -36,7 +36,7 @@
   --brass: #B8933F; --brass-edge: #E0C077; --metal: #3A3D31; --metal-edge: #6B7062;
   --warm: #E08A4E; --cold: #6CB4E2; --frost: #1E2A30; --panel: #1A1C14;
   --header-bg: radial-gradient(1200px 400px at 50% -80px, #454e5b 0%, #2b3038 65%); --header-ink: #ffffff; --header-sub: #aeb8c8;
-  --bar: rgba(47,53,62,.97); --bar-border: #4a5260; --chip-bg: #22272f; --chip-ink: #cfd6e2; --card: #ffffff;
+  --bar: rgba(47,53,62,.97); --bar-border: #4a5260; --chip-bg: #22272f; --chip-ink: #cfd6e2; --card: #22272f;
   --gold-dim: rgba(212,175,106,.4); --foot-ink: #9aa0aa; --foot-border: #4a5260;
   color-scheme: dark;
 }
@@ -47,7 +47,7 @@
     --brass: #B8933F; --brass-edge: #E0C077; --metal: #3A3D31; --metal-edge: #6B7062;
     --warm: #E08A4E; --cold: #6CB4E2; --frost: #1E2A30; --panel: #1A1C14;
     --header-bg: radial-gradient(1200px 400px at 50% -80px, #454e5b 0%, #2b3038 65%); --header-ink: #ffffff; --header-sub: #aeb8c8;
-    --bar: rgba(47,53,62,.97); --bar-border: #4a5260; --chip-bg: #22272f; --chip-ink: #cfd6e2; --card: #ffffff;
+    --bar: rgba(47,53,62,.97); --bar-border: #4a5260; --chip-bg: #22272f; --chip-ink: #cfd6e2; --card: #22272f;
     --gold-dim: rgba(212,175,106,.4); --foot-ink: #9aa0aa; --foot-border: #4a5260;
     color-scheme: dark;
   }
@@ -233,6 +233,9 @@ footer a { color: var(--gold); font-weight: 700; text-decoration: none; }
   header { padding: 34px 16px 26px; }
   header h1 { font-size: 27px; }
   .topicbar { flex-wrap: wrap; row-gap: 10px; padding: 10px 12px; }
+  .topicbar { position: static; }
+  .kicker { padding-left: 48px; padding-right: 48px; }
+  body { overflow-x: clip; }
   .tabs { margin-left: 0; }
 }
 .sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
@@ -241,7 +244,7 @@ footer a { color: var(--gold); font-weight: 700; text-decoration: none; }
 <style>
 .topicbar { flex-wrap: wrap; }
 [hidden] { display: none !important; }
-.tstrip-row { flex: 1 1 100%; display: flex; align-items: center; gap: 8px; border-top: 1px solid var(--bar-border, var(--border)); padding-top: 10px; }
+.tstrip-row { flex: 1 1 100%; min-width: 0; max-width: 100%; display: flex; align-items: center; gap: 8px; border-top: 1px solid var(--bar-border, var(--border)); padding-top: 10px; }
 .ts-label { flex: 0 0 auto; color: var(--gold); font-size: 11px; font-weight: 800; letter-spacing: 2.5px; white-space: nowrap; }
 .ts-scroll { flex: 1; min-width: 0; display: flex; gap: 8px; overflow-x: auto; scrollbar-width: none; padding: 2px; }
 .ts-scroll::-webkit-scrollbar { display: none; }
@@ -283,7 +286,7 @@ footer a { color: var(--gold); font-weight: 700; text-decoration: none; }
       <!-- FRIDGE VIEW -->
       <div class="art" id="view-fridge" role="tabpanel" aria-labelledby="tab-fridge">
         <svg viewBox="0 0 720 640" id="fridgeSvg" aria-label="Diagram of a web request journey, from your browser across the network to the server and its database">
-          <path id="signalPath" class="pulse-trail" d="M 110 100 L 610 100 L 610 330 L 100 330 L 100 560 L 625 560"/>
+          <path id="signalPath" class="pulse-trail" d="M 110 100 L 610 100 L 610 215 L 100 215 L 100 330 L 625 330 L 625 560 L 100 560"/>
           <circle id="pulseDot" class="pulse-dot" r="7" cx="-20" cy="-20"/>
           <text x="20" y="40" class="svg-note">YOUR DEVICE</text>
           <g class="part" data-id="browser" tabindex="0" role="button" aria-label="Browser">
@@ -309,61 +312,61 @@ footer a { color: var(--gold); font-weight: 700; text-decoration: none; }
           </g>
           <text x="20" y="272" class="svg-note">THE NETWORK</text>
           <g class="part" data-id="request" tabindex="0" role="button" aria-label="HTTP request">
-            <g class="shape"><rect x="30" y="298" width="140" height="64" rx="12" fill="var(--panel)" stroke="var(--border)" stroke-width="1.5"/></g>
-            <text x="100.0" y="327.0" text-anchor="middle" class="svg-label">HTTP request</text>
-            <text x="100.0" y="346.0" text-anchor="middle" class="svg-note">GET /orders</text>
-            <rect class="hit" x="26" y="294" width="148" height="72"/>
-            <circle class="marker" cx="162" cy="306" r="6"/>
-          </g>
-          <g class="part" data-id="tls" tabindex="0" role="button" aria-label="TLS">
-            <g class="shape"><rect x="205" y="298" width="140" height="64" rx="12" fill="var(--panel)" stroke="var(--border)" stroke-width="1.5"/></g>
-            <text x="275.0" y="327.0" text-anchor="middle" class="svg-label">TLS</text>
-            <text x="275.0" y="346.0" text-anchor="middle" class="svg-note">the padlock step</text>
-            <rect class="hit" x="201" y="294" width="148" height="72"/>
-            <circle class="marker" cx="337" cy="306" r="6"/>
-          </g>
-          <g class="part" data-id="tcp" tabindex="0" role="button" aria-label="TCP">
-            <g class="shape"><rect x="380" y="298" width="140" height="64" rx="12" fill="var(--panel)" stroke="var(--border)" stroke-width="1.5"/></g>
-            <text x="450.0" y="327.0" text-anchor="middle" class="svg-label">TCP</text>
-            <text x="450.0" y="346.0" text-anchor="middle" class="svg-note">the handshake</text>
-            <rect class="hit" x="376" y="294" width="148" height="72"/>
-            <circle class="marker" cx="512" cy="306" r="6"/>
-          </g>
-          <g class="part" data-id="caches" tabindex="0" role="button" aria-label="Caches">
             <g class="shape"><rect x="555" y="298" width="140" height="64" rx="12" fill="var(--panel)" stroke="var(--border)" stroke-width="1.5"/></g>
-            <text x="625.0" y="327.0" text-anchor="middle" class="svg-label">Caches</text>
-            <text x="625.0" y="346.0" text-anchor="middle" class="svg-note">answers kept nearby</text>
+            <text x="625.0" y="327.0" text-anchor="middle" class="svg-label">HTTP request</text>
+            <text x="625.0" y="346.0" text-anchor="middle" class="svg-note">GET /orders</text>
             <rect class="hit" x="551" y="294" width="148" height="72"/>
             <circle class="marker" cx="687" cy="306" r="6"/>
           </g>
+          <g class="part" data-id="tls" tabindex="0" role="button" aria-label="TLS">
+            <g class="shape"><rect x="380" y="298" width="140" height="64" rx="12" fill="var(--panel)" stroke="var(--border)" stroke-width="1.5"/></g>
+            <text x="450.0" y="327.0" text-anchor="middle" class="svg-label">TLS</text>
+            <text x="450.0" y="346.0" text-anchor="middle" class="svg-note">the padlock step</text>
+            <rect class="hit" x="376" y="294" width="148" height="72"/>
+            <circle class="marker" cx="512" cy="306" r="6"/>
+          </g>
+          <g class="part" data-id="tcp" tabindex="0" role="button" aria-label="TCP">
+            <g class="shape"><rect x="205" y="298" width="140" height="64" rx="12" fill="var(--panel)" stroke="var(--border)" stroke-width="1.5"/></g>
+            <text x="275.0" y="327.0" text-anchor="middle" class="svg-label">TCP</text>
+            <text x="275.0" y="346.0" text-anchor="middle" class="svg-note">the handshake</text>
+            <rect class="hit" x="201" y="294" width="148" height="72"/>
+            <circle class="marker" cx="337" cy="306" r="6"/>
+          </g>
+          <g class="part" data-id="caches" tabindex="0" role="button" aria-label="Caches">
+            <g class="shape"><rect x="30" y="298" width="140" height="64" rx="12" fill="var(--panel)" stroke="var(--border)" stroke-width="1.5"/></g>
+            <text x="100.0" y="327.0" text-anchor="middle" class="svg-label">Caches</text>
+            <text x="100.0" y="346.0" text-anchor="middle" class="svg-note">answers kept nearby</text>
+            <rect class="hit" x="26" y="294" width="148" height="72"/>
+            <circle class="marker" cx="162" cy="306" r="6"/>
+          </g>
           <text x="20" y="502" class="svg-note">THE SITE, IN A DATA CENTRE</text>
           <g class="part" data-id="cdn" tabindex="0" role="button" aria-label="CDN edge">
-            <g class="shape"><rect x="30" y="528" width="140" height="64" rx="12" fill="var(--panel)" stroke="var(--border)" stroke-width="1.5"/></g>
-            <text x="100.0" y="557.0" text-anchor="middle" class="svg-label">CDN edge</text>
-            <text x="100.0" y="576.0" text-anchor="middle" class="svg-note">copies near you</text>
-            <rect class="hit" x="26" y="524" width="148" height="72"/>
-            <circle class="marker" cx="162" cy="536" r="6"/>
+            <g class="shape"><rect x="555" y="528" width="140" height="64" rx="12" fill="var(--panel)" stroke="var(--border)" stroke-width="1.5"/></g>
+            <text x="625.0" y="557.0" text-anchor="middle" class="svg-label">CDN edge</text>
+            <text x="625.0" y="576.0" text-anchor="middle" class="svg-note">copies near you</text>
+            <rect class="hit" x="551" y="524" width="148" height="72"/>
+            <circle class="marker" cx="687" cy="536" r="6"/>
           </g>
           <g class="part" data-id="balancer" tabindex="0" role="button" aria-label="Load balancer">
-            <g class="shape"><rect x="205" y="528" width="140" height="64" rx="12" fill="var(--panel)" stroke="var(--border)" stroke-width="1.5"/></g>
-            <text x="275.0" y="557.0" text-anchor="middle" class="svg-label">Load balancer</text>
-            <text x="275.0" y="576.0" text-anchor="middle" class="svg-note">sharing the work</text>
-            <rect class="hit" x="201" y="524" width="148" height="72"/>
-            <circle class="marker" cx="337" cy="536" r="6"/>
-          </g>
-          <g class="part" data-id="server" tabindex="0" role="button" aria-label="Server">
             <g class="shape"><rect x="380" y="528" width="140" height="64" rx="12" fill="var(--panel)" stroke="var(--border)" stroke-width="1.5"/></g>
-            <text x="450.0" y="557.0" text-anchor="middle" class="svg-label">Server</text>
-            <text x="450.0" y="576.0" text-anchor="middle" class="svg-note">builds the page</text>
+            <text x="450.0" y="557.0" text-anchor="middle" class="svg-label">Load balancer</text>
+            <text x="450.0" y="576.0" text-anchor="middle" class="svg-note">sharing the work</text>
             <rect class="hit" x="376" y="524" width="148" height="72"/>
             <circle class="marker" cx="512" cy="536" r="6"/>
           </g>
+          <g class="part" data-id="server" tabindex="0" role="button" aria-label="Server">
+            <g class="shape"><rect x="205" y="528" width="140" height="64" rx="12" fill="var(--panel)" stroke="var(--border)" stroke-width="1.5"/></g>
+            <text x="275.0" y="557.0" text-anchor="middle" class="svg-label">Server</text>
+            <text x="275.0" y="576.0" text-anchor="middle" class="svg-note">builds the page</text>
+            <rect class="hit" x="201" y="524" width="148" height="72"/>
+            <circle class="marker" cx="337" cy="536" r="6"/>
+          </g>
           <g class="part" data-id="database" tabindex="0" role="button" aria-label="Database">
-            <g class="shape"><rect x="555" y="528" width="140" height="64" rx="12" fill="var(--panel)" stroke="var(--border)" stroke-width="1.5"/></g>
-            <text x="625.0" y="557.0" text-anchor="middle" class="svg-label">Database</text>
-            <text x="625.0" y="576.0" text-anchor="middle" class="svg-note">the facts</text>
-            <rect class="hit" x="551" y="524" width="148" height="72"/>
-            <circle class="marker" cx="687" cy="536" r="6"/>
+            <g class="shape"><rect x="30" y="528" width="140" height="64" rx="12" fill="var(--panel)" stroke="var(--border)" stroke-width="1.5"/></g>
+            <text x="100.0" y="557.0" text-anchor="middle" class="svg-label">Database</text>
+            <text x="100.0" y="576.0" text-anchor="middle" class="svg-note">the facts</text>
+            <rect class="hit" x="26" y="524" width="148" height="72"/>
+            <circle class="marker" cx="162" cy="536" r="6"/>
           </g>
         </svg>
       </div>
@@ -537,6 +540,7 @@ footer a { color: var(--gold); font-weight: 700; text-decoration: none; }
       <li><a href="https://www.cloudflare.com/learning/dns/what-is-dns/" target="_blank" rel="noopener">What is DNS?</a> <span>Cloudflare Learning Center</span></li>
       <li><a href="https://www.cloudflare.com/learning/cdn/what-is-a-cdn/" target="_blank" rel="noopener">What is a CDN?</a> <span>Cloudflare Learning Center</span></li>
       <li><a href="https://www.rfc-editor.org/rfc/rfc8446" target="_blank" rel="noopener">RFC 8446: TLS version 1.3</a> <span>IETF, August 2018</span></li>
+      <li><a href="https://www.rfc-editor.org/rfc/rfc9293" target="_blank" rel="noopener">RFC 9293: Transmission Control Protocol</a> <span>IETF, August 2022</span></li>
       <li><a href="https://www.rfc-editor.org/rfc/rfc9114" target="_blank" rel="noopener">RFC 9114: HTTP/3</a> <span>IETF, June 2022</span></li>
     </ol>
     <p class="checked">Researched and compiled for The Signal. Figures last checked 29 October 2026.</p>
@@ -648,7 +652,7 @@ footer a { color: var(--gold); font-weight: 700; text-decoration: none; }
         "before the first byte of data"
       ]
     ],
-    "src": "RFC 9114 (HTTP/3)"
+    "src": "RFC 9293 (TCP)"
   },
   "tls": {
     "view": "fridge",
@@ -917,7 +921,7 @@ footer a { color: var(--gold); font-weight: 700; text-decoration: none; }
   {
     "part": "caches",
     "at": [
-      610,
+      100,
       330
     ],
     "title": "Copies along the way",
@@ -926,7 +930,7 @@ footer a { color: var(--gold); font-weight: 700; text-decoration: none; }
   {
     "part": "tcp",
     "at": [
-      450,
+      275,
       330
     ],
     "title": "Opening the connection",
@@ -935,7 +939,7 @@ footer a { color: var(--gold); font-weight: 700; text-decoration: none; }
   {
     "part": "tls",
     "at": [
-      275,
+      450,
       330
     ],
     "title": "Locking the connection",
@@ -944,7 +948,7 @@ footer a { color: var(--gold); font-weight: 700; text-decoration: none; }
   {
     "part": "request",
     "at": [
-      100,
+      625,
       330
     ],
     "title": "The ask travels",
@@ -953,7 +957,7 @@ footer a { color: var(--gold); font-weight: 700; text-decoration: none; }
   {
     "part": "cdn",
     "at": [
-      100,
+      625,
       560
     ],
     "title": "The edge answers or passes",
@@ -962,7 +966,7 @@ footer a { color: var(--gold); font-weight: 700; text-decoration: none; }
   {
     "part": "balancer",
     "at": [
-      275,
+      450,
       560
     ],
     "title": "Shared at the door",
@@ -971,7 +975,7 @@ footer a { color: var(--gold); font-weight: 700; text-decoration: none; }
   {
     "part": "server",
     "at": [
-      450,
+      275,
       560
     ],
     "title": "The page is built",
@@ -980,7 +984,7 @@ footer a { color: var(--gold); font-weight: 700; text-decoration: none; }
   {
     "part": "database",
     "at": [
-      610,
+      100,
       560
     ],
     "title": "And back again",

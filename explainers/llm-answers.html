@@ -36,7 +36,7 @@
   --brass: #B8933F; --brass-edge: #E0C077; --metal: #3A3D31; --metal-edge: #6B7062;
   --warm: #E08A4E; --cold: #6CB4E2; --frost: #1E2A30; --panel: #1A1C14;
   --header-bg: radial-gradient(1200px 400px at 50% -80px, #454e5b 0%, #2b3038 65%); --header-ink: #ffffff; --header-sub: #aeb8c8;
-  --bar: rgba(47,53,62,.97); --bar-border: #4a5260; --chip-bg: #22272f; --chip-ink: #cfd6e2; --card: #ffffff;
+  --bar: rgba(47,53,62,.97); --bar-border: #4a5260; --chip-bg: #22272f; --chip-ink: #cfd6e2; --card: #22272f;
   --gold-dim: rgba(212,175,106,.4); --foot-ink: #9aa0aa; --foot-border: #4a5260;
   color-scheme: dark;
 }
@@ -47,7 +47,7 @@
     --brass: #B8933F; --brass-edge: #E0C077; --metal: #3A3D31; --metal-edge: #6B7062;
     --warm: #E08A4E; --cold: #6CB4E2; --frost: #1E2A30; --panel: #1A1C14;
     --header-bg: radial-gradient(1200px 400px at 50% -80px, #454e5b 0%, #2b3038 65%); --header-ink: #ffffff; --header-sub: #aeb8c8;
-    --bar: rgba(47,53,62,.97); --bar-border: #4a5260; --chip-bg: #22272f; --chip-ink: #cfd6e2; --card: #ffffff;
+    --bar: rgba(47,53,62,.97); --bar-border: #4a5260; --chip-bg: #22272f; --chip-ink: #cfd6e2; --card: #22272f;
     --gold-dim: rgba(212,175,106,.4); --foot-ink: #9aa0aa; --foot-border: #4a5260;
     color-scheme: dark;
   }
@@ -233,6 +233,9 @@ footer a { color: var(--gold); font-weight: 700; text-decoration: none; }
   header { padding: 34px 16px 26px; }
   header h1 { font-size: 27px; }
   .topicbar { flex-wrap: wrap; row-gap: 10px; padding: 10px 12px; }
+  .topicbar { position: static; }
+  .kicker { padding-left: 48px; padding-right: 48px; }
+  body { overflow-x: clip; }
   .tabs { margin-left: 0; }
 }
 .sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
@@ -241,7 +244,7 @@ footer a { color: var(--gold); font-weight: 700; text-decoration: none; }
 <style>
 .topicbar { flex-wrap: wrap; }
 [hidden] { display: none !important; }
-.tstrip-row { flex: 1 1 100%; display: flex; align-items: center; gap: 8px; border-top: 1px solid var(--bar-border, var(--border)); padding-top: 10px; }
+.tstrip-row { flex: 1 1 100%; min-width: 0; max-width: 100%; display: flex; align-items: center; gap: 8px; border-top: 1px solid var(--bar-border, var(--border)); padding-top: 10px; }
 .ts-label { flex: 0 0 auto; color: var(--gold); font-size: 11px; font-weight: 800; letter-spacing: 2.5px; white-space: nowrap; }
 .ts-scroll { flex: 1; min-width: 0; display: flex; gap: 8px; overflow-x: auto; scrollbar-width: none; padding: 2px; }
 .ts-scroll::-webkit-scrollbar { display: none; }
@@ -681,7 +684,7 @@ footer a { color: var(--gold); font-weight: 700; text-decoration: none; }
     "temp": "Output",
     "tc": "#1E7E46",
     "simple": "At the top of the stack, the final vector for the next position is compared with every token in the vocabulary. Each token gets a score, called a logit: how plausible it is as the next piece of text.",
-    "deep": "This step uses the same embedding table as the input, run in reverse: the model's final vector is scored against every token's row, producing one raw number per token, tens of thousands of them. High scores go to tokens that fit the grammar, the topic and the style of everything so far. Nothing has been chosen yet; the scores only rank the candidates.",
+    "deep": "This step, in many models, reuses the input embedding table, run in reverse: the model's final vector is scored against every token's row, producing one raw number per token, tens of thousands of them. High scores go to tokens that fit the grammar, the topic and the style of everything so far. Nothing has been chosen yet; the scores only rank the candidates.",
     "facts": [
       [
         "1 score",

@@ -28,7 +28,7 @@
   --bg: #15170F; --surface: #1D1F16; --ink: #ECEDE4; --muted: #9AA08D; --border: #33362A;
   --accent: #6FBE94; --accent-dim: #2B4838; --navy: #ECEDE4; --gold: #D9A93A;
   --header-bg: radial-gradient(1200px 400px at 50% -80px, #454e5b 0%, #2b3038 65%); --header-ink: #ffffff; --header-sub: #aeb8c8;
-  --bar: rgba(47,53,62,.97); --bar-border: #4a5260; --chip-bg: #22272f; --chip-ink: #cfd6e2; --card: #ffffff;
+  --bar: rgba(47,53,62,.97); --bar-border: #4a5260; --chip-bg: #22272f; --chip-ink: #cfd6e2; --card: #22272f;
   --gold-dim: rgba(212,175,106,.4); --foot-ink: #9aa0aa; --foot-border: #4a5260;
   color-scheme: dark;
 }
@@ -37,7 +37,7 @@
     --bg: #15170F; --surface: #1D1F16; --ink: #ECEDE4; --muted: #9AA08D; --border: #33362A;
     --accent: #6FBE94; --accent-dim: #2B4838; --navy: #ECEDE4; --gold: #D9A93A;
     --header-bg: radial-gradient(1200px 400px at 50% -80px, #454e5b 0%, #2b3038 65%); --header-ink: #ffffff; --header-sub: #aeb8c8;
-    --bar: rgba(47,53,62,.97); --bar-border: #4a5260; --chip-bg: #22272f; --chip-ink: #cfd6e2; --card: #ffffff;
+    --bar: rgba(47,53,62,.97); --bar-border: #4a5260; --chip-bg: #22272f; --chip-ink: #cfd6e2; --card: #22272f;
     --gold-dim: rgba(212,175,106,.4); --foot-ink: #9aa0aa; --foot-border: #4a5260;
     color-scheme: dark;
   }
@@ -66,6 +66,8 @@ main { max-width: 1200px; margin: 0 auto; padding: 2.2rem 2rem 4rem; }
 .card.ai:hover { background: #D6E6F7; }
 .card.cloud { background: #E6F2F0; border-color: #A8CCC6; }
 .card.cloud:hover { background: #D7ECE8; }
+.card.cyber { background: #F9ECEC; border-color: #DFA9A9; }
+.card.cyber:hover { background: #F3DEDE; }
 .tag { font-family: var(--font-mono); font-size: .75rem; font-weight: 600; color: #5B4B9E; text-transform: uppercase; letter-spacing: .05em; }
 .card h2 { font-family: var(--font-display); font-weight: 600; font-size: 1.45rem; line-height: 1.15; margin: 0; color: #14253F; }
 .card p { margin: 0; font-size: .95rem; color: #3E3A52; }
@@ -88,6 +90,7 @@ footer a { color: var(--gold); font-weight: 700; text-decoration: none; }
   header { padding: 34px 16px 26px; }
   header h1 { font-size: 27px; }
   .topicbar { padding: 10px 12px; }
+  .topicbar { position: static; }
 }
 </style>
 </head>
@@ -108,7 +111,7 @@ footer a { color: var(--gold); font-weight: 700; text-decoration: none; }
     <a class="card" href="quantum.html">
       <span class="tag">Quantum</span>
       <h2>Quantum Explainers</h2>
-      <p>Four topics in one family deck: the superconducting computer live now, trapped ion and neutral atom in demonstration, surface code to come.</p>
+      <p>Four topics in one family deck: the superconducting computer live now, trapped ion and neutral atom coming next, surface code to come.</p>
       <span class="meta"><span class="date">1 explainer live · more in preparation</span><span class="open">Open family deck ↗</span></span>
     </a>
     <a class="card ai" href="ai.html">
@@ -123,6 +126,12 @@ footer a { color: var(--gold); font-weight: 700; text-decoration: none; }
       <p>Journey of a web request, live now, with Inside a cloud data centre and the Kubernetes cluster explorer to come.</p>
       <span class="meta"><span class="date">1 explainer live · more in preparation</span><span class="open">Open family deck ↗</span></span>
     </a>
+    <div class="card cyber">
+      <span class="tag">Cybersecurity</span>
+      <h2>Cybersecurity Explainers</h2>
+      <p>Anatomy of a ransomware attack, the HTTPS handshake and Zero Trust architecture are in preparation.</p>
+      <span class="meta"><span class="date">Coming soon</span><span class="open">In preparation</span></span>
+    </div>
   </div>
 
   <p class="note">New explainers arrive in rotation across Quantum, AI, Cloud &amp; DevOps and Cybersecurity. Each one is checked against its sources before it joins this page.</p>

@@ -224,6 +224,7 @@
 .soon-note { margin: 20px 0 6px; padding: 16px 20px; border: 1px dashed var(--gold-dim); border-radius: 14px; color: var(--muted); font-size: 15px; }
 [hidden] { display: none !important; }
 @media (prefers-reduced-motion: reduce) { .open-explainer, .oe-pill { animation: none; } }
+@media (max-width: 640px) { .topicbar { position: static; } }
 </style>
 </head>
 <body>
@@ -259,7 +260,7 @@
       <span class="oe-pill">Click here to open the explainer <span class="oe-arrow">→</span></span>
     </a>
     <div class="prep-note" id="open-demo" hidden>
-      <span class="oe-dir">Explainer in preparation</span><br>
+      <span class="oe-dir">Coming next</span><br>
       <span class="oe-title" id="open-demo-title"></span><br>
       <span class="oe-sub">This explainer is being built. When it is ready, its opening block will stand here, and this page is where it will open.</span>
     </div>
@@ -356,14 +357,14 @@ function selectTopic(i) {
   document.getElementById('topic-num').textContent = 'TOPIC ' + t.num;
   document.getElementById('topic-title').textContent = t.title;
   document.getElementById('topic-tagline').textContent = t.tagline;
-  const live = t.status === 'live' || t.status === 'demo';
+  const live = t.status === 'live' || t.status === 'next';
   document.getElementById('live-block').hidden = !live;
   document.getElementById('soon-note').hidden = live;
   if (live) {
     const open = document.getElementById('open-explainer');
     const demo = document.getElementById('open-demo');
     open.hidden = t.status !== 'live';
-    demo.hidden = t.status !== 'demo';
+    demo.hidden = t.status !== 'next';
     if (t.status === 'live') {
       open.href = t.href;
       document.getElementById('open-title').textContent = t.title;
