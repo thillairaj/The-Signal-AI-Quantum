@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-28T22:00:43.274652+00:00",
+  "generated_at": "2026-10-29T02:00:14.129856+00:00",
   "sources_polled": [
     "The Verge \u2014 AI",
     "Simon Willison",
@@ -15,6 +15,39 @@
     "Quantum Intelligence"
   ],
   "articles": [
+    {
+      "id": "b0fbfced4c005ad4",
+      "title": "Quoting Ted Sanders",
+      "link": "https://simonwillison.net/2026/Oct/28/ted-sanders/",
+      "source": "Simon Willison",
+      "category": "AI",
+      "summary": "In general, LLM performance is incredibly multidimensional. There's no guarantee of a fixed ordering where the model that is best at math is also the model that's best at jokes. Despite that complexity, much of the variation in performance is explained by just a single variable: ",
+      "published": "2026-10-29T02:00:00.788871+00:00",
+      "audio_url": null,
+      "duration": ""
+    },
+    {
+      "id": "09f762edab0d4f19",
+      "title": "Adam Mosseri says negativity around AI is \u2018going to get worse\u2019",
+      "link": "https://www.theverge.com/ai-artificial-intelligence/1021644/adam-mosseri-instagram-ai-negativity",
+      "source": "The Verge \u2014 AI",
+      "category": "AI",
+      "summary": "Asked about AI and the trend of college students booing tech CEOs at graduation ceremonies, Instagram head Adam Mosseri acknowledged in an interview that a lot of people really don't like AI, and it's not just young people and creatives. Appearing on the Colin and Samir podcast t",
+      "published": "2026-10-29T01:59:59.954874+00:00",
+      "audio_url": null,
+      "duration": ""
+    },
+    {
+      "id": "ce362432103cffdc",
+      "title": "Daily AI Intelligence \u2014 Episode 28 (Thu Oct 29, 2026): Google's Gemini 4 Carbon, Anthropic's drug discovery push, Muse lands in Singapore",
+      "link": "https://muse.ai/podcasts/media/1248297608376725/94f09345-ad4a-4981-83dd-e3206bbf5c4e/ep-d69d96ce-f008-47d5-a64e-d119fe487fb3.mp3",
+      "source": "Daily AI Intelligence",
+      "category": "Podcast",
+      "summary": "Google DeepMind announces Gemini 4 Carbon for cybersecurity and long-horizon work; Anthropic pushes Claude into drug discovery and legal artifacts; OpenAI expands with ServiceNow; Muse launches in Singapore; Microsoft opens the Copilot harness; and an independent test probes Deep",
+      "published": "2026-10-29T01:03:04+00:00",
+      "audio_url": "https://muse.ai/podcasts/media/1248297608376725/94f09345-ad4a-4981-83dd-e3206bbf5c4e/ep-d69d96ce-f008-47d5-a64e-d119fe487fb3.mp3",
+      "duration": "281"
+    },
     {
       "id": "d0753be868cc7807",
       "title": "Microsoft is ending Copilot support on smart TVs",
@@ -1323,17 +1356,6 @@
       "published": "2026-10-22T02:44:26+00:00",
       "audio_url": "https://muse.ai/podcasts/media/1248297608376725/94f09345-ad4a-4981-83dd-e3206bbf5c4e/ep-00c36dbf-7c22-4095-901d-67fb7a9c320d.mp3",
       "duration": "293"
-    },
-    {
-      "id": "eaa3fbf80042951c",
-      "title": "Data centers could erase decades of air quality gains",
-      "link": "https://www.theverge.com/ai-artificial-intelligence/1015958/data-center-pollution-rising-report",
-      "source": "The Verge \u2014 AI",
-      "category": "AI",
-      "summary": "A rush of new data centers could bring air pollution roaring back to levels not seen since the 2000s in Texas, which has become ground zero for the physical infrastructure behind generative AI. New and proposed data centers are demanding a tremendous amount of electricity. How de",
-      "published": "2026-10-22T01:59:38.210852+00:00",
-      "audio_url": null,
-      "duration": ""
     },
     {
       "id": "ba6fa07d677a8221",
@@ -2861,17 +2883,6 @@
       "category": "AI",
       "summary": "Everyone is very concerned about being respectable, so I\u2019m going to be the goofball who raises worst-case possibilities. I think there is a 1% chance we live in Minicrypt, and a 15% chance we functionally lose confidence in our existing public-key encryption algorithms. [...] The",
       "published": "2026-10-09T17:59:57.369649+00:00",
-      "audio_url": null,
-      "duration": ""
-    },
-    {
-      "id": "4956a5acae88d47d",
-      "title": "September sponsors-only newsletter",
-      "link": "https://simonwillison.net/2026/Oct/3/newsletter/",
-      "source": "Simon Willison",
-      "category": "AI",
-      "summary": "I just sent the September edition of my sponsors-only monthly newsletter . If you are a sponsor (or start a sponsorship now) you can access it here . This month: More Fable class models A pricing war 3D graphics, Blender, and pixel art LLMs come for mathematics So many more accid",
-      "published": "2026-10-09T13:59:46.674833+00:00",
       "audio_url": null,
       "duration": ""
     },
