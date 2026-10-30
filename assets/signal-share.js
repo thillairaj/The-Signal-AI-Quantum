@@ -89,8 +89,33 @@ window.SignalShare = (function () {
   }
   /* The WhatsApp version: bold title, one line, link. */
   function whatsText(spec) {
+    if (spec.waText) return spec.waText;
     return "*" + spec.title + "*" + (spec.line ? "\n\n" + spec.line : "") +
       "\n\n" + spec.link;
+  }
+  /* RSS Feed items: other publishers' stories found on the Signal wire.
+     Full caption, plus the X and WhatsApp shapes (headline, source, the
+     original link, then the wire link; X stays within 280 counted with
+     both links at 23). */
+  function feedCaption(title, source, link, tag) {
+    return [title, "",
+      "Source: " + source + "\nRead it: " + link, "",
+      "Found on The Signal's live AI & Quantum wire, free, no sign-up:\n" + BASE + "/#feed", "",
+      "#TheSignal " + tag].join("\n");
+  }
+  function feedShort(title, source, link, tag) {
+    var wire = BASE + "/#feed";
+    var tags = "#TheSignal " + tag;
+    var fixed = 2 + "Source: ".length + String(source).length + 1 + 23 + 1 + 23 +
+      2 + tags.length;
+    var head = title;
+    if (head.length > 280 - fixed) head = cutWords(head, 280 - fixed);
+    return head + "\n\nSource: " + source + "\n" + link + "\n" + wire +
+      "\n\n" + tags;
+  }
+  function feedWa(title, source, link) {
+    return "*" + title + "*\n\nSource: " + source + "\n" + link + "\n" +
+      BASE + "/#feed";
   }
   /* ---------- the one Share panel ----------
      Every surface opens the same panel through openPanel(spec):
@@ -443,7 +468,8 @@ window.SignalShare = (function () {
     buildCaption: buildCaption, shareImage: shareImage,
     shareTextFlow: shareTextFlow, fillOptions: fillOptions,
     topicHashtag: topicHashtag, articleCaption: articleCaption,
-    podcastCaption: podcastCaption, shortText: shortText,
+    podcastCaption: podcastCaption, feedCaption: feedCaption,
+    feedShort: feedShort, feedWa: feedWa, shortText: shortText,
     whatsText: whatsText, openPanel: openPanel, closePanel: closePanel,
     shareButton: shareButton, ICONS: ICONS
   };

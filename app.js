@@ -395,6 +395,30 @@ function renderSources() {
   });
 }
 
+function feedSpec(a) {
+  const SS = window.SignalShare;
+  const tag = SS.topicHashtag((a.title || "") + " " + (a.summary || ""));
+  return {
+    title: a.title,
+    line: "Source: " + a.source,
+    link: a.link,
+    caption: SS.feedCaption(a.title, a.source, a.link, tag),
+    tags: "#TheSignal " + tag,
+    xText: SS.feedShort(a.title, a.source, a.link, tag),
+    waText: SS.feedWa(a.title, a.source, a.link),
+    image: null
+  };
+}
+function mountFeedShares(shown) {
+  if (!window.SignalShare) return;
+  const byId = {};
+  shown.forEach(a => { byId[a.id] = a; });
+  feedEl.querySelectorAll(".feed-share-slot").forEach(slot => {
+    const a = byId[slot.dataset.fid];
+    if (a) slot.appendChild(SignalShare.shareButton(feedSpec(a)));
+  });
+}
+
 function renderFeed() {
   const filtered = getFiltered();
 
@@ -417,7 +441,7 @@ function renderFeed() {
         <span class="source">${a.source}</span>
         <div class="article-actions">
           <button class="icon-btn bookmark-btn ${saved ? "active" : ""}" data-id="${a.id}" title="${saved ? "Remove bookmark" : "Save for later"}">${saved ? "★" : "☆"}</button>
-          <button class="icon-btn copy-btn" data-link="${a.link}" title="Copy link">⧉</button>
+          <span class="feed-share-slot" data-fid="${a.id}"></span>
         </div>
       </div>
       <div>
@@ -432,6 +456,7 @@ function renderFeed() {
     </article>
   `;
   }).join("");
+  mountFeedShares(shown);
 
   const pager = document.createElement("div");
   pager.className = "pager";
@@ -455,14 +480,6 @@ feedEl.addEventListener("click", (e) => {
   if (bm) {
     toggleBookmark(bm.dataset.id);
     return;
-  }
-  const cp = e.target.closest(".copy-btn");
-  if (cp) {
-    navigator.clipboard.writeText(cp.dataset.link).then(() => {
-      const original = cp.textContent;
-      cp.textContent = "✓";
-      setTimeout(() => { cp.textContent = original; }, 1200);
-    }).catch(() => {});
   }
 });
 
@@ -525,6 +542,8 @@ topTabsEl.querySelectorAll(".top-tab").forEach(btn => {
     topTabsEl.querySelectorAll(".top-tab").forEach(b => b.classList.remove("active"));
     btn.classList.add("active");
     showView(btn.dataset.view);
+    const h = "#" + btn.dataset.view;
+    if (location.hash !== h) history.pushState(null, "", h);
   });
 });
 
@@ -682,8 +701,15 @@ function openResearchTarget() {
   }
 }
 openResearchTarget();
+const SECTION_HASH = { "#home": "home", "#learn": "learn", "#podcast": "podcast", "#research": "research", "#feed": "feed" };
+function openSectionTarget() {
+  const v = SECTION_HASH[location.hash];
+  if (v) { showView(v); return; }
+  if (!location.hash || location.hash === "#") showView("home");
+}
+openSectionTarget();
 openPodcastTarget();
-window.addEventListener("hashchange", function () { openLearnTarget(); openResearchTarget(); openPodcastTarget(); });
+window.addEventListener("hashchange", function () { openLearnTarget(); openResearchTarget(); openPodcastTarget(); openSectionTarget(); });
 
 /* ---------- Home view: auto-rails, live counts (Oct 21 2026 redesign) ---------- */
 (function initHome() {
