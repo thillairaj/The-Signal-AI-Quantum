@@ -1,6 +1,33 @@
 {
   "articles": [
     {
+      "id": "2026-10-30-speculative-decoding",
+      "title": "How Does Speculative Decoding Answer Faster?",
+      "subtitle": "A small draft model guesses ahead, and the big model checks the guesses in one pass",
+      "date": "2026-10-30",
+      "kind": "Brief",
+      "card": "research/cards/edition-07.webp",
+      "body": "research/articles/2026-10-30-speculative-decoding.html",
+      "sources": [
+        {
+          "label": "Leviathan, Kalman, Matias: Fast Inference from Transformers via Speculative Decoding (arXiv:2211.17192)",
+          "url": "https://arxiv.org/abs/2211.17192"
+        },
+        {
+          "label": "Chen et al.: Accelerating Large Language Model Decoding with Speculative Sampling (arXiv:2302.01318)",
+          "url": "https://arxiv.org/abs/2302.01318"
+        },
+        {
+          "label": "Li et al.: EAGLE-3: Scaling up Inference Acceleration of Large Language Models via Training-Time Test (arXiv:2503.01840)",
+          "url": "https://arxiv.org/abs/2503.01840"
+        },
+        {
+          "label": "Meta GenAI and Infra Teams: Efficient Speculative Decoding for Llama at Scale (arXiv:2508.08192, Aug 2026)",
+          "url": "https://arxiv.org/abs/2508.08192"
+        }
+      ]
+    },
+    {
       "id": "2026-10-28-genie-4-world-model",
       "title": "What Changes When an AI World Can Talk Back?",
       "subtitle": "Genie 4 adds native audio and live steering to real time simulation",
@@ -203,5 +230,5 @@
       "title": "Where Does Value Accrue in the AI Stack?"
     }
   ],
-  "generated_at": "2026-10-28T04:16:25+00:00"
+  "generated_at": "2026-10-30T04:17:29+00:00"
 }

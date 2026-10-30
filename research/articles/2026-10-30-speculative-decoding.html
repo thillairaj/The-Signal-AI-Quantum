@@ -1,0 +1,11 @@
+<p><em>Signal Research Notes is an original-research series on The Signal, published three times a week. Each edition asks one question, works through it from primary sources, and keeps confirmed facts separate from analysis. Sources are linked at the end.</em></p>
+
+<p>A language model normally answers one token at a time, and each token costs a full pass through the model. The pass is slow not because the arithmetic is heavy, but because the hardware must read every weight from memory before it can compute anything. For a single request, most of the accelerator's computing power sits idle while it waits on that memory traffic. Speculative decoding turns that idle capacity into speed.</p>
+
+<h3>How the draft and check work</h3>
+
+<p>A small draft model, often a few billion parameters against a 70 billion parameter target, proposes the next few tokens. The large target model then scores all of them in a single parallel pass. It accepts the longest run that matches what it would have produced itself, discards the rest, and adds one fresh token at the point where the draft first went wrong. The crucial guarantee, proved independently by Google Research and DeepMind in 2022 and 2023, is that rejection sampling keeps the output distribution identical to the large model's own decoding. The draft never overrules the target; it only proposes.</p>
+
+<h3>When the speedup disappears</h3>
+
+<p>The gain depends on two numbers: draft acceptance, and accelerator load. EAGLE-3, a draft design that predicts tokens directly from the target model's hidden states, reports speedups up to 6.5 times at temperature zero on models including Llama 3.3 70B. But Meta's August 2026 production study of EAGLE for Llama found the speedup falling from 1.96 times at batch size one to about 1.21 times at batch size 128, because a busy accelerator has no idle compute left to spend on verification. The rule for operators is to measure acceptance on their own traffic, keep drafts short, and treat speculation as a low concurrency optimisation, not a default that always wins.</p>
