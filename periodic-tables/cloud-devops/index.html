@@ -453,6 +453,14 @@ function copyText(s){
 function wrap(x,t,mw){ var w=t.split(" "),L=[],l=""; w.forEach(function(s){ var t2=l?l+" "+s:s; if(x.measureText(t2).width>mw&&l){ L.push(l); l=s; } else { l=t2; } }); if(l) L.push(l); return L; }
 function roundRect(x,px,py,w,h,r){ x.beginPath(); x.moveTo(px+r,py); x.arcTo(px+w,py,px+w,py+h,r); x.arcTo(px+w,py+h,px,py+h,r); x.arcTo(px,py+h,px,py,r); x.arcTo(px,py,px+w,py,r); x.closePath(); }
 var FALLBACK_PALETTE={obsidian:{bg0:"#151923",bg1:"#0d0f14",accent:"#d4af6a",dim:"rgba(212,175,106,.5)",head:"#ffffff",body:"#c3ccd9",foot:"#8fa0b5"}};
+function hexRgb(h){ h=h.replace("#",""); return [parseInt(h.substr(0,2),16),parseInt(h.substr(2,2),16),parseInt(h.substr(4,2),16)]; }
+function relLum(rgb){ function f(c){ c/=255; return c<=0.03928?c/12.92:Math.pow((c+0.055)/1.055,2.4); } return 0.2126*f(rgb[0])+0.7152*f(rgb[1])+0.0722*f(rgb[2]); }
+function contrastRgb(a,b){ var la=relLum(a),lb=relLum(b); return (Math.max(la,lb)+0.05)/(Math.min(la,lb)+0.05); }
+function kickerColor(hex,bgs,lighten){ var c=hexRgb(hex); var targets=bgs.map(hexRgb);
+  function ok(col){ return targets.every(function(bg){ return contrastRgb(col,bg)>=4.55; }); }
+  if(ok(c)) return hex;
+  for(var s=0.05;s<=1.001;s+=0.05){ var m=c.map(function(v){ return Math.round(lighten?v+(255-v)*s:v*(1-s)); }); if(ok(m)){ return "#"+m.map(function(v){ return ("0"+v.toString(16)).slice(-2); }).join(""); } }
+  return lighten?"#ffffff":"#000000"; }
 function renderCard(t,size,theme){
   var dims=(size||"1080x1350").split("x"), W=+dims[0], H=+dims[1]; if(!W||!H){ W=1080; H=1350; }
   var k=W/1080;
@@ -464,12 +472,12 @@ function renderCard(t,size,theme){
   var catName=(typeof CATS!=="undefined"&&CATS[t.c])?CATS[t.c].name:t.c;
   var grd=x.createLinearGradient(0,0,0,H); grd.addColorStop(0,T.bg0); grd.addColorStop(1,T.bg1);
   x.fillStyle=grd; x.fillRect(0,0,W,H);
-  x.fillStyle=T.accent; x.fillRect(0,0,W,Math.round(8*k));
+  x.fillStyle=catCol; x.fillRect(0,0,W,Math.round(8*k));
   var pad=Math.round(84*k), mw=W-2*pad, cx=W/2;
   var topSafe=Math.round(48*k), footTop=H-Math.round(150*k);
   x.textAlign="left"; x.textBaseline="alphabetic";
   var y=topSafe+Math.round(34*k);
-  x.fillStyle=T.accent; x.font="600 "+Math.round(27*k)+"px system-ui,sans-serif";
+  x.fillStyle=kickerColor(catCol,[T.bg0,T.bg1],theme!=="ivory"); x.font="600 "+Math.round(27*k)+"px system-ui,sans-serif";
   try{ x.letterSpacing="3px"; }catch(e){}
   x.fillText((CFG.display+" \u00b7 "+catName).toUpperCase(),pad,y);
   try{ x.letterSpacing="0px"; }catch(e){}
@@ -490,14 +498,18 @@ function renderCard(t,size,theme){
   x.beginPath(); x.moveTo(pad,y); x.lineTo(pad+Math.round(130*k),y); x.stroke();
   y+=Math.round(52*k);
   var bf=Math.round(34*k), lines=[];
-  function buildLines(){ var L=[]; x.font=bf+"px system-ui,sans-serif";
+  function buildLines(withLens){ var L=[]; x.font=bf+"px system-ui,sans-serif";
     wrap(x,oneLine(t.d),mw).forEach(function(l){ L.push({s:l,label:false}); });
     if(t.f){ L.push({s:"",label:false}); L.push({s:"KEY FACT",label:true});
       wrap(x,t.f,mw).forEach(function(l){ L.push({s:l,label:false}); }); }
+    if(withLens&&t.l){ L.push({s:"",label:false}); L.push({s:"LEADER'S LENS",label:true});
+      wrap(x,t.l,mw).forEach(function(l){ L.push({s:l,label:false}); }); }
     return L; }
-  lines=buildLines();
+  var withLens=(H>W)&&!!t.l;
+  lines=buildLines(withLens);
   var lh=bf+Math.round(12*k);
-  while(y+lines.length*lh>footTop&&bf>Math.round(24*k)){ bf-=2; lh=bf+Math.round(12*k); lines=buildLines(); }
+  while(y+lines.length*lh>footTop&&bf>Math.round(24*k)){ bf-=2; lh=bf+Math.round(12*k); lines=buildLines(withLens); }
+  if(H<=W&&t.l){ var extra=buildLines(true); if(y+extra.length*lh<=footTop){ lines=extra; } }
   lines.forEach(function(o){
     if(y<footTop){ if(o.label){ x.fillStyle=T.accent; x.font="700 "+Math.round(24*k)+"px system-ui,sans-serif"; try{ x.letterSpacing="3px"; }catch(e){} x.fillText(o.s,pad,y); try{ x.letterSpacing="0px"; }catch(e){} }
       else if(o.s){ x.fillStyle=T.body; x.font=bf+"px system-ui,sans-serif"; x.fillText(o.s,pad,y); } }
