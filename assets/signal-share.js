@@ -88,6 +88,18 @@ window.SignalShare = (function () {
     return spec.title + tail;
   }
   /* The WhatsApp version: bold title, one line, link. */
+  /* Icon only variant of the Share button (feed items): the caller
+     supplies the button styling class from its own stylesheet. */
+  function iconShareButton(spec, cls) {
+    var b = document.createElement("button");
+    b.type = "button";
+    b.className = "icon-btn " + (cls || "");
+    b.setAttribute("aria-label", "Share");
+    b.title = "Share";
+    b.innerHTML = ICONS.share;
+    b.addEventListener("click", function () { openPanel(spec, b); });
+    return b;
+  }
   function whatsText(spec) {
     if (spec.waText) return spec.waText;
     return "*" + spec.title + "*" + (spec.line ? "\n\n" + spec.line : "") +
@@ -471,6 +483,6 @@ window.SignalShare = (function () {
     podcastCaption: podcastCaption, feedCaption: feedCaption,
     feedShort: feedShort, feedWa: feedWa, shortText: shortText,
     whatsText: whatsText, openPanel: openPanel, closePanel: closePanel,
-    shareButton: shareButton, ICONS: ICONS
+    shareButton: shareButton, iconShareButton: iconShareButton, ICONS: ICONS
   };
 })();

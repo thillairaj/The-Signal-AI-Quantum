@@ -979,3 +979,6 @@ body[data-view="research"] .feed-only { display: none; }
 .ss-share-btn svg{width:15px;height:15px;flex:0 0 auto}
 
 .feed-share-slot{display:inline-flex}
+
+.feed-share-btn{display:inline-flex;align-items:center;justify-content:center;padding:0}
+.feed-share-btn svg{width:14px;height:14px}

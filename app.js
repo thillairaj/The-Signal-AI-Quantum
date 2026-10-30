@@ -415,7 +415,7 @@ function mountFeedShares(shown) {
   shown.forEach(a => { byId[a.id] = a; });
   feedEl.querySelectorAll(".feed-share-slot").forEach(slot => {
     const a = byId[slot.dataset.fid];
-    if (a) slot.appendChild(SignalShare.shareButton(feedSpec(a)));
+    if (a) slot.appendChild(SignalShare.iconShareButton(feedSpec(a), "feed-share-btn"));
   });
 }
 
