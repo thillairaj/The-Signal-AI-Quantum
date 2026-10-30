@@ -273,6 +273,28 @@ a.ts-chip:hover { border-color: var(--gold); }
 @media (min-width:960px){:root{--barh:76px}.panel{top:calc(var(--barh) + 10px)}.art svg{max-height:calc(100vh - var(--barh) - 64px)}}
 /* explainer-layout:end */
 </style>
+<style>
+/* flowmode:start */
+.journey { border: 1.5px solid var(--accent); background: color-mix(in srgb, var(--accent) 8%, var(--bg)); }
+body.flow-on .panel-nav { display: none; }
+body.flow-on .parts-rail-wrap { display: none; }
+body.flow-on #hint { display: none; }
+.journey-step { white-space: nowrap; }
+.journey-top { flex-wrap: wrap; }
+.journey-nav { flex-wrap: nowrap; gap: .35rem; }
+.journey-nav .btn { white-space: nowrap; padding: .45rem .6rem; }
+.flow-toast { position: fixed; left: 50%; bottom: calc(18px + env(safe-area-inset-bottom, 0px)); transform: translateX(-50%); z-index: 90; background: var(--navy); color: #f5f1e6; padding: .55rem 1rem; border-radius: 999px; font-size: .9rem; box-shadow: 0 6px 24px rgba(0,0,0,.25); }
+@media (max-width: 640px) {
+  .journey.is-on { position: fixed; left: 8px; right: 8px; bottom: calc(8px + env(safe-area-inset-bottom, 0px)); z-index: 80; margin: 0; padding: .5rem .6rem; }
+  .journey.is-on .journey-bar, .journey.is-on .journey-text { display: none; }
+  .journey.is-on .journey-title { display: block; order: 2; font-size: .98rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; cursor: pointer; }
+  .journey.is-on .journey-text { order: 1; }
+  .journey.is-on.expanded .journey-text { display: block; }
+  .journey.is-on .journey-top { order: 3; }
+}
+@media (prefers-reduced-motion: reduce) { .journey-bar span { transition: none; } }
+/* flowmode:end */
+</style>
 </head>
 <body>
 
@@ -449,18 +471,6 @@ a.ts-chip:hover { border-color: var(--gold); }
         </svg>
       </div>
 
-      <div class="journey" id="journey" aria-live="polite">
-        <div class="journey-top">
-          <span class="journey-step" id="jStep">Step 1 of 10</span>
-          <div class="journey-nav">
-            <button class="btn" id="jPrev" type="button">Back</button>
-            <button class="btn btn-primary" id="jNext" type="button">Next step</button>
-          </div>
-        </div>
-        <div class="journey-bar"><span id="jBar"></span></div>
-        <h3 class="journey-title" id="jTitle"></h3>
-        <p class="journey-text" id="jText"></p>
-      </div>
 
       <div class="parts-rail-wrap">
         <button class="parts-rail-btn" id="partsRailPrev" type="button" aria-label="Scroll parts list back">‹</button>
@@ -471,6 +481,20 @@ a.ts-chip:hover { border-color: var(--gold); }
     </div>
 
     <aside class="panel" id="panel" aria-live="polite">
+      <div class="journey" id="journey" aria-live="polite">
+        <div class="journey-top">
+          <span class="journey-step" id="jStep">TOKEN FLOW · Step 1 of 10</span>
+          <div class="journey-nav">
+            <button class="btn" id="jPrev" type="button">Back</button>
+            <button class="btn btn-primary" id="jNext" type="button">Next step</button>
+            <button class="btn btn-primary" id="jExplore" type="button" hidden>Explore the parts</button>
+            <button class="btn" id="jExit" type="button">Exit</button>
+          </div>
+        </div>
+        <div class="journey-bar"><span id="jBar"></span></div>
+        <h3 class="journey-title" id="jTitle"></h3>
+        <p class="journey-text" id="jText"></p>
+      </div>
       <div class="panel-nav">
         <button class="btn" id="pPrev" type="button">Previous part</button>
         <button class="btn" id="pNext" type="button">Next part</button>
@@ -1175,7 +1199,7 @@ a.ts-chip:hover { border-color: var(--gold); }
   }
 
   document.querySelectorAll('.part').forEach((g) => {
-    g.addEventListener('click', () => { if (journeyOn) stopJourney(); select(g.dataset.id, { scroll: true }); });
+    g.addEventListener('click', () => { if (journeyOn) { stopJourney(); noteFlowEnded(); } select(g.dataset.id, { scroll: true }); });
     g.addEventListener('keydown', (e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); select(g.dataset.id, { scroll: true }); } });
   });
   document.querySelectorAll('.tab').forEach((t) => t.addEventListener('click', () => setView(t.dataset.view)));
@@ -1231,21 +1255,25 @@ a.ts-chip:hover { border-color: var(--gold); }
   function showStep(i) {
     jIndex = Math.max(0, Math.min(JOURNEY.length - 1, i));
     const s = JOURNEY[jIndex];
-    $('jStep').textContent = `Step ${jIndex + 1} of ${JOURNEY.length}`;
+    relabel();
+    $('journey').classList.remove('expanded');
+    fitFlowPad();
     $('jTitle').textContent = s.title;
     $('jText').textContent = s.text;
     $('jBar').style.width = ((jIndex + 1) / JOURNEY.length * 100) + '%';
     $('jPrev').disabled = jIndex === 0;
-    $('jNext').textContent = jIndex === JOURNEY.length - 1 ? 'Start again' : 'Next step';
+    $('jExplore').hidden = jIndex !== JOURNEY.length - 1;
     select(s.part, { noHash: true });
     moveDot(lenAt[jIndex]);
   }
   function startJourney() {
     journeyOn = true;
     $('journeyBtn').setAttribute('aria-pressed', 'true');
-    $('journeyBtn').textContent = 'Stop the token';
+    $('journeyBtn').textContent = 'Exit flow';
     $('journey').classList.add('is-on');
     $('view-fridge').classList.add('journey-on');
+    document.body.classList.add('flow-on');
+    fitFlowPad();
     dotLen = 0; showStep(0);
   }
   function stopJourney() {
@@ -1256,11 +1284,51 @@ a.ts-chip:hover { border-color: var(--gold); }
     $('journeyBtn').textContent = 'Follow a token';
     $('journey').classList.remove('is-on');
     $('view-fridge').classList.remove('journey-on');
+    document.body.classList.remove('flow-on');
+    document.body.style.paddingBottom = '';
     dot.setAttribute('cx', -20); dot.setAttribute('cy', -20);
   }
   $('journeyBtn').addEventListener('click', () => (journeyOn ? stopJourney() : startJourney()));
   $('jPrev').addEventListener('click', () => showStep(jIndex - 1));
   $('jNext').addEventListener('click', () => (jIndex === JOURNEY.length - 1 ? (dotLen = 0, showStep(0)) : showStep(jIndex + 1)));
+  const FLOW_LABEL = 'TOKEN FLOW';
+  $('jExit').addEventListener('click', stopJourney);
+  $('jExplore').addEventListener('click', stopJourney);
+  document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && journeyOn) stopJourney(); });
+  let toastTimer = 0;
+  function noteFlowEnded() {
+    const t = $('flowToast');
+    if (!t) return;
+    t.hidden = false;
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(() => { t.hidden = true; }, 2600);
+  }
+  const compactFlow = () => window.innerWidth < 640;
+  function relabel() {
+    $('jStep').textContent = compactFlow()
+      ? `${FLOW_LABEL} · Step ${jIndex + 1}/${JOURNEY.length}`
+      : `${FLOW_LABEL} · Step ${jIndex + 1} of ${JOURNEY.length}`;
+    $('jNext').textContent = jIndex === JOURNEY.length - 1 ? 'Start again'
+      : (compactFlow() ? 'Next' : 'Next step');
+  }
+  function fitFlowPad() {
+    if (!journeyOn) return;
+    if (compactFlow()) {
+      requestAnimationFrame(() => {
+        document.body.style.paddingBottom = ($('journey').offsetHeight + 8) + 'px';
+      });
+    } else {
+      document.body.style.paddingBottom = '';
+    }
+  }
+  window.addEventListener('resize', () => { if (journeyOn) { relabel(); fitFlowPad(); } });
+  $('jTitle').addEventListener('click', () => {
+    if (!compactFlow() || !journeyOn) return;
+    const box = $('journey');
+    box.classList.toggle('expanded');
+    $('jTitle').setAttribute('aria-expanded', String(box.classList.contains('expanded')));
+    fitFlowPad();
+  });
 
   /* ---------- Quiz ---------- */
   const quizBox = $('quizBox');
@@ -1314,5 +1382,6 @@ a.ts-chip:hover { border-color: var(--gold); }
 </script>
 
 <script src="../assets/signal-share.js"></script>
+<div class="flow-toast" id="flowToast" role="status" hidden>Token flow ended.</div>
 </body>
 </html>
