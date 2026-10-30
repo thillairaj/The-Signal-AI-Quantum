@@ -243,33 +243,14 @@ footer a { color: var(--gold); font-weight: 700; text-decoration: none; }
 </style>
 
 <style>
-/* tstrip:style:start */
 .topicbar { flex-wrap: wrap; }
 [hidden] { display: none !important; }
-.tstrip-row { flex: 1 1 100%; min-width: 0; max-width: 100%; display: flex; align-items: center; gap: 8px; border-top: 1px solid var(--bar-border, var(--border)); padding-top: 10px; }
-.ts-label { flex: 0 0 auto; color: var(--gold); font-size: 11px; font-weight: 800; letter-spacing: 2.5px; white-space: nowrap; }
-.ts-scroll { flex: 1; min-width: 0; display: flex; gap: 8px; overflow-x: auto; scrollbar-width: none; padding: 2px; }
-.ts-scroll::-webkit-scrollbar { display: none; }
-.ts-chip { flex: 0 0 auto; border: 1px solid var(--bar-border, var(--border)); background: var(--chip-bg, var(--surface)); color: var(--muted); font-size: 13.5px; font-weight: 700; padding: 7px 14px; border-radius: 999px; white-space: nowrap; }
-.ts-chip small { color: var(--gold); font-weight: 700; margin-right: 7px; letter-spacing: 1px; }
-.ts-chip.active { background: var(--gold); border-color: var(--gold); color: #fff; }
-.ts-chip.active small { color: #ffe9b0; }
-.ts-chip.soon { border-style: dashed; cursor: default; opacity: .75; }
-.ts-chip.next { border-style: dashed; cursor: default; opacity: .75; }
-.ts-state { font-size: 10.5px; font-weight: 800; letter-spacing: 1.5px; text-transform: uppercase; color: var(--gold); margin-left: 8px; }
-a.ts-chip { text-decoration: none; cursor: pointer; }
-a.ts-chip:hover { border-color: var(--gold); }
-.ts-btn { flex: 0 0 auto; width: 30px; height: 30px; border-radius: 50%; border: 1px solid var(--gold-dim, var(--border)); background: var(--chip-bg, var(--surface)); color: var(--gold); font-size: 16px; cursor: pointer; line-height: 1; padding: 0; }
-@media (max-width: 640px) { .ts-label { display: none; } }
-/* tstrip:style:end */
 </style>
 <style>
 /* explainer-layout:start */
 .topicbar{background-color:#FAF9F6}
 :root[data-theme="dark"] .topicbar{background-color:#2F353E}
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .topicbar{background-color:#2F353E}}
-.tstrip-row{background:var(--bar);border-top:none;border-bottom:1px solid var(--bar-border);padding:2px 18px 12px;backdrop-filter:blur(6px)}
-@media (max-width:640px){.tstrip-row{padding:0 12px 10px}}
 @media (min-width:960px){:root{--barh:76px}.panel{top:calc(var(--barh) + 10px)}.art svg{max-height:calc(100vh - var(--barh) - 64px)}}
 /* explainer-layout:end */
 </style>
@@ -295,6 +276,21 @@ body.flow-on #hint { display: none; }
 @media (prefers-reduced-motion: reduce) { .journey-bar span { transition: none; } }
 /* flowmode:end */
 </style>
+<style>
+/* expnav:style:start */
+.expnav { margin: 2.4rem 0 0; }
+.expnav-pos { text-align: center; color: var(--muted); font-size: .9rem; margin: 0 0 .8rem; }
+.expnav-row { display: flex; gap: .6rem; }
+.expnav-btn { flex: 1; display: flex; align-items: center; justify-content: center; text-align: center; border: 1px solid var(--gold-dim); background: var(--chip-bg); color: var(--gold); border-radius: 10px; padding: .7rem .8rem; font-weight: 600; font-size: .95rem; text-decoration: none; }
+.expnav-btn:hover { border-color: var(--gold); }
+.expnav-btn.is-disabled { opacity: .45; color: var(--muted); border-color: var(--border); cursor: default; pointer-events: none; }
+@media (max-width: 640px) {
+  .expnav-row { flex-wrap: wrap; }
+  .expnav-btn { flex: 1 1 40%; }
+  .expnav-btn.expnav-all { flex: 1 1 100%; order: 3; }
+}
+/* expnav:style:end */
+</style>
 </head>
 <body>
 
@@ -305,21 +301,13 @@ body.flow-on #hint { display: none; }
   <p>You press enter and a page appears, usually in less than a second. In that blink, your request crosses the planet and back, passes through a dozen specialised systems, and returns as a page your browser assembles on the fly. Tap any part to follow it, in simple words first and then in more depth.</p>
 </header>
 <div class="topicbar">
-  <a class="navcard back" href="../#learn-explainers"><span class="nc-dir">← Back to</span><span class="nc-title">Learning Spaces</span></a>
+  <a class="navcard back" href="cloud-devops.html"><span class="nc-dir">← Back to</span><span class="nc-title">Cloud &amp; DevOps Explainers</span></a>
   <div class="tabs" role="tablist" aria-label="View">
     <button class="tab" role="tab" id="tab-fridge" aria-selected="true" aria-controls="view-fridge" data-view="fridge">The way out</button>
     <button class="tab" role="tab" id="tab-chip" aria-selected="false" aria-controls="view-chip" data-view="chip">The way back</button>
   </div>
   <button class="journey-btn" id="journeyBtn" type="button" aria-pressed="false">Follow a request</button>
 </div>
-  <!-- tstrip:start -->
-  <div class="tstrip-row">
-    <span class="ts-label">CLOUD &amp; DEVOPS EXPLAINERS</span>
-    <button class="ts-btn" id="tsPrev" type="button" aria-label="Scroll topics back">‹</button>
-    <div class="ts-scroll" id="tsScroll"><span class="ts-chip active" aria-current="true"><small>01</small>Web request journey</span><span class="ts-chip soon"><small>02</small>Cloud data centre<span class="ts-state">soon</span></span><span class="ts-chip soon"><small>03</small>Kubernetes cluster<span class="ts-state">soon</span></span></div>
-    <button class="ts-btn" id="tsNext" type="button" aria-label="Scroll topics forward">›</button>
-  </div>
-<!-- tstrip:end -->
 
 <main>
 
@@ -591,6 +579,16 @@ body.flow-on #hint { display: none; }
     <p class="checked">Researched and compiled for The Signal. Figures last checked 29 October 2026.</p>
   </section>
 
+<!-- expnav:start -->
+<nav class="expnav" aria-label="Explainer topic navigation">
+  <p class="expnav-pos">Topic 1 of 1 · Cloud &amp; DevOps Explainers</p>
+  <div class="expnav-row">
+    <a class="expnav-btn is-disabled" aria-disabled="true" tabindex="-1">← Previous topic</a>
+    <a class="expnav-btn expnav-all" href="cloud-devops.html">All Cloud &amp; DevOps Explainers</a>
+    <a class="expnav-btn is-disabled" aria-disabled="true" tabindex="-1">Next topic →</a>
+  </div>
+</nav>
+<!-- expnav:end -->
 </main>
 
 <footer><div class="rule"></div>Curated by Thillai Raj Thanam Jeya Veera Raj · <a class="li-btn" href="https://www.linkedin.com/in/thillairaj" target="_blank" rel="noopener"><span class="li-badge" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.55V9h3.57v11.45z"/></svg></span><span class="li-txt"><span class="li-dir">Follow on</span><span class="li-name">LinkedIn</span></span></a></footer>
@@ -1371,14 +1369,6 @@ body.flow-on #hint { display: none; }
 })();
 </script>
 
-<script>
-(() => {
-  const sc = document.getElementById('tsScroll');
-  if (!sc) return;
-  document.getElementById('tsPrev').addEventListener('click', () => sc.scrollBy({ left: -sc.clientWidth * .7, behavior: 'smooth' }));
-  document.getElementById('tsNext').addEventListener('click', () => sc.scrollBy({ left: sc.clientWidth * .7, behavior: 'smooth' }));
-})();
-</script>
 
 <script src="../assets/signal-share.js"></script>
 <div class="flow-toast" id="flowToast" role="status" hidden>Request flow ended.</div>
