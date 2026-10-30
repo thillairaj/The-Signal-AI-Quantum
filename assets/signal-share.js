@@ -10,13 +10,13 @@ window.SignalShare = (function () {
   ];
   var THEME_OPTIONS = [
     { v: "obsidian", label: "Obsidian Gold" },
-    { v: "ivory", label: "Ivory" },
-    { v: "midnight", label: "Deep Tech Blue" }
+    { v: "aubergine", label: "Aubergine" },
+    { v: "ivory", label: "Ivory" }
   ];
   var PALETTES = {
     obsidian: { bg0: "#151923", bg1: "#0d0f14", accent: "#d4af6a", dim: "rgba(212,175,106,.5)", head: "#ffffff", body: "#c3ccd9", foot: "#8fa0b5" },
-    ivory: { bg0: "#fffdf9", bg1: "#f0ebdf", accent: "#a8842f", dim: "rgba(168,132,47,.45)", head: "#171b24", body: "#334052", foot: "#6b7280" },
-    midnight: { bg0: "#122c55", bg1: "#0b1f3b", accent: "#d4af6a", dim: "rgba(212,175,106,.5)", head: "#ffffff", body: "#c3ccd9", foot: "#8fa0b5" }
+    aubergine: { bg0: "#2C1734", bg1: "#160A1B", accent: "#E0B45A", dim: "rgba(224,180,90,.5)", head: "#FBF3FF", body: "#D9C8DE", foot: "#E0B45A" },
+    ivory: { bg0: "#fffdf9", bg1: "#f0ebdf", accent: "#a8842f", dim: "rgba(168,132,47,.45)", head: "#171b24", body: "#334052", foot: "#6b7280" }
   };
   function isMobile() { return /Android|iPhone|iPad|iPod/i.test(navigator.userAgent || ""); }
   function copy(text) {

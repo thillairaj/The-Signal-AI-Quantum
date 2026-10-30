@@ -5,6 +5,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Interactive Explainers · The Signal</title>
 <meta name="description" content="Tap through real machines and systems, part by part, with a simple and a deeper explanation for every part.">
+<meta property="og:image" content="https://thillairaj.github.io/The-Signal-AI-Quantum/assets/og/explainers/hub-index.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
 <meta property="og:title" content="Interactive Explainers · The Signal">
 <meta property="og:description" content="Tap through real machines and systems, part by part, with a simple and a deeper explanation for every part.">
 <meta property="og:type" content="website">
@@ -96,6 +99,24 @@ footer a { color: var(--gold); font-weight: 700; text-decoration: none; }
   .topicbar { position: static; }
 }
 </style>
+<style>
+/* mainshare:style:start */
+.ss-share-btn{display:inline-flex;align-items:center;gap:7px;padding:8px 15px;border-radius:999px;border:1px solid rgba(135,135,135,.5);background:rgba(135,135,135,.10);color:inherit;font:inherit;font-size:13.5px;font-weight:600;cursor:pointer;white-space:nowrap}
+.ss-share-btn svg{width:15px;height:15px;flex:0 0 auto}
+.pname-row{display:flex;align-items:center;gap:.6rem;flex-wrap:wrap}
+.pname-row h2{margin-right:auto}
+body.flow-on .pname-row .ss-share-btn{display:none}
+@media (max-width:640px){
+  .main-share-slot{order:1;margin-left:auto;display:flex;align-items:center}
+  .topicbar .tabs{order:2}
+  .topicbar .journey-btn{order:3}
+  .main-share-btn{width:38px;height:38px;padding:0;border-radius:50%;justify-content:center}
+  .main-share-btn span{display:none}
+  .main-share-btn svg{width:17px;height:17px}
+  header .kicker{padding-left:52px;padding-right:52px}
+}
+/* mainshare:style:end */
+</style>
 </head>
 <body>
 
@@ -107,6 +128,7 @@ footer a { color: var(--gold); font-weight: 700; text-decoration: none; }
 </header>
 <div class="topicbar">
   <a class="navcard back" href="../#learn-explainers"><span class="nc-dir">← Back to</span><span class="nc-title">Learning Spaces</span></a>
+  <span class="main-share-slot" id="mainShare"></span>
 </div>
 
 <main>
@@ -154,6 +176,26 @@ footer a { color: var(--gold); font-weight: 700; text-decoration: none; }
     try { localStorage.setItem('aisignal_theme', next); } catch (e) {}
     sync();
   });
+})();
+</script>
+<script src="../assets/signal-share.js"></script>
+<script>
+(() => {
+  const slot = document.getElementById('mainShare');
+  if (!slot || !window.SignalShare) return;
+  const btn = document.createElement('button');
+  btn.type = 'button';
+  btn.className = 'ss-share-btn main-share-btn';
+  btn.setAttribute('aria-label', 'Share');
+  btn.title = 'Share';
+  btn.innerHTML = SignalShare.ICONS.share + '<span>Share</span>';
+  btn.addEventListener('click', () => {
+    if (window.__expOpenMain) return window.__expOpenMain(btn);
+    const url = SignalShare.BASE + '/explainers/' + location.pathname.split('/').pop();
+    const caption = SignalShare.buildCaption(["Interactive Explainers", "Tap through real machines and systems, part by part, with a simple and a deeper explanation for every part.", 'Explore it free, no sign-up:\n' + url, "#TheSignal"]);
+    SignalShare.openPanel({ title: "Interactive Explainers", line: "Tap through real machines and systems, part by part, with a simple and a deeper explanation for every part.", link: url, caption: caption, tags: "#TheSignal", image: null }, btn);
+  });
+  slot.appendChild(btn);
 })();
 </script>
 </body>

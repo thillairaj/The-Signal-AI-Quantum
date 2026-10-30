@@ -5,6 +5,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>AI Explainers · The Signal</title>
 <meta name="description" content="AI Explainers on The Signal: tap through AI systems part by part, starting with how an LLM answers a prompt.">
+<meta property="og:image" content="https://thillairaj.github.io/The-Signal-AI-Quantum/assets/og/explainers/hub-ai.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
 <meta property="og:type" content="website">
 <meta property="og:title" content="AI Explainers">
 <meta property="og:description" content="Interactive explainers on AI systems, part by part.">
@@ -232,6 +235,24 @@
 @media (prefers-reduced-motion: reduce) { .open-explainer, .oe-pill { animation: none; } }
 @media (max-width: 640px) { .topicbar { position: static; } }
 </style>
+<style>
+/* mainshare:style:start */
+.ss-share-btn{display:inline-flex;align-items:center;gap:7px;padding:8px 15px;border-radius:999px;border:1px solid rgba(135,135,135,.5);background:rgba(135,135,135,.10);color:inherit;font:inherit;font-size:13.5px;font-weight:600;cursor:pointer;white-space:nowrap}
+.ss-share-btn svg{width:15px;height:15px;flex:0 0 auto}
+.pname-row{display:flex;align-items:center;gap:.6rem;flex-wrap:wrap}
+.pname-row h2{margin-right:auto}
+body.flow-on .pname-row .ss-share-btn{display:none}
+@media (max-width:640px){
+  .main-share-slot{order:1;margin-left:auto;display:flex;align-items:center}
+  .topicbar .tabs{order:2}
+  .topicbar .journey-btn{order:3}
+  .main-share-btn{width:38px;height:38px;padding:0;border-radius:50%;justify-content:center}
+  .main-share-btn span{display:none}
+  .main-share-btn svg{width:17px;height:17px}
+  header .kicker{padding-left:52px;padding-right:52px}
+}
+/* mainshare:style:end */
+</style>
 </head>
 <body>
 
@@ -250,6 +271,7 @@
   <label class="tsearch"><input id="topic-search" type="search" placeholder="Search topics…" aria-label="Search topics"></label>
   <a class="navcard sib prev" href="quantum.html"><span class="nc-dir">← Previous</span><span class="nc-title">Quantum Explainers</span></a>
   <a class="navcard sib next" href="cloud-devops.html"><span class="nc-dir">Next →</span><span class="nc-title">Cloud &amp; DevOps Explainers</span></a>
+  <span class="main-share-slot" id="mainShare"></span>
 </div>
 
 <main>
@@ -400,6 +422,26 @@ tt.addEventListener('click', () => {
   try { localStorage.setItem('deck_theme', next); } catch (e) {}
   syncIcon();
 });
+</script>
+<script src="../assets/signal-share.js"></script>
+<script>
+(() => {
+  const slot = document.getElementById('mainShare');
+  if (!slot || !window.SignalShare) return;
+  const btn = document.createElement('button');
+  btn.type = 'button';
+  btn.className = 'ss-share-btn main-share-btn';
+  btn.setAttribute('aria-label', 'Share');
+  btn.title = 'Share';
+  btn.innerHTML = SignalShare.ICONS.share + '<span>Share</span>';
+  btn.addEventListener('click', () => {
+    if (window.__expOpenMain) return window.__expOpenMain(btn);
+    const url = SignalShare.BASE + '/explainers/' + location.pathname.split('/').pop();
+    const caption = SignalShare.buildCaption(["The AI Explainers", "AI Explainers on The Signal: tap through AI systems part by part, starting with how an LLM answers a prompt.", 'Explore it free, no sign-up:\n' + url, "#TheSignal #AI"]);
+    SignalShare.openPanel({ title: "The AI Explainers", line: "AI Explainers on The Signal: tap through AI systems part by part, starting with how an LLM answers a prompt.", link: url, caption: caption, tags: "#TheSignal #AI", image: null }, btn);
+  });
+  slot.appendChild(btn);
+})();
 </script>
 </body>
 </html>

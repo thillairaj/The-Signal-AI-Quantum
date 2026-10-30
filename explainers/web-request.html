@@ -5,6 +5,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Journey of a web request · The Signal</title>
 <meta name="description" content="An interactive, part by part explainer of what happens between pressing enter and the page appearing: DNS, connections, TLS, servers, databases and the trip back.">
+<meta property="og:image" content="https://thillairaj.github.io/The-Signal-AI-Quantum/assets/og/explainers/web-request.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
 <meta property="og:title" content="Journey of a web request">
 <meta property="og:description" content="Follow one web request across the internet and back, with a simple and a deeper explanation for every part.">
 <meta property="og:type" content="article">
@@ -291,6 +294,24 @@ body.flow-on #hint { display: none; }
 }
 /* expnav:style:end */
 </style>
+<style>
+/* mainshare:style:start */
+.ss-share-btn{display:inline-flex;align-items:center;gap:7px;padding:8px 15px;border-radius:999px;border:1px solid rgba(135,135,135,.5);background:rgba(135,135,135,.10);color:inherit;font:inherit;font-size:13.5px;font-weight:600;cursor:pointer;white-space:nowrap}
+.ss-share-btn svg{width:15px;height:15px;flex:0 0 auto}
+.pname-row{display:flex;align-items:center;gap:.6rem;flex-wrap:wrap}
+.pname-row h2{margin-right:auto}
+body.flow-on .pname-row .ss-share-btn{display:none}
+@media (max-width:640px){
+  .main-share-slot{order:1;margin-left:auto;display:flex;align-items:center}
+  .topicbar .tabs{order:2}
+  .topicbar .journey-btn{order:3}
+  .main-share-btn{width:38px;height:38px;padding:0;border-radius:50%;justify-content:center}
+  .main-share-btn span{display:none}
+  .main-share-btn svg{width:17px;height:17px}
+  header .kicker{padding-left:52px;padding-right:52px}
+}
+/* mainshare:style:end */
+</style>
 </head>
 <body>
 
@@ -307,6 +328,7 @@ body.flow-on #hint { display: none; }
     <button class="tab" role="tab" id="tab-chip" aria-selected="false" aria-controls="view-chip" data-view="chip">The way back</button>
   </div>
   <button class="journey-btn" id="journeyBtn" type="button" aria-pressed="false">Follow a request</button>
+  <span class="main-share-slot" id="mainShare"></span>
 </div>
 
 <main>
@@ -490,7 +512,7 @@ body.flow-on #hint { display: none; }
           <p class="where" id="pWhere"></p>
           <span class="temp-chip" id="pTemp"></span>
         </div>
-        <h2 id="pName"></h2>
+        <div class="pname-row"><h2 id="pName"></h2><button class="ss-share-btn" id="pShareBtn" type="button">Share this part</button></div>
         <div class="level">
           <h3>In simple words</h3>
           <p id="pSimple"></p>
@@ -502,11 +524,6 @@ body.flow-on #hint { display: none; }
         <ul class="facts" id="pFacts"></ul>
         <p class="panel-src" id="pSrc"></p>
         <button class="btn open-chip" id="openChip" type="button" hidden>Open the way back</button>
-      </div>
-      <div class="panel-actions">
-        <span class="spacer"></span>
-        <span class="copied" id="copied">Link copied</span>
-        <button class="btn ss-share-btn" id="pShareBtn" type="button">Share</button>
       </div>
     </aside>
   </div>
@@ -1206,19 +1223,241 @@ body.flow-on #hint { display: none; }
   $('pPrev').addEventListener('click', () => step(-1));
   $('pNext').addEventListener('click', () => step(1));
 
+  /* ---------- Share cards (explainer-share:start) ---------- */
+  function expData() { return (window.EXPLAINER_SHARE_DATA || { pages: {} }).pages[location.pathname.split('/').pop()] || null; }
+  function expBadge() { return (window.EXPLAINER_SHARE_DATA || {}).badge || 'TRT'; }
+  function expPageUrl() { return SignalShare.BASE + '/explainers/' + location.pathname.split('/').pop(); }
+  function expHexRgb(h) { h = h.replace('#', ''); return [parseInt(h.substr(0, 2), 16), parseInt(h.substr(2, 2), 16), parseInt(h.substr(4, 2), 16)]; }
+  function expRelLum(rgb) { function f(c) { c /= 255; return c <= 0.03928 ? c / 12.92 : Math.pow((c + 0.055) / 1.055, 2.4); } return 0.2126 * f(rgb[0]) + 0.7152 * f(rgb[1]) + 0.0722 * f(rgb[2]); }
+  function expContrast(a, b) { var la = expRelLum(a), lb = expRelLum(b); return (Math.max(la, lb) + 0.05) / (Math.min(la, lb) + 0.05); }
+  function expKickerColor(hex, bgs, lighten) {
+    var c = expHexRgb(hex); var targets = bgs.map(expHexRgb);
+    function ok(col) { return targets.every(function (bg) { return expContrast(col, bg) >= 4.55; }); }
+    if (ok(c)) return hex;
+    for (var s = 0.05; s <= 1.001; s += 0.05) {
+      var m = c.map(function (v) { return Math.round(lighten ? v + (255 - v) * s : v * (1 - s)); });
+      if (ok(m)) return '#' + m.map(function (v) { return ('0' + v.toString(16)).slice(-2); }).join('');
+    }
+    return lighten ? '#ffffff' : '#000000';
+  }
+  function expKicker(theme) {
+    if (!expData()) return '#d4af6a';
+    const P = SignalShare.PALETTES[theme] || SignalShare.PALETTES.obsidian;
+    return expKickerColor(expData().familyColor, [P.bg0, P.bg1], theme !== 'ivory');
+  }
+  window.__expKickerColor = expKicker;
+  function expViewSvg(name) { const v = document.getElementById('view-' + name); return v ? v.querySelector('svg') : null; }
+  function expFirstSvg() { const keys = Object.keys(ORDER || {}); return (keys.length && expViewSvg(keys[0])) || document.querySelector('.art svg'); }
+  function expPartSvg(partId) {
+    const keys = Object.keys(ORDER || {});
+    for (const k of keys) if (ORDER[k].indexOf(partId) >= 0) return expViewSvg(k);
+    return expFirstSvg();
+  }
+  function expThemedSvg(svgEl, dark, highlightId) {
+    if (!svgEl) return '';
+    const root = document.documentElement;
+    const prev = root.getAttribute('data-theme');
+    root.setAttribute('data-theme', dark ? 'dark' : 'light');
+    const clone = svgEl.cloneNode(true);
+    const liveAll = [svgEl].concat(Array.from(svgEl.querySelectorAll('*')));
+    const copyAll = [clone].concat(Array.from(clone.querySelectorAll('*')));
+    const props = ['fill', 'stroke', 'stroke-width', 'stroke-opacity', 'fill-opacity', 'opacity', 'font-size', 'font-family', 'font-weight', 'letter-spacing', 'stop-color', 'stop-opacity'];
+    for (let i = 0; i < copyAll.length; i++) {
+      const src = liveAll[i], el = copyAll[i];
+      if (!src || !el || !el.style) continue;
+      const cs = getComputedStyle(src);
+      props.forEach(function (pr) { const v = cs.getPropertyValue(pr); if (v) el.style.setProperty(pr, v); });
+      el.removeAttribute('class');
+    }
+    if (prev) root.setAttribute('data-theme', prev); else root.removeAttribute('data-theme');
+    if (highlightId) {
+      Array.from(clone.querySelectorAll('g')).forEach(function (g) {
+        if (g.dataset && g.dataset.id) g.style.opacity = (g.dataset.id === highlightId) ? '1' : '.18';
+      });
+    }
+    const vb = svgEl.viewBox && svgEl.viewBox.baseVal;
+    if (vb && vb.width) { clone.setAttribute('width', vb.width); clone.setAttribute('height', vb.height); }
+    clone.setAttribute('xmlns', 'http://www.w3.org/2000/svg');
+    return new XMLSerializer().serializeToString(clone);
+  }
+  window.__expSvgText = function (kind, theme, partId) {
+    const dark = theme !== 'ivory';
+    return expThemedSvg(kind === 'part' ? expPartSvg(partId || current) : expFirstSvg(), dark, kind === 'part' ? (partId || current) : null);
+  };
+  function expSvgImage(svgText) {
+    return new Promise(function (resolve) {
+      if (!svgText) return resolve(null);
+      const img = new Image();
+      let url;
+      try { url = URL.createObjectURL(new Blob([svgText], { type: 'image/svg+xml;charset=utf-8' })); }
+      catch (e) { return resolve(null); }
+      const done = function (v) { try { URL.revokeObjectURL(url); } catch (e) {} resolve(v); };
+      const timer = setTimeout(function () { done(null); }, 1500);
+      img.onload = function () { clearTimeout(timer); done(img); };
+      img.onerror = function () { clearTimeout(timer); done(null); };
+      img.src = url;
+    });
+  }
+  function expWrap(ctx, text, maxW) {
+    const words = String(text || '').split(/\s+/); const lines = []; let line = '';
+    for (const w of words) { const t = line ? line + ' ' + w : w; if (ctx.measureText(t).width > maxW && line) { lines.push(line); line = w; } else line = t; }
+    if (line) lines.push(line); return lines;
+  }
+  function expRoundRect(ctx, x, y, w, h, r) {
+    ctx.beginPath(); ctx.moveTo(x + r, y);
+    ctx.arcTo(x + w, y, x + w, y + h, r); ctx.arcTo(x + w, y + h, x, y + h, r);
+    ctx.arcTo(x, y + h, x, y, r); ctx.arcTo(x, y, x + w, y, r); ctx.closePath();
+  }
+  function expDrawHook(ctx, hook, x, y, maxW, P) {
+    ctx.font = '700 54px Georgia, "Times New Roman", serif';
+    const words = String(hook).split(/\s+/);
+    const lines = []; let lineWords = [];
+    for (const w of words) {
+      const t = lineWords.concat([w]).join(' ');
+      if (ctx.measureText(t).width > maxW && lineWords.length) { lines.push(lineWords); lineWords = [w]; } else lineWords.push(w);
+    }
+    if (lineWords.length) lines.push(lineWords);
+    let idx = 0;
+    lines.slice(0, 3).forEach(function (lw) {
+      let cx = x;
+      lw.forEach(function (w) {
+        ctx.fillStyle = (idx >= words.length - 2) ? P.accent : P.head;
+        ctx.fillText(w, cx, y);
+        cx += ctx.measureText(w + ' ').width;
+        idx++;
+      });
+      y += 66;
+    });
+    return y;
+  }
+  function expDrawChips(ctx, square, P, y, M, CW) {
+    const items = [Object.keys(PARTS).length + ' parts to tap',
+      JOURNEY.length + '-step ' + expData().noun + ' journey',
+      QUIZ.length + '-question quiz', 'Free, no sign-up'];
+    if (square) {
+      ctx.font = '600 22px Arial, sans-serif';
+      ctx.fillStyle = P.body; ctx.textAlign = 'center';
+      ctx.fillText(items.join('  ·  '), M + CW / 2, y + 28);
+      ctx.textAlign = 'left'; return;
+    }
+    let fs = 23;
+    ctx.font = '600 ' + fs + 'px Arial, sans-serif';
+    let total = items.reduce(function (a, t) { return a + ctx.measureText(t).width + 36; }, 0) + 14 * (items.length - 1);
+    if (total > CW) { fs = 20; ctx.font = '600 ' + fs + 'px Arial, sans-serif'; }
+    let x = M;
+    items.forEach(function (t) {
+      const w = ctx.measureText(t).width + 36;
+      expRoundRect(ctx, x, y, w, 46, 23); ctx.strokeStyle = P.dim; ctx.stroke();
+      ctx.fillStyle = P.body; ctx.fillText(t, x + 18, y + 30);
+      x += w + 14;
+    });
+  }
+  function expDrawFooter(ctx, P, W, H, M) {
+    const y = H - 96;
+    ctx.strokeStyle = P.dim; ctx.beginPath(); ctx.moveTo(M, y); ctx.lineTo(W - M, y); ctx.stroke();
+    ctx.fillStyle = P.foot; ctx.font = '600 19px Arial, sans-serif';
+    try { ctx.letterSpacing = '2px'; } catch (e) {}
+    ctx.fillText('THE SIGNAL · INTERACTIVE EXPLAINERS', M, y + 38);
+    try { ctx.letterSpacing = '0px'; } catch (e) {}
+    ctx.fillStyle = P.accent; ctx.font = 'italic 600 24px Georgia, serif';
+    ctx.fillText(expData().title, M, y + 72);
+    expRoundRect(ctx, W - M - 52, y + 20, 52, 52, 12); ctx.strokeStyle = P.accent; ctx.stroke();
+    ctx.fillStyle = P.accent; ctx.font = '700 19px Georgia, serif'; ctx.textAlign = 'center';
+    ctx.fillText(expBadge(), W - M - 26, y + 55); ctx.textAlign = 'left';
+  }
+  function drawExplainerCard(kind, size, theme, partId) {
+    const P = (SignalShare.PALETTES || {})[theme] || SignalShare.PALETTES.obsidian;
+    const dark = theme !== 'ivory';
+    const dims = (size || '1080x1350').split('x'); const W = +dims[0], H = +dims[1];
+    const square = H <= 1080;
+    const cv = document.createElement('canvas'); cv.width = W; cv.height = H;
+    const ctx = cv.getContext('2d');
+    const M = 64, CW = W - 2 * M;
+    const grad = ctx.createLinearGradient(0, 0, W * 0.35, H);
+    grad.addColorStop(0, P.bg0); grad.addColorStop(1, P.bg1);
+    ctx.fillStyle = grad; ctx.fillRect(0, 0, W, H);
+    ctx.fillStyle = expKicker(theme); ctx.font = '700 21px Arial, sans-serif';
+    try { ctx.letterSpacing = '3px'; } catch (e) {}
+    ctx.fillText('INTERACTIVE EXPLAINER · ' + expData().family, M, 92);
+    try { ctx.letterSpacing = '0px'; } catch (e) {}
+    let y = 158;
+    let svgEl;
+    if (kind === 'main') {
+      y = expDrawHook(ctx, expData().hook, M, y, CW, P);
+      ctx.fillStyle = P.body; ctx.font = '27px Georgia, serif';
+      expWrap(ctx, expData().summary, CW).slice(0, 2).forEach(function (ln) { ctx.fillText(ln, M, y); y += 37; });
+      y += 12;
+      svgEl = expFirstSvg();
+    } else {
+      const p = PARTS[partId || current];
+      ctx.fillStyle = P.head; ctx.font = '700 52px Georgia, serif';
+      expWrap(ctx, p.name, CW).slice(0, 2).forEach(function (ln) { ctx.fillText(ln, M, y); y += 62; });
+      if (p.temp) {
+        ctx.font = '600 22px Arial, sans-serif';
+        const tw = ctx.measureText(p.temp).width + 36;
+        expRoundRect(ctx, M, y + 2, tw, 42, 21); ctx.strokeStyle = P.dim; ctx.stroke();
+        ctx.fillStyle = P.body; ctx.fillText(p.temp, M + 18, y + 31);
+        y += 62;
+      }
+      ctx.fillStyle = P.body; ctx.font = '27px Georgia, serif';
+      expWrap(ctx, p.simple, CW).slice(0, square ? 3 : 4).forEach(function (ln) { ctx.fillText(ln, M, y + 6); y += 37; });
+      y += 14;
+      svgEl = expPartSvg(partId || current);
+    }
+    const chipsH = kind === 'main' ? (square ? 46 : 60) : 12;
+    const footTop = H - 96;
+    const diaBottom = footTop - chipsH - 26;
+    const svgText = expThemedSvg(svgEl, dark, kind === 'part' ? (partId || current) : null);
+    return expSvgImage(svgText).then(function (img) {
+      const dx = M, dy = y, dw = CW, dh = Math.max(120, diaBottom - dy);
+      expRoundRect(ctx, dx, dy, dw, dh, 18);
+      ctx.fillStyle = dark ? 'rgba(255,255,255,.05)' : 'rgba(23,27,36,.045)';
+      ctx.fill(); ctx.strokeStyle = P.dim; ctx.stroke();
+      if (img) {
+        const vb = svgEl.viewBox.baseVal;
+        const pad = 22;
+        const sc = Math.min((dw - 2 * pad) / vb.width, (dh - 2 * pad) / vb.height);
+        const w2 = vb.width * sc, h2 = vb.height * sc;
+        ctx.drawImage(img, dx + (dw - w2) / 2, dy + (dh - h2) / 2, w2, h2);
+      }
+      if (kind === 'main') expDrawChips(ctx, square, P, footTop - chipsH - 4, M, CW);
+      expDrawFooter(ctx, P, W, H, M);
+      return new Promise(function (res) { cv.toBlob(res, 'image/png'); });
+    });
+  }
+  window.__expDrawCard = function (kind, size, theme) { return drawExplainerCard(kind, size, theme, current); };
+  function expMainSpec() {
+    const url = expPageUrl();
+    const tags = '#TheSignal ' + expData().hashtag;
+    const mid = 'Tap any of its ' + Object.keys(PARTS).length + ' parts, follow the ' + expData().noun + ' journey, then test yourself.';
+    const caption = SignalShare.buildCaption([expData().hook, expData().summary, mid,
+      'Explore it free, no sign-up:\n' + url, tags]);
+    return { title: expData().title, line: expData().summary, link: url, caption: caption, tags: tags,
+      image: { kind: 'render', filename: 'the-signal-explainer.png',
+        render: function (s, t) { return drawExplainerCard('main', s, t); } } };
+  }
+  window.__expOpenMain = function (btn) {
+    if (window.SignalShare && expData()) SignalShare.openPanel(expMainSpec(), btn);
+  };
   const pShareBtn = $('pShareBtn');
   if (window.SignalShare && pShareBtn) {
-    pShareBtn.innerHTML = SignalShare.ICONS.share + '<span>Share</span>';
+    pShareBtn.innerHTML = SignalShare.ICONS.share + '<span>Share this part</span>';
   }
   $('pShareBtn').addEventListener('click', () => {
-    const url = location.href.split('#')[0] + '#' + current;
     const p = PARTS[current];
-    const first = (p.simple || p.deep || '').split(/(?<=[.!?])\s+/)[0];
+    if (!p) return;
+    const url = location.href.split('#')[0] + '#' + current;
     if (window.SignalShare) {
-      const caption = SignalShare.buildCaption([p.name, first, 'Explore the full explainer, free, no sign-up:\n' + url, '#TheSignal #CloudComputing']);
-      SignalShare.openPanel({ title: p.name, line: first, link: url, caption: caption, tags: '#TheSignal #CloudComputing', image: null }, pShareBtn);
+      const d = expData();
+      const tags = ('#TheSignal ' + (d ? d.hashtag : '')).trim();
+      const caption = SignalShare.buildCaption([p.name, p.simple,
+        'See it inside the full interactive explainer, free:\n' + url, tags]);
+      SignalShare.openPanel({ title: p.name, line: p.simple, link: url, caption: caption, tags: tags,
+        image: d ? { kind: 'render', filename: 'the-signal-explainer-part.png',
+          render: function (s, t) { return drawExplainerCard('part', s, t, current); } } : null }, pShareBtn);
     }
   });
+  /* ---------- Share cards (explainer-share:end) ---------- */
 
   /* ---------- Journey ---------- */
   const path = $('signalPath'), dot = $('pulseDot');
@@ -1370,7 +1609,27 @@ body.flow-on #hint { display: none; }
 </script>
 
 
+<script src="../assets/explainer-share-data.js"></script>
 <script src="../assets/signal-share.js"></script>
 <div class="flow-toast" id="flowToast" role="status" hidden>Request flow ended.</div>
+<script>
+(() => {
+  const slot = document.getElementById('mainShare');
+  if (!slot || !window.SignalShare) return;
+  const btn = document.createElement('button');
+  btn.type = 'button';
+  btn.className = 'ss-share-btn main-share-btn';
+  btn.setAttribute('aria-label', 'Share');
+  btn.title = 'Share';
+  btn.innerHTML = SignalShare.ICONS.share + '<span>Share</span>';
+  btn.addEventListener('click', () => {
+    if (window.__expOpenMain) return window.__expOpenMain(btn);
+    const url = SignalShare.BASE + '/explainers/' + location.pathname.split('/').pop();
+    const caption = SignalShare.buildCaption(["Journey of a Web Request", "You press enter and a page appears, usually in less than a second.", 'Explore it free, no sign-up:\n' + url, "#TheSignal #CloudComputing"]);
+    SignalShare.openPanel({ title: "Journey of a Web Request", line: "You press enter and a page appears, usually in less than a second.", link: url, caption: caption, tags: "#TheSignal #CloudComputing", image: null }, btn);
+  });
+  slot.appendChild(btn);
+})();
+</script>
 </body>
 </html>
