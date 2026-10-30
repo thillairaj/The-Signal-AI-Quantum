@@ -166,6 +166,26 @@ html[data-theme="light"] .kicker{color:#046fa2}
 html[data-theme="light"] h1 span{color:#886302}
 html[data-theme="light"] .card h4{color:#0479b1}
 html[data-theme="light"] .example h4{color:#906903}
+#detail .d-cat[data-cat="algo"]{color:#1ba44e}
+html[data-theme="light"] #detail .d-cat[data-cat="algo"]{color:#15803d}
+#detail .d-cat[data-cat="apps"]{color:#65a30d}
+html[data-theme="light"] #detail .d-cat[data-cat="apps"]{color:#4f800a}
+#detail .d-cat[data-cat="basics"]{color:#0e9e91}
+html[data-theme="light"] #detail .d-cat[data-cat="basics"]{color:#0b7f75}
+#detail .d-cat[data-cat="biz"]{color:#d97706}
+html[data-theme="light"] #detail .d-cat[data-cat="biz"]{color:#af6005}
+#detail .d-cat[data-cat="circuits"]{color:#857fed}
+html[data-theme="light"] #detail .d-cat[data-cat="circuits"]{color:#4f46e5}
+#detail .d-cat[data-cat="comms"]{color:#0899bb}
+html[data-theme="light"] #detail .d-cat[data-cat="comms"]{color:#077d99}
+#detail .d-cat[data-cat="error"]{color:#e55f5f}
+html[data-theme="light"] #detail .d-cat[data-cat="error"]{color:#dc2626}
+#detail .d-cat[data-cat="hardware"]{color:#f25b0c}
+html[data-theme="light"] #detail .d-cat[data-cat="hardware"]{color:#c3490a}
+#detail .d-cat[data-cat="phenom"]{color:#0296e2}
+html[data-theme="light"] #detail .d-cat[data-cat="phenom"]{color:#0278b6}
+#detail .d-cat[data-cat="qai"]{color:#d752e3}
+html[data-theme="light"] #detail .d-cat[data-cat="qai"]{color:#a21caf}
 /* themefix:end */
 </style>
 </head>
@@ -235,16 +255,16 @@ html[data-theme="light"] .example h4{color:#906903}
 
 <script>
 const CATS = {
-  basics:{name:"The Basics", color:"#0d9488"},
-  phenom:{name:"Quantum Phenomena", color:"#0284c7"},
+  basics:{name:"The Basics",color:"#0b7f75"},
+  phenom:{name:"Quantum Phenomena",color:"#0278b6"},
   circuits:{name:"Gates & Circuits", color:"#4f46e5"},
-  hardware:{name:"Hardware & Platforms", color:"#ea580c"},
+  hardware:{name:"Hardware & Platforms",color:"#c3490a"},
   algo:{name:"Algorithms", color:"#15803d"},
   error:{name:"Noise, Errors & Scale", color:"#dc2626"},
   qai:{name:"Quantum + AI", color:"#a21caf"},
-  comms:{name:"Communication & Security", color:"#0891b2"},
-  apps:{name:"Sensing & Applications", color:"#65a30d"},
-  biz:{name:"Business & Leadership", color:"#d97706"}
+  comms:{name:"Communication & Security",color:"#077d99"},
+  apps:{name:"Sensing & Applications",color:"#4f800a"},
+  biz:{name:"Business & Leadership",color:"#af6005"}
 };
 const TERMS = [
 {s:"QMe",n:"Quantum Mechanics",c:"basics",d:"The physics theory describing how nature behaves at the smallest scales: particles can be in combinations of states, act like waves, and become linked in ways classical physics cannot explain.",l:"You do not need the mathematics to lead well here. You need the vocabulary to follow the conversation and to spot when a claim breaks the physics."},
@@ -464,7 +484,7 @@ render();
 <script>
 (function(){
 "use strict";
-var CFG = {"base": "https://thillairaj.github.io/The-Signal-AI-Quantum", "table": "quantum-keywords", "display": "Quantum Keywords", "brandTag": "#TheSignal", "familyTag": "#QuantumComputing", "footer1": "THE QUANTUM KEYWORDS PERIODIC TABLE", "footer2": "Quantum Keywords", "badge": "TRT", "aliases": {}};
+var CFG = {"base": "https://thillairaj.github.io/The-Signal-AI-Quantum", "table": "quantum-keywords", "display": "Quantum Keywords", "brandTag": "#TheSignal", "familyTag": "#QuantumComputing", "footer1": "THE QUANTUM KEYWORDS PERIODIC TABLE", "footer2": "Quantum Keywords for Leaders", "badge": "TRT", "aliases": {}};
 function slugifyName(n){
   var part = n.indexOf(" \u2014 ") >= 0 ? n.split(" \u2014 ")[1] : n;
   return part.toLowerCase().replace(/[^a-z0-9]+/g,"-").replace(/^-+|-+$/g,"");
