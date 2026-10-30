@@ -119,6 +119,7 @@ function showView(name) {
   researchViewEl.hidden = name !== "research";
   topTabsEl.querySelectorAll(".top-tab").forEach(b =>
     b.classList.toggle("active", b.dataset.view === name));
+  scrollActiveTabIntoView();
   if (name === "podcast") renderPodcast();
   if (name === "research") renderResearch();
   if (name === "learn") requestAnimationFrame(() => document.querySelectorAll(".rail-wrap").forEach(refreshRail));
@@ -317,6 +318,13 @@ async function renderResearchArticle(id) {
       <h2 class="research-title">${title}</h2>
       <p class="research-sub">${escapeHtml(a.subtitle || "")}</p>
       <p class="research-date">${fmtResearchDate(a.date)} · By The Signal</p>
+      <div class="research-share" id="researchShare">
+        <button type="button" data-share="copy">Copy link</button>
+        <button type="button" data-share="image">Share image</button>
+        <button type="button" data-share="text">Share text</button>
+        <span class="research-share-status" id="researchShareStatus" aria-live="polite"></span>
+      </div>
+      <p class="research-pagelink">This article also has its own page: <a id="researchPageLink" href="#" target="_blank" rel="noopener">open the article page</a></p>
       <div class="research-layout">
         <div class="research-main">
           <div class="research-body">${body}</div>
@@ -333,6 +341,28 @@ async function renderResearchArticle(id) {
     <div class="research-lightbox" id="researchLightbox" hidden>
       <img src="${card}" alt="${title} cover">
     </div>`;
+  const pageUrl = (window.SignalShare && SignalShare.BASE ? SignalShare.BASE : "https://thillairaj.github.io/The-Signal-AI-Quantum") + "/research/" + a.id + "/";
+  const pageLinkEl = document.getElementById("researchPageLink");
+  if (pageLinkEl) pageLinkEl.href = pageUrl;
+  const shareBox = document.getElementById("researchShare");
+  if (shareBox && window.SignalShare) {
+    const status = document.getElementById("researchShareStatus");
+    const notify = (m, ms) => { status.textContent = m; setTimeout(() => { if (status.textContent === m) status.textContent = ""; }, ms || 2600); };
+    const caption = SignalShare.articleCaption(a.title, a.subtitle || "", pageUrl);
+    shareBox.querySelectorAll("button[data-share]").forEach(b => b.addEventListener("click", async () => {
+      const act = b.dataset.share;
+      if (act === "copy") { SignalShare.copy(pageUrl).then(() => notify("Link copied")); }
+      else if (act === "text") { SignalShare.shareTextFlow({ text: caption, copiedMsg: "Text copied", notify }); }
+      else if (act === "image") {
+        try {
+          const r = await fetch(a.card.replace(".webp", ".png"));
+          if (!r.ok) throw new Error("card");
+          const blob = await r.blob();
+          SignalShare.shareImage({ blob, filename: a.id + ".png", caption, notify: m => notify(m, 8000) });
+        } catch (e) { notify("Image unavailable"); }
+      }
+    }));
+  }
   document.getElementById("researchBack").addEventListener("click", () => {
     openResearchId = null;
     try { history.pushState(null, "", "#research"); } catch (e) {}
@@ -540,6 +570,35 @@ topTabsEl.querySelectorAll(".top-tab").forEach(btn => {
     showView(btn.dataset.view);
   });
 });
+
+/* ---------- Top tab arrows: shown only while the tabs overflow ---------- */
+const tabsPrevBtn = document.getElementById("tabsPrev");
+const tabsNextBtn = document.getElementById("tabsNext");
+const tabsFadeEl = document.getElementById("tabsFade");
+function scrollActiveTabIntoView() {
+  const btn = topTabsEl.querySelector(".top-tab.active");
+  if (!btn) return;
+  const c = topTabsEl.getBoundingClientRect(), r = btn.getBoundingClientRect();
+  if (r.left < c.left) topTabsEl.scrollBy({ left: r.left - c.left - 8, behavior: "smooth" });
+  else if (r.right > c.right) topTabsEl.scrollBy({ left: r.right - c.right + 8, behavior: "smooth" });
+}
+function refreshTabArrows() {
+  if (!tabsPrevBtn || !tabsNextBtn) return;
+  const max = topTabsEl.scrollWidth - topTabsEl.clientWidth;
+  const canLeft = topTabsEl.scrollLeft > 2;
+  const canRight = max - topTabsEl.scrollLeft > 2;
+  tabsPrevBtn.style.display = canLeft ? "flex" : "none";
+  tabsNextBtn.style.display = canRight ? "flex" : "none";
+  if (tabsFadeEl) tabsFadeEl.style.opacity = canRight ? "1" : "0";
+}
+if (tabsPrevBtn && tabsNextBtn) {
+  tabsPrevBtn.addEventListener("click", () => topTabsEl.scrollBy({ left: -260, behavior: "smooth" }));
+  tabsNextBtn.addEventListener("click", () => topTabsEl.scrollBy({ left: 260, behavior: "smooth" }));
+  topTabsEl.addEventListener("scroll", refreshTabArrows, { passive: true });
+  window.addEventListener("resize", refreshTabArrows);
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(() => { refreshTabArrows(); scrollActiveTabIntoView(); });
+  refreshTabArrows();
+}
 
 if (sourcesToggleBtn) {
   sourcesToggleBtn.addEventListener("click", () => {

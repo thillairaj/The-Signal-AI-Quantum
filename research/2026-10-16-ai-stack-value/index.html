@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Where Does Value Accrue in the AI Stack? · The Signal</title>
+<meta name="description" content="Why profits pool at the two ends of the stack">
+<link rel="canonical" href="https://thillairaj.github.io/The-Signal-AI-Quantum/research/2026-10-16-ai-stack-value/">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="The Signal">
+<meta property="og:title" content="Where Does Value Accrue in the AI Stack?">
+<meta property="og:description" content="Why profits pool at the two ends of the stack">
+<meta property="og:url" content="https://thillairaj.github.io/The-Signal-AI-Quantum/research/2026-10-16-ai-stack-value/">
+<meta property="og:image" content="https://thillairaj.github.io/The-Signal-AI-Quantum/research/cards/edition-01.png">
+<link rel="stylesheet" href="../../style.css">
+<style>
+.ap-wrap{max-width:1060px;margin:0 auto;padding:28px 20px 8px}
+.ap-head{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:26px}
+.ap-brand{font-family:var(--font-display);font-weight:800;font-size:26px;color:var(--ink);text-decoration:none}
+.ap-brand em{color:#B8860B;font-style:italic}
+.ap-back{font:600 13px var(--font-body);color:var(--muted);text-decoration:none}
+.ap-back:hover{color:var(--ink)}
+.ap-foot{max-width:1060px;margin:34px auto 0;padding:18px 20px 30px;border-top:1px solid var(--border);color:var(--muted);font-size:13px;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.ap-foot a{color:var(--muted)}
+</style>
+</head>
+<body>
+<div class="ap-wrap">
+  <header class="ap-head">
+    <a class="ap-brand" href="../../">The <em>Signal</em></a>
+    <a class="ap-back" href="../../#research/2026-10-16-ai-stack-value">← Read in the Articles view</a>
+  </header>
+  <p class="research-kicker">THE SIGNAL · RESEARCH NOTES · DEEP DIVE</p>
+  <h1 class="research-title">Where Does Value Accrue in the AI Stack?</h1>
+  <p class="research-sub">Why profits pool at the two ends of the stack</p>
+  <p class="research-date">16 Oct 2026 · By The Signal</p>
+  <div class="research-share" id="artShare">
+    <button type="button" data-share="copy">Copy link</button>
+    <button type="button" data-share="image">Share image</button>
+    <button type="button" data-share="text">Share text</button>
+    <span class="research-share-status" id="artShareStatus" aria-live="polite"></span>
+  </div>
+  <div class="research-layout">
+    <div class="research-main">
+      <div class="research-body"><p><em>Signal Research Notes is an original-research series on The Signal, published three times a week. Each edition asks one question, works through it from the best available sources, and keeps confirmed facts separate from analysis. Sources are linked at the end.</em></p>
+
+<p>Every computing stack reveals where the durable profits sit. In PCs it was the microprocessor and the operating system. In mobile it was the app store and the baseband. Five years into the generative AI buildout, the map does not match the early predictions. Value is pooling at the two ends of the stack that are hardest to commoditize: the physical bottom and the workflow top. The middle is being squeezed from both sides.</p>
+
+<h3>1. Power and land are the binding constraint</h3>
+
+<p>The scarcest input to AI in 2026 is not capital. It is not chips either. It is electricity.</p>
+
+<p>Gartner puts global data center electricity consumption at 565 TWh in 2026, up 26 percent in a single year, with power demand reaching 132 GW. AI-optimized servers already account for 31 percent of that draw and will overtake conventional servers in 2027. In the US alone, Goldman Sachs sees data center demand rising from 31 GW in 2025 to 41 GW in 2026 and 66 GW in 2027. Gartner analyst Linglan Wang has called power security the new battleground for scaling AI, and the order books agree. Microsoft is reported to carry an $80 billion backlog of unfulfilled Azure orders. The five largest hyperscalers guided roughly $775 to $800 billion in 2026 capital expenditure.</p>
+
+<p>Put simply, whoever controls grid-adjacent land, firm power contracts, and the right to build collects a toll on every token computed above them.</p>
+
+<h3>2. Silicon: a fortress with a growing side door</h3>
+
+<p>NVIDIA still controls an estimated 80 percent of the AI accelerator market, and frontier model training remains its uncontested territory. But inference, now roughly two thirds of all AI compute, is where the economics are moving.</p>
+
+<p>Hyperscaler custom silicon (Google's TPUs, AWS Trainium, Microsoft's Maia, Meta's MTIA) collectively holds an estimated 15 to 20 percent of the accelerator market and is compounding at over 40 percent a year. The motive is straightforward: compress the dollar-per-token cost of inference. AWS reports that Trainium already processes more than half of the token throughput on Bedrock. There is a structural catch. These chips are captive to their builders.</p>
+
+<p>Meanwhile every advanced chip still funnels through TSMC's 3nm lines, reportedly running at full utilization with demand far exceeding supply. The fulcrum assets in silicon are not GPU design but fabrication capacity and the software stacks that make the silicon usable.</p>
+
+<h3>3. Models: the fastest-depreciating asset in the stack</h3>
+
+<p>Foundation models look like the crown jewels and behave like a commodity in training. Analyst Benedict Evans frames it well: inference runs at an estimated 40 to 50 percent gross margins today, but that figure excludes the cost of training the next model, which currently exceeds revenue. Frontier-class models list around $5 per million input tokens while small efficient models sit near $0.20. The FinOps Foundation's framing is that inference is 80 to 90 percent of total GenAI spend in real deployments.</p>
+
+<p>The conclusion is uncomfortable for model builders. Expect frontier models to behave increasingly like infrastructure: essential, expensive to build, and brutal on margins. Pricing power in this layer is the open question, not capability.</p>
+
+<h3>4. Execution and agents: where ROI goes to die, or compound</h3>
+
+<p>This is the layer the enterprise is actually buying, and the numbers tell a split story. KPMG's Q3 2026 survey finds 62 percent of large enterprises deploying or developing AI agents. Another survey puts deployment at 97 percent of executives, yet only 29 percent report significant ROI. McKinsey finds 88 percent of organizations use AI in at least one function but only 23 percent are scaling an agentic system. Gartner predicts over 40 percent of agentic AI projects will be cancelled by the end of 2027, citing unclear value and weak governance.</p>
+
+<p>There is a technical reason cost discipline matters here. Agent workflows are five to thirty times more computationally intensive than simple chatbot queries, so architecture choices are the primary cost lever as inference spend scales. The value in this layer will accrue not to whoever ships the most agents but to whoever solves orchestration, governance, and cost control. The control plane for the agentic enterprise is still up for grabs.</p>
+
+<h3>5. Applications: distribution eats the margin</h3>
+
+<p>AI products carry gross margins roughly 25 to 30 points below traditional SaaS, because every request has a variable token cost attached. That single fact is reshaping software pricing toward outcome-based models: per resolved ticket, per completed task. It punishes thin wrappers and rewards products embedded in real workflows with proprietary data feedback loops. Distribution plus compounding data is the moat. The model underneath is increasingly interchangeable.</p>
+
+<h3>Where this leaves us</h3>
+
+<p>Buy the picks and shovels where supply is genuinely constrained: firm power, advanced fabrication, and the interconnect between them. Rent the middle: models and generic compute, where prices fall. Build at the top: workflows, agents, and data loops that compound. The stack rewards ownership of bottlenecks, not ownership of intelligence.</p>
+
+<p>Three things could break this thesis, and they are worth watching:</p>
+
+<ul>
+<li>Grid and power buildout outpacing demand faster than expected.</li>
+<li>A step-change in model capability that re-prices tokens upward instead of down.</li>
+<li>Regulation that reshapes data center siting or model deployment economics in major markets.</li>
+</ul>
+</div>
+      <h3 class="research-sources-h">Sources</h3><ul class="research-sources"><li><a href="https://www.gartner.com/en/newsroom/press-releases/2026-06-10-gartner-says-data-center-electricity-demand-to-grow-26-percent-in-2026" target="_blank" rel="noopener">Gartner press release: data center electricity demand to grow 26 percent in 2026</a></li><li><a href="https://www.goldmansachs.com/insights/articles/us-data-center-power-demand-projected-to-double-by-2027" target="_blank" rel="noopener">Goldman Sachs Insights: US data center power demand projected to double by 2027</a></li><li><a href="https://www.theglobalstatistics.com/new-data-center-investments-in-us/" target="_blank" rel="noopener">US data-center investment, Microsoft Azure backlog, 2026 hyperscaler capex (The Global Statistics)</a></li><li><a href="https://introl.com/blog/custom-silicon-inflection-2026-hyperscaler-asics-nvidia-gpu" target="_blank" rel="noopener">Hyperscaler custom silicon vs NVIDIA, 2026 (Introl)</a></li><li><a href="https://theweightedaverage.com/posts/2026-06-26-amazon-trainium-chips-nvidia-challenge/" target="_blank" rel="noopener">AWS Trainium vs NVIDIA analysis (The Weighted Average)</a></li><li><a href="http://gyreresearch.com/library/Gyre_AI_Processor_Competitive_Landscape_20260611.pdf" target="_blank" rel="noopener">AI processor competitive landscape (Gyre Research, CC BY 4.0)</a></li><li><a href="https://www.ben-evans.com/benedictevans/2026/7/9/ways-to-think-about-token-pricing" target="_blank" rel="noopener">Benedict Evans: Ways to think about token pricing</a></li><li><a href="https://www.finops.org/wg/optimizing-genai-usage/" target="_blank" rel="noopener">FinOps Foundation: Optimizing GenAI Usage, inference at 80 to 90 percent of total GenAI spend</a></li><li><a href="https://kpmg.com/us/en/articles/2025/ai-quarterly-pulse-survey.html" target="_blank" rel="noopener">KPMG: AI Quarterly Pulse Survey (Q3 2026)</a></li><li><a href="https://writer.com/blog/enterprise-ai-adoption-2026/" target="_blank" rel="noopener">WRITER: Enterprise AI adoption in 2026, survey with Workplace Intelligence (97 percent deployed agents, only 29 percent significant ROI)</a></li><li><a href="https://www.mckinsey.com/capabilities/quantumblack/our-insights/the-state-of-ai-2025" target="_blank" rel="noopener">McKinsey: The state of AI in 2025, agents, innovation, and transformation</a></li><li><a href="https://www.gartner.com/en/newsroom/press-releases/2025-06-25-gartner-predicts-over-40-percent-of-agentic-ai-projects-will-be-canceled-by-end-of-2027" target="_blank" rel="noopener">Gartner press release: over 40 percent of agentic AI projects will be canceled by end of 2027</a></li><li><a href="https://research.socialcapital.com/p/the-ai-stack" target="_blank" rel="noopener">Social Capital &quot;Learn With Me&quot; deep-dive series (the format that prompted this edition)</a></li></ul>
+    </div>
+    <aside class="research-rail">
+      <img src="../../research/cards/edition-01.webp" alt="Where Does Value Accrue in the AI Stack? cover" style="width:100%;border-radius:12px">
+    </aside>
+  </div>
+</div>
+<footer class="ap-foot">
+  <span>The Signal · Research Notes</span>
+  <a href="../../#research">All articles</a>
+</footer>
+<script src="../../assets/signal-share.js"></script>
+<script>
+(function () {
+  var A = { id: "2026-10-16-ai-stack-value", title: "Where Does Value Accrue in the AI Stack?", subtitle: "Why profits pool at the two ends of the stack", cardPng: "../../research/cards/edition-01.png" };
+  var url = SignalShare.BASE + "/research/" + A.id + "/";
+  var caption = SignalShare.articleCaption(A.title, A.subtitle, url);
+  window.__articleCaption = caption;
+  window.__articleUrl = url;
+  var status = document.getElementById("artShareStatus");
+  function notify(m, ms) { status.textContent = m; setTimeout(function () { if (status.textContent === m) status.textContent = ""; }, ms || 2600); }
+  document.querySelectorAll("#artShare button[data-share]").forEach(function (b) {
+    b.addEventListener("click", async function () {
+      var act = b.dataset.share;
+      if (act === "copy") { SignalShare.copy(url).then(function () { notify("Link copied"); }); }
+      else if (act === "text") { SignalShare.shareTextFlow({ text: caption, copiedMsg: "Text copied", notify: notify }); }
+      else if (act === "image") {
+        try {
+          var r = await fetch(A.cardPng);
+          if (!r.ok) throw new Error("card");
+          var blob = await r.blob();
+          SignalShare.shareImage({ blob: blob, filename: A.id + ".png", caption: caption, notify: function (m) { notify(m, 8000); } });
+        } catch (e) { notify("Image unavailable"); }
+      }
+    });
+  });
+})();
+</script>
+</body>
+</html>

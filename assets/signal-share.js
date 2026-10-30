@@ -44,6 +44,14 @@ window.SignalShare = (function () {
   function buildCaption(parts) {
     return parts.filter(function (p) { return !!p; }).join("\n\n");
   }
+  function topicHashtag(text) {
+    return /quantum|qubit/i.test(text || "") ? "#QuantumComputing" : "#AI";
+  }
+  function articleCaption(title, subtitle, url) {
+    return buildCaption([title, subtitle,
+      "Read the full article, free, no sign-up:\n" + url,
+      "#TheSignal " + topicHashtag((title || "") + " " + (subtitle || ""))]);
+  }
   /* Uniform image sharing. Phone: share the file together with the caption
      text, copy the caption at the same moment, and show the paste notice
      (again after the sheet closes). Desktop: download the image and copy
@@ -97,6 +105,7 @@ window.SignalShare = (function () {
     BASE: BASE, NOTICE: NOTICE, SIZES: SIZES, THEME_OPTIONS: THEME_OPTIONS,
     PALETTES: PALETTES, isMobile: isMobile, copy: copy, download: download,
     buildCaption: buildCaption, shareImage: shareImage,
-    shareTextFlow: shareTextFlow, fillOptions: fillOptions
+    shareTextFlow: shareTextFlow, fillOptions: fillOptions,
+    topicHashtag: topicHashtag, articleCaption: articleCaption
   };
 })();

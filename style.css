@@ -765,7 +765,7 @@ body[data-view="research"] .feed-only { display: none; }
 
 @media (max-width: 780px) {
   .masthead { align-items: flex-start; }
-  .top-tabs { order: 3; width: 100%; margin-top: 0.8rem; }
+  .tabs-bar { order: 3; width: 100%; margin-top: 0.8rem; }
   .top-tab { flex: 1; text-align: center; }
 }
 
@@ -958,3 +958,16 @@ body[data-view="research"] .feed-only { display: none; }
   .top-tabs::-webkit-scrollbar { display: none; }
   .top-tab { flex: 0 0 auto; }
 }
+
+/* ---------- Tab bar arrows: the rail buttons, shown only on overflow ---------- */
+.tabs-bar { display: flex; align-items: center; gap: 0.25rem; position: relative; min-width: 0; }
+.tabs-bar .top-tabs { flex: 1 1 auto; min-width: 0; }
+.tab-arrow { position: static; transform: none; flex: 0 0 auto; width: 36px; height: 36px; font-size: 22px; display: none; box-shadow: none; }
+.tabs-fade { position: absolute; top: 0; bottom: 0; right: 40px; width: 34px; pointer-events: none; opacity: 0; transition: opacity 0.15s ease; background: linear-gradient(90deg, transparent, var(--bg)); }
+
+/* ---------- Article share row (homepage article view) ---------- */
+.research-share { display: flex; gap: 8px; flex-wrap: wrap; align-items: center; margin: 14px 0 4px; }
+.research-share button { border: 1px solid var(--border); background: var(--surface); color: var(--ink); border-radius: 999px; padding: 8px 15px; font: 600 13px var(--font-body); cursor: pointer; }
+.research-share button:hover { filter: brightness(1.06); }
+.research-share-status { font-size: 12.5px; color: var(--accent); }
+.research-pagelink { font-size: 13px; color: var(--muted); margin: 6px 0 0; }

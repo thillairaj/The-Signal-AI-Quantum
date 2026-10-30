@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>How Does a Hybrid Handshake Make TLS Quantum Safe? · The Signal</title>
+<meta name="description" content="One TLS handshake, two key exchanges, and the harvest now, decrypt later problem">
+<link rel="canonical" href="https://thillairaj.github.io/The-Signal-AI-Quantum/research/2026-10-23-hybrid-tls-handshake/">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="The Signal">
+<meta property="og:title" content="How Does a Hybrid Handshake Make TLS Quantum Safe?">
+<meta property="og:description" content="One TLS handshake, two key exchanges, and the harvest now, decrypt later problem">
+<meta property="og:url" content="https://thillairaj.github.io/The-Signal-AI-Quantum/research/2026-10-23-hybrid-tls-handshake/">
+<meta property="og:image" content="https://thillairaj.github.io/The-Signal-AI-Quantum/research/cards/edition-04.png">
+<link rel="stylesheet" href="../../style.css">
+<style>
+.ap-wrap{max-width:1060px;margin:0 auto;padding:28px 20px 8px}
+.ap-head{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:26px}
+.ap-brand{font-family:var(--font-display);font-weight:800;font-size:26px;color:var(--ink);text-decoration:none}
+.ap-brand em{color:#B8860B;font-style:italic}
+.ap-back{font:600 13px var(--font-body);color:var(--muted);text-decoration:none}
+.ap-back:hover{color:var(--ink)}
+.ap-foot{max-width:1060px;margin:34px auto 0;padding:18px 20px 30px;border-top:1px solid var(--border);color:var(--muted);font-size:13px;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.ap-foot a{color:var(--muted)}
+</style>
+</head>
+<body>
+<div class="ap-wrap">
+  <header class="ap-head">
+    <a class="ap-brand" href="../../">The <em>Signal</em></a>
+    <a class="ap-back" href="../../#research/2026-10-23-hybrid-tls-handshake">← Read in the Articles view</a>
+  </header>
+  <p class="research-kicker">THE SIGNAL · RESEARCH NOTES · BRIEF</p>
+  <h1 class="research-title">How Does a Hybrid Handshake Make TLS Quantum Safe?</h1>
+  <p class="research-sub">One TLS handshake, two key exchanges, and the harvest now, decrypt later problem</p>
+  <p class="research-date">23 Oct 2026 · By The Signal</p>
+  <div class="research-share" id="artShare">
+    <button type="button" data-share="copy">Copy link</button>
+    <button type="button" data-share="image">Share image</button>
+    <button type="button" data-share="text">Share text</button>
+    <span class="research-share-status" id="artShareStatus" aria-live="polite"></span>
+  </div>
+  <div class="research-layout">
+    <div class="research-main">
+      <div class="research-body"><p><em>Signal Research Notes is an original-research series on The Signal, published three times a week. Each edition asks one question, works through it from primary sources, and keeps confirmed facts separate from analysis. Sources are linked at the end.</em></p>
+
+<p>In August 2026, the IETF published RFC 10024, standardizing hybrid post-quantum key agreement for TLS 1.3. It defines three key-exchange groups: X25519MLKEM768, SecP256r1MLKEM768, and SecP384r1MLKEM1024. Each runs classical elliptic-curve key agreement alongside ML-KEM, the key-encapsulation mechanism NIST standardized as FIPS 203 in August 2024. Two key agreements run inside one handshake, and the session stays safe as long as either one holds.</p>
+
+<h3>How the handshake works</h3>
+
+<p>When both sides support the hybrid group, the client runs an X25519 Diffie-Hellman exchange and, in parallel, an ML-KEM-768 encapsulation. The two secrets are combined into the TLS 1.3 key schedule. An attacker must break both algorithms to recover the session key: a quantum computer that defeats X25519 faces the lattice problem, and a classical lattice breakthrough faces X25519. In July 2026, AI-assisted cryptanalysis found a structural weakness in the HAWK candidate, and the scheme was withdrawn within days. New mathematics carries uncertainty, and the hybrid keeps classical cryptography as the backstop.</p>
+
+<p>The motive is the harvest now, decrypt later attack: traffic recorded today can be decrypted by a quantum computer, so key exchange must be quantum resistant before that machine exists. It is why the migration stops at key exchange for now. Certificate signatures remain classical, because forging one would need a quantum computer at handshake time, and recorded traffic gives an attacker nothing to forge with.</p>
+
+<h3>Why it matters</h3>
+
+<p>Deployment is nearly invisible. On October 15, 2026, the UK's National Cyber Security Centre issued updated TLS guidance recommending hybrid ML-KEM key exchange, and every major browser now negotiates hybrid post-quantum key exchange by default. Imperva switched it on with no measurable performance penalty, and Cloudflare's September 2026 figures put hybrid traffic at roughly 70% of its browser connections. The operator's action item is short: run OpenSSL 3.5 or later, which carries X25519MLKEM768 by default, and confirm both legs of every connection can negotiate it.</p>
+</div>
+      <h3 class="research-sources-h">Sources</h3><ul class="research-sources"><li><a href="https://www.imperva.com/blog/harvest-now-decrypt-later-post-quantum-tls/" target="_blank" rel="noopener">Imperva: Harvest Now, Decrypt Later: End-to-End PQC TLS (Oct 5, 2026)</a></li><li><a href="https://blog.cloudflare.com/post-quantum-visibility/" target="_blank" rel="noopener">Cloudflare blog: post-quantum visibility, about 70 percent of browser traffic (Sep 2026)</a></li><li><a href="https://www.ncsc.gov.uk/guidance/using-tls-to-protect-data" target="_blank" rel="noopener">NCSC: Using Transport Layer Security (TLS) to protect data (guidance, updated Oct 2026)</a></li><li><a href="https://www.rfc-editor.org/info/rfc10024" target="_blank" rel="noopener">RFC 10024: Post-Quantum Traditional (PQ/T) Hybrid Key Agreement Mechanisms for TLS 1.3 (IETF, Aug 2026)</a></li><li><a href="https://www.anthropic.com/research/discovering-cryptographic-weaknesses" target="_blank" rel="noopener">Anthropic Frontier Red Team: Discovering cryptographic weaknesses with Claude (Jul 2026)</a></li><li><a href="https://shattered.io/ml-kem-vs-x25519-tls-1-3-2026/" target="_blank" rel="noopener">shattered.io: ML-KEM vs X25519 TLS 1.3 adoption and overhead (2026)</a></li></ul>
+    </div>
+    <aside class="research-rail">
+      <img src="../../research/cards/edition-04.webp" alt="How Does a Hybrid Handshake Make TLS Quantum Safe? cover" style="width:100%;border-radius:12px">
+    </aside>
+  </div>
+</div>
+<footer class="ap-foot">
+  <span>The Signal · Research Notes</span>
+  <a href="../../#research">All articles</a>
+</footer>
+<script src="../../assets/signal-share.js"></script>
+<script>
+(function () {
+  var A = { id: "2026-10-23-hybrid-tls-handshake", title: "How Does a Hybrid Handshake Make TLS Quantum Safe?", subtitle: "One TLS handshake, two key exchanges, and the harvest now, decrypt later problem", cardPng: "../../research/cards/edition-04.png" };
+  var url = SignalShare.BASE + "/research/" + A.id + "/";
+  var caption = SignalShare.articleCaption(A.title, A.subtitle, url);
+  window.__articleCaption = caption;
+  window.__articleUrl = url;
+  var status = document.getElementById("artShareStatus");
+  function notify(m, ms) { status.textContent = m; setTimeout(function () { if (status.textContent === m) status.textContent = ""; }, ms || 2600); }
+  document.querySelectorAll("#artShare button[data-share]").forEach(function (b) {
+    b.addEventListener("click", async function () {
+      var act = b.dataset.share;
+      if (act === "copy") { SignalShare.copy(url).then(function () { notify("Link copied"); }); }
+      else if (act === "text") { SignalShare.shareTextFlow({ text: caption, copiedMsg: "Text copied", notify: notify }); }
+      else if (act === "image") {
+        try {
+          var r = await fetch(A.cardPng);
+          if (!r.ok) throw new Error("card");
+          var blob = await r.blob();
+          SignalShare.shareImage({ blob: blob, filename: A.id + ".png", caption: caption, notify: function (m) { notify(m, 8000); } });
+        } catch (e) { notify("Image unavailable"); }
+      }
+    });
+  });
+})();
+</script>
+</body>
+</html>

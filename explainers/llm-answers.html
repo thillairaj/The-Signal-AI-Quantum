@@ -487,6 +487,7 @@ a.ts-chip:hover { border-color: var(--gold); }
         <span class="spacer"></span>
         <span class="copied" id="copied">Link copied</span>
         <button class="btn" id="pShare" type="button">Copy link to this part</button>
+        <button class="btn" id="pShareText" type="button">Share text</button>
       </div>
     </aside>
   </div>
@@ -1187,6 +1188,20 @@ a.ts-chip:hover { border-color: var(--gold); }
     const c = $('copied'); c.classList.add('on'); setTimeout(() => c.classList.remove('on'), 1600);
   });
 
+  $('pShareText').addEventListener('click', async () => {
+    const url = location.href.split('#')[0] + '#' + current;
+    const p = PARTS[current];
+    const first = (p.simple || p.deep || '').split(/(?<=[.!?])\s+/)[0];
+    const flash = (msg) => { const c = $('copied'); c.textContent = msg; c.classList.add('on'); setTimeout(() => { c.classList.remove('on'); c.textContent = 'Link copied'; }, 1600); };
+    if (window.SignalShare) {
+      const txt = SignalShare.buildCaption([p.name, first, 'Explore the full explainer, free, no sign-up:\n' + url, '#TheSignal #AI']);
+      SignalShare.shareTextFlow({ text: txt, copiedMsg: 'Text copied', notify: flash });
+    } else {
+      try { await navigator.clipboard.writeText([p.name, first, url].join('\n\n')); } catch (e) {}
+      flash('Text copied');
+    }
+  });
+
   /* ---------- Journey ---------- */
   const path = $('signalPath'), dot = $('pulseDot');
   const total = path.getTotalLength();
@@ -1301,5 +1316,6 @@ a.ts-chip:hover { border-color: var(--gold); }
 })();
 </script>
 
+<script src="../assets/signal-share.js"></script>
 </body>
 </html>

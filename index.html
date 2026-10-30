@@ -16,7 +16,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,800;1,9..144,500;1,9..144,600&family=Inter:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css?v=20261029d">
+<link rel="stylesheet" href="style.css?v=20261030a">
 </head>
 <body data-view="home">
 
@@ -24,13 +24,18 @@
   <div class="masthead-left">
     <h1 class="brand-h" title="Back to the front page">The <em>Signal</em></h1>
   </div>
-  <nav class="top-tabs" id="topTabs" aria-label="Sections">
+  <div class="tabs-bar">
+    <button class="rail-btn tab-arrow prev" id="tabsPrev" type="button" aria-label="Scroll sections left">‹</button>
+    <nav class="top-tabs" id="topTabs" aria-label="Sections">
     <button class="top-tab active" data-view="home">Home</button>
     <button class="top-tab" data-view="learn"><span class="tab-num">01</span>Learning Space</button>
     <button class="top-tab" data-view="podcast"><span class="tab-num">02</span>Podcast</button>
     <button class="top-tab" data-view="research"><span class="tab-num">03</span>Articles</button>
     <button class="top-tab" data-view="feed"><span class="tab-num">04</span>RSS Feed</button>
-  </nav>
+    </nav>
+    <span class="tabs-fade" id="tabsFade" aria-hidden="true"></span>
+    <button class="rail-btn tab-arrow next" id="tabsNext" type="button" aria-label="Scroll sections right">›</button>
+  </div>
   <div class="masthead-right">
     <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">☾</button>
     <div class="status">
@@ -638,6 +643,7 @@
   </div>
 
 <script data-goatcounter="https://trttech.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
-<script src="app.js?v=20261029a"></script>
+<script src="assets/signal-share.js"></script>
+<script src="app.js?v=20261030a"></script>
 </body>
 </html>

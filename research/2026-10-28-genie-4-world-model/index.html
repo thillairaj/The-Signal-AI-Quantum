@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>What Changes When an AI World Can Talk Back? · The Signal</title>
+<meta name="description" content="Genie 4 adds native audio and live steering to real time simulation">
+<link rel="canonical" href="https://thillairaj.github.io/The-Signal-AI-Quantum/research/2026-10-28-genie-4-world-model/">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="The Signal">
+<meta property="og:title" content="What Changes When an AI World Can Talk Back?">
+<meta property="og:description" content="Genie 4 adds native audio and live steering to real time simulation">
+<meta property="og:url" content="https://thillairaj.github.io/The-Signal-AI-Quantum/research/2026-10-28-genie-4-world-model/">
+<meta property="og:image" content="https://thillairaj.github.io/The-Signal-AI-Quantum/research/cards/edition-06.png">
+<link rel="stylesheet" href="../../style.css">
+<style>
+.ap-wrap{max-width:1060px;margin:0 auto;padding:28px 20px 8px}
+.ap-head{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:26px}
+.ap-brand{font-family:var(--font-display);font-weight:800;font-size:26px;color:var(--ink);text-decoration:none}
+.ap-brand em{color:#B8860B;font-style:italic}
+.ap-back{font:600 13px var(--font-body);color:var(--muted);text-decoration:none}
+.ap-back:hover{color:var(--ink)}
+.ap-foot{max-width:1060px;margin:34px auto 0;padding:18px 20px 30px;border-top:1px solid var(--border);color:var(--muted);font-size:13px;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.ap-foot a{color:var(--muted)}
+</style>
+</head>
+<body>
+<div class="ap-wrap">
+  <header class="ap-head">
+    <a class="ap-brand" href="../../">The <em>Signal</em></a>
+    <a class="ap-back" href="../../#research/2026-10-28-genie-4-world-model">← Read in the Articles view</a>
+  </header>
+  <p class="research-kicker">THE SIGNAL · RESEARCH NOTES · BRIEF</p>
+  <h1 class="research-title">What Changes When an AI World Can Talk Back?</h1>
+  <p class="research-sub">Genie 4 adds native audio and live steering to real time simulation</p>
+  <p class="research-date">28 Oct 2026 · By The Signal</p>
+  <div class="research-share" id="artShare">
+    <button type="button" data-share="copy">Copy link</button>
+    <button type="button" data-share="image">Share image</button>
+    <button type="button" data-share="text">Share text</button>
+    <span class="research-share-status" id="artShareStatus" aria-live="polite"></span>
+  </div>
+  <div class="research-layout">
+    <div class="research-main">
+      <div class="research-body"><p><em>Signal Research Notes is an original-research series on The Signal, published three times a week. Each edition asks one question, works through it from primary sources, and keeps confirmed facts separate from analysis. Sources are linked at the end.</em></p>
+
+<p>On October 27, 2026, Google DeepMind announced Genie 4 as a research preview for trusted testers, with wider access to follow in Project Genie and the Gemini API and AI Studio. The headline change from Genie 3 is sound: Genie 4 is DeepMind's first real time world model to generate audio natively, with music, ambient noise, and dialogue produced alongside the world.</p>
+
+<h3>What is new</h3>
+
+<p>A world model turns a prompt or an image into an explorable scene. Genie 4 adds three things. It can be steered live: a typed prompt can change the weather, move the camera, or add a person or an object while the simulation runs, and Gemini adapts the prompt to fit the scene. Characters move naturally and can converse and react in real time. Reasoning sits inside the loop: Gemini Omni anchors how objects look and behave, while Gemini 3.8 Flash observes the scene, breaks a goal into steps, and checks each frame against the plan.</p>
+
+<h3>Why it matters</h3>
+
+<p>The shift is from generating a clip to simulating a system. A clip is judged on how it looks; a world is judged on whether events play out coherently when the user intervenes. DeepMind positions Genie 4 as training ground material: robot and agent developers can test navigation before the real world, and game developers can prototype an idea before writing code.</p>
+
+<p>The limits are stated plainly in the announcement. Visual details and object permanence can still drift after repeated edits, and complex physics, audio accuracy, legible text, and long term consistency remain research problems. All generated video and audio carries DeepMind's SynthID watermark, which matters as simulated scenes grow harder to distinguish from recorded ones. Genie 4 is best read as a research instrument, not a production pipeline: a way to study how agents behave in worlds that answer back.</p>
+</div>
+      <h3 class="research-sources-h">Sources</h3><ul class="research-sources"><li><a href="https://deepmind.google/blog/genie-4-a-new-generation-of-world-simulation/" target="_blank" rel="noopener">Google DeepMind: Genie 4: A new generation of world simulation (Oct 27, 2026)</a></li></ul>
+    </div>
+    <aside class="research-rail">
+      <img src="../../research/cards/edition-06.webp" alt="What Changes When an AI World Can Talk Back? cover" style="width:100%;border-radius:12px">
+    </aside>
+  </div>
+</div>
+<footer class="ap-foot">
+  <span>The Signal · Research Notes</span>
+  <a href="../../#research">All articles</a>
+</footer>
+<script src="../../assets/signal-share.js"></script>
+<script>
+(function () {
+  var A = { id: "2026-10-28-genie-4-world-model", title: "What Changes When an AI World Can Talk Back?", subtitle: "Genie 4 adds native audio and live steering to real time simulation", cardPng: "../../research/cards/edition-06.png" };
+  var url = SignalShare.BASE + "/research/" + A.id + "/";
+  var caption = SignalShare.articleCaption(A.title, A.subtitle, url);
+  window.__articleCaption = caption;
+  window.__articleUrl = url;
+  var status = document.getElementById("artShareStatus");
+  function notify(m, ms) { status.textContent = m; setTimeout(function () { if (status.textContent === m) status.textContent = ""; }, ms || 2600); }
+  document.querySelectorAll("#artShare button[data-share]").forEach(function (b) {
+    b.addEventListener("click", async function () {
+      var act = b.dataset.share;
+      if (act === "copy") { SignalShare.copy(url).then(function () { notify("Link copied"); }); }
+      else if (act === "text") { SignalShare.shareTextFlow({ text: caption, copiedMsg: "Text copied", notify: notify }); }
+      else if (act === "image") {
+        try {
+          var r = await fetch(A.cardPng);
+          if (!r.ok) throw new Error("card");
+          var blob = await r.blob();
+          SignalShare.shareImage({ blob: blob, filename: A.id + ".png", caption: caption, notify: function (m) { notify(m, 8000); } });
+        } catch (e) { notify("Image unavailable"); }
+      }
+    });
+  });
+})();
+</script>
+</body>
+</html>
