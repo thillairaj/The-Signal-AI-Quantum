@@ -483,11 +483,11 @@ function drawCard(t){
 function download(blob,name){ var a=document.createElement("a"); a.href=URL.createObjectURL(blob); a.download=name; document.body.appendChild(a); a.click(); setTimeout(function(){ URL.revokeObjectURL(a.href); a.remove(); },400); }
 var isMobile=/Android|iPhone|iPad|iPod/i.test(navigator.userAgent||"");
 function shareText(t){
-  var lines=[t.n, oneLine(t.d)];
-  if(t.l) lines.push(t.l);
-  lines.push("Explore all "+TERMS.length+" "+CFG.display+" terms, free, no sign-up: "+termUrl(t));
-  lines.push(CFG.brandTag+" "+CFG.familyTag);
-  return lines.join("\n");
+  var parts=[t.n, oneLine(t.d)];
+  if(t.l) parts.push("Leader's lens: "+t.l);
+  parts.push("Explore all "+TERMS.length+" "+CFG.display+" terms, free, no sign-up:\n"+termUrl(t));
+  parts.push(CFG.brandTag+" "+CFG.familyTag);
+  return parts.join("\n\n");
 }
 var curIdx=-1;
 window.__tsEnhance=function(t,i,el){
@@ -496,14 +496,25 @@ window.__tsEnhance=function(t,i,el){
   var detail=document.getElementById("detail"); if(!detail) return;
   var row=document.createElement("div"); row.className="ts-share";
   var status=document.createElement("span"); status.className="ts-status"; status.setAttribute("aria-live","polite");
-  function note(msg){ status.textContent=msg; setTimeout(function(){ if(status.textContent===msg) status.textContent=""; },2600); }
+  function note(msg,ms){ status.textContent=msg; setTimeout(function(){ if(status.textContent===msg) status.textContent=""; },ms||2600); }
   function btn(label,fn){ var b=document.createElement("button"); b.type="button"; b.textContent=label; b.addEventListener("click",function(){ fn(t); }); return b; }
   row.appendChild(btn("Copy link",function(t){ gc("share/copy-link/"+CFG.table); copyText(termUrl(t)).then(function(){ note("Link copied"); },function(){ note("Copy failed"); }); }));
   row.appendChild(btn("Share image",function(t){ gc("share/share-image/"+CFG.table);
+    var txt=shareText(t);
     drawCard(t).then(function(blob){ if(!blob){ note("Image unavailable"); return; }
       var fname=folderFor(t)+".png"; var file=null;
       try{ file=new File([blob],fname,{type:"image/png"}); }catch(e){}
-      if(isMobile&&file&&navigator.canShare&&navigator.canShare({files:[file]})){ navigator.share({files:[file],title:t.n}).catch(function(e){ if(e&&e.name!=="AbortError") download(blob,fname); }); }
+      if(isMobile&&file&&navigator.share){
+        copyText(txt).catch(function(){});
+        var payload={files:[file],title:t.n,text:txt};
+        if(!(navigator.canShare&&navigator.canShare(payload))){ payload={files:[file],title:t.n}; }
+        var notice="Caption with link copied, paste it into your post.";
+        note(notice,8000);
+        try{
+          var sp=navigator.share(payload);
+          if(sp&&sp.then){ sp.then(function(){ note(notice,8000); },function(e){ if(e&&e.name!=="AbortError"){ download(blob,fname); } note(notice,8000); }); }
+        }catch(e){ download(blob,fname); }
+      }
       else{ download(blob,fname); note("Image downloaded"); }
     }); }));
   row.appendChild(btn("Share text",function(t){ gc("share/share-text/"+CFG.table);
