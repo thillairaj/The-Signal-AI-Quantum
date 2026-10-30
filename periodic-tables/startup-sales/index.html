@@ -530,31 +530,14 @@ window.__tsEnhance=function(t,i,el){
   curIdx=i;
   try{ history.replaceState(null,"","#"+t.s); }catch(e){}
   var detail=document.getElementById("detail"); if(!detail) return;
+  var SS=window.SignalShare||null; if(!SS) return;
   var row=document.createElement("div"); row.className="ts-share";
-  var status=document.createElement("span"); status.className="ts-status"; status.setAttribute("aria-live","polite");
-  function note(msg,ms){ status.textContent=msg; setTimeout(function(){ if(status.textContent===msg) status.textContent=""; },ms||2600); }
-  function btn(label,fn){ var b=document.createElement("button"); b.type="button"; b.textContent=label; b.addEventListener("click",function(){ fn(t); }); return b; }
-  row.appendChild(btn("Copy link",function(t){ gc("share/copy-link/"+CFG.table); copyText(termUrl(t)).then(function(){ note("Link copied"); },function(){ note("Copy failed"); }); }));
-  var SS=window.SignalShare||null;
-  var selSize=document.createElement("select"); selSize.setAttribute("aria-label","Image size");
-  var selTheme=document.createElement("select"); selTheme.setAttribute("aria-label","Colour theme");
-  if(SS){ SS.fillOptions(selSize,SS.SIZES); SS.fillOptions(selTheme,SS.THEME_OPTIONS); }
-  else{ selSize.innerHTML='<option value="1080x1350">1080\u00d71350</option><option value="1080x1080">1080\u00d71080</option>'; selTheme.innerHTML='<option value="obsidian">Obsidian Gold</option><option value="ivory">Ivory</option><option value="midnight">Deep Tech Blue</option>'; }
-  row.appendChild(selSize); row.appendChild(selTheme);
-  row.appendChild(btn("Share image",function(t){ gc("share/share-image/"+CFG.table);
-    var txt=shareText(t);
-    drawCard(t,selSize.value,selTheme.value).then(function(blob){ if(!blob){ note("Image unavailable"); return; }
-      var fname=folderFor(t)+".png";
-      if(SS){ SS.shareImage({blob:blob,filename:fname,caption:txt,notify:function(m){ note(m,8000); }}); }
-      else{ download(blob,fname); note("Image downloaded"); }
-    }); }));
-  row.appendChild(btn("Share text",function(t){ gc("share/share-text/"+CFG.table);
-    var txt=shareText(t);
-    if(SS){ SS.shareTextFlow({text:txt,copiedMsg:"Text copied",notify:function(m){ note(m); }}); }
-    else if(isMobile&&navigator.share){ navigator.share({title:t.n,text:txt}).catch(function(e){ if(e&&e.name!=="AbortError"){ copyText(txt).then(function(){ note("Text copied"); }); } }); }
-    else{ copyText(txt).then(function(){ note("Text copied"); },function(){ note("Copy failed"); }); }
-  }));
-  row.appendChild(status);
+  var spec={ title:t.n, line:oneLine(t.d), link:termUrl(t), caption:shareText(t),
+    tags:CFG.brandTag+" "+CFG.familyTag,
+    image:{ kind:"render", filename:folderFor(t)+".png",
+            render:function(size,theme){ return drawCard(t,size,theme); } },
+    onShare:function(kind){ gc("share/"+kind+"/"+CFG.table); } };
+  row.appendChild(SS.shareButton(spec));
   detail.appendChild(row);
 };
 function openFromHash(){

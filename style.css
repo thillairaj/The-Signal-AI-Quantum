@@ -971,3 +971,9 @@ body[data-view="research"] .feed-only { display: none; }
 .research-share button:hover { filter: brightness(1.06); }
 .research-share-status { font-size: 12.5px; color: var(--accent); }
 .research-pagelink { font-size: 13px; color: var(--muted); margin: 6px 0 0; }
+
+.pod-hl{outline:2px solid #c9a227;outline-offset:3px;border-radius:10px}
+.pod-share-slot{display:flex;margin-top:10px}
+.pod-row .pod-share-slot{margin-top:0;align-self:center}
+.ss-share-btn{display:inline-flex;align-items:center;gap:7px;padding:8px 15px;border-radius:999px;border:1px solid rgba(135,135,135,.5);background:rgba(135,135,135,.10);color:inherit;font:inherit;font-size:13.5px;font-weight:600;cursor:pointer;white-space:nowrap}
+.ss-share-btn svg{width:15px;height:15px;flex:0 0 auto}

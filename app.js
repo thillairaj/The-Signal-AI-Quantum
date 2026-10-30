@@ -22,9 +22,7 @@ const podcastViewEl = document.getElementById("podcast-view");
 const researchViewEl = document.getElementById("research-view");
 const homeViewEl = document.getElementById("home-view");
 const researchGridEl = document.getElementById("researchGrid");
-const researchArticleEl = document.getElementById("researchArticle");
 let researchItems = [];
-let openResearchId = null;
 const topTabsEl = document.getElementById("topTabs");
 const podcastFeaturedEl = document.getElementById("podcast-featured");
 const podcastListEl = document.getElementById("podcast-list");
@@ -215,34 +213,88 @@ function renderPodcast() {
     const [latest, ...rest] = pageItems;
     rows = rest;
     heroHtml = `
-    <div class="pod-featured">
+    <div class="pod-featured" data-epid="${latest.id}">
       <p class="pod-kicker">${q ? "Top result" : "Latest episode"} · ${latest.source}</p>
       <h3>${latest.title}</h3>
       <p class="pod-meta">${timeAgo(latest.published)}${latest.duration ? " · " + fmtDur(latest.duration) : ""}</p>
       <audio controls preload="none" src="${AUDIO_PROXY + encodeURIComponent(latest.audio_url)}"></audio>
+      <div class="pod-share-slot" data-share-for="${latest.id}"></div>
     </div>`;
   }
   podcastFeaturedEl.innerHTML = heroHtml;
   const from = total ? start + 1 : 0;
   const to = Math.min(start + POD_PAGE_SIZE, total);
   podcastListEl.innerHTML = rows.map(a => `
-    <div class="pod-row">
+    <div class="pod-row" data-epid="${a.id}">
       <div class="pod-row-text">
         <p class="pod-row-title">${a.title}</p>
         <p class="pod-row-meta">${a.source} · ${timeAgo(a.published)}${a.duration ? " · " + fmtDur(a.duration) : ""}</p>
       </div>
       <audio controls preload="none" src="${AUDIO_PROXY + encodeURIComponent(a.audio_url)}"></audio>
+      <div class="pod-share-slot" data-share-for="${a.id}"></div>
     </div>`).join("") + `
     <div class="pager">
       <button class="pager-btn" id="podPrev" ${podcastPage === 0 ? "disabled" : ""}>← Prev</button>
       <span class="pager-info">${from}–${to} of ${total}${q ? ` for "${escapeHtml(podcastQuery.trim())}"` : ""}</span>
       <button class="pager-btn" id="podNext" ${podcastPage >= totalPages - 1 ? "disabled" : ""}>Next →</button>
     </div>`;
+  mountPodShares(eps);
   document.getElementById("podPrev").addEventListener("click", () => {
     if (podcastPage > 0) { podcastPage--; renderPodcast(); podcastViewEl.scrollIntoView(); }
   });
   document.getElementById("podNext").addEventListener("click", () => {
     if (podcastPage < totalPages - 1) { podcastPage++; renderPodcast(); podcastViewEl.scrollIntoView(); }
+  });
+}
+
+
+function episodeSpec(a) {
+  const line = [a.source, fmtResearchDate(a.published), a.duration ? fmtDur(a.duration) : ""].filter(Boolean).join(" \u00b7 ");
+  const link = SignalShare.BASE + "/podcast/" + a.id + "/";
+  const slug = String(a.source || "").toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/-+/g, "-").replace(/^-|-$/g, "");
+  return { title: a.title, line, link,
+    caption: SignalShare.podcastCaption(a.title, line, link),
+    tags: "#TheSignal #Podcast",
+    image: { kind: "static", url: SignalShare.BASE + "/assets/podcast-covers/" + slug + ".png", filename: a.id + ".png" } };
+}
+
+function mountPodShares(eps) {
+  if (!window.SignalShare) return;
+  document.querySelectorAll(".pod-share-slot").forEach(slot => {
+    const ep = eps.find(e => e.id === slot.dataset.shareFor);
+    if (ep) slot.appendChild(SignalShare.shareButton(episodeSpec(ep)));
+  });
+}
+
+let podcastTargetDone = "";
+function openPodcastTarget() {
+  const h = location.hash;
+  if (!h.startsWith("#podcast/")) return;
+  if (podcastTargetDone === h) return;
+  const id = h.slice("#podcast/".length);
+  const ep = allArticles.find(a => a.category === "Podcast" && a.id === id);
+  if (!ep) return;
+  podcastTargetDone = h;
+  activeSeries = ep.source || "";
+  activeTrack = "";
+  podcastQuery = "";
+  const si = document.getElementById("podcastSearch");
+  if (si) si.value = "";
+  showView("podcast");
+  const eps = allArticles
+    .filter(a => a.category === "Podcast" && a.audio_url)
+    .sort((a, b) => new Date(b.published) - new Date(a.published))
+    .filter(e => e.source === activeSeries);
+  const idx = eps.findIndex(e => e.id === id);
+  if (idx >= 0) podcastPage = Math.floor(idx / POD_PAGE_SIZE);
+  renderPodcast();
+  requestAnimationFrame(() => {
+    const row = document.querySelector('[data-epid="' + id + '"]');
+    if (row) {
+      row.classList.add("pod-hl");
+      row.scrollIntoView({ block: "center" });
+      setTimeout(() => row.classList.remove("pod-hl"), 2600);
+    }
   });
 }
 
@@ -271,9 +323,6 @@ async function loadResearch() {
 
 function renderResearch() {
   if (!researchViewEl) return;
-  if (openResearchId) { renderResearchArticle(openResearchId); return; }
-  researchArticleEl.hidden = true;
-  researchArticleEl.innerHTML = "";
   researchGridEl.hidden = false;
   if (!researchItems.length) {
     researchGridEl.innerHTML = `<p class="empty-state">The first Research Notes edition lands soon.</p>`;
@@ -288,103 +337,10 @@ function renderResearch() {
     </button>`).join("");
   researchGridEl.querySelectorAll(".research-card").forEach(c =>
     c.addEventListener("click", () => {
-      openResearchId = c.dataset.id;
-      try { history.pushState(null, "", "#research/" + openResearchId); } catch (e) {}
-      renderResearch();
-      researchViewEl.scrollIntoView();
+      window.location.href = "research/" + c.dataset.id + "/";
     }));
 }
 
-async function renderResearchArticle(id) {
-  const a = researchItems.find(x => x.id === id);
-  if (!a) { openResearchId = null; renderResearch(); return; }
-  researchGridEl.hidden = true;
-  researchArticleEl.hidden = false;
-  let body = "";
-  try {
-    const res = await fetch(`${a.body}?t=${Date.now()}`, { cache: "no-store" });
-    body = res.ok ? await res.text() : "<p>Article body unavailable.</p>";
-  } catch (err) {
-    body = "<p>Article body unavailable.</p>";
-  }
-  const sources = (a.sources || []).map(s =>
-    `<li><a href="${escapeHtml(s.url)}" target="_blank" rel="noopener">${escapeHtml(s.label)}</a></li>`).join("");
-  const title = escapeHtml(a.title);
-  const card = escapeHtml(a.card);
-  researchArticleEl.innerHTML = `
-    <button class="research-back" id="researchBack">← All research</button>
-    <div class="research-article-wrap">
-      <p class="research-kicker">THE SIGNAL · RESEARCH NOTES · ${escapeHtml((a.kind || "Research").toUpperCase())}</p>
-      <h2 class="research-title">${title}</h2>
-      <p class="research-sub">${escapeHtml(a.subtitle || "")}</p>
-      <p class="research-date">${fmtResearchDate(a.date)} · By The Signal</p>
-      <div class="research-share" id="researchShare">
-        <button type="button" data-share="copy">Copy link</button>
-        <button type="button" data-share="image">Share image</button>
-        <button type="button" data-share="text">Share text</button>
-        <span class="research-share-status" id="researchShareStatus" aria-live="polite"></span>
-      </div>
-      <p class="research-pagelink">This article also has its own page: <a id="researchPageLink" href="#" target="_blank" rel="noopener">open the article page</a></p>
-      <div class="research-layout">
-        <div class="research-main">
-          <div class="research-body">${body}</div>
-          ${sources ? `<h3 class="research-sources-h">Sources</h3><ul class="research-sources">${sources}</ul>` : ""}
-        </div>
-        <aside class="research-rail">
-          <button class="research-thumb" id="researchThumb" aria-label="Expand cover image">
-            <img src="${card}" alt="${title} cover">
-            <span class="research-zoom">⤢ Tap to expand</span>
-          </button>
-        </aside>
-      </div>
-    </div>
-    <div class="research-lightbox" id="researchLightbox" hidden>
-      <img src="${card}" alt="${title} cover">
-    </div>`;
-  const pageUrl = (window.SignalShare && SignalShare.BASE ? SignalShare.BASE : "https://thillairaj.github.io/The-Signal-AI-Quantum") + "/research/" + a.id + "/";
-  const pageLinkEl = document.getElementById("researchPageLink");
-  if (pageLinkEl) pageLinkEl.href = pageUrl;
-  const shareBox = document.getElementById("researchShare");
-  if (shareBox && window.SignalShare) {
-    const status = document.getElementById("researchShareStatus");
-    const notify = (m, ms) => { status.textContent = m; setTimeout(() => { if (status.textContent === m) status.textContent = ""; }, ms || 2600); };
-    const caption = SignalShare.articleCaption(a.title, a.subtitle || "", pageUrl);
-    shareBox.querySelectorAll("button[data-share]").forEach(b => b.addEventListener("click", async () => {
-      const act = b.dataset.share;
-      if (act === "copy") { SignalShare.copy(pageUrl).then(() => notify("Link copied")); }
-      else if (act === "text") { SignalShare.shareTextFlow({ text: caption, copiedMsg: "Text copied", notify }); }
-      else if (act === "image") {
-        try {
-          const r = await fetch(a.card.replace(".webp", ".png"));
-          if (!r.ok) throw new Error("card");
-          const blob = await r.blob();
-          SignalShare.shareImage({ blob, filename: a.id + ".png", caption, notify: m => notify(m, 8000) });
-        } catch (e) { notify("Image unavailable"); }
-      }
-    }));
-  }
-  document.getElementById("researchBack").addEventListener("click", () => {
-    openResearchId = null;
-    try { history.pushState(null, "", "#research"); } catch (e) {}
-    renderResearch();
-  });
-  const thumb = document.getElementById("researchThumb");
-  const lightbox = document.getElementById("researchLightbox");
-  const onEsc = (e) => { if (e.key === "Escape") closeLb(); };
-  function closeLb() {
-    lightbox.hidden = true;
-    document.body.style.overflow = "";
-    document.removeEventListener("keydown", onEsc);
-  }
-  thumb.addEventListener("click", () => {
-    lightbox.hidden = false;
-    document.body.style.overflow = "hidden";
-    document.addEventListener("keydown", onEsc);
-  });
-  lightbox.addEventListener("click", closeLb);
-}
-
-/* ---------- Filtering & rendering ---------- */
 function getFiltered() {
   const term = searchTerm.trim().toLowerCase();
   return allArticles.filter(a => {
@@ -521,6 +477,7 @@ async function loadData() {
     renderFeed();
     fillHomeWire();
     if (!podcastViewEl.hidden) renderPodcast();
+    openPodcastTarget();
 
     if (data.generated_at) {
       statusDot.classList.add("live");
@@ -721,15 +678,12 @@ function openResearchTarget() {
   const h = location.hash;
   if (h.startsWith("#research/")) {
     const id = h.slice("#research/".length);
-    if (id && id !== openResearchId) {
-      openResearchId = id;
-      showView("research");
-      if (researchItems.length) renderResearch();
-    }
+    if (id) window.location.replace("research/" + id + "/");
   }
 }
 openResearchTarget();
-window.addEventListener("hashchange", function () { openLearnTarget(); openResearchTarget(); });
+openPodcastTarget();
+window.addEventListener("hashchange", function () { openLearnTarget(); openResearchTarget(); openPodcastTarget(); });
 
 /* ---------- Home view: auto-rails, live counts (Oct 21 2026 redesign) ---------- */
 (function initHome() {
@@ -748,7 +702,6 @@ window.addEventListener("hashchange", function () { openLearnTarget(); openResea
     btn.addEventListener("click", function () {
       var view = btn.getAttribute("data-goto");
       if (view === "podcast") { activeSeries = ""; podcastPage = 0; }
-      if (view === "research") { openResearchId = null; }
       showView(view);
       window.scrollTo({ top: 0 });
     });
@@ -761,9 +714,9 @@ window.addEventListener("hashchange", function () { openLearnTarget(); openResea
       if (item.dataset.ext) { window.open(item.dataset.ext, "_blank", "noopener"); return; }
       var view = item.dataset.goto;
       if (view === "podcast") { activeSeries = item.dataset.series || ""; podcastPage = 0; }
-      if (view === "research") {
-        openResearchId = item.dataset.artId || null;
-        try { history.pushState(null, "", openResearchId ? "#research/" + openResearchId : "#research"); } catch (e) {}
+      if (view === "research" && item.dataset.artId) {
+        window.location.href = "research/" + item.dataset.artId + "/";
+        return;
       }
       showView(view);
       if (view === "learn" && item.dataset.scroll) scrollToLearnId(item.dataset.scroll);

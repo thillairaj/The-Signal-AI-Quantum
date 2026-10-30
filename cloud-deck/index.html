@@ -416,7 +416,7 @@ function xText(i){const c=activeTopic.learn[i];
   const tailCounted=2+23+2+activeTopic.xTags.length;
   let t=c.q+"\n\n"+first;
   const max=280-tailCounted;
-  if(t.length>max){t=t.slice(0,Math.max(0,max-1)).trimEnd()+"\u2026";}
+  if(t.length>max){let cut=t.slice(0,Math.max(0,max-1));const sp=cut.lastIndexOf(" ");if(sp>0)cut=cut.slice(0,sp);t=cut.trimEnd()+"\u2026";}
   return t+"\n\n"+cardLink(i)+"\n\n"+activeTopic.xTags;}
 function liText(i){return cardText(i);}
 let learnBound=false;
@@ -431,25 +431,15 @@ function renderLearn(){
     d.innerHTML='<div class="pnum">'+c.n+' / '+L.length+'</div><div class="ptag">'+c.tag+'</div>'
       +'<h3 class="pq">'+c.q+'</h3>'
       +'<div class="pbody">'+c.body.map(p=>"<p>"+p+"</p>").join("")+'</div>'
-      +'<div class="toolbar"><select id="size-'+i+'" data-ss-size aria-label="Image size"></select>'
-      +'<select id="theme-'+i+'" data-ss-theme aria-label="Colour theme"></select><button data-act="dl" data-i="'+i+'">PNG</button>'
-      +'<button data-act="x" data-i="'+i+'">X</button><button data-act="li" data-i="'+i+'">in</button>'
-      +'<button data-act="copy" data-i="'+i+'">Copy</button>'
+      +'<div class="toolbar"><button data-act="share" data-i="'+i+'" class="ss-share-btn">'+SignalShare.ICONS.share+'<span>Share</span></button>'
       +'<span class="copied" id="copied-'+i+'">Copied ✓</span></div>';
     rail.appendChild(d);
   });
-  rail.querySelectorAll("select[data-ss-size]").forEach(s=>SignalShare.fillOptions(s,SignalShare.SIZES));
-  rail.querySelectorAll("select[data-ss-theme]").forEach(s=>SignalShare.fillOptions(s,SignalShare.THEME_OPTIONS));
   if(!learnBound){learnBound=true;
     rail.addEventListener("click",e=>{
       const b=e.target.closest("button[data-act]");if(!b)return;
       const i=+b.dataset.i,act=b.dataset.act;
-      if(act==="copy"){copyText(cardText(i),i);}
-      else if(act==="x"){window.open("https://twitter.com/intent/tweet?text="+encodeURIComponent(xText(i)),"_blank","width=560,height=460");}
-      else if(act==="li"){const t=liText(i);
-        copyText(t,i,"Copied \u2014 paste into the LinkedIn composer");
-        window.open("https://www.linkedin.com/sharing/share-offsite/?url="+encodeURIComponent(cardLink(i)),"_blank");}
-      else if(act==="dl"){downloadCard(i,document.getElementById("size-"+i).value,document.getElementById("theme-"+i).value);}
+      if(act==="share"){openCardPanel(i,b);}
     });
     rail.addEventListener("click",e=>{
       if(e.target.closest("button[data-act]"))return;
@@ -488,7 +478,24 @@ document.addEventListener("keydown",e=>{
 /* ---------- card -> PNG (premium obsidian/gold) ---------- */
 function wrap(x,t,mw){const w=t.split(" "),L=[];let l="";w.forEach(s=>{const t2=l?l+" "+s:s;
   if(x.measureText(t2).width>mw&&l){L.push(l);l=s;}else l=t2;});if(l)L.push(l);return L;}
-function downloadCard(i,size,theme){
+
+function openCardPanel(i,invoker){
+  const c=activeTopic.learn[i];if(!c||!window.SignalShare)return;
+  const first=(c.body[0]||"").split(/(?<=[.!?])\s+/)[0];
+  SignalShare.openPanel({
+    title:c.q, line:first, link:cardLink(i), caption:cardText(i),
+    tags:activeTopic.xTags||"", xText:xText(i),
+    image:{ kind:"render",
+      filename:"cloud-deck-"+activeTopic.id+"-"+c.n+".png",
+      render:function(size,theme){
+        return new Promise(function(res){
+          renderCardBlob(i,size,theme,function(blob){ res(blob); });
+        });
+      } }
+  }, invoker);
+}
+
+function renderCardBlob(i,size,theme,cb){
   const [W,H]=size.split("x").map(Number),c=activeTopic.learn[i],k=W/1080;
   const T=THEMES[theme]||THEMES.obsidian;
   const cv=document.createElement("canvas");cv.width=W;cv.height=H;const x=cv.getContext("2d");
@@ -536,10 +543,13 @@ function downloadCard(i,size,theme){
   try{x.letterSpacing="0px";}catch(e){}
   x.textAlign="left";x.textBaseline="alphabetic";
   const filename="cloud-deck-"+activeTopic.id+"-"+c.n+".png";
-  cv.toBlob(function(blob){
+  cv.toBlob(function(blob){ cb(blob,filename); },"image/png");
+}
+function downloadCard(i,size,theme){
+  renderCardBlob(i,size,theme,function(blob,filename){
     if(!blob){return;}
     SignalShare.shareImage({blob:blob,filename:filename,caption:cardText(i),notify:function(m){showCopied(i,m);}});
-  },"image/png");
+  });
 }
 /* ---------- compact flashcard rail ---------- */
 function renderFlash(){

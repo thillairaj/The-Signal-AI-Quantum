@@ -28,18 +28,13 @@
 <div class="ap-wrap">
   <header class="ap-head">
     <a class="ap-brand" href="../../">The <em>Signal</em></a>
-    <a class="ap-back" href="../../#research/2026-10-26-agent-decision-taste-bench">← Read in the Articles view</a>
+    <a class="ap-back" href="../../#research">← All articles</a>
   </header>
   <p class="research-kicker">THE SIGNAL · RESEARCH NOTES · DEEP DIVE</p>
   <h1 class="research-title">Why Does Finishing the Task No Longer Prove an AI Agent Works?</h1>
   <p class="research-sub">Taste-Bench and the judgment gap in long running agents</p>
   <p class="research-date">26 Oct 2026 · By The Signal</p>
-  <div class="research-share" id="artShare">
-    <button type="button" data-share="copy">Copy link</button>
-    <button type="button" data-share="image">Share image</button>
-    <button type="button" data-share="text">Share text</button>
-    <span class="research-share-status" id="artShareStatus" aria-live="polite"></span>
-  </div>
+  <div class="research-share" id="artShare"></div>
   <div class="research-layout">
     <div class="research-main">
       <div class="research-body"><p><em>Signal Research Notes is an original-research series on The Signal, published three times a week. Each edition asks one question, works through it from primary sources, and keeps confirmed facts separate from analysis. Sources are linked at the end.</em></p>
@@ -92,28 +87,17 @@
 <script src="../../assets/signal-share.js"></script>
 <script>
 (function () {
-  var A = { id: "2026-10-26-agent-decision-taste-bench", title: "Why Does Finishing the Task No Longer Prove an AI Agent Works?", subtitle: "Taste-Bench and the judgment gap in long running agents", cardPng: "../../research/cards/edition-05.png" };
+  var A = { id: "2026-10-26-agent-decision-taste-bench", title: "Why Does Finishing the Task No Longer Prove an AI Agent Works?", subtitle: "Taste-Bench and the judgment gap in long running agents" };
   var url = SignalShare.BASE + "/research/" + A.id + "/";
   var caption = SignalShare.articleCaption(A.title, A.subtitle, url);
   window.__articleCaption = caption;
   window.__articleUrl = url;
-  var status = document.getElementById("artShareStatus");
-  function notify(m, ms) { status.textContent = m; setTimeout(function () { if (status.textContent === m) status.textContent = ""; }, ms || 2600); }
-  document.querySelectorAll("#artShare button[data-share]").forEach(function (b) {
-    b.addEventListener("click", async function () {
-      var act = b.dataset.share;
-      if (act === "copy") { SignalShare.copy(url).then(function () { notify("Link copied"); }); }
-      else if (act === "text") { SignalShare.shareTextFlow({ text: caption, copiedMsg: "Text copied", notify: notify }); }
-      else if (act === "image") {
-        try {
-          var r = await fetch(A.cardPng);
-          if (!r.ok) throw new Error("card");
-          var blob = await r.blob();
-          SignalShare.shareImage({ blob: blob, filename: A.id + ".png", caption: caption, notify: function (m) { notify(m, 8000); } });
-        } catch (e) { notify("Image unavailable"); }
-      }
-    });
-  });
+  var spec = { title: A.title, line: A.subtitle, link: url, caption: caption,
+    tags: "#TheSignal " + SignalShare.topicHashtag(A.title + " " + A.subtitle),
+    image: { kind: "static", url: SignalShare.BASE + "/" + "research/cards/edition-05.png",
+             filename: A.id + ".png" } };
+  window.__articleSpec = spec;
+  document.getElementById("artShare").appendChild(SignalShare.shareButton(spec));
 })();
 </script>
 </body>

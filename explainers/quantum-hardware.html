@@ -259,6 +259,16 @@ a.ts-chip:hover { border-color: var(--gold); }
 @media (max-width: 640px) { .ts-label { display: none; } }
 /* tstrip:style:end */
 </style>
+<style>
+/* explainer-layout:start */
+.topicbar{background-color:#FAF9F6}
+:root[data-theme="dark"] .topicbar{background-color:#2F353E}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .topicbar{background-color:#2F353E}}
+.tstrip-row{background:var(--bar);border-top:none;border-bottom:1px solid var(--bar-border);padding:2px 18px 12px;backdrop-filter:blur(6px)}
+@media (max-width:640px){.tstrip-row{padding:0 12px 10px}}
+@media (min-width:960px){:root{--barh:76px}.panel{top:calc(var(--barh) + 10px)}.art svg{max-height:calc(100vh - var(--barh) - 64px)}}
+/* explainer-layout:end */
+</style>
 </head>
 <body>
 
@@ -275,6 +285,7 @@ a.ts-chip:hover { border-color: var(--gold); }
     <button class="tab" role="tab" id="tab-chip" aria-selected="false" aria-controls="view-chip" data-view="chip">The chip</button>
   </div>
   <button class="journey-btn" id="journeyBtn" type="button" aria-pressed="false">Follow a signal</button>
+</div>
   <!-- tstrip:start -->
   <div class="tstrip-row">
     <span class="ts-label">QUANTUM EXPLAINERS</span>
@@ -283,7 +294,6 @@ a.ts-chip:hover { border-color: var(--gold); }
     <button class="ts-btn" id="tsNext" type="button" aria-label="Scroll topics forward">›</button>
   </div>
 <!-- tstrip:end -->
-</div>
 
 <main>
 
@@ -652,8 +662,7 @@ a.ts-chip:hover { border-color: var(--gold); }
       <div class="panel-actions">
         <span class="spacer"></span>
         <span class="copied" id="copied">Link copied</span>
-        <button class="btn" id="pShare" type="button">Copy link to this part</button>
-        <button class="btn" id="pShareText" type="button">Share text</button>
+        <button class="btn ss-share-btn" id="pShareBtn" type="button">Share</button>
       </div>
     </aside>
   </div>
@@ -1084,29 +1093,17 @@ a.ts-chip:hover { border-color: var(--gold); }
   $('pPrev').addEventListener('click', () => step(-1));
   $('pNext').addEventListener('click', () => step(1));
 
-  $('pShare').addEventListener('click', async () => {
-    const url = location.href.split('#')[0] + '#' + current;
-    try {
-      if (navigator.share && matchMedia('(pointer: coarse)').matches) { await navigator.share({ title: PARTS[current].name + ' · The Signal', url }); return; }
-      await navigator.clipboard.writeText(url);
-    } catch (e) {
-      const ta = document.createElement('textarea'); ta.value = url; document.body.appendChild(ta); ta.select();
-      try { document.execCommand('copy'); } catch (_) {} ta.remove();
-    }
-    const c = $('copied'); c.classList.add('on'); setTimeout(() => c.classList.remove('on'), 1600);
-  });
-
-  $('pShareText').addEventListener('click', async () => {
+  const pShareBtn = $('pShareBtn');
+  if (window.SignalShare && pShareBtn) {
+    pShareBtn.innerHTML = SignalShare.ICONS.share + '<span>Share</span>';
+  }
+  $('pShareBtn').addEventListener('click', () => {
     const url = location.href.split('#')[0] + '#' + current;
     const p = PARTS[current];
     const first = (p.simple || p.deep || '').split(/(?<=[.!?])\s+/)[0];
-    const flash = (msg) => { const c = $('copied'); c.textContent = msg; c.classList.add('on'); setTimeout(() => { c.classList.remove('on'); c.textContent = 'Link copied'; }, 1600); };
     if (window.SignalShare) {
-      const txt = SignalShare.buildCaption([p.name, first, 'Explore the full explainer, free, no sign-up:\n' + url, '#TheSignal #QuantumComputing']);
-      SignalShare.shareTextFlow({ text: txt, copiedMsg: 'Text copied', notify: flash });
-    } else {
-      try { await navigator.clipboard.writeText([p.name, first, url].join('\n\n')); } catch (e) {}
-      flash('Text copied');
+      const caption = SignalShare.buildCaption([p.name, first, 'Explore the full explainer, free, no sign-up:\n' + url, '#TheSignal #QuantumComputing']);
+      SignalShare.openPanel({ title: p.name, line: first, link: url, caption: caption, tags: '#TheSignal #QuantumComputing', image: null }, pShareBtn);
     }
   });
 

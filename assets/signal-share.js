@@ -52,6 +52,342 @@ window.SignalShare = (function () {
       "Read the full article, free, no sign-up:\n" + url,
       "#TheSignal " + topicHashtag((title || "") + " " + (subtitle || ""))]);
   }
+  function podcastCaption(title, line, url) {
+    return buildCaption([title, line,
+      "Listen free, no sign-up:\n" + url,
+      "#TheSignal #Podcast"]);
+  }
+  /* The SHORT version for X: title, one line, link, hashtags; the link
+     counts as 23 characters against the 280 limit. The line used is the
+     first full sentence; anything that still does not fit is cut at the
+     last whole word before the limit, never mid word. */
+  function firstSentence(s) {
+    var m = String(s || "").match(/^[\s\S]*?[.!?](?=\s|$)/);
+    return (m ? m[0] : String(s || "")).trim();
+  }
+  function cutWords(text, room) {
+    if (text.length <= room) return text;
+    var cut = text.slice(0, Math.max(0, room - 1));
+    var sp = cut.lastIndexOf(" ");
+    if (sp > 0) cut = cut.slice(0, sp);
+    return cut.trimEnd() + "\u2026";
+  }
+  function shortText(spec) {
+    if (spec.xText) return spec.xText;
+    var tags = spec.tags || "";
+    var tail = "\n\n" + spec.link + (tags ? "\n\n" + tags : "");
+    var budget = 280 - (2 + 23 + (tags ? 2 + tags.length : 0));
+    var line = firstSentence(spec.line || "");
+    var head = spec.title + (line ? "\n\n" + line : "");
+    if (head.length <= budget) return head + tail;
+    if (spec.title.length > budget) return cutWords(spec.title, budget) + tail;
+    var room = budget - spec.title.length - 2;
+    if (line && room > 10) {
+      return spec.title + "\n\n" + cutWords(line, room) + tail;
+    }
+    return spec.title + tail;
+  }
+  /* The WhatsApp version: bold title, one line, link. */
+  function whatsText(spec) {
+    return "*" + spec.title + "*" + (spec.line ? "\n\n" + spec.line : "") +
+      "\n\n" + spec.link;
+  }
+  /* ---------- the one Share panel ----------
+     Every surface opens the same panel through openPanel(spec):
+       spec = { title, line, link, caption, tags, xText (optional),
+                image: null
+                     | { kind: "render", render(size, theme) -> Promise<Blob>, filename }
+                     | { kind: "static", url, filename },
+                onShare: function (kind) {} (optional analytics hook) }
+     Phones get a bottom sheet, wider screens a centred dialog. */
+  var PANEL_CSS = [
+    ".ss-overlay{position:fixed;inset:0;z-index:9999;background:rgba(7,9,13,.58);display:flex;align-items:flex-end;justify-content:center}",
+    ".ss-overlay[hidden]{display:none}",
+    "@media (min-width:641px){.ss-overlay{align-items:center;padding:18px}}",
+    ".ss-panel{background:#14161d;color:#ece7db;color-scheme:dark;width:100%;max-width:460px;max-height:92vh;overflow:auto;border-radius:18px 18px 0 0;padding:18px 18px 16px;box-shadow:0 18px 50px rgba(0,0,0,.5);font-family:system-ui,-apple-system,'Segoe UI',sans-serif}",
+    "@media (min-width:641px){.ss-panel{border-radius:18px}}",
+    ".ss-head{display:flex;align-items:center;gap:10px}",
+    ".ss-title{font-size:17px;font-weight:700;letter-spacing:.02em}",
+    ".ss-item{flex:1;min-width:0;font-size:12.5px;color:#9aa3b2;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}",
+    ".ss-close{flex:0 0 auto;width:34px;height:34px;border-radius:50%;border:1px solid #2c303c;background:#1e212b;color:#ece7db;font-size:19px;line-height:1;cursor:pointer}",
+    ".ss-rowlabel{margin:16px 0 8px;font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#9aa3b2}",
+    ".ss-textrow{display:flex;gap:6px;justify-content:space-between}",
+    ".ss-icobtn{flex:1;display:flex;flex-direction:column;align-items:center;gap:6px;padding:10px 0 8px;background:#1e212b;border:1px solid #2c303c;border-radius:12px;color:#ece7db;cursor:pointer;font:inherit}",
+    ".ss-icobtn:hover,.ss-icobtn:focus-visible{border-color:#d4af6a;outline:none}",
+    ".ss-icobtn svg{width:22px;height:22px}",
+    ".ss-icobtn[data-ss='linkedin'] svg{color:#0A66C2}",
+    ".ss-icobtn[data-ss='whatsapp'] svg{color:#25D366}",
+    ".ss-icobtn span{font-size:11px}",
+    ".ss-opts{display:flex;align-items:center;gap:12px;flex-wrap:wrap}",
+    ".ss-optgroup{display:flex;align-items:center;gap:7px}",
+    ".ss-sizebtn{width:42px;height:42px;display:grid;place-items:center;background:#1e212b;border:1px solid #2c303c;border-radius:10px;color:#9aa3b2;cursor:pointer}",
+    ".ss-sizebtn[aria-pressed='true']{border-color:#d4af6a;color:#d4af6a}",
+    ".ss-themebtn{width:30px;height:30px;border-radius:50%;border:2px solid rgba(255,255,255,.25);cursor:pointer;padding:0}",
+    ".ss-themebtn[aria-pressed='true']{border-color:#d4af6a;box-shadow:0 0 0 2px #14161d,0 0 0 4px #d4af6a}",
+    ".ss-selname{font-size:12.5px;color:#c3ccd9;margin-top:8px}",
+    ".ss-thumb{display:block;width:100%;max-height:290px;object-fit:contain;background:#0d0f14;border-radius:12px;margin-top:10px}",
+    ".ss-imgbtns{display:flex;gap:10px;margin-top:12px}",
+    ".ss-imgbtns button{flex:1;padding:11px 8px;border-radius:10px;font:inherit;font-weight:600;cursor:pointer}",
+    ".ss-shareimg{background:#d4af6a;border:1px solid #d4af6a;color:#171207}",
+    ".ss-download{background:transparent;border:1px solid #3a3f4d;color:#ece7db}",
+    ".ss-status{min-height:18px;margin:12px 0 0;font-size:12.5px;color:#d4af6a;text-align:center}",
+    ".ss-share-btn{display:inline-flex;align-items:center;gap:7px;padding:8px 15px;border-radius:999px;border:1px solid rgba(135,135,135,.5);background:rgba(135,135,135,.10);color:inherit;font:inherit;font-size:13.5px;font-weight:600;cursor:pointer}",
+    ".ss-share-btn svg{width:15px;height:15px}",
+    ".ss-share-btn:hover{border-color:#d4af6a}"
+  ].join("\n");
+  var ICONS = {
+    linkedin: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4V8h4"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>',
+    x: '<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.9 2H22l-6.8 7.8L23.3 22h-6.3l-4.9-6.4L6.5 22H3.4l7.3-8.3L2.7 2h6.4l4.4 5.9L18.9 2zm-1.1 18h1.7L7.1 3.9H5.3L17.8 20z"/></svg>',
+    whatsapp: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>',
+    copy: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="14" height="14" x="8" y="8" rx="2"/><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"/></svg>',
+    more: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" x2="15.42" y1="13.51" y2="17.49"/><line x1="15.41" x2="8.59" y1="6.51" y2="10.49"/></svg>',
+    share: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" x2="15.42" y1="13.51" y2="17.49"/><line x1="15.41" x2="8.59" y1="6.51" y2="10.49"/></svg>',
+    portrait: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="6" y="3" width="12" height="18" rx="2"/></svg>',
+    square: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="4" y="4" width="16" height="16" rx="2"/></svg>'
+  };
+  var panel = null;
+  function ssStatus(msg) {
+    if (!panel) return;
+    panel.statusEl.textContent = msg || "";
+    if (panel.statusTimer) clearTimeout(panel.statusTimer);
+    if (msg) {
+      panel.statusTimer = setTimeout(function () {
+        if (panel) panel.statusEl.textContent = "";
+      }, 8000);
+    }
+  }
+  function ensurePanel() {
+    if (panel) return panel;
+    var style = document.createElement("style");
+    style.id = "ss-panel-style";
+    style.textContent = PANEL_CSS;
+    document.head.appendChild(style);
+    var overlay = document.createElement("div");
+    overlay.className = "ss-overlay";
+    overlay.hidden = true;
+    overlay.innerHTML =
+      '<div class="ss-panel" role="dialog" aria-modal="true" aria-label="Share">' +
+        '<div class="ss-head"><span class="ss-title">Share</span>' +
+          '<span class="ss-item"></span>' +
+          '<button type="button" class="ss-close" aria-label="Close">\u00d7</button></div>' +
+        '<p class="ss-rowlabel">Share as text</p>' +
+        '<div class="ss-textrow">' +
+          '<button type="button" class="ss-icobtn" data-ss="linkedin">' + ICONS.linkedin + '<span>LinkedIn</span></button>' +
+          '<button type="button" class="ss-icobtn" data-ss="x">' + ICONS.x + '<span>X</span></button>' +
+          '<button type="button" class="ss-icobtn" data-ss="whatsapp">' + ICONS.whatsapp + '<span>WhatsApp</span></button>' +
+          '<button type="button" class="ss-icobtn" data-ss="copy">' + ICONS.copy + '<span>Copy</span></button>' +
+          '<button type="button" class="ss-icobtn" data-ss="more">' + ICONS.more + '<span>More</span></button>' +
+        '</div>' +
+        '<div class="ss-imgwrap" hidden>' +
+          '<p class="ss-rowlabel">Share as image</p>' +
+          '<div class="ss-opts">' +
+            '<div class="ss-optgroup ss-sizes">' +
+              '<button type="button" class="ss-sizebtn" data-size="1080x1350" aria-pressed="true" aria-label="Portrait, 1080 by 1350">' + ICONS.portrait + '</button>' +
+              '<button type="button" class="ss-sizebtn" data-size="1080x1080" aria-pressed="false" aria-label="Square, 1080 by 1080">' + ICONS.square + '</button>' +
+            '</div>' +
+            '<div class="ss-optgroup ss-themes"></div>' +
+          '</div>' +
+          '<p class="ss-selname"></p>' +
+          '<img class="ss-thumb" alt="Preview of the share image">' +
+          '<div class="ss-imgbtns">' +
+            '<button type="button" class="ss-shareimg" data-ss="shareimage">Share image</button>' +
+            '<button type="button" class="ss-download" data-ss="download">Download</button>' +
+          '</div>' +
+        '</div>' +
+        '<p class="ss-status" aria-live="polite"></p>' +
+      '</div>';
+    document.body.appendChild(overlay);
+    var themesEl = overlay.querySelector(".ss-themes");
+    THEME_OPTIONS.forEach(function (t) {
+      var b = document.createElement("button");
+      b.type = "button";
+      b.className = "ss-themebtn";
+      b.dataset.theme = t.v;
+      b.title = t.label;
+      b.setAttribute("aria-label", "Theme: " + t.label);
+      b.setAttribute("aria-pressed", "false");
+      b.style.background = PALETTES[t.v].bg1;
+      b.style.color = PALETTES[t.v].accent;
+      themesEl.appendChild(b);
+    });
+    panel = {
+      overlay: overlay,
+      itemEl: overlay.querySelector(".ss-item"),
+      statusEl: overlay.querySelector(".ss-status"),
+      imgWrap: overlay.querySelector(".ss-imgwrap"),
+      optsEl: overlay.querySelector(".ss-opts"),
+      selNameEl: overlay.querySelector(".ss-selname"),
+      thumbEl: overlay.querySelector(".ss-thumb"),
+      spec: null, invoker: null, size: "1080x1350", theme: "obsidian",
+      blob: null, blobKey: "", thumbUrl: "", statusTimer: null
+    };
+    overlay.querySelector(".ss-close").addEventListener("click", closePanel);
+    overlay.addEventListener("click", function (e) {
+      if (e.target === overlay) closePanel();
+    });
+    overlay.addEventListener("keydown", function (e) {
+      if (e.key === "Escape") { closePanel(); return; }
+      if (e.key !== "Tab") return;
+      var focusables = overlay.querySelectorAll("button:not([disabled])");
+      if (!focusables.length) return;
+      var first = focusables[0], last = focusables[focusables.length - 1];
+      if (e.shiftKey && document.activeElement === first) {
+        e.preventDefault(); last.focus();
+      } else if (!e.shiftKey && document.activeElement === last) {
+        e.preventDefault(); first.focus();
+      }
+    });
+    overlay.querySelectorAll("[data-ss]").forEach(function (b) {
+      b.addEventListener("click", function () { panelAction(b.dataset.ss); });
+    });
+    overlay.querySelectorAll(".ss-sizebtn").forEach(function (b) {
+      b.addEventListener("click", function () {
+        panel.size = b.dataset.size;
+        syncImageControls(); renderPreview();
+      });
+    });
+    themesEl.querySelectorAll(".ss-themebtn").forEach(function (b) {
+      b.addEventListener("click", function () {
+        panel.theme = b.dataset.theme;
+        syncImageControls(); renderPreview();
+      });
+    });
+    return panel;
+  }
+  function syncImageControls() {
+    if (!panel || !panel.spec) return;
+    panel.overlay.querySelectorAll(".ss-sizebtn").forEach(function (b) {
+      b.setAttribute("aria-pressed", b.dataset.size === panel.size ? "true" : "false");
+    });
+    panel.overlay.querySelectorAll(".ss-themebtn").forEach(function (b) {
+      b.setAttribute("aria-pressed", b.dataset.theme === panel.theme ? "true" : "false");
+    });
+    var sizeLabel = panel.size === "1080x1350" ? "Portrait \u00b7 1080\u00d71350" : "Square \u00b7 1080\u00d71080";
+    var themeLabel = "";
+    THEME_OPTIONS.forEach(function (t) { if (t.v === panel.theme) themeLabel = t.label; });
+    panel.selNameEl.textContent =
+      panel.spec.image && panel.spec.image.kind === "render"
+        ? sizeLabel + " \u00b7 " + themeLabel : "";
+  }
+  function renderPreview() {
+    if (!panel || !panel.spec || !panel.spec.image) return;
+    var img = panel.spec.image;
+    if (img.kind === "static") {
+      panel.thumbEl.src = img.url;
+      return;
+    }
+    var key = panel.size + "|" + panel.theme;
+    panel.blobKey = key;
+    img.render(panel.size, panel.theme).then(function (blob) {
+      if (!panel || panel.blobKey !== key) return;
+      panel.blob = blob;
+      if (panel.thumbUrl) URL.revokeObjectURL(panel.thumbUrl);
+      panel.thumbUrl = URL.createObjectURL(blob);
+      panel.thumbEl.src = panel.thumbUrl;
+    }).catch(function () { ssStatus("Image unavailable"); });
+  }
+  function currentBlob() {
+    var img = panel.spec.image;
+    if (img.kind === "static") {
+      return fetch(img.url).then(function (r) {
+        if (!r.ok) throw new Error("image fetch failed");
+        return r.blob();
+      });
+    }
+    var key = panel.size + "|" + panel.theme;
+    if (panel.blob && panel.blobKey === key) return Promise.resolve(panel.blob);
+    return img.render(panel.size, panel.theme);
+  }
+  function hook(kind) {
+    if (panel && panel.spec && panel.spec.onShare) {
+      try { panel.spec.onShare(kind); } catch (e) {}
+    }
+  }
+  function panelAction(kind) {
+    if (!panel || !panel.spec) return;
+    var spec = panel.spec;
+    if (kind === "linkedin") {
+      hook("linkedin");
+      copy(spec.caption).then(function () {
+        ssStatus(NOTICE);
+        window.open("https://www.linkedin.com/sharing/share-offsite/?url=" +
+          encodeURIComponent(spec.link), "_blank");
+      });
+    } else if (kind === "x") {
+      hook("x");
+      window.open("https://twitter.com/intent/tweet?text=" +
+        encodeURIComponent(shortText(spec)), "_blank", "width=560,height=460");
+    } else if (kind === "whatsapp") {
+      hook("whatsapp");
+      window.open("https://wa.me/?text=" +
+        encodeURIComponent(whatsText(spec)), "_blank");
+    } else if (kind === "copy") {
+      hook("copy");
+      copy(spec.caption).then(function () { ssStatus(NOTICE); });
+    } else if (kind === "more") {
+      hook("more");
+      if (navigator.share) {
+        navigator.share({ title: spec.title, text: spec.caption, url: spec.link })
+          .catch(function () {});
+      } else {
+        copy(spec.caption).then(function () {
+          ssStatus("Share sheet is not available here, so the caption was copied instead.");
+        });
+      }
+    } else if (kind === "shareimage") {
+      hook("image");
+      currentBlob().then(function (blob) {
+        shareImage({ blob: blob, filename: spec.image.filename,
+          caption: spec.caption, notify: ssStatus });
+      }).catch(function () { ssStatus("Image unavailable"); });
+    } else if (kind === "download") {
+      hook("download");
+      currentBlob().then(function (blob) {
+        download(blob, spec.image.filename);
+        copy(spec.caption).catch(function () {});
+        ssStatus(NOTICE);
+      }).catch(function () { ssStatus("Image unavailable"); });
+    }
+  }
+  function openPanel(spec, invoker) {
+    ensurePanel();
+    panel.spec = spec;
+    panel.invoker = invoker || document.activeElement;
+    panel.size = "1080x1350";
+    panel.theme = "obsidian";
+    panel.blob = null; panel.blobKey = "";
+    panel.itemEl.textContent = spec.title || "";
+    panel.itemEl.title = spec.title || "";
+    panel.imgWrap.hidden = !spec.image;
+    panel.optsEl.style.display =
+      spec.image && spec.image.kind === "render" ? "" : "none";
+    ssStatus("");
+    syncImageControls();
+    if (spec.image) renderPreview();
+    panel.overlay.hidden = false;
+    panel.prevOverflow = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    var closeBtn = panel.overlay.querySelector(".ss-close");
+    if (closeBtn) closeBtn.focus();
+  }
+  function closePanel() {
+    if (!panel) return;
+    panel.overlay.hidden = true;
+    document.body.style.overflow = panel.prevOverflow || "";
+    if (panel.thumbUrl) { URL.revokeObjectURL(panel.thumbUrl); panel.thumbUrl = ""; }
+    if (panel.invoker && panel.invoker.focus) {
+      try { panel.invoker.focus(); } catch (e) {}
+    }
+  }
+  /* A ready made Share button element for surfaces that build their own DOM. */
+  function shareButton(spec) {
+    var b = document.createElement("button");
+    b.type = "button";
+    b.className = "ss-share-btn";
+    b.innerHTML = ICONS.share + "<span>Share</span>";
+    b.addEventListener("click", function () { openPanel(spec, b); });
+    return b;
+  }
   /* Uniform image sharing. Phone: share the file together with the caption
      text, copy the caption at the same moment, and show the paste notice
      (again after the sheet closes). Desktop: download the image and copy
@@ -106,6 +442,9 @@ window.SignalShare = (function () {
     PALETTES: PALETTES, isMobile: isMobile, copy: copy, download: download,
     buildCaption: buildCaption, shareImage: shareImage,
     shareTextFlow: shareTextFlow, fillOptions: fillOptions,
-    topicHashtag: topicHashtag, articleCaption: articleCaption
+    topicHashtag: topicHashtag, articleCaption: articleCaption,
+    podcastCaption: podcastCaption, shortText: shortText,
+    whatsText: whatsText, openPanel: openPanel, closePanel: closePanel,
+    shareButton: shareButton, ICONS: ICONS
   };
 })();
