@@ -264,10 +264,11 @@
 </main>
 
 <footer><div class="rule"></div>Curated by Thillai Raj Thanam Jeya Veera Raj · <a class="li-btn" href="https://www.linkedin.com/in/thillairaj" target="_blank" rel="noopener"><span class="li-badge" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.55V9h3.57v11.45z"/></svg></span><span class="li-txt"><span class="li-dir">Follow on</span><span class="li-name">LinkedIn</span></span></a></footer>
+<script src="../assets/signal-share.js"></script>
 <script>
 const FOOTER="Curated by Thillai Raj Thanam Jeya Veera Raj";
 const BRAND="The Quantum Deck";
-const PUBLIC_URL="https://thillairaj.github.io/The-Signal-AI-Quantum/quantum-deck/";
+const PUBLIC_URL=(window.SignalShare&&window.SignalShare.BASE?window.SignalShare.BASE:"https://thillairaj.github.io/The-Signal-AI-Quantum")+"/quantum-deck/";
 const THEMES={
 obsidian:{bg0:"#151923",bg1:"#0d0f14",accent:"#d4af6a",dim:"rgba(212,175,106,.5)",head:"#ffffff",body:"#c3ccd9",foot:"#8fa0b5"},
 ivory:{bg0:"#fffdf9",bg1:"#f0ebdf",accent:"#a8842f",dim:"rgba(168,132,47,.45)",head:"#171b24",body:"#334052",foot:"#6b7280"},
@@ -590,18 +591,22 @@ function selectTopic(id,skipHash){
   if(!skipHash){try{history.replaceState(null,"","#"+t.id);}catch(e){}}
 }
 /* ---------- learn rail ---------- */
+function cardLink(i){const c=activeTopic.learn[i];
+  return PUBLIC_URL+"#card-"+activeTopic.id+"-"+c.n;}
 function cardText(i){const c=activeTopic.learn[i];
-  return c.q+"\n\n"+c.body.join("\n\n");}
-/* social-media rewrites: text only, no URLs, no credentials needed (intent links) */
+  const parts=[c.q].concat(c.body);
+  parts.push("Explore all "+activeTopic.learn.length+" cards in "+activeTopic.title+", free, no sign-up:\n"+cardLink(i));
+  parts.push(activeTopic.liTags);
+  return SignalShare.buildCaption(parts);}
+/* social-media rewrites: intent links only, no credentials needed */
 function xText(i){const c=activeTopic.learn[i];
   const first=c.body[0].split(/(?<=[.!?])\s+/)[0];
-  const tags="\n\n"+activeTopic.xTags;
+  const tailCounted=2+23+2+activeTopic.xTags.length;
   let t=c.q+"\n\n"+first;
-  const max=280-tags.length;
-  if(t.length>max){t=t.slice(0,max-1).trimEnd()+"\u2026";}
-  return t+tags;}
-function liText(i){const c=activeTopic.learn[i];
-  return "\u201c"+c.q+"\u201d\n\n"+c.body.join("\n\n")+"\n\n"+activeTopic.liTags;}
+  const max=280-tailCounted;
+  if(t.length>max){t=t.slice(0,Math.max(0,max-1)).trimEnd()+"\u2026";}
+  return t+"\n\n"+cardLink(i)+"\n\n"+activeTopic.xTags;}
+function liText(i){return cardText(i);}
 let learnBound=false;
 function renderLearn(){
   const rail=document.getElementById("learn-rail");rail.innerHTML="";
@@ -611,16 +616,15 @@ function renderLearn(){
     d.innerHTML='<div class="pnum">'+c.n+' / '+L.length+'</div><div class="ptag">'+c.tag+'</div>'
       +'<h3 class="pq">'+c.q+'</h3>'
       +'<div class="pbody">'+c.body.map(p=>"<p>"+p+"</p>").join("")+'</div>'
-      +'<div class="toolbar"><select id="size-'+i+'" aria-label="Image size">'
-      +'<option value="1080x1350">1080×1350</option><option value="1080x1080">1080×1080</option>'
-      +'</select><select id="theme-'+i+'" aria-label="Colour theme">'
-      +'<option value="obsidian">Obsidian Gold</option><option value="ivory">Ivory</option><option value="midnight">Deep Tech Blue</option>'
-      +'</select><button data-act="dl" data-i="'+i+'">PNG</button>'
+      +'<div class="toolbar"><select id="size-'+i+'" data-ss-size aria-label="Image size"></select>'
+      +'<select id="theme-'+i+'" data-ss-theme aria-label="Colour theme"></select><button data-act="dl" data-i="'+i+'">PNG</button>'
       +'<button data-act="x" data-i="'+i+'">X</button><button data-act="li" data-i="'+i+'">in</button>'
       +'<button data-act="copy" data-i="'+i+'">Copy</button>'
       +'<span class="copied" id="copied-'+i+'">Copied ✓</span></div>';
     rail.appendChild(d);
   });
+  rail.querySelectorAll("select[data-ss-size]").forEach(s=>SignalShare.fillOptions(s,SignalShare.SIZES));
+  rail.querySelectorAll("select[data-ss-theme]").forEach(s=>SignalShare.fillOptions(s,SignalShare.THEME_OPTIONS));
   if(!learnBound){learnBound=true;
     rail.addEventListener("click",e=>{
       const b=e.target.closest("button[data-act]");if(!b)return;
@@ -629,7 +633,7 @@ function renderLearn(){
       else if(act==="x"){window.open("https://twitter.com/intent/tweet?text="+encodeURIComponent(xText(i)),"_blank","width=560,height=460");}
       else if(act==="li"){const t=liText(i);
         copyText(t,i,"Copied \u2014 paste into the LinkedIn composer");
-        window.open("https://www.linkedin.com/sharing/share-offsite/?url="+encodeURIComponent(PUBLIC_URL),"_blank");}
+        window.open("https://www.linkedin.com/sharing/share-offsite/?url="+encodeURIComponent(cardLink(i)),"_blank");}
       else if(act==="dl"){downloadCard(i,document.getElementById("size-"+i).value,document.getElementById("theme-"+i).value);}
     });
     rail.addEventListener("click",e=>{
@@ -719,19 +723,8 @@ function downloadCard(i,size,theme){
   const filename="quantum-deck-"+activeTopic.id+"-"+c.n+".png";
   cv.toBlob(function(blob){
     if(!blob){return;}
-    const file=new File([blob],filename,{type:"image/png"});
-    const mobile=/Android|iPhone|iPad|iPod/i.test(navigator.userAgent||"");
-    if(mobile&&navigator.canShare&&navigator.canShare({files:[file]})){
-      navigator.share({files:[file],title:filename}).catch(function(e){
-        if(e&&e.name!=="AbortError"){fallbackDownload(blob,filename);}
-      });
-    }else{fallbackDownload(blob,filename);}
+    SignalShare.shareImage({blob:blob,filename:filename,caption:cardText(i),notify:function(m){showCopied(i,m);}});
   },"image/png");
-}
-function fallbackDownload(blob,filename){
-  const url=URL.createObjectURL(blob);
-  triggerDownload(url,filename);
-  setTimeout(function(){URL.revokeObjectURL(url);},8000);
 }
 /* ---------- compact flashcard rail ---------- */
 function renderFlash(){
