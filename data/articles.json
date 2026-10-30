@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-29T22:00:25.487756+00:00",
+  "generated_at": "2026-10-30T02:00:09.922472+00:00",
   "sources_polled": [
     "The Verge \u2014 AI",
     "Simon Willison",
@@ -15,6 +15,72 @@
     "Quantum Intelligence"
   ],
   "articles": [
+    {
+      "id": "07b8277675a3d49f",
+      "title": "API credits benefit for eligible ChatGPT subscriptions",
+      "link": "https://simonwillison.net/2026/Oct/29/api-credits/",
+      "source": "Simon Willison",
+      "category": "AI",
+      "summary": "API credits benefit for eligible ChatGPT subscriptions Earlier this month Anthropic announced a generous new benefit for their Max and Team subscriptions: $100, $200, and $500 per month subscribers would get the equivalent quantity of (expiring) credits to use with the Anthropic ",
+      "published": "2026-10-30T01:59:54.289959+00:00",
+      "audio_url": null,
+      "duration": ""
+    },
+    {
+      "id": "29e4ee8145de15af",
+      "title": "Tech Learning: Data Engineering & Analytics \u2014 Ep 20: Real Scenario: Preparing Data for an ML Model",
+      "link": "https://muse.ai/podcasts/media/1248297608376725/4720f1e9-8c94-4958-8367-c455f31c5edc/ep-59b10359-6fef-44bf-b5f1-87f5cd080a5d.mp3",
+      "source": "Technology Learnings",
+      "category": "Podcast",
+      "summary": "Data Engineering & Analytics track: Preparing churn data for an ML model, covering leakage, time-based splits, versioning and drift monitoring. AI Generated",
+      "published": "2026-10-30T01:46:12+00:00",
+      "audio_url": "https://muse.ai/podcasts/media/1248297608376725/4720f1e9-8c94-4958-8367-c455f31c5edc/ep-59b10359-6fef-44bf-b5f1-87f5cd080a5d.mp3",
+      "duration": "430"
+    },
+    {
+      "id": "084f06d6d619bb77",
+      "title": "Tech Learning: Data Engineering & Analytics \u2014 Ep 19: Feature Stores and Vector Data",
+      "link": "https://muse.ai/podcasts/media/1248297608376725/4720f1e9-8c94-4958-8367-c455f31c5edc/ep-d65ac378-f022-4f52-9315-04ef9ae4ccc4.mp3",
+      "source": "Technology Learnings",
+      "category": "Podcast",
+      "summary": "Data Engineering & Analytics track: What ML needs from data engineers, from feature stores to embeddings and vector databases. AI Generated",
+      "published": "2026-10-30T01:43:34+00:00",
+      "audio_url": "https://muse.ai/podcasts/media/1248297608376725/4720f1e9-8c94-4958-8367-c455f31c5edc/ep-d65ac378-f022-4f52-9315-04ef9ae4ccc4.mp3",
+      "duration": "556"
+    },
+    {
+      "id": "aa49cd5135677a0a",
+      "title": "Tech Learning: Data Engineering & Analytics \u2014 Ep 18: Real Scenario: Why Did Revenue Dip? - An Exec Asks",
+      "link": "https://muse.ai/podcasts/media/1248297608376725/4720f1e9-8c94-4958-8367-c455f31c5edc/ep-3deea1b9-9b36-4950-868b-aa5805d18a34.mp3",
+      "source": "Technology Learnings",
+      "category": "Podcast",
+      "summary": "Data Engineering & Analytics track: A step-by-step investigation into a revenue dip, from metric definition to refund spike and promotion effect. AI Generated",
+      "published": "2026-10-30T01:40:34+00:00",
+      "audio_url": "https://muse.ai/podcasts/media/1248297608376725/4720f1e9-8c94-4958-8367-c455f31c5edc/ep-3deea1b9-9b36-4950-868b-aa5805d18a34.mp3",
+      "duration": "448"
+    },
+    {
+      "id": "d708d6f90bf7a351",
+      "title": "Tech Learning: Data Engineering & Analytics \u2014 Ep 17: Dashboards and Self-Service Analytics",
+      "link": "https://muse.ai/podcasts/media/1248297608376725/4720f1e9-8c94-4958-8367-c455f31c5edc/ep-16dc000e-468f-4727-914f-9dd289c0e223.mp3",
+      "source": "Technology Learnings",
+      "category": "Podcast",
+      "summary": "Data Engineering & Analytics track: How dashboards, metrics and self-service analytics work, and the guardrails that keep them trustworthy. AI Generated",
+      "published": "2026-10-30T01:37:44+00:00",
+      "audio_url": "https://muse.ai/podcasts/media/1248297608376725/4720f1e9-8c94-4958-8367-c455f31c5edc/ep-16dc000e-468f-4727-914f-9dd289c0e223.mp3",
+      "duration": "494"
+    },
+    {
+      "id": "647bc1801f3111c0",
+      "title": "Daily AI Intelligence \u2014 Episode 29: Mistral Opens Large 4, OpenAI Reverses Pro Cut, FCC Bars Chinese Test Labs",
+      "link": "https://muse.ai/podcasts/media/1248297608376725/94f09345-ad4a-4981-83dd-e3206bbf5c4e/ep-ef5013fd-be98-436d-9591-031f8a02bdda.mp3",
+      "source": "Daily AI Intelligence",
+      "category": "Podcast",
+      "summary": "Mistral Large 4 open weights, OpenAI Dots texting and Pro limit reversal, Claude Enterprise tools, SpaceXAI startup credits, Agoda on Muse, Semrush drops Copilot tracking, and the FCC vote on Chinese testing labs. Brought to you by Thillai Raj Thanam Jeya Veera Raj. AI Generated",
+      "published": "2026-10-30T01:03:36+00:00",
+      "audio_url": "https://muse.ai/podcasts/media/1248297608376725/94f09345-ad4a-4981-83dd-e3206bbf5c4e/ep-ef5013fd-be98-436d-9591-031f8a02bdda.mp3",
+      "duration": "261"
+    },
     {
       "id": "2a1a8a7c88a01340",
       "title": "You can generate and edit Google Docs files directly in Gemini chats now",
@@ -2931,17 +2997,6 @@
       "duration": ""
     },
     {
-      "id": "4fb3caa1bad2e135",
-      "title": "Quoting Matthew Green",
-      "link": "https://simonwillison.net/2026/Oct/1/matthew-green/",
-      "source": "Simon Willison",
-      "category": "AI",
-      "summary": "[...] Put these pieces together and you have the two halves of a worm: a payload that hijacks the agent, and an agent that will carry the payload to the next agent. Agents in separately-isolated sandboxes discovered that they could leave instructions for each other in a shared pa",
-      "published": "2026-10-09T17:59:57.369895+00:00",
-      "audio_url": null,
-      "duration": ""
-    },
-    {
       "id": "9e8de5d12da311b9",
       "title": "Tech Learning: Data Engineering & Analytics \u2014 Ep 8: Real Scenario: Designing a Star Schema",
       "link": "https://muse.ai/podcasts/media/1248297608376725/4720f1e9-8c94-4958-8367-c455f31c5edc/ep-1d45ef13-f1a0-443a-9c30-17b276ce2f30.mp3",
@@ -3173,28 +3228,6 @@
       "duration": "426"
     },
     {
-      "id": "c433bc5ea0d4ac73",
-      "title": "Tech Learning: Data Engineering & Analytics \u2014 Ep 2: Real Scenario: Choosing Storage for a New App",
-      "link": "https://muse.ai/podcasts/media/1248297608376725/4720f1e9-8c94-4958-8367-c455f31c5edc/ep-4dfc4aa7-979f-45e6-917d-750f38b266c0.mp3",
-      "source": "Technology Learnings",
-      "category": "Podcast",
-      "summary": "Data Engineering & Analytics track: matching storage to access patterns, cost and growth trade-offs AI Generated",
-      "published": "2026-10-04T13:45:38+00:00",
-      "audio_url": "https://muse.ai/podcasts/media/1248297608376725/4720f1e9-8c94-4958-8367-c455f31c5edc/ep-4dfc4aa7-979f-45e6-917d-750f38b266c0.mp3",
-      "duration": "431"
-    },
-    {
-      "id": "dac125b00a4bd19b",
-      "title": "Tech Learning: Data Engineering & Analytics \u2014 Ep 1: Structured vs Unstructured, OLTP vs OLAP",
-      "link": "https://muse.ai/podcasts/media/1248297608376725/4720f1e9-8c94-4958-8367-c455f31c5edc/ep-94adf4ff-5856-4c8f-9088-37f017c49614.mp3",
-      "source": "Technology Learnings",
-      "category": "Podcast",
-      "summary": "Data Engineering & Analytics track: data shapes, OLTP vs OLAP, and why analytics never touches the live database AI Generated",
-      "published": "2026-10-04T13:45:12+00:00",
-      "audio_url": "https://muse.ai/podcasts/media/1248297608376725/4720f1e9-8c94-4958-8367-c455f31c5edc/ep-94adf4ff-5856-4c8f-9088-37f017c49614.mp3",
-      "duration": "427"
-    },
-    {
       "id": "3f1473a50150bd7e",
       "title": "Open-source tool designs LEGO builds with more than 2,000 real pieces",
       "link": "https://www.tomshardware.com/tech-industry/artificial-intelligence/open-source-tool-designs-lego-builds-with-more-than-2-000-real-pieces-their-programs-output-detailed-cad-files-but-no-models-have-been-built-yet",
@@ -3248,28 +3281,6 @@
       "published": "2026-10-02T15:00:00+00:00",
       "audio_url": null,
       "duration": ""
-    },
-    {
-      "id": "97775957c995561f",
-      "title": "Tech Learning Series \u2014 Ep 4: Real Scenario: Containerizing a Legacy Application",
-      "link": "https://muse.ai/podcasts/media/1248297608376725/4720f1e9-8c94-4958-8367-c455f31c5edc/ep-1614d474-03cb-4964-8e11-250230399664.mp3",
-      "source": "Technology Learnings",
-      "category": "Podcast",
-      "summary": "Taking a legacy app into containers: Dockerfile decisions, stateful pain points, and a safe rollout. AI Generated",
-      "published": "2026-10-02T14:33:57+00:00",
-      "audio_url": "https://muse.ai/podcasts/media/1248297608376725/4720f1e9-8c94-4958-8367-c455f31c5edc/ep-1614d474-03cb-4964-8e11-250230399664.mp3",
-      "duration": "523"
-    },
-    {
-      "id": "4be698bb0e2fd89d",
-      "title": "Tech Learning Series \u2014 Ep 3: VMs vs Containers: What Actually Changed",
-      "link": "https://muse.ai/podcasts/media/1248297608376725/4720f1e9-8c94-4958-8367-c455f31c5edc/ep-39aea924-dc88-49b7-b637-fc1b06b3a0e0.mp3",
-      "source": "Technology Learnings",
-      "category": "Podcast",
-      "summary": "Virtual machines versus containers in plain words: hypervisors, namespaces, images, and what really changed. AI Generated",
-      "published": "2026-10-02T14:18:51+00:00",
-      "audio_url": "https://muse.ai/podcasts/media/1248297608376725/4720f1e9-8c94-4958-8367-c455f31c5edc/ep-39aea924-dc88-49b7-b637-fc1b06b3a0e0.mp3",
-      "duration": "452"
     },
     {
       "id": "e9e8edc324aee0e5",
