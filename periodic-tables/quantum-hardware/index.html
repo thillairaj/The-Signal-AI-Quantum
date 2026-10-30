@@ -158,6 +158,31 @@ h1,h2,h3{font-family:"Fraunces",serif}
   .li-dir{font-size:9.5px;letter-spacing:1.8px;text-transform:uppercase;opacity:.85;font-weight:700}
   .li-name{font-size:15.5px;font-weight:800;letter-spacing:.01em}
 @media (prefers-reduced-motion: reduce) { *, *::before, *::after { transition: none !important; } }
+/* themefix:start */
+input,button,select,textarea{font:inherit}
+html[data-theme="light"]{--panel:#ffffff;--panel2:#eef3fa;--ink:#17293f;--muted:#4d6482;--line:rgba(23,41,63,.16)}
+html[data-theme="light"] .navcard{background:#ffffff;color:#17293f;border-color:rgba(23,41,63,.16)}
+html[data-theme="light"] .kicker{color:#046fa2}
+html[data-theme="light"] h1 span{color:#886302}
+html[data-theme="light"] .card h4{color:#0479b1}
+html[data-theme="light"] .example h4{color:#906903}
+#detail .d-cat[data-cat="exotic"]{color:#d752e3}
+html[data-theme="light"] #detail .d-cat[data-cat="exotic"]{color:#a21caf}
+#detail .d-cat[data-cat="infra"]{color:#f35b0d}
+html[data-theme="light"] #detail .d-cat[data-cat="infra"]{color:#c3490a}
+#detail .d-cat[data-cat="ion"]{color:#0e9d91}
+html[data-theme="light"] #detail .d-cat[data-cat="ion"]{color:#0b7f75}
+#detail .d-cat[data-cat="metrics"]{color:#629e0c}
+html[data-theme="light"] #detail .d-cat[data-cat="metrics"]{color:#4f800a}
+#detail .d-cat[data-cat="photon"]{color:#099cbf}
+html[data-theme="light"] #detail .d-cat[data-cat="photon"]{color:#077d99}
+#detail .d-cat[data-cat="platforms"]{color:#d47406}
+html[data-theme="light"] #detail .d-cat[data-cat="platforms"]{color:#af6005}
+#detail .d-cat[data-cat="super"]{color:#0396e4}
+html[data-theme="light"] #detail .d-cat[data-cat="super"]{color:#0278b6}
+#detail .d-cat[data-cat="tech"]{color:#857fed}
+html[data-theme="light"] #detail .d-cat[data-cat="tech"]{color:#4f46e5}
+/* themefix:end */
 </style>
 </head>
 <body>
@@ -195,7 +220,7 @@ h1,h2,h3{font-family:"Fraunces",serif}
 <footer>Educational content for leaders and practitioners. Platform positions, specifications and vendor claims are as reported publicly as of October 2026 and change quickly; verify current figures with the vendor before any decision.<div style="margin-top:12px;font-size:13px">Curated by Thillai Raj Thanam Jeya Veera Raj · <a class="li-btn" href="https://www.linkedin.com/in/thillairaj" target="_blank" rel="noopener"><span class="li-badge" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.55V9h3.57v11.45z"/></svg></span><span class="li-txt"><span class="li-dir">Follow on</span><span class="li-name">LinkedIn</span></span></a></div></footer>
 
 <script>
-const CATS = { tech:{name:"Qubit Technologies",color:"#4f46e5"}, super:{name:"Superconducting",color:"#0284c7"}, ion:{name:"Trapped Ions & Neutral Atoms",color:"#0d9488"}, photon:{name:"Photonic & Silicon",color:"#0891b2"}, exotic:{name:"Exotic Approaches",color:"#a21caf"}, infra:{name:"Cryogenics & Control",color:"#ea580c"}, metrics:{name:"Metrics That Matter",color:"#65a30d"}, platforms:{name:"Platforms & Vendors",color:"#d97706"} };
+const CATS = { tech:{name:"Qubit Technologies",color:"#4f46e5"}, super:{name:"Superconducting",color:"#0278b6"}, ion:{name:"Trapped Ions & Neutral Atoms",color:"#0b7f75"}, photon:{name:"Photonic & Silicon",color:"#077d99"}, exotic:{name:"Exotic Approaches",color:"#a21caf"}, infra:{name:"Cryogenics & Control",color:"#c3490a"}, metrics:{name:"Metrics That Matter",color:"#4f800a"}, platforms:{name:"Platforms & Vendors",color:"#af6005"} };
 const TERMS = [
 {s:"PQ", n:"Physical Qubit", c:"tech", d:"A physical qubit is a real, imperfect quantum device — a superconducting circuit, a trapped ion, an atom — that holds one unit of quantum information. Physical qubits are noisy and short-lived, so useful machines need many of them working together, plus error correction, to form a single reliable logical qubit.", f:"Today's machines need roughly hundreds to thousands of physical qubits per logical qubit, depending on hardware error rates and the error-correcting code used.", l:"Whenever a vendor quotes a qubit count, ask whether it is physical or logical. The gap between the two numbers is the honest state of the field."},
 {s:"LQ", n:"Logical Qubit", c:"tech", d:"A logical qubit is an error-corrected qubit built from many physical qubits acting as one. It stores information redundantly so errors can be detected and fixed faster than they accumulate, making it far more stable than any single physical qubit.", f:"In 2024 Google reported a Willow logical qubit (a distance-7 surface code) that lived longer than its best constituent physical qubit — a key fault-tolerance milestone.", l:"Logical qubits are the metric that separates demonstrations from useful machines. Roadmaps that name logical-qubit targets deserve more weight than those naming only chip sizes."},
@@ -291,7 +316,7 @@ function show(t,i,el){
   let html='<button class="zoom-close" type="button" onclick="closeDetail()" aria-label="Close">✕</button>';
   html+='<div class="d-no">Element '+(i+1)+' of '+TERMS.length+'</div>';
   html+='<span class="d-sym" style="background:'+CATS[t.c].color+'">'+t.s+'</span>';
-  html+='<h2>'+t.n+'</h2><div class="d-cat" style="color:'+CATS[t.c].color+'">'+CATS[t.c].name+'</div>';
+  html+='<h2>'+t.n+'</h2><div class="d-cat" data-cat="'+t.c+'"">'+CATS[t.c].name+'</div>';
   html+='<p>'+t.d+'</p>';
   if(t.f)html+='<div class="box formula"><b>Key fact</b>'+t.f+'</div>';
   if(t.l)html+='<div class="box lens"><b>Leader lens</b>'+t.l+'</div>';
@@ -386,7 +411,7 @@ render();
 <script>
 (function(){
 "use strict";
-var CFG = {"base": "https://thillairaj.github.io/The-Signal-AI-Quantum", "table": "quantum-hardware", "display": "Quantum Hardware", "brandTag": "#TheSignal", "familyTag": "#QuantumComputing", "footer": "The Signal · free learning", "aliases": {}};
+var CFG = {"base": "https://thillairaj.github.io/The-Signal-AI-Quantum", "table": "quantum-hardware", "display": "Quantum Hardware", "brandTag": "#TheSignal", "familyTag": "#QuantumComputing", "footer1": "THE QUANTUM HARDWARE PERIODIC TABLE", "footer2": "Quantum Hardware", "badge": "TRT", "aliases": {}};
 function slugifyName(n){
   var part = n.indexOf(" \u2014 ") >= 0 ? n.split(" \u2014 ")[1] : n;
   return part.toLowerCase().replace(/[^a-z0-9]+/g,"-").replace(/^-+|-+$/g,"");
@@ -430,7 +455,7 @@ function drawCard(t){
     var y=ty+ts+110, nfs=66, nameLines;
     do{ x.font="700 "+nfs+"px Georgia,serif"; nameLines=wrap(x,t.n,mw); nfs-=4; }while(nameLines.length>3&&nfs>42);
     x.fillStyle="#f2f5f9"; nameLines.forEach(function(l){ x.fillText(l,pad,y); y+=Math.round(nfs*1.22)+4; });
-    var footTop=H-190, bf=40, descLines=[], factLines=[];
+    var footTop=H-150, bf=40, descLines=[], factLines=[];
     function measure(){ x.font=bf+"px system-ui,sans-serif"; descLines=wrap(x,oneLine(t.d),mw); factLines=t.f?wrap(x,t.f,mw):[]; return descLines.length*(bf+14)+(t.f?60+factLines.length*(bf+10):0); }
     while(y+measure()>footTop&&bf>28){ bf-=2; }
     x.fillStyle="#dbe4f0"; x.font=bf+"px system-ui,sans-serif";
@@ -438,12 +463,18 @@ function drawCard(t){
     if(t.f){ y+=16; x.fillStyle="#c9a227"; x.font="700 27px system-ui,sans-serif"; try{ x.letterSpacing="3px"; }catch(e){} x.fillText("KEY FACT",pad,y); try{ x.letterSpacing="0px"; }catch(e){} y+=42;
       x.fillStyle="#cfe0f4"; x.font=(bf-2)+"px system-ui,sans-serif";
       factLines.forEach(function(l){ if(y<footTop) x.fillText(l,pad,y); y+=bf+10; }); }
-    x.strokeStyle="rgba(201,162,39,.55)"; x.lineWidth=2; x.beginPath(); x.moveTo(pad,H-160); x.lineTo(W-pad,H-160); x.stroke();
-    x.textAlign="center"; x.fillStyle="#aebdd0"; x.font="600 30px system-ui,sans-serif";
-    x.fillText(CFG.footer,540,H-104);
-    x.fillStyle="#c9a227"; x.font="600 29px system-ui,sans-serif";
-    x.fillText(termUrl(t).replace("https://",""),540,H-56);
-    x.textAlign="left";
+    x.strokeStyle="rgba(201,162,39,.55)"; x.lineWidth=2; x.beginPath(); x.moveTo(pad,H-116); x.lineTo(W-pad,H-116); x.stroke();
+    x.textAlign="center"; x.fillStyle="#aebdd0"; x.font="600 28px system-ui,sans-serif";
+    x.fillText(CFG.footer1,540,H-68);
+    x.fillStyle="#c9a227"; x.fillText(CFG.footer2,540,H-30);
+    var bx=W-pad-38,by=H-62,br=34;
+    x.strokeStyle="#c9a227"; x.lineWidth=3;
+    x.beginPath(); x.arc(bx,by,br,0,Math.PI*2); x.stroke();
+    x.fillStyle="#c9a227"; x.font="700 26px Georgia,'Times New Roman',serif"; x.textBaseline="middle";
+    try{ x.letterSpacing="3px"; }catch(e){}
+    x.fillText(CFG.badge,bx,by+2);
+    try{ x.letterSpacing="0px"; }catch(e){}
+    x.textAlign="left"; x.textBaseline="alphabetic";
     if(cv.toBlob){ cv.toBlob(function(b){ resolve(b); },"image/png"); } else { resolve(null); }
   });
 }
@@ -500,7 +531,7 @@ function openFromHash(){
 }
 window.addEventListener("hashchange",openFromHash);
 openFromHash();
-window.__tsFolder=folderFor; window.__tsShareText=shareText; window.__tsTermUrl=termUrl;
+window.__tsFolder=folderFor; window.__tsShareText=shareText; window.__tsTermUrl=termUrl; window.__tsDrawCard=drawCard;
 })();
 </script>
 <script data-goatcounter="https://trttech.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>

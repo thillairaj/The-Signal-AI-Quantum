@@ -158,6 +158,33 @@ h1,h2,h3{font-family:"Fraunces",serif}
   .li-dir{font-size:9.5px;letter-spacing:1.8px;text-transform:uppercase;opacity:.85;font-weight:700}
   .li-name{font-size:15.5px;font-weight:800;letter-spacing:.01em}
 @media (prefers-reduced-motion: reduce) { *, *::before, *::after { transition: none !important; } }
+/* themefix:start */
+input,button,select,textarea{font:inherit}
+html[data-theme="light"]{--panel:#ffffff;--panel2:#eef3fa;--ink:#17293f;--muted:#4d6482;--line:rgba(23,41,63,.16)}
+html[data-theme="light"] .navcard{background:#ffffff;color:#17293f;border-color:rgba(23,41,63,.16)}
+html[data-theme="light"] .kicker{color:#046fa2}
+html[data-theme="light"] h1 span{color:#886302}
+html[data-theme="light"] .card h4{color:#0479b1}
+html[data-theme="light"] .example h4{color:#906903}
+#detail .d-cat[data-cat="automation"]{color:#7c8ba1}
+html[data-theme="light"] #detail .d-cat[data-cat="automation"]{color:#64748b}
+#detail .d-cat[data-cat="coding"]{color:#1ba44e}
+html[data-theme="light"] #detail .d-cat[data-cat="coding"]{color:#15803d}
+#detail .d-cat[data-cat="computeruse"]{color:#f35b0d}
+html[data-theme="light"] #detail .d-cat[data-cat="computeruse"]{color:#c3490a}
+#detail .d-cat[data-cat="eval"]{color:#629e0c}
+html[data-theme="light"] #detail .d-cat[data-cat="eval"]{color:#4f800a}
+#detail .d-cat[data-cat="frameworks"]{color:#857fed}
+html[data-theme="light"] #detail .d-cat[data-cat="frameworks"]{color:#4f46e5}
+#detail .d-cat[data-cat="lowcode"]{color:#099cbf}
+html[data-theme="light"] #detail .d-cat[data-cat="lowcode"]{color:#077d99}
+#detail .d-cat[data-cat="memory"]{color:#0396e4}
+html[data-theme="light"] #detail .d-cat[data-cat="memory"]{color:#0278b6}
+#detail .d-cat[data-cat="platforms"]{color:#d47406}
+html[data-theme="light"] #detail .d-cat[data-cat="platforms"]{color:#af6005}
+#detail .d-cat[data-cat="voice"]{color:#d752e3}
+html[data-theme="light"] #detail .d-cat[data-cat="voice"]{color:#a21caf}
+/* themefix:end */
 </style>
 </head>
 <body>
@@ -229,7 +256,7 @@ h1,h2,h3{font-family:"Fraunces",serif}
 <footer>Positions as of October 2026. This market changes monthly; verify a tool's current state, pricing and ownership before any procurement decision. Educational only.<div style="margin-top:12px;font-size:13px">Curated by Thillai Raj Thanam Jeya Veera Raj · <a class="li-btn" href="https://www.linkedin.com/in/thillairaj" target="_blank" rel="noopener"><span class="li-badge" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.55V9h3.57v11.45z"/></svg></span><span class="li-txt"><span class="li-dir">Follow on</span><span class="li-name">LinkedIn</span></span></a></div></footer>
 
 <script>
-const CATS = { frameworks:{name:"Agent Frameworks (Code)",color:"#4f46e5"}, lowcode:{name:"Low-Code & Workflow Builders",color:"#0891b2"}, coding:{name:"Coding Agents",color:"#15803d"}, computeruse:{name:"Computer & Browser Agents",color:"#ea580c"}, voice:{name:"Voice Agents",color:"#a21caf"}, memory:{name:"Memory & Retrieval",color:"#0284c7"}, eval:{name:"Evaluation & Observability",color:"#65a30d"}, platforms:{name:"Enterprise Agent Platforms",color:"#d97706"}, automation:{name:"Automation Platforms with Agents",color:"#64748b"} };
+const CATS = { frameworks:{name:"Agent Frameworks (Code)",color:"#4f46e5"}, lowcode:{name:"Low-Code & Workflow Builders",color:"#077d99"}, coding:{name:"Coding Agents",color:"#15803d"}, computeruse:{name:"Computer & Browser Agents",color:"#c3490a"}, voice:{name:"Voice Agents",color:"#a21caf"}, memory:{name:"Memory & Retrieval",color:"#0278b6"}, eval:{name:"Evaluation & Observability",color:"#4f800a"}, platforms:{name:"Enterprise Agent Platforms",color:"#af6005"}, automation:{name:"Automation Platforms with Agents",color:"#64748b"} };
 const TERMS = [
 {s:"LCn",n:"LangChain",c:"frameworks",d:"One of the earliest and largest open-source frameworks for building LLM applications, offering abstractions for prompts, models, retrievers, tools and agent loops. It is used widely for prototypes and for production retrieval and agent systems, though many teams graduate to LangGraph when they need tighter control over state and flow.",f:"Maker: LangChain. Open-source core (MIT) with the commercial LangSmith platform alongside it.",l:"Its strength is ecosystem breadth. Watch that its higher-level agent abstractions change quickly; teams often pin versions and keep their own agent logic thin and portable."},
 {s:"LGr",n:"LangGraph",c:"frameworks",d:"LangChain's graph-based framework for stateful, controllable agents: workflows are built as nodes and edges with explicit state, checkpoints, human-in-the-loop pauses and durable execution. It is designed for production multi-step and multi-agent systems that need reliability, not just demos.",f:"Maker: LangChain. Open-source (MIT), with commercial deployment available through the LangGraph Platform.",l:"The default shortlist choice when an agent must be auditable and resumable. The trade-off is more upfront design work than looser prompt-driven frameworks."},
@@ -319,7 +346,7 @@ function show(t,i,el){
   let html='<button class="zoom-close" type="button" onclick="closeDetail()" aria-label="Close">✕</button>';
   html+='<div class="d-no">Element '+(i+1)+' of '+TERMS.length+'</div>';
   html+='<span class="d-sym" style="background:'+CATS[t.c].color+'">'+t.s+'</span>';
-  html+='<h2>'+t.n+'</h2><div class="d-cat" style="color:'+CATS[t.c].color+'">'+CATS[t.c].name+'</div>';
+  html+='<h2>'+t.n+'</h2><div class="d-cat" data-cat="'+t.c+'"">'+CATS[t.c].name+'</div>';
   html+='<p>'+t.d+'</p>';
   if(t.f)html+='<div class="box formula"><b>Key facts</b>'+t.f+'</div>';
   if(t.l)html+='<div class="box lens"><b>Leader lens</b>'+t.l+'</div>';
@@ -414,7 +441,7 @@ render();
 <script>
 (function(){
 "use strict";
-var CFG = {"base": "https://thillairaj.github.io/The-Signal-AI-Quantum", "table": "agentic-ai-tools", "display": "Agentic AI Tools", "brandTag": "#TheSignal", "familyTag": "#AI", "footer": "The Signal · free learning", "aliases": {"Opr": "CA", "VAB": "AB", "Wnd": "DD"}};
+var CFG = {"base": "https://thillairaj.github.io/The-Signal-AI-Quantum", "table": "agentic-ai-tools", "display": "Agentic AI Tools", "brandTag": "#TheSignal", "familyTag": "#AI", "footer1": "THE AGENTIC AI TOOLS PERIODIC TABLE", "footer2": "Agentic AI Tools", "badge": "TRT", "aliases": {"Opr": "CA", "VAB": "AB", "Wnd": "DD"}};
 function slugifyName(n){
   var part = n.indexOf(" \u2014 ") >= 0 ? n.split(" \u2014 ")[1] : n;
   return part.toLowerCase().replace(/[^a-z0-9]+/g,"-").replace(/^-+|-+$/g,"");
@@ -458,7 +485,7 @@ function drawCard(t){
     var y=ty+ts+110, nfs=66, nameLines;
     do{ x.font="700 "+nfs+"px Georgia,serif"; nameLines=wrap(x,t.n,mw); nfs-=4; }while(nameLines.length>3&&nfs>42);
     x.fillStyle="#f2f5f9"; nameLines.forEach(function(l){ x.fillText(l,pad,y); y+=Math.round(nfs*1.22)+4; });
-    var footTop=H-190, bf=40, descLines=[], factLines=[];
+    var footTop=H-150, bf=40, descLines=[], factLines=[];
     function measure(){ x.font=bf+"px system-ui,sans-serif"; descLines=wrap(x,oneLine(t.d),mw); factLines=t.f?wrap(x,t.f,mw):[]; return descLines.length*(bf+14)+(t.f?60+factLines.length*(bf+10):0); }
     while(y+measure()>footTop&&bf>28){ bf-=2; }
     x.fillStyle="#dbe4f0"; x.font=bf+"px system-ui,sans-serif";
@@ -466,12 +493,18 @@ function drawCard(t){
     if(t.f){ y+=16; x.fillStyle="#c9a227"; x.font="700 27px system-ui,sans-serif"; try{ x.letterSpacing="3px"; }catch(e){} x.fillText("KEY FACT",pad,y); try{ x.letterSpacing="0px"; }catch(e){} y+=42;
       x.fillStyle="#cfe0f4"; x.font=(bf-2)+"px system-ui,sans-serif";
       factLines.forEach(function(l){ if(y<footTop) x.fillText(l,pad,y); y+=bf+10; }); }
-    x.strokeStyle="rgba(201,162,39,.55)"; x.lineWidth=2; x.beginPath(); x.moveTo(pad,H-160); x.lineTo(W-pad,H-160); x.stroke();
-    x.textAlign="center"; x.fillStyle="#aebdd0"; x.font="600 30px system-ui,sans-serif";
-    x.fillText(CFG.footer,540,H-104);
-    x.fillStyle="#c9a227"; x.font="600 29px system-ui,sans-serif";
-    x.fillText(termUrl(t).replace("https://",""),540,H-56);
-    x.textAlign="left";
+    x.strokeStyle="rgba(201,162,39,.55)"; x.lineWidth=2; x.beginPath(); x.moveTo(pad,H-116); x.lineTo(W-pad,H-116); x.stroke();
+    x.textAlign="center"; x.fillStyle="#aebdd0"; x.font="600 28px system-ui,sans-serif";
+    x.fillText(CFG.footer1,540,H-68);
+    x.fillStyle="#c9a227"; x.fillText(CFG.footer2,540,H-30);
+    var bx=W-pad-38,by=H-62,br=34;
+    x.strokeStyle="#c9a227"; x.lineWidth=3;
+    x.beginPath(); x.arc(bx,by,br,0,Math.PI*2); x.stroke();
+    x.fillStyle="#c9a227"; x.font="700 26px Georgia,'Times New Roman',serif"; x.textBaseline="middle";
+    try{ x.letterSpacing="3px"; }catch(e){}
+    x.fillText(CFG.badge,bx,by+2);
+    try{ x.letterSpacing="0px"; }catch(e){}
+    x.textAlign="left"; x.textBaseline="alphabetic";
     if(cv.toBlob){ cv.toBlob(function(b){ resolve(b); },"image/png"); } else { resolve(null); }
   });
 }
@@ -528,7 +561,7 @@ function openFromHash(){
 }
 window.addEventListener("hashchange",openFromHash);
 openFromHash();
-window.__tsFolder=folderFor; window.__tsShareText=shareText; window.__tsTermUrl=termUrl;
+window.__tsFolder=folderFor; window.__tsShareText=shareText; window.__tsTermUrl=termUrl; window.__tsDrawCard=drawCard;
 })();
 </script>
 <script data-goatcounter="https://trttech.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>

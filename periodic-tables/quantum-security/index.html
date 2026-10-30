@@ -159,6 +159,29 @@ h1,h2,h3{font-family:"Fraunces",serif}
   .li-name{font-size:15.5px;font-weight:800;letter-spacing:.01em}
 </style>
 <style>html, body { overflow-x: clip; } .tile .nm { overflow-wrap: anywhere; } #detail { overflow-wrap: anywhere; }@media (prefers-reduced-motion: reduce) { *, *::before, *::after { transition: none !important; } }
+/* themefix:start */
+input,button,select,textarea{font:inherit}
+html[data-theme="light"]{--panel:#ffffff;--panel2:#eef3fa;--ink:#17293f;--muted:#4d6482;--line:rgba(23,41,63,.16)}
+html[data-theme="light"] .navcard{background:#ffffff;color:#17293f;border-color:rgba(23,41,63,.16)}
+html[data-theme="light"] .kicker{color:#046fa2}
+html[data-theme="light"] h1 span{color:#886302}
+html[data-theme="light"] .card h4{color:#0479b1}
+html[data-theme="light"] .example h4{color:#906903}
+#detail .d-cat[data-cat="agility"]{color:#0e9d91}
+html[data-theme="light"] #detail .d-cat[data-cat="agility"]{color:#0b7f75}
+#detail .d-cat[data-cat="gov"]{color:#d47406}
+html[data-theme="light"] #detail .d-cat[data-cat="gov"]{color:#af6005}
+#detail .d-cat[data-cat="infra"]{color:#099cbf}
+html[data-theme="light"] #detail .d-cat[data-cat="infra"]{color:#077d99}
+#detail .d-cat[data-cat="migration"]{color:#0396e4}
+html[data-theme="light"] #detail .d-cat[data-cat="migration"]{color:#0278b6}
+#detail .d-cat[data-cat="qkd"]{color:#d752e3}
+html[data-theme="light"] #detail .d-cat[data-cat="qkd"]{color:#a21caf}
+#detail .d-cat[data-cat="standards"]{color:#857fed}
+html[data-theme="light"] #detail .d-cat[data-cat="standards"]{color:#4f46e5}
+#detail .d-cat[data-cat="threat"]{color:#e55f5f}
+html[data-theme="light"] #detail .d-cat[data-cat="threat"]{color:#dc2626}
+/* themefix:end */
 </style>
 </head>
 <body>
@@ -196,9 +219,9 @@ h1,h2,h3{font-family:"Fraunces",serif}
 <footer>Educational content. Standards and regulatory positions as of October 2026; verify current status before acting on procurement or compliance decisions.<div style="margin-top:12px;font-size:13px">Curated by Thillai Raj Thanam Jeya Veera Raj · <a class="li-btn" href="https://www.linkedin.com/in/thillairaj" target="_blank" rel="noopener"><span class="li-badge" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.55V9h3.57v11.45z"/></svg></span><span class="li-txt"><span class="li-dir">Follow on</span><span class="li-name">LinkedIn</span></span></a></div></footer>
 
 <script>
-const CATS = { threat:{name:"The Quantum Threat",color:"#dc2626"}, standards:{name:"NIST Standards & Algorithms",color:"#4f46e5"}, migration:{name:"Migration in Practice",color:"#0284c7"}, agility:{name:"Crypto-Agility & Inventory",color:"#0d9488"}, infra:{name:"Infrastructure & Protocols",color:"#0891b2"}, qkd:{name:"QKD & Quantum Communications",color:"#a21caf"}, gov:{name:"Governance, Regulation & Claims",color:"#d97706"} };
+const CATS = { threat:{name:"The Quantum Threat",color:"#dc2626"}, standards:{name:"NIST Standards & Algorithms",color:"#4f46e5"}, migration:{name:"Migration in Practice",color:"#0278b6"}, agility:{name:"Crypto-Agility & Inventory",color:"#0b7f75"}, infra:{name:"Infrastructure & Protocols",color:"#077d99"}, qkd:{name:"QKD & Quantum Communications",color:"#a21caf"}, gov:{name:"Governance, Regulation & Claims",color:"#af6005"} };
 const TERMS = [
-{s:"CRQC",n:"CRQC — Cryptographically Relevant Quantum Computer",t:"Quantum Codebreaker",c:"threat",d:"A quantum computer powerful and error-corrected enough to break today's public-key cryptography, such as RSA-2048 or elliptic-curve systems, in a practical amount of time. No such machine exists today; current devices are noisy prototypes with far too few reliable qubits. The planning problem is that nobody can date its arrival with confidence, while migration takes years.",f:"Widely cited resource estimates for breaking RSA-2048 run to millions of error-corrected physical qubits, far beyond today's machines, which is why timelines are debated rather than known.",l:"Do not ask for a date. Plan against a range of arrival scenarios and the lead times your own migration will need."},
+{s:"CRQC",n:"CRQC — Cryptographically Relevant Quantum Computer",t:"Quantum Codebreaker",c:"threat",d:"A quantum computer powerful and error-corrected enough to break today's public-key cryptography, such as RSA-2048 or elliptic-curve systems, in a practical amount of time. No such machine exists today; current devices are noisy prototypes with far too few reliable qubits. The planning problem is that nobody can date its arrival with confidence, while migration takes years.",f:"The latest estimate (Gidney, Google Quantum AI, May 2025) is under one million noisy physical qubits running for under a week, still far beyond today's machines, which is why timelines are debated rather than known.",l:"Do not ask for a date. Plan against a range of arrival scenarios and the lead times your own migration will need."},
 {s:"HNDL",n:"HNDL — Harvest Now, Decrypt Later",c:"threat",d:"An attack in which adversaries intercept and store encrypted traffic today, planning to decrypt it once a cryptographically relevant quantum computer exists. The data is captured now, so the damage is already in motion even though decryption is years away. Any information with a long confidentiality life is exposed the moment it crosses a network.",f:"The attack needs no quantum computer today, only storage, which is why intelligence agencies treat it as a present-day collection practice, not a future hypothetical.",l:"Ask which of your data would still matter in ten years if read by a competitor or a state. That list is your exposure today."},
 {s:"MoI",n:"Mosca's Inequality",c:"threat",d:"A simple planning test from quantum-risk researcher Michele Mosca. If X is how many years your data must stay secret, Y is how many years migration will take, and Z is the years until a large quantum computer arrives, then X + Y greater than Z means you are already late. It converts an uncertain timeline into arithmetic a board can act on.",f:"Mosca's inequality: risk exists when X + Y > Z, where X is the required secrecy lifetime, Y is migration time and Z is time until a CRQC.",l:"Run the arithmetic per data class, not for the whole company. Long-lived data fails the test long before short-lived data does."},
 {s:"RSA",n:"RSA — Why It Falls",c:"threat",d:"RSA protects keys and signatures by the difficulty of factoring a very large number into two primes. Shor's algorithm factors such numbers efficiently on a quantum computer, so the assumption underneath RSA simply disappears. Every RSA key exchange and RSA signature in use today would become forgeable or decryptable.",f:"Shor's algorithm, published in 1994, solves factoring and discrete logarithms in polynomial time on a quantum computer; RSA's security rests on exactly those problems being hard.",l:"RSA is embedded in certificates, VPNs, smart cards and legacy systems. Its replacement is a programme, not a patch."},
@@ -290,7 +313,7 @@ function show(t,i,el){
   let html='<button class="zoom-close" type="button" onclick="closeDetail()" aria-label="Close">✕</button>';
   html+='<div class="d-no">Element '+(i+1)+' of '+TERMS.length+'</div>';
   html+='<span class="d-sym" style="background:'+CATS[t.c].color+'">'+t.s+'</span>';
-  html+='<h2>'+t.n+'</h2><div class="d-cat" style="color:'+CATS[t.c].color+'">'+CATS[t.c].name+'</div>';
+  html+='<h2>'+t.n+'</h2><div class="d-cat" data-cat="'+t.c+'"">'+CATS[t.c].name+'</div>';
   html+='<p>'+t.d+'</p>';
   if(t.f)html+='<div class="box formula"><b>Key fact</b>'+t.f+'</div>';
   if(t.l)html+='<div class="box lens"><b>Leader lens</b>'+t.l+'</div>';
@@ -385,7 +408,7 @@ render();
 <script>
 (function(){
 "use strict";
-var CFG = {"base": "https://thillairaj.github.io/The-Signal-AI-Quantum", "table": "quantum-security", "display": "Quantum Security", "brandTag": "#TheSignal", "familyTag": "#QuantumComputing", "footer": "The Signal · free learning", "aliases": {}};
+var CFG = {"base": "https://thillairaj.github.io/The-Signal-AI-Quantum", "table": "quantum-security", "display": "Quantum Security", "brandTag": "#TheSignal", "familyTag": "#QuantumComputing", "footer1": "THE QUANTUM SECURITY PERIODIC TABLE", "footer2": "Quantum Security", "badge": "TRT", "aliases": {}};
 function slugifyName(n){
   var part = n.indexOf(" \u2014 ") >= 0 ? n.split(" \u2014 ")[1] : n;
   return part.toLowerCase().replace(/[^a-z0-9]+/g,"-").replace(/^-+|-+$/g,"");
@@ -429,7 +452,7 @@ function drawCard(t){
     var y=ty+ts+110, nfs=66, nameLines;
     do{ x.font="700 "+nfs+"px Georgia,serif"; nameLines=wrap(x,t.n,mw); nfs-=4; }while(nameLines.length>3&&nfs>42);
     x.fillStyle="#f2f5f9"; nameLines.forEach(function(l){ x.fillText(l,pad,y); y+=Math.round(nfs*1.22)+4; });
-    var footTop=H-190, bf=40, descLines=[], factLines=[];
+    var footTop=H-150, bf=40, descLines=[], factLines=[];
     function measure(){ x.font=bf+"px system-ui,sans-serif"; descLines=wrap(x,oneLine(t.d),mw); factLines=t.f?wrap(x,t.f,mw):[]; return descLines.length*(bf+14)+(t.f?60+factLines.length*(bf+10):0); }
     while(y+measure()>footTop&&bf>28){ bf-=2; }
     x.fillStyle="#dbe4f0"; x.font=bf+"px system-ui,sans-serif";
@@ -437,12 +460,18 @@ function drawCard(t){
     if(t.f){ y+=16; x.fillStyle="#c9a227"; x.font="700 27px system-ui,sans-serif"; try{ x.letterSpacing="3px"; }catch(e){} x.fillText("KEY FACT",pad,y); try{ x.letterSpacing="0px"; }catch(e){} y+=42;
       x.fillStyle="#cfe0f4"; x.font=(bf-2)+"px system-ui,sans-serif";
       factLines.forEach(function(l){ if(y<footTop) x.fillText(l,pad,y); y+=bf+10; }); }
-    x.strokeStyle="rgba(201,162,39,.55)"; x.lineWidth=2; x.beginPath(); x.moveTo(pad,H-160); x.lineTo(W-pad,H-160); x.stroke();
-    x.textAlign="center"; x.fillStyle="#aebdd0"; x.font="600 30px system-ui,sans-serif";
-    x.fillText(CFG.footer,540,H-104);
-    x.fillStyle="#c9a227"; x.font="600 29px system-ui,sans-serif";
-    x.fillText(termUrl(t).replace("https://",""),540,H-56);
-    x.textAlign="left";
+    x.strokeStyle="rgba(201,162,39,.55)"; x.lineWidth=2; x.beginPath(); x.moveTo(pad,H-116); x.lineTo(W-pad,H-116); x.stroke();
+    x.textAlign="center"; x.fillStyle="#aebdd0"; x.font="600 28px system-ui,sans-serif";
+    x.fillText(CFG.footer1,540,H-68);
+    x.fillStyle="#c9a227"; x.fillText(CFG.footer2,540,H-30);
+    var bx=W-pad-38,by=H-62,br=34;
+    x.strokeStyle="#c9a227"; x.lineWidth=3;
+    x.beginPath(); x.arc(bx,by,br,0,Math.PI*2); x.stroke();
+    x.fillStyle="#c9a227"; x.font="700 26px Georgia,'Times New Roman',serif"; x.textBaseline="middle";
+    try{ x.letterSpacing="3px"; }catch(e){}
+    x.fillText(CFG.badge,bx,by+2);
+    try{ x.letterSpacing="0px"; }catch(e){}
+    x.textAlign="left"; x.textBaseline="alphabetic";
     if(cv.toBlob){ cv.toBlob(function(b){ resolve(b); },"image/png"); } else { resolve(null); }
   });
 }
@@ -499,7 +528,7 @@ function openFromHash(){
 }
 window.addEventListener("hashchange",openFromHash);
 openFromHash();
-window.__tsFolder=folderFor; window.__tsShareText=shareText; window.__tsTermUrl=termUrl;
+window.__tsFolder=folderFor; window.__tsShareText=shareText; window.__tsTermUrl=termUrl; window.__tsDrawCard=drawCard;
 })();
 </script>
 <script data-goatcounter="https://trttech.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>

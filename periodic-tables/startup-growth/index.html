@@ -158,6 +158,33 @@ h1,h2,h3{font-family:"Fraunces",serif}
   .li-dir{font-size:9.5px;letter-spacing:1.8px;text-transform:uppercase;opacity:.85;font-weight:700}
   .li-name{font-size:15.5px;font-weight:800;letter-spacing:.01em}
 @media (prefers-reduced-motion: reduce) { *, *::before, *::after { transition: none !important; } }
+/* themefix:start */
+input,button,select,textarea{font:inherit}
+html[data-theme="light"]{--panel:#ffffff;--panel2:#eef3fa;--ink:#17293f;--muted:#4d6482;--line:rgba(23,41,63,.16)}
+html[data-theme="light"] .navcard{background:#ffffff;color:#17293f;border-color:rgba(23,41,63,.16)}
+html[data-theme="light"] .kicker{color:#046fa2}
+html[data-theme="light"] h1 span{color:#886302}
+html[data-theme="light"] .card h4{color:#0479b1}
+html[data-theme="light"] .example h4{color:#906903}
+#detail .d-cat[data-cat="acquisition"]{color:#0396e4}
+html[data-theme="light"] #detail .d-cat[data-cat="acquisition"]{color:#0278b6}
+#detail .d-cat[data-cat="activation"]{color:#1ba44e}
+html[data-theme="light"] #detail .d-cat[data-cat="activation"]{color:#15803d}
+#detail .d-cat[data-cat="gtm"]{color:#f35b0d}
+html[data-theme="light"] #detail .d-cat[data-cat="gtm"]{color:#c3490a}
+#detail .d-cat[data-cat="metrics"]{color:#857fed}
+html[data-theme="light"] #detail .d-cat[data-cat="metrics"]{color:#4f46e5}
+#detail .d-cat[data-cat="pmf"]{color:#0e9d91}
+html[data-theme="light"] #detail .d-cat[data-cat="pmf"]{color:#0b7f75}
+#detail .d-cat[data-cat="process"]{color:#099cbf}
+html[data-theme="light"] #detail .d-cat[data-cat="process"]{color:#077d99}
+#detail .d-cat[data-cat="referral"]{color:#d752e3}
+html[data-theme="light"] #detail .d-cat[data-cat="referral"]{color:#a21caf}
+#detail .d-cat[data-cat="retention"]{color:#629e0c}
+html[data-theme="light"] #detail .d-cat[data-cat="retention"]{color:#4f800a}
+#detail .d-cat[data-cat="revenue"]{color:#d47406}
+html[data-theme="light"] #detail .d-cat[data-cat="revenue"]{color:#af6005}
+/* themefix:end */
 </style>
 </head>
 <body>
@@ -225,7 +252,7 @@ h1,h2,h3{font-family:"Fraunces",serif}
 <footer>Educational only. Growth frameworks are lenses for thinking, not guarantees; every tactic here has to be validated against your own market, product and data before it deserves budget.<div style="margin-top:12px;font-size:13px">Curated by Thillai Raj Thanam Jeya Veera Raj · <a class="li-btn" href="https://www.linkedin.com/in/thillairaj" target="_blank" rel="noopener"><span class="li-badge" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.55V9h3.57v11.45z"/></svg></span><span class="li-txt"><span class="li-dir">Follow on</span><span class="li-name">LinkedIn</span></span></a></div></footer>
 
 <script>
-const CATS = { pmf:{name:"Product-Market Fit",color:"#0d9488"}, metrics:{name:"Growth Metrics",color:"#4f46e5"}, acquisition:{name:"Acquisition",color:"#0284c7"}, activation:{name:"Activation",color:"#15803d"}, retention:{name:"Retention",color:"#65a30d"}, referral:{name:"Referral & Loops",color:"#a21caf"}, revenue:{name:"Revenue & Pricing",color:"#d97706"}, gtm:{name:"Go-To-Market",color:"#ea580c"}, process:{name:"Growth Process & Efficiency",color:"#0891b2"} };
+const CATS = { pmf:{name:"Product-Market Fit",color:"#0b7f75"}, metrics:{name:"Growth Metrics",color:"#4f46e5"}, acquisition:{name:"Acquisition",color:"#0278b6"}, activation:{name:"Activation",color:"#15803d"}, retention:{name:"Retention",color:"#4f800a"}, referral:{name:"Referral & Loops",color:"#a21caf"}, revenue:{name:"Revenue & Pricing",color:"#af6005"}, gtm:{name:"Go-To-Market",color:"#c3490a"}, process:{name:"Growth Process & Efficiency",color:"#077d99"} };
 const TERMS = [
 {s:"PMF",n:"Product-Market Fit",c:"pmf",d:"The state where a specific market wants your product strongly enough that demand starts pulling the company: users retain, recommend and would be genuinely disrupted if the product disappeared. Marc Andreessen coined the term, and it is the dividing line between pushing a product uphill and struggling to keep up with demand.",f:"Sean Ellis test: survey users and ask how they would feel if they could no longer use the product. If about 40% or more answer very disappointed, that is a strong product-market fit signal.",l:"Before fit, the only job is finding fit: narrow the audience, sharpen the promise, iterate with users. Growth spend before fit mostly burns cash to discover churn."},
 {s:"CD",n:"Customer Discovery",c:"pmf",d:"The structured process of interviewing and observing potential customers to learn their real problems, language and buying triggers before and while you build. Done well, it replaces founder assumptions with evidence about who hurts most and what they already pay to solve the problem.",l:"Talk about their past behaviour, not your idea. Ask what they did the last time the problem occurred and what it cost them; compliments about your concept are not data."},
@@ -320,7 +347,7 @@ function show(t,i,el){
   let html='<button class="zoom-close" type="button" onclick="closeDetail()" aria-label="Close">✕</button>';
   html+='<div class="d-no">Element '+(i+1)+' of '+TERMS.length+'</div>';
   html+='<span class="d-sym" style="background:'+CATS[t.c].color+'">'+t.s+'</span>';
-  html+='<h2>'+t.n+'</h2><div class="d-cat" style="color:'+CATS[t.c].color+'">'+CATS[t.c].name+'</div>';
+  html+='<h2>'+t.n+'</h2><div class="d-cat" data-cat="'+t.c+'"">'+CATS[t.c].name+'</div>';
   html+='<p>'+t.d+'</p>';
   if(t.f)html+='<div class="box formula"><b>Formula / Key fact</b>'+t.f+'</div>';
   if(t.l)html+='<div class="box lens"><b>Founder lens</b>'+t.l+'</div>';
@@ -415,7 +442,7 @@ render();
 <script>
 (function(){
 "use strict";
-var CFG = {"base": "https://thillairaj.github.io/The-Signal-AI-Quantum", "table": "startup-growth", "display": "Startup Growth", "brandTag": "#TheSignal", "familyTag": "#Startups", "footer": "The Signal · free learning", "aliases": {}};
+var CFG = {"base": "https://thillairaj.github.io/The-Signal-AI-Quantum", "table": "startup-growth", "display": "Startup Growth", "brandTag": "#TheSignal", "familyTag": "#Startups", "footer1": "THE STARTUP GROWTH PERIODIC TABLE", "footer2": "Startup Growth", "badge": "TRT", "aliases": {}};
 function slugifyName(n){
   var part = n.indexOf(" \u2014 ") >= 0 ? n.split(" \u2014 ")[1] : n;
   return part.toLowerCase().replace(/[^a-z0-9]+/g,"-").replace(/^-+|-+$/g,"");
@@ -459,7 +486,7 @@ function drawCard(t){
     var y=ty+ts+110, nfs=66, nameLines;
     do{ x.font="700 "+nfs+"px Georgia,serif"; nameLines=wrap(x,t.n,mw); nfs-=4; }while(nameLines.length>3&&nfs>42);
     x.fillStyle="#f2f5f9"; nameLines.forEach(function(l){ x.fillText(l,pad,y); y+=Math.round(nfs*1.22)+4; });
-    var footTop=H-190, bf=40, descLines=[], factLines=[];
+    var footTop=H-150, bf=40, descLines=[], factLines=[];
     function measure(){ x.font=bf+"px system-ui,sans-serif"; descLines=wrap(x,oneLine(t.d),mw); factLines=t.f?wrap(x,t.f,mw):[]; return descLines.length*(bf+14)+(t.f?60+factLines.length*(bf+10):0); }
     while(y+measure()>footTop&&bf>28){ bf-=2; }
     x.fillStyle="#dbe4f0"; x.font=bf+"px system-ui,sans-serif";
@@ -467,12 +494,18 @@ function drawCard(t){
     if(t.f){ y+=16; x.fillStyle="#c9a227"; x.font="700 27px system-ui,sans-serif"; try{ x.letterSpacing="3px"; }catch(e){} x.fillText("KEY FACT",pad,y); try{ x.letterSpacing="0px"; }catch(e){} y+=42;
       x.fillStyle="#cfe0f4"; x.font=(bf-2)+"px system-ui,sans-serif";
       factLines.forEach(function(l){ if(y<footTop) x.fillText(l,pad,y); y+=bf+10; }); }
-    x.strokeStyle="rgba(201,162,39,.55)"; x.lineWidth=2; x.beginPath(); x.moveTo(pad,H-160); x.lineTo(W-pad,H-160); x.stroke();
-    x.textAlign="center"; x.fillStyle="#aebdd0"; x.font="600 30px system-ui,sans-serif";
-    x.fillText(CFG.footer,540,H-104);
-    x.fillStyle="#c9a227"; x.font="600 29px system-ui,sans-serif";
-    x.fillText(termUrl(t).replace("https://",""),540,H-56);
-    x.textAlign="left";
+    x.strokeStyle="rgba(201,162,39,.55)"; x.lineWidth=2; x.beginPath(); x.moveTo(pad,H-116); x.lineTo(W-pad,H-116); x.stroke();
+    x.textAlign="center"; x.fillStyle="#aebdd0"; x.font="600 28px system-ui,sans-serif";
+    x.fillText(CFG.footer1,540,H-68);
+    x.fillStyle="#c9a227"; x.fillText(CFG.footer2,540,H-30);
+    var bx=W-pad-38,by=H-62,br=34;
+    x.strokeStyle="#c9a227"; x.lineWidth=3;
+    x.beginPath(); x.arc(bx,by,br,0,Math.PI*2); x.stroke();
+    x.fillStyle="#c9a227"; x.font="700 26px Georgia,'Times New Roman',serif"; x.textBaseline="middle";
+    try{ x.letterSpacing="3px"; }catch(e){}
+    x.fillText(CFG.badge,bx,by+2);
+    try{ x.letterSpacing="0px"; }catch(e){}
+    x.textAlign="left"; x.textBaseline="alphabetic";
     if(cv.toBlob){ cv.toBlob(function(b){ resolve(b); },"image/png"); } else { resolve(null); }
   });
 }
@@ -529,7 +562,7 @@ function openFromHash(){
 }
 window.addEventListener("hashchange",openFromHash);
 openFromHash();
-window.__tsFolder=folderFor; window.__tsShareText=shareText; window.__tsTermUrl=termUrl;
+window.__tsFolder=folderFor; window.__tsShareText=shareText; window.__tsTermUrl=termUrl; window.__tsDrawCard=drawCard;
 })();
 </script>
 <script data-goatcounter="https://trttech.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>

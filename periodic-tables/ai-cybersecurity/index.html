@@ -158,6 +158,29 @@ h1,h2,h3{font-family:"Fraunces",serif}
   .li-dir{font-size:9.5px;letter-spacing:1.8px;text-transform:uppercase;opacity:.85;font-weight:700}
   .li-name{font-size:15.5px;font-weight:800;letter-spacing:.01em}
 @media (prefers-reduced-motion: reduce) { *, *::before, *::after { transition: none !important; } }
+/* themefix:start */
+input,button,select,textarea{font:inherit}
+html[data-theme="light"]{--panel:#ffffff;--panel2:#eef3fa;--ink:#17293f;--muted:#4d6482;--line:rgba(23,41,63,.16)}
+html[data-theme="light"] .navcard{background:#ffffff;color:#17293f;border-color:rgba(23,41,63,.16)}
+html[data-theme="light"] .kicker{color:#046fa2}
+html[data-theme="light"] h1 span{color:#886302}
+html[data-theme="light"] .card h4{color:#0479b1}
+html[data-theme="light"] .example h4{color:#906903}
+#detail .d-cat[data-cat="adversarial"]{color:#857fed}
+html[data-theme="light"] #detail .d-cat[data-cat="adversarial"]{color:#4f46e5}
+#detail .d-cat[data-cat="aifordef"]{color:#629e0c}
+html[data-theme="light"] #detail .d-cat[data-cat="aifordef"]{color:#4f800a}
+#detail .d-cat[data-cat="attacks"]{color:#e76161}
+html[data-theme="light"] #detail .d-cat[data-cat="attacks"]{color:#b91c1c}
+#detail .d-cat[data-cat="defenceai"]{color:#0e9d91}
+html[data-theme="light"] #detail .d-cat[data-cat="defenceai"]{color:#0b7f75}
+#detail .d-cat[data-cat="gov"]{color:#d47406}
+html[data-theme="light"] #detail .d-cat[data-cat="gov"]{color:#af6005}
+#detail .d-cat[data-cat="llm"]{color:#f35b0d}
+html[data-theme="light"] #detail .d-cat[data-cat="llm"]{color:#c3490a}
+#detail .d-cat[data-cat="surface"]{color:#e55f5f}
+html[data-theme="light"] #detail .d-cat[data-cat="surface"]{color:#dc2626}
+/* themefix:end */
 </style>
 </head>
 <body>
@@ -195,7 +218,7 @@ h1,h2,h3{font-family:"Fraunces",serif}
 <footer>Educational only, and not a substitute for a professional security assessment. Threat landscape and framework positions as of October 2026; this field moves quickly, so verify current guidance before acting.<div style="margin-top:12px;font-size:13px">Curated by Thillai Raj Thanam Jeya Veera Raj · <a class="li-btn" href="https://www.linkedin.com/in/thillairaj" target="_blank" rel="noopener"><span class="li-badge" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.55V9h3.57v11.45z"/></svg></span><span class="li-txt"><span class="li-dir">Follow on</span><span class="li-name">LinkedIn</span></span></a></div></footer>
 
 <script>
-const CATS = { surface:{name:"AI as Attack Surface",color:"#dc2626"}, llm:{name:"LLM & GenAI Risks",color:"#ea580c"}, attacks:{name:"AI-Powered Attacks",color:"#b91c1c"}, adversarial:{name:"Adversarial Machine Learning",color:"#4f46e5"}, defenceai:{name:"Defending AI Systems",color:"#0d9488"}, aifordef:{name:"AI for Defence",color:"#65a30d"}, gov:{name:"Governance & Frameworks",color:"#d97706"} };
+const CATS = { surface:{name:"AI as Attack Surface",color:"#dc2626"}, llm:{name:"LLM & GenAI Risks",color:"#c3490a"}, attacks:{name:"AI-Powered Attacks",color:"#b91c1c"}, adversarial:{name:"Adversarial Machine Learning",color:"#4f46e5"}, defenceai:{name:"Defending AI Systems",color:"#0b7f75"}, aifordef:{name:"AI for Defence",color:"#4f800a"}, gov:{name:"Governance & Frameworks",color:"#af6005"} };
 const TERMS = [
 {s:"AAS", n:"AI Attack Surface", c:"surface", d:"The total set of ways an organisation's AI systems can be attacked: the models, the data they train and retrieve from, the prompts and APIs that reach them, the agents' permissions, and the vendors behind them. It grows with every AI feature shipped, often faster than security teams can map it. Unlike a traditional attack surface, parts of it accept natural language as input, which makes the boundary unusually fuzzy.", f:"Every input an AI system accepts — text, documents, images, tool outputs — is potentially an instruction channel, which is why the AI attack surface cannot be secured with network controls alone.", l:"Ask for an inventory of your AI systems and their entry points before approving the next one; you cannot defend a surface you have not mapped."},
 {s:"ShA", n:"Shadow AI", c:"surface", d:"AI tools and services adopted by employees without IT or security approval: free chatbot accounts, browser extensions, transcription bots and code assistants fed with company data. Each one is an unvetted data processor and a potential leak channel. Shadow AI is usually a productivity signal, not malice — people route around slow approval processes.", f:"Shadow AI is the AI-era repeat of shadow IT, with one difference: the data does not just get stored by the tool, it can be absorbed into prompts, logs and sometimes training pipelines.", l:"Banning chatbots wholesale rarely works; publish an approved AI tool list with a fast approval path, and shadow usage shrinks on its own."},
@@ -289,7 +312,7 @@ function show(t,i,el){
   let html='<button class="zoom-close" type="button" onclick="closeDetail()" aria-label="Close">✕</button>';
   html+='<div class="d-no">Element '+(i+1)+' of '+TERMS.length+'</div>';
   html+='<span class="d-sym" style="background:'+CATS[t.c].color+'">'+t.s+'</span>';
-  html+='<h2>'+t.n+'</h2><div class="d-cat" style="color:'+CATS[t.c].color+'">'+CATS[t.c].name+'</div>';
+  html+='<h2>'+t.n+'</h2><div class="d-cat" data-cat="'+t.c+'"">'+CATS[t.c].name+'</div>';
   html+='<p>'+t.d+'</p>';
   if(t.f)html+='<div class="box formula"><b>Key fact</b>'+t.f+'</div>';
   if(t.l)html+='<div class="box lens"><b>Leader lens</b>'+t.l+'</div>';
@@ -384,7 +407,7 @@ render();
 <script>
 (function(){
 "use strict";
-var CFG = {"base": "https://thillairaj.github.io/The-Signal-AI-Quantum", "table": "ai-cybersecurity", "display": "AI & Cybersecurity", "brandTag": "#TheSignal", "familyTag": "#CyberSecurity", "footer": "The Signal · free learning", "aliases": {}};
+var CFG = {"base": "https://thillairaj.github.io/The-Signal-AI-Quantum", "table": "ai-cybersecurity", "display": "AI & Cybersecurity", "brandTag": "#TheSignal", "familyTag": "#CyberSecurity", "footer1": "THE AI & CYBERSECURITY PERIODIC TABLE", "footer2": "AI & Cybersecurity", "badge": "TRT", "aliases": {}};
 function slugifyName(n){
   var part = n.indexOf(" \u2014 ") >= 0 ? n.split(" \u2014 ")[1] : n;
   return part.toLowerCase().replace(/[^a-z0-9]+/g,"-").replace(/^-+|-+$/g,"");
@@ -428,7 +451,7 @@ function drawCard(t){
     var y=ty+ts+110, nfs=66, nameLines;
     do{ x.font="700 "+nfs+"px Georgia,serif"; nameLines=wrap(x,t.n,mw); nfs-=4; }while(nameLines.length>3&&nfs>42);
     x.fillStyle="#f2f5f9"; nameLines.forEach(function(l){ x.fillText(l,pad,y); y+=Math.round(nfs*1.22)+4; });
-    var footTop=H-190, bf=40, descLines=[], factLines=[];
+    var footTop=H-150, bf=40, descLines=[], factLines=[];
     function measure(){ x.font=bf+"px system-ui,sans-serif"; descLines=wrap(x,oneLine(t.d),mw); factLines=t.f?wrap(x,t.f,mw):[]; return descLines.length*(bf+14)+(t.f?60+factLines.length*(bf+10):0); }
     while(y+measure()>footTop&&bf>28){ bf-=2; }
     x.fillStyle="#dbe4f0"; x.font=bf+"px system-ui,sans-serif";
@@ -436,12 +459,18 @@ function drawCard(t){
     if(t.f){ y+=16; x.fillStyle="#c9a227"; x.font="700 27px system-ui,sans-serif"; try{ x.letterSpacing="3px"; }catch(e){} x.fillText("KEY FACT",pad,y); try{ x.letterSpacing="0px"; }catch(e){} y+=42;
       x.fillStyle="#cfe0f4"; x.font=(bf-2)+"px system-ui,sans-serif";
       factLines.forEach(function(l){ if(y<footTop) x.fillText(l,pad,y); y+=bf+10; }); }
-    x.strokeStyle="rgba(201,162,39,.55)"; x.lineWidth=2; x.beginPath(); x.moveTo(pad,H-160); x.lineTo(W-pad,H-160); x.stroke();
-    x.textAlign="center"; x.fillStyle="#aebdd0"; x.font="600 30px system-ui,sans-serif";
-    x.fillText(CFG.footer,540,H-104);
-    x.fillStyle="#c9a227"; x.font="600 29px system-ui,sans-serif";
-    x.fillText(termUrl(t).replace("https://",""),540,H-56);
-    x.textAlign="left";
+    x.strokeStyle="rgba(201,162,39,.55)"; x.lineWidth=2; x.beginPath(); x.moveTo(pad,H-116); x.lineTo(W-pad,H-116); x.stroke();
+    x.textAlign="center"; x.fillStyle="#aebdd0"; x.font="600 28px system-ui,sans-serif";
+    x.fillText(CFG.footer1,540,H-68);
+    x.fillStyle="#c9a227"; x.fillText(CFG.footer2,540,H-30);
+    var bx=W-pad-38,by=H-62,br=34;
+    x.strokeStyle="#c9a227"; x.lineWidth=3;
+    x.beginPath(); x.arc(bx,by,br,0,Math.PI*2); x.stroke();
+    x.fillStyle="#c9a227"; x.font="700 26px Georgia,'Times New Roman',serif"; x.textBaseline="middle";
+    try{ x.letterSpacing="3px"; }catch(e){}
+    x.fillText(CFG.badge,bx,by+2);
+    try{ x.letterSpacing="0px"; }catch(e){}
+    x.textAlign="left"; x.textBaseline="alphabetic";
     if(cv.toBlob){ cv.toBlob(function(b){ resolve(b); },"image/png"); } else { resolve(null); }
   });
 }
@@ -498,7 +527,7 @@ function openFromHash(){
 }
 window.addEventListener("hashchange",openFromHash);
 openFromHash();
-window.__tsFolder=folderFor; window.__tsShareText=shareText; window.__tsTermUrl=termUrl;
+window.__tsFolder=folderFor; window.__tsShareText=shareText; window.__tsTermUrl=termUrl; window.__tsDrawCard=drawCard;
 })();
 </script>
 <script data-goatcounter="https://trttech.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
