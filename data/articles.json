@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-30T14:00:27.833285+00:00",
+  "generated_at": "2026-10-30T18:00:19.360757+00:00",
   "sources_polled": [
     "The Verge \u2014 AI",
     "Simon Willison",
@@ -15,6 +15,61 @@
     "Quantum Intelligence"
   ],
   "articles": [
+    {
+      "id": "974d9b85c8fb969a",
+      "title": "Pope Leo calls for the disarmament of AI: \u2018Machines are tools, not persons\u2019",
+      "link": "https://www.theverge.com/ai-artificial-intelligence/1023188/pope-leo-disarm-ai",
+      "source": "The Verge \u2014 AI",
+      "category": "AI",
+      "summary": "Pope Leo XIV says AI systems should be \"disarmed,\" adding that humans \"have the responsibility to guide, change and, when necessary, reject its applications.\" In Friday's Papal Address, Pope Leo encourages United Nations member states to \"take concrete steps toward banning lethal",
+      "published": "2026-10-30T18:00:06.113928+00:00",
+      "audio_url": null,
+      "duration": ""
+    },
+    {
+      "id": "0de3f9697e499aed",
+      "title": "Starbucks wants to use AI to show you a \u2018personalized digital menu\u2019 at the drive-thru",
+      "link": "https://www.theverge.com/ai-artificial-intelligence/1023440/starbucks-ai-personalized-menu-drive-thru",
+      "source": "The Verge \u2014 AI",
+      "category": "AI",
+      "summary": "Starbucks could eventually show you a personalized digital menu when you pull up to the drive-thru. During an earnings call on Thursday, Starbucks CEO Brian Niccol said the company is going to explore \"experiences that recognize participating customers as they arrive, present per",
+      "published": "2026-10-30T18:00:06.113856+00:00",
+      "audio_url": null,
+      "duration": ""
+    },
+    {
+      "id": "b10570d1171fb89b",
+      "title": "Fujifilm to boost tape production 5x as AI fuels archiving demand",
+      "link": "https://arstechnica.com/gadgets/2026/10/fujifilm-to-boost-tape-production-5x-as-ai-fuels-archiving-demand/",
+      "source": "Ars Technica AI",
+      "category": "AI",
+      "summary": "Low costs and offline security mean magnetic tape still has a job.",
+      "published": "2026-10-30T17:38:19+00:00",
+      "audio_url": null,
+      "duration": ""
+    },
+    {
+      "id": "1a9f926a45b8d184",
+      "title": "Thousands of \u201cghost students\u201d use AI to steal millions in student loans, DOJ says",
+      "link": "https://arstechnica.com/tech-policy/2026/10/doj-exposes-ghost-students-using-ai-to-complete-courses-steal-student-loans/",
+      "source": "Ars Technica AI",
+      "category": "AI",
+      "summary": "Applying for FAFSA may get messy as DOJ \u201cghost student\u201d crackdown ramps up.",
+      "published": "2026-10-30T16:53:49+00:00",
+      "audio_url": null,
+      "duration": ""
+    },
+    {
+      "id": "8257a8418e8eafc3",
+      "title": "PsiQuantum turns its photonics know-how into an optical switch for supercharging AI data center GPU networks",
+      "link": "https://www.tomshardware.com/tech-industry/photonics/psiquantum-turns-its-photonics-know-how-into-an-optical-switch-for-supercharging-ai-data-center-gpu-networks-8x8-lab-prototype-loses-less-light-than-rivals-with-plans-to-develop-larger-devices",
+      "source": "Tom's Hardware Quantum",
+      "category": "Quantum",
+      "summary": "PsiQuantum\u2019s eight-port optical switch typically loses 1.2 dB, under a quarter of its light, where data centers allow up to 3 dB.",
+      "published": "2026-10-30T14:30:00+00:00",
+      "audio_url": null,
+      "duration": ""
+    },
     {
       "id": "dbfbce585037fb7a",
       "title": "Maine\u2019s data center revolt will decide who controls the Senate",
@@ -56,6 +111,17 @@
       "category": "AI",
       "summary": "The Wikimedia Foundation is staking out a middle ground in a group of landmark AI copyright cases, pushing courts to legally protect large language models (LLMs) training on copyrighted work - but not chatbots regurgitating that work to users. An overly black-and-white ruling, it",
       "published": "2026-10-30T10:00:23.096871+00:00",
+      "audio_url": null,
+      "duration": ""
+    },
+    {
+      "id": "c7606af40dbb903f",
+      "title": "Community safety report and new protections for teens",
+      "link": "https://openai.com/index/community-safety-report-and-new-protections-for-teens",
+      "source": "OpenAI Blog",
+      "category": "AI",
+      "summary": "OpenAI is strengthening violence prevention in ChatGPT with expanded safeguards, earlier interventions, and a new commitment to public safety reporting.",
+      "published": "2026-10-30T09:00:00+00:00",
       "audio_url": null,
       "duration": ""
     },
@@ -311,6 +377,17 @@
       "published": "2026-10-29T01:03:04+00:00",
       "audio_url": "https://muse.ai/podcasts/media/1248297608376725/94f09345-ad4a-4981-83dd-e3206bbf5c4e/ep-d69d96ce-f008-47d5-a64e-d119fe487fb3.mp3",
       "duration": "281"
+    },
+    {
+      "id": "6750c2461412185f",
+      "title": "Credit Saison achieves 954% ROI in a ChatGPT Enterprise pilot",
+      "link": "https://openai.com/index/credit-saison",
+      "source": "OpenAI Blog",
+      "category": "AI",
+      "summary": "Credit Saison\u2019s ChatGPT Enterprise pilot delivered 954% ROI. See how leaders and employees helped turn the results into companywide adoption.",
+      "published": "2026-10-29T00:00:00+00:00",
+      "audio_url": null,
+      "duration": ""
     },
     {
       "id": "d0753be868cc7807",
@@ -1435,28 +1512,6 @@
       "duration": ""
     },
     {
-      "id": "afeec198fbf511f7",
-      "title": "Meta turns Muse sharing back on",
-      "link": "https://www.theverge.com/tech/1017066/meta-muse-sharing-back-on-artifiacts",
-      "source": "The Verge \u2014 AI",
-      "category": "AI",
-      "summary": "Meta has re-enabled Muse sharing after security researchers had reported that public conversation links could be easy to find. The researchers said they had been able to find Muse pages like a marketing company's internal revenue review and a small business owner's loan applicati",
-      "published": "2026-10-22T21:59:43.968066+00:00",
-      "audio_url": null,
-      "duration": ""
-    },
-    {
-      "id": "29a87826b845358b",
-      "title": "Meta&#8217;s AI could still scrape news sites, legal experts say",
-      "link": "https://www.theverge.com/tech/1017082/meta-terms-update-ai-training-concerns",
-      "source": "The Verge \u2014 AI",
-      "category": "AI",
-      "summary": "Meta has tweaked its business terms to remove language suggesting that it could freely train its AI models on news sites, like The Verge - but legal experts say these changes aren't enough to address their concerns. \"This does nothing to restrict the 'associated with your product",
-      "published": "2026-10-22T21:59:43.968026+00:00",
-      "audio_url": null,
-      "duration": ""
-    },
-    {
       "id": "27825e3003584012",
       "title": "Build more responsive apps with the Decisions API",
       "link": "https://openai.com/index/decisions-api",
@@ -2491,17 +2546,6 @@
       "duration": ""
     },
     {
-      "id": "7d10f0ddfecf202c",
-      "title": "How Block is building AI-powered security with OpenAI technology",
-      "link": "https://openai.com/index/block-ai-powered-security",
-      "source": "OpenAI Blog",
-      "category": "AI",
-      "summary": "Block is building AI-powered security with OpenAI. Its security team investigates threats faster and proposes patches in minutes.",
-      "published": "2026-10-14T07:00:00+00:00",
-      "audio_url": null,
-      "duration": ""
-    },
-    {
       "id": "ef47cf6a028c4b74",
       "title": "llm-meta-ai 0.2",
       "link": "https://simonwillison.net/2026/Oct/12/llm-meta-ai/",
@@ -2599,17 +2643,6 @@
       "published": "2026-10-14T01:01:53+00:00",
       "audio_url": "https://muse.ai/podcasts/media/1248297608376725/94f09345-ad4a-4981-83dd-e3206bbf5c4e/ep-f332482a-dfd8-4f06-9f6f-e9217dbeb9f2.mp3",
       "duration": "259"
-    },
-    {
-      "id": "2f3282e483141f68",
-      "title": "The EU\u2019s next chapter in AI is agentic",
-      "link": "https://openai.com/index/the-eus-next-chapter-in-ai-is-agentic",
-      "source": "OpenAI Blog",
-      "category": "AI",
-      "summary": "New analysis shows how agentic AI adoption is growing across EU enterprises and small businesses\u2014and where deeper use could unlock more value.",
-      "published": "2026-10-14T00:00:00+00:00",
-      "audio_url": null,
-      "duration": ""
     },
     {
       "id": "131f413269cf581f",
@@ -2971,28 +3004,6 @@
       "category": "AI",
       "summary": "I visited the Museum of the City of New York today and got to see He Built This City: Joe Macken\u2019s Model , the 50 x27 feet model of the city built over a 21 year period from balsa wood and cardboard. It exceeded my already high expectations. The exhibition closes on 12th October ",
       "published": "2026-10-09T21:59:58.379391+00:00",
-      "audio_url": null,
-      "duration": ""
-    },
-    {
-      "id": "9f4f46039e3dc6c1",
-      "title": "AI coding agents generate more code, but not more software",
-      "link": "https://arstechnica.com/ai/2026/10/ai-coding-agents-generate-more-code-but-not-more-software/",
-      "source": "Ars Technica AI",
-      "category": "AI",
-      "summary": "Study finds coding efficiency gains get \"absorbed\" by human review \"bottleneck.\"",
-      "published": "2026-10-09T19:43:50+00:00",
-      "audio_url": null,
-      "duration": ""
-    },
-    {
-      "id": "9304db4f19bb1881",
-      "title": "AI disqualification yields new Nikon Small World in Motion winner",
-      "link": "https://arstechnica.com/science/2026/10/winning-nikon-small-world-in-motion-video-disqualified-for-ai-use/",
-      "source": "Ars Technica AI",
-      "category": "AI",
-      "summary": "New winner is Nguyen Nam Nhat of Vietnam for video of a roundworm and single-celled Dileptus.",
-      "published": "2026-10-09T18:44:06+00:00",
       "audio_url": null,
       "duration": ""
     },
@@ -4533,17 +4544,6 @@
       "category": "Quantum",
       "summary": "This NISQ era of quantum computing is also the age where multiple approaches to quantum emerge. It's akin to the moment before we decided to follow mostly through the x86 path. New research on fluxonium qubits promises to keep more of our options open.",
       "published": "2023-09-30T15:10:59+00:00",
-      "audio_url": null,
-      "duration": ""
-    },
-    {
-      "id": "cb00d066ccf3a574",
-      "title": "CHIPS Act Tries to Keep Quantum Away From China",
-      "link": "https://www.tomshardware.com/news/chips-act-tries-to-keep-quantum-tech-from-china",
-      "source": "Tom's Hardware Quantum",
-      "category": "Quantum",
-      "summary": "The final version of the CHIPS and Science Act introduces clarified provisions regarding what technologies can't cross the US border toward those of a \"foreign country of concern,\" and quantum is one of them.",
-      "published": "2023-09-25T20:40:51+00:00",
       "audio_url": null,
       "duration": ""
     }
