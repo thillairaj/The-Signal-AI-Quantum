@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-30T18:00:19.360757+00:00",
+  "generated_at": "2026-10-30T22:00:20.539453+00:00",
   "sources_polled": [
     "The Verge \u2014 AI",
     "Simon Willison",
@@ -15,6 +15,83 @@
     "Quantum Intelligence"
   ],
   "articles": [
+    {
+      "id": "c4dbacf8aa2b8b7f",
+      "title": "Google&#8217;s satellite AI server transmits its first response to Earth",
+      "link": "https://www.theverge.com/tech/1023528/google-project-suncatcher-ai-satellite-transmission",
+      "source": "The Verge \u2014 AI",
+      "category": "AI",
+      "summary": "Google's AI chip-equipped satellite has generated its first response from space. In a blog post on Friday, Google says it successfully booted up the satellite's Tensor Processing Units (TPUs), allowing the on-board Gemma 4 model to follow through on a prompt to create a haiku abo",
+      "published": "2026-10-30T22:00:06.014463+00:00",
+      "audio_url": null,
+      "duration": ""
+    },
+    {
+      "id": "25a528e218b1080c",
+      "title": "The biggest names in AI are backing a new way to opt out of scraping",
+      "link": "https://www.theverge.com/tech/1023763/openai-google-microsoft-ai-scraping-standard-opt-out",
+      "source": "The Verge \u2014 AI",
+      "category": "AI",
+      "summary": "OpenAI, Google, Microsoft, and Anthropic say they will adopt a new standard that publishers can use to opt out of being scraped by AI, as reported earlier by Search Engine Roundtable. With this control, publishers can apply their AI training preferences across multiple AI compani",
+      "published": "2026-10-30T22:00:06.014409+00:00",
+      "audio_url": null,
+      "duration": ""
+    },
+    {
+      "id": "e6a83342c0c51d1e",
+      "title": "Sam Altman says it\u2019s better for RAM to be in a data center than on your desk",
+      "link": "https://www.theverge.com/ai-artificial-intelligence/1023820/sam-altman-ram-shortage-cloud-servers",
+      "source": "The Verge \u2014 AI",
+      "category": "AI",
+      "summary": "Asked about supply chain shortages, like the ongoing RAM shortage, OpenAI CEO Sam Altman said in an interview that it's \"terrible\" to have RAM in personal PCs instead of data centers. During his appearance on the Cheeky Pint podcast, where he also commented on AI's impact on math",
+      "published": "2026-10-30T22:00:06.014327+00:00",
+      "audio_url": null,
+      "duration": ""
+    },
+    {
+      "id": "df26d5473c418f43",
+      "title": "Supersonic airliner in doubt as company shifts to powering AI data centers",
+      "link": "https://arstechnica.com/gadgets/2026/10/united-airlines-ceo-doubts-supersonic-airliner-from-boom-will-be-ready-by-2029/",
+      "source": "Ars Technica AI",
+      "category": "AI",
+      "summary": "Boom\u2019s airliner may be delayed, and its data center power business lost a customer.",
+      "published": "2026-10-30T21:41:54+00:00",
+      "audio_url": null,
+      "duration": ""
+    },
+    {
+      "id": "ce0cce9f3bc5563c",
+      "title": "Anthropic VS code extension on Cursor backdoored for nearly 12 hours",
+      "link": "https://arstechnica.com/security/2026/10/anthropic-vs-code-extension-on-cursor-backdoored-for-nearly-12-hours/",
+      "source": "Ars Technica AI",
+      "category": "AI",
+      "summary": "It's still unknown how attackers got access to Anthropic's verified Cursor account.",
+      "published": "2026-10-30T21:09:54+00:00",
+      "audio_url": null,
+      "duration": ""
+    },
+    {
+      "id": "65d255a74525f3ca",
+      "title": "Dartmouth's provost warned us about AI cheating\u2014but his own AI use cost him his job",
+      "link": "https://arstechnica.com/tech-policy/2026/10/dartmouths-provost-warned-us-about-ai-cheating-but-his-own-ai-use-cost-him-his-job/",
+      "source": "Ars Technica AI",
+      "category": "AI",
+      "summary": "People who love AI don't always love telling others they used it.",
+      "published": "2026-10-30T20:40:13+00:00",
+      "audio_url": null,
+      "duration": ""
+    },
+    {
+      "id": "538ea1326a6a8ff9",
+      "title": "Basically no one is using AI agents for their DoorDash orders",
+      "link": "https://arstechnica.com/ai/2026/10/doordash-says-outside-ai-agents-have-only-led-to-hundreds-of-orders-so-far/",
+      "source": "Ars Technica AI",
+      "category": "AI",
+      "summary": "But it's still early days for the relatively new e-commerce use case.",
+      "published": "2026-10-30T19:30:52+00:00",
+      "audio_url": null,
+      "duration": ""
+    },
     {
       "id": "974d9b85c8fb969a",
       "title": "Pope Leo calls for the disarmament of AI: \u2018Machines are tools, not persons\u2019",
@@ -115,6 +192,17 @@
       "duration": ""
     },
     {
+      "id": "25cc4c9bb2e3e7e5",
+      "title": "Making it easier for websites to express AI training preferences",
+      "link": "https://openai.com/index/helping-websites-express-ai-training-preferences",
+      "source": "OpenAI Blog",
+      "category": "AI",
+      "summary": "OpenAI will honor a shared robots.txt signal to help website operators communicate their AI training preferences to participating providers.",
+      "published": "2026-10-30T09:30:00+00:00",
+      "audio_url": null,
+      "duration": ""
+    },
+    {
       "id": "c7606af40dbb903f",
       "title": "Community safety report and new protections for teens",
       "link": "https://openai.com/index/community-safety-report-and-new-protections-for-teens",
@@ -190,6 +278,17 @@
       "published": "2026-10-30T01:03:36+00:00",
       "audio_url": "https://muse.ai/podcasts/media/1248297608376725/94f09345-ad4a-4981-83dd-e3206bbf5c4e/ep-ef5013fd-be98-436d-9591-031f8a02bdda.mp3",
       "duration": "261"
+    },
+    {
+      "id": "d2282bcce1625c64",
+      "title": "Fair use benefits everyone",
+      "link": "https://openai.com/index/fair-use-benefits-everyone",
+      "source": "OpenAI Blog",
+      "category": "AI",
+      "summary": "OpenAI shares excerpts from court briefs by creators, academics, accessibility advocates, and legal experts, among others, on how fair use supports AI training and innovation.",
+      "published": "2026-10-30T00:00:00+00:00",
+      "audio_url": null,
+      "duration": ""
     },
     {
       "id": "2a1a8a7c88a01340",
@@ -1479,39 +1578,6 @@
       "duration": ""
     },
     {
-      "id": "2c1b17b371894ee5",
-      "title": "In Meta\u2019s version of the future, I\u2019ll have my Muse call your Muse",
-      "link": "https://www.theverge.com/tech/1016905/meta-earnings-fall-2026-muse-network",
-      "source": "The Verge \u2014 AI",
-      "category": "AI",
-      "summary": "Mark Zuckerberg is barrelling toward a future in which an autonomous network of AI agents will run our lives - shopping for us, working for us, talking to other people's AI agents for us. Are humans ready for this very specific and unrelenting vision of a life in which we communi",
-      "published": "2026-10-22T21:59:43.968164+00:00",
-      "audio_url": null,
-      "duration": ""
-    },
-    {
-      "id": "6dc97b2e6ae28cfe",
-      "title": "Discord now formats Markdown previews right",
-      "link": "https://www.theverge.com/news/1017012/discord-markdown-previews-organize-servers-channels",
-      "source": "The Verge \u2014 AI",
-      "category": "AI",
-      "summary": "Discord's latest update released today has a big improvement for Markdown previews: they should now render correctly instead of with \"a bunch of symbols,\" according to the company. LLMs and AI agents often rely on Markdown files for instructions and context, so these improved pre",
-      "published": "2026-10-22T21:59:43.968135+00:00",
-      "audio_url": null,
-      "duration": ""
-    },
-    {
-      "id": "3992fc4ed3eb0dfa",
-      "title": "Sure, let\u2019s smoosh SpaceX and Tesla together, who cares",
-      "link": "https://www.theverge.com/ai-artificial-intelligence/1016879/spacex-tesla-cursed-katamari",
-      "source": "The Verge \u2014 AI",
-      "category": "AI",
-      "summary": "Oh sure, SpaceX's credit risk is pretty high because it's about to borrow another $40 billion to spend on Nvidia chips, but who cares about that? SpaceX and Tesla have formed special committees to discuss a merger! The degree to which you find this merger compelling likely has to",
-      "published": "2026-10-22T21:59:43.968098+00:00",
-      "audio_url": null,
-      "duration": ""
-    },
-    {
       "id": "27825e3003584012",
       "title": "Build more responsive apps with the Decisions API",
       "link": "https://openai.com/index/decisions-api",
@@ -2513,17 +2579,6 @@
       "duration": ""
     },
     {
-      "id": "24cc989c02dbc2a2",
-      "title": "SentinelOne cuts malware analysis from weeks to hours",
-      "link": "https://openai.com/index/sentinelone",
-      "source": "OpenAI Blog",
-      "category": "AI",
-      "summary": "With OpenAI Daybreak, SentinelOne cuts weeks of malware analysis to hours, creating capacity to investigate more threats.",
-      "published": "2026-10-14T12:00:00+00:00",
-      "audio_url": null,
-      "duration": ""
-    },
-    {
       "id": "9fd67fba7efb1f2d",
       "title": "OpenAI, Google pushing new AI models easily tricked into making nudes, researchers say",
       "link": "https://arstechnica.com/tech-policy/2026/10/openai-google-pushing-new-ai-models-easily-tricked-into-making-nudes-researchers-say/",
@@ -2531,17 +2586,6 @@
       "category": "AI",
       "summary": "Attack method exposes flaws in OpenAI, Google safeguards against AI nudes.",
       "published": "2026-10-14T11:00:30+00:00",
-      "audio_url": null,
-      "duration": ""
-    },
-    {
-      "id": "e181547094b0a112",
-      "title": "How Third Moment Research runs 10,000 agents for 36+ hours",
-      "link": "https://openai.com/index/third-moment-research",
-      "source": "OpenAI Blog",
-      "category": "AI",
-      "summary": "With GPT-6 Astra and GPT-6.1 Sol, Codex, and Daybreak for cybersecurity, this AI lab builds agents that focus for days and improve with use.",
-      "published": "2026-10-14T07:00:00+00:00",
       "audio_url": null,
       "duration": ""
     },
@@ -2788,39 +2832,6 @@
       "duration": ""
     },
     {
-      "id": "b470d062734aea8f",
-      "title": "Anthropic's Claude AI submitted false murder tip to Philadelphia police",
-      "link": "https://arstechnica.com/tech-policy/2026/10/anthropics-claude-ai-submitted-false-murder-tip-to-philadelphia-police/",
-      "source": "Ars Technica AI",
-      "category": "AI",
-      "summary": "\u201cI may have information regarding this case,\" Claude AI told Philly police.",
-      "published": "2026-10-12T18:21:36+00:00",
-      "audio_url": null,
-      "duration": ""
-    },
-    {
-      "id": "b4c6a3e5aa4cab30",
-      "title": "Russia was not ready for the data center war it started with Ukraine",
-      "link": "https://arstechnica.com/gadgets/2026/10/russia-was-not-ready-for-the-data-center-war-it-started-with-ukraine/",
-      "source": "Ars Technica AI",
-      "category": "AI",
-      "summary": "Russian bloggers warn Russia\u2019s hyper-centralized digital economy is vulnerable.",
-      "published": "2026-10-12T17:52:36+00:00",
-      "audio_url": null,
-      "duration": ""
-    },
-    {
-      "id": "5dfaa1d43f85e664",
-      "title": "Amazon has over 1 million robot workers. What\u2019s next for human employees?",
-      "link": "https://arstechnica.com/ai/2026/10/inside-amazons-robotic-arms-race-and-what-it-means-for-the-future-of-human-work/",
-      "source": "Ars Technica AI",
-      "category": "AI",
-      "summary": "The second-largest corporate employer has bet big on robot workers to scale.",
-      "published": "2026-10-12T12:43:10+00:00",
-      "audio_url": null,
-      "duration": ""
-    },
-    {
       "id": "e77534a29e124c97",
       "title": "Dev used AI agents and more than 500 billion tokens to rebuild Call of Duty: Modern Warfare 2's source code",
       "link": "https://www.tomshardware.com/tech-industry/artificial-intelligence/dev-used-ai-agents-and-more-than-500-billion-tokens-to-rebuild-call-of-duty-modern-warfare-2s-source-code-83-percent-of-the-2009-shooters-functions-now-match-the-original-byte-for-byte",
@@ -2962,17 +2973,6 @@
       "published": "2026-10-10T01:02:28+00:00",
       "audio_url": "https://muse.ai/podcasts/media/1248297608376725/94f09345-ad4a-4981-83dd-e3206bbf5c4e/ep-7470c5a2-6606-4813-ad98-3a604ccfb561.mp3",
       "duration": "296"
-    },
-    {
-      "id": "5df45c5813134c05",
-      "title": "Ukraine\u2019s drones knock out AI data center belonging to \"Russia\u2019s Google\"",
-      "link": "https://arstechnica.com/gadgets/2026/10/ukraines-drones-knock-out-ai-data-center-belonging-to-russias-google/",
-      "source": "Ars Technica AI",
-      "category": "AI",
-      "summary": "One damaged data center has supercomputers used for training Yandex\u2019s AI model.",
-      "published": "2026-10-09T22:04:07+00:00",
-      "audio_url": null,
-      "duration": ""
     },
     {
       "id": "147ef720989f663d",
