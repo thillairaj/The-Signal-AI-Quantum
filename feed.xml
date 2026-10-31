@@ -4,7 +4,15 @@
     <title>The Signal</title>
     <link>https://thillairaj.github.io/The-Signal-AI-Quantum/</link>
     <description>A self-updating feed of AI, quantum computing, and podcast updates.</description>
-    <lastBuildDate>Sat, 31 Oct 2026 18:00:11 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 31 Oct 2026 22:00:08 +0000</lastBuildDate>
+    <item>
+      <title>Cloudflare’s Post-Quantum GeoKey Manager Enters Closed Beta Without Attribute-Based Encryption</title>
+      <link>https://www.infoq.com/news/2026/10/cf-pq-geokey-manager/?utm_campaign=infoq_content&amp;utm_source=infoq&amp;utm_medium=feed&amp;utm_term=Quantum+Computing-news</link>
+      <guid isPermaLink="false">76e0c2dd8ce890ea</guid>
+      <description>Cloudflare has moved a post-quantum rebuild of GeoKey Manager into closed beta, guarding geo-fenced keys with hybrid ML-KEM-768 and X25519 instead of the attribute-based encryption used since 2022. Keys live only in kernel memory on verified regional servers, and any failed check</description>
+      <category>InfoQ Quantum Computing</category>
+      <pubDate>Sat, 31 Oct 2026 19:56:00 +0000</pubDate>
+    </item>
     <item>
       <title>I built an AI Tamagotchi before Meta could</title>
       <link>https://www.theverge.com/gadgets/1013375/muse-charm-gadgets-preview-waveshare-esp32-claude-vibe-code</link>
@@ -476,14 +484,6 @@
       <description>See how Legora uses OpenAI models, ChatGPT, and Codex to accelerate legal workflows, expand contract analysis, and free lawyers to focus on higher-value work.</description>
       <category>OpenAI Blog</category>
       <pubDate>Wed, 28 Oct 2026 09:30:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>Game Boy Color on My Conference Badge</title>
-      <link>https://simonwillison.net/2026/Oct/27/game-boy-color-on-my-conference-badge/</link>
-      <guid isPermaLink="false">a9c65cb8282253c6</guid>
-      <description>Game Boy Color on My Conference Badge I'm at GitHub Universe this week and, similar to last year , the conference badge is a full-blown color screen computer. I've been hacking around with it again, and then I ran into with Steve Francia... who worked with Gemini to get a full NE</description>
-      <category>Simon Willison</category>
-      <pubDate>Tue, 27 Oct 2026 22:00:08 +0000</pubDate>
     </item>
   </channel>
 </rss>

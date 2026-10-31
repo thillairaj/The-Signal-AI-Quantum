@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-31T18:00:11.684084+00:00",
+  "generated_at": "2026-10-31T22:00:08.951022+00:00",
   "sources_polled": [
     "The Verge \u2014 AI",
     "Simon Willison",
@@ -15,6 +15,17 @@
     "Quantum Intelligence"
   ],
   "articles": [
+    {
+      "id": "76e0c2dd8ce890ea",
+      "title": "Cloudflare\u2019s Post-Quantum GeoKey Manager Enters Closed Beta Without Attribute-Based Encryption",
+      "link": "https://www.infoq.com/news/2026/10/cf-pq-geokey-manager/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=Quantum+Computing-news",
+      "source": "InfoQ Quantum Computing",
+      "category": "Quantum",
+      "summary": "Cloudflare has moved a post-quantum rebuild of GeoKey Manager into closed beta, guarding geo-fenced keys with hybrid ML-KEM-768 and X25519 instead of the attribute-based encryption used since 2022. Keys live only in kernel memory on verified regional servers, and any failed check",
+      "published": "2026-10-31T19:56:00+00:00",
+      "audio_url": null,
+      "duration": ""
+    },
     {
       "id": "ed0268fa6e325c7b",
       "title": "I built an AI Tamagotchi before Meta could",
