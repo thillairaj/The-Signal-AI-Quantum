@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-30T22:00:20.539453+00:00",
+  "generated_at": "2026-10-31T02:00:22.942083+00:00",
   "sources_polled": [
     "The Verge \u2014 AI",
     "Simon Willison",
@@ -15,6 +15,39 @@
     "Quantum Intelligence"
   ],
   "articles": [
+    {
+      "id": "1649c5dd07045357",
+      "title": "dbreunig/nesformer",
+      "link": "https://simonwillison.net/2026/Oct/30/nesformer/",
+      "source": "Simon Willison",
+      "category": "AI",
+      "summary": "dbreunig/nesformer Inspired by qwenputer by Divyansh Agrawal, Drew Breunig baked a working emulator for a Nintendo Entertainment System 6502 CPU into the weights of Qwen3.5-4B. You can now play NES ROMs such as Super Mario Bros (very slowly) running inside Qwen! In a comment on H",
+      "published": "2026-10-31T02:00:03.328098+00:00",
+      "audio_url": null,
+      "duration": ""
+    },
+    {
+      "id": "011fdc062b2b84be",
+      "title": "Apple Intelligence is finally coming to China with iOS 27.3",
+      "link": "https://www.theverge.com/tech/1023974/apple-intelligence-china-ios-27-3",
+      "source": "The Verge \u2014 AI",
+      "category": "AI",
+      "summary": "Apple will launch Apple Intelligence in China with iOS 27.3, the company announced on its Chinese newsroom website, as reported by MacRumors. The Apple Intelligence features will be available first in an iOS 27.3 beta that's set to launch on November 4th, with a full iOS 27.3 rel",
+      "published": "2026-10-31T02:00:02.412591+00:00",
+      "audio_url": null,
+      "duration": ""
+    },
+    {
+      "id": "970d204df3026519",
+      "title": "Daily AI Intelligence \u2014 Episode 30: OpenAI's Teen Safety Push, Copilot Fusion Goes General, Nvidia's Reported Nscale Guarantee",
+      "link": "https://muse.ai/podcasts/media/1248297608376725/94f09345-ad4a-4981-83dd-e3206bbf5c4e/ep-db7ce3f7-a3a1-4b0b-8b7b-2adee44d0daf.mp3",
+      "source": "Daily AI Intelligence",
+      "category": "Podcast",
+      "summary": "OpenAI tightens ChatGPT teen and violence safeguards and discloses 200+ Q3 law-enforcement referrals; Anthropic expands Claude government access and blocks game clones in Claude Code; Gemini 4 Carbon tops the Artificial Analysis index; Grok Bot can now shop; GitHub Copilot Fusion",
+      "published": "2026-10-31T01:02:29+00:00",
+      "audio_url": "https://muse.ai/podcasts/media/1248297608376725/94f09345-ad4a-4981-83dd-e3206bbf5c4e/ep-db7ce3f7-a3a1-4b0b-8b7b-2adee44d0daf.mp3",
+      "duration": "261"
+    },
     {
       "id": "c4dbacf8aa2b8b7f",
       "title": "Google&#8217;s satellite AI server transmits its first response to Earth",
@@ -1567,17 +1600,6 @@
       "duration": ""
     },
     {
-      "id": "98a7f3683d8fe8db",
-      "title": "Microsoft says its AI tool is better than doctors at diagnosing conditions",
-      "link": "https://www.theverge.com/ai-artificial-intelligence/1016690/suleyman-microsoft-diagnostic-orchestrator-science-medical-superintelligence",
-      "source": "The Verge \u2014 AI",
-      "category": "AI",
-      "summary": "For years, AI leaders have touted healthcare as one of the clearest examples of where their technology will improve lives. Now \"it is finally here,\" Microsoft AI CEO Mustafa Suleyman tells The Verge. The company claims to have developed an AI-powered tool it says can diagnose con",
-      "published": "2026-10-22T21:59:43.968193+00:00",
-      "audio_url": null,
-      "duration": ""
-    },
-    {
       "id": "27825e3003584012",
       "title": "Build more responsive apps with the Decisions API",
       "link": "https://openai.com/index/decisions-api",
@@ -2993,17 +3015,6 @@
       "category": "AI",
       "summary": "We evaluate several models on 100 tasks from the [internal Binary Exploitation benchmark] (selected at random), and find that GLM-5.3 develops full control flow hijacks in 4% of the trials; Claude Mythos Preview did so in 6%. Although GLM-5.3 performs below Claude Mythos Preview ",
       "published": "2026-10-09T21:59:58.379470+00:00",
-      "audio_url": null,
-      "duration": ""
-    },
-    {
-      "id": "562470c22e2896c8",
-      "title": "He Built This City",
-      "link": "https://simonwillison.net/2026/Sep/30/he-built-this-city/",
-      "source": "Simon Willison",
-      "category": "AI",
-      "summary": "I visited the Museum of the City of New York today and got to see He Built This City: Joe Macken\u2019s Model , the 50 x27 feet model of the city built over a 21 year period from balsa wood and cardboard. It exceeded my already high expectations. The exhibition closes on 12th October ",
-      "published": "2026-10-09T21:59:58.379391+00:00",
       "audio_url": null,
       "duration": ""
     },
