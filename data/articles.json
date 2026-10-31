@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-31T10:00:12.769869+00:00",
+  "generated_at": "2026-10-31T14:00:05.603035+00:00",
   "sources_polled": [
     "The Verge \u2014 AI",
     "Simon Willison",
@@ -15,6 +15,17 @@
     "Quantum Intelligence"
   ],
   "articles": [
+    {
+      "id": "94697ec49ac5116b",
+      "title": "Anthropic's Claude AI blocks video game cloning and reverse-engineering",
+      "link": "https://www.tomshardware.com/tech-industry/artificial-intelligence/anthropics-ai-model-is-now-blocking-attempts-at-video-game-recreation-and-cloning-users-also-claim-non-malicious-generic-reverse-engineering-tasks-are-blocked",
+      "source": "Anthropic/Claude News",
+      "category": "AI",
+      "summary": "Anthropic's Opus 5.5 model blocking attempts at videogame recreation \u2014 users also claim their non-malicious generic reverse-engineering tasks are block",
+      "published": "2026-10-31T12:20:00+00:00",
+      "audio_url": null,
+      "duration": ""
+    },
     {
       "id": "1649c5dd07045357",
       "title": "dbreunig/nesformer",
@@ -4071,17 +4082,6 @@
       "category": "Quantum",
       "summary": "Imec unveiled the world\u2019s first silicon quantum dot qubit device fabricated with High-NA EUV lithography, suggesting quantum computing may eventually scale using the semiconductor industry\u2019s existing advanced manufacturing ecosystem.",
       "published": "2026-05-25T15:27:00+00:00",
-      "audio_url": null,
-      "duration": ""
-    },
-    {
-      "id": "4a09c598a985ade2",
-      "title": "Musk's Colossus 1 AI supercomputer's inefficient mixed-architecture design couldn't be used to train Grok, so Anthropic's using it for inference instead",
-      "link": "https://www.tomshardware.com/tech-industry/artificial-intelligence/musks-colossus-1-ai-supercomputers-inefficient-mixed-architecture-design-couldnt-be-used-to-train-grok-so-anthropics-using-it-for-inference-instead-musk-readies-unified-blackwell-only-colossus-2-for-frontier-training-and-potential-ipo",
-      "source": "Anthropic/Claude News",
-      "category": "AI",
-      "summary": "Anthropic has leased xAI\u2019s entire 220,000-GPU Colossus 1 supercluster from SpaceX to ease Claude\u2019s growing compute bottlenecks, in a deal that may reveal far bigger ambitions around AI infrastructure, orbital data centers, and Musk\u2019s IPO strategy.",
-      "published": "2026-05-15T10:08:57+00:00",
       "audio_url": null,
       "duration": ""
     },
