@@ -4,7 +4,23 @@
     <title>The Signal</title>
     <link>https://thillairaj.github.io/The-Signal-AI-Quantum/</link>
     <description>A self-updating feed of AI, quantum computing, and podcast updates.</description>
-    <lastBuildDate>Sat, 31 Oct 2026 22:00:08 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 01 Nov 2026 02:00:11 +0000</lastBuildDate>
+    <item>
+      <title>datasette-llm 0.1a9</title>
+      <link>https://simonwillison.net/2026/Oct/31/datasette-llm/</link>
+      <guid isPermaLink="false">bc9463905bbd6e7a</guid>
+      <description>Release: datasette-llm 0.1a9 I have some big upgrades to Datasette Agent in the pipeline, but in the meantime here's a tiny user experience improvement to the underlying datasette-llm plugin. It now picks up the default model used by LLM , which means you can start using Datasett</description>
+      <category>Simon Willison</category>
+      <pubDate>Sun, 01 Nov 2026 01:59:58 +0000</pubDate>
+    </item>
+    <item>
+      <title>How We Took Over ChatGPT Accounts</title>
+      <link>https://simonwillison.net/2026/Oct/31/how-we-took-over-chatgpt-accounts/</link>
+      <guid isPermaLink="false">0def4a2fca6b3a20</guid>
+      <description>How We Took Over ChatGPT Accounts Parameter Labs describe an exploit they found against ChatGPT's implementation of the artifacts pattern (OpenAI used to call this "Canvas" but it looks like the latest revision is called HTML previews ), where interactive custom HTML apps are dis</description>
+      <category>Simon Willison</category>
+      <pubDate>Sun, 01 Nov 2026 01:59:58 +0000</pubDate>
+    </item>
     <item>
       <title>Cloudflare’s Post-Quantum GeoKey Manager Enters Closed Beta Without Attribute-Based Encryption</title>
       <link>https://www.infoq.com/news/2026/10/cf-pq-geokey-manager/?utm_campaign=infoq_content&amp;utm_source=infoq&amp;utm_medium=feed&amp;utm_term=Quantum+Computing-news</link>
@@ -468,22 +484,6 @@
       <description>How AI might enter the org chart—beneath, beside, and between us.</description>
       <category>OpenAI Blog</category>
       <pubDate>Wed, 28 Oct 2026 10:00:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>Legora is building the agentic operating system for legal work</title>
-      <link>https://openai.com/index/legora-agentic-operating-system-for-legal-work</link>
-      <guid isPermaLink="false">2fc8e689e413caad</guid>
-      <description>See how Legora uses OpenAI models, ChatGPT, and Codex to accelerate legal workflows, expand contract analysis, and free lawyers to focus on higher-value work.</description>
-      <category>OpenAI Blog</category>
-      <pubDate>Wed, 28 Oct 2026 09:30:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>Legora is building the agentic operating system for legal work</title>
-      <link>https://openai.com/index/legora</link>
-      <guid isPermaLink="false">41c97fe8dc29ac4a</guid>
-      <description>See how Legora uses OpenAI models, ChatGPT, and Codex to accelerate legal workflows, expand contract analysis, and free lawyers to focus on higher-value work.</description>
-      <category>OpenAI Blog</category>
-      <pubDate>Wed, 28 Oct 2026 09:30:00 +0000</pubDate>
     </item>
   </channel>
 </rss>
