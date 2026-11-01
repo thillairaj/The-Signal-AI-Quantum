@@ -4,7 +4,15 @@
     <title>The Signal</title>
     <link>https://thillairaj.github.io/The-Signal-AI-Quantum/</link>
     <description>A self-updating feed of AI, quantum computing, and podcast updates.</description>
-    <lastBuildDate>Sun, 01 Nov 2026 14:00:26 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 01 Nov 2026 18:00:03 +0000</lastBuildDate>
+    <item>
+      <title>Quoting Kyle Kingsbury</title>
+      <link>https://simonwillison.net/2026/Nov/1/kyle-kingsbury/</link>
+      <guid isPermaLink="false">835fd1406315e6b3</guid>
+      <description>More broadly, the use of LLMs erodes trust in documentation, in software, and in the organizations which produce them. Perhaps engineers will begin to treat any new software project with suspicion—the signals we used to rely on as markers of a mature system are now easier to coun</description>
+      <category>Simon Willison</category>
+      <pubDate>Sun, 01 Nov 2026 17:59:48 +0000</pubDate>
+    </item>
     <item>
       <title>datasette-llm 0.1a9</title>
       <link>https://simonwillison.net/2026/Oct/31/datasette-llm/</link>
@@ -476,14 +484,6 @@
       <description>Microsoft's latest monthly security update addresses 1415 vulnerabilities across multiple products. One vulnerability affecting Windows Shell has been exploited in the wild, while 85 are classified as critical. Affected products include Windows OS, Office, Exchange, .NET, Edge, a</description>
       <category>InfoQ — Microsoft</category>
       <pubDate>Wed, 28 Oct 2026 10:30:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>The future of the firm</title>
-      <link>https://openai.com/index/the-future-of-the-firm</link>
-      <guid isPermaLink="false">0dc3cf0b7c98dcde</guid>
-      <description>How AI might enter the org chart—beneath, beside, and between us.</description>
-      <category>OpenAI Blog</category>
-      <pubDate>Wed, 28 Oct 2026 10:00:00 +0000</pubDate>
     </item>
   </channel>
 </rss>
