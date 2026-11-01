@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-01T18:00:03.284892+00:00",
+  "generated_at": "2026-11-01T22:00:14.695516+00:00",
   "sources_polled": [
     "The Verge \u2014 AI",
     "Simon Willison",
@@ -15,6 +15,17 @@
     "Quantum Intelligence"
   ],
   "articles": [
+    {
+      "id": "370354f1b8461153",
+      "title": "New AI-driven Windows malware feeds stolen data to Claude to rank victims\u2019 assets by value, then deletes itself \u2014 payload builds custom target assessment, can switch models if one refuses, or skip the AI step entirely",
+      "link": "https://www.tomshardware.com/tech-industry/cyber-security/new-ai-driven-windows-malware-feeds-stolen-data-to-claude-to-rank-victims-assets-by-value-then-deletes-itself-payload-builds-custom-target-assessment-can-switch-models-if-one-refuses-or-skip-the-ai-step-entirely",
+      "source": "Anthropic/Claude News",
+      "category": "AI",
+      "summary": "Cisco Talos says the VOLTA infostealer sends stolen victim data to Claude Opus 4.6 to rank assets by monetization value.",
+      "published": "2026-11-01T21:00:00+00:00",
+      "audio_url": null,
+      "duration": ""
+    },
     {
       "id": "835fd1406315e6b3",
       "title": "Quoting Kyle Kingsbury",
@@ -4082,17 +4093,6 @@
       "category": "Quantum",
       "summary": "Headquartered in Albany, New York, Anderon will operate a 300mm quantum wafer fab and offer its manufacturing services to competing quantum hardware vendors.",
       "published": "2026-05-26T19:05:38+00:00",
-      "audio_url": null,
-      "duration": ""
-    },
-    {
-      "id": "b3f13c41cb29809e",
-      "title": "Uber chief warns no link yet between AI tokenmaxxing and shipping successful products",
-      "link": "https://www.tomshardware.com/tech-industry/artificial-intelligence/uber-chief-warns-no-link-yet-between-ai-tokenmaxxing-and-shipping-successful-products-company-pumps-the-brakes-on-all-out-ai-spending",
-      "source": "Anthropic/Claude News",
-      "category": "AI",
-      "summary": "Uber might be having a serious rethink about lavishing cash on AI services as management still can't draw a clear link between LLM use and beneficial results.",
-      "published": "2026-05-26T11:15:53+00:00",
       "audio_url": null,
       "duration": ""
     },
