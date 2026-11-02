@@ -4,7 +4,39 @@
     <title>The Signal</title>
     <link>https://thillairaj.github.io/The-Signal-AI-Quantum/</link>
     <description>A self-updating feed of AI, quantum computing, and podcast updates.</description>
-    <lastBuildDate>Mon, 02 Nov 2026 18:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 02 Nov 2026 22:00:12 +0000</lastBuildDate>
+    <item>
+      <title>OpenAI pitches data center power plants as a way to protect nearby areas</title>
+      <link>https://www.theverge.com/ai-artificial-intelligence/1024604/openai-data-center-grid-protection-program</link>
+      <guid isPermaLink="false">16194c055af9d0c4</guid>
+      <description>In an announcement on Monday, OpenAI says it will pilot its "Grid Protectors Program" at an upcoming data center in Effingham County, Georgia, where the company promises to free up to 1,000 megawatts of power during extreme weather or emergencies, enough to power air conditioners</description>
+      <category>The Verge — AI</category>
+      <pubDate>Mon, 02 Nov 2026 21:59:55 +0000</pubDate>
+    </item>
+    <item>
+      <title>Anthropic clamps down on Claude’s AI video game clones</title>
+      <link>https://www.theverge.com/ai-artificial-intelligence/1024632/anthropic-claude-ai-video-game-clones</link>
+      <guid isPermaLink="false">e3f3f6c0c50f4c4d</guid>
+      <description>Anthropic has updated Claude Code's system prompt to prevent the AI tool from being used to recreate existing video games, as reported by Tom's Hardware. Retro gaming is currently being overrun with AI-made decompilations, recompilations, and ports, but while Anthropic will still</description>
+      <category>The Verge — AI</category>
+      <pubDate>Mon, 02 Nov 2026 21:59:55 +0000</pubDate>
+    </item>
+    <item>
+      <title>Coming in 2027: Apple’s $1,000 home robot for FaceTime and switching on lights</title>
+      <link>https://arstechnica.com/apple/2026/11/apples-roaming-home-robot-may-do-facetime-switch-lights-on-and-yell-at-your-cat/</link>
+      <guid isPermaLink="false">95189256059f9398</guid>
+      <description>Apple robot backed by CEO John Ternus may have hefty price tag and limited uses.</description>
+      <category>Ars Technica AI</category>
+      <pubDate>Mon, 02 Nov 2026 18:32:21 +0000</pubDate>
+    </item>
+    <item>
+      <title>Claude’s new rules against game cloning won’t stop the AI copying boom</title>
+      <link>https://arstechnica.com/ai/2026/11/claudes-new-rules-against-game-cloning-wont-stop-the-ai-copying-boom/</link>
+      <guid isPermaLink="false">778dbacaaeb9af89</guid>
+      <description>The tsunami of imitators is way bigger than any one model maker can stem.</description>
+      <category>Ars Technica AI</category>
+      <pubDate>Mon, 02 Nov 2026 18:05:31 +0000</pubDate>
+    </item>
     <item>
       <title>The New York Times and other publications sue Brave web browser for AI scraping and bypassing paywalls</title>
       <link>https://www.theverge.com/tech/1024588/brave-lawsuit-ai-scraping-new-york-times</link>
@@ -60,6 +92,14 @@
       <description>I've been getting the occasional confusing Python dependency error since switching over to Python 3.15 and the rule I'm having to remember is: If in doubt, delete the uv.lock file Most of my projects are libraries which don't include a uv.lock file, since it's rude for a library </description>
       <category>Simon Willison</category>
       <pubDate>Mon, 02 Nov 2026 01:59:45 +0000</pubDate>
+    </item>
+    <item>
+      <title>Qodo builds context into AI code review with Codex</title>
+      <link>https://openai.com/index/qodo-codex-plugin</link>
+      <guid isPermaLink="false">598c6194c0d34c23</guid>
+      <description>Qodo brings company knowledge and coding standards into Codex, helping developers catch P0 issues across repositories before opening a pull request.</description>
+      <category>OpenAI Blog</category>
+      <pubDate>Mon, 02 Nov 2026 00:00:00 +0000</pubDate>
     </item>
     <item>
       <title>New AI-driven Windows malware feeds stolen data to Claude to rank victims’ assets by value, then deletes itself — payload builds custom target assessment, can switch models if one refuses, or skip the AI step entirely</title>
@@ -444,46 +484,6 @@
       <description>Google has released its latest frontier model, Gemini 4 Carbon, offering "significant gains" in coding, agentic tasks, and cybersecurity. In an announcement on Wednesday, Google highlights Carbon's top spot on the Artificial Analysis Intelligence Index (v5.0) benchmark, with Clau</description>
       <category>The Verge — AI</category>
       <pubDate>Wed, 28 Oct 2026 22:00:30 +0000</pubDate>
-    </item>
-    <item>
-      <title>Akai is embracing vibe-coded mods with an open-source MPC</title>
-      <link>https://www.theverge.com/gadgets/1021405/akai-open-source-mpc-sample-key</link>
-      <guid isPermaLink="false">e4867209a9cdfe0b</guid>
-      <description>The MPC Sample Key isn't even formally announced yet, but Akai is already showing off what the modding community is cooking up through vibe coding. Akai has decided to embrace the explosion of hackers and custom firmware developers by giving them early access to the device, which</description>
-      <category>The Verge — AI</category>
-      <pubDate>Wed, 28 Oct 2026 22:00:30 +0000</pubDate>
-    </item>
-    <item>
-      <title>Google announces Gemini 4 Carbon, its latest frontier AI model that you can't use</title>
-      <link>https://arstechnica.com/ai/2026/10/google-announces-gemini-4-carbon-its-latest-frontier-ai-model-that-you-cant-use/</link>
-      <guid isPermaLink="false">bfd6acefc1fbf840</guid>
-      <description>Gemini 4 Carbon is essentially a slightly better version of Argon.</description>
-      <category>Ars Technica AI</category>
-      <pubDate>Wed, 28 Oct 2026 18:47:27 +0000</pubDate>
-    </item>
-    <item>
-      <title>GitHub Octoverse 2026</title>
-      <link>https://simonwillison.net/2026/Oct/28/github-octoverse-2026/</link>
-      <guid isPermaLink="false">d8f853e661d65a1d</guid>
-      <description>GitHub Octoverse 2026 I'm at GitHub Universe today (GitHub gave me a free ticket through their "GitHub Stars" program). EVP Jay Parikh just announced this year's Octoverse report, and highlighted these numbers in particular: This is a pretty stark representation of the impact of </description>
-      <category>Simon Willison</category>
-      <pubDate>Wed, 28 Oct 2026 17:59:45 +0000</pubDate>
-    </item>
-    <item>
-      <title>xAI is buying out homeowners who promise not to sue over data center noise</title>
-      <link>https://www.theverge.com/ai-artificial-intelligence/1020596/xai-mississippi-neighborhood-data-center-lawsuit</link>
-      <guid isPermaLink="false">5283652bd524be85</guid>
-      <description>A subsidiary of Elon Musk's xAI is offering to buy up homes in a Mississippi neighborhood, as long as residents don't join a lawsuit targeting the company's nearby data center and power plant, according to a report from The Guardian. A realtor going door-to-door in the Southaven </description>
-      <category>The Verge — AI</category>
-      <pubDate>Wed, 28 Oct 2026 17:59:44 +0000</pubDate>
-    </item>
-    <item>
-      <title>Meta says it&amp;#8217;ll probably delay its controversial new business terms again</title>
-      <link>https://www.theverge.com/tech/1020769/meta-updated-business-terms-delay-indefinitely</link>
-      <guid isPermaLink="false">1739307690c34a28</guid>
-      <description>Meta says it may push the implementation of its new business terms past November 20th as it faces backlash from publishers over concerns about AI training. In a post on X, Meta communications head Andy Stone said the company does "not plan to make policy changes without a full co</description>
-      <category>The Verge — AI</category>
-      <pubDate>Wed, 28 Oct 2026 17:59:44 +0000</pubDate>
     </item>
   </channel>
 </rss>

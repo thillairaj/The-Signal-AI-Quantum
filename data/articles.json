@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-02T18:00:00.523046+00:00",
+  "generated_at": "2026-11-02T22:00:12.552724+00:00",
   "sources_polled": [
     "The Verge \u2014 AI",
     "Simon Willison",
@@ -15,6 +15,50 @@
     "Quantum Intelligence"
   ],
   "articles": [
+    {
+      "id": "16194c055af9d0c4",
+      "title": "OpenAI pitches data center power plants as a way to protect nearby areas",
+      "link": "https://www.theverge.com/ai-artificial-intelligence/1024604/openai-data-center-grid-protection-program",
+      "source": "The Verge \u2014 AI",
+      "category": "AI",
+      "summary": "In an announcement on Monday, OpenAI says it will pilot its \"Grid Protectors Program\" at an upcoming data center in Effingham County, Georgia, where the company promises to free up to 1,000 megawatts of power during extreme weather or emergencies, enough to power air conditioners",
+      "published": "2026-11-02T21:59:55.933672+00:00",
+      "audio_url": null,
+      "duration": ""
+    },
+    {
+      "id": "e3f3f6c0c50f4c4d",
+      "title": "Anthropic clamps down on Claude\u2019s AI video game clones",
+      "link": "https://www.theverge.com/ai-artificial-intelligence/1024632/anthropic-claude-ai-video-game-clones",
+      "source": "The Verge \u2014 AI",
+      "category": "AI",
+      "summary": "Anthropic has updated Claude Code's system prompt to prevent the AI tool from being used to recreate existing video games, as reported by Tom's Hardware. Retro gaming is currently being overrun with AI-made decompilations, recompilations, and ports, but while Anthropic will still",
+      "published": "2026-11-02T21:59:55.933596+00:00",
+      "audio_url": null,
+      "duration": ""
+    },
+    {
+      "id": "95189256059f9398",
+      "title": "Coming in 2027: Apple\u2019s $1,000 home robot for FaceTime and switching on lights",
+      "link": "https://arstechnica.com/apple/2026/11/apples-roaming-home-robot-may-do-facetime-switch-lights-on-and-yell-at-your-cat/",
+      "source": "Ars Technica AI",
+      "category": "AI",
+      "summary": "Apple robot backed by CEO John Ternus may have hefty price tag and limited uses.",
+      "published": "2026-11-02T18:32:21+00:00",
+      "audio_url": null,
+      "duration": ""
+    },
+    {
+      "id": "778dbacaaeb9af89",
+      "title": "Claude\u2019s new rules against game cloning won\u2019t stop the AI copying boom",
+      "link": "https://arstechnica.com/ai/2026/11/claudes-new-rules-against-game-cloning-wont-stop-the-ai-copying-boom/",
+      "source": "Ars Technica AI",
+      "category": "AI",
+      "summary": "The tsunami of imitators is way bigger than any one model maker can stem.",
+      "published": "2026-11-02T18:05:31+00:00",
+      "audio_url": null,
+      "duration": ""
+    },
     {
       "id": "dc6c7ef2ed74ce88",
       "title": "The New York Times and other publications sue Brave web browser for AI scraping and bypassing paywalls",
@@ -157,6 +201,17 @@
       "published": "2026-11-02T01:04:17+00:00",
       "audio_url": "https://muse.ai/podcasts/media/1248297608376725/94f09345-ad4a-4981-83dd-e3206bbf5c4e/ep-a481b489-50ff-49f9-a95c-4415fb9683d8.mp3",
       "duration": "237"
+    },
+    {
+      "id": "598c6194c0d34c23",
+      "title": "Qodo builds context into AI code review with Codex",
+      "link": "https://openai.com/index/qodo-codex-plugin",
+      "source": "OpenAI Blog",
+      "category": "AI",
+      "summary": "Qodo brings company knowledge and coding standards into Codex, helping developers catch P0 issues across repositories before opening a pull request.",
+      "published": "2026-11-02T00:00:00+00:00",
+      "audio_url": null,
+      "duration": ""
     },
     {
       "id": "370354f1b8461153",
@@ -1655,28 +1710,6 @@
       "duration": ""
     },
     {
-      "id": "d34a3f37bdd35ae5",
-      "title": "Meta delays new business terms after publisher pushback on AI scraping",
-      "link": "https://www.theverge.com/tech/1017450/meta-business-terms-delayed-ai-scraping",
-      "source": "The Verge \u2014 AI",
-      "category": "AI",
-      "summary": "Meta is delaying the enforcement of its new business terms after publishers raised concerns that they could allow the company to scrape news sites for AI training, as reported earlier by Fast Company. In a statement to The Verge, Meta spokesperson Daniel Roberts says the terms wi",
-      "published": "2026-10-23T17:59:53.521006+00:00",
-      "audio_url": null,
-      "duration": ""
-    },
-    {
-      "id": "55f38e2b0de99dce",
-      "title": "Now Google says it might use your Gmail and Google Photos data to target ads",
-      "link": "https://www.theverge.com/tech/1017600/google-personal-intelligence-privacy-policy-ads-update",
-      "source": "The Verge \u2014 AI",
-      "category": "AI",
-      "summary": "Google has updated its privacy policy in a way that could mean you'll start seeing targeted ads based on your personal data if you're using personalized AI features. The update, spotted by Android Authority, adds an exception to its promise about not using your Drive, Gmail, or G",
-      "published": "2026-10-23T17:59:53.520969+00:00",
-      "audio_url": null,
-      "duration": ""
-    },
-    {
       "id": "e44aee2d4402241c",
       "title": "Intel gets waiver after worries fuzzy US ban on foreign-made robots may hit fabs",
       "link": "https://arstechnica.com/ai/2026/10/intel-gets-waiver-after-worries-fuzzy-us-ban-on-foreign-made-robots-may-hit-fabs/",
@@ -2700,17 +2733,6 @@
       "duration": ""
     },
     {
-      "id": "fa14b8f7db4605df",
-      "title": "Teaching students to think and learn through questions",
-      "link": "https://openai.com/index/teaching-students-to-think-and-learn-through-questions",
-      "source": "OpenAI Blog",
-      "category": "AI",
-      "summary": "Celebrate Teachers\u2019 Day with AI for Educators in Brazilian Portuguese and see how Study Mode can help teachers support active, step-by-step learning.",
-      "published": "2026-10-15T13:00:00+00:00",
-      "audio_url": null,
-      "duration": ""
-    },
-    {
       "id": "bbc1e25e9e985e45",
       "title": "Tree Appreciator",
       "link": "https://simonwillison.net/2026/Oct/14/tree-appreciator/",
@@ -2953,17 +2975,6 @@
       "duration": ""
     },
     {
-      "id": "1acd025aeb34750a",
-      "title": "They war-gamed dimming the Sun. It went even worse than you think.",
-      "link": "https://arstechnica.com/science/2026/10/they-war-gamed-dimming-the-sun-it-went-even-worse-than-you-think/",
-      "source": "Ars Technica AI",
-      "category": "AI",
-      "summary": "Solar geoengineering simulation shows what happens when geopolitics takes over.",
-      "published": "2026-10-13T15:17:59+00:00",
-      "audio_url": null,
-      "duration": ""
-    },
-    {
       "id": "7408946146311b21",
       "title": "Anthropic warns of self-replicating AI worm threat that doesn't need data centers to self-improve and spread",
       "link": "https://www.tomshardware.com/tech-industry/artificial-intelligence/anthropic-warns-of-self-replicating-ai-worm-threat-that-doesnt-need-data-centers-to-self-improve-and-spread-current-deployment-is-impractical-but-could-become-a-worry-as-tech-improves",
@@ -3026,17 +3037,6 @@
       "category": "AI",
       "summary": "Python 3.15 is here ! Here's the essential What's new in Python 3.15 guide, this year curated by 3.14 and 3.15 release manager Hugo van Kemenade. As someone who builds open source software that works in every supported Python version, I get to say goodbye to Python 3.10 and start",
       "published": "2026-10-12T21:59:55.814431+00:00",
-      "audio_url": null,
-      "duration": ""
-    },
-    {
-      "id": "37b5a1e81dc84f2f",
-      "title": "Epic Games reportedly pivoting to \"AI first\" game development model",
-      "link": "https://arstechnica.com/gaming/2026/10/report-epic-games-goes-all-in-on-ai-for-disney-collaboration/",
-      "source": "Ars Technica AI",
-      "category": "AI",
-      "summary": "\"No more hand-written code\" or AI-free art for delayed Marvel/Star Wars shooter.",
-      "published": "2026-10-12T20:59:50+00:00",
       "audio_url": null,
       "duration": ""
     },
