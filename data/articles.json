@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-02T10:00:13.245539+00:00",
+  "generated_at": "2026-11-02T14:00:29.767206+00:00",
   "sources_polled": [
     "The Verge \u2014 AI",
     "Simon Willison",
@@ -15,6 +15,28 @@
     "Quantum Intelligence"
   ],
   "articles": [
+    {
+      "id": "6bf0704cb5e2b6fd",
+      "title": "The U.S. Census Bureau and \u201cSuper Intelligence\u201d",
+      "link": "https://simonwillison.net/2026/Nov/2/census-bureau-super-intelligence/",
+      "source": "Simon Willison",
+      "category": "AI",
+      "summary": "I was reminded today of AI Adoption Rate Trending Down for Large Companies , a chart produced by Apollo Global Management in September 2025, which appeared to show a slowdown in U.S. corporate AI adoption based on numbers collected by the U.S. Census Bureau. At the time I used th",
+      "published": "2026-11-02T13:59:54.608845+00:00",
+      "audio_url": null,
+      "duration": ""
+    },
+    {
+      "id": "3ace5a62609891e3",
+      "title": "Anthropic confirms new Claude Code limits to prevent game cloning, users report blocking reverse engineering tasks",
+      "link": "https://www.tomshardware.com/tech-industry/artificial-intelligence/anthropic-confirms-new-claude-code-limits-to-prevent-game-cloning-users-report-opus-5-5-is-also-actively-blocking-reverse-engineering-tasks",
+      "source": "Anthropic/Claude News",
+      "category": "AI",
+      "summary": "Anthropic employee confirms that Claude Code now has orders not to reproduce game IP \u2014 company \"iterating to ensure [...] the right balance\"",
+      "published": "2026-11-02T12:30:00+00:00",
+      "audio_url": null,
+      "duration": ""
+    },
     {
       "id": "c3818f6bb92d6663",
       "title": "Quantum Intelligence \u2014 Episode 3 (Mon Nov 2, 2026): IBM links two quantum chips, NIST finalises the post-quantum timeline, IonQ's open-air network",
@@ -3085,17 +3107,6 @@
       "duration": ""
     },
     {
-      "id": "a786585932c30cce",
-      "title": "Dwarf Fortress uses version control now",
-      "link": "https://simonwillison.net/2026/Oct/11/dwarf-fortress/",
-      "source": "Simon Willison",
-      "category": "AI",
-      "summary": "I remember hearing a while ago that Dwarf Fortress didn't use version control. That fact has been lodged in my head, because given its inherent complexity I have trouble imagining a codebase that would benefit from version control more . That's art. I went looking and I'm sad to ",
-      "published": "2026-10-11T01:59:42.165263+00:00",
-      "audio_url": null,
-      "duration": ""
-    },
-    {
       "id": "594ca9d077905efb",
       "title": "Daily AI Intelligence \u2014 Episode 10 (Sun Oct 11, 2026): OpenAI Fires Three Safety Researchers, Zuckerberg's Muse Safety Gamble",
       "link": "https://muse.ai/podcasts/media/1248297608376725/94f09345-ad4a-4981-83dd-e3206bbf5c4e/ep-ab745e5c-2253-49cc-9628-7146fdf01346.mp3",
@@ -4093,17 +4104,6 @@
       "category": "Quantum",
       "summary": "Microsoft's Majorana 2 quantum computing chip switches to lead-based materials. Microsoft is accelerating its roadmap and expects a practical machine in 2029.",
       "published": "2026-06-02T19:37:59+00:00",
-      "audio_url": null,
-      "duration": ""
-    },
-    {
-      "id": "da56eb9fac8d454a",
-      "title": "Anthropic files to go public",
-      "link": "https://www.tomshardware.com/tech-industry/anthropic-files-to-go-public-claude-maker-races-openai-and-spacex-to-ipo",
-      "source": "Anthropic/Claude News",
-      "category": "AI",
-      "summary": "Anthropic, the AI company that makes Claude, confidentially filed to go public with the U.S. Securities and Exchange Commission.",
-      "published": "2026-06-01T17:01:41+00:00",
       "audio_url": null,
       "duration": ""
     },
