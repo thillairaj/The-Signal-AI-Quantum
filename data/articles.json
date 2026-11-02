@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-01T22:00:14.695516+00:00",
+  "generated_at": "2026-11-02T01:59:58.797971+00:00",
   "sources_polled": [
     "The Verge \u2014 AI",
     "Simon Willison",
@@ -15,6 +15,72 @@
     "Quantum Intelligence"
   ],
   "articles": [
+    {
+      "id": "ffb30fef9594cc91",
+      "title": "If in doubt, delete the uv.lock file",
+      "link": "https://simonwillison.net/2026/Nov/1/delete-uv-lock-first/",
+      "source": "Simon Willison",
+      "category": "AI",
+      "summary": "I've been getting the occasional confusing Python dependency error since switching over to Python 3.15 and the rule I'm having to remember is: If in doubt, delete the uv.lock file Most of my projects are libraries which don't include a uv.lock file, since it's rude for a library ",
+      "published": "2026-11-02T01:59:45.726255+00:00",
+      "audio_url": null,
+      "duration": ""
+    },
+    {
+      "id": "64ac4626fee081b5",
+      "title": "Tech Learning: Cybersecurity & SOC \u2014 Ep 20: Real Scenario: AI-Assisted Threat Hunting",
+      "link": "https://muse.ai/podcasts/media/1248297608376725/4720f1e9-8c94-4958-8367-c455f31c5edc/ep-7b3e83e3-1fc5-489e-92f8-fbbcc39770fd.mp3",
+      "source": "Technology Learnings",
+      "category": "Podcast",
+      "summary": "Cybersecurity & SOC track: an analyst hunts a suspected supplier compromise with AI assistance, testing hypothesis against evidence. AI Generated",
+      "published": "2026-11-02T01:42:28+00:00",
+      "audio_url": "https://muse.ai/podcasts/media/1248297608376725/4720f1e9-8c94-4958-8367-c455f31c5edc/ep-7b3e83e3-1fc5-489e-92f8-fbbcc39770fd.mp3",
+      "duration": "444"
+    },
+    {
+      "id": "72e5742a841923fa",
+      "title": "Tech Learning: Cybersecurity & SOC \u2014 Ep 19: AI SOC Analysts and Threat Intelligence",
+      "link": "https://muse.ai/podcasts/media/1248297608376725/4720f1e9-8c94-4958-8367-c455f31c5edc/ep-864855c3-44c8-4b0d-ba65-a067541dd9f4.mp3",
+      "source": "Technology Learnings",
+      "category": "Podcast",
+      "summary": "Cybersecurity & SOC track: where AI genuinely helps defenders, and where a human must still decide. AI Generated",
+      "published": "2026-11-02T01:39:51+00:00",
+      "audio_url": "https://muse.ai/podcasts/media/1248297608376725/4720f1e9-8c94-4958-8367-c455f31c5edc/ep-864855c3-44c8-4b0d-ba65-a067541dd9f4.mp3",
+      "duration": "443"
+    },
+    {
+      "id": "650643f7a5e35749",
+      "title": "Tech Learning: Cybersecurity & SOC \u2014 Ep 18: Real Scenario: The Public S3 Bucket",
+      "link": "https://muse.ai/podcasts/media/1248297608376725/4720f1e9-8c94-4958-8367-c455f31c5edc/ep-7d9e38c9-3a59-4bda-83d2-35b2f6e5978f.mp3",
+      "source": "Technology Learnings",
+      "category": "Podcast",
+      "summary": "Cybersecurity & SOC track: a public storage bucket is found, contained, and fixed before the damage spreads. AI Generated",
+      "published": "2026-11-02T01:37:13+00:00",
+      "audio_url": "https://muse.ai/podcasts/media/1248297608376725/4720f1e9-8c94-4958-8367-c455f31c5edc/ep-7d9e38c9-3a59-4bda-83d2-35b2f6e5978f.mp3",
+      "duration": "442"
+    },
+    {
+      "id": "c2d312abf9174161",
+      "title": "Tech Learning: Cybersecurity & SOC \u2014 Ep 17: Shared Responsibility and Common Misconfigurations",
+      "link": "https://muse.ai/podcasts/media/1248297608376725/4720f1e9-8c94-4958-8367-c455f31c5edc/ep-ae1a6306-9afe-4a17-8ef8-b712f7ac0cef.mp3",
+      "source": "Technology Learnings",
+      "category": "Podcast",
+      "summary": "Cybersecurity & SOC track: the shared responsibility model and the misconfigurations behind most cloud breaches. AI Generated",
+      "published": "2026-11-02T01:34:38+00:00",
+      "audio_url": "https://muse.ai/podcasts/media/1248297608376725/4720f1e9-8c94-4958-8367-c455f31c5edc/ep-ae1a6306-9afe-4a17-8ef8-b712f7ac0cef.mp3",
+      "duration": "450"
+    },
+    {
+      "id": "ce787170ba24c462",
+      "title": "Daily AI Intelligence \u2014 Episode 32 (Mon Nov 2, 2026): OpenAI folds Work into Chat, Anthropic rewrites its usage policy, Microsoft moves Copilot to credits",
+      "link": "https://muse.ai/podcasts/media/1248297608376725/94f09345-ad4a-4981-83dd-e3206bbf5c4e/ep-a481b489-50ff-49f9-a95c-4415fb9683d8.mp3",
+      "source": "Daily AI Intelligence",
+      "category": "Podcast",
+      "summary": "OpenAI folds ChatGPT Work into Chat and moves ChatGPT and Codex to one shared allowance; Anthropic's rewritten usage policy takes effect November 12; Microsoft layers Copilot Credits on Copilot from December 1; Grok API watermarking confirmed for seven models; DeepSeek publishes ",
+      "published": "2026-11-02T01:04:17+00:00",
+      "audio_url": "https://muse.ai/podcasts/media/1248297608376725/94f09345-ad4a-4981-83dd-e3206bbf5c4e/ep-a481b489-50ff-49f9-a95c-4415fb9683d8.mp3",
+      "duration": "237"
+    },
     {
       "id": "370354f1b8461153",
       "title": "New AI-driven Windows malware feeds stolen data to Claude to rank victims\u2019 assets by value, then deletes itself \u2014 payload builds custom target assessment, can switch models if one refuses, or skip the AI step entirely",
@@ -3041,17 +3107,6 @@
       "duration": ""
     },
     {
-      "id": "5528ba1d9cba341e",
-      "title": "Quoting The New York Times",
-      "link": "https://simonwillison.net/2026/Oct/10/the-new-york-times/",
-      "source": "Simon Willison",
-      "category": "AI",
-      "summary": "Anthropic detailed the activity of its A.I. agents in a blog post on Friday, without naming the targeted websites. But two sources with knowledge of the incidents said Anthropic\u2019s A.I. agents had submitted 20 visa applications through a form available on the State Department\u2019s we",
-      "published": "2026-10-10T05:59:38.363870+00:00",
-      "audio_url": null,
-      "duration": ""
-    },
-    {
       "id": "d596b13c17f02477",
       "title": "Daily AI Intelligence \u2014 Episode 9 (Sat Oct 10, 2026): Anthropic's Rogue-Agent Disclosure, OpenAI's $70B Target",
       "link": "https://muse.ai/podcasts/media/1248297608376725/94f09345-ad4a-4981-83dd-e3206bbf5c4e/ep-7470c5a2-6606-4813-ad98-3a604ccfb561.mp3",
@@ -3239,28 +3294,6 @@
       "duration": "454"
     },
     {
-      "id": "d42f6ad77fe9214a",
-      "title": "Tech Learning: Cybersecurity & SOC \u2014 Ep 2: Real Scenario: Dissecting a Phishing Email",
-      "link": "https://muse.ai/podcasts/media/1248297608376725/4720f1e9-8c94-4958-8367-c455f31c5edc/ep-fe5d6a35-aa63-449c-8d06-6aa724829c56.mp3",
-      "source": "Technology Learnings",
-      "category": "Podcast",
-      "summary": "Cybersecurity & SOC track: A SOC analyst triages a reported phishing email, header by header. AI Generated",
-      "published": "2026-10-05T02:43:28+00:00",
-      "audio_url": "https://muse.ai/podcasts/media/1248297608376725/4720f1e9-8c94-4958-8367-c455f31c5edc/ep-fe5d6a35-aa63-449c-8d06-6aa724829c56.mp3",
-      "duration": "453"
-    },
-    {
-      "id": "0a2c46084bc9edd0",
-      "title": "Tech Learning: Cybersecurity & SOC \u2014 Ep 1: The CIA Triad and the Threat Landscape",
-      "link": "https://muse.ai/podcasts/media/1248297608376725/4720f1e9-8c94-4958-8367-c455f31c5edc/ep-aba7e670-60f8-4fbc-b826-09ae07936539.mp3",
-      "source": "Technology Learnings",
-      "category": "Podcast",
-      "summary": "Cybersecurity & SOC track: The three promises every secure system makes, and the threat actors trying to break them. AI Generated",
-      "published": "2026-10-05T02:43:16+00:00",
-      "audio_url": "https://muse.ai/podcasts/media/1248297608376725/4720f1e9-8c94-4958-8367-c455f31c5edc/ep-aba7e670-60f8-4fbc-b826-09ae07936539.mp3",
-      "duration": "499"
-    },
-    {
       "id": "4a84a3ce167eaad9",
       "title": "Daily AI Intelligence \u2014 Episode 4",
       "link": "https://muse.ai/podcasts/media/1248297608376725/94f09345-ad4a-4981-83dd-e3206bbf5c4e/ep-a6f0f922-2b59-469d-b9f3-1d5f87bcb228.mp3",
@@ -3270,28 +3303,6 @@
       "published": "2026-10-05T01:00:23+00:00",
       "audio_url": "https://muse.ai/podcasts/media/1248297608376725/94f09345-ad4a-4981-83dd-e3206bbf5c4e/ep-a6f0f922-2b59-469d-b9f3-1d5f87bcb228.mp3",
       "duration": "237"
-    },
-    {
-      "id": "ee552e49b6c7c965",
-      "title": "Tech Learning: Data Engineering & Analytics \u2014 Ep 4: Real Scenario: Tuning a Query from 10 Minutes to 10 Seconds",
-      "link": "https://muse.ai/podcasts/media/1248297608376725/4720f1e9-8c94-4958-8367-c455f31c5edc/ep-6ed03ba3-bd28-4505-bf82-b4251f2791fb.mp3",
-      "source": "Technology Learnings",
-      "category": "Podcast",
-      "summary": "Data Engineering & Analytics track: EXPLAIN plans, indexes, and the optimization ladder AI Generated",
-      "published": "2026-10-04T13:46:47+00:00",
-      "audio_url": "https://muse.ai/podcasts/media/1248297608376725/4720f1e9-8c94-4958-8367-c455f31c5edc/ep-6ed03ba3-bd28-4505-bf82-b4251f2791fb.mp3",
-      "duration": "425"
-    },
-    {
-      "id": "678b904cf2817bbb",
-      "title": "Tech Learning: Data Engineering & Analytics \u2014 Ep 3: SQL Beyond SELECT: Joins, Windows, CTEs",
-      "link": "https://muse.ai/podcasts/media/1248297608376725/4720f1e9-8c94-4958-8367-c455f31c5edc/ep-5f99a06b-312d-481c-bb0b-352368848305.mp3",
-      "source": "Technology Learnings",
-      "category": "Podcast",
-      "summary": "Data Engineering & Analytics track: the essential SQL toolkit \u2014 joins, window functions, and CTEs AI Generated",
-      "published": "2026-10-04T13:46:19+00:00",
-      "audio_url": "https://muse.ai/podcasts/media/1248297608376725/4720f1e9-8c94-4958-8367-c455f31c5edc/ep-5f99a06b-312d-481c-bb0b-352368848305.mp3",
-      "duration": "426"
     },
     {
       "id": "3f1473a50150bd7e",

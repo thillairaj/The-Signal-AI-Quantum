@@ -4,7 +4,15 @@
     <title>The Signal</title>
     <link>https://thillairaj.github.io/The-Signal-AI-Quantum/</link>
     <description>A self-updating feed of AI, quantum computing, and podcast updates.</description>
-    <lastBuildDate>Sun, 01 Nov 2026 22:00:14 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 02 Nov 2026 01:59:58 +0000</lastBuildDate>
+    <item>
+      <title>If in doubt, delete the uv.lock file</title>
+      <link>https://simonwillison.net/2026/Nov/1/delete-uv-lock-first/</link>
+      <guid isPermaLink="false">ffb30fef9594cc91</guid>
+      <description>I've been getting the occasional confusing Python dependency error since switching over to Python 3.15 and the rule I'm having to remember is: If in doubt, delete the uv.lock file Most of my projects are libraries which don't include a uv.lock file, since it's rude for a library </description>
+      <category>Simon Willison</category>
+      <pubDate>Mon, 02 Nov 2026 01:59:45 +0000</pubDate>
+    </item>
     <item>
       <title>New AI-driven Windows malware feeds stolen data to Claude to rank victims’ assets by value, then deletes itself — payload builds custom target assessment, can switch models if one refuses, or skip the AI step entirely</title>
       <link>https://www.tomshardware.com/tech-industry/cyber-security/new-ai-driven-windows-malware-feeds-stolen-data-to-claude-to-rank-victims-assets-by-value-then-deletes-itself-payload-builds-custom-target-assessment-can-switch-models-if-one-refuses-or-skip-the-ai-step-entirely</link>
@@ -476,14 +484,6 @@
       <description>Ask Texas NAACP president Gary Bledsoe what it's been like to see data center developers descend upon Austin and its surrounding suburbs and he can rattle off project after project facing opposition from locals. There's the fight in Taylor over plans to build a data center at a s</description>
       <category>The Verge — AI</category>
       <pubDate>Wed, 28 Oct 2026 14:00:26 +0000</pubDate>
-    </item>
-    <item>
-      <title>OpenAI and ServiceNow expand partnership across enterprise workflows</title>
-      <link>https://openai.com/index/openai-servicenow-partnership-expansion</link>
-      <guid isPermaLink="false">75e2017ed4c5a2ec</guid>
-      <description>OpenAI and ServiceNow expand their partnership to bring OpenAI models and agents into ServiceNow and ServiceNow workflows into ChatGPT and Codex.</description>
-      <category>OpenAI Blog</category>
-      <pubDate>Wed, 28 Oct 2026 13:15:00 +0000</pubDate>
     </item>
   </channel>
 </rss>
