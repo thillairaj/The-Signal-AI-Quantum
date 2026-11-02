@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-02T14:00:29.767206+00:00",
+  "generated_at": "2026-11-02T18:00:00.523046+00:00",
   "sources_polled": [
     "The Verge \u2014 AI",
     "Simon Willison",
@@ -15,6 +15,39 @@
     "Quantum Intelligence"
   ],
   "articles": [
+    {
+      "id": "dc6c7ef2ed74ce88",
+      "title": "The New York Times and other publications sue Brave web browser for AI scraping and bypassing paywalls",
+      "link": "https://www.theverge.com/tech/1024588/brave-lawsuit-ai-scraping-new-york-times",
+      "source": "The Verge \u2014 AI",
+      "category": "AI",
+      "summary": "The New York Times and a group of other publications have filed lawsuits against the company that makes the Brave web browser over alleged unlawful scraping to train AI and also letting users bypass their paywalls, as reported by Reuters. According to a complaint filed by the com",
+      "published": "2026-11-02T17:59:43.795988+00:00",
+      "audio_url": null,
+      "duration": ""
+    },
+    {
+      "id": "b810030289ed799f",
+      "title": "The latest AI news we announced in October 2026",
+      "link": "https://blog.google/innovation-and-ai/technology/ai/google-ai-updates-october-2026/",
+      "source": "Google AI Blog",
+      "category": "AI",
+      "summary": "Animated carousel of images from AI posts in October",
+      "published": "2026-11-02T17:45:00+00:00",
+      "audio_url": null,
+      "duration": ""
+    },
+    {
+      "id": "19244c7aa2063fd3",
+      "title": "Introducing the Grid Protectors Program",
+      "link": "https://openai.com/index/grid-protectors-program",
+      "source": "OpenAI Blog",
+      "category": "AI",
+      "summary": "OpenAI\u2019s Grid Protectors Program will work with utilities to help future compute campuses support grid reliability and protect consumer electricity costs.",
+      "published": "2026-11-02T15:00:00+00:00",
+      "audio_url": null,
+      "duration": ""
+    },
     {
       "id": "6bf0704cb5e2b6fd",
       "title": "The U.S. Census Bureau and \u201cSuper Intelligence\u201d",
@@ -34,6 +67,17 @@
       "category": "AI",
       "summary": "Anthropic employee confirms that Claude Code now has orders not to reproduce game IP \u2014 company \"iterating to ensure [...] the right balance\"",
       "published": "2026-11-02T12:30:00+00:00",
+      "audio_url": null,
+      "duration": ""
+    },
+    {
+      "id": "ed4b58253682640f",
+      "title": "LifeVal",
+      "link": "https://openai.com/index/lifeval",
+      "source": "OpenAI Blog",
+      "category": "AI",
+      "summary": "Introducing LifeVal, a benchmark measuring how well AI helps people complete everyday tasks, from finding childcare to managing finances and government paperwork.",
+      "published": "2026-11-02T09:00:00+00:00",
       "audio_url": null,
       "duration": ""
     },
@@ -1633,17 +1677,6 @@
       "duration": ""
     },
     {
-      "id": "9ecaeb5e863007f7",
-      "title": "The iPhone Duo should have been an iPad",
-      "link": "https://www.theverge.com/podcast/1017447/iphone-duo-ipad-review-score-vergecast",
-      "source": "The Verge \u2014 AI",
-      "category": "AI",
-      "summary": "We gave the iPhone Duo a 7 /10. But that wasn't always the score we planned, and it might not be the right score forever. Such are the challenges of reviewing - and assessing - a big, new idea about the most popular smartphone in history. On this episode of The Vergecast, David a",
-      "published": "2026-10-23T17:59:53.520900+00:00",
-      "audio_url": null,
-      "duration": ""
-    },
-    {
       "id": "e44aee2d4402241c",
       "title": "Intel gets waiver after worries fuzzy US ban on foreign-made robots may hit fabs",
       "link": "https://arstechnica.com/ai/2026/10/intel-gets-waiver-after-worries-fuzzy-us-ban-on-foreign-made-robots-may-hit-fabs/",
@@ -2700,17 +2733,6 @@
       "duration": "266"
     },
     {
-      "id": "dd00c04c9b95848e",
-      "title": "Sullivan & Cromwell brings legal expertise into agreement review",
-      "link": "https://openai.com/index/sullivan-cromwell",
-      "source": "OpenAI Blog",
-      "category": "AI",
-      "summary": "In collaboration with OpenAI, Sullivan & Cromwell developed Agreement Analyzer, an AI tool for identifying issues in a draft agreement.",
-      "published": "2026-10-15T00:00:00+00:00",
-      "audio_url": null,
-      "duration": ""
-    },
-    {
       "id": "2af446043d102e54",
       "title": "Epic says its new vibe-coded Epic Games Launcher is faster than Steam",
       "link": "https://arstechnica.com/gaming/2026/10/programming-is-hard-epic-games-leans-on-vibe-coding-for-its-new-launcher-app/",
@@ -2762,17 +2784,6 @@
       "category": "AI",
       "summary": "\"Small weight-based replicators\" could usher in a new generation of computer worms.",
       "published": "2026-10-14T12:55:06+00:00",
-      "audio_url": null,
-      "duration": ""
-    },
-    {
-      "id": "a0e0fec2c2b5f568",
-      "title": "Amp puts AI agents to work beyond code with OpenAI models",
-      "link": "https://openai.com/index/amp-beyond-coding",
-      "source": "OpenAI Blog",
-      "category": "AI",
-      "summary": "See how Amp pushes the frontier of what agents can do with GPT-6 Astra, Ultrafast, GPT-Live-1, and Sign in with ChatGPT.",
-      "published": "2026-10-14T12:00:00+00:00",
       "audio_url": null,
       "duration": ""
     },
