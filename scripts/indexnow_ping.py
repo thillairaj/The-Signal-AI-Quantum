@@ -10,10 +10,10 @@ latest git commit (HTML pages only) and submits those.
 Usage: python3 scripts/indexnow_ping.py [url ...]
 Prints the IndexNow HTTP status; exits non-zero on failure.
 """
-import json
 import re
 import subprocess
 import sys
+import urllib.parse
 import urllib.request
 from pathlib import Path
 
@@ -60,28 +60,30 @@ def main():
     if not urls:
         print("NOCHANGE: no page URLs to submit")
         return 0
-    payload = {
-        "host": HOST,
-        "key": key,
-        "keyLocation": SITE_URL + key_file,
-        "urlList": urls[:10000],
-    }
-    req = urllib.request.Request(
-        ENDPOINT,
-        data=json.dumps(payload).encode("utf-8"),
-        headers={"Content-Type": "application/json; charset=utf-8"},
-        method="POST",
-    )
-    try:
-        with urllib.request.urlopen(req, timeout=30) as resp:
-            status = resp.status
-    except urllib.error.HTTPError as e:
-        status = e.code
-    except Exception as e:
-        print(f"FAIL: IndexNow submission error: {e}")
-        return 1
-    print(f"IndexNow: HTTP {status} for {len(urls)} URL(s)")
-    return 0 if status in (200, 202) else 1
+    # The GET form of the protocol is used (one URL per request), carried by
+    # curl: from this network the IndexNow edge closes connections from
+    # Python's HTTP stack, while curl returns 200. Cap one run at 200 URLs.
+    key_location = SITE_URL + key_file
+    ok, failed = 0, 0
+    for url in urls[:200]:
+        q = urllib.parse.urlencode(
+            {"url": url, "key": key, "keyLocation": key_location})
+        try:
+            r = subprocess.run(
+                ["curl", "-s", "-o", "/dev/null", "-w", "%{http_code}",
+                 "--max-time", "30", f"{ENDPOINT}?{q}"],
+                capture_output=True, text=True, timeout=45)
+            status = int(r.stdout.strip() or 0)
+        except Exception as e:
+            print(f"FAIL: IndexNow submission error for {url}: {e}")
+            return 1
+        if status in (200, 202):
+            ok += 1
+        else:
+            failed += 1
+            print(f"IndexNow: HTTP {status} for {url}")
+    print(f"IndexNow: {ok} accepted, {failed} failed, of {len(urls)} URL(s)")
+    return 0 if failed == 0 else 1
 
 
 if __name__ == "__main__":
