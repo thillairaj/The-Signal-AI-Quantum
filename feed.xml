@@ -4,7 +4,15 @@
     <title>The Signal</title>
     <link>https://thillairaj.github.io/The-Signal-AI-Quantum/</link>
     <description>A self-updating feed of AI, quantum computing, and podcast updates.</description>
-    <lastBuildDate>Mon, 02 Nov 2026 22:00:12 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 03 Nov 2026 01:59:57 +0000</lastBuildDate>
+    <item>
+      <title>llm 0.37</title>
+      <link>https://simonwillison.net/2026/Nov/2/llm/</link>
+      <guid isPermaLink="false">10dab842bc689c46</guid>
+      <description>Release: llm 0.37 There's a lot of stuff in this new release of my LLM CLI tool and Python library, representing around two months of accumulated features and fixes. I added gpt-6.1-sol and gpt-6.1-terra , plus a new llm openai endpoint add command to make it easier to configure </description>
+      <category>Simon Willison</category>
+      <pubDate>Tue, 03 Nov 2026 01:59:42 +0000</pubDate>
+    </item>
     <item>
       <title>OpenAI pitches data center power plants as a way to protect nearby areas</title>
       <link>https://www.theverge.com/ai-artificial-intelligence/1024604/openai-data-center-grid-protection-program</link>
@@ -54,6 +62,14 @@
       <pubDate>Mon, 02 Nov 2026 17:45:00 +0000</pubDate>
     </item>
     <item>
+      <title>Scaling Git at OpenAI</title>
+      <link>https://openai.com/index/scaling-git-at-openai</link>
+      <guid isPermaLink="false">de4cf53f9db96311</guid>
+      <description>How OpenAI built Pando, a Git-compatible backend designed for the scale of development that Codex makes possible.</description>
+      <category>OpenAI Blog</category>
+      <pubDate>Mon, 02 Nov 2026 15:30:00 +0000</pubDate>
+    </item>
+    <item>
       <title>Introducing the Grid Protectors Program</title>
       <link>https://openai.com/index/grid-protectors-program</link>
       <guid isPermaLink="false">19244c7aa2063fd3</guid>
@@ -98,6 +114,14 @@
       <link>https://openai.com/index/qodo-codex-plugin</link>
       <guid isPermaLink="false">598c6194c0d34c23</guid>
       <description>Qodo brings company knowledge and coding standards into Codex, helping developers catch P0 issues across repositories before opening a pull request.</description>
+      <category>OpenAI Blog</category>
+      <pubDate>Mon, 02 Nov 2026 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>OpenAI appoints Dan Driscoll as Senior Counselor for National Security Modernization</title>
+      <link>https://openai.com/index/dan-driscoll-joins-openai</link>
+      <guid isPermaLink="false">ff138f709a7e7c37</guid>
+      <description>OpenAI appoints Dan Driscoll to advise on responsible AI for national security modernization, cyber resilience, and collaboration with U.S. allies.</description>
       <category>OpenAI Blog</category>
       <pubDate>Mon, 02 Nov 2026 00:00:00 +0000</pubDate>
     </item>
@@ -460,30 +484,6 @@
       <description>Asked about AI and the trend of college students booing tech CEOs at graduation ceremonies, Instagram head Adam Mosseri acknowledged in an interview that a lot of people really don't like AI, and it's not just young people and creatives. Appearing on the Colin and Samir podcast t</description>
       <category>The Verge — AI</category>
       <pubDate>Thu, 29 Oct 2026 01:59:59 +0000</pubDate>
-    </item>
-    <item>
-      <title>Credit Saison achieves 954% ROI in a ChatGPT Enterprise pilot</title>
-      <link>https://openai.com/index/credit-saison</link>
-      <guid isPermaLink="false">6750c2461412185f</guid>
-      <description>Credit Saison’s ChatGPT Enterprise pilot delivered 954% ROI. See how leaders and employees helped turn the results into companywide adoption.</description>
-      <category>OpenAI Blog</category>
-      <pubDate>Thu, 29 Oct 2026 00:00:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>Microsoft is ending Copilot support on smart TVs</title>
-      <link>https://www.theverge.com/tech/1021143/microsoft-lg-samsung-copilot-ai-assistant-smart-tvs-ending</link>
-      <guid isPermaLink="false">d0753be868cc7807</guid>
-      <description>Nearly two years after LG and Samsung announced at CES 2025 that their latest smart TVs would include access to Microsoft's Copilot, the company is ending support for the AI assistant's functionality on all TVs this year, according to a report by Windows Central. The news comes n</description>
-      <category>The Verge — AI</category>
-      <pubDate>Wed, 28 Oct 2026 22:00:30 +0000</pubDate>
-    </item>
-    <item>
-      <title>Google launches Gemini 4 Carbon with a ‘significant leap’ in cybersecurity</title>
-      <link>https://www.theverge.com/tech/1021339/google-gemini-4-carbon-cybersecurity-frontier</link>
-      <guid isPermaLink="false">fc7d1d71bde9a18e</guid>
-      <description>Google has released its latest frontier model, Gemini 4 Carbon, offering "significant gains" in coding, agentic tasks, and cybersecurity. In an announcement on Wednesday, Google highlights Carbon's top spot on the Artificial Analysis Intelligence Index (v5.0) benchmark, with Clau</description>
-      <category>The Verge — AI</category>
-      <pubDate>Wed, 28 Oct 2026 22:00:30 +0000</pubDate>
     </item>
   </channel>
 </rss>

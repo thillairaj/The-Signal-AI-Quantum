@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-02T22:00:12.552724+00:00",
+  "generated_at": "2026-11-03T01:59:57.292985+00:00",
   "sources_polled": [
     "The Verge \u2014 AI",
     "Simon Willison",
@@ -15,6 +15,28 @@
     "Quantum Intelligence"
   ],
   "articles": [
+    {
+      "id": "10dab842bc689c46",
+      "title": "llm 0.37",
+      "link": "https://simonwillison.net/2026/Nov/2/llm/",
+      "source": "Simon Willison",
+      "category": "AI",
+      "summary": "Release: llm 0.37 There's a lot of stuff in this new release of my LLM CLI tool and Python library, representing around two months of accumulated features and fixes. I added gpt-6.1-sol and gpt-6.1-terra , plus a new llm openai endpoint add command to make it easier to configure ",
+      "published": "2026-11-03T01:59:42.181508+00:00",
+      "audio_url": null,
+      "duration": ""
+    },
+    {
+      "id": "57532985d7fdaa8c",
+      "title": "Daily AI Intelligence \u2014 Episode 33 (Tue Nov 3, 2026): OpenAI's funding target cut, Grok Bot costs bite, Nvidia weighs backing Nscale",
+      "link": "https://muse.ai/podcasts/media/1248297608376725/94f09345-ad4a-4981-83dd-e3206bbf5c4e/ep-d695f88b-eb6f-4b1b-b80f-fd5d4a8b4d46.mp3",
+      "source": "Daily AI Intelligence",
+      "category": "Podcast",
+      "summary": "Reports say OpenAI cut its fundraising target to twenty billion dollars at a one point two five trillion dollar valuation; Anthropic launches message threads for long-running agents; Gemini gains an in-chat file editor; Musk says Grok Bot costs are unsustainable; Amazon blocks Mu",
+      "published": "2026-11-03T01:04:56+00:00",
+      "audio_url": "https://muse.ai/podcasts/media/1248297608376725/94f09345-ad4a-4981-83dd-e3206bbf5c4e/ep-d695f88b-eb6f-4b1b-b80f-fd5d4a8b4d46.mp3",
+      "duration": "263"
+    },
     {
       "id": "16194c055af9d0c4",
       "title": "OpenAI pitches data center power plants as a way to protect nearby areas",
@@ -78,6 +100,17 @@
       "category": "AI",
       "summary": "Animated carousel of images from AI posts in October",
       "published": "2026-11-02T17:45:00+00:00",
+      "audio_url": null,
+      "duration": ""
+    },
+    {
+      "id": "de4cf53f9db96311",
+      "title": "Scaling Git at OpenAI",
+      "link": "https://openai.com/index/scaling-git-at-openai",
+      "source": "OpenAI Blog",
+      "category": "AI",
+      "summary": "How OpenAI built Pando, a Git-compatible backend designed for the scale of development that Codex makes possible.",
+      "published": "2026-11-02T15:30:00+00:00",
       "audio_url": null,
       "duration": ""
     },
@@ -209,6 +242,17 @@
       "source": "OpenAI Blog",
       "category": "AI",
       "summary": "Qodo brings company knowledge and coding standards into Codex, helping developers catch P0 issues across repositories before opening a pull request.",
+      "published": "2026-11-02T00:00:00+00:00",
+      "audio_url": null,
+      "duration": ""
+    },
+    {
+      "id": "ff138f709a7e7c37",
+      "title": "OpenAI appoints Dan Driscoll as Senior Counselor for National Security Modernization",
+      "link": "https://openai.com/index/dan-driscoll-joins-openai",
+      "source": "OpenAI Blog",
+      "category": "AI",
+      "summary": "OpenAI appoints Dan Driscoll to advise on responsible AI for national security modernization, cyber resilience, and collaboration with U.S. allies.",
       "published": "2026-11-02T00:00:00+00:00",
       "audio_url": null,
       "duration": ""
@@ -2667,17 +2711,6 @@
       "duration": ""
     },
     {
-      "id": "827221925d8dc2bc",
-      "title": "How Localiza reorganized work around generative AI",
-      "link": "https://openai.com/index/localiza-generative-ai",
-      "source": "OpenAI Blog",
-      "category": "AI",
-      "summary": "See how Localiza uses ChatGPT Enterprise, the OpenAI API, Codex, and 60+ specialized agents to reorganize work and build AI-native mobility experiences.",
-      "published": "2026-10-16T00:00:00+00:00",
-      "audio_url": null,
-      "duration": ""
-    },
-    {
       "id": "08c79764230e6e3c",
       "title": "Chirp Pong",
       "link": "https://simonwillison.net/2026/Oct/15/chirp-pong/",
@@ -2685,17 +2718,6 @@
       "category": "AI",
       "summary": "Tool: Chirp Pong Another game experiment - I wanted to see if it was feasible to have a two player game on two separate phones running in static HTML where the networking code uses chirps sent via the microphone. It seems to work! Build a two player competitive pong like game whe",
       "published": "2026-10-15T21:59:44.528685+00:00",
-      "audio_url": null,
-      "duration": ""
-    },
-    {
-      "id": "a72d1e4da6b0e106",
-      "title": "Bringing GPT-Rosalind to academic research labs",
-      "link": "https://openai.com/index/introducing-the-rosalind-academic-plan",
-      "source": "OpenAI Blog",
-      "category": "AI",
-      "summary": "Introducing the Rosalind Academic Plan, offering eligible academic labs sponsored access to GPT-Rosalind and tools to advance life sciences research.",
-      "published": "2026-10-15T19:00:00+00:00",
       "audio_url": null,
       "duration": ""
     },
@@ -3105,17 +3127,6 @@
       "published": "2026-10-12T01:08:21+00:00",
       "audio_url": "https://muse.ai/podcasts/media/1248297608376725/94f09345-ad4a-4981-83dd-e3206bbf5c4e/ep-0678c25e-a2d2-4c97-9db6-8fd67abc6cc1.mp3",
       "duration": "237"
-    },
-    {
-      "id": "ffe9771dd0f2e869",
-      "title": "Python 3.15.0 added to actions/python-versions",
-      "link": "https://simonwillison.net/2026/Oct/10/python-actions/",
-      "source": "Simon Willison",
-      "category": "AI",
-      "summary": "Python 3.15.0 added to actions/python-versions Bit of a niche link, but I've been waiting for this for a couple of days - I even told ChatGPT to check for it: Clone https://github.com/actions/python-versions and git pull once an hour until they add the stable 3.15 - then tell me ",
-      "published": "2026-10-11T01:59:42.165340+00:00",
-      "audio_url": null,
-      "duration": ""
     },
     {
       "id": "594ca9d077905efb",
