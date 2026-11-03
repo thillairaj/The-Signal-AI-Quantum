@@ -1,7 +1,11 @@
 #!/usr/bin/env python3
 """
 Pulls every feed listed in feeds.json, merges new items into data/articles.json,
-and keeps the 50 most recent articles per source (no time cutoff). Podcast feeds
+and keeps the 50 most recent articles per source (no time cutoff). Podcast
+episodes are exempt from that cap and are never dropped: a podcast series is
+a fixed catalogue, and capping its single source at 50 silently cut the 10
+earliest Tech Learning episodes on Nov 2, 2026 (Thillai's fix, Nov 3, 2026).
+Podcast feeds
 additionally carry an audio_url and duration, extracted from the RSS <enclosure>
 tag, so the site can show an inline player. If a podcast entry has no standalone
 <link> (common for podcast feeds), the audio URL itself is used as the link.
@@ -193,7 +197,10 @@ def main():
     final = []
     for source_articles in by_source.values():
         source_articles.sort(key=lambda a: a["published"], reverse=True)
-        final.extend(source_articles[:MAX_PER_SOURCE])
+        episodes = [a for a in source_articles if a.get("category") == "Podcast"]
+        stories = [a for a in source_articles if a.get("category") != "Podcast"]
+        final.extend(episodes)
+        final.extend(stories[:MAX_PER_SOURCE])
 
     articles = sorted(final, key=lambda a: a["published"], reverse=True)
 
@@ -208,7 +215,8 @@ def main():
 
     print(f"Polled {len(seen_sources)}/{len(feeds)} feeds, added {added} new item(s) "
           f"(skipped {skipped_offtopic} off-topic, {skipped_no_link} with no usable link), "
-          f"kept up to {MAX_PER_SOURCE} per source, {len(articles)} total stored, feed.xml written.")
+          f"kept up to {MAX_PER_SOURCE} stories per source (podcast episodes uncapped), "
+          f"{len(articles)} total stored, feed.xml written.")
 
 
 if __name__ == "__main__":

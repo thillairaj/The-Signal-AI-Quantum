@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-03T14:00:19.278105+00:00",
+  "generated_at": "2026-11-03T16:16:22.157464+00:00",
   "sources_polled": [
     "The Verge \u2014 AI",
     "Simon Willison",
@@ -15,6 +15,39 @@
     "Quantum Intelligence"
   ],
   "articles": [
+    {
+      "id": "32791f69eb2c329e",
+      "title": "OpenAI is quietly renaming data centers \u2018compute campuses\u2019",
+      "link": "https://www.theverge.com/ai-artificial-intelligence/1025242/openai-quietly-renames-data-centers-as-compute-campuses",
+      "source": "The Verge \u2014 AI",
+      "category": "AI",
+      "summary": "People hate data centers. They're loud, resource-hungry eyesores that are so profoundly unpopular they have managed to achieve the near-impossible in today's polarized political landscape: genuine bipartisan opposition. But what about \"compute campuses\"? Those sound lovely, right",
+      "published": "2026-11-03T16:16:10.570515+00:00",
+      "audio_url": null,
+      "duration": ""
+    },
+    {
+      "id": "dde5f3bd6293e988",
+      "title": "Apple is all in on AI \u2014 its own and everyone else&#8217;s",
+      "link": "https://www.theverge.com/ai-artificial-intelligence/1025245/apple-earnings-q4-ai",
+      "source": "The Verge \u2014 AI",
+      "category": "AI",
+      "summary": "Apple's latest earnings show how it's continuing to capitalize on the AI boom without busting its budget on the infrastructure spending consuming its competitors. Overall, Apple posted its best-ever fiscal year for revenue and earnings per share. iPhone and Mac sales continued to",
+      "published": "2026-11-03T16:16:10.570476+00:00",
+      "audio_url": null,
+      "duration": ""
+    },
+    {
+      "id": "85827c831b0bc197",
+      "title": "Midterm elections 2026: all the news",
+      "link": "https://www.theverge.com/policy/1020640/midterm-elections-2026-all-the-news",
+      "source": "The Verge \u2014 AI",
+      "category": "AI",
+      "summary": "The 2026 midterm elections will determine the scope of President Donald Trump&#8217;s power in his final two years in office, and signal what voters care about going into the 2028 presidential election. While this year&#8217;s races are expected to be most broadly defined by affo",
+      "published": "2026-11-03T16:16:10.570375+00:00",
+      "audio_url": null,
+      "duration": ""
+    },
     {
       "id": "08b710f1e7801fa8",
       "title": "Heimstaden is changing residential real estate management with AI",
@@ -1721,17 +1754,6 @@
       "duration": ""
     },
     {
-      "id": "0509c80e85fbace7",
-      "title": "Blue Planet III is keeping the rough edges in the age of AI",
-      "link": "https://www.theverge.com/ai-artificial-intelligence/1018205/blue-planet-iii-authentic-organic-ai",
-      "source": "The Verge \u2014 AI",
-      "category": "AI",
-      "summary": "BBC's Blue Planet III is looking to prove its authenticity by leaving in the less-than-perfect shots. Previous incarnations of the nature series were defined by their gorgeous, crystal-clear footage that seemed almost too good to be real. But one dead giveaway of AI is when thing",
-      "published": "2026-10-24T21:59:44.252983+00:00",
-      "audio_url": null,
-      "duration": ""
-    },
-    {
       "id": "3812b4d599bb7adb",
       "title": "battledrones v14: Compass Rose, a four player map",
       "link": "https://simonwillison.net/2026/Oct/24/battledrones/",
@@ -1772,28 +1794,6 @@
       "category": "AI",
       "summary": "Introducing Kimi K3.1 Pro Kimi K3.1 Pro landed on the Kimi API today - it's not yet open weights, but Moonshot promise \"Full model weights will be released by Nov 4, 2026\". They're also offering a \"Highspeed\" version that's 2-3x faster, at twice the price (except for input token ",
       "published": "2026-10-23T21:59:49.087164+00:00",
-      "audio_url": null,
-      "duration": ""
-    },
-    {
-      "id": "f490e9c8ed30cee3",
-      "title": "Jack Dorsey\u2019s Block made an AI model that talks to you like an awkward new friend",
-      "link": "https://www.theverge.com/ai-artificial-intelligence/1017906/jack-dorsey-block-dessa-ai-voice-speech",
-      "source": "The Verge \u2014 AI",
-      "category": "AI",
-      "summary": "Jack Dorsey's Block announced an AI model called Dessa that's trained \"from scratch on nothing but human conversation,\" and to show off the model, Block shared chats it has had with humans that can occasionally be a little awkward and uncanny. Take this one, for example, shared b",
-      "published": "2026-10-23T21:59:48.619971+00:00",
-      "audio_url": null,
-      "duration": ""
-    },
-    {
-      "id": "f9113fa394af665d",
-      "title": "OpenAI now trains its frontier AI models with no internet access",
-      "link": "https://www.theverge.com/ai-artificial-intelligence/1018021/openai-training-top-ai-models-no-internet",
-      "source": "The Verge \u2014 AI",
-      "category": "AI",
-      "summary": "OpenAI is now training its most advanced AI models without internet access following a string of rogue hacking incidents. In a blog post on Friday, OpenAI says it built an offline testing environment where AI models can interact with indexed and cached web content \"without risk o",
-      "published": "2026-10-23T21:59:48.619901+00:00",
       "audio_url": null,
       "duration": ""
     },
@@ -3338,6 +3338,28 @@
       "duration": "454"
     },
     {
+      "id": "d42f6ad77fe9214a",
+      "title": "Tech Learning: Cybersecurity & SOC \u2014 Ep 2: Real Scenario: Dissecting a Phishing Email",
+      "link": "https://muse.ai/podcasts/media/1248297608376725/4720f1e9-8c94-4958-8367-c455f31c5edc/ep-fe5d6a35-aa63-449c-8d06-6aa724829c56.mp3",
+      "source": "Technology Learnings",
+      "category": "Podcast",
+      "summary": "Cybersecurity & SOC track: A SOC analyst triages a reported phishing email, header by header. AI Generated",
+      "published": "2026-10-05T02:43:28+00:00",
+      "audio_url": "https://muse.ai/podcasts/media/1248297608376725/4720f1e9-8c94-4958-8367-c455f31c5edc/ep-fe5d6a35-aa63-449c-8d06-6aa724829c56.mp3",
+      "duration": "453"
+    },
+    {
+      "id": "0a2c46084bc9edd0",
+      "title": "Tech Learning: Cybersecurity & SOC \u2014 Ep 1: The CIA Triad and the Threat Landscape",
+      "link": "https://muse.ai/podcasts/media/1248297608376725/4720f1e9-8c94-4958-8367-c455f31c5edc/ep-aba7e670-60f8-4fbc-b826-09ae07936539.mp3",
+      "source": "Technology Learnings",
+      "category": "Podcast",
+      "summary": "Cybersecurity & SOC track: The three promises every secure system makes, and the threat actors trying to break them. AI Generated",
+      "published": "2026-10-05T02:43:16+00:00",
+      "audio_url": "https://muse.ai/podcasts/media/1248297608376725/4720f1e9-8c94-4958-8367-c455f31c5edc/ep-aba7e670-60f8-4fbc-b826-09ae07936539.mp3",
+      "duration": "499"
+    },
+    {
       "id": "4a84a3ce167eaad9",
       "title": "Daily AI Intelligence \u2014 Episode 4",
       "link": "https://muse.ai/podcasts/media/1248297608376725/94f09345-ad4a-4981-83dd-e3206bbf5c4e/ep-a6f0f922-2b59-469d-b9f3-1d5f87bcb228.mp3",
@@ -3347,6 +3369,50 @@
       "published": "2026-10-05T01:00:23+00:00",
       "audio_url": "https://muse.ai/podcasts/media/1248297608376725/94f09345-ad4a-4981-83dd-e3206bbf5c4e/ep-a6f0f922-2b59-469d-b9f3-1d5f87bcb228.mp3",
       "duration": "237"
+    },
+    {
+      "id": "ee552e49b6c7c965",
+      "title": "Tech Learning: Data Engineering & Analytics \u2014 Ep 4: Real Scenario: Tuning a Query from 10 Minutes to 10 Seconds",
+      "link": "https://muse.ai/podcasts/media/1248297608376725/4720f1e9-8c94-4958-8367-c455f31c5edc/ep-6ed03ba3-bd28-4505-bf82-b4251f2791fb.mp3",
+      "source": "Technology Learnings",
+      "category": "Podcast",
+      "summary": "Data Engineering & Analytics track: EXPLAIN plans, indexes, and the optimization ladder AI Generated",
+      "published": "2026-10-04T13:46:47+00:00",
+      "audio_url": "https://muse.ai/podcasts/media/1248297608376725/4720f1e9-8c94-4958-8367-c455f31c5edc/ep-6ed03ba3-bd28-4505-bf82-b4251f2791fb.mp3",
+      "duration": "425"
+    },
+    {
+      "id": "678b904cf2817bbb",
+      "title": "Tech Learning: Data Engineering & Analytics \u2014 Ep 3: SQL Beyond SELECT: Joins, Windows, CTEs",
+      "link": "https://muse.ai/podcasts/media/1248297608376725/4720f1e9-8c94-4958-8367-c455f31c5edc/ep-5f99a06b-312d-481c-bb0b-352368848305.mp3",
+      "source": "Technology Learnings",
+      "category": "Podcast",
+      "summary": "Data Engineering & Analytics track: the essential SQL toolkit \u2014 joins, window functions, and CTEs AI Generated",
+      "published": "2026-10-04T13:46:19+00:00",
+      "audio_url": "https://muse.ai/podcasts/media/1248297608376725/4720f1e9-8c94-4958-8367-c455f31c5edc/ep-5f99a06b-312d-481c-bb0b-352368848305.mp3",
+      "duration": "426"
+    },
+    {
+      "id": "c433bc5ea0d4ac73",
+      "title": "Tech Learning: Data Engineering & Analytics \u2014 Ep 2: Real Scenario: Choosing Storage for a New App",
+      "link": "https://muse.ai/podcasts/media/1248297608376725/4720f1e9-8c94-4958-8367-c455f31c5edc/ep-4dfc4aa7-979f-45e6-917d-750f38b266c0.mp3",
+      "source": "Technology Learnings",
+      "category": "Podcast",
+      "summary": "Data Engineering & Analytics track: matching storage to access patterns, cost and growth trade-offs AI Generated",
+      "published": "2026-10-04T13:45:38+00:00",
+      "audio_url": "https://muse.ai/podcasts/media/1248297608376725/4720f1e9-8c94-4958-8367-c455f31c5edc/ep-4dfc4aa7-979f-45e6-917d-750f38b266c0.mp3",
+      "duration": "431"
+    },
+    {
+      "id": "dac125b00a4bd19b",
+      "title": "Tech Learning: Data Engineering & Analytics \u2014 Ep 1: Structured vs Unstructured, OLTP vs OLAP",
+      "link": "https://muse.ai/podcasts/media/1248297608376725/4720f1e9-8c94-4958-8367-c455f31c5edc/ep-94adf4ff-5856-4c8f-9088-37f017c49614.mp3",
+      "source": "Technology Learnings",
+      "category": "Podcast",
+      "summary": "Data Engineering & Analytics track: data shapes, OLTP vs OLAP, and why analytics never touches the live database AI Generated",
+      "published": "2026-10-04T13:45:12+00:00",
+      "audio_url": "https://muse.ai/podcasts/media/1248297608376725/4720f1e9-8c94-4958-8367-c455f31c5edc/ep-94adf4ff-5856-4c8f-9088-37f017c49614.mp3",
+      "duration": "427"
     },
     {
       "id": "3f1473a50150bd7e",
@@ -3402,6 +3468,50 @@
       "published": "2026-10-02T15:00:00+00:00",
       "audio_url": null,
       "duration": ""
+    },
+    {
+      "id": "97775957c995561f",
+      "title": "Tech Learning Series \u2014 Ep 4: Real Scenario: Containerizing a Legacy Application",
+      "link": "https://muse.ai/podcasts/media/1248297608376725/4720f1e9-8c94-4958-8367-c455f31c5edc/ep-1614d474-03cb-4964-8e11-250230399664.mp3",
+      "source": "Technology Learnings",
+      "category": "Podcast",
+      "summary": "Taking a legacy app into containers: Dockerfile decisions, stateful pain points, and a safe rollout. AI Generated",
+      "published": "2026-10-02T14:33:57+00:00",
+      "audio_url": "https://muse.ai/podcasts/media/1248297608376725/4720f1e9-8c94-4958-8367-c455f31c5edc/ep-1614d474-03cb-4964-8e11-250230399664.mp3",
+      "duration": "523"
+    },
+    {
+      "id": "4be698bb0e2fd89d",
+      "title": "Tech Learning Series \u2014 Ep 3: VMs vs Containers: What Actually Changed",
+      "link": "https://muse.ai/podcasts/media/1248297608376725/4720f1e9-8c94-4958-8367-c455f31c5edc/ep-39aea924-dc88-49b7-b637-fc1b06b3a0e0.mp3",
+      "source": "Technology Learnings",
+      "category": "Podcast",
+      "summary": "Virtual machines versus containers in plain words: hypervisors, namespaces, images, and what really changed. AI Generated",
+      "published": "2026-10-02T14:18:51+00:00",
+      "audio_url": "https://muse.ai/podcasts/media/1248297608376725/4720f1e9-8c94-4958-8367-c455f31c5edc/ep-39aea924-dc88-49b7-b637-fc1b06b3a0e0.mp3",
+      "duration": "452"
+    },
+    {
+      "id": "fc8c60fd8723bb17",
+      "title": "Tech Learning Series \u2014 Ep 2: Real Scenario: Lifting an On-Prem App to the Cloud",
+      "link": "https://muse.ai/podcasts/media/1248297608376725/4720f1e9-8c94-4958-8367-c455f31c5edc/ep-0fdf819f-8537-4021-985e-3102ae06ffc9.mp3",
+      "source": "Technology Learnings",
+      "category": "Podcast",
+      "summary": "A realistic lift-and-shift walkthrough: discovery, hidden risks, and how to think about rollback before you need it. AI Generated",
+      "published": "2026-10-02T14:18:43+00:00",
+      "audio_url": "https://muse.ai/podcasts/media/1248297608376725/4720f1e9-8c94-4958-8367-c455f31c5edc/ep-0fdf819f-8537-4021-985e-3102ae06ffc9.mp3",
+      "duration": "541"
+    },
+    {
+      "id": "04df6270573324f4",
+      "title": "Tech Learning Series \u2014 Ep 1: Cloud Models Explained: IaaS vs PaaS vs SaaS",
+      "link": "https://muse.ai/podcasts/media/1248297608376725/4720f1e9-8c94-4958-8367-c455f31c5edc/ep-35f36e24-f394-4e61-931e-12633efd2a7b.mp3",
+      "source": "Technology Learnings",
+      "category": "Podcast",
+      "summary": "Sobana and Sudhan unpack IaaS, PaaS and SaaS: what each model means, who manages what, and how to pick the right one. AI Generated",
+      "published": "2026-10-02T14:18:34+00:00",
+      "audio_url": "https://muse.ai/podcasts/media/1248297608376725/4720f1e9-8c94-4958-8367-c455f31c5edc/ep-35f36e24-f394-4e61-931e-12633efd2a7b.mp3",
+      "duration": "527"
     },
     {
       "id": "e9e8edc324aee0e5",
