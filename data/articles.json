@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-03T01:59:57.292985+00:00",
+  "generated_at": "2026-11-03T05:59:58.781188+00:00",
   "sources_polled": [
     "The Verge \u2014 AI",
     "Simon Willison",
@@ -15,6 +15,28 @@
     "Quantum Intelligence"
   ],
   "articles": [
+    {
+      "id": "c006e897d48e9930",
+      "title": "October sponsors-only newsletter",
+      "link": "https://simonwillison.net/2026/Nov/3/october-newsletter/",
+      "source": "Simon Willison",
+      "category": "AI",
+      "summary": "I sent out the October edition of my sponsors-only monthly newsletter . If you are a sponsor (or start a sponsorship now) you can access it here . This month: The October inflection point for vibe game development The vulnerability apocalypse gets hot LLM releases API credits for",
+      "published": "2026-11-03T05:59:47.123413+00:00",
+      "audio_url": null,
+      "duration": ""
+    },
+    {
+      "id": "22c23cfe758c1cb6",
+      "title": "I discovered a sound that leaks your exact location (and it's everywhere) - YouTube",
+      "link": "https://simonwillison.net/2026/Nov/3/a-sound-that-leaks-your-exact-location/",
+      "source": "Simon Willison",
+      "category": "AI",
+      "summary": "I discovered a sound that leaks your exact location (and it&#x27;s everywhere) - YouTube Genius piece of OSINT by Colsto, who demonstrates how you can take almost imperceptible background noise of planes from a video soundtrack, figure out their Doppler curves, then cross referen",
+      "published": "2026-11-03T05:59:47.123298+00:00",
+      "audio_url": null,
+      "duration": ""
+    },
     {
       "id": "10dab842bc689c46",
       "title": "llm 0.37",
@@ -78,6 +100,28 @@
       "category": "AI",
       "summary": "The tsunami of imitators is way bigger than any one model maker can stem.",
       "published": "2026-11-02T18:05:31+00:00",
+      "audio_url": null,
+      "duration": ""
+    },
+    {
+      "id": "6fd6ad7938fa5bc5",
+      "title": "Rewarding defenders with bigger bug bounties",
+      "link": "https://openai.com/index/rewarding-defenders-with-bigger-bug-bounties",
+      "source": "OpenAI Blog",
+      "category": "AI",
+      "summary": "OpenAI is raising Security Bug Bounty rewards and introducing report quality, loyalty, and priority campaign bonuses for independent security researchers.",
+      "published": "2026-11-02T18:00:00+00:00",
+      "audio_url": null,
+      "duration": ""
+    },
+    {
+      "id": "262cfa35f4308cc0",
+      "title": "Preparing our next security sprint to harden OpenAI",
+      "link": "https://openai.com/index/preparing-our-next-security-sprint-to-harden-openai",
+      "source": "OpenAI Blog",
+      "category": "AI",
+      "summary": "OpenAI is preparing its next internal security sprint with Cathedral Systems to test and strengthen its defenses using AI.",
+      "published": "2026-11-02T18:00:00+00:00",
       "audio_url": null,
       "duration": ""
     },
@@ -2689,28 +2733,6 @@
       "duration": ""
     },
     {
-      "id": "4a2f3ca18eb9cee6",
-      "title": "Benefit Street Partners answers questions faster with Codex",
-      "link": "https://openai.com/index/benefit-street-partners",
-      "source": "OpenAI Blog",
-      "category": "AI",
-      "summary": "Anant Kumar builds tools to compare loan valuations and analyze credit agreements, using Codex for code review and faster follow-ups.",
-      "published": "2026-10-16T00:00:00+00:00",
-      "audio_url": null,
-      "duration": ""
-    },
-    {
-      "id": "1d7d75b47c31f4d0",
-      "title": "How Grupo Botic\u00e1rio uses AI to strengthen human connections",
-      "link": "https://openai.com/index/grupo-boticario",
-      "source": "OpenAI Blog",
-      "category": "AI",
-      "summary": "Almost 50 years after starting in a compounding pharmacy in Paran\u00e1, the group operates a proprietary agent platform that autonomously resolves up to 80% of resellers\u2019 operational requests\u2014enabling the sales force to take on an advisory role.",
-      "published": "2026-10-16T00:00:00+00:00",
-      "audio_url": null,
-      "duration": ""
-    },
-    {
       "id": "08c79764230e6e3c",
       "title": "Chirp Pong",
       "link": "https://simonwillison.net/2026/Oct/15/chirp-pong/",
@@ -3039,28 +3061,6 @@
       "published": "2026-10-13T01:03:31+00:00",
       "audio_url": "https://muse.ai/podcasts/media/1248297608376725/94f09345-ad4a-4981-83dd-e3206bbf5c4e/ep-2c99a941-4407-4667-9f77-0c237a92d4a3.mp3",
       "duration": "291"
-    },
-    {
-      "id": "59e7fc14e8c1a5c7",
-      "title": "datasette-ports 0.4",
-      "link": "https://simonwillison.net/2026/Oct/12/datasette-ports/",
-      "source": "Simon Willison",
-      "category": "AI",
-      "summary": "Release: datasette-ports 0.4 My plugin for detecting and listing all Datasette instances on the current machine now works with the latest version, and displays the detected PID as well. Knowing the PID makes it easier to attach the new Python 3.15 profiler . Tags: datasette",
-      "published": "2026-10-12T21:59:55.814511+00:00",
-      "audio_url": null,
-      "duration": ""
-    },
-    {
-      "id": "92f57cbc8464c256",
-      "title": "Hello Python 3.15, goodbye 3.10, and now I can use 3.11",
-      "link": "https://simonwillison.net/2026/Oct/12/python-3-15/",
-      "source": "Simon Willison",
-      "category": "AI",
-      "summary": "Python 3.15 is here ! Here's the essential What's new in Python 3.15 guide, this year curated by 3.14 and 3.15 release manager Hugo van Kemenade. As someone who builds open source software that works in every supported Python version, I get to say goodbye to Python 3.10 and start",
-      "published": "2026-10-12T21:59:55.814431+00:00",
-      "audio_url": null,
-      "duration": ""
     },
     {
       "id": "e77534a29e124c97",

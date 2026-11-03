@@ -4,7 +4,23 @@
     <title>The Signal</title>
     <link>https://thillairaj.github.io/The-Signal-AI-Quantum/</link>
     <description>A self-updating feed of AI, quantum computing, and podcast updates.</description>
-    <lastBuildDate>Tue, 03 Nov 2026 01:59:57 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 03 Nov 2026 05:59:58 +0000</lastBuildDate>
+    <item>
+      <title>October sponsors-only newsletter</title>
+      <link>https://simonwillison.net/2026/Nov/3/october-newsletter/</link>
+      <guid isPermaLink="false">c006e897d48e9930</guid>
+      <description>I sent out the October edition of my sponsors-only monthly newsletter . If you are a sponsor (or start a sponsorship now) you can access it here . This month: The October inflection point for vibe game development The vulnerability apocalypse gets hot LLM releases API credits for</description>
+      <category>Simon Willison</category>
+      <pubDate>Tue, 03 Nov 2026 05:59:47 +0000</pubDate>
+    </item>
+    <item>
+      <title>I discovered a sound that leaks your exact location (and it's everywhere) - YouTube</title>
+      <link>https://simonwillison.net/2026/Nov/3/a-sound-that-leaks-your-exact-location/</link>
+      <guid isPermaLink="false">22c23cfe758c1cb6</guid>
+      <description>I discovered a sound that leaks your exact location (and it&amp;#x27;s everywhere) - YouTube Genius piece of OSINT by Colsto, who demonstrates how you can take almost imperceptible background noise of planes from a video soundtrack, figure out their Doppler curves, then cross referen</description>
+      <category>Simon Willison</category>
+      <pubDate>Tue, 03 Nov 2026 05:59:47 +0000</pubDate>
+    </item>
     <item>
       <title>llm 0.37</title>
       <link>https://simonwillison.net/2026/Nov/2/llm/</link>
@@ -44,6 +60,22 @@
       <description>The tsunami of imitators is way bigger than any one model maker can stem.</description>
       <category>Ars Technica AI</category>
       <pubDate>Mon, 02 Nov 2026 18:05:31 +0000</pubDate>
+    </item>
+    <item>
+      <title>Rewarding defenders with bigger bug bounties</title>
+      <link>https://openai.com/index/rewarding-defenders-with-bigger-bug-bounties</link>
+      <guid isPermaLink="false">6fd6ad7938fa5bc5</guid>
+      <description>OpenAI is raising Security Bug Bounty rewards and introducing report quality, loyalty, and priority campaign bonuses for independent security researchers.</description>
+      <category>OpenAI Blog</category>
+      <pubDate>Mon, 02 Nov 2026 18:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>Preparing our next security sprint to harden OpenAI</title>
+      <link>https://openai.com/index/preparing-our-next-security-sprint-to-harden-openai</link>
+      <guid isPermaLink="false">262cfa35f4308cc0</guid>
+      <description>OpenAI is preparing its next internal security sprint with Cathedral Systems to test and strengthen its defenses using AI.</description>
+      <category>OpenAI Blog</category>
+      <pubDate>Mon, 02 Nov 2026 18:00:00 +0000</pubDate>
     </item>
     <item>
       <title>The New York Times and other publications sue Brave web browser for AI scraping and bypassing paywalls</title>
@@ -452,38 +484,6 @@
       <description>Anthropic’s S-1 splits its $8.9 billion H1 compute bill: most went to R&amp;amp;D, with less than a third estimated to serve Claude customers.</description>
       <category>Anthropic/Claude News</category>
       <pubDate>Thu, 29 Oct 2026 11:30:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>How we detect frontier model misalignment</title>
-      <link>https://openai.com/index/how-we-detect-frontier-model-misalignment</link>
-      <guid isPermaLink="false">d28967fce9c692cd</guid>
-      <description>OpenAI uses layered monitoring to detect frontier model misalignment and unauthorized agent behavior so responders can intervene before incidents escalate.</description>
-      <category>OpenAI Blog</category>
-      <pubDate>Thu, 29 Oct 2026 09:00:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>How Ropes &amp; Gray is developing AI for transactional diligence</title>
-      <link>https://openai.com/index/ropes-gray-ai-diligence</link>
-      <guid isPermaLink="false">2d9928289658e986</guid>
-      <description>Ropes &amp; Gray is developing AI for transactional diligence with OpenAI. Lawyers review grouped documents, summaries, and reports before advising clients.</description>
-      <category>OpenAI Blog</category>
-      <pubDate>Thu, 29 Oct 2026 07:00:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>Quoting Ted Sanders</title>
-      <link>https://simonwillison.net/2026/Oct/28/ted-sanders/</link>
-      <guid isPermaLink="false">b0fbfced4c005ad4</guid>
-      <description>In general, LLM performance is incredibly multidimensional. There's no guarantee of a fixed ordering where the model that is best at math is also the model that's best at jokes. Despite that complexity, much of the variation in performance is explained by just a single variable: </description>
-      <category>Simon Willison</category>
-      <pubDate>Thu, 29 Oct 2026 02:00:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>Adam Mosseri says negativity around AI is ‘going to get worse’</title>
-      <link>https://www.theverge.com/ai-artificial-intelligence/1021644/adam-mosseri-instagram-ai-negativity</link>
-      <guid isPermaLink="false">09f762edab0d4f19</guid>
-      <description>Asked about AI and the trend of college students booing tech CEOs at graduation ceremonies, Instagram head Adam Mosseri acknowledged in an interview that a lot of people really don't like AI, and it's not just young people and creatives. Appearing on the Colin and Samir podcast t</description>
-      <category>The Verge — AI</category>
-      <pubDate>Thu, 29 Oct 2026 01:59:59 +0000</pubDate>
     </item>
   </channel>
 </rss>
