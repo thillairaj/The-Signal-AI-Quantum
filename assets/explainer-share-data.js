@@ -4,7 +4,7 @@ window.EXPLAINER_SHARE_DATA = {
  "pages": {
   "quantum-hardware.html": {
    "title": "Inside a Superconducting Quantum Computer",
-   "hook": "The golden 'chandelier' in quantum computer photos isn't the computer.",
+   "hook": "The golden “chandelier” in quantum computer photos isn't the computer.",
    "summary": "It is a refrigerator and its wiring, built to keep one small chip colder than outer space.",
    "family": "QUANTUM",
    "familyColor": "#7C5CBF",

@@ -103,7 +103,7 @@ main { max-width: 1200px; margin: 0 auto; padding: 0 2rem 4rem; }
 @media (max-width: 640px) {
   .svg-label { font-size: 24px; }
   .svg-temp { font-size: 24px; }
-  .svg-note { font-size: 20px; }
+  .svg-note { font-size: 24px; }
 }
 .part { cursor: pointer; outline: none; }
 .part .hit { fill: transparent; stroke: transparent; }
@@ -168,10 +168,6 @@ main { max-width: 1200px; margin: 0 auto; padding: 0 2rem 4rem; }
 .panel-src { font-size: .78rem; color: var(--muted); margin: .7rem 0 0; }
 .panel-nav { display: flex; gap: .5rem; margin-bottom: 1rem; padding-bottom: .9rem; border-bottom: 1px solid var(--border); }
 .panel-nav .btn { flex: 1; padding: .55rem .8rem; font-weight: 600; }
-.panel-actions { display: flex; flex-wrap: wrap; gap: .5rem; margin-top: 1.1rem; padding-top: 1rem; border-top: 1px solid var(--border); }
-.panel-actions .spacer { flex: 1; }
-.copied { font-size: .8rem; color: var(--accent); align-self: center; opacity: 0; transition: opacity .2s; }
-.copied.on { opacity: 1; }
 .open-chip { margin-top: .4rem; }
 @media (prefers-reduced-motion: no-preference) { .panel-body.swap { animation: swapIn .35s ease; } }
 @keyframes swapIn { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: none; } }
