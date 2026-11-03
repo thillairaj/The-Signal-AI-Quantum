@@ -4,7 +4,23 @@
     <title>The Signal</title>
     <link>https://thillairaj.github.io/The-Signal-AI-Quantum/</link>
     <description>A self-updating feed of AI, quantum computing, and podcast updates.</description>
-    <lastBuildDate>Tue, 03 Nov 2026 16:16:22 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 03 Nov 2026 17:59:58 +0000</lastBuildDate>
+    <item>
+      <title>Qwen 3.8 27B on my laptop can interpret model weights, too</title>
+      <link>https://simonwillison.net/2026/Nov/3/qwen-can-interpret-model-weights/</link>
+      <guid isPermaLink="false">6857dc224a419fe9</guid>
+      <description>Yesterday's hot paper was Sparks of Weight-Space Programming: LLMs can natively read &amp;amp; write neural network weights by Rikiya Takehi, Jayden Teoh, Alex Zhang, and Omar Khattab. The paper found that frontier models, in particular GPT-6 Astra, can both interpret and modify the </description>
+      <category>Simon Willison</category>
+      <pubDate>Tue, 03 Nov 2026 17:59:48 +0000</pubDate>
+    </item>
+    <item>
+      <title>Google will let schools skip AI tools, but they have to give up search, too</title>
+      <link>https://arstechnica.com/ai/2026/11/google-will-let-schools-skip-ai-tools-but-they-have-to-give-up-search-too/</link>
+      <guid isPermaLink="false">b121628aeba070c8</guid>
+      <description>Google will offer schools AI tools that allegedly don't give away the answers.</description>
+      <category>Ars Technica AI</category>
+      <pubDate>Tue, 03 Nov 2026 17:54:43 +0000</pubDate>
+    </item>
     <item>
       <title>OpenAI is quietly renaming data centers ‘compute campuses’</title>
       <link>https://www.theverge.com/ai-artificial-intelligence/1025242/openai-quietly-renames-data-centers-as-compute-campuses</link>
@@ -468,22 +484,6 @@
       <description>The New York Times is testing a new AI feature for its Cooking app that helps users to modify recipes, and it has sparked some drama among users. Last Friday, NYT Cooking senior editor Genevieve Ko announced the feature, which can be used to recommend substitutions for ingredient</description>
       <category>The Verge — AI</category>
       <pubDate>Thu, 29 Oct 2026 18:00:01 +0000</pubDate>
-    </item>
-    <item>
-      <title>Microsoft’s AI future has fewer jobs</title>
-      <link>https://www.theverge.com/tech/1022023/microsoft-exit-offer-layoffs-notepad</link>
-      <guid isPermaLink="false">45b4ef0b726f6d16</guid>
-      <description>To anyone listening closely to what Microsoft CEO Satya Nadella has been saying over the past couple of years, this week felt like the clearest sign yet that AI is about to fundamentally change the size of Microsoft's workforce. Microsoft is now offering voluntary buyouts to arou</description>
-      <category>The Verge — AI</category>
-      <pubDate>Thu, 29 Oct 2026 18:00:01 +0000</pubDate>
-    </item>
-    <item>
-      <title>An updated Model Spec for more capable and beneficial AI</title>
-      <link>https://openai.com/index/updated-model-spec</link>
-      <guid isPermaLink="false">7bf0065ceb1646f5</guid>
-      <description>OpenAI’s updated Model Spec outlines five core values to guide more capable AI toward sound judgment, human agency, and faithfulness to human intent.</description>
-      <category>OpenAI Blog</category>
-      <pubDate>Thu, 29 Oct 2026 17:00:00 +0000</pubDate>
     </item>
   </channel>
 </rss>

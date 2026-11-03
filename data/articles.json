@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-03T16:16:22.157464+00:00",
+  "generated_at": "2026-11-03T17:59:58.963719+00:00",
   "sources_polled": [
     "The Verge \u2014 AI",
     "Simon Willison",
@@ -15,6 +15,28 @@
     "Quantum Intelligence"
   ],
   "articles": [
+    {
+      "id": "6857dc224a419fe9",
+      "title": "Qwen 3.8 27B on my laptop can interpret model weights, too",
+      "link": "https://simonwillison.net/2026/Nov/3/qwen-can-interpret-model-weights/",
+      "source": "Simon Willison",
+      "category": "AI",
+      "summary": "Yesterday's hot paper was Sparks of Weight-Space Programming: LLMs can natively read &amp; write neural network weights by Rikiya Takehi, Jayden Teoh, Alex Zhang, and Omar Khattab. The paper found that frontier models, in particular GPT-6 Astra, can both interpret and modify the ",
+      "published": "2026-11-03T17:59:48.905524+00:00",
+      "audio_url": null,
+      "duration": ""
+    },
+    {
+      "id": "b121628aeba070c8",
+      "title": "Google will let schools skip AI tools, but they have to give up search, too",
+      "link": "https://arstechnica.com/ai/2026/11/google-will-let-schools-skip-ai-tools-but-they-have-to-give-up-search-too/",
+      "source": "Ars Technica AI",
+      "category": "AI",
+      "summary": "Google will offer schools AI tools that allegedly don't give away the answers.",
+      "published": "2026-11-03T17:54:43+00:00",
+      "audio_url": null,
+      "duration": ""
+    },
     {
       "id": "32791f69eb2c329e",
       "title": "OpenAI is quietly renaming data centers \u2018compute campuses\u2019",
@@ -2997,17 +3019,6 @@
       "duration": ""
     },
     {
-      "id": "caa6203fc500b5ac",
-      "title": "Gemini 4 Argon begins rolling out in Gemini app and Antigravity, but only if you pay",
-      "link": "https://arstechnica.com/ai/2026/10/gemini-4-argon-begins-rolling-out-in-gemini-app-and-antigravity-but-only-if-you-pay/",
-      "source": "Ars Technica AI",
-      "category": "AI",
-      "summary": "Developers will get 50 percent discounted API rates through November.",
-      "published": "2026-10-13T16:00:02+00:00",
-      "audio_url": null,
-      "duration": ""
-    },
-    {
       "id": "c1e94fc831365c13",
       "title": "Gemini 4 Argon: Built to solve your hardest problems",
       "link": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-argon/",
@@ -3037,17 +3048,6 @@
       "category": "AI",
       "summary": "If the agent isn't using my diagnostics library, I could introspect and update AGENTS.md, but there's still a delta, and it'll drift. Instead, I write a pre-commit hook that checks the git diff for direct calls to observability modules that bypass my diagnostics module. Boom: fai",
       "published": "2026-10-13T13:59:50.433273+00:00",
-      "audio_url": null,
-      "duration": ""
-    },
-    {
-      "id": "93062c67d6f00e76",
-      "title": "web-edit 0.1a0",
-      "link": "https://simonwillison.net/2026/Oct/12/web-edit/",
-      "source": "Simon Willison",
-      "category": "AI",
-      "summary": "Release: web-edit 0.1a0 I was working on a project from my phone using Codex Remote when I found myself wanting to edit a credentials file without round-tripping those credentials through the LLM itself. So... I had Codex and GPT-6 Astra Extra High build this Python web app which",
-      "published": "2026-10-13T01:59:42.841624+00:00",
       "audio_url": null,
       "duration": ""
     },
