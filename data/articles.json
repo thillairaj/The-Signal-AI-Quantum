@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-03T17:59:58.963719+00:00",
+  "generated_at": "2026-11-03T21:59:56.712661+00:00",
   "sources_polled": [
     "The Verge \u2014 AI",
     "Simon Willison",
@@ -15,6 +15,94 @@
     "Quantum Intelligence"
   ],
   "articles": [
+    {
+      "id": "0eaf3e3a754437a6",
+      "title": "Google is entirely disabling Search in schools that don&#8217;t want AI",
+      "link": "https://www.theverge.com/tech/1025411/google-turn-off-search-ai-features",
+      "source": "The Verge \u2014 AI",
+      "category": "AI",
+      "summary": "Google is completely turning off Search in schools that reject its AI features, the company told The New York Times. The decision was also shared in a broader education-related update from Google on Tuesday, saying that access to Gemini, Gemini Notebook, Gemini in Classroom, and ",
+      "published": "2026-11-03T21:59:45.518696+00:00",
+      "audio_url": null,
+      "duration": ""
+    },
+    {
+      "id": "c65f77dcf81d86c7",
+      "title": "Netflix will show you themed recommendations through a new \u2018AI Discover\u2019 tab",
+      "link": "https://www.theverge.com/streaming/1025029/netflix-ai-discover-recommendations",
+      "source": "The Verge \u2014 AI",
+      "category": "AI",
+      "summary": "Netflix's TV app is getting a new \"AI Discover\" tab where the company will show experimental, AI-powered features to help you find new shows and movies to watch. The first of these experiments surfaces content based around themes, like \"Something Light,\" \"Family Movie Night,\" or ",
+      "published": "2026-11-03T21:59:45.518667+00:00",
+      "audio_url": null,
+      "duration": ""
+    },
+    {
+      "id": "db1d0915e4421fd1",
+      "title": "Indie games are missing launch dates because Steam is backed up",
+      "link": "https://www.theverge.com/games/1025596/valve-steam-indie-games-missing-launch-dates",
+      "source": "The Verge \u2014 AI",
+      "category": "AI",
+      "summary": "Many indie game developers have recently posted on social media about unexpectedly long approval wait times for their game submissions on Steam, with some of the approvals causing developers to miss their planned launch dates. For example, Studio Daimon, the team behind an upcomi",
+      "published": "2026-11-03T21:59:45.518635+00:00",
+      "audio_url": null,
+      "duration": ""
+    },
+    {
+      "id": "662bf89dbff24ba9",
+      "title": "OpenAI says ChatGPT is catching up to Google in search",
+      "link": "https://www.theverge.com/ai-artificial-intelligence/1025482/openai-says-chatgpt-is-catching-up-to-google-in-search",
+      "source": "The Verge \u2014 AI",
+      "category": "AI",
+      "summary": "In many circles, \"Ask Chat\" has replaced \"Google it,\" and that's reflected in a new announcement from OpenAI: the volume of search queries run through ChatGPT now equals 20 percent of the volume run through Google. Adam Fry, OpenAI's consumer product lead for ChatGPT, made the an",
+      "published": "2026-11-03T21:59:45.518599+00:00",
+      "audio_url": null,
+      "duration": ""
+    },
+    {
+      "id": "62af551153394ae1",
+      "title": "Apple\u2019s latest watchOS beta includes its new always-on Audio Intelligence features",
+      "link": "https://www.theverge.com/tech/1025002/apple-watch-audio-intelligence-watchos-beta",
+      "source": "The Verge \u2014 AI",
+      "category": "AI",
+      "summary": "Starting today, Siri can tune into the Apple Watch's mic with Audio Intelligence features that are available in the new watchOS 27.3 developer beta rolling out now. The two new additions are Siri Recap, which uses \"ambient listening\" to generate summaries of your conversation, an",
+      "published": "2026-11-03T21:59:45.518566+00:00",
+      "audio_url": null,
+      "duration": ""
+    },
+    {
+      "id": "49792679d79fe36c",
+      "title": "Apple starts giving Siri AI access to third-party apps",
+      "link": "https://www.theverge.com/tech/1025694/apple-siri-ai-third-party-apps",
+      "source": "The Verge \u2014 AI",
+      "category": "AI",
+      "summary": "Apple will now let Siri AI perform actions across third-party apps. As part of the iOS 27.3 update rolling out on Tuesday, Apple announced developers can now integrate Siri AI's new features in \"all apps,\" allowing the voice assistant to draw on a user's personal context, process",
+      "published": "2026-11-03T21:59:45.518526+00:00",
+      "audio_url": null,
+      "duration": ""
+    },
+    {
+      "id": "39cfcbde58ede335",
+      "title": "Those Jeff Bezos hair transplant photos are very fake",
+      "link": "https://www.theverge.com/tech/1025745/fake-jeff-bezos-hair-replacement-photos-debunk",
+      "source": "The Verge \u2014 AI",
+      "category": "AI",
+      "summary": "Amazon founder Jeff Bezos and actor Jason Statham have a distinctive feature in common: They're both famously bald, and that definitely hasn't changed in the last few days. However, there are some images of the two men circulating around X, Threads, and Bluesky in which they both",
+      "published": "2026-11-03T21:59:45.518457+00:00",
+      "audio_url": null,
+      "duration": ""
+    },
+    {
+      "id": "2f70d6c369eb8871",
+      "title": "Ukraine\u2019s drone strikes spur hasty Russian plans for underground data centers",
+      "link": "https://arstechnica.com/ai/2026/11/russia-looks-to-hide-data-centers-underground-as-ukrainian-drones-strike-back/",
+      "source": "Ars Technica AI",
+      "category": "AI",
+      "summary": "Russia tries to fix exposed digital infrastructure as data center war backfires.",
+      "published": "2026-11-03T20:39:55+00:00",
+      "audio_url": null,
+      "duration": ""
+    },
     {
       "id": "6857dc224a419fe9",
       "title": "Qwen 3.8 27B on my laptop can interpret model weights, too",
@@ -71,12 +159,34 @@
       "duration": ""
     },
     {
+      "id": "26c6032e1d267765",
+      "title": "Accelerating engineering for the physical world",
+      "link": "https://openai.com/index/accelerating-engineering-for-the-physical-world",
+      "source": "OpenAI Blog",
+      "category": "AI",
+      "summary": "Discover how ChatGPT and Codex are helping engineers accelerate CAD, PCB design, simulation, and other workflows across the physical world.",
+      "published": "2026-11-03T12:00:00+00:00",
+      "audio_url": null,
+      "duration": ""
+    },
+    {
       "id": "08b710f1e7801fa8",
       "title": "Heimstaden is changing residential real estate management with AI",
       "link": "https://openai.com/index/heimstaden",
       "source": "OpenAI Blog",
       "category": "AI",
       "summary": "Discover how Heimstaden uses OpenAI\u2019s ChatGPT Enterprise and Codex to transform property management, cut costs, and empower employees across Europe.",
+      "published": "2026-11-03T08:00:00+00:00",
+      "audio_url": null,
+      "duration": ""
+    },
+    {
+      "id": "a2357e701f020223",
+      "title": "How Cisco defends at machine speed with OpenAI",
+      "link": "https://openai.com/index/cisco-cyber",
+      "source": "OpenAI Blog",
+      "category": "AI",
+      "summary": "Cisco combines network intelligence with OpenAI models to strengthen enterprise security. Learn how it is building more adaptive defenses.",
       "published": "2026-11-03T08:00:00+00:00",
       "audio_url": null,
       "duration": ""
@@ -124,6 +234,17 @@
       "published": "2026-11-03T01:04:56+00:00",
       "audio_url": "https://muse.ai/podcasts/media/1248297608376725/94f09345-ad4a-4981-83dd-e3206bbf5c4e/ep-d695f88b-eb6f-4b1b-b80f-fd5d4a8b4d46.mp3",
       "duration": "263"
+    },
+    {
+      "id": "3d509e27bae229a3",
+      "title": "OpenAI appoints Jill Hazelbaker as Chief Corporate Affairs Officer",
+      "link": "https://openai.com/index/jill-hazelbaker-chief-corporate-affairs-officer",
+      "source": "OpenAI Blog",
+      "category": "AI",
+      "summary": "Jill Hazelbaker will join OpenAI as Chief Corporate Affairs Officer, leading the company\u2019s global communications and corporate positioning.",
+      "published": "2026-11-03T00:00:00+00:00",
+      "audio_url": null,
+      "duration": ""
     },
     {
       "id": "16194c055af9d0c4",
@@ -995,6 +1116,17 @@
       "duration": ""
     },
     {
+      "id": "bbd4d7a8dcb56d48",
+      "title": "Evernote turns AI-driven discovery into paid subscriptions",
+      "link": "https://openai.com/ads/customers/evernote",
+      "source": "OpenAI Blog",
+      "category": "AI",
+      "summary": "Evernote used ChatGPT Ads to introduce its note-taking app to people working with AI. The team tracked how often free trials led to paid subscriptions.",
+      "published": "2026-10-28T19:40:49+00:00",
+      "audio_url": null,
+      "duration": ""
+    },
+    {
       "id": "bfd6acefc1fbf840",
       "title": "Google announces Gemini 4 Carbon, its latest frontier AI model that you can't use",
       "link": "https://arstechnica.com/ai/2026/10/google-announces-gemini-4-carbon-its-latest-frontier-ai-model-that-you-cant-use/",
@@ -1512,28 +1644,6 @@
       "duration": ""
     },
     {
-      "id": "4a8f41d180d7e408",
-      "title": "Five weird details from Anthropic\u2019s IPO filing",
-      "link": "https://www.theverge.com/ai-artificial-intelligence/1018738/anthropic-ipo-s1-filing-weird-details",
-      "source": "The Verge \u2014 AI",
-      "category": "AI",
-      "summary": "Anthropic has finally filed its S-1 prospectus with the SEC, a document designed to give investors a look under the hood of its business, from how much its executives are making and plans for spending its IPO billions to the risks that could derail its ambitions. At more than 300",
-      "published": "2026-10-26T17:59:37.486288+00:00",
-      "audio_url": null,
-      "duration": ""
-    },
-    {
-      "id": "2500a6aad8741c76",
-      "title": "The RealReal won\u2019t let AI agents hog designer clothing",
-      "link": "https://www.theverge.com/news/1018713/meta-muse-agentic-shopping-ai-the-realreal",
-      "source": "The Verge \u2014 AI",
-      "category": "AI",
-      "summary": "The RealReal, a secondhand luxury fashion consignment retailer, said it's updating its bot defense system, effectively making it harder for AI agents to shop on its site. The change comes days after The Verge reported that an AI agent could be used to take advantage of The RealRe",
-      "published": "2026-10-26T17:59:37.486216+00:00",
-      "audio_url": null,
-      "duration": ""
-    },
-    {
       "id": "71784ce3534e69e4",
       "title": "Highway thieves are spoofing GPS to steal millions in data center-bound cargo",
       "link": "https://arstechnica.com/tech-policy/2026/10/highway-thieves-are-spoofing-gps-to-steal-millions-in-data-center-bound-cargo/",
@@ -1563,28 +1673,6 @@
       "category": "AI",
       "summary": "Tesla hopes autonomy subscriptions can deliver the margins car sales cannot.",
       "published": "2026-10-26T14:30:27+00:00",
-      "audio_url": null,
-      "duration": ""
-    },
-    {
-      "id": "9c0a98fa46a8163e",
-      "title": "Can AI help solve the COBOL code crisis?",
-      "link": "https://www.theverge.com/ai-artificial-intelligence/1018434/cobol-migration-legacy-code-openai-anthropic",
-      "source": "The Verge \u2014 AI",
-      "category": "AI",
-      "summary": "What do the IRS, banks, airlines, and government infrastructure around the world have in common? They're all running on systems propped up by antique computer code that nobody dares touch, lest everything come crashing down. OpenAI thinks it may have a solution. On October 19th, ",
-      "published": "2026-10-26T14:00:19.388169+00:00",
-      "audio_url": null,
-      "duration": ""
-    },
-    {
-      "id": "a0064ee100f0c0b3",
-      "title": "Anthropic\u2019s IPO filing lays out a plan to &#8216;revolutionize every area of human endeavor&#8217; with AI",
-      "link": "https://www.theverge.com/ai-artificial-intelligence/1018476/anthropic-ipo-details-s1-filed-sec",
-      "source": "The Verge \u2014 AI",
-      "category": "AI",
-      "summary": "Anthropic has filed its S-1 prospectus with the Securities and Exchange Commission, preparing the company behind Claude to beat OpenAI to the punch with an IPO. In a filing with the SEC, Anthropic said it plans to list on the Nasdaq exchange under the ticker symbol \"ANT.\" The AI ",
-      "published": "2026-10-26T14:00:19.388099+00:00",
       "audio_url": null,
       "duration": ""
     },
@@ -1732,28 +1820,6 @@
       "duration": ""
     },
     {
-      "id": "99c99157c7fa1579",
-      "title": "Google\u2019s AI search changes upended online publishing",
-      "link": "https://www.theverge.com/column/1017983/google-ai-search-online-publishing",
-      "source": "The Verge \u2014 AI",
-      "category": "AI",
-      "summary": "This is The Stepback, a weekly newsletter breaking down one essential story from the tech world. For more about AI's impact on the web, follow Emma Roth. The Stepback arrives in our subscribers' inboxes on Sunday at 8AM ET. Opt in for The Stepback here. How it started The digital",
-      "published": "2026-10-25T13:59:37.164077+00:00",
-      "audio_url": null,
-      "duration": ""
-    },
-    {
-      "id": "b366ba776fde8cd4",
-      "title": "r/opensource just banned AI, non-English speakers, and more",
-      "link": "https://www.theverge.com/ai-artificial-intelligence/1018217/reddit-opensource-ai-ban",
-      "source": "The Verge \u2014 AI",
-      "category": "AI",
-      "summary": "The mods at r/opensource posted new submission rules that, among other things, banned projects that use AI. The post made Saturday evening opens by saying, \"If your project uses AI, is made by AI, or is intended for AI, it's not welcome on r/opensource. AI, as it exists today, is",
-      "published": "2026-10-25T13:59:37.163998+00:00",
-      "audio_url": null,
-      "duration": ""
-    },
-    {
       "id": "428cd95fd49b9366",
       "title": "Daily AI Intelligence \u2014 Episode 24: Texas sues OpenAI, Muse lands in Japan, Kimi K3.1 Pro",
       "link": "https://muse.ai/podcasts/media/1248297608376725/94f09345-ad4a-4981-83dd-e3206bbf5c4e/ep-0aded4c9-9259-4a1d-b6c7-220cc39840a4.mp3",
@@ -1763,17 +1829,6 @@
       "published": "2026-10-25T01:01:13+00:00",
       "audio_url": "https://muse.ai/podcasts/media/1248297608376725/94f09345-ad4a-4981-83dd-e3206bbf5c4e/ep-0aded4c9-9259-4a1d-b6c7-220cc39840a4.mp3",
       "duration": "271"
-    },
-    {
-      "id": "09a5dda451583962",
-      "title": "Pennsylvania will require labels on AI-generated ads",
-      "link": "https://www.theverge.com/ai-artificial-intelligence/1018187/pennsylvania-ai-deceptive-advertising-act",
-      "source": "The Verge \u2014 AI",
-      "category": "AI",
-      "summary": "On Thursday, Pennsylvania Governor Josh Shapiro signed the Artificial Intelligence Deceptive Advertising Act into law, requiring disclosures on AI-generated ads. The law requires any ad - whether it's a still image, video, audio, or text - that \"has been significantly modified or",
-      "published": "2026-10-24T21:59:44.253055+00:00",
-      "audio_url": null,
-      "duration": ""
     },
     {
       "id": "3812b4d599bb7adb",
@@ -2370,17 +2425,6 @@
       "duration": ""
     },
     {
-      "id": "a84b6a7bee5c68a6",
-      "title": "Terminal X matches senior investor judgment 88.6% with GPT-6.1",
-      "link": "https://openai.com/index/terminal-x",
-      "source": "OpenAI Blog",
-      "category": "AI",
-      "summary": "Terminal X\u2019s Eval Agent grades outputs against a 54-criterion rubric, catching 25% more deviances from a fund\u2019s mandate with GPT-6.1 Sol.",
-      "published": "2026-10-20T07:00:00+00:00",
-      "audio_url": null,
-      "duration": ""
-    },
-    {
       "id": "af02b0baed077a86",
       "title": "My obituary for programming",
       "link": "https://simonwillison.net/2026/Oct/19/my-obituary-for-programming/",
@@ -2401,17 +2445,6 @@
       "published": "2026-10-20T01:06:42+00:00",
       "audio_url": "https://muse.ai/podcasts/media/1248297608376725/94f09345-ad4a-4981-83dd-e3206bbf5c4e/ep-be3189c4-4559-4f75-964a-126062edd473.mp3",
       "duration": "220"
-    },
-    {
-      "id": "dbaa902542534b3a",
-      "title": "OpenAI acquires Orchestra Bio",
-      "link": "https://openai.com/index/openai-to-acquire-orchestra-bio",
-      "source": "OpenAI Blog",
-      "category": "AI",
-      "summary": "OpenAI is acquiring Orchestra Bio to bring AI-powered operations to life sciences R&amp;D, helping biopharma teams accelerate drug development and advance new treatments.",
-      "published": "2026-10-20T00:00:00+00:00",
-      "audio_url": null,
-      "duration": ""
     },
     {
       "id": "71a28de11a06820b",
@@ -2443,17 +2476,6 @@
       "category": "AI",
       "summary": "Character.AI faces claims its bots encouraged minors to self-harm and kill their parents.",
       "published": "2026-10-19T14:45:43+00:00",
-      "audio_url": null,
-      "duration": ""
-    },
-    {
-      "id": "7a364f356aab4946",
-      "title": "Advancing coding in low\u2011resource programming languages",
-      "link": "https://openai.com/index/low-resource-programming-languages",
-      "source": "OpenAI Blog",
-      "category": "AI",
-      "summary": "Learn how OpenAI is improving ChatGPT across low-resource programming languages, with new evaluations for software engineering, SQLite, and COBOL migration.",
-      "published": "2026-10-19T12:00:00+00:00",
       "audio_url": null,
       "duration": ""
     },
@@ -2663,17 +2685,6 @@
       "category": "AI",
       "summary": "Discord user flagged AI CSAM, triggering arrest of New Jersey deputy AG.",
       "published": "2026-10-16T20:20:07+00:00",
-      "audio_url": null,
-      "duration": ""
-    },
-    {
-      "id": "65442e708214c10b",
-      "title": "How Ita\u00fa is building generative AI for its entire customer base",
-      "link": "https://openai.com/index/itau-generative-ai",
-      "source": "OpenAI Blog",
-      "category": "AI",
-      "summary": "With ia.i, a conversational interface, and the IARA governance platform, Ita\u00fa is applying its AI First strategy to customers and employees \u2014 in one of Brazil\u2019s most regulated sectors.",
-      "published": "2026-10-16T19:00:00+00:00",
       "audio_url": null,
       "duration": ""
     },
@@ -3004,17 +3015,6 @@
       "category": "AI",
       "summary": "Disney may acquire tech from one of the first chatbot makers linked to child suicide.",
       "published": "2026-10-13T18:23:33+00:00",
-      "audio_url": null,
-      "duration": ""
-    },
-    {
-      "id": "7e60f5237eddc095",
-      "title": "Google wants to host your personal vibe-coded apps in the Play Store",
-      "link": "https://arstechnica.com/google/2026/10/google-wants-to-host-your-personal-vibe-coded-apps-in-the-play-store/",
-      "source": "Ars Technica AI",
-      "category": "AI",
-      "summary": "Google plans to help turn those personal AI-generated apps into wide releases.",
-      "published": "2026-10-13T17:00:39+00:00",
       "audio_url": null,
       "duration": ""
     },
