@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-04T17:59:57.438907+00:00",
+  "generated_at": "2026-11-04T22:00:06.657885+00:00",
   "sources_polled": [
     "The Verge \u2014 AI",
     "Simon Willison",
@@ -15,6 +15,61 @@
     "Quantum Intelligence"
   ],
   "articles": [
+    {
+      "id": "07065efd722751e2",
+      "title": "llm 0.37.1",
+      "link": "https://simonwillison.net/2026/Nov/3/llm/",
+      "source": "Simon Willison",
+      "category": "AI",
+      "summary": "Release: llm 0.37.1 A bugfix release for LLM , with contributions from Steven Huang , Tao An , Arjan Mossel , and XQ . Tags: llm",
+      "published": "2026-11-04T21:59:53.020301+00:00",
+      "audio_url": null,
+      "duration": ""
+    },
+    {
+      "id": "196e073af215c4a0",
+      "title": "datasette-agent 0.5a0",
+      "link": "https://simonwillison.net/2026/Nov/3/datasette-agent/",
+      "source": "Simon Willison",
+      "category": "AI",
+      "summary": "Release: datasette-agent 0.5a0 This is a significant release of Datasette Agent . The most notable new feature is called the panel - it lets the agent chat open and then sit next to pages from Datasette, for example a table or query page. When combined with datasette-apps this me",
+      "published": "2026-11-04T21:59:53.020272+00:00",
+      "audio_url": null,
+      "duration": ""
+    },
+    {
+      "id": "c3dba756698ba6ec",
+      "title": "datasette-apps 0.3a0",
+      "link": "https://simonwillison.net/2026/Nov/4/datasette-apps/",
+      "source": "Simon Willison",
+      "category": "AI",
+      "summary": "Release: datasette-apps 0.3a0 Datasette Apps adds support for hosting and editing custom HTML applications inside of Datasette. These can be created by hand, but it's easier to create them using LLMs via Datasette Agent . This release improves that integration: Apps can now be ta",
+      "published": "2026-11-04T21:59:53.020217+00:00",
+      "audio_url": null,
+      "duration": ""
+    },
+    {
+      "id": "f121b002be2ba369",
+      "title": "datasette-llm 0.1a10",
+      "link": "https://simonwillison.net/2026/Nov/4/datasette-llm/",
+      "source": "Simon Willison",
+      "category": "AI",
+      "summary": "Release: datasette-llm 0.1a10 Fixes a bug that affected my agent.datasette.io demo site, where the set of available LLM models was not correctly restricted to just those in the configuration. Tags: datasette , llm",
+      "published": "2026-11-04T21:59:53.020111+00:00",
+      "audio_url": null,
+      "duration": ""
+    },
+    {
+      "id": "e5cb2e6663b2cf73",
+      "title": "Big Tech claims voters\u2019 AI backlash is \u201canti-Trump\u201d not \u201canti-tech\u201d",
+      "link": "https://arstechnica.com/tech-policy/2026/11/big-tech-claims-voters-ai-backlash-is-anti-trump-not-anti-tech/",
+      "source": "Ars Technica AI",
+      "category": "AI",
+      "summary": "Tech industry in denial as US overwhelmingly votes to restrict AI, data centers.",
+      "published": "2026-11-04T20:55:50+00:00",
+      "audio_url": null,
+      "duration": ""
+    },
     {
       "id": "1eb19ba95d162c18",
       "title": "Sam Altman addresses RAM comments: People should &#8216;put as much as they want in their computers&#8217;",
@@ -2931,28 +2986,6 @@
       "duration": ""
     },
     {
-      "id": "781a955ce352281b",
-      "title": "llm-gemini 0.35",
-      "link": "https://simonwillison.net/2026/Oct/13/llm-gemini/",
-      "source": "Simon Willison",
-      "category": "AI",
-      "summary": "Release: llm-gemini 0.35 I added support to llm-gemini for the new Gemini 4 Argon model, made available today via the Gemini API and for customers of their $100/month subscription plan. Here are the low, medium and high pelicans . As expected, they are all excellent: Gemini has a",
-      "published": "2026-10-14T01:59:42.368590+00:00",
-      "audio_url": null,
-      "duration": ""
-    },
-    {
-      "id": "fd83ae3d1e3e02de",
-      "title": "Redesigning source control at Anthropic",
-      "link": "https://simonwillison.net/2026/Oct/13/redesigning-source-control-at-anthropic/",
-      "source": "Simon Willison",
-      "category": "AI",
-      "summary": "Redesigning source control at Anthropic Interesting piece from Anthropic describing why and how they built their own custom alternative to Git, based on the dramatic increase in rate of changes to their code after the past six months. In May 2026, Anthropic averaged around 2,500 ",
-      "published": "2026-10-14T01:59:42.368398+00:00",
-      "audio_url": null,
-      "duration": ""
-    },
-    {
       "id": "b7495b8fc4716e35",
       "title": "Tech Learning: IT Infrastructure & Cloud \u2014 Ep 12: Real Scenario: Running a Disaster Recovery Drill",
       "link": "https://muse.ai/podcasts/media/1248297608376725/4720f1e9-8c94-4958-8367-c455f31c5edc/ep-6d775560-907a-4484-ae72-59c5a3d941ef.mp3",
@@ -3008,28 +3041,6 @@
       "duration": "259"
     },
     {
-      "id": "131f413269cf581f",
-      "title": "Profiling web-edit with Python 3.15: flame graphs and source heatmaps",
-      "link": "https://simonwillison.net/2026/Oct/12/python-3-15-web-edit-profiling/",
-      "source": "Simon Willison",
-      "category": "AI",
-      "summary": "Research: Profiling web-edit with Python 3.15: flame graphs and source heatmaps I put the new Python 3.15 profiler through its paces by having GPT-6 Astra Extra High in Codex run it against my new web-edit app : I need a Python 3.15 flame graph and heatmap demo of the \"web-edit\" ",
-      "published": "2026-10-13T21:59:57.025163+00:00",
-      "audio_url": null,
-      "duration": ""
-    },
-    {
-      "id": "63b1605b51b19bf5",
-      "title": "Disney offers $20M for Character.AI\u2019s scandal-plagued chatbot tech",
-      "link": "https://arstechnica.com/tech-policy/2026/10/disney-offers-20m-for-character-ais-scandal-plagued-chatbot-tech/",
-      "source": "Ars Technica AI",
-      "category": "AI",
-      "summary": "Disney may acquire tech from one of the first chatbot makers linked to child suicide.",
-      "published": "2026-10-13T18:23:33+00:00",
-      "audio_url": null,
-      "duration": ""
-    },
-    {
       "id": "c1e94fc831365c13",
       "title": "Gemini 4 Argon: Built to solve your hardest problems",
       "link": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-argon/",
@@ -3048,17 +3059,6 @@
       "category": "AI",
       "summary": "Anthropic\u2019s paper establishes conceptual model capabilities, but doesn\u2019t quite demonstrate a real threat until models improve further.",
       "published": "2026-10-13T14:00:00+00:00",
-      "audio_url": null,
-      "duration": ""
-    },
-    {
-      "id": "87e22abf54d8b628",
-      "title": "Quoting Geoffrey Huntley",
-      "link": "https://simonwillison.net/2026/Oct/13/geoffrey-huntley/",
-      "source": "Simon Willison",
-      "category": "AI",
-      "summary": "If the agent isn't using my diagnostics library, I could introspect and update AGENTS.md, but there's still a delta, and it'll drift. Instead, I write a pre-commit hook that checks the git diff for direct calls to observability modules that bypass my diagnostics module. Boom: fai",
-      "published": "2026-10-13T13:59:50.433273+00:00",
       "audio_url": null,
       "duration": ""
     },
