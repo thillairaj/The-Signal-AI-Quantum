@@ -1,6 +1,33 @@
 {
  "articles": [
   {
+   "id": "2026-11-04-nist-pqc-deadline",
+   "title": "Why Does NIST Now Give RSA and Elliptic Curves a 2030 Expiry Date?",
+   "subtitle": "Final IR 8547 sets deprecation after 2030, disallowance after 2035",
+   "date": "2026-11-04",
+   "kind": "Brief",
+   "card": "research/cards/edition-09.webp",
+   "body": "research/articles/2026-11-04-nist-pqc-deadline.html",
+   "sources": [
+    {
+     "label": "NIST: NIST Report Provides Guidelines for Transition to Post-Quantum Cryptography Standards (Oct 27, 2026)",
+     "url": "https://www.nist.gov/news-events/news/2026/10/nist-report-provides-guidelines-transition-post-quantum-cryptography"
+    },
+    {
+     "label": "NIST IR 8547: Transition to Post-Quantum Cryptography Standards, final (Oct 2026)",
+     "url": "https://nvlpubs.nist.gov/nistpubs/ir/2026/NIST.IR.8547.pdf"
+    },
+    {
+     "label": "NIST CSRC: IR 8547 final publication page",
+     "url": "https://csrc.nist.gov/pubs/ir/8547/final"
+    },
+    {
+     "label": "SITG-Consulting: NIST IR 8547, Draft to Final (Oct 28, 2026)",
+     "url": "https://www.sitg-consulting.com/post/nist-ir-8547-what-changed-draft-to-final"
+    }
+   ]
+  },
+  {
    "id": "2026-11-02-ai-power-race",
    "title": "Why Is the Next AI Race Being Won by Power Companies, Not Chipmakers?",
    "subtitle": "Megawatts on a date now decide where AI capacity gets built",
@@ -261,5 +288,5 @@
    "title": "Where Does Value Accrue in the AI Stack?"
   }
  ],
- "generated_at": "2026-11-02T04:23:03+00:00"
+ "generated_at": "2026-11-04T04:16:45+00:00"
 }
