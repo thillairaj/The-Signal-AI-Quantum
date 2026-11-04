@@ -1,0 +1,620 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Cybersecurity Deck</title>
+<meta property="og:type" content="website">
+<meta property="og:title" content="The Cybersecurity Deck — learn cybersecurity, one card at a time">
+<meta property="og:description" content="15-card visual lessons on cybersecurity: foundations and the threat landscape, identity and zero trust, network security, SOC operations, incident response, cloud and application security, governance and frameworks, and AI in cybersecurity. Read a card, flip it, prove you know it.">
+<meta property="og:url" content="https://thillairaj.github.io/The-Signal-AI-Quantum/cybersecurity-deck/">
+<style>
+  :root{
+    --obsidian:#0d0f14; --obsidian2:#151923; --gold:#b08d3e; --gold-dim:rgba(176,141,62,.4);
+    --ivory:#faf7f0; --card:#ffffff; --ink:#171b24; --muted:#6b7280; --line:#e8e2d4;
+    --green:#1e7e46; --red:#b3261e;
+    --page:#faf9f6; --page-ink:#2b3542;
+    --header-bg:radial-gradient(1200px 400px at 50% -80px,#f1eee4 0%,#faf9f6 65%);
+    --header-ink:#171b24; --header-sub:#5b6470;
+    --bar:rgba(250,249,246,.97); --bar-border:#e0dccf;
+    --chip-bg:#ffffff; --chip-ink:#2b3542; --chip-small:#6b7280;
+    --nav-bg:#ffffff;
+    --title-ink:#171b24; --row-sub:#5b6470;
+    --foot-ink:#6b7280; --foot-border:#e0dccf;
+  }
+  :root[data-theme="dark"]{
+    --obsidian:#0d0f14; --obsidian2:#151923; --gold:#d4af6a; --gold-dim:rgba(212,175,106,.4);
+    --ivory:#faf7f0; --card:#ffffff; --ink:#171b24; --muted:#6b7280; --line:#e8e2d4;
+    --green:#1e7e46; --red:#b3261e;
+    --page:#2f353e; --page-ink:#e9e4d6;
+    --header-bg:radial-gradient(1200px 400px at 50% -80px,#454e5b 0%,#2b3038 65%);
+    --header-ink:#ffffff; --header-sub:#aeb8c8;
+    --bar:rgba(47,53,62,.97); --bar-border:#4a5260;
+    --chip-bg:#22272f; --chip-ink:#cfd6e2; --chip-small:#8a919c;
+    --nav-bg:rgba(70,78,90,.45);
+    --title-ink:#f2ede0; --row-sub:#a8adb5;
+    --foot-ink:#9aa0aa; --foot-border:#4a5260;
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --gold:#d4af6a; --gold-dim:rgba(212,175,106,.4);
+      --page:#2f353e; --page-ink:#e9e4d6;
+      --header-bg:radial-gradient(1200px 400px at 50% -80px,#454e5b 0%,#2b3038 65%);
+      --header-ink:#ffffff; --header-sub:#aeb8c8;
+      --bar:rgba(47,53,62,.97); --bar-border:#4a5260;
+      --chip-bg:#22272f; --chip-ink:#cfd6e2; --chip-small:#8a919c;
+      --nav-bg:rgba(70,78,90,.45);
+      --title-ink:#f2ede0; --row-sub:#a8adb5;
+      --foot-ink:#9aa0aa; --foot-border:#4a5260;
+    }
+  }
+  .theme-toggle{position:absolute;top:14px;right:14px;background:var(--chip-bg);
+    border:1px solid var(--bar-border);border-radius:50%;width:32px;height:32px;
+    font-size:.95rem;cursor:pointer;color:var(--chip-ink);z-index:60;line-height:1}
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--page);color:var(--page-ink);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;line-height:1.55}
+  header{position:relative;background:var(--header-bg);
+    color:var(--header-ink);padding:44px 20px 34px;text-align:center;border-bottom:3px solid var(--gold)}
+  header .kicker{color:var(--gold);letter-spacing:4px;font-size:12px;font-weight:700}
+  header h1{margin:12px 0 8px;font-size:34px;letter-spacing:.5px;font-weight:800}
+  header h1 .thin{font-weight:300;color:var(--gold)}
+  header p{margin:0 auto;color:var(--header-sub);font-size:15px;max-width:620px}
+  /* topic navigator: horizontal scroll strip + search */
+  .topicbar{position:sticky;top:0;z-index:20;background:var(--bar);backdrop-filter:blur(6px);
+    border-bottom:1px solid var(--bar-border);padding:12px 18px;display:flex;gap:10px;align-items:center}
+  .tsearch{flex:0 0 220px;display:flex;align-items:center;background:var(--chip-bg);border:1px solid var(--bar-border);
+    border-radius:9px;padding:7px 10px}
+  .tsearch input{flex:1;background:none;border:none;outline:none;color:var(--chip-ink);font-size:13.5px;min-width:0}
+  .tsearch input::placeholder{color:var(--chip-small)}
+  .tstrip-wrap{flex:1;min-width:0;overflow:hidden}
+  .tstrip{display:flex;gap:10px;overflow-x:auto;scrollbar-width:none;padding:2px;scroll-snap-type:x proximity}
+  .tstrip::-webkit-scrollbar{display:none}
+  .tlabel{flex:0 0 auto;color:var(--gold);font-size:11px;font-weight:800;letter-spacing:2.5px;white-space:nowrap}
+  .tchip{flex:0 0 auto;scroll-snap-align:start;border:1px solid var(--bar-border);background:var(--chip-bg);color:var(--chip-ink);
+    font-size:15px;font-weight:700;padding:11px 20px;border-radius:999px;cursor:pointer;white-space:nowrap}
+  .tchip small{color:var(--chip-small);font-weight:700;margin-right:8px;letter-spacing:1px;font-size:12px}
+  .tchip:hover{border-color:var(--gold-dim)}
+  .tchip.active{background:var(--gold);border-color:var(--gold);color:#171b24}
+  .tchip.active small{color:#5c4a1f}
+  .tchip.soon{opacity:.55;border-style:dashed;cursor:default}
+  .tchip.soon:hover{border-color:var(--bar-border)}
+  .tnav{flex:0 0 auto;width:34px;height:34px;border-radius:50%;border:1px solid var(--gold-dim);
+    background:var(--nav-bg);color:var(--gold);font-size:18px;cursor:pointer;line-height:1}
+  .tnav:hover{background:rgba(70,78,90,.72)}
+  main{max-width:1140px;margin:0 auto;padding:30px 18px 60px}
+  .topic-head{text-align:center;margin:6px 0 4px}
+  .topic-head .tnum{color:var(--gold);letter-spacing:4px;font-size:12px;font-weight:700}
+  .topic-head h2{margin:8px 0 0;font-size:30px;font-weight:800;color:var(--title-ink);font-family:Georgia,serif;letter-spacing:.3px}
+  .topic-head .tsub{margin:10px auto 0;max-width:640px;font-size:15px;color:var(--muted);line-height:1.55}
+  .topic-head .tdraft{display:inline-block;margin-top:8px;font-size:11px;letter-spacing:3px;font-weight:700;
+    color:var(--gold);border:1px dashed var(--gold-dim);border-radius:999px;padding:4px 14px}
+  .rowhead{display:flex;align-items:baseline;justify-content:space-between;margin:34px 0 6px}
+  .rowhead h2{margin:0;font-size:21px;letter-spacing:.3px;color:var(--title-ink)}
+  .rowhead h2 .n{color:var(--gold);font-size:13px;letter-spacing:2px;vertical-align:middle;margin-right:8px}
+  .rowhead p{margin:4px 0 0;color:var(--row-sub);font-size:13.5px}
+  .rail-wrap{position:relative}
+  .rail{display:flex;gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;
+    scrollbar-width:none;padding:14px 4px 18px;align-items:stretch}
+  .rail::-webkit-scrollbar{display:none}
+  .rail-btn{position:absolute;top:42%;transform:translateY(-50%);z-index:5;width:44px;height:44px;border-radius:50%;
+    border:1px solid var(--gold-dim);background:rgba(70,78,90,.45);color:var(--gold);font-size:22px;cursor:pointer;
+    box-shadow:0 2px 8px rgba(0,0,0,.18)}
+  .rail-btn:hover{background:rgba(70,78,90,.72)}
+  .rail-btn.prev{left:-8px}.rail-btn.next{right:-8px}
+  @keyframes wiggle{0%,100%{transform:rotate(0deg)}25%{transform:rotate(.7deg) translateY(-2px)}75%{transform:rotate(-.7deg)}}
+  @media(hover:hover) and (prefers-reduced-motion:no-preference){
+    .pcard:hover{animation:wiggle .45s ease-in-out}
+    .fcard:hover{animation:wiggle .45s ease-in-out}
+  }
+  .pcard{flex:0 0 320px;height:480px;scroll-snap-align:start;border-radius:16px;background:var(--card);
+    border:1px solid var(--line);box-shadow:0 6px 22px rgba(13,15,20,.08);
+    display:flex;flex-direction:column;padding:20px;position:relative;overflow:hidden}
+  .pcard::before{content:"";position:absolute;top:0;left:0;right:0;height:5px;
+    background:linear-gradient(90deg,var(--gold),#f0d9a0,var(--gold))}
+  .pnum{font-size:12px;font-weight:800;color:var(--gold);letter-spacing:2px}
+  .ptag{font-size:11px;font-weight:700;letter-spacing:2px;color:var(--muted);margin:2px 0 8px}
+  .pq{font-size:17.5px;font-weight:750;line-height:1.35;margin:0 0 10px;font-family:Georgia,serif;color:var(--ink)}
+  .pbody{flex:1;overflow-y:auto;font-size:13.5px;color:#2b3542;scrollbar-width:thin}
+  .pbody p{margin:0 0 9px}
+  .toolbar{border-top:1px dashed var(--line);padding-top:10px;margin-top:8px;display:flex;flex-wrap:wrap;gap:6px;align-items:center}
+  .toolbar select{font-size:11.5px;padding:6px 6px;border-radius:7px;border:1px solid var(--line);background:#f4f1e8;max-width:128px}
+  .toolbar button{font-size:11.5px;font-weight:700;padding:6px 10px;border-radius:7px;cursor:pointer;
+    border:1px solid var(--line);background:#f4f1e8;color:var(--ink)}
+  .toolbar button:hover{background:var(--gold);border-color:var(--gold);color:#fff}
+  .copied{font-size:11px;color:var(--green);font-weight:700;display:none}
+  /* click-to-zoom reading view */
+  .pcard[data-i]{cursor:pointer}
+  #zoom-ov{position:fixed;inset:0;background:rgba(10,12,16,.68);z-index:300;display:none;align-items:center;justify-content:center;padding:24px;box-sizing:border-box}
+  #zoom-ov.open{display:flex}
+  #zoom-card{position:relative;max-width:660px;width:100%;max-height:88vh;overflow-y:auto;background:var(--card);color:var(--ink);border:1px solid var(--line);border-radius:18px;padding:38px 42px 32px;box-shadow:0 24px 70px rgba(0,0,0,.35);box-sizing:border-box}
+  #zoom-card::before{content:"";position:absolute;top:0;left:0;right:0;height:6px;background:linear-gradient(90deg,var(--gold),#f0d9a0,var(--gold));border-radius:18px 18px 0 0}
+  #zoom-num{font-size:12px;font-weight:800;color:var(--gold);letter-spacing:2px;margin-bottom:8px}
+  #zoom-tag{font-size:12px;font-weight:700;letter-spacing:2.5px;color:var(--muted);margin-bottom:10px}
+  #zoom-q{font-size:26px;font-weight:750;line-height:1.35;margin:0 0 16px;font-family:Georgia,serif;color:var(--ink)}
+  #zoom-body{font-size:17px;line-height:1.7;color:var(--ink)}
+  #zoom-body p{margin:0 0 14px}
+  #zoom-close{position:absolute;top:14px;right:14px;width:36px;height:36px;border-radius:50%;border:1px solid var(--line);background:var(--card);color:var(--ink);font-size:18px;cursor:pointer;line-height:1;padding:0}
+  #zoom-close:hover{background:var(--gold);border-color:var(--gold);color:#fff}
+  @media(max-width:700px){#zoom-card{padding:30px 24px 24px}#zoom-q{font-size:22px}#zoom-body{font-size:16px}}
+  /* compact flashcards */
+  .fcard{flex:0 0 260px;height:215px;scroll-snap-align:start;perspective:1000px;cursor:pointer}
+  .finner{position:relative;width:100%;height:100%;transform-style:preserve-3d;transition:transform .55s}
+  .fcard.flipped .finner{transform:rotateY(180deg)}
+  .fface{position:absolute;inset:0;backface-visibility:hidden;-webkit-backface-visibility:hidden;border-radius:12px;
+    padding:16px 18px;display:flex;flex-direction:column;justify-content:flex-start;overflow:auto}
+  .ffront{background:linear-gradient(160deg,#3d444f 0%,#2c313a 72%);color:#fff;border:1px solid #545d6b}
+  .ffront .fnum{color:var(--gold);font-size:11px;font-weight:800;letter-spacing:2px;margin-bottom:6px}
+  .ffront .fq{font-size:13.5px;font-weight:700;line-height:1.45;font-family:Georgia,serif}
+  .ffront .fhint{margin-top:8px;font-size:9.5px;letter-spacing:2px;color:var(--gold);font-weight:700}
+  .fback{background:var(--card);transform:rotateY(180deg);border:1px solid var(--line);color:var(--ink);font-size:12px}
+  .fback .fnum{font-size:10.5px;font-weight:800;color:var(--gold);letter-spacing:2px;margin-bottom:5px}
+  /* quiz */
+  #quiz-box{max-width:700px;margin:6px auto 0;background:var(--card);border:1px solid var(--line);
+    border-radius:16px;padding:28px;box-shadow:0 6px 22px rgba(13,15,20,.08)}
+  #quiz-progress{font-size:11.5px;color:var(--muted);font-weight:700;letter-spacing:1.5px;margin-bottom:10px}
+  #quiz-q{font-size:18px;font-weight:700;margin:0 0 18px;font-family:Georgia,serif;
+    background:#2b3038;color:#fff;padding:18px 20px;border-radius:12px;border-left:5px solid var(--gold)}
+  .opt{display:block;width:100%;text-align:left;margin:0 0 10px;padding:13px 15px;font-size:14.5px;
+    border:1px solid var(--line);border-radius:10px;background:#fbfaf6;cursor:pointer;color:var(--ink)}
+  .opt:hover:not(:disabled){border-color:var(--gold)}
+  .opt:disabled{cursor:default}
+  .opt.correct{background:#e6f4ea;border-color:var(--green);font-weight:700}
+  .opt.wrong{background:#fbeae9;border-color:var(--red)}
+  #quiz-feedback{font-size:14px;font-weight:700;margin:6px 0 12px;min-height:22px}
+  #quiz-next{display:none;padding:10px 28px;font-size:14px;font-weight:700;border-radius:10px;border:none;
+    background:#2b3038;color:var(--gold);cursor:pointer}
+  #quiz-result{text-align:center}
+  #quiz-score{font-size:46px;font-weight:800;color:#2b3038}
+  #quiz-band{font-size:18px;font-weight:750;margin:8px 0 4px}
+  #quiz-sub{color:var(--muted);font-size:14px;margin-bottom:18px}
+  #quiz-restart{padding:10px 28px;font-size:14px;font-weight:700;border-radius:10px;border:none;
+    background:#2b3038;color:var(--gold);cursor:pointer}
+  .upgrid{display:flex;gap:14px;overflow-x:auto;scrollbar-width:none;padding:14px 4px 18px;
+    scroll-snap-type:x proximity;margin-top:10px}
+  .upgrid::-webkit-scrollbar{display:none}
+  .upcard{flex:0 0 230px;scroll-snap-align:start;border:1px dashed var(--gold-dim);border-radius:12px;padding:22px;background:#fff;text-align:center;color:var(--muted)}
+  .upcard b{display:block;color:#2b3038;font-size:16px;margin-bottom:6px}
+  .upcard span{font-size:11px;letter-spacing:2px;font-weight:700;color:var(--gold)}
+  .upcard.live{border-style:solid;cursor:pointer}
+  .upcard.live:hover{border-color:var(--gold)}
+  .upcard.live span{color:var(--green)}
+  footer{text-align:center;padding:28px 16px;color:var(--foot-ink);font-size:13px;border-top:1px solid var(--foot-border);margin-top:20px}
+  footer .rule{width:60px;height:2px;background:var(--gold);margin:0 auto 12px}
+  footer a{color:var(--gold);font-weight:700;text-decoration:none}
+  @media(max-width:700px){.pcard{flex-basis:80%}.fcard{flex-basis:62%}.rail-btn{display:none}
+    .topicbar{flex-wrap:wrap;row-gap:10px}
+    .tstrip-wrap{flex:1 1 auto}
+    .tnav{display:none}
+    .tsearch{flex:1 1 100%;order:5}}
+
+  /* Back link lives in the sticky topic bar (Thillai, Oct 21 2026) so it stays visible while scrolling. */
+  .topicbar .backlink{color:inherit;opacity:.78;text-decoration:none;font-size:13.5px;font-weight:600;white-space:nowrap;align-self:center}
+  .topicbar .backlink:hover{opacity:1;text-decoration:underline}
+
+  /* Frozen navigation cards (Thillai, Oct 21 2026): Back + sibling deck live inside the sticky topic bar. */
+  .topicbar .navcard{display:flex;flex-direction:column;gap:1px;justify-content:center;padding:6px 12px;border:1px solid var(--gold-dim);border-radius:12px;background:var(--card);color:var(--ink);text-decoration:none;min-width:0;transition:border-color .15s ease,transform .15s ease}
+  .topicbar .navcard:hover{border-color:var(--gold);transform:translateY(-1px)}
+  .topicbar .navcard.sib{margin-left:auto}
+  .nc-dir{font-size:9.5px;letter-spacing:1.8px;text-transform:uppercase;opacity:.62;font-weight:700;white-space:nowrap}
+  .nc-title{font-size:14px;font-weight:700;line-height:1.25;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:200px}
+  .topicbar .navcard.next{text-align:right}
+  /* LinkedIn follow button (Thillai, Oct 21 2026): coloured card-button, LinkedIn blue gradient. */
+  .li-btn{display:inline-flex;align-items:center;gap:10px;padding:8px 16px 8px 9px;border-radius:14px;background:linear-gradient(135deg,#0A66C2,#004182);color:#fff !important;text-decoration:none !important;box-shadow:0 4px 14px rgba(10,102,194,.35);vertical-align:middle;transition:transform .15s ease,box-shadow .15s ease}
+  .li-btn:hover{transform:translateY(-1px);box-shadow:0 8px 22px rgba(10,102,194,.45)}
+  .li-btn .li-badge{display:inline-flex;align-items:center;justify-content:center;width:30px;height:30px;border-radius:8px;background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.45);color:#fff;flex:0 0 auto}
+  .li-btn .li-badge svg{width:16px;height:16px;display:block}
+  .li-txt{display:flex;flex-direction:column;line-height:1.15;text-align:left}
+  .li-dir{font-size:9.5px;letter-spacing:1.8px;text-transform:uppercase;opacity:.85;font-weight:700}
+  .li-name{font-size:15.5px;font-weight:800;letter-spacing:.01em}
+</style>
+</head>
+<body>
+
+<header>
+  <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">☾</button>
+  <div class="kicker" id="deck-kicker">CYBERSECURITY, MADE VISUAL</div>
+  <h1>The <span class="thin">Cybersecurity</span> Deck</h1>
+</header>
+<div class="topicbar">
+  <a class="navcard back" href="../#learn-decks"><span class="nc-dir">← Back to</span><span class="nc-title">Learning Spaces</span></a>
+  <span class="tlabel">SELECT TOPIC</span>
+  <button class="tnav" id="tstrip-prev" aria-label="Scroll topics left">‹</button>
+  <div class="tstrip-wrap"><div class="tstrip" id="topic-strip"></div></div>
+  <button class="tnav" id="tstrip-next" aria-label="Scroll topics right">›</button>
+  <label class="tsearch"><input id="topic-search" type="search" placeholder="Search topics…" aria-label="Search topics"></label>
+  <a class="navcard sib prev" href="../cloud-deck/"><span class="nc-dir">← Previous</span><span class="nc-title">The Cloud &amp; DevOps Deck</span></a>
+</div>
+<main>
+  <div class="topic-head">
+    <div class="tnum" id="topic-num">DECK 01</div>
+    <h2 id="topic-title">The Cybersecurity Deck</h2>
+    <p class="tsub" id="topic-tagline"></p>
+    <div><span class="tdraft" id="topic-draft" style="display:none">DRAFT · UNDER REVIEW</span></div>
+  </div>
+  <div class="rowhead"><div><h2><span class="n">01</span>Learn</h2><p>Scroll the rail — arrows move one card at a time. Share any card as an image, post, or text.</p></div></div>
+  <div class="rail-wrap">
+    <button class="rail-btn prev" data-rail="learn-rail" aria-label="Previous">‹</button>
+    <div class="rail" id="learn-rail"></div>
+    <button class="rail-btn next" data-rail="learn-rail" aria-label="Next">›</button>
+  </div>
+
+  <div class="rowhead"><div><h2><span class="n">02</span>Flashcards</h2><p>Read the question, think, tap to flip. Honest self-check — no scoring, no sharing.</p></div></div>
+  <div class="rail-wrap">
+    <button class="rail-btn prev" data-rail="flash-rail" aria-label="Previous">‹</button>
+    <div class="rail" id="flash-rail"></div>
+    <button class="rail-btn next" data-rail="flash-rail" aria-label="Next">›</button>
+  </div>
+
+  <div class="rowhead"><div><h2><span class="n">03</span>Quiz</h2><p>Ten questions, one at a time. Options shuffle every attempt.</p></div></div>
+  <div id="quiz-box"></div>
+
+  <div class="rowhead"><div><h2><span class="n">+</span>What's next</h2><p>One new topic goes live every Wednesday — scroll sideways.</p></div></div>
+  <div class="rail-wrap">
+    <button class="rail-btn prev" data-rail="upgrid" aria-label="Previous">‹</button>
+    <div class="upgrid" id="upgrid"></div>
+    <button class="rail-btn next" data-rail="upgrid" aria-label="Next">›</button>
+  </div>
+</main>
+
+<footer><div class="rule"></div>Curated by Thillai Raj Thanam Jeya Veera Raj · <a class="li-btn" href="https://www.linkedin.com/in/thillairaj" target="_blank" rel="noopener"><span class="li-badge" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.55V9h3.57v11.45z"/></svg></span><span class="li-txt"><span class="li-dir">Follow on</span><span class="li-name">LinkedIn</span></span></a></footer>
+<script>
+const FOOTER="Curated by Thillai Raj Thanam Jeya Veera Raj";
+const BRAND="The Cybersecurity Deck";
+const PUBLIC_URL="https://thillairaj.github.io/The-Signal-AI-Quantum/cybersecurity-deck/";
+const THEMES={
+obsidian:{bg0:"#151923",bg1:"#0d0f14",accent:"#d4af6a",dim:"rgba(212,175,106,.5)",head:"#ffffff",body:"#c3ccd9",foot:"#8fa0b5"},
+ivory:{bg0:"#fffdf9",bg1:"#f0ebdf",accent:"#a8842f",dim:"rgba(168,132,47,.45)",head:"#171b24",body:"#334052",foot:"#6b7280"},
+midnight:{bg0:"#122c55",bg1:"#0b1f3b",accent:"#d4af6a",dim:"rgba(212,175,106,.5)",head:"#ffffff",body:"#c3ccd9",foot:"#8fa0b5"}};
+/* ---------- topics: one data block per deck; shared render below ---------- */
+/* ---------- Theme (same pattern as The Signal) ---------- */
+const THEME_KEY="deck_theme";
+const themeToggleBtn=document.getElementById("themeToggle");
+function applyTheme(theme){
+  if(theme==="dark"||theme==="light"){document.documentElement.setAttribute("data-theme",theme);}
+  else{document.documentElement.removeAttribute("data-theme");}
+  themeToggleBtn.textContent=(theme==="dark")?"\u2600":"\u263e";
+  if(!theme&&window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches){
+    themeToggleBtn.textContent="\u2600";
+  }
+}
+(function initTheme(){
+  let saved=null;try{saved=localStorage.getItem(THEME_KEY);}catch(e){}
+  applyTheme(saved);
+})();
+themeToggleBtn.addEventListener("click",()=>{
+  const cur=document.documentElement.getAttribute("data-theme")||
+    (window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light");
+  const next=cur==="dark"?"light":"dark";
+  try{localStorage.setItem(THEME_KEY,next);}catch(e){}
+  applyTheme(next);
+});
+
+const TOPICS=[
+{id:"cybersecurity-foundations",num:"01",short:"Foundations",title:"Security Foundations & the Threat Landscape",status:"live",
+ tagline:"The ground every defender stands on: assets, attackers, and the habits that keep both safe.",
+ xTags:"#CyberSecurity #ThreatLandscape",liTags:"#CyberSecurity #CyberDeck #LearnInPublic",learn:[{n:"1",tag:"THE CIA TRIAD",q:"Confidentiality, integrity, availability: what do these three words actually protect?",body:["Every security decision traces back to three promises. Confidentiality means only authorised people can read the data. Integrity means the data has not been tampered with. Availability means authorised people can reach it when they need it. Together they are called the CIA triad, and they are the yardstick for every control that follows.","The triad also explains why security is always a trade off. Lock data down too hard and availability suffers; make everything reachable and confidentiality suffers. Good security is not maximum lockdown, it is the right balance of the three for each asset. When you read about any breach, ask which leg of the triad broke."]},{n:"2",tag:"THREAT, VULNERABILITY, RISK",q:"Threat, vulnerability, risk: three words people constantly mix up",body:["A threat is anything that could cause harm: a ransomware gang, a flood, a careless employee. A vulnerability is a weakness a threat could exploit: an unpatched server, a weak password, an unlocked door. Neither alone causes an incident; risk appears when a threat meets a vulnerability, and risk is judged by how likely that meeting is and how bad the damage would be.","Keeping the three apart matters because each calls for a different response. You cannot eliminate every threat, but you can shrink vulnerabilities with patching and training, and you can reduce risk by adding controls where likelihood and impact are highest. Security budgets follow risk, not fear."]},{n:"3",tag:"THREAT ACTORS",q:"Who actually attacks, and what do they want?",body:["Attackers are not one group. Cybercriminals want money, through ransomware, fraud, or stolen data sold on. Nation state actors want intelligence or disruption and are patient and well funded. Hacktivists want attention for a cause. Insiders, current or former staff, already hold access and may act from grievance or greed.","Motivation shapes method. A criminal wants the fastest payout, so they spray phishing widely and exploit known flaws. A nation state actor studies one target for months. Defenders who know who is likely to come for them, and why, can spend on the controls that matter instead of defending against every Hollywood scenario at once."]},{n:"4",tag:"MALWARE",q:"Viruses, worms, trojans, ransomware: what is the difference?",body:["Malware is hostile software, and the family names describe how it spreads and what it does. A virus attaches to files and needs a human to run it. A worm spreads on its own across networks. A trojan pretends to be legitimate software to get invited in. Ransomware encrypts your files and demands payment. Spyware watches quietly and steals.","The names matter less than the pattern: almost all malware needs an entry point, usually a clicked link, an opened attachment, or an unpatched flaw. That is why patching, email filtering, and user awareness sit at the top of every defence list. Modern malware also often arrives in stages, so one blocked stage can stop the whole attack."]},{n:"5",tag:"PHISHING",q:"Why is phishing still the most successful attack of all?",body:["Phishing is a message crafted to trick a person into handing over credentials, clicking a malicious link, or opening a weaponised attachment. It works because it targets judgement, not technology: urgency, authority, and familiarity short circuit careful thinking. A message that looks like it comes from your boss or your bank bypasses every firewall by walking through the front door.","Defences are layered: email filters catch much of it, multifactor authentication limits what stolen passwords alone can do, and reporting suspicious messages trains both people and filters. The single most useful habit is pausing before acting on any message that demands urgency, especially one asking for credentials or payment."]},{n:"6",tag:"SOCIAL ENGINEERING",q:"Beyond phishing: how attackers manipulate people",body:["Social engineering is any attack that manipulates a person rather than a machine. Pretexting invents a believable story, such as a support engineer needing a password to fix an urgent fault. Baiting leaves an infected USB stick or a tempting download where someone will pick it up. Tailgating means following an authorised person through a secure door.","The defence is process, not suspicion of everyone. Verify unusual requests through a second channel, never share credentials even with someone claiming authority, and treat unsolicited help with the same caution as an unsolicited demand. Attackers research their targets on public profiles, so what you post publicly becomes their script."]},{n:"7",tag:"PASSWORDS",q:"Why do passwords alone no longer protect anything important?",body:["Passwords fail in predictable ways. People reuse them, so one breached site hands attackers the key to many accounts. Short or guessable passwords fall to automated guessing. And large breaches leak billions of credentials that attackers test automatically against every service they can reach, a technique called credential stuffing.","The fixes are practical: long unique passwords for every account, stored in a password manager so you only memorise one strong master password, and a second factor on every important account. Passwords are not dead, but a password standing alone is no longer a defence, it is a hope."]},{n:"8",tag:"ATTACK SURFACE",q:"What is an attack surface, and why does it keep growing?",body:["An attack surface is everything an attacker can reach: every internet facing service, every open port, every employee account, every supplier connection, every forgotten test server. Each addition to your estate, each new cloud service, each remote worker, adds surface. Attackers do not need your front door; they probe for the side window nobody remembers.","Shrinking the surface is unglamorous work with outsized payoff: close unused ports, retire forgotten systems, inventory every asset, and question every new connection. You cannot defend what you do not know exists, which is why asset inventory is treated as a foundational control rather than paperwork."]},{n:"9",tag:"DEFENCE IN DEPTH",q:"Defence in depth: why one strong wall is never enough",body:["Defence in depth means stacking independent layers so that no single failure hands an attacker victory. A firewall blocks the obvious, endpoint protection catches what slips through, network segmentation limits how far an intruder can move, encryption protects stolen data from being readable, and backups restore what ransomware encrypts.","The point is graceful failure. Every layer will eventually be bypassed by someone determined enough; layered design buys time, creates noise that detection can hear, and turns a total compromise into a contained incident. If your security plan has a single point of failure, it is not a plan, it is a bet."]},{n:"10",tag:"SECURITY CONTROLS",q:"Preventive, detective, corrective: the three jobs of a control",body:["Controls are grouped by what they do. Preventive controls stop incidents: firewalls, access rules, training. Detective controls spot incidents in progress: monitoring, alerts, audits. Corrective controls limit damage and restore normality: incident response, backups, patching the exploited flaw. A mature programme has all three, because prevention always leaks.","The classification also guides spending. A company with strong prevention but no detection discovers breaches months late, from a customer or a journalist. A company with detection but no tested recovery can watch an incident unfold without being able to end it. Balance across the three is the mark of a programme that has been tested by reality."]},{n:"11",tag:"ENCRYPTION",q:"Encryption in plain terms: symmetric versus asymmetric",body:["Encryption scrambles data so only someone holding the right key can read it. Symmetric encryption uses one shared key to lock and unlock, which is fast and suits bulk data, but the key itself must be shared safely. Asymmetric encryption uses a key pair: a public key anyone may use to encrypt, and a private key only the owner holds to decrypt.","Together they power everyday security. When your browser shows a padlock, asymmetric encryption has safely exchanged a symmetric session key, and the symmetric key then encrypts the traffic at speed. Encryption does not stop attackers stealing files, but it can make stolen files useless, which is why it sits inside nearly every modern control."]},{n:"12",tag:"PATCHING",q:"Why is patching the least glamorous and most effective control?",body:["Most successful attacks exploit flaws for which a fix already exists. Attackers automate scanning for unpatched systems within hours of a fix being published, and the window between disclosure and exploitation keeps shrinking. Patching closes known doors before attackers walk through them.","The difficulty is operational, not technical: knowing every asset, testing patches so they do not break services, and prioritising the flaws attackers actually exploit over the thousands that exist. Vulnerability management is therefore a discipline of triage: patch the internet facing and actively exploited first, schedule the rest, and never let a critical fix drift for months."]},{n:"13",tag:"BACKUP & RECOVERY",q:"Backups: the control that turns ransomware from disaster into inconvenience",body:["A backup is a copy of data stored separately from the original, and recovery is the tested ability to restore from it. Ransomware only has leverage when the victim has no clean copy: pay, or lose the data. Organisations with recent, isolated backups can refuse payment and rebuild, which is why attackers now deliberately target backup systems first.","Three rules make backups trustworthy: keep at least one copy offline or immutable so ransomware cannot encrypt it too, test restores regularly because an untested backup is a rumour, and define recovery objectives in advance, how much data you can afford to lose and how long you can afford to be down. Backups are not an IT chore; they are the last line of defence."]},{n:"14",tag:"DETECTION",q:"Firewalls, endpoint protection, SIEM: the defender's toolkit in one tour",body:["A firewall filters network traffic by rules, allowing the legitimate and blocking the rest. Endpoint protection watches individual computers and servers for malicious behaviour, not just known malware signatures. A SIEM collects logs from across the estate into one place, correlates them, and raises alerts when patterns look like an attack.","No single tool sees everything, which is why defenders combine them and staff the result: analysts in a security operations centre triage alerts, hunt for quiet intrusions, and escalate real incidents. Tools collect evidence; people make judgements. Topic 04 follows this team into its daily work."]},{n:"15",tag:"THE DEFENDER'S MINDSET",q:"How should a beginner start thinking like a defender?",body:["Start with assets and adversaries, not products. What do you hold that someone else wants: customer data, money, intellectual property, reputation? Who would want it, and what path would they take? Every control you meet later in this deck answers one of those questions, which is why this topic comes first.","Then build habits that cost nothing: unique passwords with a second factor, scepticism toward urgent messages, updates installed promptly, and backups that actually exist. Security is mostly unglamorous consistency, practised daily, not heroic incident response once a year. The defenders you admire are the ones whose boring habits prevented the exciting incident."]}],
+flash:[{q:"A colleague forwards an email from 'IT support' asking everyone to confirm passwords through a link, urgently. What do you do?",a:"Do not click. Verify through a second channel, such as calling IT on a known number, and report the message. Urgency plus a credential request is the classic phishing shape; the sender address and logo are easy to fake."},{q:"Ransomware has encrypted your company's file server. The backup drive was connected to the same server. What went wrong?",a:"The backup was not isolated. Connected backups get encrypted in the same attack. Keep at least one copy offline or immutable, and test restores, so ransomware becomes a recovery exercise instead of a ransom decision."},{q:"An unpatched web server, a ransomware gang scanning the internet, and a week of downtime: which is the threat, the vulnerability, and the risk?",a:"The gang is the threat, the unpatched server is the vulnerability, and the week of downtime is the risk realised, the impact if threat meets vulnerability. Patch the vulnerability to shrink the risk; you cannot eliminate the threat."},{q:"'We have antivirus, so we are safe.' What is wrong with that claim?",a:"Antivirus is one preventive layer against known malware. It does not stop phishing, stolen credentials, unpatched flaws, or an attacker already inside. Safety comes from layers: prevention, detection, and tested recovery together."},{q:"A critical patch was released on Monday. Your team plans to apply it 'next quarter'. What is the exposure?",a:"Attackers scan for the flaw within hours of disclosure. Every day unpatched is a day the exploit is public and your system is a known target. Internet facing and actively exploited flaws are patched first, not queued."},{q:"You are working from a cafe on a public wireless network and need to access a sensitive internal system. What protects you?",a:"A VPN encrypts your traffic across the untrusted network, and multifactor authentication limits what a stolen password alone can do. Without encryption, anyone on the same network can observe or intercept traffic."},{q:"Define the CIA triad in one sentence each.",a:"Confidentiality: only authorised people can read the data. Integrity: the data has not been altered without authorisation. Availability: authorised people can reach the data when they need it. Every control defends at least one leg."},{q:"You find a USB stick labelled 'Salary review 2026' in the office car park. Tempting to check it. Why must you not?",a:"It is bait, a classic social engineering trick. Plugging it in can install malware or open a path into the network. Hand it to IT unopened. Curiosity is exactly the reaction the attacker is counting on."},{q:"When should you use symmetric encryption, and when asymmetric?",a:"Symmetric is fast and suits bulk data, but both sides need the same key shared safely. Asymmetric solves key sharing with a public and private key pair, but is slower. In practice they combine: asymmetric exchange hands over a symmetric session key."},{q:"'I use one strong password everywhere, so I am safe.' What breaks this logic?",a:"Reuse. One breach anywhere exposes every account sharing that password, and attackers test leaked credentials automatically across services. Strength does not survive reuse; uniqueness per account plus a second factor is the fix."},{q:"An email that looks exactly like your CEO's asks finance to urgently wire funds to a new supplier account. What is this, and what stops it?",a:"Business email compromise, a targeted form of phishing. It is stopped by process: verify payment changes through a second channel, never by replying to the same email, and require dual approval for new payees."},{q:"A company never tested its backups. Ransomware strikes. Why might recovery still fail?",a:"Because an untested backup is a rumour. Backups can be incomplete, corrupted, encrypted alongside the originals, or too old to matter. Test restores regularly and keep one copy isolated from the network."},{q:"What is social engineering, in one sentence?",a:"Manipulating a person into giving access or information, instead of attacking a machine: pretexting, baiting, tailgating, and phishing are all forms of it. The defence is verification process, not just awareness."},{q:"A pop up warns your computer is infected and offers a 'security tool' download. What is the right response?",a:"Close it without clicking, and get help from IT or your real security software. The pop up is itself the attack, a scareware lure. Never install software from an unsolicited warning; legitimate tools never announce themselves this way."},{q:"'We are a small company; attackers only target big names.' Why is that dangerously wrong?",a:"Automated attacks spray the whole internet and hit whoever is vulnerable, and small suppliers are attacked as a route into larger customers. Small companies are often softer targets precisely because they believe they are not targets."}],
+quiz:[{q:"A ransomware gang is scanning the internet for unpatched servers. Your server is missing the patch. Which term describes the gang, and which describes the missing patch?",opts:["The gang is the vulnerability; the patch is the threat","The gang is the threat; the unpatched server is the vulnerability","Both are risks; the terms are interchangeable","The gang is the risk; the patch is the control"],c:1},{q:"Which statement best describes the CIA triad?",opts:["Confidentiality, integrity, and availability: the three promises every security control ultimately defends","Three US agencies that set security law","A checklist for buying antivirus software","The three stages of a ransomware attack"],c:0},{q:"Why is phishing so effective even against organisations with strong firewalls?",opts:["Firewalls cannot filter email at all","Email encryption defeats firewalls","Phishing targets human judgement, so a clicked link or shared credential bypasses network defences entirely","Attackers always have insider help"],c:2},{q:"Which backup practice most reliably defeats ransomware?",opts:["Backing up more often to the same connected drive","Keeping backups on the same server for fast restores","Storing passwords with the backup media","Keeping at least one copy offline or immutable, and testing restores regularly"],c:3},{q:"You reuse one strong password across ten sites. One site is breached. What is the immediate danger?",opts:["Nothing, because the password is strong","Attackers test the leaked credentials automatically against other services, a technique called credential stuffing","The breached site can read your other accounts directly","Your password manager is now compromised"],c:1},{q:"A company has strong firewalls but no monitoring, and discovers a breach six months late from a customer complaint. What is missing?",opts:["More firewalls","A bigger IT budget","Detective controls: monitoring and alerting that spot incidents while they are happening","Stronger passwords for the firewall admins"],c:2},{q:"What is the key difference between symmetric and asymmetric encryption?",opts:["Symmetric uses one shared key for locking and unlocking; asymmetric uses a public key to encrypt and a private key to decrypt","Symmetric encryption is only used by governments","Asymmetric encryption needs no keys at all","Symmetric encryption cannot protect data in transit"],c:0},{q:"An employee finds a USB stick in the car park labelled 'Bonus list' and plugs it in. This is an example of:",opts:["A worm spreading on its own","Patch management","A denial of service attack","Baiting, a form of social engineering that exploits curiosity"],c:3},{q:"Defence in depth means:",opts:["Buying the most expensive firewall available","Stacking independent layers so no single failure hands an attacker victory, and each layer buys time and creates detection noise","Defending only the network perimeter","Hiring more security staff than attackers"],c:1},{q:"Why do attackers love unpatched systems even when the flaw was disclosed months ago?",opts:["Patches are illegal to install without vendor approval","Unpatched systems have no passwords","Exploits for known flaws are widely automated, so unpatched systems are easy, known targets","Patching removes encryption"],c:2}]},
+{id:"identity-zero-trust",num:"02",short:"Identity & Zero Trust",title:"Identity & Zero Trust",status:"live",
+ tagline:"Identity is the new perimeter: prove who you are, limit what you can do, trust nothing by default.",
+ xTags:"#ZeroTrust #IdentitySecurity",liTags:"#ZeroTrust #IdentitySecurity #CyberDeck #LearnInPublic",learn:[{n:"1",tag:"IDENTITY IS THE PERIMETER",q:"Why did identity replace the network wall as the perimeter?",body:["For decades the office network was the castle wall: inside was trusted, outside was not. Remote work, cloud services, and personal devices dissolved that wall. People now reach company data from homes, airports, and phones, so the network boundary no longer marks who is trusted.","Identity took its place. Every access decision now starts with who is asking, on what device, from where, and whether that combination is trustworthy. Protecting identity is therefore not an admin chore; it is the perimeter itself, and every other control in this deck leans on it."]},{n:"2",tag:"AUTHENTICATION VS AUTHORISATION",q:"Authentication versus authorisation: what is the difference?",body:["Authentication proves who you are: a password, a fingerprint, a hardware key. Authorisation decides what you may do once proven: which files you can open, which systems you can change. The first answers 'who are you', the second answers 'what are you allowed to do here'.","Confusing the two causes real breaches. A system that authenticates everyone correctly but authorises loosely lets any valid user reach everything. Both checks must pass, every time, for every resource, which is exactly the discipline zero trust demands."]},{n:"3",tag:"PASSWORDS DONE RIGHT",q:"Long, unique, managed: the only password advice that survives contact with reality",body:["Length beats complexity rules. A long passphrase is both harder to crack and easier to remember than a short string of forced symbols, and password managers remove the memory burden entirely: one strong master password guards a vault of long unique passwords for every account.","The second habit is checking exposure. If a service tells you a password appeared in a breach, change it everywhere it was reused, starting with email and banking, because email resets unlock other accounts. A password manager plus breach alerts turns password hygiene from willpower into routine."]},{n:"4",tag:"MULTIFACTOR AUTHENTICATION",q:"Multifactor authentication: why a second factor changes everything",body:["Multifactor authentication requires two or more independent kinds of proof: something you know, like a password; something you have, like a phone app code or hardware key; something you are, like a fingerprint. An attacker who steals your password still lacks the second factor, and most opportunistic attacks stop there.","Not all second factors are equal. App generated codes and hardware keys resist phishing far better than text message codes, which can be intercepted or redirected by SIM swap fraud. The rule is simple: enable the strongest second factor every important account offers, and treat any account without one as exposed."]},{n:"5",tag:"SINGLE SIGN ON",q:"Single sign on: one login for everything, convenience and concentration of risk",body:["Single sign on lets one verified identity open many applications, so people sign in once and move between email, documents, and internal tools without juggling passwords. Fewer passwords means fewer reused and forgotten ones, and IT can enforce strong authentication in one place instead of fifty.","The trade is concentration: compromise the single identity and the attacker inherits every connected application. That is why single sign on must pair with strong multifactor authentication and fast revocation. Convenience centralised without protection centralised is not progress, it is a master key left in a glass box."]},{n:"6",tag:"PRIVILEGED ACCESS",q:"Admin accounts: why the most powerful accounts need the tightest rules",body:["Privileged accounts can change systems, read all data, and disable protections, which makes them the attacker's favourite prize. The discipline is separation: administrators use an ordinary account for email and browsing, and a separate privileged account only for admin tasks, so a phishing click on the daily account cannot inherit admin power.","Stronger still is just in time privilege: admin rights granted for a short window, for a specific task, with approval and logging, then removed automatically. Standing admin access is an invitation; temporary, approved, recorded access is a control. Every privilege that nobody uses is a risk nobody needs."]},{n:"7",tag:"LEAST PRIVILEGE",q:"Least privilege: give each person only what the job needs",body:["Least privilege means every user, application, and service holds only the permissions its job requires, nothing more, nothing borrowed from a previous role. A marketing analyst does not need production database access; a backup service does not need permission to delete the backups it creates.","The payoff appears during incidents. An attacker who compromises one account inherits only that account's reach, not the whole estate. Least privilege is maintained by regular access reviews, prompt removal when people change roles, and refusing the easy answer of granting everything 'just in case'."]},{n:"8",tag:"ZERO TRUST PRINCIPLES",q:"Zero trust: never trust, always verify, in plain terms",body:["Zero trust starts from a blunt observation: the network location of a request proves nothing. A request from inside the office can be an attacker on a compromised laptop; a request from abroad can be a legitimate employee travelling. So zero trust removes implicit trust entirely and verifies every request on its own merits.","Three principles carry the model: verify explicitly, using identity, device health, and context; use least privilege access, granting the minimum for the shortest time; and assume breach, designing as though an attacker is already inside, so one compromised account cannot roam freely. It is a strategy, not a product, and no vendor box delivers it alone."]},{n:"9",tag:"ZERO TRUST ARCHITECTURE",q:"How is zero trust actually built: policy engine, enforcement, segmentation",body:["In practice, zero trust has moving parts. A policy engine evaluates each request against rules: who, what device, where, how healthy, how sensitive the resource. Policy enforcement points sit in front of applications and networks and carry out the decision, allowing, challenging with extra authentication, or blocking.","Microsegmentation completes the picture by dividing the network into small zones, so a compromised laptop in one zone cannot freely reach servers in another. Together these parts turn 'never trust, always verify' from a slogan into a request by request reality, and each part can be adopted gradually rather than in one giant rebuild."]},{n:"10",tag:"CONDITIONAL ACCESS",q:"Conditional access: the same login, different answers, depending on context",body:["Conditional access is policy that adapts to context. A sign in from a managed laptop at the office may pass silently; the same account from an unknown device in another country may be asked for an extra factor, or blocked from sensitive data until verified. Risk, not routine, sets the friction.","This is where security stops punishing everyone equally. Low risk requests stay smooth, high risk requests meet challenge, and impossible travel, such as sign ins from two distant countries minutes apart, triggers investigation. Done well, conditional access feels invisible to legitimate users and hostile to attackers, which is the ideal combination."]},{n:"11",tag:"IDENTITY LIFECYCLE",q:"Joiner, mover, leaver: why identity management is a lifecycle, not a form",body:["Every identity has a lifecycle. Joiners need accounts created promptly with correct role based access. Movers, people changing teams, need old permissions removed as new ones are granted, or privilege quietly accumulates. Leavers need access revoked the same day they leave, across every system, including cloud services and shared credentials they knew.","Most access failures are lifecycle failures: the ex contractor whose account lingered, the manager who kept old team access for years. Automating provisioning from the HR record, so employment changes drive access changes, turns this from a manual chore into a reliable control."]},{n:"12",tag:"IDENTITY PROVIDERS",q:"Directories and identity providers: the single source of truth",body:["An identity provider is the central service that verifies users and issues proof of identity to applications, such as a directory service in an office or a cloud identity platform. Applications stop keeping their own password lists and instead trust the provider's verdict, which means one strong authentication policy applies everywhere.","Centralisation also makes revocation fast: disable one identity at the provider and every connected application stops trusting it. The provider itself then becomes critical infrastructure, protected by its own strong authentication, monitoring, and backup, because whoever controls the identity store controls the keys to everything it serves."]},{n:"13",tag:"TOKENS AND SESSIONS",q:"After you sign in: tokens, sessions, and why 'remember me' is a risk decision",body:["Once authenticated, applications usually hand your device a token, a signed proof that you already proved who you are, so you are not asked for a password on every click. Tokens expire, and refresh tokens can extend a session, which is why 'remember me' keeps you signed in across visits.","Tokens are valuable loot. Malware or a stolen laptop can reuse a live session token without ever knowing your password, which is why sessions should expire, sensitive actions should re prompt for authentication, and revocation must kill tokens immediately when a device is lost or an account is suspected compromised. Convenience that outlives its need becomes exposure."]},{n:"14",tag:"INSIDER RISK",q:"Insider risk: the threat that already has a login",body:["Insiders hold legitimate access, so they bypass perimeter defences entirely. Risk ranges from the malicious, such as a departing employee copying customer data, to the careless, such as sharing credentials with a colleague 'to get the job done', to the compromised, an employee whose account an attacker now operates.","Controls here are cultural as much as technical: least privilege limits what any insider can reach, logging makes actions attributable to individuals, shared accounts are banned so blame cannot hide, and offboarding is immediate. Treating insider risk as purely a technology problem misses the point; it is an access and accountability problem."]},{n:"15",tag:"ZERO TRUST IN PRACTICE",q:"A day in a zero trust workplace: what changes for ordinary people?",body:["Picture the working day. You sign in once with a password plus an app approval. Your laptop's health is checked silently. Opening ordinary documents is instant; opening the finance system from a new device prompts an extra check; a request at 3 a.m. from an unusual country is blocked and your security team is alerted. Nothing about your normal work feels harder.","That is the goal of this topic: security that verifies constantly yet stays out of the way of legitimate work. Identity done well is invisible to honest users and expensive for attackers, and it is the foundation every later topic, from network security to incident response, assumes is in place."]}],
+flash:[{q:"An employee reused their work password on a breached shopping site. Attackers now try it against the company VPN. What is this attack called, and what stops it?",a:"Credential stuffing: automated testing of leaked credentials against other services. It is stopped by unique passwords per account and multifactor authentication on the VPN, so a stolen password alone opens nothing."},{q:"An attacker spams an employee with dozens of login approval prompts at midnight, hoping for one tired tap. What is this, and how do you defend it?",a:"MFA fatigue, also called push bombing. Defend with number matching approvals, where the user must enter a code shown on screen, rate limiting, and reporting unexpected prompts instead of approving them to make them stop."},{q:"A user signs in successfully but cannot open the payroll system. Is that an authentication failure or an authorisation failure?",a:"Authorisation. Authentication proved who they are; authorisation decides what they may do. The account is valid, but it lacks permission for that resource. Check role assignments, not the password."},{q:"'Single sign on means one password protects everything, so it is less secure.' What is the flaw in this argument?",a:"It ignores the other half: single sign on centralises strong authentication and fast revocation in one place, and pairs with multifactor authentication. One well protected identity is stronger than fifty weak, reused passwords scattered across apps."},{q:"A contractor finished six months ago. Their account still works. What failed?",a:"The leaver process in the identity lifecycle. Access must be revoked the day someone leaves, across all systems, including cloud apps and shared credentials they knew. Audit dormant accounts regularly; every lingering account is an unguarded door."},{q:"Define zero trust in one sentence.",a:"Never trust a request based on where it comes from; verify every request explicitly on identity, device, and context, grant only least privilege access, and design as though an attacker is already inside."},{q:"An administrator browses the web and reads email while signed in as domain admin. A phishing click compromises the session. Why is the damage so severe?",a:"Because privilege was standing and combined with daily work. Admin tasks need a separate privileged account used only for admin work, ideally just in time and logged, so a click on the daily account cannot inherit the keys to the kingdom."},{q:"A service account created for backups was given full admin rights 'to be safe'. Attackers compromise it. What principle was violated, and what is the consequence?",a:"Least privilege. The account held far more than its job required, so its compromise handed attackers the whole estate instead of one function. Every account, human or service, holds only what its job needs."},{q:"An employee signs in from London, then ten minutes later from another continent. The system blocks the second sign in and alerts security. What control acted?",a:"Conditional access with impossible travel detection. Context, location, device, and timing, changed the risk verdict, so the same credentials met a different answer. Legitimate travel should be verified through IT, not by disabling the control."},{q:"'We bought a zero trust product, so we are zero trust now.' Why is that wrong?",a:"Zero trust is a strategy, not a product. Tools help, but the model requires identity discipline, least privilege, segmentation, and monitoring working together. A single purchase without those changes is a label, not an architecture."},{q:"Why is a session token valuable to an attacker even if they never learn your password?",a:"Because the token is proof you already authenticated. Replaying it lets the attacker act as you without the password. That is why sessions expire, sensitive actions re prompt for authentication, and revocation must kill tokens when a device is lost."},{q:"A team shares one login for a supplier portal 'because it is easier'. An incident follows and nobody can say who did what. What was lost?",a:"Attribution. Shared accounts destroy accountability: logs show the account, never the person. Give every person their own account, even when it feels slower, or incidents become unsolvable."},{q:"What does least privilege mean, in one sentence?",a:"Every user, application, and service holds only the permissions its job requires, for only as long as it needs them, so one compromise cannot inherit the whole estate."},{q:"An employee's laptop is stolen while signed in to several cloud apps. What must happen immediately, and why?",a:"Revoke the sessions and tokens at the identity provider, and disable the device. Tokens outlive passwords, so changing the password alone leaves live sessions working. Revocation at the provider kills access everywhere at once."},{q:"'Text message codes are just as secure as app codes for the second factor.' Is that true?",a:"No. Text codes can be intercepted or redirected through SIM swap fraud, where an attacker convinces the carrier to move the number. App generated codes and hardware keys are not tied to the phone number and resist that attack."}],
+quiz:[{q:"What is the core difference between authentication and authorisation?",opts:["Authentication is for employees, authorisation for customers","Authentication encrypts data; authorisation backs it up","Authentication proves who you are; authorisation decides what you may do once proven","They are two names for the same check"],c:2},{q:"An attacker has your password but no second factor. With multifactor authentication enabled, what normally happens?",opts:["They can still sign in after three attempts","The sign in is blocked, because the second factor is missing","They are asked to reset the password instead","Multifactor authentication only applies to administrators"],c:1},{q:"Which second factor best resists phishing and SIM swap fraud?",opts:["A hardware security key or authenticator app code","A text message code","A memorable security question","An emailed link"],c:0},{q:"Why is single sign on considered stronger than dozens of separate passwords, despite concentrating risk?",opts:["It removes the need for passwords entirely","Attackers cannot find single sign on systems","It is required by law everywhere","It lets IT enforce strong multifactor authentication and instant revocation in one place, instead of weak reused passwords scattered across apps"],c:3},{q:"A user signs in from the office on a managed laptop with no challenge, then from an unknown device abroad and is asked for extra verification. What control is this?",opts:["A firewall rule","Password expiry","Conditional access, adapting the challenge to the risk of the context","Network segmentation"],c:2},{q:"An administrator uses their admin account for email and browsing, then clicks a phishing link. What practice would have limited the damage?",opts:["Longer passwords for the admin account","Separate accounts: an ordinary account for daily work, a privileged account only for admin tasks, ideally just in time","Disabling email for administrators","Changing the admin password weekly"],c:1},{q:"Under zero trust, a request arriving from inside the office network is treated how?",opts:["Trusted automatically, because it is inside","Trusted if it arrives during working hours","Blocked until a manager approves it","Verified on its own merits like any other request, because location proves nothing"],c:3},{q:"A leaver's account still works three months after they left. The root failure is in:",opts:["The identity lifecycle: leaver offboarding did not revoke access promptly across systems","The firewall, which should block former staff","Password complexity rules","The antivirus software"],c:0},{q:"A team shares one login for a tool, and an incident follows. Why does the investigation stall?",opts:["Logs are deleted automatically","Shared accounts destroy attribution: logs show the account, never the person who acted","The tool has no logging at all","Investigators need a court order for shared accounts"],c:1},{q:"Microsegmentation in a zero trust design primarily achieves what?",opts:["Faster network speeds","Cheaper cloud bills","Dividing the network into small zones so a compromise in one zone cannot freely reach the others","Automatic patching of all servers"],c:2}]},
+{id:"network-security",num:"03",short:"Network",title:"Network Security",status:"soon"},
+{id:"soc-operations-blue-team",num:"04",short:"SOC & Blue Team",title:"SOC Operations & Blue Team",status:"soon"},
+{id:"incident-response-recovery",num:"05",short:"Incident Response",title:"Incident Response & Recovery",status:"soon"},
+{id:"cloud-application-security",num:"06",short:"Cloud & App Security",title:"Cloud & Application Security",status:"soon"},
+{id:"governance-risk-frameworks",num:"07",short:"Governance & Risk",title:"Governance, Risk & Frameworks",status:"soon"},
+{id:"ai-cybersecurity",num:"08",short:"AI Security",title:"AI in Cybersecurity",status:"soon"}
+];
+let activeTopic=TOPICS[0];
+</script>
+<script>
+/* ---------- robust copy + download ---------- */
+function showCopied(i,msg){const s=document.getElementById("copied-"+i);
+  if(s){s.textContent=msg||"Copied ✓";s.style.display="inline";
+    setTimeout(()=>{s.style.display="none";s.textContent="Copied ✓";},2400);}}
+function copyText(t,i,msg){
+  const done=()=>showCopied(i,msg);
+  const legacy=()=>{const ta=document.createElement("textarea");
+    ta.value=t;ta.setAttribute("readonly","");ta.style.position="fixed";ta.style.opacity="0";
+    document.body.appendChild(ta);ta.select();
+    try{if(document.execCommand("copy")){done();}else{window.prompt("Copy this text:",t);}}
+    catch(e){window.prompt("Copy this text:",t);}
+    document.body.removeChild(ta);};
+  if(navigator.clipboard&&window.isSecureContext){navigator.clipboard.writeText(t).then(done).catch(()=>legacy());}
+  else{legacy();}
+}
+function triggerDownload(url,filename){
+  const a=document.createElement("a");a.download=filename;a.href=url;
+  document.body.appendChild(a);a.click();
+  setTimeout(()=>document.body.removeChild(a),400);
+}
+/* ---------- topic navigator ---------- */
+function renderStrip(filter){
+  const s=document.getElementById("topic-strip");s.innerHTML="";
+  const f=(filter||"").toLowerCase();
+  TOPICS.filter(t=>(t.title+" "+t.short+" "+t.num).toLowerCase().includes(f)).forEach(t=>{
+    const b=document.createElement("button");
+    b.className="tchip"+(t.id===activeTopic.id?" active":"")+(t.status!=="live"?" soon":"");
+    b.dataset.id=t.id;
+    b.innerHTML="<small>"+t.num+"</small>"+t.short+(t.status!=="live"?" · soon":"");
+    if(t.status==="live"){b.addEventListener("click",()=>selectTopic(t.id));}
+    else{b.disabled=true;b.title="Coming soon";}
+    s.appendChild(b);
+  });
+}
+function renderUpcoming(){
+  const g=document.getElementById("upgrid");g.innerHTML="";
+  TOPICS.filter(t=>t.status!=="live").forEach(t=>{
+    const d=document.createElement("div");
+    if(t.status==="live"){
+      d.className="upcard live";d.title="Open this deck";
+      d.innerHTML="<b>"+t.title+"</b><span>LIVE</span>";
+      d.addEventListener("click",()=>{selectTopic(t.id);window.scrollTo({top:0,behavior:"smooth"});});
+    }else{
+      d.className="upcard";
+      d.innerHTML="<b>"+t.title+"</b><span>COMING SOON</span>";
+    }
+    g.appendChild(d);
+  });
+}
+function selectTopic(id,skipHash){
+  const t=TOPICS.find(x=>x.id===id&&x.status==="live");if(!t)return;
+  activeTopic=t;
+  document.getElementById("topic-num").textContent="DECK "+t.num;
+  document.getElementById("topic-title").textContent=t.title;
+  document.getElementById("topic-tagline").textContent=t.tagline||"";
+  document.getElementById("topic-draft").style.display=t.draft?"inline-block":"none";
+  document.title="The Cybersecurity Deck — "+t.title;
+  document.querySelectorAll(".tchip").forEach(ch=>ch.classList.toggle("active",ch.dataset.id===id));
+  renderLearn();renderFlash();startQuiz();
+  document.getElementById("learn-rail").scrollLeft=0;
+  document.getElementById("flash-rail").scrollLeft=0;
+  if(!skipHash){try{history.replaceState(null,"","#"+t.id);}catch(e){}}
+}
+/* ---------- learn rail ---------- */
+function cardText(i){const c=activeTopic.learn[i];
+  return c.q+"\n\n"+c.body.join("\n\n");}
+/* social-media rewrites: text only, no URLs, no credentials needed (intent links) */
+function xText(i){const c=activeTopic.learn[i];
+  const first=c.body[0].split(/(?<=[.!?])\s+/)[0];
+  const tags="\n\n"+activeTopic.xTags;
+  let t=c.q+"\n\n"+first;
+  const max=280-tags.length;
+  if(t.length>max){t=t.slice(0,max-1).trimEnd()+"\u2026";}
+  return t+tags;}
+function liText(i){const c=activeTopic.learn[i];
+  return "\u201c"+c.q+"\u201d\n\n"+c.body.join("\n\n")+"\n\n"+activeTopic.liTags;}
+let learnBound=false;
+function renderLearn(){
+  const rail=document.getElementById("learn-rail");rail.innerHTML="";
+  const L=activeTopic.learn||[];
+  if(!L.length){
+    rail.innerHTML='<article class="pcard" style="justify-content:center;text-align:center"><div class="ptag">COMING SOON</div><h3 class="pq">Learn cards for this topic are in production.</h3><div class="pbody"><p>New topics go live every Wednesday.</p></div></article>';
+  }
+  L.forEach((c,i)=>{
+    const d=document.createElement("article");d.className="pcard";d.id="card-"+activeTopic.id+"-"+c.n;d.dataset.i=i;d.title="Click to read larger";
+    d.innerHTML='<div class="pnum">'+c.n+' / '+L.length+'</div><div class="ptag">'+c.tag+'</div>'
+      +'<h3 class="pq">'+c.q+'</h3>'
+      +'<div class="pbody">'+c.body.map(p=>"<p>"+p+"</p>").join("")+'</div>'
+      +'<div class="toolbar"><select id="size-'+i+'" aria-label="Image size">'
+      +'<option value="1080x1350">1080×1350</option><option value="1080x1080">1080×1080</option>'
+      +'</select><select id="theme-'+i+'" aria-label="Colour theme">'
+      +'<option value="obsidian">Obsidian Gold</option><option value="ivory">Ivory</option><option value="midnight">Deep Tech Blue</option>'
+      +'</select><button data-act="dl" data-i="'+i+'">PNG</button>'
+      +'<button data-act="x" data-i="'+i+'">X</button><button data-act="li" data-i="'+i+'">in</button>'
+      +'<button data-act="copy" data-i="'+i+'">Copy</button>'
+      +'<span class="copied" id="copied-'+i+'">Copied ✓</span></div>';
+    rail.appendChild(d);
+  });
+  if(!learnBound){learnBound=true;
+    rail.addEventListener("click",e=>{
+      const b=e.target.closest("button[data-act]");if(!b)return;
+      const i=+b.dataset.i,act=b.dataset.act;
+      if(act==="copy"){copyText(cardText(i),i);}
+      else if(act==="x"){window.open("https://twitter.com/intent/tweet?text="+encodeURIComponent(xText(i)),"_blank","width=560,height=460");}
+      else if(act==="li"){const t=liText(i);
+        copyText(t,i,"Copied \u2014 paste into the LinkedIn composer");
+        window.open("https://www.linkedin.com/sharing/share-offsite/?url="+encodeURIComponent(PUBLIC_URL),"_blank");}
+      else if(act==="dl"){downloadCard(i,document.getElementById("size-"+i).value,document.getElementById("theme-"+i).value);}
+    });
+    rail.addEventListener("click",e=>{
+      if(e.target.closest("button[data-act]"))return;
+      if(e.target.closest(".toolbar"))return;
+      if(window.getSelection&&window.getSelection().toString())return;
+      const card=e.target.closest(".pcard");if(!card)return;
+      if(card.dataset.i===undefined||card.dataset.i==="")return;
+      openZoom(+card.dataset.i);
+    });
+  }
+}
+/* ---------- card zoom: click a card to read it larger ---------- */
+let zoomReturnTo=null;
+function openZoom(i){
+  const c=activeTopic.learn[i];if(!c)return;
+  zoomReturnTo=document.querySelector('.pcard[data-i="'+i+'"]');
+  document.getElementById("zoom-num").textContent=c.n+" / "+activeTopic.learn.length;
+  document.getElementById("zoom-tag").textContent=c.tag;
+  document.getElementById("zoom-q").textContent=c.q;
+  document.getElementById("zoom-body").innerHTML=c.body.map(p=>"<p>"+p+"</p>").join("");
+  document.getElementById("zoom-ov").classList.add("open");
+  document.body.style.overflow="hidden";
+  document.getElementById("zoom-close").focus();
+}
+function closeZoom(){
+  document.getElementById("zoom-ov").classList.remove("open");
+  document.body.style.overflow="";
+  if(zoomReturnTo){zoomReturnTo.setAttribute("tabindex","-1");zoomReturnTo.focus({preventScroll:true});}
+}
+document.addEventListener("click",e=>{
+  if(e.target.id==="zoom-close"||e.target.id==="zoom-ov")closeZoom();
+});
+document.addEventListener("keydown",e=>{
+  if(e.key==="Escape"){const ov=document.getElementById("zoom-ov");if(ov&&ov.classList.contains("open"))closeZoom();}
+});
+/* ---------- card -> PNG (premium obsidian/gold) ---------- */
+function wrap(x,t,mw){const w=t.split(" "),L=[];let l="";w.forEach(s=>{const t2=l?l+" "+s:s;
+  if(x.measureText(t2).width>mw&&l){L.push(l);l=s;}else l=t2;});if(l)L.push(l);return L;}
+function downloadCard(i,size,theme){
+  const [W,H]=size.split("x").map(Number),c=activeTopic.learn[i],k=W/1080;
+  const T=THEMES[theme]||THEMES.obsidian;
+  const cv=document.createElement("canvas");cv.width=W;cv.height=H;const x=cv.getContext("2d");
+  const grd=x.createLinearGradient(0,0,0,H);grd.addColorStop(0,T.bg0);grd.addColorStop(1,T.bg1);
+  x.fillStyle=grd;x.fillRect(0,0,W,H);
+  x.fillStyle=T.accent;x.fillRect(0,0,W,8*k);
+  const pad=84*k,mw=W-2*pad,cx=W/2;
+  const topSafe=48*k,footTop=H-150*k;
+  x.textAlign="left";
+  x.fillStyle=T.head;x.font="700 "+Math.round(72*k)+"px Georgia,serif";
+  const headLines=wrap(x,c.tag,mw);
+  const headH=headLines.length*Math.round(86*k);
+  let bf=44;
+  const fit=()=>{x.font=Math.round(bf*k)+"px system-ui,sans-serif";const L=[];
+    c.body.forEach(p=>{wrap(x,p,mw).forEach(l=>L.push(l));L.push("");});return L;};
+  const measure=()=>{const L=fit();return{L,h:L.length*Math.round((bf+14)*k)};};
+  let m=measure();
+  const gapH=Math.round(34*k),divGap=Math.round(56*k);
+  while((headH+gapH+divGap+m.h)>(footTop-topSafe)&&bf>24){bf-=2;m=measure();}
+  const lines=m.L,lh=Math.round((bf+14)*k);
+  let y=topSafe+Math.round(66*k);
+  x.fillStyle=T.head;x.font="700 "+Math.round(72*k)+"px Georgia,serif";
+  headLines.forEach(l=>{x.fillText(l,pad,y);y+=Math.round(86*k);});
+  y+=gapH;
+  x.strokeStyle=T.dim;x.lineWidth=2*k;
+  x.beginPath();x.moveTo(pad,y);x.lineTo(pad+130*k,y);x.stroke();
+  const divY=y;
+  y=divY+divGap+Math.max(0,(footTop-(divY+divGap)-m.h)/2);
+  x.fillStyle=T.body;x.font=Math.round(bf*k)+"px system-ui,sans-serif";
+  lines.forEach(l=>{if(l&&y<footTop){x.fillText(l,pad,y);}y+=lh;});
+  x.textAlign="center";
+  x.strokeStyle=T.dim;x.lineWidth=2*k;
+  x.beginPath();x.moveTo(pad,H-116*k);x.lineTo(W-pad,H-116*k);x.stroke();
+  x.fillStyle=T.foot;x.font="600 "+Math.round(28*k)+"px system-ui,sans-serif";
+  x.fillText("THE CYBERSECURITY DECK",cx,H-68*k);
+  x.fillStyle=T.accent;x.fillText(activeTopic.title,cx,H-30*k);
+  x.textAlign="left";
+  const bx=W-pad-Math.round(38*k),by=H-Math.round(62*k),br=Math.round(34*k);
+  x.strokeStyle=T.accent;x.lineWidth=Math.round(3*k);
+  x.beginPath();x.arc(bx,by,br,0,Math.PI*2);x.stroke();
+  x.fillStyle=T.accent;x.font="700 "+Math.round(26*k)+"px Georgia,'Times New Roman',serif";
+  x.textAlign="center";x.textBaseline="middle";
+  try{x.letterSpacing="3px";}catch(e){}
+  x.fillText("TRT",bx,by+Math.round(2*k));
+  try{x.letterSpacing="0px";}catch(e){}
+  x.textAlign="left";x.textBaseline="alphabetic";
+  const filename="cybersecurity-deck-"+activeTopic.id+"-"+c.n+".png";
+  cv.toBlob(function(blob){
+    if(!blob){return;}
+    const file=new File([blob],filename,{type:"image/png"});
+    const mobile=/Android|iPhone|iPad|iPod/i.test(navigator.userAgent||"");
+    if(mobile&&navigator.canShare&&navigator.canShare({files:[file]})){
+      navigator.share({files:[file],title:filename}).catch(function(e){
+        if(e&&e.name!=="AbortError"){fallbackDownload(blob,filename);}
+      });
+    }else{fallbackDownload(blob,filename);}
+  },"image/png");
+}
+function fallbackDownload(blob,filename){
+  const url=URL.createObjectURL(blob);
+  triggerDownload(url,filename);
+  setTimeout(function(){URL.revokeObjectURL(url);},8000);
+}
+/* ---------- compact flashcard rail ---------- */
+function renderFlash(){
+  const rail=document.getElementById("flash-rail");rail.innerHTML="";
+  const F=activeTopic.flash;
+  if(!F||!F.length){
+    rail.innerHTML='<div class="fcard" style="cursor:default"><div class="finner"><div class="fface ffront" style="justify-content:center;align-items:center;text-align:center"><div class="fq">Flashcards unlock after the Learn cards pass review.</div></div></div></div>';
+    return;
+  }
+  F.forEach((f,i)=>{
+    const d=document.createElement("div");d.className="fcard";
+    d.innerHTML='<div class="finner"><div class="fface ffront"><div class="fnum">'+(i+1)+' / '+F.length+'</div>'
+      +'<div class="fq">'+f.q+'</div><div class="fhint">TAP TO FLIP</div></div>'
+      +'<div class="fface fback"><div class="fnum">'+(i+1)+' / '+F.length+' · ANSWER</div><div>'+f.a+'</div></div></div>';
+    d.addEventListener("click",()=>d.classList.toggle("flipped"));
+    rail.appendChild(d);
+  });
+}
+/* ---------- rail arrows: one card at a time ---------- */
+document.querySelectorAll(".rail-btn").forEach(b=>b.addEventListener("click",()=>{
+  const rail=document.getElementById(b.dataset.rail);
+  const card=rail.querySelector(".pcard,.fcard,.upcard");
+  const step=card?card.getBoundingClientRect().width+16:320;
+  rail.scrollBy({left:(b.classList.contains("next")?1:-1)*step,behavior:"smooth"});
+}));
+/* ---------- quiz ---------- */
+let qi=0,qscore=0,qorder=[];
+const shuffle=a=>{for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]];}return a;};
+function startQuiz(){
+  const box=document.getElementById("quiz-box");
+  if(!activeTopic.quiz||!activeTopic.quiz.length){
+    box.innerHTML='<div id="quiz-result"><div id="quiz-progress">DECK '+activeTopic.num+' · QUIZ</div><div id="quiz-band">Coming soon</div><div id="quiz-sub">The quiz unlocks after the Learn cards pass review.</div></div>';
+    return;
+  }
+  qi=0;qscore=0;qorder=activeTopic.quiz.map((_,i)=>i);renderQ();}
+function renderQ(){
+  const box=document.getElementById("quiz-box"),QZ=activeTopic.quiz;
+  if(qi>=QZ.length){
+    const band=qscore>=9?["Excellent","You have the fundamentals down cold."]:qscore>=7?["Solid","A strong foundation — skim the cards you missed."]:qscore>=5?["Keep going","Revisit the Learn cards, then retake."]:["Re-read the deck","Go through the 15 Learn cards once more, then try again."];
+    box.innerHTML='<div id="quiz-result"><div id="quiz-progress">DECK '+activeTopic.num+' · COMPLETE</div><div id="quiz-score">'
+      +qscore+' / '+QZ.length+'</div><div id="quiz-band">'+band[0]+'</div><div id="quiz-sub">'+band[1]
+      +'</div><button id="quiz-restart">Retake quiz</button></div>';
+    document.getElementById("quiz-restart").addEventListener("click",startQuiz);return;
+  }
+  const Q=QZ[qorder[qi]],order=shuffle(Q.opts.map((t,idx)=>({t,ok:idx===Q.c})));
+  box.innerHTML='<div id="quiz-progress">QUESTION '+(qi+1)+' OF '+QZ.length+' · SCORE '+qscore+'</div>'
+    +'<div id="quiz-q">'+Q.q+'</div>'
+    +order.map(o=>'<button class="opt" data-ok="'+(o.ok?1:0)+'">'+o.t+'</button>').join("")
+    +'<div id="quiz-feedback"></div><button id="quiz-next">Next →</button>';
+  const opts=[...box.querySelectorAll(".opt")],fb=box.querySelector("#quiz-feedback"),nx=box.querySelector("#quiz-next");
+  opts.forEach(b=>b.addEventListener("click",()=>{
+    const good=b.dataset.ok==="1";
+    opts.forEach(o=>{o.disabled=true;if(o.dataset.ok==="1")o.classList.add("correct");});
+    if(good){qscore++;fb.textContent="Correct ✓";fb.style.color="var(--green)";}
+    else{b.classList.add("wrong");fb.textContent="Not quite — the highlighted answer is correct.";fb.style.color="var(--red)";}
+    nx.style.display="inline-block";
+  }));
+  nx.addEventListener("click",()=>{qi++;renderQ();});
+}
+/* ---------- init ---------- */
+renderStrip();renderUpcoming();
+document.getElementById("topic-search").addEventListener("input",e=>renderStrip(e.target.value));
+document.getElementById("tstrip-prev").addEventListener("click",()=>document.getElementById("topic-strip").scrollBy({left:-240,behavior:"smooth"}));
+document.getElementById("tstrip-next").addEventListener("click",()=>document.getElementById("topic-strip").scrollBy({left:240,behavior:"smooth"}));
+(function(){
+  const live=TOPICS.filter(t=>t.status==="live");
+  const h=(location.hash||"").replace("#","");
+  const m=h.match(/^card-([a-z-]+)-(\d+)$/);
+  if(m&&TOPICS.some(t=>t.id===m[1]&&t.status==="live")){
+    selectTopic(m[1],true);
+    requestAnimationFrame(()=>{const el=document.getElementById(h);if(el)el.scrollIntoView({behavior:"smooth",block:"center"});});
+  }else if(h&&TOPICS.some(t=>t.id===h&&t.status==="live")){
+    selectTopic(h,true);
+  }else if(live.length){
+    selectTopic(live[0].id,true);
+  }else{
+    activeTopic=TOPICS[0];
+    document.getElementById("topic-num").textContent="IN CO-CREATION";
+    document.getElementById("topic-title").textContent="The Cybersecurity Deck";
+    document.getElementById("topic-tagline").textContent=activeTopic.tagline||"";
+    document.getElementById("topic-draft").style.display="none";
+    renderLearn();renderFlash();startQuiz();
+    document.getElementById("learn-rail").scrollLeft=0;
+    document.getElementById("flash-rail").scrollLeft=0;
+  }
+})();
+</script>
+<div id="zoom-ov" role="dialog" aria-modal="true" aria-label="Card reading view">
+  <div id="zoom-card">
+    <button id="zoom-close" aria-label="Close">×</button>
+    <div id="zoom-num"></div>
+    <div id="zoom-tag"></div>
+    <h3 id="zoom-q"></h3>
+    <div id="zoom-body"></div>
+  </div>
+</div>
+</body>
+</html>

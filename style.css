@@ -483,18 +483,21 @@ body[data-view="research"] .feed-only { display: none; }
 }
 .learn-card:hover { transform: translateY(-3px); box-shadow: 0 14px 30px rgba(0,0,0,0.25); }
 /* Video cards: a whisper lighter than the page background. */
-.learn-card.video-bot, .learn-card.video-quantum, .learn-card.video-cloud, .learn-card.video-assistants { background-color: #FEFDFB; border: 1px solid #E6DFCC; }
-.learn-card.video-bot:hover, .learn-card.video-quantum:hover, .learn-card.video-cloud:hover, .learn-card.video-assistants:hover { background-color: #F5EFE0; border-color: #CFBE93; }
+.learn-card.video-bot, .learn-card.video-quantum, .learn-card.video-cloud, .learn-card.video-assistants, .learn-card.video-cyber { background-color: #FEFDFB; border: 1px solid #E6DFCC; }
+.learn-card.video-bot:hover, .learn-card.video-quantum:hover, .learn-card.video-cloud:hover, .learn-card.video-assistants:hover, .learn-card.video-cyber:hover { background-color: #F5EFE0; border-color: #CFBE93; }
 .learn-card.video-quantum { background-color: #ECE7F7; border-color: #C9BCE8; }
 .learn-card.video-ai { background-color: #E8F1FB; border-color: #B9D2EC; }
 .learn-card.video-cloud { background-color: #E6F4F1; border-color: #B7DDD5; }
+.learn-card.video-cyber { background-color: #FBEAEA; border-color: #E3AEAE; }
 /* Deck cards: a touch darker than the page background. */
 .learn-card.deck-quantum { background-color: #ECE9F7; border: 1px solid #BDB0DE; }
 .learn-card.deck-ai { background-color: #E7F0FA; border: 1px solid #A9C6E8; }
 .learn-card.deck-cloud { background-color: #E6F2F0; border: 1px solid #A8CCC6; }
+.learn-card.deck-cyber { background-color: #FBEAEA; border: 1px solid #E3AEAE; }
 .learn-card.deck-quantum:hover { background-color: #DCD3F0; border-color: #8B76C4; }
 .learn-card.deck-ai:hover { background-color: #D6E6F7; border-color: #5B8DBF; }
 .learn-card.deck-cloud:hover { background-color: #D7ECE8; border-color: #4C9A94; }
+.learn-card.deck-cyber:hover { background-color: #F5D5D5; border-color: #C47474; }
 .learn-card.explainer-all { background-color: #F3EDDE; border: 1px solid #D8C9A3; }
 .learn-card.guide-card { background-color: #F3EDDE; border: 1px solid #D8C9A3; cursor: default; }
 .door-guide { display: flex; flex-direction: column; gap: 0.35rem; background-color: #F3EDDE; border: 1px solid #D8C9A3; border-radius: 14px; padding: 16px 18px; margin: 2px 0 14px; }
