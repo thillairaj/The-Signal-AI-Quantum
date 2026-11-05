@@ -1,10 +1,11 @@
-# Signal Brief: system notes (preview build, Nov 5, 2026)
+# Signal Brief: system notes (LIVE since Nov 5, 2026)
 
-Status: PREVIEW ONLY. Nothing here runs on the live site until Thillai
-approves the preview. On approval: copy data/brief.json,
-scripts/build_brief.py, signal.xml, signal/, brief/ and the homepage room
-to the live repo, create the daily job below, add the Saturday section
-below, and ping IndexNow for the brief page and feeds.
+Status: LIVE on The Signal, approved by Thillai on Nov 5, 2026 after five
+fixes to the preview editions (factual midterm item, Russia wording,
+2 per company cap, IonQ primary source, predictive language gate). The
+daily job is signal-brief-daily (07:00 IST); the Saturday quality check
+carries the Signal Brief sampling as its check 7; IndexNow pings for the
+brief page and signal.xml run inside the daily job.
 
 ## Editorial rules (from the task, Nov 5, 2026)
 - Six categories: AI, Quantum, Cloud & DevOps, Cybersecurity, Industry
@@ -53,8 +54,8 @@ below, and ping IndexNow for the brief page and feeds.
 - signal.xml and signal/*.xml: generated feeds. Do not hand edit.
 - brief/index.html: generated page. Do not hand edit.
 
-## Daily job (to create at live publish, NOT created for the preview)
-Signal Brief daily, 07:00 IST, in the main chat's ownership:
+## Daily job (signal-brief-daily, created Nov 5, 2026)
+Signal Brief daily, 07:00 IST:
 1. Research the previous 24 hours from the validated wire feeds
    (feeds.json), official government and company pages, and Reuters or AP
    for geopolitical items with technology impact.
@@ -71,7 +72,7 @@ Signal Brief daily, 07:00 IST, in the main chat's ownership:
 Breaking items: on a major event, add a breaking edition, rebuild, push,
 ping, and report the same way, without waiting for 07:00.
 
-## Saturday quality check (section to add at live publish)
+## Saturday quality check (check 7, added Nov 5, 2026)
 Signal Brief: sample 10 items from the week's editions. For each, open
 every source link and confirm the item's claims and numbers match the
 source, the wording is the Brief's own (no copied source text), and
