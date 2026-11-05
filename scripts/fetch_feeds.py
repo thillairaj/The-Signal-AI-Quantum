@@ -11,13 +11,14 @@ Nov 3, 2026).
 
 Weekly source health check (Thillai, Nov 5, 2026): every run records how
 many posts each non podcast source's feed returned from the last 7 days.
-The threshold is at least 2 posts a week for AI, Cybersecurity and Cloud &
-DevOps, and at least 1 a week for Quantum. When a new ISO week starts, the
-finished week is judged on its final recorded count; a source below its
-threshold for 2 judged weeks in a row is removed automatically: it is taken
-out of feeds.json, its stored items are dropped, and the removal is
-recorded in data/wire-health.json for the Saturday quality report. Podcast
-sources are exempt from the health check.
+Thresholds are set by source type (Thillai, Nov 5, 2026): official company
+and lab sources need at least 1 post a week; news sites need at least 2 a
+week, except Quantum news sites, which need at least 1 a week. When a new
+ISO week starts, the finished week is judged on its final recorded count;
+a source below its threshold for 2 judged weeks in a row is removed
+automatically: it is taken out of feeds.json, its stored items are
+dropped, and the removal is recorded in data/wire-health.json for the
+Saturday quality report. Podcast sources are exempt from the health check.
 
 Podcast feeds additionally carry an audio_url and duration, extracted from
 the RSS <enclosure> tag, so the site can show an inline player. If a podcast
@@ -47,8 +48,27 @@ SITE_URL = "https://thillairaj.github.io/The-Signal-AI-Quantum/"
 MAX_PER_SOURCE = 10
 RSS_ITEM_LIMIT = 60
 
-# Weekly health thresholds: minimum posts in the trailing 7 days.
-HEALTH_THRESHOLDS = {"Quantum": 1}
+# Weekly health thresholds: minimum posts in the trailing 7 days, by
+# source type (Thillai, Nov 5, 2026). Official company and lab sources:
+# 1 a week. News sites: 2 a week, except Quantum news sites: 1 a week.
+# Any non podcast source not listed here defaults to 2 a week.
+HEALTH_THRESHOLDS = {
+    "OpenAI Blog": 1,
+    "Google AI Blog": 1,
+    "Google DeepMind": 1,
+    "Microsoft Research": 1,
+    "Hugging Face Blog": 1,
+    "NVIDIA Technical Blog": 1,
+    "AWS Machine Learning Blog": 1,
+    "AWS News Blog": 1,
+    "Microsoft Security Blog": 1,
+    "Google Cloud Blog": 1,
+    "Azure Updates": 1,
+    "The Quantum Insider": 1,
+    "Quantum Computing Report": 1,
+    "Phys.org Quantum Physics": 1,
+    "ScienceDaily Quantum Computers": 1,
+}
 HEALTH_DEFAULT_THRESHOLD = 2
 
 AGENT_KEYWORDS = re.compile(
@@ -170,7 +190,7 @@ def update_health(feeds, feed_stats):
         category = feed.get("category", "AI")
         if category == "Podcast":
             continue
-        threshold = HEALTH_THRESHOLDS.get(category, HEALTH_DEFAULT_THRESHOLD)
+        threshold = HEALTH_THRESHOLDS.get(source, HEALTH_DEFAULT_THRESHOLD)
         count7 = feed_stats.get(source, 0)
         state = sources_state.setdefault(source, {"below_streak": 0})
         prev_week = state.get("current_week")
@@ -188,8 +208,8 @@ def update_health(feeds, feed_stats):
                     "source": source,
                     "category": category,
                     "removed_at": now.isoformat(),
-                    "reason": (f"Below threshold ({threshold} post(s) a week for "
-                               f"{category}) for 2 weeks in a row; judged weeks "
+                    "reason": (f"Below threshold ({threshold} post(s) a week) "
+                               f"for 2 weeks in a row; judged weeks "
                                f"ended with {judged} post(s) in the trailing "
                                f"7 days."),
                 })
