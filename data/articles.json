@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-04T22:00:06.657885+00:00",
+  "generated_at": "2026-11-05T01:59:47.183313+00:00",
   "sources_polled": [
     "The Verge \u2014 AI",
     "Simon Willison",
@@ -15,6 +15,83 @@
     "Quantum Intelligence"
   ],
   "articles": [
+    {
+      "id": "026e4ebd4085d32e",
+      "title": "ChatGPT will now make you animated GIFs",
+      "link": "https://www.theverge.com/ai-artificial-intelligence/1026474/openai-chatgpt-animated-gifs-images-2-6",
+      "source": "The Verge \u2014 AI",
+      "category": "AI",
+      "summary": "ChatGPT can now create GIFs using a prompt or a photo uploaded to the AI chatbot. The update, which is rolling out alongside OpenAI's new Images 2.6 model, allows you to adjust the GIF's animation speed, edit individual frames, and share it with others. Before this change, ChatGP",
+      "published": "2026-11-05T01:59:34.700577+00:00",
+      "audio_url": null,
+      "duration": ""
+    },
+    {
+      "id": "3fdace98b464eb08",
+      "title": "My therapist thinks I should chuck the Amazon Bee Frontier out a window",
+      "link": "https://www.theverge.com/column/1026464/optimizer-amazon-bee-frontier-ambient-listening-wearables",
+      "source": "The Verge \u2014 AI",
+      "category": "AI",
+      "summary": "This is Optimizer, a weekly newsletter sent from Verge senior reviewer Victoria Song that dissects and discusses the latest gizmos and potions that swear they're going to change your life. Opt in for Optimizer here. \"How does that make you feel?\" I get asked this a lot in therapy",
+      "published": "2026-11-05T01:59:34.700546+00:00",
+      "audio_url": null,
+      "duration": ""
+    },
+    {
+      "id": "d0178f35064d57a6",
+      "title": "Nothing teases a screen-free AI device ahead of launch next month",
+      "link": "https://www.theverge.com/ai-artificial-intelligence/1026586/nothing-screen-free-ai-device-carl-pei",
+      "source": "The Verge \u2014 AI",
+      "category": "AI",
+      "summary": "Nothing CEO Carl Pei said in a post on X that the company's launching its first AI device in December. That's just a little over a year after Pei announced plans for \"AI-native\" devices and an AI operating system. He didn't give away much about what exactly the new device is, onl",
+      "published": "2026-11-05T01:59:34.700516+00:00",
+      "audio_url": null,
+      "duration": ""
+    },
+    {
+      "id": "b6ceabf91c49350f",
+      "title": "Gemini for Home now plugs into AT&#038;T\u2019s smart security system",
+      "link": "https://www.theverge.com/tech/1026787/att-gemini-for-home-connected-life-security-system",
+      "source": "The Verge \u2014 AI",
+      "category": "AI",
+      "summary": "AT&#38;T's smart home security system now integrates with Gemini for Home. The company says its Connected Life system is the \"first\" home security product to integrate with Google Home Premium, enabling a bunch of Gemini-powered features that can summarize home events, search you",
+      "published": "2026-11-05T01:59:34.700483+00:00",
+      "audio_url": null,
+      "duration": ""
+    },
+    {
+      "id": "4c9b76bc0bf942e0",
+      "title": "17 better ways Elon Musk could have wasted $446 million",
+      "link": "https://www.theverge.com/ai-artificial-intelligence/1026878/not-even-good-at-being-rich",
+      "source": "The Verge \u2014 AI",
+      "category": "AI",
+      "summary": "One of the basic problems of spending too much time on social media is that you are cooking your brain by reading posts from a pack of attention-seeking lunatics. If your social media of choice is the site formerly known as Twitter, and it is your main source of contact with the ",
+      "published": "2026-11-05T01:59:34.700444+00:00",
+      "audio_url": null,
+      "duration": ""
+    },
+    {
+      "id": "48d8c1552d58becd",
+      "title": "Qualcomm is betting big on data centers as smartphone sales sink",
+      "link": "https://www.theverge.com/ai-artificial-intelligence/1026867/qualcomm-earnings-data-centers",
+      "source": "The Verge \u2014 AI",
+      "category": "AI",
+      "summary": "With smartphone sales tanking by around 20 percent compared to 2025, Qualcomm is looking to data centers to help boost its bottom line. During its Q4 2026 earnings call, the company laid out its plans to make a splash in the AI data center business, through partnerships with comp",
+      "published": "2026-11-05T01:59:34.700370+00:00",
+      "audio_url": null,
+      "duration": ""
+    },
+    {
+      "id": "c3d12447d9d5ff15",
+      "title": "Daily AI Intelligence \u2014 Episode 35 (Thu Nov 5, 2026): Kimi K3.1 Pro weights land, OpenAI GIFs arrive, and an EU warning for Gemini",
+      "link": "https://muse.ai/podcasts/media/1248297608376725/94f09345-ad4a-4981-83dd-e3206bbf5c4e/ep-42447031-ea6e-47f7-b1f1-55a70afadc9b.mp3",
+      "source": "Daily AI Intelligence",
+      "category": "Podcast",
+      "summary": "Moonshot AI releases the Kimi K3.1 Pro open weights on its promised deadline; OpenAI rolls out Images 2.6 animated GIFs; Anthropic expands the Claude Marketplace; the Gemini app gets a new head; xAI shows off Data Bot; Meta publishes Muse bug bounty results; Copilot Autopilot hea",
+      "published": "2026-11-05T01:01:47+00:00",
+      "audio_url": "https://muse.ai/podcasts/media/1248297608376725/94f09345-ad4a-4981-83dd-e3206bbf5c4e/ep-42447031-ea6e-47f7-b1f1-55a70afadc9b.mp3",
+      "duration": "256"
+    },
     {
       "id": "07065efd722751e2",
       "title": "llm 0.37.1",
@@ -126,6 +203,17 @@
       "duration": ""
     },
     {
+      "id": "a4f4c423c5426033",
+      "title": "A thousand fewer paths to root",
+      "link": "https://openai.com/index/a-thousand-fewer-paths-to-root",
+      "source": "OpenAI Blog",
+      "category": "AI",
+      "summary": "OpenAI built an autonomous pipeline that found, validated, and generated patches for 948 local privilege-escalation vulnerabilities in the Linux kernel.",
+      "published": "2026-11-04T08:00:00+00:00",
+      "audio_url": null,
+      "duration": ""
+    },
+    {
       "id": "75679f5aa60bfcf8",
       "title": "Daybreak Red is now available in AWS GovCloud (US-East)",
       "link": "https://openai.com/index/daybreak-red-aws-govcloud",
@@ -168,6 +256,28 @@
       "published": "2026-11-04T01:00:44+00:00",
       "audio_url": "https://muse.ai/podcasts/media/1248297608376725/94f09345-ad4a-4981-83dd-e3206bbf5c4e/ep-dd9d0ba0-7bbb-46cc-8e39-33de99c6c4de.mp3",
       "duration": "246"
+    },
+    {
+      "id": "0a437d67f2effbc5",
+      "title": "Introducing Images 2.6",
+      "link": "https://openai.com/index/introducing-images-2-6",
+      "source": "OpenAI Blog",
+      "category": "AI",
+      "summary": "Images 2.6 brings faster image generation, GIF creation, more precise editing, and new API controls across ChatGPT, Codex, and the API.",
+      "published": "2026-11-04T00:00:00+00:00",
+      "audio_url": null,
+      "duration": ""
+    },
+    {
+      "id": "bf25be8f87794d7d",
+      "title": "DevRev delivers autonomous self-service with GPT-6.1 Sol",
+      "link": "https://openai.com/index/devrev-enterprise-self-service",
+      "source": "OpenAI Blog",
+      "category": "AI",
+      "summary": "DevRev uses GPT-6.1 Sol to power Computer and Operator, balancing reasoning, speed, and cost for enterprise service.",
+      "published": "2026-11-04T00:00:00+00:00",
+      "audio_url": null,
+      "duration": ""
     },
     {
       "id": "0eaf3e3a754437a6",
@@ -1380,17 +1490,6 @@
       "duration": ""
     },
     {
-      "id": "8030d1b5c63548db",
-      "title": "Voters in Texas agree: They hate data centers",
-      "link": "https://www.theverge.com/ai-artificial-intelligence/1018676/data-center-midterm-election-energy-water-texas",
-      "source": "The Verge \u2014 AI",
-      "category": "AI",
-      "summary": "Ask Texas NAACP president Gary Bledsoe what it's been like to see data center developers descend upon Austin and its surrounding suburbs and he can rattle off project after project facing opposition from locals. There's the fight in Taylor over plans to build a data center at a s",
-      "published": "2026-10-28T14:00:26.321060+00:00",
-      "audio_url": null,
-      "duration": ""
-    },
-    {
       "id": "75e2017ed4c5a2ec",
       "title": "OpenAI and ServiceNow expand partnership across enterprise workflows",
       "link": "https://openai.com/index/openai-servicenow-partnership-expansion",
@@ -1512,17 +1611,6 @@
       "duration": ""
     },
     {
-      "id": "ba3cece69efb7bc0",
-      "title": "Researchers are getting tired of OpenAI gatekeeping its breakthroughs",
-      "link": "https://www.theverge.com/ai-artificial-intelligence/1019921/openai-breakthrough-math-computer-science-physics",
-      "source": "The Verge \u2014 AI",
-      "category": "AI",
-      "summary": "On Monday, OpenAI announced impressive breakthroughs in mathematics, computer science, and physics, along with what the company says is an evolving approach to communicating its findings. But despite its apparent course correction, researchers who spoke to The Verge are growing i",
-      "published": "2026-10-27T22:00:07.987435+00:00",
-      "audio_url": null,
-      "duration": ""
-    },
-    {
       "id": "6849d36ab61f28e0",
       "title": "\"No human at the helm\": Delaware plan would let AI agents run entire businesses",
       "link": "https://arstechnica.com/tech-policy/2026/10/no-human-at-the-helm-delaware-plan-would-let-ai-agents-run-entire-businesses/",
@@ -1552,50 +1640,6 @@
       "category": "AI",
       "summary": "You can apparently now tell AI tools what sort of protein you want them to make.",
       "published": "2026-10-27T18:49:08+00:00",
-      "audio_url": null,
-      "duration": ""
-    },
-    {
-      "id": "0d516a24ee36aa2d",
-      "title": "Apple is adding an AI chatbot to Pages, Keynote, and Numbers",
-      "link": "https://www.theverge.com/tech/1019373/apple-pages-keynote-numbers-ai-chatbot-update",
-      "source": "The Verge \u2014 AI",
-      "category": "AI",
-      "summary": "Apple is bringing an AI assistant to its suite of productivity apps, including Keynote, Pages, and Numbers. The assistant, which is built on AI models from Apple and OpenAI, can understand a document's context to perform tasks like designing, animating, and refining slides in Key",
-      "published": "2026-10-27T18:00:02.590322+00:00",
-      "audio_url": null,
-      "duration": ""
-    },
-    {
-      "id": "3513fbe8e9520556",
-      "title": "Google\u2019s next Genie AI model generates more realistic experiences",
-      "link": "https://www.theverge.com/tech/1019076/google-genie-4-ai-model",
-      "source": "The Verge \u2014 AI",
-      "category": "AI",
-      "summary": "Google announced today its Genie 4 world model for generating interactive experiences using AI. The company says the model has four main updates: It allows for more realistic worlds, lets users update an experience in real time with a natural language prompt, can generate audio, ",
-      "published": "2026-10-27T18:00:02.590290+00:00",
-      "audio_url": null,
-      "duration": ""
-    },
-    {
-      "id": "abb96e9fdd6f617e",
-      "title": "Firefox\u2019s Smart Window adds AI form filling and webpage monitoring",
-      "link": "https://www.theverge.com/ai-artificial-intelligence/1019551/firefox-smart-window-ai-fill-forms",
-      "source": "The Verge \u2014 AI",
-      "category": "AI",
-      "summary": "Mozilla is updating Smart Window - Firefox's AI-powered browsing experience - with a new feature that can help you fill out online forms based on your open tabs. As an example, Mozilla says Smart Window can pull information from your online portfolio or LinkedIn page to paste you",
-      "published": "2026-10-27T18:00:02.590257+00:00",
-      "audio_url": null,
-      "duration": ""
-    },
-    {
-      "id": "5d9174dd4f1a7b53",
-      "title": "Anthropic\u2019s elaborate plan to keep Wall Street at bay",
-      "link": "https://www.theverge.com/ai-artificial-intelligence/1019470/anthropic-ipo-resist-investor-pressure-cut-corners-safety",
-      "source": "The Verge \u2014 AI",
-      "category": "AI",
-      "summary": "Anthropic wants to have it both ways. With its impending IPO, it wants to tap the vast riches of the public markets and insists it doesn't want to compromise its core mission of developing AI safely and for the benefit of humanity. But greater model capabilities bring greater ris",
-      "published": "2026-10-27T18:00:02.590201+00:00",
       "audio_url": null,
       "duration": ""
     },
@@ -2315,28 +2359,6 @@
       "duration": ""
     },
     {
-      "id": "edef63b51aedc012",
-      "title": "How we built ChatGPT\u2019s novel ad stack for user trust and relevance",
-      "link": "https://openai.com/index/building-chatgpt-ad-stack",
-      "source": "OpenAI Blog",
-      "category": "AI",
-      "summary": "Learn how OpenAI built ChatGPT\u2019s LLM-powered ad stack to understand conversational intent, keep ads separate from answers, and deliver relevant ads at scale.",
-      "published": "2026-10-21T07:00:00+00:00",
-      "audio_url": null,
-      "duration": ""
-    },
-    {
-      "id": "1de8e62ff715d1f1",
-      "title": "Using thousands of AI agents to uncover new leads in biological data",
-      "link": "https://openai.com/index/scaling-ai-research-for-complex-biological-data",
-      "source": "OpenAI Blog",
-      "category": "AI",
-      "summary": "See how OpenAI, PerturbAI, and Scripps Research used distributed AI agents to uncover promising research leads in data from millions of brain cells.",
-      "published": "2026-10-21T04:50:00+00:00",
-      "audio_url": null,
-      "duration": ""
-    },
-    {
       "id": "1778fb273dbb6c0b",
       "title": "Southeast Asia\u2019s digital economy to hit $368 billion",
       "link": "https://blog.google/company-news/inside-google/around-the-globe/google-asia/e-conomy-sea-report-2026/",
@@ -2412,17 +2434,6 @@
       "published": "2026-10-21T01:08:41+00:00",
       "audio_url": "https://muse.ai/podcasts/media/1248297608376725/94f09345-ad4a-4981-83dd-e3206bbf5c4e/ep-63f07fa5-21da-424a-998d-c131c79710b1.mp3",
       "duration": "287"
-    },
-    {
-      "id": "b2deaf97c98cf0ff",
-      "title": "Democratic governance of frontier AI, part II: Empowering cyber defenders",
-      "link": "https://openai.com/index/empowering-cyber-defenders",
-      "source": "OpenAI Blog",
-      "category": "AI",
-      "summary": "OpenAI outlines a blueprint for empowering cyber defenders with frontier AI, stronger safeguards, modernized cybersecurity, and more resilient public institutions.",
-      "published": "2026-10-21T00:00:00+00:00",
-      "audio_url": null,
-      "duration": ""
     },
     {
       "id": "3b5ce86c8c402c8d",
