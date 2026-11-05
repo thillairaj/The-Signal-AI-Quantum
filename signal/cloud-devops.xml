@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Signal Brief · Cloud &amp; DevOps</title>
+    <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/</link>
+    <description>Signal Brief: the day in technology, in The Signal's own words. Every item is written from linked official sources and fact checked before publication.</description>
+    <lastBuildDate>Thu, 05 Nov 2026 04:58:45 +0000</lastBuildDate>
+    <atom:link xmlns:atom="http://www.w3.org/2005/Atom" href="https://thillairaj.github.io/The-Signal-AI-Quantum/signal/cloud-devops.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>Google previews AlloyDB Express, a scale to zero PostgreSQL for developers and agents</title>
+      <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/#brief-2026-11-05-10</link>
+      <guid isPermaLink="false">brief-2026-11-05-10</guid>
+      <pubDate>Thu, 05 Nov 2026 01:30:00 +0000</pubDate>
+      <category>Cloud &amp; DevOps</category>
+      <description>Google has announced a preview of AlloyDB Express, a version of AlloyDB for PostgreSQL designed for rapid testing and prototyping. It offers instant provisioning and scale to zero, aimed at development pipelines and coding agents that need short lived databases. Why it matters for tech: Databases are being reshaped around agent driven development, where environments spin up and down in minutes.</description>
+      <content:encoded><![CDATA[<p>Google has announced a preview of AlloyDB Express, a version of AlloyDB for PostgreSQL designed for rapid testing and prototyping. It offers instant provisioning and scale to zero, aimed at development pipelines and coding agents that need short lived databases.</p><p><strong>Why it matters for tech:</strong> Databases are being reshaped around agent driven development, where environments spin up and down in minutes.</p><p>Source: </p><ul><li><a href="https://cloud.google.com/blog/products/databases/introducing-alloydb-express-for-rapid-testing-and-prototyping/">Google Cloud Blog</a></li></ul>]]></content:encoded>
+    </item>
+    <item>
+      <title>Amazon S3 Tables can now migrate Hive tables to Iceberg for you</title>
+      <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/#brief-2026-11-05-11</link>
+      <guid isPermaLink="false">brief-2026-11-05-11</guid>
+      <pubDate>Thu, 05 Nov 2026 01:30:00 +0000</pubDate>
+      <category>Cloud &amp; DevOps</category>
+      <description>AWS has added managed migration from Apache Hive tables to Apache Iceberg in Amazon S3 Tables. AWS says existing datasets can be converted with no pipelines to build and no compute to provision, while production workloads keep running. Why it matters for tech: Iceberg has become the default table format for lakehouse data, and managed migration removes the main barrier to switching.</description>
+      <content:encoded><![CDATA[<p>AWS has added managed migration from Apache Hive tables to Apache Iceberg in Amazon S3 Tables. AWS says existing datasets can be converted with no pipelines to build and no compute to provision, while production workloads keep running.</p><p><strong>Why it matters for tech:</strong> Iceberg has become the default table format for lakehouse data, and managed migration removes the main barrier to switching.</p><p>Source: </p><ul><li><a href="https://aws.amazon.com/blogs/aws/amazon-s3-tables-now-offer-managed-migration-of-apache-hive-tables-to-apache-iceberg/">AWS News Blog</a></li></ul>]]></content:encoded>
+    </item>
+    <item>
+      <title>Azure previews an MCP gateway for its container application gateway</title>
+      <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/#brief-2026-11-04-06</link>
+      <guid isPermaLink="false">brief-2026-11-04-06</guid>
+      <pubDate>Wed, 04 Nov 2026 01:30:00 +0000</pubDate>
+      <category>Cloud &amp; DevOps</category>
+      <description>Microsoft has put an MCP gateway for Application Gateway for Containers into public preview, adding a Model Context Protocol route type. Platform teams can publish MCP servers behind one hostname while centralising TLS, token validation and firewall controls. Why it matters for tech: Gateways are becoming the control point where enterprises govern agent traffic.</description>
+      <content:encoded><![CDATA[<p>Microsoft has put an MCP gateway for Application Gateway for Containers into public preview, adding a Model Context Protocol route type. Platform teams can publish MCP servers behind one hostname while centralising TLS, token validation and firewall controls.</p><p><strong>Why it matters for tech:</strong> Gateways are becoming the control point where enterprises govern agent traffic.</p><p>Source: </p><ul><li><a href="https://azure.microsoft.com/updates?id=576388">Azure Updates</a></li></ul>]]></content:encoded>
+    </item>
+    <item>
+      <title>Nammu21 runs syndicated loan automation on Google Cloud's ledger in a proof of concept</title>
+      <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/#brief-2026-11-04-07</link>
+      <guid isPermaLink="false">brief-2026-11-04-07</guid>
+      <pubDate>Wed, 04 Nov 2026 01:30:00 +0000</pubDate>
+      <category>Cloud &amp; DevOps</category>
+      <description>Fintech firm Nammu21 worked with Google Cloud to structure syndicated loan agreements as smart contracts on the Google Cloud Universal Ledger. The proof of concept automates the loan lifecycle in a market where settlement currently takes weeks of manual processing. Why it matters for tech: It tests ledger technology on a real, high value financial workflow rather than a pilot in isolation.</description>
+      <content:encoded><![CDATA[<p>Fintech firm Nammu21 worked with Google Cloud to structure syndicated loan agreements as smart contracts on the Google Cloud Universal Ledger. The proof of concept automates the loan lifecycle in a market where settlement currently takes weeks of manual processing.</p><p><strong>Why it matters for tech:</strong> It tests ledger technology on a real, high value financial workflow rather than a pilot in isolation.</p><p>Source: </p><ul><li><a href="https://cloud.google.com/blog/topics/financial-services/how-nammu21-automates-syndicated-loans-on-google-cloud-universal-ledger/">Google Cloud Blog</a></li></ul>]]></content:encoded>
+    </item>
+    <item>
+      <title>AWS makes Step Functions callable as agent tools</title>
+      <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/#brief-2026-11-03-04</link>
+      <guid isPermaLink="false">brief-2026-11-03-04</guid>
+      <pubDate>Tue, 03 Nov 2026 01:30:00 +0000</pubDate>
+      <category>Cloud &amp; DevOps</category>
+      <description>In its weekly roundup, AWS notes that Step Functions, its workflow service spanning more than 220 AWS services, can now be handed to AI agents as a tool. Workflows that teams already run and trust become callable by agents without being rewritten. Why it matters for tech: It shows cloud platforms adapting established automation for agents rather than replacing it.</description>
+      <content:encoded><![CDATA[<p>In its weekly roundup, AWS notes that Step Functions, its workflow service spanning more than 220 AWS services, can now be handed to AI agents as a tool. Workflows that teams already run and trust become callable by agents without being rewritten.</p><p><strong>Why it matters for tech:</strong> It shows cloud platforms adapting established automation for agents rather than replacing it.</p><p>Source: </p><ul><li><a href="https://aws.amazon.com/blogs/aws/aws-weekly-roundup-gpt-6-1-terra-on-bedrock-step-functions-as-agent-tools-and-more-november-2-2026/">AWS News Blog</a></li></ul>]]></content:encoded>
+    </item>
+    <item>
+      <title>Developers choose smaller AI models on purpose, and report better results</title>
+      <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/#brief-2026-11-03-05</link>
+      <guid isPermaLink="false">brief-2026-11-03-05</guid>
+      <pubDate>Tue, 03 Nov 2026 01:30:00 +0000</pubDate>
+      <category>Cloud &amp; DevOps</category>
+      <description>The New Stack reports that some development teams are deliberately downgrading the AI models they use for coding work, and finding the results better for their purposes. The smaller setups can be cheaper and easier to control for the tasks these teams run most. Why it matters for tech: Model choice is becoming an engineering decision about fit and cost, not a race to the largest model.</description>
+      <content:encoded><![CDATA[<p>The New Stack reports that some development teams are deliberately downgrading the AI models they use for coding work, and finding the results better for their purposes. The smaller setups can be cheaper and easier to control for the tasks these teams run most.</p><p><strong>Why it matters for tech:</strong> Model choice is becoming an engineering decision about fit and cost, not a race to the largest model.</p><p>Source: </p><ul><li><a href="https://thenewstack.io/claude-code-developer-refusals/">The New Stack</a></li></ul>]]></content:encoded>
+    </item>
+  </channel>
+</rss>

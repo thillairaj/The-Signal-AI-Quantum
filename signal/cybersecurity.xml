@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Signal Brief · Cybersecurity</title>
+    <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/</link>
+    <description>Signal Brief: the day in technology, in The Signal's own words. Every item is written from linked official sources and fact checked before publication.</description>
+    <lastBuildDate>Thu, 05 Nov 2026 04:58:45 +0000</lastBuildDate>
+    <atom:link xmlns:atom="http://www.w3.org/2005/Atom" href="https://thillairaj.github.io/The-Signal-AI-Quantum/signal/cybersecurity.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>Zyxel patches zero day used to compromise nearly 1,000 network switches</title>
+      <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/#brief-2026-11-05-08</link>
+      <guid isPermaLink="false">brief-2026-11-05-08</guid>
+      <pubDate>Thu, 05 Nov 2026 01:30:00 +0000</pubDate>
+      <category>Cybersecurity</category>
+      <description>Zyxel has patched a zero day vulnerability in its GS1900 series network switches. BleepingComputer reports that attackers exploited it to compromise nearly 1,000 devices worldwide and steal configuration files and credentials. Why it matters for tech: Network switches are trusted infrastructure; stolen configurations hand attackers a map of the networks those switches protect.</description>
+      <content:encoded><![CDATA[<p>Zyxel has patched a zero day vulnerability in its GS1900 series network switches. BleepingComputer reports that attackers exploited it to compromise nearly 1,000 devices worldwide and steal configuration files and credentials.</p><p><strong>Why it matters for tech:</strong> Network switches are trusted infrastructure; stolen configurations hand attackers a map of the networks those switches protect.</p><p>Source: </p><ul><li><a href="https://www.bleepingcomputer.com/news/security/zyxel-fixes-zero-day-exploited-to-hack-nearly-1-000-network-switches/">BleepingComputer</a></li></ul>]]></content:encoded>
+    </item>
+    <item>
+      <title>Google patches critical Android flaw that needs no user interaction</title>
+      <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/#brief-2026-11-05-09</link>
+      <guid isPermaLink="false">brief-2026-11-05-09</guid>
+      <pubDate>Thu, 05 Nov 2026 01:30:00 +0000</pubDate>
+      <category>Cybersecurity</category>
+      <description>Google's November security bulletin patches a critical flaw, CVE-2026-58868, that could let an attacker run code on a phone remotely without any user action. It affects Android 14 through 17, and the fix arrives at security patch level 2026-11-01 or later, which phone makers and carriers distribute on their own schedules. Why it matters for tech: The gap between Google's patch and each maker's rollout is the window of exposure for most Android users.</description>
+      <content:encoded><![CDATA[<p>Google's November security bulletin patches a critical flaw, CVE-2026-58868, that could let an attacker run code on a phone remotely without any user action. It affects Android 14 through 17, and the fix arrives at security patch level 2026-11-01 or later, which phone makers and carriers distribute on their own schedules.</p><p><strong>Why it matters for tech:</strong> The gap between Google's patch and each maker's rollout is the window of exposure for most Android users.</p><p>Source: </p><ul><li><a href="https://thehackernews.com/2026/11/google-patches-critical-android-flaw.html">The Hacker News</a></li></ul>]]></content:encoded>
+    </item>
+    <item>
+      <title>Microsoft tracks fake download campaign spreading trojanised installers</title>
+      <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/#brief-2026-11-04-08</link>
+      <guid isPermaLink="false">brief-2026-11-04-08</guid>
+      <pubDate>Wed, 04 Nov 2026 01:30:00 +0000</pubDate>
+      <category>Cybersecurity</category>
+      <description>Microsoft Threat Intelligence is tracking a campaign that uses trojanised Inno installers, spread through fake download pages, to deliver monetisation payloads. Microsoft published detection and investigation guidance covering the complete installer session. Why it matters for tech: Fake installers remain one of the most reliable ways attackers reach ordinary users and company machines.</description>
+      <content:encoded><![CDATA[<p>Microsoft Threat Intelligence is tracking a campaign that uses trojanised Inno installers, spread through fake download pages, to deliver monetisation payloads. Microsoft published detection and investigation guidance covering the complete installer session.</p><p><strong>Why it matters for tech:</strong> Fake installers remain one of the most reliable ways attackers reach ordinary users and company machines.</p><p>Source: </p><ul><li><a href="https://www.microsoft.com/en-us/security/blog/2026/11/03/fake-download-campaign-uses-trojanized-installers-deliver-monetization-payloads/">Microsoft Security Blog</a></li></ul>]]></content:encoded>
+    </item>
+    <item>
+      <title>Microsoft: real world exploitation concentrates in a small set of vulnerabilities</title>
+      <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/#brief-2026-11-03-06</link>
+      <guid isPermaLink="false">brief-2026-11-03-06</guid>
+      <pubDate>Tue, 03 Nov 2026 01:30:00 +0000</pubDate>
+      <category>Cybersecurity</category>
+      <description>Microsoft's analysis of real world attacks finds that exploitation concentrates in a small, high impact subset of known vulnerabilities. It advises defenders to prioritise patching by exploitation likelihood, exposure and potential blast radius, rather than by severity score alone. Why it matters for tech: It gives security teams an evidence based order for patching when they cannot patch everything at once.</description>
+      <content:encoded><![CDATA[<p>Microsoft's analysis of real world attacks finds that exploitation concentrates in a small, high impact subset of known vulnerabilities. It advises defenders to prioritise patching by exploitation likelihood, exposure and potential blast radius, rather than by severity score alone.</p><p><strong>Why it matters for tech:</strong> It gives security teams an evidence based order for patching when they cannot patch everything at once.</p><p>Source: </p><ul><li><a href="https://www.microsoft.com/en-us/security/blog/2026/11/02/exploited-vulnerabilities-common-data-driven-analysis-real-world-attacks/">Microsoft Security Blog</a></li></ul>]]></content:encoded>
+    </item>
+  </channel>
+</rss>

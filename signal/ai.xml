@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Signal Brief · AI</title>
+    <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/</link>
+    <description>Signal Brief: the day in technology, in The Signal's own words. Every item is written from linked official sources and fact checked before publication.</description>
+    <lastBuildDate>Thu, 05 Nov 2026 04:58:45 +0000</lastBuildDate>
+    <atom:link xmlns:atom="http://www.w3.org/2005/Atom" href="https://thillairaj.github.io/The-Signal-AI-Quantum/signal/ai.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>OpenAI launches Images 2.6 with faster generation and GIF creation</title>
+      <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/#brief-2026-11-05-01</link>
+      <guid isPermaLink="false">brief-2026-11-05-01</guid>
+      <pubDate>Thu, 05 Nov 2026 01:30:00 +0000</pubDate>
+      <category>AI</category>
+      <description>OpenAI's Images 2.6 brings faster image generation, GIF creation, more precise editing and new API controls. It is available across ChatGPT, Codex and the API. Why it matters for tech: Image generation is shipping as a product feature with controls developers can build on, not only as a model demonstration.</description>
+      <content:encoded><![CDATA[<p>OpenAI's Images 2.6 brings faster image generation, GIF creation, more precise editing and new API controls. It is available across ChatGPT, Codex and the API.</p><p><strong>Why it matters for tech:</strong> Image generation is shipping as a product feature with controls developers can build on, not only as a model demonstration.</p><p>Source: </p><ul><li><a href="https://openai.com/index/introducing-images-2-6">OpenAI Blog</a></li></ul>]]></content:encoded>
+    </item>
+    <item>
+      <title>OpenAI pipeline finds and patches 948 Linux kernel privilege flaws</title>
+      <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/#brief-2026-11-05-02</link>
+      <guid isPermaLink="false">brief-2026-11-05-02</guid>
+      <pubDate>Thu, 05 Nov 2026 01:30:00 +0000</pubDate>
+      <category>AI</category>
+      <description>OpenAI built an autonomous pipeline that found, validated and generated patches for 948 local privilege escalation vulnerabilities in the Linux kernel. The work is presented as defensive security research carried out at machine scale. Why it matters for tech: It is a measurable example of AI systems doing vulnerability research end to end.</description>
+      <content:encoded><![CDATA[<p>OpenAI built an autonomous pipeline that found, validated and generated patches for 948 local privilege escalation vulnerabilities in the Linux kernel. The work is presented as defensive security research carried out at machine scale.</p><p><strong>Why it matters for tech:</strong> It is a measurable example of AI systems doing vulnerability research end to end.</p><p>Source: </p><ul><li><a href="https://openai.com/index/a-thousand-fewer-paths-to-root">OpenAI Blog</a></li></ul>]]></content:encoded>
+    </item>
+    <item>
+      <title>AWS shows decision models plugged into Bedrock AgentCore agent evaluations</title>
+      <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/#brief-2026-11-05-03</link>
+      <guid isPermaLink="false">brief-2026-11-05-03</guid>
+      <pubDate>Thu, 05 Nov 2026 01:30:00 +0000</pubDate>
+      <category>AI</category>
+      <description>An AWS Machine Learning Blog post shows how two decision models, Jev and Strands Decider, connect to Amazon Bedrock AgentCore Evaluations through code based evaluators. Decision models answer the narrow, repeatable evaluation questions that come up when testing AI agents. Why it matters for tech: Agent evaluation tooling is being built into the major cloud AI platforms as a standard part of the stack.</description>
+      <content:encoded><![CDATA[<p>An AWS Machine Learning Blog post shows how two decision models, Jev and Strands Decider, connect to Amazon Bedrock AgentCore Evaluations through code based evaluators. Decision models answer the narrow, repeatable evaluation questions that come up when testing AI agents.</p><p><strong>Why it matters for tech:</strong> Agent evaluation tooling is being built into the major cloud AI platforms as a standard part of the stack.</p><p>Source: </p><ul><li><a href="https://aws.amazon.com/blogs/machine-learning/use-decision-models-with-amazon-bedrock-agentcore-evaluations/">AWS Machine Learning Blog</a></li></ul>]]></content:encoded>
+    </item>
+    <item>
+      <title>DeepMind applies AI agents to chemistry and drug discovery workflows</title>
+      <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/#brief-2026-11-04-01</link>
+      <guid isPermaLink="false">brief-2026-11-04-01</guid>
+      <pubDate>Wed, 04 Nov 2026 01:30:00 +0000</pubDate>
+      <category>AI</category>
+      <description>Google DeepMind describes agentic cheminformatics built with its Antigravity platform and a set of Cheminformatics Skills. The system searches compounds and proposes novel rigidified macrocycles, a class of molecules used in drug design. Why it matters for tech: It is a concrete case of agents doing specialist scientific work rather than only answering questions.</description>
+      <content:encoded><![CDATA[<p>Google DeepMind describes agentic cheminformatics built with its Antigravity platform and a set of Cheminformatics Skills. The system searches compounds and proposes novel rigidified macrocycles, a class of molecules used in drug design.</p><p><strong>Why it matters for tech:</strong> It is a concrete case of agents doing specialist scientific work rather than only answering questions.</p><p>Source: </p><ul><li><a href="https://deepmind.google/blog/agentic-cheminformatics-with-google-antigravity/">Google DeepMind</a></li></ul>]]></content:encoded>
+    </item>
+    <item>
+      <title>New benchmark finds frontier models lose track of changing facts in long documents</title>
+      <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/#brief-2026-11-04-02</link>
+      <guid isPermaLink="false">brief-2026-11-04-02</guid>
+      <pubDate>Wed, 04 Nov 2026 01:30:00 +0000</pubDate>
+      <category>AI</category>
+      <description>Allen AI's StateBench tests how well language models track information that changes across long documents, across four levels of difficulty. Frontier models including Gemini 3.8 Flash, Claude Opus 5.5 and GPT-6 handled simple updates but fell to 13 percent accuracy or lower on the hardest problems at the longest lengths, while recurrent and hybrid architectures generalised further when trained on the task. Why it matters for tech: Long document and agent work depends on exactly this state tracking, so the failure mode matters well beyond the benchmark.</description>
+      <content:encoded><![CDATA[<p>Allen AI's StateBench tests how well language models track information that changes across long documents, across four levels of difficulty. Frontier models including Gemini 3.8 Flash, Claude Opus 5.5 and GPT-6 handled simple updates but fell to 13 percent accuracy or lower on the hardest problems at the longest lengths, while recurrent and hybrid architectures generalised further when trained on the task.</p><p><strong>Why it matters for tech:</strong> Long document and agent work depends on exactly this state tracking, so the failure mode matters well beyond the benchmark.</p><p>Source: </p><ul><li><a href="https://huggingface.co/blog/allenai/statebench">Hugging Face Blog (Allen AI)</a></li></ul>]]></content:encoded>
+    </item>
+    <item>
+      <title>OpenAI shows ChatGPT and Codex in engineering work for the physical world</title>
+      <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/#brief-2026-11-04-03</link>
+      <guid isPermaLink="false">brief-2026-11-04-03</guid>
+      <pubDate>Wed, 04 Nov 2026 01:30:00 +0000</pubDate>
+      <category>AI</category>
+      <description>OpenAI describes how engineers are using ChatGPT and Codex to speed up CAD work, PCB design, simulation and related workflows. The examples take the tools beyond software code into hardware engineering processes. Why it matters for tech: Adoption in physical engineering widens the market for AI assistants beyond software teams.</description>
+      <content:encoded><![CDATA[<p>OpenAI describes how engineers are using ChatGPT and Codex to speed up CAD work, PCB design, simulation and related workflows. The examples take the tools beyond software code into hardware engineering processes.</p><p><strong>Why it matters for tech:</strong> Adoption in physical engineering widens the market for AI assistants beyond software teams.</p><p>Source: </p><ul><li><a href="https://openai.com/index/accelerating-engineering-for-the-physical-world">OpenAI Blog</a></li></ul>]]></content:encoded>
+    </item>
+    <item>
+      <title>OpenAI raises bug bounty rewards for security researchers</title>
+      <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/#brief-2026-11-03-01</link>
+      <guid isPermaLink="false">brief-2026-11-03-01</guid>
+      <pubDate>Tue, 03 Nov 2026 01:30:00 +0000</pubDate>
+      <category>AI</category>
+      <description>OpenAI is increasing payouts under its Security Bug Bounty programme and adding bonuses tied to report quality, researcher loyalty and priority campaigns. The programme pays independent researchers who find and report vulnerabilities in OpenAI products and services. Why it matters for tech: Bigger rewards pull more skilled researchers toward finding flaws in widely used AI systems before attackers do.</description>
+      <content:encoded><![CDATA[<p>OpenAI is increasing payouts under its Security Bug Bounty programme and adding bonuses tied to report quality, researcher loyalty and priority campaigns. The programme pays independent researchers who find and report vulnerabilities in OpenAI products and services.</p><p><strong>Why it matters for tech:</strong> Bigger rewards pull more skilled researchers toward finding flaws in widely used AI systems before attackers do.</p><p>Source: </p><ul><li><a href="https://openai.com/index/rewarding-defenders-with-bigger-bug-bounties">OpenAI Blog</a></li></ul>]]></content:encoded>
+    </item>
+    <item>
+      <title>Anthropic adds Claude Code limits aimed at game cloning</title>
+      <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/#brief-2026-11-03-02</link>
+      <guid isPermaLink="false">brief-2026-11-03-02</guid>
+      <pubDate>Tue, 03 Nov 2026 01:30:00 +0000</pubDate>
+      <category>AI</category>
+      <description>Anthropic has confirmed new restrictions in Claude Code that stop the tool from reproducing existing video games, after its Opus 5.5 model began blocking game recreation requests. Some users report that generic reverse engineering tasks are also being blocked, and an Anthropic employee said the company is iterating to find the right balance. Why it matters for tech: It is a live example of a model maker enforcing copyright limits inside a coding tool, with false positives already hitting legitimate work.</description>
+      <content:encoded><![CDATA[<p>Anthropic has confirmed new restrictions in Claude Code that stop the tool from reproducing existing video games, after its Opus 5.5 model began blocking game recreation requests. Some users report that generic reverse engineering tasks are also being blocked, and an Anthropic employee said the company is iterating to find the right balance.</p><p><strong>Why it matters for tech:</strong> It is a live example of a model maker enforcing copyright limits inside a coding tool, with false positives already hitting legitimate work.</p><p>Source: </p><ul><li><a href="https://www.tomshardware.com/tech-industry/artificial-intelligence/anthropic-confirms-new-claude-code-limits-to-prevent-game-cloning-users-report-opus-5-5-is-also-actively-blocking-reverse-engineering-tasks">Tom's Hardware (wire report)</a></li><li><a href="https://arstechnica.com/ai/2026/11/claudes-new-rules-against-game-cloning-wont-stop-the-ai-copying-boom/">Ars Technica (analysis)</a></li></ul>]]></content:encoded>
+    </item>
+  </channel>
+</rss>
