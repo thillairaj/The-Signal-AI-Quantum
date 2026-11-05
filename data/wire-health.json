@@ -1,0 +1,204 @@
+{
+  "sources": {
+    "OpenAI Blog": {
+      "below_streak": 0,
+      "category": "AI",
+      "threshold_per_week": 2,
+      "current_week": "2026-W45",
+      "current_count_7d": 22,
+      "below_threshold_now": false,
+      "last_checked": "2026-11-05T04:36:07.519341+00:00"
+    },
+    "Google AI Blog": {
+      "below_streak": 0,
+      "category": "AI",
+      "threshold_per_week": 2,
+      "current_week": "2026-W45",
+      "current_count_7d": 1,
+      "below_threshold_now": true,
+      "last_checked": "2026-11-05T04:36:07.519341+00:00"
+    },
+    "Anthropic/Claude News": {
+      "below_streak": 0,
+      "category": "AI",
+      "threshold_per_week": 2,
+      "current_week": "2026-W45",
+      "current_count_7d": 4,
+      "below_threshold_now": false,
+      "last_checked": "2026-11-05T04:36:07.519341+00:00"
+    },
+    "The Verge \u2014 AI": {
+      "below_streak": 0,
+      "category": "AI",
+      "threshold_per_week": 2,
+      "current_week": "2026-W45",
+      "current_count_7d": 10,
+      "below_threshold_now": false,
+      "last_checked": "2026-11-05T04:36:07.519341+00:00"
+    },
+    "Ars Technica AI": {
+      "below_streak": 0,
+      "category": "AI",
+      "threshold_per_week": 2,
+      "current_week": "2026-W45",
+      "current_count_7d": 13,
+      "below_threshold_now": false,
+      "last_checked": "2026-11-05T04:36:07.519341+00:00"
+    },
+    "Simon Willison": {
+      "below_streak": 0,
+      "category": "AI",
+      "threshold_per_week": 2,
+      "current_week": "2026-W45",
+      "current_count_7d": 17,
+      "below_threshold_now": false,
+      "last_checked": "2026-11-05T04:36:07.519341+00:00"
+    },
+    "Google DeepMind": {
+      "below_streak": 0,
+      "category": "AI",
+      "threshold_per_week": 2,
+      "current_week": "2026-W45",
+      "current_count_7d": 2,
+      "below_threshold_now": false,
+      "last_checked": "2026-11-05T04:36:07.519341+00:00"
+    },
+    "Microsoft Research": {
+      "below_streak": 0,
+      "category": "AI",
+      "threshold_per_week": 2,
+      "current_week": "2026-W45",
+      "current_count_7d": 3,
+      "below_threshold_now": false,
+      "last_checked": "2026-11-05T04:36:07.519341+00:00"
+    },
+    "Hugging Face Blog": {
+      "below_streak": 0,
+      "category": "AI",
+      "threshold_per_week": 2,
+      "current_week": "2026-W45",
+      "current_count_7d": 7,
+      "below_threshold_now": false,
+      "last_checked": "2026-11-05T04:36:07.519341+00:00"
+    },
+    "NVIDIA Technical Blog": {
+      "below_streak": 0,
+      "category": "AI",
+      "threshold_per_week": 2,
+      "current_week": "2026-W45",
+      "current_count_7d": 14,
+      "below_threshold_now": false,
+      "last_checked": "2026-11-05T04:36:07.519341+00:00"
+    },
+    "AWS Machine Learning Blog": {
+      "below_streak": 0,
+      "category": "AI",
+      "threshold_per_week": 2,
+      "current_week": "2026-W45",
+      "current_count_7d": 20,
+      "below_threshold_now": false,
+      "last_checked": "2026-11-05T04:36:07.519341+00:00"
+    },
+    "The Quantum Insider": {
+      "below_streak": 0,
+      "category": "Quantum",
+      "threshold_per_week": 1,
+      "current_week": "2026-W45",
+      "current_count_7d": 10,
+      "below_threshold_now": false,
+      "last_checked": "2026-11-05T04:36:07.519341+00:00"
+    },
+    "Quantum Computing Report": {
+      "below_streak": 0,
+      "category": "Quantum",
+      "threshold_per_week": 1,
+      "current_week": "2026-W45",
+      "current_count_7d": 10,
+      "below_threshold_now": false,
+      "last_checked": "2026-11-05T04:36:07.519341+00:00"
+    },
+    "Phys.org Quantum Physics": {
+      "below_streak": 0,
+      "category": "Quantum",
+      "threshold_per_week": 1,
+      "current_week": "2026-W45",
+      "current_count_7d": 0,
+      "below_threshold_now": true,
+      "last_checked": "2026-11-05T04:36:07.519341+00:00"
+    },
+    "ScienceDaily Quantum Computers": {
+      "below_streak": 0,
+      "category": "Quantum",
+      "threshold_per_week": 1,
+      "current_week": "2026-W45",
+      "current_count_7d": 0,
+      "below_threshold_now": true,
+      "last_checked": "2026-11-05T04:36:07.519341+00:00"
+    },
+    "Microsoft Security Blog": {
+      "below_streak": 0,
+      "category": "Cybersecurity",
+      "threshold_per_week": 2,
+      "current_week": "2026-W45",
+      "current_count_7d": 7,
+      "below_threshold_now": false,
+      "last_checked": "2026-11-05T04:36:07.519341+00:00"
+    },
+    "The Hacker News": {
+      "below_streak": 0,
+      "category": "Cybersecurity",
+      "threshold_per_week": 2,
+      "current_week": "2026-W45",
+      "current_count_7d": 50,
+      "below_threshold_now": false,
+      "last_checked": "2026-11-05T04:36:07.519341+00:00"
+    },
+    "BleepingComputer": {
+      "below_streak": 0,
+      "category": "Cybersecurity",
+      "threshold_per_week": 2,
+      "current_week": "2026-W45",
+      "current_count_7d": 15,
+      "below_threshold_now": false,
+      "last_checked": "2026-11-05T04:36:07.519341+00:00"
+    },
+    "AWS News Blog": {
+      "below_streak": 0,
+      "category": "Cloud & DevOps",
+      "threshold_per_week": 2,
+      "current_week": "2026-W45",
+      "current_count_7d": 2,
+      "below_threshold_now": false,
+      "last_checked": "2026-11-05T04:36:07.519341+00:00"
+    },
+    "Google Cloud Blog": {
+      "below_streak": 0,
+      "category": "Cloud & DevOps",
+      "threshold_per_week": 2,
+      "current_week": "2026-W45",
+      "current_count_7d": 20,
+      "below_threshold_now": false,
+      "last_checked": "2026-11-05T04:36:07.519341+00:00"
+    },
+    "Azure Updates": {
+      "below_streak": 0,
+      "category": "Cloud & DevOps",
+      "threshold_per_week": 2,
+      "current_week": "2026-W45",
+      "current_count_7d": 22,
+      "below_threshold_now": false,
+      "last_checked": "2026-11-05T04:36:07.519341+00:00"
+    },
+    "The New Stack": {
+      "below_streak": 0,
+      "category": "Cloud & DevOps",
+      "threshold_per_week": 2,
+      "current_week": "2026-W45",
+      "current_count_7d": 26,
+      "below_threshold_now": false,
+      "last_checked": "2026-11-05T04:36:07.519341+00:00"
+    }
+  },
+  "removals": [],
+  "updated_at": "2026-11-05T04:36:07.519341+00:00"
+}
