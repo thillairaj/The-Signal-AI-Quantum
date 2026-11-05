@@ -4,7 +4,7 @@
     <title>Signal Brief · Quantum</title>
     <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/</link>
     <description>Signal Brief: the day in technology, in The Signal's own words. Every item is written from linked official sources and fact checked before publication.</description>
-    <lastBuildDate>Thu, 05 Nov 2026 04:58:45 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 05 Nov 2026 05:09:44 +0000</lastBuildDate>
     <atom:link xmlns:atom="http://www.w3.org/2005/Atom" href="https://thillairaj.github.io/The-Signal-AI-Quantum/signal/quantum.xml" rel="self" type="application/rss+xml"/>
     <item>
       <title>IBM Quantum and QuICS use AI agents to find over 500 magic state factory designs</title>
@@ -12,8 +12,8 @@
       <guid isPermaLink="false">brief-2026-11-05-04</guid>
       <pubDate>Thu, 05 Nov 2026 01:30:00 +0000</pubDate>
       <category>Quantum</category>
-      <description>IBM Quantum and University of Maryland QuICS researchers used AI agents with deterministic solvers to discover more than 500 new magic state factories. These produce the non Clifford states that fault tolerant quantum computers need, with significantly lower resource requirements, and the detailed circuit models are openly accessible. Why it matters for tech: Magic state production is one of the largest cost centres in fault tolerant designs, so cheaper factories change machine economics.</description>
-      <content:encoded><![CDATA[<p>IBM Quantum and University of Maryland QuICS researchers used AI agents with deterministic solvers to discover more than 500 new magic state factories. These produce the non Clifford states that fault tolerant quantum computers need, with significantly lower resource requirements, and the detailed circuit models are openly accessible.</p><p><strong>Why it matters for tech:</strong> Magic state production is one of the largest cost centres in fault tolerant designs, so cheaper factories change machine economics.</p><p>Source: </p><ul><li><a href="https://quantumcomputingreport.com/ibm-quantum-and-quics-deploy-ai-agents-to-discover-over-500-high-efficiency-magic-state-factories/">Quantum Computing Report</a></li></ul>]]></content:encoded>
+      <description>IBM Quantum and University of Maryland QuICS researchers used AI agents with deterministic solvers to discover more than 500 new magic state factories. These produce the non Clifford states that fault tolerant quantum computers need, with significantly lower resource requirements, and the detailed circuit models are openly accessible. Why it matters for tech: Magic state production is a major cost centre in fault tolerant designs, so cheaper factories change machine economics.</description>
+      <content:encoded><![CDATA[<p>IBM Quantum and University of Maryland QuICS researchers used AI agents with deterministic solvers to discover more than 500 new magic state factories. These produce the non Clifford states that fault tolerant quantum computers need, with significantly lower resource requirements, and the detailed circuit models are openly accessible.</p><p><strong>Why it matters for tech:</strong> Magic state production is a major cost centre in fault tolerant designs, so cheaper factories change machine economics.</p><p>Source: </p><ul><li><a href="https://quantumcomputingreport.com/ibm-quantum-and-quics-deploy-ai-agents-to-discover-over-500-high-efficiency-magic-state-factories/">Quantum Computing Report</a></li></ul>]]></content:encoded>
     </item>
     <item>
       <title>Superinductor built inside a silicon chip in a commercial CMOS process</title>

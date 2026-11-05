@@ -397,7 +397,7 @@ function renderSources() {
 
 function feedSpec(a) {
   const SS = window.SignalShare;
-  const tag = SS.topicHashtag((a.title || "") + " " + (a.summary || ""));
+  const tag = SS.categoryHashtag(a.category);
   return {
     title: a.title,
     line: "Source: " + a.source,

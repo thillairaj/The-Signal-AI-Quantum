@@ -44,6 +44,13 @@ brief page and signal.xml run inside the daily job.
   item that breaks this rule. Policy items state specific, verifiable
   facts; broad generalisations and predictions are removed or the item is
   replaced.
+- Superlatives in why lines (Thillai, Nov 5, 2026): a "Why it matters"
+  line may not contain a superlative or a first ("first", "largest",
+  "biggest", "never", "not seen") unless the claim appears in a linked
+  source. The builder rejects such a why line unless the item carries
+  "why_claim_sourced": true, which the editor sets only after checking
+  the claim in the linked source itself. Every item must carry a company
+  field so the company cap covers every item.
 
 ## Files
 - data/brief.json: editorial source of truth (editions and items).

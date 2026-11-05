@@ -47,6 +47,13 @@ window.SignalShare = (function () {
   function topicHashtag(text) {
     return /quantum|qubit/i.test(text || "") ? "#QuantumComputing" : "#AI";
   }
+  /* Wire items are tagged by their category, never guessed from the text
+     (Thillai, Nov 5, 2026). */
+  function categoryHashtag(category) {
+    var map = { "AI": "#AI", "Quantum": "#QuantumComputing",
+      "Cybersecurity": "#CyberSecurity", "Cloud & DevOps": "#CloudComputing" };
+    return map[category] || "#AI";
+  }
   function articleCaption(title, subtitle, url) {
     return buildCaption([title, subtitle,
       "Read the full article, free, no sign-up:\n" + url,
@@ -479,7 +486,7 @@ window.SignalShare = (function () {
     PALETTES: PALETTES, isMobile: isMobile, copy: copy, download: download,
     buildCaption: buildCaption, shareImage: shareImage,
     shareTextFlow: shareTextFlow, fillOptions: fillOptions,
-    topicHashtag: topicHashtag, articleCaption: articleCaption,
+    topicHashtag: topicHashtag, categoryHashtag: categoryHashtag, articleCaption: articleCaption,
     podcastCaption: podcastCaption, feedCaption: feedCaption,
     feedShort: feedShort, feedWa: feedWa, shortText: shortText,
     whatsText: whatsText, openPanel: openPanel, closePanel: closePanel,

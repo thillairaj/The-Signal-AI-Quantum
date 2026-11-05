@@ -247,6 +247,12 @@ def main():
     # may not contain predictive language unless it sits inside a direct,
     # attributed quote.
     PREDICTIVE = ["expected to", "will likely", "set to"]
+    # Superlative gate (Thillai, Nov 5, 2026): a why line may not contain a
+    # superlative or a first ("first", "largest", "biggest", "never",
+    # "not seen") unless the item is flagged why_claim_sourced, which the
+    # editor sets only when that exact claim appears in a linked source.
+    SUPERLATIVES = re.compile(r"\b(first|largest|biggest|never)\b|not seen",
+                              re.IGNORECASE)
     problems = []
     for ed in data["editions"]:
         if not (8 <= len(ed["items"]) <= 12) and not ed.get("breaking"):
@@ -270,6 +276,13 @@ def main():
                         problems.append(
                             f"{item['id']}: predictive language '{phrase}' in a Policy item "
                             "outside a direct quote, rejected by the gate")
+            if not item.get("company"):
+                problems.append(f"{item['id']}: missing company field")
+            m = SUPERLATIVES.search(item.get("why", ""))
+            if m and not item.get("why_claim_sourced"):
+                problems.append(
+                    f"{item['id']}: superlative '{m.group(0)}' in the why line is not "
+                    "flagged as sourced (why_claim_sourced), rejected by the gate")
     if problems:
         for p in problems:
             print(f"GATE: {p}")

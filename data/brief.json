@@ -81,7 +81,8 @@
             }
           ],
           "summary": "Researchers have produced experimental support for the theoretical basis of topological quantum computing, an approach that stores information in special quantum states expected to be more resistant to local disturbances. The work addresses one of the field's core problems: how easily quantum information degrades.",
-          "why": "If topological approaches hold up, they could reduce the error correction burden that dominates quantum hardware design today."
+          "why": "If topological approaches hold up, they could reduce the error correction burden that dominates quantum hardware design today.",
+          "company": "Topological quantum computing (research)"
         },
         {
           "category": "Cloud & DevOps",
@@ -110,7 +111,8 @@
             }
           ],
           "summary": "The New Stack reports that some development teams are deliberately downgrading the AI models they use for coding work, and finding the results better for their purposes. The smaller setups can be cheaper and easier to control for the tasks these teams run most.",
-          "why": "Model choice is becoming an engineering decision about fit and cost, not a race to the largest model."
+          "why": "Model choice is becoming an engineering decision about fit and cost, not a race to the most powerful model.",
+          "company": "AI model providers (multiple)"
         },
         {
           "category": "Cybersecurity",
@@ -139,7 +141,7 @@
             }
           ],
           "summary": "Ars Technica reports that Apple is preparing a roaming home robot for 2027, priced at about $1,000, with FaceTime and smart home controls among its functions. The device is reported to have backing from CEO John Ternus and a limited initial feature set.",
-          "why": "It would be Apple's first robot product, and a test of whether consumers will pay four figures for a home robot.",
+          "why": "It puts Apple into home robotics, a new product category for the company, at a four figure price point.",
           "company": "Apple"
         },
         {
@@ -158,7 +160,8 @@
             }
           ],
           "summary": "Ars Technica reports that Ukrainian drone strikes on exposed Russian infrastructure have prompted Russian plans to move data centres underground. Russia's Digital Development Ministry has confirmed, as reported by Kommersant, that it completed drone protection recommendations for data centres, covering underground siting for the most critical sites, and sent them to the relevant organisations.",
-          "why": "The conflict is directly reshaping where and how a major state builds and protects its data centre capacity."
+          "why": "The conflict is directly reshaping where and how a major state builds and protects its data centre capacity.",
+          "company": "Russian Ministry of Digital Development"
         }
       ]
     },
@@ -237,7 +240,8 @@
             }
           ],
           "summary": "Researchers at the University of Regensburg and their international partners showed that a single additional measurement before a series of quantum operations reduced the qubit error rate by more than half. The results were published in Applied Physics Reviews.",
-          "why": "Low cost error reduction matters because error correction overhead decides how large a useful quantum machine must be."
+          "why": "Low cost error reduction matters because error correction overhead decides how large a useful quantum machine must be.",
+          "company": "University of Regensburg"
         },
         {
           "category": "Cloud & DevOps",
@@ -305,6 +309,10 @@
           "id": "brief-2026-11-04-10",
           "source_date": "2026-11-03",
           "sources": [
+            {
+              "label": "IQM (the report: Quantum Is Europe's Second Chance)",
+              "url": "https://iqm.tech/blog/quantum-is-europes-chance-to-lead-a-global-industry/"
+            },
             {
               "label": "Quantum Computing Report",
               "url": "https://quantumcomputingreport.com/ahead-of-eu-quantum-act-iqm-calls-for-dedicated-qubit-foundries-and-darpa-style-procurement/"
@@ -376,7 +384,7 @@
             }
           ],
           "summary": "IBM Quantum and University of Maryland QuICS researchers used AI agents with deterministic solvers to discover more than 500 new magic state factories. These produce the non Clifford states that fault tolerant quantum computers need, with significantly lower resource requirements, and the detailed circuit models are openly accessible.",
-          "why": "Magic state production is one of the largest cost centres in fault tolerant designs, so cheaper factories change machine economics.",
+          "why": "Magic state production is a major cost centre in fault tolerant designs, so cheaper factories change machine economics.",
           "company": "IBM"
         },
         {
@@ -391,7 +399,8 @@
             }
           ],
           "summary": "A study in Nature Electronics by researchers from nanoGUNE's Quantum Hardware group, Quantum Motion and UK partners introduces a superinductor created within a silicon integrated circuit. The device was fabricated in a commercial CMOS process, the same family of processes used for ordinary chips.",
-          "why": "Components made in standard chip processes are easier to manufacture at scale for quantum hardware."
+          "why": "Components made in standard chip processes are easier to manufacture at scale for quantum hardware.",
+          "company": "Quantum Motion"
         },
         {
           "category": "Industry",
@@ -428,7 +437,7 @@
             }
           ],
           "summary": "IonQ has completed its acquisition of Elisity, a zero trust security company, in an all stock transaction. IonQ's own announcement says it issued 1.15 billion US dollars of consideration in common stock at closing, with up to 150 million dollars more payable if Elisity meets revenue milestones through January 2028, and that Elisity's technology complements its post quantum cryptography and quantum key distribution work.",
-          "why": "A quantum company buying an operating security business is a revenue diversification move the sector has not seen at this size.",
+          "why": "A quantum computing company is adding an operating security business to its revenue base.",
           "company": "IonQ"
         },
         {
@@ -507,7 +516,8 @@
             }
           ],
           "summary": "Ballotpedia counted 41 local ballot measures on data centre policy across 10 states on November 3: 28 would limit development and 13 would facilitate it. In reported results, Edgewater, Florida voted to add a ban on new data centres to its city charter, Alhambra, California voted to prohibit data centres, and Harwood, North Dakota rejected its restrictive measure, the only one voted down in USA Today's tally of local results.",
-          "why": "Local ballot outcomes now directly decide where large data centres can be built in the United States."
+          "why": "Local ballot outcomes now directly decide where large data centres can be built in the United States.",
+          "company": "US state and local governments"
         }
       ]
     }
