@@ -4,8 +4,26 @@
     <title>Signal Brief · Cloud &amp; DevOps</title>
     <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/</link>
     <description>Signal Brief: the day in technology, in The Signal's own words. Every item is written from linked official sources and fact checked before publication.</description>
-    <lastBuildDate>Thu, 05 Nov 2026 05:09:44 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 06 Nov 2026 01:36:27 +0000</lastBuildDate>
     <atom:link xmlns:atom="http://www.w3.org/2005/Atom" href="https://thillairaj.github.io/The-Signal-AI-Quantum/signal/cloud-devops.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>Azure Front Door gains generally available post quantum TLS key exchange</title>
+      <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/#brief-2026-11-06-06</link>
+      <guid isPermaLink="false">brief-2026-11-06-06</guid>
+      <pubDate>Fri, 06 Nov 2026 01:30:00 +0000</pubDate>
+      <category>Cloud &amp; DevOps</category>
+      <description>Microsoft made configurable TLS key exchange policies generally available in Azure Front Door, including hybrid post quantum key exchange. The option is aimed at teams preparing for future cryptographic threats while keeping client compatibility. Why it matters for tech: Post quantum readiness is reaching production edge services, so teams can start the migration before quantum computers threaten current cryptography.</description>
+      <content:encoded><![CDATA[<p>Microsoft made configurable TLS key exchange policies generally available in Azure Front Door, including hybrid post quantum key exchange. The option is aimed at teams preparing for future cryptographic threats while keeping client compatibility.</p><p><strong>Why it matters for tech:</strong> Post quantum readiness is reaching production edge services, so teams can start the migration before quantum computers threaten current cryptography.</p><p>Source: </p><ul><li><a href="https://azure.microsoft.com/updates?id=577668">Azure Updates</a></li></ul>]]></content:encoded>
+    </item>
+    <item>
+      <title>Google donates its agent runtime stack to the CNCF as Agent Substrate hits 1.0</title>
+      <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/#brief-2026-11-06-07</link>
+      <guid isPermaLink="false">brief-2026-11-06-07</guid>
+      <pubDate>Fri, 06 Nov 2026 01:30:00 +0000</pubDate>
+      <category>Cloud &amp; DevOps</category>
+      <description>Google donated three open source projects that started at Google, Agent Substrate, gVisor and OpenRL, to the Cloud Native Computing Foundation after their acceptance into the CNCF Sandbox. Agent Substrate, which runs isolated agent environments, reached version 1.0 and is generally available on Google Kubernetes Engine, restoring idle agents in under 500 milliseconds at 10 times container density. Why it matters for tech: Agent infrastructure is getting the same neutral, open governance treatment Kubernetes got, so no single vendor controls how agents run at scale.</description>
+      <content:encoded><![CDATA[<p>Google donated three open source projects that started at Google, Agent Substrate, gVisor and OpenRL, to the Cloud Native Computing Foundation after their acceptance into the CNCF Sandbox. Agent Substrate, which runs isolated agent environments, reached version 1.0 and is generally available on Google Kubernetes Engine, restoring idle agents in under 500 milliseconds at 10 times container density.</p><p><strong>Why it matters for tech:</strong> Agent infrastructure is getting the same neutral, open governance treatment Kubernetes got, so no single vendor controls how agents run at scale.</p><p>Source: </p><ul><li><a href="https://cloud.google.com/blog/products/containers-kubernetes/open-infrastructure-for-autonomous-agents-comes-to-cncf/">Google Cloud Blog</a></li></ul>]]></content:encoded>
+    </item>
     <item>
       <title>Google previews AlloyDB Express, a scale to zero PostgreSQL for developers and agents</title>
       <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/#brief-2026-11-05-10</link>

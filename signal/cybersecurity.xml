@@ -4,8 +4,26 @@
     <title>Signal Brief · Cybersecurity</title>
     <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/</link>
     <description>Signal Brief: the day in technology, in The Signal's own words. Every item is written from linked official sources and fact checked before publication.</description>
-    <lastBuildDate>Thu, 05 Nov 2026 05:09:44 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 06 Nov 2026 01:36:27 +0000</lastBuildDate>
     <atom:link xmlns:atom="http://www.w3.org/2005/Atom" href="https://thillairaj.github.io/The-Signal-AI-Quantum/signal/cybersecurity.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>OpenSSH ships emergency fix for a flaw that let long passwords bypass login on Alpine Linux</title>
+      <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/#brief-2026-11-06-08</link>
+      <guid isPermaLink="false">brief-2026-11-06-08</guid>
+      <pubDate>Fri, 06 Nov 2026 01:30:00 +0000</pubDate>
+      <category>Cybersecurity</category>
+      <description>OpenSSH released version 10.6p2 to fix a critical flaw in which a password between 257 and 1,024 bytes long could log in to accounts with no password set, such as key only accounts, on some Alpine Linux servers. The flaw affects systems where the server checks passwords without PAM, which is how Alpine's openssh-server package is built. Alpine published fixed packages for every release back to 3.16, and no attacks using the flaw have been reported. Why it matters for tech: A password check that accepts the wrong input is a serious failure, and Alpine's wide use in containers makes fast patching matter.</description>
+      <content:encoded><![CDATA[<p>OpenSSH released version 10.6p2 to fix a critical flaw in which a password between 257 and 1,024 bytes long could log in to accounts with no password set, such as key only accounts, on some Alpine Linux servers. The flaw affects systems where the server checks passwords without PAM, which is how Alpine's openssh-server package is built. Alpine published fixed packages for every release back to 3.16, and no attacks using the flaw have been reported.</p><p><strong>Why it matters for tech:</strong> A password check that accepts the wrong input is a serious failure, and Alpine's wide use in containers makes fast patching matter.</p><p>Source: </p><ul><li><a href="https://thehackernews.com/2026/11/openssh-issues-emergency-fix-for-flaw.html">The Hacker News</a></li></ul>]]></content:encoded>
+    </item>
+    <item>
+      <title>FBI and CISA warn hackers are targeting refrigeration systems</title>
+      <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/#brief-2026-11-06-09</link>
+      <guid isPermaLink="false">brief-2026-11-06-09</guid>
+      <pubDate>Fri, 06 Nov 2026 01:30:00 +0000</pubDate>
+      <category>Cybersecurity</category>
+      <description>The FBI and CISA warned that hackers are actively targeting industrial refrigeration and cold chain monitoring systems worldwide, in a joint advisory with the US health, agriculture and transport departments. Attackers exploit unpatched or internet accessible temperature controllers to alter settings, which can spoil food, damage equipment and create fire hazards. The warning follows attacks on European refrigeration systems, including controllers at an estimated 250 to 350 French supermarkets in October. Why it matters for tech: Cyberattacks on refrigeration reach beyond data theft into food safety and public health, so operators are urged to take controllers off the public internet.</description>
+      <content:encoded><![CDATA[<p>The FBI and CISA warned that hackers are actively targeting industrial refrigeration and cold chain monitoring systems worldwide, in a joint advisory with the US health, agriculture and transport departments. Attackers exploit unpatched or internet accessible temperature controllers to alter settings, which can spoil food, damage equipment and create fire hazards. The warning follows attacks on European refrigeration systems, including controllers at an estimated 250 to 350 French supermarkets in October.</p><p><strong>Why it matters for tech:</strong> Cyberattacks on refrigeration reach beyond data theft into food safety and public health, so operators are urged to take controllers off the public internet.</p><p>Source: </p><ul><li><a href="https://www.ic3.gov/CSA/2026/261105.pdf">CISA and FBI joint advisory (PDF)</a></li><li><a href="https://www.bleepingcomputer.com/news/security/fbi-cisa-warn-of-cyberattacks-targeting-refrigeration-systems/">BleepingComputer</a></li></ul>]]></content:encoded>
+    </item>
     <item>
       <title>Zyxel patches zero day used to compromise nearly 1,000 network switches</title>
       <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/#brief-2026-11-05-08</link>

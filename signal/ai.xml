@@ -4,8 +4,35 @@
     <title>Signal Brief · AI</title>
     <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/</link>
     <description>Signal Brief: the day in technology, in The Signal's own words. Every item is written from linked official sources and fact checked before publication.</description>
-    <lastBuildDate>Thu, 05 Nov 2026 05:09:44 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 06 Nov 2026 01:36:27 +0000</lastBuildDate>
     <atom:link xmlns:atom="http://www.w3.org/2005/Atom" href="https://thillairaj.github.io/The-Signal-AI-Quantum/signal/ai.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>OpenAI launches GPT-6 Cyber, a security model built to stay inside its authorised scope</title>
+      <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/#brief-2026-11-06-01</link>
+      <guid isPermaLink="false">brief-2026-11-06-01</guid>
+      <pubDate>Fri, 06 Nov 2026 01:30:00 +0000</pubDate>
+      <category>AI</category>
+      <description>OpenAI introduced GPT-6 Cyber, a model for finding exploitable vulnerabilities and developing fixes, trained to stay within the scope researchers set. It scores 48.5% on ExploitGym, up from 32.1% for GPT-5.6 Cyber, and avoided out of scope services in 99.93% of alignment tests without deployment prompts. It already helped find 81 previously unknown high severity Firefox flaws, and it is initially available through the API and Codex to approved Daybreak Red customers. Why it matters for tech: Security models that can find flaws are only useful if they can be trusted not to wander, and this one pairs stronger exploit skills with measured restraint.</description>
+      <content:encoded><![CDATA[<p>OpenAI introduced GPT-6 Cyber, a model for finding exploitable vulnerabilities and developing fixes, trained to stay within the scope researchers set. It scores 48.5% on ExploitGym, up from 32.1% for GPT-5.6 Cyber, and avoided out of scope services in 99.93% of alignment tests without deployment prompts. It already helped find 81 previously unknown high severity Firefox flaws, and it is initially available through the API and Codex to approved Daybreak Red customers.</p><p><strong>Why it matters for tech:</strong> Security models that can find flaws are only useful if they can be trusted not to wander, and this one pairs stronger exploit skills with measured restraint.</p><p>Source: </p><ul><li><a href="https://openai.com/index/introducing-gpt-6-cyber">OpenAI Blog</a></li></ul>]]></content:encoded>
+    </item>
+    <item>
+      <title>Google ships Gemini Omni 1.2 Flash with 15 second video and a 30% price cut</title>
+      <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/#brief-2026-11-06-02</link>
+      <guid isPermaLink="false">brief-2026-11-06-02</guid>
+      <pubDate>Fri, 06 Nov 2026 01:30:00 +0000</pubDate>
+      <category>AI</category>
+      <description>Google made Gemini Omni 1.2 Flash generally available across the Gemini API and Google Cloud. It creates and edits video clips up to 15 seconds long, up from 10 seconds, with multi turn conversational editing and stronger reference consistency. The price falls 30% from version 1.1, to $0.07 per second for 720p video. Why it matters for tech: Video generation is moving from short demos toward usable ad and product clips, with editing and pricing aimed at production use.</description>
+      <content:encoded><![CDATA[<p>Google made Gemini Omni 1.2 Flash generally available across the Gemini API and Google Cloud. It creates and edits video clips up to 15 seconds long, up from 10 seconds, with multi turn conversational editing and stronger reference consistency. The price falls 30% from version 1.1, to $0.07 per second for 720p video.</p><p><strong>Why it matters for tech:</strong> Video generation is moving from short demos toward usable ad and product clips, with editing and pricing aimed at production use.</p><p>Source: </p><ul><li><a href="https://blog.google/innovation-and-ai/technology/developers-tools/introducing-gemini-omni-1-2-flash/">Google AI Blog</a></li><li><a href="https://deepmind.google/blog/gemini-omni-12-flash-fast-and-cost-effective-with-longer-clips/">Google DeepMind</a></li></ul>]]></content:encoded>
+    </item>
+    <item>
+      <title>Claude can now read your bank account, with read only access through Plaid</title>
+      <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/#brief-2026-11-06-03</link>
+      <guid isPermaLink="false">brief-2026-11-06-03</guid>
+      <pubDate>Fri, 06 Nov 2026 01:30:00 +0000</pubDate>
+      <category>AI</category>
+      <description>Anthropic launched Personal Finance in Claude in beta, connecting the chatbot to bank and card accounts through Plaid. Claude can break down spending by category, say which bills remain before payday, and judge whether a large purchase is affordable, using up to two years of transaction history. Access is read only: Claude cannot move, manage or invest money, and it does not see banking passwords. The beta is rolling out this week to Claude Pro, Max and Ultra subscribers in the US. Why it matters for tech: AI assistants are moving from answering questions to acting on personal financial data, which makes read only access and clear limits the story.</description>
+      <content:encoded><![CDATA[<p>Anthropic launched Personal Finance in Claude in beta, connecting the chatbot to bank and card accounts through Plaid. Claude can break down spending by category, say which bills remain before payday, and judge whether a large purchase is affordable, using up to two years of transaction history. Access is read only: Claude cannot move, manage or invest money, and it does not see banking passwords. The beta is rolling out this week to Claude Pro, Max and Ultra subscribers in the US.</p><p><strong>Why it matters for tech:</strong> AI assistants are moving from answering questions to acting on personal financial data, which makes read only access and clear limits the story.</p><p>Source: </p><ul><li><a href="https://www.theverge.com/ai-artificial-intelligence/1027652/anthropic-claude-plaid-personal-finance">The Verge</a></li></ul>]]></content:encoded>
+    </item>
     <item>
       <title>OpenAI launches Images 2.6 with faster generation and GIF creation</title>
       <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/#brief-2026-11-05-01</link>

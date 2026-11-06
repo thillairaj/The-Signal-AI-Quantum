@@ -4,14 +4,14 @@
     <title>The Signal</title>
     <link>https://thillairaj.github.io/The-Signal-AI-Quantum/</link>
     <description>A self-updating feed of AI, quantum computing, cybersecurity, cloud and DevOps, and podcast updates.</description>
-    <lastBuildDate>Thu, 05 Nov 2026 22:00:14 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 06 Nov 2026 01:28:32 +0000</lastBuildDate>
     <item>
       <title>NVIDIA PAIR Virtual Inference Router Expands Available Compute on Your Local Network</title>
       <link>https://developer.nvidia.com/blog/nvidia-pair-virtual-inference-router-expands-available-compute-on-your-local-network/</link>
       <guid isPermaLink="false">291ea19a15e9fa9d</guid>
       <description>AI agents are learning to do more by working together. A lead agent can break a complex task into smaller jobs and assign those jobs to specialized subagents....</description>
       <category>NVIDIA Technical Blog</category>
-      <pubDate>Thu, 05 Nov 2026 21:59:56 +0000</pubDate>
+      <pubDate>Fri, 06 Nov 2026 01:28:16 +0000</pubDate>
     </item>
     <item>
       <title>How to Carry User Identity Across Federated Kubernetes and AI Platforms</title>
@@ -19,7 +19,7 @@
       <guid isPermaLink="false">96735b4a162296d9</guid>
       <description>Modern AI platforms are no longer a single application behind one login screen. A user may start in a central portal, open a governed dataset, launch a notebook...</description>
       <category>NVIDIA Technical Blog</category>
-      <pubDate>Thu, 05 Nov 2026 21:59:56 +0000</pubDate>
+      <pubDate>Fri, 06 Nov 2026 01:28:16 +0000</pubDate>
     </item>
     <item>
       <title>Frontier Reasoning Reaches the Edge: How to Deploy and Optimize Models on NVIDIA Jetson</title>
@@ -27,7 +27,7 @@
       <guid isPermaLink="false">bb4eff084ce0c3ca</guid>
       <description>Running reasoning and agentic AI at the edge has been harder than it needs to be. Until recently, models capable of multi-step reasoning were too large to run...</description>
       <category>NVIDIA Technical Blog</category>
-      <pubDate>Thu, 05 Nov 2026 21:59:56 +0000</pubDate>
+      <pubDate>Fri, 06 Nov 2026 01:28:16 +0000</pubDate>
     </item>
     <item>
       <title>Building a Memory-Driven Agent with NVIDIA NemoClaw</title>
@@ -35,7 +35,7 @@
       <guid isPermaLink="false">aa717a2074d6c4eb</guid>
       <description>Enterprise work spans messages, decisions, projects, and obligations that change over time. An AI agent that starts without this context must reconstruct it...</description>
       <category>NVIDIA Technical Blog</category>
-      <pubDate>Thu, 05 Nov 2026 21:59:56 +0000</pubDate>
+      <pubDate>Fri, 06 Nov 2026 01:28:16 +0000</pubDate>
     </item>
     <item>
       <title>Introducing CUDA Rust: Two Tracks for Writing GPU Kernels</title>
@@ -43,7 +43,7 @@
       <guid isPermaLink="false">dbb60a81aa824bf3</guid>
       <description>In September 2026, NVIDIA announced it is leaning into native GPU programming in Rust. CUDA C++ and CUDA Python are mature, enterprise-grade toolchains, and...</description>
       <category>NVIDIA Technical Blog</category>
-      <pubDate>Thu, 05 Nov 2026 21:59:56 +0000</pubDate>
+      <pubDate>Fri, 06 Nov 2026 01:28:16 +0000</pubDate>
     </item>
     <item>
       <title>CUDA Toolkit 13.4 Adds Windows on Arm Support and Greater Control over Shared GPUs</title>
@@ -51,7 +51,7 @@
       <guid isPermaLink="false">7816c3b36083bf87</guid>
       <description>Every NVIDIA CUDA Toolkit release adds functionality and performance improvements that help developers get more from NVIDIA GPUs and the broader NVIDIA software...</description>
       <category>NVIDIA Technical Blog</category>
-      <pubDate>Thu, 05 Nov 2026 21:59:56 +0000</pubDate>
+      <pubDate>Fri, 06 Nov 2026 01:28:16 +0000</pubDate>
     </item>
     <item>
       <title>When to Use Encode-Prefill-Decode Disaggregation to Accelerate Multimodal Model Serving</title>
@@ -59,7 +59,7 @@
       <guid isPermaLink="false">51e6e5a8d9bdaf12</guid>
       <description>Encode-prefill-decode (EPD) disaggregation is an inference optimization technique for multimodal models that separates the vision encoder stage from the prefill...</description>
       <category>NVIDIA Technical Blog</category>
-      <pubDate>Thu, 05 Nov 2026 21:59:56 +0000</pubDate>
+      <pubDate>Fri, 06 Nov 2026 01:28:16 +0000</pubDate>
     </item>
     <item>
       <title>From Wafer-Out to First Token: Codifying Supply Chain Expertise with Nemotron and Palantir Foundry</title>
@@ -67,7 +67,7 @@
       <guid isPermaLink="false">d23b90bcfb6224ff</guid>
       <description>NVIDIA has one of the largest and most complex supply chains in the world, and its performance is measured from wafer-out to first token. The interval is in two...</description>
       <category>NVIDIA Technical Blog</category>
-      <pubDate>Thu, 05 Nov 2026 21:59:56 +0000</pubDate>
+      <pubDate>Fri, 06 Nov 2026 01:28:16 +0000</pubDate>
     </item>
     <item>
       <title>High-Throughput Structure Prediction with BioNeMo Inference Runtime</title>
@@ -75,7 +75,7 @@
       <guid isPermaLink="false">bf13fbf2f14a0fa2</guid>
       <description>Biomolecular structure prediction is now often run at proteome scale, where the goal is to move an entire worklist through the pipeline efficiently. NVIDIA...</description>
       <category>NVIDIA Technical Blog</category>
-      <pubDate>Thu, 05 Nov 2026 21:59:56 +0000</pubDate>
+      <pubDate>Fri, 06 Nov 2026 01:28:16 +0000</pubDate>
     </item>
     <item>
       <title>How Full-Stack NIM Optimizations Deliver 2.5x More Users on Nemotron 3 Ultra</title>
@@ -83,7 +83,7 @@
       <guid isPermaLink="false">2abc4ceb82a011e6</guid>
       <description>Deploying a large language model is only the first step toward production-ready serving. Production teams also need to serve as many concurrent users as...</description>
       <category>NVIDIA Technical Blog</category>
-      <pubDate>Thu, 05 Nov 2026 21:59:56 +0000</pubDate>
+      <pubDate>Fri, 06 Nov 2026 01:28:16 +0000</pubDate>
     </item>
     <item>
       <title>Introducing Kimi K3.1 Pro</title>
@@ -91,7 +91,7 @@
       <guid isPermaLink="false">2e71264ea893e482</guid>
       <description>Introducing Kimi K3.1 Pro Kimi K3.1 Pro landed on the Kimi API today - it's not yet open weights, but Moonshot promise "Full model weights will be released by Nov 4, 2026". They're also offering a "Highspeed" version that's 2-3x faster, at twice the price (except for input token </description>
       <category>Simon Willison</category>
-      <pubDate>Thu, 05 Nov 2026 21:59:51 +0000</pubDate>
+      <pubDate>Fri, 06 Nov 2026 01:28:09 +0000</pubDate>
     </item>
     <item>
       <title>Quick Study</title>
@@ -99,7 +99,7 @@
       <guid isPermaLink="false">ece6c921b830e7e3</guid>
       <description>Tool: Quick Study Prompt to Claude Opus 5.5 High : Build an artifact where you open a photo and it rapidly (in a few seconds) paints a version of that photo using a canvas element and simulated paintbrush See also my previous experiment getting Claude Fable to simulate a watercol</description>
       <category>Simon Willison</category>
-      <pubDate>Thu, 05 Nov 2026 21:59:51 +0000</pubDate>
+      <pubDate>Fri, 06 Nov 2026 01:28:09 +0000</pubDate>
     </item>
     <item>
       <title>battledrones v14: Compass Rose, a four player map</title>
@@ -107,7 +107,7 @@
       <guid isPermaLink="false">3812b4d599bb7adb</guid>
       <description>Release: battledrones v14: Compass Rose, a four player map I added four player online mode to Battledrones - previous maps were limited to two. Here's the initial prompt I used: Add a new map for a four player battle - four way rotational symmetry, up to four AI players, works wi</description>
       <category>Simon Willison</category>
-      <pubDate>Thu, 05 Nov 2026 21:59:51 +0000</pubDate>
+      <pubDate>Fri, 06 Nov 2026 01:28:09 +0000</pubDate>
     </item>
     <item>
       <title>Seam Cutter</title>
@@ -115,7 +115,7 @@
       <guid isPermaLink="false">0c0ce1d91251a58f</guid>
       <description>Tool: Seam Cutter I built this weird and very specific cropping tool - it lets you create a horizontal or vertical cut across an image, then slide the two sides relative to each other. Effectively it lets you crop out a section in the middle of an image. I wanted this because I o</description>
       <category>Simon Willison</category>
-      <pubDate>Thu, 05 Nov 2026 21:59:51 +0000</pubDate>
+      <pubDate>Fri, 06 Nov 2026 01:28:09 +0000</pubDate>
     </item>
     <item>
       <title>webframe: evaluated as a scraper and a sandbox</title>
@@ -123,7 +123,7 @@
       <guid isPermaLink="false">d4fc15392e5cfcdd</guid>
       <description>Research: webframe: evaluated as a scraper and a sandbox webframe is a neat little project from Jeff Lindsay which lets you "run a web page like a program" - you point it at a URL or file and it executes it in a hidden headless web view and outputs console.log() to standard outpu</description>
       <category>Simon Willison</category>
-      <pubDate>Thu, 05 Nov 2026 21:59:51 +0000</pubDate>
+      <pubDate>Fri, 06 Nov 2026 01:28:09 +0000</pubDate>
     </item>
     <item>
       <title>Quoting Jason Koebler</title>
@@ -131,7 +131,7 @@
       <guid isPermaLink="false">34adadfb171aaca1</guid>
       <description>Because big tech platforms essentially do not have customer support and make it impossible for their users to contact a human, many people experiencing run-of-the-mill tech problems have turned to ChatGPT. And, increasingly, ChatGPT is telling people that have normal tech support</description>
       <category>Simon Willison</category>
-      <pubDate>Thu, 05 Nov 2026 21:59:51 +0000</pubDate>
+      <pubDate>Fri, 06 Nov 2026 01:28:09 +0000</pubDate>
     </item>
     <item>
       <title>GPT-6.1 Terra</title>
@@ -139,7 +139,7 @@
       <guid isPermaLink="false">51b6dc021077f16c</guid>
       <description>GPT-6.1 Terra It's always interesting to note which aspects of a new model are emphasized in the release announcement. In the case of GPT-6.1 Terra, OpenAI went with visual reasoning and computer use: We’re introducing GPT-6.1 Terra , a fast, efficient model that combines detaile</description>
       <category>Simon Willison</category>
-      <pubDate>Thu, 05 Nov 2026 21:59:51 +0000</pubDate>
+      <pubDate>Fri, 06 Nov 2026 01:28:09 +0000</pubDate>
     </item>
     <item>
       <title>Game Boy Color on My Conference Badge</title>
@@ -147,7 +147,7 @@
       <guid isPermaLink="false">a9c65cb8282253c6</guid>
       <description>Game Boy Color on My Conference Badge I'm at GitHub Universe this week and, similar to last year , the conference badge is a full-blown color screen computer. I've been hacking around with it again, and then I ran into with Steve Francia... who worked with Gemini to get a full NE</description>
       <category>Simon Willison</category>
-      <pubDate>Thu, 05 Nov 2026 21:59:51 +0000</pubDate>
+      <pubDate>Fri, 06 Nov 2026 01:28:09 +0000</pubDate>
     </item>
     <item>
       <title>Quoting Terk Terkowitz</title>
@@ -155,7 +155,7 @@
       <guid isPermaLink="false">5d9615019ec259be</guid>
       <description>If your work does not benefit from current AI tooling, that is a finding, not a failing. Document why, share it with your community of peers, bring it to your manager, and work to find solutions. An engineer who can explain where AI does not yet help their work is demonstrating t</description>
       <category>Simon Willison</category>
-      <pubDate>Thu, 05 Nov 2026 21:59:51 +0000</pubDate>
+      <pubDate>Fri, 06 Nov 2026 01:28:09 +0000</pubDate>
     </item>
     <item>
       <title>If in doubt, delete the uv.lock file</title>
@@ -163,23 +163,47 @@
       <guid isPermaLink="false">ffb30fef9594cc91</guid>
       <description>I've been getting the occasional confusing Python dependency error since switching over to Python 3.15 and the rule I'm having to remember is: If in doubt, delete the uv.lock file Most of my projects are libraries which don't include a uv.lock file, since it's rude for a library </description>
       <category>Simon Willison</category>
-      <pubDate>Thu, 05 Nov 2026 21:59:51 +0000</pubDate>
+      <pubDate>Fri, 06 Nov 2026 01:28:09 +0000</pubDate>
     </item>
     <item>
-      <title>17 better ways Elon Musk could have wasted $446 million</title>
-      <link>https://www.theverge.com/ai-artificial-intelligence/1026878/not-even-good-at-being-rich</link>
-      <guid isPermaLink="false">4c9b76bc0bf942e0</guid>
-      <description>One of the basic problems of spending too much time on social media is that you are cooking your brain by reading posts from a pack of attention-seeking lunatics. If your social media of choice is the site formerly known as Twitter, and it is your main source of contact with the </description>
+      <title>You can post AI music straight to SoundCloud from ElevenLabs</title>
+      <link>https://www.theverge.com/ai-artificial-intelligence/1027427/ai-music-soundcloud-elevenlabs</link>
+      <guid isPermaLink="false">f8f8c085e2e5be1c</guid>
+      <description>After partnering with Moises earlier this year, SoundCloud is now adding integration with another AI music platform, ElevenLabs. Now, rather than having to export and download your outputs from ElevenLabs and then upload them to SoundCloud, you can publish them directly. As part </description>
       <category>The Verge — AI</category>
-      <pubDate>Thu, 05 Nov 2026 21:59:50 +0000</pubDate>
+      <pubDate>Fri, 06 Nov 2026 01:28:07 +0000</pubDate>
     </item>
     <item>
-      <title>Qualcomm is betting big on data centers as smartphone sales sink</title>
-      <link>https://www.theverge.com/ai-artificial-intelligence/1026867/qualcomm-earnings-data-centers</link>
-      <guid isPermaLink="false">48d8c1552d58becd</guid>
-      <description>With smartphone sales tanking by around 20 percent compared to 2025, Qualcomm is looking to data centers to help boost its bottom line. During its Q4 2026 earnings call, the company laid out its plans to make a splash in the AI data center business, through partnerships with comp</description>
+      <title>The hidden supply chain costs of the AI boom</title>
+      <link>https://www.theverge.com/podcast/1024438/willy-shih-supply-chain-ai-chips-ram-where-does-my-stuff-come-from-book</link>
+      <guid isPermaLink="false">56c190950731d79b</guid>
+      <description>Today, I’m talking with Willy Shih, an economist, a professor of management practice at Harvard Business School, and the author of the upcoming book, Where Does My Stuff Come From? The Powerful Economics Behind Global Supply Chains. Willy is one of my all-time favorite Decoder gu</description>
       <category>The Verge — AI</category>
-      <pubDate>Thu, 05 Nov 2026 21:59:50 +0000</pubDate>
+      <pubDate>Fri, 06 Nov 2026 01:28:07 +0000</pubDate>
+    </item>
+    <item>
+      <title>OpenAI says its new cybersecurity model is better at not hacking other companies</title>
+      <link>https://www.theverge.com/ai-artificial-intelligence/1027599/openai-gpt-6-cyber-launch</link>
+      <guid isPermaLink="false">b529285c262b3aff</guid>
+      <description>OpenAI is launching GPT-6 Cyber, the latest version of its cybersecurity AI model, which it says is better at finding vulnerabilities and less likely to go rogue and hack other platforms in the process. OpenAI says that during testing, GPT-6 Cyber went out of bounds less than 1 p</description>
+      <category>The Verge — AI</category>
+      <pubDate>Fri, 06 Nov 2026 01:28:07 +0000</pubDate>
+    </item>
+    <item>
+      <title>Grimes is going to star in an AI movie that’s coming to theaters</title>
+      <link>https://www.theverge.com/entertainment/1026282/grimes-ai-movie</link>
+      <guid isPermaLink="false">4dac3d0c60c6510e</guid>
+      <description>The AI-generated sci-fi film Gods Don't Give Gifts has added a bit of star power: Pop star Grimes is going to appear in the movie. Billed as "the first AI film to come to theatres," Gods Don't Give Gifts is a notable test case for the commercial potential of AI films, and it rele</description>
+      <category>The Verge — AI</category>
+      <pubDate>Fri, 06 Nov 2026 01:28:07 +0000</pubDate>
+    </item>
+    <item>
+      <title>‘Total repudiation’: The blue wave is about to hit AI</title>
+      <link>https://www.theverge.com/ai-artificial-intelligence/1026927/total-repudiation-the-blue-wave-is-about-to-hit-ai</link>
+      <guid isPermaLink="false">23696f011bd98b05</guid>
+      <description>On Tuesday night, Democrats made history as they took control of the House and the Senate, and a blue wave swept through traditionally red and swing states - with the nation's first Black woman governor elected in Georgia, the country's first Native American woman governor electe</description>
+      <category>The Verge — AI</category>
+      <pubDate>Fri, 06 Nov 2026 01:28:07 +0000</pubDate>
     </item>
     <item>
       <title>Claude AI can plug directly into your bank account</title>
@@ -187,7 +211,7 @@
       <guid isPermaLink="false">f49d817c3fd35c35</guid>
       <description>Anthropic has a new pitch for managing your personal finances: let Claude do it instead, with a new Personal Finance feature that connects it to your bank and card accounts via the Plaid bank bridging platform. You can ask the chatbot "where did my money go this month," for examp</description>
       <category>The Verge — AI</category>
-      <pubDate>Thu, 05 Nov 2026 21:59:50 +0000</pubDate>
+      <pubDate>Fri, 06 Nov 2026 01:28:07 +0000</pubDate>
     </item>
     <item>
       <title>Muse has a voice mode now</title>
@@ -195,7 +219,63 @@
       <guid isPermaLink="false">c6134d61030c25d1</guid>
       <description>Meta now lets you have voice conversations with your Muse AI agent in real time, CEO Mark Zuckerberg announced today. The feature has been rolled out to me, and I gave it a spin on the iOS app while writing this article. As you chat with your Muse agent, the avatar at the top of </description>
       <category>The Verge — AI</category>
-      <pubDate>Thu, 05 Nov 2026 21:59:50 +0000</pubDate>
+      <pubDate>Fri, 06 Nov 2026 01:28:07 +0000</pubDate>
+    </item>
+    <item>
+      <title>Perplexity launches its own take on AI agents for work</title>
+      <link>https://www.theverge.com/ai-artificial-intelligence/1028302/perplexity-teammates-ai-agents-work</link>
+      <guid isPermaLink="false">8e75ec02fc50e91f</guid>
+      <description>Perplexity is taking on OpenAI and Anthropic with its own work-focused AI agents. The startup's new always-on "Teammates" can take on multiple roles within a workspace, while pulling existing projects, skills, and memory from the Perplexity tools you already use. Teammates integr</description>
+      <category>The Verge — AI</category>
+      <pubDate>Fri, 06 Nov 2026 01:28:07 +0000</pubDate>
+    </item>
+    <item>
+      <title>Airbnb is working on an AI travel agent</title>
+      <link>https://www.theverge.com/tech/1028412/airbnb-ai-travel-agent-q3-2026-earnings</link>
+      <guid isPermaLink="false">cc48f8093c5bb103</guid>
+      <description>Airbnb plans to roll out an AI agent in the first half of 2027 that will help users plan and book travel, the company said in its Q3 2026 earnings shareholder letter released today. "Today's AI agents are good at simple, routine tasks, like making a restaurant reservation or sche</description>
+      <category>The Verge — AI</category>
+      <pubDate>Fri, 06 Nov 2026 01:28:07 +0000</pubDate>
+    </item>
+    <item>
+      <title>OpenAI is stepping back from NDAs for data center projects</title>
+      <link>https://www.theverge.com/ai-artificial-intelligence/1028454/openai-data-center-nda</link>
+      <guid isPermaLink="false">85f398082dadd860</guid>
+      <description>Following this week's midterms where voters resoundingly voiced their opposition to data center expansion, OpenAI today announced new commitments to communities where it is working on data center projects, including that it won't use non-disclosure agreements (NDAs) with public o</description>
+      <category>The Verge — AI</category>
+      <pubDate>Fri, 06 Nov 2026 01:28:07 +0000</pubDate>
+    </item>
+    <item>
+      <title>FBI, CISA warn of cyberattacks targeting refrigeration systems</title>
+      <link>https://www.bleepingcomputer.com/news/security/fbi-cisa-warn-of-cyberattacks-targeting-refrigeration-systems/</link>
+      <guid isPermaLink="false">97d7db0e7e4a0b1e</guid>
+      <description>The FBI and CISA warn that hackers are actively targeting industrial refrigeration and cold-chain monitoring systems worldwide, potentially causing food spoilage, equipment damage, and fire hazards. [...]</description>
+      <category>BleepingComputer</category>
+      <pubDate>Fri, 06 Nov 2026 00:56:44 +0000</pubDate>
+    </item>
+    <item>
+      <title>[Launched] Generally Available: Azure Front Door TLS key exchange policy with post-quantum support</title>
+      <link>https://azure.microsoft.com/updates?id=577668</link>
+      <guid isPermaLink="false">0a1279cf12a25858</guid>
+      <description>Azure Front Door now supports configurable TLS key exchange policies, including hybrid post-quantum key exchange, to help you prepare for evolving cryptographic threats while meeting your security and client compatibility requirements. Choose a predefined</description>
+      <category>Azure Updates</category>
+      <pubDate>Thu, 05 Nov 2026 23:19:48 +0000</pubDate>
+    </item>
+    <item>
+      <title>Quantinuum Raises Revenue Outlook After Landing Its Largest Cloud Agreement</title>
+      <link>https://thequantuminsider.com/2026/11/05/quantinuum-raises-revenue-outlook-after-landing-its-largest-cloud-agreement/</link>
+      <guid isPermaLink="false">f5f13fce9245044c</guid>
+      <description>Insider Brief PRESS RELEASE &amp;#8212; Quantinuum secured its largest cloud agreement and raised its annual revenue forecast as customers committed to using future generations of its quantum computers, according to a statement from the company. The multiyear extension with a leading</description>
+      <category>The Quantum Insider</category>
+      <pubDate>Thu, 05 Nov 2026 22:18:57 +0000</pubDate>
+    </item>
+    <item>
+      <title>IonQ Raises Revenue Forecast as Quarterly Sales Climb to $173.8 Million</title>
+      <link>https://thequantuminsider.com/2026/11/05/ionq-raises-revenue-forecast-as-quarterly-sales-climb-to-173-8-million/</link>
+      <guid isPermaLink="false">c8eeda1d6ad17348</guid>
+      <description>Insider Brief IonQ raised its full-year revenue forecast as record quarterly sales and new computing, manufacturing and security agreements expanded its quantum technology business, according to a company statement. The company reported third-quarter revenue of $173.8 million, up</description>
+      <category>The Quantum Insider</category>
+      <pubDate>Thu, 05 Nov 2026 21:44:40 +0000</pubDate>
     </item>
     <item>
       <title>Google: Schools can keep search while skipping Gemini, but AI search is non-negotiable</title>
@@ -262,6 +342,14 @@
       <pubDate>Thu, 05 Nov 2026 20:02:19 +0000</pubDate>
     </item>
     <item>
+      <title>Cult.fit builds operational muscle with Codex</title>
+      <link>https://openai.com/index/cultfit-builds-with-codex</link>
+      <guid isPermaLink="false">c88b52d0b21039c7</guid>
+      <description>Cult.fit is using Codex to help teams across functions build tools, move faster, and change how work gets done.</description>
+      <category>OpenAI Blog</category>
+      <pubDate>Thu, 05 Nov 2026 20:00:00 +0000</pubDate>
+    </item>
+    <item>
       <title>New NVIDIA Cosmos 3 Open Models for Interactive World Simulation</title>
       <link>https://huggingface.co/blog/nvidia/cosmos-interactive-world-simulation</link>
       <guid isPermaLink="false">e8690f74b67f5698</guid>
@@ -308,46 +396,6 @@
       <description>Raindrop wants developers to know what else will change when they edit an agent&amp;#8217;s prompt, swap its model, or give The post Raindrop simulates your agent’s world to catch what your changes break appeared first on The New Stack .</description>
       <category>The New Stack</category>
       <pubDate>Thu, 05 Nov 2026 18:00:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>You can post AI music straight to SoundCloud from ElevenLabs</title>
-      <link>https://www.theverge.com/ai-artificial-intelligence/1027427/ai-music-soundcloud-elevenlabs</link>
-      <guid isPermaLink="false">f8f8c085e2e5be1c</guid>
-      <description>After partnering with Moises earlier this year, SoundCloud is now adding integration with another AI music platform, ElevenLabs. Now, rather than having to export and download your outputs from ElevenLabs and then upload them to SoundCloud, you can publish them directly. As part </description>
-      <category>The Verge — AI</category>
-      <pubDate>Thu, 05 Nov 2026 17:59:55 +0000</pubDate>
-    </item>
-    <item>
-      <title>The hidden supply chain costs of the AI boom</title>
-      <link>https://www.theverge.com/podcast/1024438/willy-shih-supply-chain-ai-chips-ram-where-does-my-stuff-come-from-book</link>
-      <guid isPermaLink="false">56c190950731d79b</guid>
-      <description>Today, I’m talking with Willy Shih, an economist, a professor of management practice at Harvard Business School, and the author of the upcoming book, Where Does My Stuff Come From? The Powerful Economics Behind Global Supply Chains. Willy is one of my all-time favorite Decoder gu</description>
-      <category>The Verge — AI</category>
-      <pubDate>Thu, 05 Nov 2026 17:59:55 +0000</pubDate>
-    </item>
-    <item>
-      <title>OpenAI says its new cybersecurity model is better at not hacking other companies</title>
-      <link>https://www.theverge.com/ai-artificial-intelligence/1027599/openai-gpt-6-cyber-launch</link>
-      <guid isPermaLink="false">b529285c262b3aff</guid>
-      <description>OpenAI is launching GPT-6 Cyber, the latest version of its cybersecurity AI model, which it says is better at finding vulnerabilities and less likely to go rogue and hack other platforms in the process. OpenAI says that during testing, GPT-6 Cyber went out of bounds less than 1 p</description>
-      <category>The Verge — AI</category>
-      <pubDate>Thu, 05 Nov 2026 17:59:55 +0000</pubDate>
-    </item>
-    <item>
-      <title>Grimes is going to star in an AI movie that’s coming to theaters</title>
-      <link>https://www.theverge.com/entertainment/1026282/grimes-ai-movie</link>
-      <guid isPermaLink="false">4dac3d0c60c6510e</guid>
-      <description>The AI-generated sci-fi film Gods Don't Give Gifts has added a bit of star power: Pop star Grimes is going to appear in the movie. Billed as "the first AI film to come to theatres," Gods Don't Give Gifts is a notable test case for the commercial potential of AI films, and it rele</description>
-      <category>The Verge — AI</category>
-      <pubDate>Thu, 05 Nov 2026 17:59:55 +0000</pubDate>
-    </item>
-    <item>
-      <title>‘Total repudiation’: The blue wave is about to hit AI</title>
-      <link>https://www.theverge.com/ai-artificial-intelligence/1026927/total-repudiation-the-blue-wave-is-about-to-hit-ai</link>
-      <guid isPermaLink="false">23696f011bd98b05</guid>
-      <description>On Tuesday night, Democrats made history as they took control of the House and the Senate, and a blue wave swept through traditionally red and swing states - with the nation's first Black woman governor elected in Georgia, the country's first Native American woman governor electe</description>
-      <category>The Verge — AI</category>
-      <pubDate>Thu, 05 Nov 2026 17:59:55 +0000</pubDate>
     </item>
     <item>
       <title>OpenSSH flaw lets attackers log into password-disabled Linux accounts</title>
@@ -436,54 +484,6 @@
       <description>November 2 - November 6 BigQuery observability for data agents is now generally available : Data teams can now monitor the performance, adoption, latency, and cost of BigQuery data agents and their multi-turn conversations using Google Cloud Observability. This capability provide</description>
       <category>Google Cloud Blog</category>
       <pubDate>Thu, 05 Nov 2026 17:00:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>Gemini Omni 1.2 Flash: Fast and cost-effective with longer clips</title>
-      <link>https://blog.google/innovation-and-ai/technology/developers-tools/introducing-gemini-omni-1-2-flash/</link>
-      <guid isPermaLink="false">63c3d56bc72bc9e8</guid>
-      <description>Text "Gemini Introducing Gemini Omni 1.2 Flash" surroudned by images of a beehive, animals in conversation, a squid, and a woman walking down a street</description>
-      <category>Google AI Blog</category>
-      <pubDate>Thu, 05 Nov 2026 17:00:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>​​​​What’s new in Microsoft Security: November 2026</title>
-      <link>https://www.microsoft.com/en-us/security/blog/2026/11/05/whats-new-in-microsoft-security-november-2026/</link>
-      <guid isPermaLink="false">1a39a444dba6b797</guid>
-      <description>Microsoft Security’s November 2026 updates strengthen AI agent security, least privilege, threat protection, and exposure management. The post ​​​​What’s new in Microsoft Security: November 2026 appeared first on Microsoft Security Blog .</description>
-      <category>Microsoft Security Blog</category>
-      <pubDate>Thu, 05 Nov 2026 17:00:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>OpenSSH Issues Emergency Fix for Flaw Letting Long Passwords Bypass SSH Auth on Alpine Linux</title>
-      <link>https://thehackernews.com/2026/11/openssh-issues-emergency-fix-for-flaw.html</link>
-      <guid isPermaLink="false">3fe484f436f5a815</guid>
-      <description>Attackers can log in to accounts that have no password, such as SSH key-only accounts, on some Alpine Linux servers running the standard openssh-server package. They need network access to the server, an account name, and a password between 257 and 1,024 bytes long. OpenSSH, whic</description>
-      <category>The Hacker News</category>
-      <pubDate>Thu, 05 Nov 2026 16:42:46 +0000</pubDate>
-    </item>
-    <item>
-      <title>Researchers Bypass ChatGPT Lockdown Mode to Exfiltrate Chats Without User Interaction</title>
-      <link>https://thehackernews.com/2026/11/researchers-bypass-chatgpt-lockdown.html</link>
-      <guid isPermaLink="false">306be99284dc169e</guid>
-      <description>Cybersecurity researchers have disclosed details of a now-patched vulnerability that could be exploited to bypass Lockdown Mode protections in OpenAI ChatGPT. Lockdown Mode was introduced by the artificial intelligence (AI) company in June 2026 as an optional setting to minimize </description>
-      <category>The Hacker News</category>
-      <pubDate>Thu, 05 Nov 2026 16:42:32 +0000</pubDate>
-    </item>
-    <item>
-      <title>Hackers backdoor Linux servers using trojanized CWP web server</title>
-      <link>https://www.bleepingcomputer.com/news/security/hackers-backdoor-linux-servers-using-trojanized-cwp-web-server/</link>
-      <guid isPermaLink="false">5263a8e99f87686b</guid>
-      <description>A new Linux malware called CWPdoor is being distributed through a trojanized version of cwpsrv, the web server behind the Control Web Panel (CWP) management interface. [...]</description>
-      <category>BleepingComputer</category>
-      <pubDate>Thu, 05 Nov 2026 16:24:26 +0000</pubDate>
-    </item>
-    <item>
-      <title>DigiCert data breach exposes customer information, identity documents</title>
-      <link>https://www.bleepingcomputer.com/news/security/digicert-data-breach-exposes-customer-information-identity-documents/</link>
-      <guid isPermaLink="false">6b1d9cd5a096d574</guid>
-      <description>DigiCert warns it suffered a data breach after a server migration mistakenly exposed an internal business system to the internet, allowing unauthorized access to customer information and identity documents. [...]</description>
-      <category>BleepingComputer</category>
-      <pubDate>Thu, 05 Nov 2026 16:12:46 +0000</pubDate>
     </item>
   </channel>
 </rss>

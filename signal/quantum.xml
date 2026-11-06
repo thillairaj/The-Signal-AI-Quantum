@@ -4,8 +4,26 @@
     <title>Signal Brief · Quantum</title>
     <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/</link>
     <description>Signal Brief: the day in technology, in The Signal's own words. Every item is written from linked official sources and fact checked before publication.</description>
-    <lastBuildDate>Thu, 05 Nov 2026 05:09:44 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 06 Nov 2026 01:36:27 +0000</lastBuildDate>
     <atom:link xmlns:atom="http://www.w3.org/2005/Atom" href="https://thillairaj.github.io/The-Signal-AI-Quantum/signal/quantum.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>Quantinuum maps its Nexus platform toward a fault tolerant computer in 2029</title>
+      <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/#brief-2026-11-06-04</link>
+      <guid isPermaLink="false">brief-2026-11-06-04</guid>
+      <pubDate>Fri, 06 Nov 2026 01:30:00 +0000</pubDate>
+      <category>Quantum</category>
+      <description>Quantinuum published a roadmap to grow Nexus, its platform as a service, into a developer platform for fault tolerant quantum applications, tracking hardware releases through Apollo, its planned universal fault tolerant computer in 2029. Releases will progressively automate error correction, resource management and deployment. Nexus already serves more than 200 organisations, up 45% in 2026, with job submissions up tenfold in the year to August 2026. Why it matters for tech: Quantum vendors are now competing on developer platforms, not only hardware, so applications built today can carry over to fault tolerant machines.</description>
+      <content:encoded><![CDATA[<p>Quantinuum published a roadmap to grow Nexus, its platform as a service, into a developer platform for fault tolerant quantum applications, tracking hardware releases through Apollo, its planned universal fault tolerant computer in 2029. Releases will progressively automate error correction, resource management and deployment. Nexus already serves more than 200 organisations, up 45% in 2026, with job submissions up tenfold in the year to August 2026.</p><p><strong>Why it matters for tech:</strong> Quantum vendors are now competing on developer platforms, not only hardware, so applications built today can carry over to fault tolerant machines.</p><p>Source: </p><ul><li><a href="https://thequantuminsider.com/2026/11/05/quantinuum-maps-nexus-expansion-ahead-of-planned-2029-fault-tolerant-computer/">The Quantum Insider</a></li></ul>]]></content:encoded>
+    </item>
+    <item>
+      <title>IBM, Oak Ridge and AMD pair quantum hardware with supercomputing to advance error correction</title>
+      <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/#brief-2026-11-06-05</link>
+      <guid isPermaLink="false">brief-2026-11-06-05</guid>
+      <pubDate>Fri, 06 Nov 2026 01:30:00 +0000</pubDate>
+      <category>Quantum</category>
+      <description>IBM, the Quantum Science Center at Oak Ridge National Laboratory and AMD launched a joint co-design platform for quantum error correction, combining quantum and high performance computing. The first deployment pairs IBM quantum computers, including the 120 qubit Nighthawk processor, with Oak Ridge's Umbra system, powered by AMD Instinct MI355X GPUs and 5th Gen EPYC CPUs. The work supports the US Department of Energy goal of 100 logical qubits running 100,000 hard operations by late 2028. Why it matters for tech: Error correction needs classical computing at scale, and this platform tests quantum and supercomputing as one system rather than two separate tools.</description>
+      <content:encoded><![CDATA[<p>IBM, the Quantum Science Center at Oak Ridge National Laboratory and AMD launched a joint co-design platform for quantum error correction, combining quantum and high performance computing. The first deployment pairs IBM quantum computers, including the 120 qubit Nighthawk processor, with Oak Ridge's Umbra system, powered by AMD Instinct MI355X GPUs and 5th Gen EPYC CPUs. The work supports the US Department of Energy goal of 100 logical qubits running 100,000 hard operations by late 2028.</p><p><strong>Why it matters for tech:</strong> Error correction needs classical computing at scale, and this platform tests quantum and supercomputing as one system rather than two separate tools.</p><p>Source: </p><ul><li><a href="https://thequantuminsider.com/2026/11/05/oak-ridge-national-laboratory-ibm-and-amd-launch-new-co-design-platform-for-quantum-error-correction/">The Quantum Insider</a></li></ul>]]></content:encoded>
+    </item>
     <item>
       <title>IBM Quantum and QuICS use AI agents to find over 500 magic state factory designs</title>
       <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/#brief-2026-11-05-04</link>

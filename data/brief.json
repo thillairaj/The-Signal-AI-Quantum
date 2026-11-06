@@ -1,525 +1,722 @@
 {
-  "categories": [
+ "categories": [
+  {
+   "file": "signal/ai.xml",
+   "key": "ai",
+   "label": "AI"
+  },
+  {
+   "file": "signal/quantum.xml",
+   "key": "quantum",
+   "label": "Quantum"
+  },
+  {
+   "file": "signal/cloud-devops.xml",
+   "key": "cloud-devops",
+   "label": "Cloud & DevOps"
+  },
+  {
+   "file": "signal/cybersecurity.xml",
+   "key": "cybersecurity",
+   "label": "Cybersecurity"
+  },
+  {
+   "file": "signal/industry.xml",
+   "key": "industry",
+   "label": "Industry"
+  },
+  {
+   "file": "signal/policy.xml",
+   "key": "policy",
+   "label": "Policy"
+  }
+ ],
+ "editions": [
+  {
+   "date": "2026-11-03",
+   "items": [
     {
-      "file": "signal/ai.xml",
-      "key": "ai",
-      "label": "AI"
+     "category": "AI",
+     "headline": "OpenAI raises bug bounty rewards for security researchers",
+     "id": "brief-2026-11-03-01",
+     "source_date": "2026-11-02",
+     "sources": [
+      {
+       "label": "OpenAI Blog",
+       "url": "https://openai.com/index/rewarding-defenders-with-bigger-bug-bounties"
+      }
+     ],
+     "summary": "OpenAI is increasing payouts under its Security Bug Bounty programme and adding bonuses tied to report quality, researcher loyalty and priority campaigns. The programme pays independent researchers who find and report vulnerabilities in OpenAI products and services.",
+     "why": "Bigger rewards pull more skilled researchers toward finding flaws in widely used AI systems before attackers do.",
+     "company": "OpenAI"
     },
     {
-      "file": "signal/quantum.xml",
-      "key": "quantum",
-      "label": "Quantum"
+     "category": "AI",
+     "headline": "Anthropic adds Claude Code limits aimed at game cloning",
+     "id": "brief-2026-11-03-02",
+     "source_date": "2026-11-02",
+     "sources": [
+      {
+       "label": "Tom's Hardware (wire report)",
+       "url": "https://www.tomshardware.com/tech-industry/artificial-intelligence/anthropic-confirms-new-claude-code-limits-to-prevent-game-cloning-users-report-opus-5-5-is-also-actively-blocking-reverse-engineering-tasks"
+      },
+      {
+       "label": "Ars Technica (analysis)",
+       "url": "https://arstechnica.com/ai/2026/11/claudes-new-rules-against-game-cloning-wont-stop-the-ai-copying-boom/"
+      }
+     ],
+     "summary": "Anthropic has confirmed new restrictions in Claude Code that stop the tool from reproducing existing video games, after its Opus 5.5 model began blocking game recreation requests. Some users report that generic reverse engineering tasks are also being blocked, and an Anthropic employee said the company is iterating to find the right balance.",
+     "why": "It is a live example of a model maker enforcing copyright limits inside a coding tool, with false positives already hitting legitimate work.",
+     "company": "Anthropic"
     },
     {
-      "file": "signal/cloud-devops.xml",
-      "key": "cloud-devops",
-      "label": "Cloud & DevOps"
+     "category": "Quantum",
+     "headline": "Experiment backs a route to more error resistant quantum information storage",
+     "id": "brief-2026-11-03-03",
+     "source_date": "2026-11-02",
+     "sources": [
+      {
+       "label": "Phys.org Quantum Physics",
+       "url": "https://phys.org/news/2026-11-theoretical-foundation-potentially-error-resistant.html"
+      }
+     ],
+     "summary": "Researchers have produced experimental support for the theoretical basis of topological quantum computing, an approach that stores information in special quantum states expected to be more resistant to local disturbances. The work addresses one of the field's core problems: how easily quantum information degrades.",
+     "why": "If topological approaches hold up, they could reduce the error correction burden that dominates quantum hardware design today.",
+     "company": "Topological quantum computing (research)"
     },
     {
-      "file": "signal/cybersecurity.xml",
-      "key": "cybersecurity",
-      "label": "Cybersecurity"
+     "category": "Cloud & DevOps",
+     "headline": "AWS makes Step Functions callable as agent tools",
+     "id": "brief-2026-11-03-04",
+     "source_date": "2026-11-02",
+     "sources": [
+      {
+       "label": "AWS News Blog",
+       "url": "https://aws.amazon.com/blogs/aws/aws-weekly-roundup-gpt-6-1-terra-on-bedrock-step-functions-as-agent-tools-and-more-november-2-2026/"
+      }
+     ],
+     "summary": "In its weekly roundup, AWS notes that Step Functions, its workflow service spanning more than 220 AWS services, can now be handed to AI agents as a tool. Workflows that teams already run and trust become callable by agents without being rewritten.",
+     "why": "It shows cloud platforms adapting established automation for agents rather than replacing it.",
+     "company": "AWS"
     },
     {
-      "file": "signal/industry.xml",
-      "key": "industry",
-      "label": "Industry"
+     "category": "Cloud & DevOps",
+     "headline": "Developers choose smaller AI models on purpose, and report better results",
+     "id": "brief-2026-11-03-05",
+     "source_date": "2026-11-02",
+     "sources": [
+      {
+       "label": "The New Stack",
+       "url": "https://thenewstack.io/claude-code-developer-refusals/"
+      }
+     ],
+     "summary": "The New Stack reports that some development teams are deliberately downgrading the AI models they use for coding work, and finding the results better for their purposes. The smaller setups can be cheaper and easier to control for the tasks these teams run most.",
+     "why": "Model choice is becoming an engineering decision about fit and cost, not a race to the most powerful model.",
+     "company": "AI model providers (multiple)"
     },
     {
-      "file": "signal/policy.xml",
-      "key": "policy",
-      "label": "Policy"
+     "category": "Cybersecurity",
+     "headline": "Microsoft: real world exploitation concentrates in a small set of vulnerabilities",
+     "id": "brief-2026-11-03-06",
+     "source_date": "2026-11-02",
+     "sources": [
+      {
+       "label": "Microsoft Security Blog",
+       "url": "https://www.microsoft.com/en-us/security/blog/2026/11/02/exploited-vulnerabilities-common-data-driven-analysis-real-world-attacks/"
+      }
+     ],
+     "summary": "Microsoft's analysis of real world attacks finds that exploitation concentrates in a small, high impact subset of known vulnerabilities. It advises defenders to prioritise patching by exploitation likelihood, exposure and potential blast radius, rather than by severity score alone.",
+     "why": "It gives security teams an evidence based order for patching when they cannot patch everything at once.",
+     "company": "Microsoft"
+    },
+    {
+     "category": "Industry",
+     "headline": "Apple home robot reported for 2027 at around $1,000",
+     "id": "brief-2026-11-03-07",
+     "source_date": "2026-11-02",
+     "sources": [
+      {
+       "label": "Ars Technica",
+       "url": "https://arstechnica.com/apple/2026/11/apples-roaming-home-robot-may-do-facetime-switch-lights-on-and-yell-at-your-cat/"
+      }
+     ],
+     "summary": "Ars Technica reports that Apple is preparing a roaming home robot for 2027, priced at about $1,000, with FaceTime and smart home controls among its functions. The device is reported to have backing from CEO John Ternus and a limited initial feature set.",
+     "why": "It puts Apple into home robotics, a new product category for the company, at a four figure price point.",
+     "company": "Apple"
+    },
+    {
+     "category": "Policy",
+     "headline": "Russia plans underground data centres after Ukrainian drone strikes",
+     "id": "brief-2026-11-03-08",
+     "source_date": "2026-11-03",
+     "sources": [
+      {
+       "label": "Ars Technica",
+       "url": "https://arstechnica.com/ai/2026/11/russia-looks-to-hide-data-centers-underground-as-ukrainian-drones-strike-back/"
+      },
+      {
+       "label": "Kyiv Independent (ministry recommendations, via Kommersant)",
+       "url": "https://kyivindependent.com/russian-ministry-recommends-underground-data-centers-following-ukrainian-drone-strikes/"
+      }
+     ],
+     "summary": "Ars Technica reports that Ukrainian drone strikes on exposed Russian infrastructure have prompted Russian plans to move data centres underground. Russia's Digital Development Ministry has confirmed, as reported by Kommersant, that it completed drone protection recommendations for data centres, covering underground siting for the most critical sites, and sent them to the relevant organisations.",
+     "why": "The conflict is directly reshaping where and how a major state builds and protects its data centre capacity.",
+     "company": "Russian Ministry of Digital Development"
     }
-  ],
-  "editions": [
+   ]
+  },
+  {
+   "date": "2026-11-04",
+   "items": [
     {
-      "date": "2026-11-03",
-      "items": [
-        {
-          "category": "AI",
-          "headline": "OpenAI raises bug bounty rewards for security researchers",
-          "id": "brief-2026-11-03-01",
-          "source_date": "2026-11-02",
-          "sources": [
-            {
-              "label": "OpenAI Blog",
-              "url": "https://openai.com/index/rewarding-defenders-with-bigger-bug-bounties"
-            }
-          ],
-          "summary": "OpenAI is increasing payouts under its Security Bug Bounty programme and adding bonuses tied to report quality, researcher loyalty and priority campaigns. The programme pays independent researchers who find and report vulnerabilities in OpenAI products and services.",
-          "why": "Bigger rewards pull more skilled researchers toward finding flaws in widely used AI systems before attackers do.",
-          "company": "OpenAI"
-        },
-        {
-          "category": "AI",
-          "headline": "Anthropic adds Claude Code limits aimed at game cloning",
-          "id": "brief-2026-11-03-02",
-          "source_date": "2026-11-02",
-          "sources": [
-            {
-              "label": "Tom's Hardware (wire report)",
-              "url": "https://www.tomshardware.com/tech-industry/artificial-intelligence/anthropic-confirms-new-claude-code-limits-to-prevent-game-cloning-users-report-opus-5-5-is-also-actively-blocking-reverse-engineering-tasks"
-            },
-            {
-              "label": "Ars Technica (analysis)",
-              "url": "https://arstechnica.com/ai/2026/11/claudes-new-rules-against-game-cloning-wont-stop-the-ai-copying-boom/"
-            }
-          ],
-          "summary": "Anthropic has confirmed new restrictions in Claude Code that stop the tool from reproducing existing video games, after its Opus 5.5 model began blocking game recreation requests. Some users report that generic reverse engineering tasks are also being blocked, and an Anthropic employee said the company is iterating to find the right balance.",
-          "why": "It is a live example of a model maker enforcing copyright limits inside a coding tool, with false positives already hitting legitimate work.",
-          "company": "Anthropic"
-        },
-        {
-          "category": "Quantum",
-          "headline": "Experiment backs a route to more error resistant quantum information storage",
-          "id": "brief-2026-11-03-03",
-          "source_date": "2026-11-02",
-          "sources": [
-            {
-              "label": "Phys.org Quantum Physics",
-              "url": "https://phys.org/news/2026-11-theoretical-foundation-potentially-error-resistant.html"
-            }
-          ],
-          "summary": "Researchers have produced experimental support for the theoretical basis of topological quantum computing, an approach that stores information in special quantum states expected to be more resistant to local disturbances. The work addresses one of the field's core problems: how easily quantum information degrades.",
-          "why": "If topological approaches hold up, they could reduce the error correction burden that dominates quantum hardware design today.",
-          "company": "Topological quantum computing (research)"
-        },
-        {
-          "category": "Cloud & DevOps",
-          "headline": "AWS makes Step Functions callable as agent tools",
-          "id": "brief-2026-11-03-04",
-          "source_date": "2026-11-02",
-          "sources": [
-            {
-              "label": "AWS News Blog",
-              "url": "https://aws.amazon.com/blogs/aws/aws-weekly-roundup-gpt-6-1-terra-on-bedrock-step-functions-as-agent-tools-and-more-november-2-2026/"
-            }
-          ],
-          "summary": "In its weekly roundup, AWS notes that Step Functions, its workflow service spanning more than 220 AWS services, can now be handed to AI agents as a tool. Workflows that teams already run and trust become callable by agents without being rewritten.",
-          "why": "It shows cloud platforms adapting established automation for agents rather than replacing it.",
-          "company": "AWS"
-        },
-        {
-          "category": "Cloud & DevOps",
-          "headline": "Developers choose smaller AI models on purpose, and report better results",
-          "id": "brief-2026-11-03-05",
-          "source_date": "2026-11-02",
-          "sources": [
-            {
-              "label": "The New Stack",
-              "url": "https://thenewstack.io/claude-code-developer-refusals/"
-            }
-          ],
-          "summary": "The New Stack reports that some development teams are deliberately downgrading the AI models they use for coding work, and finding the results better for their purposes. The smaller setups can be cheaper and easier to control for the tasks these teams run most.",
-          "why": "Model choice is becoming an engineering decision about fit and cost, not a race to the most powerful model.",
-          "company": "AI model providers (multiple)"
-        },
-        {
-          "category": "Cybersecurity",
-          "headline": "Microsoft: real world exploitation concentrates in a small set of vulnerabilities",
-          "id": "brief-2026-11-03-06",
-          "source_date": "2026-11-02",
-          "sources": [
-            {
-              "label": "Microsoft Security Blog",
-              "url": "https://www.microsoft.com/en-us/security/blog/2026/11/02/exploited-vulnerabilities-common-data-driven-analysis-real-world-attacks/"
-            }
-          ],
-          "summary": "Microsoft's analysis of real world attacks finds that exploitation concentrates in a small, high impact subset of known vulnerabilities. It advises defenders to prioritise patching by exploitation likelihood, exposure and potential blast radius, rather than by severity score alone.",
-          "why": "It gives security teams an evidence based order for patching when they cannot patch everything at once.",
-          "company": "Microsoft"
-        },
-        {
-          "category": "Industry",
-          "headline": "Apple home robot reported for 2027 at around $1,000",
-          "id": "brief-2026-11-03-07",
-          "source_date": "2026-11-02",
-          "sources": [
-            {
-              "label": "Ars Technica",
-              "url": "https://arstechnica.com/apple/2026/11/apples-roaming-home-robot-may-do-facetime-switch-lights-on-and-yell-at-your-cat/"
-            }
-          ],
-          "summary": "Ars Technica reports that Apple is preparing a roaming home robot for 2027, priced at about $1,000, with FaceTime and smart home controls among its functions. The device is reported to have backing from CEO John Ternus and a limited initial feature set.",
-          "why": "It puts Apple into home robotics, a new product category for the company, at a four figure price point.",
-          "company": "Apple"
-        },
-        {
-          "category": "Policy",
-          "headline": "Russia plans underground data centres after Ukrainian drone strikes",
-          "id": "brief-2026-11-03-08",
-          "source_date": "2026-11-03",
-          "sources": [
-            {
-              "label": "Ars Technica",
-              "url": "https://arstechnica.com/ai/2026/11/russia-looks-to-hide-data-centers-underground-as-ukrainian-drones-strike-back/"
-            },
-            {
-              "label": "Kyiv Independent (ministry recommendations, via Kommersant)",
-              "url": "https://kyivindependent.com/russian-ministry-recommends-underground-data-centers-following-ukrainian-drone-strikes/"
-            }
-          ],
-          "summary": "Ars Technica reports that Ukrainian drone strikes on exposed Russian infrastructure have prompted Russian plans to move data centres underground. Russia's Digital Development Ministry has confirmed, as reported by Kommersant, that it completed drone protection recommendations for data centres, covering underground siting for the most critical sites, and sent them to the relevant organisations.",
-          "why": "The conflict is directly reshaping where and how a major state builds and protects its data centre capacity.",
-          "company": "Russian Ministry of Digital Development"
-        }
-      ]
+     "category": "AI",
+     "headline": "DeepMind applies AI agents to chemistry and drug discovery workflows",
+     "id": "brief-2026-11-04-01",
+     "source_date": "2026-11-03",
+     "sources": [
+      {
+       "label": "Google DeepMind",
+       "url": "https://deepmind.google/blog/agentic-cheminformatics-with-google-antigravity/"
+      }
+     ],
+     "summary": "Google DeepMind describes agentic cheminformatics built with its Antigravity platform and a set of Cheminformatics Skills. The system searches compounds and proposes novel rigidified macrocycles, a class of molecules used in drug design.",
+     "why": "It is a concrete case of agents doing specialist scientific work rather than only answering questions.",
+     "company": "Google"
     },
     {
-      "date": "2026-11-04",
-      "items": [
-        {
-          "category": "AI",
-          "headline": "DeepMind applies AI agents to chemistry and drug discovery workflows",
-          "id": "brief-2026-11-04-01",
-          "source_date": "2026-11-03",
-          "sources": [
-            {
-              "label": "Google DeepMind",
-              "url": "https://deepmind.google/blog/agentic-cheminformatics-with-google-antigravity/"
-            }
-          ],
-          "summary": "Google DeepMind describes agentic cheminformatics built with its Antigravity platform and a set of Cheminformatics Skills. The system searches compounds and proposes novel rigidified macrocycles, a class of molecules used in drug design.",
-          "why": "It is a concrete case of agents doing specialist scientific work rather than only answering questions.",
-          "company": "Google"
-        },
-        {
-          "category": "AI",
-          "headline": "New benchmark finds frontier models lose track of changing facts in long documents",
-          "id": "brief-2026-11-04-02",
-          "source_date": "2026-11-03",
-          "sources": [
-            {
-              "label": "Hugging Face Blog (Allen AI)",
-              "url": "https://huggingface.co/blog/allenai/statebench"
-            }
-          ],
-          "summary": "Allen AI's StateBench tests how well language models track information that changes across long documents, across four levels of difficulty. Frontier models including Gemini 3.8 Flash, Claude Opus 5.5 and GPT-6 handled simple updates but fell to 13 percent accuracy or lower on the hardest problems at the longest lengths, while recurrent and hybrid architectures generalised further when trained on the task.",
-          "why": "Long document and agent work depends on exactly this state tracking, so the failure mode matters well beyond the benchmark.",
-          "company": "Allen AI"
-        },
-        {
-          "category": "AI",
-          "headline": "OpenAI shows ChatGPT and Codex in engineering work for the physical world",
-          "id": "brief-2026-11-04-03",
-          "source_date": "2026-11-03",
-          "sources": [
-            {
-              "label": "OpenAI Blog",
-              "url": "https://openai.com/index/accelerating-engineering-for-the-physical-world"
-            }
-          ],
-          "summary": "OpenAI describes how engineers are using ChatGPT and Codex to speed up CAD work, PCB design, simulation and related workflows. The examples take the tools beyond software code into hardware engineering processes.",
-          "why": "Adoption in physical engineering widens the market for AI assistants beyond software teams.",
-          "company": "OpenAI"
-        },
-        {
-          "category": "Quantum",
-          "headline": "Universal Quantum unveils a foundry made trapped ion processor built for modular scaling",
-          "id": "brief-2026-11-04-04",
-          "source_date": "2026-11-03",
-          "sources": [
-            {
-              "label": "Quantum Computing Report",
-              "url": "https://quantumcomputingreport.com/universal-quantum-unveils-the-iqpu-foundry-fabricated-trapped-ion-processor-engineered-for-modular-scaling/"
-            }
-          ],
-          "summary": "Universal Quantum has launched the iQPU, a trapped ion processor fabricated in a foundry, with control electronics integrated on chip. Its UQConnect interconnect is designed to link multiple modules, and the processors are destined for two quantum computers being built for the German Aerospace Center.",
-          "why": "Foundry fabrication and modular links are two of the practical steps needed to scale trapped ion machines.",
-          "company": "Universal Quantum"
-        },
-        {
-          "category": "Quantum",
-          "headline": "One extra measurement cuts qubit errors by more than half in Regensburg experiment",
-          "id": "brief-2026-11-04-05",
-          "source_date": "2026-11-03",
-          "sources": [
-            {
-              "label": "Phys.org Quantum Physics",
-              "url": "https://phys.org/news/2026-11-quantum-bits-reliable.html"
-            }
-          ],
-          "summary": "Researchers at the University of Regensburg and their international partners showed that a single additional measurement before a series of quantum operations reduced the qubit error rate by more than half. The results were published in Applied Physics Reviews.",
-          "why": "Low cost error reduction matters because error correction overhead decides how large a useful quantum machine must be.",
-          "company": "University of Regensburg"
-        },
-        {
-          "category": "Cloud & DevOps",
-          "headline": "Azure previews an MCP gateway for its container application gateway",
-          "id": "brief-2026-11-04-06",
-          "source_date": "2026-11-03",
-          "sources": [
-            {
-              "label": "Azure Updates",
-              "url": "https://azure.microsoft.com/updates?id=576388"
-            }
-          ],
-          "summary": "Microsoft has put an MCP gateway for Application Gateway for Containers into public preview, adding a Model Context Protocol route type. Platform teams can publish MCP servers behind one hostname while centralising TLS, token validation and firewall controls.",
-          "why": "Gateways are becoming the control point where enterprises govern agent traffic.",
-          "company": "Microsoft"
-        },
-        {
-          "category": "Cloud & DevOps",
-          "headline": "Nammu21 runs syndicated loan automation on Google Cloud's ledger in a proof of concept",
-          "id": "brief-2026-11-04-07",
-          "source_date": "2026-11-03",
-          "sources": [
-            {
-              "label": "Google Cloud Blog",
-              "url": "https://cloud.google.com/blog/topics/financial-services/how-nammu21-automates-syndicated-loans-on-google-cloud-universal-ledger/"
-            }
-          ],
-          "summary": "Fintech firm Nammu21 worked with Google Cloud to structure syndicated loan agreements as smart contracts on the Google Cloud Universal Ledger. The proof of concept automates the loan lifecycle in a market where settlement currently takes weeks of manual processing.",
-          "why": "It tests ledger technology on a real, high value financial workflow rather than a pilot in isolation.",
-          "company": "Nammu21"
-        },
-        {
-          "category": "Cybersecurity",
-          "headline": "Microsoft tracks fake download campaign spreading trojanised installers",
-          "id": "brief-2026-11-04-08",
-          "source_date": "2026-11-03",
-          "sources": [
-            {
-              "label": "Microsoft Security Blog",
-              "url": "https://www.microsoft.com/en-us/security/blog/2026/11/03/fake-download-campaign-uses-trojanized-installers-deliver-monetization-payloads/"
-            }
-          ],
-          "summary": "Microsoft Threat Intelligence is tracking a campaign that uses trojanised Inno installers, spread through fake download pages, to deliver monetisation payloads. Microsoft published detection and investigation guidance covering the complete installer session.",
-          "why": "Fake installers remain one of the most reliable ways attackers reach ordinary users and company machines.",
-          "company": "Microsoft"
-        },
-        {
-          "category": "Industry",
-          "headline": "Quint Computing raises €9.1 million seed round for hardware level quantum error correction",
-          "id": "brief-2026-11-04-09",
-          "source_date": "2026-11-03",
-          "sources": [
-            {
-              "label": "Quantum Computing Report",
-              "url": "https://quantumcomputingreport.com/quint-computing-secures-e9-1m-10-2m-usd-seed-round-to-scale-hardware-level-quantum-error-correction/"
-            }
-          ],
-          "summary": "Quint Computing has secured €9.1 million (10.2 million US dollars) in seed funding plus a €2.2 million European Innovation Council Pathfinder grant. The company says its architecture aims to reduce physical error correction overhead by up to 100 times, using continuous electrical control in superconducting circuits.",
-          "why": "Error correction is where quantum hardware economics are decided, and investors are funding it at the hardware layer.",
-          "company": "Quint Computing"
-        },
-        {
-          "category": "Policy",
-          "headline": "IQM calls for an EU Quantum Act with dedicated qubit foundries",
-          "id": "brief-2026-11-04-10",
-          "source_date": "2026-11-03",
-          "sources": [
-            {
-              "label": "IQM (the report: Quantum Is Europe's Second Chance)",
-              "url": "https://iqm.tech/blog/quantum-is-europes-chance-to-lead-a-global-industry/"
-            },
-            {
-              "label": "Quantum Computing Report",
-              "url": "https://quantumcomputingreport.com/ahead-of-eu-quantum-act-iqm-calls-for-dedicated-qubit-foundries-and-darpa-style-procurement/"
-            }
-          ],
-          "summary": "In a report titled Quantum Is Europe's Second Chance, IQM Quantum Computers calls on the EU to pass a Quantum Act. It proposes dedicated qubit foundries, more late stage growth capital and DARPA style procurement, arguing that Europe is strong in public investment and deployments but weaker in venture capital, chip manufacturing and regulatory speed.",
-          "why": "The proposal shows industry shaping the EU quantum policy agenda before legislation is drafted.",
-          "company": "IQM"
-        }
-      ]
+     "category": "AI",
+     "headline": "New benchmark finds frontier models lose track of changing facts in long documents",
+     "id": "brief-2026-11-04-02",
+     "source_date": "2026-11-03",
+     "sources": [
+      {
+       "label": "Hugging Face Blog (Allen AI)",
+       "url": "https://huggingface.co/blog/allenai/statebench"
+      }
+     ],
+     "summary": "Allen AI's StateBench tests how well language models track information that changes across long documents, across four levels of difficulty. Frontier models including Gemini 3.8 Flash, Claude Opus 5.5 and GPT-6 handled simple updates but fell to 13 percent accuracy or lower on the hardest problems at the longest lengths, while recurrent and hybrid architectures generalised further when trained on the task.",
+     "why": "Long document and agent work depends on exactly this state tracking, so the failure mode matters well beyond the benchmark.",
+     "company": "Allen AI"
     },
     {
-      "date": "2026-11-05",
-      "items": [
-        {
-          "category": "AI",
-          "headline": "OpenAI launches Images 2.6 with faster generation and GIF creation",
-          "id": "brief-2026-11-05-01",
-          "source_date": "2026-11-04",
-          "sources": [
-            {
-              "label": "OpenAI Blog",
-              "url": "https://openai.com/index/introducing-images-2-6"
-            }
-          ],
-          "summary": "OpenAI's Images 2.6 brings faster image generation, GIF creation, more precise editing and new API controls. It is available across ChatGPT, Codex and the API.",
-          "why": "Image generation is shipping as a product feature with controls developers can build on, not only as a model demonstration.",
-          "company": "OpenAI"
-        },
-        {
-          "category": "AI",
-          "headline": "OpenAI pipeline finds and patches 948 Linux kernel privilege flaws",
-          "id": "brief-2026-11-05-02",
-          "source_date": "2026-11-04",
-          "sources": [
-            {
-              "label": "OpenAI Blog",
-              "url": "https://openai.com/index/a-thousand-fewer-paths-to-root"
-            }
-          ],
-          "summary": "OpenAI built an autonomous pipeline that found, validated and generated patches for 948 local privilege escalation vulnerabilities in the Linux kernel. The work is presented as defensive security research carried out at machine scale.",
-          "why": "It is a measurable example of AI systems doing vulnerability research end to end.",
-          "company": "OpenAI"
-        },
-        {
-          "category": "AI",
-          "company": "AWS",
-          "headline": "AWS shows decision models plugged into Bedrock AgentCore agent evaluations",
-          "id": "brief-2026-11-05-03",
-          "source_date": "2026-11-04",
-          "sources": [
-            {
-              "label": "AWS Machine Learning Blog",
-              "url": "https://aws.amazon.com/blogs/machine-learning/use-decision-models-with-amazon-bedrock-agentcore-evaluations/"
-            }
-          ],
-          "summary": "An AWS Machine Learning Blog post shows how two decision models, Jev and Strands Decider, connect to Amazon Bedrock AgentCore Evaluations through code based evaluators. Decision models answer the narrow, repeatable evaluation questions that come up when testing AI agents.",
-          "why": "Agent evaluation tooling is being built into the major cloud AI platforms as a standard part of the stack."
-        },
-        {
-          "category": "Quantum",
-          "headline": "IBM Quantum and QuICS use AI agents to find over 500 magic state factory designs",
-          "id": "brief-2026-11-05-04",
-          "source_date": "2026-11-04",
-          "sources": [
-            {
-              "label": "Quantum Computing Report",
-              "url": "https://quantumcomputingreport.com/ibm-quantum-and-quics-deploy-ai-agents-to-discover-over-500-high-efficiency-magic-state-factories/"
-            }
-          ],
-          "summary": "IBM Quantum and University of Maryland QuICS researchers used AI agents with deterministic solvers to discover more than 500 new magic state factories. These produce the non Clifford states that fault tolerant quantum computers need, with significantly lower resource requirements, and the detailed circuit models are openly accessible.",
-          "why": "Magic state production is a major cost centre in fault tolerant designs, so cheaper factories change machine economics.",
-          "company": "IBM"
-        },
-        {
-          "category": "Quantum",
-          "headline": "Superinductor built inside a silicon chip in a commercial CMOS process",
-          "id": "brief-2026-11-05-05",
-          "source_date": "2026-11-04",
-          "sources": [
-            {
-              "label": "Phys.org Quantum Physics",
-              "url": "https://phys.org/news/2026-11-superinductor-silicon-circuit.html"
-            }
-          ],
-          "summary": "A study in Nature Electronics by researchers from nanoGUNE's Quantum Hardware group, Quantum Motion and UK partners introduces a superinductor created within a silicon integrated circuit. The device was fabricated in a commercial CMOS process, the same family of processes used for ordinary chips.",
-          "why": "Components made in standard chip processes are easier to manufacture at scale for quantum hardware.",
-          "company": "Quantum Motion"
-        },
-        {
-          "category": "Industry",
-          "company": "CQMTEK",
-          "headline": "CQMTEK raises more than $15 million to expand quantum measurement manufacturing",
-          "id": "brief-2026-11-05-06",
-          "source_date": "2026-11-04",
-          "sources": [
-            {
-              "label": "The Quantum Insider",
-              "url": "https://thequantuminsider.com/2026/11/04/cqmtek-raises-more-than-15-million-for-quantum-measurement-expansion/"
-            }
-          ],
-          "summary": "CQMTEK, the brand of Guoce Quantum Technology (Zhejiang) Co., Ltd, has raised more than 100 million yuan, about 15 million US dollars, the company said. The funding is for expanding manufacturing and commercial applications of its quantum precision measurement products.",
-          "why": "Quantum sensing and measurement is drawing commercial funding alongside computing, with manufacturing scale as the goal."
-        },
-        {
-          "category": "Industry",
-          "headline": "IonQ completes $1.15 billion acquisition of security firm Elisity",
-          "id": "brief-2026-11-05-07",
-          "source_date": "2026-11-04",
-          "sources": [
-            {
-              "label": "IonQ press release (Business Wire)",
-              "url": "https://www.businesswire.com/news/home/20261102959024/en/IonQ-Completes-Acquisition-of-Elisity-Extending-Quantum-Security-for-Enterprises-and-Government"
-            },
-            {
-              "label": "Quantum Computing Report",
-              "url": "https://quantumcomputingreport.com/ionq-completes-1-15b-acquisition-of-elisity-to-integrate-zero-trust-with-quantum-security/"
-            },
-            {
-              "label": "The Quantum Insider",
-              "url": "https://thequantuminsider.com/2026/11/04/ionq-completes-acquisition-zero-trust-security-company-elisity/"
-            }
-          ],
-          "summary": "IonQ has completed its acquisition of Elisity, a zero trust security company, in an all stock transaction. IonQ's own announcement says it issued 1.15 billion US dollars of consideration in common stock at closing, with up to 150 million dollars more payable if Elisity meets revenue milestones through January 2028, and that Elisity's technology complements its post quantum cryptography and quantum key distribution work.",
-          "why": "A quantum computing company is adding an operating security business to its revenue base.",
-          "company": "IonQ"
-        },
-        {
-          "category": "Cybersecurity",
-          "headline": "Zyxel patches zero day used to compromise nearly 1,000 network switches",
-          "id": "brief-2026-11-05-08",
-          "source_date": "2026-11-04",
-          "sources": [
-            {
-              "label": "BleepingComputer",
-              "url": "https://www.bleepingcomputer.com/news/security/zyxel-fixes-zero-day-exploited-to-hack-nearly-1-000-network-switches/"
-            }
-          ],
-          "summary": "Zyxel has patched a zero day vulnerability in its GS1900 series network switches. BleepingComputer reports that attackers exploited it to compromise nearly 1,000 devices worldwide and steal configuration files and credentials.",
-          "why": "Network switches are trusted infrastructure; stolen configurations hand attackers a map of the networks those switches protect.",
-          "company": "Zyxel"
-        },
-        {
-          "category": "Cybersecurity",
-          "headline": "Google patches critical Android flaw that needs no user interaction",
-          "id": "brief-2026-11-05-09",
-          "source_date": "2026-11-04",
-          "sources": [
-            {
-              "label": "The Hacker News",
-              "url": "https://thehackernews.com/2026/11/google-patches-critical-android-flaw.html"
-            }
-          ],
-          "summary": "Google's November security bulletin patches a critical flaw, CVE-2026-58868, that could let an attacker run code on a phone remotely without any user action. It affects Android 14 through 17, and the fix arrives at security patch level 2026-11-01 or later, which phone makers and carriers distribute on their own schedules.",
-          "why": "The gap between Google's patch and each maker's rollout is the window of exposure for most Android users.",
-          "company": "Google"
-        },
-        {
-          "category": "Cloud & DevOps",
-          "headline": "Google previews AlloyDB Express, a scale to zero PostgreSQL for developers and agents",
-          "id": "brief-2026-11-05-10",
-          "source_date": "2026-11-04",
-          "sources": [
-            {
-              "label": "Google Cloud Blog",
-              "url": "https://cloud.google.com/blog/products/databases/introducing-alloydb-express-for-rapid-testing-and-prototyping/"
-            }
-          ],
-          "summary": "Google has announced a preview of AlloyDB Express, a version of AlloyDB for PostgreSQL designed for rapid testing and prototyping. It offers instant provisioning and scale to zero, aimed at development pipelines and coding agents that need short lived databases.",
-          "why": "Databases are being reshaped around agent driven development, where environments spin up and down in minutes.",
-          "company": "Google"
-        },
-        {
-          "category": "Cloud & DevOps",
-          "headline": "Amazon S3 Tables can now migrate Hive tables to Iceberg for you",
-          "id": "brief-2026-11-05-11",
-          "source_date": "2026-11-04",
-          "sources": [
-            {
-              "label": "AWS News Blog",
-              "url": "https://aws.amazon.com/blogs/aws/amazon-s3-tables-now-offer-managed-migration-of-apache-hive-tables-to-apache-iceberg/"
-            }
-          ],
-          "summary": "AWS has added managed migration from Apache Hive tables to Apache Iceberg in Amazon S3 Tables. AWS says existing datasets can be converted with no pipelines to build and no compute to provision, while production workloads keep running.",
-          "why": "Iceberg has become the default table format for lakehouse data, and managed migration removes the main barrier to switching.",
-          "company": "AWS"
-        },
-        {
-          "category": "Policy",
-          "headline": "US voters decide 41 local data centre measures in the midterm elections",
-          "id": "brief-2026-11-05-12",
-          "source_date": "2026-11-04",
-          "sources": [
-            {
-              "label": "Ballotpedia News",
-              "url": "https://news.ballotpedia.org/2026/11/03/voters-in-ten-states-will-vote-on-data-center-related-ballot-measures-november-3/"
-            },
-            {
-              "label": "USA Today",
-              "url": "https://www.usatoday.com/story/news/nation/2026/11/04/data-centers-midterm-elections/92611809007/"
-            }
-          ],
-          "summary": "Ballotpedia counted 41 local ballot measures on data centre policy across 10 states on November 3: 28 would limit development and 13 would facilitate it. In reported results, Edgewater, Florida voted to add a ban on new data centres to its city charter, Alhambra, California voted to prohibit data centres, and Harwood, North Dakota rejected its restrictive measure, the only one voted down in USA Today's tally of local results.",
-          "why": "Local ballot outcomes now directly decide where large data centres can be built in the United States.",
-          "company": "US state and local governments"
-        }
-      ]
+     "category": "AI",
+     "headline": "OpenAI shows ChatGPT and Codex in engineering work for the physical world",
+     "id": "brief-2026-11-04-03",
+     "source_date": "2026-11-03",
+     "sources": [
+      {
+       "label": "OpenAI Blog",
+       "url": "https://openai.com/index/accelerating-engineering-for-the-physical-world"
+      }
+     ],
+     "summary": "OpenAI describes how engineers are using ChatGPT and Codex to speed up CAD work, PCB design, simulation and related workflows. The examples take the tools beyond software code into hardware engineering processes.",
+     "why": "Adoption in physical engineering widens the market for AI assistants beyond software teams.",
+     "company": "OpenAI"
+    },
+    {
+     "category": "Quantum",
+     "headline": "Universal Quantum unveils a foundry made trapped ion processor built for modular scaling",
+     "id": "brief-2026-11-04-04",
+     "source_date": "2026-11-03",
+     "sources": [
+      {
+       "label": "Quantum Computing Report",
+       "url": "https://quantumcomputingreport.com/universal-quantum-unveils-the-iqpu-foundry-fabricated-trapped-ion-processor-engineered-for-modular-scaling/"
+      }
+     ],
+     "summary": "Universal Quantum has launched the iQPU, a trapped ion processor fabricated in a foundry, with control electronics integrated on chip. Its UQConnect interconnect is designed to link multiple modules, and the processors are destined for two quantum computers being built for the German Aerospace Center.",
+     "why": "Foundry fabrication and modular links are two of the practical steps needed to scale trapped ion machines.",
+     "company": "Universal Quantum"
+    },
+    {
+     "category": "Quantum",
+     "headline": "One extra measurement cuts qubit errors by more than half in Regensburg experiment",
+     "id": "brief-2026-11-04-05",
+     "source_date": "2026-11-03",
+     "sources": [
+      {
+       "label": "Phys.org Quantum Physics",
+       "url": "https://phys.org/news/2026-11-quantum-bits-reliable.html"
+      }
+     ],
+     "summary": "Researchers at the University of Regensburg and their international partners showed that a single additional measurement before a series of quantum operations reduced the qubit error rate by more than half. The results were published in Applied Physics Reviews.",
+     "why": "Low cost error reduction matters because error correction overhead decides how large a useful quantum machine must be.",
+     "company": "University of Regensburg"
+    },
+    {
+     "category": "Cloud & DevOps",
+     "headline": "Azure previews an MCP gateway for its container application gateway",
+     "id": "brief-2026-11-04-06",
+     "source_date": "2026-11-03",
+     "sources": [
+      {
+       "label": "Azure Updates",
+       "url": "https://azure.microsoft.com/updates?id=576388"
+      }
+     ],
+     "summary": "Microsoft has put an MCP gateway for Application Gateway for Containers into public preview, adding a Model Context Protocol route type. Platform teams can publish MCP servers behind one hostname while centralising TLS, token validation and firewall controls.",
+     "why": "Gateways are becoming the control point where enterprises govern agent traffic.",
+     "company": "Microsoft"
+    },
+    {
+     "category": "Cloud & DevOps",
+     "headline": "Nammu21 runs syndicated loan automation on Google Cloud's ledger in a proof of concept",
+     "id": "brief-2026-11-04-07",
+     "source_date": "2026-11-03",
+     "sources": [
+      {
+       "label": "Google Cloud Blog",
+       "url": "https://cloud.google.com/blog/topics/financial-services/how-nammu21-automates-syndicated-loans-on-google-cloud-universal-ledger/"
+      }
+     ],
+     "summary": "Fintech firm Nammu21 worked with Google Cloud to structure syndicated loan agreements as smart contracts on the Google Cloud Universal Ledger. The proof of concept automates the loan lifecycle in a market where settlement currently takes weeks of manual processing.",
+     "why": "It tests ledger technology on a real, high value financial workflow rather than a pilot in isolation.",
+     "company": "Nammu21"
+    },
+    {
+     "category": "Cybersecurity",
+     "headline": "Microsoft tracks fake download campaign spreading trojanised installers",
+     "id": "brief-2026-11-04-08",
+     "source_date": "2026-11-03",
+     "sources": [
+      {
+       "label": "Microsoft Security Blog",
+       "url": "https://www.microsoft.com/en-us/security/blog/2026/11/03/fake-download-campaign-uses-trojanized-installers-deliver-monetization-payloads/"
+      }
+     ],
+     "summary": "Microsoft Threat Intelligence is tracking a campaign that uses trojanised Inno installers, spread through fake download pages, to deliver monetisation payloads. Microsoft published detection and investigation guidance covering the complete installer session.",
+     "why": "Fake installers remain one of the most reliable ways attackers reach ordinary users and company machines.",
+     "company": "Microsoft"
+    },
+    {
+     "category": "Industry",
+     "headline": "Quint Computing raises €9.1 million seed round for hardware level quantum error correction",
+     "id": "brief-2026-11-04-09",
+     "source_date": "2026-11-03",
+     "sources": [
+      {
+       "label": "Quantum Computing Report",
+       "url": "https://quantumcomputingreport.com/quint-computing-secures-e9-1m-10-2m-usd-seed-round-to-scale-hardware-level-quantum-error-correction/"
+      }
+     ],
+     "summary": "Quint Computing has secured €9.1 million (10.2 million US dollars) in seed funding plus a €2.2 million European Innovation Council Pathfinder grant. The company says its architecture aims to reduce physical error correction overhead by up to 100 times, using continuous electrical control in superconducting circuits.",
+     "why": "Error correction is where quantum hardware economics are decided, and investors are funding it at the hardware layer.",
+     "company": "Quint Computing"
+    },
+    {
+     "category": "Policy",
+     "headline": "IQM calls for an EU Quantum Act with dedicated qubit foundries",
+     "id": "brief-2026-11-04-10",
+     "source_date": "2026-11-03",
+     "sources": [
+      {
+       "label": "IQM (the report: Quantum Is Europe's Second Chance)",
+       "url": "https://iqm.tech/blog/quantum-is-europes-chance-to-lead-a-global-industry/"
+      },
+      {
+       "label": "Quantum Computing Report",
+       "url": "https://quantumcomputingreport.com/ahead-of-eu-quantum-act-iqm-calls-for-dedicated-qubit-foundries-and-darpa-style-procurement/"
+      }
+     ],
+     "summary": "In a report titled Quantum Is Europe's Second Chance, IQM Quantum Computers calls on the EU to pass a Quantum Act. It proposes dedicated qubit foundries, more late stage growth capital and DARPA style procurement, arguing that Europe is strong in public investment and deployments but weaker in venture capital, chip manufacturing and regulatory speed.",
+     "why": "The proposal shows industry shaping the EU quantum policy agenda before legislation is drafted.",
+     "company": "IQM"
     }
-  ]
+   ]
+  },
+  {
+   "date": "2026-11-05",
+   "items": [
+    {
+     "category": "AI",
+     "headline": "OpenAI launches Images 2.6 with faster generation and GIF creation",
+     "id": "brief-2026-11-05-01",
+     "source_date": "2026-11-04",
+     "sources": [
+      {
+       "label": "OpenAI Blog",
+       "url": "https://openai.com/index/introducing-images-2-6"
+      }
+     ],
+     "summary": "OpenAI's Images 2.6 brings faster image generation, GIF creation, more precise editing and new API controls. It is available across ChatGPT, Codex and the API.",
+     "why": "Image generation is shipping as a product feature with controls developers can build on, not only as a model demonstration.",
+     "company": "OpenAI"
+    },
+    {
+     "category": "AI",
+     "headline": "OpenAI pipeline finds and patches 948 Linux kernel privilege flaws",
+     "id": "brief-2026-11-05-02",
+     "source_date": "2026-11-04",
+     "sources": [
+      {
+       "label": "OpenAI Blog",
+       "url": "https://openai.com/index/a-thousand-fewer-paths-to-root"
+      }
+     ],
+     "summary": "OpenAI built an autonomous pipeline that found, validated and generated patches for 948 local privilege escalation vulnerabilities in the Linux kernel. The work is presented as defensive security research carried out at machine scale.",
+     "why": "It is a measurable example of AI systems doing vulnerability research end to end.",
+     "company": "OpenAI"
+    },
+    {
+     "category": "AI",
+     "company": "AWS",
+     "headline": "AWS shows decision models plugged into Bedrock AgentCore agent evaluations",
+     "id": "brief-2026-11-05-03",
+     "source_date": "2026-11-04",
+     "sources": [
+      {
+       "label": "AWS Machine Learning Blog",
+       "url": "https://aws.amazon.com/blogs/machine-learning/use-decision-models-with-amazon-bedrock-agentcore-evaluations/"
+      }
+     ],
+     "summary": "An AWS Machine Learning Blog post shows how two decision models, Jev and Strands Decider, connect to Amazon Bedrock AgentCore Evaluations through code based evaluators. Decision models answer the narrow, repeatable evaluation questions that come up when testing AI agents.",
+     "why": "Agent evaluation tooling is being built into the major cloud AI platforms as a standard part of the stack."
+    },
+    {
+     "category": "Quantum",
+     "headline": "IBM Quantum and QuICS use AI agents to find over 500 magic state factory designs",
+     "id": "brief-2026-11-05-04",
+     "source_date": "2026-11-04",
+     "sources": [
+      {
+       "label": "Quantum Computing Report",
+       "url": "https://quantumcomputingreport.com/ibm-quantum-and-quics-deploy-ai-agents-to-discover-over-500-high-efficiency-magic-state-factories/"
+      }
+     ],
+     "summary": "IBM Quantum and University of Maryland QuICS researchers used AI agents with deterministic solvers to discover more than 500 new magic state factories. These produce the non Clifford states that fault tolerant quantum computers need, with significantly lower resource requirements, and the detailed circuit models are openly accessible.",
+     "why": "Magic state production is a major cost centre in fault tolerant designs, so cheaper factories change machine economics.",
+     "company": "IBM"
+    },
+    {
+     "category": "Quantum",
+     "headline": "Superinductor built inside a silicon chip in a commercial CMOS process",
+     "id": "brief-2026-11-05-05",
+     "source_date": "2026-11-04",
+     "sources": [
+      {
+       "label": "Phys.org Quantum Physics",
+       "url": "https://phys.org/news/2026-11-superinductor-silicon-circuit.html"
+      }
+     ],
+     "summary": "A study in Nature Electronics by researchers from nanoGUNE's Quantum Hardware group, Quantum Motion and UK partners introduces a superinductor created within a silicon integrated circuit. The device was fabricated in a commercial CMOS process, the same family of processes used for ordinary chips.",
+     "why": "Components made in standard chip processes are easier to manufacture at scale for quantum hardware.",
+     "company": "Quantum Motion"
+    },
+    {
+     "category": "Industry",
+     "company": "CQMTEK",
+     "headline": "CQMTEK raises more than $15 million to expand quantum measurement manufacturing",
+     "id": "brief-2026-11-05-06",
+     "source_date": "2026-11-04",
+     "sources": [
+      {
+       "label": "The Quantum Insider",
+       "url": "https://thequantuminsider.com/2026/11/04/cqmtek-raises-more-than-15-million-for-quantum-measurement-expansion/"
+      }
+     ],
+     "summary": "CQMTEK, the brand of Guoce Quantum Technology (Zhejiang) Co., Ltd, has raised more than 100 million yuan, about 15 million US dollars, the company said. The funding is for expanding manufacturing and commercial applications of its quantum precision measurement products.",
+     "why": "Quantum sensing and measurement is drawing commercial funding alongside computing, with manufacturing scale as the goal."
+    },
+    {
+     "category": "Industry",
+     "headline": "IonQ completes $1.15 billion acquisition of security firm Elisity",
+     "id": "brief-2026-11-05-07",
+     "source_date": "2026-11-04",
+     "sources": [
+      {
+       "label": "IonQ press release (Business Wire)",
+       "url": "https://www.businesswire.com/news/home/20261102959024/en/IonQ-Completes-Acquisition-of-Elisity-Extending-Quantum-Security-for-Enterprises-and-Government"
+      },
+      {
+       "label": "Quantum Computing Report",
+       "url": "https://quantumcomputingreport.com/ionq-completes-1-15b-acquisition-of-elisity-to-integrate-zero-trust-with-quantum-security/"
+      },
+      {
+       "label": "The Quantum Insider",
+       "url": "https://thequantuminsider.com/2026/11/04/ionq-completes-acquisition-zero-trust-security-company-elisity/"
+      }
+     ],
+     "summary": "IonQ has completed its acquisition of Elisity, a zero trust security company, in an all stock transaction. IonQ's own announcement says it issued 1.15 billion US dollars of consideration in common stock at closing, with up to 150 million dollars more payable if Elisity meets revenue milestones through January 2028, and that Elisity's technology complements its post quantum cryptography and quantum key distribution work.",
+     "why": "A quantum computing company is adding an operating security business to its revenue base.",
+     "company": "IonQ"
+    },
+    {
+     "category": "Cybersecurity",
+     "headline": "Zyxel patches zero day used to compromise nearly 1,000 network switches",
+     "id": "brief-2026-11-05-08",
+     "source_date": "2026-11-04",
+     "sources": [
+      {
+       "label": "BleepingComputer",
+       "url": "https://www.bleepingcomputer.com/news/security/zyxel-fixes-zero-day-exploited-to-hack-nearly-1-000-network-switches/"
+      }
+     ],
+     "summary": "Zyxel has patched a zero day vulnerability in its GS1900 series network switches. BleepingComputer reports that attackers exploited it to compromise nearly 1,000 devices worldwide and steal configuration files and credentials.",
+     "why": "Network switches are trusted infrastructure; stolen configurations hand attackers a map of the networks those switches protect.",
+     "company": "Zyxel"
+    },
+    {
+     "category": "Cybersecurity",
+     "headline": "Google patches critical Android flaw that needs no user interaction",
+     "id": "brief-2026-11-05-09",
+     "source_date": "2026-11-04",
+     "sources": [
+      {
+       "label": "The Hacker News",
+       "url": "https://thehackernews.com/2026/11/google-patches-critical-android-flaw.html"
+      }
+     ],
+     "summary": "Google's November security bulletin patches a critical flaw, CVE-2026-58868, that could let an attacker run code on a phone remotely without any user action. It affects Android 14 through 17, and the fix arrives at security patch level 2026-11-01 or later, which phone makers and carriers distribute on their own schedules.",
+     "why": "The gap between Google's patch and each maker's rollout is the window of exposure for most Android users.",
+     "company": "Google"
+    },
+    {
+     "category": "Cloud & DevOps",
+     "headline": "Google previews AlloyDB Express, a scale to zero PostgreSQL for developers and agents",
+     "id": "brief-2026-11-05-10",
+     "source_date": "2026-11-04",
+     "sources": [
+      {
+       "label": "Google Cloud Blog",
+       "url": "https://cloud.google.com/blog/products/databases/introducing-alloydb-express-for-rapid-testing-and-prototyping/"
+      }
+     ],
+     "summary": "Google has announced a preview of AlloyDB Express, a version of AlloyDB for PostgreSQL designed for rapid testing and prototyping. It offers instant provisioning and scale to zero, aimed at development pipelines and coding agents that need short lived databases.",
+     "why": "Databases are being reshaped around agent driven development, where environments spin up and down in minutes.",
+     "company": "Google"
+    },
+    {
+     "category": "Cloud & DevOps",
+     "headline": "Amazon S3 Tables can now migrate Hive tables to Iceberg for you",
+     "id": "brief-2026-11-05-11",
+     "source_date": "2026-11-04",
+     "sources": [
+      {
+       "label": "AWS News Blog",
+       "url": "https://aws.amazon.com/blogs/aws/amazon-s3-tables-now-offer-managed-migration-of-apache-hive-tables-to-apache-iceberg/"
+      }
+     ],
+     "summary": "AWS has added managed migration from Apache Hive tables to Apache Iceberg in Amazon S3 Tables. AWS says existing datasets can be converted with no pipelines to build and no compute to provision, while production workloads keep running.",
+     "why": "Iceberg has become the default table format for lakehouse data, and managed migration removes the main barrier to switching.",
+     "company": "AWS"
+    },
+    {
+     "category": "Policy",
+     "headline": "US voters decide 41 local data centre measures in the midterm elections",
+     "id": "brief-2026-11-05-12",
+     "source_date": "2026-11-04",
+     "sources": [
+      {
+       "label": "Ballotpedia News",
+       "url": "https://news.ballotpedia.org/2026/11/03/voters-in-ten-states-will-vote-on-data-center-related-ballot-measures-november-3/"
+      },
+      {
+       "label": "USA Today",
+       "url": "https://www.usatoday.com/story/news/nation/2026/11/04/data-centers-midterm-elections/92611809007/"
+      }
+     ],
+     "summary": "Ballotpedia counted 41 local ballot measures on data centre policy across 10 states on November 3: 28 would limit development and 13 would facilitate it. In reported results, Edgewater, Florida voted to add a ban on new data centres to its city charter, Alhambra, California voted to prohibit data centres, and Harwood, North Dakota rejected its restrictive measure, the only one voted down in USA Today's tally of local results.",
+     "why": "Local ballot outcomes now directly decide where large data centres can be built in the United States.",
+     "company": "US state and local governments"
+    }
+   ]
+  },
+  {
+   "date": "2026-11-06",
+   "items": [
+    {
+     "category": "AI",
+     "company": "OpenAI",
+     "headline": "OpenAI launches GPT-6 Cyber, a security model built to stay inside its authorised scope",
+     "id": "brief-2026-11-06-01",
+     "source_date": "2026-11-05",
+     "sources": [
+      {
+       "label": "OpenAI Blog",
+       "url": "https://openai.com/index/introducing-gpt-6-cyber"
+      }
+     ],
+     "summary": "OpenAI introduced GPT-6 Cyber, a model for finding exploitable vulnerabilities and developing fixes, trained to stay within the scope researchers set. It scores 48.5% on ExploitGym, up from 32.1% for GPT-5.6 Cyber, and avoided out of scope services in 99.93% of alignment tests without deployment prompts. It already helped find 81 previously unknown high severity Firefox flaws, and it is initially available through the API and Codex to approved Daybreak Red customers.",
+     "why": "Security models that can find flaws are only useful if they can be trusted not to wander, and this one pairs stronger exploit skills with measured restraint."
+    },
+    {
+     "category": "AI",
+     "company": "Google",
+     "headline": "Google ships Gemini Omni 1.2 Flash with 15 second video and a 30% price cut",
+     "id": "brief-2026-11-06-02",
+     "source_date": "2026-11-05",
+     "sources": [
+      {
+       "label": "Google AI Blog",
+       "url": "https://blog.google/innovation-and-ai/technology/developers-tools/introducing-gemini-omni-1-2-flash/"
+      },
+      {
+       "label": "Google DeepMind",
+       "url": "https://deepmind.google/blog/gemini-omni-12-flash-fast-and-cost-effective-with-longer-clips/"
+      }
+     ],
+     "summary": "Google made Gemini Omni 1.2 Flash generally available across the Gemini API and Google Cloud. It creates and edits video clips up to 15 seconds long, up from 10 seconds, with multi turn conversational editing and stronger reference consistency. The price falls 30% from version 1.1, to $0.07 per second for 720p video.",
+     "why": "Video generation is moving from short demos toward usable ad and product clips, with editing and pricing aimed at production use."
+    },
+    {
+     "category": "AI",
+     "company": "Anthropic",
+     "headline": "Claude can now read your bank account, with read only access through Plaid",
+     "id": "brief-2026-11-06-03",
+     "source_date": "2026-11-05",
+     "sources": [
+      {
+       "label": "The Verge",
+       "url": "https://www.theverge.com/ai-artificial-intelligence/1027652/anthropic-claude-plaid-personal-finance"
+      }
+     ],
+     "summary": "Anthropic launched Personal Finance in Claude in beta, connecting the chatbot to bank and card accounts through Plaid. Claude can break down spending by category, say which bills remain before payday, and judge whether a large purchase is affordable, using up to two years of transaction history. Access is read only: Claude cannot move, manage or invest money, and it does not see banking passwords. The beta is rolling out this week to Claude Pro, Max and Ultra subscribers in the US.",
+     "why": "AI assistants are moving from answering questions to acting on personal financial data, which makes read only access and clear limits the story."
+    },
+    {
+     "category": "Quantum",
+     "company": "Quantinuum",
+     "headline": "Quantinuum maps its Nexus platform toward a fault tolerant computer in 2029",
+     "id": "brief-2026-11-06-04",
+     "source_date": "2026-11-05",
+     "sources": [
+      {
+       "label": "The Quantum Insider",
+       "url": "https://thequantuminsider.com/2026/11/05/quantinuum-maps-nexus-expansion-ahead-of-planned-2029-fault-tolerant-computer/"
+      }
+     ],
+     "summary": "Quantinuum published a roadmap to grow Nexus, its platform as a service, into a developer platform for fault tolerant quantum applications, tracking hardware releases through Apollo, its planned universal fault tolerant computer in 2029. Releases will progressively automate error correction, resource management and deployment. Nexus already serves more than 200 organisations, up 45% in 2026, with job submissions up tenfold in the year to August 2026.",
+     "why": "Quantum vendors are now competing on developer platforms, not only hardware, so applications built today can carry over to fault tolerant machines."
+    },
+    {
+     "category": "Quantum",
+     "company": "IBM",
+     "headline": "IBM, Oak Ridge and AMD pair quantum hardware with supercomputing to advance error correction",
+     "id": "brief-2026-11-06-05",
+     "source_date": "2026-11-05",
+     "sources": [
+      {
+       "label": "The Quantum Insider",
+       "url": "https://thequantuminsider.com/2026/11/05/oak-ridge-national-laboratory-ibm-and-amd-launch-new-co-design-platform-for-quantum-error-correction/"
+      }
+     ],
+     "summary": "IBM, the Quantum Science Center at Oak Ridge National Laboratory and AMD launched a joint co-design platform for quantum error correction, combining quantum and high performance computing. The first deployment pairs IBM quantum computers, including the 120 qubit Nighthawk processor, with Oak Ridge's Umbra system, powered by AMD Instinct MI355X GPUs and 5th Gen EPYC CPUs. The work supports the US Department of Energy goal of 100 logical qubits running 100,000 hard operations by late 2028.",
+     "why": "Error correction needs classical computing at scale, and this platform tests quantum and supercomputing as one system rather than two separate tools."
+    },
+    {
+     "category": "Cloud & DevOps",
+     "company": "Microsoft",
+     "headline": "Azure Front Door gains generally available post quantum TLS key exchange",
+     "id": "brief-2026-11-06-06",
+     "source_date": "2026-11-05",
+     "sources": [
+      {
+       "label": "Azure Updates",
+       "url": "https://azure.microsoft.com/updates?id=577668"
+      }
+     ],
+     "summary": "Microsoft made configurable TLS key exchange policies generally available in Azure Front Door, including hybrid post quantum key exchange. The option is aimed at teams preparing for future cryptographic threats while keeping client compatibility.",
+     "why": "Post quantum readiness is reaching production edge services, so teams can start the migration before quantum computers threaten current cryptography."
+    },
+    {
+     "category": "Cloud & DevOps",
+     "company": "Google",
+     "headline": "Google donates its agent runtime stack to the CNCF as Agent Substrate hits 1.0",
+     "id": "brief-2026-11-06-07",
+     "source_date": "2026-11-05",
+     "sources": [
+      {
+       "label": "Google Cloud Blog",
+       "url": "https://cloud.google.com/blog/products/containers-kubernetes/open-infrastructure-for-autonomous-agents-comes-to-cncf/"
+      }
+     ],
+     "summary": "Google donated three open source projects that started at Google, Agent Substrate, gVisor and OpenRL, to the Cloud Native Computing Foundation after their acceptance into the CNCF Sandbox. Agent Substrate, which runs isolated agent environments, reached version 1.0 and is generally available on Google Kubernetes Engine, restoring idle agents in under 500 milliseconds at 10 times container density.",
+     "why": "Agent infrastructure is getting the same neutral, open governance treatment Kubernetes got, so no single vendor controls how agents run at scale."
+    },
+    {
+     "category": "Cybersecurity",
+     "company": "OpenSSH",
+     "headline": "OpenSSH ships emergency fix for a flaw that let long passwords bypass login on Alpine Linux",
+     "id": "brief-2026-11-06-08",
+     "source_date": "2026-11-05",
+     "sources": [
+      {
+       "label": "The Hacker News",
+       "url": "https://thehackernews.com/2026/11/openssh-issues-emergency-fix-for-flaw.html"
+      }
+     ],
+     "summary": "OpenSSH released version 10.6p2 to fix a critical flaw in which a password between 257 and 1,024 bytes long could log in to accounts with no password set, such as key only accounts, on some Alpine Linux servers. The flaw affects systems where the server checks passwords without PAM, which is how Alpine's openssh-server package is built. Alpine published fixed packages for every release back to 3.16, and no attacks using the flaw have been reported.",
+     "why": "A password check that accepts the wrong input is a serious failure, and Alpine's wide use in containers makes fast patching matter."
+    },
+    {
+     "category": "Cybersecurity",
+     "company": "FBI and CISA",
+     "headline": "FBI and CISA warn hackers are targeting refrigeration systems",
+     "id": "brief-2026-11-06-09",
+     "source_date": "2026-11-05",
+     "sources": [
+      {
+       "label": "CISA and FBI joint advisory (PDF)",
+       "url": "https://www.ic3.gov/CSA/2026/261105.pdf"
+      },
+      {
+       "label": "BleepingComputer",
+       "url": "https://www.bleepingcomputer.com/news/security/fbi-cisa-warn-of-cyberattacks-targeting-refrigeration-systems/"
+      }
+     ],
+     "summary": "The FBI and CISA warned that hackers are actively targeting industrial refrigeration and cold chain monitoring systems worldwide, in a joint advisory with the US health, agriculture and transport departments. Attackers exploit unpatched or internet accessible temperature controllers to alter settings, which can spoil food, damage equipment and create fire hazards. The warning follows attacks on European refrigeration systems, including controllers at an estimated 250 to 350 French supermarkets in October.",
+     "why": "Cyberattacks on refrigeration reach beyond data theft into food safety and public health, so operators are urged to take controllers off the public internet."
+    },
+    {
+     "category": "Industry",
+     "company": "Horizon Quantum",
+     "headline": "Horizon Quantum plans to buy error correction specialist Entropica Labs for $27 million",
+     "id": "brief-2026-11-06-10",
+     "source_date": "2026-11-05",
+     "sources": [
+      {
+       "label": "The Quantum Insider",
+       "url": "https://thequantuminsider.com/2026/11/05/horizon-quantum-acquire-entropica-labs-27-million/"
+      }
+     ],
+     "summary": "Horizon Quantum signed a non-binding letter of intent to acquire Singapore based quantum software company Entropica Labs for about $27 million in Horizon Quantum Class A ordinary shares. Entropica Labs specialises in error correction and fault tolerance. The deal still needs due diligence, audits and definitive agreements.",
+     "why": "Quantum software firms are consolidating around error correction, the capability every hardware maker needs before fault tolerant machines arrive."
+    },
+    {
+     "category": "Industry",
+     "company": "Agility Robotics",
+     "headline": "Agility Robotics lists on Nasdaq as humanoid robots face scrutiny over scale",
+     "id": "brief-2026-11-06-11",
+     "source_date": "2026-11-05",
+     "sources": [
+      {
+       "label": "Ars Technica",
+       "url": "https://arstechnica.com/ai/2026/11/agility-robotics-nasdaq-debut-invites-scrutiny-of-humanoid-robot-market/"
+      }
+     ],
+     "summary": "Agility Robotics, maker of the Digit humanoid robot, listed on the Nasdaq on November 5 through a merger with a special purpose acquisition company, becoming the first dedicated humanoid robot developer to trade publicly in the US. Digit robots already work at customer sites including GXO warehouses and a Schaeffler factory, and the next model, Digit 5, arrives in 2027 with 50 pound lifting and more than 20 hours of work per day. The company's filing shows $1.8 million of revenue in 2025 against a $140 million operating loss, and notes humanoid robots remain unproven at scale.",
+     "why": "A public listing tests whether investors will fund humanoid robots before the market proves itself, and Agility's numbers show how early that bet still is."
+    },
+    {
+     "category": "Policy",
+     "company": "OpenAI",
+     "headline": "OpenAI drops NDAs with public officials for its data centre projects",
+     "id": "brief-2026-11-06-12",
+     "source_date": "2026-11-05",
+     "sources": [
+      {
+       "label": "OpenAI Blog",
+       "url": "https://openai.com/index/setting-new-standard-responsible-ai-infrastructure"
+      },
+      {
+       "label": "The Verge",
+       "url": "https://www.theverge.com/ai-artificial-intelligence/1028454/openai-data-center-nda"
+      }
+     ],
+     "summary": "OpenAI published a National Community Compact and a Compute Campus Policy Blueprint setting out commitments for future compute campuses it owns and operates, including paying the full cost of the electricity it uses and publishing the jobs it expects to create. It will not use non-disclosure agreements with public officials, allowing only narrow protections for security information, trade secrets or proprietary information. The announcement follows midterm votes in which US voters decided local data centre measures.",
+     "why": "Data centre deals have drawn scrutiny over secrecy and local costs, and OpenAI is putting its community terms in writing rather than leaving them to negotiation."
+    }
+   ]
+  }
+ ]
 }
