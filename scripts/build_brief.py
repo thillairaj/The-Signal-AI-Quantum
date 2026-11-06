@@ -6,9 +6,17 @@ each item carrying its own source links) and generates:
   signal.xml                 the full Signal Brief RSS feed (all categories)
   signal/<category>.xml      one RSS feed per category (ai, quantum,
                              cloud-devops, cybersecurity, industry, policy)
-  brief/index.html           the Signal Brief page (all editions, newest first)
-  index.html                 the homepage Signal Brief room's latest edition
-                             cards, between the BRIEF-LATEST markers
+  brief/index.html           the Signal Brief page: the card based design
+                             rendered by assets/brief.js (same UI as the
+                             homepage #brief tab)
+  brief/<date>/<nn>/         one static story page per story, with its own
+                             preview tags and a rendered og.png news card
+                             (Obsidian Gold, 1200x630), for link previews
+  sitemap.xml                gains the /brief/ page and every story page
+  index.html                 the homepage Signal Brief room's latest
+                             edition cards, between the BRIEF-LATEST markers
+  brief/story-urls.txt       the brief page plus every story page URL,
+                             one per line, for the daily job's IndexNow ping
 
 Every item must carry at least one source link; the builder refuses to
 publish an item with no sources (the fact check gate, Thillai, Nov 5, 2026).
@@ -35,17 +43,19 @@ ROOT = Path(__file__).resolve().parent.parent
 DATA_FILE = ROOT / "data" / "brief.json"
 PAGE_DIR = ROOT / "brief"
 HOME_FILE = ROOT / "index.html"
+SITEMAP_FILE = ROOT / "sitemap.xml"
 
 DEFAULT_BASE = "https://thillairaj.github.io/The-Signal-AI-Quantum/"
 EDITION_TIME_UTC = timezone(timedelta(hours=1, minutes=30))  # 07:00 IST
 
+# Category colours from the approved card design (Thillai, Nov 6, 2026).
 CAT_COLOURS = {
-    "AI": "#2f6fed",
-    "Quantum": "#7c4dff",
-    "Cloud & DevOps": "#2a9d8f",
-    "Cybersecurity": "#d64560",
-    "Industry": "#b8860b",
-    "Policy": "#5a6b7f",
+    "AI": "#4F46E5",
+    "Quantum": "#7C3AED",
+    "Cloud & DevOps": "#0E7490",
+    "Cybersecurity": "#DC2626",
+    "Industry": "#B45309",
+    "Policy": "#0F766E",
 }
 
 
@@ -67,6 +77,34 @@ def edition_dt(edition):
     return d.astimezone(timezone.utc)
 
 
+def fmt_date(iso):
+    """Readable date: 'Fri, 6 Nov 2026' (never the ISO form on a page)."""
+    d = datetime.fromisoformat(str(iso))
+    return d.strftime("%a, %-d %b %Y")
+
+
+def fmt_date_short(iso):
+    d = datetime.fromisoformat(str(iso))
+    return d.strftime("%-d %b %Y")
+
+
+def edition_time(edition):
+    if edition.get("published"):
+        dt = datetime.fromisoformat(edition["published"])
+        ist = dt.astimezone(timezone(timedelta(hours=5, minutes=30)))
+        return ist.strftime("%H:%M")
+    return "07:00"
+
+
+def story_nn(item):
+    m = re.search(r"-(\d+)$", item["id"])
+    return m.group(1).zfill(2) if m else "01"
+
+
+def story_path(edition, item):
+    return f"brief/{edition['date']}/{story_nn(item)}/"
+
+
 def item_html(item, base):
     sources = "".join(
         f'<li><a href="{escape(s["url"])}">{escape(s["label"])}</a></li>'
@@ -82,7 +120,7 @@ def build_feed(items, base, title, feed_path, self_file):
     rows = []
     for item, ed in items:
         pub = edition_dt(ed)
-        link = f"{base}brief/#{item['id']}"
+        link = f"{base}{story_path(ed, item)}"
         content = item_html(item, base)
         rows.append(f"""    <item>
       <title>{escape(item['headline'])}</title>
@@ -108,37 +146,62 @@ def build_feed(items, base, title, feed_path, self_file):
 """
 
 
-def item_card(item, ed):
-    colour = CAT_COLOURS.get(item["category"], "#5a6b7f")
-    sources = " · ".join(
-        f'<a href="{escape(s["url"])}" target="_blank" rel="noopener">{escape(s["label"])}</a>'
-        for s in item["sources"])
-    breaking = ' <span class="brief-breaking">Breaking</span>' if ed.get("breaking") else ""
-    return f"""      <article class="brief-item" id="{item['id']}">
-        <p class="brief-meta"><span class="brief-tag" style="background:{colour}">{escape(item['category'])}</span><span class="brief-srcdate">Source dated {escape(item['source_date'])}</span>{breaking}</p>
-        <h3>{escape(item['headline'])}</h3>
-        <p>{escape(item['summary'])}</p>
-        <p class="brief-why"><strong>Why it matters for tech:</strong> {escape(item['why'])}</p>
-        <p class="brief-source">Source: {sources}</p>
-      </article>"""
+PAGE_CSS = """
+  :root { --ink:#171b24; --muted:#5a6270; --gold:#b8860b; --paper:#faf9f6; --card:#ffffff; --line:#e5dfce; }
+  :root[data-theme="dark"] { --ink:#ecede4; --muted:#9aa08d; --paper:#15170f; --card:#1d2019; --line:#3a3d31; }
+  @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { --ink:#ecede4; --muted:#9aa08d; --paper:#15170f; --card:#1d2019; --line:#3a3d31; } }
+  * { box-sizing:border-box; }
+  body { margin:0; font-family: Inter, system-ui, sans-serif; background:var(--paper); color:var(--ink); }
+  [hidden] { display: none !important; }
+  .brief-topbar { position:sticky; top:0; z-index:50; background:var(--paper); border-bottom:1px solid var(--line); padding:10px 16px; display:flex; justify-content:center; align-items:center; gap:12px; }
+  .brief-back { font-size:.85rem; color:var(--ink); text-decoration:none; border:1px solid var(--line); background:var(--card); border-radius:10px; padding:8px 14px; line-height:1.3; text-align:left; }
+  .brief-back small { display:block; color:var(--muted); }
+  .brief-theme { margin-left:auto; position:absolute; right:16px; width:38px; height:38px; border-radius:50%; border:1px solid var(--line); background:var(--card); color:var(--ink); font-size:1rem; cursor:pointer; }
+  .brief-rules { max-width:820px; margin:18px auto 4px; padding:0 18px; }
+  .brief-rules-in { background:var(--card); border:1px solid var(--line); border-radius:12px; padding:14px 18px; font-size:.9rem; line-height:1.55; color:var(--muted); }
+  .brief-rules-in strong { color:var(--ink); }
+  footer { text-align:center; padding:26px 16px 40px; color:var(--muted); font-size:.9rem; }
+  footer .rule { width:60px; height:3px; background:var(--gold); margin:0 auto 16px; }
+  .li-btn { display:inline-block; margin-left:8px; background:#0a66c2; color:#fff; text-decoration:none; border-radius:6px; padding:3px 10px; font-size:.8rem; }
+"""
+
+THEME_SCRIPT = """<script>
+(function () {
+  var saved = null;
+  try { saved = localStorage.getItem("aisignal_theme"); } catch (e) {}
+  if (saved === "dark" || saved === "light") {
+    document.documentElement.setAttribute("data-theme", saved);
+  }
+  document.addEventListener("DOMContentLoaded", function () {
+    var btn = document.getElementById("briefTheme");
+    if (!btn) return;
+    var sync = function () {
+      var cur = document.documentElement.getAttribute("data-theme") ||
+        (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+      btn.textContent = cur === "dark" ? "☀" : "☾";
+    };
+    sync();
+    btn.addEventListener("click", function () {
+      var cur = document.documentElement.getAttribute("data-theme") ||
+        (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+      var next = cur === "dark" ? "light" : "dark";
+      document.documentElement.setAttribute("data-theme", next);
+      try { localStorage.setItem("aisignal_theme", next); } catch (e) {}
+      sync();
+    });
+  });
+})();
+</script>"""
+
+RULES_BOX = """<div class="brief-rules"><div class="brief-rules-in"><strong>How Signal Brief is made:</strong> items are written from the validated wire sources, official government and company pages, and Reuters or AP for geopolitical events. Policy coverage is limited to events with a clear technology impact, is neutral and factual, and carries each side's official position where relevant. Any item whose claims cannot be linked to a source is dropped before publication.</div></div>"""
+
+FOOTER = """<footer>
+    <div class="rule"></div>
+    <p>Curated by Thillai Raj Thanam Jeya Veera Raj <a class="li-btn" href="https://www.linkedin.com/in/thillairaj" target="_blank" rel="noopener">Follow on LinkedIn</a></p>
+  </footer>"""
 
 
 def build_page(data, base):
-    editions = sorted(data["editions"], key=lambda e: e["date"], reverse=True)
-    cat_links = "".join(
-        f'<a class="brief-feedlink" href="{base}{c["file"]}">'
-        f'{escape(c["label"])} feed</a>'
-        for c in data["categories"])
-    sections = []
-    for ed in editions:
-        cards = "\n".join(item_card(i, ed) for i in ed["items"])
-        label = "Breaking update" if ed.get("breaking") else "Daily edition"
-        sections.append(f"""    <section class="brief-edition">
-      <h2>{escape(ed['date'])}</h2>
-      <p class="brief-edmeta">{label} · {len(ed['items'])} items · Published 07:00 IST</p>
-{cards}
-    </section>""")
-    editions_html = "\n".join(sections)
     return f"""<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -146,64 +209,361 @@ def build_page(data, base):
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Signal Brief · The Signal</title>
 <meta name="description" content="Signal Brief: The Signal's own daily brief on AI, quantum, cloud and DevOps, cybersecurity, industry and policy. Original wording, every claim linked to its source.">
+<meta property="og:title" content="Signal Brief · The Signal">
+<meta property="og:description" content="Today in tech, in one swipe. The Signal's own daily brief: original wording, every claim linked to its source.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="{base}brief/">
+<link rel="canonical" href="{base}brief/">
 <link rel="alternate" type="application/rss+xml" title="Signal Brief" href="{base}signal.xml">
-<style>
-  :root {{ --ink:#171b24; --muted:#5a6270; --gold:#b8860b; --paper:#faf9f6; --card:#ffffff; --line:#e5dfce; }}
-  * {{ box-sizing:border-box; }}
-  body {{ margin:0; font-family: Georgia, 'Times New Roman', serif; background:var(--paper); color:var(--ink); }}
-  .brief-hero {{ text-align:center; padding:56px 20px 30px; background:radial-gradient(ellipse at 50% 0%, #fffdf4 0%, var(--paper) 70%); border-bottom:3px solid var(--gold); position:relative; }}
-  .brief-kicker {{ letter-spacing:.28em; font-size:.72rem; color:var(--gold); text-transform:uppercase; font-family: Arial, sans-serif; font-weight:bold; }}
-  .brief-hero h1 {{ font-size:2.6rem; margin:.35em 0 .15em; font-weight:normal; }}
-  .brief-hero h1 .thin {{ color:var(--gold); }}
-  .brief-hero p {{ color:var(--muted); max-width:640px; margin:0 auto; line-height:1.55; }}
-  .brief-topbar {{ position:sticky; top:0; z-index:10; background:var(--paper); border-bottom:1px solid var(--line); padding:10px 16px; display:flex; justify-content:center; }}
-  .brief-back {{ font-family: Arial, sans-serif; font-size:.85rem; color:var(--ink); text-decoration:none; border:1px solid var(--line); background:var(--card); border-radius:10px; padding:8px 14px; line-height:1.3; text-align:left; }}
-  .brief-back small {{ display:block; color:var(--muted); }}
-  main {{ max-width:820px; margin:0 auto; padding:10px 18px 30px; }}
-  .brief-feeds {{ display:flex; flex-wrap:wrap; gap:8px; justify-content:center; margin:22px 0 6px; }}
-  .brief-feedlink {{ font-family: Arial, sans-serif; font-size:.78rem; color:var(--ink); border:1px solid var(--gold); border-radius:999px; padding:6px 12px; text-decoration:none; background:var(--card); }}
-  .brief-rules {{ background:var(--card); border:1px solid var(--line); border-radius:12px; padding:16px 20px; margin:18px 0 8px; font-size:.92rem; line-height:1.55; color:var(--muted); }}
-  .brief-rules strong {{ color:var(--ink); }}
-  .brief-edition h2 {{ font-size:1.55rem; margin:34px 0 2px; font-weight:normal; }}
-  .brief-edmeta {{ color:var(--muted); font-family: Arial, sans-serif; font-size:.8rem; margin:0 0 10px; }}
-  .brief-item {{ background:var(--card); border:1px solid var(--line); border-radius:12px; padding:18px 20px; margin:14px 0; }}
-  .brief-item h3 {{ margin:.3em 0 .45em; font-size:1.22rem; line-height:1.35; }}
-  .brief-item p {{ line-height:1.6; margin:.45em 0; }}
-  .brief-meta {{ display:flex; gap:10px; align-items:center; font-family: Arial, sans-serif; font-size:.75rem; }}
-  .brief-tag {{ color:#fff; border-radius:999px; padding:3px 10px; font-weight:bold; }}
-  .brief-srcdate {{ color:var(--muted); }}
-  .brief-breaking {{ color:#b00020; font-weight:bold; letter-spacing:.08em; }}
-  .brief-why {{ background:#fdf8ec; border-radius:8px; padding:10px 12px; }}
-  .brief-source {{ font-family: Arial, sans-serif; font-size:.82rem; color:var(--muted); }}
-  .brief-source a {{ color:#0b5cad; }}
-  footer {{ text-align:center; padding:26px 16px 40px; color:var(--muted); font-size:.9rem; }}
-  footer .rule {{ width:60px; height:3px; background:var(--gold); margin:0 auto 16px; }}
-  .li-btn {{ display:inline-block; margin-left:8px; background:#0a66c2; color:#fff; text-decoration:none; border-radius:6px; padding:3px 10px; font-family: Arial, sans-serif; font-size:.8rem; }}
-</style>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,800;1,9..144,500;1,9..144,600&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="{base}assets/brief.css?v=20261106">
+<style>{PAGE_CSS}</style>
+{THEME_SCRIPT}
 </head>
 <body>
-  <div class="brief-topbar"><a class="brief-back" href="{base}"><small>← Back to</small>The Signal</a></div>
-  <header class="brief-hero">
-    <p class="brief-kicker">The Signal · Daily at 07:00 IST</p>
-    <h1>Signal <span class="thin">Brief</span></h1>
-    <p>The day in technology, in our own words: AI, quantum, cloud and DevOps, cybersecurity, industry and policy. Every claim is linked to its source and checked before publication; source text is never copied.</p>
-    <div class="brief-feeds"><a class="brief-feedlink" href="{base}signal.xml">Full feed (RSS)</a>{cat_links}</div>
-  </header>
+  <div class="brief-topbar"><a class="brief-back" href="{base}#brief"><small>← Back to</small>The Signal</a><button class="brief-theme" id="briefTheme" type="button" aria-label="Toggle dark mode">☾</button></div>
   <main>
-    <div class="brief-rules"><strong>How Signal Brief is made:</strong> items are written from the validated wire sources, official government and company pages, and Reuters or AP for geopolitical events. Policy coverage is limited to events with a clear technology impact, is neutral and factual, and carries each side's official position where relevant. Any item whose claims cannot be linked to a source is dropped before publication.</div>
-{editions_html}
+    <div data-brief-root data-root-prefix="../"></div>
+    {RULES_BOX}
   </main>
-  <footer>
-    <div class="rule"></div>
-    <p>Curated by Thillai Raj Thanam Jeya Veera Raj <a class="li-btn" href="https://www.linkedin.com/in/thillairaj" target="_blank" rel="noopener">Follow on LinkedIn</a></p>
-  </footer>
+  {FOOTER}
+  <script src="{base}assets/signal-share.js"></script>
+  <script src="{base}assets/brief.js?v=20261106"></script>
 </body>
 </html>
 """
 
 
+# ---------- story pages and their og images ----------
+
+def first_sentence(text):
+    m = re.match(r"^[\s\S]*?[.!?](?=\s|$)", text or "")
+    return (m.group(0) if m else (text or "")).strip()
+
+
+def render_og_image(item, ed, out_path):
+    """The story's news card, Obsidian Gold, 1200x630, drawn with PIL.
+    Same design as the canvas news card in assets/brief.js (category
+    colour bar, SIGNAL BRIEF pill, readable date, headline, first
+    sentence, WHY box, source line, THE SIGNAL footer with the TRT
+    badge), tightened for the landscape frame: the first sentence and
+    the why line are capped at two lines each, cut at a word boundary,
+    and the type shrinks until everything fits above the footer."""
+    from PIL import Image, ImageDraw, ImageFont
+
+    W, H = 1200, 630
+    k = W / 1080.0
+    fonts_dir = "/usr/share/fonts/truetype/dejavu"
+
+    def font(name, size):
+        return ImageFont.truetype(f"{fonts_dir}/{name}", max(8, int(size)))
+
+    cat_hex = CAT_COLOURS.get(item["category"], "#5a6b7f")
+    cat_rgb = tuple(int(cat_hex[i:i + 2], 16) for i in (1, 3, 5))
+    img = Image.new("RGB", (W, H), (13, 15, 20))
+    dr = ImageDraw.Draw(img, "RGBA")
+    for yy in range(H):
+        t = yy / H
+        dr.line([(0, yy), (W, yy)],
+                fill=(int(21 + (13 - 21) * t), int(25 + (15 - 25) * t),
+                      int(35 + (20 - 35) * t)))
+    dr.rectangle([0, 0, W, 12], fill=cat_rgb)
+    pad = int(72 * k)
+    mw = W - 2 * pad
+    gold = (212, 175, 106)
+    head_c = (255, 255, 255)
+    body_c = (195, 204, 217)
+    foot_c = (143, 160, 181)
+    foot_y = H - int(92 * k)
+
+    def wrap(text, fnt, width):
+        lines, cur = [], ""
+        for word in str(text).split():
+            trial = (cur + " " + word).strip()
+            if dr.textlength(trial, font=fnt) > width and cur:
+                lines.append(cur)
+                cur = word
+            else:
+                cur = trial
+        if cur:
+            lines.append(cur)
+        return lines
+
+    def cap_lines(lines, fnt, width, max_lines):
+        if len(lines) <= max_lines:
+            return lines
+        kept = lines[:max_lines]
+        last = kept[-1]
+        while last and dr.textlength(last + "…", font=fnt) > width:
+            last = last.rsplit(" ", 1)[0] if " " in last else last[:-1]
+        kept[-1] = last + "…"
+        return kept
+
+    date_line = f"{fmt_date(ed['date'])} · {edition_time(ed)} IST"
+    first = first_sentence(item["summary"])
+
+    def layout(hf, bf):
+        hfnt = font("DejaVuSerif-Bold.ttf", hf * k)
+        bfnt = font("DejaVuSans.ttf", bf * k)
+        wfnt = font("DejaVuSans.ttf", (bf - 3) * k)
+        head = wrap(item["headline"], hfnt, mw)
+        body = cap_lines(wrap(first, bfnt, mw), bfnt, mw, 2)
+        why = cap_lines(wrap(item["why"], wfnt, mw - int(36 * k)),
+                        wfnt, mw - int(36 * k), 2)
+        why_h = (int(44 * k) + len(why) * int((bf - 3) * 1.3 * k) +
+                 int(14 * k))
+        y = int(30 * k)
+        y += int(40 * k) + int(22 * k)
+        y += int(40 * k)
+        head_y = y
+        y += len(head) * int(hf * 1.18 * k) + int(16 * k)
+        body_y = y
+        y += len(body) * int(bf * 1.3 * k) + int(14 * k)
+        why_y = y
+        y += why_h + int(18 * k)
+        src_y = y
+        y += int(30 * k)
+        return (hfnt, bfnt, wfnt, head, body, why, why_h, head_y, body_y,
+                why_y, src_y, y)
+
+    hf, bf = 46, 25
+    lay = layout(hf, bf)
+    while lay[-1] > foot_y - int(10 * k) and hf > 26:
+        hf -= 2
+        bf -= 1
+        lay = layout(hf, bf)
+    (hfnt, bfnt, wfnt, head, body, why, why_h, head_y, body_y, why_y,
+     src_y, _end) = lay
+
+    y = int(30 * k)
+    label = f"SIGNAL BRIEF · {item['category'].upper()}"
+    lfnt = font("DejaVuSans-Bold.ttf", 24 * k)
+    tw = dr.textlength(label, font=lfnt)
+    pill_h = int(40 * k)
+    dr.rounded_rectangle([pad, y, pad + tw + int(34 * k), y + pill_h],
+                         radius=pill_h // 2, fill=cat_rgb)
+    dr.text((pad + int(17 * k), y + pill_h / 2), label, font=lfnt,
+            fill=(255, 255, 255), anchor="lm")
+    y += pill_h + int(22 * k)
+    dr.text((pad, y), date_line, font=font("DejaVuSans-Bold.ttf", 24 * k),
+            fill=foot_c, anchor="la")
+    y = head_y
+    for line in head:
+        dr.text((pad, y), line, font=hfnt, fill=head_c, anchor="la")
+        y += int(hf * 1.18 * k)
+    y = body_y
+    for line in body:
+        dr.text((pad, y), line, font=bfnt, fill=body_c, anchor="la")
+        y += int(bf * 1.3 * k)
+    y = why_y
+    dr.rounded_rectangle([pad, y, pad + mw, y + why_h],
+                         radius=int(12 * k),
+                         fill=cat_rgb + (40,),
+                         outline=cat_rgb + (140,), width=max(1, int(1.5 * k)))
+    wy = y + int(15 * k)
+    dr.text((pad + int(18 * k), wy), "WHY IT MATTERS",
+            font=font("DejaVuSans-Bold.ttf", 20 * k), fill=gold, anchor="la")
+    wy += int(29 * k)
+    for line in why:
+        dr.text((pad + int(18 * k), wy), line, font=wfnt, fill=body_c,
+                anchor="la")
+        wy += int((bf - 3) * 1.3 * k)
+    dr.text((pad, src_y), f"Source: {item['sources'][0]['label']}",
+            font=font("DejaVuSans-Bold.ttf", 23 * k), fill=foot_c,
+            anchor="la")
+    dr.line([(pad, foot_y), (W - pad, foot_y)], fill=gold + (128,), width=2)
+    dr.text((W / 2, H - int(44 * k)), "THE SIGNAL · free learning",
+            font=font("DejaVuSans-Bold.ttf", 25 * k), fill=foot_c,
+            anchor="mm")
+    bx, by, br = W - pad - int(30 * k), H - int(44 * k), int(28 * k)
+    dr.ellipse([bx - br, by - br, bx + br, by + br], outline=gold, width=3)
+    dr.text((bx, by), "TRT", font=font("DejaVuSerif-Bold.ttf", 21 * k),
+            fill=gold, anchor="mm")
+    img.save(out_path, "PNG")
+
+
+STORY_CSS = """
+  main { max-width:760px; margin:0 auto; padding:26px 18px 10px; }
+  .story-pill { display:inline-block; color:#fff; border-radius:999px; padding:4px 13px; font-size:.75rem; font-weight:700; letter-spacing:.04em; }
+  .story-dates { color:var(--muted); font-size:.85rem; margin:10px 0 0; }
+  h1 { font-family: Georgia, 'Times New Roman', serif; font-weight:normal; font-size:2rem; line-height:1.3; margin:.35em 0 .4em; }
+  .story-sum { line-height:1.7; font-size:1.02rem; }
+  .story-why { border-radius:10px; padding:12px 14px; line-height:1.6; margin:16px 0; }
+  .story-why .story-why-label { display:block; font-size:.68rem; font-weight:800; letter-spacing:.16em; margin-bottom:4px; }
+  .story-why p { margin:0; }
+  .story-srcs { list-style:none; padding:0; margin:6px 0 18px; display:flex; flex-direction:column; gap:7px; }
+  .story-srcs a { color:#0b5cad; }
+  .story-actions { display:flex; align-items:center; gap:14px; flex-wrap:wrap; margin:20px 0 6px; }
+  .story-edition { display:inline-block; margin-top:14px; border:1px solid var(--gold); border-radius:999px; padding:8px 16px; color:var(--ink); text-decoration:none; background:var(--card); font-size:.88rem; font-weight:600; }
+"""
+
+
+def tint(hex_colour, alpha_pct):
+    n = int(hex_colour[1:], 16)
+    return (f"rgba({(n >> 16) & 255},{(n >> 8) & 255},{n & 255},"
+            f"{alpha_pct / 100:.2f})")
+
+
+def _lum(rgb):
+    def f(c):
+        c = c / 255
+        return c / 12.92 if c <= 0.03928 else ((c + 0.055) / 1.055) ** 2.4
+    return 0.2126 * f(rgb[0]) + 0.7152 * f(rgb[1]) + 0.0722 * f(rgb[2])
+
+
+def _ratio(a, b):
+    la, lb = _lum(a), _lum(b)
+    return (max(la, lb) + 0.05) / (min(la, lb) + 0.05)
+
+
+def label_shades(hex_colour):
+    """WHY label shades that clear 4.6:1 on the category tint: darkened
+    for light cards, lightened for dark cards (the pure colour falls
+    under 4.5:1 for Cybersecurity and Industry)."""
+    c = tuple(int(hex_colour[i:i + 2], 16) for i in (1, 3, 5))
+    light_bg = tuple(round(v * 0.12 + 255 * 0.88) for v in c)
+    dark_bg = tuple(round(c[i] * 0.12 + (29, 32, 25)[i] * 0.88)
+                    for i in range(3))
+    out = c
+    for _ in range(30):
+        if _ratio(out, light_bg) >= 4.6:
+            break
+        out = tuple(round(v * 0.96) for v in out)
+    light = "#%02x%02x%02x" % out
+    out = c
+    for _ in range(20):
+        if _ratio(out, dark_bg) >= 4.6:
+            break
+        out = tuple(round(v + (255 - v) * 0.12) for v in out)
+    dark = "#%02x%02x%02x" % out
+    return light, dark
+
+
+def build_story_page(item, ed, base):
+    colour = CAT_COLOURS.get(item["category"], "#5a6b7f")
+    label_light, label_dark = label_shades(colour)
+    url = f"{base}{story_path(ed, item)}"
+    og = f"{base}{story_path(ed, item)}og.png"
+    sources = "".join(
+        f'<li><a href="{escape(s["url"])}" target="_blank" '
+        f'rel="noopener">{escape(s["label"])}</a></li>'
+        for s in item["sources"])
+    spec = {
+        "title": item["headline"],
+        "line": first_sentence(item["summary"]),
+        "link": url,
+        "caption": "\n\n".join([
+            item["headline"], item["summary"],
+            "Why it matters: " + item["why"],
+            "Source: " + item["sources"][0]["label"],
+            "Read on Signal Brief, free:\n" + url,
+            "#TheSignal " + {
+                "AI": "#AI", "Quantum": "#QuantumComputing",
+                "Cloud & DevOps": "#CloudComputing",
+                "Cybersecurity": "#CyberSecurity",
+                "Industry": "#TechIndustry",
+                "Policy": "#TechPolicy"}.get(item["category"], "#AI")]),
+        "image": {"kind": "static", "url": og,
+                  "filename": f"signal-brief-{ed['date']}-{story_nn(item)}.png"},
+    }
+    spec_js = json.dumps(spec).replace("</", "<\\/")
+    return f"""<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{escape(item['headline'])} · Signal Brief</title>
+<meta name="description" content="{escape(item['summary'][:160])}">
+<meta property="og:title" content="{escape(item['headline'])}">
+<meta property="og:description" content="{escape(item['summary'][:200])}">
+<meta property="og:type" content="article">
+<meta property="og:url" content="{url}">
+<meta property="og:image" content="{og}">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="{escape(item['headline'])}">
+<meta name="twitter:description" content="{escape(item['summary'][:200])}">
+<meta name="twitter:image" content="{og}">
+<link rel="canonical" href="{url}">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,800;1,9..144,500;1,9..144,600&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>{PAGE_CSS}{STORY_CSS}
+  .story-why-label {{ color:{label_light}; }}
+  :root[data-theme="dark"] .story-why-label {{ color:{label_dark}; }}
+  @media (prefers-color-scheme: dark) {{ :root:not([data-theme="light"]) .story-why-label {{ color:{label_dark}; }} }}
+</style>
+{THEME_SCRIPT}
+</head>
+<body>
+  <div class="brief-topbar"><a class="brief-back" href="{base}brief/"><small>← Back to</small>Signal Brief</a><button class="brief-theme" id="briefTheme" type="button" aria-label="Toggle dark mode">☾</button></div>
+  <main>
+    <span class="story-pill" style="background:{colour}">{escape(item['category'])}</span>
+    <p class="story-dates">{escape(fmt_date(ed['date']))} · {escape(edition_time(ed))} IST · Source dated {escape(fmt_date_short(item['source_date']))}</p>
+    <h1>{escape(item['headline'])}</h1>
+    <p class="story-sum">{escape(item['summary'])}</p>
+    <div class="story-why" style="background:{tint(colour, 12)}"><span class="story-why-label">WHY IT MATTERS FOR TECH</span><p>{escape(item['why'])}</p></div>
+    <p class="bu-srcs-label" style="font-size:.7rem;font-weight:800;letter-spacing:.16em;color:var(--muted);text-transform:uppercase">Sources</p>
+    <ul class="story-srcs">{sources}</ul>
+    <div class="story-actions"><span id="storyShare"></span></div>
+    <a class="story-edition" href="{base}#brief">Read the whole {escape(fmt_date(ed['date']))} edition in the Signal Brief tab →</a>
+  </main>
+  {FOOTER}
+  <script src="{base}assets/signal-share.js"></script>
+  <script>
+    (function () {{
+      var slot = document.getElementById("storyShare");
+      if (slot && window.SignalShare) {{
+        slot.appendChild(SignalShare.shareButton({spec_js}));
+      }}
+    }})();
+  </script>
+</body>
+</html>
+"""
+
+
+def build_story_pages(data, base):
+    count = 0
+    for ed in data["editions"]:
+        for item in ed["items"]:
+            d = PAGE_DIR / ed["date"] / story_nn(item)
+            d.mkdir(parents=True, exist_ok=True)
+            (d / "index.html").write_text(
+                build_story_page(item, ed, base), encoding="utf-8")
+            render_og_image(item, ed, d / "og.png")
+            count += 1
+    print(f"story pages: {count}")
+    return count
+
+
+def update_sitemap(data, base):
+    if not SITEMAP_FILE.exists():
+        print("sitemap.xml not found, skipping")
+        return
+    text = SITEMAP_FILE.read_text(encoding="utf-8")
+    latest = sorted(data["editions"], key=lambda e: e["date"],
+                    reverse=True)[0]
+    entries = [(f"{base}brief/", latest["date"])]
+    for ed in data["editions"]:
+        for item in ed["items"]:
+            entries.append((f"{base}{story_path(ed, item)}", ed["date"]))
+    added = 0
+    for url, lastmod in entries:
+        if f"<loc>{url}</loc>" in text:
+            continue
+        entry = (f"  <url><loc>{url}</loc>"
+                 f"<lastmod>{lastmod}</lastmod></url>\n")
+        text = text.replace("</urlset>", entry + "</urlset>")
+        added += 1
+    if added:
+        SITEMAP_FILE.write_text(text, encoding="utf-8")
+    print(f"sitemap: {added} brief URLs added")
+
+
 def update_home(data, base):
-    """Refresh the homepage Signal Brief room between its markers."""
+    """Refresh the homepage Signal Brief room between its markers.
+    The room's cards open the Signal Brief tab (data-goto="brief");
+    story cards also carry the item id so the tab opens that story."""
     html = HOME_FILE.read_text(encoding="utf-8")
     start_marker, end_marker = "<!--BRIEF-LATEST-->", "<!--/BRIEF-LATEST-->"
     if start_marker not in html:
@@ -212,16 +572,17 @@ def update_home(data, base):
     latest = sorted(data["editions"], key=lambda e: e["date"], reverse=True)[0]
     cards = []
     cards.append(
-        f'<section class="hm-ritem" data-ext="{base}brief/"><span class="hm-ghost">1</span>'
+        f'<section class="hm-ritem" data-goto="brief"><span class="hm-ghost">1</span>'
         f'<p class="hm-meta">Signal Brief · Latest edition</p>'
-        f'<h4>{escape(latest["date"])}: {len(latest["items"])} items</h4>'
+        f'<h4>{escape(fmt_date(latest["date"]))}: {len(latest["items"])} items</h4>'
         f'<p>The day in technology, in our own words, every claim linked to its source. '
         f'New edition daily at 07:00 IST.</p>'
         f'<div class="hm-chips"><span class="hm-chip navy">Daily · 07:00 IST</span>'
         f'<span class="hm-chip">{len(latest["items"])} items</span></div></section>')
     for n, item in enumerate(latest["items"][:3], start=2):
         cards.append(
-            f'<section class="hm-ritem" data-ext="{base}brief/#{item["id"]}">'
+            f'<section class="hm-ritem" data-goto="brief" '
+            f'data-brief-item="{item["id"]}">'
             f'<span class="hm-ghost">{n}</span>'
             f'<p class="hm-meta">Signal Brief · {escape(item["category"])}</p>'
             f'<h4>{escape(item["headline"])}</h4>'
@@ -310,6 +671,15 @@ def main():
     PAGE_DIR.mkdir(exist_ok=True)
     (PAGE_DIR / "index.html").write_text(build_page(data, base), encoding="utf-8")
     print("brief/index.html written")
+    build_story_pages(data, base)
+    urls = [f"{base}brief/", f"{base}signal.xml"]
+    for ed in data["editions"]:
+        for item in ed["items"]:
+            urls.append(f"{base}{story_path(ed, item)}")
+    (PAGE_DIR / "story-urls.txt").write_text(
+        "\n".join(urls) + "\n", encoding="utf-8")
+    print(f"story-urls.txt: {len(urls)} URLs")
+    update_sitemap(data, base)
     update_home(data, base)
 
 

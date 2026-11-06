@@ -433,6 +433,19 @@ body[data-view="research"] .feed-only { display: none; }
   .masthead h1 { font-size: 2rem; }
 }
 
+/* Phones (Thillai, Nov 6, 2026): under 900px, on every view except Home,
+   the open tab's content comes first and the side blocks (LinkedIn Follow
+   links, the Automated box and the older version note) drop below it.
+   The panel is pinned to the last grid row; hidden views generate no
+   boxes, so the visible view takes the first rows. Desktop is unchanged,
+   and Home keeps its existing stacking. */
+@media (max-width: 899px) {
+  body:not([data-view="home"]) .layout { grid-template-columns: minmax(0, 1fr); }
+  body:not([data-view="home"]) .layout > .panel { grid-column: 1; grid-row: 99; position: static; }
+  body:not([data-view="home"]) .layout > section,
+  body:not([data-view="home"]) .layout > main { grid-column: 1; }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .dot.live { animation: none; }
 }

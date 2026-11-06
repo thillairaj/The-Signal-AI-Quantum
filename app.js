@@ -20,6 +20,7 @@ const feedToolsEl = document.getElementById("feed-tools");
 const learnViewEl = document.getElementById("learn-view");
 const podcastViewEl = document.getElementById("podcast-view");
 const researchViewEl = document.getElementById("research-view");
+const briefViewEl = document.getElementById("brief-view");
 const homeViewEl = document.getElementById("home-view");
 const researchGridEl = document.getElementById("researchGrid");
 let researchItems = [];
@@ -115,6 +116,7 @@ function showView(name) {
   learnViewEl.hidden = name !== "learn";
   podcastViewEl.hidden = name !== "podcast";
   researchViewEl.hidden = name !== "research";
+  if (briefViewEl) briefViewEl.hidden = name !== "brief";
   topTabsEl.querySelectorAll(".top-tab").forEach(b =>
     b.classList.toggle("active", b.dataset.view === name));
   scrollActiveTabIntoView();
@@ -701,7 +703,7 @@ function openResearchTarget() {
   }
 }
 openResearchTarget();
-const SECTION_HASH = { "#home": "home", "#learn": "learn", "#podcast": "podcast", "#research": "research", "#feed": "feed" };
+const SECTION_HASH = { "#home": "home", "#learn": "learn", "#podcast": "podcast", "#research": "research", "#feed": "feed", "#brief": "brief" };
 function openSectionTarget() {
   const v = SECTION_HASH[location.hash];
   if (v) { showView(v); return; }
@@ -745,6 +747,10 @@ window.addEventListener("hashchange", function () { openLearnTarget(); openResea
         return;
       }
       showView(view);
+      if (view === "brief" && item.dataset.briefItem && window.SignalBriefUI) {
+        SignalBriefUI.openStory(item.dataset.briefItem);
+        return;
+      }
       if (view === "learn" && item.dataset.scroll) scrollToLearnId(item.dataset.scroll);
       else window.scrollTo({ top: 0 });
     }

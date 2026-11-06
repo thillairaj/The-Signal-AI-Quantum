@@ -5,365 +5,71 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Signal Brief · The Signal</title>
 <meta name="description" content="Signal Brief: The Signal's own daily brief on AI, quantum, cloud and DevOps, cybersecurity, industry and policy. Original wording, every claim linked to its source.">
+<meta property="og:title" content="Signal Brief · The Signal">
+<meta property="og:description" content="Today in tech, in one swipe. The Signal's own daily brief: original wording, every claim linked to its source.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://thillairaj.github.io/The-Signal-AI-Quantum/brief/">
+<link rel="canonical" href="https://thillairaj.github.io/The-Signal-AI-Quantum/brief/">
 <link rel="alternate" type="application/rss+xml" title="Signal Brief" href="https://thillairaj.github.io/The-Signal-AI-Quantum/signal.xml">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,800;1,9..144,500;1,9..144,600&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://thillairaj.github.io/The-Signal-AI-Quantum/assets/brief.css?v=20261106">
 <style>
   :root { --ink:#171b24; --muted:#5a6270; --gold:#b8860b; --paper:#faf9f6; --card:#ffffff; --line:#e5dfce; }
+  :root[data-theme="dark"] { --ink:#ecede4; --muted:#9aa08d; --paper:#15170f; --card:#1d2019; --line:#3a3d31; }
+  @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { --ink:#ecede4; --muted:#9aa08d; --paper:#15170f; --card:#1d2019; --line:#3a3d31; } }
   * { box-sizing:border-box; }
-  body { margin:0; font-family: Georgia, 'Times New Roman', serif; background:var(--paper); color:var(--ink); }
-  .brief-hero { text-align:center; padding:56px 20px 30px; background:radial-gradient(ellipse at 50% 0%, #fffdf4 0%, var(--paper) 70%); border-bottom:3px solid var(--gold); position:relative; }
-  .brief-kicker { letter-spacing:.28em; font-size:.72rem; color:var(--gold); text-transform:uppercase; font-family: Arial, sans-serif; font-weight:bold; }
-  .brief-hero h1 { font-size:2.6rem; margin:.35em 0 .15em; font-weight:normal; }
-  .brief-hero h1 .thin { color:var(--gold); }
-  .brief-hero p { color:var(--muted); max-width:640px; margin:0 auto; line-height:1.55; }
-  .brief-topbar { position:sticky; top:0; z-index:10; background:var(--paper); border-bottom:1px solid var(--line); padding:10px 16px; display:flex; justify-content:center; }
-  .brief-back { font-family: Arial, sans-serif; font-size:.85rem; color:var(--ink); text-decoration:none; border:1px solid var(--line); background:var(--card); border-radius:10px; padding:8px 14px; line-height:1.3; text-align:left; }
+  body { margin:0; font-family: Inter, system-ui, sans-serif; background:var(--paper); color:var(--ink); }
+  [hidden] { display: none !important; }
+  .brief-topbar { position:sticky; top:0; z-index:50; background:var(--paper); border-bottom:1px solid var(--line); padding:10px 16px; display:flex; justify-content:center; align-items:center; gap:12px; }
+  .brief-back { font-size:.85rem; color:var(--ink); text-decoration:none; border:1px solid var(--line); background:var(--card); border-radius:10px; padding:8px 14px; line-height:1.3; text-align:left; }
   .brief-back small { display:block; color:var(--muted); }
-  main { max-width:820px; margin:0 auto; padding:10px 18px 30px; }
-  .brief-feeds { display:flex; flex-wrap:wrap; gap:8px; justify-content:center; margin:22px 0 6px; }
-  .brief-feedlink { font-family: Arial, sans-serif; font-size:.78rem; color:var(--ink); border:1px solid var(--gold); border-radius:999px; padding:6px 12px; text-decoration:none; background:var(--card); }
-  .brief-rules { background:var(--card); border:1px solid var(--line); border-radius:12px; padding:16px 20px; margin:18px 0 8px; font-size:.92rem; line-height:1.55; color:var(--muted); }
-  .brief-rules strong { color:var(--ink); }
-  .brief-edition h2 { font-size:1.55rem; margin:34px 0 2px; font-weight:normal; }
-  .brief-edmeta { color:var(--muted); font-family: Arial, sans-serif; font-size:.8rem; margin:0 0 10px; }
-  .brief-item { background:var(--card); border:1px solid var(--line); border-radius:12px; padding:18px 20px; margin:14px 0; }
-  .brief-item h3 { margin:.3em 0 .45em; font-size:1.22rem; line-height:1.35; }
-  .brief-item p { line-height:1.6; margin:.45em 0; }
-  .brief-meta { display:flex; gap:10px; align-items:center; font-family: Arial, sans-serif; font-size:.75rem; }
-  .brief-tag { color:#fff; border-radius:999px; padding:3px 10px; font-weight:bold; }
-  .brief-srcdate { color:var(--muted); }
-  .brief-breaking { color:#b00020; font-weight:bold; letter-spacing:.08em; }
-  .brief-why { background:#fdf8ec; border-radius:8px; padding:10px 12px; }
-  .brief-source { font-family: Arial, sans-serif; font-size:.82rem; color:var(--muted); }
-  .brief-source a { color:#0b5cad; }
+  .brief-theme { margin-left:auto; position:absolute; right:16px; width:38px; height:38px; border-radius:50%; border:1px solid var(--line); background:var(--card); color:var(--ink); font-size:1rem; cursor:pointer; }
+  .brief-rules { max-width:820px; margin:18px auto 4px; padding:0 18px; }
+  .brief-rules-in { background:var(--card); border:1px solid var(--line); border-radius:12px; padding:14px 18px; font-size:.9rem; line-height:1.55; color:var(--muted); }
+  .brief-rules-in strong { color:var(--ink); }
   footer { text-align:center; padding:26px 16px 40px; color:var(--muted); font-size:.9rem; }
   footer .rule { width:60px; height:3px; background:var(--gold); margin:0 auto 16px; }
-  .li-btn { display:inline-block; margin-left:8px; background:#0a66c2; color:#fff; text-decoration:none; border-radius:6px; padding:3px 10px; font-family: Arial, sans-serif; font-size:.8rem; }
+  .li-btn { display:inline-block; margin-left:8px; background:#0a66c2; color:#fff; text-decoration:none; border-radius:6px; padding:3px 10px; font-size:.8rem; }
 </style>
+<script>
+(function () {
+  var saved = null;
+  try { saved = localStorage.getItem("aisignal_theme"); } catch (e) {}
+  if (saved === "dark" || saved === "light") {
+    document.documentElement.setAttribute("data-theme", saved);
+  }
+  document.addEventListener("DOMContentLoaded", function () {
+    var btn = document.getElementById("briefTheme");
+    if (!btn) return;
+    var sync = function () {
+      var cur = document.documentElement.getAttribute("data-theme") ||
+        (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+      btn.textContent = cur === "dark" ? "☀" : "☾";
+    };
+    sync();
+    btn.addEventListener("click", function () {
+      var cur = document.documentElement.getAttribute("data-theme") ||
+        (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+      var next = cur === "dark" ? "light" : "dark";
+      document.documentElement.setAttribute("data-theme", next);
+      try { localStorage.setItem("aisignal_theme", next); } catch (e) {}
+      sync();
+    });
+  });
+})();
+</script>
 </head>
 <body>
-  <div class="brief-topbar"><a class="brief-back" href="https://thillairaj.github.io/The-Signal-AI-Quantum/"><small>← Back to</small>The Signal</a></div>
-  <header class="brief-hero">
-    <p class="brief-kicker">The Signal · Daily at 07:00 IST</p>
-    <h1>Signal <span class="thin">Brief</span></h1>
-    <p>The day in technology, in our own words: AI, quantum, cloud and DevOps, cybersecurity, industry and policy. Every claim is linked to its source and checked before publication; source text is never copied.</p>
-    <div class="brief-feeds"><a class="brief-feedlink" href="https://thillairaj.github.io/The-Signal-AI-Quantum/signal.xml">Full feed (RSS)</a><a class="brief-feedlink" href="https://thillairaj.github.io/The-Signal-AI-Quantum/signal/ai.xml">AI feed</a><a class="brief-feedlink" href="https://thillairaj.github.io/The-Signal-AI-Quantum/signal/quantum.xml">Quantum feed</a><a class="brief-feedlink" href="https://thillairaj.github.io/The-Signal-AI-Quantum/signal/cloud-devops.xml">Cloud &amp; DevOps feed</a><a class="brief-feedlink" href="https://thillairaj.github.io/The-Signal-AI-Quantum/signal/cybersecurity.xml">Cybersecurity feed</a><a class="brief-feedlink" href="https://thillairaj.github.io/The-Signal-AI-Quantum/signal/industry.xml">Industry feed</a><a class="brief-feedlink" href="https://thillairaj.github.io/The-Signal-AI-Quantum/signal/policy.xml">Policy feed</a></div>
-  </header>
+  <div class="brief-topbar"><a class="brief-back" href="https://thillairaj.github.io/The-Signal-AI-Quantum/#brief"><small>← Back to</small>The Signal</a><button class="brief-theme" id="briefTheme" type="button" aria-label="Toggle dark mode">☾</button></div>
   <main>
-    <div class="brief-rules"><strong>How Signal Brief is made:</strong> items are written from the validated wire sources, official government and company pages, and Reuters or AP for geopolitical events. Policy coverage is limited to events with a clear technology impact, is neutral and factual, and carries each side's official position where relevant. Any item whose claims cannot be linked to a source is dropped before publication.</div>
-    <section class="brief-edition">
-      <h2>2026-11-06</h2>
-      <p class="brief-edmeta">Daily edition · 12 items · Published 07:00 IST</p>
-      <article class="brief-item" id="brief-2026-11-06-01">
-        <p class="brief-meta"><span class="brief-tag" style="background:#2f6fed">AI</span><span class="brief-srcdate">Source dated 2026-11-05</span></p>
-        <h3>OpenAI launches GPT-6 Cyber, a security model built to stay inside its authorised scope</h3>
-        <p>OpenAI introduced GPT-6 Cyber, a model for finding exploitable vulnerabilities and developing fixes, trained to stay within the scope researchers set. It scores 48.5% on ExploitGym, up from 32.1% for GPT-5.6 Cyber, and avoided out of scope services in 99.93% of alignment tests without deployment prompts. It already helped find 81 previously unknown high severity Firefox flaws, and it is initially available through the API and Codex to approved Daybreak Red customers.</p>
-        <p class="brief-why"><strong>Why it matters for tech:</strong> Security models that can find flaws are only useful if they can be trusted not to wander, and this one pairs stronger exploit skills with measured restraint.</p>
-        <p class="brief-source">Source: <a href="https://openai.com/index/introducing-gpt-6-cyber" target="_blank" rel="noopener">OpenAI Blog</a></p>
-      </article>
-      <article class="brief-item" id="brief-2026-11-06-02">
-        <p class="brief-meta"><span class="brief-tag" style="background:#2f6fed">AI</span><span class="brief-srcdate">Source dated 2026-11-05</span></p>
-        <h3>Google ships Gemini Omni 1.2 Flash with 15 second video and a 30% price cut</h3>
-        <p>Google made Gemini Omni 1.2 Flash generally available across the Gemini API and Google Cloud. It creates and edits video clips up to 15 seconds long, up from 10 seconds, with multi turn conversational editing and stronger reference consistency. The price falls 30% from version 1.1, to $0.07 per second for 720p video.</p>
-        <p class="brief-why"><strong>Why it matters for tech:</strong> Video generation is moving from short demos toward usable ad and product clips, with editing and pricing aimed at production use.</p>
-        <p class="brief-source">Source: <a href="https://blog.google/innovation-and-ai/technology/developers-tools/introducing-gemini-omni-1-2-flash/" target="_blank" rel="noopener">Google AI Blog</a> · <a href="https://deepmind.google/blog/gemini-omni-12-flash-fast-and-cost-effective-with-longer-clips/" target="_blank" rel="noopener">Google DeepMind</a></p>
-      </article>
-      <article class="brief-item" id="brief-2026-11-06-03">
-        <p class="brief-meta"><span class="brief-tag" style="background:#2f6fed">AI</span><span class="brief-srcdate">Source dated 2026-11-05</span></p>
-        <h3>Claude can now read your bank account, with read only access through Plaid</h3>
-        <p>Anthropic launched Personal Finance in Claude in beta, connecting the chatbot to bank and card accounts through Plaid. Claude can break down spending by category, say which bills remain before payday, and judge whether a large purchase is affordable, using up to two years of transaction history. Access is read only: Claude cannot move, manage or invest money, and it does not see banking passwords. The beta is rolling out this week to Claude Pro, Max and Ultra subscribers in the US.</p>
-        <p class="brief-why"><strong>Why it matters for tech:</strong> AI assistants are moving from answering questions to acting on personal financial data, which makes read only access and clear limits the story.</p>
-        <p class="brief-source">Source: <a href="https://www.theverge.com/ai-artificial-intelligence/1027652/anthropic-claude-plaid-personal-finance" target="_blank" rel="noopener">The Verge</a></p>
-      </article>
-      <article class="brief-item" id="brief-2026-11-06-04">
-        <p class="brief-meta"><span class="brief-tag" style="background:#7c4dff">Quantum</span><span class="brief-srcdate">Source dated 2026-11-05</span></p>
-        <h3>Quantinuum maps its Nexus platform toward a fault tolerant computer in 2029</h3>
-        <p>Quantinuum published a roadmap to grow Nexus, its platform as a service, into a developer platform for fault tolerant quantum applications, tracking hardware releases through Apollo, its planned universal fault tolerant computer in 2029. Releases will progressively automate error correction, resource management and deployment. Nexus already serves more than 200 organisations, up 45% in 2026, with job submissions up tenfold in the year to August 2026.</p>
-        <p class="brief-why"><strong>Why it matters for tech:</strong> Quantum vendors are now competing on developer platforms, not only hardware, so applications built today can carry over to fault tolerant machines.</p>
-        <p class="brief-source">Source: <a href="https://thequantuminsider.com/2026/11/05/quantinuum-maps-nexus-expansion-ahead-of-planned-2029-fault-tolerant-computer/" target="_blank" rel="noopener">The Quantum Insider</a></p>
-      </article>
-      <article class="brief-item" id="brief-2026-11-06-05">
-        <p class="brief-meta"><span class="brief-tag" style="background:#7c4dff">Quantum</span><span class="brief-srcdate">Source dated 2026-11-05</span></p>
-        <h3>IBM, Oak Ridge and AMD pair quantum hardware with supercomputing to advance error correction</h3>
-        <p>IBM, the Quantum Science Center at Oak Ridge National Laboratory and AMD launched a joint co-design platform for quantum error correction, combining quantum and high performance computing. The first deployment pairs IBM quantum computers, including the 120 qubit Nighthawk processor, with Oak Ridge's Umbra system, powered by AMD Instinct MI355X GPUs and 5th Gen EPYC CPUs. The work supports the US Department of Energy goal of 100 logical qubits running 100,000 hard operations by late 2028.</p>
-        <p class="brief-why"><strong>Why it matters for tech:</strong> Error correction needs classical computing at scale, and this platform tests quantum and supercomputing as one system rather than two separate tools.</p>
-        <p class="brief-source">Source: <a href="https://thequantuminsider.com/2026/11/05/oak-ridge-national-laboratory-ibm-and-amd-launch-new-co-design-platform-for-quantum-error-correction/" target="_blank" rel="noopener">The Quantum Insider</a></p>
-      </article>
-      <article class="brief-item" id="brief-2026-11-06-06">
-        <p class="brief-meta"><span class="brief-tag" style="background:#2a9d8f">Cloud &amp; DevOps</span><span class="brief-srcdate">Source dated 2026-11-05</span></p>
-        <h3>Azure Front Door gains generally available post quantum TLS key exchange</h3>
-        <p>Microsoft made configurable TLS key exchange policies generally available in Azure Front Door, including hybrid post quantum key exchange. The option is aimed at teams preparing for future cryptographic threats while keeping client compatibility.</p>
-        <p class="brief-why"><strong>Why it matters for tech:</strong> Post quantum readiness is reaching production edge services, so teams can start the migration before quantum computers threaten current cryptography.</p>
-        <p class="brief-source">Source: <a href="https://azure.microsoft.com/updates?id=577668" target="_blank" rel="noopener">Azure Updates</a></p>
-      </article>
-      <article class="brief-item" id="brief-2026-11-06-07">
-        <p class="brief-meta"><span class="brief-tag" style="background:#2a9d8f">Cloud &amp; DevOps</span><span class="brief-srcdate">Source dated 2026-11-05</span></p>
-        <h3>Google donates its agent runtime stack to the CNCF as Agent Substrate hits 1.0</h3>
-        <p>Google donated three open source projects that started at Google, Agent Substrate, gVisor and OpenRL, to the Cloud Native Computing Foundation after their acceptance into the CNCF Sandbox. Agent Substrate, which runs isolated agent environments, reached version 1.0 and is generally available on Google Kubernetes Engine, restoring idle agents in under 500 milliseconds at 10 times container density.</p>
-        <p class="brief-why"><strong>Why it matters for tech:</strong> Agent infrastructure is getting the same neutral, open governance treatment Kubernetes got, so no single vendor controls how agents run at scale.</p>
-        <p class="brief-source">Source: <a href="https://cloud.google.com/blog/products/containers-kubernetes/open-infrastructure-for-autonomous-agents-comes-to-cncf/" target="_blank" rel="noopener">Google Cloud Blog</a></p>
-      </article>
-      <article class="brief-item" id="brief-2026-11-06-08">
-        <p class="brief-meta"><span class="brief-tag" style="background:#d64560">Cybersecurity</span><span class="brief-srcdate">Source dated 2026-11-05</span></p>
-        <h3>OpenSSH ships emergency fix for a flaw that let long passwords bypass login on Alpine Linux</h3>
-        <p>OpenSSH released version 10.6p2 to fix a critical flaw in which a password between 257 and 1,024 bytes long could log in to accounts with no password set, such as key only accounts, on some Alpine Linux servers. The flaw affects systems where the server checks passwords without PAM, which is how Alpine's openssh-server package is built. Alpine published fixed packages for every release back to 3.16, and no attacks using the flaw have been reported.</p>
-        <p class="brief-why"><strong>Why it matters for tech:</strong> A password check that accepts the wrong input is a serious failure, and Alpine's wide use in containers makes fast patching matter.</p>
-        <p class="brief-source">Source: <a href="https://thehackernews.com/2026/11/openssh-issues-emergency-fix-for-flaw.html" target="_blank" rel="noopener">The Hacker News</a></p>
-      </article>
-      <article class="brief-item" id="brief-2026-11-06-09">
-        <p class="brief-meta"><span class="brief-tag" style="background:#d64560">Cybersecurity</span><span class="brief-srcdate">Source dated 2026-11-05</span></p>
-        <h3>FBI and CISA warn hackers are targeting refrigeration systems</h3>
-        <p>The FBI and CISA warned that hackers are actively targeting industrial refrigeration and cold chain monitoring systems worldwide, in a joint advisory with the US health, agriculture and transport departments. Attackers exploit unpatched or internet accessible temperature controllers to alter settings, which can spoil food, damage equipment and create fire hazards. The warning follows attacks on European refrigeration systems, including controllers at an estimated 250 to 350 French supermarkets in October.</p>
-        <p class="brief-why"><strong>Why it matters for tech:</strong> Cyberattacks on refrigeration reach beyond data theft into food safety and public health, so operators are urged to take controllers off the public internet.</p>
-        <p class="brief-source">Source: <a href="https://www.ic3.gov/CSA/2026/261105.pdf" target="_blank" rel="noopener">CISA and FBI joint advisory (PDF)</a> · <a href="https://www.bleepingcomputer.com/news/security/fbi-cisa-warn-of-cyberattacks-targeting-refrigeration-systems/" target="_blank" rel="noopener">BleepingComputer</a></p>
-      </article>
-      <article class="brief-item" id="brief-2026-11-06-10">
-        <p class="brief-meta"><span class="brief-tag" style="background:#b8860b">Industry</span><span class="brief-srcdate">Source dated 2026-11-05</span></p>
-        <h3>Horizon Quantum plans to buy error correction specialist Entropica Labs for $27 million</h3>
-        <p>Horizon Quantum signed a non-binding letter of intent to acquire Singapore based quantum software company Entropica Labs for about $27 million in Horizon Quantum Class A ordinary shares. Entropica Labs specialises in error correction and fault tolerance. The deal still needs due diligence, audits and definitive agreements.</p>
-        <p class="brief-why"><strong>Why it matters for tech:</strong> Quantum software firms are consolidating around error correction, the capability every hardware maker needs before fault tolerant machines arrive.</p>
-        <p class="brief-source">Source: <a href="https://thequantuminsider.com/2026/11/05/horizon-quantum-acquire-entropica-labs-27-million/" target="_blank" rel="noopener">The Quantum Insider</a></p>
-      </article>
-      <article class="brief-item" id="brief-2026-11-06-11">
-        <p class="brief-meta"><span class="brief-tag" style="background:#b8860b">Industry</span><span class="brief-srcdate">Source dated 2026-11-05</span></p>
-        <h3>Agility Robotics lists on Nasdaq as humanoid robots face scrutiny over scale</h3>
-        <p>Agility Robotics, maker of the Digit humanoid robot, listed on the Nasdaq on November 5 through a merger with a special purpose acquisition company, becoming the first dedicated humanoid robot developer to trade publicly in the US. Digit robots already work at customer sites including GXO warehouses and a Schaeffler factory, and the next model, Digit 5, arrives in 2027 with 50 pound lifting and more than 20 hours of work per day. The company's filing shows $1.8 million of revenue in 2025 against a $140 million operating loss, and notes humanoid robots remain unproven at scale.</p>
-        <p class="brief-why"><strong>Why it matters for tech:</strong> A public listing tests whether investors will fund humanoid robots before the market proves itself, and Agility's numbers show how early that bet still is.</p>
-        <p class="brief-source">Source: <a href="https://arstechnica.com/ai/2026/11/agility-robotics-nasdaq-debut-invites-scrutiny-of-humanoid-robot-market/" target="_blank" rel="noopener">Ars Technica</a></p>
-      </article>
-      <article class="brief-item" id="brief-2026-11-06-12">
-        <p class="brief-meta"><span class="brief-tag" style="background:#5a6b7f">Policy</span><span class="brief-srcdate">Source dated 2026-11-05</span></p>
-        <h3>OpenAI drops NDAs with public officials for its data centre projects</h3>
-        <p>OpenAI published a National Community Compact and a Compute Campus Policy Blueprint setting out commitments for future compute campuses it owns and operates, including paying the full cost of the electricity it uses and publishing the jobs it expects to create. It will not use non-disclosure agreements with public officials, allowing only narrow protections for security information, trade secrets or proprietary information. The announcement follows midterm votes in which US voters decided local data centre measures.</p>
-        <p class="brief-why"><strong>Why it matters for tech:</strong> Data centre deals have drawn scrutiny over secrecy and local costs, and OpenAI is putting its community terms in writing rather than leaving them to negotiation.</p>
-        <p class="brief-source">Source: <a href="https://openai.com/index/setting-new-standard-responsible-ai-infrastructure" target="_blank" rel="noopener">OpenAI Blog</a> · <a href="https://www.theverge.com/ai-artificial-intelligence/1028454/openai-data-center-nda" target="_blank" rel="noopener">The Verge</a></p>
-      </article>
-    </section>
-    <section class="brief-edition">
-      <h2>2026-11-05</h2>
-      <p class="brief-edmeta">Daily edition · 12 items · Published 07:00 IST</p>
-      <article class="brief-item" id="brief-2026-11-05-01">
-        <p class="brief-meta"><span class="brief-tag" style="background:#2f6fed">AI</span><span class="brief-srcdate">Source dated 2026-11-04</span></p>
-        <h3>OpenAI launches Images 2.6 with faster generation and GIF creation</h3>
-        <p>OpenAI's Images 2.6 brings faster image generation, GIF creation, more precise editing and new API controls. It is available across ChatGPT, Codex and the API.</p>
-        <p class="brief-why"><strong>Why it matters for tech:</strong> Image generation is shipping as a product feature with controls developers can build on, not only as a model demonstration.</p>
-        <p class="brief-source">Source: <a href="https://openai.com/index/introducing-images-2-6" target="_blank" rel="noopener">OpenAI Blog</a></p>
-      </article>
-      <article class="brief-item" id="brief-2026-11-05-02">
-        <p class="brief-meta"><span class="brief-tag" style="background:#2f6fed">AI</span><span class="brief-srcdate">Source dated 2026-11-04</span></p>
-        <h3>OpenAI pipeline finds and patches 948 Linux kernel privilege flaws</h3>
-        <p>OpenAI built an autonomous pipeline that found, validated and generated patches for 948 local privilege escalation vulnerabilities in the Linux kernel. The work is presented as defensive security research carried out at machine scale.</p>
-        <p class="brief-why"><strong>Why it matters for tech:</strong> It is a measurable example of AI systems doing vulnerability research end to end.</p>
-        <p class="brief-source">Source: <a href="https://openai.com/index/a-thousand-fewer-paths-to-root" target="_blank" rel="noopener">OpenAI Blog</a></p>
-      </article>
-      <article class="brief-item" id="brief-2026-11-05-03">
-        <p class="brief-meta"><span class="brief-tag" style="background:#2f6fed">AI</span><span class="brief-srcdate">Source dated 2026-11-04</span></p>
-        <h3>AWS shows decision models plugged into Bedrock AgentCore agent evaluations</h3>
-        <p>An AWS Machine Learning Blog post shows how two decision models, Jev and Strands Decider, connect to Amazon Bedrock AgentCore Evaluations through code based evaluators. Decision models answer the narrow, repeatable evaluation questions that come up when testing AI agents.</p>
-        <p class="brief-why"><strong>Why it matters for tech:</strong> Agent evaluation tooling is being built into the major cloud AI platforms as a standard part of the stack.</p>
-        <p class="brief-source">Source: <a href="https://aws.amazon.com/blogs/machine-learning/use-decision-models-with-amazon-bedrock-agentcore-evaluations/" target="_blank" rel="noopener">AWS Machine Learning Blog</a></p>
-      </article>
-      <article class="brief-item" id="brief-2026-11-05-04">
-        <p class="brief-meta"><span class="brief-tag" style="background:#7c4dff">Quantum</span><span class="brief-srcdate">Source dated 2026-11-04</span></p>
-        <h3>IBM Quantum and QuICS use AI agents to find over 500 magic state factory designs</h3>
-        <p>IBM Quantum and University of Maryland QuICS researchers used AI agents with deterministic solvers to discover more than 500 new magic state factories. These produce the non Clifford states that fault tolerant quantum computers need, with significantly lower resource requirements, and the detailed circuit models are openly accessible.</p>
-        <p class="brief-why"><strong>Why it matters for tech:</strong> Magic state production is a major cost centre in fault tolerant designs, so cheaper factories change machine economics.</p>
-        <p class="brief-source">Source: <a href="https://quantumcomputingreport.com/ibm-quantum-and-quics-deploy-ai-agents-to-discover-over-500-high-efficiency-magic-state-factories/" target="_blank" rel="noopener">Quantum Computing Report</a></p>
-      </article>
-      <article class="brief-item" id="brief-2026-11-05-05">
-        <p class="brief-meta"><span class="brief-tag" style="background:#7c4dff">Quantum</span><span class="brief-srcdate">Source dated 2026-11-04</span></p>
-        <h3>Superinductor built inside a silicon chip in a commercial CMOS process</h3>
-        <p>A study in Nature Electronics by researchers from nanoGUNE's Quantum Hardware group, Quantum Motion and UK partners introduces a superinductor created within a silicon integrated circuit. The device was fabricated in a commercial CMOS process, the same family of processes used for ordinary chips.</p>
-        <p class="brief-why"><strong>Why it matters for tech:</strong> Components made in standard chip processes are easier to manufacture at scale for quantum hardware.</p>
-        <p class="brief-source">Source: <a href="https://phys.org/news/2026-11-superinductor-silicon-circuit.html" target="_blank" rel="noopener">Phys.org Quantum Physics</a></p>
-      </article>
-      <article class="brief-item" id="brief-2026-11-05-06">
-        <p class="brief-meta"><span class="brief-tag" style="background:#b8860b">Industry</span><span class="brief-srcdate">Source dated 2026-11-04</span></p>
-        <h3>CQMTEK raises more than $15 million to expand quantum measurement manufacturing</h3>
-        <p>CQMTEK, the brand of Guoce Quantum Technology (Zhejiang) Co., Ltd, has raised more than 100 million yuan, about 15 million US dollars, the company said. The funding is for expanding manufacturing and commercial applications of its quantum precision measurement products.</p>
-        <p class="brief-why"><strong>Why it matters for tech:</strong> Quantum sensing and measurement is drawing commercial funding alongside computing, with manufacturing scale as the goal.</p>
-        <p class="brief-source">Source: <a href="https://thequantuminsider.com/2026/11/04/cqmtek-raises-more-than-15-million-for-quantum-measurement-expansion/" target="_blank" rel="noopener">The Quantum Insider</a></p>
-      </article>
-      <article class="brief-item" id="brief-2026-11-05-07">
-        <p class="brief-meta"><span class="brief-tag" style="background:#b8860b">Industry</span><span class="brief-srcdate">Source dated 2026-11-04</span></p>
-        <h3>IonQ completes $1.15 billion acquisition of security firm Elisity</h3>
-        <p>IonQ has completed its acquisition of Elisity, a zero trust security company, in an all stock transaction. IonQ's own announcement says it issued 1.15 billion US dollars of consideration in common stock at closing, with up to 150 million dollars more payable if Elisity meets revenue milestones through January 2028, and that Elisity's technology complements its post quantum cryptography and quantum key distribution work.</p>
-        <p class="brief-why"><strong>Why it matters for tech:</strong> A quantum computing company is adding an operating security business to its revenue base.</p>
-        <p class="brief-source">Source: <a href="https://www.businesswire.com/news/home/20261102959024/en/IonQ-Completes-Acquisition-of-Elisity-Extending-Quantum-Security-for-Enterprises-and-Government" target="_blank" rel="noopener">IonQ press release (Business Wire)</a> · <a href="https://quantumcomputingreport.com/ionq-completes-1-15b-acquisition-of-elisity-to-integrate-zero-trust-with-quantum-security/" target="_blank" rel="noopener">Quantum Computing Report</a> · <a href="https://thequantuminsider.com/2026/11/04/ionq-completes-acquisition-zero-trust-security-company-elisity/" target="_blank" rel="noopener">The Quantum Insider</a></p>
-      </article>
-      <article class="brief-item" id="brief-2026-11-05-08">
-        <p class="brief-meta"><span class="brief-tag" style="background:#d64560">Cybersecurity</span><span class="brief-srcdate">Source dated 2026-11-04</span></p>
-        <h3>Zyxel patches zero day used to compromise nearly 1,000 network switches</h3>
-        <p>Zyxel has patched a zero day vulnerability in its GS1900 series network switches. BleepingComputer reports that attackers exploited it to compromise nearly 1,000 devices worldwide and steal configuration files and credentials.</p>
-        <p class="brief-why"><strong>Why it matters for tech:</strong> Network switches are trusted infrastructure; stolen configurations hand attackers a map of the networks those switches protect.</p>
-        <p class="brief-source">Source: <a href="https://www.bleepingcomputer.com/news/security/zyxel-fixes-zero-day-exploited-to-hack-nearly-1-000-network-switches/" target="_blank" rel="noopener">BleepingComputer</a></p>
-      </article>
-      <article class="brief-item" id="brief-2026-11-05-09">
-        <p class="brief-meta"><span class="brief-tag" style="background:#d64560">Cybersecurity</span><span class="brief-srcdate">Source dated 2026-11-04</span></p>
-        <h3>Google patches critical Android flaw that needs no user interaction</h3>
-        <p>Google's November security bulletin patches a critical flaw, CVE-2026-58868, that could let an attacker run code on a phone remotely without any user action. It affects Android 14 through 17, and the fix arrives at security patch level 2026-11-01 or later, which phone makers and carriers distribute on their own schedules.</p>
-        <p class="brief-why"><strong>Why it matters for tech:</strong> The gap between Google's patch and each maker's rollout is the window of exposure for most Android users.</p>
-        <p class="brief-source">Source: <a href="https://thehackernews.com/2026/11/google-patches-critical-android-flaw.html" target="_blank" rel="noopener">The Hacker News</a></p>
-      </article>
-      <article class="brief-item" id="brief-2026-11-05-10">
-        <p class="brief-meta"><span class="brief-tag" style="background:#2a9d8f">Cloud &amp; DevOps</span><span class="brief-srcdate">Source dated 2026-11-04</span></p>
-        <h3>Google previews AlloyDB Express, a scale to zero PostgreSQL for developers and agents</h3>
-        <p>Google has announced a preview of AlloyDB Express, a version of AlloyDB for PostgreSQL designed for rapid testing and prototyping. It offers instant provisioning and scale to zero, aimed at development pipelines and coding agents that need short lived databases.</p>
-        <p class="brief-why"><strong>Why it matters for tech:</strong> Databases are being reshaped around agent driven development, where environments spin up and down in minutes.</p>
-        <p class="brief-source">Source: <a href="https://cloud.google.com/blog/products/databases/introducing-alloydb-express-for-rapid-testing-and-prototyping/" target="_blank" rel="noopener">Google Cloud Blog</a></p>
-      </article>
-      <article class="brief-item" id="brief-2026-11-05-11">
-        <p class="brief-meta"><span class="brief-tag" style="background:#2a9d8f">Cloud &amp; DevOps</span><span class="brief-srcdate">Source dated 2026-11-04</span></p>
-        <h3>Amazon S3 Tables can now migrate Hive tables to Iceberg for you</h3>
-        <p>AWS has added managed migration from Apache Hive tables to Apache Iceberg in Amazon S3 Tables. AWS says existing datasets can be converted with no pipelines to build and no compute to provision, while production workloads keep running.</p>
-        <p class="brief-why"><strong>Why it matters for tech:</strong> Iceberg has become the default table format for lakehouse data, and managed migration removes the main barrier to switching.</p>
-        <p class="brief-source">Source: <a href="https://aws.amazon.com/blogs/aws/amazon-s3-tables-now-offer-managed-migration-of-apache-hive-tables-to-apache-iceberg/" target="_blank" rel="noopener">AWS News Blog</a></p>
-      </article>
-      <article class="brief-item" id="brief-2026-11-05-12">
-        <p class="brief-meta"><span class="brief-tag" style="background:#5a6b7f">Policy</span><span class="brief-srcdate">Source dated 2026-11-04</span></p>
-        <h3>US voters decide 41 local data centre measures in the midterm elections</h3>
-        <p>Ballotpedia counted 41 local ballot measures on data centre policy across 10 states on November 3: 28 would limit development and 13 would facilitate it. In reported results, Edgewater, Florida voted to add a ban on new data centres to its city charter, Alhambra, California voted to prohibit data centres, and Harwood, North Dakota rejected its restrictive measure, the only one voted down in USA Today's tally of local results.</p>
-        <p class="brief-why"><strong>Why it matters for tech:</strong> Local ballot outcomes now directly decide where large data centres can be built in the United States.</p>
-        <p class="brief-source">Source: <a href="https://news.ballotpedia.org/2026/11/03/voters-in-ten-states-will-vote-on-data-center-related-ballot-measures-november-3/" target="_blank" rel="noopener">Ballotpedia News</a> · <a href="https://www.usatoday.com/story/news/nation/2026/11/04/data-centers-midterm-elections/92611809007/" target="_blank" rel="noopener">USA Today</a></p>
-      </article>
-    </section>
-    <section class="brief-edition">
-      <h2>2026-11-04</h2>
-      <p class="brief-edmeta">Daily edition · 10 items · Published 07:00 IST</p>
-      <article class="brief-item" id="brief-2026-11-04-01">
-        <p class="brief-meta"><span class="brief-tag" style="background:#2f6fed">AI</span><span class="brief-srcdate">Source dated 2026-11-03</span></p>
-        <h3>DeepMind applies AI agents to chemistry and drug discovery workflows</h3>
-        <p>Google DeepMind describes agentic cheminformatics built with its Antigravity platform and a set of Cheminformatics Skills. The system searches compounds and proposes novel rigidified macrocycles, a class of molecules used in drug design.</p>
-        <p class="brief-why"><strong>Why it matters for tech:</strong> It is a concrete case of agents doing specialist scientific work rather than only answering questions.</p>
-        <p class="brief-source">Source: <a href="https://deepmind.google/blog/agentic-cheminformatics-with-google-antigravity/" target="_blank" rel="noopener">Google DeepMind</a></p>
-      </article>
-      <article class="brief-item" id="brief-2026-11-04-02">
-        <p class="brief-meta"><span class="brief-tag" style="background:#2f6fed">AI</span><span class="brief-srcdate">Source dated 2026-11-03</span></p>
-        <h3>New benchmark finds frontier models lose track of changing facts in long documents</h3>
-        <p>Allen AI's StateBench tests how well language models track information that changes across long documents, across four levels of difficulty. Frontier models including Gemini 3.8 Flash, Claude Opus 5.5 and GPT-6 handled simple updates but fell to 13 percent accuracy or lower on the hardest problems at the longest lengths, while recurrent and hybrid architectures generalised further when trained on the task.</p>
-        <p class="brief-why"><strong>Why it matters for tech:</strong> Long document and agent work depends on exactly this state tracking, so the failure mode matters well beyond the benchmark.</p>
-        <p class="brief-source">Source: <a href="https://huggingface.co/blog/allenai/statebench" target="_blank" rel="noopener">Hugging Face Blog (Allen AI)</a></p>
-      </article>
-      <article class="brief-item" id="brief-2026-11-04-03">
-        <p class="brief-meta"><span class="brief-tag" style="background:#2f6fed">AI</span><span class="brief-srcdate">Source dated 2026-11-03</span></p>
-        <h3>OpenAI shows ChatGPT and Codex in engineering work for the physical world</h3>
-        <p>OpenAI describes how engineers are using ChatGPT and Codex to speed up CAD work, PCB design, simulation and related workflows. The examples take the tools beyond software code into hardware engineering processes.</p>
-        <p class="brief-why"><strong>Why it matters for tech:</strong> Adoption in physical engineering widens the market for AI assistants beyond software teams.</p>
-        <p class="brief-source">Source: <a href="https://openai.com/index/accelerating-engineering-for-the-physical-world" target="_blank" rel="noopener">OpenAI Blog</a></p>
-      </article>
-      <article class="brief-item" id="brief-2026-11-04-04">
-        <p class="brief-meta"><span class="brief-tag" style="background:#7c4dff">Quantum</span><span class="brief-srcdate">Source dated 2026-11-03</span></p>
-        <h3>Universal Quantum unveils a foundry made trapped ion processor built for modular scaling</h3>
-        <p>Universal Quantum has launched the iQPU, a trapped ion processor fabricated in a foundry, with control electronics integrated on chip. Its UQConnect interconnect is designed to link multiple modules, and the processors are destined for two quantum computers being built for the German Aerospace Center.</p>
-        <p class="brief-why"><strong>Why it matters for tech:</strong> Foundry fabrication and modular links are two of the practical steps needed to scale trapped ion machines.</p>
-        <p class="brief-source">Source: <a href="https://quantumcomputingreport.com/universal-quantum-unveils-the-iqpu-foundry-fabricated-trapped-ion-processor-engineered-for-modular-scaling/" target="_blank" rel="noopener">Quantum Computing Report</a></p>
-      </article>
-      <article class="brief-item" id="brief-2026-11-04-05">
-        <p class="brief-meta"><span class="brief-tag" style="background:#7c4dff">Quantum</span><span class="brief-srcdate">Source dated 2026-11-03</span></p>
-        <h3>One extra measurement cuts qubit errors by more than half in Regensburg experiment</h3>
-        <p>Researchers at the University of Regensburg and their international partners showed that a single additional measurement before a series of quantum operations reduced the qubit error rate by more than half. The results were published in Applied Physics Reviews.</p>
-        <p class="brief-why"><strong>Why it matters for tech:</strong> Low cost error reduction matters because error correction overhead decides how large a useful quantum machine must be.</p>
-        <p class="brief-source">Source: <a href="https://phys.org/news/2026-11-quantum-bits-reliable.html" target="_blank" rel="noopener">Phys.org Quantum Physics</a></p>
-      </article>
-      <article class="brief-item" id="brief-2026-11-04-06">
-        <p class="brief-meta"><span class="brief-tag" style="background:#2a9d8f">Cloud &amp; DevOps</span><span class="brief-srcdate">Source dated 2026-11-03</span></p>
-        <h3>Azure previews an MCP gateway for its container application gateway</h3>
-        <p>Microsoft has put an MCP gateway for Application Gateway for Containers into public preview, adding a Model Context Protocol route type. Platform teams can publish MCP servers behind one hostname while centralising TLS, token validation and firewall controls.</p>
-        <p class="brief-why"><strong>Why it matters for tech:</strong> Gateways are becoming the control point where enterprises govern agent traffic.</p>
-        <p class="brief-source">Source: <a href="https://azure.microsoft.com/updates?id=576388" target="_blank" rel="noopener">Azure Updates</a></p>
-      </article>
-      <article class="brief-item" id="brief-2026-11-04-07">
-        <p class="brief-meta"><span class="brief-tag" style="background:#2a9d8f">Cloud &amp; DevOps</span><span class="brief-srcdate">Source dated 2026-11-03</span></p>
-        <h3>Nammu21 runs syndicated loan automation on Google Cloud's ledger in a proof of concept</h3>
-        <p>Fintech firm Nammu21 worked with Google Cloud to structure syndicated loan agreements as smart contracts on the Google Cloud Universal Ledger. The proof of concept automates the loan lifecycle in a market where settlement currently takes weeks of manual processing.</p>
-        <p class="brief-why"><strong>Why it matters for tech:</strong> It tests ledger technology on a real, high value financial workflow rather than a pilot in isolation.</p>
-        <p class="brief-source">Source: <a href="https://cloud.google.com/blog/topics/financial-services/how-nammu21-automates-syndicated-loans-on-google-cloud-universal-ledger/" target="_blank" rel="noopener">Google Cloud Blog</a></p>
-      </article>
-      <article class="brief-item" id="brief-2026-11-04-08">
-        <p class="brief-meta"><span class="brief-tag" style="background:#d64560">Cybersecurity</span><span class="brief-srcdate">Source dated 2026-11-03</span></p>
-        <h3>Microsoft tracks fake download campaign spreading trojanised installers</h3>
-        <p>Microsoft Threat Intelligence is tracking a campaign that uses trojanised Inno installers, spread through fake download pages, to deliver monetisation payloads. Microsoft published detection and investigation guidance covering the complete installer session.</p>
-        <p class="brief-why"><strong>Why it matters for tech:</strong> Fake installers remain one of the most reliable ways attackers reach ordinary users and company machines.</p>
-        <p class="brief-source">Source: <a href="https://www.microsoft.com/en-us/security/blog/2026/11/03/fake-download-campaign-uses-trojanized-installers-deliver-monetization-payloads/" target="_blank" rel="noopener">Microsoft Security Blog</a></p>
-      </article>
-      <article class="brief-item" id="brief-2026-11-04-09">
-        <p class="brief-meta"><span class="brief-tag" style="background:#b8860b">Industry</span><span class="brief-srcdate">Source dated 2026-11-03</span></p>
-        <h3>Quint Computing raises €9.1 million seed round for hardware level quantum error correction</h3>
-        <p>Quint Computing has secured €9.1 million (10.2 million US dollars) in seed funding plus a €2.2 million European Innovation Council Pathfinder grant. The company says its architecture aims to reduce physical error correction overhead by up to 100 times, using continuous electrical control in superconducting circuits.</p>
-        <p class="brief-why"><strong>Why it matters for tech:</strong> Error correction is where quantum hardware economics are decided, and investors are funding it at the hardware layer.</p>
-        <p class="brief-source">Source: <a href="https://quantumcomputingreport.com/quint-computing-secures-e9-1m-10-2m-usd-seed-round-to-scale-hardware-level-quantum-error-correction/" target="_blank" rel="noopener">Quantum Computing Report</a></p>
-      </article>
-      <article class="brief-item" id="brief-2026-11-04-10">
-        <p class="brief-meta"><span class="brief-tag" style="background:#5a6b7f">Policy</span><span class="brief-srcdate">Source dated 2026-11-03</span></p>
-        <h3>IQM calls for an EU Quantum Act with dedicated qubit foundries</h3>
-        <p>In a report titled Quantum Is Europe's Second Chance, IQM Quantum Computers calls on the EU to pass a Quantum Act. It proposes dedicated qubit foundries, more late stage growth capital and DARPA style procurement, arguing that Europe is strong in public investment and deployments but weaker in venture capital, chip manufacturing and regulatory speed.</p>
-        <p class="brief-why"><strong>Why it matters for tech:</strong> The proposal shows industry shaping the EU quantum policy agenda before legislation is drafted.</p>
-        <p class="brief-source">Source: <a href="https://iqm.tech/blog/quantum-is-europes-chance-to-lead-a-global-industry/" target="_blank" rel="noopener">IQM (the report: Quantum Is Europe's Second Chance)</a> · <a href="https://quantumcomputingreport.com/ahead-of-eu-quantum-act-iqm-calls-for-dedicated-qubit-foundries-and-darpa-style-procurement/" target="_blank" rel="noopener">Quantum Computing Report</a></p>
-      </article>
-    </section>
-    <section class="brief-edition">
-      <h2>2026-11-03</h2>
-      <p class="brief-edmeta">Daily edition · 8 items · Published 07:00 IST</p>
-      <article class="brief-item" id="brief-2026-11-03-01">
-        <p class="brief-meta"><span class="brief-tag" style="background:#2f6fed">AI</span><span class="brief-srcdate">Source dated 2026-11-02</span></p>
-        <h3>OpenAI raises bug bounty rewards for security researchers</h3>
-        <p>OpenAI is increasing payouts under its Security Bug Bounty programme and adding bonuses tied to report quality, researcher loyalty and priority campaigns. The programme pays independent researchers who find and report vulnerabilities in OpenAI products and services.</p>
-        <p class="brief-why"><strong>Why it matters for tech:</strong> Bigger rewards pull more skilled researchers toward finding flaws in widely used AI systems before attackers do.</p>
-        <p class="brief-source">Source: <a href="https://openai.com/index/rewarding-defenders-with-bigger-bug-bounties" target="_blank" rel="noopener">OpenAI Blog</a></p>
-      </article>
-      <article class="brief-item" id="brief-2026-11-03-02">
-        <p class="brief-meta"><span class="brief-tag" style="background:#2f6fed">AI</span><span class="brief-srcdate">Source dated 2026-11-02</span></p>
-        <h3>Anthropic adds Claude Code limits aimed at game cloning</h3>
-        <p>Anthropic has confirmed new restrictions in Claude Code that stop the tool from reproducing existing video games, after its Opus 5.5 model began blocking game recreation requests. Some users report that generic reverse engineering tasks are also being blocked, and an Anthropic employee said the company is iterating to find the right balance.</p>
-        <p class="brief-why"><strong>Why it matters for tech:</strong> It is a live example of a model maker enforcing copyright limits inside a coding tool, with false positives already hitting legitimate work.</p>
-        <p class="brief-source">Source: <a href="https://www.tomshardware.com/tech-industry/artificial-intelligence/anthropic-confirms-new-claude-code-limits-to-prevent-game-cloning-users-report-opus-5-5-is-also-actively-blocking-reverse-engineering-tasks" target="_blank" rel="noopener">Tom's Hardware (wire report)</a> · <a href="https://arstechnica.com/ai/2026/11/claudes-new-rules-against-game-cloning-wont-stop-the-ai-copying-boom/" target="_blank" rel="noopener">Ars Technica (analysis)</a></p>
-      </article>
-      <article class="brief-item" id="brief-2026-11-03-03">
-        <p class="brief-meta"><span class="brief-tag" style="background:#7c4dff">Quantum</span><span class="brief-srcdate">Source dated 2026-11-02</span></p>
-        <h3>Experiment backs a route to more error resistant quantum information storage</h3>
-        <p>Researchers have produced experimental support for the theoretical basis of topological quantum computing, an approach that stores information in special quantum states expected to be more resistant to local disturbances. The work addresses one of the field's core problems: how easily quantum information degrades.</p>
-        <p class="brief-why"><strong>Why it matters for tech:</strong> If topological approaches hold up, they could reduce the error correction burden that dominates quantum hardware design today.</p>
-        <p class="brief-source">Source: <a href="https://phys.org/news/2026-11-theoretical-foundation-potentially-error-resistant.html" target="_blank" rel="noopener">Phys.org Quantum Physics</a></p>
-      </article>
-      <article class="brief-item" id="brief-2026-11-03-04">
-        <p class="brief-meta"><span class="brief-tag" style="background:#2a9d8f">Cloud &amp; DevOps</span><span class="brief-srcdate">Source dated 2026-11-02</span></p>
-        <h3>AWS makes Step Functions callable as agent tools</h3>
-        <p>In its weekly roundup, AWS notes that Step Functions, its workflow service spanning more than 220 AWS services, can now be handed to AI agents as a tool. Workflows that teams already run and trust become callable by agents without being rewritten.</p>
-        <p class="brief-why"><strong>Why it matters for tech:</strong> It shows cloud platforms adapting established automation for agents rather than replacing it.</p>
-        <p class="brief-source">Source: <a href="https://aws.amazon.com/blogs/aws/aws-weekly-roundup-gpt-6-1-terra-on-bedrock-step-functions-as-agent-tools-and-more-november-2-2026/" target="_blank" rel="noopener">AWS News Blog</a></p>
-      </article>
-      <article class="brief-item" id="brief-2026-11-03-05">
-        <p class="brief-meta"><span class="brief-tag" style="background:#2a9d8f">Cloud &amp; DevOps</span><span class="brief-srcdate">Source dated 2026-11-02</span></p>
-        <h3>Developers choose smaller AI models on purpose, and report better results</h3>
-        <p>The New Stack reports that some development teams are deliberately downgrading the AI models they use for coding work, and finding the results better for their purposes. The smaller setups can be cheaper and easier to control for the tasks these teams run most.</p>
-        <p class="brief-why"><strong>Why it matters for tech:</strong> Model choice is becoming an engineering decision about fit and cost, not a race to the most powerful model.</p>
-        <p class="brief-source">Source: <a href="https://thenewstack.io/claude-code-developer-refusals/" target="_blank" rel="noopener">The New Stack</a></p>
-      </article>
-      <article class="brief-item" id="brief-2026-11-03-06">
-        <p class="brief-meta"><span class="brief-tag" style="background:#d64560">Cybersecurity</span><span class="brief-srcdate">Source dated 2026-11-02</span></p>
-        <h3>Microsoft: real world exploitation concentrates in a small set of vulnerabilities</h3>
-        <p>Microsoft's analysis of real world attacks finds that exploitation concentrates in a small, high impact subset of known vulnerabilities. It advises defenders to prioritise patching by exploitation likelihood, exposure and potential blast radius, rather than by severity score alone.</p>
-        <p class="brief-why"><strong>Why it matters for tech:</strong> It gives security teams an evidence based order for patching when they cannot patch everything at once.</p>
-        <p class="brief-source">Source: <a href="https://www.microsoft.com/en-us/security/blog/2026/11/02/exploited-vulnerabilities-common-data-driven-analysis-real-world-attacks/" target="_blank" rel="noopener">Microsoft Security Blog</a></p>
-      </article>
-      <article class="brief-item" id="brief-2026-11-03-07">
-        <p class="brief-meta"><span class="brief-tag" style="background:#b8860b">Industry</span><span class="brief-srcdate">Source dated 2026-11-02</span></p>
-        <h3>Apple home robot reported for 2027 at around $1,000</h3>
-        <p>Ars Technica reports that Apple is preparing a roaming home robot for 2027, priced at about $1,000, with FaceTime and smart home controls among its functions. The device is reported to have backing from CEO John Ternus and a limited initial feature set.</p>
-        <p class="brief-why"><strong>Why it matters for tech:</strong> It puts Apple into home robotics, a new product category for the company, at a four figure price point.</p>
-        <p class="brief-source">Source: <a href="https://arstechnica.com/apple/2026/11/apples-roaming-home-robot-may-do-facetime-switch-lights-on-and-yell-at-your-cat/" target="_blank" rel="noopener">Ars Technica</a></p>
-      </article>
-      <article class="brief-item" id="brief-2026-11-03-08">
-        <p class="brief-meta"><span class="brief-tag" style="background:#5a6b7f">Policy</span><span class="brief-srcdate">Source dated 2026-11-03</span></p>
-        <h3>Russia plans underground data centres after Ukrainian drone strikes</h3>
-        <p>Ars Technica reports that Ukrainian drone strikes on exposed Russian infrastructure have prompted Russian plans to move data centres underground. Russia's Digital Development Ministry has confirmed, as reported by Kommersant, that it completed drone protection recommendations for data centres, covering underground siting for the most critical sites, and sent them to the relevant organisations.</p>
-        <p class="brief-why"><strong>Why it matters for tech:</strong> The conflict is directly reshaping where and how a major state builds and protects its data centre capacity.</p>
-        <p class="brief-source">Source: <a href="https://arstechnica.com/ai/2026/11/russia-looks-to-hide-data-centers-underground-as-ukrainian-drones-strike-back/" target="_blank" rel="noopener">Ars Technica</a> · <a href="https://kyivindependent.com/russian-ministry-recommends-underground-data-centers-following-ukrainian-drone-strikes/" target="_blank" rel="noopener">Kyiv Independent (ministry recommendations, via Kommersant)</a></p>
-      </article>
-    </section>
+    <div data-brief-root data-root-prefix="../"></div>
+    <div class="brief-rules"><div class="brief-rules-in"><strong>How Signal Brief is made:</strong> items are written from the validated wire sources, official government and company pages, and Reuters or AP for geopolitical events. Policy coverage is limited to events with a clear technology impact, is neutral and factual, and carries each side's official position where relevant. Any item whose claims cannot be linked to a source is dropped before publication.</div></div>
   </main>
   <footer>
     <div class="rule"></div>
     <p>Curated by Thillai Raj Thanam Jeya Veera Raj <a class="li-btn" href="https://www.linkedin.com/in/thillairaj" target="_blank" rel="noopener">Follow on LinkedIn</a></p>
   </footer>
+  <script src="https://thillairaj.github.io/The-Signal-AI-Quantum/assets/signal-share.js"></script>
+  <script src="https://thillairaj.github.io/The-Signal-AI-Quantum/assets/brief.js?v=20261106"></script>
 </body>
 </html>

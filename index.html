@@ -16,7 +16,8 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,800;1,9..144,500;1,9..144,600&family=Inter:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css?v=20261104">
+<link rel="stylesheet" href="style.css?v=20261106">
+<link rel="stylesheet" href="assets/brief.css?v=20261106">
 </head>
 <body data-view="home">
 
@@ -32,6 +33,7 @@
     <button class="top-tab" data-view="podcast"><span class="tab-num">02</span>Podcast</button>
     <button class="top-tab" data-view="research"><span class="tab-num">03</span>Articles</button>
     <button class="top-tab" data-view="feed"><span class="tab-num">04</span>RSS Feed</button>
+    <button class="top-tab" data-view="brief"><span class="tab-num">05</span>Signal Brief<span class="tab-new" id="briefNewBadge" hidden>NEW</span></button>
     </nav>
     <span class="tabs-fade" id="tabsFade" aria-hidden="true"></span>
     <button class="rail-btn tab-arrow next" id="tabsNext" type="button" aria-label="Scroll sections right">›</button>
@@ -166,15 +168,15 @@
         <div class="hm-room-head">
           <div class="hm-room-no">05</div>
           <div><h3>Signal Brief</h3><p class="hm-what">The Signal's own daily brief — the day in technology, in our words, every claim sourced.</p></div>
-          <a class="hm-go" href="brief/">Read &#8594;</a>
+          <button class="hm-go" type="button" data-goto="brief">Read →</button>
         </div>
         <div class="hm-rail" data-hm-rail>
           <div class="hm-rview"><div class="hm-rtrack">
             <!--BRIEF-LATEST-->
-            <section class="hm-ritem" data-ext="https://thillairaj.github.io/The-Signal-AI-Quantum/brief/"><span class="hm-ghost">1</span><p class="hm-meta">Signal Brief · Latest edition</p><h4>2026-11-06: 12 items</h4><p>The day in technology, in our own words, every claim linked to its source. New edition daily at 07:00 IST.</p><div class="hm-chips"><span class="hm-chip navy">Daily · 07:00 IST</span><span class="hm-chip">12 items</span></div></section>
-            <section class="hm-ritem" data-ext="https://thillairaj.github.io/The-Signal-AI-Quantum/brief/#brief-2026-11-06-01"><span class="hm-ghost">2</span><p class="hm-meta">Signal Brief · AI</p><h4>OpenAI launches GPT-6 Cyber, a security model built to stay inside its authorised scope</h4><p>Security models that can find flaws are only useful if they can be trusted not to wander, and this one pairs stronger exploit skills with measured restraint.</p><div class="hm-chips"><span class="hm-chip">Source · OpenAI Blog</span></div></section>
-            <section class="hm-ritem" data-ext="https://thillairaj.github.io/The-Signal-AI-Quantum/brief/#brief-2026-11-06-02"><span class="hm-ghost">3</span><p class="hm-meta">Signal Brief · AI</p><h4>Google ships Gemini Omni 1.2 Flash with 15 second video and a 30% price cut</h4><p>Video generation is moving from short demos toward usable ad and product clips, with editing and pricing aimed at production use.</p><div class="hm-chips"><span class="hm-chip">Source · Google AI Blog</span></div></section>
-            <section class="hm-ritem" data-ext="https://thillairaj.github.io/The-Signal-AI-Quantum/brief/#brief-2026-11-06-03"><span class="hm-ghost">4</span><p class="hm-meta">Signal Brief · AI</p><h4>Claude can now read your bank account, with read only access through Plaid</h4><p>AI assistants are moving from answering questions to acting on personal financial data, which makes read only access and clear limits the story.</p><div class="hm-chips"><span class="hm-chip">Source · The Verge</span></div></section>
+            <section class="hm-ritem" data-goto="brief"><span class="hm-ghost">1</span><p class="hm-meta">Signal Brief · Latest edition</p><h4>Fri, 6 Nov 2026: 12 items</h4><p>The day in technology, in our own words, every claim linked to its source. New edition daily at 07:00 IST.</p><div class="hm-chips"><span class="hm-chip navy">Daily · 07:00 IST</span><span class="hm-chip">12 items</span></div></section>
+            <section class="hm-ritem" data-goto="brief" data-brief-item="brief-2026-11-06-01"><span class="hm-ghost">2</span><p class="hm-meta">Signal Brief · AI</p><h4>OpenAI launches GPT-6 Cyber, a security model built to stay inside its authorised scope</h4><p>Security models that can find flaws are only useful if they can be trusted not to wander, and this one pairs stronger exploit skills with measured restraint.</p><div class="hm-chips"><span class="hm-chip">Source · OpenAI Blog</span></div></section>
+            <section class="hm-ritem" data-goto="brief" data-brief-item="brief-2026-11-06-02"><span class="hm-ghost">3</span><p class="hm-meta">Signal Brief · AI</p><h4>Google ships Gemini Omni 1.2 Flash with 15 second video and a 30% price cut</h4><p>Video generation is moving from short demos toward usable ad and product clips, with editing and pricing aimed at production use.</p><div class="hm-chips"><span class="hm-chip">Source · Google AI Blog</span></div></section>
+            <section class="hm-ritem" data-goto="brief" data-brief-item="brief-2026-11-06-03"><span class="hm-ghost">4</span><p class="hm-meta">Signal Brief · AI</p><h4>Claude can now read your bank account, with read only access through Plaid</h4><p>AI assistants are moving from answering questions to acting on personal financial data, which makes read only access and clear limits the story.</p><div class="hm-chips"><span class="hm-chip">Source · The Verge</span></div></section>
             <!--/BRIEF-LATEST-->
           </div></div>
           <div class="hm-railbar"><button class="hm-rbtn" type="button" data-hm-prev aria-label="Previous">&#8249;</button><div class="hm-dots"></div><span class="hm-count"></span><button class="hm-rbtn" type="button" data-hm-next aria-label="Next">&#8250;</button></div>
@@ -656,6 +658,10 @@
     </div>
     <div class="research-grid" id="researchGrid"></div>
   </section>
+
+  <section id="brief-view" class="view-section" hidden>
+    <div data-brief-root data-root-prefix="./"></div>
+  </section>
 </div>
 
 <footer class="site-footer">
@@ -678,6 +684,7 @@
 
 <script data-goatcounter="https://trttech.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
 <script src="assets/signal-share.js"></script>
-<script src="app.js?v=20261105a"></script>
+<script src="assets/brief.js?v=20261106"></script>
+<script src="app.js?v=20261106"></script>
 </body>
 </html>
