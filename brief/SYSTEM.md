@@ -124,9 +124,13 @@ Signal Brief daily, 07:00 IST:
 2. Draft 8 to 12 items across the six categories in data/brief.json
    format, original wording, every claim sourced; drop anything that
    cannot be sourced.
-3. Run scripts/build_brief.py in the work clone, verify the feeds parse
-   and the page renders, commit and push from the work clone, sync the
-   bot clone.
+3. Run scripts/build_brief.py in the bot clone (jobs only ever use the
+   bot clone, under the git safety rule of Nov 6, 2026: confirm the
+   folder and remote, refuse if the clone holds unpushed commits or
+   unexpected changes, reset to origin/main before editing, and pull
+   with rebase before pushing), verify the feeds parse and the page
+   renders, commit and push from the bot clone. Hand edits to the Brief
+   system happen in the work clone instead.
 4. Ping IndexNow for the brief page and signal.xml
    (scripts/indexnow_ping.py with those URLs). From the card redesign
    go live: ping every URL in brief/story-urls.txt instead, which adds
