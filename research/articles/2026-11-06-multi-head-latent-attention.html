@@ -1,0 +1,15 @@
+<p><em>Signal Research Notes is an original-research series on The Signal, published three times a week. Each edition asks one question, works through it from primary sources, and keeps confirmed facts separate from analysis. Sources are linked at the end.</em></p>
+
+<p>Every token a model generates forces it to remember every token before it. That memory is the KV cache: the key and value vectors for each token, layer and head. The cache makes generation fast and long context expensive, because it grows with every token and every user.</p>
+
+<h3>Compress by rank, not by head count</h3>
+
+<p>Standard multi-head attention stores a full key and value for every head: 128 heads of 128 dimensions in BF16 cost 65,536 bytes per token per layer. Multi-Head Latent Attention, introduced in DeepSeek-V2 (DeepSeek-AI, arXiv:2405.04434, May 2024), takes a different axis. It down-projects each token into one shared low-rank latent vector, 512 dimensions in DeepSeek-V3, caching only that. Up-projection matrices rebuild the per-head keys and values at attention time, absorbed into other weights so the full vectors never materialise. The paper reports a 93.3 percent cut in KV cache size against standard multi-head attention at matching quality. DeepSeek-V3 needs 70KB of KV cache per token, against 516KB for LLaMA-3.1 405B and 327KB for Qwen2.5-72B (arXiv:2412.19437, December 2024).</p>
+
+<h3>The position problem, and the fix</h3>
+
+<p>One wrinkle is position: rotary embeddings rotate each key by its position, and that rotation does not survive MLA's matrix absorption. DeepSeek-V2 solves it with decoupled RoPE: a separate 64-dimension key carries position outside the compressed latent. The cost becomes 2 times (512 plus 64) times 2 bytes, or 1,152 bytes per token per layer, a 57 times reduction regardless of head count.</p>
+
+<h3>Why it matters, and what it costs</h3>
+
+<p>A smaller cache buys longer context or more concurrent users on the same GPU, which is why at least eight model families beyond DeepSeek adopted MLA. The catch is commitment: latent, projections and decoupled RoPE split are trained in from the start. A grouped-query team cannot flip a flag for MLA's savings; it needs retraining. Compression is a design decision, not a serving setting.</p>

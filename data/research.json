@@ -1,292 +1,319 @@
 {
- "articles": [
-  {
-   "id": "2026-11-04-nist-pqc-deadline",
-   "title": "Why Does NIST Now Give RSA and Elliptic Curves a 2030 Expiry Date?",
-   "subtitle": "Final IR 8547 sets deprecation after 2030, disallowance after 2035",
-   "date": "2026-11-04",
-   "kind": "Brief",
-   "card": "research/cards/edition-09.webp",
-   "body": "research/articles/2026-11-04-nist-pqc-deadline.html",
-   "sources": [
+  "articles": [
     {
-     "label": "NIST: NIST Report Provides Guidelines for Transition to Post-Quantum Cryptography Standards (Oct 27, 2026)",
-     "url": "https://www.nist.gov/news-events/news/2026/10/nist-report-provides-guidelines-transition-post-quantum-cryptography"
+      "id": "2026-11-06-multi-head-latent-attention",
+      "title": "How Does Multi-Head Latent Attention Shrink the KV Cache?",
+      "subtitle": "DeepSeek's MLA cuts the KV cache 93 percent, and eight model families followed",
+      "date": "2026-11-06",
+      "kind": "Brief",
+      "card": "research/cards/edition-10.webp",
+      "body": "research/articles/2026-11-06-multi-head-latent-attention.html",
+      "sources": [
+        {
+          "label": "DeepSeek-AI: DeepSeek-V2 technical report, arXiv:2405.04434 (May 2024)",
+          "url": "https://arxiv.org/abs/2405.04434"
+        },
+        {
+          "label": "DeepSeek-AI: DeepSeek-V3 technical report, arXiv:2412.19437 (Dec 2024)",
+          "url": "https://arxiv.org/abs/2412.19437"
+        },
+        {
+          "label": "The Frontier Desk: How Multi-Head Latent Attention Shrinks the KV Cache (Sep 8, 2026)",
+          "url": "https://temperature2.com/p/2026-09-08-did-you-know-multi-head-latent-attention/"
+        },
+        {
+          "label": "MHA2MLA: Towards Economical Inference, arXiv:2502.14837",
+          "url": "https://arxiv.org/pdf/2502.14837"
+        }
+      ]
     },
     {
-     "label": "NIST IR 8547: Transition to Post-Quantum Cryptography Standards, final (Oct 2026)",
-     "url": "https://nvlpubs.nist.gov/nistpubs/ir/2026/NIST.IR.8547.pdf"
+      "id": "2026-11-04-nist-pqc-deadline",
+      "title": "Why Does NIST Now Give RSA and Elliptic Curves a 2030 Expiry Date?",
+      "subtitle": "Final IR 8547 sets deprecation after 2030, disallowance after 2035",
+      "date": "2026-11-04",
+      "kind": "Brief",
+      "card": "research/cards/edition-09.webp",
+      "body": "research/articles/2026-11-04-nist-pqc-deadline.html",
+      "sources": [
+        {
+          "label": "NIST: NIST Report Provides Guidelines for Transition to Post-Quantum Cryptography Standards (Oct 27, 2026)",
+          "url": "https://www.nist.gov/news-events/news/2026/10/nist-report-provides-guidelines-transition-post-quantum-cryptography"
+        },
+        {
+          "label": "NIST IR 8547: Transition to Post-Quantum Cryptography Standards, final (Oct 2026)",
+          "url": "https://nvlpubs.nist.gov/nistpubs/ir/2026/NIST.IR.8547.pdf"
+        },
+        {
+          "label": "NIST CSRC: IR 8547 final publication page",
+          "url": "https://csrc.nist.gov/pubs/ir/8547/final"
+        },
+        {
+          "label": "SITG-Consulting: NIST IR 8547, Draft to Final (Oct 28, 2026)",
+          "url": "https://www.sitg-consulting.com/post/nist-ir-8547-what-changed-draft-to-final"
+        }
+      ]
     },
     {
-     "label": "NIST CSRC: IR 8547 final publication page",
-     "url": "https://csrc.nist.gov/pubs/ir/8547/final"
+      "id": "2026-11-02-ai-power-race",
+      "title": "Why Is the Next AI Race Being Won by Power Companies, Not Chipmakers?",
+      "subtitle": "Megawatts on a date now decide where AI capacity gets built",
+      "date": "2026-11-02",
+      "kind": "Deep Dive",
+      "card": "research/cards/edition-08.webp",
+      "body": "research/articles/2026-11-02-ai-power-race.html",
+      "sources": [
+        {
+          "label": "Constellation Energy and Amazon: 20-year power purchase agreement at Calvert Cliffs (Sep 30, 2026)",
+          "url": "https://www.constellationenergy.com/news/2026/09/constellation-and-amazon-announce-20-year-power-purchase-agreement-at-calvert-cliffs.html"
+        },
+        {
+          "label": "Construction Dive: Constellation, Google strike 890-MW nuclear deal (Oct 6, 2026)",
+          "url": "https://www.constructiondive.com/news/constellation-google-nuclear-deal-data-center-energy/832351/"
+        },
+        {
+          "label": "Venture Global: agreements to support expansion of grid-independent power network (Oct 15, 2026)",
+          "url": "https://ventureglobal.com/2026/10/15/venture-global-secures-new-agreements-to-support-expansion-of-existing-grid-independent-power-network/"
+        },
+        {
+          "label": "Japan.co.jp: JERA, Dell and RHAELM plan 400 MW AI infrastructure at Chiba (Oct 1, 2026)",
+          "url": "https://japan.co.jp/e/reports/jera-chiba-ai-data-center-power-station-2026.html"
+        },
+        {
+          "label": "The Flywheel: Data Center Power Companies 2026, who supplies AI's gigawatts (Oct 21, 2026)",
+          "url": "https://wetheflywheel.com/en/guides/data-center-power-companies-2026/"
+        }
+      ]
     },
     {
-     "label": "SITG-Consulting: NIST IR 8547, Draft to Final (Oct 28, 2026)",
-     "url": "https://www.sitg-consulting.com/post/nist-ir-8547-what-changed-draft-to-final"
+      "id": "2026-10-30-speculative-decoding",
+      "title": "How Does Speculative Decoding Answer Faster?",
+      "subtitle": "A small draft model guesses ahead, and the big model checks the guesses in one pass",
+      "date": "2026-10-30",
+      "kind": "Brief",
+      "card": "research/cards/edition-07.webp",
+      "body": "research/articles/2026-10-30-speculative-decoding.html",
+      "sources": [
+        {
+          "label": "Leviathan, Kalman, Matias: Fast Inference from Transformers via Speculative Decoding (arXiv:2211.17192)",
+          "url": "https://arxiv.org/abs/2211.17192"
+        },
+        {
+          "label": "Chen et al.: Accelerating Large Language Model Decoding with Speculative Sampling (arXiv:2302.01318)",
+          "url": "https://arxiv.org/abs/2302.01318"
+        },
+        {
+          "label": "Li et al.: EAGLE-3: Scaling up Inference Acceleration of Large Language Models via Training-Time Test (arXiv:2503.01840)",
+          "url": "https://arxiv.org/abs/2503.01840"
+        },
+        {
+          "label": "Meta GenAI and Infra Teams: Efficient Speculative Decoding for Llama at Scale (arXiv:2508.08192, Aug 2025)",
+          "url": "https://arxiv.org/abs/2508.08192"
+        }
+      ]
+    },
+    {
+      "id": "2026-10-28-genie-4-world-model",
+      "title": "What Changes When an AI World Can Talk Back?",
+      "subtitle": "Genie 4 adds native audio and live steering to real time simulation",
+      "date": "2026-10-28",
+      "kind": "Brief",
+      "card": "research/cards/edition-06.webp",
+      "body": "research/articles/2026-10-28-genie-4-world-model.html",
+      "sources": [
+        {
+          "label": "Google DeepMind: Genie 4: A new generation of world simulation (Oct 27, 2026)",
+          "url": "https://deepmind.google/blog/genie-4-a-new-generation-of-world-simulation/"
+        }
+      ]
+    },
+    {
+      "id": "2026-10-26-agent-decision-taste-bench",
+      "title": "Why Does Finishing the Task No Longer Prove an AI Agent Works?",
+      "subtitle": "Taste-Bench and the judgment gap in long running agents",
+      "date": "2026-10-26",
+      "kind": "Deep Dive",
+      "card": "research/cards/edition-05.webp",
+      "body": "research/articles/2026-10-26-agent-decision-taste-bench.html",
+      "sources": [
+        {
+          "label": "Pan et al.: The Tasteful Agent: Measuring and Improving Taste in Long-Horizon Tasks (arXiv, revised Sep 23, 2026)",
+          "url": "https://arxiv.org/abs/2609.25804"
+        },
+        {
+          "label": "Simbian: AI SOC Agents Stop Too Soon, October 2026 Cyber Defense Benchmark",
+          "url": "https://simbian.ai/blog/ai-soc-agents-give-up-early"
+        },
+        {
+          "label": "Nanonets Research: TRACE benchmark, LLMs search and retrieve rules but still do not apply them",
+          "url": "https://nanonets.com/research/trace"
+        }
+      ]
+    },
+    {
+      "id": "2026-10-23-hybrid-tls-handshake",
+      "title": "How Does a Hybrid Handshake Make TLS Quantum Safe?",
+      "subtitle": "One TLS handshake, two key exchanges, and the harvest now, decrypt later problem",
+      "date": "2026-10-23",
+      "kind": "Brief",
+      "card": "research/cards/edition-04.webp",
+      "body": "research/articles/2026-10-23-hybrid-tls-handshake.html",
+      "sources": [
+        {
+          "label": "Imperva: Harvest Now, Decrypt Later: End-to-End PQC TLS (Oct 5, 2026)",
+          "url": "https://www.imperva.com/blog/harvest-now-decrypt-later-post-quantum-tls/"
+        },
+        {
+          "label": "Cloudflare blog: post-quantum visibility, about 70 percent of browser traffic (Sep 2026)",
+          "url": "https://blog.cloudflare.com/post-quantum-visibility/"
+        },
+        {
+          "label": "NCSC: Using Transport Layer Security (TLS) to protect data (guidance, updated Oct 2026)",
+          "url": "https://www.ncsc.gov.uk/guidance/using-tls-to-protect-data"
+        },
+        {
+          "label": "RFC 10024: Post-Quantum Traditional (PQ/T) Hybrid Key Agreement Mechanisms for TLS 1.3 (IETF, Aug 2026)",
+          "url": "https://www.rfc-editor.org/info/rfc10024"
+        },
+        {
+          "label": "Anthropic Frontier Red Team: Discovering cryptographic weaknesses with Claude (Jul 2026)",
+          "url": "https://www.anthropic.com/research/discovering-cryptographic-weaknesses"
+        },
+        {
+          "label": "shattered.io: ML-KEM vs X25519 TLS 1.3 adoption and overhead (2026)",
+          "url": "https://shattered.io/ml-kem-vs-x25519-tls-1-3-2026/"
+        }
+      ]
+    },
+    {
+      "id": "2026-10-21-meta-muse-wonder",
+      "title": "Meta Ships Muse Wonder: Its First Frontier Model, Built for Agents That Remember",
+      "subtitle": "Active Memory and Active Focus move the frontier pitch from raw capability to persistent behavior",
+      "date": "2026-10-21",
+      "kind": "Brief",
+      "card": "research/cards/edition-03.webp",
+      "body": "research/articles/2026-10-21-meta-muse-wonder.html",
+      "sources": [
+        {
+          "label": "Meta Newsroom: Introducing Muse Wonder and Muse Wonder Full, frontier models for agents (Oct 12, 2026)",
+          "url": "https://about.fb.com/news/2026/10/introducing-muse-wonder-models/"
+        },
+        {
+          "label": "Artificial Analysis: Muse Wonder and Muse Wonder Full, a material jump in intelligence",
+          "url": "https://artificialanalysis.ai/articles/muse-wonder"
+        }
+      ]
+    },
+    {
+      "body": "research/articles/2026-10-19-willow-magic-states.html",
+      "card": "research/cards/edition-02.webp",
+      "date": "2026-10-19",
+      "id": "2026-10-19-willow-magic-states",
+      "kind": "Deep Dive",
+      "sources": [
+        {
+          "label": "Google: Bringing the magic: Google breaks open a bottleneck in quantum computing (Oct 15, 2026)",
+          "url": "https://blog.google/innovation-and-ai/models-and-research/quantum-computing/magic-state-cultivation-quantum-computing/"
+        },
+        {
+          "label": "Rosenfeld et al.: Magic state cultivation on a superconducting quantum processor (Science, Oct 2026)",
+          "url": "https://doi.org/10.1126/science.aee7961"
+        },
+        {
+          "label": "RFC 10024: Post-Quantum Traditional (PQ/T) Hybrid Key Agreement Mechanisms for TLS 1.3 (IETF, Aug 2026)",
+          "url": "https://www.rfc-editor.org/info/rfc10024"
+        },
+        {
+          "label": "NSA: CNSA 2.0 and Quantum Computing FAQ (Cybersecurity Information Sheet, Dec 2024)",
+          "url": "https://www.nsa.gov/Portals/75/documents/CNSA%20Suite%20documents%2009-2026/CSI_CNSA_2.0_FAQ_.pdf?ver=TpEt_3h8AhgZ-u21Jf6eZA%3d%3d"
+        },
+        {
+          "label": "Executive Order 14412: Securing the Nation Against Advanced Cryptographic Attacks (Federal Register, Jun 25, 2026)",
+          "url": "https://www.govinfo.gov/content/pkg/FR-2026-06-25/html/2026-12909.htm"
+        },
+        {
+          "label": "Cloudflare blog: the 2026 US post-quantum executive order",
+          "url": "https://blog.cloudflare.com/post-quantum-eo-2026/"
+        },
+        {
+          "label": "Cloudflare blog: post-quantum encryption for Cloudflare IPsec (two-thirds of human TLS traffic protected)",
+          "url": "https://blog.cloudflare.com/post-quantum-ipsec/"
+        },
+        {
+          "label": "DigiCert: Quantum Readiness Outlook, second annual survey, only 7% deployed (press release, Jul 23, 2026)",
+          "url": "https://www.digicert.com/news/quantum-security-deployment-remains-stuck"
+        },
+        {
+          "label": "Gidney: How to factor 2048 bit RSA integers with less than a million noisy qubits (arXiv, May 2025)",
+          "url": "https://arxiv.org/abs/2505.15917"
+        }
+      ],
+      "subtitle": "Willow's 40x magic-state error cut, and what it means for the migration clock",
+      "title": "Did Google Just Crack Quantum's Biggest Bottleneck?"
+    },
+    {
+      "body": "research/articles/2026-10-16-ai-stack-value.html",
+      "card": "research/cards/edition-01.webp",
+      "date": "2026-10-16",
+      "id": "2026-10-16-ai-stack-value",
+      "kind": "Deep Dive",
+      "sources": [
+        {
+          "label": "Gartner press release: data center electricity demand to grow 26 percent in 2026",
+          "url": "https://www.gartner.com/en/newsroom/press-releases/2026-06-10-gartner-says-data-center-electricity-demand-to-grow-26-percent-in-2026"
+        },
+        {
+          "label": "Goldman Sachs Insights: US data center power demand projected to double by 2027",
+          "url": "https://www.goldmansachs.com/insights/articles/us-data-center-power-demand-projected-to-double-by-2027"
+        },
+        {
+          "label": "US data-center investment, Microsoft Azure backlog, 2026 hyperscaler capex (The Global Statistics)",
+          "url": "https://www.theglobalstatistics.com/new-data-center-investments-in-us/"
+        },
+        {
+          "label": "Hyperscaler custom silicon vs NVIDIA, 2026 (Introl)",
+          "url": "https://introl.com/blog/custom-silicon-inflection-2026-hyperscaler-asics-nvidia-gpu"
+        },
+        {
+          "label": "AWS Trainium vs NVIDIA analysis (The Weighted Average)",
+          "url": "https://theweightedaverage.com/posts/2026-06-26-amazon-trainium-chips-nvidia-challenge/"
+        },
+        {
+          "label": "AI processor competitive landscape (Gyre Research, CC BY 4.0)",
+          "url": "http://gyreresearch.com/library/Gyre_AI_Processor_Competitive_Landscape_20260611.pdf"
+        },
+        {
+          "label": "Benedict Evans: Ways to think about token pricing",
+          "url": "https://www.ben-evans.com/benedictevans/2026/7/9/ways-to-think-about-token-pricing"
+        },
+        {
+          "label": "FinOps Foundation: Optimizing GenAI Usage, inference at 80 to 90 percent of total GenAI spend",
+          "url": "https://www.finops.org/wg/optimizing-genai-usage/"
+        },
+        {
+          "label": "KPMG: AI Quarterly Pulse Survey (Q3 2026)",
+          "url": "https://kpmg.com/us/en/articles/2025/ai-quarterly-pulse-survey.html"
+        },
+        {
+          "label": "WRITER: Enterprise AI adoption in 2026, survey with Workplace Intelligence (97 percent deployed agents, only 29 percent significant ROI)",
+          "url": "https://writer.com/blog/enterprise-ai-adoption-2026/"
+        },
+        {
+          "label": "McKinsey: The state of AI in 2025, agents, innovation, and transformation",
+          "url": "https://www.mckinsey.com/capabilities/quantumblack/our-insights/the-state-of-ai-2025"
+        },
+        {
+          "label": "Gartner press release: over 40 percent of agentic AI projects will be canceled by end of 2027",
+          "url": "https://www.gartner.com/en/newsroom/press-releases/2025-06-25-gartner-predicts-over-40-percent-of-agentic-ai-projects-will-be-canceled-by-end-of-2027"
+        },
+        {
+          "label": "Social Capital \"Learn With Me\" deep-dive series (the format that prompted this edition)",
+          "url": "https://research.socialcapital.com/p/the-ai-stack"
+        }
+      ],
+      "subtitle": "Why profits pool at the two ends of the stack",
+      "title": "Where Does Value Accrue in the AI Stack?"
     }
-   ]
-  },
-  {
-   "id": "2026-11-02-ai-power-race",
-   "title": "Why Is the Next AI Race Being Won by Power Companies, Not Chipmakers?",
-   "subtitle": "Megawatts on a date now decide where AI capacity gets built",
-   "date": "2026-11-02",
-   "kind": "Deep Dive",
-   "card": "research/cards/edition-08.webp",
-   "body": "research/articles/2026-11-02-ai-power-race.html",
-   "sources": [
-    {
-     "label": "Constellation Energy and Amazon: 20-year power purchase agreement at Calvert Cliffs (Sep 30, 2026)",
-     "url": "https://www.constellationenergy.com/news/2026/09/constellation-and-amazon-announce-20-year-power-purchase-agreement-at-calvert-cliffs.html"
-    },
-    {
-     "label": "Construction Dive: Constellation, Google strike 890-MW nuclear deal (Oct 6, 2026)",
-     "url": "https://www.constructiondive.com/news/constellation-google-nuclear-deal-data-center-energy/832351/"
-    },
-    {
-     "label": "Venture Global: agreements to support expansion of grid-independent power network (Oct 15, 2026)",
-     "url": "https://ventureglobal.com/2026/10/15/venture-global-secures-new-agreements-to-support-expansion-of-existing-grid-independent-power-network/"
-    },
-    {
-     "label": "Japan.co.jp: JERA, Dell and RHAELM plan 400 MW AI infrastructure at Chiba (Oct 1, 2026)",
-     "url": "https://japan.co.jp/e/reports/jera-chiba-ai-data-center-power-station-2026.html"
-    },
-    {
-     "label": "The Flywheel: Data Center Power Companies 2026, who supplies AI's gigawatts (Oct 21, 2026)",
-     "url": "https://wetheflywheel.com/en/guides/data-center-power-companies-2026/"
-    }
-   ]
-  },
-  {
-   "id": "2026-10-30-speculative-decoding",
-   "title": "How Does Speculative Decoding Answer Faster?",
-   "subtitle": "A small draft model guesses ahead, and the big model checks the guesses in one pass",
-   "date": "2026-10-30",
-   "kind": "Brief",
-   "card": "research/cards/edition-07.webp",
-   "body": "research/articles/2026-10-30-speculative-decoding.html",
-   "sources": [
-    {
-     "label": "Leviathan, Kalman, Matias: Fast Inference from Transformers via Speculative Decoding (arXiv:2211.17192)",
-     "url": "https://arxiv.org/abs/2211.17192"
-    },
-    {
-     "label": "Chen et al.: Accelerating Large Language Model Decoding with Speculative Sampling (arXiv:2302.01318)",
-     "url": "https://arxiv.org/abs/2302.01318"
-    },
-    {
-     "label": "Li et al.: EAGLE-3: Scaling up Inference Acceleration of Large Language Models via Training-Time Test (arXiv:2503.01840)",
-     "url": "https://arxiv.org/abs/2503.01840"
-    },
-    {
-     "label": "Meta GenAI and Infra Teams: Efficient Speculative Decoding for Llama at Scale (arXiv:2508.08192, Aug 2025)",
-     "url": "https://arxiv.org/abs/2508.08192"
-    }
-   ]
-  },
-  {
-   "id": "2026-10-28-genie-4-world-model",
-   "title": "What Changes When an AI World Can Talk Back?",
-   "subtitle": "Genie 4 adds native audio and live steering to real time simulation",
-   "date": "2026-10-28",
-   "kind": "Brief",
-   "card": "research/cards/edition-06.webp",
-   "body": "research/articles/2026-10-28-genie-4-world-model.html",
-   "sources": [
-    {
-     "label": "Google DeepMind: Genie 4: A new generation of world simulation (Oct 27, 2026)",
-     "url": "https://deepmind.google/blog/genie-4-a-new-generation-of-world-simulation/"
-    }
-   ]
-  },
-  {
-   "id": "2026-10-26-agent-decision-taste-bench",
-   "title": "Why Does Finishing the Task No Longer Prove an AI Agent Works?",
-   "subtitle": "Taste-Bench and the judgment gap in long running agents",
-   "date": "2026-10-26",
-   "kind": "Deep Dive",
-   "card": "research/cards/edition-05.webp",
-   "body": "research/articles/2026-10-26-agent-decision-taste-bench.html",
-   "sources": [
-    {
-     "label": "Pan et al.: The Tasteful Agent: Measuring and Improving Taste in Long-Horizon Tasks (arXiv, revised Sep 23, 2026)",
-     "url": "https://arxiv.org/abs/2609.25804"
-    },
-    {
-     "label": "Simbian: AI SOC Agents Stop Too Soon, October 2026 Cyber Defense Benchmark",
-     "url": "https://simbian.ai/blog/ai-soc-agents-give-up-early"
-    },
-    {
-     "label": "Nanonets Research: TRACE benchmark, LLMs search and retrieve rules but still do not apply them",
-     "url": "https://nanonets.com/research/trace"
-    }
-   ]
-  },
-  {
-   "id": "2026-10-23-hybrid-tls-handshake",
-   "title": "How Does a Hybrid Handshake Make TLS Quantum Safe?",
-   "subtitle": "One TLS handshake, two key exchanges, and the harvest now, decrypt later problem",
-   "date": "2026-10-23",
-   "kind": "Brief",
-   "card": "research/cards/edition-04.webp",
-   "body": "research/articles/2026-10-23-hybrid-tls-handshake.html",
-   "sources": [
-    {
-     "label": "Imperva: Harvest Now, Decrypt Later: End-to-End PQC TLS (Oct 5, 2026)",
-     "url": "https://www.imperva.com/blog/harvest-now-decrypt-later-post-quantum-tls/"
-    },
-    {
-     "label": "Cloudflare blog: post-quantum visibility, about 70 percent of browser traffic (Sep 2026)",
-     "url": "https://blog.cloudflare.com/post-quantum-visibility/"
-    },
-    {
-     "label": "NCSC: Using Transport Layer Security (TLS) to protect data (guidance, updated Oct 2026)",
-     "url": "https://www.ncsc.gov.uk/guidance/using-tls-to-protect-data"
-    },
-    {
-     "label": "RFC 10024: Post-Quantum Traditional (PQ/T) Hybrid Key Agreement Mechanisms for TLS 1.3 (IETF, Aug 2026)",
-     "url": "https://www.rfc-editor.org/info/rfc10024"
-    },
-    {
-     "label": "Anthropic Frontier Red Team: Discovering cryptographic weaknesses with Claude (Jul 2026)",
-     "url": "https://www.anthropic.com/research/discovering-cryptographic-weaknesses"
-    },
-    {
-     "label": "shattered.io: ML-KEM vs X25519 TLS 1.3 adoption and overhead (2026)",
-     "url": "https://shattered.io/ml-kem-vs-x25519-tls-1-3-2026/"
-    }
-   ]
-  },
-  {
-   "id": "2026-10-21-meta-muse-wonder",
-   "title": "Meta Ships Muse Wonder: Its First Frontier Model, Built for Agents That Remember",
-   "subtitle": "Active Memory and Active Focus move the frontier pitch from raw capability to persistent behavior",
-   "date": "2026-10-21",
-   "kind": "Brief",
-   "card": "research/cards/edition-03.webp",
-   "body": "research/articles/2026-10-21-meta-muse-wonder.html",
-   "sources": [
-    {
-     "label": "Meta Newsroom: Introducing Muse Wonder and Muse Wonder Full, frontier models for agents (Oct 12, 2026)",
-     "url": "https://about.fb.com/news/2026/10/introducing-muse-wonder-models/"
-    },
-    {
-     "label": "Artificial Analysis: Muse Wonder and Muse Wonder Full, a material jump in intelligence",
-     "url": "https://artificialanalysis.ai/articles/muse-wonder"
-    }
-   ]
-  },
-  {
-   "body": "research/articles/2026-10-19-willow-magic-states.html",
-   "card": "research/cards/edition-02.webp",
-   "date": "2026-10-19",
-   "id": "2026-10-19-willow-magic-states",
-   "kind": "Deep Dive",
-   "sources": [
-    {
-     "label": "Google: Bringing the magic: Google breaks open a bottleneck in quantum computing (Oct 15, 2026)",
-     "url": "https://blog.google/innovation-and-ai/models-and-research/quantum-computing/magic-state-cultivation-quantum-computing/"
-    },
-    {
-     "label": "Rosenfeld et al.: Magic state cultivation on a superconducting quantum processor (Science, Oct 2026)",
-     "url": "https://doi.org/10.1126/science.aee7961"
-    },
-    {
-     "label": "RFC 10024: Post-Quantum Traditional (PQ/T) Hybrid Key Agreement Mechanisms for TLS 1.3 (IETF, Aug 2026)",
-     "url": "https://www.rfc-editor.org/info/rfc10024"
-    },
-    {
-     "label": "NSA: CNSA 2.0 and Quantum Computing FAQ (Cybersecurity Information Sheet, Dec 2024)",
-     "url": "https://www.nsa.gov/Portals/75/documents/CNSA%20Suite%20documents%2009-2026/CSI_CNSA_2.0_FAQ_.pdf?ver=TpEt_3h8AhgZ-u21Jf6eZA%3d%3d"
-    },
-    {
-     "label": "Executive Order 14412: Securing the Nation Against Advanced Cryptographic Attacks (Federal Register, Jun 25, 2026)",
-     "url": "https://www.govinfo.gov/content/pkg/FR-2026-06-25/html/2026-12909.htm"
-    },
-    {
-     "label": "Cloudflare blog: the 2026 US post-quantum executive order",
-     "url": "https://blog.cloudflare.com/post-quantum-eo-2026/"
-    },
-    {
-     "label": "Cloudflare blog: post-quantum encryption for Cloudflare IPsec (two-thirds of human TLS traffic protected)",
-     "url": "https://blog.cloudflare.com/post-quantum-ipsec/"
-    },
-    {
-     "label": "DigiCert: Quantum Readiness Outlook, second annual survey, only 7% deployed (press release, Jul 23, 2026)",
-     "url": "https://www.digicert.com/news/quantum-security-deployment-remains-stuck"
-    },
-    {
-     "label": "Gidney: How to factor 2048 bit RSA integers with less than a million noisy qubits (arXiv, May 2025)",
-     "url": "https://arxiv.org/abs/2505.15917"
-    }
-   ],
-   "subtitle": "Willow's 40x magic-state error cut, and what it means for the migration clock",
-   "title": "Did Google Just Crack Quantum's Biggest Bottleneck?"
-  },
-  {
-   "body": "research/articles/2026-10-16-ai-stack-value.html",
-   "card": "research/cards/edition-01.webp",
-   "date": "2026-10-16",
-   "id": "2026-10-16-ai-stack-value",
-   "kind": "Deep Dive",
-   "sources": [
-    {
-     "label": "Gartner press release: data center electricity demand to grow 26 percent in 2026",
-     "url": "https://www.gartner.com/en/newsroom/press-releases/2026-06-10-gartner-says-data-center-electricity-demand-to-grow-26-percent-in-2026"
-    },
-    {
-     "label": "Goldman Sachs Insights: US data center power demand projected to double by 2027",
-     "url": "https://www.goldmansachs.com/insights/articles/us-data-center-power-demand-projected-to-double-by-2027"
-    },
-    {
-     "label": "US data-center investment, Microsoft Azure backlog, 2026 hyperscaler capex (The Global Statistics)",
-     "url": "https://www.theglobalstatistics.com/new-data-center-investments-in-us/"
-    },
-    {
-     "label": "Hyperscaler custom silicon vs NVIDIA, 2026 (Introl)",
-     "url": "https://introl.com/blog/custom-silicon-inflection-2026-hyperscaler-asics-nvidia-gpu"
-    },
-    {
-     "label": "AWS Trainium vs NVIDIA analysis (The Weighted Average)",
-     "url": "https://theweightedaverage.com/posts/2026-06-26-amazon-trainium-chips-nvidia-challenge/"
-    },
-    {
-     "label": "AI processor competitive landscape (Gyre Research, CC BY 4.0)",
-     "url": "http://gyreresearch.com/library/Gyre_AI_Processor_Competitive_Landscape_20260611.pdf"
-    },
-    {
-     "label": "Benedict Evans: Ways to think about token pricing",
-     "url": "https://www.ben-evans.com/benedictevans/2026/7/9/ways-to-think-about-token-pricing"
-    },
-    {
-     "label": "FinOps Foundation: Optimizing GenAI Usage, inference at 80 to 90 percent of total GenAI spend",
-     "url": "https://www.finops.org/wg/optimizing-genai-usage/"
-    },
-    {
-     "label": "KPMG: AI Quarterly Pulse Survey (Q3 2026)",
-     "url": "https://kpmg.com/us/en/articles/2025/ai-quarterly-pulse-survey.html"
-    },
-    {
-     "label": "WRITER: Enterprise AI adoption in 2026, survey with Workplace Intelligence (97 percent deployed agents, only 29 percent significant ROI)",
-     "url": "https://writer.com/blog/enterprise-ai-adoption-2026/"
-    },
-    {
-     "label": "McKinsey: The state of AI in 2025, agents, innovation, and transformation",
-     "url": "https://www.mckinsey.com/capabilities/quantumblack/our-insights/the-state-of-ai-2025"
-    },
-    {
-     "label": "Gartner press release: over 40 percent of agentic AI projects will be canceled by end of 2027",
-     "url": "https://www.gartner.com/en/newsroom/press-releases/2025-06-25-gartner-predicts-over-40-percent-of-agentic-ai-projects-will-be-canceled-by-end-of-2027"
-    },
-    {
-     "label": "Social Capital \"Learn With Me\" deep-dive series (the format that prompted this edition)",
-     "url": "https://research.socialcapital.com/p/the-ai-stack"
-    }
-   ],
-   "subtitle": "Why profits pool at the two ends of the stack",
-   "title": "Where Does Value Accrue in the AI Stack?"
-  }
- ],
- "generated_at": "2026-11-04T04:16:45+00:00"
+  ],
+  "generated_at": "2026-11-06T04:18:37+00:00"
 }
