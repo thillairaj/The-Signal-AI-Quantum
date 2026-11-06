@@ -15,7 +15,7 @@ let feedPage = 0;
 let bookmarks = new Set(JSON.parse(localStorage.getItem(BOOKMARK_KEY) || "[]"));
 let lastGeneratedAt = null;
 
-const feedEl = document.getElementById("feed");
+const feedEl = document.getElementById("feedList");
 const feedToolsEl = document.getElementById("feed-tools");
 const learnViewEl = document.getElementById("learn-view");
 const podcastViewEl = document.getElementById("podcast-view");
@@ -108,6 +108,19 @@ async function loadViews() {
 }
 
 /* ---------- Views: feed / learn / podcast ---------- */
+/* Tab landing rule (Thillai, Nov 6, 2026): opening any section tab, by tap,
+   link or back button, lands at the top of that tab's content. Two guards:
+   the browser must not restore a saved scroll position for a tab entry, and
+   no element id on this page may equal a section hash (the feed list element
+   is #feedList, not #feed), so no fragment jump can move the landing point. */
+try { history.scrollRestoration = "manual"; } catch (e) {}
+const VIEW_TOP = { home: homeViewEl, feed: feedToolsEl, learn: learnViewEl, podcast: podcastViewEl, research: researchViewEl, brief: briefViewEl };
+function scrollToViewTop(name) {
+  const el = VIEW_TOP[name];
+  if (!el) return;
+  const y = el.getBoundingClientRect().top + window.scrollY;
+  window.scrollTo({ top: Math.max(0, y), behavior: "instant" });
+}
 function showView(name) {
   document.body.dataset.view = name;
   homeViewEl.hidden = name !== "home";
@@ -544,6 +557,7 @@ topTabsEl.querySelectorAll(".top-tab").forEach(btn => {
     topTabsEl.querySelectorAll(".top-tab").forEach(b => b.classList.remove("active"));
     btn.classList.add("active");
     showView(btn.dataset.view);
+    scrollToViewTop(btn.dataset.view);
     const h = "#" + btn.dataset.view;
     if (location.hash !== h) history.pushState(null, "", h);
   });
@@ -706,8 +720,8 @@ openResearchTarget();
 const SECTION_HASH = { "#home": "home", "#learn": "learn", "#podcast": "podcast", "#research": "research", "#feed": "feed", "#brief": "brief" };
 function openSectionTarget() {
   const v = SECTION_HASH[location.hash];
-  if (v) { showView(v); return; }
-  if (!location.hash || location.hash === "#") showView("home");
+  if (v) { showView(v); scrollToViewTop(v); return; }
+  if (!location.hash || location.hash === "#") { showView("home"); scrollToViewTop("home"); }
 }
 openSectionTarget();
 openPodcastTarget();
