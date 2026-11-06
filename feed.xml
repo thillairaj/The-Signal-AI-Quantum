@@ -4,166 +4,174 @@
     <title>The Signal</title>
     <link>https://thillairaj.github.io/The-Signal-AI-Quantum/</link>
     <description>A self-updating feed of AI, quantum computing, cybersecurity, cloud and DevOps, and podcast updates.</description>
-    <lastBuildDate>Fri, 06 Nov 2026 02:00:17 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 06 Nov 2026 06:00:18 +0000</lastBuildDate>
     <item>
-      <title>NVIDIA NVLink Fusion Brings NVHBM to Next-Generation AI Infrastructure</title>
-      <link>https://developer.nvidia.com/blog/nvidia-nvlink-fusion-brings-nvhbm-to-next-generation-ai-infrastructure/</link>
-      <guid isPermaLink="false">10fdc968d3e00128</guid>
-      <description>AI factories must support increasingly large models and more complex reasoning workloads. To keep up with the insatiable compute demands of AI workloads,...</description>
+      <title>NVIDIA PAIR Virtual Inference Router Expands Available Compute on Your Local Network</title>
+      <link>https://developer.nvidia.com/blog/nvidia-pair-virtual-inference-router-expands-available-compute-on-your-local-network/</link>
+      <guid isPermaLink="false">291ea19a15e9fa9d</guid>
+      <description>AI agents are learning to do more by working together. A lead agent can break a complex task into smaller jobs and assign those jobs to specialized subagents....</description>
       <category>NVIDIA Technical Blog</category>
-      <pubDate>Fri, 06 Nov 2026 01:59:59 +0000</pubDate>
+      <pubDate>Fri, 06 Nov 2026 05:59:53 +0000</pubDate>
     </item>
     <item>
-      <title>Deploy an Open Model from Checkpoint to Inference in Two Commands with NVIDIA TensorRT Model Connect</title>
-      <link>https://developer.nvidia.com/blog/deploy-an-open-model-from-checkpoint-to-inference-in-two-commands-with-nvidia-tensorrt-model-connect/</link>
-      <guid isPermaLink="false">a3f7ff5e21389316</guid>
-      <description>Open AI models are evolving faster than ever, but bringing them into native applications can still require model-specific conversion, preprocessing,...</description>
+      <title>How to Carry User Identity Across Federated Kubernetes and AI Platforms</title>
+      <link>https://developer.nvidia.com/blog/how-to-carry-user-identity-across-federated-kubernetes-and-ai-platforms/</link>
+      <guid isPermaLink="false">96735b4a162296d9</guid>
+      <description>Modern AI platforms are no longer a single application behind one login screen. A user may start in a central portal, open a governed dataset, launch a notebook...</description>
       <category>NVIDIA Technical Blog</category>
-      <pubDate>Fri, 06 Nov 2026 01:59:59 +0000</pubDate>
+      <pubDate>Fri, 06 Nov 2026 05:59:53 +0000</pubDate>
     </item>
     <item>
-      <title>Scale AV Perception Across Vehicle Platforms with NVIDIA Omniverse NuRec</title>
-      <link>https://developer.nvidia.com/blog/scale-av-perception-across-vehicle-platforms-with-nvidia-omniverse-nurec/</link>
-      <guid isPermaLink="false">11b3c8b71073a678</guid>
-      <description>A perception stack is shaped by the vehicle that carries it. Move the same software to a new carline—for example, from an SUV to a sedan or another vehicle...</description>
+      <title>Frontier Reasoning Reaches the Edge: How to Deploy and Optimize Models on NVIDIA Jetson</title>
+      <link>https://developer.nvidia.com/blog/frontier-reasoning-reaches-the-edge-how-to-deploy-and-optimize-models-on-nvidia-jetson/</link>
+      <guid isPermaLink="false">bb4eff084ce0c3ca</guid>
+      <description>Running reasoning and agentic AI at the edge has been harder than it needs to be. Until recently, models capable of multi-step reasoning were too large to run...</description>
       <category>NVIDIA Technical Blog</category>
-      <pubDate>Fri, 06 Nov 2026 01:59:59 +0000</pubDate>
+      <pubDate>Fri, 06 Nov 2026 05:59:53 +0000</pubDate>
     </item>
     <item>
-      <title>Run NVIDIA BioNeMo NIM Microservices for Protein Structure Prediction in Claude Science</title>
-      <link>https://developer.nvidia.com/blog/run-nvidia-bionemo-nim-microservices-for-protein-structure-prediction-in-claude-science/</link>
-      <guid isPermaLink="false">00db43f67924926f</guid>
-      <description>Agentic AI is changing how research is done. AI scientists can read papers, propose hypotheses, call models, and determine which experiments to prioritize next....</description>
+      <title>Building a Memory-Driven Agent with NVIDIA NemoClaw</title>
+      <link>https://developer.nvidia.com/blog/building-a-memory-driven-agent-with-nvidia-nemoclaw/</link>
+      <guid isPermaLink="false">aa717a2074d6c4eb</guid>
+      <description>Enterprise work spans messages, decisions, projects, and obligations that change over time. An AI agent that starts without this context must reconstruct it...</description>
       <category>NVIDIA Technical Blog</category>
-      <pubDate>Fri, 06 Nov 2026 01:59:59 +0000</pubDate>
+      <pubDate>Fri, 06 Nov 2026 05:59:53 +0000</pubDate>
     </item>
     <item>
-      <title>How to Size GPUs for AI Inference and TCO Without Overspending</title>
-      <link>https://developer.nvidia.com/blog/how-to-size-gpus-for-ai-inference-and-tco-without-overspending/</link>
-      <guid isPermaLink="false">20d2343d93ebf318</guid>
-      <description>The surge in AI adoption is transforming everything from chatbots to content generation. Still, a common pain point remains: How can organizations confidently...</description>
+      <title>Introducing CUDA Rust: Two Tracks for Writing GPU Kernels</title>
+      <link>https://developer.nvidia.com/blog/introducing-cuda-rust-two-tracks-for-writing-gpu-kernels/</link>
+      <guid isPermaLink="false">dbb60a81aa824bf3</guid>
+      <description>In September 2026, NVIDIA announced it is leaning into native GPU programming in Rust. CUDA C++ and CUDA Python are mature, enterprise-grade toolchains, and...</description>
       <category>NVIDIA Technical Blog</category>
-      <pubDate>Fri, 06 Nov 2026 01:59:59 +0000</pubDate>
+      <pubDate>Fri, 06 Nov 2026 05:59:53 +0000</pubDate>
     </item>
     <item>
-      <title>Building an Adaptive Agentic Cybersecurity System with NVIDIA Nemotron</title>
-      <link>https://developer.nvidia.com/blog/building-an-adaptive-agentic-cybersecurity-system-with-nvidia-nemotron/</link>
-      <guid isPermaLink="false">d090814422bb1d48</guid>
-      <description>AI is changing the pace of cybersecurity. Agentic systems can coordinate work and pursue complex objectives over long horizons. Security teams are beginning to...</description>
+      <title>CUDA Toolkit 13.4 Adds Windows on Arm Support and Greater Control over Shared GPUs</title>
+      <link>https://developer.nvidia.com/blog/cuda-toolkit-13-4-adds-windows-on-arm-support-and-greater-control-over-shared-gpus/</link>
+      <guid isPermaLink="false">7816c3b36083bf87</guid>
+      <description>Every NVIDIA CUDA Toolkit release adds functionality and performance improvements that help developers get more from NVIDIA GPUs and the broader NVIDIA software...</description>
       <category>NVIDIA Technical Blog</category>
-      <pubDate>Fri, 06 Nov 2026 01:59:59 +0000</pubDate>
+      <pubDate>Fri, 06 Nov 2026 05:59:53 +0000</pubDate>
     </item>
     <item>
-      <title>Co-Designing AI Models Using Speculative Decoding for Faster LLM Inference</title>
-      <link>https://developer.nvidia.com/blog/co-designing-ai-models-using-speculative-decoding-for-faster-llm-inference/</link>
-      <guid isPermaLink="false">616379459821cc21</guid>
-      <description>This post is the third in a series on AI model co-design. It explores how to accelerate LLM inference while maintaining accuracy using speculative decoding and...</description>
+      <title>When to Use Encode-Prefill-Decode Disaggregation to Accelerate Multimodal Model Serving</title>
+      <link>https://developer.nvidia.com/blog/when-to-use-encode-prefill-decode-disaggregation-to-accelerate-multimodal-model-serving/</link>
+      <guid isPermaLink="false">51e6e5a8d9bdaf12</guid>
+      <description>Encode-prefill-decode (EPD) disaggregation is an inference optimization technique for multimodal models that separates the vision encoder stage from the prefill...</description>
       <category>NVIDIA Technical Blog</category>
-      <pubDate>Fri, 06 Nov 2026 01:59:59 +0000</pubDate>
+      <pubDate>Fri, 06 Nov 2026 05:59:53 +0000</pubDate>
     </item>
     <item>
-      <title>The Modern CUDA Toolbox in Practice: A Step-by-Step Optimization Walkthrough</title>
-      <link>https://developer.nvidia.com/blog/the-modern-cuda-toolbox-in-practice-a-step-by-step-optimization-walkthrough/</link>
-      <guid isPermaLink="false">bdadb7b6c741274c</guid>
-      <description>NVIDIA CUDA remains the foundation of GPU-accelerated computing, powering everything from scientific simulations to large-scale AI training. But writing...</description>
+      <title>From Wafer-Out to First Token: Codifying Supply Chain Expertise with Nemotron and Palantir Foundry</title>
+      <link>https://developer.nvidia.com/blog/from-wafer-out-to-first-token-codifying-supply-chain-expertise-with-nemotron-and-palantir-foundry/</link>
+      <guid isPermaLink="false">d23b90bcfb6224ff</guid>
+      <description>NVIDIA has one of the largest and most complex supply chains in the world, and its performance is measured from wafer-out to first token. The interval is in two...</description>
       <category>NVIDIA Technical Blog</category>
-      <pubDate>Fri, 06 Nov 2026 01:59:59 +0000</pubDate>
+      <pubDate>Fri, 06 Nov 2026 05:59:53 +0000</pubDate>
     </item>
     <item>
-      <title>Accelerating Dropless MoE Training in JAX with NVIDIA Transformer Engine</title>
-      <link>https://developer.nvidia.com/blog/accelerating-dropless-moe-training-in-jax-with-nvidia-transformer-engine/</link>
-      <guid isPermaLink="false">833c207badafe5a0</guid>
-      <description>Mixture of experts (MoE) has become one of the defining architectural trends in large-scale AI model training. DeepSeek, Qwen, and Mixtral are examples of MoE...</description>
+      <title>High-Throughput Structure Prediction with BioNeMo Inference Runtime</title>
+      <link>https://developer.nvidia.com/blog/high-throughput-structure-prediction-with-bionemo-inference-runtime/</link>
+      <guid isPermaLink="false">bf13fbf2f14a0fa2</guid>
+      <description>Biomolecular structure prediction is now often run at proteome scale, where the goal is to move an entire worklist through the pipeline efficiently. NVIDIA...</description>
       <category>NVIDIA Technical Blog</category>
-      <pubDate>Fri, 06 Nov 2026 01:59:59 +0000</pubDate>
+      <pubDate>Fri, 06 Nov 2026 05:59:53 +0000</pubDate>
     </item>
     <item>
-      <title>Scaling Federated Learning Across Docker, Kubernetes, and Slurm with NVIDIA FLARE</title>
-      <link>https://developer.nvidia.com/blog/scaling-federated-learning-across-docker-kubernetes-and-slurm-with-nvidia-flare/</link>
-      <guid isPermaLink="false">c2ceacd67091fd6a</guid>
-      <description>Federated learning (FL) projects often begin with a straightforward setup: one server, a few clients, and one dataset at each site. As those projects grow, the...</description>
+      <title>How Full-Stack NIM Optimizations Deliver 2.5x More Users on Nemotron 3 Ultra</title>
+      <link>https://developer.nvidia.com/blog/how-full-stack-nim-optimizations-deliver-2-5x-more-users-on-nemotron-3-ultra/</link>
+      <guid isPermaLink="false">2abc4ceb82a011e6</guid>
+      <description>Deploying a large language model is only the first step toward production-ready serving. Production teams also need to serve as many concurrent users as...</description>
       <category>NVIDIA Technical Blog</category>
-      <pubDate>Fri, 06 Nov 2026 01:59:59 +0000</pubDate>
+      <pubDate>Fri, 06 Nov 2026 05:59:53 +0000</pubDate>
     </item>
     <item>
-      <title>The October inflection point for vibe game development</title>
-      <link>https://simonwillison.net/2026/Oct/28/vibe-game-development/</link>
-      <guid isPermaLink="false">93b9dc1d31289278</guid>
-      <description>I've written before about how November 2025 was an inflection point for coding agents - the point where Opus 4.5 and GPT-5.1 crossed a tipping point that meant their respective coding agents became reliable daily drivers for software engineers. I think we've reached a new inflect</description>
+      <title>Introducing Kimi K3.1 Pro</title>
+      <link>https://simonwillison.net/2026/Oct/23/kimi-k31-pro/</link>
+      <guid isPermaLink="false">2e71264ea893e482</guid>
+      <description>Introducing Kimi K3.1 Pro Kimi K3.1 Pro landed on the Kimi API today - it's not yet open weights, but Moonshot promise "Full model weights will be released by Nov 4, 2026". They're also offering a "Highspeed" version that's 2-3x faster, at twice the price (except for input token </description>
       <category>Simon Willison</category>
-      <pubDate>Fri, 06 Nov 2026 01:59:53 +0000</pubDate>
+      <pubDate>Fri, 06 Nov 2026 05:59:47 +0000</pubDate>
     </item>
     <item>
-      <title>GitHub Octoverse 2026</title>
-      <link>https://simonwillison.net/2026/Oct/28/github-octoverse-2026/</link>
-      <guid isPermaLink="false">d8f853e661d65a1d</guid>
-      <description>GitHub Octoverse 2026 I'm at GitHub Universe today (GitHub gave me a free ticket through their "GitHub Stars" program). EVP Jay Parikh just announced this year's Octoverse report, and highlighted these numbers in particular: This is a pretty stark representation of the impact of </description>
+      <title>Quick Study</title>
+      <link>https://simonwillison.net/2026/Oct/23/quick-study-painter/</link>
+      <guid isPermaLink="false">ece6c921b830e7e3</guid>
+      <description>Tool: Quick Study Prompt to Claude Opus 5.5 High : Build an artifact where you open a photo and it rapidly (in a few seconds) paints a version of that photo using a canvas element and simulated paintbrush See also my previous experiment getting Claude Fable to simulate a watercol</description>
       <category>Simon Willison</category>
-      <pubDate>Fri, 06 Nov 2026 01:59:53 +0000</pubDate>
+      <pubDate>Fri, 06 Nov 2026 05:59:47 +0000</pubDate>
     </item>
     <item>
-      <title>Quoting Ted Sanders</title>
-      <link>https://simonwillison.net/2026/Oct/28/ted-sanders/</link>
-      <guid isPermaLink="false">b0fbfced4c005ad4</guid>
-      <description>In general, LLM performance is incredibly multidimensional. There's no guarantee of a fixed ordering where the model that is best at math is also the model that's best at jokes. Despite that complexity, much of the variation in performance is explained by just a single variable: </description>
+      <title>battledrones v14: Compass Rose, a four player map</title>
+      <link>https://simonwillison.net/2026/Oct/24/battledrones/</link>
+      <guid isPermaLink="false">3812b4d599bb7adb</guid>
+      <description>Release: battledrones v14: Compass Rose, a four player map I added four player online mode to Battledrones - previous maps were limited to two. Here's the initial prompt I used: Add a new map for a four player battle - four way rotational symmetry, up to four AI players, works wi</description>
       <category>Simon Willison</category>
-      <pubDate>Fri, 06 Nov 2026 01:59:53 +0000</pubDate>
+      <pubDate>Fri, 06 Nov 2026 05:59:47 +0000</pubDate>
     </item>
     <item>
-      <title>Quoting Ben Hylak</title>
-      <link>https://simonwillison.net/2026/Oct/29/ben-hylak/</link>
-      <guid isPermaLink="false">18c36f7241d29e16</guid>
-      <description>every product i use should just be a headless mcp, that feeds into an agent, where i never have to think about anything underneath. except for our product, of course. in our product, customers love the ui and love us very much. we're special that way. &amp;mdash; Ben Hylak Tags: mode</description>
+      <title>Seam Cutter</title>
+      <link>https://simonwillison.net/2026/Oct/25/seam-cutter/</link>
+      <guid isPermaLink="false">0c0ce1d91251a58f</guid>
+      <description>Tool: Seam Cutter I built this weird and very specific cropping tool - it lets you create a horizontal or vertical cut across an image, then slide the two sides relative to each other. Effectively it lets you crop out a section in the middle of an image. I wanted this because I o</description>
       <category>Simon Willison</category>
-      <pubDate>Fri, 06 Nov 2026 01:59:53 +0000</pubDate>
+      <pubDate>Fri, 06 Nov 2026 05:59:47 +0000</pubDate>
     </item>
     <item>
-      <title>Building a multiplayer game world with autonomous Fable-class models</title>
-      <link>https://simonwillison.net/2026/Oct/29/how-i-built-the-most-ai-pilled-company-in-the-world/</link>
-      <guid isPermaLink="false">672400a4a73efc0d</guid>
-      <description>How I Built the Most AI-Pilled Company in the World Don't be put off by the clickbait headline, this piece by Jacob Sansbury describing how they are building Spawn is a fascinating exploration of the bleeding edge of what's possible with agentic engineering against frontier model</description>
+      <title>webframe: evaluated as a scraper and a sandbox</title>
+      <link>https://simonwillison.net/2026/Oct/26/webframe-evaluation/</link>
+      <guid isPermaLink="false">d4fc15392e5cfcdd</guid>
+      <description>Research: webframe: evaluated as a scraper and a sandbox webframe is a neat little project from Jeff Lindsay which lets you "run a web page like a program" - you point it at a URL or file and it executes it in a hidden headless web view and outputs console.log() to standard outpu</description>
       <category>Simon Willison</category>
-      <pubDate>Fri, 06 Nov 2026 01:59:53 +0000</pubDate>
+      <pubDate>Fri, 06 Nov 2026 05:59:47 +0000</pubDate>
     </item>
     <item>
-      <title>API credits benefit for eligible ChatGPT subscriptions</title>
-      <link>https://simonwillison.net/2026/Oct/29/api-credits/</link>
-      <guid isPermaLink="false">07b8277675a3d49f</guid>
-      <description>API credits benefit for eligible ChatGPT subscriptions Earlier this month Anthropic announced a generous new benefit for their Max and Team subscriptions: $100, $200, and $500 per month subscribers would get the equivalent quantity of (expiring) credits to use with the Anthropic </description>
+      <title>Quoting Jason Koebler</title>
+      <link>https://simonwillison.net/2026/Oct/26/jason-koebler/</link>
+      <guid isPermaLink="false">34adadfb171aaca1</guid>
+      <description>Because big tech platforms essentially do not have customer support and make it impossible for their users to contact a human, many people experiencing run-of-the-mill tech problems have turned to ChatGPT. And, increasingly, ChatGPT is telling people that have normal tech support</description>
       <category>Simon Willison</category>
-      <pubDate>Fri, 06 Nov 2026 01:59:53 +0000</pubDate>
+      <pubDate>Fri, 06 Nov 2026 05:59:47 +0000</pubDate>
     </item>
     <item>
-      <title>dbreunig/nesformer</title>
-      <link>https://simonwillison.net/2026/Oct/30/nesformer/</link>
-      <guid isPermaLink="false">1649c5dd07045357</guid>
-      <description>dbreunig/nesformer Inspired by qwenputer by Divyansh Agrawal, Drew Breunig baked a working emulator for a Nintendo Entertainment System 6502 CPU into the weights of Qwen3.5-4B. You can now play NES ROMs such as Super Mario Bros (very slowly) running inside Qwen! In a comment on H</description>
+      <title>GPT-6.1 Terra</title>
+      <link>https://simonwillison.net/2026/Oct/26/gpt-61-terra/</link>
+      <guid isPermaLink="false">51b6dc021077f16c</guid>
+      <description>GPT-6.1 Terra It's always interesting to note which aspects of a new model are emphasized in the release announcement. In the case of GPT-6.1 Terra, OpenAI went with visual reasoning and computer use: We’re introducing GPT-6.1 Terra , a fast, efficient model that combines detaile</description>
       <category>Simon Willison</category>
-      <pubDate>Fri, 06 Nov 2026 01:59:53 +0000</pubDate>
+      <pubDate>Fri, 06 Nov 2026 05:59:47 +0000</pubDate>
     </item>
     <item>
-      <title>datasette-llm 0.1a9</title>
-      <link>https://simonwillison.net/2026/Oct/31/datasette-llm/</link>
-      <guid isPermaLink="false">bc9463905bbd6e7a</guid>
-      <description>Release: datasette-llm 0.1a9 I have some big upgrades to Datasette Agent in the pipeline, but in the meantime here's a tiny user experience improvement to the underlying datasette-llm plugin. It now picks up the default model used by LLM , which means you can start using Datasett</description>
+      <title>Game Boy Color on My Conference Badge</title>
+      <link>https://simonwillison.net/2026/Oct/27/game-boy-color-on-my-conference-badge/</link>
+      <guid isPermaLink="false">a9c65cb8282253c6</guid>
+      <description>Game Boy Color on My Conference Badge I'm at GitHub Universe this week and, similar to last year , the conference badge is a full-blown color screen computer. I've been hacking around with it again, and then I ran into with Steve Francia... who worked with Gemini to get a full NE</description>
       <category>Simon Willison</category>
-      <pubDate>Fri, 06 Nov 2026 01:59:53 +0000</pubDate>
+      <pubDate>Fri, 06 Nov 2026 05:59:47 +0000</pubDate>
     </item>
     <item>
-      <title>How We Took Over ChatGPT Accounts</title>
-      <link>https://simonwillison.net/2026/Oct/31/how-we-took-over-chatgpt-accounts/</link>
-      <guid isPermaLink="false">0def4a2fca6b3a20</guid>
-      <description>How We Took Over ChatGPT Accounts Parameter Labs describe an exploit they found against ChatGPT's implementation of the artifacts pattern (OpenAI used to call this "Canvas" but it looks like the latest revision is called HTML previews ), where interactive custom HTML apps are dis</description>
+      <title>Quoting Terk Terkowitz</title>
+      <link>https://simonwillison.net/2026/Oct/28/terk-terkowitz/</link>
+      <guid isPermaLink="false">5d9615019ec259be</guid>
+      <description>If your work does not benefit from current AI tooling, that is a finding, not a failing. Document why, share it with your community of peers, bring it to your manager, and work to find solutions. An engineer who can explain where AI does not yet help their work is demonstrating t</description>
       <category>Simon Willison</category>
-      <pubDate>Fri, 06 Nov 2026 01:59:53 +0000</pubDate>
+      <pubDate>Fri, 06 Nov 2026 05:59:47 +0000</pubDate>
     </item>
     <item>
-      <title>Quoting Kyle Kingsbury</title>
-      <link>https://simonwillison.net/2026/Nov/1/kyle-kingsbury/</link>
-      <guid isPermaLink="false">835fd1406315e6b3</guid>
-      <description>More broadly, the use of LLMs erodes trust in documentation, in software, and in the organizations which produce them. Perhaps engineers will begin to treat any new software project with suspicion—the signals we used to rely on as markers of a mature system are now easier to coun</description>
+      <title>If in doubt, delete the uv.lock file</title>
+      <link>https://simonwillison.net/2026/Nov/1/delete-uv-lock-first/</link>
+      <guid isPermaLink="false">ffb30fef9594cc91</guid>
+      <description>I've been getting the occasional confusing Python dependency error since switching over to Python 3.15 and the rule I'm having to remember is: If in doubt, delete the uv.lock file Most of my projects are libraries which don't include a uv.lock file, since it's rude for a library </description>
       <category>Simon Willison</category>
-      <pubDate>Fri, 06 Nov 2026 01:59:53 +0000</pubDate>
+      <pubDate>Fri, 06 Nov 2026 05:59:47 +0000</pubDate>
+    </item>
+    <item>
+      <title>IQM and Volkswagen Advance Quantum-Classical AFQMC to Simulate Next-Generation Battery Chemistry</title>
+      <link>https://quantumcomputingreport.com/iqm-and-volkswagen-advance-quantum-classical-afqmc-to-simulate-next-generation-battery-chemistry/</link>
+      <guid isPermaLink="false">bb5184cc59855064</guid>
+      <description>IQM Quantum Computers and Volkswagen Group Innovation have significantly advanced Quantum-Classical Auxiliary-Field Quantum Monte Carlo (QC-AFQMC) for simulating battery chemistry. They achieved up to a 124x reduction in classical execution time for a 50-orbital benchmark, valida</description>
+      <category>Quantum Computing Report</category>
+      <pubDate>Fri, 06 Nov 2026 02:46:43 +0000</pubDate>
     </item>
     <item>
       <title>Quantinuum Unveils Nexus Roadmap to Automate Fault-Tolerant Application Deployment Through 2029</title>
@@ -284,6 +292,14 @@
       <description>Yonsei University in South Korea has become the first international institution to install IBM's Quantum Nighthawk r2 processor, replacing the older IBM Eagle processor. This upgrade significantly enhances the quantum computing capabilities at the university's Quantum Computing C</description>
       <category>Quantum Computing Report</category>
       <pubDate>Fri, 06 Nov 2026 00:31:11 +0000</pubDate>
+    </item>
+    <item>
+      <title>Threat actors use agentic AI tooling to find and abuse exposed secrets</title>
+      <link>https://www.microsoft.com/en-us/security/blog/2026/11/05/threat-actors-use-agentic-ai-tooling-to-find-and-abuse-exposed-secrets/</link>
+      <guid isPermaLink="false">e2845eccbac1628b</guid>
+      <description>Microsoft Threat Intelligence has observed threat actors using the agentic offensive security framework ARTEX to search GitHub for OAuth application secrets, which can be used to compromise the associated OAuth application and perform authenticated actions in the application’s te</description>
+      <category>Microsoft Security Blog</category>
+      <pubDate>Thu, 05 Nov 2026 23:46:50 +0000</pubDate>
     </item>
     <item>
       <title>[Launched] Generally Available: Azure Front Door TLS key exchange policy with post-quantum support</title>
@@ -468,22 +484,6 @@
       <description></description>
       <category>Google DeepMind</category>
       <pubDate>Thu, 05 Nov 2026 17:05:16 +0000</pubDate>
-    </item>
-    <item>
-      <title>MTSU Hosts Interstate Hackathon to Expand Quantum Computing Education</title>
-      <link>https://thequantuminsider.com/2026/11/05/mtsu-multistate-quantum-computing-hackathon-beginners/</link>
-      <guid isPermaLink="false">ea9570bc6e9542f8</guid>
-      <description>Insider Brief PRESS RELEASE &amp;#8212; The Interstate Quantum Hackathon for Beginners was led by MTSU’s Quantum Research, Interdisciplinary Science and Education (QRISE) Center in collaboration with universities across Tennessee, Indiana, Missouri, Florida and Alabama. The three-day</description>
-      <category>The Quantum Insider</category>
-      <pubDate>Thu, 05 Nov 2026 17:04:38 +0000</pubDate>
-    </item>
-    <item>
-      <title>AI failures threaten incident management: Here are 4 ways to avoid them.</title>
-      <link>https://thenewstack.io/ai-failures-incident-management/</link>
-      <guid isPermaLink="false">f54bae1439de4859</guid>
-      <description>AI is becoming woven into the fabric of digital operations and incident management. On the one hand, AI can detect, The post AI failures threaten incident management: Here are 4 ways to avoid them. appeared first on The New Stack .</description>
-      <category>The New Stack</category>
-      <pubDate>Thu, 05 Nov 2026 17:00:00 +0000</pubDate>
     </item>
   </channel>
 </rss>
