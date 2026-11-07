@@ -4,8 +4,26 @@
     <title>Signal Brief · Quantum</title>
     <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/</link>
     <description>Signal Brief: the day in technology, in The Signal's own words. Every item is written from linked official sources and fact checked before publication.</description>
-    <lastBuildDate>Fri, 06 Nov 2026 05:49:11 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 07 Nov 2026 01:58:24 +0000</lastBuildDate>
     <atom:link xmlns:atom="http://www.w3.org/2005/Atom" href="https://thillairaj.github.io/The-Signal-AI-Quantum/signal/quantum.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>AI assisted proof settles a 2008 question about quantum speedups</title>
+      <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/2026-11-07/04/</link>
+      <guid isPermaLink="false">brief-2026-11-07-04</guid>
+      <pubDate>Sat, 07 Nov 2026 01:30:00 +0000</pubDate>
+      <category>Quantum</category>
+      <description>A proof by David Turturean of Physical Superintelligence has settled the Aaronson-Ambainis conjecture, open since 2008, which asks when quantum computers can gain dramatic advantages over classical machines. The proof shows that for yes or no questions on most randomly generated inputs, a classical algorithm can estimate a quantum algorithm’s answer without needing vastly more reads of the input, so large speedups need structure in the problem. The proof was found by an AI research system using a non public Anthropic model on the third day of a run, then checked in the Lean proof assistant and reviewed by researchers. Why it matters for tech: It draws a clearer line around where quantum advantage can come from, pointing algorithm research toward problems with structure worth exploiting.</description>
+      <content:encoded><![CDATA[<p>A proof by David Turturean of Physical Superintelligence has settled the Aaronson-Ambainis conjecture, open since 2008, which asks when quantum computers can gain dramatic advantages over classical machines. The proof shows that for yes or no questions on most randomly generated inputs, a classical algorithm can estimate a quantum algorithm’s answer without needing vastly more reads of the input, so large speedups need structure in the problem. The proof was found by an AI research system using a non public Anthropic model on the third day of a run, then checked in the Lean proof assistant and reviewed by researchers.</p><p><strong>Why it matters for tech:</strong> It draws a clearer line around where quantum advantage can come from, pointing algorithm research toward problems with structure worth exploiting.</p><p>Source: </p><ul><li><a href="https://thequantuminsider.com/2026/11/06/ai-assisted-proof-settles-longstanding-question-about-quantum-speedups/">The Quantum Insider</a></li></ul>]]></content:encoded>
+    </item>
+    <item>
+      <title>UK announces fresh funding to speed up quantum commercialisation</title>
+      <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/2026-11-07/05/</link>
+      <guid isPermaLink="false">brief-2026-11-07-05</guid>
+      <pubDate>Sat, 07 Nov 2026 01:30:00 +0000</pubDate>
+      <category>Quantum</category>
+      <description>The UK government and UK Research and Innovation have announced new funding to speed up quantum commercialisation, including £138 million for quantum sensing procurement across government, £12 million for a national commercialisation skills centre and £35 million for quantum networking testbeds. The skills centre will be run by the UK Quantum SuperConnector, a partnership led by Imperial College London with Bristol, Cambridge, Glasgow and Oxford. A UKRI review of £300 million invested between 2014 and 2024 found it helped create more than 2,000 skilled jobs, supported 74 spinout companies and attracted £482 million in private investment. Why it matters for tech: Public money is now aimed at turning research into products and jobs, and the UK is measuring a decade of funding by the companies and skills it produced.</description>
+      <content:encoded><![CDATA[<p>The UK government and UK Research and Innovation have announced new funding to speed up quantum commercialisation, including £138 million for quantum sensing procurement across government, £12 million for a national commercialisation skills centre and £35 million for quantum networking testbeds. The skills centre will be run by the UK Quantum SuperConnector, a partnership led by Imperial College London with Bristol, Cambridge, Glasgow and Oxford. A UKRI review of £300 million invested between 2014 and 2024 found it helped create more than 2,000 skilled jobs, supported 74 spinout companies and attracted £482 million in private investment.</p><p><strong>Why it matters for tech:</strong> Public money is now aimed at turning research into products and jobs, and the UK is measuring a decade of funding by the companies and skills it produced.</p><p>Source: </p><ul><li><a href="https://thequantuminsider.com/2026/11/06/uk-announces-new-funding-to-support-quantum-technology-commercialisation/">The Quantum Insider</a></li><li><a href="https://www.ukri.org/news/how-the-uk-built-a-quantum-technology-nation/">UKRI</a></li></ul>]]></content:encoded>
+    </item>
     <item>
       <title>Quantinuum maps its Nexus platform toward a fault tolerant computer in 2029</title>
       <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/2026-11-06/04/</link>

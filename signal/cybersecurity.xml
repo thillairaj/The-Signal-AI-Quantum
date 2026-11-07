@@ -4,8 +4,26 @@
     <title>Signal Brief · Cybersecurity</title>
     <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/</link>
     <description>Signal Brief: the day in technology, in The Signal's own words. Every item is written from linked official sources and fact checked before publication.</description>
-    <lastBuildDate>Fri, 06 Nov 2026 05:49:11 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 07 Nov 2026 01:58:24 +0000</lastBuildDate>
     <atom:link xmlns:atom="http://www.w3.org/2005/Atom" href="https://thillairaj.github.io/The-Signal-AI-Quantum/signal/cybersecurity.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>Chainalysis breach exposed credentials for all customers</title>
+      <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/2026-11-07/08/</link>
+      <guid isPermaLink="false">brief-2026-11-07-08</guid>
+      <pubDate>Sat, 07 Nov 2026 01:30:00 +0000</pubDate>
+      <category>Cybersecurity</category>
+      <description>Blockchain intelligence firm Chainalysis says an attack on its systems exposed usernames, password hashes and live tokens for all of its customers. The company, whose customers include law enforcement, government agencies and financial institutions, has taken its login portal and several products offline, including Reactor and its transaction screening tools. It says it has found no evidence that investigation data was accessed, and all users will have to reset passwords and rotate API keys before regaining access. Why it matters for tech: A breach at a firm that traces crypto crime puts its own customers’ access at risk, and the shutdown shows how much trust the service carries.</description>
+      <content:encoded><![CDATA[<p>Blockchain intelligence firm Chainalysis says an attack on its systems exposed usernames, password hashes and live tokens for all of its customers. The company, whose customers include law enforcement, government agencies and financial institutions, has taken its login portal and several products offline, including Reactor and its transaction screening tools. It says it has found no evidence that investigation data was accessed, and all users will have to reset passwords and rotate API keys before regaining access.</p><p><strong>Why it matters for tech:</strong> A breach at a firm that traces crypto crime puts its own customers’ access at risk, and the shutdown shows how much trust the service carries.</p><p>Source: </p><ul><li><a href="https://www.bleepingcomputer.com/news/security/chainalysis-says-breach-exposed-credentials-for-all-customers/">BleepingComputer</a></li></ul>]]></content:encoded>
+    </item>
+    <item>
+      <title>QNAP warns hackers are breaching NAS devices through Plex</title>
+      <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/2026-11-07/09/</link>
+      <guid isPermaLink="false">brief-2026-11-07-09</guid>
+      <pubDate>Sat, 07 Nov 2026 01:30:00 +0000</pubDate>
+      <category>Cybersecurity</category>
+      <description>QNAP says hackers are exploiting the Plex2Shell chain of four flaws in Plex Media Server to compromise its network attached storage devices, and it has received multiple reports of suspected breaches. The company urges users to update Plex Media Server to version 1.43.3.10861 through the QNAP App Center, noting that its own operating systems are not affected. Users with an exposed Plex server should treat their device and stored content as compromised, check for signs of intrusion and reinstall the operating system rather than only updating. Why it matters for tech: A media app flaw is reaching into home and small business storage, and updating alone will not clear an attack that has already landed.</description>
+      <content:encoded><![CDATA[<p>QNAP says hackers are exploiting the Plex2Shell chain of four flaws in Plex Media Server to compromise its network attached storage devices, and it has received multiple reports of suspected breaches. The company urges users to update Plex Media Server to version 1.43.3.10861 through the QNAP App Center, noting that its own operating systems are not affected. Users with an exposed Plex server should treat their device and stored content as compromised, check for signs of intrusion and reinstall the operating system rather than only updating.</p><p><strong>Why it matters for tech:</strong> A media app flaw is reaching into home and small business storage, and updating alone will not clear an attack that has already landed.</p><p>Source: </p><ul><li><a href="https://www.bleepingcomputer.com/news/security/qnap-says-hackers-breaching-nas-devices-in-plex2shell-attacks/">BleepingComputer</a></li></ul>]]></content:encoded>
+    </item>
     <item>
       <title>OpenSSH ships emergency fix for a flaw that let long passwords bypass login on Alpine Linux</title>
       <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/2026-11-06/08/</link>

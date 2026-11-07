@@ -717,6 +717,195 @@
      "why": "Data centre deals have drawn scrutiny over secrecy and local costs, and OpenAI is putting its community terms in writing rather than leaving them to negotiation."
     }
    ]
+  },
+  {
+   "date": "2026-11-07",
+   "items": [
+    {
+     "id": "brief-2026-11-07-01",
+     "category": "AI",
+     "company": "Perplexity",
+     "headline": "Perplexity launches always on work agents called Teammates",
+     "summary": "Perplexity has launched Teammates, always on AI agents built for work that can take on different roles in a workspace at the same time. Each Teammate works from its own thread in the Perplexity app and can draw on existing projects, skills and memory, and users can talk to them in Slack. Access is limited to the $200 a month Max plan, and chief executive Aravind Srinivas said on X that he sees organisations eventually having hundreds of Teammates working for each person.",
+     "why": "Work agents are moving from single chatbots to teams of agents with their own roles, and Perplexity is charging a premium for the shift.",
+     "source_date": "2026-11-06",
+     "sources": [
+      {
+       "label": "The Verge",
+       "url": "https://www.theverge.com/ai-artificial-intelligence/1028302/perplexity-teammates-ai-agents-work"
+      }
+     ]
+    },
+    {
+     "id": "brief-2026-11-07-02",
+     "category": "AI",
+     "company": "Meta",
+     "headline": "Meta Muse can now build custom spaces from a description",
+     "summary": "Meta has added spaces to its Muse assistant, letting users describe an app such as a shopping hub, a school dashboard or a trivia game and have Muse build it. Connected apps such as Gmail, Google Calendar, OpenTable and Notion let Muse keep the details in a space current in the background, and users can tick items off, add notes and place spaces in the sidebar or on a schedule. Meta also said Active Memory and Active Focus, capabilities from its Muse Wonder model, are coming to the Muse app and the Meta AI chatbot.",
+     "why": "Assistants are turning into personalised workspaces that stay current on their own, which raises the bar for what a chatbot is expected to do.",
+     "source_date": "2026-11-06",
+     "sources": [
+      {
+       "label": "The Verge",
+       "url": "https://www.theverge.com/tech/1028871/meta-muse-ai-spaces"
+      }
+     ]
+    },
+    {
+     "id": "brief-2026-11-07-03",
+     "category": "AI",
+     "company": "Cognition",
+     "headline": "Cognition ships a cheaper coding model but keeps its weights private",
+     "summary": "Cognition has released SWE-2 Flash, a coding model it says costs a fifth as much as its larger SWE-2 model and generates tokens about three times faster. Flash is built on Thinking Machines Lab’s open weight Inkling Small model, yet Cognition is keeping its own weights private, citing cybersecurity concerns. On Cognition’s own figures, Flash scored 20% on Terminal Bench 4.0 against 0.9% for the base model, and 89.9% on SWE Bench Pro v2 Hard, close to SWE-2’s 90.6%.",
+     "why": "A model built on an open base with closed weights tests how far openness extends in practice, and whether cheaper coding models can match their larger siblings.",
+     "source_date": "2026-11-06",
+     "sources": [
+      {
+       "label": "The New Stack",
+       "url": "https://thenewstack.io/cognition-flash-private-weights/"
+      }
+     ]
+    },
+    {
+     "id": "brief-2026-11-07-04",
+     "category": "Quantum",
+     "company": "PSI",
+     "headline": "AI assisted proof settles a 2008 question about quantum speedups",
+     "summary": "A proof by David Turturean of Physical Superintelligence has settled the Aaronson-Ambainis conjecture, open since 2008, which asks when quantum computers can gain dramatic advantages over classical machines. The proof shows that for yes or no questions on most randomly generated inputs, a classical algorithm can estimate a quantum algorithm’s answer without needing vastly more reads of the input, so large speedups need structure in the problem. The proof was found by an AI research system using a non public Anthropic model on the third day of a run, then checked in the Lean proof assistant and reviewed by researchers.",
+     "why": "It draws a clearer line around where quantum advantage can come from, pointing algorithm research toward problems with structure worth exploiting.",
+     "source_date": "2026-11-06",
+     "sources": [
+      {
+       "label": "The Quantum Insider",
+       "url": "https://thequantuminsider.com/2026/11/06/ai-assisted-proof-settles-longstanding-question-about-quantum-speedups/"
+      }
+     ]
+    },
+    {
+     "id": "brief-2026-11-07-05",
+     "category": "Quantum",
+     "company": "UK Government",
+     "headline": "UK announces fresh funding to speed up quantum commercialisation",
+     "summary": "The UK government and UK Research and Innovation have announced new funding to speed up quantum commercialisation, including £138 million for quantum sensing procurement across government, £12 million for a national commercialisation skills centre and £35 million for quantum networking testbeds. The skills centre will be run by the UK Quantum SuperConnector, a partnership led by Imperial College London with Bristol, Cambridge, Glasgow and Oxford. A UKRI review of £300 million invested between 2014 and 2024 found it helped create more than 2,000 skilled jobs, supported 74 spinout companies and attracted £482 million in private investment.",
+     "why": "Public money is now aimed at turning research into products and jobs, and the UK is measuring a decade of funding by the companies and skills it produced.",
+     "source_date": "2026-11-06",
+     "sources": [
+      {
+       "label": "The Quantum Insider",
+       "url": "https://thequantuminsider.com/2026/11/06/uk-announces-new-funding-to-support-quantum-technology-commercialisation/"
+      },
+      {
+       "label": "UKRI",
+       "url": "https://www.ukri.org/news/how-the-uk-built-a-quantum-technology-nation/"
+      }
+     ]
+    },
+    {
+     "id": "brief-2026-11-07-06",
+     "category": "Cloud & DevOps",
+     "company": "Google",
+     "headline": "Google hands gVisor and its agent stack to the CNCF",
+     "summary": "Google is donating gVisor, Agent Substrate and OpenRL to the Cloud Native Computing Foundation, putting its AI agent infrastructure under neutral governance. gVisor, open sourced by Google in 2018, runs a lightweight kernel in user space to intercept system calls, adding isolation between containers and the host system, and is used by Anthropic and OpenAI to run untrusted code. Agent Substrate 1.0, now generally available on Google Kubernetes Engine, lets agents pause when idle and resume without rebuilding their runtime, while OpenRL coordinates reinforcement learning training on a user’s own Kubernetes setup.",
+     "why": "Sandboxing is becoming core infrastructure for agents that run untrusted code, and neutral ownership is Google’s bid to make its stack the default.",
+     "source_date": "2026-11-06",
+     "sources": [
+      {
+       "label": "The New Stack",
+       "url": "https://thenewstack.io/gvisor-cncf-kubernetes-open-source/"
+      }
+     ]
+    },
+    {
+     "id": "brief-2026-11-07-07",
+     "category": "Cloud & DevOps",
+     "company": "Cursor",
+     "headline": "Cursor will now publish AI built apps to a live URL",
+     "summary": "Cursor has added fully managed deployment, letting its cloud agents take an AI generated app from a description to a live, shareable web address without the user setting up infrastructure. Cursor handles hosting, database provisioning and sign in, runs security checks for exposed credentials and secrets before publishing, and builds on Vercel for Platforms. The feature is available on all paid Cursor plans with cloud agents enabled, and targets internal business apps as well as personal projects.",
+     "why": "Coding tools are closing the gap between generating an app and shipping it, which makes deployment skill less of a gate for new builders.",
+     "source_date": "2026-11-06",
+     "sources": [
+      {
+       "label": "The New Stack",
+       "url": "https://thenewstack.io/cursor-ai-app-deployment/"
+      }
+     ]
+    },
+    {
+     "id": "brief-2026-11-07-08",
+     "category": "Cybersecurity",
+     "company": "Chainalysis",
+     "headline": "Chainalysis breach exposed credentials for all customers",
+     "summary": "Blockchain intelligence firm Chainalysis says an attack on its systems exposed usernames, password hashes and live tokens for all of its customers. The company, whose customers include law enforcement, government agencies and financial institutions, has taken its login portal and several products offline, including Reactor and its transaction screening tools. It says it has found no evidence that investigation data was accessed, and all users will have to reset passwords and rotate API keys before regaining access.",
+     "why": "A breach at a firm that traces crypto crime puts its own customers’ access at risk, and the shutdown shows how much trust the service carries.",
+     "source_date": "2026-11-06",
+     "sources": [
+      {
+       "label": "BleepingComputer",
+       "url": "https://www.bleepingcomputer.com/news/security/chainalysis-says-breach-exposed-credentials-for-all-customers/"
+      }
+     ]
+    },
+    {
+     "id": "brief-2026-11-07-09",
+     "category": "Cybersecurity",
+     "company": "QNAP",
+     "headline": "QNAP warns hackers are breaching NAS devices through Plex",
+     "summary": "QNAP says hackers are exploiting the Plex2Shell chain of four flaws in Plex Media Server to compromise its network attached storage devices, and it has received multiple reports of suspected breaches. The company urges users to update Plex Media Server to version 1.43.3.10861 through the QNAP App Center, noting that its own operating systems are not affected. Users with an exposed Plex server should treat their device and stored content as compromised, check for signs of intrusion and reinstall the operating system rather than only updating.",
+     "why": "A media app flaw is reaching into home and small business storage, and updating alone will not clear an attack that has already landed.",
+     "source_date": "2026-11-06",
+     "sources": [
+      {
+       "label": "BleepingComputer",
+       "url": "https://www.bleepingcomputer.com/news/security/qnap-says-hackers-breaching-nas-devices-in-plex2shell-attacks/"
+      }
+     ]
+    },
+    {
+     "id": "brief-2026-11-07-10",
+     "category": "Industry",
+     "company": "IQM",
+     "headline": "IQM revenue up 51 percent as backlog passes €100 million",
+     "summary": "IQM Quantum Computers reported third quarter revenue of €8.86 million, up 50.7 percent on a year earlier, and an order backlog of €102.5 million after booking €42.2 million in new orders during the quarter. The Finnish company reaffirmed full year revenue guidance of €42 million to €47 million and closed its largest contract to date, a €33 million deal with the LUMI AI Factory. It also sold its first system in South America and a second system in Japan.",
+     "why": "Order books are growing faster than revenue for a quantum hardware maker, which is the clearest signal yet that buyers are committing real money.",
+     "source_date": "2026-11-06",
+     "sources": [
+      {
+       "label": "Quantum Computing Report",
+       "url": "https://quantumcomputingreport.com/iqm-quantum-computers-reports-q3-2026-results-backlog-expands-to-e102-5m-q3-revenue-up-51-and-fy-2026-guidance-reaffirmed/"
+      }
+     ]
+    },
+    {
+     "id": "brief-2026-11-07-11",
+     "category": "Industry",
+     "company": "Microsoft",
+     "headline": "Protesters enter Microsoft data centre site in Amsterdam",
+     "summary": "About 100 protesters entered the construction site of a Microsoft data centre in Amsterdam, according to Reuters, in a protest against three 85 metre towers planned for the outskirts of the city. Amsterdam has banned new data centres until 2030, but the project dates to 2016 and proceeds as planned, with Microsoft as sole tenant. It is the latest in a week of actions against data centre building, after voters in the United States rejected data centre development in local ballots earlier in the week.",
+     "why": "Data centre building is meeting organised local resistance in Europe as well as the US, and older approvals are letting projects proceed despite new bans.",
+     "source_date": "2026-11-06",
+     "sources": [
+      {
+       "label": "The Verge",
+       "url": "https://www.theverge.com/news/1028549/protesters-microsoft-data-center-site-amsterdam"
+      }
+     ]
+    },
+    {
+     "id": "brief-2026-11-07-12",
+     "category": "Policy",
+     "company": "United States",
+     "headline": "US midterm results put data centre building under pressure",
+     "summary": "Democrats won control of both houses of Congress in the United States midterm elections on Tuesday, a result that carries direct consequences for data centre building. Voters decided 41 ballot measures about data centres across 10 states, and all but one went against data centre development, with Harwood in North Dakota the only exception. Texas, one of the largest data centre hubs, saw Democrats win races up and down the ballot, and candidates from both parties had campaigned against data centre expansion in several states.",
+     "why": "Election results now shape where data centres can be built, turning local planning fights into a national question for the AI buildout.",
+     "source_date": "2026-11-06",
+     "sources": [
+      {
+       "label": "The Verge",
+       "url": "https://www.theverge.com/podcast/1028731/2026-midterms-tech-ai-vergecast"
+      }
+     ]
+    }
+   ]
   }
  ]
 }

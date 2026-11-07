@@ -4,8 +4,26 @@
     <title>Signal Brief · Cloud &amp; DevOps</title>
     <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/</link>
     <description>Signal Brief: the day in technology, in The Signal's own words. Every item is written from linked official sources and fact checked before publication.</description>
-    <lastBuildDate>Fri, 06 Nov 2026 05:49:11 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 07 Nov 2026 01:58:24 +0000</lastBuildDate>
     <atom:link xmlns:atom="http://www.w3.org/2005/Atom" href="https://thillairaj.github.io/The-Signal-AI-Quantum/signal/cloud-devops.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>Google hands gVisor and its agent stack to the CNCF</title>
+      <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/2026-11-07/06/</link>
+      <guid isPermaLink="false">brief-2026-11-07-06</guid>
+      <pubDate>Sat, 07 Nov 2026 01:30:00 +0000</pubDate>
+      <category>Cloud &amp; DevOps</category>
+      <description>Google is donating gVisor, Agent Substrate and OpenRL to the Cloud Native Computing Foundation, putting its AI agent infrastructure under neutral governance. gVisor, open sourced by Google in 2018, runs a lightweight kernel in user space to intercept system calls, adding isolation between containers and the host system, and is used by Anthropic and OpenAI to run untrusted code. Agent Substrate 1.0, now generally available on Google Kubernetes Engine, lets agents pause when idle and resume without rebuilding their runtime, while OpenRL coordinates reinforcement learning training on a user’s own Kubernetes setup. Why it matters for tech: Sandboxing is becoming core infrastructure for agents that run untrusted code, and neutral ownership is Google’s bid to make its stack the default.</description>
+      <content:encoded><![CDATA[<p>Google is donating gVisor, Agent Substrate and OpenRL to the Cloud Native Computing Foundation, putting its AI agent infrastructure under neutral governance. gVisor, open sourced by Google in 2018, runs a lightweight kernel in user space to intercept system calls, adding isolation between containers and the host system, and is used by Anthropic and OpenAI to run untrusted code. Agent Substrate 1.0, now generally available on Google Kubernetes Engine, lets agents pause when idle and resume without rebuilding their runtime, while OpenRL coordinates reinforcement learning training on a user’s own Kubernetes setup.</p><p><strong>Why it matters for tech:</strong> Sandboxing is becoming core infrastructure for agents that run untrusted code, and neutral ownership is Google’s bid to make its stack the default.</p><p>Source: </p><ul><li><a href="https://thenewstack.io/gvisor-cncf-kubernetes-open-source/">The New Stack</a></li></ul>]]></content:encoded>
+    </item>
+    <item>
+      <title>Cursor will now publish AI built apps to a live URL</title>
+      <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/2026-11-07/07/</link>
+      <guid isPermaLink="false">brief-2026-11-07-07</guid>
+      <pubDate>Sat, 07 Nov 2026 01:30:00 +0000</pubDate>
+      <category>Cloud &amp; DevOps</category>
+      <description>Cursor has added fully managed deployment, letting its cloud agents take an AI generated app from a description to a live, shareable web address without the user setting up infrastructure. Cursor handles hosting, database provisioning and sign in, runs security checks for exposed credentials and secrets before publishing, and builds on Vercel for Platforms. The feature is available on all paid Cursor plans with cloud agents enabled, and targets internal business apps as well as personal projects. Why it matters for tech: Coding tools are closing the gap between generating an app and shipping it, which makes deployment skill less of a gate for new builders.</description>
+      <content:encoded><![CDATA[<p>Cursor has added fully managed deployment, letting its cloud agents take an AI generated app from a description to a live, shareable web address without the user setting up infrastructure. Cursor handles hosting, database provisioning and sign in, runs security checks for exposed credentials and secrets before publishing, and builds on Vercel for Platforms. The feature is available on all paid Cursor plans with cloud agents enabled, and targets internal business apps as well as personal projects.</p><p><strong>Why it matters for tech:</strong> Coding tools are closing the gap between generating an app and shipping it, which makes deployment skill less of a gate for new builders.</p><p>Source: </p><ul><li><a href="https://thenewstack.io/cursor-ai-app-deployment/">The New Stack</a></li></ul>]]></content:encoded>
+    </item>
     <item>
       <title>Azure Front Door gains generally available post quantum TLS key exchange</title>
       <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/2026-11-06/06/</link>
