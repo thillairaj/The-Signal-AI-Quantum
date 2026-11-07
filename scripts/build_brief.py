@@ -195,10 +195,13 @@ THEME_SCRIPT = """<script>
 
 RULES_BOX = """<div class="brief-rules"><div class="brief-rules-in"><strong>How Signal Brief is made:</strong> items are written from the validated wire sources, official government and company pages, and Reuters or AP for geopolitical events. Policy coverage is limited to events with a clear technology impact, is neutral and factual, and carries each side's official position where relevant. Any item whose claims cannot be linked to a source is dropped before publication.</div></div>"""
 
-FOOTER = """<footer>
-    <div class="rule"></div>
-    <p>Curated by Thillai Raj Thanam Jeya Veera Raj <a class="li-btn" href="https://www.linkedin.com/in/thillairaj" target="_blank" rel="noopener">Follow on LinkedIn</a></p>
-  </footer>"""
+FOOTER = """<footer class="signal-footer">
+  <div class="sf-follow"><span class="sf-label">Follow along</span><span class="sf-links"><a class="sf-link" href="https://www.linkedin.com/in/thillairaj" target="_blank" rel="noopener">Thillai Raj</a><a class="sf-link" href="https://www.linkedin.com/showcase/qu-bits/" target="_blank" rel="noopener">QuBits · Quantum &amp; AI</a><a class="sf-link" href="https://www.linkedin.com/showcase/agentic-ai-architect/" target="_blank" rel="noopener">Agentic AI Architect</a></span></div>
+  <p class="sf-copy">© 2026 The Signal</p>
+  <p class="sf-tag">Learn it. Then share it.</p>
+</footer>"""
+# NOTE: apply_standard_footer.py runs after this builder and adds the footer badge svg,
+# signal-footer.css link, build stamp and version-check script (single footer source).
 
 
 def build_page(data, base):

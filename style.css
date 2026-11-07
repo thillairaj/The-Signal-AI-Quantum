@@ -136,33 +136,17 @@ body {
   max-width: 1200px;
   margin: 0 auto;
   display: grid;
-  grid-template-columns: 230px minmax(0, 1fr);
+  grid-template-columns: minmax(0, 1fr);
   align-items: start;
 }
-/* Explicit placement: sidebar pinned to column 1 across all rows, every view
-   block in column 2. Auto-placement alone put main#feed into row 2 column 1
-   once the feed view had two visible blocks (tools card + list), Oct 21 2026. */
-.layout > .panel { grid-column: 1; grid-row: 1 / span 99; }
-.layout > section, .layout > main { grid-column: 2; }
+.layout > section, .layout > main { grid-column: 1; }
 
-.panel {
-  padding: 2rem 1.5rem 2rem 2rem;
-  position: sticky;
-  top: 0;
-}
 
-.panel-block { margin-bottom: 1.75rem; }
 body[data-view="podcast"] .feed-only,
 body[data-view="learn"] .feed-only,
 body[data-view="home"] .feed-only,
 body[data-view="research"] .feed-only { display: none; }
 
-.panel-label {
-  font-family: var(--font-mono);
-  font-size: 0.72rem;
-  color: var(--muted);
-  margin: 0 0 0.6rem;
-}
 .sub-label {
   font-family: var(--font-mono);
   font-size: 0.68rem;
@@ -244,43 +228,7 @@ body[data-view="research"] .feed-only { display: none; }
 .source-toggle.active { color: var(--ink); font-weight: 500; }
 .source-toggle .count { font-family: var(--font-mono); font-size: 0.75rem; }
 
-/* Follow panel page links (Thillai, Oct 21 2026): card-buttons in Signal navy + gold —
-   a different colourway from the LinkedIn-blue personal follow button; the badge
-   carries the LinkedIn identity, so no "LinkedIn" word is needed. */
-.follow-link {
-  display: flex;
-  align-items: center;
-  gap: 7px;
-  font-size: 0.7rem;
-  font-weight: 700;
-  color: #F4EFE2;
-  text-decoration: none;
-  background: linear-gradient(135deg, #0B1F3B, #173863);
-  border: 1px solid #0B1F3B;
-  padding: 0.42rem 0.6rem;
-  border-radius: 10px;
-  margin-bottom: 0.45rem;
-  box-shadow: 0 3px 10px rgba(11,31,59,.22);
-  transition: transform .15s ease, box-shadow .15s ease;
-}
-.follow-link:hover { transform: translateY(-1px); box-shadow: 0 7px 18px rgba(11,31,59,.32); }
-.follow-link .li-badge {
-  width: 20px; height: 20px; border-radius: 5px;
-  background: rgba(255,255,255,.14);
-  border: 1px solid rgba(255,255,255,.45);
-  margin-right: 0;
-}
-.follow-link .li-badge svg { width: 14px; height: 14px; }
-.follow-link .fl-name { letter-spacing: .01em; white-space: nowrap; }
-.follow-link .fl-arrow { margin-left: auto; color: #E9C766; font-weight: 800; }
 
-.panel-note {
-  font-size: 0.82rem;
-  color: var(--muted);
-  border-top: 1px solid var(--border);
-  padding-top: 1.25rem;
-}
-.panel-note p { margin: 0; }
 
 .feed {
   border-left: 1px solid var(--border);
@@ -424,27 +372,13 @@ body[data-view="research"] .feed-only { display: none; }
 
 @media (max-width: 780px) {
   .layout { grid-template-columns: minmax(0, 1fr); }
-  .layout > .panel { grid-column: 1; grid-row: auto; }
   .layout > section, .layout > main { grid-column: 1; }
-  .panel { position: static; padding: 1.5rem 1.25rem 0; }
   .feed { border-left: none; padding: 0 1.25rem; }
   .article { grid-template-columns: 1fr; gap: 0.4rem; }
   .masthead { padding: 1.75rem 1.25rem 1rem; flex-wrap: wrap; gap: 0.75rem; }
   .masthead h1 { font-size: 2rem; }
 }
 
-/* Phones (Thillai, Nov 6, 2026): under 900px, on every view except Home,
-   the open tab's content comes first and the side blocks (LinkedIn Follow
-   links, the Automated box and the older version note) drop below it.
-   The panel is pinned to the last grid row; hidden views generate no
-   boxes, so the visible view takes the first rows. Desktop is unchanged,
-   and Home keeps its existing stacking. */
-@media (max-width: 899px) {
-  body:not([data-view="home"]) .layout { grid-template-columns: minmax(0, 1fr); }
-  body:not([data-view="home"]) .layout > .panel { grid-column: 1; grid-row: 99; position: static; }
-  body:not([data-view="home"]) .layout > section,
-  body:not([data-view="home"]) .layout > main { grid-column: 1; }
-}
 
 @media (prefers-reduced-motion: reduce) {
   .dot.live { animation: none; }
@@ -907,9 +841,6 @@ body[data-view="research"] .feed-only { display: none; }
 .fam-door-body[hidden] { display: none; }
 
 /* The rebuilds-itself note as a highlighted box (Thillai, Oct 21 2026) */
-.panel-block.panel-note { background: #0B1F3B; border: 1px solid #0B1F3B; border-radius: 14px; padding: 14px 16px; box-shadow: 0 8px 22px rgba(11,31,59,.28); }
-.panel-note p { color: #F7F2E4; font-size: 13.5px; line-height: 1.55; margin: 0; }
-.panel-note .panel-note-label { font-family: var(--font-mono); font-size: 10px; letter-spacing: .18em; text-transform: uppercase; color: #E9C766; margin: 0 0 6px; }
 
 /* Feed tools: search + topic moved to the top of the RSS view (Thillai, Oct 21 2026) */
 .feed-tools { background: var(--surface); border: 1px solid var(--border); border-radius: 16px; padding: 16px 18px 10px; margin: 2rem 2rem 0 0; box-shadow: 0 1px 2px rgba(20,24,15,.05), 0 10px 30px rgba(20,24,15,.05); }
@@ -927,9 +858,6 @@ body[data-view="research"] .feed-only { display: none; }
 @media (max-width: 780px) { .feed-tools { margin: 1rem 1rem 0; } }
 
 /* Cache tip box, bottom of the sidebar (Thillai, Oct 21 2026) */
-.cache-tip { background: #FBF3E2; border: 1px solid #E2CD9B; border-radius: 14px; padding: 13px 15px; }
-.cache-tip p { color: #4A3D14; font-size: 12.5px; line-height: 1.55; margin: 0; }
-.cache-tip .cache-tip-label { font-family: var(--font-display); font-weight: 700; font-size: 14.5px; color: #0B1F3B; margin: 0 0 5px; }
 
 /* Sources inside the feed tools card: a collapsible chip row (Thillai, Oct 21 2026) */
 .ft-sources { margin-top: 12px; padding-top: 10px; border-top: 1px dashed var(--border); }
@@ -998,3 +926,6 @@ body[data-view="research"] .feed-only { display: none; }
 
 .feed-share-btn{display:inline-flex;align-items:center;justify-content:center;padding:0}
 .feed-share-btn svg{width:14px;height:14px}
+
+/* Home-only quiet automation line (Nov 7, 2026) */
+.hm-auto-note { font-size: 13px; color: var(--muted); margin: 0 0 10px; }
