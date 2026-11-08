@@ -4,8 +4,35 @@
     <title>Signal Brief · Cybersecurity</title>
     <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/</link>
     <description>Signal Brief: the day in technology, in The Signal's own words. Every item is written from linked official sources and fact checked before publication.</description>
-    <lastBuildDate>Sat, 07 Nov 2026 01:58:24 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 08 Nov 2026 01:41:04 +0000</lastBuildDate>
     <atom:link xmlns:atom="http://www.w3.org/2005/Atom" href="https://thillairaj.github.io/The-Signal-AI-Quantum/signal/cybersecurity.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>Claude Code settings files leak passwords and keys in public GitHub repos</title>
+      <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/2026-11-08/07/</link>
+      <guid isPermaLink="false">brief-2026-11-08-07</guid>
+      <pubDate>Sun, 08 Nov 2026 01:30:00 +0000</pubDate>
+      <category>Cybersecurity</category>
+      <description>Security researchers at Apiiro found 1,122 public copies of Claude Code's settings file holding at least one secret, including database passwords, cloud keys and tokens. The file, .claude/settings.local.json, records commands a user approved with 'don't ask again', word for word, so passwords typed into a command are saved in plain text. Apiiro counted 1,379 secrets in current copies and 2,539 in total across 1,994 repositories once older versions, forks and shared settings files are included, and says the fix starts with rotating every exposed credential. Why it matters for tech: Secrets saved in agent settings files leak into public repos, so teams need to treat agent folders like credential stores and scan their history.</description>
+      <content:encoded><![CDATA[<p>Security researchers at Apiiro found 1,122 public copies of Claude Code's settings file holding at least one secret, including database passwords, cloud keys and tokens. The file, .claude/settings.local.json, records commands a user approved with 'don't ask again', word for word, so passwords typed into a command are saved in plain text. Apiiro counted 1,379 secrets in current copies and 2,539 in total across 1,994 repositories once older versions, forks and shared settings files are included, and says the fix starts with rotating every exposed credential.</p><p><strong>Why it matters for tech:</strong> Secrets saved in agent settings files leak into public repos, so teams need to treat agent folders like credential stores and scan their history.</p><p>Source: </p><ul><li><a href="https://thehackernews.com/2026/11/claude-codes-dont-ask-again-file.html">The Hacker News</a></li><li><a href="https://apiiro.com/blog/coding-agents-leaking-secrets-github-dont-ask-again">Apiiro</a></li></ul>]]></content:encoded>
+    </item>
+    <item>
+      <title>French bank Arkéa hit by heist of up to $133 million through a service provider</title>
+      <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/2026-11-08/08/</link>
+      <guid isPermaLink="false">brief-2026-11-08-08</guid>
+      <pubDate>Sun, 08 Nov 2026 01:30:00 +0000</pubDate>
+      <category>Cybersecurity</category>
+      <description>French cooperative bank Crédit Mutuel Arkéa was hit by a cyberattack in which the attacker used the bank's own account to send fraudulent transactions to other banks. Blockchain investigator ZachXBT estimated up to 118 million euros ($133 million) was taken and converted into stablecoins, while the bank would only confirm the order of magnitude. The bank says customer assets were not affected, the incident is closed and under control, and it is working with police to establish how the attacker got in through a service provider's platform. Why it matters for tech: A bank's own account was used to move funds through a service provider, showing third-party access is now a direct route to the money.</description>
+      <content:encoded><![CDATA[<p>French cooperative bank Crédit Mutuel Arkéa was hit by a cyberattack in which the attacker used the bank's own account to send fraudulent transactions to other banks. Blockchain investigator ZachXBT estimated up to 118 million euros ($133 million) was taken and converted into stablecoins, while the bank would only confirm the order of magnitude. The bank says customer assets were not affected, the incident is closed and under control, and it is working with police to establish how the attacker got in through a service provider's platform.</p><p><strong>Why it matters for tech:</strong> A bank's own account was used to move funds through a service provider, showing third-party access is now a direct route to the money.</p><p>Source: </p><ul><li><a href="https://www.bleepingcomputer.com/news/security/hackers-pull-off-133-million-french-bank-heist-via-service-provider/">BleepingComputer</a></li></ul>]]></content:encoded>
+    </item>
+    <item>
+      <title>Microsoft warns agentic AI framework ARTEX is being used against banks</title>
+      <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/2026-11-08/09/</link>
+      <guid isPermaLink="false">brief-2026-11-08-09</guid>
+      <pubDate>Sun, 08 Nov 2026 01:30:00 +0000</pubDate>
+      <category>Cybersecurity</category>
+      <description>Microsoft says the financially motivated group it tracks as Storm-3358 began targeting financial organisations in October using ARTEX, an agentic AI offensive framework. The group, which Microsoft describes as Cambodia-based and focused on financial targets in Southeast Asia, uses ARTEX agents to scan public systems, exploit flaws such as anonymous file upload and server-side request forgery, and install remote access trojans. Microsoft has published indicators of compromise and detections, and says defenders need AI-assisted investigation to match attacks that move at machine speed. Why it matters for tech: Agentic frameworks let attackers scan, exploit and move laterally at machine speed, so defence has to detect and respond at the same pace.</description>
+      <content:encoded><![CDATA[<p>Microsoft says the financially motivated group it tracks as Storm-3358 began targeting financial organisations in October using ARTEX, an agentic AI offensive framework. The group, which Microsoft describes as Cambodia-based and focused on financial targets in Southeast Asia, uses ARTEX agents to scan public systems, exploit flaws such as anonymous file upload and server-side request forgery, and install remote access trojans. Microsoft has published indicators of compromise and detections, and says defenders need AI-assisted investigation to match attacks that move at machine speed.</p><p><strong>Why it matters for tech:</strong> Agentic frameworks let attackers scan, exploit and move laterally at machine speed, so defence has to detect and respond at the same pace.</p><p>Source: </p><ul><li><a href="https://www.microsoft.com/en-us/security/blog/2026/11/06/artex-abuse-expands-as-cybercriminals-target-financial-sector/">Microsoft Security Blog</a></li></ul>]]></content:encoded>
+    </item>
     <item>
       <title>Chainalysis breach exposed credentials for all customers</title>
       <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/2026-11-07/08/</link>

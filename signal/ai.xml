@@ -4,8 +4,26 @@
     <title>Signal Brief · AI</title>
     <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/</link>
     <description>Signal Brief: the day in technology, in The Signal's own words. Every item is written from linked official sources and fact checked before publication.</description>
-    <lastBuildDate>Sat, 07 Nov 2026 01:58:24 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 08 Nov 2026 01:41:04 +0000</lastBuildDate>
     <atom:link xmlns:atom="http://www.w3.org/2005/Atom" href="https://thillairaj.github.io/The-Signal-AI-Quantum/signal/ai.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>DeepMind AI agents find two weaknesses in retired 1024-bit RSA</title>
+      <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/2026-11-08/01/</link>
+      <guid isPermaLink="false">brief-2026-11-08-01</guid>
+      <pubDate>Sun, 08 Nov 2026 01:30:00 +0000</pubDate>
+      <category>AI</category>
+      <description>Google DeepMind says AI agents working under human supervision found two weaknesses in legacy 1024-bit RSA encryption, a key size the industry retired years ago. In a sandbox test, the agents reproduced a signature forgery on a solved benchmark key using 3.5 times less CPU time, and a new algorithm improved on the previous best method by roughly 1,600 times in theoretical estimates for short fingerprints, while a second result cuts the average cost of factoring each additional 1024-bit key by about 30 times. DeepMind states modern 2048-bit and larger keys are unaffected and no live systems were touched. Why it matters for tech: AI agents are now doing original cryptanalysis in weeks, so hardness assumptions need continuous re-testing rather than being treated as fixed.</description>
+      <content:encoded><![CDATA[<p>Google DeepMind says AI agents working under human supervision found two weaknesses in legacy 1024-bit RSA encryption, a key size the industry retired years ago. In a sandbox test, the agents reproduced a signature forgery on a solved benchmark key using 3.5 times less CPU time, and a new algorithm improved on the previous best method by roughly 1,600 times in theoretical estimates for short fingerprints, while a second result cuts the average cost of factoring each additional 1024-bit key by about 30 times. DeepMind states modern 2048-bit and larger keys are unaffected and no live systems were touched.</p><p><strong>Why it matters for tech:</strong> AI agents are now doing original cryptanalysis in weeks, so hardness assumptions need continuous re-testing rather than being treated as fixed.</p><p>Source: </p><ul><li><a href="https://lnkd.in/eKU6VKMp">Google DeepMind</a></li></ul>]]></content:encoded>
+    </item>
+    <item>
+      <title>Thinking Machines Lab ships Inkling 2 Small, with open weights promised next week</title>
+      <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/2026-11-08/02/</link>
+      <guid isPermaLink="false">brief-2026-11-08-02</guid>
+      <pubDate>Sun, 08 Nov 2026 01:30:00 +0000</pubDate>
+      <category>AI</category>
+      <description>Thinking Machines Lab has released Inkling 2 Small, a mixture-of-experts model with 594 billion total parameters and 17 billion active per token, which takes text and image input. The lab reports a score of 31 on the Artificial Analysis Intelligence Index and says the model is built for long autonomous coding and research tasks. It is available now through the lab's Tinker platform with closed weights, and the lab says it intends to release the full weights under an Apache 2.0 licence next week, after external safety testing and red-teaming. Why it matters for tech: The model is built for hours-long autonomous coding work, and its weights stay closed until safety testing finishes, so the open release is conditional rather than immediate.</description>
+      <content:encoded><![CDATA[<p>Thinking Machines Lab has released Inkling 2 Small, a mixture-of-experts model with 594 billion total parameters and 17 billion active per token, which takes text and image input. The lab reports a score of 31 on the Artificial Analysis Intelligence Index and says the model is built for long autonomous coding and research tasks. It is available now through the lab's Tinker platform with closed weights, and the lab says it intends to release the full weights under an Apache 2.0 licence next week, after external safety testing and red-teaming.</p><p><strong>Why it matters for tech:</strong> The model is built for hours-long autonomous coding work, and its weights stay closed until safety testing finishes, so the open release is conditional rather than immediate.</p><p>Source: </p><ul><li><a href="https://thinkingmachines.ai/news/inkling-2-small/">Thinking Machines Lab</a></li></ul>]]></content:encoded>
+    </item>
     <item>
       <title>Perplexity launches always on work agents called Teammates</title>
       <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/2026-11-07/01/</link>

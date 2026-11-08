@@ -4,8 +4,26 @@
     <title>Signal Brief · Quantum</title>
     <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/</link>
     <description>Signal Brief: the day in technology, in The Signal's own words. Every item is written from linked official sources and fact checked before publication.</description>
-    <lastBuildDate>Sat, 07 Nov 2026 01:58:24 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 08 Nov 2026 01:41:04 +0000</lastBuildDate>
     <atom:link xmlns:atom="http://www.w3.org/2005/Atom" href="https://thillairaj.github.io/The-Signal-AI-Quantum/signal/quantum.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>IBM unveils Quantum System Two at the University of Chicago</title>
+      <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/2026-11-08/03/</link>
+      <guid isPermaLink="false">brief-2026-11-08-03</guid>
+      <pubDate>Sun, 08 Nov 2026 01:30:00 +0000</pubDate>
+      <category>Quantum</category>
+      <description>IBM, the University of Chicago, the State of Illinois and the Illinois Quantum and Microelectronics Park have unveiled an IBM Quantum System Two in Chicago, the company's first quantum computer in Illinois. The system runs on IBM's Nighthawk processor, a 120-qubit chip, and is hosted at the university's Hyde Park Labs. It anchors the National Quantum Algorithm Center, where researchers from universities, labs and companies work on practical quantum applications, and will move to the new Illinois Quantum and Microelectronics Park campus once it is built. Why it matters for tech: Putting a 120-qubit system on a university campus gives Illinois researchers local hardware for algorithm work instead of remote cloud access.</description>
+      <content:encoded><![CDATA[<p>IBM, the University of Chicago, the State of Illinois and the Illinois Quantum and Microelectronics Park have unveiled an IBM Quantum System Two in Chicago, the company's first quantum computer in Illinois. The system runs on IBM's Nighthawk processor, a 120-qubit chip, and is hosted at the university's Hyde Park Labs. It anchors the National Quantum Algorithm Center, where researchers from universities, labs and companies work on practical quantum applications, and will move to the new Illinois Quantum and Microelectronics Park campus once it is built.</p><p><strong>Why it matters for tech:</strong> Putting a 120-qubit system on a university campus gives Illinois researchers local hardware for algorithm work instead of remote cloud access.</p><p>Source: </p><ul><li><a href="https://newsroom.ibm.com/2026-11-06-ibm-unveils-its-most-advanced-quantum-computer-in-chicago,-marking-a-milestone-for-illinoiss-quantum-future">IBM Newsroom</a></li><li><a href="https://quantumcomputingreport.com/ibm-deploys-quantum-system-two-at-hyde-park-labs-to-anchor-illinois-quantum-ecosystem/">Quantum Computing Report</a></li></ul>]]></content:encoded>
+    </item>
+    <item>
+      <title>Oxford team simulates Aharonov-Bohm effect with two trapped ions</title>
+      <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/2026-11-08/04/</link>
+      <guid isPermaLink="false">brief-2026-11-08-04</guid>
+      <pubDate>Sun, 08 Nov 2026 01:30:00 +0000</pubDate>
+      <category>Quantum</category>
+      <description>Researchers at the University of Oxford have simulated the Aharonov-Bohm effect in a lattice gauge theory using a hybrid trapped-ion quantum computer, in a study published in Nature Physics. Two trapped ions formed a loop with two paths, and entangling the qubits that encode the magnetic flux changed whether a particle could tunnel between sites. When the entangled qubits encoded a nonzero flux, the two paths cancelled out and tunnelling stopped entirely, showing the simulation captures how flux affects particle motion. Why it matters for tech: Simulating gauge theories with matter and flux together moves quantum simulation closer to the physics behind particle interactions and exotic materials.</description>
+      <content:encoded><![CDATA[<p>Researchers at the University of Oxford have simulated the Aharonov-Bohm effect in a lattice gauge theory using a hybrid trapped-ion quantum computer, in a study published in Nature Physics. Two trapped ions formed a loop with two paths, and entangling the qubits that encode the magnetic flux changed whether a particle could tunnel between sites. When the entangled qubits encoded a nonzero flux, the two paths cancelled out and tunnelling stopped entirely, showing the simulation captures how flux affects particle motion.</p><p><strong>Why it matters for tech:</strong> Simulating gauge theories with matter and flux together moves quantum simulation closer to the physics behind particle interactions and exotic materials.</p><p>Source: </p><ul><li><a href="https://phys.org/news/2026-11-paths-flux-ions-simulate-aharonovbohm.html">Phys.org</a></li><li><a href="https://doi.org/10.1038/s41567-026-03400-6">Nature Physics</a></li></ul>]]></content:encoded>
+    </item>
     <item>
       <title>AI assisted proof settles a 2008 question about quantum speedups</title>
       <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/2026-11-07/04/</link>

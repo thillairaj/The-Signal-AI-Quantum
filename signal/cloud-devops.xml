@@ -4,8 +4,26 @@
     <title>Signal Brief · Cloud &amp; DevOps</title>
     <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/</link>
     <description>Signal Brief: the day in technology, in The Signal's own words. Every item is written from linked official sources and fact checked before publication.</description>
-    <lastBuildDate>Sat, 07 Nov 2026 01:58:24 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 08 Nov 2026 01:41:04 +0000</lastBuildDate>
     <atom:link xmlns:atom="http://www.w3.org/2005/Atom" href="https://thillairaj.github.io/The-Signal-AI-Quantum/signal/cloud-devops.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>AWS makes Kiro bots generally available in Kiro Crew</title>
+      <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/2026-11-08/05/</link>
+      <guid isPermaLink="false">brief-2026-11-08-05</guid>
+      <pubDate>Sun, 08 Nov 2026 01:30:00 +0000</pubDate>
+      <category>Cloud &amp; DevOps</category>
+      <description>Amazon Web Services has made Kiro bots generally available in Kiro Crew, its open-source multi-agent development environment. Each bot is a named, long-running agent with its own durable memory, kept in a notes file the developer can edit, and its own tools and permissions for one standing job such as triaging tickets or watching builds. A bot runs parallel worker sessions and can ask for more tools, but cannot take them without developer approval, and bots cannot delegate work to each other. Why it matters for tech: Giving each agent its own memory and a standing job shifts developers from carrying context between sessions to handing off whole processes.</description>
+      <content:encoded><![CDATA[<p>Amazon Web Services has made Kiro bots generally available in Kiro Crew, its open-source multi-agent development environment. Each bot is a named, long-running agent with its own durable memory, kept in a notes file the developer can edit, and its own tools and permissions for one standing job such as triaging tickets or watching builds. A bot runs parallel worker sessions and can ask for more tools, but cannot take them without developer approval, and bots cannot delegate work to each other.</p><p><strong>Why it matters for tech:</strong> Giving each agent its own memory and a standing job shifts developers from carrying context between sessions to handing off whole processes.</p><p>Source: </p><ul><li><a href="https://thenewstack.io/kiro-bots-agent-memory/">The New Stack</a></li></ul>]]></content:encoded>
+    </item>
+    <item>
+      <title>SageMaker Inference now supports NVIDIA multi-instance GPU partitioning</title>
+      <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/2026-11-08/06/</link>
+      <guid isPermaLink="false">brief-2026-11-08-06</guid>
+      <pubDate>Sun, 08 Nov 2026 01:30:00 +0000</pubDate>
+      <category>Cloud &amp; DevOps</category>
+      <description>Amazon SageMaker Inference now supports GPU partitioning with NVIDIA Multi-Instance GPU, which splits one GPU into hardware-isolated partitions. Each partition can run a different model, or take a right-sized fraction of a newer accelerator, so teams can pack more models onto one card. The feature is aimed at raising GPU utilisation for model endpoints. Why it matters for tech: Splitting one GPU into isolated partitions lets teams run more models per accelerator and cut inference cost.</description>
+      <content:encoded><![CDATA[<p>Amazon SageMaker Inference now supports GPU partitioning with NVIDIA Multi-Instance GPU, which splits one GPU into hardware-isolated partitions. Each partition can run a different model, or take a right-sized fraction of a newer accelerator, so teams can pack more models onto one card. The feature is aimed at raising GPU utilisation for model endpoints.</p><p><strong>Why it matters for tech:</strong> Splitting one GPU into isolated partitions lets teams run more models per accelerator and cut inference cost.</p><p>Source: </p><ul><li><a href="https://aws.amazon.com/blogs/machine-learning/sagemaker-inference-now-supports-multi-instance-gpu-to-maximize-gpu-utilization-for-model-endpoints/">AWS Machine Learning Blog</a></li></ul>]]></content:encoded>
+    </item>
     <item>
       <title>Google hands gVisor and its agent stack to the CNCF</title>
       <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/2026-11-07/06/</link>
