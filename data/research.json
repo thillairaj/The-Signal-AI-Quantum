@@ -1,6 +1,41 @@
 {
   "articles": [
     {
+      "id": "2026-11-09-frontier-ai-economics",
+      "title": "Why Does Frontier AI Cost More the Faster It Grows?",
+      "subtitle": "Anthropic's S-1 puts the frontier lab business model on the public record: $17 billion in a quarter, and a $895 billion compute bill behind it",
+      "date": "2026-11-09",
+      "kind": "Deep Dive",
+      "card": "research/cards/edition-11.webp",
+      "body": "research/articles/2026-11-09-frontier-ai-economics.html",
+      "sources": [
+        {
+          "label": "Anthropic, PBC: Form S-1/A, Amendment No. 1, filed Nov 2, 2026 (SEC EDGAR, accession 0001628280-26-067168)",
+          "url": "https://timesof.ai/2026/10/anthropic-files-s1-nasdaq-ant-16-3b-revenue"
+        },
+        {
+          "label": "The Desk: Anthropic's amended IPO filing shows $17 billion third-quarter revenue and about $895 billion in compute commitments (Nov 2, 2026)",
+          "url": "https://www.thedeskresearch.com/publications/anthropics-amended-ipo-filing-shows-17-billion-third-b2342ee3"
+        },
+        {
+          "label": "The AI Insider: Anthropic's compute costs climb to 58% of revenue (Nov 4, 2026)",
+          "url": "https://theaiinsider.tech/2026/11/04/anthropics-compute-costs-climb-to-58-of-revenue-as-it-develops-flashprove-to-verify-ai-model-outputs/"
+        },
+        {
+          "label": "Wing Venture Capital: Who makes money when inference gets 10x cheaper",
+          "url": "https://www.wing.vc/content/who-makes-money-when-inference-gets-10x-cheaper"
+        },
+        {
+          "label": "Santage: OpenAI and SpaceX rein in costs of always-on AI agents (Nov 3, 2026)",
+          "url": "https://santageai.com/news/2026/11/03/openai-dots-grok-bot-agent-costs"
+        },
+        {
+          "label": "Signal: Anthropic S-1: $33B revenue, $895B compute costs",
+          "url": "https://www.readsignal.io/article/anthropic-revised-s1-33b-revenue-compute-commitments-frontier-2026"
+        }
+      ]
+    },
+    {
       "id": "2026-11-06-multi-head-latent-attention",
       "title": "How Does Multi-Head Latent Attention Shrink the KV Cache?",
       "subtitle": "DeepSeek's MLA cuts the KV cache 93 percent, and eight model families followed",
@@ -315,5 +350,5 @@
       "title": "Where Does Value Accrue in the AI Stack?"
     }
   ],
-  "generated_at": "2026-11-06T04:18:37+00:00"
+  "generated_at": "2026-11-09T04:19:53+00:00"
 }
