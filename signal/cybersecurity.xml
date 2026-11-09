@@ -4,8 +4,17 @@
     <title>Signal Brief · Cybersecurity</title>
     <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/</link>
     <description>Signal Brief: the day in technology, in The Signal's own words. Every item is written from linked official sources and fact checked before publication.</description>
-    <lastBuildDate>Sun, 08 Nov 2026 01:41:04 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 09 Nov 2026 01:41:42 +0000</lastBuildDate>
     <atom:link xmlns:atom="http://www.w3.org/2005/Atom" href="https://thillairaj.github.io/The-Signal-AI-Quantum/signal/cybersecurity.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>Iris Ohyama breach may have exposed data of 7.7 million people</title>
+      <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/2026-11-09/05/</link>
+      <guid isPermaLink="false">brief-2026-11-09-05</guid>
+      <pubDate>Mon, 09 Nov 2026 01:30:00 +0000</pubDate>
+      <category>Cybersecurity</category>
+      <description>Japanese manufacturer Iris Ohyama said personal information belonging to about 7.7 million people may have been exposed after unauthorised access to a third-party cloud service used by its Iris Plaza online store. The company said the impact reaches up to 5.8 million registered and former members and 1.9 million non-members. Names, addresses, phone numbers, email addresses, dates of birth and passwords may have been exposed, though passwords for active members were stored encrypted and card data was not in the affected service. As of November 5 the company had received no reports of misuse, and Japan's privacy regulator and police were notified on October 29. Why it matters for tech: A breach through a supplier's cloud service shows customer data can be exposed even when the retailer's own systems are not the entry point.</description>
+      <content:encoded><![CDATA[<p>Japanese manufacturer Iris Ohyama said personal information belonging to about 7.7 million people may have been exposed after unauthorised access to a third-party cloud service used by its Iris Plaza online store. The company said the impact reaches up to 5.8 million registered and former members and 1.9 million non-members. Names, addresses, phone numbers, email addresses, dates of birth and passwords may have been exposed, though passwords for active members were stored encrypted and card data was not in the affected service. As of November 5 the company had received no reports of misuse, and Japan's privacy regulator and police were notified on October 29.</p><p><strong>Why it matters for tech:</strong> A breach through a supplier's cloud service shows customer data can be exposed even when the retailer's own systems are not the entry point.</p><p>Source: </p><ul><li><a href="https://www.bleepingcomputer.com/news/security/iris-ohyama-data-cloud-breach-exposes-info-of-77-million-customers/">BleepingComputer</a></li></ul>]]></content:encoded>
+    </item>
     <item>
       <title>Claude Code settings files leak passwords and keys in public GitHub repos</title>
       <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/2026-11-08/07/</link>

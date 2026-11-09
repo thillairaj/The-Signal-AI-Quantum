@@ -1115,6 +1115,135 @@
      ]
     }
    ]
+  },
+  {
+   "date": "2026-11-09",
+   "items": [
+    {
+     "id": "brief-2026-11-09-01",
+     "category": "AI",
+     "company": "Apple",
+     "headline": "Apple pushes Siri toward agentic tasks, report says",
+     "summary": "Bloomberg reports that Apple chief executive John Ternus is pressing AI chief Craig Federighi to speed up the Siri roadmap and deliver an assistant that can act on its own, rivalling OpenAI's Dots and Meta's Muse. Fine-grained control of Apple's own apps, such as editing photos and organising Safari tabs, is reported to arrive with iOS 27.3, while control of third-party apps, such as placing a food order or booking a table, is reported to follow in the spring. Bloomberg's Mark Gurman writes that Siri could become more like an agent as early as next year.",
+     "why": "Siri is the assistant built into Apple's devices, so turning it into an assistant that carries out multi-step tasks changes what phone assistants are expected to do.",
+     "source_date": "2026-11-09",
+     "sources": [
+      {
+       "label": "The Verge",
+       "url": "https://www.theverge.com/ai-artificial-intelligence/1029552/apple-siri-ai-agentic"
+      }
+     ]
+    },
+    {
+     "id": "brief-2026-11-09-02",
+     "category": "Industry",
+     "company": "NVIDIA",
+     "headline": "Nvidia board opens independent review of chief executive after spy reports",
+     "summary": "Nvidia's board of directors said it is opening an independent investigation into chief executive Jensen Huang's relationship with Megaspeed executive Alice Huang, who US officials believe was recruited by China's Ministry of State Security. The board said it has no reason to believe national security or Nvidia secrets were compromised, and that Huang supports the review and will cooperate. The New York Times reported last month on the relationship, which Huang later described as romantic in a memo to staff. Megaspeed, a Nvidia customer, is under a Commerce Department investigation into alleged smuggling of AI chips to China.",
+     "why": "The review sits where chip export controls meet corporate governance, and its outcome shapes how Nvidia handles foreign-intelligence risk at the top of the company.",
+     "source_date": "2026-11-09",
+     "sources": [
+      {
+       "label": "The Verge",
+       "url": "https://www.theverge.com/ai-artificial-intelligence/1029562/nvidia-investigating-jensen-huang-relationship-chinese-spy"
+      },
+      {
+       "label": "The Verge",
+       "url": "https://www.theverge.com/ai-artificial-intelligence/1029595/full-text-jensen-huang-affair-memo-nvidia"
+      }
+     ]
+    },
+    {
+     "id": "brief-2026-11-09-03",
+     "category": "Industry",
+     "company": "Suno",
+     "headline": "Elvis and Eminem rights holders sue Suno over AI music clones",
+     "summary": "Rights holders for Elvis Presley's music and the publisher of some of Eminem's biggest records have sued AI music company Suno, saying it generates music and lyrics that mimic the artists. The Presley suit says Suno violated Tennessee's ELVIS Act, which bars AI companies from cloning a singer's voice. Suno says it prohibits unauthorised use of an artist's work, blocks prompts naming specific artists, and screens uploads for misuse. The suits follow similar claims by Jason Isbell and others in September and add to cases already brought by Sony and Universal Music Group.",
+     "why": "The cases test whether voice and likeness laws cover AI-generated imitations, a question that decides how music AI tools can be built and sold.",
+     "source_date": "2026-11-08",
+     "sources": [
+      {
+       "label": "The Verge",
+       "url": "https://www.theverge.com/ai-artificial-intelligence/1029533/elvis-eminem-suno-ai-music-clone-lawsuit"
+      }
+     ]
+    },
+    {
+     "id": "brief-2026-11-09-04",
+     "category": "Cloud & DevOps",
+     "company": "Perplexity",
+     "headline": "Perplexity's Teammates keep AI agents working between sessions",
+     "summary": "Perplexity has launched Teammates, a system that coordinates several AI agents which remember where past sessions left off and keep working without a new prompt. Shared project state lives in Git, with each project in its own repository and each agent working in a separate sandbox. Perplexity says fewer than 2% of agent submissions are rejected for being based on outdated state, with median submission latency under 1.7 seconds. Teammates is available first on the web for Perplexity Max subscribers, with iOS support planned.",
+     "why": "Agents that keep working after a tab closes move AI tools from answering questions toward carrying out multi-step work on their own.",
+     "source_date": "2026-11-08",
+     "sources": [
+      {
+       "label": "The New Stack",
+       "url": "https://thenewstack.io/perplexity-teammates-agent-orchestration/"
+      }
+     ]
+    },
+    {
+     "id": "brief-2026-11-09-05",
+     "category": "Cybersecurity",
+     "company": "Iris Ohyama",
+     "headline": "Iris Ohyama breach may have exposed data of 7.7 million people",
+     "summary": "Japanese manufacturer Iris Ohyama said personal information belonging to about 7.7 million people may have been exposed after unauthorised access to a third-party cloud service used by its Iris Plaza online store. The company said the impact reaches up to 5.8 million registered and former members and 1.9 million non-members. Names, addresses, phone numbers, email addresses, dates of birth and passwords may have been exposed, though passwords for active members were stored encrypted and card data was not in the affected service. As of November 5 the company had received no reports of misuse, and Japan's privacy regulator and police were notified on October 29.",
+     "why": "A breach through a supplier's cloud service shows customer data can be exposed even when the retailer's own systems are not the entry point.",
+     "source_date": "2026-11-08",
+     "sources": [
+      {
+       "label": "BleepingComputer",
+       "url": "https://www.bleepingcomputer.com/news/security/iris-ohyama-data-cloud-breach-exposes-info-of-77-million-customers/"
+      }
+     ]
+    },
+    {
+     "id": "brief-2026-11-09-06",
+     "category": "Quantum",
+     "company": "Riverlane",
+     "headline": "Riverlane cuts surface-code logical errors with data-driven decoder fix",
+     "summary": "Riverlane has demonstrated a method that finds unmodelled correlated errors directly from syndrome measurement data and folds them into the detector error models used to decode surface-code qubits. The augmented models cut logical error rates by up to 75% in simulations and by 14% on Google's published superconducting hardware data. The approach stays compatible with fast graph-based decoders such as PyMatching, which existing error-correction pipelines already use.",
+     "why": "Better decoding from measured noise, rather than from theory alone, moves error-corrected quantum computing forward without waiting on new hardware.",
+     "source_date": "2026-11-08",
+     "sources": [
+      {
+       "label": "Quantum Computing Report",
+       "url": "https://quantumcomputingreport.com/riverlane-demonstrates-data-driven-dem-augmentation-to-reduce-surface-code-logical-errors/"
+      }
+     ]
+    },
+    {
+     "id": "brief-2026-11-09-07",
+     "category": "Cloud & DevOps",
+     "company": "AWS",
+     "headline": "A decision framework for moving autonomous agents from Lambda to EKS",
+     "summary": "A senior QA engineer at Amazon describes an autonomous agent that reads test failures, files structured bug reports and catches regressions, running on AWS Lambda for one team at under $5 a month and about 200 invocations a month, saving 8 to 10 hours a week. Scaling the same agent to 50 teams changes the workload from stateless events to long-running, multi-tenant work with shared state and API contention, and the piece sets out when to move to EKS Auto Mode: when a workload needs persistent state, cross-tenant analysis, GPU bursts, namespace isolation and central rate limiting together. At 50 teams the EKS setup is put at roughly $200 to $250 a month in total.",
+     "why": "The piece gives teams a concrete test for moving agents off serverless, which matters as agent workloads grow from one team to many.",
+     "source_date": "2026-11-08",
+     "sources": [
+      {
+       "label": "The New Stack",
+       "url": "https://thenewstack.io/scaling-autonomous-agents-framework/"
+      }
+     ]
+    },
+    {
+     "id": "brief-2026-11-09-08",
+     "category": "Cloud & DevOps",
+     "company": "Docusign",
+     "headline": "Docusign turns AI coding tools into an engineering operating model",
+     "summary": "Docusign says all of its more than 1,100 engineers are now onboarded to and actively using AI coding tools, after early adoption stalled at 49% of engineers and an 18% productivity gain levelled off. The company credits a six-person Eng AI Champions team and about 75 AI Multipliers embedded in teams, with active usage reaching 93% within two months of the Multipliers starting, and lines of code updated per developer up about 52% from the starting point, though the article notes that volume alone does not prove faster delivery. Internal tools include Kody for coding, Chronicle for observability and DocuWiki for documentation, brought together in Krew, where teams build agents for recurring work under human review; no code enters the system unreviewed.",
+     "why": "Docusign's numbers show the hard part of AI coding tools is not the rollout but the operating model around them, a lesson other engineering teams are now working through.",
+     "source_date": "2026-11-08",
+     "sources": [
+      {
+       "label": "The New Stack",
+       "url": "https://thenewstack.io/docusign-ai-engineering-adoption/"
+      }
+     ]
+    }
+   ]
   }
  ]
 }
