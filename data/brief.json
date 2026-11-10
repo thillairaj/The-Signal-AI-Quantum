@@ -1244,6 +1244,192 @@
      ]
     }
    ]
+  },
+  {
+   "date": "2026-11-10",
+   "items": [
+    {
+     "id": "brief-2026-11-10-01",
+     "category": "AI",
+     "company": "Anthropic",
+     "headline": "Anthropic launches Claude Fable 5.2 and Mythos 5.2 for coding, finance and science",
+     "summary": "Anthropic has released Claude Fable 5.2 and Claude Mythos 5.2, which it describes as its most capable models for coding, finance and science. Fable 5.2 is available now, while Mythos 5.2 is limited to vetted organizations. In pre-release testing cited by Anthropic, Fable 5.2 migrated three complex devices in a day where Claude Sonnet 4.5 managed one, and completed a 30-hour proof of Fermat's Last Theorem.",
+     "why": "A new top-tier coding model with a published test record gives developers a concrete alternative to compare against current coding models on speed and long-task stamina.",
+     "source_date": "2026-11-09",
+     "sources": [
+      {
+       "label": "Anthropic",
+       "url": "https://www.anthropic.com/claude-fable-and-mythos-5-2"
+      },
+      {
+       "label": "The Verge",
+       "url": "https://www.theverge.com/ai-artificial-intelligence/1030005/anthropic-claude-fable-mythos-5-2"
+      }
+     ]
+    },
+    {
+     "id": "brief-2026-11-10-02",
+     "category": "AI",
+     "company": "Meta",
+     "headline": "Meta launches Muse Ember, a small model for agentic coding",
+     "summary": "Meta has launched Muse Ember (muse-ember-1.0), a small model built for agentic coding, available through Meta's Models API and Amazon Bedrock, with Azure and Google Cloud to follow. It carries a 1 million token context window and up to 512,000 output tokens, priced at $0.10 per million input tokens and $0.50 per million output tokens. On Meta's Intelligence Index benchmark it scored 36 at $0.14 per task, the same score as Claude Haiku at $0.41 per task.",
+     "why": "A cheaper model that matches a larger rival on Meta's own benchmark puts price pressure on coding agents and widens the choice of small models for everyday coding work.",
+     "source_date": "2026-11-09",
+     "sources": [
+      {
+       "label": "The New Stack",
+       "url": "https://thenewstack.io/meta-muse-ember-launch/"
+      }
+     ]
+    },
+    {
+     "id": "brief-2026-11-10-03",
+     "category": "Cloud & DevOps",
+     "company": "Google",
+     "headline": "Google launches TPU 8tx and TPU 8i Max for AI inference and training",
+     "summary": "Google has launched two new TPU chips built on its TPU v8 architecture. TPU 8tx is aimed at confidential inference and offers up to two times lower latency than TPU 8t, while TPU 8i Max is aimed at training and fine-tuning and carries twice the compute, SRAM and HBM bandwidth of TPU 8i, with two TPU 8i chips in one package. TPU 8tx supports clusters of up to 2,048 hosts with 24 terabits per second of cross-pod bandwidth.",
+     "why": "New TPU options change the cost and speed trade-off for teams running large models on Google Cloud, and the confidential inference chip addresses regulated workloads that need hardware isolation.",
+     "source_date": "2026-11-10",
+     "sources": [
+      {
+       "label": "Google Cloud Blog",
+       "url": "https://cloud.google.com/blog/topics/ai-infrastructure/tpu-8tx-and-tpu-8i-max/"
+      }
+     ]
+    },
+    {
+     "id": "brief-2026-11-10-04",
+     "category": "Quantum",
+     "company": "Diraq",
+     "headline": "Diraq installs an 8-qubit silicon spin computer in a Sydney data centre",
+     "summary": "Diraq has installed an 8-qubit silicon spin quantum computer at Equinix's data centre in Sydney, which the company describes as the first such system inside a commercial data centre. The system uses under 20 kilowatts and 170 square feet, and Diraq plans to reach up to 256 qubits in the same system within a year. Diraq also published a Quantum at Work report estimating that a 10 percentage point rise in clinical trial success rates could save about $600 million per medicine.",
+     "why": "Running a quantum system inside a commercial data centre tests whether the technology can operate as a hosted service alongside ordinary cloud hardware instead of in a laboratory.",
+     "source_date": "2026-11-09",
+     "sources": [
+      {
+       "label": "The Quantum Insider",
+       "url": "https://thequantuminsider.com/2026/11/09/diraq-deploys-silicon-spin-quantum-computer-inside-a-commercial-data-center/"
+      }
+     ]
+    },
+    {
+     "id": "brief-2026-11-10-05",
+     "category": "Quantum",
+     "company": "IonQ",
+     "headline": "IonQ and Carahsoft partner to sell quantum systems to the public sector",
+     "summary": "IonQ and Carahsoft have announced a strategic partnership in which Carahsoft becomes IonQ's distributor for the public sector, handling procurement, contract vehicles and resale to federal agencies, higher education and state and local government. The agreement covers quantum computing, networking, sensing and security, and cites Executive Order 14413 on quantum innovation. IonQ points to its Stage C progress in DARPA's Quantum Benchmarking Initiative and its quantum network work with the Air Force Research Laboratory in Rome, New York.",
+     "why": "A dedicated public sector channel puts IonQ's systems in front of government buyers through established procurement routes, which is how most government quantum purchases are made.",
+     "source_date": "2026-11-09",
+     "sources": [
+      {
+       "label": "The Quantum Insider",
+       "url": "https://thequantuminsider.com/2026/11/09/ionq-carahsoft-quantum-technologies-government/"
+      }
+     ]
+    },
+    {
+     "id": "brief-2026-11-10-06",
+     "category": "Cloud & DevOps",
+     "company": "AWS",
+     "headline": "AWS makes AgentCore Runtime V2 generally available in 10 regions",
+     "summary": "AWS has made AgentCore Runtime V2 generally available in 10 regions. Sessions now start small and page memory in on demand, and environments are snapshotted once and restored for each instance, holding P75 cold starts at about 2 seconds for images from 200 MB to 2 GB, against about 5.4 seconds rising to nearly 30 seconds on the original runtime.",
+     "why": "Faster and steadier cold starts remove a common delay for agent workloads that spin up on demand, so teams can run agents without keeping idle capacity warm.",
+     "source_date": "2026-11-09",
+     "sources": [
+      {
+       "label": "AWS News Blog",
+       "url": "https://aws.amazon.com/blogs/aws/aws-weekly-roundup-agentcore-runtime-v2-amazon-dynamodb-bulk-put-items-and-more-november-9-2026/"
+      },
+      {
+       "label": "AWS Machine Learning Blog",
+       "url": "https://aws.amazon.com/blogs/machine-learning/the-new-agentcore-runtime-elastic-optimized-and-consistently-fast-starts/"
+      }
+     ]
+    },
+    {
+     "id": "brief-2026-11-10-07",
+     "category": "Cybersecurity",
+     "company": "N-able",
+     "headline": "N-able takes its N-central platform offline after 30 alleged zero-days surface",
+     "summary": "N-able has taken its hosted N-central environments offline across the Americas, Europe and Asia-Pacific and told customers running the software on site to shut down their servers, after researcher Sean Bales disclosed more than 30 alleged zero-day flaws in a GitHub repository named Able2Shell. The flaws include authentication bypass, credential disclosure and remote code execution, and the most critical chain used unauthenticated XXE to steal a session, reset a password and run commands as the nable user. N-able said it had not observed active exploitation and is developing a hotfix, with updates every four hours and no return-to-service estimate given.",
+     "why": "N-central manages IT systems for many small and mid-sized businesses, so taking the platform offline shows how a single disclosure can halt remote management for a large customer base at once.",
+     "source_date": "2026-11-09",
+     "sources": [
+      {
+       "label": "BleepingComputer",
+       "url": "https://www.bleepingcomputer.com/news/security/n-able-takes-cloud-platform-offline-after-30-plus-zero-days-published/"
+      }
+     ]
+    },
+    {
+     "id": "brief-2026-11-10-08",
+     "category": "Cybersecurity",
+     "company": "OpenSSH",
+     "headline": "SSHole flaw lets attackers bypass login on some Linux systems",
+     "summary": "A flaw named SSHole allows authentication bypass in OpenSSH on certain Linux systems built on musl, including Alpine, for accounts whose password hash is the single character \"*\". An oversized password makes musl return \"*\", which OpenSSH then treats as a match. Exploitation began on November 5, the day a proof of concept appeared, and OpenSSH 10.6p2 was released the same day as the fix. GreyNoise recorded the first successful exploitation on November 7, with 16 successful chains from 6 source IP addresses.",
+     "why": "The flaw turns a password length check into a login bypass on affected systems, so administrators running musl-based Linux need the patched OpenSSH version rather than relying on password strength.",
+     "source_date": "2026-11-09",
+     "sources": [
+      {
+       "label": "BleepingComputer",
+       "url": "https://www.bleepingcomputer.com/news/security/hackers-exploit-sshole-openssh-flaw-to-breach-linux-systems/"
+      }
+     ]
+    },
+    {
+     "id": "brief-2026-11-10-09",
+     "category": "Industry",
+     "company": "Anthropic",
+     "headline": "Anthropic spends $3.4 billion on gas turbines to power AI data centres",
+     "summary": "Anthropic has agreed to spend $3.4 billion on 1.7 gigawatts of gas-powered generators, taking over Texas supplier OnePWR Solutions' existing Caterpillar orders placed about two years ago. The deal, reached in late September according to Reuters, also covers engineering and construction work. It lets Anthropic sidestep a waitlist for turbines that averages six years in the United States.",
+     "why": "Securing power generation directly shows that electricity supply, not just chips, now sets the pace for AI data centre expansion, and it ties a leading AI lab to new gas capacity.",
+     "source_date": "2026-11-09",
+     "sources": [
+      {
+       "label": "Tom's Hardware",
+       "url": "https://www.tomshardware.com/tech-industry/data-centers/anthropic-skips-six-year-waitlist-with-massive-usd3-4-billion-gas-turbine-generator-deal-firm-takes-over-onepwrs-orders-secures-1-7gw-of-capacity-to-power-ai-data-centers"
+      }
+     ]
+    },
+    {
+     "id": "brief-2026-11-10-10",
+     "category": "Industry",
+     "company": "Disney",
+     "headline": "Disney and Adobe agree a multi-year alliance on generative AI tools",
+     "summary": "Disney and Adobe have announced a multi-year strategic alliance on generative AI tools. Disney gets early access to Adobe's AI tools and will use Firefly, Photoshop, Express, Premiere Pro and Adobe Experience Manager across its businesses, including Walt Disney Imagineering, its resorts and cruise line, and ESPN graphics. The two companies will also develop new generative AI tools together for Disney's franchises.",
+     "why": "The deal puts Adobe's tools at the centre of Disney's creative pipeline and gives Adobe a flagship entertainment customer to shape its AI products around.",
+     "source_date": "2026-11-09",
+     "sources": [
+      {
+       "label": "The Verge",
+       "url": "https://www.theverge.com/tech/1029773/disney-adobe-generative-ai-partnership"
+      },
+      {
+       "label": "Adobe press release",
+       "url": "https://www.businesswire.com/news/home/20261109707511/en/Adobe-and-The-Walt-Disney-Company-Announce-Multi-Year-Strategic-Alliance-to-Support-Disney-Innovation-with-New-AI-Powered-Tools"
+      }
+     ]
+    },
+    {
+     "id": "brief-2026-11-10-11",
+     "category": "Policy",
+     "company": "MEXC",
+     "headline": "US bars financial institutions from transmitting funds involving crypto exchange MEXC",
+     "summary": "The US Treasury's Financial Crimes Enforcement Network has barred US financial institutions from transmitting funds involving MEXC, a Seychelles-based crypto exchange founded in 2018 with more than 40 million users in over 170 countries. Treasury said MEXC was still processing transactions as recently as June 2026 with sanctioned Russian entities Garantex and Grinex. Treasury also said MEXC facilitated or processed at least $226 million in transactions connected to the A7 sanctions-evasion network, which the US Office of Foreign Assets Control has sanctioned.",
+     "why": "Cutting a large exchange off from the US financial system raises the cost of moving funds through it and signals that crypto venues handling sanctioned flows face direct US action.",
+     "source_date": "2026-11-09",
+     "sources": [
+      {
+       "label": "US Treasury",
+       "url": "https://home.treasury.gov/news/press-releases/sb0685/"
+      },
+      {
+       "label": "BleepingComputer",
+       "url": "https://www.bleepingcomputer.com/news/security/us-bans-mexc-crypto-exchange-over-sanctions-evasion-cybercrime-links/"
+      }
+     ]
+    }
+   ]
   }
  ]
 }

@@ -4,8 +4,26 @@
     <title>Signal Brief · Quantum</title>
     <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/</link>
     <description>Signal Brief: the day in technology, in The Signal's own words. Every item is written from linked official sources and fact checked before publication.</description>
-    <lastBuildDate>Mon, 09 Nov 2026 01:41:42 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 10 Nov 2026 01:36:45 +0000</lastBuildDate>
     <atom:link xmlns:atom="http://www.w3.org/2005/Atom" href="https://thillairaj.github.io/The-Signal-AI-Quantum/signal/quantum.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>Diraq installs an 8-qubit silicon spin computer in a Sydney data centre</title>
+      <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/2026-11-10/04/</link>
+      <guid isPermaLink="false">brief-2026-11-10-04</guid>
+      <pubDate>Tue, 10 Nov 2026 01:30:00 +0000</pubDate>
+      <category>Quantum</category>
+      <description>Diraq has installed an 8-qubit silicon spin quantum computer at Equinix's data centre in Sydney, which the company describes as the first such system inside a commercial data centre. The system uses under 20 kilowatts and 170 square feet, and Diraq plans to reach up to 256 qubits in the same system within a year. Diraq also published a Quantum at Work report estimating that a 10 percentage point rise in clinical trial success rates could save about $600 million per medicine. Why it matters for tech: Running a quantum system inside a commercial data centre tests whether the technology can operate as a hosted service alongside ordinary cloud hardware instead of in a laboratory.</description>
+      <content:encoded><![CDATA[<p>Diraq has installed an 8-qubit silicon spin quantum computer at Equinix's data centre in Sydney, which the company describes as the first such system inside a commercial data centre. The system uses under 20 kilowatts and 170 square feet, and Diraq plans to reach up to 256 qubits in the same system within a year. Diraq also published a Quantum at Work report estimating that a 10 percentage point rise in clinical trial success rates could save about $600 million per medicine.</p><p><strong>Why it matters for tech:</strong> Running a quantum system inside a commercial data centre tests whether the technology can operate as a hosted service alongside ordinary cloud hardware instead of in a laboratory.</p><p>Source: </p><ul><li><a href="https://thequantuminsider.com/2026/11/09/diraq-deploys-silicon-spin-quantum-computer-inside-a-commercial-data-center/">The Quantum Insider</a></li></ul>]]></content:encoded>
+    </item>
+    <item>
+      <title>IonQ and Carahsoft partner to sell quantum systems to the public sector</title>
+      <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/2026-11-10/05/</link>
+      <guid isPermaLink="false">brief-2026-11-10-05</guid>
+      <pubDate>Tue, 10 Nov 2026 01:30:00 +0000</pubDate>
+      <category>Quantum</category>
+      <description>IonQ and Carahsoft have announced a strategic partnership in which Carahsoft becomes IonQ's distributor for the public sector, handling procurement, contract vehicles and resale to federal agencies, higher education and state and local government. The agreement covers quantum computing, networking, sensing and security, and cites Executive Order 14413 on quantum innovation. IonQ points to its Stage C progress in DARPA's Quantum Benchmarking Initiative and its quantum network work with the Air Force Research Laboratory in Rome, New York. Why it matters for tech: A dedicated public sector channel puts IonQ's systems in front of government buyers through established procurement routes, which is how most government quantum purchases are made.</description>
+      <content:encoded><![CDATA[<p>IonQ and Carahsoft have announced a strategic partnership in which Carahsoft becomes IonQ's distributor for the public sector, handling procurement, contract vehicles and resale to federal agencies, higher education and state and local government. The agreement covers quantum computing, networking, sensing and security, and cites Executive Order 14413 on quantum innovation. IonQ points to its Stage C progress in DARPA's Quantum Benchmarking Initiative and its quantum network work with the Air Force Research Laboratory in Rome, New York.</p><p><strong>Why it matters for tech:</strong> A dedicated public sector channel puts IonQ's systems in front of government buyers through established procurement routes, which is how most government quantum purchases are made.</p><p>Source: </p><ul><li><a href="https://thequantuminsider.com/2026/11/09/ionq-carahsoft-quantum-technologies-government/">The Quantum Insider</a></li></ul>]]></content:encoded>
+    </item>
     <item>
       <title>Riverlane cuts surface-code logical errors with data-driven decoder fix</title>
       <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/2026-11-09/06/</link>

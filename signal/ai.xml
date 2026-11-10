@@ -4,8 +4,26 @@
     <title>Signal Brief · AI</title>
     <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/</link>
     <description>Signal Brief: the day in technology, in The Signal's own words. Every item is written from linked official sources and fact checked before publication.</description>
-    <lastBuildDate>Mon, 09 Nov 2026 01:41:42 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 10 Nov 2026 01:36:45 +0000</lastBuildDate>
     <atom:link xmlns:atom="http://www.w3.org/2005/Atom" href="https://thillairaj.github.io/The-Signal-AI-Quantum/signal/ai.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>Anthropic launches Claude Fable 5.2 and Mythos 5.2 for coding, finance and science</title>
+      <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/2026-11-10/01/</link>
+      <guid isPermaLink="false">brief-2026-11-10-01</guid>
+      <pubDate>Tue, 10 Nov 2026 01:30:00 +0000</pubDate>
+      <category>AI</category>
+      <description>Anthropic has released Claude Fable 5.2 and Claude Mythos 5.2, which it describes as its most capable models for coding, finance and science. Fable 5.2 is available now, while Mythos 5.2 is limited to vetted organizations. In pre-release testing cited by Anthropic, Fable 5.2 migrated three complex devices in a day where Claude Sonnet 4.5 managed one, and completed a 30-hour proof of Fermat's Last Theorem. Why it matters for tech: A new top-tier coding model with a published test record gives developers a concrete alternative to compare against current coding models on speed and long-task stamina.</description>
+      <content:encoded><![CDATA[<p>Anthropic has released Claude Fable 5.2 and Claude Mythos 5.2, which it describes as its most capable models for coding, finance and science. Fable 5.2 is available now, while Mythos 5.2 is limited to vetted organizations. In pre-release testing cited by Anthropic, Fable 5.2 migrated three complex devices in a day where Claude Sonnet 4.5 managed one, and completed a 30-hour proof of Fermat's Last Theorem.</p><p><strong>Why it matters for tech:</strong> A new top-tier coding model with a published test record gives developers a concrete alternative to compare against current coding models on speed and long-task stamina.</p><p>Source: </p><ul><li><a href="https://www.anthropic.com/claude-fable-and-mythos-5-2">Anthropic</a></li><li><a href="https://www.theverge.com/ai-artificial-intelligence/1030005/anthropic-claude-fable-mythos-5-2">The Verge</a></li></ul>]]></content:encoded>
+    </item>
+    <item>
+      <title>Meta launches Muse Ember, a small model for agentic coding</title>
+      <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/2026-11-10/02/</link>
+      <guid isPermaLink="false">brief-2026-11-10-02</guid>
+      <pubDate>Tue, 10 Nov 2026 01:30:00 +0000</pubDate>
+      <category>AI</category>
+      <description>Meta has launched Muse Ember (muse-ember-1.0), a small model built for agentic coding, available through Meta's Models API and Amazon Bedrock, with Azure and Google Cloud to follow. It carries a 1 million token context window and up to 512,000 output tokens, priced at $0.10 per million input tokens and $0.50 per million output tokens. On Meta's Intelligence Index benchmark it scored 36 at $0.14 per task, the same score as Claude Haiku at $0.41 per task. Why it matters for tech: A cheaper model that matches a larger rival on Meta's own benchmark puts price pressure on coding agents and widens the choice of small models for everyday coding work.</description>
+      <content:encoded><![CDATA[<p>Meta has launched Muse Ember (muse-ember-1.0), a small model built for agentic coding, available through Meta's Models API and Amazon Bedrock, with Azure and Google Cloud to follow. It carries a 1 million token context window and up to 512,000 output tokens, priced at $0.10 per million input tokens and $0.50 per million output tokens. On Meta's Intelligence Index benchmark it scored 36 at $0.14 per task, the same score as Claude Haiku at $0.41 per task.</p><p><strong>Why it matters for tech:</strong> A cheaper model that matches a larger rival on Meta's own benchmark puts price pressure on coding agents and widens the choice of small models for everyday coding work.</p><p>Source: </p><ul><li><a href="https://thenewstack.io/meta-muse-ember-launch/">The New Stack</a></li></ul>]]></content:encoded>
+    </item>
     <item>
       <title>Apple pushes Siri toward agentic tasks, report says</title>
       <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/2026-11-09/01/</link>
