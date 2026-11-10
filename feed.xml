@@ -4,166 +4,390 @@
     <title>The Signal</title>
     <link>https://thillairaj.github.io/The-Signal-AI-Quantum/</link>
     <description>A self-updating feed of AI, quantum computing, cybersecurity, cloud and DevOps, and podcast updates.</description>
-    <lastBuildDate>Tue, 10 Nov 2026 18:00:34 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 10 Nov 2026 22:00:39 +0000</lastBuildDate>
     <item>
-      <title>NVIDIA PAIR Virtual Inference Router Expands Available Compute on Your Local Network</title>
-      <link>https://developer.nvidia.com/blog/nvidia-pair-virtual-inference-router-expands-available-compute-on-your-local-network/</link>
-      <guid isPermaLink="false">291ea19a15e9fa9d</guid>
-      <description>AI agents are learning to do more by working together. A lead agent can break a complex task into smaller jobs and assign those jobs to specialized subagents....</description>
+      <title>The Modern CUDA Toolbox in Practice: A Step-by-Step Optimization Walkthrough</title>
+      <link>https://developer.nvidia.com/blog/the-modern-cuda-toolbox-in-practice-a-step-by-step-optimization-walkthrough/</link>
+      <guid isPermaLink="false">bdadb7b6c741274c</guid>
+      <description>NVIDIA CUDA remains the foundation of GPU-accelerated computing, powering everything from scientific simulations to large-scale AI training. But writing...</description>
       <category>NVIDIA Technical Blog</category>
-      <pubDate>Tue, 10 Nov 2026 18:00:14 +0000</pubDate>
+      <pubDate>Tue, 10 Nov 2026 22:00:21 +0000</pubDate>
     </item>
     <item>
-      <title>How to Carry User Identity Across Federated Kubernetes and AI Platforms</title>
-      <link>https://developer.nvidia.com/blog/how-to-carry-user-identity-across-federated-kubernetes-and-ai-platforms/</link>
-      <guid isPermaLink="false">96735b4a162296d9</guid>
-      <description>Modern AI platforms are no longer a single application behind one login screen. A user may start in a central portal, open a governed dataset, launch a notebook...</description>
+      <title>Accelerating Dropless MoE Training in JAX with NVIDIA Transformer Engine</title>
+      <link>https://developer.nvidia.com/blog/accelerating-dropless-moe-training-in-jax-with-nvidia-transformer-engine/</link>
+      <guid isPermaLink="false">833c207badafe5a0</guid>
+      <description>Mixture of experts (MoE) has become one of the defining architectural trends in large-scale AI model training. DeepSeek, Qwen, and Mixtral are examples of MoE...</description>
       <category>NVIDIA Technical Blog</category>
-      <pubDate>Tue, 10 Nov 2026 18:00:14 +0000</pubDate>
+      <pubDate>Tue, 10 Nov 2026 22:00:21 +0000</pubDate>
     </item>
     <item>
-      <title>Frontier Reasoning Reaches the Edge: How to Deploy and Optimize Models on NVIDIA Jetson</title>
-      <link>https://developer.nvidia.com/blog/frontier-reasoning-reaches-the-edge-how-to-deploy-and-optimize-models-on-nvidia-jetson/</link>
-      <guid isPermaLink="false">bb4eff084ce0c3ca</guid>
-      <description>Running reasoning and agentic AI at the edge has been harder than it needs to be. Until recently, models capable of multi-step reasoning were too large to run...</description>
+      <title>Scaling Federated Learning Across Docker, Kubernetes, and Slurm with NVIDIA FLARE</title>
+      <link>https://developer.nvidia.com/blog/scaling-federated-learning-across-docker-kubernetes-and-slurm-with-nvidia-flare/</link>
+      <guid isPermaLink="false">c2ceacd67091fd6a</guid>
+      <description>Federated learning (FL) projects often begin with a straightforward setup: one server, a few clients, and one dataset at each site. As those projects grow, the...</description>
       <category>NVIDIA Technical Blog</category>
-      <pubDate>Tue, 10 Nov 2026 18:00:14 +0000</pubDate>
+      <pubDate>Tue, 10 Nov 2026 22:00:21 +0000</pubDate>
     </item>
     <item>
-      <title>Building a Memory-Driven Agent with NVIDIA NemoClaw</title>
-      <link>https://developer.nvidia.com/blog/building-a-memory-driven-agent-with-nvidia-nemoclaw/</link>
-      <guid isPermaLink="false">aa717a2074d6c4eb</guid>
-      <description>Enterprise work spans messages, decisions, projects, and obligations that change over time. An AI agent that starts without this context must reconstruct it...</description>
+      <title>How NVIDIA NVLink 6 Delivers Multi-Layer Resiliency for AI Factories</title>
+      <link>https://developer.nvidia.com/blog/how-nvidia-nvlink-6-delivers-multi-layer-resiliency-for-ai-factories/</link>
+      <guid isPermaLink="false">6510d81523c67e16</guid>
+      <description>For operators of large-scale AI factories, maximizing continuous output is essential for productivity. In massive-scale AI training, every GPU in the cluster...</description>
       <category>NVIDIA Technical Blog</category>
-      <pubDate>Tue, 10 Nov 2026 18:00:14 +0000</pubDate>
+      <pubDate>Tue, 10 Nov 2026 22:00:21 +0000</pubDate>
     </item>
     <item>
-      <title>Introducing CUDA Rust: Two Tracks for Writing GPU Kernels</title>
-      <link>https://developer.nvidia.com/blog/introducing-cuda-rust-two-tracks-for-writing-gpu-kernels/</link>
-      <guid isPermaLink="false">dbb60a81aa824bf3</guid>
-      <description>In September 2026, NVIDIA announced it is leaning into native GPU programming in Rust. CUDA C++ and CUDA Python are mature, enterprise-grade toolchains, and...</description>
+      <title>How NVIDIA Groq 3 LPX Deterministic Execution Drives Power-Efficient High-Interactivity Inference on NVIDIA Vera Rubin</title>
+      <link>https://developer.nvidia.com/blog/how-nvidia-groq-3-lpx-deterministic-execution-drives-power-efficient-high-interactivity-inference-on-nvidia-vera-rubin/</link>
+      <guid isPermaLink="false">ce9893f8b1d37b1f</guid>
+      <description>Power is a defining constraint for AI factories. As AI workloads demand a full compute platform to serve them, each component of that platform must maximize...</description>
       <category>NVIDIA Technical Blog</category>
-      <pubDate>Tue, 10 Nov 2026 18:00:14 +0000</pubDate>
+      <pubDate>Tue, 10 Nov 2026 22:00:21 +0000</pubDate>
     </item>
     <item>
-      <title>CUDA Toolkit 13.4 Adds Windows on Arm Support and Greater Control over Shared GPUs</title>
-      <link>https://developer.nvidia.com/blog/cuda-toolkit-13-4-adds-windows-on-arm-support-and-greater-control-over-shared-gpus/</link>
-      <guid isPermaLink="false">7816c3b36083bf87</guid>
-      <description>Every NVIDIA CUDA Toolkit release adds functionality and performance improvements that help developers get more from NVIDIA GPUs and the broader NVIDIA software...</description>
+      <title>Dense vs. MoE Models: Active Parameters, Throughput, and When to Choose Each</title>
+      <link>https://developer.nvidia.com/blog/dense-vs-moe-models-active-parameters-throughput-and-when-to-choose-each/</link>
+      <guid isPermaLink="false">3f75c86687362489</guid>
+      <description>How can a 30B-parameter model activate only 3B parameters per token, and still use the capacity of the larger model? Nemotron 3.5 Lightning illustrates the...</description>
       <category>NVIDIA Technical Blog</category>
-      <pubDate>Tue, 10 Nov 2026 18:00:14 +0000</pubDate>
+      <pubDate>Tue, 10 Nov 2026 22:00:21 +0000</pubDate>
     </item>
     <item>
-      <title>When to Use Encode-Prefill-Decode Disaggregation to Accelerate Multimodal Model Serving</title>
-      <link>https://developer.nvidia.com/blog/when-to-use-encode-prefill-decode-disaggregation-to-accelerate-multimodal-model-serving/</link>
-      <guid isPermaLink="false">51e6e5a8d9bdaf12</guid>
-      <description>Encode-prefill-decode (EPD) disaggregation is an inference optimization technique for multimodal models that separates the vision encoder stage from the prefill...</description>
+      <title>Translating CUDA Tile Operations from Python to Rust Using Agentic AI</title>
+      <link>https://developer.nvidia.com/blog/translating-cuda-tile-operations-from-python-to-rust-using-agentic-ai/</link>
+      <guid isPermaLink="false">833138d51e10dc27</guid>
+      <description>cuTile Rust (cutile-rs) is a tile-based system for safe, idiomatic GPU kernel authoring in the Rust programming language. Extending the Rust ownership model to...</description>
       <category>NVIDIA Technical Blog</category>
-      <pubDate>Tue, 10 Nov 2026 18:00:14 +0000</pubDate>
+      <pubDate>Tue, 10 Nov 2026 22:00:21 +0000</pubDate>
     </item>
     <item>
-      <title>From Wafer-Out to First Token: Codifying Supply Chain Expertise with Nemotron and Palantir Foundry</title>
-      <link>https://developer.nvidia.com/blog/from-wafer-out-to-first-token-codifying-supply-chain-expertise-with-nemotron-and-palantir-foundry/</link>
-      <guid isPermaLink="false">d23b90bcfb6224ff</guid>
-      <description>NVIDIA has one of the largest and most complex supply chains in the world, and its performance is measured from wafer-out to first token. The interval is in two...</description>
+      <title>TensorRT Edge-LLM Completes the MLPerf Edge Agentic Benchmark 6.4x Faster on Jetson AGX Thor</title>
+      <link>https://developer.nvidia.com/blog/tensorrt-edge-llm-completes-the-mlperf-edge-agentic-benchmark-6-4x-faster-on-jetson-agx-thor/</link>
+      <guid isPermaLink="false">82b935833ffdc855</guid>
+      <description>AI agents are moving from cloud data centers to vehicles, robots, and other edge devices. Unlike a chatbot that answers a single prompt, an agent works through...</description>
       <category>NVIDIA Technical Blog</category>
-      <pubDate>Tue, 10 Nov 2026 18:00:14 +0000</pubDate>
+      <pubDate>Tue, 10 Nov 2026 22:00:21 +0000</pubDate>
     </item>
     <item>
-      <title>High-Throughput Structure Prediction with BioNeMo Inference Runtime</title>
-      <link>https://developer.nvidia.com/blog/high-throughput-structure-prediction-with-bionemo-inference-runtime/</link>
-      <guid isPermaLink="false">bf13fbf2f14a0fa2</guid>
-      <description>Biomolecular structure prediction is now often run at proteome scale, where the goal is to move an entire worklist through the pipeline efficiently. NVIDIA...</description>
+      <title>How to Use AI Agents to Prepare 3D Scenes for Simulation</title>
+      <link>https://developer.nvidia.com/blog/how-to-use-ai-agents-to-prepare-3d-scenes-for-simulation/</link>
+      <guid isPermaLink="false">d01a6b066d0e307e</guid>
+      <description>Agentic AI workflows can be used to prepare and validate digital twins for physical AI systems. Agents can inspect 3D scenes, author simulation-relevant data in...</description>
       <category>NVIDIA Technical Blog</category>
-      <pubDate>Tue, 10 Nov 2026 18:00:14 +0000</pubDate>
+      <pubDate>Tue, 10 Nov 2026 22:00:21 +0000</pubDate>
     </item>
     <item>
-      <title>How Full-Stack NIM Optimizations Deliver 2.5x More Users on Nemotron 3 Ultra</title>
-      <link>https://developer.nvidia.com/blog/how-full-stack-nim-optimizations-deliver-2-5x-more-users-on-nemotron-3-ultra/</link>
-      <guid isPermaLink="false">2abc4ceb82a011e6</guid>
-      <description>Deploying a large language model is only the first step toward production-ready serving. Production teams also need to serve as many concurrent users as...</description>
+      <title>Benchmarking LLM Inference at Scale with AIPerf</title>
+      <link>https://developer.nvidia.com/blog/benchmarking-llm-inference-at-scale-with-aiperf/</link>
+      <guid isPermaLink="false">88c32b0b48612efb</guid>
+      <description>You’re deploying a model on a system. It starts up, prompts are getting responses. Now the hard question: Is this fast? Your instincts might lead you to send...</description>
       <category>NVIDIA Technical Blog</category>
-      <pubDate>Tue, 10 Nov 2026 18:00:14 +0000</pubDate>
+      <pubDate>Tue, 10 Nov 2026 22:00:21 +0000</pubDate>
     </item>
     <item>
-      <title>If in doubt, delete the uv.lock file</title>
-      <link>https://simonwillison.net/2026/Nov/1/delete-uv-lock-first/</link>
-      <guid isPermaLink="false">ffb30fef9594cc91</guid>
-      <description>I've been getting the occasional confusing Python dependency error since switching over to Python 3.15 and the rule I'm having to remember is: If in doubt, delete the uv.lock file Most of my projects are libraries which don't include a uv.lock file, since it's rude for a library </description>
+      <title>Building a multiplayer game world with autonomous Fable-class models</title>
+      <link>https://simonwillison.net/2026/Oct/29/how-i-built-the-most-ai-pilled-company-in-the-world/</link>
+      <guid isPermaLink="false">672400a4a73efc0d</guid>
+      <description>How I Built the Most AI-Pilled Company in the World Don't be put off by the clickbait headline, this piece by Jacob Sansbury describing how they are building Spawn is a fascinating exploration of the bleeding edge of what's possible with agentic engineering against frontier model</description>
       <category>Simon Willison</category>
-      <pubDate>Tue, 10 Nov 2026 18:00:02 +0000</pubDate>
+      <pubDate>Tue, 10 Nov 2026 22:00:02 +0000</pubDate>
     </item>
     <item>
-      <title>The U.S. Census Bureau and “Super Intelligence”</title>
-      <link>https://simonwillison.net/2026/Nov/2/census-bureau-super-intelligence/</link>
-      <guid isPermaLink="false">6bf0704cb5e2b6fd</guid>
-      <description>I was reminded today of AI Adoption Rate Trending Down for Large Companies , a chart produced by Apollo Global Management in September 2025, which appeared to show a slowdown in U.S. corporate AI adoption based on numbers collected by the U.S. Census Bureau. At the time I used th</description>
+      <title>API credits benefit for eligible ChatGPT subscriptions</title>
+      <link>https://simonwillison.net/2026/Oct/29/api-credits/</link>
+      <guid isPermaLink="false">07b8277675a3d49f</guid>
+      <description>API credits benefit for eligible ChatGPT subscriptions Earlier this month Anthropic announced a generous new benefit for their Max and Team subscriptions: $100, $200, and $500 per month subscribers would get the equivalent quantity of (expiring) credits to use with the Anthropic </description>
       <category>Simon Willison</category>
-      <pubDate>Tue, 10 Nov 2026 18:00:02 +0000</pubDate>
+      <pubDate>Tue, 10 Nov 2026 22:00:02 +0000</pubDate>
     </item>
     <item>
-      <title>llm 0.37</title>
-      <link>https://simonwillison.net/2026/Nov/2/llm/</link>
-      <guid isPermaLink="false">10dab842bc689c46</guid>
-      <description>Release: llm 0.37 There's a lot of stuff in this new release of my LLM CLI tool and Python library, representing around two months of accumulated features and fixes. I added gpt-6.1-sol and gpt-6.1-terra , plus a new llm openai endpoint add command to make it easier to configure </description>
+      <title>dbreunig/nesformer</title>
+      <link>https://simonwillison.net/2026/Oct/30/nesformer/</link>
+      <guid isPermaLink="false">1649c5dd07045357</guid>
+      <description>dbreunig/nesformer Inspired by qwenputer by Divyansh Agrawal, Drew Breunig baked a working emulator for a Nintendo Entertainment System 6502 CPU into the weights of Qwen3.5-4B. You can now play NES ROMs such as Super Mario Bros (very slowly) running inside Qwen! In a comment on H</description>
       <category>Simon Willison</category>
-      <pubDate>Tue, 10 Nov 2026 18:00:02 +0000</pubDate>
+      <pubDate>Tue, 10 Nov 2026 22:00:02 +0000</pubDate>
     </item>
     <item>
-      <title>October sponsors-only newsletter</title>
-      <link>https://simonwillison.net/2026/Nov/3/october-newsletter/</link>
-      <guid isPermaLink="false">c006e897d48e9930</guid>
-      <description>I sent out the October edition of my sponsors-only monthly newsletter . If you are a sponsor (or start a sponsorship now) you can access it here . This month: The October inflection point for vibe game development The vulnerability apocalypse gets hot LLM releases API credits for</description>
+      <title>datasette-llm 0.1a9</title>
+      <link>https://simonwillison.net/2026/Oct/31/datasette-llm/</link>
+      <guid isPermaLink="false">bc9463905bbd6e7a</guid>
+      <description>Release: datasette-llm 0.1a9 I have some big upgrades to Datasette Agent in the pipeline, but in the meantime here's a tiny user experience improvement to the underlying datasette-llm plugin. It now picks up the default model used by LLM , which means you can start using Datasett</description>
       <category>Simon Willison</category>
-      <pubDate>Tue, 10 Nov 2026 18:00:02 +0000</pubDate>
+      <pubDate>Tue, 10 Nov 2026 22:00:02 +0000</pubDate>
     </item>
     <item>
-      <title>I discovered a sound that leaks your exact location (and it's everywhere) - YouTube</title>
-      <link>https://simonwillison.net/2026/Nov/3/a-sound-that-leaks-your-exact-location/</link>
-      <guid isPermaLink="false">22c23cfe758c1cb6</guid>
-      <description>I discovered a sound that leaks your exact location (and it&amp;#x27;s everywhere) - YouTube Genius piece of OSINT by Colsto, who demonstrates how you can take almost imperceptible background noise of planes from a video soundtrack, figure out their Doppler curves, then cross referen</description>
+      <title>How We Took Over ChatGPT Accounts</title>
+      <link>https://simonwillison.net/2026/Oct/31/how-we-took-over-chatgpt-accounts/</link>
+      <guid isPermaLink="false">0def4a2fca6b3a20</guid>
+      <description>How We Took Over ChatGPT Accounts Parameter Labs describe an exploit they found against ChatGPT's implementation of the artifacts pattern (OpenAI used to call this "Canvas" but it looks like the latest revision is called HTML previews ), where interactive custom HTML apps are dis</description>
       <category>Simon Willison</category>
-      <pubDate>Tue, 10 Nov 2026 18:00:02 +0000</pubDate>
+      <pubDate>Tue, 10 Nov 2026 22:00:02 +0000</pubDate>
     </item>
     <item>
-      <title>Qwen 3.8 27B on my laptop can interpret model weights, too</title>
-      <link>https://simonwillison.net/2026/Nov/3/qwen-can-interpret-model-weights/</link>
-      <guid isPermaLink="false">6857dc224a419fe9</guid>
-      <description>Yesterday's hot paper was Sparks of Weight-Space Programming: LLMs can natively read &amp;amp; write neural network weights by Rikiya Takehi, Jayden Teoh, Alex Zhang, and Omar Khattab. The paper (OK, the authors classify is as a "blog post", but it's paper-shaped) found that frontier</description>
+      <title>Quoting Kyle Kingsbury</title>
+      <link>https://simonwillison.net/2026/Nov/1/kyle-kingsbury/</link>
+      <guid isPermaLink="false">835fd1406315e6b3</guid>
+      <description>More broadly, the use of LLMs erodes trust in documentation, in software, and in the organizations which produce them. Perhaps engineers will begin to treat any new software project with suspicion—the signals we used to rely on as markers of a mature system are now easier to coun</description>
       <category>Simon Willison</category>
-      <pubDate>Tue, 10 Nov 2026 18:00:02 +0000</pubDate>
+      <pubDate>Tue, 10 Nov 2026 22:00:02 +0000</pubDate>
     </item>
     <item>
-      <title>AI is destroying my CS degree</title>
-      <link>https://simonwillison.net/2026/Nov/3/hn-50354278/</link>
-      <guid isPermaLink="false">5b7b48c647c50787</guid>
-      <description>My comment on AI is destroying my CS degree &amp;mdash; Hacker News. I don't envy educators right now. AI clearly means you need to change how you teach and evaluate students. We are only a few years in though, and it's still extremely unclear what effective teaching with these tools</description>
+      <title>datasette-llm 0.1a10</title>
+      <link>https://simonwillison.net/2026/Nov/4/datasette-llm/</link>
+      <guid isPermaLink="false">f121b002be2ba369</guid>
+      <description>Release: datasette-llm 0.1a10 Fixes a bug that affected my agent.datasette.io demo site, where the set of available LLM models was not correctly restricted to just those in the configuration. Tags: llm , datasette</description>
       <category>Simon Willison</category>
-      <pubDate>Tue, 10 Nov 2026 18:00:02 +0000</pubDate>
+      <pubDate>Tue, 10 Nov 2026 22:00:02 +0000</pubDate>
     </item>
     <item>
-      <title>llm 0.37.1</title>
-      <link>https://simonwillison.net/2026/Nov/3/llm/</link>
-      <guid isPermaLink="false">07065efd722751e2</guid>
-      <description>Release: llm 0.37.1 A bugfix release for LLM , with contributions from Steven Huang , Tao An , Arjan Mossel , and XQ . Tags: llm</description>
+      <title>Quoting Paul Ford</title>
+      <link>https://simonwillison.net/2026/Nov/5/paul-ford/</link>
+      <guid isPermaLink="false">3089c4e12a10528f</guid>
+      <description>The web browser is very, very, very powerful software for applications, and the cost of accessing that power is going down seemingly every day . &amp;mdash; Paul Ford , The Web Is More Than Enough Tags: browsers , paul-ford , web-development</description>
       <category>Simon Willison</category>
-      <pubDate>Tue, 10 Nov 2026 18:00:02 +0000</pubDate>
+      <pubDate>Tue, 10 Nov 2026 22:00:02 +0000</pubDate>
     </item>
     <item>
-      <title>datasette-agent 0.5a0</title>
-      <link>https://simonwillison.net/2026/Nov/3/datasette-agent/</link>
-      <guid isPermaLink="false">196e073af215c4a0</guid>
-      <description>Release: datasette-agent 0.5a0 This is a significant release of Datasette Agent . The most notable new feature is called the panel - it lets the agent chat open and then sit next to pages from Datasette, for example a table or query page. When combined with datasette-apps this me</description>
+      <title>Quoting Nilay Patel</title>
+      <link>https://simonwillison.net/2026/Nov/6/nilay-patel/</link>
+      <guid isPermaLink="false">04ff5155f60621be</guid>
+      <description>The products aren't good enough to sell people on the costs. You cannot tell people that you have to listen to the whine of a data center in their backyard for AI overviews and some of the most hilarious deep fake slop in history. It's not worth it. It just isn't worth it to anyo</description>
       <category>Simon Willison</category>
-      <pubDate>Tue, 10 Nov 2026 18:00:02 +0000</pubDate>
+      <pubDate>Tue, 10 Nov 2026 22:00:02 +0000</pubDate>
     </item>
     <item>
-      <title>datasette-apps 0.3a0</title>
-      <link>https://simonwillison.net/2026/Nov/4/datasette-apps/</link>
-      <guid isPermaLink="false">c3dba756698ba6ec</guid>
-      <description>Release: datasette-apps 0.3a0 Datasette Apps adds support for hosting and editing custom HTML applications inside of Datasette. These can be created by hand, but it's easier to create them using LLMs via Datasette Agent . This release improves that integration: Apps can now be ta</description>
+      <title>Terry Pratchett's Study</title>
+      <link>https://simonwillison.net/2026/Nov/7/hn-50407316/</link>
+      <guid isPermaLink="false">dadfbd3c3260c4b0</guid>
+      <description>My comment on Terry Pratchett&amp;#x27;s Study &amp;mdash; Hacker News. Terry Pratchett once wrote about the concept of "horizontal wealth". Vertical wealth is where you spend money on rich people stuff - yachts and suchlike. Horizontal wealth is where you spend more money on the things </description>
       <category>Simon Willison</category>
-      <pubDate>Tue, 10 Nov 2026 18:00:02 +0000</pubDate>
+      <pubDate>Tue, 10 Nov 2026 22:00:02 +0000</pubDate>
+    </item>
+    <item>
+      <title>ChatGPT is getting verified AI ‘Business Agents’</title>
+      <link>https://www.theverge.com/ai-artificial-intelligence/1030552/openai-chatgpt-business-agents-hub</link>
+      <guid isPermaLink="false">7396b577c72532a7</guid>
+      <description>ChatGPT is going to let you chat with verified "Business Agents" that represent a brand to help you with things like comparison shopping. The feature, available first to "eligible" e-commerce and online service businesses in the US, is launching as part of a suite of business-foc</description>
+      <category>The Verge — AI</category>
+      <pubDate>Tue, 10 Nov 2026 22:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>The US is winning the AI race. Jensen Huang could have blown it</title>
+      <link>https://www.theverge.com/ai-artificial-intelligence/1031063/jensen-huang-ai-race-us-china-spy</link>
+      <guid isPermaLink="false">34a6071342ff5a88</guid>
+      <description>As espionage targets go, Jensen Huang is perhaps one of the least surprising on Earth. The Nvidia CEO runs one of the world's most valuable companies, controls the in-demand technology fueling the AI boom, and is cozy with presidents, CEOs, and all manner of important people. He </description>
+      <category>The Verge — AI</category>
+      <pubDate>Tue, 10 Nov 2026 22:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>Scientists discover new way to control magnetic waves for future quantum technologies</title>
+      <link>https://phys.org/news/2026-11-scientists-magnetic-future-quantum-technologies.html</link>
+      <guid isPermaLink="false">7b16d317f2c00682</guid>
+      <description>Researchers at the U.S. Department of Energy's (DOE) Ames National Laboratory have discovered a way to control the handedness of magnons, tiny magnetic waves that can carry information through materials. By changing the material's magnetic state with an external magnetic field, t</description>
+      <category>Phys.org Quantum Physics</category>
+      <pubDate>Tue, 10 Nov 2026 21:40:02 +0000</pubDate>
+    </item>
+    <item>
+      <title>Classical–quantum light interactions could make complex quantum behavior easier to simulate</title>
+      <link>https://phys.org/news/2026-11-classicalquantum-interactions-complex-quantum-behavior.html</link>
+      <guid isPermaLink="false">dbce61fefe3ab468</guid>
+      <description>An international collaboration demonstrates that classical nonlinear dynamics can drive single- and two-photon states to thermalize, opening new avenues for simulating complex quantum many-body systems within accessible optical architectures.</description>
+      <category>Phys.org Quantum Physics</category>
+      <pubDate>Tue, 10 Nov 2026 21:30:01 +0000</pubDate>
+    </item>
+    <item>
+      <title>Grok Build coding agent leaks oodles of confidential info, some belonging to SpaceXSI</title>
+      <link>https://arstechnica.com/security/2026/11/grok-build-coding-agent-leaks-oodles-of-confidential-info-some-belonging-to-spacexsi/</link>
+      <guid isPermaLink="false">b686da68349e5f78</guid>
+      <description>Researcher finds 35,000 Grok Build apps wide open to anyone who looked for them.</description>
+      <category>Ars Technica AI</category>
+      <pubDate>Tue, 10 Nov 2026 21:12:59 +0000</pubDate>
+    </item>
+    <item>
+      <title>Japanese furniture giant Nitori says hackers stole 37.6M customer records</title>
+      <link>https://www.bleepingcomputer.com/news/security/japanese-furniture-giant-nitori-says-hackers-stole-376m-customer-records/</link>
+      <guid isPermaLink="false">230bcad0faf39354</guid>
+      <description>Nitori, a major Japanese furniture and home accessories retailer, discovered that an attacker accessed a system on its network and may have stolen 37.62 million customer records. [...]</description>
+      <category>BleepingComputer</category>
+      <pubDate>Tue, 10 Nov 2026 20:54:55 +0000</pubDate>
+    </item>
+    <item>
+      <title>What happens to mathematics when AI becomes an oracle?</title>
+      <link>https://arstechnica.com/science/2026/11/what-happens-to-mathematics-when-ai-becames-an-oracle/</link>
+      <guid isPermaLink="false">c4b2e9a50337f305</guid>
+      <description>Mathematician Steven Strogatz discusses his new book, Big Math: The Hidden Codes That Run Our World .</description>
+      <category>Ars Technica AI</category>
+      <pubDate>Tue, 10 Nov 2026 20:30:01 +0000</pubDate>
+    </item>
+    <item>
+      <title>[In preview] Public Preview: Distributed accelerator for cloud storage on AKS</title>
+      <link>https://azure.microsoft.com/updates?id=578454</link>
+      <guid isPermaLink="false">d2881754b1394dc6</guid>
+      <description>Distributed accelerator for cloud storage (DACS) is now in public preview for AI workloads running on Azure Kubernetes Service (AKS). DACS is a distributed read-through cache that runs within your AKS cluster and uses local NVMe disks across nodes to keep</description>
+      <category>Azure Updates</category>
+      <pubDate>Tue, 10 Nov 2026 20:08:32 +0000</pubDate>
+    </item>
+    <item>
+      <title>[Launched] Generally Available: Azure Functions support for .NET 11</title>
+      <link>https://azure.microsoft.com/updates?id=578773</link>
+      <guid isPermaLink="false">8f1285269ebf82f4</guid>
+      <description>Azure Functions support for .NET 11 is now generally available.You can now build Azure Functions apps targeting .NET 11 using the isolated worker model, while continuing to use the Azure Functions programming model and host integration. Your serverless ap</description>
+      <category>Azure Updates</category>
+      <pubDate>Tue, 10 Nov 2026 20:07:45 +0000</pubDate>
+    </item>
+    <item>
+      <title>Microsoft releases Windows 10 KB5131096 extended security update</title>
+      <link>https://www.bleepingcomputer.com/news/microsoft/microsoft-releases-windows-10-kb5131096-extended-security-update/</link>
+      <guid isPermaLink="false">9814f0299437ed94</guid>
+      <description>Microsoft released the Windows 10 KB5131096 extended security update, which includes this month's November 2026 Patch Tuesday fixes and a few bug fixes and changes. [...]</description>
+      <category>BleepingComputer</category>
+      <pubDate>Tue, 10 Nov 2026 20:04:36 +0000</pubDate>
+    </item>
+    <item>
+      <title>Anthropic wants Claude to be the front end for your entire enterprise app stack</title>
+      <link>https://thenewstack.io/claude-enterprise-apps-connectors/</link>
+      <guid isPermaLink="false">ece2dc32322ed8fe</guid>
+      <description>Anthropic is expanding Claude&amp;#8217;s ability to work directly inside enterprise applications; it can now open full software interfaces, retrieve information, The post Anthropic wants Claude to be the front end for your entire enterprise app stack appeared first on The New Stack </description>
+      <category>The New Stack</category>
+      <pubDate>Tue, 10 Nov 2026 20:00:58 +0000</pubDate>
+    </item>
+    <item>
+      <title>Repeatable laser measurements reveal 'forbidden' vibrations in single molecules without destroying them</title>
+      <link>https://phys.org/news/2026-11-laser-reveal-forbidden-vibrations-molecules.html</link>
+      <guid isPermaLink="false">d86ea2801d35abc6</guid>
+      <description>The possibility of controlling "forbidden" excitations of vibrations in molecules could form the basis of extremely accurate clocks, quantum bits and precise tests of the fundamental laws of physics. Researchers at the University of Basel have now identified and controlled such "</description>
+      <category>Phys.org Quantum Physics</category>
+      <pubDate>Tue, 10 Nov 2026 20:00:01 +0000</pubDate>
+    </item>
+    <item>
+      <title>Hackers exploit trusted AWS access to breach multiple cloud environments</title>
+      <link>https://www.bleepingcomputer.com/news/security/hackers-exploit-trusted-aws-access-to-breach-multiple-cloud-environments/</link>
+      <guid isPermaLink="false">09de80ae0aa44cee</guid>
+      <description>A threat actor used compromised identity and access management (IAM) credentials for a Qubole big data platform's AWS account to access and exfiltrate data from multiple customers' AWS environments. [...]</description>
+      <category>BleepingComputer</category>
+      <pubDate>Tue, 10 Nov 2026 19:31:11 +0000</pubDate>
+    </item>
+    <item>
+      <title>Git Patches Flaw That Lets Malicious Repositories Execute Code During Recursive Clones</title>
+      <link>https://thehackernews.com/2026/11/git-patches-flaw-that-lets-malicious.html</link>
+      <guid isPermaLink="false">b86930e18372a4de</guid>
+      <description>A flaw in Git can let a malicious repository run an attacker's code on a computer that clones it recursively, together with its submodules. The Git project fixed it this week in Git 2.56.1, with matching fixes for the 2.50 through 2.55 series in 2.50.2, 2.51.3, 2.52.1, 2.53.1, 2.</description>
+      <category>The Hacker News</category>
+      <pubDate>Tue, 10 Nov 2026 19:23:10 +0000</pubDate>
+    </item>
+    <item>
+      <title>SGLang RCE Exploit Breaches NEAR AI, Steals Data From 18 Agents and About 100 Users</title>
+      <link>https://thehackernews.com/2026/11/sglang-rce-exploit-breaches-near-ai.html</link>
+      <guid isPermaLink="false">b958c227209529b5</guid>
+      <description>An attacker exploited a remote code execution flaw in SGLang, an open-source inference engine, and ran code on one of NEAR AI's inference servers last Sunday. The attacker could also have seen requests being processed on that server that day, including requests sent in confidenti</description>
+      <category>The Hacker News</category>
+      <pubDate>Tue, 10 Nov 2026 19:19:39 +0000</pubDate>
+    </item>
+    <item>
+      <title>Microsoft November 2026 Patch Tuesday fixes 1,235 flaws, Outlook zero-day</title>
+      <link>https://www.bleepingcomputer.com/news/microsoft/microsoft-november-2026-patch-tuesday-fixes-1-235-flaws-outlook-zero-day/</link>
+      <guid isPermaLink="false">50eb1dccf495275b</guid>
+      <description>Today is Microsoft's November 2026 Patch Tuesday, with security updates addressing a record-breaking 1,235 flaws, including one actively exploited Microsoft Outlook zero-day vulnerability. [...]</description>
+      <category>BleepingComputer</category>
+      <pubDate>Tue, 10 Nov 2026 19:07:36 +0000</pubDate>
+    </item>
+    <item>
+      <title>Gemini Intelligence: New features, on more devices</title>
+      <link>https://blog.google/products-and-platforms/platforms/android/gemini-intelligence-november-features-devices/</link>
+      <guid isPermaLink="false">ac5a661efbfd509d</guid>
+      <description>A man speaks into a phone. Text on the screen reads 'Gemini Intelligence'</description>
+      <category>Google AI Blog</category>
+      <pubDate>Tue, 10 Nov 2026 19:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>[In preview] Public Preview: Azure Front Door adds native gRPC support</title>
+      <link>https://azure.microsoft.com/updates?id=579383</link>
+      <guid isPermaLink="false">ac66b2519c41791e</guid>
+      <description>Announcing the public preview of gRPC support in Azure Front Door. Build and deliver gRPC applications through Azure Front Door Standard and Premium. Now in preview, gRPC support lets you route calls to specific services and methods, distribute traffic ac</description>
+      <category>Azure Updates</category>
+      <pubDate>Tue, 10 Nov 2026 18:55:53 +0000</pubDate>
+    </item>
+    <item>
+      <title>[Launched] Generally Available: Azure Front Door edge actions</title>
+      <link>https://azure.microsoft.com/updates?id=579310</link>
+      <guid isPermaLink="false">426f6f822f47226e</guid>
+      <description>Announcing the general availability of Azure Front Door edge actions (serverless compute at the edge). With edge actions, customers can execute lightweight JavaScript functions during Azure Front Door client request/response processing to make real-time d</description>
+      <category>Azure Updates</category>
+      <pubDate>Tue, 10 Nov 2026 18:55:09 +0000</pubDate>
+    </item>
+    <item>
+      <title>Quantinuum, RIKEN, and SoftBank Partner to Advance Quantum-AI Supercomputing and Domestic Fault-Tolerant Systems</title>
+      <link>https://quantumcomputingreport.com/quantinuum-riken-and-softbank-partner-to-advance-quantum-ai-supercomputing-and-domestic-fault-tolerant-systems/</link>
+      <guid isPermaLink="false">d92155ba65b7a6d8</guid>
+      <description>Quantinuum, RIKEN, and SoftBank have partnered to advance quantum-AI supercomputing and develop fault-tolerant systems in Japan. This collaboration involves commercializing hybrid quantum-AI supercomputing using Quantinuum's Reimei H2 quantum computer, RIKEN's ROQUO GPU system, a</description>
+      <category>Quantum Computing Report</category>
+      <pubDate>Tue, 10 Nov 2026 18:40:32 +0000</pubDate>
+    </item>
+    <item>
+      <title>Windows 11 KB5132061 &amp; KB5131087 cumulative updates released</title>
+      <link>https://www.bleepingcomputer.com/news/microsoft/windows-11-kb5132061-and-kb5131087-cumulative-updates-released/</link>
+      <guid isPermaLink="false">33bc3cf0f92e3e70</guid>
+      <description>Microsoft has released the Patch Tuesday Windows 11 and cumulative updates for versions 26H2/25H2/24H2 and 23H2 to fix security vulnerabilities and bugs, and add new features. [...]</description>
+      <category>BleepingComputer</category>
+      <pubDate>Tue, 10 Nov 2026 18:33:26 +0000</pubDate>
+    </item>
+    <item>
+      <title>Fermilab and CERN Begin Installation Work on DUNE Neutrino Experiment</title>
+      <link>https://thequantuminsider.com/2026/11/10/construction-begins-dune-underground-neutrino-detector-cryostats/</link>
+      <guid isPermaLink="false">091e8f1f99da0d67</guid>
+      <description>Insider Brief PRESS RELEASE &amp;#8212; Installation crews with the U.S. Department of Energy’s (DOE) Fermi National Accelerator Laboratory (Fermilab) and CERN, the European Organization for Particle Physics, are working alongside the Sanford Underground Research Facility (SURF) to b</description>
+      <category>The Quantum Insider</category>
+      <pubDate>Tue, 10 Nov 2026 18:31:40 +0000</pubDate>
+    </item>
+    <item>
+      <title>QuiX Quantum Leads National Mission to Develop 100+ Qubit Photonic Quantum Computer</title>
+      <link>https://thequantuminsider.com/2026/11/10/quix-quantum-leads-national-mission-100-qubit-photonic-quantum-computer/</link>
+      <guid isPermaLink="false">2baa6fd0fec12730</guid>
+      <description>Insider Brief PRESS RELEASE &amp;#8212; QuiX Quantum, a Dutch-German developer of universal photonic quantum computers, has been the Photonic Quantum Computing Mission awarded funding under Phase II of the PhotonDelta National Growth Fund (NGF) Integrated Photonics Programme. QuiX Qu</description>
+      <category>The Quantum Insider</category>
+      <pubDate>Tue, 10 Nov 2026 18:23:52 +0000</pubDate>
+    </item>
+    <item>
+      <title>Public Preview: Azure Route Server dual-stack IPv4/IPv6 support</title>
+      <link>https://azure.microsoft.com/updates?id=579746</link>
+      <guid isPermaLink="false">f86e1e31ff7d771a</guid>
+      <description>Azure Route Server now supports IPv4/IPv6 dual-stack mode in public preview, enabling route exchange for both address families across supported hybrid networking connections. Existing IPv4 connections remain unchanged, so organizations can adopt IPv6 rout</description>
+      <category>Azure Updates</category>
+      <pubDate>Tue, 10 Nov 2026 18:21:41 +0000</pubDate>
+    </item>
+    <item>
+      <title>Hackers Exploit Critical Xen Orchestra Auth Bypass Flaw to Gain Admin Access</title>
+      <link>https://thehackernews.com/2026/11/hackers-exploit-critical-xen-orchestra.html</link>
+      <guid isPermaLink="false">9398616ade4dc7e1</guid>
+      <description>French software company Vates VMS has warned of a critical security vulnerability in Xen Orchestra that it said is being actively exploited in the wild. The authentication bypass flaw, which does not yet have a CVE identifier, is tracked as VSA-2026-062. "REST cookie parsing turn</description>
+      <category>The Hacker News</category>
+      <pubDate>Tue, 10 Nov 2026 18:12:21 +0000</pubDate>
+    </item>
+    <item>
+      <title>Autonomous treasury agents: How Trovata built an AI-native solution on Amazon Bedrock and AgentCore</title>
+      <link>https://aws.amazon.com/blogs/machine-learning/autonomous-treasury-agents-how-trovata-built-an-ai-native-solution-on-amazon-bedrock-and-agentcore/</link>
+      <guid isPermaLink="false">d525bf07423189ac</guid>
+      <description>Learn how Trovata built autonomous treasury agents on Amazon Bedrock and Amazon Bedrock AgentCore, using an RBAC-secured architecture for bank-branded AI deployment and agentic workflows that move corporate treasury from manual operations to real-time decision-making at enterpris</description>
+      <category>AWS Machine Learning Blog</category>
+      <pubDate>Tue, 10 Nov 2026 18:11:08 +0000</pubDate>
+    </item>
+    <item>
+      <title>QuEra, Harvard and Anthropic Use AI to Reduce Quantum Circuit Resource Requirements</title>
+      <link>https://thequantuminsider.com/2026/11/10/quera-harvard-anthropic-ai-quantum-circuit-resource-requirements/</link>
+      <guid isPermaLink="false">434ade13a04cc16f</guid>
+      <description>Insider Brief PRESS RELEASE &amp;#8212; QuEra Computing, the leader in fault-tolerant quantum computing, today highlighted research with Harvard University and Anthropic showing that AI can design quantum circuits that require fewer computational resources. The findings show how adva</description>
+      <category>The Quantum Insider</category>
+      <pubDate>Tue, 10 Nov 2026 18:10:47 +0000</pubDate>
+    </item>
+    <item>
+      <title>RIKEN Upgrades Reimei-Fugaku Hybrid Quantum Platform with 56-Qubit Quantinuum H2 Processor</title>
+      <link>https://quantumcomputingreport.com/riken-upgrades-reimei-fugaku-hybrid-quantum-platform-with-56-qubit-quantinuum-h2-processor/</link>
+      <guid isPermaLink="false">c029730cbf271c35</guid>
+      <description>RIKEN has upgraded its Reimei-Fugaku hybrid quantum platform with Quantinuum's 56-qubit System Model H2 trapped-ion quantum computer, replacing the 20-qubit H1. This upgrade enhances physical capacity, gate fidelity, and computational active space, allowing for more complex quant</description>
+      <category>Quantum Computing Report</category>
+      <pubDate>Tue, 10 Nov 2026 18:03:35 +0000</pubDate>
     </item>
     <item>
       <title>Photoshop, Lightroom, and Premiere are making it easier to remove things</title>
@@ -230,6 +454,22 @@
       <pubDate>Tue, 10 Nov 2026 17:52:29 +0000</pubDate>
     </item>
     <item>
+      <title>Three China-Nexus Espionage Campaigns Linked Through Sparrow Malware Ecosystem</title>
+      <link>https://thehackernews.com/2026/11/three-china-nexus-espionage-campaigns.html</link>
+      <guid isPermaLink="false">3ac35ff647369fb9</guid>
+      <description>Three distinct threat activity clusters with shared infrastructure and malware code similarities have been observed targeting telecommunications providers, government organizations, military entities, research institutions, and critical infrastructure across Latin America, Asia, </description>
+      <category>The Hacker News</category>
+      <pubDate>Tue, 10 Nov 2026 17:43:23 +0000</pubDate>
+    </item>
+    <item>
+      <title>Draft EU Quantum Act Would Favor European Suppliers, Set Computing and Security Targets</title>
+      <link>https://thequantuminsider.com/2026/11/10/draft-eu-quantum-act-would-favor-european-suppliers-set-computing-and-security-targets/</link>
+      <guid isPermaLink="false">acc22a37507c438b</guid>
+      <description>Insider Brief If Winston Churchill were here today, he might say an “ion curtain” is descending across the Continent. Europe’s proposed Quantum Act would generally reserve public purchases of quantum technology and participation in strategic projects for EU-controlled companies, </description>
+      <category>The Quantum Insider</category>
+      <pubDate>Tue, 10 Nov 2026 17:32:31 +0000</pubDate>
+    </item>
+    <item>
       <title>UK Unveils £189 Million Quantum Deployment Package Spanning Networking Testbeds, Commercialization, and Procurement</title>
       <link>https://quantumcomputingreport.com/uk-unveils-189-million-quantum-deployment-package-spanning-networking-testbeds-commercialization-and-procurement/</link>
       <guid isPermaLink="false">45ad124a7037269a</guid>
@@ -244,246 +484,6 @@
       <description>Researchers at the Department of Energy's (DOE's) Oak Ridge National Laboratory (ORNL) and their collaborators used lasers and neutrons to observe a long-lived quantum state in a magnetic material, opening a new way to study materials systems driven far from their equilibrium. Ma</description>
       <category>Phys.org Quantum Physics</category>
       <pubDate>Tue, 10 Nov 2026 17:00:10 +0000</pubDate>
-    </item>
-    <item>
-      <title>BigQuery measures is now GA, unifying BI metrics and knowledge graphs for AI accuracy</title>
-      <link>https://cloud.google.com/blog/products/data-analytics/bigquery-measures-ga-unifying-bi-metrics-and-knowledge-graphs/</link>
-      <guid isPermaLink="false">13443ab5d8135ea4</guid>
-      <description>To answer a complex business question, an AI agent must understand two things: what happened, and why . The what is a governed metric, like revenue at risk; the why is the network of relationships that produced it. Because metric definitions, a.k.a. measures, traditionally live i</description>
-      <category>Google Cloud Blog</category>
-      <pubDate>Tue, 10 Nov 2026 17:00:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>Don't just flag it, fix it: How to run CodeMender in your pull requests</title>
-      <link>https://cloud.google.com/blog/products/identity-security/how-to-run-codemender-in-your-pull-requests/</link>
-      <guid isPermaLink="false">0f2e7381a89b5681</guid>
-      <description>As many developers use agentic tools to create more code faster than ever before, the code has gotten more complex and they’re taking longer to find and fix software flaws. Helping to address that pressure is a key concern at Google. We know that software development velocity is </description>
-      <category>Google Cloud Blog</category>
-      <pubDate>Tue, 10 Nov 2026 17:00:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>Inside the Gemini factory: Accelerating partner solutions</title>
-      <link>https://cloud.google.com/blog/topics/partners/inside-the-gemini-factory-accelerating-partner-solutions/</link>
-      <guid isPermaLink="false">601d85d67ee6ecd5</guid>
-      <description>With the new unified Gemini experience, enterprises can bring third-party partner capabilities directly in Gemini through standardized connectors (spanning Model Context Protocol (MCP), Agent-to-Agent (A2A) runtimes, and REST APIs), alongside emerging declarative skills and plugi</description>
-      <category>Google Cloud Blog</category>
-      <pubDate>Tue, 10 Nov 2026 17:00:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>How TCS built an agentic test orchestrator with Amazon Bedrock AgentCore</title>
-      <link>https://aws.amazon.com/blogs/machine-learning/how-tcs-built-an-agentic-test-orchestrator-with-amazon-bedrock-agentcore/</link>
-      <guid isPermaLink="false">4098b8dc9938d6e0</guid>
-      <description>Tata Consultancy Services (TCS) built an agentic test orchestrator on Amazon Bedrock AgentCore that turns requirements into executable, governed tests for its Banking, Financial Services, and Insurance (BFSI) clients. Learn how specialized agents, per-tenant isolation, and worklo</description>
-      <category>AWS Machine Learning Blog</category>
-      <pubDate>Tue, 10 Nov 2026 16:59:43 +0000</pubDate>
-    </item>
-    <item>
-      <title>Amazon Bedrock tokenomics data lake</title>
-      <link>https://aws.amazon.com/blogs/machine-learning/amazon-bedrock-tokenomics-data-lake/</link>
-      <guid isPermaLink="false">fcbcd12bc962bf24</guid>
-      <description>Running Amazon Bedrock across many accounts shows you the bill but not what happened inside each call. This post builds a centralized observability data lake that aggregates Bedrock invocation logs from every linked account into one queryable table, so you can see prompts, token </description>
-      <category>AWS Machine Learning Blog</category>
-      <pubDate>Tue, 10 Nov 2026 16:56:36 +0000</pubDate>
-    </item>
-    <item>
-      <title>Google says its new AI proved Signal’s encryption in weeks</title>
-      <link>https://thenewstack.io/gemini-4-carbon-swarm/</link>
-      <guid isPermaLink="false">fed18abda5a30c5b</guid>
-      <description>Google released Gemini 4 Carbon to paying developers Tuesday, positioning its newest frontier model above Gemini 4 Argon for complex The post Google says its new AI proved Signal’s encryption in weeks appeared first on The New Stack .</description>
-      <category>The New Stack</category>
-      <pubDate>Tue, 10 Nov 2026 16:17:22 +0000</pubDate>
-    </item>
-    <item>
-      <title>Critical Xen Orchestra auth bypass flaw exploited to hijack VM servers</title>
-      <link>https://www.bleepingcomputer.com/news/security/critical-xen-orchestra-auth-bypass-flaw-exploited-to-hijack-vm-servers/</link>
-      <guid isPermaLink="false">82b5e1a648c0d248</guid>
-      <description>A critical authentication bypass vulnerability in Xen Orchestra is being actively exploited in attacks that could grant administrator privileges and allow takeover of XCP-ng virtualization hosts. [...]</description>
-      <category>BleepingComputer</category>
-      <pubDate>Tue, 10 Nov 2026 16:17:16 +0000</pubDate>
-    </item>
-    <item>
-      <title>Gemini 4 Carbon is now available</title>
-      <link>https://deepmind.google/blog/gemini-4-carbon-is-now-available/</link>
-      <guid isPermaLink="false">0b2e1c02de474f20</guid>
-      <description></description>
-      <category>Google DeepMind</category>
-      <pubDate>Tue, 10 Nov 2026 16:03:47 +0000</pubDate>
-    </item>
-    <item>
-      <title>Attackers Exploit AhsayCBS Flaws to Deploy Sandbox-Evading Python Backdoor</title>
-      <link>https://thehackernews.com/2026/11/attackers-exploit-ahsaycbs-flaws-to.html</link>
-      <guid isPermaLink="false">0eb55bf1598eb50a</guid>
-      <description>Cybersecurity researchers have disclosed details of an attack that exploited two now-patched vulnerabilities in AhsayCBS to deliver a Python-based implant. The activity, observed by Huntress in October 2026, involves the exploitation of a chain comprising CVE-2026-105133 and CVE-</description>
-      <category>The Hacker News</category>
-      <pubDate>Tue, 10 Nov 2026 16:00:55 +0000</pubDate>
-    </item>
-    <item>
-      <title>Changing magnetic dimensionality boosts spin-wave frequency in Cr₂₋δTe₂</title>
-      <link>https://phys.org/news/2026-11-magnetic-dimensionality-boosts-frequency-crte.html</link>
-      <guid isPermaLink="false">2eba9ffa234e5dc2</guid>
-      <description>Magnons are quasiparticles that represent quantized spin waves in magnetic materials. They can carry information without moving electric charge, making them promising for future information technologies that could use less energy than conventional electronics. The frequency, stab</description>
-      <category>Phys.org Quantum Physics</category>
-      <pubDate>Tue, 10 Nov 2026 16:00:05 +0000</pubDate>
-    </item>
-    <item>
-      <title>Experimenting with ClusterNetworkPolicy in GKE</title>
-      <link>https://cloud.google.com/blog/topics/developers-practitioners/experimenting-with-clusternetworkpolicy-in-gke/</link>
-      <guid isPermaLink="false">770a6d4bc1de6dd0</guid>
-      <description>Standard Network Policies limit you to applying policies at the namespace level, but ClusterNetworkPolicy (CNP) lets you apply granular networking policies across an entire cluster. When you use CNP, you can easily scale security and governance policies. Recently, I experimented </description>
-      <category>Google Cloud Blog</category>
-      <pubDate>Tue, 10 Nov 2026 16:00:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>Binance warns of iOS flaw that could leak crypto wallet secrets</title>
-      <link>https://www.bleepingcomputer.com/news/security/binance-warns-of-ios-flaw-that-could-leak-crypto-wallet-secrets/</link>
-      <guid isPermaLink="false">89d6f6254d42deea</guid>
-      <description>Binance is warning about a vulnerability in Apple's iOS 26.7.1, 27.0.1, and 27.2 that could allow third-party apps to read private files stored by other apps, including cryptocurrency seed phrases, secret keys, and login credentials. [...]</description>
-      <category>BleepingComputer</category>
-      <pubDate>Tue, 10 Nov 2026 15:59:19 +0000</pubDate>
-    </item>
-    <item>
-      <title>Blind Eagle Uses Fake Court Notices to Deliver Remote Access Trojan Across Latin America</title>
-      <link>https://thehackernews.com/2026/11/blind-eagle-uses-fake-court-notices-to.html</link>
-      <guid isPermaLink="false">7e413807cc2f111e</guid>
-      <description>The threat actor known as Blind Eagle has resurfaced with a new campaign targeting organizations in Latin America through judicial and administrative-themed phishing lures to deliver a remote access trojan (RAT) that shares its lineage with AsyncRAT and DCRat. "The campaign uses </description>
-      <category>The Hacker News</category>
-      <pubDate>Tue, 10 Nov 2026 15:58:44 +0000</pubDate>
-    </item>
-    <item>
-      <title>SpaceXSI quietly flips Grok API text watermarking to off by default</title>
-      <link>https://thenewstack.io/grok-api-watermarking-default/</link>
-      <guid isPermaLink="false">16b4dd94022a2114</guid>
-      <description>The thorny issue of watermarking AI-generated text took an interesting turn this past week, with SpaceXSI seemingly U-turning on plans The post SpaceXSI quietly flips Grok API text watermarking to off by default appeared first on The New Stack .</description>
-      <category>The New Stack</category>
-      <pubDate>Tue, 10 Nov 2026 15:58:44 +0000</pubDate>
-    </item>
-    <item>
-      <title>New CNCF report: 75% of cloud-native developers ship code with AI. Jonathan Bryce explains why.</title>
-      <link>https://thenewstack.io/cncf-developer-ai-adoption/</link>
-      <guid isPermaLink="false">563a4b044549fd06</guid>
-      <description>Today&amp;#8217;s developers are AI-pilled. Cloud native developers even more so. That&amp;#8217;s the key takeaway from the Cloud Native Computing Foundation&amp;#8217;s The post New CNCF report: 75% of cloud-native developers ship code with AI. Jonathan Bryce explains why. appeared first o</description>
-      <category>The New Stack</category>
-      <pubDate>Tue, 10 Nov 2026 15:42:54 +0000</pubDate>
-    </item>
-    <item>
-      <title>Fireworks AI Breach Widens to Expose Customer Billing Data and Incomplete Model Weights</title>
-      <link>https://thehackernews.com/2026/11/fireworks-ai-breach-widens-to-expose.html</link>
-      <guid isPermaLink="false">7646e96e2e7b5496</guid>
-      <description>Fireworks AI disclosed on Monday that its investigation into a security incident first reported early last month&amp;nbsp; uncovered further malicious activity, affecting account and billing information, alongside secrets, datasets, and incomplete models for a "limited set of account</description>
-      <category>The Hacker News</category>
-      <pubDate>Tue, 10 Nov 2026 15:33:59 +0000</pubDate>
-    </item>
-    <item>
-      <title>Commission on U.S. Quantum Primacy Urges Sustained Investment to Turn Quantum Discovery Into American Advantage</title>
-      <link>https://thequantuminsider.com/2026/11/10/commission-on-u-s-quantum-primacy-urges-sustained-investment-to-turn-quantum-discovery-into-american-advantage/</link>
-      <guid isPermaLink="false">7ea3086515c1d808</guid>
-      <description>Insider Brief PRESS RELEASE &amp;#8212; The Commission on U.S. Quantum Primacy (CUSP), convened by the Special Competitive Studies Project (SCSP), released today its preliminary report, Defining the American Quantum Era, a strategy argument for why the United States must move beyond </description>
-      <category>The Quantum Insider</category>
-      <pubDate>Tue, 10 Nov 2026 15:26:59 +0000</pubDate>
-    </item>
-    <item>
-      <title>Ransomware recovery is now a client retention metric</title>
-      <link>https://www.bleepingcomputer.com/news/security/ransomware-recovery-is-now-a-client-retention-metric/</link>
-      <guid isPermaLink="false">74f31cae8a39391e</guid>
-      <description>Recovering from ransomware doesn't guarantee an MSP will retain its clients, especially when delays, poor communication, and unexpected costs undermine trust. Kaseya examines how disconnected recovery tools create these problems and how integrated workflows can improve response t</description>
-      <category>BleepingComputer</category>
-      <pubDate>Tue, 10 Nov 2026 15:01:11 +0000</pubDate>
-    </item>
-    <item>
-      <title>DeepMind reveals Gemini Robotics 2.5 and open safety benchmark "ASIMOV-jailbreak"</title>
-      <link>https://arstechnica.com/google/2026/11/deepmind-reveals-gemini-robotics-2-5-and-open-safety-benchmark-asimov-jailbreak/</link>
-      <guid isPermaLink="false">004c51f512e0fac4</guid>
-      <description>The new model is up to twice as successful at some tasks.</description>
-      <category>Ars Technica AI</category>
-      <pubDate>Tue, 10 Nov 2026 15:00:39 +0000</pubDate>
-    </item>
-    <item>
-      <title>Anthropic launches new Claude Fable and Mythos 5.2 models</title>
-      <link>https://www.theverge.com/ai-artificial-intelligence/1030005/anthropic-claude-fable-mythos-5-2</link>
-      <guid isPermaLink="false">f1eea0a2781af6aa</guid>
-      <description>Anthropic is announcing two new models today: Claude Fable 5.2 and Claude Mythos 5.2, which it says are designed to take on "daunting" technical challenges. The company claims the new models show improvements in coding, reasoning, and vision, and can generate outputs faster than </description>
-      <category>The Verge — AI</category>
-      <pubDate>Tue, 10 Nov 2026 14:00:01 +0000</pubDate>
-    </item>
-    <item>
-      <title>Hands-on with Ring’s new AI drone camera for your home</title>
-      <link>https://www.theverge.com/tech/1030601/ring-drone-cam-hands-on-price-release-date-ai-pilot</link>
-      <guid isPermaLink="false">707c973eeceba790</guid>
-      <description>Ring is finally shipping a flying indoor drone camera. For real this time. The Ring Drone Cam will arrive on January 27th, 2027, for $249.99, Ring founder Jamie Siminoff said at a launch event in New York City this week. If it does actually ship, it will arrive almost six years a</description>
-      <category>The Verge — AI</category>
-      <pubDate>Tue, 10 Nov 2026 14:00:01 +0000</pubDate>
-    </item>
-    <item>
-      <title>We’re bringing Adobe’s creative and productivity tools closer to your everyday Google apps.</title>
-      <link>https://blog.google/company-news/inside-google/company-announcements/adobe-google-partnership-integration/</link>
-      <guid isPermaLink="false">c5fffc8a0cbdc3d4</guid>
-      <description>Google and Adobe are integrating creative and productivity tools. Edit PDFs in Drive and use Adobe AI in Gemini. See what’s new in this partnership.</description>
-      <category>Google AI Blog</category>
-      <pubDate>Tue, 10 Nov 2026 14:00:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>EPFL Demonstrates Millimeter-Wave-to-Optical Transducer with 67% Internal Efficiency</title>
-      <link>https://quantumcomputingreport.com/epfl-demonstrates-millimeter-wave-to-optical-transducer-with-67-internal-efficiency/</link>
-      <guid isPermaLink="false">003c2649156e27fd</guid>
-      <description>Researchers at EPFL have developed a millimeter-wave-to-optical transducer with 67% internal efficiency. This device uses a thin-film lithium niobate photonic molecule coupled to a metallic resonator to bridge the gap between millimeter-wave and telecom optical domains. This adva</description>
-      <category>Quantum Computing Report</category>
-      <pubDate>Tue, 10 Nov 2026 13:41:34 +0000</pubDate>
-    </item>
-    <item>
-      <title>Xanadu and HyperLight Reduce Photonic Switch Loss to 7 mdB</title>
-      <link>https://thequantuminsider.com/2026/11/10/xanadu-hyperlight-photonic-switch-loss-7-mdb/</link>
-      <guid isPermaLink="false">a6c76c50d3da95d6</guid>
-      <description>Insider Brief PRESS RELEASE &amp;#8212; Xanadu Quantum Technologies Limited (“Xanadu”; NASDAQ/TSX: XNDU), a leading photonic quantum computing company, in collaboration with HyperLight Corporation, a leading thin-film lithium niobate (TFLN) photonics company, today announced a signif</description>
-      <category>The Quantum Insider</category>
-      <pubDate>Tue, 10 Nov 2026 13:09:20 +0000</pubDate>
-    </item>
-    <item>
-      <title>Gartner Names IonQ a Market Shaper in Quantum Computing</title>
-      <link>https://thequantuminsider.com/2026/11/10/gartner-ionq-market-shaper-quantum-computing/</link>
-      <guid isPermaLink="false">2f35f4c67530747d</guid>
-      <description>Insider Brief PRESS RELEASE &amp;#8212; IonQ (NYSE: IONQ), the world&amp;#8217;s leading full-stack quantum platform and foundry, today announced it has been positioned as a Market Shaper in the inaugural Gartner® Emerging Market Quadrant™ for Quantum Computing. IonQ appears in the Marke</description>
-      <category>The Quantum Insider</category>
-      <pubDate>Tue, 10 Nov 2026 13:01:26 +0000</pubDate>
-    </item>
-    <item>
-      <title>Google Cloud launches Gemini for healthcare.</title>
-      <link>https://blog.google/innovation-and-ai/infrastructure-and-cloud/google-cloud/gemini-for-healthcare/</link>
-      <guid isPermaLink="false">155d33cae7267931</guid>
-      <description>Google Cloud launches Gemini for healthcare to unify clinical data and automate workflows. Reduce administrative burnout. See how it works.</description>
-      <category>Google AI Blog</category>
-      <pubDate>Tue, 10 Nov 2026 13:00:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>D-Wave Revenue Rises 21% as Customer Deployments Expand And CHIPS Agreement Advances</title>
-      <link>https://thequantuminsider.com/2026/11/10/d-wave-revenue-rises-21-as-customer-deployments-expand-and-chips-agreement-advances/</link>
-      <guid isPermaLink="false">186ad9ff603e4d4e</guid>
-      <description>Insider Brief D-Wave Quantum reported a 21% increase in third-quarter revenue as professional services and cloud access sales grew, alongside customer deployments and a federal agreement supporting development of its next quantum computers. Revenue reached $4.5 million for the qu</description>
-      <category>The Quantum Insider</category>
-      <pubDate>Tue, 10 Nov 2026 12:54:04 +0000</pubDate>
-    </item>
-    <item>
-      <title>Horizon Quantum Reports Q3 2026 Financial Results</title>
-      <link>https://thequantuminsider.com/2026/11/10/horizon-quantum-third-quarter-2026-financial-results/</link>
-      <guid isPermaLink="false">0ca1da733c487ac8</guid>
-      <description>Insider Brief PRESS RELEASE &amp;#8212; Horizon Quantum Holdings Ltd. (Nasdaq: HQ) (“Horizon Quantum,” “Horizon,” or “the Company”), a pioneer of software infrastructure for quantum applications, today reported financial results for the fiscal third quarter ended September 30, 2026 (</description>
-      <category>The Quantum Insider</category>
-      <pubDate>Tue, 10 Nov 2026 12:51:41 +0000</pubDate>
-    </item>
-    <item>
-      <title>IBM Selects Four Organisations for AI and Quantum Workforce Programme</title>
-      <link>https://thequantuminsider.com/2026/11/10/ibm-education-workforce-development-cohort/</link>
-      <guid isPermaLink="false">b53629eaa76be392</guid>
-      <description>Insider Brief PRESS RELEASE &amp;#8212; IBM (NYSE: IBM) today announced four organizations selected for the new education and workforce development cohort of the IBM Impact Accelerator, a pro bono social innovation program that provides grants of IBM technology and expertise to help </description>
-      <category>The Quantum Insider</category>
-      <pubDate>Tue, 10 Nov 2026 12:45:38 +0000</pubDate>
-    </item>
-    <item>
-      <title>Ukraine’s fiber-optic drones get squeezed by AI data center demand</title>
-      <link>https://arstechnica.com/gadgets/2026/11/ukraines-fiber-optic-drones-get-squeezed-by-ai-data-center-demand/</link>
-      <guid isPermaLink="false">ffd1be60b8ac1c68</guid>
-      <description>Ukraine competes with Russia and data centers for China’s optical fiber supply.</description>
-      <category>Ars Technica AI</category>
-      <pubDate>Tue, 10 Nov 2026 12:15:32 +0000</pubDate>
     </item>
   </channel>
 </rss>
