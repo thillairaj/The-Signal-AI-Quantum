@@ -4,8 +4,26 @@
     <title>Signal Brief · Cloud &amp; DevOps</title>
     <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/</link>
     <description>Signal Brief: the day in technology, in The Signal's own words. Every item is written from linked official sources and fact checked before publication.</description>
-    <lastBuildDate>Tue, 10 Nov 2026 01:36:45 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 11 Nov 2026 01:35:19 +0000</lastBuildDate>
     <atom:link xmlns:atom="http://www.w3.org/2005/Atom" href="https://thillairaj.github.io/The-Signal-AI-Quantum/signal/cloud-devops.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>Ubuntu Core 26 enters public preview on AWS, Azure and Google Cloud</title>
+      <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/2026-11-11/05/</link>
+      <guid isPermaLink="false">brief-2026-11-11-05</guid>
+      <pubDate>Wed, 11 Nov 2026 01:30:00 +0000</pubDate>
+      <category>Cloud &amp; DevOps</category>
+      <description>Canonical has opened a public preview of Ubuntu Core 26 images for Amazon Web Services, Microsoft Azure and Google Cloud, bringing its immutable Ubuntu variant to public cloud marketplaces. Ubuntu Core builds systems from strictly confined snap packages and delivers updates as complete, auditable revisions with rollback, aiming to stop cloud virtual machines drifting from their original configuration. Canonical says the preview is for testing and feedback, and the images include cloud-specific kernel snaps and cloud guest agents packaged as snaps. Why it matters for tech: An immutable, drift-free operating system model on the three large clouds gives teams building appliances and managed services a smaller writable surface and a uniform image across providers.</description>
+      <content:encoded><![CDATA[<p>Canonical has opened a public preview of Ubuntu Core 26 images for Amazon Web Services, Microsoft Azure and Google Cloud, bringing its immutable Ubuntu variant to public cloud marketplaces. Ubuntu Core builds systems from strictly confined snap packages and delivers updates as complete, auditable revisions with rollback, aiming to stop cloud virtual machines drifting from their original configuration. Canonical says the preview is for testing and feedback, and the images include cloud-specific kernel snaps and cloud guest agents packaged as snaps.</p><p><strong>Why it matters for tech:</strong> An immutable, drift-free operating system model on the three large clouds gives teams building appliances and managed services a smaller writable surface and a uniform image across providers.</p><p>Source: </p><ul><li><a href="https://canonical.com/blog/ubuntu-core-26-public-cloud-preview">Canonical</a></li></ul>]]></content:encoded>
+    </item>
+    <item>
+      <title>Azure Front Door edge actions reach general availability</title>
+      <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/2026-11-11/06/</link>
+      <guid isPermaLink="false">brief-2026-11-11-06</guid>
+      <pubDate>Wed, 11 Nov 2026 01:30:00 +0000</pubDate>
+      <category>Cloud &amp; DevOps</category>
+      <description>Microsoft has made Azure Front Door edge actions generally available, adding serverless compute at the edge of its content delivery network. Customers can run lightweight JavaScript functions while Front Door processes client requests and responses, for tasks such as modifying headers or routing decisions before traffic reaches an origin. Why it matters for tech: Running small functions at the network edge lets teams handle request shaping and routing close to users without adding a separate compute tier behind the front door.</description>
+      <content:encoded><![CDATA[<p>Microsoft has made Azure Front Door edge actions generally available, adding serverless compute at the edge of its content delivery network. Customers can run lightweight JavaScript functions while Front Door processes client requests and responses, for tasks such as modifying headers or routing decisions before traffic reaches an origin.</p><p><strong>Why it matters for tech:</strong> Running small functions at the network edge lets teams handle request shaping and routing close to users without adding a separate compute tier behind the front door.</p><p>Source: </p><ul><li><a href="https://azure.microsoft.com/updates?id=579310">Azure Updates</a></li></ul>]]></content:encoded>
+    </item>
     <item>
       <title>Google launches TPU 8tx and TPU 8i Max for AI inference and training</title>
       <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/2026-11-10/03/</link>

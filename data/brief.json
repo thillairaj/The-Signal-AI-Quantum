@@ -1430,6 +1430,223 @@
      ]
     }
    ]
+  },
+  {
+   "date": "2026-11-11",
+   "items": [
+    {
+     "category": "AI",
+     "company": "Google",
+     "headline": "Google rolls out Gemini 4 Carbon with an agent swarm for coding",
+     "id": "brief-2026-11-11-01",
+     "source_date": "2026-11-10",
+     "sources": [
+      {
+       "label": "Google",
+       "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-4-carbon-now-available/"
+      },
+      {
+       "label": "The Verge",
+       "url": "https://www.theverge.com/ai-artificial-intelligence/1030787/google-gemini-4-carbon-public-rollout"
+      }
+     ],
+     "summary": "Google has made Gemini 4 Carbon publicly available to Gemini app users and to developers through the Gemini API, AI Studio and Vertex AI, after an earlier limited release for cybersecurity work. The model is aimed at agentic coding, including building apps and prototypes and debugging code. Google cites 87.9% on SWE-Bench Verified, against 81% for the previous Gemini 4 Argon, and says one master agent can coordinate up to 10,000 agents that plan, work in parallel and check each other's work. Pricing is $2 per million input tokens and $12 per million output tokens.",
+     "why": "A coding model that coordinates large agent teams changes how much of a build can be handed to agents at once, and the published benchmark figures give teams a concrete basis for comparing it with the previous release."
+    },
+    {
+     "category": "AI",
+     "company": "OpenAI",
+     "headline": "ChatGPT gains verified Business Agents with in-chat checkout",
+     "id": "brief-2026-11-11-02",
+     "source_date": "2026-11-10",
+     "sources": [
+      {
+       "label": "OpenAI",
+       "url": "https://openai.com/index/introducing-businesses-chatgpt/"
+      },
+      {
+       "label": "The Verge",
+       "url": "https://www.theverge.com/ai-artificial-intelligence/1030552/openai-chatgpt-business-agents-hub"
+      }
+     ],
+     "summary": "OpenAI has launched Businesses in ChatGPT in beta, adding verified AI Business Agents that represent companies inside ChatGPT and carry a verified blue checkmark. Users can browse a business directory, ask questions, compare products and complete purchases with instant checkout without leaving the chat. Launch partners named by OpenAI include Etsy, Target, Walmart, Shopify, Zillow, Expedia, Booking.com, Canva and Figma. The feature is available from November 10 to ChatGPT users in the US, free and paid, at no additional charge.",
+     "why": "Putting storefronts and checkout inside a chatbot turns ChatGPT into a shopping channel, which matters for retailers deciding whether to build an agent and for rivals watching how conversational commerce takes shape."
+    },
+    {
+     "category": "Quantum",
+     "company": "Quantinuum",
+     "headline": "Quantinuum and RIKEN complete the Reimei upgrade to the H2 system",
+     "id": "brief-2026-11-11-03",
+     "source_date": "2026-11-10",
+     "sources": [
+      {
+       "label": "Quantinuum",
+       "url": "https://www.quantinuum.com/press-releases/quantinuum-and-riken-expand-partnership-to-accelerate-the-commercialization-of-quantum-ai-hybrid-supercomputing-in-japan"
+      },
+      {
+       "label": "Kyodo News",
+       "url": "https://english.kyodonews.net/articles/-/90965"
+      }
+     ],
+     "summary": "Quantinuum and RIKEN have completed the upgrade of the Reimei quantum computer at RIKEN to Quantinuum's System Model H2, and expanded their partnership around quantum-AI hybrid supercomputing in Japan. The upgraded machine sits alongside RIKEN's Fugaku supercomputer and the ROQUO GPU system, and the partners have started two research projects on it, one training an AI model on quantum data for magnetism simulations and one simulating a light-absorbing biomolecule. Under a separate agreement with SoftBank, the partners will study connecting quantum computers directly with AI data centres in Japan.",
+     "why": "A working three-way hybrid of quantum, supercomputing and AI hardware gives researchers a live platform for testing whether quantum-generated data improves AI models for materials and biology."
+    },
+    {
+     "category": "Quantum",
+     "company": "Xanadu",
+     "headline": "Xanadu and HyperLight cut photonic switch loss to 7 millidecibels",
+     "id": "brief-2026-11-11-04",
+     "source_date": "2026-11-10",
+     "sources": [
+      {
+       "label": "HPCwire",
+       "url": "https://www.hpcwire.com/off-the-wire/xanadu-reports-lower-optical-switch-loss-for-photonic-quantum-computing/"
+      },
+      {
+       "label": "The Quantum Insider",
+       "url": "https://thequantuminsider.com/2026/11/10/xanadu-hyperlight-photonic-switch-loss-7-mdb/"
+      }
+     ],
+     "summary": "Xanadu and HyperLight have reported an optical switch insertion loss of 7 millidecibels using thin-film lithium niobate technology, down from 20 millidecibels in their previous result in 2025. Lower switch loss reduces the degradation of quantum signals as they pass through the switches that route light in a photonic quantum computer. The result was demonstrated on HyperLight's thin-film lithium niobate chiplet platform, which the companies describe as a high-volume wafer manufacturing line.",
+     "why": "Switch loss is one of the physical limits on scaling photonic quantum computers, so a measured drop of nearly two-thirds changes the overhead budget for larger machines built on this platform."
+    },
+    {
+     "category": "Cloud & DevOps",
+     "company": "Canonical",
+     "headline": "Ubuntu Core 26 enters public preview on AWS, Azure and Google Cloud",
+     "id": "brief-2026-11-11-05",
+     "source_date": "2026-11-10",
+     "sources": [
+      {
+       "label": "Canonical",
+       "url": "https://canonical.com/blog/ubuntu-core-26-public-cloud-preview"
+      }
+     ],
+     "summary": "Canonical has opened a public preview of Ubuntu Core 26 images for Amazon Web Services, Microsoft Azure and Google Cloud, bringing its immutable Ubuntu variant to public cloud marketplaces. Ubuntu Core builds systems from strictly confined snap packages and delivers updates as complete, auditable revisions with rollback, aiming to stop cloud virtual machines drifting from their original configuration. Canonical says the preview is for testing and feedback, and the images include cloud-specific kernel snaps and cloud guest agents packaged as snaps.",
+     "why": "An immutable, drift-free operating system model on the three large clouds gives teams building appliances and managed services a smaller writable surface and a uniform image across providers."
+    },
+    {
+     "category": "Cloud & DevOps",
+     "company": "Microsoft",
+     "headline": "Azure Front Door edge actions reach general availability",
+     "id": "brief-2026-11-11-06",
+     "source_date": "2026-11-10",
+     "sources": [
+      {
+       "label": "Azure Updates",
+       "url": "https://azure.microsoft.com/updates?id=579310"
+      }
+     ],
+     "summary": "Microsoft has made Azure Front Door edge actions generally available, adding serverless compute at the edge of its content delivery network. Customers can run lightweight JavaScript functions while Front Door processes client requests and responses, for tasks such as modifying headers or routing decisions before traffic reaches an origin.",
+     "why": "Running small functions at the network edge lets teams handle request shaping and routing close to users without adding a separate compute tier behind the front door."
+    },
+    {
+     "category": "Cybersecurity",
+     "company": "Microsoft",
+     "headline": "Microsoft's November Patch Tuesday fixes 1,235 flaws, including an exploited Outlook zero-day",
+     "id": "brief-2026-11-11-07",
+     "source_date": "2026-11-10",
+     "sources": [
+      {
+       "label": "BleepingComputer",
+       "url": "https://www.bleepingcomputer.com/news/microsoft/microsoft-november-2026-patch-tuesday-fixes-1-235-flaws-outlook-zero-day/"
+      },
+      {
+       "label": "iFynx",
+       "url": "https://ifynx.com/blog/outlook-zero-day-cve-2026-124194-november-2026-patch-tuesday-gulf-egypt/"
+      }
+     ],
+     "summary": "Microsoft's November Patch Tuesday addresses 1,235 vulnerabilities, including 66 rated Critical, with one actively exploited zero-day in Outlook. The zero-day, CVE-2026-124194, is a spoofing flaw in which opening a specially crafted message file can make Outlook connect to an attacker-controlled location without the usual external-content warning, disclosing the user's NTLMv2 hash. Microsoft rates the flaw Moderate with a CVSS score of 6.5, and CISA added it to its exploited-vulnerabilities catalog on November 10 with a November 24 patching deadline for federal agencies.",
+     "why": "A single crafted message file can expose credentials used to impersonate a user, so the fix matters for any organisation running Outlook, and the federal deadline sets the pace for patching."
+    },
+    {
+     "category": "Cybersecurity",
+     "company": "Vates",
+     "headline": "Attackers exploit a Xen Orchestra authentication bypass to seize virtualisation hosts",
+     "id": "brief-2026-11-11-08",
+     "source_date": "2026-11-10",
+     "sources": [
+      {
+       "label": "The Hacker News",
+       "url": "https://thehackernews.com/2026/11/hackers-exploit-critical-xen-orchestra.html"
+      },
+      {
+       "label": "BleepingComputer",
+       "url": "https://www.bleepingcomputer.com/news/security/critical-xen-orchestra-auth-bypass-flaw-exploited-to-hijack-vm-servers/"
+      }
+     ],
+     "summary": "Vates has warned that a critical authentication bypass in Xen Orchestra, tracked as VSA-2026-062, is being actively exploited in the wild. A specially crafted cookie can bypass login and give an attacker administrative actions, leading to arbitrary code execution on managed pools and a full takeover of an XCP-ng node as root. Vates linked the activity to an IP address previously flagged as a RedLine Stealer command-and-control server. Fixed versions are Xen Orchestra 6.9.1 and 6.10.0, and xo-server 5.211.2 and 5.213.1.",
+     "why": "Xen Orchestra manages virtual machines and server pools, so a login bypass on an internet-facing instance hands an attacker the control plane for the hosts behind it."
+    },
+    {
+     "category": "Cybersecurity",
+     "company": "SAP",
+     "headline": "SAP patches four maximum-severity flaws, including two that allow remote code execution",
+     "id": "brief-2026-11-11-09",
+     "source_date": "2026-11-10",
+     "sources": [
+      {
+       "label": "The Hacker News",
+       "url": "https://thehackernews.com/2026/11/sap-patches-four-cvss-100-flaws.html"
+      },
+      {
+       "label": "BleepingComputer",
+       "url": "https://www.bleepingcomputer.com/news/security/sap-patches-four-maximum-severity-security-vulnerabilities/"
+      }
+     ],
+     "summary": "SAP's November Security Patch Day addresses 38 new vulnerabilities, nine of them rated Critical, with four carrying the maximum CVSS score of 10.0. The four cover a SAML assertion verification bypass in NetWeaver AS ABAP, memory corruption in the Internet Communication Manager, a default access-control setting in SAP Gateway, and a heap overflow in SAP Web Dispatcher. SAP has not reported active exploitation of the four, and none of them appears in CISA's exploited-vulnerabilities catalog.",
+     "why": "Four maximum-severity flaws in core SAP systems, two of them leading to remote code execution, make patching a priority this week for teams running SAP, even with no exploitation reported yet."
+    },
+    {
+     "category": "Industry",
+     "company": "SoftBank",
+     "headline": "SoftBank sells its entire Nvidia stake for $5.83 billion to fund its AI push",
+     "id": "brief-2026-11-11-10",
+     "source_date": "2026-11-10",
+     "sources": [
+      {
+       "label": "Sharecast via Lloyds Bank",
+       "url": "https://www.investments.lloydsbank.com/markets-and-commentary/market-news/article/?id=21201982&type=bsm"
+      }
+     ],
+     "summary": "SoftBank has confirmed it sold all 32.1 million Nvidia shares it held, for $5.83 billion, during October, as it reported second-quarter results on November 10. Chief financial officer Yoshimitsu Goto said the sale was a financing measure to fund SoftBank's AI investments, including the Stargate data-centre project and its investment in OpenAI. SoftBank also reported second-quarter net profit of 2.5 trillion yen, more than double a year earlier and far above analyst forecasts, helped by gains in its Vision Fund.",
+     "why": "Selling out of Nvidia to pay for data centres and an OpenAI stake shows the scale of cash SoftBank is moving to fund its AI plans, and the sale weighed on Nvidia's share price."
+    },
+    {
+     "category": "Industry",
+     "company": "D-Wave",
+     "headline": "D-Wave revenue rises 21% as bookings and contracted revenue climb",
+     "id": "brief-2026-11-11-11",
+     "source_date": "2026-11-10",
+     "sources": [
+      {
+       "label": "Business Wire",
+       "url": "https://www.businesswire.com/news/home/20261110935432/en/D-Wave-Reports-Third-Quarter-2026-Results"
+      },
+      {
+       "label": "The Quantum Insider",
+       "url": "https://thequantuminsider.com/2026/11/10/d-wave-revenue-rises-21-as-customer-deployments-expand-and-chips-agreement-advances/"
+      }
+     ],
+     "summary": "D-Wave reported third-quarter revenue of $4.5 million, up 21% from a year earlier, with nine-month bookings of $37.4 million, up 611%, and contracted revenue still to be recognised of $38.3 million. The company signed a definitive agreement with the US Department of Commerce giving it access to up to $100 million in CHIPS and Science Act funding, in instalments tied to milestones, to develop larger annealing and gate-model machines. NTT DOCOMO deployed a second production application using D-Wave's hybrid quantum technology for mobile network operations.",
+     "why": "Rising bookings and a large contracted-revenue balance, alongside federal funding for bigger machines, show a quantum vendor converting pilot deployments into paid production work."
+    },
+    {
+     "category": "Policy",
+     "company": "European Commission",
+     "headline": "Draft EU Quantum Act would reserve strategic quantum projects for EU-controlled suppliers",
+     "id": "brief-2026-11-11-12",
+     "source_date": "2026-11-10",
+     "sources": [
+      {
+       "label": "The Quantum Insider",
+       "url": "https://thequantuminsider.com/2026/11/10/draft-eu-quantum-act-would-favor-european-suppliers-set-computing-and-security-targets/"
+      }
+     ],
+     "summary": "A draft EU Quantum Act obtained by The Quantum Insider would coordinate European quantum research, manufacturing and commercialisation, and would generally limit participation in strategic quantum projects and public procurement to EU-controlled suppliers, with access for qualifying international partners. The draft targets about 100 error-corrected logical qubits per system by 2030, scaling toward thousands by 2035, and would require quantum-safe purchasing in designated critical sectors. It sets no overall spending figure, with funding to depend on future EU programmes and national and private contributions.",
+     "why": "Procurement rules and a shared computing target in the draft shape which suppliers can sell into European public quantum projects and how fast the bloc moves to quantum-safe cryptography."
+    }
+   ]
   }
  ]
 }

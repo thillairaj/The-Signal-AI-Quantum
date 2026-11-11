@@ -4,8 +4,26 @@
     <title>Signal Brief · AI</title>
     <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/</link>
     <description>Signal Brief: the day in technology, in The Signal's own words. Every item is written from linked official sources and fact checked before publication.</description>
-    <lastBuildDate>Tue, 10 Nov 2026 01:36:45 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 11 Nov 2026 01:35:19 +0000</lastBuildDate>
     <atom:link xmlns:atom="http://www.w3.org/2005/Atom" href="https://thillairaj.github.io/The-Signal-AI-Quantum/signal/ai.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>Google rolls out Gemini 4 Carbon with an agent swarm for coding</title>
+      <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/2026-11-11/01/</link>
+      <guid isPermaLink="false">brief-2026-11-11-01</guid>
+      <pubDate>Wed, 11 Nov 2026 01:30:00 +0000</pubDate>
+      <category>AI</category>
+      <description>Google has made Gemini 4 Carbon publicly available to Gemini app users and to developers through the Gemini API, AI Studio and Vertex AI, after an earlier limited release for cybersecurity work. The model is aimed at agentic coding, including building apps and prototypes and debugging code. Google cites 87.9% on SWE-Bench Verified, against 81% for the previous Gemini 4 Argon, and says one master agent can coordinate up to 10,000 agents that plan, work in parallel and check each other's work. Pricing is $2 per million input tokens and $12 per million output tokens. Why it matters for tech: A coding model that coordinates large agent teams changes how much of a build can be handed to agents at once, and the published benchmark figures give teams a concrete basis for comparing it with the previous release.</description>
+      <content:encoded><![CDATA[<p>Google has made Gemini 4 Carbon publicly available to Gemini app users and to developers through the Gemini API, AI Studio and Vertex AI, after an earlier limited release for cybersecurity work. The model is aimed at agentic coding, including building apps and prototypes and debugging code. Google cites 87.9% on SWE-Bench Verified, against 81% for the previous Gemini 4 Argon, and says one master agent can coordinate up to 10,000 agents that plan, work in parallel and check each other's work. Pricing is $2 per million input tokens and $12 per million output tokens.</p><p><strong>Why it matters for tech:</strong> A coding model that coordinates large agent teams changes how much of a build can be handed to agents at once, and the published benchmark figures give teams a concrete basis for comparing it with the previous release.</p><p>Source: </p><ul><li><a href="https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-4-carbon-now-available/">Google</a></li><li><a href="https://www.theverge.com/ai-artificial-intelligence/1030787/google-gemini-4-carbon-public-rollout">The Verge</a></li></ul>]]></content:encoded>
+    </item>
+    <item>
+      <title>ChatGPT gains verified Business Agents with in-chat checkout</title>
+      <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/2026-11-11/02/</link>
+      <guid isPermaLink="false">brief-2026-11-11-02</guid>
+      <pubDate>Wed, 11 Nov 2026 01:30:00 +0000</pubDate>
+      <category>AI</category>
+      <description>OpenAI has launched Businesses in ChatGPT in beta, adding verified AI Business Agents that represent companies inside ChatGPT and carry a verified blue checkmark. Users can browse a business directory, ask questions, compare products and complete purchases with instant checkout without leaving the chat. Launch partners named by OpenAI include Etsy, Target, Walmart, Shopify, Zillow, Expedia, Booking.com, Canva and Figma. The feature is available from November 10 to ChatGPT users in the US, free and paid, at no additional charge. Why it matters for tech: Putting storefronts and checkout inside a chatbot turns ChatGPT into a shopping channel, which matters for retailers deciding whether to build an agent and for rivals watching how conversational commerce takes shape.</description>
+      <content:encoded><![CDATA[<p>OpenAI has launched Businesses in ChatGPT in beta, adding verified AI Business Agents that represent companies inside ChatGPT and carry a verified blue checkmark. Users can browse a business directory, ask questions, compare products and complete purchases with instant checkout without leaving the chat. Launch partners named by OpenAI include Etsy, Target, Walmart, Shopify, Zillow, Expedia, Booking.com, Canva and Figma. The feature is available from November 10 to ChatGPT users in the US, free and paid, at no additional charge.</p><p><strong>Why it matters for tech:</strong> Putting storefronts and checkout inside a chatbot turns ChatGPT into a shopping channel, which matters for retailers deciding whether to build an agent and for rivals watching how conversational commerce takes shape.</p><p>Source: </p><ul><li><a href="https://openai.com/index/introducing-businesses-chatgpt/">OpenAI</a></li><li><a href="https://www.theverge.com/ai-artificial-intelligence/1030552/openai-chatgpt-business-agents-hub">The Verge</a></li></ul>]]></content:encoded>
+    </item>
     <item>
       <title>Anthropic launches Claude Fable 5.2 and Mythos 5.2 for coding, finance and science</title>
       <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/2026-11-10/01/</link>

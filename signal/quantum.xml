@@ -4,8 +4,26 @@
     <title>Signal Brief · Quantum</title>
     <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/</link>
     <description>Signal Brief: the day in technology, in The Signal's own words. Every item is written from linked official sources and fact checked before publication.</description>
-    <lastBuildDate>Tue, 10 Nov 2026 01:36:45 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 11 Nov 2026 01:35:19 +0000</lastBuildDate>
     <atom:link xmlns:atom="http://www.w3.org/2005/Atom" href="https://thillairaj.github.io/The-Signal-AI-Quantum/signal/quantum.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>Quantinuum and RIKEN complete the Reimei upgrade to the H2 system</title>
+      <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/2026-11-11/03/</link>
+      <guid isPermaLink="false">brief-2026-11-11-03</guid>
+      <pubDate>Wed, 11 Nov 2026 01:30:00 +0000</pubDate>
+      <category>Quantum</category>
+      <description>Quantinuum and RIKEN have completed the upgrade of the Reimei quantum computer at RIKEN to Quantinuum's System Model H2, and expanded their partnership around quantum-AI hybrid supercomputing in Japan. The upgraded machine sits alongside RIKEN's Fugaku supercomputer and the ROQUO GPU system, and the partners have started two research projects on it, one training an AI model on quantum data for magnetism simulations and one simulating a light-absorbing biomolecule. Under a separate agreement with SoftBank, the partners will study connecting quantum computers directly with AI data centres in Japan. Why it matters for tech: A working three-way hybrid of quantum, supercomputing and AI hardware gives researchers a live platform for testing whether quantum-generated data improves AI models for materials and biology.</description>
+      <content:encoded><![CDATA[<p>Quantinuum and RIKEN have completed the upgrade of the Reimei quantum computer at RIKEN to Quantinuum's System Model H2, and expanded their partnership around quantum-AI hybrid supercomputing in Japan. The upgraded machine sits alongside RIKEN's Fugaku supercomputer and the ROQUO GPU system, and the partners have started two research projects on it, one training an AI model on quantum data for magnetism simulations and one simulating a light-absorbing biomolecule. Under a separate agreement with SoftBank, the partners will study connecting quantum computers directly with AI data centres in Japan.</p><p><strong>Why it matters for tech:</strong> A working three-way hybrid of quantum, supercomputing and AI hardware gives researchers a live platform for testing whether quantum-generated data improves AI models for materials and biology.</p><p>Source: </p><ul><li><a href="https://www.quantinuum.com/press-releases/quantinuum-and-riken-expand-partnership-to-accelerate-the-commercialization-of-quantum-ai-hybrid-supercomputing-in-japan">Quantinuum</a></li><li><a href="https://english.kyodonews.net/articles/-/90965">Kyodo News</a></li></ul>]]></content:encoded>
+    </item>
+    <item>
+      <title>Xanadu and HyperLight cut photonic switch loss to 7 millidecibels</title>
+      <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/2026-11-11/04/</link>
+      <guid isPermaLink="false">brief-2026-11-11-04</guid>
+      <pubDate>Wed, 11 Nov 2026 01:30:00 +0000</pubDate>
+      <category>Quantum</category>
+      <description>Xanadu and HyperLight have reported an optical switch insertion loss of 7 millidecibels using thin-film lithium niobate technology, down from 20 millidecibels in their previous result in 2025. Lower switch loss reduces the degradation of quantum signals as they pass through the switches that route light in a photonic quantum computer. The result was demonstrated on HyperLight's thin-film lithium niobate chiplet platform, which the companies describe as a high-volume wafer manufacturing line. Why it matters for tech: Switch loss is one of the physical limits on scaling photonic quantum computers, so a measured drop of nearly two-thirds changes the overhead budget for larger machines built on this platform.</description>
+      <content:encoded><![CDATA[<p>Xanadu and HyperLight have reported an optical switch insertion loss of 7 millidecibels using thin-film lithium niobate technology, down from 20 millidecibels in their previous result in 2025. Lower switch loss reduces the degradation of quantum signals as they pass through the switches that route light in a photonic quantum computer. The result was demonstrated on HyperLight's thin-film lithium niobate chiplet platform, which the companies describe as a high-volume wafer manufacturing line.</p><p><strong>Why it matters for tech:</strong> Switch loss is one of the physical limits on scaling photonic quantum computers, so a measured drop of nearly two-thirds changes the overhead budget for larger machines built on this platform.</p><p>Source: </p><ul><li><a href="https://www.hpcwire.com/off-the-wire/xanadu-reports-lower-optical-switch-loss-for-photonic-quantum-computing/">HPCwire</a></li><li><a href="https://thequantuminsider.com/2026/11/10/xanadu-hyperlight-photonic-switch-loss-7-mdb/">The Quantum Insider</a></li></ul>]]></content:encoded>
+    </item>
     <item>
       <title>Diraq installs an 8-qubit silicon spin computer in a Sydney data centre</title>
       <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/2026-11-10/04/</link>
