@@ -1,6 +1,29 @@
 {
   "articles": [
     {
+      "id": "2026-11-11-claude-fable-mythos-5-2",
+      "title": "Why Did Anthropic Ship Its Strongest Model in Two Versions?",
+      "subtitle": "Fable 5.2 is open to everyone. Mythos 5.2 is the same model, gated to vetted labs",
+      "date": "2026-11-11",
+      "kind": "Brief",
+      "card": "research/cards/edition-12.webp",
+      "body": "research/articles/2026-11-11-claude-fable-mythos-5-2.html",
+      "sources": [
+        {
+          "label": "Anthropic: Introducing Claude Fable 5.2 and Claude Mythos 5.2 (Nov 9, 2026)",
+          "url": "https://www.anthropic.com/claude-fable-and-mythos-5-2"
+        },
+        {
+          "label": "Anthropic: Claude can design electronic prototypes from start to finish (Nov 9, 2026)",
+          "url": "https://www.anthropic.com/research/claude-electronics-design"
+        },
+        {
+          "label": "Anthropic: Claude Fable model page (benchmarks and pricing)",
+          "url": "https://www.anthropic.com/claude/fable"
+        }
+      ]
+    },
+    {
       "id": "2026-11-09-frontier-ai-economics",
       "title": "Why Does Frontier AI Cost More the Faster It Grows?",
       "subtitle": "Anthropic's S-1 puts the frontier lab business model on the public record: $17 billion in a quarter, and a $895 billion compute bill behind it",
@@ -350,5 +373,5 @@
       "title": "Where Does Value Accrue in the AI Stack?"
     }
   ],
-  "generated_at": "2026-11-09T04:19:53+00:00"
+  "generated_at": "2026-11-11T04:17:46+00:00"
 }

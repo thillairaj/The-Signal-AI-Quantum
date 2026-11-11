@@ -1,0 +1,13 @@
+<p><em>Signal Research Notes is an original-research series on The Signal, published three times a week. Each edition asks one question, works through it from primary sources, and keeps confirmed facts separate from analysis. Sources are linked at the end.</em></p>
+
+<p>On November 9, Anthropic released Claude Fable 5.2 and Claude Mythos 5.2, its most capable models for technical work. They are the same underlying model. The difference is access. Fable carries strong cybersecurity and biology safeguards and is available to everyone. Mythos has those safeguards lifted and goes only to organizations vetted through Anthropic's Cyber Verification and Life Sciences Verification Programs.</p>
+
+<h3>Faster, cheaper, and harder working</h3>
+
+<p>Anthropic reports outputs up to 30 percent faster than Fable 5.1 and Mythos 5.1, at a lower price: $8 per million input tokens and $40 per million output tokens, down from $10 and $50. An optional fast mode speeds token generation by up to 2.5 times, at $16 and $80. On Anthropic's own benchmarks, Fable 5.2 scored 49.1 percent on FrontierCode 2.0 against 32.4 percent for Fable 5.1, and Mythos 5.2 scored 89.6 percent on CVE Rediscovery against 78.3 percent for Mythos 5.1.</p>
+
+<p>The capability demos are the striking part. One Anthropic engineer asked Fable 5.2 to design a prototype operating system. The model coordinated over 1,000 subagents for eight days and produced a working system that boots on a laptop. A team of 1,000 Fable 5.2 agents formalized the proof of Fermat's Last Theorem in 30 hours, against 11 days for Anthropic's first attempt with human guidance. The model also solved two open problems in black hole physics and designed three working electronic devices.</p>
+
+<h3>Why two doors for one model</h3>
+
+<p>The split is a governance answer to a capability problem. The same model that finds vulnerabilities at scale can also be misused at scale, so Anthropic keeps the full version behind verification while shipping the safeguarded version widely. That makes access policy, not model weights, the real product decision. The question now is whether other frontier labs follow the same two-door pattern, or whether the gated version becomes the default shape of frontier releases.</p>
