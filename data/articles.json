@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-12T18:00:45.579442+00:00",
+  "generated_at": "2026-11-12T22:00:39.049282+00:00",
   "sources_polled": [
     "OpenAI Blog",
     "Google AI Blog",
@@ -14,7 +14,6 @@
     "AWS Machine Learning Blog",
     "The Quantum Insider",
     "Quantum Computing Report",
-    "Phys.org Quantum Physics",
     "ScienceDaily Quantum Computers",
     "Microsoft Security Blog",
     "The Hacker News",
@@ -29,6 +28,402 @@
   ],
   "articles": [
     {
+      "id": "833c207badafe5a0",
+      "title": "Accelerating Dropless MoE Training in JAX with NVIDIA Transformer Engine",
+      "link": "https://developer.nvidia.com/blog/accelerating-dropless-moe-training-in-jax-with-nvidia-transformer-engine/",
+      "source": "NVIDIA Technical Blog",
+      "category": "AI",
+      "summary": "Mixture of experts (MoE) has become one of the defining architectural trends in large-scale AI model training. DeepSeek, Qwen, and Mixtral are examples of MoE...",
+      "published": "2026-11-12T22:00:11.391726+00:00",
+      "audio_url": null,
+      "duration": ""
+    },
+    {
+      "id": "c2ceacd67091fd6a",
+      "title": "Scaling Federated Learning Across Docker, Kubernetes, and Slurm with NVIDIA FLARE",
+      "link": "https://developer.nvidia.com/blog/scaling-federated-learning-across-docker-kubernetes-and-slurm-with-nvidia-flare/",
+      "source": "NVIDIA Technical Blog",
+      "category": "AI",
+      "summary": "Federated learning (FL) projects often begin with a straightforward setup: one server, a few clients, and one dataset at each site. As those projects grow, the...",
+      "published": "2026-11-12T22:00:11.391703+00:00",
+      "audio_url": null,
+      "duration": ""
+    },
+    {
+      "id": "6510d81523c67e16",
+      "title": "How NVIDIA NVLink 6 Delivers Multi-Layer Resiliency for AI Factories",
+      "link": "https://developer.nvidia.com/blog/how-nvidia-nvlink-6-delivers-multi-layer-resiliency-for-ai-factories/",
+      "source": "NVIDIA Technical Blog",
+      "category": "AI",
+      "summary": "For operators of large-scale AI factories, maximizing continuous output is essential for productivity. In massive-scale AI training, every GPU in the cluster...",
+      "published": "2026-11-12T22:00:11.391672+00:00",
+      "audio_url": null,
+      "duration": ""
+    },
+    {
+      "id": "ce9893f8b1d37b1f",
+      "title": "How NVIDIA Groq 3 LPX Deterministic Execution Drives Power-Efficient High-Interactivity Inference on NVIDIA Vera Rubin",
+      "link": "https://developer.nvidia.com/blog/how-nvidia-groq-3-lpx-deterministic-execution-drives-power-efficient-high-interactivity-inference-on-nvidia-vera-rubin/",
+      "source": "NVIDIA Technical Blog",
+      "category": "AI",
+      "summary": "Power is a defining constraint for AI factories. As AI workloads demand a full compute platform to serve them, each component of that platform must maximize...",
+      "published": "2026-11-12T22:00:11.391650+00:00",
+      "audio_url": null,
+      "duration": ""
+    },
+    {
+      "id": "3f75c86687362489",
+      "title": "Dense vs. MoE Models: Active Parameters, Throughput, and When to Choose Each",
+      "link": "https://developer.nvidia.com/blog/dense-vs-moe-models-active-parameters-throughput-and-when-to-choose-each/",
+      "source": "NVIDIA Technical Blog",
+      "category": "AI",
+      "summary": "How can a 30B-parameter model activate only 3B parameters per token, and still use the capacity of the larger model? Nemotron 3.5 Lightning illustrates the...",
+      "published": "2026-11-12T22:00:11.391628+00:00",
+      "audio_url": null,
+      "duration": ""
+    },
+    {
+      "id": "833138d51e10dc27",
+      "title": "Translating CUDA Tile Operations from Python to Rust Using Agentic AI",
+      "link": "https://developer.nvidia.com/blog/translating-cuda-tile-operations-from-python-to-rust-using-agentic-ai/",
+      "source": "NVIDIA Technical Blog",
+      "category": "AI",
+      "summary": "cuTile Rust (cutile-rs) is a tile-based system for safe, idiomatic GPU kernel authoring in the Rust programming language. Extending the Rust ownership model to...",
+      "published": "2026-11-12T22:00:11.391605+00:00",
+      "audio_url": null,
+      "duration": ""
+    },
+    {
+      "id": "82b935833ffdc855",
+      "title": "TensorRT Edge-LLM Completes the MLPerf Edge Agentic Benchmark 6.4x Faster on Jetson AGX Thor",
+      "link": "https://developer.nvidia.com/blog/tensorrt-edge-llm-completes-the-mlperf-edge-agentic-benchmark-6-4x-faster-on-jetson-agx-thor/",
+      "source": "NVIDIA Technical Blog",
+      "category": "AI",
+      "summary": "AI agents are moving from cloud data centers to vehicles, robots, and other edge devices. Unlike a chatbot that answers a single prompt, an agent works through...",
+      "published": "2026-11-12T22:00:11.391582+00:00",
+      "audio_url": null,
+      "duration": ""
+    },
+    {
+      "id": "d01a6b066d0e307e",
+      "title": "How to Use AI Agents to Prepare 3D Scenes for Simulation",
+      "link": "https://developer.nvidia.com/blog/how-to-use-ai-agents-to-prepare-3d-scenes-for-simulation/",
+      "source": "NVIDIA Technical Blog",
+      "category": "AI",
+      "summary": "Agentic AI workflows can be used to prepare and validate digital twins for physical AI systems. Agents can inspect 3D scenes, author simulation-relevant data in...",
+      "published": "2026-11-12T22:00:11.391560+00:00",
+      "audio_url": null,
+      "duration": ""
+    },
+    {
+      "id": "88c32b0b48612efb",
+      "title": "Benchmarking LLM Inference at Scale with AIPerf",
+      "link": "https://developer.nvidia.com/blog/benchmarking-llm-inference-at-scale-with-aiperf/",
+      "source": "NVIDIA Technical Blog",
+      "category": "AI",
+      "summary": "You\u2019re deploying a model on a system. It starts up, prompts are getting responses. Now the hard question: Is this fast? Your instincts might lead you to send...",
+      "published": "2026-11-12T22:00:11.391538+00:00",
+      "audio_url": null,
+      "duration": ""
+    },
+    {
+      "id": "e61094f257dbd757",
+      "title": "Turn Your Latest Observations Into Timely Weather Decisions With NVIDIA Earth-2",
+      "link": "https://developer.nvidia.com/blog/turn-your-latest-observations-into-timely-weather-decisions-with-nvidia-earth-2/",
+      "source": "NVIDIA Technical Blog",
+      "category": "AI",
+      "summary": "Weather-sensitive industries increasingly have access to observations that offer an earlier, more local view of changing conditions. Energy companies collect...",
+      "published": "2026-11-12T22:00:11.391513+00:00",
+      "audio_url": null,
+      "duration": ""
+    },
+    {
+      "id": "835fd1406315e6b3",
+      "title": "Quoting Kyle Kingsbury",
+      "link": "https://simonwillison.net/2026/Nov/1/kyle-kingsbury/",
+      "source": "Simon Willison",
+      "category": "AI",
+      "summary": "More broadly, the use of LLMs erodes trust in documentation, in software, and in the organizations which produce them. Perhaps engineers will begin to treat any new software project with suspicion\u2014the signals we used to rely on as markers of a mature system are now easier to coun",
+      "published": "2026-11-12T22:00:01.844530+00:00",
+      "audio_url": null,
+      "duration": ""
+    },
+    {
+      "id": "f121b002be2ba369",
+      "title": "datasette-llm 0.1a10",
+      "link": "https://simonwillison.net/2026/Nov/4/datasette-llm/",
+      "source": "Simon Willison",
+      "category": "AI",
+      "summary": "Release: datasette-llm 0.1a10 Fixes a bug that affected my agent.datasette.io demo site, where the set of available LLM models was not correctly restricted to just those in the configuration. Tags: llm , datasette",
+      "published": "2026-11-12T22:00:01.844428+00:00",
+      "audio_url": null,
+      "duration": ""
+    },
+    {
+      "id": "3089c4e12a10528f",
+      "title": "Quoting Paul Ford",
+      "link": "https://simonwillison.net/2026/Nov/5/paul-ford/",
+      "source": "Simon Willison",
+      "category": "AI",
+      "summary": "The web browser is very, very, very powerful software for applications, and the cost of accessing that power is going down seemingly every day . &mdash; Paul Ford , The Web Is More Than Enough Tags: browsers , paul-ford , web-development",
+      "published": "2026-11-12T22:00:01.844401+00:00",
+      "audio_url": null,
+      "duration": ""
+    },
+    {
+      "id": "04ff5155f60621be",
+      "title": "Quoting Nilay Patel",
+      "link": "https://simonwillison.net/2026/Nov/6/nilay-patel/",
+      "source": "Simon Willison",
+      "category": "AI",
+      "summary": "The products aren't good enough to sell people on the costs. You cannot tell people that you have to listen to the whine of a data center in their backyard for AI overviews and some of the most hilarious deep fake slop in history. It's not worth it. It just isn't worth it to anyo",
+      "published": "2026-11-12T22:00:01.844372+00:00",
+      "audio_url": null,
+      "duration": ""
+    },
+    {
+      "id": "dadfbd3c3260c4b0",
+      "title": "Terry Pratchett's Study",
+      "link": "https://simonwillison.net/2026/Nov/7/hn-50407316/",
+      "source": "Simon Willison",
+      "category": "AI",
+      "summary": "My comment on Terry Pratchett&#x27;s Study &mdash; Hacker News. Terry Pratchett once wrote about the concept of \"horizontal wealth\". Vertical wealth is where you spend money on rich people stuff - yachts and suchlike. Horizontal wealth is where you spend more money on the things ",
+      "published": "2026-11-12T22:00:01.844300+00:00",
+      "audio_url": null,
+      "duration": ""
+    },
+    {
+      "id": "3880bf849bb943e9",
+      "title": "datasette #3046: Don't serve link: rel=next HTTP headers to Firefox for HTML pages",
+      "link": "https://simonwillison.net/2026/Nov/7/link-rel-next/",
+      "source": "Simon Willison",
+      "category": "AI",
+      "summary": "datasette #3046: Don&#x27;t serve link: rel=next HTTP headers to Firefox for HTML pages I was looking at the Firefox network panel today when I noticed that requests to a Datasette table page were triggering an HTTP prefetch to the next page of rows in that table. This was happen",
+      "published": "2026-11-12T22:00:01.844243+00:00",
+      "audio_url": null,
+      "duration": ""
+    },
+    {
+      "id": "9572242cc9fc8ca1",
+      "title": "parse_number() as a SQLite extension: C vs Rust",
+      "link": "https://simonwillison.net/2026/Nov/8/sqlite-parse-number-c-vs-rust/",
+      "source": "Simon Willison",
+      "category": "AI",
+      "summary": "Research: parse_number() as a SQLite extension: C vs Rust I was out walking the dog when I got curious about how easy/difficult it would be to write a SQLite C extension that adds a parse_number() function for turning strings like -$1,234.56 or '12.5%' into numeric values that co",
+      "published": "2026-11-12T22:00:01.844179+00:00",
+      "audio_url": null,
+      "duration": ""
+    },
+    {
+      "id": "a92667754bb129c0",
+      "title": "Hide your slop PR descriptions behind <details><summary>",
+      "link": "https://simonwillison.net/2026/Nov/9/details-summary/",
+      "source": "Simon Willison",
+      "category": "AI",
+      "summary": "Most of the changes I make to my projects these days come in the form of PRs opened for me by Claude Code or Codex. The PR is my unit of work - I use them to bundle commits together, iterating on them until a feature is complete, document decisions and then merge the finished res",
+      "published": "2026-11-12T22:00:01.844036+00:00",
+      "audio_url": null,
+      "duration": ""
+    },
+    {
+      "id": "5b851a3023343d96",
+      "title": "The Web Is More Than Enough, by Paul Ford",
+      "link": "https://simonwillison.net/2026/Nov/9/hn-50421091/",
+      "source": "Simon Willison",
+      "category": "AI",
+      "summary": "My comment on The Web Is More Than Enough, by Paul Ford &mdash; Hacker News. OK, this comment convinced me to give that a shot. Here's a thing I made in Three.js this morning - a Nudibranch themed Faberge Egg: https://static.simonwillison.net/static/2026/Hidden-Reef-Egg... (77KB)",
+      "published": "2026-11-12T22:00:01.843719+00:00",
+      "audio_url": null,
+      "duration": ""
+    },
+    {
+      "id": "d363b026f0d913e8",
+      "title": "Locating the source of a mysterious beep with Claude",
+      "link": "https://simonwillison.net/2026/Nov/9/mysterious-beeps/",
+      "source": "Simon Willison",
+      "category": "AI",
+      "summary": "Our house has a box room, full of boxes that we still haven't unpacked from our last move. A couple of weeks ago something in that room started intermittently beeping . The beeps were far enough apart that standing in the room and trying to determine the source of the noise was f",
+      "published": "2026-11-12T22:00:01.843653+00:00",
+      "audio_url": null,
+      "duration": ""
+    },
+    {
+      "id": "d545fdc617b9aefd",
+      "title": "Oh, Palantir is \u2018progressive\u2019 now, is it?",
+      "link": "https://www.theverge.com/ai-artificial-intelligence/1032126/alex-baby-you-were-recorded-on-video",
+      "source": "The Verge \u2014 AI",
+      "category": "AI",
+      "summary": "I had other things to do today, but Alex Karp's pathetic attempt to pivot back to the left gave me no choice but to put them on hold. Last week's elections were a bloodbath for the right, a problem for all the wannabe fash founders who had tied their political fortunes to a \"vibe",
+      "published": "2026-11-12T21:59:59.944235+00:00",
+      "audio_url": null,
+      "duration": ""
+    },
+    {
+      "id": "3b869b1138e3a082",
+      "title": "No, AI agents did not discover a previously unknown Maya site",
+      "link": "https://www.theverge.com/ai-artificial-intelligence/1032125/ai-agents-maya-site-archeology-discovery",
+      "source": "The Verge \u2014 AI",
+      "category": "AI",
+      "summary": "Armed with a team of AI agents, Google researcher Pietro Miotti claimed earlier this week to have discovered a potentially unmapped Maya site in Mexico. There was just one problem: The site had already been discovered and was published in an academic journal last year. The incide",
+      "published": "2026-11-12T21:59:59.944174+00:00",
+      "audio_url": null,
+      "duration": ""
+    },
+    {
+      "id": "164d18b9ed2ea525",
+      "title": "How Natera designed an agentic AI system for lab ops with Amazon Bedrock AgentCore",
+      "link": "https://aws.amazon.com/blogs/machine-learning/how-natera-designed-an-agentic-ai-system-for-lab-ops-with-amazon-bedrock-agentcore/",
+      "source": "AWS Machine Learning Blog",
+      "category": "AI",
+      "summary": "Natera built SWARM, an agentic AI system on Amazon Bedrock AgentCore that captures institutional lab-operations knowledge and deploys it at scale. This post walks through the full architecture, from knowledge base construction to deployment and evaluation, delivering about 130x f",
+      "published": "2026-11-12T21:47:07+00:00",
+      "audio_url": null,
+      "duration": ""
+    },
+    {
+      "id": "3ded89e2e5f95acf",
+      "title": "Microsoft Research Focus \u2013 Edition #98",
+      "link": "https://www.microsoft.com/en-us/research/podcast/microsoft-research-focus-edition-98/",
+      "source": "Microsoft Research",
+      "category": "AI",
+      "summary": "What's new in research at Microsoft? Host Anson Ho explores the latest, including AI-powered universal translation, a breakthrough in a 31-year-old mathematics challenge, and advances making AI coding agents faster and more efficient. The post Microsoft Research Focus \u2013 Edition #",
+      "published": "2026-11-12T21:31:57+00:00",
+      "audio_url": null,
+      "duration": ""
+    },
+    {
+      "id": "71c71fe3c5fe38c2",
+      "title": "Google\u2019s Gemini 4 coding agent now switches models mid-task \u2014 and finishes 19% faster",
+      "link": "https://thenewstack.io/gemini-4-hydrogen-orchestrator/",
+      "source": "The New Stack",
+      "category": "Cloud & DevOps",
+      "summary": "Google launched Gemini 4 Hydrogen on Thursday alongside a new system that changes how coding agents use AI models. Rather The post Google&#8217;s Gemini 4 coding agent now switches models mid-task \u2014 and finishes 19% faster appeared first on The New Stack .",
+      "published": "2026-11-12T21:26:08+00:00",
+      "audio_url": null,
+      "duration": ""
+    },
+    {
+      "id": "a007d45733738901",
+      "title": "Google\u2019s coding agents now /swarm for one developer. Cursor\u2019s go multiplayer so teammates\u2019 agents can talk.",
+      "link": "https://thenewstack.io/cursor-google-multiplayer-swarm/",
+      "source": "The New Stack",
+      "category": "Cloud & DevOps",
+      "summary": "Coding agents are pretty good at working in parallel: one writes a new API endpoint, another updates the tests, while The post Google\u2019s coding agents now /swarm for one developer. Cursor\u2019s go multiplayer so teammates\u2019 agents can talk. appeared first on The New Stack .",
+      "published": "2026-11-12T21:22:46+00:00",
+      "audio_url": null,
+      "duration": ""
+    },
+    {
+      "id": "332da1c688ca108e",
+      "title": "Four Amazon Bedrock inference choices that affect cost",
+      "link": "https://aws.amazon.com/blogs/machine-learning/four-amazon-bedrock-inference-choices-that-affect-cost/",
+      "source": "AWS Machine Learning Blog",
+      "category": "AI",
+      "summary": "Your Amazon Bedrock inference bill can keep climbing even after you tune prompts and application logic. Four request-level choices (cache duration, service tier, reasoning effort, and maxTokens) change how many tokens the service processes and the rate applied. We show how we tes",
+      "published": "2026-11-12T20:51:55+00:00",
+      "audio_url": null,
+      "duration": ""
+    },
+    {
+      "id": "fd416d58448acaf0",
+      "title": "Massive Microsoft 365 outage disrupts Outlook, Teams, Copilot worldwide",
+      "link": "https://www.bleepingcomputer.com/news/microsoft/massive-microsoft-365-outage-disrupts-outlook-teams-copilot-worldwide/",
+      "source": "BleepingComputer",
+      "category": "Cybersecurity",
+      "summary": "Microsoft is investigating a widespread outage affecting multiple Microsoft 365 services, including Outlook, Microsoft Teams, and Copilot, as users report connectivity problems worldwide. [...]",
+      "published": "2026-11-12T20:15:16+00:00",
+      "audio_url": null,
+      "duration": ""
+    },
+    {
+      "id": "372847c9499451eb",
+      "title": "How Amplitude ships product improvements in 1\u20132 days with OpenAI",
+      "link": "https://openai.com/index/amplitude",
+      "source": "OpenAI Blog",
+      "category": "AI",
+      "summary": "Built primarily on OpenAI models, Amplitude\u2019s proactive product agent, Wave, identifies what to build, helps teams ship changes with coding agents, and measures the impact.",
+      "published": "2026-11-12T20:00:00+00:00",
+      "audio_url": null,
+      "duration": ""
+    },
+    {
+      "id": "75c7ee7437ec7c0d",
+      "title": "Ars Live: What drone attacks on data centers mean for modern life in the cloud",
+      "link": "https://arstechnica.com/gadgets/2026/11/ars-live-can-the-cloud-survive-drone-strikes-on-data-centers/",
+      "source": "Ars Technica AI",
+      "category": "AI",
+      "summary": "A livestream Ars discussion is happening on November 17 at 1 pm Eastern Time.",
+      "published": "2026-11-12T19:59:59+00:00",
+      "audio_url": null,
+      "duration": ""
+    },
+    {
+      "id": "5e7c3d53ea737937",
+      "title": "New N-able \"4EverAble2Shell\" zero-day exploited hours after PoC released",
+      "link": "https://www.bleepingcomputer.com/news/security/new-n-able-4everable2shell-zero-day-exploited-hours-after-poc-released/",
+      "source": "BleepingComputer",
+      "category": "Cybersecurity",
+      "summary": "Hackers are actively exploiting a newly disclosed N-able N-central zero-day vulnerability dubbed \"4EverAble2Shell\" to compromise servers and deploy cryptocurrency miners, with researchers reporting at least 21 affected systems, including 19 running the company's latest security u",
+      "published": "2026-11-12T19:51:16+00:00",
+      "audio_url": null,
+      "duration": ""
+    },
+    {
+      "id": "a674b726b083743f",
+      "title": "Tokenomics at scale: Track and cap Amazon Bedrock spend per IAM principal with CUR 2.0 and AWS Budgets",
+      "link": "https://aws.amazon.com/blogs/machine-learning/tokenomics-at-scale-track-and-cap-amazon-bedrock-spend-per-iam-principal-with-cur-2-0-and-aws-budgets/",
+      "source": "AWS Machine Learning Blog",
+      "category": "AI",
+      "summary": "Get per-identity Amazon Bedrock cost visibility and enforceable spend limits using only AWS-native features, with no application code for the common case. Attribute spend with IAM principal tags, report with CUR 2.0 or Cost Explorer, and enforce with AWS Budgets actions that appl",
+      "published": "2026-11-12T19:29:55+00:00",
+      "audio_url": null,
+      "duration": ""
+    },
+    {
+      "id": "77a7ce670b8cd0eb",
+      "title": "Google rolls out Gemini 4 Hydrogen, finally replacing 3.8 Flash",
+      "link": "https://arstechnica.com/google/2026/11/google-rolls-out-gemini-4-hydrogen-finally-replacing-3-8-flash/",
+      "source": "Ars Technica AI",
+      "category": "AI",
+      "summary": "Gemini 4 Hydrogen isn't getting a slow, security-conscious release like Carbon and Argon.",
+      "published": "2026-11-12T19:23:03+00:00",
+      "audio_url": null,
+      "duration": ""
+    },
+    {
+      "id": "fac8887887ba8ddd",
+      "title": "Apache HTTP Server patches critical HTTP/2 remote code execution flaw",
+      "link": "https://www.bleepingcomputer.com/news/security/apache-http-server-patches-critical-http-2-remote-code-execution-flaw/",
+      "source": "BleepingComputer",
+      "category": "Cybersecurity",
+      "summary": "A critical vulnerability in the HTTP/2 module of Apache HTTP Server could be exploited by an unauthenticated attacker to obtain remote code execution (RCE). [...]",
+      "published": "2026-11-12T19:12:55+00:00",
+      "audio_url": null,
+      "duration": ""
+    },
+    {
+      "id": "a88bddb17214a029",
+      "title": "LLMON: An LLM-Native Markup Language, now in Granite 4.1 3B and 8B",
+      "link": "https://huggingface.co/blog/ibm-granite/llmon-an-llm-native-markup-language-now-in-granite",
+      "source": "Hugging Face Blog",
+      "category": "AI",
+      "summary": "",
+      "published": "2026-11-12T19:07:35+00:00",
+      "audio_url": null,
+      "duration": ""
+    },
+    {
+      "id": "3a3ea46b43b8fa68",
+      "title": "Google faces calls for AI moratoriums in schools after Gemini pilot backlash",
+      "link": "https://arstechnica.com/tech-policy/2026/11/families-fight-to-keep-googles-disturbing-ai-off-school-issued-chromebooks/",
+      "source": "Ars Technica AI",
+      "category": "AI",
+      "summary": "Families confront Google after teen\u2019s lawsuit labels Gemini a \u201csuicide coach.\u201d",
+      "published": "2026-11-12T18:57:45+00:00",
+      "audio_url": null,
+      "duration": ""
+    },
+    {
       "id": "585f7dd38210ed2b",
       "title": "Chrome Enterprise brings more protections to healthcare technologies",
       "link": "https://cloud.google.com/blog/products/chrome-enterprise/chrome-enterprise-brings-more-protections-to-healthcare-technologies/",
@@ -40,222 +435,57 @@
       "duration": ""
     },
     {
-      "id": "291ea19a15e9fa9d",
-      "title": "NVIDIA PAIR Virtual Inference Router Expands Available Compute on Your Local Network",
-      "link": "https://developer.nvidia.com/blog/nvidia-pair-virtual-inference-router-expands-available-compute-on-your-local-network/",
-      "source": "NVIDIA Technical Blog",
+      "id": "355689f1d7eaece6",
+      "title": "Optimizing cost per task and proving agent ROI on Amazon Bedrock",
+      "link": "https://aws.amazon.com/blogs/machine-learning/optimizing-cost-per-task-and-proving-agent-roi-on-amazon-bedrock/",
+      "source": "AWS Machine Learning Blog",
       "category": "AI",
-      "summary": "AI agents are learning to do more by working together. A lead agent can break a complex task into smaller jobs and assign those jobs to specialized subagents....",
-      "published": "2026-11-12T18:00:24.894737+00:00",
+      "summary": "Comparing per-token prices hides the real cost of running a model on Amazon Bedrock. This post shows how to calculate the true cost per task across four hidden cost drivers, reduce it with caching, routing, and output constraints, and prove agent ROI with human baselines, holdout",
+      "published": "2026-11-12T18:43:19+00:00",
       "audio_url": null,
       "duration": ""
     },
     {
-      "id": "96735b4a162296d9",
-      "title": "How to Carry User Identity Across Federated Kubernetes and AI Platforms",
-      "link": "https://developer.nvidia.com/blog/how-to-carry-user-identity-across-federated-kubernetes-and-ai-platforms/",
-      "source": "NVIDIA Technical Blog",
+      "id": "b7b9161e40e9197c",
+      "title": "Building a self-service LLM gateway with Amazon Bedrock and LiteLLM",
+      "link": "https://aws.amazon.com/blogs/machine-learning/building-a-self-service-llm-gateway-with-amazon-bedrock-and-litellm/",
+      "source": "AWS Machine Learning Blog",
       "category": "AI",
-      "summary": "Modern AI platforms are no longer a single application behind one login screen. A user may start in a central portal, open a governed dataset, launch a notebook...",
-      "published": "2026-11-12T18:00:24.894714+00:00",
+      "summary": "Build a self-service LLM gateway with LiteLLM on AWS Fargate that puts Amazon Bedrock foundation models behind an OpenAI-compatible API. Developers get instant access through a single API key, while platform teams gain per-user cost controls, quota isolation, and observability.",
+      "published": "2026-11-12T18:41:12+00:00",
       "audio_url": null,
       "duration": ""
     },
     {
-      "id": "bb4eff084ce0c3ca",
-      "title": "Frontier Reasoning Reaches the Edge: How to Deploy and Optimize Models on NVIDIA Jetson",
-      "link": "https://developer.nvidia.com/blog/frontier-reasoning-reaches-the-edge-how-to-deploy-and-optimize-models-on-nvidia-jetson/",
-      "source": "NVIDIA Technical Blog",
-      "category": "AI",
-      "summary": "Running reasoning and agentic AI at the edge has been harder than it needs to be. Until recently, models capable of multi-step reasoning were too large to run...",
-      "published": "2026-11-12T18:00:24.894690+00:00",
+      "id": "b0041657013fc391",
+      "title": "[In preview] Public Preview: Auto scaling of ingestion limits in Azure Monitor workspace",
+      "link": "https://azure.microsoft.com/updates?id=578207",
+      "source": "Azure Updates",
+      "category": "Cloud & DevOps",
+      "summary": "Auto scaling introduces a per-workspace capability in Azure Monitor Workspace (AMW) to automatically scale ingestion limits based on observed usage patterns. When enabled, the system dynamically adjusts ingestion limits (quota ceiling) to maintain healthy",
+      "published": "2026-11-12T18:23:52+00:00",
       "audio_url": null,
       "duration": ""
     },
     {
-      "id": "aa717a2074d6c4eb",
-      "title": "Building a Memory-Driven Agent with NVIDIA NemoClaw",
-      "link": "https://developer.nvidia.com/blog/building-a-memory-driven-agent-with-nvidia-nemoclaw/",
-      "source": "NVIDIA Technical Blog",
-      "category": "AI",
-      "summary": "Enterprise work spans messages, decisions, projects, and obligations that change over time. An AI agent that starts without this context must reconstruct it...",
-      "published": "2026-11-12T18:00:24.894651+00:00",
+      "id": "0215fb6873aed2b7",
+      "title": "ThreatsDay: 59 Linux Kernel Bugs, Falcon Spyware, GSocket Backdoors + 17 More Stories",
+      "link": "https://thehackernews.com/2026/11/threatsday-59-linux-kernel-bugs-falcon.html",
+      "source": "The Hacker News",
+      "category": "Cybersecurity",
+      "summary": "A search result isn't always safe. An access request isn't always harmless. And a familiar account doesn't always mean a familiar person is using it. Simple things to remember. Yet a surprising amount of this week's trouble starts right there. Attackers are using fake websites, s",
+      "published": "2026-11-12T18:02:51+00:00",
       "audio_url": null,
       "duration": ""
     },
     {
-      "id": "dbb60a81aa824bf3",
-      "title": "Introducing CUDA Rust: Two Tracks for Writing GPU Kernels",
-      "link": "https://developer.nvidia.com/blog/introducing-cuda-rust-two-tracks-for-writing-gpu-kernels/",
-      "source": "NVIDIA Technical Blog",
+      "id": "4bad5afe01a19f79",
+      "title": "Introducing Gemini 4 Hydrogen",
+      "link": "https://deepmind.google/blog/introducing-gemini-4-hydrogen/",
+      "source": "Google DeepMind",
       "category": "AI",
-      "summary": "In September 2026, NVIDIA announced it is leaning into native GPU programming in Rust. CUDA C++ and CUDA Python are mature, enterprise-grade toolchains, and...",
-      "published": "2026-11-12T18:00:24.894629+00:00",
-      "audio_url": null,
-      "duration": ""
-    },
-    {
-      "id": "7816c3b36083bf87",
-      "title": "CUDA Toolkit 13.4 Adds Windows on Arm Support and Greater Control over Shared GPUs",
-      "link": "https://developer.nvidia.com/blog/cuda-toolkit-13-4-adds-windows-on-arm-support-and-greater-control-over-shared-gpus/",
-      "source": "NVIDIA Technical Blog",
-      "category": "AI",
-      "summary": "Every NVIDIA CUDA Toolkit release adds functionality and performance improvements that help developers get more from NVIDIA GPUs and the broader NVIDIA software...",
-      "published": "2026-11-12T18:00:24.894607+00:00",
-      "audio_url": null,
-      "duration": ""
-    },
-    {
-      "id": "51e6e5a8d9bdaf12",
-      "title": "When to Use Encode-Prefill-Decode Disaggregation to Accelerate Multimodal Model Serving",
-      "link": "https://developer.nvidia.com/blog/when-to-use-encode-prefill-decode-disaggregation-to-accelerate-multimodal-model-serving/",
-      "source": "NVIDIA Technical Blog",
-      "category": "AI",
-      "summary": "Encode-prefill-decode (EPD) disaggregation is an inference optimization technique for multimodal models that separates the vision encoder stage from the prefill...",
-      "published": "2026-11-12T18:00:24.894585+00:00",
-      "audio_url": null,
-      "duration": ""
-    },
-    {
-      "id": "d23b90bcfb6224ff",
-      "title": "From Wafer-Out to First Token: Codifying Supply Chain Expertise with Nemotron and Palantir Foundry",
-      "link": "https://developer.nvidia.com/blog/from-wafer-out-to-first-token-codifying-supply-chain-expertise-with-nemotron-and-palantir-foundry/",
-      "source": "NVIDIA Technical Blog",
-      "category": "AI",
-      "summary": "NVIDIA has one of the largest and most complex supply chains in the world, and its performance is measured from wafer-out to first token. The interval is in two...",
-      "published": "2026-11-12T18:00:24.894563+00:00",
-      "audio_url": null,
-      "duration": ""
-    },
-    {
-      "id": "bf13fbf2f14a0fa2",
-      "title": "High-Throughput Structure Prediction with BioNeMo Inference Runtime",
-      "link": "https://developer.nvidia.com/blog/high-throughput-structure-prediction-with-bionemo-inference-runtime/",
-      "source": "NVIDIA Technical Blog",
-      "category": "AI",
-      "summary": "Biomolecular structure prediction is now often run at proteome scale, where the goal is to move an entire worklist through the pipeline efficiently. NVIDIA...",
-      "published": "2026-11-12T18:00:24.894539+00:00",
-      "audio_url": null,
-      "duration": ""
-    },
-    {
-      "id": "2abc4ceb82a011e6",
-      "title": "How Full-Stack NIM Optimizations Deliver 2.5x More Users on Nemotron 3 Ultra",
-      "link": "https://developer.nvidia.com/blog/how-full-stack-nim-optimizations-deliver-2-5x-more-users-on-nemotron-3-ultra/",
-      "source": "NVIDIA Technical Blog",
-      "category": "AI",
-      "summary": "Deploying a large language model is only the first step toward production-ready serving. Production teams also need to serve as many concurrent users as...",
-      "published": "2026-11-12T18:00:24.894516+00:00",
-      "audio_url": null,
-      "duration": ""
-    },
-    {
-      "id": "ffb30fef9594cc91",
-      "title": "If in doubt, delete the uv.lock file",
-      "link": "https://simonwillison.net/2026/Nov/1/delete-uv-lock-first/",
-      "source": "Simon Willison",
-      "category": "AI",
-      "summary": "I've been getting the occasional confusing Python dependency error since switching over to Python 3.15 and the rule I'm having to remember is: If in doubt, delete the uv.lock file Most of my projects are libraries which don't include a uv.lock file, since it's rude for a library ",
-      "published": "2026-11-12T18:00:07.269658+00:00",
-      "audio_url": null,
-      "duration": ""
-    },
-    {
-      "id": "6bf0704cb5e2b6fd",
-      "title": "The U.S. Census Bureau and \u201cSuper Intelligence\u201d",
-      "link": "https://simonwillison.net/2026/Nov/2/census-bureau-super-intelligence/",
-      "source": "Simon Willison",
-      "category": "AI",
-      "summary": "I was reminded today of AI Adoption Rate Trending Down for Large Companies , a chart produced by Apollo Global Management in September 2025, which appeared to show a slowdown in U.S. corporate AI adoption based on numbers collected by the U.S. Census Bureau. At the time I used th",
-      "published": "2026-11-12T18:00:07.269596+00:00",
-      "audio_url": null,
-      "duration": ""
-    },
-    {
-      "id": "10dab842bc689c46",
-      "title": "llm 0.37",
-      "link": "https://simonwillison.net/2026/Nov/2/llm/",
-      "source": "Simon Willison",
-      "category": "AI",
-      "summary": "Release: llm 0.37 There's a lot of stuff in this new release of my LLM CLI tool and Python library, representing around two months of accumulated features and fixes. I added gpt-6.1-sol and gpt-6.1-terra , plus a new llm openai endpoint add command to make it easier to configure ",
-      "published": "2026-11-12T18:00:07.269364+00:00",
-      "audio_url": null,
-      "duration": ""
-    },
-    {
-      "id": "c006e897d48e9930",
-      "title": "October sponsors-only newsletter",
-      "link": "https://simonwillison.net/2026/Nov/3/october-newsletter/",
-      "source": "Simon Willison",
-      "category": "AI",
-      "summary": "I sent out the October edition of my sponsors-only monthly newsletter . If you are a sponsor (or start a sponsorship now) you can access it here . This month: The October inflection point for vibe game development The vulnerability apocalypse gets hot LLM releases API credits for",
-      "published": "2026-11-12T18:00:07.269264+00:00",
-      "audio_url": null,
-      "duration": ""
-    },
-    {
-      "id": "22c23cfe758c1cb6",
-      "title": "I discovered a sound that leaks your exact location (and it's everywhere) - YouTube",
-      "link": "https://simonwillison.net/2026/Nov/3/a-sound-that-leaks-your-exact-location/",
-      "source": "Simon Willison",
-      "category": "AI",
-      "summary": "I discovered a sound that leaks your exact location (and it&#x27;s everywhere) - YouTube Genius piece of OSINT by Colsto, who demonstrates how you can take almost imperceptible background noise of planes from a video soundtrack, figure out their Doppler curves, then cross referen",
-      "published": "2026-11-12T18:00:07.269210+00:00",
-      "audio_url": null,
-      "duration": ""
-    },
-    {
-      "id": "6857dc224a419fe9",
-      "title": "Qwen 3.8 27B on my laptop can interpret model weights, too",
-      "link": "https://simonwillison.net/2026/Nov/3/qwen-can-interpret-model-weights/",
-      "source": "Simon Willison",
-      "category": "AI",
-      "summary": "Yesterday's hot paper was Sparks of Weight-Space Programming: LLMs can natively read &amp; write neural network weights by Rikiya Takehi, Jayden Teoh, Alex Zhang, and Omar Khattab. The paper (OK, the authors classify is as a \"blog post\", but it's paper-shaped) found that frontier",
-      "published": "2026-11-12T18:00:07.269169+00:00",
-      "audio_url": null,
-      "duration": ""
-    },
-    {
-      "id": "5b7b48c647c50787",
-      "title": "AI is destroying my CS degree",
-      "link": "https://simonwillison.net/2026/Nov/3/hn-50354278/",
-      "source": "Simon Willison",
-      "category": "AI",
-      "summary": "My comment on AI is destroying my CS degree &mdash; Hacker News. I don't envy educators right now. AI clearly means you need to change how you teach and evaluate students. We are only a few years in though, and it's still extremely unclear what effective teaching with these tools",
-      "published": "2026-11-12T18:00:07.268703+00:00",
-      "audio_url": null,
-      "duration": ""
-    },
-    {
-      "id": "07065efd722751e2",
-      "title": "llm 0.37.1",
-      "link": "https://simonwillison.net/2026/Nov/3/llm/",
-      "source": "Simon Willison",
-      "category": "AI",
-      "summary": "Release: llm 0.37.1 A bugfix release for LLM , with contributions from Steven Huang , Tao An , Arjan Mossel , and XQ . Tags: llm",
-      "published": "2026-11-12T18:00:07.268643+00:00",
-      "audio_url": null,
-      "duration": ""
-    },
-    {
-      "id": "196e073af215c4a0",
-      "title": "datasette-agent 0.5a0",
-      "link": "https://simonwillison.net/2026/Nov/3/datasette-agent/",
-      "source": "Simon Willison",
-      "category": "AI",
-      "summary": "Release: datasette-agent 0.5a0 This is a significant release of Datasette Agent . The most notable new feature is called the panel - it lets the agent chat open and then sit next to pages from Datasette, for example a table or query page. When combined with datasette-apps this me",
-      "published": "2026-11-12T18:00:07.268614+00:00",
-      "audio_url": null,
-      "duration": ""
-    },
-    {
-      "id": "c3dba756698ba6ec",
-      "title": "datasette-apps 0.3a0",
-      "link": "https://simonwillison.net/2026/Nov/4/datasette-apps/",
-      "source": "Simon Willison",
-      "category": "AI",
-      "summary": "Release: datasette-apps 0.3a0 Datasette Apps adds support for hosting and editing custom HTML applications inside of Datasette. These can be created by hand, but it's easier to create them using LLMs via Datasette Agent . This release improves that integration: Apps can now be ta",
-      "published": "2026-11-12T18:00:07.268567+00:00",
+      "summary": "",
+      "published": "2026-11-12T18:00:50+00:00",
       "audio_url": null,
       "duration": ""
     },
@@ -348,6 +578,17 @@
       "duration": ""
     },
     {
+      "id": "459a57b4750adf48",
+      "title": "Google Search gets a major upgrade with Gemini 4 Hydrogen",
+      "link": "https://blog.google/products-and-platforms/products/search/gemini-4-hydrogen-search-upgrade/",
+      "source": "Google AI Blog",
+      "category": "AI",
+      "summary": "Rotating carousel of cards with text \"Gemini 4 Hydrogen\" \"Now in Google Search\" and examples from the Google Search UI",
+      "published": "2026-11-12T18:00:00+00:00",
+      "audio_url": null,
+      "duration": ""
+    },
+    {
       "id": "66bdd92f8e9786ed",
       "title": "Run agents securely and efficiently with the next generation AgentCore runtime",
       "link": "https://aws.amazon.com/blogs/machine-learning/run-agents-securely-and-efficiently-with-the-next-generation-agentcore-runtime/",
@@ -355,6 +596,28 @@
       "category": "AI",
       "summary": "AI agents now run multi-step workloads for hours and act on behalf of users, raising the bar for secure, scalable agent compute. Learn how the next generation of Amazon Bedrock AgentCore runtime delivers hardware-isolated sessions with faster starts, more compute, usage-based bil",
       "published": "2026-11-12T17:59:59+00:00",
+      "audio_url": null,
+      "duration": ""
+    },
+    {
+      "id": "7386d3de069ba5ca",
+      "title": "Train the Trainer: Inside MAHE\u2019s Hardware-First Bet on Quantum",
+      "link": "https://thequantuminsider.com/2026/11/12/train-the-trainer-inside-mahes-hardware-first-bet-on-quantum/",
+      "source": "The Quantum Insider",
+      "category": "Quantum",
+      "summary": "Through its partnership with QuantrolOx, Manipal Academy of Higher Education is preparing educators like Dr. Chandrakantha Bekal to run a live quantum facility. Insider Brief For Chandrakantha Bekal, teaching had never been a lifelong interest. After completing his master&#8217;s",
+      "published": "2026-11-12T17:51:35+00:00",
+      "audio_url": null,
+      "duration": ""
+    },
+    {
+      "id": "1acaa8e77a2e5854",
+      "title": "New SignDrop Zero-Day Exploit Turns Windows CLFS Security Feature Into SYSTEM Access",
+      "link": "https://thehackernews.com/2026/11/new-signdrop-zero-day-exploit-turns.html",
+      "source": "The Hacker News",
+      "category": "Cybersecurity",
+      "summary": "Public exploit code released earlier this week claims that a local Windows user can gain SYSTEM privileges through the Common Log File System driver. The proof of concept, called SignDrop, targets a log-authentication feature added to the driver last year. It abuses how clfs.sys ",
+      "published": "2026-11-12T17:50:27+00:00",
       "audio_url": null,
       "duration": ""
     },
@@ -420,6 +683,17 @@
       "source": "Google Cloud Blog",
       "category": "Cloud & DevOps",
       "summary": "November 9 - November 13 Bringing conversational analytics to Gemini with Data Cloud connectors : Data Cloud connectors in Gemini are now in preview, enabling knowledge workers to query live enterprise data using natural language directly within tools like Google Docs, Gmail, and",
+      "published": "2026-11-12T17:00:00+00:00",
+      "audio_url": null,
+      "duration": ""
+    },
+    {
+      "id": "a9b2747b83a3e347",
+      "title": "Trained to betray: How post-training supply chain attacks hijack coding agents",
+      "link": "https://www.microsoft.com/en-us/security/blog/2026/11/12/trained-to-betray-how-post-training-supply-chain-attacks-hijack-coding-agents/",
+      "source": "Microsoft Security Blog",
+      "category": "Cybersecurity",
+      "summary": "Microsoft Defender Research and the AI Red Team discuss how poisoned datasets and poisoned model checkpoints can trigger remote code execution and other malicious activities. The post Trained to betray: How post-training supply chain attacks hijack coding agents appeared first on",
       "published": "2026-11-12T17:00:00+00:00",
       "audio_url": null,
       "duration": ""
@@ -656,17 +930,6 @@
       "duration": ""
     },
     {
-      "id": "b5ca4e19eb54da53",
-      "title": "Nvidia CEO Jensen Huang resigns amid spy, affair scandals",
-      "link": "https://www.theverge.com/ai-artificial-intelligence/1031689/jensen-huang-fired-nvidia",
-      "source": "The Verge \u2014 AI",
-      "category": "AI",
-      "summary": "Nvidia's board has separated from Jensen Huang, its longtime co-founder, president, and CEO, after reports of two extramarital affairs - one with an alleged Chinese spy and one with an Nvidia executive who reported to Huang. A press release published Thursday following a late Wed",
-      "published": "2026-11-12T14:00:58.934185+00:00",
-      "audio_url": null,
-      "duration": ""
-    },
-    {
       "id": "74d66659e737d200",
       "title": "See what AI looks like in production at Microsoft Ignite",
       "link": "https://thenewstack.io/microsoft-ignite-2026/",
@@ -755,17 +1018,6 @@
       "duration": ""
     },
     {
-      "id": "988b46d175c69a81",
-      "title": "PTC Patches Critical Windchill and FlexPLM Flaw That Could Enable Remote Code Execution",
-      "link": "https://thehackernews.com/2026/11/ptc-patches-critical-windchill-and.html",
-      "source": "The Hacker News",
-      "category": "Cybersecurity",
-      "summary": "PTC has released patches for a new critical vulnerability impacting Windchill and FlexPLM software that, if successfully exploited, could result in remote code execution. The security flaw, tracked as CVE-2026-126325, carries a CVSS v4 score of 9.2 out of a maximum of 10.0. It ha",
-      "published": "2026-11-12T11:33:15+00:00",
-      "audio_url": null,
-      "duration": ""
-    },
-    {
       "id": "66e67dba1591fa47",
       "title": "OrangeQS Appoints Raj Badoni as Chief Commercial Officer",
       "link": "https://thequantuminsider.com/2026/11/12/orangeqs-raj-badoni-chief-commercial-officer/",
@@ -799,17 +1051,6 @@
       "duration": ""
     },
     {
-      "id": "7396b577c72532a7",
-      "title": "ChatGPT is getting verified AI \u2018Business Agents\u2019",
-      "link": "https://www.theverge.com/ai-artificial-intelligence/1030552/openai-chatgpt-business-agents-hub",
-      "source": "The Verge \u2014 AI",
-      "category": "AI",
-      "summary": "ChatGPT is going to let you chat with verified \"Business Agents\" that represent a brand to help you with things like comparison shopping. The feature, available first to \"eligible\" e-commerce and online service businesses in the US, is launching as part of a suite of business-foc",
-      "published": "2026-11-12T09:59:57.756904+00:00",
-      "audio_url": null,
-      "duration": ""
-    },
-    {
       "id": "3ca0085eba4f5e00",
       "title": "Hackers plant GSocket on Linux servers for persistent access",
       "link": "https://www.bleepingcomputer.com/news/security/hackers-plant-gsocket-on-linux-servers-for-persistent-access/",
@@ -832,17 +1073,6 @@
       "duration": ""
     },
     {
-      "id": "26d811aac83d6968",
-      "title": "Critical Pre-Auth MongoDB Flaw (CVE-2026-118383) Can Crash Lagging Servers on Failover",
-      "link": "https://thehackernews.com/2026/11/critical-pre-auth-mongodb-flaw-cve-2026.html",
-      "source": "The Hacker News",
-      "category": "Cybersecurity",
-      "summary": "A critical flaw in MongoDB Server allows an unauthenticated attacker to send two requests that trigger a crash on the database server. The crash occurs only if that server is later chosen to take over as the main server while it still lacks some recent changes. MongoDB, the compa",
-      "published": "2026-11-12T09:25:00+00:00",
-      "audio_url": null,
-      "duration": ""
-    },
-    {
       "id": "0b45550b97285dee",
       "title": "CyberRisk Collaborative Announces Virtual Event on Post-Quantum Readiness",
       "link": "https://thequantuminsider.com/2026/11/12/cyberrisk-collaborative-virtual-event-post-quantum-readiness/",
@@ -850,17 +1080,6 @@
       "category": "Quantum",
       "summary": "Insider Brief PRESS RELEASE &#8212; CyberRisk Collaborative, a membership organization for senior cybersecurity leaders, today announced Post-Quantum Readiness: Preparing for Q-Day, a virtual event taking place Tuesday, Jan. 26, 2027, focused on the security, risk, and technology",
       "published": "2026-11-12T08:29:00+00:00",
-      "audio_url": null,
-      "duration": ""
-    },
-    {
-      "id": "8b9f910c0b1b2820",
-      "title": "Xanadu Reports Revenue Growth as Photonic Partnerships and Government Support Expand",
-      "link": "https://thequantuminsider.com/2026/11/12/xanadu-reports-revenue-growth-as-photonic-partnerships-and-government-support-expand/",
-      "source": "The Quantum Insider",
-      "category": "Quantum",
-      "summary": "Insider Brief Xanadu reported higher revenue in the third quarter of 2026 and expanded government support as it added manufacturing partners and classical computing tools to advance its plans for a photonic quantum data center. The Toronto-based company generated $1.3 million of ",
-      "published": "2026-11-12T08:23:09+00:00",
       "audio_url": null,
       "duration": ""
     },
@@ -942,17 +1161,6 @@
       "duration": ""
     },
     {
-      "id": "4fde59b89280401f",
-      "title": "Build autonomous AI agents with Amazon Bedrock and Spring AI",
-      "link": "https://aws.amazon.com/blogs/machine-learning/build-autonomous-ai-agents-with-amazon-bedrock-and-spring-ai/",
-      "source": "AWS Machine Learning Blog",
-      "category": "AI",
-      "summary": "Learn how Java developers can build production-ready autonomous AI agents using Amazon Bedrock and Spring AI. This post walks through tool calling, conversation memory, resilience patterns, and multi-agent orchestration, then deploys the agent to AWS with Amazon Bedrock AgentCore",
-      "published": "2026-11-12T01:18:23+00:00",
-      "audio_url": null,
-      "duration": ""
-    },
-    {
       "id": "7e6517291ecd8e70",
       "title": "Daily AI Intelligence \u2014 Episode 42 (Thu Nov 12, 2026): Anthropic's usage policy takes effect, Cursor's proposed cutoff day, and Washington tightens chip exports",
       "link": "https://muse.ai/podcasts/media/1248297608376725/94f09345-ad4a-4981-83dd-e3206bbf5c4e/ep-3b05134e-9f81-4d82-8906-b8ef1b949e6e.mp3",
@@ -1026,83 +1234,6 @@
       "category": "Quantum",
       "summary": "Xanadu reported a 32% year-over-year revenue increase to $1.31 million in Q3 2026, driven by DARPA contracts and commercial partnerships. Despite an expanded operating loss due to increased R&#038;D, the company maintains a strong liquidity position with $286.5 million in cash an",
       "published": "2026-11-11T23:40:52+00:00",
-      "audio_url": null,
-      "duration": ""
-    },
-    {
-      "id": "8983976445a64b87",
-      "title": "OpenAI Codex on Amazon Bedrock",
-      "link": "https://aws.amazon.com/blogs/machine-learning/openai-codex-on-amazon-bedrock/",
-      "source": "AWS Machine Learning Blog",
-      "category": "AI",
-      "summary": "A practical guide for enterprises rolling out OpenAI Codex to developers on AWS, with Amazon Bedrock as the model backend, covering the access, governance, and cost decisions that platform, security, and finance teams need to align on.",
-      "published": "2026-11-11T23:35:47+00:00",
-      "audio_url": null,
-      "duration": ""
-    },
-    {
-      "id": "d69d0f141f7ad6bf",
-      "title": "Semantic diffing of formal policies with anti-unification",
-      "link": "https://aws.amazon.com/blogs/machine-learning/semantic-diffing-of-formal-policies-with-anti-unification/",
-      "source": "AWS Machine Learning Blog",
-      "category": "AI",
-      "summary": "A textual diff of two formal policies flags every cosmetic change and hides the one that alters behavior. This post shows how to compute a symbolic, deterministic semantic diff with an open-source anti-unification engine, so reviewers see only the genuine disagreements between tw",
-      "published": "2026-11-11T23:33:03+00:00",
-      "audio_url": null,
-      "duration": ""
-    },
-    {
-      "id": "a0a816a0eb24ca9a",
-      "title": "Detecting and recovering from silent data corruption on Amazon SageMaker HyperPod",
-      "link": "https://aws.amazon.com/blogs/machine-learning/detecting-and-recovering-from-silent-data-corruption-on-amazon-sagemaker-hyperpod/",
-      "source": "AWS Machine Learning Blog",
-      "category": "AI",
-      "summary": "Silent data corruption is a GPU fault that returns wrong but plausible numbers with no error, quietly poisoning distributed training. This post adds three checks to a PyTorch DDP loop to detect it, localize the faulty node on Amazon SageMaker HyperPod, and hand the node to automa",
-      "published": "2026-11-11T23:30:03+00:00",
-      "audio_url": null,
-      "duration": ""
-    },
-    {
-      "id": "b5708027eb886069",
-      "title": "Introducing the Web Search API on Amazon Bedrock AgentCore",
-      "link": "https://aws.amazon.com/blogs/machine-learning/introducing-the-web-search-api-on-amazon-bedrock-agentcore/",
-      "source": "AWS Machine Learning Blog",
-      "category": "AI",
-      "summary": "Today we're announcing the Web Search API on Amazon Bedrock AgentCore: your own code can search the web with a single signed API call, with no gateway and no resources to create. Call it from the AWS SDKs or the AWS CLI and use it in applications, agent loops, and data pipelines.",
-      "published": "2026-11-11T23:13:16+00:00",
-      "audio_url": null,
-      "duration": ""
-    },
-    {
-      "id": "7f241c94ac846596",
-      "title": "Baker Tilly notifies clients of data breach at third-party provider",
-      "link": "https://www.bleepingcomputer.com/news/security/baker-tilly-notifies-clients-of-data-breach-at-third-party-provider/",
-      "source": "BleepingComputer",
-      "category": "Cybersecurity",
-      "summary": "The Baker Tilly Advisory Group is notifying clients that a data breach has compromised certain personal information about them and their dependents. [...]",
-      "published": "2026-11-11T23:01:31+00:00",
-      "audio_url": null,
-      "duration": ""
-    },
-    {
-      "id": "ccdd6c7f3ffe5679",
-      "title": "Active ScreenConnect attacks breach MSPs, impact dozens of organizations",
-      "link": "https://www.bleepingcomputer.com/news/security/active-screenconnect-attacks-breach-msps-impact-dozens-of-organizations/",
-      "source": "BleepingComputer",
-      "category": "Cybersecurity",
-      "summary": "ConnectWise is investigating an active malware campaign targeting managed service providers (MSPs) that uses compromised ScreenConnect environments to deploy rogue remote-access clients to customer devices. [...]",
-      "published": "2026-11-11T22:56:21+00:00",
-      "audio_url": null,
-      "duration": ""
-    },
-    {
-      "id": "a4a34375ee4e181d",
-      "title": "eMudhra revokes 8 more CA certificates after private key mishap",
-      "link": "https://www.bleepingcomputer.com/news/security/emudhra-revokes-8-more-ca-certificates-after-private-key-mishap/",
-      "source": "BleepingComputer",
-      "category": "Cybersecurity",
-      "summary": "Certificate authority eMudhra has revoked eight additional intermediate CA certificates after an investigation into its recent certificate security incident found improper handling of private keys during the certificate-generation process. [...]",
-      "published": "2026-11-11T21:27:40+00:00",
       "audio_url": null,
       "duration": ""
     },
@@ -1224,28 +1355,6 @@
       "category": "AI",
       "summary": "Any amount of AI coding is too much for many Indie Game Festival judges.",
       "published": "2026-11-11T17:37:32+00:00",
-      "audio_url": null,
-      "duration": ""
-    },
-    {
-      "id": "b2ba715dd2288843",
-      "title": "AWS had its agents build a free and open emulator for AWS. They now maintain it, too.",
-      "link": "https://thenewstack.io/aws-emulator-ai-agents/",
-      "source": "The New Stack",
-      "category": "Cloud & DevOps",
-      "summary": "AWS on Wednesday launched an emulator for AWS called AWS Emulator. That, by itself, is interesting and may raise some The post AWS had its agents build a free and open emulator for AWS. They now maintain it, too. appeared first on The New Stack .",
-      "published": "2026-11-11T17:30:00+00:00",
-      "audio_url": null,
-      "duration": ""
-    },
-    {
-      "id": "663bcab770e240a9",
-      "title": "Developers have been hacking around MCP\u2019s file-upload problem for two years. A fix is taking shape.",
-      "link": "https://thenewstack.io/mcp-file-upload-extension/",
-      "source": "The New Stack",
-      "category": "Cloud & DevOps",
-      "summary": "The Model Context Protocol (MCP) has played an instrumental part in connecting AI assistants to external tools and data since The post Developers have been hacking around MCP\u2019s file-upload problem for two years. A fix is taking shape. appeared first on The New Stack .",
-      "published": "2026-11-11T17:11:55+00:00",
       "audio_url": null,
       "duration": ""
     },
@@ -1591,17 +1700,6 @@
       "duration": ""
     },
     {
-      "id": "004c51f512e0fac4",
-      "title": "DeepMind reveals Gemini Robotics 2.5 and open safety benchmark \"ASIMOV-jailbreak\"",
-      "link": "https://arstechnica.com/google/2026/11/deepmind-reveals-gemini-robotics-2-5-and-open-safety-benchmark-asimov-jailbreak/",
-      "source": "Ars Technica AI",
-      "category": "AI",
-      "summary": "The new model is up to twice as successful at some tasks.",
-      "published": "2026-11-10T15:00:39+00:00",
-      "audio_url": null,
-      "duration": ""
-    },
-    {
       "id": "c5fffc8a0cbdc3d4",
       "title": "We\u2019re bringing Adobe\u2019s creative and productivity tools closer to your everyday Google apps.",
       "link": "https://blog.google/company-news/inside-google/company-announcements/adobe-google-partnership-integration/",
@@ -1620,17 +1718,6 @@
       "category": "AI",
       "summary": "Google Cloud launches Gemini for healthcare to unify clinical data and automate workflows. Reduce administrative burnout. See how it works.",
       "published": "2026-11-10T13:00:00+00:00",
-      "audio_url": null,
-      "duration": ""
-    },
-    {
-      "id": "ffd1be60b8ac1c68",
-      "title": "Ukraine\u2019s fiber-optic drones get squeezed by AI data center demand",
-      "link": "https://arstechnica.com/gadgets/2026/11/ukraines-fiber-optic-drones-get-squeezed-by-ai-data-center-demand/",
-      "source": "Ars Technica AI",
-      "category": "AI",
-      "summary": "Ukraine competes with Russia and data centers for China\u2019s optical fiber supply.",
-      "published": "2026-11-10T12:15:32+00:00",
       "audio_url": null,
       "duration": ""
     },
@@ -1697,17 +1784,6 @@
       "category": "AI",
       "summary": "Discover how Singapore Airlines uses OpenAI models and API to enhance customer support, travel discovery, and employee productivity, doubling CSAT for its Kris chatbot.",
       "published": "2026-11-10T08:00:00+00:00",
-      "audio_url": null,
-      "duration": ""
-    },
-    {
-      "id": "3588ceed41552e46",
-      "title": "Work at the Frontier: AI\u2019s effect on freelance work",
-      "link": "https://openai.com/index/ai-effect-on-freelance-work",
-      "source": "OpenAI Blog",
-      "category": "AI",
-      "summary": "New research from OpenAI and Upwork finds shifting demand for freelance work, new skill combinations, and larger budgets and more hours for AI-related projects.",
-      "published": "2026-11-10T07:00:00+00:00",
       "audio_url": null,
       "duration": ""
     },
@@ -1818,17 +1894,6 @@
       "category": "Cloud & DevOps",
       "summary": "Most of the cost of adopting something new isn\u2019t the new thing, it\u2019s the move. Moving a Hive table to Apache Iceberg has typically meant weeks of engineering work. Last week, Amazon S3 Tables turned that into three steps: start, sync as often as you need, complete. The source sta",
       "published": "2026-11-09T17:55:26+00:00",
-      "audio_url": null,
-      "duration": ""
-    },
-    {
-      "id": "4065836ff3f518ca",
-      "title": "Claude Code is accidentally exposing secrets all over GitHub",
-      "link": "https://arstechnica.com/ai/2026/11/claude-code-settings-files-expose-thousands-of-secrets-on-github/",
-      "source": "Ars Technica AI",
-      "category": "AI",
-      "summary": "\"Do not ask again\" prompt leads to passwords, API keys, and more being shared.",
-      "published": "2026-11-09T17:24:26+00:00",
       "audio_url": null,
       "duration": ""
     },
@@ -1976,28 +2041,6 @@
       "duration": ""
     },
     {
-      "id": "0a1279cf12a25858",
-      "title": "[Launched] Generally Available: Azure Front Door TLS key exchange policy with post-quantum support",
-      "link": "https://azure.microsoft.com/updates?id=577668",
-      "source": "Azure Updates",
-      "category": "Cloud & DevOps",
-      "summary": "Azure Front Door now supports configurable TLS key exchange policies, including hybrid post-quantum key exchange, to help you prepare for evolving cryptographic threats while meeting your security and client compatibility requirements. Choose a predefined",
-      "published": "2026-11-05T23:19:48+00:00",
-      "audio_url": null,
-      "duration": ""
-    },
-    {
-      "id": "e8690f74b67f5698",
-      "title": "New NVIDIA Cosmos 3 Open Models for Interactive World Simulation",
-      "link": "https://huggingface.co/blog/nvidia/cosmos-interactive-world-simulation",
-      "source": "Hugging Face Blog",
-      "category": "AI",
-      "summary": "",
-      "published": "2026-11-05T19:35:16+00:00",
-      "audio_url": null,
-      "duration": ""
-    },
-    {
       "id": "ccc66eb2563172ef",
       "title": "New investments to reduce on-premises security risk",
       "link": "https://techcommunity.microsoft.com/blog/microsoft-security-blog/new-investments-to-reduce-on-premises-security-risk/4570381",
@@ -2106,17 +2149,6 @@
       "published": "2026-11-04T01:00:44+00:00",
       "audio_url": "https://muse.ai/podcasts/media/1248297608376725/94f09345-ad4a-4981-83dd-e3206bbf5c4e/ep-dd9d0ba0-7bbb-46cc-8e39-33de99c6c4de.mp3",
       "duration": "246"
-    },
-    {
-      "id": "86c38c1e82c9eaca",
-      "title": "Fake-download campaign uses trojanized installers to deliver monetization payloads",
-      "link": "https://www.microsoft.com/en-us/security/blog/2026/11/03/fake-download-campaign-uses-trojanized-installers-deliver-monetization-payloads/",
-      "source": "Microsoft Security Blog",
-      "category": "Cybersecurity",
-      "summary": "Microsoft Threat Intelligence tracks a fake-download campaign that uses trojanized Inno installers to deliver multiple monetization offers and provides detection and investigation guidance across the complete installer session. The post Fake-download campaign uses trojanized inst",
-      "published": "2026-11-03T17:32:47+00:00",
-      "audio_url": null,
-      "duration": ""
     },
     {
       "id": "7edcdb24a88ec718",
@@ -2724,17 +2756,6 @@
       "duration": ""
     },
     {
-      "id": "e66e9796ba6be5e9",
-      "title": "Beyond tree cover: mapping the world\u2019s forest types",
-      "link": "https://deepmind.google/blog/beyond-tree-cover-mapping-the-worlds-forest-types/",
-      "source": "Google DeepMind",
-      "category": "AI",
-      "summary": "A global map categorizing every 10-meter patch of land on Earth into distinct forest types.",
-      "published": "2026-10-22T14:30:24+00:00",
-      "audio_url": null,
-      "duration": ""
-    },
-    {
       "id": "52d0a68d1d474a14",
       "title": "Daily AI Intelligence \u2014 Episode 21 (Thu Oct 22, 2026): AI-found critical PHP flaws, Claude Duet launch, Nvidia container AI factories",
       "link": "https://muse.ai/podcasts/media/1248297608376725/94f09345-ad4a-4981-83dd-e3206bbf5c4e/ep-00c36dbf-7c22-4095-901d-67fb7a9c320d.mp3",
@@ -2753,17 +2774,6 @@
       "category": "AI",
       "summary": "For decades, a fundamental question about the difficulty of computing in high-dimensional spaces has resisted proof. New research resolves this question, removing a major theoretical obstacle to understanding the efficiency of randomized algorithms used across science and computi",
       "published": "2026-10-21T16:00:00+00:00",
-      "audio_url": null,
-      "duration": ""
-    },
-    {
-      "id": "1778fb273dbb6c0b",
-      "title": "Southeast Asia\u2019s digital economy to hit $368 billion",
-      "link": "https://blog.google/company-news/inside-google/around-the-globe/google-asia/e-conomy-sea-report-2026/",
-      "source": "Google AI Blog",
-      "category": "AI",
-      "summary": "Cover image for the e-Conomy SEA 2026 report titled Building the intelligent economy by Google, Temasek, and Bain and Company. A 3D illustration features a glowing yellow star surrounded by miniature scenes representing digital sectors, including data cen",
-      "published": "2026-10-21T04:00:00+00:00",
       "audio_url": null,
       "duration": ""
     },
@@ -3173,17 +3183,6 @@
       "published": "2026-10-13T01:03:31+00:00",
       "audio_url": "https://muse.ai/podcasts/media/1248297608376725/94f09345-ad4a-4981-83dd-e3206bbf5c4e/ep-2c99a941-4407-4667-9f77-0c237a92d4a3.mp3",
       "duration": "291"
-    },
-    {
-      "id": "5d83dba89b9f02b7",
-      "title": "Simulating student learning for better AI tutoring",
-      "link": "https://www.microsoft.com/en-us/research/blog/simulating-student-learning-for-better-ai-tutoring/",
-      "source": "Microsoft Research",
-      "category": "AI",
-      "summary": "StudentSim is a research system for evaluating and improving AI tutoring tools before they are tested with learners. It models how individuals may engage with tutors, giving feedback to improve tutor performance across subjects like chess, writing, and mathematics. The post Simul",
-      "published": "2026-10-12T16:00:00+00:00",
-      "audio_url": null,
-      "duration": ""
     },
     {
       "id": "e77534a29e124c97",
