@@ -4,8 +4,35 @@
     <title>Signal Brief · Cybersecurity</title>
     <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/</link>
     <description>Signal Brief: the day in technology, in The Signal's own words. Every item is written from linked official sources and fact checked before publication.</description>
-    <lastBuildDate>Wed, 11 Nov 2026 01:35:19 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 12 Nov 2026 01:36:23 +0000</lastBuildDate>
     <atom:link xmlns:atom="http://www.w3.org/2005/Atom" href="https://thillairaj.github.io/The-Signal-AI-Quantum/signal/cybersecurity.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>Maersk confirms a breach of a legacy logistics system as a ransomware gang demands $5 million</title>
+      <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/2026-11-12/07/</link>
+      <guid isPermaLink="false">brief-2026-11-12-07</guid>
+      <pubDate>Thu, 12 Nov 2026 01:30:00 +0000</pubDate>
+      <category>Cybersecurity</category>
+      <description>Maersk has confirmed that a threat actor breached a local legacy system from its acquired LF Logistics arm and stole data. The WhiteArmor ransomware gang claims about 100GB of data and demands $5 million in bitcoin within 30 days. Maersk says the incident is isolated to that system, current evidence shows no sensitive data has been disclosed, and operations are unaffected. Why it matters for tech: The breach hit a system inherited through acquisition, which is a reminder that acquired infrastructure carries its own exposure long after the deal closes.</description>
+      <content:encoded><![CDATA[<p>Maersk has confirmed that a threat actor breached a local legacy system from its acquired LF Logistics arm and stole data. The WhiteArmor ransomware gang claims about 100GB of data and demands $5 million in bitcoin within 30 days. Maersk says the incident is isolated to that system, current evidence shows no sensitive data has been disclosed, and operations are unaffected.</p><p><strong>Why it matters for tech:</strong> The breach hit a system inherited through acquisition, which is a reminder that acquired infrastructure carries its own exposure long after the deal closes.</p><p>Source: </p><ul><li><a href="https://www.bleepingcomputer.com/news/security/maersk-confirms-data-breach-as-whitearmor-ransomware-demands-5-million/">BleepingComputer</a></li></ul>]]></content:encoded>
+    </item>
+    <item>
+      <title>More than 35,000 Grok-built apps found open online, some leaking confidential data</title>
+      <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/2026-11-12/08/</link>
+      <guid isPermaLink="false">brief-2026-11-12-08</guid>
+      <pubDate>Thu, 12 Nov 2026 01:30:00 +0000</pubDate>
+      <category>Cybersecurity</category>
+      <description>Security researchers at Claroc found 37,571 Grok-built apps online, of which 35,578 were open to anyone without signing in. About one in ten contained internal business or personal data, and roughly 2% of the open apps held material rated high or critical. Twenty-four of the apps were built by staff at X and SpaceX, including a confidential sales onboarding plan, and the company has since taken those staff apps down. Why it matters for tech: Apps built by typing a description inherit the builder's sharing default, so a tool meant for quick prototypes can quietly publish internal data.</description>
+      <content:encoded><![CDATA[<p>Security researchers at Claroc found 37,571 Grok-built apps online, of which 35,578 were open to anyone without signing in. About one in ten contained internal business or personal data, and roughly 2% of the open apps held material rated high or critical. Twenty-four of the apps were built by staff at X and SpaceX, including a confidential sales onboarding plan, and the company has since taken those staff apps down.</p><p><strong>Why it matters for tech:</strong> Apps built by typing a description inherit the builder's sharing default, so a tool meant for quick prototypes can quietly publish internal data.</p><p>Source: </p><ul><li><a href="https://thehackernews.com/2026/11/over-35000-grok-built-apps-exposed.html">The Hacker News</a></li></ul>]]></content:encoded>
+    </item>
+    <item>
+      <title>CISA adds an exploited Cisco BroadWorks flaw to its must-patch list</title>
+      <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/2026-11-12/09/</link>
+      <guid isPermaLink="false">brief-2026-11-12-09</guid>
+      <pubDate>Thu, 12 Nov 2026 01:30:00 +0000</pubDate>
+      <category>Cybersecurity</category>
+      <description>CISA has added CVE-2026-20320, an unauthenticated XML external entity flaw in Cisco BroadWorks that lets remote attackers read sensitive configuration, to its Known Exploited Vulnerabilities catalog. Federal civilian agencies must patch by November 24, and CISA urges private organisations to prioritise it too. Cisco patched the flaw in August, and threat researchers report it was exploited with help from a jailbroken AI model in attacks on a European telecom provider. Why it matters for tech: A patched flaw becomes urgent once exploitation is confirmed, and the reported AI-assisted attack shows how quickly a known bug can be turned into a live intrusion.</description>
+      <content:encoded><![CDATA[<p>CISA has added CVE-2026-20320, an unauthenticated XML external entity flaw in Cisco BroadWorks that lets remote attackers read sensitive configuration, to its Known Exploited Vulnerabilities catalog. Federal civilian agencies must patch by November 24, and CISA urges private organisations to prioritise it too. Cisco patched the flaw in August, and threat researchers report it was exploited with help from a jailbroken AI model in attacks on a European telecom provider.</p><p><strong>Why it matters for tech:</strong> A patched flaw becomes urgent once exploitation is confirmed, and the reported AI-assisted attack shows how quickly a known bug can be turned into a live intrusion.</p><p>Source: </p><ul><li><a href="https://www.bleepingcomputer.com/news/security/cisa-flags-cisco-broadworks-flaw-as-actively-exploited-in-attacks/">BleepingComputer</a></li></ul>]]></content:encoded>
+    </item>
     <item>
       <title>Microsoft's November Patch Tuesday fixes 1,235 flaws, including an exploited Outlook zero-day</title>
       <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/2026-11-11/07/</link>

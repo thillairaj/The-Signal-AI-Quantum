@@ -4,8 +4,26 @@
     <title>Signal Brief · AI</title>
     <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/</link>
     <description>Signal Brief: the day in technology, in The Signal's own words. Every item is written from linked official sources and fact checked before publication.</description>
-    <lastBuildDate>Wed, 11 Nov 2026 01:35:19 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 12 Nov 2026 01:36:23 +0000</lastBuildDate>
     <atom:link xmlns:atom="http://www.w3.org/2005/Atom" href="https://thillairaj.github.io/The-Signal-AI-Quantum/signal/ai.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>Google DeepMind launches AlphaGenome 2 to predict DNA effects in single cell types</title>
+      <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/2026-11-12/01/</link>
+      <guid isPermaLink="false">brief-2026-11-12-01</guid>
+      <pubDate>Thu, 12 Nov 2026 01:30:00 +0000</pubDate>
+      <category>AI</category>
+      <description>Google DeepMind has announced AlphaGenome 2, a DNA sequence model that predicts how genetic variants affect specific human cell types rather than broad tissue averages. Trained on more than 100 million individual cell profiles across 68 tissues, it identified nearly twice as many causal variants on a single-cell immune dataset, 30% against 16% for the original model. The model is available now for non-commercial research through the AlphaGenome API, and in private preview for commercial research. Why it matters for tech: Cell-level variant prediction helps researchers connect disease-linked DNA changes to the exact cells where they act, which broad tissue models miss.</description>
+      <content:encoded><![CDATA[<p>Google DeepMind has announced AlphaGenome 2, a DNA sequence model that predicts how genetic variants affect specific human cell types rather than broad tissue averages. Trained on more than 100 million individual cell profiles across 68 tissues, it identified nearly twice as many causal variants on a single-cell immune dataset, 30% against 16% for the original model. The model is available now for non-commercial research through the AlphaGenome API, and in private preview for commercial research.</p><p><strong>Why it matters for tech:</strong> Cell-level variant prediction helps researchers connect disease-linked DNA changes to the exact cells where they act, which broad tissue models miss.</p><p>Source: </p><ul><li><a href="https://deepmind.google/blog/alphagenome-2-deciphering-how-cells-read-dna-to-better-understand-disease/">Google DeepMind</a></li><li><a href="https://www.theverge.com/ai-artificial-intelligence/1031524/google-deepmind-alphagenome-2-genetic-ai-model">The Verge</a></li></ul>]]></content:encoded>
+    </item>
+    <item>
+      <title>Google launches Gemini Decisions API for fast yes or no and scoring calls</title>
+      <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/2026-11-12/02/</link>
+      <guid isPermaLink="false">brief-2026-11-12-02</guid>
+      <pubDate>Thu, 12 Nov 2026 01:30:00 +0000</pubDate>
+      <category>AI</category>
+      <description>Google has introduced the Gemini Decisions API, powered by its new Gemini Decision 1 model, which scores up to 1,000 yes or no, multiple choice and rubric questions against one multimodal input in a single pass. It returns probabilities and confidence scores with 150 to 250 milliseconds of end-to-end latency, priced at $0.10 per million input tokens with no output tokens billed. The API is available through the Gemini API in Google AI Studio, and Google already uses it for model routing, design iteration and safety checks on tools. Why it matters for tech: Scoring options instead of generating text makes routine agent decisions such as routing, policy checks and grading faster and cheaper, and the confidence scores let code send uncertain cases to a human.</description>
+      <content:encoded><![CDATA[<p>Google has introduced the Gemini Decisions API, powered by its new Gemini Decision 1 model, which scores up to 1,000 yes or no, multiple choice and rubric questions against one multimodal input in a single pass. It returns probabilities and confidence scores with 150 to 250 milliseconds of end-to-end latency, priced at $0.10 per million input tokens with no output tokens billed. The API is available through the Gemini API in Google AI Studio, and Google already uses it for model routing, design iteration and safety checks on tools.</p><p><strong>Why it matters for tech:</strong> Scoring options instead of generating text makes routine agent decisions such as routing, policy checks and grading faster and cheaper, and the confidence scores let code send uncertain cases to a human.</p><p>Source: </p><ul><li><a href="https://blog.google/innovation-and-ai/technology/developers-tools/gemini-decisions-api/">Google AI Blog</a></li></ul>]]></content:encoded>
+    </item>
     <item>
       <title>Google rolls out Gemini 4 Carbon with an agent swarm for coding</title>
       <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/2026-11-11/01/</link>

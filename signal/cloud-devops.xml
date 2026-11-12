@@ -4,8 +4,26 @@
     <title>Signal Brief · Cloud &amp; DevOps</title>
     <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/</link>
     <description>Signal Brief: the day in technology, in The Signal's own words. Every item is written from linked official sources and fact checked before publication.</description>
-    <lastBuildDate>Wed, 11 Nov 2026 01:35:19 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 12 Nov 2026 01:36:23 +0000</lastBuildDate>
     <atom:link xmlns:atom="http://www.w3.org/2005/Atom" href="https://thillairaj.github.io/The-Signal-AI-Quantum/signal/cloud-devops.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>AWS ships a local emulator that runs AWS APIs on your laptop</title>
+      <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/2026-11-12/05/</link>
+      <guid isPermaLink="false">brief-2026-11-12-05</guid>
+      <pubDate>Thu, 12 Nov 2026 01:30:00 +0000</pubDate>
+      <category>Cloud &amp; DevOps</category>
+      <description>AWS Emulator is generally available: it runs on the laptop and answers AWS CLI, SDK and coding-agent calls over a local HTTPS endpoint using the same AWS APIs, with no additional service fee. It is built in Rust from the AWS API models, and an embedded mode runs inside test processes for the Rust SDK. AWS publishes per-service fidelity scores showing how closely the emulator matches real AWS, and an unimplemented operation returns an error instead of silently passing. Why it matters for tech: Developers and coding agents can test AWS calls without deploying, which shortens the loop for agent-built cloud code, though the emulator does not evaluate IAM policies the way AWS does.</description>
+      <content:encoded><![CDATA[<p>AWS Emulator is generally available: it runs on the laptop and answers AWS CLI, SDK and coding-agent calls over a local HTTPS endpoint using the same AWS APIs, with no additional service fee. It is built in Rust from the AWS API models, and an embedded mode runs inside test processes for the Rust SDK. AWS publishes per-service fidelity scores showing how closely the emulator matches real AWS, and an unimplemented operation returns an error instead of silently passing.</p><p><strong>Why it matters for tech:</strong> Developers and coding agents can test AWS calls without deploying, which shortens the loop for agent-built cloud code, though the emulator does not evaluate IAM policies the way AWS does.</p><p>Source: </p><ul><li><a href="https://aws.amazon.com/blogs/aws/test-your-applications-against-aws-locally-with-aws-emulator/">AWS News Blog</a></li></ul>]]></content:encoded>
+    </item>
+    <item>
+      <title>NVIDIA hands OpenShell, its agent security runtime, to the CNCF</title>
+      <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/2026-11-12/06/</link>
+      <guid isPermaLink="false">brief-2026-11-12-06</guid>
+      <pubDate>Thu, 12 Nov 2026 01:30:00 +0000</pubDate>
+      <category>Cloud &amp; DevOps</category>
+      <description>NVIDIA has donated OpenShell, its open-source runtime for securing and governing AI agents, to the Cloud Native Computing Foundation, where it joins as a Sandbox project. OpenShell runs an agent inside a sandbox and enforces policy on the files, networks, credentials and model endpoints the agent can reach, using Cedar as its policy language. The donation was announced at KubeCon North America, the project lists about 380 contributing organisations, and Red Hat, Docker and Canonical are among its core contributors. Why it matters for tech: As agents run longer tasks with real credentials, the controls around them become infrastructure, and neutral governance is meant to speed adoption across clouds and tools.</description>
+      <content:encoded><![CDATA[<p>NVIDIA has donated OpenShell, its open-source runtime for securing and governing AI agents, to the Cloud Native Computing Foundation, where it joins as a Sandbox project. OpenShell runs an agent inside a sandbox and enforces policy on the files, networks, credentials and model endpoints the agent can reach, using Cedar as its policy language. The donation was announced at KubeCon North America, the project lists about 380 contributing organisations, and Red Hat, Docker and Canonical are among its core contributors.</p><p><strong>Why it matters for tech:</strong> As agents run longer tasks with real credentials, the controls around them become infrastructure, and neutral governance is meant to speed adoption across clouds and tools.</p><p>Source: </p><ul><li><a href="https://thenewstack.io/nvidia-donates-openshell-cncf/">The New Stack</a></li></ul>]]></content:encoded>
+    </item>
     <item>
       <title>Ubuntu Core 26 enters public preview on AWS, Azure and Google Cloud</title>
       <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/2026-11-11/05/</link>

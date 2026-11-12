@@ -4,8 +4,26 @@
     <title>Signal Brief · Quantum</title>
     <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/</link>
     <description>Signal Brief: the day in technology, in The Signal's own words. Every item is written from linked official sources and fact checked before publication.</description>
-    <lastBuildDate>Wed, 11 Nov 2026 01:35:19 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 12 Nov 2026 01:36:23 +0000</lastBuildDate>
     <atom:link xmlns:atom="http://www.w3.org/2005/Atom" href="https://thillairaj.github.io/The-Signal-AI-Quantum/signal/quantum.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>IBM details Nighthawk r3 chip and a 1,040-qubit system for 2027</title>
+      <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/2026-11-12/03/</link>
+      <guid isPermaLink="false">brief-2026-11-12-03</guid>
+      <pubDate>Thu, 12 Nov 2026 01:30:00 +0000</pubDate>
+      <category>Quantum</category>
+      <description>IBM has announced Nighthawk r3, a processor designed to run 10,000 quantum operations across 520 programmable qubits, with 2,034 physical qubits in total. IBM plans to link two r3 processors into a single 1,040-qubit system in 2027, using chip to chip interconnects it has already demonstrated. The current Nighthawk r2 runs up to 100,000 samples a second and more than 7,500 operations on 120 qubits, and partners have run 34 billion circuits on it so far. Why it matters for tech: Linking processors with chip to chip interconnects is IBM's route to larger systems without building one giant chip, and sample speed decides whether heavy workloads finish in practical time.</description>
+      <content:encoded><![CDATA[<p>IBM has announced Nighthawk r3, a processor designed to run 10,000 quantum operations across 520 programmable qubits, with 2,034 physical qubits in total. IBM plans to link two r3 processors into a single 1,040-qubit system in 2027, using chip to chip interconnects it has already demonstrated. The current Nighthawk r2 runs up to 100,000 samples a second and more than 7,500 operations on 120 qubits, and partners have run 34 billion circuits on it so far.</p><p><strong>Why it matters for tech:</strong> Linking processors with chip to chip interconnects is IBM's route to larger systems without building one giant chip, and sample speed decides whether heavy workloads finish in practical time.</p><p>Source: </p><ul><li><a href="https://thequantuminsider.com/2026/11/11/ibm-nighthawk-r3-processor-520-programmable-qubits/">The Quantum Insider</a></li></ul>]]></content:encoded>
+    </item>
+    <item>
+      <title>Rigetti reports third-quarter revenue of $1.4 million and a 99.5% fidelity milestone</title>
+      <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/2026-11-12/04/</link>
+      <guid isPermaLink="false">brief-2026-11-12-04</guid>
+      <pubDate>Thu, 12 Nov 2026 01:30:00 +0000</pubDate>
+      <category>Quantum</category>
+      <description>Rigetti reported third-quarter revenue of $1.4 million, with nine-month revenue of $10.9 million, up about 110% on a year earlier, and an operating loss of $33.2 million. The company ended the quarter with $497.1 million in cash and investments and no debt. Its Cepheus-1-108Q system reached 99.5% median two-qubit gate fidelity, Rigetti signed a definitive agreement for up to $100 million from the US Department of Commerce under the CHIPS Act, and it targets a 300-plus-qubit system at about 99.7% fidelity by mid-2028. Why it matters for tech: The fidelity figure and the federal award show a small quantum hardware maker funding its roadmap from both sales growth and government research money.</description>
+      <content:encoded><![CDATA[<p>Rigetti reported third-quarter revenue of $1.4 million, with nine-month revenue of $10.9 million, up about 110% on a year earlier, and an operating loss of $33.2 million. The company ended the quarter with $497.1 million in cash and investments and no debt. Its Cepheus-1-108Q system reached 99.5% median two-qubit gate fidelity, Rigetti signed a definitive agreement for up to $100 million from the US Department of Commerce under the CHIPS Act, and it targets a 300-plus-qubit system at about 99.7% fidelity by mid-2028.</p><p><strong>Why it matters for tech:</strong> The fidelity figure and the federal award show a small quantum hardware maker funding its roadmap from both sales growth and government research money.</p><p>Source: </p><ul><li><a href="https://thequantuminsider.com/2026/11/11/rigetti-q3-2026-results-quantum-computing-roadmap/">The Quantum Insider</a></li></ul>]]></content:encoded>
+    </item>
     <item>
       <title>Quantinuum and RIKEN complete the Reimei upgrade to the H2 system</title>
       <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/2026-11-11/03/</link>
