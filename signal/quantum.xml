@@ -4,8 +4,26 @@
     <title>Signal Brief · Quantum</title>
     <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/</link>
     <description>Signal Brief: the day in technology, in The Signal's own words. Every item is written from linked official sources and fact checked before publication.</description>
-    <lastBuildDate>Thu, 12 Nov 2026 01:36:23 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 13 Nov 2026 01:33:50 +0000</lastBuildDate>
     <atom:link xmlns:atom="http://www.w3.org/2005/Atom" href="https://thillairaj.github.io/The-Signal-AI-Quantum/signal/quantum.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>PsiQuantum and AMD widen their partnership to build the classical side of fault-tolerant quantum computers</title>
+      <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/2026-11-13/03/</link>
+      <guid isPermaLink="false">brief-2026-11-13-03</guid>
+      <pubDate>Fri, 13 Nov 2026 01:30:00 +0000</pubDate>
+      <category>Quantum</category>
+      <description>PsiQuantum and AMD have expanded their partnership to co-design the computing infrastructure for utility-scale, fault-tolerant quantum machines and the hybrid workloads that mix quantum, high-performance and AI computing. The work moves beyond AMD Versal FPGAs to Instinct GPUs, EPYC CPUs and the ROCm software stack, paired with PsiQuantum's silicon photonics platform, and AMD also plans an equity investment in PsiQuantum. The first focus is pharmaceutical research and drug discovery, and the companies will share more at the SC26 conference in Chicago from November 15 to 20. Why it matters for tech: Fault-tolerant machines will need as much classical computing around them as quantum hardware inside, so chipmakers are now part of the quantum build.</description>
+      <content:encoded><![CDATA[<p>PsiQuantum and AMD have expanded their partnership to co-design the computing infrastructure for utility-scale, fault-tolerant quantum machines and the hybrid workloads that mix quantum, high-performance and AI computing. The work moves beyond AMD Versal FPGAs to Instinct GPUs, EPYC CPUs and the ROCm software stack, paired with PsiQuantum's silicon photonics platform, and AMD also plans an equity investment in PsiQuantum. The first focus is pharmaceutical research and drug discovery, and the companies will share more at the SC26 conference in Chicago from November 15 to 20.</p><p><strong>Why it matters for tech:</strong> Fault-tolerant machines will need as much classical computing around them as quantum hardware inside, so chipmakers are now part of the quantum build.</p><p>Source: </p><ul><li><a href="https://thequantuminsider.com/2026/11/12/psiquantum-amd-expand-quantum-computing-infrastructure-partnership/">The Quantum Insider</a></li></ul>]]></content:encoded>
+    </item>
+    <item>
+      <title>Qunova's hybrid method matches the best classical result on a hard chemistry problem</title>
+      <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/2026-11-13/04/</link>
+      <guid isPermaLink="false">brief-2026-11-13-04</guid>
+      <pubDate>Fri, 13 Nov 2026 01:30:00 +0000</pubDate>
+      <category>Quantum</category>
+      <description>Qunova Computing says its HI-VQE algorithm reached chemical accuracy in an 80-qubit simulation of the 4Fe-4S iron-sulfur cluster, using an IBM Quantum System Two machine at RIKEN alongside the Fugaku supercomputer. Its ground-state energy estimate of minus 327.2482 Hartree agreed within chemical accuracy with the leading classical reference, calculated by the Density Matrix Renormalization Group method at minus 327.2471 Hartree. The workflow also used about 300 times fewer Fugaku node-hours than a previously published sample-based quantum diagonalization approach on the same molecule. Why it matters for tech: A quantum workflow that agrees with the reference classical calculation on a benchmark molecule gives chemists a reason to trust hybrid methods for real design questions.</description>
+      <content:encoded><![CDATA[<p>Qunova Computing says its HI-VQE algorithm reached chemical accuracy in an 80-qubit simulation of the 4Fe-4S iron-sulfur cluster, using an IBM Quantum System Two machine at RIKEN alongside the Fugaku supercomputer. Its ground-state energy estimate of minus 327.2482 Hartree agreed within chemical accuracy with the leading classical reference, calculated by the Density Matrix Renormalization Group method at minus 327.2471 Hartree. The workflow also used about 300 times fewer Fugaku node-hours than a previously published sample-based quantum diagonalization approach on the same molecule.</p><p><strong>Why it matters for tech:</strong> A quantum workflow that agrees with the reference classical calculation on a benchmark molecule gives chemists a reason to trust hybrid methods for real design questions.</p><p>Source: </p><ul><li><a href="https://thequantuminsider.com/2026/11/12/qunovas-hybrid-computing-method-matches-classical-benchmark-for-iron-sulfur-cluster/">The Quantum Insider</a></li></ul>]]></content:encoded>
+    </item>
     <item>
       <title>IBM details Nighthawk r3 chip and a 1,040-qubit system for 2027</title>
       <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/2026-11-12/03/</link>

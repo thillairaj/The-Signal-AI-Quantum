@@ -4,8 +4,26 @@
     <title>Signal Brief · Cloud &amp; DevOps</title>
     <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/</link>
     <description>Signal Brief: the day in technology, in The Signal's own words. Every item is written from linked official sources and fact checked before publication.</description>
-    <lastBuildDate>Thu, 12 Nov 2026 01:36:23 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 13 Nov 2026 01:33:50 +0000</lastBuildDate>
     <atom:link xmlns:atom="http://www.w3.org/2005/Atom" href="https://thillairaj.github.io/The-Signal-AI-Quantum/signal/cloud-devops.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>AWS upgrades its AgentCore runtime for faster, cheaper agent sessions</title>
+      <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/2026-11-13/05/</link>
+      <guid isPermaLink="false">brief-2026-11-13-05</guid>
+      <pubDate>Fri, 13 Nov 2026 01:30:00 +0000</pubDate>
+      <category>Cloud &amp; DevOps</category>
+      <description>Amazon Web Services has released a new version of the Amazon Bedrock AgentCore runtime, the managed layer that runs AI agents in isolated Firecracker micro virtual machines. Sessions now start up to 15 times faster and scale to four times more compute, up to 8 vCPUs and 32 GB of memory, while idle sessions scale to zero and reclaim memory within minutes. Agents can also mount storage such as an S3 bucket inside the session boundary, so data stays under the same controls as the compute. Why it matters for tech: Agents that run for hours need isolation that does not tax every minute of waiting, and this release ties billing and storage to how agents actually work.</description>
+      <content:encoded><![CDATA[<p>Amazon Web Services has released a new version of the Amazon Bedrock AgentCore runtime, the managed layer that runs AI agents in isolated Firecracker micro virtual machines. Sessions now start up to 15 times faster and scale to four times more compute, up to 8 vCPUs and 32 GB of memory, while idle sessions scale to zero and reclaim memory within minutes. Agents can also mount storage such as an S3 bucket inside the session boundary, so data stays under the same controls as the compute.</p><p><strong>Why it matters for tech:</strong> Agents that run for hours need isolation that does not tax every minute of waiting, and this release ties billing and storage to how agents actually work.</p><p>Source: </p><ul><li><a href="https://aws.amazon.com/blogs/machine-learning/run-agents-securely-and-efficiently-with-the-next-generation-agentcore-runtime/">AWS Machine Learning Blog</a></li></ul>]]></content:encoded>
+    </item>
+    <item>
+      <title>Chainguard defends shipping PHP patches six hours before the agreed release time</title>
+      <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/2026-11-13/06/</link>
+      <guid isPermaLink="false">brief-2026-11-13-06</guid>
+      <pubDate>Fri, 13 Nov 2026 01:30:00 +0000</pubDate>
+      <category>Cloud &amp; DevOps</category>
+      <description>Chainguard has defended its decision to publish patched PHP container images at 07:41 UTC on October 21, six hours and 19 minutes before the agreed 14:00 UTC coordinated release for the critical PHP2Shell flaws, tracked as CVE-2026-109618 and CVE-2026-109619. Chief technology officer Matt Moore told KubeCon that attackers already had a head start, pointing to leaked vulnerability details, a mistakenly published proof-of-concept video, a honeypot exploitation attempt reported by Amazon on October 17, and attack traffic seen by Cloudflare. PHP said it found no working public exploit at release time, and CISA added both flaws to its Known Exploited Vulnerabilities catalog on October 26. Why it matters for tech: Coordinated disclosure only works when everyone holds the line, so an early release by one vendor forces the whole industry to rethink how embargoes are enforced.</description>
+      <content:encoded><![CDATA[<p>Chainguard has defended its decision to publish patched PHP container images at 07:41 UTC on October 21, six hours and 19 minutes before the agreed 14:00 UTC coordinated release for the critical PHP2Shell flaws, tracked as CVE-2026-109618 and CVE-2026-109619. Chief technology officer Matt Moore told KubeCon that attackers already had a head start, pointing to leaked vulnerability details, a mistakenly published proof-of-concept video, a honeypot exploitation attempt reported by Amazon on October 17, and attack traffic seen by Cloudflare. PHP said it found no working public exploit at release time, and CISA added both flaws to its Known Exploited Vulnerabilities catalog on October 26.</p><p><strong>Why it matters for tech:</strong> Coordinated disclosure only works when everyone holds the line, so an early release by one vendor forces the whole industry to rethink how embargoes are enforced.</p><p>Source: </p><ul><li><a href="https://thenewstack.io/chainguard-php-embargo-defense/">The New Stack</a></li></ul>]]></content:encoded>
+    </item>
     <item>
       <title>AWS ships a local emulator that runs AWS APIs on your laptop</title>
       <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/2026-11-12/05/</link>

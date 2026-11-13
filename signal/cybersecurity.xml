@@ -4,8 +4,26 @@
     <title>Signal Brief · Cybersecurity</title>
     <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/</link>
     <description>Signal Brief: the day in technology, in The Signal's own words. Every item is written from linked official sources and fact checked before publication.</description>
-    <lastBuildDate>Thu, 12 Nov 2026 01:36:23 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 13 Nov 2026 01:33:50 +0000</lastBuildDate>
     <atom:link xmlns:atom="http://www.w3.org/2005/Atom" href="https://thillairaj.github.io/The-Signal-AI-Quantum/signal/cybersecurity.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>Apache patches a critical HTTP/2 flaw that allows remote code execution</title>
+      <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/2026-11-13/07/</link>
+      <guid isPermaLink="false">brief-2026-11-13-07</guid>
+      <pubDate>Fri, 13 Nov 2026 01:30:00 +0000</pubDate>
+      <category>Cybersecurity</category>
+      <description>The Apache Software Foundation has fixed a critical race condition in the mod_http2 module of Apache HTTP Server, tracked as CVE-2026-119618, which an unauthenticated attacker could exploit to gain remote code execution. The flaw affects HTTP Server versions 2.4.55 through 2.4.70 and was found by Anthropic's OSS Scanner and Google Cloud's Vulnerability Research teams. Cloud security company Wiz reports that 64% of cloud environments hold vulnerable resources, though the flaw needs HTTP/2 enabled, which is off by default, and no public exploit is known. Why it matters for tech: Apache still serves about one in five websites, so a remotely exploitable flaw in its HTTP/2 code is a patch-now item for anyone running it.</description>
+      <content:encoded><![CDATA[<p>The Apache Software Foundation has fixed a critical race condition in the mod_http2 module of Apache HTTP Server, tracked as CVE-2026-119618, which an unauthenticated attacker could exploit to gain remote code execution. The flaw affects HTTP Server versions 2.4.55 through 2.4.70 and was found by Anthropic's OSS Scanner and Google Cloud's Vulnerability Research teams. Cloud security company Wiz reports that 64% of cloud environments hold vulnerable resources, though the flaw needs HTTP/2 enabled, which is off by default, and no public exploit is known.</p><p><strong>Why it matters for tech:</strong> Apache still serves about one in five websites, so a remotely exploitable flaw in its HTTP/2 code is a patch-now item for anyone running it.</p><p>Source: </p><ul><li><a href="https://www.bleepingcomputer.com/news/security/apache-http-server-patches-critical-http-2-remote-code-execution-flaw/">BleepingComputer</a></li></ul>]]></content:encoded>
+    </item>
+    <item>
+      <title>New SignDrop zero-day turns a Windows security mitigation into a privilege escalation</title>
+      <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/2026-11-13/08/</link>
+      <guid isPermaLink="false">brief-2026-11-13-08</guid>
+      <pubDate>Fri, 13 Nov 2026 01:30:00 +0000</pubDate>
+      <category>Cybersecurity</category>
+      <description>Security researcher Abdelhamid Naceri has disclosed SignDrop, a Windows zero-day that abuses the Common Log File System mitigations Microsoft added in October 2025. The flaw lets an attacker trick a privileged process, such as an antivirus engine, into creating an authentication file with SYSTEM privileges, which can then be used to turn off antivirus and endpoint protection. Naceri tested the exploit on Windows 11 26H2 and Windows Server 2025 Experimental, estimates 80% of Windows installations are vulnerable, and says there is no fix yet except waiting for a Microsoft patch. Why it matters for tech: A defence that can be turned against itself is a reminder that mitigations need their own review, and defenders cannot patch this one yet.</description>
+      <content:encoded><![CDATA[<p>Security researcher Abdelhamid Naceri has disclosed SignDrop, a Windows zero-day that abuses the Common Log File System mitigations Microsoft added in October 2025. The flaw lets an attacker trick a privileged process, such as an antivirus engine, into creating an authentication file with SYSTEM privileges, which can then be used to turn off antivirus and endpoint protection. Naceri tested the exploit on Windows 11 26H2 and Windows Server 2025 Experimental, estimates 80% of Windows installations are vulnerable, and says there is no fix yet except waiting for a Microsoft patch.</p><p><strong>Why it matters for tech:</strong> A defence that can be turned against itself is a reminder that mitigations need their own review, and defenders cannot patch this one yet.</p><p>Source: </p><ul><li><a href="https://www.bleepingcomputer.com/news/security/new-windows-signdrop-zero-day-gives-hackers-system-privileges/">BleepingComputer</a></li><li><a href="https://thehackernews.com/2026/11/new-signdrop-zero-day-exploit-turns.html">The Hacker News</a></li></ul>]]></content:encoded>
+    </item>
     <item>
       <title>Maersk confirms a breach of a legacy logistics system as a ransomware gang demands $5 million</title>
       <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/2026-11-12/07/</link>

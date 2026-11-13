@@ -1840,6 +1840,207 @@
           "why": "The report frames quantum leadership as an industrial problem of factories, supply chains and funding, not only a research race, and its recommendations point at federal action on manufacturing and standards."
         }
       ]
+    },
+    {
+      "date": "2026-11-13",
+      "items": [
+        {
+          "id": "brief-2026-11-13-01",
+          "category": "AI",
+          "company": "Google DeepMind",
+          "headline": "Google launches Gemini 4 Hydrogen, a faster model built for agentic coding work",
+          "summary": "Google DeepMind has introduced Gemini 4 Hydrogen, a model aimed at everyday coding and multi-step agent workflows rather than long-horizon reasoning, which stays with the Carbon and Argon models. Hydrogen runs across the Gemini API, AI Studio, the Gemini app and Google Search, with a 1 million token context window priced at $1.50 per million input tokens and $7.50 per million output tokens. On Terminal-Bench 4.1 it scored 57%, against 18.2% for Gemini 3.8 Flash, and Google says it completes tasks about 2.5 times faster at its default setting.",
+          "why": "A cheaper, quicker execution model changes the economics of running agents all day, since most agent work is routine execution rather than deep reasoning.",
+          "source_date": "2026-11-12",
+          "sources": [
+            {
+              "label": "Google DeepMind",
+              "url": "https://deepmind.google/blog/introducing-gemini-4-hydrogen/"
+            },
+            {
+              "label": "Ars Technica",
+              "url": "https://arstechnica.com/google/2026/11/google-rolls-out-gemini-4-hydrogen-finally-replacing-3-8-flash/"
+            }
+          ]
+        },
+        {
+          "id": "brief-2026-11-13-02",
+          "category": "AI",
+          "company": "Google",
+          "headline": "Google opens preorders for Gemini smartglasses starting at $395",
+          "summary": "Google has opened preorders for its first Gemini-powered smartglasses, built with Samsung, Gentle Monster and Warby Parker, with shipping and store availability from December 10. The glasses have no in-lens display; wearers talk to Gemini by voice, use touch controls, or use a 12 megapixel camera. Warby Parker frames start at $395 in the US and Gentle Monster styles at $449, and Google says the camera has an always-on recording light, a physical off switch, no livestreaming and no real-time face recognition.",
+          "why": "Glasses put an AI assistant on the face rather than in the hand, so the privacy controls Google ships with them set the pattern other makers will be judged against.",
+          "source_date": "2026-11-12",
+          "sources": [
+            {
+              "label": "Ars Technica",
+              "url": "https://arstechnica.com/google/2026/11/google-pushes-privacy-angle-as-gemini-powered-smartglasses-debut-starting-at-395/"
+            }
+          ]
+        },
+        {
+          "id": "brief-2026-11-13-03",
+          "category": "Quantum",
+          "company": "PsiQuantum",
+          "headline": "PsiQuantum and AMD widen their partnership to build the classical side of fault-tolerant quantum computers",
+          "summary": "PsiQuantum and AMD have expanded their partnership to co-design the computing infrastructure for utility-scale, fault-tolerant quantum machines and the hybrid workloads that mix quantum, high-performance and AI computing. The work moves beyond AMD Versal FPGAs to Instinct GPUs, EPYC CPUs and the ROCm software stack, paired with PsiQuantum's silicon photonics platform, and AMD also plans an equity investment in PsiQuantum. The first focus is pharmaceutical research and drug discovery, and the companies will share more at the SC26 conference in Chicago from November 15 to 20.",
+          "why": "Fault-tolerant machines will need as much classical computing around them as quantum hardware inside, so chipmakers are now part of the quantum build.",
+          "source_date": "2026-11-12",
+          "sources": [
+            {
+              "label": "The Quantum Insider",
+              "url": "https://thequantuminsider.com/2026/11/12/psiquantum-amd-expand-quantum-computing-infrastructure-partnership/"
+            }
+          ]
+        },
+        {
+          "id": "brief-2026-11-13-04",
+          "category": "Quantum",
+          "company": "Qunova Computing",
+          "headline": "Qunova's hybrid method matches the best classical result on a hard chemistry problem",
+          "summary": "Qunova Computing says its HI-VQE algorithm reached chemical accuracy in an 80-qubit simulation of the 4Fe-4S iron-sulfur cluster, using an IBM Quantum System Two machine at RIKEN alongside the Fugaku supercomputer. Its ground-state energy estimate of minus 327.2482 Hartree agreed within chemical accuracy with the leading classical reference, calculated by the Density Matrix Renormalization Group method at minus 327.2471 Hartree. The workflow also used about 300 times fewer Fugaku node-hours than a previously published sample-based quantum diagonalization approach on the same molecule.",
+          "why": "A quantum workflow that agrees with the reference classical calculation on a benchmark molecule gives chemists a reason to trust hybrid methods for real design questions.",
+          "source_date": "2026-11-12",
+          "sources": [
+            {
+              "label": "The Quantum Insider",
+              "url": "https://thequantuminsider.com/2026/11/12/qunovas-hybrid-computing-method-matches-classical-benchmark-for-iron-sulfur-cluster/"
+            }
+          ]
+        },
+        {
+          "id": "brief-2026-11-13-05",
+          "category": "Cloud & DevOps",
+          "company": "Amazon Web Services",
+          "headline": "AWS upgrades its AgentCore runtime for faster, cheaper agent sessions",
+          "summary": "Amazon Web Services has released a new version of the Amazon Bedrock AgentCore runtime, the managed layer that runs AI agents in isolated Firecracker micro virtual machines. Sessions now start up to 15 times faster and scale to four times more compute, up to 8 vCPUs and 32 GB of memory, while idle sessions scale to zero and reclaim memory within minutes. Agents can also mount storage such as an S3 bucket inside the session boundary, so data stays under the same controls as the compute.",
+          "why": "Agents that run for hours need isolation that does not tax every minute of waiting, and this release ties billing and storage to how agents actually work.",
+          "source_date": "2026-11-12",
+          "sources": [
+            {
+              "label": "AWS Machine Learning Blog",
+              "url": "https://aws.amazon.com/blogs/machine-learning/run-agents-securely-and-efficiently-with-the-next-generation-agentcore-runtime/"
+            }
+          ]
+        },
+        {
+          "id": "brief-2026-11-13-06",
+          "category": "Cloud & DevOps",
+          "company": "Chainguard",
+          "headline": "Chainguard defends shipping PHP patches six hours before the agreed release time",
+          "summary": "Chainguard has defended its decision to publish patched PHP container images at 07:41 UTC on October 21, six hours and 19 minutes before the agreed 14:00 UTC coordinated release for the critical PHP2Shell flaws, tracked as CVE-2026-109618 and CVE-2026-109619. Chief technology officer Matt Moore told KubeCon that attackers already had a head start, pointing to leaked vulnerability details, a mistakenly published proof-of-concept video, a honeypot exploitation attempt reported by Amazon on October 17, and attack traffic seen by Cloudflare. PHP said it found no working public exploit at release time, and CISA added both flaws to its Known Exploited Vulnerabilities catalog on October 26.",
+          "why": "Coordinated disclosure only works when everyone holds the line, so an early release by one vendor forces the whole industry to rethink how embargoes are enforced.",
+          "source_date": "2026-11-12",
+          "sources": [
+            {
+              "label": "The New Stack",
+              "url": "https://thenewstack.io/chainguard-php-embargo-defense/"
+            }
+          ]
+        },
+        {
+          "id": "brief-2026-11-13-07",
+          "category": "Cybersecurity",
+          "company": "Apache Software Foundation",
+          "headline": "Apache patches a critical HTTP/2 flaw that allows remote code execution",
+          "summary": "The Apache Software Foundation has fixed a critical race condition in the mod_http2 module of Apache HTTP Server, tracked as CVE-2026-119618, which an unauthenticated attacker could exploit to gain remote code execution. The flaw affects HTTP Server versions 2.4.55 through 2.4.70 and was found by Anthropic's OSS Scanner and Google Cloud's Vulnerability Research teams. Cloud security company Wiz reports that 64% of cloud environments hold vulnerable resources, though the flaw needs HTTP/2 enabled, which is off by default, and no public exploit is known.",
+          "why": "Apache still serves about one in five websites, so a remotely exploitable flaw in its HTTP/2 code is a patch-now item for anyone running it.",
+          "source_date": "2026-11-12",
+          "sources": [
+            {
+              "label": "BleepingComputer",
+              "url": "https://www.bleepingcomputer.com/news/security/apache-http-server-patches-critical-http-2-remote-code-execution-flaw/"
+            }
+          ]
+        },
+        {
+          "id": "brief-2026-11-13-08",
+          "category": "Cybersecurity",
+          "company": "Microsoft",
+          "headline": "New SignDrop zero-day turns a Windows security mitigation into a privilege escalation",
+          "summary": "Security researcher Abdelhamid Naceri has disclosed SignDrop, a Windows zero-day that abuses the Common Log File System mitigations Microsoft added in October 2025. The flaw lets an attacker trick a privileged process, such as an antivirus engine, into creating an authentication file with SYSTEM privileges, which can then be used to turn off antivirus and endpoint protection. Naceri tested the exploit on Windows 11 26H2 and Windows Server 2025 Experimental, estimates 80% of Windows installations are vulnerable, and says there is no fix yet except waiting for a Microsoft patch.",
+          "why": "A defence that can be turned against itself is a reminder that mitigations need their own review, and defenders cannot patch this one yet.",
+          "source_date": "2026-11-12",
+          "sources": [
+            {
+              "label": "BleepingComputer",
+              "url": "https://www.bleepingcomputer.com/news/security/new-windows-signdrop-zero-day-gives-hackers-system-privileges/"
+            },
+            {
+              "label": "The Hacker News",
+              "url": "https://thehackernews.com/2026/11/new-signdrop-zero-day-exploit-turns.html"
+            }
+          ]
+        },
+        {
+          "id": "brief-2026-11-13-09",
+          "category": "Industry",
+          "company": "NVIDIA",
+          "headline": "Nvidia chief executive Jensen Huang resigns; finance chief Colette Kress takes over on an interim basis",
+          "summary": "Nvidia has announced that Jensen Huang has resigned as president, chief executive officer and a member of the board, effective immediately, ending 33 years as chief executive of the company he co-founded in 1993. The announcement gave no reason for the departure, which followed days of reports about Huang's personal conduct and a board investigation, while chief financial officer Colette Kress takes over as interim chief executive and the board searches for a permanent successor. The board also named longtime director Harvey C. Jones as its first-ever chair, and Nvidia confirmed its third-quarter fiscal 2027 results will still be reported on November 17 as scheduled.",
+          "why": "A change at the top of the chipmaker at the centre of the AI buildout will shape chip supply, pricing and US export policy debates.",
+          "source_date": "2026-11-12",
+          "sources": [
+            {
+              "label": "NVIDIA Newsroom",
+              "url": "https://nvidianews.nvidia.com/news/nvidia-announces-ceo-transition"
+            },
+            {
+              "label": "Reuters",
+              "url": "https://www.reuters.com/business/retail-consumer/nvidia-ceo-jensen-huang-step-down-big-blow-ai-boom-2026-11-12/"
+            }
+          ]
+        },
+        {
+          "id": "brief-2026-11-13-10",
+          "category": "Industry",
+          "company": "Q-CTRL",
+          "headline": "Q-CTRL raises $290 million and becomes the quantum sector's newest unicorn",
+          "summary": "Q-CTRL has raised US$290 million in a Series C round led by Salesforce Ventures, with participation from Bullhound Capital and Affinity Partners, reaching unicorn status. The oversubscribed round was expanded twice to meet investor demand, and the company says it is the largest fundraise for a software-focused quantum business. Q-CTRL plans to use the money to expand globally, strengthen its AI-powered quantum software, and scale customer programs in finance, energy, autonomy and aerospace, including its Ironstone Opal navigation system that works without GPS.",
+          "why": "Private money is concentrating on the software layer that makes quantum hardware usable, and a round of this size signals where investors expect value to sit.",
+          "source_date": "2026-11-12",
+          "sources": [
+            {
+              "label": "The Quantum Insider",
+              "url": "https://thequantuminsider.com/2026/11/12/q-ctrl-secures-us290-million-series-c-funding-led-by-salesforce-ventures/"
+            }
+          ]
+        },
+        {
+          "id": "brief-2026-11-13-11",
+          "category": "Industry",
+          "company": "Microsoft",
+          "headline": "Microsoft 365 outage disrupts Outlook, Teams and Copilot worldwide",
+          "summary": "Microsoft is investigating a widespread Microsoft 365 outage that began on Thursday at 1:26 PM ET and left customers unable to connect to Outlook, Teams, SharePoint Online, Copilot and Defender XDR. Microsoft said the disruption was caused by servers unexpectedly becoming unavailable, which strained the remaining infrastructure, and it has paused deployments, redistributed traffic and begun restarting servers. By Thursday evening Microsoft reported limited recovery after returning some servers to service, but had not confirmed when services would be fully restored.",
+          "why": "A single outage that takes out mail, chat and AI assistance at once shows how much daily work now depends on one provider's infrastructure.",
+          "source_date": "2026-11-12",
+          "sources": [
+            {
+              "label": "BleepingComputer",
+              "url": "https://www.bleepingcomputer.com/news/microsoft/massive-microsoft-365-outage-disrupts-outlook-teams-copilot-worldwide/"
+            }
+          ]
+        },
+        {
+          "id": "brief-2026-11-13-12",
+          "category": "Policy",
+          "company": "Northwestern Polytechnical University",
+          "headline": "Blacklisted Chinese university bought Nvidia H200 chips despite US export controls",
+          "summary": "A Reuters investigation of procurement records found that Northwestern Polytechnical University in China bought two Nvidia H200 AI chips for 874,700 yuan, about $123,000, on October 21, through Chinese supplier Shaanxi Bosuan Network Technology rather than directly from Nvidia. The university has been on the US Entity List since 2001 over missile-proliferation and military research concerns, and Reuters reviewed 26 records showing Chinese institutions buying restricted Nvidia chips or renting computing capacity through domestic suppliers. The US has allowed some H200 exports to China on a case-by-case basis since January, with safeguards against blacklisted and military end users, and Nvidia, the university and the US Commerce Department did not respond to Reuters' requests for comment.",
+          "why": "The purchase shows how export controls are tested in practice, through intermediaries and rentals, and the gap between the rules and enforcement is now part of the policy debate.",
+          "source_date": "2026-11-11",
+          "sources": [
+            {
+              "label": "Reuters",
+              "url": "https://www.facebook.com/reel/1659756365608990/"
+            },
+            {
+              "label": "Cybernews",
+              "url": "https://cybernews.com/tech/military-linked-chinese-university-bought-nvidia-h200-chips-despite-us-blacklist/"
+            }
+          ]
+        }
+      ]
     }
   ]
 }

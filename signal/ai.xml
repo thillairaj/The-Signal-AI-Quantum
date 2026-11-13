@@ -4,8 +4,26 @@
     <title>Signal Brief · AI</title>
     <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/</link>
     <description>Signal Brief: the day in technology, in The Signal's own words. Every item is written from linked official sources and fact checked before publication.</description>
-    <lastBuildDate>Thu, 12 Nov 2026 01:36:23 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 13 Nov 2026 01:33:50 +0000</lastBuildDate>
     <atom:link xmlns:atom="http://www.w3.org/2005/Atom" href="https://thillairaj.github.io/The-Signal-AI-Quantum/signal/ai.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>Google launches Gemini 4 Hydrogen, a faster model built for agentic coding work</title>
+      <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/2026-11-13/01/</link>
+      <guid isPermaLink="false">brief-2026-11-13-01</guid>
+      <pubDate>Fri, 13 Nov 2026 01:30:00 +0000</pubDate>
+      <category>AI</category>
+      <description>Google DeepMind has introduced Gemini 4 Hydrogen, a model aimed at everyday coding and multi-step agent workflows rather than long-horizon reasoning, which stays with the Carbon and Argon models. Hydrogen runs across the Gemini API, AI Studio, the Gemini app and Google Search, with a 1 million token context window priced at $1.50 per million input tokens and $7.50 per million output tokens. On Terminal-Bench 4.1 it scored 57%, against 18.2% for Gemini 3.8 Flash, and Google says it completes tasks about 2.5 times faster at its default setting. Why it matters for tech: A cheaper, quicker execution model changes the economics of running agents all day, since most agent work is routine execution rather than deep reasoning.</description>
+      <content:encoded><![CDATA[<p>Google DeepMind has introduced Gemini 4 Hydrogen, a model aimed at everyday coding and multi-step agent workflows rather than long-horizon reasoning, which stays with the Carbon and Argon models. Hydrogen runs across the Gemini API, AI Studio, the Gemini app and Google Search, with a 1 million token context window priced at $1.50 per million input tokens and $7.50 per million output tokens. On Terminal-Bench 4.1 it scored 57%, against 18.2% for Gemini 3.8 Flash, and Google says it completes tasks about 2.5 times faster at its default setting.</p><p><strong>Why it matters for tech:</strong> A cheaper, quicker execution model changes the economics of running agents all day, since most agent work is routine execution rather than deep reasoning.</p><p>Source: </p><ul><li><a href="https://deepmind.google/blog/introducing-gemini-4-hydrogen/">Google DeepMind</a></li><li><a href="https://arstechnica.com/google/2026/11/google-rolls-out-gemini-4-hydrogen-finally-replacing-3-8-flash/">Ars Technica</a></li></ul>]]></content:encoded>
+    </item>
+    <item>
+      <title>Google opens preorders for Gemini smartglasses starting at $395</title>
+      <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/2026-11-13/02/</link>
+      <guid isPermaLink="false">brief-2026-11-13-02</guid>
+      <pubDate>Fri, 13 Nov 2026 01:30:00 +0000</pubDate>
+      <category>AI</category>
+      <description>Google has opened preorders for its first Gemini-powered smartglasses, built with Samsung, Gentle Monster and Warby Parker, with shipping and store availability from December 10. The glasses have no in-lens display; wearers talk to Gemini by voice, use touch controls, or use a 12 megapixel camera. Warby Parker frames start at $395 in the US and Gentle Monster styles at $449, and Google says the camera has an always-on recording light, a physical off switch, no livestreaming and no real-time face recognition. Why it matters for tech: Glasses put an AI assistant on the face rather than in the hand, so the privacy controls Google ships with them set the pattern other makers will be judged against.</description>
+      <content:encoded><![CDATA[<p>Google has opened preorders for its first Gemini-powered smartglasses, built with Samsung, Gentle Monster and Warby Parker, with shipping and store availability from December 10. The glasses have no in-lens display; wearers talk to Gemini by voice, use touch controls, or use a 12 megapixel camera. Warby Parker frames start at $395 in the US and Gentle Monster styles at $449, and Google says the camera has an always-on recording light, a physical off switch, no livestreaming and no real-time face recognition.</p><p><strong>Why it matters for tech:</strong> Glasses put an AI assistant on the face rather than in the hand, so the privacy controls Google ships with them set the pattern other makers will be judged against.</p><p>Source: </p><ul><li><a href="https://arstechnica.com/google/2026/11/google-pushes-privacy-angle-as-gemini-powered-smartglasses-debut-starting-at-395/">Ars Technica</a></li></ul>]]></content:encoded>
+    </item>
     <item>
       <title>Google DeepMind launches AlphaGenome 2 to predict DNA effects in single cell types</title>
       <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/2026-11-12/01/</link>
