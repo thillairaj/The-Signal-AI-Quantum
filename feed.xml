@@ -4,166 +4,214 @@
     <title>The Signal</title>
     <link>https://thillairaj.github.io/The-Signal-AI-Quantum/</link>
     <description>A self-updating feed of AI, quantum computing, cybersecurity, cloud and DevOps, and podcast updates.</description>
-    <lastBuildDate>Fri, 13 Nov 2026 02:00:31 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 13 Nov 2026 06:00:32 +0000</lastBuildDate>
     <item>
-      <title>NVIDIA PAIR Virtual Inference Router Expands Available Compute on Your Local Network</title>
-      <link>https://developer.nvidia.com/blog/nvidia-pair-virtual-inference-router-expands-available-compute-on-your-local-network/</link>
-      <guid isPermaLink="false">291ea19a15e9fa9d</guid>
-      <description>AI agents are learning to do more by working together. A lead agent can break a complex task into smaller jobs and assign those jobs to specialized subagents....</description>
+      <title>Accelerating Dropless MoE Training in JAX with NVIDIA Transformer Engine</title>
+      <link>https://developer.nvidia.com/blog/accelerating-dropless-moe-training-in-jax-with-nvidia-transformer-engine/</link>
+      <guid isPermaLink="false">833c207badafe5a0</guid>
+      <description>Mixture of experts (MoE) has become one of the defining architectural trends in large-scale AI model training. DeepSeek, Qwen, and Mixtral are examples of MoE...</description>
       <category>NVIDIA Technical Blog</category>
-      <pubDate>Fri, 13 Nov 2026 02:00:15 +0000</pubDate>
+      <pubDate>Fri, 13 Nov 2026 06:00:04 +0000</pubDate>
     </item>
     <item>
-      <title>How to Carry User Identity Across Federated Kubernetes and AI Platforms</title>
-      <link>https://developer.nvidia.com/blog/how-to-carry-user-identity-across-federated-kubernetes-and-ai-platforms/</link>
-      <guid isPermaLink="false">96735b4a162296d9</guid>
-      <description>Modern AI platforms are no longer a single application behind one login screen. A user may start in a central portal, open a governed dataset, launch a notebook...</description>
+      <title>Scaling Federated Learning Across Docker, Kubernetes, and Slurm with NVIDIA FLARE</title>
+      <link>https://developer.nvidia.com/blog/scaling-federated-learning-across-docker-kubernetes-and-slurm-with-nvidia-flare/</link>
+      <guid isPermaLink="false">c2ceacd67091fd6a</guid>
+      <description>Federated learning (FL) projects often begin with a straightforward setup: one server, a few clients, and one dataset at each site. As those projects grow, the...</description>
       <category>NVIDIA Technical Blog</category>
-      <pubDate>Fri, 13 Nov 2026 02:00:15 +0000</pubDate>
+      <pubDate>Fri, 13 Nov 2026 06:00:04 +0000</pubDate>
     </item>
     <item>
-      <title>Frontier Reasoning Reaches the Edge: How to Deploy and Optimize Models on NVIDIA Jetson</title>
-      <link>https://developer.nvidia.com/blog/frontier-reasoning-reaches-the-edge-how-to-deploy-and-optimize-models-on-nvidia-jetson/</link>
-      <guid isPermaLink="false">bb4eff084ce0c3ca</guid>
-      <description>Running reasoning and agentic AI at the edge has been harder than it needs to be. Until recently, models capable of multi-step reasoning were too large to run...</description>
+      <title>How NVIDIA NVLink 6 Delivers Multi-Layer Resiliency for AI Factories</title>
+      <link>https://developer.nvidia.com/blog/how-nvidia-nvlink-6-delivers-multi-layer-resiliency-for-ai-factories/</link>
+      <guid isPermaLink="false">6510d81523c67e16</guid>
+      <description>For operators of large-scale AI factories, maximizing continuous output is essential for productivity. In massive-scale AI training, every GPU in the cluster...</description>
       <category>NVIDIA Technical Blog</category>
-      <pubDate>Fri, 13 Nov 2026 02:00:15 +0000</pubDate>
+      <pubDate>Fri, 13 Nov 2026 06:00:04 +0000</pubDate>
     </item>
     <item>
-      <title>Building a Memory-Driven Agent with NVIDIA NemoClaw</title>
-      <link>https://developer.nvidia.com/blog/building-a-memory-driven-agent-with-nvidia-nemoclaw/</link>
-      <guid isPermaLink="false">aa717a2074d6c4eb</guid>
-      <description>Enterprise work spans messages, decisions, projects, and obligations that change over time. An AI agent that starts without this context must reconstruct it...</description>
+      <title>How NVIDIA Groq 3 LPX Deterministic Execution Drives Power-Efficient High-Interactivity Inference on NVIDIA Vera Rubin</title>
+      <link>https://developer.nvidia.com/blog/how-nvidia-groq-3-lpx-deterministic-execution-drives-power-efficient-high-interactivity-inference-on-nvidia-vera-rubin/</link>
+      <guid isPermaLink="false">ce9893f8b1d37b1f</guid>
+      <description>Power is a defining constraint for AI factories. As AI workloads demand a full compute platform to serve them, each component of that platform must maximize...</description>
       <category>NVIDIA Technical Blog</category>
-      <pubDate>Fri, 13 Nov 2026 02:00:15 +0000</pubDate>
+      <pubDate>Fri, 13 Nov 2026 06:00:04 +0000</pubDate>
     </item>
     <item>
-      <title>Introducing CUDA Rust: Two Tracks for Writing GPU Kernels</title>
-      <link>https://developer.nvidia.com/blog/introducing-cuda-rust-two-tracks-for-writing-gpu-kernels/</link>
-      <guid isPermaLink="false">dbb60a81aa824bf3</guid>
-      <description>In September 2026, NVIDIA announced it is leaning into native GPU programming in Rust. CUDA C++ and CUDA Python are mature, enterprise-grade toolchains, and...</description>
+      <title>Dense vs. MoE Models: Active Parameters, Throughput, and When to Choose Each</title>
+      <link>https://developer.nvidia.com/blog/dense-vs-moe-models-active-parameters-throughput-and-when-to-choose-each/</link>
+      <guid isPermaLink="false">3f75c86687362489</guid>
+      <description>How can a 30B-parameter model activate only 3B parameters per token, and still use the capacity of the larger model? Nemotron 3.5 Lightning illustrates the...</description>
       <category>NVIDIA Technical Blog</category>
-      <pubDate>Fri, 13 Nov 2026 02:00:15 +0000</pubDate>
+      <pubDate>Fri, 13 Nov 2026 06:00:04 +0000</pubDate>
     </item>
     <item>
-      <title>CUDA Toolkit 13.4 Adds Windows on Arm Support and Greater Control over Shared GPUs</title>
-      <link>https://developer.nvidia.com/blog/cuda-toolkit-13-4-adds-windows-on-arm-support-and-greater-control-over-shared-gpus/</link>
-      <guid isPermaLink="false">7816c3b36083bf87</guid>
-      <description>Every NVIDIA CUDA Toolkit release adds functionality and performance improvements that help developers get more from NVIDIA GPUs and the broader NVIDIA software...</description>
+      <title>Translating CUDA Tile Operations from Python to Rust Using Agentic AI</title>
+      <link>https://developer.nvidia.com/blog/translating-cuda-tile-operations-from-python-to-rust-using-agentic-ai/</link>
+      <guid isPermaLink="false">833138d51e10dc27</guid>
+      <description>cuTile Rust (cutile-rs) is a tile-based system for safe, idiomatic GPU kernel authoring in the Rust programming language. Extending the Rust ownership model to...</description>
       <category>NVIDIA Technical Blog</category>
-      <pubDate>Fri, 13 Nov 2026 02:00:15 +0000</pubDate>
+      <pubDate>Fri, 13 Nov 2026 06:00:04 +0000</pubDate>
     </item>
     <item>
-      <title>When to Use Encode-Prefill-Decode Disaggregation to Accelerate Multimodal Model Serving</title>
-      <link>https://developer.nvidia.com/blog/when-to-use-encode-prefill-decode-disaggregation-to-accelerate-multimodal-model-serving/</link>
-      <guid isPermaLink="false">51e6e5a8d9bdaf12</guid>
-      <description>Encode-prefill-decode (EPD) disaggregation is an inference optimization technique for multimodal models that separates the vision encoder stage from the prefill...</description>
+      <title>TensorRT Edge-LLM Completes the MLPerf Edge Agentic Benchmark 6.4x Faster on Jetson AGX Thor</title>
+      <link>https://developer.nvidia.com/blog/tensorrt-edge-llm-completes-the-mlperf-edge-agentic-benchmark-6-4x-faster-on-jetson-agx-thor/</link>
+      <guid isPermaLink="false">82b935833ffdc855</guid>
+      <description>AI agents are moving from cloud data centers to vehicles, robots, and other edge devices. Unlike a chatbot that answers a single prompt, an agent works through...</description>
       <category>NVIDIA Technical Blog</category>
-      <pubDate>Fri, 13 Nov 2026 02:00:15 +0000</pubDate>
+      <pubDate>Fri, 13 Nov 2026 06:00:04 +0000</pubDate>
     </item>
     <item>
-      <title>From Wafer-Out to First Token: Codifying Supply Chain Expertise with Nemotron and Palantir Foundry</title>
-      <link>https://developer.nvidia.com/blog/from-wafer-out-to-first-token-codifying-supply-chain-expertise-with-nemotron-and-palantir-foundry/</link>
-      <guid isPermaLink="false">d23b90bcfb6224ff</guid>
-      <description>NVIDIA has one of the largest and most complex supply chains in the world, and its performance is measured from wafer-out to first token. The interval is in two...</description>
+      <title>How to Use AI Agents to Prepare 3D Scenes for Simulation</title>
+      <link>https://developer.nvidia.com/blog/how-to-use-ai-agents-to-prepare-3d-scenes-for-simulation/</link>
+      <guid isPermaLink="false">d01a6b066d0e307e</guid>
+      <description>Agentic AI workflows can be used to prepare and validate digital twins for physical AI systems. Agents can inspect 3D scenes, author simulation-relevant data in...</description>
       <category>NVIDIA Technical Blog</category>
-      <pubDate>Fri, 13 Nov 2026 02:00:15 +0000</pubDate>
+      <pubDate>Fri, 13 Nov 2026 06:00:04 +0000</pubDate>
     </item>
     <item>
-      <title>High-Throughput Structure Prediction with BioNeMo Inference Runtime</title>
-      <link>https://developer.nvidia.com/blog/high-throughput-structure-prediction-with-bionemo-inference-runtime/</link>
-      <guid isPermaLink="false">bf13fbf2f14a0fa2</guid>
-      <description>Biomolecular structure prediction is now often run at proteome scale, where the goal is to move an entire worklist through the pipeline efficiently. NVIDIA...</description>
+      <title>Benchmarking LLM Inference at Scale with AIPerf</title>
+      <link>https://developer.nvidia.com/blog/benchmarking-llm-inference-at-scale-with-aiperf/</link>
+      <guid isPermaLink="false">88c32b0b48612efb</guid>
+      <description>You’re deploying a model on a system. It starts up, prompts are getting responses. Now the hard question: Is this fast? Your instincts might lead you to send...</description>
       <category>NVIDIA Technical Blog</category>
-      <pubDate>Fri, 13 Nov 2026 02:00:15 +0000</pubDate>
+      <pubDate>Fri, 13 Nov 2026 06:00:04 +0000</pubDate>
     </item>
     <item>
-      <title>How Full-Stack NIM Optimizations Deliver 2.5x More Users on Nemotron 3 Ultra</title>
-      <link>https://developer.nvidia.com/blog/how-full-stack-nim-optimizations-deliver-2-5x-more-users-on-nemotron-3-ultra/</link>
-      <guid isPermaLink="false">2abc4ceb82a011e6</guid>
-      <description>Deploying a large language model is only the first step toward production-ready serving. Production teams also need to serve as many concurrent users as...</description>
+      <title>Turn Your Latest Observations Into Timely Weather Decisions With NVIDIA Earth-2</title>
+      <link>https://developer.nvidia.com/blog/turn-your-latest-observations-into-timely-weather-decisions-with-nvidia-earth-2/</link>
+      <guid isPermaLink="false">e61094f257dbd757</guid>
+      <description>Weather-sensitive industries increasingly have access to observations that offer an earlier, more local view of changing conditions. Energy companies collect...</description>
       <category>NVIDIA Technical Blog</category>
-      <pubDate>Fri, 13 Nov 2026 02:00:15 +0000</pubDate>
+      <pubDate>Fri, 13 Nov 2026 06:00:04 +0000</pubDate>
     </item>
     <item>
-      <title>If in doubt, delete the uv.lock file</title>
-      <link>https://simonwillison.net/2026/Nov/1/delete-uv-lock-first/</link>
-      <guid isPermaLink="false">ffb30fef9594cc91</guid>
-      <description>I've been getting the occasional confusing Python dependency error since switching over to Python 3.15 and the rule I'm having to remember is: If in doubt, delete the uv.lock file Most of my projects are libraries which don't include a uv.lock file, since it's rude for a library </description>
+      <title>datasette-llm 0.1a10</title>
+      <link>https://simonwillison.net/2026/Nov/4/datasette-llm/</link>
+      <guid isPermaLink="false">f121b002be2ba369</guid>
+      <description>Release: datasette-llm 0.1a10 Fixes a bug that affected my agent.datasette.io demo site, where the set of available LLM models was not correctly restricted to just those in the configuration. Tags: llm , datasette</description>
       <category>Simon Willison</category>
-      <pubDate>Fri, 13 Nov 2026 02:00:05 +0000</pubDate>
+      <pubDate>Fri, 13 Nov 2026 05:59:57 +0000</pubDate>
     </item>
     <item>
-      <title>The U.S. Census Bureau and “Super Intelligence”</title>
-      <link>https://simonwillison.net/2026/Nov/2/census-bureau-super-intelligence/</link>
-      <guid isPermaLink="false">6bf0704cb5e2b6fd</guid>
-      <description>I was reminded today of AI Adoption Rate Trending Down for Large Companies , a chart produced by Apollo Global Management in September 2025, which appeared to show a slowdown in U.S. corporate AI adoption based on numbers collected by the U.S. Census Bureau. At the time I used th</description>
+      <title>Quoting Paul Ford</title>
+      <link>https://simonwillison.net/2026/Nov/5/paul-ford/</link>
+      <guid isPermaLink="false">3089c4e12a10528f</guid>
+      <description>The web browser is very, very, very powerful software for applications, and the cost of accessing that power is going down seemingly every day . &amp;mdash; Paul Ford , The Web Is More Than Enough Tags: browsers , paul-ford , web-development</description>
       <category>Simon Willison</category>
-      <pubDate>Fri, 13 Nov 2026 02:00:05 +0000</pubDate>
+      <pubDate>Fri, 13 Nov 2026 05:59:57 +0000</pubDate>
     </item>
     <item>
-      <title>llm 0.37</title>
-      <link>https://simonwillison.net/2026/Nov/2/llm/</link>
-      <guid isPermaLink="false">10dab842bc689c46</guid>
-      <description>Release: llm 0.37 There's a lot of stuff in this new release of my LLM CLI tool and Python library, representing around two months of accumulated features and fixes. I added gpt-6.1-sol and gpt-6.1-terra , plus a new llm openai endpoint add command to make it easier to configure </description>
+      <title>Quoting Nilay Patel</title>
+      <link>https://simonwillison.net/2026/Nov/6/nilay-patel/</link>
+      <guid isPermaLink="false">04ff5155f60621be</guid>
+      <description>The products aren't good enough to sell people on the costs. You cannot tell people that you have to listen to the whine of a data center in their backyard for AI overviews and some of the most hilarious deep fake slop in history. It's not worth it. It just isn't worth it to anyo</description>
       <category>Simon Willison</category>
-      <pubDate>Fri, 13 Nov 2026 02:00:05 +0000</pubDate>
+      <pubDate>Fri, 13 Nov 2026 05:59:57 +0000</pubDate>
     </item>
     <item>
-      <title>October sponsors-only newsletter</title>
-      <link>https://simonwillison.net/2026/Nov/3/october-newsletter/</link>
-      <guid isPermaLink="false">c006e897d48e9930</guid>
-      <description>I sent out the October edition of my sponsors-only monthly newsletter . If you are a sponsor (or start a sponsorship now) you can access it here . This month: The October inflection point for vibe game development The vulnerability apocalypse gets hot LLM releases API credits for</description>
+      <title>Terry Pratchett's Study</title>
+      <link>https://simonwillison.net/2026/Nov/7/hn-50407316/</link>
+      <guid isPermaLink="false">dadfbd3c3260c4b0</guid>
+      <description>My comment on Terry Pratchett&amp;#x27;s Study &amp;mdash; Hacker News. Terry Pratchett once wrote about the concept of "horizontal wealth". Vertical wealth is where you spend money on rich people stuff - yachts and suchlike. Horizontal wealth is where you spend more money on the things </description>
       <category>Simon Willison</category>
-      <pubDate>Fri, 13 Nov 2026 02:00:05 +0000</pubDate>
+      <pubDate>Fri, 13 Nov 2026 05:59:57 +0000</pubDate>
     </item>
     <item>
-      <title>I discovered a sound that leaks your exact location (and it's everywhere) - YouTube</title>
-      <link>https://simonwillison.net/2026/Nov/3/a-sound-that-leaks-your-exact-location/</link>
-      <guid isPermaLink="false">22c23cfe758c1cb6</guid>
-      <description>I discovered a sound that leaks your exact location (and it&amp;#x27;s everywhere) - YouTube Genius piece of OSINT by Colsto, who demonstrates how you can take almost imperceptible background noise of planes from a video soundtrack, figure out their Doppler curves, then cross referen</description>
+      <title>datasette #3046: Don't serve link: rel=next HTTP headers to Firefox for HTML pages</title>
+      <link>https://simonwillison.net/2026/Nov/7/link-rel-next/</link>
+      <guid isPermaLink="false">3880bf849bb943e9</guid>
+      <description>datasette #3046: Don&amp;#x27;t serve link: rel=next HTTP headers to Firefox for HTML pages I was looking at the Firefox network panel today when I noticed that requests to a Datasette table page were triggering an HTTP prefetch to the next page of rows in that table. This was happen</description>
       <category>Simon Willison</category>
-      <pubDate>Fri, 13 Nov 2026 02:00:05 +0000</pubDate>
+      <pubDate>Fri, 13 Nov 2026 05:59:57 +0000</pubDate>
     </item>
     <item>
-      <title>Qwen 3.8 27B on my laptop can interpret model weights, too</title>
-      <link>https://simonwillison.net/2026/Nov/3/qwen-can-interpret-model-weights/</link>
-      <guid isPermaLink="false">6857dc224a419fe9</guid>
-      <description>Yesterday's hot paper was Sparks of Weight-Space Programming: LLMs can natively read &amp;amp; write neural network weights by Rikiya Takehi, Jayden Teoh, Alex Zhang, and Omar Khattab. The paper (OK, the authors classify is as a "blog post", but it's paper-shaped) found that frontier</description>
+      <title>parse_number() as a SQLite extension: C vs Rust</title>
+      <link>https://simonwillison.net/2026/Nov/8/sqlite-parse-number-c-vs-rust/</link>
+      <guid isPermaLink="false">9572242cc9fc8ca1</guid>
+      <description>Research: parse_number() as a SQLite extension: C vs Rust I was out walking the dog when I got curious about how easy/difficult it would be to write a SQLite C extension that adds a parse_number() function for turning strings like -$1,234.56 or '12.5%' into numeric values that co</description>
       <category>Simon Willison</category>
-      <pubDate>Fri, 13 Nov 2026 02:00:05 +0000</pubDate>
+      <pubDate>Fri, 13 Nov 2026 05:59:57 +0000</pubDate>
     </item>
     <item>
-      <title>AI is destroying my CS degree</title>
-      <link>https://simonwillison.net/2026/Nov/3/hn-50354278/</link>
-      <guid isPermaLink="false">5b7b48c647c50787</guid>
-      <description>My comment on AI is destroying my CS degree &amp;mdash; Hacker News. I don't envy educators right now. AI clearly means you need to change how you teach and evaluate students. We are only a few years in though, and it's still extremely unclear what effective teaching with these tools</description>
+      <title>Hide your slop PR descriptions behind &lt;details&gt;&lt;summary&gt;</title>
+      <link>https://simonwillison.net/2026/Nov/9/details-summary/</link>
+      <guid isPermaLink="false">a92667754bb129c0</guid>
+      <description>Most of the changes I make to my projects these days come in the form of PRs opened for me by Claude Code or Codex. The PR is my unit of work - I use them to bundle commits together, iterating on them until a feature is complete, document decisions and then merge the finished res</description>
       <category>Simon Willison</category>
-      <pubDate>Fri, 13 Nov 2026 02:00:05 +0000</pubDate>
+      <pubDate>Fri, 13 Nov 2026 05:59:57 +0000</pubDate>
     </item>
     <item>
-      <title>llm 0.37.1</title>
-      <link>https://simonwillison.net/2026/Nov/3/llm/</link>
-      <guid isPermaLink="false">07065efd722751e2</guid>
-      <description>Release: llm 0.37.1 A bugfix release for LLM , with contributions from Steven Huang , Tao An , Arjan Mossel , and XQ . Tags: llm</description>
+      <title>The Web Is More Than Enough, by Paul Ford</title>
+      <link>https://simonwillison.net/2026/Nov/9/hn-50421091/</link>
+      <guid isPermaLink="false">5b851a3023343d96</guid>
+      <description>My comment on The Web Is More Than Enough, by Paul Ford &amp;mdash; Hacker News. OK, this comment convinced me to give that a shot. Here's a thing I made in Three.js this morning - a Nudibranch themed Faberge Egg: https://static.simonwillison.net/static/2026/Hidden-Reef-Egg... (77KB)</description>
       <category>Simon Willison</category>
-      <pubDate>Fri, 13 Nov 2026 02:00:05 +0000</pubDate>
+      <pubDate>Fri, 13 Nov 2026 05:59:57 +0000</pubDate>
     </item>
     <item>
-      <title>datasette-agent 0.5a0</title>
-      <link>https://simonwillison.net/2026/Nov/3/datasette-agent/</link>
-      <guid isPermaLink="false">196e073af215c4a0</guid>
-      <description>Release: datasette-agent 0.5a0 This is a significant release of Datasette Agent . The most notable new feature is called the panel - it lets the agent chat open and then sit next to pages from Datasette, for example a table or query page. When combined with datasette-apps this me</description>
+      <title>Locating the source of a mysterious beep with Claude</title>
+      <link>https://simonwillison.net/2026/Nov/9/mysterious-beeps/</link>
+      <guid isPermaLink="false">d363b026f0d913e8</guid>
+      <description>Our house has a box room, full of boxes that we still haven't unpacked from our last move. A couple of weeks ago something in that room started intermittently beeping . The beeps were far enough apart that standing in the room and trying to determine the source of the noise was f</description>
       <category>Simon Willison</category>
-      <pubDate>Fri, 13 Nov 2026 02:00:05 +0000</pubDate>
+      <pubDate>Fri, 13 Nov 2026 05:59:57 +0000</pubDate>
     </item>
     <item>
-      <title>datasette-apps 0.3a0</title>
-      <link>https://simonwillison.net/2026/Nov/4/datasette-apps/</link>
-      <guid isPermaLink="false">c3dba756698ba6ec</guid>
-      <description>Release: datasette-apps 0.3a0 Datasette Apps adds support for hosting and editing custom HTML applications inside of Datasette. These can be created by hand, but it's easier to create them using LLMs via Datasette Agent . This release improves that integration: Apps can now be ta</description>
+      <title>llm-anthropic 0.31</title>
+      <link>https://simonwillison.net/2026/Nov/9/llm-anthropic/</link>
+      <guid isPermaLink="false">c93c64172e07cb1e</guid>
+      <description>Release: llm-anthropic 0.31 Anthropic released Fable 5.2 and Mythos 5.2 today. Fable 5.2 is currently ranked first on Artificial Analysis . Anthropic say it "solved two open problems in the physics of black holes", so clearly their internal benchmarks have become more ambitious! </description>
       <category>Simon Willison</category>
-      <pubDate>Fri, 13 Nov 2026 02:00:05 +0000</pubDate>
+      <pubDate>Fri, 13 Nov 2026 05:59:57 +0000</pubDate>
+    </item>
+    <item>
+      <title>The Jensen Huang scandal is hardly over</title>
+      <link>https://www.theverge.com/ai-artificial-intelligence/1032069/jensen-huang-resignation-affair-chips-smuggling</link>
+      <guid isPermaLink="false">96892311de09e14b</guid>
+      <description>I was certain, until the story of Jensen Huang's second affair hit, that Huang was bulletproof. After all, why wouldn't he be? He's placed himself indispensably at the center of the AI industry and famously had no succession plan at Nvidia. In fact, he's the only CEO Nvidia has e</description>
+      <category>The Verge — AI</category>
+      <pubDate>Fri, 13 Nov 2026 05:59:55 +0000</pubDate>
+    </item>
+    <item>
+      <title>Hackers Exploit N-central Flaws to Infect 21 Servers, Including 19 Running Hotfix 2</title>
+      <link>https://thehackernews.com/2026/11/hackers-exploit-n-central-flaws-to.html</link>
+      <guid isPermaLink="false">9e0cc84d062dbe41</guid>
+      <description>N-able on Thursday said it's taking additional precautions in the wake of public disclosure of a new set of flaws tracked as 4EverAble2Shell and Agent2Shell. "We are restricting certain N-central features and integrations," the company said in a Thursday update. "These measures m</description>
+      <category>The Hacker News</category>
+      <pubDate>Fri, 13 Nov 2026 05:43:28 +0000</pubDate>
+    </item>
+    <item>
+      <title>Qunova Computing Achieves Chemical Accuracy at 80 Qubits on Iron-Sulfur Cluster Using IBM Quantum System Two and Fugaku</title>
+      <link>https://quantumcomputingreport.com/qunova-computing-achieves-chemical-accuracy-at-80-qubits-on-iron-sulfur-cluster-using-ibm-quantum-system-two-and-fugaku/</link>
+      <guid isPermaLink="false">70b4545a5b102dd0</guid>
+      <description>Qunova Computing achieved a breakthrough in quantum chemistry by simulating an 80-qubit iron-sulfur cluster with chemical accuracy using a hybrid approach combining IBM Quantum System Two and the Fugaku supercomputer. Their HI-VQE algorithm reduced classical computing costs by ap</description>
+      <category>Quantum Computing Report</category>
+      <pubDate>Fri, 13 Nov 2026 03:02:16 +0000</pubDate>
+    </item>
+    <item>
+      <title>Cleveland Clinic, RIKEN, and IBM Cross 12,000-Atom Barrier in Heterogeneous Quantum-Classical Drug Binding Simulations</title>
+      <link>https://quantumcomputingreport.com/cleveland-clinic-riken-and-ibm-cross-12000-atom-barrier-in-heterogeneous-quantum-classical-drug-binding-simulations/</link>
+      <guid isPermaLink="false">89ff689925ce0228</guid>
+      <description>A collaboration between Cleveland Clinic, RIKEN, and IBM Quantum has achieved the largest heterogeneous quantum-classical (HQC) electronic-structure calculation to date, simulating protein-ligand complexes exceeding 12,000 atoms. This research utilized 156-qubit IBM Heron r2 proc</description>
+      <category>Quantum Computing Report</category>
+      <pubDate>Fri, 13 Nov 2026 03:01:11 +0000</pubDate>
+    </item>
+    <item>
+      <title>The Geometry of Quantum Memory: How Anyons Rewrite the Rules of Remembering and Computation in the Quantum Realm</title>
+      <link>https://thequantuminsider.com/2026/11/13/the-geometry-of-quantum-memory-how-anyons-rewrite-the-rules-of-remembering-and-computation-in-the-quantum-realm/</link>
+      <guid isPermaLink="false">e59ebffd458cd4b6</guid>
+      <description>Insider Brief An ordinary qubit remembers too much and listens too well. Its delicate phase is the hidden part of a qubit’s state. It carries much of the qubit&amp;#8217;s information and is very easy to disturb. The phase takes account of every stray field, lattice vibration, and fl</description>
+      <category>The Quantum Insider</category>
+      <pubDate>Fri, 13 Nov 2026 02:40:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>LTM Becomes First Global Systems Integrator to Launch Function in IBM Quantum Functions Catalog with AI-QEM</title>
+      <link>https://quantumcomputingreport.com/ltm-becomes-first-global-systems-integrator-to-launch-function-in-ibm-quantum-functions-catalog-with-ai-qem/</link>
+      <guid isPermaLink="false">a54994d9c906fe52</guid>
+      <description>LTM has launched its AI-QEM software in the IBM Quantum Functions Catalog, becoming the first global systems integrator to do so. This software utilizes an AI-powered approach to mitigate hardware noise in quantum circuits without additional quantum processing unit (QPU) runtime.</description>
+      <category>Quantum Computing Report</category>
+      <pubDate>Fri, 13 Nov 2026 02:37:56 +0000</pubDate>
     </item>
     <item>
       <title>Google’s new Gemini model is better at understanding complicated questions</title>
@@ -172,6 +220,22 @@
       <description>Google says its new Gemini 4 Hydrogen model can give more helpful answers to complex questions, including "questions with multiple parts, hard-to-understand typos, or highly specific requests." The new model can break down your questions and address each part in its responses. It</description>
       <category>The Verge — AI</category>
       <pubDate>Fri, 13 Nov 2026 02:00:03 +0000</pubDate>
+    </item>
+    <item>
+      <title>Kipu Quantum Launches Rimay Quantum Feature Extraction in IBM Quantum Functions Catalog</title>
+      <link>https://quantumcomputingreport.com/kipu-quantum-launches-rimay-quantum-feature-extraction-in-ibm-quantum-functions-catalog/</link>
+      <guid isPermaLink="false">80ab6441046d0a44</guid>
+      <description>Kipu Quantum has launched its Rimay quantum feature extraction service on the IBM Quantum Functions Catalog, allowing IBM Quantum users to access quantum-enhanced machine learning for feature engineering. This service, which operates as a preprocessing layer for classical machine</description>
+      <category>Quantum Computing Report</category>
+      <pubDate>Fri, 13 Nov 2026 01:15:01 +0000</pubDate>
+    </item>
+    <item>
+      <title>PsiQuantum and AMD Expand Partnership with Equity Investment to Co-Design Utility-Scale Quantum Infrastructure</title>
+      <link>https://quantumcomputingreport.com/psiquantum-and-amd-expand-partnership-with-equity-investment-to-co-design-utility-scale-quantum-infrastructure/</link>
+      <guid isPermaLink="false">71f819597b644f31</guid>
+      <description>PsiQuantum and AMD are expanding their partnership with an equity investment from AMD to co-design the infrastructure for fault-tolerant quantum systems. The collaboration integrates AMD's GPUs, CPUs, and software with PsiQuantum's silicon photonics architecture to enhance real-t</description>
+      <category>Quantum Computing Report</category>
+      <pubDate>Fri, 13 Nov 2026 00:57:02 +0000</pubDate>
     </item>
     <item>
       <title>Engineered atomic interactions help microwave sensor capture three times as much information</title>
@@ -420,70 +484,6 @@
       <description>Auto scaling introduces a per-workspace capability in Azure Monitor Workspace (AMW) to automatically scale ingestion limits based on observed usage patterns. When enabled, the system dynamically adjusts ingestion limits (quota ceiling) to maintain healthy</description>
       <category>Azure Updates</category>
       <pubDate>Thu, 12 Nov 2026 18:23:52 +0000</pubDate>
-    </item>
-    <item>
-      <title>ThreatsDay: 59 Linux Kernel Bugs, Falcon Spyware, GSocket Backdoors + 17 More Stories</title>
-      <link>https://thehackernews.com/2026/11/threatsday-59-linux-kernel-bugs-falcon.html</link>
-      <guid isPermaLink="false">0215fb6873aed2b7</guid>
-      <description>A search result isn't always safe. An access request isn't always harmless. And a familiar account doesn't always mean a familiar person is using it. Simple things to remember. Yet a surprising amount of this week's trouble starts right there. Attackers are using fake websites, s</description>
-      <category>The Hacker News</category>
-      <pubDate>Thu, 12 Nov 2026 18:02:51 +0000</pubDate>
-    </item>
-    <item>
-      <title>Introducing Gemini 4 Hydrogen</title>
-      <link>https://deepmind.google/blog/introducing-gemini-4-hydrogen/</link>
-      <guid isPermaLink="false">4bad5afe01a19f79</guid>
-      <description></description>
-      <category>Google DeepMind</category>
-      <pubDate>Thu, 12 Nov 2026 18:00:50 +0000</pubDate>
-    </item>
-    <item>
-      <title>Nvidia CEO Jensen Huang resigns amid spy, affair scandals</title>
-      <link>https://www.theverge.com/ai-artificial-intelligence/1031689/jensen-huang-nvidia-ceo-resigns</link>
-      <guid isPermaLink="false">426b199762db8714</guid>
-      <description>Nvidia's board announced that Jensen Huang - its longtime co-founder, president, and CEO - has resigned after reports of two extramarital affairs, one with an alleged Chinese spy and one with an Nvidia executive who reported to Huang. Following a late Wednesday night meeting, the</description>
-      <category>The Verge — AI</category>
-      <pubDate>Thu, 12 Nov 2026 18:00:05 +0000</pubDate>
-    </item>
-    <item>
-      <title>I reviewed the Apple HomeView, ask me anything</title>
-      <link>https://www.theverge.com/tech/1031868/i-reviewed-the-apple-homeview-ask-me-anything</link>
-      <guid isPermaLink="false">39f4c129e4341242</guid>
-      <description>Hi! I'm Jen Tuohy, The Verge's senior smart home reviewer. I've tested every smart display Amazon and Google have ever made, and for the past week I've been testing Apple's first: The $299 HomeView. I put the tabletop and wall-mounted versions through their paces, on my kitchen c</description>
-      <category>The Verge — AI</category>
-      <pubDate>Thu, 12 Nov 2026 18:00:05 +0000</pubDate>
-    </item>
-    <item>
-      <title>Nvidia CEO Jensen Huang has resigned. What happens next?</title>
-      <link>https://www.theverge.com/ai-artificial-intelligence/1030422/nvidia-jensen-huang-ai-china-alice-huang</link>
-      <guid isPermaLink="false">15c28179b2dc3ec9</guid>
-      <description>After the leather-jacketed CEO, president, and co-founder of Nvidia, Jensen Huang, acknowledged an affair with Megaspeed exec Alice Huang, his company initially announced an investigation. However, The New York Times reported on Wednesday that there was evidence of another affair</description>
-      <category>The Verge — AI</category>
-      <pubDate>Thu, 12 Nov 2026 18:00:05 +0000</pubDate>
-    </item>
-    <item>
-      <title>Read Nvidia’s internal emails about the ‘extraordinarily difficult period’ amid CEO shakeup</title>
-      <link>https://www.theverge.com/ai-artificial-intelligence/1032028/read-nvidias-internal-emails-jensen-huang</link>
-      <guid isPermaLink="false">830958e6e6f7f875</guid>
-      <description>Jensen Huang resigned as CEO of Nvidia this morning, a company he co-founded in 1993. The decision came following the company's board opening an investigation into multiple extramarital affairs Huang had with a direct report and an alleged Chinese spy. The new, and first, Chair o</description>
-      <category>The Verge — AI</category>
-      <pubDate>Thu, 12 Nov 2026 18:00:05 +0000</pubDate>
-    </item>
-    <item>
-      <title>Jensen Huang is out. What did China want from him?</title>
-      <link>https://www.theverge.com/podcast/1031260/nvidia-jensen-huang-resign-china-spy-scandal-ai-chips-trump</link>
-      <guid isPermaLink="false">1d250e9233fe0f75</guid>
-      <description>Today, we’re talking about the Jensen Huang scandal at Nvidia, which is developing so quickly that we had to do an emergency update of this intro minutes before publishing this episode. Huang just resigned from his position as CEO of Nvidia as news of his affairs, including with </description>
-      <category>The Verge — AI</category>
-      <pubDate>Thu, 12 Nov 2026 18:00:05 +0000</pubDate>
-    </item>
-    <item>
-      <title>More game developers are starting to use generative AI</title>
-      <link>https://www.theverge.com/games/1032085/gdc-festival-of-gaming-annual-survey-ai-layoffs</link>
-      <guid isPermaLink="false">4213b9afeff9a7e6</guid>
-      <description>More video game developers are using generative AI tools in their jobs compared to last year, according to the GDC Festival of Gaming's latest annual industry survey. Forty percent of developers surveyed say they use it "as part of their job," an increase from 36 percent in 2025.</description>
-      <category>The Verge — AI</category>
-      <pubDate>Thu, 12 Nov 2026 18:00:05 +0000</pubDate>
     </item>
   </channel>
 </rss>
