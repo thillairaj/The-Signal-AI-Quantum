@@ -1,0 +1,15 @@
+<p><em>Signal Research Notes is an original-research series on The Signal, published three times a week. Each edition asks one question, works through it from primary sources, and keeps confirmed facts separate from analysis. Sources are linked at the end.</em></p>
+
+<p>On November 12, Q-CTRL announced a $290 million Series C, led by Salesforce Ventures, the largest fundraise yet for a quantum software company. The money is chasing one problem: qubits make mistakes constantly, and you cannot check their work the way a classical computer does. Reading a qubit collapses the superposition it holds, and the no-cloning theorem forbids keeping a backup copy. The classical fix, store everything three times and take a majority vote, is impossible.</p>
+
+<h3>Spread the qubit, measure the neighbours</h3>
+
+<p>The surface code answers with redundancy of a different kind. One logical qubit is spread across a grid of physical qubits, and extra measure qubits sit between them, checking whether neighbouring data qubits agree. A flipped parity flags an error and locates it, without ever reading the data qubits themselves. A classical decoder then works out the most likely error from the pattern of flags and applies the correction. The code distance, the size of the grid, sets how many simultaneous errors it can survive: a distance-7 patch corrects up to three.</p>
+
+<h3>Below threshold, bigger is better</h3>
+
+<p>This only pays off below a threshold error rate, roughly 1 percent per operation for surface codes. Above it, adding qubits adds errors faster than the code removes them. Google's Willow crossed that line in December 2024: as the code grew from distance 3 to 5 to 7, the logical error rate halved at each step, reaching 0.143 percent per cycle at distance 7, and the logical qubit outlived the best physical qubit on the chip by 2.4 times. That result, published in Nature, is why the field treats error correction as proven in principle and unfinished in practice.</p>
+
+<h3>Suppression is not correction</h3>
+
+<p>One distinction matters for reading the funding news. Q-CTRL's software suppresses errors, tuning control pulses so fewer errors happen in the first place. Error correction catches the errors that still slip through. Both are needed, and neither is cheap: a useful logical qubit will take hundreds of physical qubits, which is why the error problem, not the qubit count, now decides when quantum computing becomes useful.</p>

@@ -1,6 +1,33 @@
 {
   "articles": [
     {
+      "id": "2026-11-13-quantum-error-correction",
+      "title": "How Do You Fix a Quantum Error You Cannot Look At?",
+      "subtitle": "Q-CTRL raised $290M to fight quantum errors. The fix: a grid and a parity check",
+      "date": "2026-11-13",
+      "kind": "Brief",
+      "card": "research/cards/edition-13.webp",
+      "body": "research/articles/2026-11-13-quantum-error-correction.html",
+      "sources": [
+        {
+          "label": "Q-CTRL: Q-CTRL Secures US$290 Million Series C Funding Led by Salesforce Ventures (Nov 12, 2026)",
+          "url": "https://www.hpcwire.com/off-the-wire/q-ctrl-secures-290m-series-c-to-accelerate-convergence-of-quantum-and-ai/"
+        },
+        {
+          "label": "SiliconANGLE: Quantum sensor and software maker Q-CTRL raises $290M in funding (Nov 12, 2026)",
+          "url": "https://siliconangle.com/2026/11/12/quantum-sensor-and-software-maker-q-ctrl-raises-290m-in-funding/"
+        },
+        {
+          "label": "Google Quantum AI et al.: Quantum error correction below the surface code threshold, Nature 638, 920 (2025)",
+          "url": "https://doi.org/10.1038/s41586-024-08449-y"
+        },
+        {
+          "label": "Fowler et al.: Fault-tolerant thresholds for quantum error correction with the surface code (arXiv:1311.5003)",
+          "url": "https://ar5iv.labs.arxiv.org/html/1311.5003"
+        }
+      ]
+    },
+    {
       "id": "2026-11-11-claude-fable-mythos-5-2",
       "title": "Why Did Anthropic Ship Its Strongest Model in Two Versions?",
       "subtitle": "Fable 5.2 is open to everyone. Mythos 5.2 is the same model, gated to vetted labs",
@@ -373,5 +400,5 @@
       "title": "Where Does Value Accrue in the AI Stack?"
     }
   ],
-  "generated_at": "2026-11-11T04:17:46+00:00"
+  "generated_at": "2026-11-13T04:16:55+00:00"
 }

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>How Do You Fix a Quantum Error You Cannot Look At? · The Signal</title>
+<meta name="description" content="Q-CTRL raised $290M to fight quantum errors. The fix: a grid and a parity check">
+<link rel="canonical" href="https://thillairaj.github.io/The-Signal-AI-Quantum/research/2026-11-13-quantum-error-correction/">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="The Signal">
+<meta property="og:title" content="How Do You Fix a Quantum Error You Cannot Look At?">
+<meta property="og:description" content="Q-CTRL raised $290M to fight quantum errors. The fix: a grid and a parity check">
+<meta property="og:url" content="https://thillairaj.github.io/The-Signal-AI-Quantum/research/2026-11-13-quantum-error-correction/">
+<meta property="og:image" content="https://thillairaj.github.io/The-Signal-AI-Quantum/research/cards/edition-13.png">
+<link rel="stylesheet" href="../../style.css">
+<style>
+.ap-wrap{max-width:1060px;margin:0 auto;padding:28px 20px 8px}
+.ap-head{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:26px}
+.ap-brand{font-family:var(--font-display);font-weight:800;font-size:26px;color:var(--ink);text-decoration:none}
+.ap-brand em{color:#B8860B;font-style:italic}
+.ap-back{font:600 13px var(--font-body);color:var(--muted);text-decoration:none}
+.ap-back:hover{color:var(--ink)}
+.ap-foot{max-width:1060px;margin:34px auto 0;padding:18px 20px 30px;border-top:1px solid var(--border);color:var(--muted);font-size:13px;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.ap-foot a{color:var(--muted)}
+</style>
+
+<meta name="signal-build" content="2026-11-07.footer1">
+<link rel="stylesheet" href="../../assets/signal-footer.css?v=2026-11-07.footer1">
+</head>
+<body>
+<div class="ap-wrap">
+  <header class="ap-head">
+    <a class="ap-brand" href="../../">The <em>Signal</em></a>
+    <a class="ap-back" href="../../#research">← All articles</a>
+  </header>
+  <p class="research-kicker">THE SIGNAL · RESEARCH NOTES · BRIEF</p>
+  <h1 class="research-title">How Do You Fix a Quantum Error You Cannot Look At?</h1>
+  <p class="research-sub">Q-CTRL raised $290M to fight quantum errors. The fix: a grid and a parity check</p>
+  <p class="research-date">13 Nov 2026 · By The Signal</p>
+  <div class="research-share" id="artShare"></div>
+  <div class="research-layout">
+    <div class="research-main">
+      <div class="research-body"><p><em>Signal Research Notes is an original-research series on The Signal, published three times a week. Each edition asks one question, works through it from primary sources, and keeps confirmed facts separate from analysis. Sources are linked at the end.</em></p>
+
+<p>On November 12, Q-CTRL announced a $290 million Series C, led by Salesforce Ventures, the largest fundraise yet for a quantum software company. The money is chasing one problem: qubits make mistakes constantly, and you cannot check their work the way a classical computer does. Reading a qubit collapses the superposition it holds, and the no-cloning theorem forbids keeping a backup copy. The classical fix, store everything three times and take a majority vote, is impossible.</p>
+
+<h3>Spread the qubit, measure the neighbours</h3>
+
+<p>The surface code answers with redundancy of a different kind. One logical qubit is spread across a grid of physical qubits, and extra measure qubits sit between them, checking whether neighbouring data qubits agree. A flipped parity flags an error and locates it, without ever reading the data qubits themselves. A classical decoder then works out the most likely error from the pattern of flags and applies the correction. The code distance, the size of the grid, sets how many simultaneous errors it can survive: a distance-7 patch corrects up to three.</p>
+
+<h3>Below threshold, bigger is better</h3>
+
+<p>This only pays off below a threshold error rate, roughly 1 percent per operation for surface codes. Above it, adding qubits adds errors faster than the code removes them. Google's Willow crossed that line in December 2024: as the code grew from distance 3 to 5 to 7, the logical error rate halved at each step, reaching 0.143 percent per cycle at distance 7, and the logical qubit outlived the best physical qubit on the chip by 2.4 times. That result, published in Nature, is why the field treats error correction as proven in principle and unfinished in practice.</p>
+
+<h3>Suppression is not correction</h3>
+
+<p>One distinction matters for reading the funding news. Q-CTRL's software suppresses errors, tuning control pulses so fewer errors happen in the first place. Error correction catches the errors that still slip through. Both are needed, and neither is cheap: a useful logical qubit will take hundreds of physical qubits, which is why the error problem, not the qubit count, now decides when quantum computing becomes useful.</p>
+</div>
+      <h3 class="research-sources-h">Sources</h3><ul class="research-sources"><li><a href="https://www.hpcwire.com/off-the-wire/q-ctrl-secures-290m-series-c-to-accelerate-convergence-of-quantum-and-ai/" target="_blank" rel="noopener">Q-CTRL: Q-CTRL Secures US$290 Million Series C Funding Led by Salesforce Ventures (Nov 12, 2026)</a></li><li><a href="https://siliconangle.com/2026/11/12/quantum-sensor-and-software-maker-q-ctrl-raises-290m-in-funding/" target="_blank" rel="noopener">SiliconANGLE: Quantum sensor and software maker Q-CTRL raises $290M in funding (Nov 12, 2026)</a></li><li><a href="https://doi.org/10.1038/s41586-024-08449-y" target="_blank" rel="noopener">Google Quantum AI et al.: Quantum error correction below the surface code threshold, Nature 638, 920 (2025)</a></li><li><a href="https://ar5iv.labs.arxiv.org/html/1311.5003" target="_blank" rel="noopener">Fowler et al.: Fault-tolerant thresholds for quantum error correction with the surface code (arXiv:1311.5003)</a></li></ul>
+    </div>
+    <aside class="research-rail">
+      <img src="../../research/cards/edition-13.webp" alt="How Do You Fix a Quantum Error You Cannot Look At? cover" style="width:100%;border-radius:12px">
+    </aside>
+  </div>
+</div>
+<footer class="ap-foot">
+  <span>The Signal · Research Notes</span>
+  <a href="../../#research">All articles</a>
+</footer>
+<script src="../../assets/signal-share.js"></script>
+<script>
+(function () {
+  var A = { id: "2026-11-13-quantum-error-correction", title: "How Do You Fix a Quantum Error You Cannot Look At?", subtitle: "Q-CTRL raised $290M to fight quantum errors. The fix: a grid and a parity check" };
+  var url = SignalShare.BASE + "/research/" + A.id + "/";
+  var caption = SignalShare.articleCaption(A.title, A.subtitle, url);
+  window.__articleCaption = caption;
+  window.__articleUrl = url;
+  var spec = { title: A.title, line: A.subtitle, link: url, caption: caption,
+    tags: "#TheSignal " + SignalShare.topicHashtag(A.title + " " + A.subtitle),
+    image: { kind: "static", url: SignalShare.BASE + "/" + "research/cards/edition-13.png",
+             filename: A.id + ".png" } };
+  window.__articleSpec = spec;
+  document.getElementById("artShare").appendChild(SignalShare.shareButton(spec));
+})();
+</script>
+<footer class="signal-footer">
+  <div class="sf-follow"><span class="sf-label">Follow along</span><span class="sf-links"><a class="sf-link" href="https://www.linkedin.com/in/thillairaj" target="_blank" rel="noopener"><span class="sf-badge" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.55V9h3.57v11.45z"/></svg></span>Thillai Raj</a><a class="sf-link" href="https://www.linkedin.com/showcase/qu-bits/" target="_blank" rel="noopener"><span class="sf-badge" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.55V9h3.57v11.45z"/></svg></span>QuBits · Quantum &amp; AI</a><a class="sf-link" href="https://www.linkedin.com/showcase/agentic-ai-architect/" target="_blank" rel="noopener"><span class="sf-badge" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.55V9h3.57v11.45z"/></svg></span>Agentic AI Architect</a></span></div>
+  <p class="sf-copy">© 2026 The Signal</p>
+  <p class="sf-tag">Learn it. Then share it.</p>
+</footer>
+<script src="../../assets/version-check.js?v=2026-11-07.footer1"></script>
+</body>
+</html>
