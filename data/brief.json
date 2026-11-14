@@ -2041,6 +2041,215 @@
           ]
         }
       ]
+    },
+    {
+      "date": "2026-11-14",
+      "items": [
+        {
+          "id": "brief-2026-11-14-01",
+          "category": "AI",
+          "company": "OpenAI",
+          "headline": "ChatGPT Wallet lets agents pay without seeing your card details",
+          "summary": "OpenAI has introduced ChatGPT Wallet, a way for its Dots agents to pay for purchases on a user's behalf without seeing the user's actual card details. Users add a card once and approve each purchase with a security check such as Face ID or a fingerprint, after which the payment network issues a token in place of the real card number. The wallet starts with ChatGPT Pro subscribers in the US, built with American Express, Mastercard and Visa, and OpenAI has published a Commerce Partner Playbook to help businesses accept agent payments.",
+          "why": "Agent-led shopping only works if payments are safe and merchants can accept them, so a wallet built on existing card rails is the missing piece for agentic commerce.",
+          "source_date": "2026-11-13",
+          "sources": [
+            {
+              "label": "OpenAI",
+              "url": "https://openai.com/index/introducing-chatgpt-wallet"
+            },
+            {
+              "label": "The Verge",
+              "url": "https://www.theverge.com/ai-artificial-intelligence/1033425/openai-chatgpt-wallet"
+            }
+          ]
+        },
+        {
+          "id": "brief-2026-11-14-02",
+          "category": "AI",
+          "company": "Anthropic",
+          "headline": "Anthropic opens a private beta for self-hosted Claude Managed Agents",
+          "summary": "Anthropic has opened a private beta of self-hosted Claude Managed Agents, letting companies run the whole agent service inside their own cloud or data centre. The harness, sandboxes, credentials and session history all run on the customer's infrastructure, while model calls still go to a provider the customer chooses, such as Anthropic, Amazon Bedrock, Google's Agent Platform or Microsoft Foundry. Access is limited to eligible organisations through their Anthropic account team, and the server licence requires customers to roll back a version within eight hours of a safety notice.",
+          "why": "Teams that want long-running agents working on internal code can now keep the control plane behind their own security perimeter instead of handing it to a vendor.",
+          "source_date": "2026-11-12",
+          "sources": [
+            {
+              "label": "Anthropic",
+              "url": "https://claude.com/resources/articles/self-hosted-claude-managed-agents"
+            },
+            {
+              "label": "The New Stack",
+              "url": "https://thenewstack.io/self-hosted-claude-managed-agents/"
+            }
+          ]
+        },
+        {
+          "id": "brief-2026-11-14-03",
+          "category": "AI",
+          "company": "llama.cpp",
+          "headline": "llama.cpp reaches 1.0 with a stability promise for local AI builders",
+          "summary": "The llama.cpp project has released version 1.0.0 of its libraries, committing to semantic versioning so that breaking changes to the public C API will only arrive with major version bumps. The project, which lets developers run multimodal language models on hardware from consumer laptops to enterprise servers, now supports more than 150 model architecture variants. The release also covers ggml 1.0.0, the tensor library underneath it.",
+          "why": "Local and private AI products depend on llama.cpp, so a stable API gives their builders a firmer foundation to build on.",
+          "source_date": "2026-11-13",
+          "sources": [
+            {
+              "label": "Hugging Face",
+              "url": "https://huggingface.co/blog/ggml-org/llama-cpp-v1"
+            }
+          ]
+        },
+        {
+          "id": "brief-2026-11-14-04",
+          "category": "Quantum",
+          "company": "IBM",
+          "headline": "Cleveland Clinic, RIKEN and IBM simulate drug binding across 12,000 atoms",
+          "summary": "A collaboration between Cleveland Clinic, RIKEN and IBM has run a hybrid quantum-classical simulation of full protein-ligand complexes exceeding 12,000 atoms, described as the largest such calculation to date. The team paired two 156-qubit IBM Heron r2 processors with three supercomputers, collecting 3.0 billion measurement shots across 21,006 circuits, and reported up to a 210-fold improvement in fragment energy accuracy over earlier quantum-embedding benchmarks. The work, detailed in a preprint, produced a binding energy prediction for a T4-lysozyme complex.",
+          "why": "Drug binding predictions at this scale move quantum computing closer to real pharmaceutical work, where accurate energies decide which molecules advance.",
+          "source_date": "2026-11-12",
+          "sources": [
+            {
+              "label": "Quantum Computing Report",
+              "url": "https://quantumcomputingreport.com/cleveland-clinic-riken-and-ibm-cross-12000-atom-barrier-in-heterogeneous-quantum-classical-drug-binding-simulations/"
+            }
+          ]
+        },
+        {
+          "id": "brief-2026-11-14-05",
+          "category": "Quantum",
+          "company": "Princeton Plasma Physics Laboratory",
+          "headline": "A cheaper way to hunt for diamond qubits",
+          "summary": "A researcher at the US Department of Energy's Princeton Plasma Physics Laboratory has developed a method that cuts the cost of modelling quantum defects in diamond, by treating a cluster of just 16 to 30 atoms around a defect as a separate molecule. The approach, published in ACS Central Science, already identified promising new qubit candidates involving boron and oxygen defects, which emit ultraviolet and blue light respectively, unlike the well-known nitrogen-vacancy centre that emits red. Because each defect type responds to different light, several kinds could be combined in one device and addressed independently.",
+          "why": "Cheaper screening of diamond defects widens the search for qubits that work at room temperature, which would simplify quantum hardware.",
+          "source_date": "2026-11-11",
+          "sources": [
+            {
+              "label": "ScienceDaily",
+              "url": "https://www.sciencedaily.com/releases/2026/11/261111005855.htm"
+            }
+          ]
+        },
+        {
+          "id": "brief-2026-11-14-06",
+          "category": "Cloud & DevOps",
+          "company": "Google Cloud",
+          "headline": "Google Cloud brings agentic HPC to SC26",
+          "summary": "Google Cloud has set out its agentic high-performance computing plans for the SC26 supercomputing conference, centred on reusable agent skills that teach AI agents to build and run HPC workloads through Cluster Toolkit blueprints. The skills validate quotas and capacity before deploying a cluster, guide domain work such as fluid dynamics and life-science pipelines, and operate inside IAM and budget guardrails. The company is also showing AlphaEvolve on Cloud Batch for evolving code at scale, and new hardware including A5X instances on NVIDIA Vera Rubin and 8th generation TPUs.",
+          "why": "Scientific teams are asking agents to run supercomputing workloads, so packaging HPC expertise into skills keeps those agents from misconfiguring expensive infrastructure.",
+          "source_date": "2026-11-14",
+          "sources": [
+            {
+              "label": "Google Cloud Blog",
+              "url": "https://cloud.google.com/blog/topics/hpc/whats-new-in-hpc-and-ai-at-sc26/"
+            }
+          ]
+        },
+        {
+          "id": "brief-2026-11-14-07",
+          "category": "Cybersecurity",
+          "company": "Check Point",
+          "headline": "Check Point zero-day chained with PHP2Shell to wipe VMware hosts",
+          "summary": "Check Point has released emergency hotfixes for a zero-day privilege escalation flaw, CVE-2026-123039, that attackers have exploited against a couple of dozen customers since late October. Attackers first entered through Mobile Access portals using the PHP2Shell flaws, then used the flaw to run commands as root, installed the TSGA backdoor, and in an early wave wiped VMware ESXi hosts. The company advises customers who cannot patch immediately to stop the DynamicCLI daemon as a temporary mitigation.",
+          "why": "A chained portal flaw plus a root escalation shows how one unpatched gateway can become a route to destructive attacks on virtualisation hosts.",
+          "source_date": "2026-11-13",
+          "sources": [
+            {
+              "label": "BleepingComputer",
+              "url": "https://www.bleepingcomputer.com/news/security/check-point-patches-zero-day-that-lets-hackers-get-root-access/"
+            },
+            {
+              "label": "BleepingComputer",
+              "url": "https://www.bleepingcomputer.com/news/security/check-point-gateways-hacked-via-php2shell-to-deploy-vmware-esxi-wiper/"
+            }
+          ]
+        },
+        {
+          "id": "brief-2026-11-14-08",
+          "category": "Cybersecurity",
+          "company": "North Korea",
+          "headline": "FBI says North Korean hackers stole over $400 million in deepfake video call scheme",
+          "summary": "The FBI says North Korean hackers stole more than $400 million in cryptocurrency over 18 months through a scheme it calls FaceStealer, which lures targets into fake video meetings that play recorded webcam footage of people they trust. Once on the call, victims are told of a fake audio fault and sent a link that installs malware to steal wallets and credentials. US authorities seized the cloud infrastructure behind the scheme and more than 900 recorded victim videos, and the Justice Department separately won court approval to seize or restrain over $1.2 billion stolen from Binance by a different North Korean group.",
+          "why": "The scheme turns a victim's own face into the lure for the next target, so verifying meeting invitations through a second channel matters more than ever.",
+          "source_date": "2026-11-12",
+          "sources": [
+            {
+              "label": "The Hacker News",
+              "url": "https://thehackernews.com/2026/11/fbi-says-north-korean-hackers-stole.html"
+            },
+            {
+              "label": "Reuters",
+              "url": "https://ktwb.com/2026/11/12/north-korean-hackers-steal-more-than-400-million-using-video-images-fbi-says/"
+            }
+          ]
+        },
+        {
+          "id": "brief-2026-11-14-09",
+          "category": "Cybersecurity",
+          "company": "Europol",
+          "headline": "Operation Endgame seizes servers behind Gootloader, CastleRAT and StealC",
+          "summary": "An international police operation has taken down servers behind the Gootloader, CastleRAT and StealC malware tools, seizing 235 servers and 257 domains and about 6.4 million stolen logins belonging to more than 40,000 victims. Gootloader spread through fake legal documents on hacked websites and was used in ransomware attacks, while CastleRAT gave attackers remote control of infected machines and StealC stole passwords. Dutch police have loaded data stolen by CastleRAT into their Check your hack service so people can see if their email address was affected.",
+          "why": "Taking down the loaders and stealers that feed ransomware cuts off the access brokers' supply chain, even when no arrests are announced.",
+          "source_date": "2026-11-13",
+          "sources": [
+            {
+              "label": "The Hacker News",
+              "url": "https://thehackernews.com/2026/11/operation-endgame-takes-down-gootloader.html"
+            }
+          ]
+        },
+        {
+          "id": "brief-2026-11-14-10",
+          "category": "Cybersecurity",
+          "company": "Trezor",
+          "headline": "Trezor confirms hardware implants in three wallets and cuts reseller network",
+          "summary": "Trezor has confirmed that three Safe 5 hardware wallets sold by Southeast Asian reseller CryptoBilis contained hidden circuit boards designed to steal recovery phrases and send them to attackers over a mobile network. The company released firmware 2.13.1 on November 11, which stops the implants from capturing anything on screen, and says no affected customer has reported losing funds. Trezor has also cut its global reseller network by about 80 percent and is offering replacement devices to anyone who bought a wallet from CryptoBilis since March 2026.",
+          "why": "A hardware wallet is only as trustworthy as its supply chain, so a tampered device shows why buying from authorised sellers matters.",
+          "source_date": "2026-11-13",
+          "sources": [
+            {
+              "label": "BleepingComputer",
+              "url": "https://www.bleepingcomputer.com/news/cryptocurrency/trezor-confirms-crypto-stealing-implants-in-three-wallets-releases-fix/"
+            }
+          ]
+        },
+        {
+          "id": "brief-2026-11-14-11",
+          "category": "Industry",
+          "company": "Atom Computing",
+          "headline": "Atom Computing finalises $100 million Commerce Department award",
+          "summary": "Atom Computing has signed an agreement for up to $100 million with the US Department of Commerce to accelerate research and development of fault-tolerant, utility-scale quantum computers built on neutral atoms. The award, made under the CHIPS and Science Act, follows a letter of intent announced earlier in 2026 and will fund in-house technology work, expanded engineering and testing infrastructure, and supply chain collaboration. Atom also recently advanced to Stage C of DARPA's Quantum Benchmarking Initiative, with potential funding of up to $300 million.",
+          "why": "Federal funding at this scale signals that neutral-atom quantum computing is now treated as strategic infrastructure, not just research.",
+          "source_date": "2026-11-13",
+          "sources": [
+            {
+              "label": "NIST",
+              "url": "https://www.nist.gov/news-events/news/2026/11/department-commerce-announces-finalization-chips-rd-award-atom-computing"
+            },
+            {
+              "label": "The Quantum Insider",
+              "url": "https://thequantuminsider.com/2026/11/13/atom-computing-finalizes-100-million-u-s-department-of-commerce-rd-award/"
+            }
+          ]
+        },
+        {
+          "id": "brief-2026-11-14-12",
+          "category": "Policy",
+          "company": "Europol",
+          "headline": "Operation TorNado arrests 354 in global dark web crackdown",
+          "summary": "Police in 14 countries have arrested 354 people and seized more than $234 million in cash and virtual currencies in Operation TorNado, a coordinated action against vendors and buyers on five dark web marketplaces that had already been seized by law enforcement. The operation, which ran from May 2025 to October 2026, also seized about 5.7 metric tons of illicit drugs, 209 firearms and 38 pill presses. The US Justice Department, which announced the results with Europol, said 132 of the arrests were in the United States.",
+          "why": "Seized marketplaces keep producing leads, so each takedown feeds the next round of arrests rather than ending the trade.",
+          "source_date": "2026-11-12",
+          "sources": [
+            {
+              "label": "US Department of Justice",
+              "url": "https://www.justice.gov/opa/pr/international-law-enforcement-operation-targeting-opioid-and-fentanyl-traffickers-dark-web"
+            },
+            {
+              "label": "BleepingComputer",
+              "url": "https://www.bleepingcomputer.com/news/security/police-arrest-354-vendors-buyers-in-global-cybercrime-crackdown/"
+            }
+          ]
+        }
+      ]
     }
   ]
 }

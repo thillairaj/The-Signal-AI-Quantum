@@ -4,8 +4,26 @@
     <title>Signal Brief · Quantum</title>
     <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/</link>
     <description>Signal Brief: the day in technology, in The Signal's own words. Every item is written from linked official sources and fact checked before publication.</description>
-    <lastBuildDate>Fri, 13 Nov 2026 01:33:50 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 14 Nov 2026 01:31:40 +0000</lastBuildDate>
     <atom:link xmlns:atom="http://www.w3.org/2005/Atom" href="https://thillairaj.github.io/The-Signal-AI-Quantum/signal/quantum.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>Cleveland Clinic, RIKEN and IBM simulate drug binding across 12,000 atoms</title>
+      <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/2026-11-14/04/</link>
+      <guid isPermaLink="false">brief-2026-11-14-04</guid>
+      <pubDate>Sat, 14 Nov 2026 01:30:00 +0000</pubDate>
+      <category>Quantum</category>
+      <description>A collaboration between Cleveland Clinic, RIKEN and IBM has run a hybrid quantum-classical simulation of full protein-ligand complexes exceeding 12,000 atoms, described as the largest such calculation to date. The team paired two 156-qubit IBM Heron r2 processors with three supercomputers, collecting 3.0 billion measurement shots across 21,006 circuits, and reported up to a 210-fold improvement in fragment energy accuracy over earlier quantum-embedding benchmarks. The work, detailed in a preprint, produced a binding energy prediction for a T4-lysozyme complex. Why it matters for tech: Drug binding predictions at this scale move quantum computing closer to real pharmaceutical work, where accurate energies decide which molecules advance.</description>
+      <content:encoded><![CDATA[<p>A collaboration between Cleveland Clinic, RIKEN and IBM has run a hybrid quantum-classical simulation of full protein-ligand complexes exceeding 12,000 atoms, described as the largest such calculation to date. The team paired two 156-qubit IBM Heron r2 processors with three supercomputers, collecting 3.0 billion measurement shots across 21,006 circuits, and reported up to a 210-fold improvement in fragment energy accuracy over earlier quantum-embedding benchmarks. The work, detailed in a preprint, produced a binding energy prediction for a T4-lysozyme complex.</p><p><strong>Why it matters for tech:</strong> Drug binding predictions at this scale move quantum computing closer to real pharmaceutical work, where accurate energies decide which molecules advance.</p><p>Source: </p><ul><li><a href="https://quantumcomputingreport.com/cleveland-clinic-riken-and-ibm-cross-12000-atom-barrier-in-heterogeneous-quantum-classical-drug-binding-simulations/">Quantum Computing Report</a></li></ul>]]></content:encoded>
+    </item>
+    <item>
+      <title>A cheaper way to hunt for diamond qubits</title>
+      <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/2026-11-14/05/</link>
+      <guid isPermaLink="false">brief-2026-11-14-05</guid>
+      <pubDate>Sat, 14 Nov 2026 01:30:00 +0000</pubDate>
+      <category>Quantum</category>
+      <description>A researcher at the US Department of Energy's Princeton Plasma Physics Laboratory has developed a method that cuts the cost of modelling quantum defects in diamond, by treating a cluster of just 16 to 30 atoms around a defect as a separate molecule. The approach, published in ACS Central Science, already identified promising new qubit candidates involving boron and oxygen defects, which emit ultraviolet and blue light respectively, unlike the well-known nitrogen-vacancy centre that emits red. Because each defect type responds to different light, several kinds could be combined in one device and addressed independently. Why it matters for tech: Cheaper screening of diamond defects widens the search for qubits that work at room temperature, which would simplify quantum hardware.</description>
+      <content:encoded><![CDATA[<p>A researcher at the US Department of Energy's Princeton Plasma Physics Laboratory has developed a method that cuts the cost of modelling quantum defects in diamond, by treating a cluster of just 16 to 30 atoms around a defect as a separate molecule. The approach, published in ACS Central Science, already identified promising new qubit candidates involving boron and oxygen defects, which emit ultraviolet and blue light respectively, unlike the well-known nitrogen-vacancy centre that emits red. Because each defect type responds to different light, several kinds could be combined in one device and addressed independently.</p><p><strong>Why it matters for tech:</strong> Cheaper screening of diamond defects widens the search for qubits that work at room temperature, which would simplify quantum hardware.</p><p>Source: </p><ul><li><a href="https://www.sciencedaily.com/releases/2026/11/261111005855.htm">ScienceDaily</a></li></ul>]]></content:encoded>
+    </item>
     <item>
       <title>PsiQuantum and AMD widen their partnership to build the classical side of fault-tolerant quantum computers</title>
       <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/2026-11-13/03/</link>

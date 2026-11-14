@@ -4,8 +4,17 @@
     <title>Signal Brief · Cloud &amp; DevOps</title>
     <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/</link>
     <description>Signal Brief: the day in technology, in The Signal's own words. Every item is written from linked official sources and fact checked before publication.</description>
-    <lastBuildDate>Fri, 13 Nov 2026 01:33:50 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 14 Nov 2026 01:31:40 +0000</lastBuildDate>
     <atom:link xmlns:atom="http://www.w3.org/2005/Atom" href="https://thillairaj.github.io/The-Signal-AI-Quantum/signal/cloud-devops.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>Google Cloud brings agentic HPC to SC26</title>
+      <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/2026-11-14/06/</link>
+      <guid isPermaLink="false">brief-2026-11-14-06</guid>
+      <pubDate>Sat, 14 Nov 2026 01:30:00 +0000</pubDate>
+      <category>Cloud &amp; DevOps</category>
+      <description>Google Cloud has set out its agentic high-performance computing plans for the SC26 supercomputing conference, centred on reusable agent skills that teach AI agents to build and run HPC workloads through Cluster Toolkit blueprints. The skills validate quotas and capacity before deploying a cluster, guide domain work such as fluid dynamics and life-science pipelines, and operate inside IAM and budget guardrails. The company is also showing AlphaEvolve on Cloud Batch for evolving code at scale, and new hardware including A5X instances on NVIDIA Vera Rubin and 8th generation TPUs. Why it matters for tech: Scientific teams are asking agents to run supercomputing workloads, so packaging HPC expertise into skills keeps those agents from misconfiguring expensive infrastructure.</description>
+      <content:encoded><![CDATA[<p>Google Cloud has set out its agentic high-performance computing plans for the SC26 supercomputing conference, centred on reusable agent skills that teach AI agents to build and run HPC workloads through Cluster Toolkit blueprints. The skills validate quotas and capacity before deploying a cluster, guide domain work such as fluid dynamics and life-science pipelines, and operate inside IAM and budget guardrails. The company is also showing AlphaEvolve on Cloud Batch for evolving code at scale, and new hardware including A5X instances on NVIDIA Vera Rubin and 8th generation TPUs.</p><p><strong>Why it matters for tech:</strong> Scientific teams are asking agents to run supercomputing workloads, so packaging HPC expertise into skills keeps those agents from misconfiguring expensive infrastructure.</p><p>Source: </p><ul><li><a href="https://cloud.google.com/blog/topics/hpc/whats-new-in-hpc-and-ai-at-sc26/">Google Cloud Blog</a></li></ul>]]></content:encoded>
+    </item>
     <item>
       <title>AWS upgrades its AgentCore runtime for faster, cheaper agent sessions</title>
       <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/2026-11-13/05/</link>

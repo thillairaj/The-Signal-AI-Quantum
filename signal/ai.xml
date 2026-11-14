@@ -4,8 +4,35 @@
     <title>Signal Brief · AI</title>
     <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/</link>
     <description>Signal Brief: the day in technology, in The Signal's own words. Every item is written from linked official sources and fact checked before publication.</description>
-    <lastBuildDate>Fri, 13 Nov 2026 01:33:50 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 14 Nov 2026 01:31:40 +0000</lastBuildDate>
     <atom:link xmlns:atom="http://www.w3.org/2005/Atom" href="https://thillairaj.github.io/The-Signal-AI-Quantum/signal/ai.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>ChatGPT Wallet lets agents pay without seeing your card details</title>
+      <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/2026-11-14/01/</link>
+      <guid isPermaLink="false">brief-2026-11-14-01</guid>
+      <pubDate>Sat, 14 Nov 2026 01:30:00 +0000</pubDate>
+      <category>AI</category>
+      <description>OpenAI has introduced ChatGPT Wallet, a way for its Dots agents to pay for purchases on a user's behalf without seeing the user's actual card details. Users add a card once and approve each purchase with a security check such as Face ID or a fingerprint, after which the payment network issues a token in place of the real card number. The wallet starts with ChatGPT Pro subscribers in the US, built with American Express, Mastercard and Visa, and OpenAI has published a Commerce Partner Playbook to help businesses accept agent payments. Why it matters for tech: Agent-led shopping only works if payments are safe and merchants can accept them, so a wallet built on existing card rails is the missing piece for agentic commerce.</description>
+      <content:encoded><![CDATA[<p>OpenAI has introduced ChatGPT Wallet, a way for its Dots agents to pay for purchases on a user's behalf without seeing the user's actual card details. Users add a card once and approve each purchase with a security check such as Face ID or a fingerprint, after which the payment network issues a token in place of the real card number. The wallet starts with ChatGPT Pro subscribers in the US, built with American Express, Mastercard and Visa, and OpenAI has published a Commerce Partner Playbook to help businesses accept agent payments.</p><p><strong>Why it matters for tech:</strong> Agent-led shopping only works if payments are safe and merchants can accept them, so a wallet built on existing card rails is the missing piece for agentic commerce.</p><p>Source: </p><ul><li><a href="https://openai.com/index/introducing-chatgpt-wallet">OpenAI</a></li><li><a href="https://www.theverge.com/ai-artificial-intelligence/1033425/openai-chatgpt-wallet">The Verge</a></li></ul>]]></content:encoded>
+    </item>
+    <item>
+      <title>Anthropic opens a private beta for self-hosted Claude Managed Agents</title>
+      <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/2026-11-14/02/</link>
+      <guid isPermaLink="false">brief-2026-11-14-02</guid>
+      <pubDate>Sat, 14 Nov 2026 01:30:00 +0000</pubDate>
+      <category>AI</category>
+      <description>Anthropic has opened a private beta of self-hosted Claude Managed Agents, letting companies run the whole agent service inside their own cloud or data centre. The harness, sandboxes, credentials and session history all run on the customer's infrastructure, while model calls still go to a provider the customer chooses, such as Anthropic, Amazon Bedrock, Google's Agent Platform or Microsoft Foundry. Access is limited to eligible organisations through their Anthropic account team, and the server licence requires customers to roll back a version within eight hours of a safety notice. Why it matters for tech: Teams that want long-running agents working on internal code can now keep the control plane behind their own security perimeter instead of handing it to a vendor.</description>
+      <content:encoded><![CDATA[<p>Anthropic has opened a private beta of self-hosted Claude Managed Agents, letting companies run the whole agent service inside their own cloud or data centre. The harness, sandboxes, credentials and session history all run on the customer's infrastructure, while model calls still go to a provider the customer chooses, such as Anthropic, Amazon Bedrock, Google's Agent Platform or Microsoft Foundry. Access is limited to eligible organisations through their Anthropic account team, and the server licence requires customers to roll back a version within eight hours of a safety notice.</p><p><strong>Why it matters for tech:</strong> Teams that want long-running agents working on internal code can now keep the control plane behind their own security perimeter instead of handing it to a vendor.</p><p>Source: </p><ul><li><a href="https://claude.com/resources/articles/self-hosted-claude-managed-agents">Anthropic</a></li><li><a href="https://thenewstack.io/self-hosted-claude-managed-agents/">The New Stack</a></li></ul>]]></content:encoded>
+    </item>
+    <item>
+      <title>llama.cpp reaches 1.0 with a stability promise for local AI builders</title>
+      <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/2026-11-14/03/</link>
+      <guid isPermaLink="false">brief-2026-11-14-03</guid>
+      <pubDate>Sat, 14 Nov 2026 01:30:00 +0000</pubDate>
+      <category>AI</category>
+      <description>The llama.cpp project has released version 1.0.0 of its libraries, committing to semantic versioning so that breaking changes to the public C API will only arrive with major version bumps. The project, which lets developers run multimodal language models on hardware from consumer laptops to enterprise servers, now supports more than 150 model architecture variants. The release also covers ggml 1.0.0, the tensor library underneath it. Why it matters for tech: Local and private AI products depend on llama.cpp, so a stable API gives their builders a firmer foundation to build on.</description>
+      <content:encoded><![CDATA[<p>The llama.cpp project has released version 1.0.0 of its libraries, committing to semantic versioning so that breaking changes to the public C API will only arrive with major version bumps. The project, which lets developers run multimodal language models on hardware from consumer laptops to enterprise servers, now supports more than 150 model architecture variants. The release also covers ggml 1.0.0, the tensor library underneath it.</p><p><strong>Why it matters for tech:</strong> Local and private AI products depend on llama.cpp, so a stable API gives their builders a firmer foundation to build on.</p><p>Source: </p><ul><li><a href="https://huggingface.co/blog/ggml-org/llama-cpp-v1">Hugging Face</a></li></ul>]]></content:encoded>
+    </item>
     <item>
       <title>Google launches Gemini 4 Hydrogen, a faster model built for agentic coding work</title>
       <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/2026-11-13/01/</link>
