@@ -4,166 +4,190 @@
     <title>The Signal</title>
     <link>https://thillairaj.github.io/The-Signal-AI-Quantum/</link>
     <description>A self-updating feed of AI, quantum computing, cybersecurity, cloud and DevOps, and podcast updates.</description>
-    <lastBuildDate>Sat, 14 Nov 2026 10:00:21 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 14 Nov 2026 14:00:41 +0000</lastBuildDate>
     <item>
-      <title>CUDA Toolkit 13.4 Adds Windows on Arm Support and Greater Control over Shared GPUs</title>
-      <link>https://developer.nvidia.com/blog/cuda-toolkit-13-4-adds-windows-on-arm-support-and-greater-control-over-shared-gpus/</link>
-      <guid isPermaLink="false">7816c3b36083bf87</guid>
-      <description>Every NVIDIA CUDA Toolkit release adds functionality and performance improvements that help developers get more from NVIDIA GPUs and the broader NVIDIA software...</description>
+      <title>Accelerating Dropless MoE Training in JAX with NVIDIA Transformer Engine</title>
+      <link>https://developer.nvidia.com/blog/accelerating-dropless-moe-training-in-jax-with-nvidia-transformer-engine/</link>
+      <guid isPermaLink="false">833c207badafe5a0</guid>
+      <description>Mixture of experts (MoE) has become one of the defining architectural trends in large-scale AI model training. DeepSeek, Qwen, and Mixtral are examples of MoE...</description>
       <category>NVIDIA Technical Blog</category>
-      <pubDate>Sat, 14 Nov 2026 10:00:00 +0000</pubDate>
+      <pubDate>Sat, 14 Nov 2026 14:00:16 +0000</pubDate>
     </item>
     <item>
-      <title>When to Use Encode-Prefill-Decode Disaggregation to Accelerate Multimodal Model Serving</title>
-      <link>https://developer.nvidia.com/blog/when-to-use-encode-prefill-decode-disaggregation-to-accelerate-multimodal-model-serving/</link>
-      <guid isPermaLink="false">51e6e5a8d9bdaf12</guid>
-      <description>Encode-prefill-decode (EPD) disaggregation is an inference optimization technique for multimodal models that separates the vision encoder stage from the prefill...</description>
+      <title>Scaling Federated Learning Across Docker, Kubernetes, and Slurm with NVIDIA FLARE</title>
+      <link>https://developer.nvidia.com/blog/scaling-federated-learning-across-docker-kubernetes-and-slurm-with-nvidia-flare/</link>
+      <guid isPermaLink="false">c2ceacd67091fd6a</guid>
+      <description>Federated learning (FL) projects often begin with a straightforward setup: one server, a few clients, and one dataset at each site. As those projects grow, the...</description>
       <category>NVIDIA Technical Blog</category>
-      <pubDate>Sat, 14 Nov 2026 10:00:00 +0000</pubDate>
+      <pubDate>Sat, 14 Nov 2026 14:00:16 +0000</pubDate>
     </item>
     <item>
-      <title>From Wafer-Out to First Token: Codifying Supply Chain Expertise with Nemotron and Palantir Foundry</title>
-      <link>https://developer.nvidia.com/blog/from-wafer-out-to-first-token-codifying-supply-chain-expertise-with-nemotron-and-palantir-foundry/</link>
-      <guid isPermaLink="false">d23b90bcfb6224ff</guid>
-      <description>NVIDIA has one of the largest and most complex supply chains in the world, and its performance is measured from wafer-out to first token. The interval is in two...</description>
+      <title>How NVIDIA NVLink 6 Delivers Multi-Layer Resiliency for AI Factories</title>
+      <link>https://developer.nvidia.com/blog/how-nvidia-nvlink-6-delivers-multi-layer-resiliency-for-ai-factories/</link>
+      <guid isPermaLink="false">6510d81523c67e16</guid>
+      <description>For operators of large-scale AI factories, maximizing continuous output is essential for productivity. In massive-scale AI training, every GPU in the cluster...</description>
       <category>NVIDIA Technical Blog</category>
-      <pubDate>Sat, 14 Nov 2026 10:00:00 +0000</pubDate>
+      <pubDate>Sat, 14 Nov 2026 14:00:16 +0000</pubDate>
     </item>
     <item>
-      <title>High-Throughput Structure Prediction with BioNeMo Inference Runtime</title>
-      <link>https://developer.nvidia.com/blog/high-throughput-structure-prediction-with-bionemo-inference-runtime/</link>
-      <guid isPermaLink="false">bf13fbf2f14a0fa2</guid>
-      <description>Biomolecular structure prediction is now often run at proteome scale, where the goal is to move an entire worklist through the pipeline efficiently. NVIDIA...</description>
+      <title>How NVIDIA Groq 3 LPX Deterministic Execution Drives Power-Efficient High-Interactivity Inference on NVIDIA Vera Rubin</title>
+      <link>https://developer.nvidia.com/blog/how-nvidia-groq-3-lpx-deterministic-execution-drives-power-efficient-high-interactivity-inference-on-nvidia-vera-rubin/</link>
+      <guid isPermaLink="false">ce9893f8b1d37b1f</guid>
+      <description>Power is a defining constraint for AI factories. As AI workloads demand a full compute platform to serve them, each component of that platform must maximize...</description>
       <category>NVIDIA Technical Blog</category>
-      <pubDate>Sat, 14 Nov 2026 10:00:00 +0000</pubDate>
+      <pubDate>Sat, 14 Nov 2026 14:00:16 +0000</pubDate>
     </item>
     <item>
-      <title>How Full-Stack NIM Optimizations Deliver 2.5x More Users on Nemotron 3 Ultra</title>
-      <link>https://developer.nvidia.com/blog/how-full-stack-nim-optimizations-deliver-2-5x-more-users-on-nemotron-3-ultra/</link>
-      <guid isPermaLink="false">2abc4ceb82a011e6</guid>
-      <description>Deploying a large language model is only the first step toward production-ready serving. Production teams also need to serve as many concurrent users as...</description>
+      <title>Dense vs. MoE Models: Active Parameters, Throughput, and When to Choose Each</title>
+      <link>https://developer.nvidia.com/blog/dense-vs-moe-models-active-parameters-throughput-and-when-to-choose-each/</link>
+      <guid isPermaLink="false">3f75c86687362489</guid>
+      <description>How can a 30B-parameter model activate only 3B parameters per token, and still use the capacity of the larger model? Nemotron 3.5 Lightning illustrates the...</description>
       <category>NVIDIA Technical Blog</category>
-      <pubDate>Sat, 14 Nov 2026 10:00:00 +0000</pubDate>
+      <pubDate>Sat, 14 Nov 2026 14:00:16 +0000</pubDate>
     </item>
     <item>
-      <title>How to Evaluate AI Agents From Tool Calls to Task Completion</title>
-      <link>https://developer.nvidia.com/blog/how-to-evaluate-ai-agents-from-tool-calls-to-task-completion/</link>
-      <guid isPermaLink="false">f6a9f53be32d14de</guid>
-      <description>When you ship an AI agent, the key question is whether it can execute a chain of work across dozens of sequential tool calls against a live environment, and...</description>
+      <title>Translating CUDA Tile Operations from Python to Rust Using Agentic AI</title>
+      <link>https://developer.nvidia.com/blog/translating-cuda-tile-operations-from-python-to-rust-using-agentic-ai/</link>
+      <guid isPermaLink="false">833138d51e10dc27</guid>
+      <description>cuTile Rust (cutile-rs) is a tile-based system for safe, idiomatic GPU kernel authoring in the Rust programming language. Extending the Rust ownership model to...</description>
       <category>NVIDIA Technical Blog</category>
-      <pubDate>Sat, 14 Nov 2026 10:00:00 +0000</pubDate>
+      <pubDate>Sat, 14 Nov 2026 14:00:16 +0000</pubDate>
     </item>
     <item>
-      <title>Simplifying Model Serving Across Multiple GPUs with NVIDIA TensorRT Multi-Device Integration in NVIDIA Dynamo-Triton</title>
-      <link>https://developer.nvidia.com/blog/simplifying-model-serving-across-multiple-gpus-with-nvidia-tensorrt-multi-device-integration-in-nvidia-dynamo-triton/</link>
-      <guid isPermaLink="false">21a9c69cb6ecf4db</guid>
-      <description>The compute and memory demands of generative AI increasingly exceed what a single GPU can provide. NVIDIA TensorRT multi-device inference is a new capability...</description>
+      <title>TensorRT Edge-LLM Completes the MLPerf Edge Agentic Benchmark 6.4x Faster on Jetson AGX Thor</title>
+      <link>https://developer.nvidia.com/blog/tensorrt-edge-llm-completes-the-mlperf-edge-agentic-benchmark-6-4x-faster-on-jetson-agx-thor/</link>
+      <guid isPermaLink="false">82b935833ffdc855</guid>
+      <description>AI agents are moving from cloud data centers to vehicles, robots, and other edge devices. Unlike a chatbot that answers a single prompt, an agent works through...</description>
       <category>NVIDIA Technical Blog</category>
-      <pubDate>Sat, 14 Nov 2026 10:00:00 +0000</pubDate>
+      <pubDate>Sat, 14 Nov 2026 14:00:16 +0000</pubDate>
     </item>
     <item>
-      <title>Accelerating a ROS 2 Node with an AI Agent and NVIDIA Isaac ROS</title>
-      <link>https://developer.nvidia.com/blog/accelerating-a-ros-2-node-with-an-ai-agent-and-nvidia-isaac-ros/</link>
-      <guid isPermaLink="false">930fe61380afbf97</guid>
-      <description>GPU acceleration can speed up compute-intensive robotics workloads, but a fast CUDA kernel alone does not guarantee a fast ROS 2 graph. As messages move between...</description>
+      <title>How to Use AI Agents to Prepare 3D Scenes for Simulation</title>
+      <link>https://developer.nvidia.com/blog/how-to-use-ai-agents-to-prepare-3d-scenes-for-simulation/</link>
+      <guid isPermaLink="false">d01a6b066d0e307e</guid>
+      <description>Agentic AI workflows can be used to prepare and validate digital twins for physical AI systems. Agents can inspect 3D scenes, author simulation-relevant data in...</description>
       <category>NVIDIA Technical Blog</category>
-      <pubDate>Sat, 14 Nov 2026 10:00:00 +0000</pubDate>
+      <pubDate>Sat, 14 Nov 2026 14:00:16 +0000</pubDate>
     </item>
     <item>
-      <title>What’s New for Game Developers: DLSS 5 with 3D-Guided Neural Rendering, NVIDIA ACE Updates, and New RTX Kit Capabilities</title>
-      <link>https://developer.nvidia.com/blog/whats-new-for-game-developers-dlss-5-with-3d-guided-neural-rendering-nvidia-ace-updates-and-new-rtx-kit-capabilities/</link>
-      <guid isPermaLink="false">60dd7f94fc5e5449</guid>
-      <description>NVIDIA DLSS 5 introduces DLSS 3D-Guided Neural Rendering and granular controls that help game developers add lifelike lighting and material detail while...</description>
+      <title>Benchmarking LLM Inference at Scale with AIPerf</title>
+      <link>https://developer.nvidia.com/blog/benchmarking-llm-inference-at-scale-with-aiperf/</link>
+      <guid isPermaLink="false">88c32b0b48612efb</guid>
+      <description>You’re deploying a model on a system. It starts up, prompts are getting responses. Now the hard question: Is this fast? Your instincts might lead you to send...</description>
       <category>NVIDIA Technical Blog</category>
-      <pubDate>Sat, 14 Nov 2026 10:00:00 +0000</pubDate>
+      <pubDate>Sat, 14 Nov 2026 14:00:16 +0000</pubDate>
     </item>
     <item>
-      <title>Topology-Aware Workload Scheduling with NVIDIA Topograph</title>
-      <link>https://developer.nvidia.com/blog/topology-aware-workload-scheduling-with-nvidia-topograph/</link>
-      <guid isPermaLink="false">05cef1f359d31552</guid>
-      <description>AI factories are power-limited systems that deliver maximum value when fully optimized. GPU workload placement is a key optimization. Poor workload placement...</description>
+      <title>Turn Your Latest Observations Into Timely Weather Decisions With NVIDIA Earth-2</title>
+      <link>https://developer.nvidia.com/blog/turn-your-latest-observations-into-timely-weather-decisions-with-nvidia-earth-2/</link>
+      <guid isPermaLink="false">e61094f257dbd757</guid>
+      <description>Weather-sensitive industries increasingly have access to observations that offer an earlier, more local view of changing conditions. Energy companies collect...</description>
       <category>NVIDIA Technical Blog</category>
-      <pubDate>Sat, 14 Nov 2026 10:00:00 +0000</pubDate>
+      <pubDate>Sat, 14 Nov 2026 14:00:16 +0000</pubDate>
     </item>
     <item>
-      <title>llm 0.37</title>
-      <link>https://simonwillison.net/2026/Nov/2/llm/</link>
-      <guid isPermaLink="false">10dab842bc689c46</guid>
-      <description>Release: llm 0.37 There's a lot of stuff in this new release of my LLM CLI tool and Python library, representing around two months of accumulated features and fixes. I added gpt-6.1-sol and gpt-6.1-terra , plus a new llm openai endpoint add command to make it easier to configure </description>
+      <title>datasette-llm 0.1a10</title>
+      <link>https://simonwillison.net/2026/Nov/4/datasette-llm/</link>
+      <guid isPermaLink="false">f121b002be2ba369</guid>
+      <description>Release: datasette-llm 0.1a10 Fixes a bug that affected my agent.datasette.io demo site, where the set of available LLM models was not correctly restricted to just those in the configuration. Tags: llm , datasette</description>
       <category>Simon Willison</category>
-      <pubDate>Sat, 14 Nov 2026 09:59:56 +0000</pubDate>
+      <pubDate>Sat, 14 Nov 2026 14:00:09 +0000</pubDate>
     </item>
     <item>
-      <title>October sponsors-only newsletter</title>
-      <link>https://simonwillison.net/2026/Nov/3/october-newsletter/</link>
-      <guid isPermaLink="false">c006e897d48e9930</guid>
-      <description>I sent out the October edition of my sponsors-only monthly newsletter . If you are a sponsor (or start a sponsorship now) you can access it here . This month: The October inflection point for vibe game development The vulnerability apocalypse gets hot LLM releases API credits for</description>
+      <title>Quoting Paul Ford</title>
+      <link>https://simonwillison.net/2026/Nov/5/paul-ford/</link>
+      <guid isPermaLink="false">3089c4e12a10528f</guid>
+      <description>The web browser is very, very, very powerful software for applications, and the cost of accessing that power is going down seemingly every day . &amp;mdash; Paul Ford , The Web Is More Than Enough Tags: browsers , paul-ford , web-development</description>
       <category>Simon Willison</category>
-      <pubDate>Sat, 14 Nov 2026 09:59:56 +0000</pubDate>
+      <pubDate>Sat, 14 Nov 2026 14:00:09 +0000</pubDate>
     </item>
     <item>
-      <title>I discovered a sound that leaks your exact location (and it's everywhere) - YouTube</title>
-      <link>https://simonwillison.net/2026/Nov/3/a-sound-that-leaks-your-exact-location/</link>
-      <guid isPermaLink="false">22c23cfe758c1cb6</guid>
-      <description>I discovered a sound that leaks your exact location (and it&amp;#x27;s everywhere) - YouTube Genius piece of OSINT by Colsto, who demonstrates how you can take almost imperceptible background noise of planes from a video soundtrack, figure out their Doppler curves, then cross referen</description>
+      <title>Quoting Nilay Patel</title>
+      <link>https://simonwillison.net/2026/Nov/6/nilay-patel/</link>
+      <guid isPermaLink="false">04ff5155f60621be</guid>
+      <description>The products aren't good enough to sell people on the costs. You cannot tell people that you have to listen to the whine of a data center in their backyard for AI overviews and some of the most hilarious deep fake slop in history. It's not worth it. It just isn't worth it to anyo</description>
       <category>Simon Willison</category>
-      <pubDate>Sat, 14 Nov 2026 09:59:56 +0000</pubDate>
+      <pubDate>Sat, 14 Nov 2026 14:00:09 +0000</pubDate>
     </item>
     <item>
-      <title>Qwen 3.8 27B on my laptop can interpret model weights, too</title>
-      <link>https://simonwillison.net/2026/Nov/3/qwen-can-interpret-model-weights/</link>
-      <guid isPermaLink="false">6857dc224a419fe9</guid>
-      <description>Yesterday's hot paper was Sparks of Weight-Space Programming: LLMs can natively read &amp;amp; write neural network weights by Rikiya Takehi, Jayden Teoh, Alex Zhang, and Omar Khattab. The paper (OK, the authors classify is as a "blog post", but it's paper-shaped) found that frontier</description>
+      <title>Terry Pratchett's Study</title>
+      <link>https://simonwillison.net/2026/Nov/7/hn-50407316/</link>
+      <guid isPermaLink="false">dadfbd3c3260c4b0</guid>
+      <description>My comment on Terry Pratchett&amp;#x27;s Study &amp;mdash; Hacker News. Terry Pratchett once wrote about the concept of "horizontal wealth". Vertical wealth is where you spend money on rich people stuff - yachts and suchlike. Horizontal wealth is where you spend more money on the things </description>
       <category>Simon Willison</category>
-      <pubDate>Sat, 14 Nov 2026 09:59:56 +0000</pubDate>
+      <pubDate>Sat, 14 Nov 2026 14:00:09 +0000</pubDate>
     </item>
     <item>
-      <title>AI is destroying my CS degree</title>
-      <link>https://simonwillison.net/2026/Nov/3/hn-50354278/</link>
-      <guid isPermaLink="false">5b7b48c647c50787</guid>
-      <description>My comment on AI is destroying my CS degree &amp;mdash; Hacker News. I don't envy educators right now. AI clearly means you need to change how you teach and evaluate students. We are only a few years in though, and it's still extremely unclear what effective teaching with these tools</description>
+      <title>datasette #3046: Don't serve link: rel=next HTTP headers to Firefox for HTML pages</title>
+      <link>https://simonwillison.net/2026/Nov/7/link-rel-next/</link>
+      <guid isPermaLink="false">3880bf849bb943e9</guid>
+      <description>datasette #3046: Don&amp;#x27;t serve link: rel=next HTTP headers to Firefox for HTML pages I was looking at the Firefox network panel today when I noticed that requests to a Datasette table page were triggering an HTTP prefetch to the next page of rows in that table. This was happen</description>
       <category>Simon Willison</category>
-      <pubDate>Sat, 14 Nov 2026 09:59:56 +0000</pubDate>
+      <pubDate>Sat, 14 Nov 2026 14:00:09 +0000</pubDate>
     </item>
     <item>
-      <title>llm 0.37.1</title>
-      <link>https://simonwillison.net/2026/Nov/3/llm/</link>
-      <guid isPermaLink="false">07065efd722751e2</guid>
-      <description>Release: llm 0.37.1 A bugfix release for LLM , with contributions from Steven Huang , Tao An , Arjan Mossel , and XQ . Tags: llm</description>
+      <title>parse_number() as a SQLite extension: C vs Rust</title>
+      <link>https://simonwillison.net/2026/Nov/8/sqlite-parse-number-c-vs-rust/</link>
+      <guid isPermaLink="false">9572242cc9fc8ca1</guid>
+      <description>Research: parse_number() as a SQLite extension: C vs Rust I was out walking the dog when I got curious about how easy/difficult it would be to write a SQLite C extension that adds a parse_number() function for turning strings like -$1,234.56 or '12.5%' into numeric values that co</description>
       <category>Simon Willison</category>
-      <pubDate>Sat, 14 Nov 2026 09:59:56 +0000</pubDate>
+      <pubDate>Sat, 14 Nov 2026 14:00:09 +0000</pubDate>
     </item>
     <item>
-      <title>datasette-agent 0.5a0</title>
-      <link>https://simonwillison.net/2026/Nov/3/datasette-agent/</link>
-      <guid isPermaLink="false">196e073af215c4a0</guid>
-      <description>Release: datasette-agent 0.5a0 This is a significant release of Datasette Agent . The most notable new feature is called the panel - it lets the agent chat open and then sit next to pages from Datasette, for example a table or query page. When combined with datasette-apps this me</description>
+      <title>Hide your slop PR descriptions behind &lt;details&gt;&lt;summary&gt;</title>
+      <link>https://simonwillison.net/2026/Nov/9/details-summary/</link>
+      <guid isPermaLink="false">a92667754bb129c0</guid>
+      <description>Most of the changes I make to my projects these days come in the form of PRs opened for me by Claude Code or Codex. The PR is my unit of work - I use them to bundle commits together, iterating on them until a feature is complete, document decisions and then merge the finished res</description>
       <category>Simon Willison</category>
-      <pubDate>Sat, 14 Nov 2026 09:59:56 +0000</pubDate>
+      <pubDate>Sat, 14 Nov 2026 14:00:09 +0000</pubDate>
     </item>
     <item>
-      <title>datasette-apps 0.3a0</title>
-      <link>https://simonwillison.net/2026/Nov/4/datasette-apps/</link>
-      <guid isPermaLink="false">c3dba756698ba6ec</guid>
-      <description>Release: datasette-apps 0.3a0 Datasette Apps adds support for hosting and editing custom HTML applications inside of Datasette. These can be created by hand, but it's easier to create them using LLMs via Datasette Agent . This release improves that integration: Apps can now be ta</description>
+      <title>The Web Is More Than Enough, by Paul Ford</title>
+      <link>https://simonwillison.net/2026/Nov/9/hn-50421091/</link>
+      <guid isPermaLink="false">5b851a3023343d96</guid>
+      <description>My comment on The Web Is More Than Enough, by Paul Ford &amp;mdash; Hacker News. OK, this comment convinced me to give that a shot. Here's a thing I made in Three.js this morning - a Nudibranch themed Faberge Egg: https://static.simonwillison.net/static/2026/Hidden-Reef-Egg... (77KB)</description>
       <category>Simon Willison</category>
-      <pubDate>Sat, 14 Nov 2026 09:59:56 +0000</pubDate>
+      <pubDate>Sat, 14 Nov 2026 14:00:09 +0000</pubDate>
     </item>
     <item>
-      <title>Yonkers Rises</title>
-      <link>https://simonwillison.net/2026/Nov/10/yonkers-rises/</link>
-      <guid isPermaLink="false">75546f2ae879a5a9</guid>
-      <description>Tool: Yonkers Rises I realized I didn't know where Yonkers was, so I looked it up on Google Maps and then, to help embed its location and shape in my head (and to try out Claude Fable 5.2's 3D modeling and animation skills), I prompted Fable 5.2 Medium to: Make a three js animati</description>
+      <title>Locating the source of a mysterious beep with Claude</title>
+      <link>https://simonwillison.net/2026/Nov/9/mysterious-beeps/</link>
+      <guid isPermaLink="false">d363b026f0d913e8</guid>
+      <description>Our house has a box room, full of boxes that we still haven't unpacked from our last move. A couple of weeks ago something in that room started intermittently beeping . The beeps were far enough apart that standing in the room and trying to determine the source of the noise was f</description>
       <category>Simon Willison</category>
-      <pubDate>Sat, 14 Nov 2026 09:59:56 +0000</pubDate>
+      <pubDate>Sat, 14 Nov 2026 14:00:09 +0000</pubDate>
     </item>
     <item>
-      <title>Quoting Prompting Claude Fable 5.2</title>
-      <link>https://simonwillison.net/2026/Nov/10/prompting-claude-fable-52/</link>
-      <guid isPermaLink="false">c8bf0b8e918f2da7</guid>
-      <description>Claude Fable 5.2 pays close attention to who owns the code it works on. In Anthropic’s testing on small coding tasks, the model tended to add to the existing structure when the prompt said nothing about ownership or presented the code base as someone else’s, even when that duplic</description>
+      <title>llm-anthropic 0.31</title>
+      <link>https://simonwillison.net/2026/Nov/9/llm-anthropic/</link>
+      <guid isPermaLink="false">c93c64172e07cb1e</guid>
+      <description>Release: llm-anthropic 0.31 Anthropic released Fable 5.2 and Mythos 5.2 today. Fable 5.2 is currently ranked first on Artificial Analysis . Anthropic say it "solved two open problems in the physics of black holes", so clearly their internal benchmarks have become more ambitious! </description>
       <category>Simon Willison</category>
-      <pubDate>Sat, 14 Nov 2026 09:59:56 +0000</pubDate>
+      <pubDate>Sat, 14 Nov 2026 14:00:09 +0000</pubDate>
+    </item>
+    <item>
+      <title>Let’s talk about Jensen Huang’s many affairs!</title>
+      <link>https://www.theverge.com/ai-artificial-intelligence/1032339/lets-talk-about-the-nvidia-shitshow</link>
+      <guid isPermaLink="false">71dad9da95c2fbfe</guid>
+      <description>Usually, we'd be offering to answer your questions about a news event, but honestly we don't really have any answers about what the hell is going on over at Nvidia. I can't speak for Nilay but at the rate Jensen Huang's new mistresses are dropping, I am concerned we are approachi</description>
+      <category>The Verge — AI</category>
+      <pubDate>Sat, 14 Nov 2026 14:00:06 +0000</pubDate>
+    </item>
+    <item>
+      <title>Jensen Huang and the decline of the visionary showman founder CEO</title>
+      <link>https://www.theverge.com/tech/1033781/nvidia-jensen-huang-last-visionary-showman-founder-ceo</link>
+      <guid isPermaLink="false">567fa298898a17ca</guid>
+      <description>On January 6th, 2025, Nvidia CEO Jensen Huang got his rockstar moment at last. He strode triumphantly onstage, hand raised in the air, to the claps and cheers of a 14,000-person arena absolutely packed with influencers and fans, their faces awash in blue glow, as he made his entr</description>
+      <category>The Verge — AI</category>
+      <pubDate>Sat, 14 Nov 2026 14:00:06 +0000</pubDate>
+    </item>
+    <item>
+      <title>Attackers Exploit UnrealIRCd Flaw That Enables Server-Level Command Injection</title>
+      <link>https://thehackernews.com/2026/11/attackers-exploit-unrealircd-flaw-that.html</link>
+      <guid isPermaLink="false">b58e8e6c37edfa61</guid>
+      <description>The U.S. Cybersecurity and Infrastructure Security Agency (CISA) on Friday added a high-severity security flaw impacting UnrealIRCd, an open-source Internet Relay Chat (IRC) server, to its Known Exploited Vulnerabilities (KEV) catalog, following reports of active exploitation. Th</description>
+      <category>The Hacker News</category>
+      <pubDate>Sat, 14 Nov 2026 12:38:35 +0000</pubDate>
     </item>
     <item>
       <title>AI chatbots are recommending fake retail websites, study finds</title>
@@ -422,22 +446,6 @@
       <pubDate>Fri, 13 Nov 2026 17:59:49 +0000</pubDate>
     </item>
     <item>
-      <title>Claude’s Duet agent is a little neurotic and surprisingly helpful</title>
-      <link>https://www.theverge.com/ai-artificial-intelligence/1032518/claude-duet-ai-agent-hands-on</link>
-      <guid isPermaLink="false">cd9d1a105b69dd29</guid>
-      <description>Normally, the products I test don't offer to help me write up my experience with them. Duet is different. Claude Duet is Anthropic's AI agent for consumers, the latest attempt by an AI company to try to convince us that agents can be useful for people who don't write code. It's b</description>
-      <category>The Verge — AI</category>
-      <pubDate>Fri, 13 Nov 2026 17:59:49 +0000</pubDate>
-    </item>
-    <item>
-      <title>What&amp;#8217;s really at stake in the Jensen Huang saga</title>
-      <link>https://www.theverge.com/podcast/1032866/jensen-huang-nvidia-china-trump-vergecast</link>
-      <guid isPermaLink="false">627c324df106de1b</guid>
-      <description>One part of the saga surrounding Nvidia CEO Jensen Huang ended on Thursday, when Huang resigned from his position at the top of AI's most important company. But in the coming weeks and months, a much bigger story may be about to unfold. A story about Nvidia's dealings in China, a</description>
-      <category>The Verge — AI</category>
-      <pubDate>Fri, 13 Nov 2026 17:59:49 +0000</pubDate>
-    </item>
-    <item>
       <title>DeepSeek’s coding agent is too tidy for its own good — and benchmarks are punishing it</title>
       <link>https://thenewstack.io/deepseek-harness-cleanup-benchmark/</link>
       <guid isPermaLink="false">56a12282587adbcf</guid>
@@ -476,14 +484,6 @@
       <description></description>
       <category>Hugging Face Blog</category>
       <pubDate>Fri, 13 Nov 2026 17:02:35 +0000</pubDate>
-    </item>
-    <item>
-      <title>Rigetti Computing Integrates Quantum Elements Constellation Platform into Error Correction Pipeline</title>
-      <link>https://quantumcomputingreport.com/rigetti-computing-integrates-quantum-elements-constellation-platform-into-error-correction-pipeline/</link>
-      <guid isPermaLink="false">c5032cb46644a380</guid>
-      <description>Rigetti Computing has integrated Quantum Elements' Constellation simulation environment into its quantum error correction (QEC) workflow. This allows Rigetti to model processor behavior and predict system performance, including single and two-qubit gate fidelity, on their 36-qubi</description>
-      <category>Quantum Computing Report</category>
-      <pubDate>Fri, 13 Nov 2026 17:00:41 +0000</pubDate>
     </item>
   </channel>
 </rss>
