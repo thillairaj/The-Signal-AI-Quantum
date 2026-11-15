@@ -4,8 +4,26 @@
     <title>Signal Brief · Cloud &amp; DevOps</title>
     <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/</link>
     <description>Signal Brief: the day in technology, in The Signal's own words. Every item is written from linked official sources and fact checked before publication.</description>
-    <lastBuildDate>Sat, 14 Nov 2026 01:31:40 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 15 Nov 2026 01:48:46 +0000</lastBuildDate>
     <atom:link xmlns:atom="http://www.w3.org/2005/Atom" href="https://thillairaj.github.io/The-Signal-AI-Quantum/signal/cloud-devops.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>DuckLake 1.1 turns data lake metadata into plain SQL tables</title>
+      <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/2026-11-15/06/</link>
+      <guid isPermaLink="false">brief-2026-11-15-06</guid>
+      <pubDate>Sun, 15 Nov 2026 01:30:00 +0000</pubDate>
+      <category>Cloud &amp; DevOps</category>
+      <description>DuckLake 1.1, released in October alongside DuckDB 2.0.0, stores data lake metadata as ordinary SQL tables in a catalog database such as Postgres, MySQL, SQLite or DuckDB, instead of a separate metadata service. The open-source lakehouse works with DuckLake, Apache Iceberg and Delta Lake catalog formats, and its three layers are the DuckDB query engine, the catalog database and the storage itself. In the same month, Amazon chief executive Andy Jassy announced the acquisition of DuckLabs on the company's third-quarter earnings call. Why it matters for tech: AI agents work through SQL, so a lakehouse that keeps its metadata as SQL tables fits agent-driven data work without a new query layer.</description>
+      <content:encoded><![CDATA[<p>DuckLake 1.1, released in October alongside DuckDB 2.0.0, stores data lake metadata as ordinary SQL tables in a catalog database such as Postgres, MySQL, SQLite or DuckDB, instead of a separate metadata service. The open-source lakehouse works with DuckLake, Apache Iceberg and Delta Lake catalog formats, and its three layers are the DuckDB query engine, the catalog database and the storage itself. In the same month, Amazon chief executive Andy Jassy announced the acquisition of DuckLabs on the company's third-quarter earnings call.</p><p><strong>Why it matters for tech:</strong> AI agents work through SQL, so a lakehouse that keeps its metadata as SQL tables fits agent-driven data work without a new query layer.</p><p>Source: </p><ul><li><a href="https://thenewstack.io/ducklake-sql-lakehouse-metadata/">The New Stack</a></li><li><a href="https://duckdb.org/2026/10/15/announcing-duckdb-200.html">DuckDB</a></li></ul>]]></content:encoded>
+    </item>
+    <item>
+      <title>AWS Emulator gives agents a local copy of the cloud to test against</title>
+      <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/2026-11-15/07/</link>
+      <guid isPermaLink="false">brief-2026-11-15-07</guid>
+      <pubDate>Sun, 15 Nov 2026 01:30:00 +0000</pubDate>
+      <category>Cloud &amp; DevOps</category>
+      <description>Amazon Web Services has released AWS Emulator, a local copy of AWS covering more than 200 services that developers select by changing one environment variable. According to the AWS announcement, the emulator was written entirely by agents, and a verification loop tests it against real AWS first, with a merge gate that has security agents review unimplemented features. Unimplemented operations return errors rather than fake successes, though the emulator does not simulate throttling, outages or per-region availability. Why it matters for tech: Agents need fast, realistic cloud environments to test their work in, and a local emulator with a checked fidelity loop is how AWS built one for its own agent teams.</description>
+      <content:encoded><![CDATA[<p>Amazon Web Services has released AWS Emulator, a local copy of AWS covering more than 200 services that developers select by changing one environment variable. According to the AWS announcement, the emulator was written entirely by agents, and a verification loop tests it against real AWS first, with a merge gate that has security agents review unimplemented features. Unimplemented operations return errors rather than fake successes, though the emulator does not simulate throttling, outages or per-region availability.</p><p><strong>Why it matters for tech:</strong> Agents need fast, realistic cloud environments to test their work in, and a local emulator with a checked fidelity loop is how AWS built one for its own agent teams.</p><p>Source: </p><ul><li><a href="https://thenewstack.io/aws-emulator-verification-loops/">The New Stack</a></li><li><a href="https://www.aboutamazon.com/news/aws/how-autonomous-ai-agents-built-aws-emulator">AWS</a></li></ul>]]></content:encoded>
+    </item>
     <item>
       <title>Google Cloud brings agentic HPC to SC26</title>
       <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/2026-11-14/06/</link>
