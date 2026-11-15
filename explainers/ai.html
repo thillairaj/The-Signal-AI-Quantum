@@ -424,26 +424,12 @@ tt.addEventListener('click', () => {
   syncIcon();
 });
 </script>
-<script src="../assets/signal-share.js"></script>
+<script src="../assets/signal-share.js?v=20261115"></script>
+<!-- ss-page-share:start -->
 <script>
-(() => {
-  const slot = document.getElementById('mainShare');
-  if (!slot || !window.SignalShare) return;
-  const btn = document.createElement('button');
-  btn.type = 'button';
-  btn.className = 'ss-share-btn main-share-btn';
-  btn.setAttribute('aria-label', 'Share');
-  btn.title = 'Share';
-  btn.innerHTML = SignalShare.ICONS.share + '<span>Share</span>';
-  btn.addEventListener('click', () => {
-    if (window.__expOpenMain) return window.__expOpenMain(btn);
-    const url = SignalShare.BASE + '/explainers/' + location.pathname.split('/').pop();
-    const caption = SignalShare.buildCaption(["The AI Explainers", "AI Explainers on The Signal: tap through AI systems part by part, starting with how an LLM answers a prompt.", 'Explore it free, no sign-up:\n' + url, "#TheSignal #AI"]);
-    SignalShare.openPanel({ title: "The AI Explainers", line: "AI Explainers on The Signal: tap through AI systems part by part, starting with how an LLM answers a prompt.", link: url, caption: caption, tags: "#TheSignal #AI", image: null }, btn);
-  });
-  slot.appendChild(btn);
-})();
+(function(){function go(){if(window.SignalShare&&SignalShare.mountPageShare){SignalShare.mountPageShare(document.getElementById("mainShare"), {"title": "AI Explainers", "desc": "Interactive explainers on AI systems, part by part.", "inside": "1 interactive explainer", "link": "https://thillairaj.github.io/The-Signal-AI-Quantum/explainers/ai.html", "tag": "#AI", "image": {"url": "https://thillairaj.github.io/The-Signal-AI-Quantum/assets/og/explainers/hub-ai.png", "filename": "hub-ai.png"}});}}if(document.readyState==="loading"){document.addEventListener("DOMContentLoaded",go);}else{go();}})();
 </script>
+<!-- ss-page-share:end -->
 <footer class="signal-footer">
   <div class="sf-follow"><span class="sf-label">Follow along</span><span class="sf-links"><a class="sf-link" href="https://www.linkedin.com/in/thillairaj" target="_blank" rel="noopener"><span class="sf-badge" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.55V9h3.57v11.45z"/></svg></span>Thillai Raj</a><a class="sf-link" href="https://www.linkedin.com/showcase/qu-bits/" target="_blank" rel="noopener"><span class="sf-badge" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.55V9h3.57v11.45z"/></svg></span>QuBits · Quantum &amp; AI</a><a class="sf-link" href="https://www.linkedin.com/showcase/agentic-ai-architect/" target="_blank" rel="noopener"><span class="sf-badge" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.55V9h3.57v11.45z"/></svg></span>Agentic AI Architect</a></span></div>
   <p class="sf-copy">© 2026 The Signal</p>

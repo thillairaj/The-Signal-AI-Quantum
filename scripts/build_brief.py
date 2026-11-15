@@ -154,6 +154,7 @@ PAGE_CSS = """
   body { margin:0; font-family: Inter, system-ui, sans-serif; background:var(--paper); color:var(--ink); }
   [hidden] { display: none !important; }
   .brief-topbar { position:sticky; top:0; z-index:50; background:var(--paper); border-bottom:1px solid var(--line); padding:10px 16px; display:flex; justify-content:center; align-items:center; gap:12px; }
+  .brief-topbar .ss-page-mount { margin-left: 4px; }
   .brief-back { font-size:.85rem; color:var(--ink); text-decoration:none; border:1px solid var(--line); background:var(--card); border-radius:10px; padding:8px 14px; line-height:1.3; text-align:left; }
   .brief-back small { display:block; color:var(--muted); }
   .brief-theme { margin-left:auto; position:absolute; right:16px; width:38px; height:38px; border-radius:50%; border:1px solid var(--line); background:var(--card); color:var(--ink); font-size:1rem; cursor:pointer; }
@@ -205,6 +206,37 @@ FOOTER = """<footer class="signal-footer">
 
 
 def build_page(data, base):
+    editions = data.get("editions", data)
+    latest = max(editions, key=lambda e: (e.get("date", ""),
+                                          str(e.get("published", ""))))
+    page_share_cfg = {
+        "title": "Signal Brief · The Signal",
+        "desc": "Today in tech, in one swipe. The Signal's own daily "
+                "brief: original wording, every claim linked to its "
+                "source.",
+        "inside": "A fresh brief every morning at 07:00, "
+                  f"{len(latest.get('items', []))} stories in the "
+                  "latest edition",
+        "link": f"{base}brief/",
+        "tag": "#SignalBrief",
+        "image": {"url": f"{base}assets/og/brief.png",
+                  "filename": "signal-brief.png"},
+    }
+    import json as _json
+    page_share_block = (
+        '<span id="ssPageMount" class="ss-page-mount"></span>'
+    )
+    page_share_script = (
+        "<!-- ss-page-share:start -->\n<script>\n"
+        "(function(){function go(){"
+        "if(window.SignalShare&&SignalShare.mountPageShare){"
+        "SignalShare.mountPageShare("
+        "document.getElementById(\"ssPageMount\"), "
+        + _json.dumps(page_share_cfg, ensure_ascii=False) +
+        ");}}if(document.readyState===\"loading\"){"
+        "document.addEventListener(\"DOMContentLoaded\",go);}"
+        "else{go();}})();\n</script>\n<!-- ss-page-share:end -->"
+    )
     return f"""<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -216,6 +248,10 @@ def build_page(data, base):
 <meta property="og:description" content="Today in tech, in one swipe. The Signal's own daily brief: original wording, every claim linked to its source.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="{base}brief/">
+<meta property="og:image" content="{base}assets/og/brief.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:type" content="image/png">
 <link rel="canonical" href="{base}brief/">
 <link rel="alternate" type="application/rss+xml" title="Signal Brief" href="{base}signal.xml">
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,800;1,9..144,500;1,9..144,600&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -224,7 +260,7 @@ def build_page(data, base):
 {THEME_SCRIPT}
 </head>
 <body>
-  <div class="brief-topbar"><a class="brief-back" href="{base}#brief"><small>← Back to</small>The Signal</a><button class="brief-theme" id="briefTheme" type="button" aria-label="Toggle dark mode">☾</button></div>
+  <div class="brief-topbar"><a class="brief-back" href="{base}#brief"><small>← Back to</small>The Signal</a>{page_share_block}<button class="brief-theme" id="briefTheme" type="button" aria-label="Toggle dark mode">☾</button></div>
   <main>
     <div data-brief-root data-root-prefix="../"></div>
     {RULES_BOX}
@@ -232,6 +268,7 @@ def build_page(data, base):
   {FOOTER}
   <script src="{base}assets/signal-share.js"></script>
   <script src="{base}assets/brief.js?v=20261106"></script>
+  {page_share_script}
 </body>
 </html>
 """

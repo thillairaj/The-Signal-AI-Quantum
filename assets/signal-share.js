@@ -177,7 +177,12 @@ window.SignalShare = (function () {
     ".ss-status{min-height:18px;margin:12px 0 0;font-size:12.5px;color:#d4af6a;text-align:center}",
     ".ss-share-btn{display:inline-flex;align-items:center;gap:7px;padding:8px 15px;border-radius:999px;border:1px solid rgba(135,135,135,.5);background:rgba(135,135,135,.10);color:inherit;font:inherit;font-size:13.5px;font-weight:600;cursor:pointer}",
     ".ss-share-btn svg{width:15px;height:15px}",
-    ".ss-share-btn:hover{border-color:#d4af6a}"
+    ".ss-share-btn:hover{border-color:#d4af6a}",
+    ".ss-page-btn{display:inline-flex;align-items:center;gap:7px;padding:8px 15px;border-radius:999px;border:1px solid rgba(135,135,135,.5);background:rgba(135,135,135,.10);color:inherit;font:inherit;font-size:13.5px;font-weight:600;cursor:pointer;white-space:nowrap}",
+    ".ss-page-btn svg{width:15px;height:15px;flex:0 0 auto}",
+    ".ss-page-btn:hover{border-color:#d4af6a}",
+    "@media (max-width:899px){.ss-page-btn{width:38px;height:38px;padding:0;border-radius:50%;justify-content:center;gap:0}.ss-page-btn .ss-page-label{display:none}.ss-page-btn svg{width:17px;height:17px}}",
+    ".ss-page-mount{display:inline-flex;align-items:center}"
   ].join("\n");
   var ICONS = {
     linkedin: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4V8h4"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>',
@@ -432,6 +437,88 @@ window.SignalShare = (function () {
     b.addEventListener("click", function () { openPanel(spec, b); });
     return b;
   }
+  /* ---------- page level sharing ----------
+     One facility for every page type (Thillai, Nov 9, 2026): a "Share
+     this page" button (pill on desktop, round icon only under 900px via
+     the .ss-page-btn rules) opening the same Share panel with the page
+     caption and the page og image as a static image row.
+     cfg = { title, desc, inside, link, tag, image: { url, filename } }
+     "inside" is the counted contents line ("34 lessons across 6
+     tracks"); "tag" is the topic hashtag without the brand tag, which
+     is added here. cfg may be a function returning cfg, resolved at
+     click time (the homepage button follows the active tab). */
+  var PAGE_STYLE_ID = "ss-page-style";
+  function ensurePageStyle() {
+    if (document.getElementById(PAGE_STYLE_ID)) return;
+    var st = document.createElement("style");
+    st.id = PAGE_STYLE_ID;
+    st.textContent = PANEL_CSS;
+    document.head.appendChild(st);
+  }
+  function pageTags(cfg) {
+    return "#TheSignal" + (cfg.tag ? " " + cfg.tag : "");
+  }
+  function pageCaption(cfg) {
+    return buildCaption([cfg.title, cfg.desc, cfg.inside,
+      "Explore it free, no sign-up:\n" + cfg.link, pageTags(cfg)]);
+  }
+  function xCounted(text, link) {
+    var i = text.indexOf(link);
+    return i < 0 ? text.length : text.length - link.length + 23;
+  }
+  function pageXText(cfg) {
+    var tags = pageTags(cfg);
+    var variants = [
+      [cfg.title, cfg.desc, cfg.inside, cfg.link, tags],
+      [cfg.title, cfg.desc, cfg.link, tags],
+      [cfg.title, cfg.inside, cfg.link, tags],
+      [cfg.title, cfg.link, tags]
+    ];
+    for (var i = 0; i < variants.length; i++) {
+      var t = variants[i].filter(function (p) { return !!p; }).join("\n\n");
+      if (xCounted(t, cfg.link) <= 280) return t;
+    }
+    var tail = "\n\n" + cfg.link + "\n\n" + tags;
+    var room = 280 - (23 + 2 + tags.length) - 2;
+    return cutWords(cfg.title, Math.max(10, room)) + tail;
+  }
+  function pageSpec(cfg) {
+    return {
+      title: cfg.title,
+      line: [cfg.desc, cfg.inside].filter(function (p) { return !!p; }).join("\n\n"),
+      link: cfg.link,
+      caption: pageCaption(cfg),
+      tags: pageTags(cfg),
+      xText: pageXText(cfg),
+      image: cfg.image ? { kind: "static", url: cfg.image.url,
+        filename: cfg.image.filename } : null
+    };
+  }
+  function pageShareButton(cfgOrFn) {
+    ensurePageStyle();
+    var b = document.createElement("button");
+    b.type = "button";
+    b.className = "ss-page-btn";
+    b.setAttribute("aria-label", "Share this page");
+    b.title = "Share this page";
+    b.innerHTML = ICONS.share +
+      '<span class="ss-page-label">Share this page</span>';
+    if (typeof cfgOrFn !== "function") b._ssPageConfig = cfgOrFn;
+    b.addEventListener("click", function () {
+      var cfg = typeof cfgOrFn === "function" ? cfgOrFn() : cfgOrFn;
+      b._ssPageConfig = cfg;
+      openPanel(pageSpec(cfg), b);
+    });
+    return b;
+  }
+  function mountPageShare(target, cfgOrFn) {
+    var el = typeof target === "string"
+      ? document.querySelector(target) : target;
+    if (!el) return null;
+    var b = pageShareButton(cfgOrFn);
+    el.appendChild(b);
+    return b;
+  }
   /* Uniform image sharing. Phone: share the file together with the caption
      text, copy the caption at the same moment, and show the paste notice
      (again after the sheet closes). Desktop: download the image and copy
@@ -490,6 +577,8 @@ window.SignalShare = (function () {
     podcastCaption: podcastCaption, feedCaption: feedCaption,
     feedShort: feedShort, feedWa: feedWa, shortText: shortText,
     whatsText: whatsText, openPanel: openPanel, closePanel: closePanel,
-    shareButton: shareButton, iconShareButton: iconShareButton, ICONS: ICONS
+    shareButton: shareButton, iconShareButton: iconShareButton, ICONS: ICONS,
+    pageCaption: pageCaption, pageXText: pageXText, pageSpec: pageSpec,
+    pageShareButton: pageShareButton, mountPageShare: mountPageShare
   };
 })();
