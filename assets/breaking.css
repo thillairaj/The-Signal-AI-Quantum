@@ -1,0 +1,191 @@
+/* Breaking lane (Nov 15, 2026, preview build): the homepage strip and the
+   standalone /breaking/ page, rendered from data/breaking.json by
+   assets/breaking.js. Deliberately a news wire look (red accent, ruled
+   items, mono timestamps), distinct from the Signal Brief card design.
+   Category chip colours match the Brief set so a category reads the same
+   everywhere on the site. Theme variables mirror assets/brief.css so the
+   module follows the site theme on both surfaces. */
+.bk-strip, .breaking-ui {
+  --bk-card: #ffffff;
+  --bk-ink: var(--ink, #171b24);
+  --bk-muted: var(--muted, #5a6270);
+  --bk-line: #e3ddcb;
+  --bk-soft: #f6f2e7;
+  --bk-gold: #b8860b;
+  --bk-red: #c02727;
+  --bk-red-soft: #fbeeee;
+  /* Ticker tokens (fix round, Nov 15, 2026): light red family in BOTH
+     themes so the strip reads as an alert band everywhere; the text
+     colour keeps AA contrast on the tint. */
+  --bk-tick-bg: #FDECEA;
+  --bk-tick-line: #F5C2BC;
+  --bk-tick-ink: #8A1F14;
+  --bk-tick-dot: #D93A2B;
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", sans-serif;
+  color: var(--bk-ink);
+}
+:root[data-theme="dark"] .bk-strip, :root[data-theme="dark"] .breaking-ui {
+  --bk-card: #1d2019;
+  --bk-line: #3a3d31;
+  --bk-soft: #26281e;
+  --bk-gold: #d4af6a;
+  --bk-red: #ff7a72;
+  --bk-red-soft: #3a2321;
+  --bk-tick-bg: #F3D2CC;
+  --bk-tick-line: #DFA198;
+  --bk-tick-ink: #7A1A10;
+  --bk-tick-dot: #D93A2B;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .bk-strip, :root:not([data-theme="light"]) .breaking-ui {
+    --bk-card: #1d2019;
+    --bk-line: #3a3d31;
+    --bk-soft: #26281e;
+    --bk-gold: #d4af6a;
+    --bk-red: #ff7a72;
+    --bk-red-soft: #3a2321;
+    --bk-tick-bg: #F3D2CC;
+    --bk-tick-line: #DFA198;
+    --bk-tick-ink: #7A1A10;
+    --bk-tick-dot: #D93A2B;
+  }
+}
+.bk-strip *, .breaking-ui * { box-sizing: border-box; }
+.bk-strip[hidden], .breaking-ui [hidden] { display: none !important; }
+
+/* Homepage ticker: one compact line (about 40px) directly below the
+   global top bar, only while an item is active. All active items
+   scroll in a continuous loop; the loop pauses on hover and whenever
+   focus is inside the strip. */
+.bk-strip {
+  display: flex; align-items: center; gap: 10px;
+  height: 40px; padding: 0 16px; overflow: hidden;
+  background: var(--bk-tick-bg);
+  border-bottom: 1px solid var(--bk-tick-line);
+  color: var(--bk-tick-ink);
+  font-size: .9rem; line-height: 1.35;
+}
+.bk-dot {
+  flex: 0 0 auto; width: 10px; height: 10px; border-radius: 50%;
+  background: var(--bk-tick-dot);
+  animation: bk-pulse 1.6s ease-out infinite;
+}
+@keyframes bk-pulse {
+  0% { box-shadow: 0 0 0 0 rgba(217, 58, 43, .55); }
+  70% { box-shadow: 0 0 0 9px rgba(217, 58, 43, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(217, 58, 43, 0); }
+}
+.bk-strip-label {
+  flex: 0 0 auto; font-weight: 800; letter-spacing: .14em;
+  font-size: .72rem; text-transform: uppercase; color: var(--bk-tick-ink);
+}
+.bk-ticker { flex: 1 1 auto; min-width: 0; overflow: hidden; }
+.bk-ticker-track {
+  display: flex; width: max-content;
+  animation: bk-scroll var(--bk-dur, 30s) linear infinite;
+}
+@keyframes bk-scroll {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+.bk-strip:hover .bk-ticker-track,
+.bk-strip:focus-within .bk-ticker-track { animation-play-state: paused; }
+.bk-ticker-seq { display: flex; align-items: center; }
+.bk-tick { white-space: nowrap; padding-right: 3rem; }
+.bk-tick-time { font-weight: 800; }
+.bk-tick-head { font-weight: 600; }
+.bk-tick-link {
+  font-weight: 700; color: var(--bk-tick-ink);
+  text-decoration: underline; text-underline-offset: 3px;
+}
+.bk-tick-link:hover, .bk-tick-link:focus-visible { color: #5F130B; }
+@media (prefers-reduced-motion: reduce) {
+  .bk-dot { animation: none; }
+  /* No scrolling: the active items become a static list and the
+     aria-hidden loop duplicate disappears entirely. */
+  .bk-strip { height: auto; padding: 8px 16px; align-items: flex-start; }
+  .bk-ticker { overflow: visible; }
+  .bk-ticker-track { animation: none; width: auto; display: block; }
+  .bk-ticker-seq { display: block; }
+  .bk-ticker-seq[aria-hidden="true"] { display: none; }
+  .bk-tick { display: block; white-space: normal; padding: 2px 0; }
+}
+
+/* Breaking page body */
+.breaking-ui { max-width: 860px; margin: 0 auto; padding: 10px 18px 34px; }
+.bk-h2 {
+  font-family: Fraunces, Georgia, serif; font-size: 1.35rem; font-weight: 600;
+  margin: 30px 0 6px; padding-bottom: 8px;
+  border-bottom: 3px solid var(--bk-red);
+}
+.bk-sub { color: var(--bk-muted); font-size: .92rem; margin: 0 0 14px; line-height: 1.5; }
+
+/* Check timeline */
+.bk-timeline {
+  list-style: none; margin: 0; padding: 0;
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px;
+}
+.bk-slot {
+  border: 1px solid var(--bk-line); border-radius: 10px;
+  background: var(--bk-card); padding: 10px 12px;
+  display: flex; flex-direction: column; gap: 3px;
+}
+.bk-slot-time {
+  font-family: "IBM Plex Mono", ui-monospace, monospace;
+  font-size: 1rem; font-weight: 600;
+}
+.bk-slot-state { font-size: .8rem; color: var(--bk-muted); }
+.bk-slot-published { border-color: var(--bk-red); }
+.bk-slot-published .bk-slot-state { color: var(--bk-red); font-weight: 700; }
+.bk-slot-next { border-color: var(--bk-gold); }
+.bk-slot-next .bk-slot-state { color: var(--bk-gold); font-weight: 700; }
+.bk-slot-later { opacity: .62; }
+
+/* Items: ruled wire entries, newest first */
+.bk-item { padding: 20px 0 18px; border-bottom: 1px solid var(--bk-line); }
+.bk-item:first-child { padding-top: 8px; }
+.bk-item-meta {
+  display: flex; align-items: center; gap: 10px; flex-wrap: wrap; margin: 0 0 8px;
+}
+.bk-chip {
+  color: #fff; border-radius: 999px; padding: 3px 11px;
+  font-size: .72rem; font-weight: 700; letter-spacing: .04em;
+  background: var(--bk-cat, #555);
+}
+.bk-item-time {
+  font-family: "IBM Plex Mono", ui-monospace, monospace;
+  font-size: .8rem; color: var(--bk-muted);
+}
+.bk-item-arch { font-size: .72rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--bk-muted); }
+.bk-item-h {
+  font-family: Fraunces, Georgia, serif; font-size: 1.42rem; line-height: 1.28;
+  font-weight: 600; margin: 0 0 8px;
+}
+.bk-item-what { margin: 0 0 12px; line-height: 1.58; font-size: .96rem; }
+.bk-impact {
+  background: var(--bk-red-soft); border-left: 4px solid var(--bk-red);
+  border-radius: 0 10px 10px 0; padding: 10px 14px; margin: 0 0 12px;
+}
+.bk-impact-label {
+  display: block; font-size: .66rem; font-weight: 800;
+  letter-spacing: .16em; text-transform: uppercase; color: var(--bk-red);
+  margin-bottom: 4px;
+}
+.bk-impact p { margin: 0; font-size: .9rem; line-height: 1.55; }
+.bk-srcs { margin: 0; font-size: .85rem; color: var(--bk-muted); line-height: 1.6; }
+.bk-srcs a {
+  color: var(--bk-ink); font-weight: 600; text-decoration: none;
+  border-bottom: 1px solid var(--bk-gold);
+}
+.bk-srcs a:hover, .bk-srcs a:focus-visible {
+  color: var(--bk-red); border-bottom-color: var(--bk-red);
+}
+.bk-empty { color: var(--bk-muted); font-size: .94rem; padding: 10px 0 4px; }
+
+@media (max-width: 899px) {
+  .bk-strip { padding: 0 12px; font-size: .86rem; }
+  .breaking-ui { padding: 8px 14px 28px; }
+  .bk-timeline { grid-template-columns: repeat(2, 1fr); }
+  .bk-item-h { font-size: 1.24rem; }
+  .bk-h2 { font-size: 1.2rem; margin-top: 24px; }
+}

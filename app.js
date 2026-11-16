@@ -130,9 +130,14 @@ function showView(name) {
   podcastViewEl.hidden = name !== "podcast";
   researchViewEl.hidden = name !== "research";
   if (briefViewEl) briefViewEl.hidden = name !== "brief";
-  topTabsEl.querySelectorAll(".top-tab").forEach(b =>
-    b.classList.toggle("active", b.dataset.view === name));
-  scrollActiveTabIntoView();
+  /* The old tab bar was removed in the Nov 15, 2026 fix round; the top
+     bar and menus drive views by hash now. Guard stays so showView works
+     with no tab element present. */
+  if (topTabsEl) {
+    topTabsEl.querySelectorAll(".top-tab").forEach(b =>
+      b.classList.toggle("active", b.dataset.view === name));
+    scrollActiveTabIntoView();
+  }
   if (name === "podcast") renderPodcast();
   if (name === "research") renderResearch();
   if (name === "learn") requestAnimationFrame(() => document.querySelectorAll(".rail-wrap").forEach(refreshRail));
@@ -552,7 +557,7 @@ categoryToggleEl.querySelectorAll(".cat-btn").forEach(btn => {
   });
 });
 
-topTabsEl.querySelectorAll(".top-tab").forEach(btn => {
+if (topTabsEl) topTabsEl.querySelectorAll(".top-tab").forEach(btn => {
   btn.addEventListener("click", () => {
     topTabsEl.querySelectorAll(".top-tab").forEach(b => b.classList.remove("active"));
     btn.classList.add("active");
@@ -568,6 +573,7 @@ const tabsPrevBtn = document.getElementById("tabsPrev");
 const tabsNextBtn = document.getElementById("tabsNext");
 const tabsFadeEl = document.getElementById("tabsFade");
 function scrollActiveTabIntoView() {
+  if (!topTabsEl) return;
   const btn = topTabsEl.querySelector(".top-tab.active");
   if (!btn) return;
   const c = topTabsEl.getBoundingClientRect(), r = btn.getBoundingClientRect();
@@ -852,29 +858,3 @@ function fillHomeArticles() {
     if (a.id) slot.dataset.artId = a.id;
   });
 }
-
-/* Interactive Explainers launch pop up: shown once per visitor;
-   the go button opens Learning Spaces with the explainers door expanded. */
-(function initGamesPopup() {
-  var KEY = "signalExplainersPopupV1";
-  var seen = false;
-  try { seen = !!localStorage.getItem(KEY); } catch (e) {}
-  var popup = document.getElementById("gamesPopup");
-  if (!popup || seen) return;
-  if (location.hash && location.hash !== "#home") return;
-  function mark() { try { localStorage.setItem(KEY, "1"); } catch (e) {} }
-  function hide() { popup.hidden = true; }
-  document.getElementById("gamesPopupClose").addEventListener("click", function () { mark(); hide(); });
-  document.getElementById("gamesPopupLater").addEventListener("click", function () { mark(); hide(); });
-  popup.addEventListener("click", function (ev) { if (ev.target === popup) { mark(); hide(); } });
-  document.getElementById("gamesPopupGo").addEventListener("click", function () {
-    mark(); hide();
-    showView("learn");
-    openDoor("explainers");
-    requestAnimationFrame(function () {
-      var el = document.getElementById("learn-explainers");
-      if (el) el.scrollIntoView({ block: "start" });
-    });
-  });
-  setTimeout(function () { popup.hidden = false; }, 900);
-})();

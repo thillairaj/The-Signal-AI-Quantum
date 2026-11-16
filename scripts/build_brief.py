@@ -88,6 +88,38 @@ def fmt_date_short(iso):
     return d.strftime("%-d %b %Y")
 
 
+# ---------- global top bar (round 3, Nov 15, 2026) ----------
+# The shared component lives in patch-global-topbar.py (the same
+# module the family builders import): the ds-topbar markup styled by
+# assets/design-system.css and driven by assets/topbar.js. Emitted
+# here so rebuilt Brief pages keep it. Navigation links are relative
+# so the pages link inside whichever deployment serves them.
+import importlib.util as _ilu
+import os as _os
+_gtb_spec = _ilu.spec_from_file_location(
+    "gtb", _os.path.expanduser(
+        "~/workspace/periodic-table-builder/patch-global-topbar.py"))
+_gtb = _ilu.module_from_spec(_gtb_spec)
+_gtb_spec.loader.exec_module(_gtb)
+
+
+def global_topbar(p, crumb_html="", variant="plain", theme_id=None):
+    return _gtb.bar_html(p, crumb_html, variant, theme_id)
+
+
+def with_global_bar(page_html, p, crumb_html="", variant="plain",
+                    theme_id=None):
+    if "data-global-topbar" in page_html:
+        return page_html
+    page_html = page_html.replace(
+        "<head>",
+        '<head>\n<link rel="stylesheet" href="' + p
+        + 'assets/design-system.css?v=20261117">', 1)
+    return page_html.replace(
+        "<body>", "<body>\n  " + global_topbar(p, crumb_html, variant,
+                                               theme_id), 1)
+
+
 def edition_time(edition):
     if edition.get("published"):
         dt = datetime.fromisoformat(edition["published"])
@@ -153,11 +185,6 @@ PAGE_CSS = """
   * { box-sizing:border-box; }
   body { margin:0; font-family: Inter, system-ui, sans-serif; background:var(--paper); color:var(--ink); }
   [hidden] { display: none !important; }
-  .brief-topbar { position:sticky; top:0; z-index:50; background:var(--paper); border-bottom:1px solid var(--line); padding:10px 16px; display:flex; justify-content:center; align-items:center; gap:12px; }
-  .brief-topbar .ss-page-mount { margin-left: 4px; }
-  .brief-back { font-size:.85rem; color:var(--ink); text-decoration:none; border:1px solid var(--line); background:var(--card); border-radius:10px; padding:8px 14px; line-height:1.3; text-align:left; }
-  .brief-back small { display:block; color:var(--muted); }
-  .brief-theme { margin-left:auto; position:absolute; right:16px; width:38px; height:38px; border-radius:50%; border:1px solid var(--line); background:var(--card); color:var(--ink); font-size:1rem; cursor:pointer; }
   .brief-rules { max-width:820px; margin:18px auto 4px; padding:0 18px; }
   .brief-rules-in { background:var(--card); border:1px solid var(--line); border-radius:12px; padding:14px 18px; font-size:.9rem; line-height:1.55; color:var(--muted); }
   .brief-rules-in strong { color:var(--ink); }
@@ -237,7 +264,7 @@ def build_page(data, base):
         "document.addEventListener(\"DOMContentLoaded\",go);}"
         "else{go();}})();\n</script>\n<!-- ss-page-share:end -->"
     )
-    return f"""<!DOCTYPE html>
+    page = f"""<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="utf-8">
@@ -260,7 +287,6 @@ def build_page(data, base):
 {THEME_SCRIPT}
 </head>
 <body>
-  <div class="brief-topbar"><a class="brief-back" href="{base}#brief"><small>← Back to</small>The Signal</a>{page_share_block}<button class="brief-theme" id="briefTheme" type="button" aria-label="Toggle dark mode">☾</button></div>
   <main>
     <div data-brief-root data-root-prefix="../"></div>
     {RULES_BOX}
@@ -272,6 +298,7 @@ def build_page(data, base):
 </body>
 </html>
 """
+    return with_global_bar(page, "../", "", "share-theme", "briefTheme")
 
 
 # ---------- story pages and their og images ----------
@@ -507,7 +534,7 @@ def build_story_page(item, ed, base):
                   "filename": f"signal-brief-{ed['date']}-{story_nn(item)}.png"},
     }
     spec_js = json.dumps(spec).replace("</", "<\\/")
-    return f"""<!DOCTYPE html>
+    page = f"""<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="utf-8">
@@ -535,7 +562,6 @@ def build_story_page(item, ed, base):
 {THEME_SCRIPT}
 </head>
 <body>
-  <div class="brief-topbar"><a class="brief-back" href="{base}brief/"><small>← Back to</small>Signal Brief</a><button class="brief-theme" id="briefTheme" type="button" aria-label="Toggle dark mode">☾</button></div>
   <main>
     <span class="story-pill" style="background:{colour}">{escape(item['category'])}</span>
     <p class="story-dates">{escape(fmt_date(ed['date']))} · {escape(edition_time(ed))} IST · Source dated {escape(fmt_date_short(item['source_date']))}</p>
@@ -545,7 +571,8 @@ def build_story_page(item, ed, base):
     <p class="bu-srcs-label" style="font-size:.7rem;font-weight:800;letter-spacing:.16em;color:var(--muted);text-transform:uppercase">Sources</p>
     <ul class="story-srcs">{sources}</ul>
     <div class="story-actions"><span id="storyShare"></span></div>
-    <a class="story-edition" href="{base}#brief">Read the whole {escape(fmt_date(ed['date']))} edition in the Signal Brief tab →</a>
+    <a class="story-edition" href="../../../#brief">Read the whole {escape(fmt_date(ed['date']))} edition in the Signal Brief tab →</a>
+    <p class="story-weekly"><a href="../../../index.html#subscribe-block">Get the weekly update</a></p>
   </main>
   {FOOTER}
   <script src="{base}assets/signal-share.js"></script>
@@ -560,6 +587,13 @@ def build_story_page(item, ed, base):
 </body>
 </html>
 """
+    crumb_html = ('<a href="../../../index.html">Home</a>'
+                  '<span aria-hidden="true">/</span>'
+                  '<a href="../../../brief/">Signal Brief</a>'
+                  '<span aria-hidden="true">/</span>'
+                  '<span aria-current="page">'
+                  + escape(fmt_date_short(ed["date"])) + '</span>')
+    return with_global_bar(page, "../../../", crumb_html, "theme", "briefTheme")
 
 
 def build_story_pages(data, base):

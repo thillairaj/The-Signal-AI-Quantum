@@ -1,0 +1,181 @@
+{
+ "topic": "Quantum",
+ "share": {
+  "title": "Quantum · The Signal",
+  "desc": "Every way The Signal teaches quantum: the deck, the explainer, the tables, the video room and the podcast.",
+  "inside": "34 lessons · 8 deck topics · 4 tables with 259 terms · 4 podcast episodes",
+  "tag": "#QuantumComputing"
+ },
+ "flashcard": {
+  "q": "Why won't a quantum computer just make every calculation faster?",
+  "a": "Speedup isn't the aim — quantum algorithms exploit superposition, interference, and entanglement for particular problems where those effects beat classical methods. Everything else stays classical.",
+  "topic": "Quantum Computing Fundamentals"
+ },
+ "space": {
+  "lessons": 34,
+  "levels": 3
+ },
+ "items": [
+  {
+   "format": "Decks",
+   "title": "Quantum Computing Fundamentals",
+   "desc": "The 15 essential ideas behind quantum computing — no physics background needed.",
+   "url": "../../quantum-deck/#fundamentals",
+   "meta": "15 cards · flashcards · quiz"
+  },
+  {
+   "format": "Decks",
+   "title": "Quantum Networks",
+   "desc": "15 cards on entanglement at a distance — teleportation, repeaters, and the quantum internet.",
+   "url": "../../quantum-deck/#networks",
+   "meta": "15 cards · flashcards · quiz"
+  },
+  {
+   "format": "Decks",
+   "title": "Quantum Cryptography",
+   "desc": "15 cards on security from physics — QKD, post-quantum crypto, and what’s actually at risk.",
+   "url": "../../quantum-deck/#cryptography",
+   "meta": "15 cards · flashcards · quiz"
+  },
+  {
+   "format": "Decks",
+   "title": "Quantum Machine Learning",
+   "desc": "15 cards on where quantum meets learning — with honest hype filters.",
+   "url": "../../quantum-deck/#qml",
+   "meta": "15 cards · flashcards · quiz"
+  },
+  {
+   "format": "Decks",
+   "title": "Quantum Error Correction",
+   "desc": "The 15 essential ideas behind protecting fragile qubits — no physics background needed.",
+   "url": "../../quantum-deck/#error-correction",
+   "meta": "15 cards · flashcards · quiz"
+  },
+  {
+   "format": "Decks",
+   "title": "Quantum Algorithms",
+   "desc": "15 cards on the algorithm zoo — Grover, Shor, and where the speedup comes from.",
+   "url": "../../quantum-deck/#algorithms",
+   "meta": "15 cards · flashcards · quiz"
+  },
+  {
+   "format": "Decks",
+   "title": "Quantum Hardware",
+   "desc": "15 cards on the physical race: superconducting qubits, trapped ions, atoms and photonics.",
+   "url": "../../quantum-deck/#hardware",
+   "meta": "15 cards · flashcards · quiz"
+  },
+  {
+   "format": "Decks",
+   "title": "Quantum Sensing",
+   "desc": "15 cards on how quantum sensors measure gravity, magnetism, and time more precisely than ordinary instruments ever could.",
+   "url": "../../quantum-deck/#sensing",
+   "meta": "15 cards · flashcards · quiz"
+  },
+  {
+   "format": "Explainers",
+   "title": "Inside a superconducting quantum computer",
+   "desc": "An interactive, part-by-part explainer of the hardware inside a superconducting quantum computer, from the room-temperature racks down to the 10 millikelvin chip.",
+   "url": "../../explainers/quantum-hardware.html",
+   "meta": "Interactive explainer · tap through the machine"
+  },
+  {
+   "format": "Tables",
+   "title": "Quantum Keywords for Leaders",
+   "desc": "85 quantum terms every leader should know, in plain business language, arranged as an interactive periodic table. Click any element for its meaning, a key fact where one applies, and a leader takeaway.",
+   "url": "../../periodic-tables/quantum-keywords/",
+   "meta": "85 terms in 10 groups"
+  },
+  {
+   "format": "Tables",
+   "title": "Quantum Algorithms",
+   "desc": "60 quantum algorithms and primitives: Shor, Grover, QFT, VQE, QAOA, fault-tolerant methods and limits — real formulas where they exist and an honest reality check on every term.",
+   "url": "../../periodic-tables/quantum-algorithms/",
+   "meta": "60 terms in 8 groups"
+  },
+  {
+   "format": "Tables",
+   "title": "Quantum Hardware",
+   "desc": "58 hardware terms: superconducting, trapped-ion, photonic and neutral-atom qubits, cryogenics, the metrics that matter, and the vendor platforms — reported facts, flagged claims.",
+   "url": "../../periodic-tables/quantum-hardware/",
+   "meta": "58 terms in 8 groups"
+  },
+  {
+   "format": "Tables",
+   "title": "Quantum Security & Post-Quantum Cryptography",
+   "desc": "56 terms on the quantum threat and the response: harvest-now-decrypt-later, NIST FIPS 203/204/205, ML-KEM migration and crypto-agility — the PQC playbook for leaders.",
+   "url": "../../periodic-tables/quantum-security/",
+   "meta": "56 terms in 7 groups"
+  },
+  {
+   "format": "Videos",
+   "title": "Quantum Learning Space",
+   "desc": "Video lessons from the official quantum labs and channels, beginner to intermediate.",
+   "url": "../../quantum-learning-space/",
+   "meta": "34 lessons across 3 levels"
+  },
+  {
+   "format": "Games",
+   "title": "Answer Duel",
+   "desc": "One question, four answer cards: throw the right card to score. The duel draws on the full term pool, quantum included.",
+   "url": "../../games/answer-duel/",
+   "meta": "Interactive game · recall under light pressure"
+  },
+  {
+   "format": "Podcasts",
+   "title": "Quantum Intelligence — Episode 4 (Mon Nov 9, 2026): IBM's Chicago quantum computer, IonQ's record quarter, error correction goes industrial",
+   "desc": "The week's top quantum stories, plus one concept in plain language.",
+   "url": "../../podcast/5e455999c2bc7c39/",
+   "meta": "Quantum Intelligence · 9 Nov 2026"
+  },
+  {
+   "format": "Podcasts",
+   "title": "Quantum Intelligence — Episode 3 (Mon Nov 2, 2026): IBM links two quantum chips, NIST finalises the post-quantum timeline, IonQ's open-air network",
+   "desc": "The week's top quantum stories, plus one concept in plain language.",
+   "url": "../../podcast/c3818f6bb92d6663/",
+   "meta": "Quantum Intelligence · 2 Nov 2026"
+  },
+  {
+   "format": "Podcasts",
+   "title": "Quantum Intelligence — Episode 2 (Mon Oct 26, 2026): Quantinuum's five errors per million, the post-quantum deadline, Xanadu's DARPA extension",
+   "desc": "The week's top quantum stories, plus one concept in plain language.",
+   "url": "../../podcast/9f2af089d6464f2a/",
+   "meta": "Quantum Intelligence · 26 Oct 2026"
+  },
+  {
+   "format": "Podcasts",
+   "title": "Quantum Intelligence — Episode 1 (Mon Oct 19, 2026): Google's Willow cuts magic-state errors forty-fold, DARPA's hardware testing stage, IonQ's big week",
+   "desc": "The week's top quantum stories, plus one concept in plain language.",
+   "url": "../../podcast/e883b6b9b923beb1/",
+   "meta": "Quantum Intelligence · 19 Oct 2026"
+  },
+  {
+   "format": "Articles",
+   "title": "Why Are Classical Computers Now the Deciding Factor in the Quantum Race?",
+   "desc": "IBM's Nighthawk r3 and PsiQuantum's AMD pact put decoders, interconnects and HPC at the centre",
+   "url": "../../research/2026-11-16-classical-computers-quantum-race/",
+   "meta": "Deep Dive · 16 Nov 2026"
+  },
+  {
+   "format": "Articles",
+   "title": "How Do You Fix a Quantum Error You Cannot Look At?",
+   "desc": "Q-CTRL raised $290M to fight quantum errors. The fix: a grid and a parity check",
+   "url": "../../research/2026-11-13-quantum-error-correction/",
+   "meta": "Brief · 13 Nov 2026"
+  },
+  {
+   "format": "Articles",
+   "title": "How Does a Hybrid Handshake Make TLS Quantum Safe?",
+   "desc": "One TLS handshake, two key exchanges, and the harvest now, decrypt later problem",
+   "url": "../../research/2026-10-23-hybrid-tls-handshake/",
+   "meta": "Brief · 23 Oct 2026"
+  },
+  {
+   "format": "Articles",
+   "title": "Did Google Just Crack Quantum's Biggest Bottleneck?",
+   "desc": "Willow's 40x magic-state error cut, and what it means for the migration clock",
+   "url": "../../research/2026-10-19-willow-magic-states/",
+   "meta": "Deep Dive · 19 Oct 2026"
+  }
+ ]
+}
