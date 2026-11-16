@@ -1,6 +1,8 @@
 <!doctype html>
 <html lang="en">
   <head>
+<link rel="stylesheet" href="../../assets/design-system.css?v=20261117">
+<script data-ds-theme-init>(function(){var s=null;try{s=localStorage.getItem("aisignal_theme");}catch(e){}if(s==="dark"||s==="light"){document.documentElement.setAttribute("data-theme",s);}})();</script>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
     <meta name="color-scheme" content="light dark" />
@@ -78,9 +80,9 @@
       body{
         min-height:100vh; background:var(--page); background-attachment:fixed;
         color:var(--ink); font-family:Nunito,"Trebuchet MS",system-ui,sans-serif;
-        padding:14px 12px 26px;
+        
       }
-      .wrap{max-width:1020px;margin:0 auto}
+      .wrap{max-width:1020px;margin:0 auto;padding:14px 12px 26px;}
       h1,h2,.disp{font-family:Fredoka,"Trebuchet MS",system-ui,sans-serif}
       button{font:inherit}
       :focus-visible{outline:3px solid var(--gold);outline-offset:2px;border-radius:8px}
@@ -234,14 +236,67 @@
         #fact{transition:none}
       }
     </style>
+<style data-ds-theme-vars>:root[data-theme="light"] {
+        --page: linear-gradient(162deg,#04272e 0%,#07403d 46%,#082f42 100%);
+        --panel:#fff6e9; --panel2:#ffeeda; --ink:#38220f; --inkSoft:#7a5b3d;
+        --felt1:#0e8a6d; --felt2:#075f4a;
+        --coral:#ff5964; --gold:#ffc53d; --teal:#12b5a5; --pink:#ef5da8; --orange:#ff8c42; --violet:#8b5cf6; --blue:#3a7bd5;
+        --p1:#ff8c42; --p2:#ef5da8;
+        --shadow:rgba(0,10,12,.45);
+        color-scheme:light;
+      }:root[data-theme="dark"] {
+          --page: linear-gradient(162deg,#02161a 0%,#04282a 48%,#03141f 100%);
+          --panel:#123332; --panel2:#1a423f; --ink:#ffeedd; --inkSoft:#cfe3d8;
+          --felt1:#0d7a5c; --felt2:#07503c;
+          --shadow:rgba(0,0,0,.6);
+          color-scheme:dark;
+        }</style>
 
 <meta name="signal-build" content="2026-11-07.footer1">
 <link rel="stylesheet" href="../../assets/signal-footer.css?v=2026-11-07.footer1">
 </head>
   <body>
+<div class="ds-topbar ds-root" data-global-topbar>
+  <div class="ds-topbar-in">
+    <a class="ds-logo" href="../../index.html" aria-label="The Signal home"><i aria-hidden="true"></i>The&nbsp;<em>Signal</em></a>
+    <nav class="ds-nav" aria-label="Main">
+      <span class="ds-mega-wrap">
+        <button class="ds-nav-btn" type="button" data-tb-learn aria-haspopup="true" aria-expanded="false">Learn <span aria-hidden="true">▾</span></button>
+        <div class="ds-mega" data-tb-mega hidden>
+          <div class="ds-mega-grid">
+            <div><h3>By topic</h3><ul><li><a href="../../topics/quantum/">Quantum<small>The topic hub: start here</small></a></li><li><a href="../../ai-learning-space/">AI and Agentic AI<small>The AI learning space</small></a></li><li><a href="../../cloud-devops-learning-space/">Cloud and DevOps<small>The cloud learning space</small></a></li><li><a href="../../cybersecurity-learning-space/">Cybersecurity<small>The security learning space</small></a></li></ul></div>
+            <div><h3>By format</h3><ul><li><a href="../../index.html#learn-decks">Decks<small>Cards, flashcards and quizzes</small></a></li><li><a href="../../explainers/">Explainers<small>Interactive visual explainers</small></a></li><li><a href="../../index.html#learn-tables">Periodic tables<small>Every key term, organised</small></a></li><li><a href="../../index.html#learn-videos">Video rooms<small>Curated lessons by topic</small></a></li><li><a href="../../index.html#learn-games">Games<small>Play and learn</small></a></li><li><a href="../../index.html#podcast">Podcasts<small>Three series, new episodes weekly</small></a></li><li><a href="../../index.html#research">Articles<small>Research notes and explainers</small></a></li><li><a href="../../index.html#feed">Live wire and news<small>The self updating feed</small></a></li><li><a href="../../index.html#brief">Signal Brief<small>The daily digest, out at 07:00 IST</small></a></li></ul></div>
+          </div>
+        </div>
+      </span>
+      <a class="ds-nav-link" href="../../index.html#news-two-ways">The Signal</a>
+      <a class="ds-nav-link" href="../../breaking/"><span class="ds-bk-dot" data-tb-bk-dot hidden aria-hidden="true"></span>Breaking</a>
+      <a class="ds-nav-link" href="../../index.html#podcast">Podcasts</a>
+      <a class="ds-nav-link" href="../../weekly/">Weekly</a>
+      <a class="ds-btn ds-subscribe-btn" href="../../index.html#subscribe-block">Subscribe</a>
+    </nav>
+    <span id="ssPageMount" class="ss-page-mount"></span><button class="ds-theme-btn" id="themeToggle" type="button" data-tb-theme aria-label="Toggle dark mode">☾</button>    <button class="ds-menu-btn" type="button" data-tb-menu-btn aria-label="Open menu" aria-expanded="false">☰</button>
+  </div>
+  <nav class="ds-bar-crumb" aria-label="Breadcrumb"><a href="../../index.html">Home</a><span aria-hidden="true">/</span><a href="../../index.html#learn-games">Games</a><span aria-hidden="true">/</span><span aria-current="page">Target Run</span></nav>
+</div>
+<div class="ds-mobile-menu ds-root" data-tb-mobile hidden>
+  <div class="ds-mm-head">
+    <a class="ds-logo" href="../../index.html"><i aria-hidden="true"></i>The&nbsp;<em>Signal</em></a>
+    <button class="ds-mm-close" type="button" data-tb-mm-close aria-label="Close menu">✕</button>
+  </div>
+  <h3>By topic</h3><a href="../../topics/quantum/">Quantum</a><a href="../../ai-learning-space/">AI and Agentic AI</a><a href="../../cloud-devops-learning-space/">Cloud and DevOps</a><a href="../../cybersecurity-learning-space/">Cybersecurity</a>
+  <h3>By format</h3><a href="../../index.html#learn-decks">Decks</a><a href="../../explainers/">Explainers</a><a href="../../index.html#learn-tables">Periodic tables</a><a href="../../index.html#learn-videos">Video rooms</a><a href="../../index.html#learn-games">Games</a><a href="../../index.html#podcast">Podcasts</a><a href="../../index.html#research">Articles</a><a href="../../index.html#feed">Live wire and news</a><a href="../../index.html#brief">Signal Brief</a>
+  <h3>The Signal</h3>
+  <a href="../../index.html#news-two-ways">News, two ways</a>
+  <a href="../../breaking/">Breaking</a>
+  <a href="../../weekly/">Weekly update</a>
+  <a href="../../index.html#subscribe-block">Subscribe</a>
+</div>
+<script src="../../assets/topbar.js?v=20261117" defer></script>
+
     <div id="ambient" aria-hidden="true"></div>
     <div class="wrap">
-      <nav class="backBar"><a class="backLink" href="https://thillairaj.github.io/The-Signal-AI-Quantum/#learn-games">← Back to Learning Spaces</a><span id="ssPageMount" class="ss-page-mount" style="float:right"></span></nav>
+      
 
       <section id="setup">
         <div class="panel">
