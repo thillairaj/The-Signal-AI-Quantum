@@ -50,6 +50,11 @@
     "url": "https://aws.amazon.com/blogs/machine-learning/feed/"
   },
   {
+    "category": "AI",
+    "source": "NVIDIA Blog",
+    "url": "https://blogs.nvidia.com/feed/"
+  },
+  {
     "category": "Quantum",
     "source": "The Quantum Insider",
     "url": "https://thequantuminsider.com/feed/"
@@ -70,6 +75,11 @@
     "url": "https://www.sciencedaily.com/rss/computers_math/quantum_computers.xml"
   },
   {
+    "category": "Quantum",
+    "source": "IonQ News",
+    "url": "https://ionq.com/news/rss.xml"
+  },
+  {
     "category": "Cybersecurity",
     "source": "Microsoft Security Blog",
     "url": "https://www.microsoft.com/en-us/security/blog/feed/"
@@ -83,6 +93,11 @@
     "category": "Cybersecurity",
     "source": "BleepingComputer",
     "url": "https://www.bleepingcomputer.com/feed/"
+  },
+  {
+    "category": "Cybersecurity",
+    "source": "CISA Advisories",
+    "url": "https://www.cisa.gov/cybersecurity-advisories/all.xml"
   },
   {
     "category": "Cloud & DevOps",
@@ -105,6 +120,21 @@
     "url": "https://thenewstack.io/feed/"
   },
   {
+    "category": "Cloud & DevOps",
+    "source": "Cloudflare Blog",
+    "url": "https://blog.cloudflare.com/rss/"
+  },
+  {
+    "category": "Cloud & DevOps",
+    "source": "GitHub Status",
+    "url": "https://www.githubstatus.com/history.rss"
+  },
+  {
+    "category": "Cloud & DevOps",
+    "source": "Cloudflare Status",
+    "url": "https://www.cloudflarestatus.com/history.rss"
+  },
+  {
     "category": "Podcast",
     "source": "Daily AI Intelligence",
     "url": "https://muse.ai/podcasts/feed/1248297608376725/94f09345-ad4a-4981-83dd-e3206bbf5c4e"
@@ -118,5 +148,40 @@
     "category": "Podcast",
     "source": "Quantum Intelligence",
     "url": "https://muse.ai/podcasts/feed/1248297608376725/e94514d7-438c-4486-b16c-5a6c5b6bd1cd"
+  },
+  {
+    "category": "Industry",
+    "source": "Microsoft Blog",
+    "url": "https://blogs.microsoft.com/feed/"
+  },
+  {
+    "category": "Industry",
+    "source": "NVIDIA Newsroom",
+    "url": "https://nvidianews.nvidia.com/rss.xml"
+  },
+  {
+    "category": "Industry",
+    "source": "Meta Newsroom",
+    "url": "https://about.fb.com/news/feed/"
+  },
+  {
+    "category": "Industry",
+    "source": "Apple Newsroom",
+    "url": "https://www.apple.com/newsroom/rss-feed.rss"
+  },
+  {
+    "category": "Industry",
+    "source": "Salesforce Blog",
+    "url": "https://www.salesforce.com/blog/feed/"
+  },
+  {
+    "category": "Policy",
+    "source": "European Commission Press Corner",
+    "url": "https://ec.europa.eu/commission/presscorner/api/rss?language=en"
+  },
+  {
+    "category": "Policy",
+    "source": "GOV.UK DSIT",
+    "url": "https://www.gov.uk/government/organisations/department-for-science-innovation-and-technology.atom"
   }
 ]

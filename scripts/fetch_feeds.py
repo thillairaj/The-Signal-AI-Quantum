@@ -68,6 +68,21 @@ HEALTH_THRESHOLDS = {
     "Quantum Computing Report": 1,
     "Phys.org Quantum Physics": 1,
     "ScienceDaily Quantum Computers": 1,
+    # Widened pool (Nov 15, 2026; live Nov 17, 2026): official company,
+    # status, regulator and government sources, 1 a week each.
+    "NVIDIA Blog": 1,
+    "NVIDIA Newsroom": 1,
+    "IonQ News": 1,
+    "CISA Advisories": 1,
+    "Cloudflare Blog": 1,
+    "Cloudflare Status": 1,
+    "GitHub Status": 1,
+    "Microsoft Blog": 1,
+    "Meta Newsroom": 1,
+    "Apple Newsroom": 1,
+    "Salesforce Blog": 1,
+    "European Commission Press Corner": 1,
+    "GOV.UK DSIT": 1,
 }
 HEALTH_DEFAULT_THRESHOLD = 2
 
