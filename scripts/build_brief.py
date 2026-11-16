@@ -534,6 +534,13 @@ def build_story_page(item, ed, base):
                   "filename": f"signal-brief-{ed['date']}-{story_nn(item)}.png"},
     }
     spec_js = json.dumps(spec).replace("</", "<\\/")
+    correction = (item.get("correction") or "").strip()
+    correction_html = (f'\n    <p class="story-correction">{escape(correction)}</p>'
+                       if correction else "")
+    correction_css = ("\n  .story-correction { border:1px solid var(--gold);"
+                      " border-radius:10px; padding:12px 14px; line-height:1.6;"
+                      " margin:16px 0; font-size:.95rem; }"
+                      if correction else "")
     page = f"""<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -557,7 +564,7 @@ def build_story_page(item, ed, base):
 <style>{PAGE_CSS}{STORY_CSS}
   .story-why-label {{ color:{label_light}; }}
   :root[data-theme="dark"] .story-why-label {{ color:{label_dark}; }}
-  @media (prefers-color-scheme: dark) {{ :root:not([data-theme="light"]) .story-why-label {{ color:{label_dark}; }} }}
+  @media (prefers-color-scheme: dark) {{ :root:not([data-theme="light"]) .story-why-label {{ color:{label_dark}; }} }}{correction_css}
 </style>
 {THEME_SCRIPT}
 </head>
@@ -567,7 +574,7 @@ def build_story_page(item, ed, base):
     <p class="story-dates">{escape(fmt_date(ed['date']))} · {escape(edition_time(ed))} IST · Source dated {escape(fmt_date_short(item['source_date']))}</p>
     <h1>{escape(item['headline'])}</h1>
     <p class="story-sum">{escape(item['summary'])}</p>
-    <div class="story-why" style="background:{tint(colour, 12)}"><span class="story-why-label">WHY IT MATTERS FOR TECH</span><p>{escape(item['why'])}</p></div>
+    <div class="story-why" style="background:{tint(colour, 12)}"><span class="story-why-label">WHY IT MATTERS FOR TECH</span><p>{escape(item['why'])}</p></div>{correction_html}
     <p class="bu-srcs-label" style="font-size:.7rem;font-weight:800;letter-spacing:.16em;color:var(--muted);text-transform:uppercase">Sources</p>
     <ul class="story-srcs">{sources}</ul>
     <div class="story-actions"><span id="storyShare"></span></div>

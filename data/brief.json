@@ -1253,8 +1253,9 @@
      "category": "AI",
      "company": "Anthropic",
      "headline": "Anthropic launches Claude Fable 5.2 and Mythos 5.2 for coding, finance and science",
-     "summary": "Anthropic has released Claude Fable 5.2 and Claude Mythos 5.2, which it describes as its most capable models for coding, finance and science. Fable 5.2 is available now, while Mythos 5.2 is limited to vetted organizations. In pre-release testing cited by Anthropic, Fable 5.2 migrated three complex devices in a day where Claude Sonnet 4.5 managed one, and completed a 30-hour proof of Fermat's Last Theorem.",
+     "summary": "Anthropic has released Claude Fable 5.2 and Claude Mythos 5.2, two versions of the same underlying model: Fable 5.2 is available to all users, while Mythos 5.2 is limited to vetted organizations. In pre-release testing reported by Anthropic, Fable 5.2 designed three working electronic devices from scratch, a home voice-assistant hub, a USB speakerphone and a handheld virtual pet, and each circuit board was ready for manufacturing in under a day, with all three devices working without electrical modifications. A team of 1,000 Fable 5.2 agents also formalized the proof of Fermat's Last Theorem in 30 hours; Anthropic's first formalization of the proof, performed by an unreleased research version of Claude, took 11 days.",
      "why": "A new top-tier coding model with a published test record gives developers a concrete alternative to compare against current coding models on speed and long-task stamina.",
+     "correction": "Corrected on 17 November 2026: an earlier version misstated the results of Anthropic's tests. The figures now match Anthropic's announcement.",
      "source_date": "2026-11-09",
      "sources": [
       {
