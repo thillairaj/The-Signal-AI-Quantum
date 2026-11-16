@@ -4,8 +4,35 @@
     <title>Signal Brief · AI</title>
     <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/</link>
     <description>Signal Brief: the day in technology, in The Signal's own words. Every item is written from linked official sources and fact checked before publication.</description>
-    <lastBuildDate>Sun, 15 Nov 2026 05:10:20 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 16 Nov 2026 01:40:54 +0000</lastBuildDate>
     <atom:link xmlns:atom="http://www.w3.org/2005/Atom" href="https://thillairaj.github.io/The-Signal-AI-Quantum/signal/ai.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>OpenAI opens a blog for scientists using AI in research</title>
+      <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/2026-11-16/01/</link>
+      <guid isPermaLink="false">brief-2026-11-16-01</guid>
+      <pubDate>Mon, 16 Nov 2026 01:30:00 +0000</pubDate>
+      <category>AI</category>
+      <description>OpenAI has started a science blog where scientists and academic researchers share what they are discovering with AI and how they do the work. The blog will cover research results, methods and practical guidance, and firsthand accounts from researchers, including how to check AI-generated work and where methods fall short. Early posts cover mathematical results, including work on defining the Standard Model on a lattice and a proof addressing the Navier-Stokes existence and smoothness problem. Why it matters for tech: Research teams are adopting AI tools faster than the methods for checking them, so a shared record of what works and what fails helps other labs use the tools well.</description>
+      <content:encoded><![CDATA[<p>OpenAI has started a science blog where scientists and academic researchers share what they are discovering with AI and how they do the work. The blog will cover research results, methods and practical guidance, and firsthand accounts from researchers, including how to check AI-generated work and where methods fall short. Early posts cover mathematical results, including work on defining the Standard Model on a lattice and a proof addressing the Navier-Stokes existence and smoothness problem.</p><p><strong>Why it matters for tech:</strong> Research teams are adopting AI tools faster than the methods for checking them, so a shared record of what works and what fails helps other labs use the tools well.</p><p>Source: </p><ul><li><a href="https://openai.com/index/our-new-blog-for-science">OpenAI</a></li><li><a href="https://openai.com/index/step-toward-defining-the-standard-model">OpenAI</a></li></ul>]]></content:encoded>
+    </item>
+    <item>
+      <title>Meituan releases open weights for its 1.6 trillion parameter agent model</title>
+      <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/2026-11-16/02/</link>
+      <guid isPermaLink="false">brief-2026-11-16-02</guid>
+      <pubDate>Mon, 16 Nov 2026 01:30:00 +0000</pubDate>
+      <category>AI</category>
+      <description>Meituan's LongCat team has released the weights for LongCat-2.5, a mixture-of-experts model built for long, multi-step agent tasks such as coding. The model carries 1.6 trillion parameters in total and activates about 48 billion per token, with training infrastructure optimised for domestic Chinese accelerators. The weights are available under the MIT licence, and Meituan's own evaluation puts it at 88.4 on Terminal Bench v2.1, close to Claude Opus 5 at 89.1, though those scores come from the company's own testing. Why it matters for tech: Open-weight agent models built on domestic Chinese chips show how far that hardware has come, and give builders a model they can run and adapt themselves.</description>
+      <content:encoded><![CDATA[<p>Meituan's LongCat team has released the weights for LongCat-2.5, a mixture-of-experts model built for long, multi-step agent tasks such as coding. The model carries 1.6 trillion parameters in total and activates about 48 billion per token, with training infrastructure optimised for domestic Chinese accelerators. The weights are available under the MIT licence, and Meituan's own evaluation puts it at 88.4 on Terminal Bench v2.1, close to Claude Opus 5 at 89.1, though those scores come from the company's own testing.</p><p><strong>Why it matters for tech:</strong> Open-weight agent models built on domestic Chinese chips show how far that hardware has come, and give builders a model they can run and adapt themselves.</p><p>Source: </p><ul><li><a href="https://huggingface.co/meituan-longcat/LongCat-2.5">Hugging Face</a></li></ul>]]></content:encoded>
+    </item>
+    <item>
+      <title>Apple opens a study of how people use AI for health questions</title>
+      <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/2026-11-16/03/</link>
+      <guid isPermaLink="false">brief-2026-11-16-03</guid>
+      <pubDate>Mon, 16 Nov 2026 01:30:00 +0000</pubDate>
+      <category>AI</category>
+      <description>Apple has announced the Apple Health AI Usage Study, run with clinical AI platform OpenEvidence, to learn how people interact with conversational AI health tools and how useful the answers are. Participants use a new iOS app to ask medical questions and rate answers for accuracy, detail and relevance; answers are written in plain language and link to peer-reviewed clinical sources. Apple is seeking up to 200,000 participants in the United States aged 21 or older, using an iPhone 15 Pro on iOS 26 or later, and says data collected will not be used to train AI models. Why it matters for tech: Health questions are a common use for chatbots, so a study of real questions and ratings gives a clearer picture of where AI health answers help and where they fall short.</description>
+      <content:encoded><![CDATA[<p>Apple has announced the Apple Health AI Usage Study, run with clinical AI platform OpenEvidence, to learn how people interact with conversational AI health tools and how useful the answers are. Participants use a new iOS app to ask medical questions and rate answers for accuracy, detail and relevance; answers are written in plain language and link to peer-reviewed clinical sources. Apple is seeking up to 200,000 participants in the United States aged 21 or older, using an iPhone 15 Pro on iOS 26 or later, and says data collected will not be used to train AI models.</p><p><strong>Why it matters for tech:</strong> Health questions are a common use for chatbots, so a study of real questions and ratings gives a clearer picture of where AI health answers help and where they fall short.</p><p>Source: </p><ul><li><a href="https://www.theverge.com/tech/1033355/apples-new-study-looks-to-improve-the-effectiveness-of-ai-health-tools">The Verge</a></li></ul>]]></content:encoded>
+    </item>
     <item>
       <title>Anthropic puts its consumer agent Duet into research preview</title>
       <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/2026-11-15/01/</link>

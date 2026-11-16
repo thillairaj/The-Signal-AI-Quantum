@@ -4,8 +4,17 @@
     <title>Signal Brief · Cybersecurity</title>
     <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/</link>
     <description>Signal Brief: the day in technology, in The Signal's own words. Every item is written from linked official sources and fact checked before publication.</description>
-    <lastBuildDate>Sun, 15 Nov 2026 05:10:20 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 16 Nov 2026 01:40:54 +0000</lastBuildDate>
     <atom:link xmlns:atom="http://www.w3.org/2005/Atom" href="https://thillairaj.github.io/The-Signal-AI-Quantum/signal/cybersecurity.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>Google Project Zero cuts bug disclosure to 30 days by 2028</title>
+      <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/2026-11-16/06/</link>
+      <guid isPermaLink="false">brief-2026-11-16-06</guid>
+      <pubDate>Mon, 16 Nov 2026 01:30:00 +0000</pubDate>
+      <category>Cybersecurity</category>
+      <description>Google's Project Zero has replaced its '90 + 30' vulnerability disclosure policy with a fixed clock called 'Full X': bug details go public a set number of days after the vendor is told, whether or not a patch exists. The window starts at 90 days, drops to 60 days on February 2, 2027, and to 30 days on January 3, 2028. Project Zero says AI-assisted discovery and exploitation has made the old timeline unsafe, because attackers can now work out bug details from a patch almost immediately. Why it matters for tech: Shorter disclosure deadlines push vendors to fix bugs faster, and set a clear timetable that security teams can plan patching around.</description>
+      <content:encoded><![CDATA[<p>Google's Project Zero has replaced its '90 + 30' vulnerability disclosure policy with a fixed clock called 'Full X': bug details go public a set number of days after the vendor is told, whether or not a patch exists. The window starts at 90 days, drops to 60 days on February 2, 2027, and to 30 days on January 3, 2028. Project Zero says AI-assisted discovery and exploitation has made the old timeline unsafe, because attackers can now work out bug details from a patch almost immediately.</p><p><strong>Why it matters for tech:</strong> Shorter disclosure deadlines push vendors to fix bugs faster, and set a clear timetable that security teams can plan patching around.</p><p>Source: </p><ul><li><a href="https://projectzero.google/2026/11/disclosure-policy.html">Google Project Zero</a></li></ul>]]></content:encoded>
+    </item>
     <item>
       <title>Cursor traces breach to an exposed key at AI vendor Fireworks</title>
       <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/2026-11-15/08/</link>
