@@ -1,8 +1,6 @@
 <!doctype html>
 <html lang="en">
   <head>
-<link rel="stylesheet" href="../../assets/design-system.css?v=20261117">
-<script data-ds-theme-init>(function(){var s=null;try{s=localStorage.getItem("aisignal_theme");}catch(e){}if(s==="dark"||s==="light"){document.documentElement.setAttribute("data-theme",s);}})();</script>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
     <meta name="color-scheme" content="light dark" />
@@ -45,9 +43,9 @@
       body{
         min-height:100vh; background:var(--page); background-attachment:fixed;
         color:var(--ink); font-family:Nunito,"Trebuchet MS",system-ui,sans-serif;
-        
+        padding:14px 12px 26px;
       }
-      .wrap{max-width:1020px;margin:0 auto;position:relative;z-index:1;padding:14px 12px 26px;}
+      .wrap{max-width:1020px;margin:0 auto;position:relative;z-index:1}
       .backRow{max-width:640px;margin:2px auto 0}
       .backRow a{display:inline-flex;align-items:center;gap:7px;color:var(--gold);font-family:Fredoka,sans-serif;font-weight:600;font-size:14.5px;text-decoration:none;background:var(--panel);border:2px solid rgba(232,194,104,.55);border-radius:999px;padding:7px 15px;box-shadow:0 5px 0 var(--shadow)}
       .backRow a:hover{border-color:var(--gold);color:var(--ink)}
@@ -261,66 +259,11 @@
         #stage{animation:none}
       }
     </style>
-<style data-ds-theme-vars>:root[data-theme="light"] {
-        --page: linear-gradient(155deg,#2a1650 0%,#3a1c6e 52%,#1a0b38 100%);
-        --panel:#2e1c52; --panel2:#3d2770; --ink:#f7ecd4; --inkSoft:#cdb287;
-        --card:#fff8e7; --cardInk:#2e1c4e;
-        --felt1:#452a7d; --felt2:#2a1650;
-        --coral:#d9a441; --gold:#e8c268; --teal:#12b5a5; --pink:#b388ff; --orange:#f0b73f; --violet:#8b5cf6;
-        --p1:#f0b73f; --p2:#b388ff;
-        --shadow:rgba(8,3,20,.55);
-        color-scheme:dark;
-      }:root[data-theme="dark"] {
-          --page: linear-gradient(155deg,#180a33 0%,#241047 52%,#0e051f 100%);
-          --panel:#231344; --panel2:#2f1a5c; --ink:#f7ecd4; --inkSoft:#c3a878;
-          --card:#f6ead0; --cardInk:#2e1c4e;
-          --felt1:#38206a; --felt2:#1e0d42;
-          --shadow:rgba(0,0,0,.65);
-          color-scheme:dark;
-        }</style>
 
 <meta name="signal-build" content="2026-11-07.footer1">
 <link rel="stylesheet" href="../../assets/signal-footer.css?v=2026-11-07.footer1">
 </head>
   <body>
-<div class="ds-topbar ds-root" data-global-topbar>
-  <div class="ds-topbar-in">
-    <a class="ds-logo" href="../../index.html" aria-label="The Signal home"><i aria-hidden="true"></i>The&nbsp;<em>Signal</em></a>
-    <nav class="ds-nav" aria-label="Main">
-      <span class="ds-mega-wrap">
-        <button class="ds-nav-btn" type="button" data-tb-learn aria-haspopup="true" aria-expanded="false">Learn <span aria-hidden="true">▾</span></button>
-        <div class="ds-mega" data-tb-mega hidden>
-          <div class="ds-mega-grid">
-            <div><h3>By topic</h3><ul><li><a href="../../topics/quantum/">Quantum<small>The topic hub: start here</small></a></li><li><a href="../../ai-learning-space/">AI and Agentic AI<small>The AI learning space</small></a></li><li><a href="../../cloud-devops-learning-space/">Cloud and DevOps<small>The cloud learning space</small></a></li><li><a href="../../cybersecurity-learning-space/">Cybersecurity<small>The security learning space</small></a></li></ul></div>
-            <div><h3>By format</h3><ul><li><a href="../../index.html#learn-decks">Decks<small>Cards, flashcards and quizzes</small></a></li><li><a href="../../explainers/">Explainers<small>Interactive visual explainers</small></a></li><li><a href="../../index.html#learn-tables">Periodic tables<small>Every key term, organised</small></a></li><li><a href="../../index.html#learn-videos">Video rooms<small>Curated lessons by topic</small></a></li><li><a href="../../index.html#learn-games">Games<small>Play and learn</small></a></li><li><a href="../../index.html#podcast">Podcasts<small>Three series, new episodes weekly</small></a></li><li><a href="../../index.html#research">Articles<small>Research notes and explainers</small></a></li><li><a href="../../index.html#feed">Live wire and news<small>The self updating feed</small></a></li><li><a href="../../index.html#brief">Signal Brief<small>The daily digest, out at 07:00 IST</small></a></li></ul></div>
-          </div>
-        </div>
-      </span>
-      <a class="ds-nav-link" href="../../index.html#news-two-ways">The Signal</a>
-      <a class="ds-nav-link" href="../../breaking/"><span class="ds-bk-dot" data-tb-bk-dot hidden aria-hidden="true"></span>Breaking</a>
-      <a class="ds-nav-link" href="../../index.html#podcast">Podcasts</a>
-      <a class="ds-nav-link" href="../../weekly/">Weekly</a>
-      <a class="ds-btn ds-subscribe-btn" href="../../index.html#subscribe-block">Subscribe</a>
-    </nav>
-    <span id="ssPageMount" class="ss-page-mount"></span><button class="ds-theme-btn" id="themeToggle" type="button" data-tb-theme aria-label="Toggle dark mode">☾</button>    <button class="ds-menu-btn" type="button" data-tb-menu-btn aria-label="Open menu" aria-expanded="false">☰</button>
-  </div>
-  <nav class="ds-bar-crumb" aria-label="Breadcrumb"><a href="../../index.html">Home</a><span aria-hidden="true">/</span><a href="../../index.html#learn-games">Games</a><span aria-hidden="true">/</span><span aria-current="page">Answer Duel</span></nav>
-</div>
-<div class="ds-mobile-menu ds-root" data-tb-mobile hidden>
-  <div class="ds-mm-head">
-    <a class="ds-logo" href="../../index.html"><i aria-hidden="true"></i>The&nbsp;<em>Signal</em></a>
-    <button class="ds-mm-close" type="button" data-tb-mm-close aria-label="Close menu">✕</button>
-  </div>
-  <h3>By topic</h3><a href="../../topics/quantum/">Quantum</a><a href="../../ai-learning-space/">AI and Agentic AI</a><a href="../../cloud-devops-learning-space/">Cloud and DevOps</a><a href="../../cybersecurity-learning-space/">Cybersecurity</a>
-  <h3>By format</h3><a href="../../index.html#learn-decks">Decks</a><a href="../../explainers/">Explainers</a><a href="../../index.html#learn-tables">Periodic tables</a><a href="../../index.html#learn-videos">Video rooms</a><a href="../../index.html#learn-games">Games</a><a href="../../index.html#podcast">Podcasts</a><a href="../../index.html#research">Articles</a><a href="../../index.html#feed">Live wire and news</a><a href="../../index.html#brief">Signal Brief</a>
-  <h3>The Signal</h3>
-  <a href="../../index.html#news-two-ways">News, two ways</a>
-  <a href="../../breaking/">Breaking</a>
-  <a href="../../weekly/">Weekly update</a>
-  <a href="../../index.html#subscribe-block">Subscribe</a>
-</div>
-<script src="../../assets/topbar.js?v=20261117" defer></script>
-
     <div id="ambient" aria-hidden="true">
       <span class="blob b1"></span>
       <span class="blob b2"></span>
@@ -333,7 +276,9 @@
     </div>
     <div class="wrap">
 
-      
+      <nav class="backRow">
+        <a href="https://thillairaj.github.io/The-Signal-AI-Quantum/#learn-games">&#8592; Back to Learning Spaces</a><span id="ssPageMount" class="ss-page-mount" style="float:right"></span>
+      </nav>
 
       <!-- Rules and settings -->
       <section id="setup">
@@ -1139,7 +1084,7 @@
       $('#quitBtn').addEventListener('click', () => { if (S){ S.active = false; clearTimers(); } showSection('setup'); });
       setMode(2);
     </script>
-<script src="../../assets/signal-share.js?v=20261115"></script>
+<script src="../../assets/signal-share.js?v=20261117"></script>
 <!-- ss-page-share:start -->
 <script>
 (function(){function go(){if(window.SignalShare&&SignalShare.mountPageShare){SignalShare.mountPageShare(document.getElementById("ssPageMount"), {"title": "Answer Duel", "desc": "A two player throwing duel built from the Learning Spaces terms, where the right moving answer wins the point.", "inside": "1316 terms in the pool", "link": "https://thillairaj.github.io/The-Signal-AI-Quantum/games/answer-duel/", "tag": "#Games", "image": {"url": "https://thillairaj.github.io/The-Signal-AI-Quantum/assets/og/games/answer-duel.png", "filename": "answer-duel.png"}});}}if(document.readyState==="loading"){document.addEventListener("DOMContentLoaded",go);}else{go();}})();

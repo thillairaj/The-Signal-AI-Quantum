@@ -19,304 +19,177 @@
 <link rel="alternate" type="application/rss+xml" title="The Signal RSS" href="feed.xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,800;1,9..144,500;1,9..144,600&family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css?v=20261115">
-<link rel="stylesheet" href="assets/brief.css?v=20261115">
-<link rel="stylesheet" href="assets/breaking.css?v=20261117">
-<link rel="stylesheet" href="assets/design-system.css?v=20261117">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,800;1,9..144,500;1,9..144,600&family=Inter:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css?v=20261117">
+<link rel="stylesheet" href="assets/brief.css?v=20261117">
 
 <meta name="signal-build" content="2026-11-07.footer1">
 <link rel="stylesheet" href="assets/signal-footer.css?v=2026-11-07.footer1">
 </head>
 <body data-view="home">
 
-<div class="ds-topbar ds-root">
-  <div class="ds-topbar-in">
-    <a class="ds-logo" href="#home" aria-label="The Signal home"><i aria-hidden="true"></i>The&nbsp;<em>Signal</em></a>
-    <nav class="ds-nav" aria-label="Main">
-      <span class="ds-mega-wrap">
-        <button class="ds-nav-btn" type="button" id="dsLearnBtn" aria-haspopup="true" aria-expanded="false" aria-controls="dsMega">Learn <span aria-hidden="true">▾</span></button>
-        <div class="ds-mega" id="dsMega" hidden>
-          <div class="ds-mega-grid">
-            <div>
-              <h3>By topic</h3>
-              <ul>
-                <li><a href="topics/quantum/">Quantum<small>The topic hub: start here</small></a></li>
-                <li><a href="ai-learning-space/">AI and Agentic AI<small>The AI learning space</small></a></li>
-                <li><a href="cloud-devops-learning-space/">Cloud and DevOps<small>The cloud learning space</small></a></li>
-                <li><a href="cybersecurity-learning-space/">Cybersecurity<small>The security learning space</small></a></li>
-              </ul>
-            </div>
-            <div>
-              <h3>By format</h3>
-              <ul>
-                <li><a href="#learn-decks">Decks<small>Cards, flashcards and quizzes</small></a></li>
-                <li><a href="explainers/">Explainers<small>Interactive visual explainers</small></a></li>
-                <li><a href="#learn-tables">Periodic tables<small>Every key term, organised</small></a></li>
-                <li><a href="#learn-videos">Video rooms<small>Curated lessons by topic</small></a></li>
-                <li><a href="#learn-games">Games<small>Play and learn</small></a></li>
-                <li><a href="#podcast">Podcasts<small>Three series, new episodes weekly</small></a></li>
-                <li><a href="#research">Articles<small>Research notes and explainers</small></a></li>
-                <li><a href="#feed">Live wire and news<small>The self updating feed</small></a></li>
-                <li><a href="#brief">Signal Brief<small>The daily digest, out at 07:00 IST</small><span class="tab-new" id="briefNewBadge" hidden>NEW</span></a></li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </span>
-      <button class="ds-nav-btn" type="button" data-ds-scroll="news-two-ways">The Signal</button>
-      <a class="ds-nav-link" href="breaking/"><span class="ds-bk-dot" data-ds-bk-dot hidden aria-hidden="true"></span>Breaking</a>
-      <a class="ds-nav-link" href="#podcast">Podcasts</a>
-      <a class="ds-nav-link" href="weekly/">Weekly</a>
-      <a class="ds-btn ds-subscribe-btn" data-ds-subscribe href="#subscribe-block">Subscribe</a>
+<header class="masthead">
+  <div class="masthead-left">
+    <h1 class="brand-h" title="Back to the front page">The <em>Signal</em></h1>
+  </div>
+  <div class="tabs-bar">
+    <button class="rail-btn tab-arrow prev" id="tabsPrev" type="button" aria-label="Scroll sections left">‹</button>
+    <nav class="top-tabs" id="topTabs" aria-label="Sections">
+    <button class="top-tab active" data-view="home">Home</button>
+    <button class="top-tab" data-view="learn"><span class="tab-num">01</span>Learning Space</button>
+    <button class="top-tab" data-view="podcast"><span class="tab-num">02</span>Podcast</button>
+    <button class="top-tab" data-view="research"><span class="tab-num">03</span>Articles</button>
+    <button class="top-tab" data-view="feed"><span class="tab-num">04</span>RSS Feed</button>
+    <button class="top-tab" data-view="brief"><span class="tab-num">05</span>Signal Brief<span class="tab-new" id="briefNewBadge" hidden>NEW</span></button>
     </nav>
+    <span class="tabs-fade" id="tabsFade" aria-hidden="true"></span>
+    <button class="rail-btn tab-arrow next" id="tabsNext" type="button" aria-label="Scroll sections right">›</button>
+  </div>
+  <div class="masthead-right">
     <span id="ssPageMount" class="ss-page-mount"></span>
-    <button class="theme-toggle" id="themeToggle" type="button" aria-label="Toggle dark mode">☾</button>
-    <button class="ds-menu-btn" type="button" id="dsMenuBtn" aria-label="Open menu" aria-expanded="false" aria-controls="dsMobileMenu">☰</button>
+    <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">☾</button>
+    <div class="status">
+      <span class="dot" id="statusDot"></span>
+      <span id="statusText">connecting…</span>
+    </div>
+    <div class="views" id="viewsText"></div>
   </div>
-  <div class="bk-strip" id="breakingStrip" hidden></div>
-</div>
-<div class="ds-mobile-menu ds-root" id="dsMobileMenu" hidden>
-  <div class="ds-mm-head">
-    <a class="ds-logo" href="#home"><i aria-hidden="true"></i>The&nbsp;<em>Signal</em></a>
-    <button class="ds-mm-close" type="button" data-ds-mm-close aria-label="Close menu">✕</button>
-  </div>
-  <h3>By topic</h3>
-  <a href="topics/quantum/">Quantum</a>
-  <a href="ai-learning-space/">AI and Agentic AI</a>
-  <a href="cloud-devops-learning-space/">Cloud and DevOps</a>
-  <a href="cybersecurity-learning-space/">Cybersecurity</a>
-  <h3>By format</h3>
-  <a href="#learn-decks">Decks</a>
-  <a href="explainers/">Explainers</a>
-  <a href="#learn-tables">Periodic tables</a>
-  <a href="#learn-videos">Video rooms</a>
-  <a href="#learn-games">Games</a>
-  <a href="#podcast">Podcasts</a>
-  <a href="#research">Articles</a>
-  <a href="#feed">Live wire and news</a>
-  <a href="#brief">Signal Brief</a>
-  <h3>The Signal</h3>
-  <button class="ds-mm-link" type="button" data-ds-scroll="news-two-ways">News, two ways</button>
-  <a href="breaking/">Breaking</a>
-  <a href="weekly/">Weekly update</a>
-  <a data-ds-subscribe href="#subscribe-block">Subscribe</a>
-</div>
-
-<div class="ds-legacy-meta" hidden aria-hidden="true"><span class="dot" id="statusDot"></span><span id="statusText">connecting…</span><span id="viewsText"></span></div>
+</header>
 
 <div class="layout">
 
-  <section id="home-view" class="view-section ds-root">
-    <div class="ds-hero">
-      <div class="ds-hero-in">
-        <div>
-          <p class="ds-kicker">The Signal · Learn technology, one idea at a time</p>
-          <h1 class="ds-h1">Where technology learning <em>lights up</em>.</h1>
-          <p class="ds-lede">Decks, explainers, periodic tables, video rooms, games and podcasts across quantum, AI, cloud and cybersecurity, plus the technology news that matters, checked through the day.</p>
-          <div class="ds-hero-cta">
-            <a class="ds-btn" href="#learn">Start learning</a>
-            <button class="ds-btn-ghost" type="button" data-ds-scroll="subscribe-block">Get the weekly update</button>
-          </div>
-        </div>
-        <div class="ds-snips" aria-label="A taste of the formats">
-          <div class="ds-snip">
-            <p class="ds-snip-label">Flashcard <span data-ds-hero="ftopic">Quantum · Quantum Computing Fundamentals</span></p>
-            <div class="ds-flip" aria-hidden="true"><div class="ds-flip-in">
-              <div class="ds-flip-face ds-flip-front"><span data-ds-hero="fq">Why won't a quantum computer just make every calculation faster?</span></div>
-              <div class="ds-flip-face ds-flip-back"><span data-ds-hero="fa">Speedup isn't the aim — quantum algorithms exploit superposition, interference, and entanglement for particular problems where those effects beat classical methods. Everything else stays classical.</span></div>
-            </div></div>
-          </div>
-          <div class="ds-snip">
-            <p class="ds-snip-label">Podcast <span>Latest episode</span></p>
-            <div class="ds-wave" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
-            <p class="ds-pod-title" data-ds-hero="ep">Daily AI Intelligence — Episode 45: Claude Projects goes hands-free, OpenAI folds robotics, and the Nvidia fallout grows</p>
-          </div>
-          <div class="ds-snip">
-            <p class="ds-snip-label">Quiz progress <span data-ds-hero="quiz">Quantum Computing Fundamentals</span></p>
-            <div class="ds-progress" aria-hidden="true"><i></i></div>
-            <p class="ds-quiz-meta" data-ds-hero="quizmeta">10 questions · Quantum deck</p>
-          </div>
-        </div>
+  <section id="home-view" class="view-section">
+    <div class="hm-hero">
+      <div class="hm-hero-in">
+        <p class="hm-kicker">AI &amp; Quantum · On a schedule, not by chance</p>
+        <h2 class="hm-h1">One front door to everything <em>The Signal</em> publishes.</h2>
+        <p class="hm-auto-note">Updated automatically, every few hours.</p>
+            <p class="hm-lede">Five rooms — a learning space, a podcast studio, a research desk, a live wire and a daily brief. Everything moves on its own; hover or tap a box to hold it still and read.</p>
       </div>
-      <div class="ds-stats">
-        <span class="ds-stat ds-stat-pages"><b>33</b><span>learning pages</span></span>
-        <span class="ds-stat ds-stat-decks"><b>32</b><span>deck topics — 24 live, 8 to come</span></span>
-        <span class="ds-stat ds-stat-terms"><b>1,316</b><span>terms in the periodic tables</span></span>
-        <span class="ds-stat ds-stat-explainers"><b>3</b><span>interactive explainers</span></span>
-        <span class="ds-stat ds-stat-articles"><b data-hm-art-count>14</b><span>research articles</span></span>
-        <span class="ds-stat ds-stat-wire"><b data-hm-wire-count>210</b><span>stories on the live wire</span></span>
-      </div>
-    </div>
-
-    <div class="ds-brief-banner" id="briefBanner" hidden>
-      <p><strong>Signal Brief:</strong> a fresh edition every day at 07:00 IST. Read the morning's top stories, and share any story as a card.</p>
-      <a class="ds-btn-ghost" href="#brief">Read today's Brief</a>
-      <button class="ds-banner-close" type="button" id="briefBannerClose" aria-label="Dismiss this announcement">✕</button>
-    </div>
-
-    <div class="ds-section">
-      <h2 class="ds-h2">Choose a topic</h2>
-      <p class="ds-sub">Four fields, one way in: start in the learning room, then go deeper with the deck, the periodic tables and the games.</p>
-      <div class="ds-topics">
-        <a class="ds-topic ds-topic-first" href="topics/quantum/">
-          <span class="ds-start-pill">Start here</span>
-          <span class="ds-anim"><span class="ds-orbit" aria-hidden="true"><span class="ds-ring"></span><span class="ds-nucleus"></span></span></span>
-          <h3>Quantum</h3>
-          <p class="ds-topic-line" data-ds-topic="quantum">34 video lessons · 8 deck topics live · 4 tables · 259 terms</p>
-        </a>
-        <a class="ds-topic" href="ai-learning-space/">
-          <span class="ds-anim"><span class="ds-neural" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></span></span>
-          <h3>AI and Agentic AI</h3>
-          <p class="ds-topic-line" data-ds-topic="ai">253 video lessons · 8 deck topics live · 4 tables · 238 terms</p>
-        </a>
-        <a class="ds-topic" href="cloud-devops-learning-space/">
-          <span class="ds-anim"><span class="ds-cloudfig" aria-hidden="true"><span class="ds-cloudbody"></span><span class="ds-cloudbar"></span></span></span>
-          <h3>Cloud and DevOps</h3>
-          <p class="ds-topic-line" data-ds-topic="cloud">111 video lessons · 5 deck topics live · 4 tables · 250 terms</p>
-        </a>
-        <a class="ds-topic" href="cybersecurity-learning-space/">
-          <span class="ds-anim"><span class="ds-shieldfig" aria-hidden="true"></span></span>
-          <h3>Cybersecurity</h3>
-          <p class="ds-topic-line" data-ds-topic="cybersecurity">58 video lessons · 3 deck topics live · 4 tables · 241 terms</p>
-        </a>
-      </div>
-    </div>
-
-    <div class="ds-section">
-      <h2 class="ds-h2">Eight ways to learn</h2>
-      <p class="ds-sub">Pick the format that fits the moment. Every count below comes from the same data that powers the pages themselves.</p>
-      <div class="ds-formats">
-        <a class="ds-format" href="#learn-decks">
-          <span class="ds-fanim ds-fanim-flip"><span class="ds-flip ds-mini-flip" aria-hidden="true"><span class="ds-flip-in">
-            <span class="ds-flip-face ds-flip-front" data-ds-tile="deckq">Why won't a quantum computer just make every calculation faster?</span>
-            <span class="ds-flip-face ds-flip-back" data-ds-tile="decka">Speedup isn't the aim: quantum algorithms exploit superposition, interference, and entanglement for particular problems where those effects beat classical methods.</span>
-          </span></span></span>
-          <h3>Decks</h3>
-          <p class="ds-fcount" data-ds-count="decks">24 of 32 deck topics live</p>
-        </a>
-        <a class="ds-format" href="explainers/">
-          <span class="ds-fanim"><span class="ds-steps" aria-hidden="true"><i></i><i></i><i></i><i></i></span></span>
-          <h3>Explainers</h3>
-          <p class="ds-fcount" data-ds-count="explainers">3 interactive explainers</p>
-        </a>
-        <a class="ds-format" href="#learn-tables">
-          <span class="ds-fanim"><span class="ds-mini-table" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span></span>
-          <h3>Periodic tables</h3>
-          <p class="ds-fcount" data-ds-count="tables">20 tables · 1,316 terms</p>
-        </a>
-        <a class="ds-format" href="#learn-videos">
-          <span class="ds-fanim"><span class="ds-playwrap" aria-hidden="true"><span class="ds-play"></span><span class="ds-playbar"><i></i></span></span></span>
-          <h3>Video rooms</h3>
-          <p class="ds-fcount" data-ds-count="videos">456 video lessons in 4 rooms</p>
-        </a>
-        <a class="ds-format" href="#learn-games">
-          <span class="ds-fanim"><span class="ds-target" aria-hidden="true"><span class="ds-bull"></span><span class="ds-timer"><i></i></span></span></span>
-          <h3>Games</h3>
-          <p class="ds-fcount" data-ds-count="games">2 games live</p>
-        </a>
-        <a class="ds-format" href="#podcast">
-          <span class="ds-fanim"><span class="ds-wave" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span></span>
-          <h3>Podcasts</h3>
-          <p class="ds-fcount" data-ds-count="podcasts">111 episodes · 3 series</p>
-        </a>
-        <a class="ds-format" href="#research">
-          <span class="ds-fanim"><span class="ds-readlines" aria-hidden="true"><i></i><i></i><i></i></span><span class="ds-readbar" aria-hidden="true"><i></i></span></span>
-          <h3>Articles</h3>
-          <p class="ds-fcount" data-ds-count="articles">14 research articles</p>
-        </a>
-        <a class="ds-format" href="#feed">
-          <span class="ds-fanim"><span class="ds-wirebox"><span class="ds-wire-track" data-ds-wire>
-            <p><span>NVIDIA Technical Blog</span> High-Throughput Structure Prediction with BioNeMo Inference Runtime</p>
-            <p><span>NVIDIA Technical Blog</span> How Full-Stack NIM Optimizations Deliver 2.5x More Users on Nemotron 3 Ultra</p>
-            <p><span>Simon Willison</span> datasette-apps 0.3a0</p>
-            <p><span>Simon Willison</span> Yonkers Rises</p>
-            <p><span>The Verge — AI</span> Nvidia’s board is reportedly ‘not considering’ hiring Jensen Huang back</p>
-            <p><span>The Verge — AI</span> OpenAI wants to stop deepfakes from overwhelming child abuse tiplines</p>
-          </span> NVIDIA PAIR Virtual Inference Router Expands Available Compute on Your Local Network</p>
-            <p><span>NVIDIA Technical Blog</span> How to Carry User Identity Across Federated Kubernetes and AI Platforms</p>
-            <p><span>NVIDIA Technical Blog</span> Frontier Reasoning Reaches the Edge: How to Deploy and Optimize Models on NVIDIA Jetson</p>
-            <p><span>NVIDIA Technical Blog</span> Building a Memory-Driven Agent with NVIDIA NemoClaw</p>
-            <p><span>NVIDIA Technical Blog</span> Introducing CUDA Rust: Two Tracks for Writing GPU Kernels</p>
-            <p><span>NVIDIA Technical Blog</span> CUDA Toolkit 13.4 Adds Windows on Arm Support and Greater Control over Shared GPUs</p>
-          </span></span></span>
-          <h3>Live wire</h3>
-          <p class="ds-fcount" data-ds-count="wire">210 stories on the wire</p>
-        </a>
-      </div>
-    </div>
-
-    <div class="ds-section" id="news-two-ways">
-      <p class="ds-kicker">The Signal</p>
-      <h2 class="ds-h2">News, two ways</h2>
-      <p class="ds-sub">Breaking stories the moment they qualify, and one calm digest every morning. Same sources, two speeds.</p>
-      <div class="ds-news">
-        <div class="ds-panel ds-panel-bk">
-          <div class="ds-panel-head"><h3>Breaking</h3><span class="ds-panel-tag ds-tag-red">As it happens</span></div>
-          <p class="ds-panel-line">Checked every 4 hours · published only when there is news</p>
-          <ul class="ds-slots" data-ds-slots>
-            <li class="ds-slot"><b>02:00 IST</b>On the four hour cycle</li>
-            <li class="ds-slot"><b>06:00 IST</b>On the four hour cycle</li>
-            <li class="ds-slot"><b>10:00 IST</b>On the four hour cycle</li>
-            <li class="ds-slot"><b>14:00 IST</b>On the four hour cycle</li>
-            <li class="ds-slot"><b>18:00 IST</b>On the four hour cycle</li>
-            <li class="ds-slot"><b>22:00 IST</b>On the four hour cycle</li>
-          </ul>
-          <div class="ds-bk-latest" data-ds-bk-latest>
-            <p class="ds-quiet">No breaking items are active right now. The lane checks again on the four hour cycle and publishes only when a story qualifies.</p>
-          </div>
-          <a class="ds-btn" href="breaking/">Open the Breaking page</a>
-        </div>
-        <div class="ds-panel ds-panel-brief">
-          <div class="ds-panel-head"><h3>Signal Brief</h3><span class="ds-panel-tag ds-tag-gold">Daily digest</span></div>
-          <p class="ds-panel-line">Once a day · 07:00 IST</p>
-          <p class="ds-brief-date" data-ds-brief-date>Monday 16 November 2026 · 8 stories</p>
-          <ol class="ds-brief-top" data-ds-brief-top>
-            <li><span class="ds-brief-num">1</span><span><span class="ds-brief-cat">AI</span><a href="brief/2026-11-16/01/">OpenAI opens a blog for scientists using AI in research</a></span></li>
-            <li><span class="ds-brief-num">2</span><span><span class="ds-brief-cat">AI</span><a href="brief/2026-11-16/02/">Meituan releases open weights for its 1.6 trillion parameter agent model</a></span></li>
-            <li><span class="ds-brief-num">3</span><span><span class="ds-brief-cat">AI</span><a href="brief/2026-11-16/03/">Apple opens a study of how people use AI for health questions</a></span></li>
-            <li><span class="ds-brief-num">4</span><span><span class="ds-brief-cat">Quantum</span><a href="brief/2026-11-16/04/">Cloud quantum computers deliver far less entanglement than their qubit counts suggest</a></span></li>
-            <li><span class="ds-brief-num">5</span><span><span class="ds-brief-cat">Cloud &amp; DevOps</span><a href="brief/2026-11-16/05/">DuckDB&#x27;s Quack protocol streams database results in column batches</a></span></li>
-          </ol>
-          <div class="ds-hero-cta">
-            <a class="ds-btn" href="brief/">Read the full Brief</a>
-            <a class="ds-btn-ghost" href="#brief">Open the Brief view</a>
-          </div>
+      <div class="hm-ticker" aria-label="Key numbers">
+        <div class="hm-ticker-track" id="hmTickerTrack">
+          <span class="hm-tick"><b>33</b><span>learning pages</span></span>
+          <span class="hm-tick"><b>1,316</b><span>terms in the periodic tables</span></span>
+          <span class="hm-tick"><b>32</b><span>deck topics — 24 live, 8 to come</span></span>
+          <span class="hm-tick"><b>3</b><span>interactive explainers</span></span>
+          <span class="hm-tick"><b>3</b><span>podcast series</span></span>
+          <span class="hm-tick"><b>60 / 60</b><span>Tech Learning episodes published</span></span>
+          <span class="hm-tick"><b data-hm-art-count>13</b><span>research articles</span></span>
+          <span class="hm-tick"><b data-hm-wire-count>220</b><span>stories on the live wire</span></span>
+          <span class="hm-tick"><b>4 hrs</b><span>feed refresh cycle</span></span>
         </div>
       </div>
     </div>
 
-    <div class="ds-section">
-      <h2 class="ds-h2">New this week</h2>
-      <p class="ds-sub">The latest additions across every format, newest first.</p>
-      <div class="ds-latest" data-ds-latest>
-        <a class="ds-latest-card" href="research/2026-11-16-classical-computers-quantum-race/"><span class="ds-fmt ds-fmt-Articles">Articles</span><h3>Why Are Classical Computers Now the Deciding Factor in the Quantum Race?</h3><p>Added 16 Nov 2026</p></a>
-        <a class="ds-latest-card" href="podcast/4549143107ec1a73/"><span class="ds-fmt ds-fmt-Podcasts">Podcasts</span><h3>Daily AI Intelligence — Episode 45: Claude Projects goes hands-free, OpenAI folds robotics, and the Nvidia fallout grows</h3><p>Added 15 Nov 2026</p></a>
-        <a class="ds-latest-card" href="podcast/0be8fa5b75c70f98/"><span class="ds-fmt ds-fmt-Podcasts">Podcasts</span><h3>Daily AI Intelligence — Episode 44 (Sat Nov 14, 2026): ChatGPT Wallet lets agents pay, Claude goes down, and the Nvidia fallout grows</h3><p>Added 14 Nov 2026</p></a>
-        <a class="ds-latest-card" href="research/2026-11-13-quantum-error-correction/"><span class="ds-fmt ds-fmt-Articles">Articles</span><h3>How Do You Fix a Quantum Error You Cannot Look At?</h3><p>Added 13 Nov 2026</p></a>
-      </div>
+    <div class="hm-rooms">
+      <article class="hm-room">
+        <div class="hm-room-head">
+          <div class="hm-room-no">01</div>
+          <div><h3>Learning Space</h3><p class="hm-what">Watch it, then work it — videos, decks, tables and games.</p></div>
+          <button class="hm-go" type="button" data-goto="learn">Enter →</button>
+        </div>
+        <div class="hm-rail" data-hm-rail>
+          <div class="hm-rview"><div class="hm-rtrack">
+            <section class="hm-ritem" data-goto="learn" data-scroll="learn-videos"><span class="hm-ghost">1</span><p class="hm-meta">Video · Quantum Learning Space</p><h4>Quantum, straight from the labs</h4><p>A video room for quantum only: <b>IBM, Google Quantum AI, Microsoft and Qiskit</b>, from first circuits to fault tolerance roadmaps, with the newest lessons leading the rail.</p><div class="hm-chips"><span class="hm-chip gold">New · 31 lessons</span></div></section>
+            <section class="hm-ritem" data-goto="learn" data-scroll="learn-videos"><span class="hm-ghost">2</span><p class="hm-meta">Video · AI Learning Space</p><h4>Bots, assistants and the frontier, in one room</h4><p>One room for all of AI video: <b>AI bots, AI assistants and the frontier lessons from the labs</b>, thirteen tracks in all, refreshed twice a week.</p><div class="hm-chips"><span class="hm-chip gold">New · 234 lessons</span></div></section>
+            <section class="hm-ritem" data-goto="learn" data-scroll="learn-videos"><span class="hm-ghost">3</span><p class="hm-meta">Video · Cloud &amp; DevOps Learning Space</p><h4>The cloud, taught properly</h4><p>A third video room: <b>cloud foundations, AWS, Azure, Google Cloud, DevOps &amp; Kubernetes, observability &amp; AIOps</b> — from the official channels and trusted trainers.</p><div class="hm-chips"><span class="hm-chip gold">New · 100 lessons</span></div></section>
+            <section class="hm-ritem" data-goto="learn" data-scroll="learn-videos"><span class="hm-ghost">4</span><p class="hm-meta">Video · Cybersecurity &amp; SOC Learning Space</p><h4>Security, from first principles to the SOC</h4><p>A fourth video room: <b>security foundations, network security, identity &amp; zero trust, SOC &amp; incident response, cloud security, threat intelligence &amp; AI security</b> — from the official channels and trusted trainers.</p><div class="hm-chips"><span class="hm-chip gold">New · 47 lessons</span></div></section>
+            
+            <section class="hm-ritem" data-goto="learn" data-scroll="learn-explainers"><span class="hm-ghost">5</span><p class="hm-meta">Explainers · Interactive Explainers</p><h4>Machines and systems, opened up part by part</h4><p>Tap through real systems one part at a time: <b>a superconducting quantum computer, how an LLM answers a prompt, and the journey of a web request</b>, each with a simple and a deeper explanation for every part, a guided journey and a short quiz.</p><div class="hm-chips"><span class="hm-chip gold">New · 3 explainers</span></div></section>
+            <section class="hm-ritem" data-goto="learn" data-scroll="learn-decks"><span class="hm-ghost">6</span><p class="hm-meta">Decks · The Quantum Deck, The AI Deck, The Cloud &amp; DevOps Deck &amp; The Cybersecurity Deck</p><h4>Four decks, eight topics each</h4><p>15 visual cards per topic. <b>Eight topics are live in the Quantum deck, eight in the AI deck, five in the Cloud deck and three in the new Cybersecurity deck</b>; new topics unlock <b>every Wednesday</b> until all four decks are complete.</p><div class="hm-chips"><span class="hm-chip navy">24 topics live</span><span class="hm-chip">New · Wednesdays</span></div></section>
+            <section class="hm-ritem" data-goto="learn" data-scroll="learn-decks"><span class="hm-ghost">7</span><p class="hm-meta">How a deck works</p><h4>Learn → Flashcards → Quiz</h4><p><b>Learn</b> the cards to understand. <b>Flashcards</b> to test what your memory kept. <b>Quiz</b> — ten questions per topic — to test the knowledge itself.</p><div class="hm-chips"><span class="hm-chip">1 · Learn</span><span class="hm-chip">2 · Flashcards</span><span class="hm-chip">3 · Quiz</span></div></section>
+            <section class="hm-ritem" data-goto="learn" data-scroll="learn-tables"><span class="hm-ghost">8</span><p class="hm-meta">Tables · Periodic Tables</p><h4>Whole vocabularies, one picture each</h4><p><b>20 tables, 1,316 terms</b> across five families — Founders &amp; Leadership, Quantum, AI, Cloud, Cybersecurity. Click any element for the full explanation.</p><div class="hm-chips"><span class="hm-chip">20 tables</span><span class="hm-chip">1,316 terms</span></div></section>
+            <section class="hm-ritem" data-goto="learn" data-scroll="learn-games"><span class="hm-ghost">9</span><p class="hm-meta">Games · Interactive Games</p><h4>Play what you learned</h4><p>Two interactive games built from the same terms: <b>Answer Duel</b>, a card throwing duel, and <b>Target Run</b>, a bursting gallery with ten stages. Pure recollection, played for points.</p><div class="hm-chips"><span class="hm-chip gold">New · 2 games</span></div></section>
+          </div></div>
+          <div class="hm-railbar"><button class="hm-rbtn" type="button" data-hm-prev aria-label="Previous">‹</button><div class="hm-dots"></div><span class="hm-count"></span><button class="hm-rbtn" type="button" data-hm-next aria-label="Next">›</button></div>
+        </div>
+      </article>
+
+      <article class="hm-room">
+        <div class="hm-room-head">
+          <div class="hm-room-no">02</div>
+          <div><h3>Podcast</h3><p class="hm-what">Three series — topics curated by a human, episodes researched, scripted and voiced automatically.</p></div>
+          <button class="hm-go" type="button" data-goto="podcast">Listen →</button>
+        </div>
+        <div class="hm-rail" data-hm-rail>
+          <div class="hm-rview"><div class="hm-rtrack">
+            <section class="hm-ritem" data-goto="podcast" data-series="Daily AI Intelligence"><span class="hm-ghost">1</span><p class="hm-meta">Daily · 6:30 AM IST (01:00 GMT) · ~5 min</p><h4>Daily AI Intelligence</h4><p>The day's most important AI stories, every morning, with hosts <b>Luna &amp; Bhavesh</b>. A new episode lands daily at 6:30 AM IST.</p><div class="hm-chips"><span class="hm-chip navy">Daily</span><span class="hm-chip">Since 2 Oct</span></div></section>
+            <section class="hm-ritem" data-goto="podcast" data-series="Technology Learnings"><span class="hm-ghost">2</span><p class="hm-meta">Mon · Wed · Fri · 7:00 AM IST (01:30 GMT)</p><h4>Tech Learning Series — 60 of 60</h4><p>A structured course in audio: <b>Cybersecurity, Infrastructure, Data Engineering</b> — 20 episodes per track, beginner to intermediate, real scenarios.</p><div class="hm-bar"><i data-hm-fill="100.0"></i></div><div class="hm-chips"><span class="hm-chip gold">Infra 20/20</span><span class="hm-chip">Cyber 20/20</span><span class="hm-chip">Data 20/20</span></div></section>
+            <section class="hm-ritem" data-goto="podcast" data-series="Quantum Intelligence"><span class="hm-ghost">3</span><p class="hm-meta">Mondays · 8:44 AM IST (03:14 GMT) · 5–8 min · Host: Alex</p><h4>Quantum Intelligence</h4><p>The week's top quantum stories + one concept in plain language. Episode 2: Quantinuum's five errors per million, the post quantum deadline, Xanadu's DARPA extension. <b>Episode 3 lands Mon 2 Nov.</b></p><div class="hm-chips"><span class="hm-chip navy">Weekly</span><span class="hm-chip">Ep 3 · 2 Nov</span></div></section>
+            <section class="hm-ritem" data-goto="podcast" data-series=""><span class="hm-ghost">4</span><p class="hm-meta">How episodes are made</p><h4>Configured once, published on schedule</h4><p>Each series has a fixed format, voices and slot. The pipeline researches, scripts and voices each episode — it appears <b>on its day, at its time</b>, with nothing to press.</p><div class="hm-chips"><span class="hm-chip">Daily · 6:30 AM IST / 01:00 GMT</span><span class="hm-chip">Mon/Wed/Fri · 7:00 AM IST / 01:30 GMT</span><span class="hm-chip">Mon · 8:44 AM IST / 03:14 GMT</span></div></section>
+          </div></div>
+          <div class="hm-railbar"><button class="hm-rbtn" type="button" data-hm-prev aria-label="Previous">‹</button><div class="hm-dots"></div><span class="hm-count"></span><button class="hm-rbtn" type="button" data-hm-next aria-label="Next">›</button></div>
+        </div>
+      </article>
+
+      <article class="hm-room">
+        <div class="hm-room-head">
+          <div class="hm-room-no">03</div>
+          <div><h3>Articles</h3><p class="hm-what">The research desk — slower than the wire, deeper than the podcast.</p></div>
+          <button class="hm-go" type="button" data-goto="research">Read →</button>
+        </div>
+        <div class="hm-rail" data-hm-rail>
+          <div class="hm-rview"><div class="hm-rtrack">
+            <section class="hm-ritem" data-goto="research"><span class="hm-ghost">1</span><p class="hm-meta">Format · Mondays</p><h4>The Deep Dive</h4><p>Monday's long read: <b>one question, examined properly</b> — 600–900 words, the evidence on the table, a conclusion you can argue with.</p><div class="hm-chips"><span class="hm-chip navy">Mon · Deep Dive</span><span class="hm-chip">600–900 words</span></div></section>
+            <section class="hm-ritem" data-goto="research"><span class="hm-ghost">2</span><p class="hm-meta">Format · Wednesdays &amp; Fridays</p><h4>The Brief</h4><p><b>200–350 words</b> on the one development that matters, and why. Short enough for coffee, sharp enough to forward.</p><div class="hm-chips"><span class="hm-chip gold">Wed · Brief</span><span class="hm-chip gold">Fri · Brief</span></div></section>
+            <section class="hm-ritem" data-hm-art="0" data-goto="research" data-art-id="2026-10-21-meta-muse-wonder"><span class="hm-ghost">3</span><p class="hm-meta">Brief · 21 Oct 2026</p><h4>Meta Ships Muse Wonder: Its First Frontier Model</h4><p>The latest from the research desk — new pieces land ~9:44 AM IST (04:14 GMT) on their days.</p><div class="hm-chips"><span class="hm-chip">Latest</span></div></section>
+            <section class="hm-ritem" data-hm-art="1" data-goto="research" data-art-id="2026-10-19-willow-magic-states"><span class="hm-ghost">4</span><p class="hm-meta">Deep Dive · 19 Oct 2026</p><h4>Did Google Just Crack Quantum's Biggest Bottleneck?</h4><p>Inside the error-correction result everyone is citing — what actually changed, and what it means for timelines.</p><div class="hm-chips"><span class="hm-chip">Deep Dive</span></div></section>
+            <section class="hm-ritem" data-hm-art="2" data-goto="research" data-art-id="2026-10-16-ai-stack-value"><span class="hm-ghost">5</span><p class="hm-meta">Deep Dive · 16 Oct 2026</p><h4>Where Does Value Accrue in the AI Stack?</h4><p>The first edition of the research desk — who captures the money as AI scales: chips, clouds, models or applications.</p><div class="hm-chips"><span class="hm-chip">Edition 01</span></div></section>
+          </div></div>
+          <div class="hm-railbar"><button class="hm-rbtn" type="button" data-hm-prev aria-label="Previous">‹</button><div class="hm-dots"></div><span class="hm-count"></span><button class="hm-rbtn" type="button" data-hm-next aria-label="Next">›</button></div>
+        </div>
+      </article>
+
+      <article class="hm-room">
+        <div class="hm-room-head">
+          <div class="hm-room-no">04</div>
+          <div><h3>RSS Feed</h3><p class="hm-what">The live wire — raw material for everything above.</p></div>
+          <button class="hm-go" type="button" data-goto="feed">Open →</button>
+        </div>
+        <div class="hm-rail" data-hm-rail>
+          <div class="hm-rview"><div class="hm-rtrack">
+            <section class="hm-ritem" data-goto="feed"><span class="hm-ghost">1</span><p class="hm-meta">The live wire</p><h4><span data-hm-wire-count>220</span> stories, refreshed every 4 hours</h4><p>A scheduled bot polls curated AI, quantum, cybersecurity and cloud &amp; DevOps sources and republishes the wire around the clock. <b>Nothing is typed by hand.</b></p><div class="hm-chips"><span class="hm-chip navy">Every 4 hours</span><span class="hm-chip"><span data-hm-wire-count>220</span> stories</span></div></section>
+            <section class="hm-ritem" data-hm-wire="0" data-ext="https://blog.google/company-news/inside-google/around-the-globe/google-asia/e-conomy-sea-report-2026/"><span class="hm-ghost">2</span><p class="hm-meta">On the wire · Google AI Blog</p><h4>Southeast Asia's digital economy to hit $368 billion</h4><p>Primary sources only: labs, journals and engineering blogs, not aggregators.</p><div class="hm-chips"><span class="hm-chip">Source · Google AI Blog</span></div></section>
+            <section class="hm-ritem" data-hm-wire="1" data-ext="https://www.theverge.com/tech/1014999/google-gemini-ai-cars-android-auto"><span class="hm-ghost">3</span><p class="hm-meta">On the wire · The Verge — AI</p><h4>Google's more personalized Gemini AI is heading to your car</h4><p>Product moves land on the wire within one refresh cycle — scan here first, then follow through to the original.</p><div class="hm-chips"><span class="hm-chip">Source · The Verge — AI</span></div></section>
+            <section class="hm-ritem" data-goto="feed"><span class="hm-ghost">4</span><p class="hm-meta">How to use the wire</p><h4>Scan → read → hear it explained</h4><p>The wire is the <b>top of the funnel</b>: stories that matter resurface — explained in the podcast, examined in the articles, taught in the decks.</p><div class="hm-chips"><span class="hm-chip">1 · Scan</span><span class="hm-chip">2 · Follow through</span><span class="hm-chip">3 · Learn it</span></div></section>
+          </div></div>
+          <div class="hm-railbar"><button class="hm-rbtn" type="button" data-hm-prev aria-label="Previous">‹</button><div class="hm-dots"></div><span class="hm-count"></span><button class="hm-rbtn" type="button" data-hm-next aria-label="Next">›</button></div>
+        </div>
+      </article>
+      <article class="hm-room">
+        <div class="hm-room-head">
+          <div class="hm-room-no">05</div>
+          <div><h3>Signal Brief</h3><p class="hm-what">The Signal's own daily brief — the day in technology, in our words, every claim sourced.</p></div>
+          <button class="hm-go" type="button" data-goto="brief">Read →</button>
+        </div>
+        <div class="hm-rail" data-hm-rail>
+          <div class="hm-rview"><div class="hm-rtrack">
+            <!--BRIEF-LATEST-->
+            <section class="hm-ritem" data-goto="brief"><span class="hm-ghost">1</span><p class="hm-meta">Signal Brief · Latest edition</p><h4>Mon, 16 Nov 2026: 8 items</h4><p>The day in technology, in our own words, every claim linked to its source. New edition daily at 07:00 IST.</p><div class="hm-chips"><span class="hm-chip navy">Daily · 07:00 IST</span><span class="hm-chip">8 items</span></div></section>
+            <section class="hm-ritem" data-goto="brief" data-brief-item="brief-2026-11-16-01"><span class="hm-ghost">2</span><p class="hm-meta">Signal Brief · AI</p><h4>OpenAI opens a blog for scientists using AI in research</h4><p>Research teams are adopting AI tools faster than the methods for checking them, so a shared record of what works and what fails helps other labs use the tools well.</p><div class="hm-chips"><span class="hm-chip">Source · OpenAI</span></div></section>
+            <section class="hm-ritem" data-goto="brief" data-brief-item="brief-2026-11-16-02"><span class="hm-ghost">3</span><p class="hm-meta">Signal Brief · AI</p><h4>Meituan releases open weights for its 1.6 trillion parameter agent model</h4><p>Open-weight agent models built on domestic Chinese chips show how far that hardware has come, and give builders a model they can run and adapt themselves.</p><div class="hm-chips"><span class="hm-chip">Source · Hugging Face</span></div></section>
+            <section class="hm-ritem" data-goto="brief" data-brief-item="brief-2026-11-16-03"><span class="hm-ghost">4</span><p class="hm-meta">Signal Brief · AI</p><h4>Apple opens a study of how people use AI for health questions</h4><p>Health questions are a common use for chatbots, so a study of real questions and ratings gives a clearer picture of where AI health answers help and where they fall short.</p><div class="hm-chips"><span class="hm-chip">Source · The Verge</span></div></section>
+            <!--/BRIEF-LATEST-->
+          </div></div>
+          <div class="hm-railbar"><button class="hm-rbtn" type="button" data-hm-prev aria-label="Previous">&#8249;</button><div class="hm-dots"></div><span class="hm-count"></span><button class="hm-rbtn" type="button" data-hm-next aria-label="Next">&#8250;</button></div>
+        </div>
+      </article>
     </div>
 
-    <div class="ds-subscribe" id="subscribe-block">
-      <div class="ds-subscribe-in">
-        <h2>Don't miss what's new.</h2>
-        <p>One weekly update with the new decks, explainers, episodes and the stories that mattered, in your inbox every Friday.</p>
-        <form class="ds-signup" data-kit-signup method="post" novalidate>
-          <div class="ds-signup-row">
-            <div class="ds-field">
-              <label for="kitEmailHome">Email address</label>
-              <input id="kitEmailHome" name="email_address" type="email" autocomplete="email" required placeholder="you@example.com">
-            </div>
-            <button class="ds-btn" type="submit" data-kit-submit>Subscribe</button>
-          </div>
-          <label class="ds-consent"><input type="checkbox" name="consent" required data-kit-consent> Send me the weekly update from The Signal. I can unsubscribe anytime.</label>
-          <p class="ds-signup-note" data-kit-note hidden>Weekly update starting soon</p>
-          <p class="ds-signup-msg ds-signup-ok" data-kit-success role="status" hidden></p>
-          <p class="ds-signup-msg ds-signup-err" data-kit-error role="alert" hidden></p>
-        </form>
-      </div>
+    <div class="hm-week">
+      <div class="hm-week-head"><h3>The week at The Signal</h3><p>It moves on its own — hover to hold a day still.</p></div>
+      <div class="hm-week-mask"><div class="hm-week-track" id="hmWeekTrack">
+        <div class="hm-day"><b>MON</b><span>Videos re-curated</span><span>Research Deep Dive</span><span>Quantum Intelligence</span><span>Tech Learning episode</span></div>
+        <div class="hm-day"><b>TUE</b><span>Daily AI Intelligence · 6:30 AM IST (01:00 GMT)</span><span>Wire refreshes ×6</span></div>
+        <div class="hm-day"><b>WED</b><span>New deck topics unlock</span><span>Research Brief</span><span>Tech Learning episode</span></div>
+        <div class="hm-day"><b>THU</b><span>Daily AI Intelligence · 6:30 AM IST (01:00 GMT)</span><span>Wire refreshes ×6</span></div>
+        <div class="hm-day"><b>FRI</b><span>Research Brief</span><span>Tech Learning episode</span><span>Daily AI Intelligence · 6:30 AM IST (01:00 GMT)</span></div>
+        <div class="hm-day"><b>SAT</b><span>Daily AI Intelligence · 6:30 AM IST (01:00 GMT)</span><span>Wire refreshes ×6</span></div>
+        <div class="hm-day"><b>SUN</b><span>Daily AI Intelligence · 6:30 AM IST (01:00 GMT)</span><span>Wire refreshes ×6</span><span>A quiet day — catch up</span></div>
+      </div></div>
     </div>
   </section>
+
   <section id="feed-tools" class="feed-tools" hidden>
     <div class="ft-row">
       <div class="ft-search">
@@ -370,21 +243,21 @@
       </div>
 
     <div class="rail-wrap"><button class="rail-btn prev" type="button" aria-label="Previous cards">‹</button><div class="table-rail">
-                              <a class="learn-card video-quantum" href="quantum-learning-space/">
+                              <a class="learn-card video-quantum" href="https://thillairaj.github.io/The-Signal-AI-Quantum/quantum-learning-space/">
         <span class="learn-play" aria-hidden="true">▶</span>
         <span class="learn-kicker">Video Learning · Quantum</span>
         <span class="learn-title">Quantum Learning Space</span>
         <span class="learn-desc">Thirty-one lessons from IBM, Google Quantum AI, Microsoft and Qiskit: first circuits to fault tolerance roadmaps, straight from the labs.</span>
         <span class="learn-open">Open space ↗</span>
       </a>
-            <a class="learn-card video-ai" href="ai-learning-space/">
+            <a class="learn-card video-ai" href="https://thillairaj.github.io/The-Signal-AI-Quantum/ai-learning-space/">
         <span class="learn-play" aria-hidden="true">▶</span>
         <span class="learn-kicker">Video Learning · AI</span>
         <span class="learn-title">AI Learning Space</span>
         <span class="learn-desc">Bots, assistants and frontier lessons in one room: 234 videos across thirteen tracks, from Grok and Claude Duet to ChatGPT and Perplexity.</span>
         <span class="learn-open">Open space ↗</span>
       </a>
-      <a class="learn-card video-cloud" href="cloud-devops-learning-space/">
+      <a class="learn-card video-cloud" href="https://thillairaj.github.io/The-Signal-AI-Quantum/cloud-devops-learning-space/">
         <span class="learn-play" aria-hidden="true">▶</span>
         <span class="learn-kicker">Video Learning · New</span>
         <span class="learn-title">Cloud &amp; DevOps Learning Space</span>
@@ -788,63 +661,32 @@
   <span class="li-txt"><span class="li-dir">Follow on</span><span class="li-name">LinkedIn</span></span></a></span>
 </footer>
 
-<script data-goatcounter="https://trttech.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
-<script src="assets/signal-share.js?v=20261115"></script>
-<script src="assets/brief.js?v=20261115"></script>
-<script src="assets/breaking.js?v=20261117"></script>
-<script src="app.js?v=20261117"></script>
-<script src="assets/home.js?v=20261117"></script>
-<script src="assets/topbar.js?v=20261117" defer></script>
-<script src="assets/signup.js?v=20261117"></script>
-<!-- ss-page-share:start -->
-<script>
-window.__ssHomeShareConfigs = {"home": {"title": "The Signal", "desc": "A self-updating feed of AI, quantum computing, cybersecurity, cloud and DevOps, and podcast updates.", "inside": "33 learning pages · 24 of 32 deck topics live · 1,316 terms", "link": "https://thillairaj.github.io/The-Signal-AI-Quantum/", "tag": "#Learning", "image": {"url": "https://thillairaj.github.io/The-Signal-AI-Quantum/assets/og/home.png", "filename": "the-signal.png"}}, "learn": {"title": "Learning Space · The Signal", "desc": "A self-updating feed of AI, quantum computing, cybersecurity, cloud and DevOps, and podcast updates.", "inside": "4 learning spaces, 456 video lessons", "link": "https://thillairaj.github.io/The-Signal-AI-Quantum/#learn", "tag": "#Learning", "image": {"url": "https://thillairaj.github.io/The-Signal-AI-Quantum/assets/og/home.png", "filename": "the-signal.png"}}, "podcast": {"title": "Podcast · The Signal", "desc": "A self-updating feed of AI, quantum computing, cybersecurity, cloud and DevOps, and podcast updates.", "inside": "111 episodes across 3 series", "link": "https://thillairaj.github.io/The-Signal-AI-Quantum/#podcast", "tag": "#Podcasts", "image": {"url": "https://thillairaj.github.io/The-Signal-AI-Quantum/assets/og/home.png", "filename": "the-signal.png"}}, "research": {"title": "Articles · The Signal", "desc": "A self-updating feed of AI, quantum computing, cybersecurity, cloud and DevOps, and podcast updates.", "inside": "14 research articles", "link": "https://thillairaj.github.io/The-Signal-AI-Quantum/#research", "tag": "#TechNews", "image": {"url": "https://thillairaj.github.io/The-Signal-AI-Quantum/assets/og/home.png", "filename": "the-signal.png"}}, "feed": {"title": "RSS Feed · The Signal", "desc": "A self-updating feed of AI, quantum computing, cybersecurity, cloud and DevOps, and podcast updates.", "inside": "210 stories on the live wire", "link": "https://thillairaj.github.io/The-Signal-AI-Quantum/#feed", "tag": "#TechNews", "image": {"url": "https://thillairaj.github.io/The-Signal-AI-Quantum/assets/og/home.png", "filename": "the-signal.png"}}, "brief": {"title": "Signal Brief · The Signal", "desc": "A self-updating feed of AI, quantum computing, cybersecurity, cloud and DevOps, and podcast updates.", "inside": "A fresh brief every morning at 07:00, 8 stories today", "link": "https://thillairaj.github.io/The-Signal-AI-Quantum/#brief", "tag": "#SignalBrief", "image": {"url": "https://thillairaj.github.io/The-Signal-AI-Quantum/assets/og/home.png", "filename": "the-signal.png"}}};
-</script>
-<!-- ss-page-share:start -->
-<script>
-(function(){function go(){if(window.SignalShare&&SignalShare.mountPageShare){SignalShare.mountPageShare(document.getElementById("ssPageMount"), function(){var v=(document.body&&document.body.dataset&&document.body.dataset.view)||"home";return window.__ssHomeShareConfigs[v]||window.__ssHomeShareConfigs.home;});}}if(document.readyState==="loading"){document.addEventListener("DOMContentLoaded",go);}else{go();}})();
-</script>
-<!-- ss-page-share:end -->
-<div class="ds-topics-band ds-root">
-  <div class="ds-topics-band-in">
-    <div>
-      <h3>Topics</h3>
-      <ul>
-        <li><a href="topics/quantum/">Quantum</a></li>
-        <li><a href="ai-learning-space/">AI and Agentic AI</a></li>
-        <li><a href="cloud-devops-learning-space/">Cloud and DevOps</a></li>
-        <li><a href="cybersecurity-learning-space/">Cybersecurity</a></li>
-      </ul>
-    </div>
-    <div>
-      <h3>Learn</h3>
-      <ul>
-        <li><a href="#learn-decks">Decks</a></li>
-        <li><a href="explainers/">Explainers</a></li>
-        <li><a href="#learn-tables">Periodic tables</a></li>
-        <li><a href="#learn-videos">Video rooms</a></li>
-      </ul>
-    </div>
-    <div>
-      <h3>More formats</h3>
-      <ul>
-        <li><a href="#learn-games">Games</a></li>
-        <li><a href="#podcast">Podcasts</a></li>
-        <li><a href="#research">Articles</a></li>
-        <li><a href="#feed">Live wire</a></li>
-      </ul>
-    </div>
-    <div>
-      <h3>News</h3>
-      <ul>
-        <li><a href="breaking/">Breaking</a></li>
-        <li><a href="brief/">Signal Brief</a></li>
-        <li><a href="#brief">Brief view</a></li>
-        <li><a href="#subscribe-block" data-ds-subscribe>Subscribe</a></li>
-      </ul>
+  <div class="games-popup-backdrop" id="gamesPopup" hidden>
+    <div class="games-popup" role="dialog" aria-modal="true" aria-labelledby="gamesPopupTitle">
+      <button class="games-popup-close" type="button" id="gamesPopupClose" aria-label="Close announcement">×</button>
+      <span class="games-popup-kicker">Interactive Explainers · New</span>
+      <h3 id="gamesPopupTitle">Introducing Interactive Explainers</h3>
+      <p>A new way to learn at The Signal. Open up a superconducting quantum computer, a large language model and a web request, part by part, with a simple and a deeper explanation for every part.</p>
+      <div class="games-popup-actions">
+        <button class="games-popup-go" type="button" id="gamesPopupGo">Take me to the explainers</button>
+        <button class="games-popup-later" type="button" id="gamesPopupLater">Close</button>
+      </div>
     </div>
   </div>
-</div>
+
+<script data-goatcounter="https://trttech.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+<script src="assets/signal-share.js?v=20261117"></script>
+<script src="assets/brief.js?v=20261117"></script>
+<script src="app.js?v=20261117"></script>
+<!-- ss-page-share:start -->
+<script>
+window.__ssHomeShareConfigs = {"home": {"title": "The Signal", "desc": "A self-updating feed of AI, quantum computing, cybersecurity, cloud and DevOps, and podcast updates.", "inside": "33 learning pages · 24 of 32 deck topics live · 1,316 terms", "link": "https://thillairaj.github.io/The-Signal-AI-Quantum/", "tag": "#Learning", "image": {"url": "https://thillairaj.github.io/The-Signal-AI-Quantum/assets/og/home.png", "filename": "the-signal.png"}}, "learn": {"title": "Learning Space · The Signal", "desc": "A self-updating feed of AI, quantum computing, cybersecurity, cloud and DevOps, and podcast updates.", "inside": "4 learning spaces, 412 video lessons", "link": "https://thillairaj.github.io/The-Signal-AI-Quantum/#learn", "tag": "#Learning", "image": {"url": "https://thillairaj.github.io/The-Signal-AI-Quantum/assets/og/home.png", "filename": "the-signal.png"}}, "podcast": {"title": "Podcast · The Signal", "desc": "A self-updating feed of AI, quantum computing, cybersecurity, cloud and DevOps, and podcast updates.", "inside": "111 episodes across 3 series", "link": "https://thillairaj.github.io/The-Signal-AI-Quantum/#podcast", "tag": "#Podcasts", "image": {"url": "https://thillairaj.github.io/The-Signal-AI-Quantum/assets/og/home.png", "filename": "the-signal.png"}}, "research": {"title": "Articles · The Signal", "desc": "A self-updating feed of AI, quantum computing, cybersecurity, cloud and DevOps, and podcast updates.", "inside": "14 research articles", "link": "https://thillairaj.github.io/The-Signal-AI-Quantum/#research", "tag": "#TechNews", "image": {"url": "https://thillairaj.github.io/The-Signal-AI-Quantum/assets/og/home.png", "filename": "the-signal.png"}}, "feed": {"title": "RSS Feed · The Signal", "desc": "A self-updating feed of AI, quantum computing, cybersecurity, cloud and DevOps, and podcast updates.", "inside": "210 stories on the live wire", "link": "https://thillairaj.github.io/The-Signal-AI-Quantum/#feed", "tag": "#TechNews", "image": {"url": "https://thillairaj.github.io/The-Signal-AI-Quantum/assets/og/home.png", "filename": "the-signal.png"}}, "brief": {"title": "Signal Brief · The Signal", "desc": "A self-updating feed of AI, quantum computing, cybersecurity, cloud and DevOps, and podcast updates.", "inside": "A fresh brief every morning at 07:00, 12 stories today", "link": "https://thillairaj.github.io/The-Signal-AI-Quantum/#brief", "tag": "#SignalBrief", "image": {"url": "https://thillairaj.github.io/The-Signal-AI-Quantum/assets/og/home.png", "filename": "the-signal.png"}}};
+</script>
+<!-- ss-page-share:start -->
+<script>
+(function(){function go(){if(window.SignalShare&&SignalShare.mountPageShare){SignalShare.mountPageShare(document.getElementById("ssPageMount"), function(){var t=document.querySelector(".top-tab.active");var v=t?t.getAttribute("data-view"):"home";return window.__ssHomeShareConfigs[v]||window.__ssHomeShareConfigs.home;});}}if(document.readyState==="loading"){document.addEventListener("DOMContentLoaded",go);}else{go();}})();
+</script>
+<!-- ss-page-share:end -->
 <footer class="signal-footer">
   <div class="sf-follow"><span class="sf-label">Follow along</span><span class="sf-links"><a class="sf-link" href="https://www.linkedin.com/in/thillairaj" target="_blank" rel="noopener"><span class="sf-badge" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.55V9h3.57v11.45z"/></svg></span>Thillai Raj</a><a class="sf-link" href="https://www.linkedin.com/showcase/qu-bits/" target="_blank" rel="noopener"><span class="sf-badge" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.55V9h3.57v11.45z"/></svg></span>QuBits · Quantum &amp; AI</a><a class="sf-link" href="https://www.linkedin.com/showcase/agentic-ai-architect/" target="_blank" rel="noopener"><span class="sf-badge" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.55V9h3.57v11.45z"/></svg></span>Agentic AI Architect</a></span></div>
   <p class="sf-copy">© 2026 The Signal</p>
