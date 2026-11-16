@@ -4,14 +4,14 @@
     <title>The Signal</title>
     <link>https://thillairaj.github.io/The-Signal-AI-Quantum/</link>
     <description>A self-updating feed of AI, quantum computing, cybersecurity, cloud and DevOps, and podcast updates.</description>
-    <lastBuildDate>Mon, 16 Nov 2026 02:00:26 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 16 Nov 2026 06:01:22 +0000</lastBuildDate>
     <item>
       <title>Accelerating Dropless MoE Training in JAX with NVIDIA Transformer Engine</title>
       <link>https://developer.nvidia.com/blog/accelerating-dropless-moe-training-in-jax-with-nvidia-transformer-engine/</link>
       <guid isPermaLink="false">833c207badafe5a0</guid>
       <description>Mixture of experts (MoE) has become one of the defining architectural trends in large-scale AI model training. DeepSeek, Qwen, and Mixtral are examples of MoE...</description>
       <category>NVIDIA Technical Blog</category>
-      <pubDate>Mon, 16 Nov 2026 02:00:13 +0000</pubDate>
+      <pubDate>Mon, 16 Nov 2026 06:01:14 +0000</pubDate>
     </item>
     <item>
       <title>Scaling Federated Learning Across Docker, Kubernetes, and Slurm with NVIDIA FLARE</title>
@@ -19,7 +19,7 @@
       <guid isPermaLink="false">c2ceacd67091fd6a</guid>
       <description>Federated learning (FL) projects often begin with a straightforward setup: one server, a few clients, and one dataset at each site. As those projects grow, the...</description>
       <category>NVIDIA Technical Blog</category>
-      <pubDate>Mon, 16 Nov 2026 02:00:13 +0000</pubDate>
+      <pubDate>Mon, 16 Nov 2026 06:01:14 +0000</pubDate>
     </item>
     <item>
       <title>How NVIDIA NVLink 6 Delivers Multi-Layer Resiliency for AI Factories</title>
@@ -27,7 +27,7 @@
       <guid isPermaLink="false">6510d81523c67e16</guid>
       <description>For operators of large-scale AI factories, maximizing continuous output is essential for productivity. In massive-scale AI training, every GPU in the cluster...</description>
       <category>NVIDIA Technical Blog</category>
-      <pubDate>Mon, 16 Nov 2026 02:00:13 +0000</pubDate>
+      <pubDate>Mon, 16 Nov 2026 06:01:14 +0000</pubDate>
     </item>
     <item>
       <title>How NVIDIA Groq 3 LPX Deterministic Execution Drives Power-Efficient High-Interactivity Inference on NVIDIA Vera Rubin</title>
@@ -35,7 +35,7 @@
       <guid isPermaLink="false">ce9893f8b1d37b1f</guid>
       <description>Power is a defining constraint for AI factories. As AI workloads demand a full compute platform to serve them, each component of that platform must maximize...</description>
       <category>NVIDIA Technical Blog</category>
-      <pubDate>Mon, 16 Nov 2026 02:00:13 +0000</pubDate>
+      <pubDate>Mon, 16 Nov 2026 06:01:14 +0000</pubDate>
     </item>
     <item>
       <title>Dense vs. MoE Models: Active Parameters, Throughput, and When to Choose Each</title>
@@ -43,7 +43,7 @@
       <guid isPermaLink="false">3f75c86687362489</guid>
       <description>How can a 30B-parameter model activate only 3B parameters per token, and still use the capacity of the larger model? Nemotron 3.5 Lightning illustrates the...</description>
       <category>NVIDIA Technical Blog</category>
-      <pubDate>Mon, 16 Nov 2026 02:00:13 +0000</pubDate>
+      <pubDate>Mon, 16 Nov 2026 06:01:14 +0000</pubDate>
     </item>
     <item>
       <title>Translating CUDA Tile Operations from Python to Rust Using Agentic AI</title>
@@ -51,7 +51,7 @@
       <guid isPermaLink="false">833138d51e10dc27</guid>
       <description>cuTile Rust (cutile-rs) is a tile-based system for safe, idiomatic GPU kernel authoring in the Rust programming language. Extending the Rust ownership model to...</description>
       <category>NVIDIA Technical Blog</category>
-      <pubDate>Mon, 16 Nov 2026 02:00:13 +0000</pubDate>
+      <pubDate>Mon, 16 Nov 2026 06:01:14 +0000</pubDate>
     </item>
     <item>
       <title>TensorRT Edge-LLM Completes the MLPerf Edge Agentic Benchmark 6.4x Faster on Jetson AGX Thor</title>
@@ -59,7 +59,7 @@
       <guid isPermaLink="false">82b935833ffdc855</guid>
       <description>AI agents are moving from cloud data centers to vehicles, robots, and other edge devices. Unlike a chatbot that answers a single prompt, an agent works through...</description>
       <category>NVIDIA Technical Blog</category>
-      <pubDate>Mon, 16 Nov 2026 02:00:13 +0000</pubDate>
+      <pubDate>Mon, 16 Nov 2026 06:01:14 +0000</pubDate>
     </item>
     <item>
       <title>How to Use AI Agents to Prepare 3D Scenes for Simulation</title>
@@ -67,7 +67,7 @@
       <guid isPermaLink="false">d01a6b066d0e307e</guid>
       <description>Agentic AI workflows can be used to prepare and validate digital twins for physical AI systems. Agents can inspect 3D scenes, author simulation-relevant data in...</description>
       <category>NVIDIA Technical Blog</category>
-      <pubDate>Mon, 16 Nov 2026 02:00:13 +0000</pubDate>
+      <pubDate>Mon, 16 Nov 2026 06:01:14 +0000</pubDate>
     </item>
     <item>
       <title>Benchmarking LLM Inference at Scale with AIPerf</title>
@@ -75,7 +75,7 @@
       <guid isPermaLink="false">88c32b0b48612efb</guid>
       <description>You’re deploying a model on a system. It starts up, prompts are getting responses. Now the hard question: Is this fast? Your instincts might lead you to send...</description>
       <category>NVIDIA Technical Blog</category>
-      <pubDate>Mon, 16 Nov 2026 02:00:13 +0000</pubDate>
+      <pubDate>Mon, 16 Nov 2026 06:01:14 +0000</pubDate>
     </item>
     <item>
       <title>Turn Your Latest Observations Into Timely Weather Decisions With NVIDIA Earth-2</title>
@@ -83,7 +83,7 @@
       <guid isPermaLink="false">e61094f257dbd757</guid>
       <description>Weather-sensitive industries increasingly have access to observations that offer an earlier, more local view of changing conditions. Energy companies collect...</description>
       <category>NVIDIA Technical Blog</category>
-      <pubDate>Mon, 16 Nov 2026 02:00:13 +0000</pubDate>
+      <pubDate>Mon, 16 Nov 2026 06:01:14 +0000</pubDate>
     </item>
     <item>
       <title>datasette-llm 0.1a10</title>
@@ -91,7 +91,7 @@
       <guid isPermaLink="false">f121b002be2ba369</guid>
       <description>Release: datasette-llm 0.1a10 Fixes a bug that affected my agent.datasette.io demo site, where the set of available LLM models was not correctly restricted to just those in the configuration. Tags: llm , datasette</description>
       <category>Simon Willison</category>
-      <pubDate>Mon, 16 Nov 2026 02:00:08 +0000</pubDate>
+      <pubDate>Mon, 16 Nov 2026 06:01:10 +0000</pubDate>
     </item>
     <item>
       <title>Quoting Paul Ford</title>
@@ -99,7 +99,7 @@
       <guid isPermaLink="false">3089c4e12a10528f</guid>
       <description>The web browser is very, very, very powerful software for applications, and the cost of accessing that power is going down seemingly every day . &amp;mdash; Paul Ford , The Web Is More Than Enough Tags: browsers , paul-ford , web-development</description>
       <category>Simon Willison</category>
-      <pubDate>Mon, 16 Nov 2026 02:00:08 +0000</pubDate>
+      <pubDate>Mon, 16 Nov 2026 06:01:10 +0000</pubDate>
     </item>
     <item>
       <title>Quoting Nilay Patel</title>
@@ -107,7 +107,7 @@
       <guid isPermaLink="false">04ff5155f60621be</guid>
       <description>The products aren't good enough to sell people on the costs. You cannot tell people that you have to listen to the whine of a data center in their backyard for AI overviews and some of the most hilarious deep fake slop in history. It's not worth it. It just isn't worth it to anyo</description>
       <category>Simon Willison</category>
-      <pubDate>Mon, 16 Nov 2026 02:00:08 +0000</pubDate>
+      <pubDate>Mon, 16 Nov 2026 06:01:10 +0000</pubDate>
     </item>
     <item>
       <title>Terry Pratchett's Study</title>
@@ -115,7 +115,7 @@
       <guid isPermaLink="false">dadfbd3c3260c4b0</guid>
       <description>My comment on Terry Pratchett&amp;#x27;s Study &amp;mdash; Hacker News. Terry Pratchett once wrote about the concept of "horizontal wealth". Vertical wealth is where you spend money on rich people stuff - yachts and suchlike. Horizontal wealth is where you spend more money on the things </description>
       <category>Simon Willison</category>
-      <pubDate>Mon, 16 Nov 2026 02:00:08 +0000</pubDate>
+      <pubDate>Mon, 16 Nov 2026 06:01:10 +0000</pubDate>
     </item>
     <item>
       <title>datasette #3046: Don't serve link: rel=next HTTP headers to Firefox for HTML pages</title>
@@ -123,7 +123,7 @@
       <guid isPermaLink="false">3880bf849bb943e9</guid>
       <description>datasette #3046: Don&amp;#x27;t serve link: rel=next HTTP headers to Firefox for HTML pages I was looking at the Firefox network panel today when I noticed that requests to a Datasette table page were triggering an HTTP prefetch to the next page of rows in that table. This was happen</description>
       <category>Simon Willison</category>
-      <pubDate>Mon, 16 Nov 2026 02:00:08 +0000</pubDate>
+      <pubDate>Mon, 16 Nov 2026 06:01:10 +0000</pubDate>
     </item>
     <item>
       <title>parse_number() as a SQLite extension: C vs Rust</title>
@@ -131,7 +131,7 @@
       <guid isPermaLink="false">9572242cc9fc8ca1</guid>
       <description>Research: parse_number() as a SQLite extension: C vs Rust I was out walking the dog when I got curious about how easy/difficult it would be to write a SQLite C extension that adds a parse_number() function for turning strings like -$1,234.56 or '12.5%' into numeric values that co</description>
       <category>Simon Willison</category>
-      <pubDate>Mon, 16 Nov 2026 02:00:08 +0000</pubDate>
+      <pubDate>Mon, 16 Nov 2026 06:01:10 +0000</pubDate>
     </item>
     <item>
       <title>Hide your slop PR descriptions behind &lt;details&gt;&lt;summary&gt;</title>
@@ -139,7 +139,7 @@
       <guid isPermaLink="false">a92667754bb129c0</guid>
       <description>Most of the changes I make to my projects these days come in the form of PRs opened for me by Claude Code or Codex. The PR is my unit of work - I use them to bundle commits together, iterating on them until a feature is complete, document decisions and then merge the finished res</description>
       <category>Simon Willison</category>
-      <pubDate>Mon, 16 Nov 2026 02:00:08 +0000</pubDate>
+      <pubDate>Mon, 16 Nov 2026 06:01:10 +0000</pubDate>
     </item>
     <item>
       <title>The Web Is More Than Enough, by Paul Ford</title>
@@ -147,7 +147,7 @@
       <guid isPermaLink="false">5b851a3023343d96</guid>
       <description>My comment on The Web Is More Than Enough, by Paul Ford &amp;mdash; Hacker News. OK, this comment convinced me to give that a shot. Here's a thing I made in Three.js this morning - a Nudibranch themed Faberge Egg: https://static.simonwillison.net/static/2026/Hidden-Reef-Egg... (77KB)</description>
       <category>Simon Willison</category>
-      <pubDate>Mon, 16 Nov 2026 02:00:08 +0000</pubDate>
+      <pubDate>Mon, 16 Nov 2026 06:01:10 +0000</pubDate>
     </item>
     <item>
       <title>Locating the source of a mysterious beep with Claude</title>
@@ -155,7 +155,7 @@
       <guid isPermaLink="false">d363b026f0d913e8</guid>
       <description>Our house has a box room, full of boxes that we still haven't unpacked from our last move. A couple of weeks ago something in that room started intermittently beeping . The beeps were far enough apart that standing in the room and trying to determine the source of the noise was f</description>
       <category>Simon Willison</category>
-      <pubDate>Mon, 16 Nov 2026 02:00:08 +0000</pubDate>
+      <pubDate>Mon, 16 Nov 2026 06:01:10 +0000</pubDate>
     </item>
     <item>
       <title>llm-anthropic 0.31</title>
@@ -163,7 +163,39 @@
       <guid isPermaLink="false">c93c64172e07cb1e</guid>
       <description>Release: llm-anthropic 0.31 Anthropic released Fable 5.2 and Mythos 5.2 today. Fable 5.2 is currently ranked first on Artificial Analysis . Anthropic say it "solved two open problems in the physics of black holes", so clearly their internal benchmarks have become more ambitious! </description>
       <category>Simon Willison</category>
-      <pubDate>Mon, 16 Nov 2026 02:00:08 +0000</pubDate>
+      <pubDate>Mon, 16 Nov 2026 06:01:10 +0000</pubDate>
+    </item>
+    <item>
+      <title>Claude’s Duet agent is a little neurotic and surprisingly helpful</title>
+      <link>https://www.theverge.com/ai-artificial-intelligence/1032518/claude-duet-ai-agent-hands-on</link>
+      <guid isPermaLink="false">cd9d1a105b69dd29</guid>
+      <description>Normally, the products I test don't offer to help me write up my experience with them. Duet is different. Claude Duet is Anthropic's AI agent for consumers, the latest attempt by an AI company to try to convince us that agents can be useful for people who don't write code. It's b</description>
+      <category>The Verge — AI</category>
+      <pubDate>Mon, 16 Nov 2026 06:01:09 +0000</pubDate>
+    </item>
+    <item>
+      <title>What&amp;#8217;s really at stake in the Jensen Huang saga</title>
+      <link>https://www.theverge.com/podcast/1032866/jensen-huang-nvidia-china-trump-vergecast</link>
+      <guid isPermaLink="false">627c324df106de1b</guid>
+      <description>One part of the saga surrounding Nvidia CEO Jensen Huang ended on Thursday, when Huang resigned from his position at the top of AI's most important company. But in the coming weeks and months, a much bigger story may be about to unfold. A story about Nvidia's dealings in China, a</description>
+      <category>The Verge — AI</category>
+      <pubDate>Mon, 16 Nov 2026 06:01:09 +0000</pubDate>
+    </item>
+    <item>
+      <title>Jensen Huang and the decline of the visionary showman founder CEO</title>
+      <link>https://www.theverge.com/tech/1033781/nvidia-jensen-huang-last-visionary-showman-founder-ceo</link>
+      <guid isPermaLink="false">567fa298898a17ca</guid>
+      <description>On January 6th, 2025, Nvidia CEO Jensen Huang got his rockstar moment at last. He strode triumphantly onstage, hand raised in the air, to the claps and cheers of a 14,000-person arena absolutely packed with influencers and fans, their faces awash in blue glow, as he made his entr</description>
+      <category>The Verge — AI</category>
+      <pubDate>Mon, 16 Nov 2026 05:59:54 +0000</pubDate>
+    </item>
+    <item>
+      <title>The OpenAI board member who fired Sam Altman says we still can&amp;#8217;t trust AI CEOs</title>
+      <link>https://www.theverge.com/podcast/1032907/helen-toner-openai-cset-ai-safety-policy-interview</link>
+      <guid isPermaLink="false">d46b516a4c8344dc</guid>
+      <description>Today, I’m talking with Helen Toner, the executive director of the Center for Security and Emerging Technology at Georgetown University. This episode is part two of our series on AI in real life. Helen is a well-known figure in the AI safety and policy community, though she is pe</description>
+      <category>The Verge — AI</category>
+      <pubDate>Mon, 16 Nov 2026 05:59:54 +0000</pubDate>
     </item>
     <item>
       <title>An overview of Jensen Huang’s messy days</title>
@@ -310,44 +342,12 @@
       <pubDate>Sat, 14 Nov 2026 22:44:27 +0000</pubDate>
     </item>
     <item>
-      <title>ChatGPT Wallet lets OpenAI’s Dots agents make purchases for you</title>
-      <link>https://www.theverge.com/ai-artificial-intelligence/1033425/openai-chatgpt-wallet</link>
-      <guid isPermaLink="false">951c84561943a913</guid>
-      <description>After launching its Dots AI agents platform earlier this year, OpenAI is launching a wallet for the agents. ChatGPT Wallet is rolling out starting today for ChatGPT Pro subscribers in the US aged 18 and older using a US billing address and "eligible US-issued American Express, Ch</description>
-      <category>The Verge — AI</category>
-      <pubDate>Sat, 14 Nov 2026 21:59:54 +0000</pubDate>
-    </item>
-    <item>
-      <title>Amazon has a plan to index the world’s online shopping data</title>
-      <link>https://www.theverge.com/tech/1033697/amazon-world-product-graph-ai-search</link>
-      <guid isPermaLink="false">04367a7d0b10c58a</guid>
-      <description>Amazon has plans to build a vault of data on every product sold anywhere on the internet, even products Amazon doesn't sell, and make the information available through its own site, according to Reuters. The project, called the "World Product Graph," is meant to make it less like</description>
-      <category>The Verge — AI</category>
-      <pubDate>Sat, 14 Nov 2026 21:59:54 +0000</pubDate>
-    </item>
-    <item>
       <title>Who’s News: Strategic Appointments at SemiQon, OrangeQS, IonQ, Haiqu, and Jij</title>
       <link>https://quantumcomputingreport.com/whos-news-strategic-appointments-at-semiqon-orangeqs-ionq-haiqu-and-jij/</link>
       <guid isPermaLink="false">7fe11404b5c664aa</guid>
       <description>This article announces several strategic appointments in the quantum technology sector. SemiQon appointed Dr. Thierry Botter as CCO, OrangeQS named Raj Badoni as CCO, and IonQ expanded its finance leadership with Gary Merrill as CFO and Thomas A. Austin as CAO. Additionally, Haiq</description>
       <category>Quantum Computing Report</category>
       <pubDate>Sat, 14 Nov 2026 18:26:53 +0000</pubDate>
-    </item>
-    <item>
-      <title>Claude’s Duet agent is a little neurotic and surprisingly helpful</title>
-      <link>https://www.theverge.com/ai-artificial-intelligence/1032518/claude-duet-ai-agent-hands-on</link>
-      <guid isPermaLink="false">cd9d1a105b69dd29</guid>
-      <description>Normally, the products I test don't offer to help me write up my experience with them. Duet is different. Claude Duet is Anthropic's AI agent for consumers, the latest attempt by an AI company to try to convince us that agents can be useful for people who don't write code. It's b</description>
-      <category>The Verge — AI</category>
-      <pubDate>Sat, 14 Nov 2026 17:59:57 +0000</pubDate>
-    </item>
-    <item>
-      <title>What&amp;#8217;s really at stake in the Jensen Huang saga</title>
-      <link>https://www.theverge.com/podcast/1032866/jensen-huang-nvidia-china-trump-vergecast</link>
-      <guid isPermaLink="false">627c324df106de1b</guid>
-      <description>One part of the saga surrounding Nvidia CEO Jensen Huang ended on Thursday, when Huang resigned from his position at the top of AI's most important company. But in the coming weeks and months, a much bigger story may be about to unfold. A story about Nvidia's dealings in China, a</description>
-      <category>The Verge — AI</category>
-      <pubDate>Sat, 14 Nov 2026 17:59:57 +0000</pubDate>
     </item>
     <item>
       <title>AWS Emulator proves agents need a verification loop. Realism is the hard part.</title>
