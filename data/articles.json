@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-15T02:00:36.058096+00:00",
+  "generated_at": "2026-11-16T02:00:26.242417+00:00",
   "sources_polled": [
     "OpenAI Blog",
     "Google AI Blog",
@@ -22,229 +22,391 @@
     "AWS News Blog",
     "Google Cloud Blog",
     "Azure Updates",
-    "The New Stack",
-    "Daily AI Intelligence",
-    "Technology Learnings",
-    "Quantum Intelligence"
+    "The New Stack"
   ],
   "articles": [
     {
-      "id": "7816c3b36083bf87",
-      "title": "CUDA Toolkit 13.4 Adds Windows on Arm Support and Greater Control over Shared GPUs",
-      "link": "https://developer.nvidia.com/blog/cuda-toolkit-13-4-adds-windows-on-arm-support-and-greater-control-over-shared-gpus/",
+      "id": "833c207badafe5a0",
+      "title": "Accelerating Dropless MoE Training in JAX with NVIDIA Transformer Engine",
+      "link": "https://developer.nvidia.com/blog/accelerating-dropless-moe-training-in-jax-with-nvidia-transformer-engine/",
       "source": "NVIDIA Technical Blog",
       "category": "AI",
-      "summary": "Every NVIDIA CUDA Toolkit release adds functionality and performance improvements that help developers get more from NVIDIA GPUs and the broader NVIDIA software...",
-      "published": "2026-11-15T02:00:17.825559+00:00",
+      "summary": "Mixture of experts (MoE) has become one of the defining architectural trends in large-scale AI model training. DeepSeek, Qwen, and Mixtral are examples of MoE...",
+      "published": "2026-11-16T02:00:13.778579+00:00",
       "audio_url": null,
       "duration": ""
     },
     {
-      "id": "51e6e5a8d9bdaf12",
-      "title": "When to Use Encode-Prefill-Decode Disaggregation to Accelerate Multimodal Model Serving",
-      "link": "https://developer.nvidia.com/blog/when-to-use-encode-prefill-decode-disaggregation-to-accelerate-multimodal-model-serving/",
+      "id": "c2ceacd67091fd6a",
+      "title": "Scaling Federated Learning Across Docker, Kubernetes, and Slurm with NVIDIA FLARE",
+      "link": "https://developer.nvidia.com/blog/scaling-federated-learning-across-docker-kubernetes-and-slurm-with-nvidia-flare/",
       "source": "NVIDIA Technical Blog",
       "category": "AI",
-      "summary": "Encode-prefill-decode (EPD) disaggregation is an inference optimization technique for multimodal models that separates the vision encoder stage from the prefill...",
-      "published": "2026-11-15T02:00:17.825538+00:00",
+      "summary": "Federated learning (FL) projects often begin with a straightforward setup: one server, a few clients, and one dataset at each site. As those projects grow, the...",
+      "published": "2026-11-16T02:00:13.778558+00:00",
       "audio_url": null,
       "duration": ""
     },
     {
-      "id": "d23b90bcfb6224ff",
-      "title": "From Wafer-Out to First Token: Codifying Supply Chain Expertise with Nemotron and Palantir Foundry",
-      "link": "https://developer.nvidia.com/blog/from-wafer-out-to-first-token-codifying-supply-chain-expertise-with-nemotron-and-palantir-foundry/",
+      "id": "6510d81523c67e16",
+      "title": "How NVIDIA NVLink 6 Delivers Multi-Layer Resiliency for AI Factories",
+      "link": "https://developer.nvidia.com/blog/how-nvidia-nvlink-6-delivers-multi-layer-resiliency-for-ai-factories/",
       "source": "NVIDIA Technical Blog",
       "category": "AI",
-      "summary": "NVIDIA has one of the largest and most complex supply chains in the world, and its performance is measured from wafer-out to first token. The interval is in two...",
-      "published": "2026-11-15T02:00:17.825516+00:00",
+      "summary": "For operators of large-scale AI factories, maximizing continuous output is essential for productivity. In massive-scale AI training, every GPU in the cluster...",
+      "published": "2026-11-16T02:00:13.778537+00:00",
       "audio_url": null,
       "duration": ""
     },
     {
-      "id": "bf13fbf2f14a0fa2",
-      "title": "High-Throughput Structure Prediction with BioNeMo Inference Runtime",
-      "link": "https://developer.nvidia.com/blog/high-throughput-structure-prediction-with-bionemo-inference-runtime/",
+      "id": "ce9893f8b1d37b1f",
+      "title": "How NVIDIA Groq 3 LPX Deterministic Execution Drives Power-Efficient High-Interactivity Inference on NVIDIA Vera Rubin",
+      "link": "https://developer.nvidia.com/blog/how-nvidia-groq-3-lpx-deterministic-execution-drives-power-efficient-high-interactivity-inference-on-nvidia-vera-rubin/",
       "source": "NVIDIA Technical Blog",
       "category": "AI",
-      "summary": "Biomolecular structure prediction is now often run at proteome scale, where the goal is to move an entire worklist through the pipeline efficiently. NVIDIA...",
-      "published": "2026-11-15T02:00:17.825494+00:00",
+      "summary": "Power is a defining constraint for AI factories. As AI workloads demand a full compute platform to serve them, each component of that platform must maximize...",
+      "published": "2026-11-16T02:00:13.778516+00:00",
       "audio_url": null,
       "duration": ""
     },
     {
-      "id": "2abc4ceb82a011e6",
-      "title": "How Full-Stack NIM Optimizations Deliver 2.5x More Users on Nemotron 3 Ultra",
-      "link": "https://developer.nvidia.com/blog/how-full-stack-nim-optimizations-deliver-2-5x-more-users-on-nemotron-3-ultra/",
+      "id": "3f75c86687362489",
+      "title": "Dense vs. MoE Models: Active Parameters, Throughput, and When to Choose Each",
+      "link": "https://developer.nvidia.com/blog/dense-vs-moe-models-active-parameters-throughput-and-when-to-choose-each/",
       "source": "NVIDIA Technical Blog",
       "category": "AI",
-      "summary": "Deploying a large language model is only the first step toward production-ready serving. Production teams also need to serve as many concurrent users as...",
-      "published": "2026-11-15T02:00:17.825473+00:00",
+      "summary": "How can a 30B-parameter model activate only 3B parameters per token, and still use the capacity of the larger model? Nemotron 3.5 Lightning illustrates the...",
+      "published": "2026-11-16T02:00:13.778494+00:00",
       "audio_url": null,
       "duration": ""
     },
     {
-      "id": "f6a9f53be32d14de",
-      "title": "How to Evaluate AI Agents From Tool Calls to Task Completion",
-      "link": "https://developer.nvidia.com/blog/how-to-evaluate-ai-agents-from-tool-calls-to-task-completion/",
+      "id": "833138d51e10dc27",
+      "title": "Translating CUDA Tile Operations from Python to Rust Using Agentic AI",
+      "link": "https://developer.nvidia.com/blog/translating-cuda-tile-operations-from-python-to-rust-using-agentic-ai/",
       "source": "NVIDIA Technical Blog",
       "category": "AI",
-      "summary": "When you ship an AI agent, the key question is whether it can execute a chain of work across dozens of sequential tool calls against a live environment, and...",
-      "published": "2026-11-15T02:00:17.825397+00:00",
+      "summary": "cuTile Rust (cutile-rs) is a tile-based system for safe, idiomatic GPU kernel authoring in the Rust programming language. Extending the Rust ownership model to...",
+      "published": "2026-11-16T02:00:13.778473+00:00",
       "audio_url": null,
       "duration": ""
     },
     {
-      "id": "21a9c69cb6ecf4db",
-      "title": "Simplifying Model Serving Across Multiple GPUs with NVIDIA TensorRT Multi-Device Integration in NVIDIA Dynamo-Triton",
-      "link": "https://developer.nvidia.com/blog/simplifying-model-serving-across-multiple-gpus-with-nvidia-tensorrt-multi-device-integration-in-nvidia-dynamo-triton/",
+      "id": "82b935833ffdc855",
+      "title": "TensorRT Edge-LLM Completes the MLPerf Edge Agentic Benchmark 6.4x Faster on Jetson AGX Thor",
+      "link": "https://developer.nvidia.com/blog/tensorrt-edge-llm-completes-the-mlperf-edge-agentic-benchmark-6-4x-faster-on-jetson-agx-thor/",
       "source": "NVIDIA Technical Blog",
       "category": "AI",
-      "summary": "The compute and memory demands of generative AI increasingly exceed what a single GPU can provide. NVIDIA TensorRT multi-device inference is a new capability...",
-      "published": "2026-11-15T02:00:17.825375+00:00",
+      "summary": "AI agents are moving from cloud data centers to vehicles, robots, and other edge devices. Unlike a chatbot that answers a single prompt, an agent works through...",
+      "published": "2026-11-16T02:00:13.778451+00:00",
       "audio_url": null,
       "duration": ""
     },
     {
-      "id": "930fe61380afbf97",
-      "title": "Accelerating a ROS 2 Node with an AI Agent and NVIDIA Isaac ROS",
-      "link": "https://developer.nvidia.com/blog/accelerating-a-ros-2-node-with-an-ai-agent-and-nvidia-isaac-ros/",
+      "id": "d01a6b066d0e307e",
+      "title": "How to Use AI Agents to Prepare 3D Scenes for Simulation",
+      "link": "https://developer.nvidia.com/blog/how-to-use-ai-agents-to-prepare-3d-scenes-for-simulation/",
       "source": "NVIDIA Technical Blog",
       "category": "AI",
-      "summary": "GPU acceleration can speed up compute-intensive robotics workloads, but a fast CUDA kernel alone does not guarantee a fast ROS 2 graph. As messages move between...",
-      "published": "2026-11-15T02:00:17.825354+00:00",
+      "summary": "Agentic AI workflows can be used to prepare and validate digital twins for physical AI systems. Agents can inspect 3D scenes, author simulation-relevant data in...",
+      "published": "2026-11-16T02:00:13.778429+00:00",
       "audio_url": null,
       "duration": ""
     },
     {
-      "id": "60dd7f94fc5e5449",
-      "title": "What\u2019s New for Game Developers: DLSS 5 with 3D-Guided Neural Rendering, NVIDIA ACE Updates, and New RTX Kit Capabilities",
-      "link": "https://developer.nvidia.com/blog/whats-new-for-game-developers-dlss-5-with-3d-guided-neural-rendering-nvidia-ace-updates-and-new-rtx-kit-capabilities/",
+      "id": "88c32b0b48612efb",
+      "title": "Benchmarking LLM Inference at Scale with AIPerf",
+      "link": "https://developer.nvidia.com/blog/benchmarking-llm-inference-at-scale-with-aiperf/",
       "source": "NVIDIA Technical Blog",
       "category": "AI",
-      "summary": "NVIDIA DLSS 5 introduces DLSS 3D-Guided Neural Rendering and granular controls that help game developers add lifelike lighting and material detail while...",
-      "published": "2026-11-15T02:00:17.825332+00:00",
+      "summary": "You\u2019re deploying a model on a system. It starts up, prompts are getting responses. Now the hard question: Is this fast? Your instincts might lead you to send...",
+      "published": "2026-11-16T02:00:13.778407+00:00",
       "audio_url": null,
       "duration": ""
     },
     {
-      "id": "05cef1f359d31552",
-      "title": "Topology-Aware Workload Scheduling with NVIDIA Topograph",
-      "link": "https://developer.nvidia.com/blog/topology-aware-workload-scheduling-with-nvidia-topograph/",
+      "id": "e61094f257dbd757",
+      "title": "Turn Your Latest Observations Into Timely Weather Decisions With NVIDIA Earth-2",
+      "link": "https://developer.nvidia.com/blog/turn-your-latest-observations-into-timely-weather-decisions-with-nvidia-earth-2/",
       "source": "NVIDIA Technical Blog",
       "category": "AI",
-      "summary": "AI factories are power-limited systems that deliver maximum value when fully optimized. GPU workload placement is a key optimization. Poor workload placement...",
-      "published": "2026-11-15T02:00:17.825311+00:00",
+      "summary": "Weather-sensitive industries increasingly have access to observations that offer an earlier, more local view of changing conditions. Energy companies collect...",
+      "published": "2026-11-16T02:00:13.778383+00:00",
       "audio_url": null,
       "duration": ""
     },
     {
-      "id": "22c23cfe758c1cb6",
-      "title": "I discovered a sound that leaks your exact location (and it's everywhere) - YouTube",
-      "link": "https://simonwillison.net/2026/Nov/3/a-sound-that-leaks-your-exact-location/",
+      "id": "f121b002be2ba369",
+      "title": "datasette-llm 0.1a10",
+      "link": "https://simonwillison.net/2026/Nov/4/datasette-llm/",
       "source": "Simon Willison",
       "category": "AI",
-      "summary": "I discovered a sound that leaks your exact location (and it&#x27;s everywhere) - YouTube Genius piece of OSINT by Colsto, who demonstrates how you can take almost imperceptible background noise of planes from a video soundtrack, figure out their Doppler curves, then cross referen",
-      "published": "2026-11-15T02:00:03.617733+00:00",
+      "summary": "Release: datasette-llm 0.1a10 Fixes a bug that affected my agent.datasette.io demo site, where the set of available LLM models was not correctly restricted to just those in the configuration. Tags: llm , datasette",
+      "published": "2026-11-16T02:00:08.945268+00:00",
       "audio_url": null,
       "duration": ""
     },
     {
-      "id": "6857dc224a419fe9",
-      "title": "Qwen 3.8 27B on my laptop can interpret model weights, too",
-      "link": "https://simonwillison.net/2026/Nov/3/qwen-can-interpret-model-weights/",
+      "id": "3089c4e12a10528f",
+      "title": "Quoting Paul Ford",
+      "link": "https://simonwillison.net/2026/Nov/5/paul-ford/",
       "source": "Simon Willison",
       "category": "AI",
-      "summary": "Yesterday's hot paper was Sparks of Weight-Space Programming: LLMs can natively read &amp; write neural network weights by Rikiya Takehi, Jayden Teoh, Alex Zhang, and Omar Khattab. The paper (OK, the authors classify is as a \"blog post\", but it's paper-shaped) found that frontier",
-      "published": "2026-11-15T02:00:03.617693+00:00",
+      "summary": "The web browser is very, very, very powerful software for applications, and the cost of accessing that power is going down seemingly every day . &mdash; Paul Ford , The Web Is More Than Enough Tags: browsers , paul-ford , web-development",
+      "published": "2026-11-16T02:00:08.945241+00:00",
       "audio_url": null,
       "duration": ""
     },
     {
-      "id": "5b7b48c647c50787",
-      "title": "AI is destroying my CS degree",
-      "link": "https://simonwillison.net/2026/Nov/3/hn-50354278/",
+      "id": "04ff5155f60621be",
+      "title": "Quoting Nilay Patel",
+      "link": "https://simonwillison.net/2026/Nov/6/nilay-patel/",
       "source": "Simon Willison",
       "category": "AI",
-      "summary": "My comment on AI is destroying my CS degree &mdash; Hacker News. I don't envy educators right now. AI clearly means you need to change how you teach and evaluate students. We are only a few years in though, and it's still extremely unclear what effective teaching with these tools",
-      "published": "2026-11-15T02:00:03.617235+00:00",
+      "summary": "The products aren't good enough to sell people on the costs. You cannot tell people that you have to listen to the whine of a data center in their backyard for AI overviews and some of the most hilarious deep fake slop in history. It's not worth it. It just isn't worth it to anyo",
+      "published": "2026-11-16T02:00:08.945212+00:00",
       "audio_url": null,
       "duration": ""
     },
     {
-      "id": "07065efd722751e2",
-      "title": "llm 0.37.1",
-      "link": "https://simonwillison.net/2026/Nov/3/llm/",
+      "id": "dadfbd3c3260c4b0",
+      "title": "Terry Pratchett's Study",
+      "link": "https://simonwillison.net/2026/Nov/7/hn-50407316/",
       "source": "Simon Willison",
       "category": "AI",
-      "summary": "Release: llm 0.37.1 A bugfix release for LLM , with contributions from Steven Huang , Tao An , Arjan Mossel , and XQ . Tags: llm",
-      "published": "2026-11-15T02:00:03.617188+00:00",
+      "summary": "My comment on Terry Pratchett&#x27;s Study &mdash; Hacker News. Terry Pratchett once wrote about the concept of \"horizontal wealth\". Vertical wealth is where you spend money on rich people stuff - yachts and suchlike. Horizontal wealth is where you spend more money on the things ",
+      "published": "2026-11-16T02:00:08.945128+00:00",
       "audio_url": null,
       "duration": ""
     },
     {
-      "id": "196e073af215c4a0",
-      "title": "datasette-agent 0.5a0",
-      "link": "https://simonwillison.net/2026/Nov/3/datasette-agent/",
+      "id": "3880bf849bb943e9",
+      "title": "datasette #3046: Don't serve link: rel=next HTTP headers to Firefox for HTML pages",
+      "link": "https://simonwillison.net/2026/Nov/7/link-rel-next/",
       "source": "Simon Willison",
       "category": "AI",
-      "summary": "Release: datasette-agent 0.5a0 This is a significant release of Datasette Agent . The most notable new feature is called the panel - it lets the agent chat open and then sit next to pages from Datasette, for example a table or query page. When combined with datasette-apps this me",
-      "published": "2026-11-15T02:00:03.617161+00:00",
+      "summary": "datasette #3046: Don&#x27;t serve link: rel=next HTTP headers to Firefox for HTML pages I was looking at the Firefox network panel today when I noticed that requests to a Datasette table page were triggering an HTTP prefetch to the next page of rows in that table. This was happen",
+      "published": "2026-11-16T02:00:08.945073+00:00",
       "audio_url": null,
       "duration": ""
     },
     {
-      "id": "c3dba756698ba6ec",
-      "title": "datasette-apps 0.3a0",
-      "link": "https://simonwillison.net/2026/Nov/4/datasette-apps/",
+      "id": "9572242cc9fc8ca1",
+      "title": "parse_number() as a SQLite extension: C vs Rust",
+      "link": "https://simonwillison.net/2026/Nov/8/sqlite-parse-number-c-vs-rust/",
       "source": "Simon Willison",
       "category": "AI",
-      "summary": "Release: datasette-apps 0.3a0 Datasette Apps adds support for hosting and editing custom HTML applications inside of Datasette. These can be created by hand, but it's easier to create them using LLMs via Datasette Agent . This release improves that integration: Apps can now be ta",
-      "published": "2026-11-15T02:00:03.617117+00:00",
+      "summary": "Research: parse_number() as a SQLite extension: C vs Rust I was out walking the dog when I got curious about how easy/difficult it would be to write a SQLite C extension that adds a parse_number() function for turning strings like -$1,234.56 or '12.5%' into numeric values that co",
+      "published": "2026-11-16T02:00:08.945006+00:00",
       "audio_url": null,
       "duration": ""
     },
     {
-      "id": "75546f2ae879a5a9",
-      "title": "Yonkers Rises",
-      "link": "https://simonwillison.net/2026/Nov/10/yonkers-rises/",
+      "id": "a92667754bb129c0",
+      "title": "Hide your slop PR descriptions behind <details><summary>",
+      "link": "https://simonwillison.net/2026/Nov/9/details-summary/",
       "source": "Simon Willison",
       "category": "AI",
-      "summary": "Tool: Yonkers Rises I realized I didn't know where Yonkers was, so I looked it up on Google Maps and then, to help embed its location and shape in my head (and to try out Claude Fable 5.2's 3D modeling and animation skills), I prompted Fable 5.2 Medium to: Make a three js animati",
-      "published": "2026-11-15T02:00:03.617005+00:00",
+      "summary": "Most of the changes I make to my projects these days come in the form of PRs opened for me by Claude Code or Codex. The PR is my unit of work - I use them to bundle commits together, iterating on them until a feature is complete, document decisions and then merge the finished res",
+      "published": "2026-11-16T02:00:08.944843+00:00",
       "audio_url": null,
       "duration": ""
     },
     {
-      "id": "c8bf0b8e918f2da7",
-      "title": "Quoting Prompting Claude Fable 5.2",
-      "link": "https://simonwillison.net/2026/Nov/10/prompting-claude-fable-52/",
+      "id": "5b851a3023343d96",
+      "title": "The Web Is More Than Enough, by Paul Ford",
+      "link": "https://simonwillison.net/2026/Nov/9/hn-50421091/",
       "source": "Simon Willison",
       "category": "AI",
-      "summary": "Claude Fable 5.2 pays close attention to who owns the code it works on. In Anthropic\u2019s testing on small coding tasks, the model tended to add to the existing structure when the prompt said nothing about ownership or presented the code base as someone else\u2019s, even when that duplic",
-      "published": "2026-11-15T02:00:03.616950+00:00",
+      "summary": "My comment on The Web Is More Than Enough, by Paul Ford &mdash; Hacker News. OK, this comment convinced me to give that a shot. Here's a thing I made in Three.js this morning - a Nudibranch themed Faberge Egg: https://static.simonwillison.net/static/2026/Hidden-Reef-Egg... (77KB)",
+      "published": "2026-11-16T02:00:08.944563+00:00",
       "audio_url": null,
       "duration": ""
     },
     {
-      "id": "fabe838d73f55c38",
-      "title": "Introducing Our Smallest, Most Efficient Model: Muse Ember",
-      "link": "https://simonwillison.net/2026/Nov/10/muse-ember/",
+      "id": "d363b026f0d913e8",
+      "title": "Locating the source of a mysterious beep with Claude",
+      "link": "https://simonwillison.net/2026/Nov/9/mysterious-beeps/",
       "source": "Simon Willison",
       "category": "AI",
-      "summary": "Introducing Our Smallest, Most Efficient Model: Muse Ember Meta AI just launched their entry in the Claude Haiku/GPT Luna category: Muse Ember, which they describe as: [...] our smallest and most efficient model designed for complex reasoning execution and the work agents repeat ",
-      "published": "2026-11-15T02:00:03.616870+00:00",
+      "summary": "Our house has a box room, full of boxes that we still haven't unpacked from our last move. A couple of weeks ago something in that room started intermittently beeping . The beeps were far enough apart that standing in the room and trying to determine the source of the noise was f",
+      "published": "2026-11-16T02:00:08.944491+00:00",
       "audio_url": null,
       "duration": ""
     },
     {
-      "id": "c1fbfe2e3fcb7bc5",
-      "title": "llm-gemini 0.36",
-      "link": "https://simonwillison.net/2026/Nov/10/llm-gemini/",
+      "id": "c93c64172e07cb1e",
+      "title": "llm-anthropic 0.31",
+      "link": "https://simonwillison.net/2026/Nov/9/llm-anthropic/",
       "source": "Simon Willison",
       "category": "AI",
-      "summary": "Release: llm-gemini 0.36 Gemini 4 Carbon was announced two weeks ago for \"a subset of cyber defenders\", but today it's available to everyone else . This is Google's best ever Gemini, priced at $2/million input and $10/million output at launch (that's GPT-6.1 Sol / Claude Sonnet 5",
-      "published": "2026-11-15T02:00:03.616652+00:00",
+      "summary": "Release: llm-anthropic 0.31 Anthropic released Fable 5.2 and Mythos 5.2 today. Fable 5.2 is currently ranked first on Artificial Analysis . Anthropic say it \"solved two open problems in the physics of black holes\", so clearly their internal benchmarks have become more ambitious! ",
+      "published": "2026-11-16T02:00:08.943791+00:00",
+      "audio_url": null,
+      "duration": ""
+    },
+    {
+      "id": "4c525e5e54fa3645",
+      "title": "An overview of Jensen Huang\u2019s messy days",
+      "link": "https://www.theverge.com/column/1033943/jensen-huang-nvidia-china-spying-scandal-resignation",
+      "source": "The Verge \u2014 AI",
+      "category": "AI",
+      "summary": "This is The Stepback, a weekly newsletter breaking down one essential story from the tech world. For more on Jensen Huang's resignation and the fallout from Nvidia's leadership crisis, follow Terrence O'Brien. The Stepback arrives in our subscribers' inboxes on Sunday at 8AM ET. ",
+      "published": "2026-11-16T02:00:07.751858+00:00",
+      "audio_url": null,
+      "duration": ""
+    },
+    {
+      "id": "1207b5c1c70bbc64",
+      "title": "Congress wants to tighten export rules on AI chips after Nvidia spy scandal",
+      "link": "https://www.theverge.com/ai-artificial-intelligence/1033984/congress-export-rules-ai-chips-china",
+      "source": "The Verge \u2014 AI",
+      "category": "AI",
+      "summary": "Unsurprisingly, following the scandal involving now-former Nvidia CEO Jensen Huang and a suspected Chinese spy, Congress is looking to further restrict exports of AI chips. Both Democrats and Republicans have voiced support for various measures and bills that would tighten rules ",
+      "published": "2026-11-16T02:00:07.751824+00:00",
+      "audio_url": null,
+      "duration": ""
+    },
+    {
+      "id": "2f1f5cbf7ce833ab",
+      "title": "Jensen Huang might be plotting a return and more of the latest Nvidia drama",
+      "link": "https://www.theverge.com/tech/1033999/jensen-huang-return-nvidia-megaspeed",
+      "source": "The Verge \u2014 AI",
+      "category": "AI",
+      "summary": "The drama around Nvidia co-founder and former CEO Jensen Huang is evolving quickly. The latest edition of our Stepback newsletter should get you up to speed, but there have already been a number of new developments since this morning. That includes rumors that Jensen Huang might ",
+      "published": "2026-11-16T02:00:07.751785+00:00",
+      "audio_url": null,
+      "duration": ""
+    },
+    {
+      "id": "f7214e14d1e100a3",
+      "title": "Apple\u2019s new study looks to improve the effectiveness of AI health tools",
+      "link": "https://www.theverge.com/tech/1033355/apples-new-study-looks-to-improve-the-effectiveness-of-ai-health-tools",
+      "source": "The Verge \u2014 AI",
+      "category": "AI",
+      "summary": "Apple announced a new study today with the goal of better understanding how people interact with conversational AI health tools and how useful their responses actually are. The company is conducting the Apple Health AI Usage Study in collaboration with OpenEvidence, a clinical AI",
+      "published": "2026-11-16T02:00:07.751724+00:00",
+      "audio_url": null,
+      "duration": ""
+    },
+    {
+      "id": "87c3f5416c055605",
+      "title": "Qatar Ministry of Communications and Information Technology Signs Post-Quantum Readiness Agreement with SignQuantum and QANplatform",
+      "link": "https://quantumcomputingreport.com/qatar-ministry-of-communications-and-information-technology-signs-post-quantum-readiness-agreement-with-signquantum-and-qanplatform/",
+      "source": "Quantum Computing Report",
+      "category": "Quantum",
+      "summary": "The Ministry of Communications and Information Technology of Qatar has partnered with SignQuantum and QANplatform to explore post-quantum cryptography for public-sector data, aligning with Qatar's National Vision 2030. This collaboration, announced at MWC26 Doha, aims to enhance ",
+      "published": "2026-11-16T00:39:05+00:00",
+      "audio_url": null,
+      "duration": ""
+    },
+    {
+      "id": "6e4c27f9bf6305ac",
+      "title": "Cross-Platform Cloud Benchmark Reveals Wide Gap Between Physical Qubit Counts and Entangled GHZ State Sizes",
+      "link": "https://quantumcomputingreport.com/cross-platform-cloud-benchmark-reveals-wide-gap-between-physical-qubit-counts-and-entangled-ghz-state-sizes/",
+      "source": "Quantum Computing Report",
+      "category": "Quantum",
+      "summary": "A new study benchmarked nine cloud-accessible quantum processors, revealing a significant gap between the number of physical qubits and the size of entangled GHZ states achievable without error mitigation. The research, which utilized standard remote cloud workflows, found that l",
+      "published": "2026-11-16T00:31:18+00:00",
+      "audio_url": null,
+      "duration": ""
+    },
+    {
+      "id": "87d7014c15ee68a3",
+      "title": "A step toward defining the Standard Model on a lattice",
+      "link": "https://openai.com/index/step-toward-defining-the-standard-model",
+      "source": "OpenAI Blog",
+      "category": "AI",
+      "summary": "Explore a candidate nonperturbative lattice definition of the Standard Model and how GPT-6 Astra helped turn the idea into a detailed proof.",
+      "published": "2026-11-15T22:00:01+00:00",
+      "audio_url": null,
+      "duration": ""
+    },
+    {
+      "id": "4b0fc5b701ffd77d",
+      "title": "Our new blog for science",
+      "link": "https://openai.com/index/our-new-blog-for-science",
+      "source": "OpenAI Blog",
+      "category": "AI",
+      "summary": "The OpenAI science blog shares new findings, practical methods, and firsthand accounts from researchers using AI to advance scientific discovery.",
+      "published": "2026-11-15T22:00:00+00:00",
+      "audio_url": null,
+      "duration": ""
+    },
+    {
+      "id": "4201db3ac6828cb2",
+      "title": "FBI warns ARTEX AI hacking tool is powering global cyberattacks",
+      "link": "https://www.bleepingcomputer.com/news/security/fbi-warns-artex-ai-hacking-tool-is-powering-global-cyberattacks/",
+      "source": "BleepingComputer",
+      "category": "Cybersecurity",
+      "summary": "The FBI is warning that hackers are using an AI-powered penetration testing framework called ARTEX to automate cyberattacks against organizations worldwide, including a recent ConnectWise supply-chain breach that compromised Microsoft 365 customer environments. [...]",
+      "published": "2026-11-15T18:29:53+00:00",
+      "audio_url": null,
+      "duration": ""
+    },
+    {
+      "id": "40b5c39e2ce51fd2",
+      "title": "Tangled quantum whirlpools caught unraveling in an ultracold gas",
+      "link": "https://phys.org/news/2026-11-tangled-quantum-whirlpools-caught-unraveling.html",
+      "source": "Phys.org Quantum Physics",
+      "category": "Quantum",
+      "summary": "When a cloud of atoms is cooled close to absolute zero, its atoms can merge into a Bose\u2013Einstein condensate (BEC): an exotic fluid in which atoms across the whole cloud share a single quantum state. Current theories predict that as a disordered quantum gas settles into this order",
+      "published": "2026-11-15T16:40:01+00:00",
+      "audio_url": null,
+      "duration": ""
+    },
+    {
+      "id": "bbb8a67270856461",
+      "title": "TSMC employee data breach linked to cloud provider",
+      "link": "https://www.bleepingcomputer.com/news/security/tsmc-employee-data-breach-linked-to-cloud-provider/",
+      "source": "BleepingComputer",
+      "category": "Cybersecurity",
+      "summary": "Taiwan Semiconductor Manufacturing Company (TSMC) confirmed that personal employee data has been leaked online after a threat actor put 6.9GB of information allegedly stolen from the company up for auction. [...]",
+      "published": "2026-11-15T15:23:48+00:00",
+      "audio_url": null,
+      "duration": ""
+    },
+    {
+      "id": "1fe5eb03b596b1cd",
+      "title": "DuckDB has an answer to \u201cbloated\u201d database messages",
+      "link": "https://thenewstack.io/duckdb-quack-database-protocol/",
+      "source": "The New Stack",
+      "category": "Cloud & DevOps",
+      "summary": "Older database protocols were built before big data. Some still send results row by row, repeating details like column names The post DuckDB has an answer to \u201cbloated\u201d database messages appeared first on The New Stack .",
+      "published": "2026-11-15T15:05:56+00:00",
+      "audio_url": null,
+      "duration": ""
+    },
+    {
+      "id": "0ecd0ab9ad51f1b4",
+      "title": "Claude Fable 5.2 vs. Opus 5.5: Same scores at almost 4x the cost",
+      "link": "https://thenewstack.io/claude-fable-5-2-vs-opus-5-5/",
+      "source": "The New Stack",
+      "category": "Cloud & DevOps",
+      "summary": "Anthropic released Claude Fable 5.2 on November 9 and said it beats Claude Opus 5.5 in almost every capability the The post Claude Fable 5.2 vs. Opus 5.5: Same scores at almost 4x the cost appeared first on The New Stack .",
+      "published": "2026-11-15T15:00:00+00:00",
+      "audio_url": null,
+      "duration": ""
+    },
+    {
+      "id": "04c1c102f5a737e8",
+      "title": "Italy Fines Meta \u20ac805 Million Over Facebook's Android Gallery Access Without Explicit Consent",
+      "link": "https://thehackernews.com/2026/11/italy-fines-meta-805-million-over.html",
+      "source": "The Hacker News",
+      "category": "Cybersecurity",
+      "summary": "Meta was fined \u20ac805 million in Italy yesterday over a Facebook for Android feature that suggests photos and videos from users' phone galleries for them to post. The Garante, Italy's data protection authority, found that the feature was enabled by default and that the app accessed",
+      "published": "2026-11-15T11:27:31+00:00",
+      "audio_url": null,
+      "duration": ""
+    },
+    {
+      "id": "960f41318ea903dd",
+      "title": "Cursor Says Stolen Fireworks AI Key Led to Trojanized Claude Code Extension Incident",
+      "link": "https://thehackernews.com/2026/11/stolen-fireworks-ai-key-led-to-cursor.html",
+      "source": "The Hacker News",
+      "category": "Cybersecurity",
+      "summary": "The compromise of Anthropic's official Claude Code extension on Cursor's extension marketplace was the result of the theft of an access key that was exposed in the wake of a breach targeting Fireworks AI. \"An attacker obtained an access key we had issued to Fireworks,\" Cursor sai",
+      "published": "2026-11-15T08:22:04+00:00",
       "audio_url": null,
       "duration": ""
     },
@@ -348,17 +510,6 @@
       "duration": ""
     },
     {
-      "id": "d46b516a4c8344dc",
-      "title": "The OpenAI board member who fired Sam Altman says we still can&#8217;t trust AI CEOs",
-      "link": "https://www.theverge.com/podcast/1032907/helen-toner-openai-cset-ai-safety-policy-interview",
-      "source": "The Verge \u2014 AI",
-      "category": "AI",
-      "summary": "Today, I\u2019m talking with Helen Toner, the executive director of the Center for Security and Emerging Technology at Georgetown University. This episode is part two of our series on AI in real life. Helen is a well-known figure in the AI safety and policy community, though she is pe",
-      "published": "2026-11-14T17:59:57.221198+00:00",
-      "audio_url": null,
-      "duration": ""
-    },
-    {
       "id": "4c0c677b8fcc3f4a",
       "title": "AWS Emulator proves agents need a verification loop. Realism is the hard part.",
       "link": "https://thenewstack.io/aws-emulator-verification-loops/",
@@ -436,28 +587,6 @@
       "duration": ""
     },
     {
-      "id": "71dad9da95c2fbfe",
-      "title": "Let\u2019s talk about Jensen Huang\u2019s many affairs!",
-      "link": "https://www.theverge.com/ai-artificial-intelligence/1032339/lets-talk-about-the-nvidia-shitshow",
-      "source": "The Verge \u2014 AI",
-      "category": "AI",
-      "summary": "Usually, we'd be offering to answer your questions about a news event, but honestly we don't really have any answers about what the hell is going on over at Nvidia. I can't speak for Nilay but at the rate Jensen Huang's new mistresses are dropping, I am concerned we are approachi",
-      "published": "2026-11-14T14:00:06.363796+00:00",
-      "audio_url": null,
-      "duration": ""
-    },
-    {
-      "id": "567fa298898a17ca",
-      "title": "Jensen Huang and the decline of the visionary showman founder CEO",
-      "link": "https://www.theverge.com/tech/1033781/nvidia-jensen-huang-last-visionary-showman-founder-ceo",
-      "source": "The Verge \u2014 AI",
-      "category": "AI",
-      "summary": "On January 6th, 2025, Nvidia CEO Jensen Huang got his rockstar moment at last. He strode triumphantly onstage, hand raised in the air, to the claps and cheers of a 14,000-person arena absolutely packed with influencers and fans, their faces awash in blue glow, as he made his entr",
-      "published": "2026-11-14T14:00:06.363647+00:00",
-      "audio_url": null,
-      "duration": ""
-    },
-    {
       "id": "bfa341543aab8992",
       "title": "Claude Fable 5.2 vs. GPT-6 Astra: A lower list price didn\u2019t mean a lower bill",
       "link": "https://thenewstack.io/claude-fable-5-2-vs-gpt-6-astra/",
@@ -476,17 +605,6 @@
       "category": "Cybersecurity",
       "summary": "The U.S. Cybersecurity and Infrastructure Security Agency (CISA) on Friday added a high-severity security flaw impacting UnrealIRCd, an open-source Internet Relay Chat (IRC) server, to its Known Exploited Vulnerabilities (KEV) catalog, following reports of active exploitation. Th",
       "published": "2026-11-14T12:38:35+00:00",
-      "audio_url": null,
-      "duration": ""
-    },
-    {
-      "id": "32933935200c2839",
-      "title": "AI chatbots are recommending fake retail websites, study finds",
-      "link": "https://www.theverge.com/ai-artificial-intelligence/1032020/gemini-chatgpt-perplexity-shopping-test-risky-fake-websites-citations",
-      "source": "The Verge \u2014 AI",
-      "category": "AI",
-      "summary": "Shoppers using AI chatbots to research products or find places to buy items could be directed to imposters and other risky websites, a new study found. The study conducted by IP protection firm Podqi and shared exclusively with The Verge prompted ChatGPT, Gemini, and Perplexity w",
-      "published": "2026-11-14T09:59:55.009724+00:00",
       "audio_url": null,
       "duration": ""
     },
@@ -590,17 +708,6 @@
       "duration": ""
     },
     {
-      "id": "c6d14192eb51c48c",
-      "title": "German Aerospace Center (DLR) Researchers Demonstrate Low-Cost Benchmarked-Noise Error Mitigation Across 100-Qubit IBM and IQM Processors",
-      "link": "https://quantumcomputingreport.com/german-aerospace-center-dlr-researchers-demonstrate-low-cost-benchmarked-noise-error-mitigation-across-100-qubit-ibm-and-iqm-processors/",
-      "source": "Quantum Computing Report",
-      "category": "Quantum",
-      "summary": "Researchers at the German Aerospace Center (DLR) have developed an improved quantum error mitigation protocol, randomized benchmarked-noise zero-noise extrapolation (bnZNE). This method enhances expectation-value accuracy without increasing measurement shot budgets, validated on ",
-      "published": "2026-11-13T22:55:15+00:00",
-      "audio_url": null,
-      "duration": ""
-    },
-    {
       "id": "3880f24cce93a157",
       "title": "Route coding agent requests to the right model on Amazon Bedrock with NVIDIA NeMo Switchyard",
       "link": "https://aws.amazon.com/blogs/machine-learning/route-coding-agent-requests-to-the-right-model-on-amazon-bedrock-with-nvidia-nemo-switchyard/",
@@ -608,17 +715,6 @@
       "category": "AI",
       "summary": "Coding agents work in tasks, and the number that matters is cost per solved task, not price per token. In this post, you use the AWS CDK to deploy LiteLLM with the NVIDIA NeMo Switchyard routing plugin on Amazon Bedrock, then measure cost per solved task for a routed model group ",
       "published": "2026-11-13T22:30:12+00:00",
-      "audio_url": null,
-      "duration": ""
-    },
-    {
-      "id": "b578bfb4ac71b774",
-      "title": "QodeX Quantum, NVIDIA, RTX BBN, and U.S. Navy Researchers Forecast Unstructured PDEs on 52-Qubit IBM Hardware",
-      "link": "https://quantumcomputingreport.com/qodex-quantum-nvidia-rtx-bbn-and-u-s-navy-researchers-forecast-unstructured-pdes-on-52-qubit-ibm-hardware/",
-      "source": "Quantum Computing Report",
-      "category": "Quantum",
-      "summary": "A research team from QodeX Quantum, NVIDIA, RTX BBN, and U.S. Navy researchers successfully demonstrated gradient-free forecasting of nonlinear partial differential equations (PDEs) on unstructured engineering meshes using up to 52 qubits on an IBM Quantum Heron r3 processor. The",
-      "published": "2026-11-13T22:22:38+00:00",
       "audio_url": null,
       "duration": ""
     },
@@ -762,17 +858,6 @@
       "category": "AI",
       "summary": "",
       "published": "2026-11-13T18:00:39+00:00",
-      "audio_url": null,
-      "duration": ""
-    },
-    {
-      "id": "56a12282587adbcf",
-      "title": "DeepSeek\u2019s coding agent is too tidy for its own good \u2014 and benchmarks are punishing it",
-      "link": "https://thenewstack.io/deepseek-harness-cleanup-benchmark/",
-      "source": "The New Stack",
-      "category": "Cloud & DevOps",
-      "summary": "DeepSeek&#8217;s open-source coding agent is losing points on a major benchmark for a habit developers usually treat as good practice: The post DeepSeek\u2019s coding agent is too tidy for its own good \u2014 and benchmarks are punishing it appeared first on The New Stack .",
-      "published": "2026-11-13T17:56:30+00:00",
       "audio_url": null,
       "duration": ""
     },
@@ -942,17 +1027,6 @@
       "duration": ""
     },
     {
-      "id": "15a4d9fd682388a6",
-      "title": "Here\u2019s how to teach AI agents to search like human experts",
-      "link": "https://thenewstack.io/ai-agents-retrieval-agent-ready-schema/",
-      "source": "The New Stack",
-      "category": "Cloud & DevOps",
-      "summary": "Agentic retrieval is a hot topic for a reason: Every company wants to automate work, but they often just are The post Here&#8217;s how to teach AI agents to search like human experts appeared first on The New Stack .",
-      "published": "2026-11-13T14:50:37+00:00",
-      "audio_url": null,
-      "duration": ""
-    },
-    {
       "id": "c6e1d6a772717416",
       "title": "FBI Says North Korean Hackers Stole Over $400 Million in Crypto Using Deepfake Video Calls",
       "link": "https://thehackernews.com/2026/11/fbi-says-north-korean-hackers-stole.html",
@@ -1052,17 +1126,6 @@
       "duration": ""
     },
     {
-      "id": "8762a201a24f4db2",
-      "title": "Microsoft confirms Windows activation failures after November updates",
-      "link": "https://www.bleepingcomputer.com/news/microsoft/microsoft-confirms-windows-activation-failures-after-november-updates/",
-      "source": "BleepingComputer",
-      "category": "Cybersecurity",
-      "summary": "Microsoft has confirmed that this month's Patch Tuesday security updates are causing Windows activation and licensing failures with 0x80041008 error codes. [...]",
-      "published": "2026-11-13T09:36:18+00:00",
-      "audio_url": null,
-      "duration": ""
-    },
-    {
       "id": "c9761a2103e6c4c4",
       "title": "Classical Light Dynamics Could Help Simulate Quantum Interactions",
       "link": "https://thequantuminsider.com/2026/11/13/classical-light-dynamics-could-help-simulate-quantum-interactions/",
@@ -1085,28 +1148,6 @@
       "duration": ""
     },
     {
-      "id": "3ff055feac947c37",
-      "title": "Police arrest 354 suspects in dark web cybercrime crackdown",
-      "link": "https://www.bleepingcomputer.com/news/security/police-arrest-354-vendors-buyers-in-global-cybercrime-crackdown/",
-      "source": "BleepingComputer",
-      "category": "Cybersecurity",
-      "summary": "Authorities arrested 354 suspects in a joint international operation targeting vendors and buyers on the Archetyp, Nemesis, Tor2Door, Bohemia, and Kingdom dark web marketplaces. [...]",
-      "published": "2026-11-13T08:34:20+00:00",
-      "audio_url": null,
-      "duration": ""
-    },
-    {
-      "id": "c0eea237828e0534",
-      "title": "Hackers Exploit PHP2Shell Flaws in Check Point Gateways to Deploy TSGA Backdoor and Wipe ESXi Files",
-      "link": "https://thehackernews.com/2026/11/hackers-exploit-php2shell-flaws-in.html",
-      "source": "The Hacker News",
-      "category": "Cybersecurity",
-      "summary": "An unknown threat actor has been observed targeting unpatched Check Point Security Gateways to obtain initial access via the PHP2Shell vulnerabilities and then a previously unreported local privilege escalation flaw in Gaia OS&nbsp; to deploy a backdoor called TSGA. The activity,",
-      "published": "2026-11-13T08:05:49+00:00",
-      "audio_url": null,
-      "duration": ""
-    },
-    {
       "id": "d1318183fe172893",
       "title": "Shield helps technicians hand off legacy portal work with OpenAI",
       "link": "https://openai.com/business/customer-stories/shield",
@@ -1114,17 +1155,6 @@
       "category": "AI",
       "summary": "Shield uses OpenAI to help IT technicians hand off work in legacy portals. Its Forge agents navigate systems so technicians can focus on issues needing their judgment.",
       "published": "2026-11-13T08:00:00+00:00",
-      "audio_url": null,
-      "duration": ""
-    },
-    {
-      "id": "9e0cc84d062dbe41",
-      "title": "Hackers Exploit N-central Flaws to Infect 21 Servers, Including 19 Running Hotfix 2",
-      "link": "https://thehackernews.com/2026/11/hackers-exploit-n-central-flaws-to.html",
-      "source": "The Hacker News",
-      "category": "Cybersecurity",
-      "summary": "N-able on Thursday said it's taking additional precautions in the wake of public disclosure of a new set of flaws tracked as 4EverAble2Shell and Agent2Shell. \"We are restricting certain N-central features and integrations,\" the company said in a Thursday update. \"These measures m",
-      "published": "2026-11-13T05:43:28+00:00",
       "audio_url": null,
       "duration": ""
     },
@@ -1756,17 +1786,6 @@
       "duration": ""
     },
     {
-      "id": "80b38ea7da372c49",
-      "title": "ChatGPT Plus for veterans and servicemembers",
-      "link": "https://openai.com/index/chatgpt-plus-for-veterans",
-      "source": "OpenAI Blog",
-      "category": "AI",
-      "summary": "More than 20,000 veterans and transitioning service members have claimed a free year of ChatGPT Plus. See how they use it to prepare for civilian careers.",
-      "published": "2026-11-11T08:00:00+00:00",
-      "audio_url": null,
-      "duration": ""
-    },
-    {
       "id": "b22522d14a17f95f",
       "title": "BotPsy: On-Device Personal Assistant with a Sub-Billion-Parameter Agentic Language Model",
       "link": "https://huggingface.co/blog/qvac/botpsy",
@@ -1800,17 +1819,6 @@
       "duration": ""
     },
     {
-      "id": "8c999d6885d24711",
-      "title": "JioStar\u2019s chief architect on AI discovery at 500M-user scale",
-      "link": "https://openai.com/index/jiostar-vijay-seshadri",
-      "source": "OpenAI Blog",
-      "category": "AI",
-      "summary": "JioStar\u2019s Vijay Seshadri explains AI discovery at 500M-user scale. Read his lessons on evals, guardrails, and taking AI into production.",
-      "published": "2026-11-11T00:00:00+00:00",
-      "audio_url": null,
-      "duration": ""
-    },
-    {
       "id": "f91527c7bf888616",
       "title": "Detecting sleeper agents hiding in AI model neurons",
       "link": "https://www.microsoft.com/en-us/security/blog/2026/11/10/detecting-sleeper-agents-hiding-in-ai-model-neurons/",
@@ -1829,17 +1837,6 @@
       "category": "Quantum",
       "summary": "Researchers at the U.S. Department of Energy's (DOE) Ames National Laboratory have discovered a way to control the handedness of magnons, tiny magnetic waves that can carry information through materials. By changing the material's magnetic state with an external magnetic field, t",
       "published": "2026-11-10T21:40:02+00:00",
-      "audio_url": null,
-      "duration": ""
-    },
-    {
-      "id": "dbce61fefe3ab468",
-      "title": "Classical\u2013quantum light interactions could make complex quantum behavior easier to simulate",
-      "link": "https://phys.org/news/2026-11-classicalquantum-interactions-complex-quantum-behavior.html",
-      "source": "Phys.org Quantum Physics",
-      "category": "Quantum",
-      "summary": "An international collaboration demonstrates that classical nonlinear dynamics can drive single- and two-photon states to thermalize, opening new avenues for simulating complex quantum many-body systems within accessible optical architectures.",
-      "published": "2026-11-10T21:30:01+00:00",
       "audio_url": null,
       "duration": ""
     },
@@ -2038,17 +2035,6 @@
       "category": "AI",
       "summary": "",
       "published": "2026-11-09T15:05:57+00:00",
-      "audio_url": null,
-      "duration": ""
-    },
-    {
-      "id": "f1d34edf42f32adc",
-      "title": "Anthropic skips six-year waitlist with massive $3.4 billion gas turbine generator deal",
-      "link": "https://www.tomshardware.com/tech-industry/data-centers/anthropic-skips-six-year-waitlist-with-massive-usd3-4-billion-gas-turbine-generator-deal-firm-takes-over-onepwrs-orders-secures-1-7gw-of-capacity-to-power-ai-data-centers",
-      "source": "Tom's Hardware \u2014 Anthropic",
-      "category": "AI",
-      "summary": "Anthropic has committed $3.4 billion to secure 1.7GW of gas-fired generators from OnePWR Solutions, taking over existing Caterpillar orders as lengthy equipment lead times push AI companies to build their own power infrastructure",
-      "published": "2026-11-09T13:45:00+00:00",
       "audio_url": null,
       "duration": ""
     },
@@ -2284,17 +2270,6 @@
       "duration": ""
     },
     {
-      "id": "3ace5a62609891e3",
-      "title": "Anthropic confirms new Claude Code limits to prevent game cloning, users report blocking reverse engineering tasks",
-      "link": "https://www.tomshardware.com/tech-industry/artificial-intelligence/anthropic-confirms-new-claude-code-limits-to-prevent-game-cloning-users-report-opus-5-5-is-also-actively-blocking-reverse-engineering-tasks",
-      "source": "Tom's Hardware \u2014 Anthropic",
-      "category": "AI",
-      "summary": "Anthropic employee confirms that Claude Code now has orders not to reproduce game IP \u2014 company \"iterating to ensure [...] the right balance\"",
-      "published": "2026-11-02T12:30:00+00:00",
-      "audio_url": null,
-      "duration": ""
-    },
-    {
       "id": "c3818f6bb92d6663",
       "title": "Quantum Intelligence \u2014 Episode 3 (Mon Nov 2, 2026): IBM links two quantum chips, NIST finalises the post-quantum timeline, IonQ's open-air network",
       "link": "https://muse.ai/podcasts/media/1248297608376725/e94514d7-438c-4486-b16c-5a6c5b6bd1cd/ep-df6f8649-a8ad-411c-8c0e-6e92d8016daf.mp3",
@@ -2361,17 +2336,6 @@
       "duration": "237"
     },
     {
-      "id": "370354f1b8461153",
-      "title": "New AI-driven Windows malware feeds stolen data to Claude to rank victims\u2019 assets by value, then deletes itself \u2014 payload builds custom target assessment, can switch models if one refuses, or skip the AI step entirely",
-      "link": "https://www.tomshardware.com/tech-industry/cyber-security/new-ai-driven-windows-malware-feeds-stolen-data-to-claude-to-rank-victims-assets-by-value-then-deletes-itself-payload-builds-custom-target-assessment-can-switch-models-if-one-refuses-or-skip-the-ai-step-entirely",
-      "source": "Tom's Hardware \u2014 Anthropic",
-      "category": "AI",
-      "summary": "Cisco Talos says the VOLTA infostealer sends stolen victim data to Claude Opus 4.6 to rank assets by monetization value.",
-      "published": "2026-11-01T21:00:00+00:00",
-      "audio_url": null,
-      "duration": ""
-    },
-    {
       "id": "1d149533392ce5c6",
       "title": "Daily AI Intelligence \u2014 Episode 31 (Sun Nov 1, 2026): One shared AI training opt-out, a tampered Claude Code extension, and DeepSeek billing begins",
       "link": "https://muse.ai/podcasts/media/1248297608376725/94f09345-ad4a-4981-83dd-e3206bbf5c4e/ep-6e819eb1-1548-49c8-adf5-c092f212edeb.mp3",
@@ -2381,17 +2345,6 @@
       "published": "2026-11-01T01:01:42+00:00",
       "audio_url": "https://muse.ai/podcasts/media/1248297608376725/94f09345-ad4a-4981-83dd-e3206bbf5c4e/ep-6e819eb1-1548-49c8-adf5-c092f212edeb.mp3",
       "duration": "265"
-    },
-    {
-      "id": "94697ec49ac5116b",
-      "title": "Anthropic's Claude AI blocks video game cloning and reverse-engineering",
-      "link": "https://www.tomshardware.com/tech-industry/artificial-intelligence/anthropics-ai-model-is-now-blocking-attempts-at-video-game-recreation-and-cloning-users-also-claim-non-malicious-generic-reverse-engineering-tasks-are-blocked",
-      "source": "Tom's Hardware \u2014 Anthropic",
-      "category": "AI",
-      "summary": "Anthropic's Opus 5.5 model blocking attempts at videogame recreation \u2014 users also claim their non-malicious generic reverse-engineering tasks are block",
-      "published": "2026-10-31T12:20:00+00:00",
-      "audio_url": null,
-      "duration": ""
     },
     {
       "id": "970d204df3026519",
@@ -2493,17 +2446,6 @@
       "duration": ""
     },
     {
-      "id": "b53378954f7facf4",
-      "title": "Anthropic\u2019s IPO filing shows most of its compute goes to R&D, not serving customers",
-      "link": "https://www.tomshardware.com/tech-industry/artificial-intelligence/anthropics-ipo-filing-shows-most-of-its-compute-goes-to-r-and-d-not-serving-customers-company-details-massive-usd800-billion-in-tpu-and-gpu-contracts",
-      "source": "Tom's Hardware \u2014 Anthropic",
-      "category": "AI",
-      "summary": "Anthropic\u2019s S-1 splits its $8.9 billion H1 compute bill: most went to R&amp;D, with less than a third estimated to serve Claude customers.",
-      "published": "2026-10-29T11:30:00+00:00",
-      "audio_url": null,
-      "duration": ""
-    },
-    {
       "id": "ce362432103cffdc",
       "title": "Daily AI Intelligence \u2014 Episode 28 (Thu Oct 29, 2026): Google's Gemini 4 Carbon, Anthropic's drug discovery push, Muse lands in Singapore",
       "link": "https://muse.ai/podcasts/media/1248297608376725/94f09345-ad4a-4981-83dd-e3206bbf5c4e/ep-d69d96ce-f008-47d5-a64e-d119fe487fb3.mp3",
@@ -2579,17 +2521,6 @@
       "published": "2026-10-28T01:02:02+00:00",
       "audio_url": "https://muse.ai/podcasts/media/1248297608376725/94f09345-ad4a-4981-83dd-e3206bbf5c4e/ep-f8fe2ed7-da38-485b-a4bd-2ccbb59faf4d.mp3",
       "duration": "266"
-    },
-    {
-      "id": "2f927aa8ccac7686",
-      "title": "Anthropic prepares for potential $2 trillion IPO valuation after reporting billions in revenue",
-      "link": "https://www.tomshardware.com/tech-industry/artificial-intelligence/anthropic-prepares-for-potential-usd2-trillion-ipo-valuation-after-reporting-billions-in-revenue-company-warns-ai-could-pose-catastrophic-existential-risks-to-humanity",
-      "source": "Tom's Hardware \u2014 Anthropic",
-      "category": "AI",
-      "summary": "Anthropic has filed to go public as it pursues a potential multitrillion-dollar valuation, reporting $16.3 billion in revenue for the first half of 2026. The company\u2019s filing also warns that its AI safety measures may not prevent catastrophic risks. OpenAI and AI chipmaker Cerebr",
-      "published": "2026-10-27T10:00:00+00:00",
-      "audio_url": null,
-      "duration": ""
     },
     {
       "id": "8bee98f2e1bbe1b5",
@@ -3021,17 +2952,6 @@
       "duration": "253"
     },
     {
-      "id": "a257dddc2d05fd3f",
-      "title": "Anthropic\u2019s proposed AI safety bill only kicks in if 50 deaths or $1 billion in damages are on the line",
-      "link": "https://www.tomshardware.com/tech-industry/artificial-intelligence/anthropics-proposed-ai-safety-bill-only-kicks-in-if-50-deaths-or-usd1-billion-in-damages-are-on-the-line-proposal-would-effectively-make-the-commerce-department-the-only-agency-capable-of-stopping-an-ai-model",
-      "source": "Tom's Hardware \u2014 Anthropic",
-      "category": "AI",
-      "summary": "Anthropic's proposal requires evaluators to report any imminent risk to the Department of Commerce within 72 hours, after which the Department must present the evidence to a federal judge and await an order.",
-      "published": "2026-10-18T11:25:00+00:00",
-      "audio_url": null,
-      "duration": ""
-    },
-    {
       "id": "afd8a1cfa0be0c7d",
       "title": "Daily AI Intelligence \u2014 Episode 17 (Sun Oct 18, 2026): DeepSeek's V4.1-Flash-1017, Microsoft's agent accounts, Google's Gemini Plus downgrade",
       "link": "https://muse.ai/podcasts/media/1248297608376725/94f09345-ad4a-4981-83dd-e3206bbf5c4e/ep-9d67f8e1-4602-4188-9a6d-e209ea1a9b37.mp3",
@@ -3041,17 +2961,6 @@
       "published": "2026-10-18T01:03:03+00:00",
       "audio_url": "https://muse.ai/podcasts/media/1248297608376725/94f09345-ad4a-4981-83dd-e3206bbf5c4e/ep-9d67f8e1-4602-4188-9a6d-e209ea1a9b37.mp3",
       "duration": "285"
-    },
-    {
-      "id": "9f87c7b56c7d43e8",
-      "title": "Game decompilation hub freezes leaderboard after AI turns progress into a hollow numbers game amid explosion of 'AI slop'",
-      "link": "https://www.tomshardware.com/video-games/retro-gaming/game-decompilation-tracker-decomp-dev-shuts-its-public-leaderboard-saying-ai-has-broken-the-community-its-creator-blames-forks-that-use-ai-to-finish-other-teams-projects-and-races-to-ship-rough-pc-ports",
-      "source": "Tom's Hardware \u2014 Anthropic",
-      "category": "AI",
-      "summary": "decomp.dev has closed its public index of game decompilation projects, saying AI-driven forks and ports broke the community.",
-      "published": "2026-10-17T11:30:00+00:00",
-      "audio_url": null,
-      "duration": ""
     },
     {
       "id": "e5cd6773e8d9a9e6",
@@ -3219,17 +3128,6 @@
       "duration": ""
     },
     {
-      "id": "7408946146311b21",
-      "title": "Anthropic warns of self-replicating AI worm threat that doesn't need data centers to self-improve and spread",
-      "link": "https://www.tomshardware.com/tech-industry/artificial-intelligence/anthropic-warns-of-self-replicating-ai-worm-threat-that-doesnt-need-data-centers-to-self-improve-and-spread-current-deployment-is-impractical-but-could-become-a-worry-as-tech-improves",
-      "source": "Tom's Hardware \u2014 Anthropic",
-      "category": "AI",
-      "summary": "Anthropic\u2019s paper establishes conceptual model capabilities, but doesn\u2019t quite demonstrate a real threat until models improve further.",
-      "published": "2026-10-13T14:00:00+00:00",
-      "audio_url": null,
-      "duration": ""
-    },
-    {
       "id": "361040e238eeae78",
       "title": "Scientists recreate a bizarre quantum effect that stops a particle cold",
       "link": "https://www.sciencedaily.com/releases/2026/10/261011211554.htm",
@@ -3250,17 +3148,6 @@
       "published": "2026-10-13T01:03:31+00:00",
       "audio_url": "https://muse.ai/podcasts/media/1248297608376725/94f09345-ad4a-4981-83dd-e3206bbf5c4e/ep-2c99a941-4407-4667-9f77-0c237a92d4a3.mp3",
       "duration": "291"
-    },
-    {
-      "id": "e77534a29e124c97",
-      "title": "Dev used AI agents and more than 500 billion tokens to rebuild Call of Duty: Modern Warfare 2's source code",
-      "link": "https://www.tomshardware.com/tech-industry/artificial-intelligence/dev-used-ai-agents-and-more-than-500-billion-tokens-to-rebuild-call-of-duty-modern-warfare-2s-source-code-83-percent-of-the-2009-shooters-functions-now-match-the-original-byte-for-byte",
-      "source": "Tom's Hardware \u2014 Anthropic",
-      "category": "AI",
-      "summary": "Maurice Heumann's Claude and Codex agents rebuilt Modern Warfare 2's source; 83% of functions match the original byte for byte.",
-      "published": "2026-10-12T11:00:00+00:00",
-      "audio_url": null,
-      "duration": ""
     },
     {
       "id": "63ddb34ce9542223",
