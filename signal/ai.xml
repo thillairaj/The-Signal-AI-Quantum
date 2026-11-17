@@ -4,8 +4,35 @@
     <title>Signal Brief · AI</title>
     <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/</link>
     <description>Signal Brief: the day in technology, in The Signal's own words. Every item is written from linked official sources and fact checked before publication.</description>
-    <lastBuildDate>Mon, 16 Nov 2026 22:58:13 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 17 Nov 2026 01:44:54 +0000</lastBuildDate>
     <atom:link xmlns:atom="http://www.w3.org/2005/Atom" href="https://thillairaj.github.io/The-Signal-AI-Quantum/signal/ai.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>NVIDIA announces Rubin HPC, a GPU built for science simulations</title>
+      <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/2026-11-17/01/</link>
+      <guid isPermaLink="false">brief-2026-11-17-01</guid>
+      <pubDate>Tue, 17 Nov 2026 01:30:00 +0000</pubDate>
+      <category>AI</category>
+      <description>NVIDIA has announced Rubin HPC, a new GPU in its Vera Rubin platform, at the SC26 supercomputing conference. The chip carries more than 50,000 CUDA cores with seventh generation NVLink links between GPUs, and is aimed at the simulation workloads that AI agents use to test ideas in science, engineering and analytics. NVIDIA says the GPU will be available in 2028, and its CUDA-X libraries give agents ready made routines for simulation and analytics work. Why it matters for tech: Simulation is the slow step in agent driven science, so a chip shaped around sparse simulation data changes how quickly researchers can test ideas before running lab work.</description>
+      <content:encoded><![CDATA[<p>NVIDIA has announced Rubin HPC, a new GPU in its Vera Rubin platform, at the SC26 supercomputing conference. The chip carries more than 50,000 CUDA cores with seventh generation NVLink links between GPUs, and is aimed at the simulation workloads that AI agents use to test ideas in science, engineering and analytics. NVIDIA says the GPU will be available in 2028, and its CUDA-X libraries give agents ready made routines for simulation and analytics work.</p><p><strong>Why it matters for tech:</strong> Simulation is the slow step in agent driven science, so a chip shaped around sparse simulation data changes how quickly researchers can test ideas before running lab work.</p><p>Source: </p><ul><li><a href="https://blogs.nvidia.com/blog/rubin-hpc/">NVIDIA Blog</a></li></ul>]]></content:encoded>
+    </item>
+    <item>
+      <title>OpenAI brings computer use agents to healthcare admin work</title>
+      <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/2026-11-17/02/</link>
+      <guid isPermaLink="false">brief-2026-11-17-02</guid>
+      <pubDate>Tue, 17 Nov 2026 01:30:00 +0000</pubDate>
+      <category>AI</category>
+      <description>OpenAI has published results for computer use agents working on clinical and administrative healthcare tasks, alongside partnerships with CVS Health, Abridge, Cigna Healthcare and Ambience. In its evaluation, physicians rated 99% of 325 reviewed tasks safe, and rated the model very helpful or extremely helpful in 93% of 646 assessments. On the independent HealthAdminBench benchmark from Stanford researchers, GPT-6 Astra scored 94.3% of available points, while the cheaper GPT-6 Luna scored 91.8% at 8.5 cents per task. Why it matters for tech: Hospitals run on paperwork spread across systems that do not talk to each other, so agents that can work inside existing software cut admin load without replacing the systems.</description>
+      <content:encoded><![CDATA[<p>OpenAI has published results for computer use agents working on clinical and administrative healthcare tasks, alongside partnerships with CVS Health, Abridge, Cigna Healthcare and Ambience. In its evaluation, physicians rated 99% of 325 reviewed tasks safe, and rated the model very helpful or extremely helpful in 93% of 646 assessments. On the independent HealthAdminBench benchmark from Stanford researchers, GPT-6 Astra scored 94.3% of available points, while the cheaper GPT-6 Luna scored 91.8% at 8.5 cents per task.</p><p><strong>Why it matters for tech:</strong> Hospitals run on paperwork spread across systems that do not talk to each other, so agents that can work inside existing software cut admin load without replacing the systems.</p><p>Source: </p><ul><li><a href="https://openai.com/index/advancing-computer-use-for-healthcare-teams">OpenAI</a></li></ul>]]></content:encoded>
+    </item>
+    <item>
+      <title>Alibaba launches Qwen4-Max as an API only flagship model</title>
+      <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/2026-11-17/03/</link>
+      <guid isPermaLink="false">brief-2026-11-17-03</guid>
+      <pubDate>Tue, 17 Nov 2026 01:30:00 +0000</pubDate>
+      <category>AI</category>
+      <description>Alibaba has launched Qwen4-Max, the first model in its Qwen4 family, built on a mixture of experts design with 2.4 trillion backbone parameters and a 1 million token context window. Unlike earlier Qwen flagships, the model is available only through Alibaba's QwenCloud API, starting at $1.50 per million input tokens and $4.50 per million output tokens, with no downloadable weights announced. Alibaba said open weights will come for smaller Qwen4 models, without naming which ones or when. Why it matters for tech: Qwen's earlier flagships shipped with open weights, so keeping the new flagship API only changes what developers can do with it, and puts the focus on API pricing instead of downloads.</description>
+      <content:encoded><![CDATA[<p>Alibaba has launched Qwen4-Max, the first model in its Qwen4 family, built on a mixture of experts design with 2.4 trillion backbone parameters and a 1 million token context window. Unlike earlier Qwen flagships, the model is available only through Alibaba's QwenCloud API, starting at $1.50 per million input tokens and $4.50 per million output tokens, with no downloadable weights announced. Alibaba said open weights will come for smaller Qwen4 models, without naming which ones or when.</p><p><strong>Why it matters for tech:</strong> Qwen's earlier flagships shipped with open weights, so keeping the new flagship API only changes what developers can do with it, and puts the focus on API pricing instead of downloads.</p><p>Source: </p><ul><li><a href="https://thenewstack.io/qwen4-max-alibaba-open-weights/">The New Stack</a></li></ul>]]></content:encoded>
+    </item>
     <item>
       <title>OpenAI opens a blog for scientists using AI in research</title>
       <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/2026-11-16/01/</link>

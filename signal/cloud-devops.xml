@@ -4,8 +4,17 @@
     <title>Signal Brief · Cloud &amp; DevOps</title>
     <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/</link>
     <description>Signal Brief: the day in technology, in The Signal's own words. Every item is written from linked official sources and fact checked before publication.</description>
-    <lastBuildDate>Mon, 16 Nov 2026 22:58:13 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 17 Nov 2026 01:44:54 +0000</lastBuildDate>
     <atom:link xmlns:atom="http://www.w3.org/2005/Atom" href="https://thillairaj.github.io/The-Signal-AI-Quantum/signal/cloud-devops.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>GitHub pull request merges timed out for hours before recovery</title>
+      <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/2026-11-17/06/</link>
+      <guid isPermaLink="false">brief-2026-11-17-06</guid>
+      <pubDate>Tue, 17 Nov 2026 01:30:00 +0000</pubDate>
+      <category>Cloud &amp; DevOps</category>
+      <description>GitHub investigated elevated timeouts on pull request merges from 11:59 UTC on November 16, with timeout rates reaching about 4.75% against a baseline near 0.2%, and degraded performance in Actions workflows. Engineers reduced load on the affected systems and reported pull requests and Actions recovered, with the incident marked resolved at 16:26 UTC. GitHub said a detailed root cause analysis will follow. Why it matters for tech: Pull requests are the merge path for most software teams, so hours of timeouts stall releases and show how much daily development depends on one hosted service.</description>
+      <content:encoded><![CDATA[<p>GitHub investigated elevated timeouts on pull request merges from 11:59 UTC on November 16, with timeout rates reaching about 4.75% against a baseline near 0.2%, and degraded performance in Actions workflows. Engineers reduced load on the affected systems and reported pull requests and Actions recovered, with the incident marked resolved at 16:26 UTC. GitHub said a detailed root cause analysis will follow.</p><p><strong>Why it matters for tech:</strong> Pull requests are the merge path for most software teams, so hours of timeouts stall releases and show how much daily development depends on one hosted service.</p><p>Source: </p><ul><li><a href="https://www.githubstatus.com/incidents/2zfqmghmg3s3">GitHub Status</a></li></ul>]]></content:encoded>
+    </item>
     <item>
       <title>DuckDB's Quack protocol streams database results in column batches</title>
       <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/2026-11-16/05/</link>
