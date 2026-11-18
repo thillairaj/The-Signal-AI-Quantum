@@ -4,8 +4,26 @@
     <title>Signal Brief · Cybersecurity</title>
     <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/</link>
     <description>Signal Brief: the day in technology, in The Signal's own words. Every item is written from linked official sources and fact checked before publication.</description>
-    <lastBuildDate>Tue, 17 Nov 2026 01:44:54 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 18 Nov 2026 01:40:30 +0000</lastBuildDate>
     <atom:link xmlns:atom="http://www.w3.org/2005/Atom" href="https://thillairaj.github.io/The-Signal-AI-Quantum/signal/cybersecurity.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>Critical Java4Shell flaw allows code execution on widely used Java applications</title>
+      <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/2026-11-18/07/</link>
+      <guid isPermaLink="false">brief-2026-11-18-07</guid>
+      <pubDate>Wed, 18 Nov 2026 01:30:00 +0000</pubDate>
+      <category>Cybersecurity</category>
+      <description>A critical flaw in OpenJDK's hardware-accelerated Base64 decoder, tracked as CVE-2026-114938, lets unauthenticated attackers run code on widely used Java applications. Researchers at Calif, who rated it 9.2 under CVSS 4.0, demonstrated remote code execution against Keycloak, Jira, Confluence, Jenkins and other tools running default settings. The flaw affects OpenJDK 17.0.6 and later and the distributions built on it, and Oracle released patches on November 17 as part of a security update covering 655 vulnerabilities. Why it matters for tech: Java runs the back office of many large organisations, so a flaw in the runtime itself puts unrelated applications at risk at the same time, and patching the runtime is the only full fix.</description>
+      <content:encoded><![CDATA[<p>A critical flaw in OpenJDK's hardware-accelerated Base64 decoder, tracked as CVE-2026-114938, lets unauthenticated attackers run code on widely used Java applications. Researchers at Calif, who rated it 9.2 under CVSS 4.0, demonstrated remote code execution against Keycloak, Jira, Confluence, Jenkins and other tools running default settings. The flaw affects OpenJDK 17.0.6 and later and the distributions built on it, and Oracle released patches on November 17 as part of a security update covering 655 vulnerabilities.</p><p><strong>Why it matters for tech:</strong> Java runs the back office of many large organisations, so a flaw in the runtime itself puts unrelated applications at risk at the same time, and patching the runtime is the only full fix.</p><p>Source: </p><ul><li><a href="https://www.bleepingcomputer.com/news/security/critical-java4shell-flaw-allows-rce-attacks-on-major-java-applications/">BleepingComputer</a></li><li><a href="https://www.cisa.gov/news-events/alerts/2026/11/17/critical-java-vulnerability-requires-immediate-patching">CISA</a></li></ul>]]></content:encoded>
+    </item>
+    <item>
+      <title>Hijacked Optimizely scripts served a card skimmer to visitors of CNN, BBC and Zoom</title>
+      <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/2026-11-18/08/</link>
+      <guid isPermaLink="false">brief-2026-11-18-08</guid>
+      <pubDate>Wed, 18 Nov 2026 01:30:00 +0000</pubDate>
+      <category>Cybersecurity</category>
+      <description>An attacker exploited a flaw in Optimizely's Web Experimentation service to inject malicious code into the scripts that customer websites load from it, reaching visitors at 178 organisations including CNN, the BBC and Zoom. The code swapped cryptocurrency wallet addresses for the attacker's own and added a card skimmer that captured card numbers, expiry dates and security codes, while iPhones were served exploit kits that researchers say did not take over any device. Optimizely says it has fixed the flaw and removed the code, and researchers counted about 7,040 dollars in cryptocurrency sent to the attacker's wallets. Why it matters for tech: A single compromised supplier script ran on hundreds of high-traffic sites at once, so visitors had no way to tell a trusted page had turned hostile.</description>
+      <content:encoded><![CDATA[<p>An attacker exploited a flaw in Optimizely's Web Experimentation service to inject malicious code into the scripts that customer websites load from it, reaching visitors at 178 organisations including CNN, the BBC and Zoom. The code swapped cryptocurrency wallet addresses for the attacker's own and added a card skimmer that captured card numbers, expiry dates and security codes, while iPhones were served exploit kits that researchers say did not take over any device. Optimizely says it has fixed the flaw and removed the code, and researchers counted about 7,040 dollars in cryptocurrency sent to the attacker's wallets.</p><p><strong>Why it matters for tech:</strong> A single compromised supplier script ran on hundreds of high-traffic sites at once, so visitors had no way to tell a trusted page had turned hostile.</p><p>Source: </p><ul><li><a href="https://thehackernews.com/2026/11/hijacked-optimizely-scripts-served-card.html">The Hacker News</a></li><li><a href="https://status.optimizely.com/incidents/ftw0fh9wx43z">Optimizely Status</a></li></ul>]]></content:encoded>
+    </item>
     <item>
       <title>Google finds attackers running fully automated exploit pipelines</title>
       <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/2026-11-17/07/</link>

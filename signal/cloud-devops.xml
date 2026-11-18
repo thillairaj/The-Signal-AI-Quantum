@@ -4,8 +4,17 @@
     <title>Signal Brief · Cloud &amp; DevOps</title>
     <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/</link>
     <description>Signal Brief: the day in technology, in The Signal's own words. Every item is written from linked official sources and fact checked before publication.</description>
-    <lastBuildDate>Tue, 17 Nov 2026 01:44:54 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 18 Nov 2026 01:40:30 +0000</lastBuildDate>
     <atom:link xmlns:atom="http://www.w3.org/2005/Atom" href="https://thillairaj.github.io/The-Signal-AI-Quantum/signal/cloud-devops.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>Azure HorizonDB leaves preview as Microsoft's cloud-native PostgreSQL</title>
+      <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/2026-11-18/06/</link>
+      <guid isPermaLink="false">brief-2026-11-18-06</guid>
+      <pubDate>Wed, 18 Nov 2026 01:30:00 +0000</pubDate>
+      <category>Cloud &amp; DevOps</category>
+      <description>Microsoft has made Azure HorizonDB, its cloud-native PostgreSQL-compatible database, generally available in 13 regions. Microsoft says it delivers up to eight times faster transaction performance than self-managed PostgreSQL on its own benchmark, supports databases up to 128 TB, and fails over in under five seconds. A serverless version, Fabric HorizonDB, is in public preview and pauses compute after five minutes of inactivity. Why it matters for tech: Teams are asking one database to hold transactions, vectors, graphs and AI calls together, and HorizonDB is Microsoft's answer for PostgreSQL shops that want that in a managed service.</description>
+      <content:encoded><![CDATA[<p>Microsoft has made Azure HorizonDB, its cloud-native PostgreSQL-compatible database, generally available in 13 regions. Microsoft says it delivers up to eight times faster transaction performance than self-managed PostgreSQL on its own benchmark, supports databases up to 128 TB, and fails over in under five seconds. A serverless version, Fabric HorizonDB, is in public preview and pauses compute after five minutes of inactivity.</p><p><strong>Why it matters for tech:</strong> Teams are asking one database to hold transactions, vectors, graphs and AI calls together, and HorizonDB is Microsoft's answer for PostgreSQL shops that want that in a managed service.</p><p>Source: </p><ul><li><a href="https://techcommunity.microsoft.com/blog/adforpostgresql/horizondb-postgresql-for-enterprises-developers-and-agents-on-azure-and-fabric/4573498">Microsoft Tech Community</a></li></ul>]]></content:encoded>
+    </item>
     <item>
       <title>GitHub pull request merges timed out for hours before recovery</title>
       <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/2026-11-17/06/</link>

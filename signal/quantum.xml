@@ -4,8 +4,26 @@
     <title>Signal Brief · Quantum</title>
     <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/</link>
     <description>Signal Brief: the day in technology, in The Signal's own words. Every item is written from linked official sources and fact checked before publication.</description>
-    <lastBuildDate>Tue, 17 Nov 2026 01:44:54 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 18 Nov 2026 01:40:30 +0000</lastBuildDate>
     <atom:link xmlns:atom="http://www.w3.org/2005/Atom" href="https://thillairaj.github.io/The-Signal-AI-Quantum/signal/quantum.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>Planckian wins 10 million euros in EU backing for shared-control quantum chips</title>
+      <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/2026-11-18/04/</link>
+      <guid isPermaLink="false">brief-2026-11-18-04</guid>
+      <pubDate>Wed, 18 Nov 2026 01:30:00 +0000</pubDate>
+      <category>Quantum</category>
+      <description>Planckian, a quantum hardware company building superconducting processors, has been selected for the European Innovation Council Accelerator, combining a 2.5 million euro grant with a planned 7.5 million euro equity investment from the EIC Fund. Its processors let many qubits share control lines, removing the one-line-per-qubit wiring that limits how large these machines can grow. The grant funds a 24-month programme ending in a market-ready system, and Planckian was one of 35 companies selected from 453 full applications. Why it matters for tech: Wiring is one of the practical limits on building larger superconducting machines, so funding aimed at shared control lines matters to how fast these systems can scale.</description>
+      <content:encoded><![CDATA[<p>Planckian, a quantum hardware company building superconducting processors, has been selected for the European Innovation Council Accelerator, combining a 2.5 million euro grant with a planned 7.5 million euro equity investment from the EIC Fund. Its processors let many qubits share control lines, removing the one-line-per-qubit wiring that limits how large these machines can grow. The grant funds a 24-month programme ending in a market-ready system, and Planckian was one of 35 companies selected from 453 full applications.</p><p><strong>Why it matters for tech:</strong> Wiring is one of the practical limits on building larger superconducting machines, so funding aimed at shared control lines matters to how fast these systems can scale.</p><p>Source: </p><ul><li><a href="https://thequantuminsider.com/2026/11/17/planckian-selected-for-e10-million-in-eic-support-for-quantum-hardware/">The Quantum Insider</a></li><li><a href="https://quantumcomputingreport.com/planckian-selected-for-e10-million-11-million-usd-eic-accelerator-blended-finance-package-to-scale-shared-control-superconducting-processors/">Quantum Computing Report</a></li></ul>]]></content:encoded>
+    </item>
+    <item>
+      <title>Telia, Nokia and QMill run quantum-powered encryption on a live 5G network</title>
+      <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/2026-11-18/05/</link>
+      <guid isPermaLink="false">brief-2026-11-18-05</guid>
+      <pubDate>Wed, 18 Nov 2026 01:30:00 +0000</pubDate>
+      <category>Quantum</category>
+      <description>Telia Finland, Nokia and QMill have demonstrated quantum-powered encryption running in a live 5G network on commercial equipment. The method pairs standard ML-KEM post-quantum cryptography with a key exchange powered by a quantum computer and random numbers drawn from quantum computation, securing the link between a 5G base station and the network security gateway. The partners took the idea from concept to demonstration in under 90 days and are now looking at use cases in security-sensitive sectors. Why it matters for tech: Operators need a path to quantum-safe mobile networks that runs on the equipment they already have, and this shows the cryptography working inside a real 5G setup rather than a lab.</description>
+      <content:encoded><![CDATA[<p>Telia Finland, Nokia and QMill have demonstrated quantum-powered encryption running in a live 5G network on commercial equipment. The method pairs standard ML-KEM post-quantum cryptography with a key exchange powered by a quantum computer and random numbers drawn from quantum computation, securing the link between a 5G base station and the network security gateway. The partners took the idea from concept to demonstration in under 90 days and are now looking at use cases in security-sensitive sectors.</p><p><strong>Why it matters for tech:</strong> Operators need a path to quantum-safe mobile networks that runs on the equipment they already have, and this shows the cryptography working inside a real 5G setup rather than a lab.</p><p>Source: </p><ul><li><a href="https://thequantuminsider.com/2026/11/17/telia-nokia-and-qmill-demonstrate-quantum-powered-encryption-in-a-5g-network/">The Quantum Insider</a></li></ul>]]></content:encoded>
+    </item>
     <item>
       <title>IBM, NVIDIA and Fermilab plan a modular quantum computing platform</title>
       <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/2026-11-17/04/</link>
