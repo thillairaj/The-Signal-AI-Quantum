@@ -1,0 +1,15 @@
+<p><em>Signal Research Notes is an original-research series on The Signal, published three times a week. Each edition asks one question, works through it from primary sources, and keeps confirmed facts separate from analysis. Sources are linked at the end.</em></p>
+
+<p>On November 16, 2026, the Institute of Foundation Models (IFM) posted the long-form technical report for K2-Horizon, arXiv:2611.21003, a six-model open fleet from a 0.9-billion-parameter dense model to a 375-billion-parameter mixture-of-experts with 23 billion active parameters. The weights are the least interesting part of the release. IFM also publishes the training code, stage checkpoints, and data recipes behind roughly 10 trillion synthetic pretraining tokens. Its slogan is "a glass box, not a black box".</p>
+
+<h3>Open weights, open recipe</h3>
+
+<p>K2-Horizon ships the xLLM training stack, the RL360 post-training stack, and the pipelines that generated the synthetic data. Four of the six models share one 22-trillion-token pretraining corpus, which turns the fleet into a controlled experiment in scaling: same data, different sizes, comparable results. That lets an independent lab test whether a capability came from scale or from a data choice.</p>
+
+<h3>Two ideas worth testing</h3>
+
+<p>MoVA, mixture-of-value attention, applies mixture-of-experts routing to attention value projections instead of only to feed-forward layers. IFM reports that its 36-billion-parameter MoVA model, with 4 billion active parameters, nearly matches a 32-billion-parameter dense model trained on the same data while activating about one-seventh of the parameters. Uno adds a lossless diffusion adapter that speeds decoding by up to 2.2 times without a separate speculative draft model. Both figures are vendor-reported. If MoVA holds up, the efficient model in the fleet is not the smallest, it is the one that spends its parameters best.</p>
+
+<h3>The honest limits</h3>
+
+<p>Three limits should shape how teams read this release. The benchmarks are IFM's own, published against leading open and proprietary models; treat them as claims, not verdicts. The 375-billion-parameter flagship is infrastructure news unless you run a cluster or a host that already serves comparable open mixture-of-experts models. IFM is Abu Dhabi-based, so some teams must map data residency and export rules before mirroring the corpus. Read the license files bundled with each checkpoint before any commercial fine-tuning. K2-Horizon does not settle the open-weights debate, but it raises the bar for what "open" has to mean: weights, data, code, and the recipe, all inspectable.</p>
