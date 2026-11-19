@@ -2997,6 +2997,215 @@
      ]
     }
    ]
+  },
+  {
+   "date": "2026-11-19",
+   "items": [
+    {
+     "id": "brief-2026-11-19-01",
+     "category": "AI",
+     "company": "Google",
+     "headline": "Google launches Gemini 4 Neon, a faster frontier model for coding and knowledge work",
+     "summary": "Google DeepMind has introduced Gemini 4 Neon, a model built for complex software engineering, knowledge work and science workflows, with a 1 million token context window and prices of $3 per million input tokens and $15 per million output tokens. It ranks third overall with a score of 61 on the Artificial Analysis Intelligence Index at its highest thinking level and second on the Vals Index. On the SWE sweep coding benchmark it scores 12.8% with the mini harness and 39.0% inside Google Antigravity. It is rolling out in the Gemini API, AI Studio, Antigravity and the Gemini app for Pro and Ultra subscribers.",
+     "why": "A frontier class model tuned for long agent runs at a lower cost per task changes which workloads teams run on a mid tier model instead of a flagship.",
+     "source_date": "2026-11-18",
+     "sources": [
+      {
+       "label": "Google DeepMind",
+       "url": "https://deepmind.google/blog/introducing-gemini-4-neon/"
+      },
+      {
+       "label": "The New Stack",
+       "url": "https://thenewstack.io/gemini-neon-antigravity-harness/"
+      }
+     ]
+    },
+    {
+     "id": "brief-2026-11-19-02",
+     "category": "AI",
+     "company": "OpenAI",
+     "headline": "OpenAI agents find working exploits for 948 Linux kernel flaws for about $1.2 million",
+     "summary": "OpenAI says an automated pipeline reproduced 1,724 Linux kernel vulnerabilities and generated working exploits for 948 of them, at about $1.2 million in API costs, in a November 4 technical report titled A thousand fewer paths to root. Human security researchers reviewed the findings before they went to Linux kernel maintainers, and the company notes the cost is an upper bound because the harness was not tuned for cost. Sam Altman, speaking at the New York Times DealBook Summit, said OpenAI is the only company that has the entire intelligence stack.",
+     "why": "Agents that reproduce and exploit real kernel flaws for about $1.2 million change the economics of vulnerability research for defenders and attackers alike.",
+     "source_date": "2026-11-18",
+     "sources": [
+      {
+       "label": "The New Stack",
+       "url": "https://thenewstack.io/openai-entire-ai-stack/"
+      }
+     ]
+    },
+    {
+     "id": "brief-2026-11-19-03",
+     "category": "AI",
+     "company": "Suno",
+     "headline": "Suno adds AI video to its music platform with Visuals",
+     "summary": "Suno has added image and video generation to its AI music platform with a feature called Visuals. Users can turn a song into 15 second video clips that sync to the music and lip sync to the lyrics, or generate images to use as thumbnails and album artwork. Visuals runs on the H3 Move model, based on MiniMax H3, and uses its own Visuals credits, separate from the credits used to make songs. It is available on web, iOS and Android.",
+     "why": "Music generation tools are adding video to keep creators inside one app, so the contest among AI creative tools now covers sound and picture together.",
+     "source_date": "2026-11-18",
+     "sources": [
+      {
+       "label": "The Verge",
+       "url": "https://www.theverge.com/ai-artificial-intelligence/1036415/suno-visuals-ai-generated-video-images-feature"
+      }
+     ]
+    },
+    {
+     "id": "brief-2026-11-19-04",
+     "category": "Quantum",
+     "company": "Alice & Bob",
+     "headline": "Alice & Bob doubles its target to 200 logical qubits by 2030",
+     "summary": "Alice & Bob has published an updated modular roadmap that targets 200 logical qubits by 2030, built from 3,600 physical cat qubits in its Carbon system, double its previous target. The plan calls for 6 logical qubits in 2028, 1,024 in 2032 and 2,048 in 2034. Cat qubits suppress bit flip errors at the hardware level, so fewer physical qubits are needed per logical qubit, and the company plans to link modular processors at cryogenic temperatures to scale.",
+     "why": "A roadmap that needs far fewer physical qubits per logical qubit changes how soon fault tolerant machines can move from lab demonstrations to useful work.",
+     "source_date": "2026-11-18",
+     "sources": [
+      {
+       "label": "The Quantum Insider",
+       "url": "https://thequantuminsider.com/2026/11/18/alice-bobs-updated-roadmap-targets-200-logical-qubits-from-3600-physical-qubits-by-2030/"
+      },
+      {
+       "label": "Quantum Computing Report",
+       "url": "https://quantumcomputingreport.com/alice-bob-accelerates-modular-cat-qubit-roadmap-to-200-logical-qubits-from-3600-physical-qubits-by-2030/"
+      }
+     ]
+    },
+    {
+     "id": "brief-2026-11-19-05",
+     "category": "Quantum",
+     "company": "QuEra",
+     "headline": "QuEra and Berkeley Lab publish a Nature study of quantum dynamics on up to 180 qubits",
+     "summary": "QuEra Computing and Lawrence Berkeley National Laboratory researchers have published a study in Nature using Aquila, QuEra's analog neutral atom quantum computer, to watch how quantum systems settle after sudden changes. Experiments on arrays of up to 180 atoms found long lived prethermal states, resonant melting and a dynamical phase transition with no equilibrium counterpart. Classical calculations on NERSC's Perlmutter supercomputer validated the results at small scales.",
+     "why": "Programmable quantum hardware that reveals physics classical machines cannot reach shows the machines are already producing publishable science, not only benchmarks.",
+     "source_date": "2026-11-18",
+     "sources": [
+      {
+       "label": "The Quantum Insider",
+       "url": "https://thequantuminsider.com/2026/11/18/quera-berkeley-lab-study-quantum-dynamics-aquila/"
+      }
+     ]
+    },
+    {
+     "id": "brief-2026-11-19-06",
+     "category": "Cloud & DevOps",
+     "company": "Amazon",
+     "headline": "AWS Lambda now runs GPU workloads for event driven functions",
+     "summary": "AWS Lambda now supports GPU instances for Event Functions running on Lambda Managed Instances, so teams can run machine learning inference, media processing, rendering and scientific computing as serverless functions. Functions are deployed as container images, Lambda handles provisioning, scaling and drivers, and the feature is aimed at inference rather than training. GPU functions support timeouts of up to 90 minutes for asynchronous work and up to 32 GB of ephemeral storage.",
+     "why": "Serverless GPU support removes the cluster and driver work from small inference jobs, so teams can run a model as one step in an event driven workflow.",
+     "source_date": "2026-11-18",
+     "sources": [
+      {
+       "label": "AWS News Blog",
+       "url": "https://aws.amazon.com/blogs/aws/aws-lambda-now-supports-gpu-instances-for-event-functions-on-lambda-managed-instances/"
+      }
+     ]
+    },
+    {
+     "id": "brief-2026-11-19-07",
+     "category": "Cloud & DevOps",
+     "company": "Microsoft",
+     "headline": "Microsoft announces Windows Server 2028 with hardened security by default",
+     "summary": "Microsoft has announced Windows Server 2028 at its Ignite 2026 conference, with a hardened Server Core configuration by default and a new security baseline that cuts the work of securing a server from first boot. The release adds Trusted Launch for virtual machines, hybrid post quantum key exchange with ML-KEM, Intune management for servers and native NVMe storage enabled by default. It also adds AI accelerator support for running inference environments and open weight models on premises.",
+     "why": "A server release that ships hardened and manages inference on premises matters to teams that must keep AI workloads inside their own data centres.",
+     "source_date": "2026-11-18",
+     "sources": [
+      {
+       "label": "BleepingComputer",
+       "url": "https://www.bleepingcomputer.com/news/microsoft/microsoft-announces-windows-server-2028-with-hardened-security/"
+      }
+     ]
+    },
+    {
+     "id": "brief-2026-11-19-08",
+     "category": "Cybersecurity",
+     "company": "Microsoft",
+     "headline": "Attackers hijack Microsoft's Agent Framework package on PyPI to steal cloud credentials",
+     "summary": "Attackers compromised Microsoft's agent-framework package on the Python Package Index, publishing malicious versions 1.26.1 and 1.26.2 33 minutes apart on November 17. Both versions install startup hooks that run a credential stealer on every Python launch, collecting environment variables, Azure tokens and credential files and sending them to a remote endpoint. The two versions have been quarantined on PyPI, and users are advised to pin to version 1.26.0, check for exposure between 8:35 and about 9:20 p.m. UTC on November 17, and rotate exposed credentials.",
+     "why": "A poisoned package from a trusted publisher shows that AI developer tools are now a direct route into cloud credentials, so pinning versions and auditing installs matters as much as patching.",
+     "source_date": "2026-11-18",
+     "sources": [
+      {
+       "label": "The Hacker News",
+       "url": "https://thehackernews.com/2026/11/attackers-compromise-microsofts-agent.html"
+      },
+      {
+       "label": "BleepingComputer",
+       "url": "https://www.bleepingcomputer.com/news/security/microsofts-agent-framework-pypi-package-compromised-to-steal-credentials/"
+      }
+     ]
+    },
+    {
+     "id": "brief-2026-11-19-09",
+     "category": "Cybersecurity",
+     "company": "Apache",
+     "headline": "Critical Apache Roller flaw under active attack lets anyone run code without logging in",
+     "summary": "A critical flaw in Apache Roller, an open source Java blogging platform, is under active exploitation, according to the Apache Software Foundation. The flaw, CVE-2026-129448, carries a CVSS score of 9.8 and is an unauthenticated deserialization bug in the XML-RPC endpoint that lets a remote attacker run arbitrary code. It affects Roller versions 4.0.0 through 6.1.4, and users should upgrade to 6.1.6 or later or disable the XML-RPC extension types.",
+     "why": "An unauthenticated flaw with a 9.8 severity score that is already being exploited leaves no safe window to wait for a maintenance slot.",
+     "source_date": "2026-11-18",
+     "sources": [
+      {
+       "label": "The Hacker News",
+       "url": "https://thehackernews.com/2026/11/critical-apache-roller-rce-flaw-under.html"
+      },
+      {
+       "label": "BleepingComputer",
+       "url": "https://www.bleepingcomputer.com/news/security/apache-warns-of-roller-rce-vulnerability-exploited-in-attacks/"
+      }
+     ]
+    },
+    {
+     "id": "brief-2026-11-19-10",
+     "category": "Industry",
+     "company": "NVIDIA",
+     "headline": "NVIDIA RTX Spark compact desktops go on sale for local AI work",
+     "summary": "Compact desktop PCs built on NVIDIA RTX Spark are now on sale from ASUS, Dell and MSI, bringing local AI agents, image and video generation and model fine tuning to a dedicated Windows PC. The systems pair a 20 core Grace CPU with a Blackwell RTX GPU and up to 128 GB of unified memory, delivering up to 1 petaflop of AI performance and able to run 120 billion parameter models locally. Mini PCs from Acer, GIGABYTE and HP are coming soon, along with a Microsoft Surface RTX Spark Dev Box.",
+     "why": "A compact desktop that runs large models locally gives developers an always on machine for agents and scheduled work without paying per token cloud charges.",
+     "source_date": "2026-11-18",
+     "sources": [
+      {
+       "label": "NVIDIA Blog",
+       "url": "https://blogs.nvidia.com/blog/rtx-spark-desktop-local-ai-available-now/"
+      }
+     ]
+    },
+    {
+     "id": "brief-2026-11-19-11",
+     "category": "Policy",
+     "company": "NVIDIA",
+     "headline": "NVIDIA stops shipping licensed Hopper AI chips to China",
+     "summary": "NVIDIA has stopped shipping its licensed Hopper data centre chips, including the H200, to China, interim chief executive Colette Kress said on the company's earnings call on November 17. The chips brought in $2.4 billion in the quarter ended October 25, about 2 percent of NVIDIA's $115.8 billion revenue, and the current quarter forecast of about $130 billion assumes no data centre revenue from China. The halt comes after the US Commerce Department issued an interim rule barring advanced chips from foreign data centres that serve Chinese customers remotely, and Reuters reported about 600,000 H200 chips stuck in Hong Kong after Beijing withheld approval for large scale imports.",
+     "why": "The chipmaker walking away from a licensed China business it had defended shows export controls now shape product strategy directly, not only compliance paperwork.",
+     "source_date": "2026-11-18",
+     "sources": [
+      {
+       "label": "The Verge",
+       "url": "https://www.theverge.com/tech/1036445/nvidia-h200-ai-chips-china-stop-selling"
+      },
+      {
+       "label": "NVIDIA Q3 FY2027 results (SEC filing)",
+       "url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000088/q3fy27pr.htm"
+      }
+     ]
+    },
+    {
+     "id": "brief-2026-11-19-12",
+     "category": "Policy",
+     "company": "European Commission",
+     "headline": "EU creates a Sanctions Office and names Lars Danielsson as sanctions envoy",
+     "summary": "The European Commission has created an EU Sanctions Office to bring together its sanctions work across the full cycle, from policy design and implementation to enforcement and anti circumvention. The office sits in the Secretariat-General under Commissioner Maria Luís Albuquerque and takes effect on 16 January 2027. The Commission also appointed Swedish diplomat Lars Danielsson as International Special Envoy for the Implementation of EU Sanctions; he takes up the post on 6 February 2027, succeeding David O'Sullivan.",
+     "why": "Centralising sanctions enforcement changes how export controls on chips and other technology reach companies, since circumvention through third countries is now one office's job.",
+     "source_date": "2026-11-18",
+     "sources": [
+      {
+       "label": "European Commission",
+       "url": "https://ec.europa.eu/commission/presscorner/detail/en/ip_26_2499"
+      },
+      {
+       "label": "Kyiv Independent",
+       "url": "https://kyivindependent.com/eu-launches-new-sanctions-office-appoints-official-to-analyze-and-enforce-russia-restrictions/"
+      }
+     ]
+    }
+   ]
   }
  ]
 }

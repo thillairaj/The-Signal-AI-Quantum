@@ -4,8 +4,26 @@
     <title>Signal Brief · Quantum</title>
     <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/</link>
     <description>Signal Brief: the day in technology, in The Signal's own words. Every item is written from linked official sources and fact checked before publication.</description>
-    <lastBuildDate>Wed, 18 Nov 2026 01:40:30 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 19 Nov 2026 01:39:08 +0000</lastBuildDate>
     <atom:link xmlns:atom="http://www.w3.org/2005/Atom" href="https://thillairaj.github.io/The-Signal-AI-Quantum/signal/quantum.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>Alice &amp; Bob doubles its target to 200 logical qubits by 2030</title>
+      <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/2026-11-19/04/</link>
+      <guid isPermaLink="false">brief-2026-11-19-04</guid>
+      <pubDate>Thu, 19 Nov 2026 01:30:00 +0000</pubDate>
+      <category>Quantum</category>
+      <description>Alice &amp; Bob has published an updated modular roadmap that targets 200 logical qubits by 2030, built from 3,600 physical cat qubits in its Carbon system, double its previous target. The plan calls for 6 logical qubits in 2028, 1,024 in 2032 and 2,048 in 2034. Cat qubits suppress bit flip errors at the hardware level, so fewer physical qubits are needed per logical qubit, and the company plans to link modular processors at cryogenic temperatures to scale. Why it matters for tech: A roadmap that needs far fewer physical qubits per logical qubit changes how soon fault tolerant machines can move from lab demonstrations to useful work.</description>
+      <content:encoded><![CDATA[<p>Alice &amp; Bob has published an updated modular roadmap that targets 200 logical qubits by 2030, built from 3,600 physical cat qubits in its Carbon system, double its previous target. The plan calls for 6 logical qubits in 2028, 1,024 in 2032 and 2,048 in 2034. Cat qubits suppress bit flip errors at the hardware level, so fewer physical qubits are needed per logical qubit, and the company plans to link modular processors at cryogenic temperatures to scale.</p><p><strong>Why it matters for tech:</strong> A roadmap that needs far fewer physical qubits per logical qubit changes how soon fault tolerant machines can move from lab demonstrations to useful work.</p><p>Source: </p><ul><li><a href="https://thequantuminsider.com/2026/11/18/alice-bobs-updated-roadmap-targets-200-logical-qubits-from-3600-physical-qubits-by-2030/">The Quantum Insider</a></li><li><a href="https://quantumcomputingreport.com/alice-bob-accelerates-modular-cat-qubit-roadmap-to-200-logical-qubits-from-3600-physical-qubits-by-2030/">Quantum Computing Report</a></li></ul>]]></content:encoded>
+    </item>
+    <item>
+      <title>QuEra and Berkeley Lab publish a Nature study of quantum dynamics on up to 180 qubits</title>
+      <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/2026-11-19/05/</link>
+      <guid isPermaLink="false">brief-2026-11-19-05</guid>
+      <pubDate>Thu, 19 Nov 2026 01:30:00 +0000</pubDate>
+      <category>Quantum</category>
+      <description>QuEra Computing and Lawrence Berkeley National Laboratory researchers have published a study in Nature using Aquila, QuEra's analog neutral atom quantum computer, to watch how quantum systems settle after sudden changes. Experiments on arrays of up to 180 atoms found long lived prethermal states, resonant melting and a dynamical phase transition with no equilibrium counterpart. Classical calculations on NERSC's Perlmutter supercomputer validated the results at small scales. Why it matters for tech: Programmable quantum hardware that reveals physics classical machines cannot reach shows the machines are already producing publishable science, not only benchmarks.</description>
+      <content:encoded><![CDATA[<p>QuEra Computing and Lawrence Berkeley National Laboratory researchers have published a study in Nature using Aquila, QuEra's analog neutral atom quantum computer, to watch how quantum systems settle after sudden changes. Experiments on arrays of up to 180 atoms found long lived prethermal states, resonant melting and a dynamical phase transition with no equilibrium counterpart. Classical calculations on NERSC's Perlmutter supercomputer validated the results at small scales.</p><p><strong>Why it matters for tech:</strong> Programmable quantum hardware that reveals physics classical machines cannot reach shows the machines are already producing publishable science, not only benchmarks.</p><p>Source: </p><ul><li><a href="https://thequantuminsider.com/2026/11/18/quera-berkeley-lab-study-quantum-dynamics-aquila/">The Quantum Insider</a></li></ul>]]></content:encoded>
+    </item>
     <item>
       <title>Planckian wins 10 million euros in EU backing for shared-control quantum chips</title>
       <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/2026-11-18/04/</link>

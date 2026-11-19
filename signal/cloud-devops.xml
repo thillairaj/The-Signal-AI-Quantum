@@ -4,8 +4,26 @@
     <title>Signal Brief · Cloud &amp; DevOps</title>
     <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/</link>
     <description>Signal Brief: the day in technology, in The Signal's own words. Every item is written from linked official sources and fact checked before publication.</description>
-    <lastBuildDate>Wed, 18 Nov 2026 01:40:30 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 19 Nov 2026 01:39:08 +0000</lastBuildDate>
     <atom:link xmlns:atom="http://www.w3.org/2005/Atom" href="https://thillairaj.github.io/The-Signal-AI-Quantum/signal/cloud-devops.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>AWS Lambda now runs GPU workloads for event driven functions</title>
+      <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/2026-11-19/06/</link>
+      <guid isPermaLink="false">brief-2026-11-19-06</guid>
+      <pubDate>Thu, 19 Nov 2026 01:30:00 +0000</pubDate>
+      <category>Cloud &amp; DevOps</category>
+      <description>AWS Lambda now supports GPU instances for Event Functions running on Lambda Managed Instances, so teams can run machine learning inference, media processing, rendering and scientific computing as serverless functions. Functions are deployed as container images, Lambda handles provisioning, scaling and drivers, and the feature is aimed at inference rather than training. GPU functions support timeouts of up to 90 minutes for asynchronous work and up to 32 GB of ephemeral storage. Why it matters for tech: Serverless GPU support removes the cluster and driver work from small inference jobs, so teams can run a model as one step in an event driven workflow.</description>
+      <content:encoded><![CDATA[<p>AWS Lambda now supports GPU instances for Event Functions running on Lambda Managed Instances, so teams can run machine learning inference, media processing, rendering and scientific computing as serverless functions. Functions are deployed as container images, Lambda handles provisioning, scaling and drivers, and the feature is aimed at inference rather than training. GPU functions support timeouts of up to 90 minutes for asynchronous work and up to 32 GB of ephemeral storage.</p><p><strong>Why it matters for tech:</strong> Serverless GPU support removes the cluster and driver work from small inference jobs, so teams can run a model as one step in an event driven workflow.</p><p>Source: </p><ul><li><a href="https://aws.amazon.com/blogs/aws/aws-lambda-now-supports-gpu-instances-for-event-functions-on-lambda-managed-instances/">AWS News Blog</a></li></ul>]]></content:encoded>
+    </item>
+    <item>
+      <title>Microsoft announces Windows Server 2028 with hardened security by default</title>
+      <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/2026-11-19/07/</link>
+      <guid isPermaLink="false">brief-2026-11-19-07</guid>
+      <pubDate>Thu, 19 Nov 2026 01:30:00 +0000</pubDate>
+      <category>Cloud &amp; DevOps</category>
+      <description>Microsoft has announced Windows Server 2028 at its Ignite 2026 conference, with a hardened Server Core configuration by default and a new security baseline that cuts the work of securing a server from first boot. The release adds Trusted Launch for virtual machines, hybrid post quantum key exchange with ML-KEM, Intune management for servers and native NVMe storage enabled by default. It also adds AI accelerator support for running inference environments and open weight models on premises. Why it matters for tech: A server release that ships hardened and manages inference on premises matters to teams that must keep AI workloads inside their own data centres.</description>
+      <content:encoded><![CDATA[<p>Microsoft has announced Windows Server 2028 at its Ignite 2026 conference, with a hardened Server Core configuration by default and a new security baseline that cuts the work of securing a server from first boot. The release adds Trusted Launch for virtual machines, hybrid post quantum key exchange with ML-KEM, Intune management for servers and native NVMe storage enabled by default. It also adds AI accelerator support for running inference environments and open weight models on premises.</p><p><strong>Why it matters for tech:</strong> A server release that ships hardened and manages inference on premises matters to teams that must keep AI workloads inside their own data centres.</p><p>Source: </p><ul><li><a href="https://www.bleepingcomputer.com/news/microsoft/microsoft-announces-windows-server-2028-with-hardened-security/">BleepingComputer</a></li></ul>]]></content:encoded>
+    </item>
     <item>
       <title>Azure HorizonDB leaves preview as Microsoft's cloud-native PostgreSQL</title>
       <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/2026-11-18/06/</link>

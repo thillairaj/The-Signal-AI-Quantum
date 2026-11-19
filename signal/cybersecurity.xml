@@ -4,8 +4,26 @@
     <title>Signal Brief · Cybersecurity</title>
     <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/</link>
     <description>Signal Brief: the day in technology, in The Signal's own words. Every item is written from linked official sources and fact checked before publication.</description>
-    <lastBuildDate>Wed, 18 Nov 2026 01:40:30 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 19 Nov 2026 01:39:08 +0000</lastBuildDate>
     <atom:link xmlns:atom="http://www.w3.org/2005/Atom" href="https://thillairaj.github.io/The-Signal-AI-Quantum/signal/cybersecurity.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>Attackers hijack Microsoft's Agent Framework package on PyPI to steal cloud credentials</title>
+      <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/2026-11-19/08/</link>
+      <guid isPermaLink="false">brief-2026-11-19-08</guid>
+      <pubDate>Thu, 19 Nov 2026 01:30:00 +0000</pubDate>
+      <category>Cybersecurity</category>
+      <description>Attackers compromised Microsoft's agent-framework package on the Python Package Index, publishing malicious versions 1.26.1 and 1.26.2 33 minutes apart on November 17. Both versions install startup hooks that run a credential stealer on every Python launch, collecting environment variables, Azure tokens and credential files and sending them to a remote endpoint. The two versions have been quarantined on PyPI, and users are advised to pin to version 1.26.0, check for exposure between 8:35 and about 9:20 p.m. UTC on November 17, and rotate exposed credentials. Why it matters for tech: A poisoned package from a trusted publisher shows that AI developer tools are now a direct route into cloud credentials, so pinning versions and auditing installs matters as much as patching.</description>
+      <content:encoded><![CDATA[<p>Attackers compromised Microsoft's agent-framework package on the Python Package Index, publishing malicious versions 1.26.1 and 1.26.2 33 minutes apart on November 17. Both versions install startup hooks that run a credential stealer on every Python launch, collecting environment variables, Azure tokens and credential files and sending them to a remote endpoint. The two versions have been quarantined on PyPI, and users are advised to pin to version 1.26.0, check for exposure between 8:35 and about 9:20 p.m. UTC on November 17, and rotate exposed credentials.</p><p><strong>Why it matters for tech:</strong> A poisoned package from a trusted publisher shows that AI developer tools are now a direct route into cloud credentials, so pinning versions and auditing installs matters as much as patching.</p><p>Source: </p><ul><li><a href="https://thehackernews.com/2026/11/attackers-compromise-microsofts-agent.html">The Hacker News</a></li><li><a href="https://www.bleepingcomputer.com/news/security/microsofts-agent-framework-pypi-package-compromised-to-steal-credentials/">BleepingComputer</a></li></ul>]]></content:encoded>
+    </item>
+    <item>
+      <title>Critical Apache Roller flaw under active attack lets anyone run code without logging in</title>
+      <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/2026-11-19/09/</link>
+      <guid isPermaLink="false">brief-2026-11-19-09</guid>
+      <pubDate>Thu, 19 Nov 2026 01:30:00 +0000</pubDate>
+      <category>Cybersecurity</category>
+      <description>A critical flaw in Apache Roller, an open source Java blogging platform, is under active exploitation, according to the Apache Software Foundation. The flaw, CVE-2026-129448, carries a CVSS score of 9.8 and is an unauthenticated deserialization bug in the XML-RPC endpoint that lets a remote attacker run arbitrary code. It affects Roller versions 4.0.0 through 6.1.4, and users should upgrade to 6.1.6 or later or disable the XML-RPC extension types. Why it matters for tech: An unauthenticated flaw with a 9.8 severity score that is already being exploited leaves no safe window to wait for a maintenance slot.</description>
+      <content:encoded><![CDATA[<p>A critical flaw in Apache Roller, an open source Java blogging platform, is under active exploitation, according to the Apache Software Foundation. The flaw, CVE-2026-129448, carries a CVSS score of 9.8 and is an unauthenticated deserialization bug in the XML-RPC endpoint that lets a remote attacker run arbitrary code. It affects Roller versions 4.0.0 through 6.1.4, and users should upgrade to 6.1.6 or later or disable the XML-RPC extension types.</p><p><strong>Why it matters for tech:</strong> An unauthenticated flaw with a 9.8 severity score that is already being exploited leaves no safe window to wait for a maintenance slot.</p><p>Source: </p><ul><li><a href="https://thehackernews.com/2026/11/critical-apache-roller-rce-flaw-under.html">The Hacker News</a></li><li><a href="https://www.bleepingcomputer.com/news/security/apache-warns-of-roller-rce-vulnerability-exploited-in-attacks/">BleepingComputer</a></li></ul>]]></content:encoded>
+    </item>
     <item>
       <title>Critical Java4Shell flaw allows code execution on widely used Java applications</title>
       <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/2026-11-18/07/</link>

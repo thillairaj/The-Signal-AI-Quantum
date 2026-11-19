@@ -4,8 +4,35 @@
     <title>Signal Brief · AI</title>
     <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/</link>
     <description>Signal Brief: the day in technology, in The Signal's own words. Every item is written from linked official sources and fact checked before publication.</description>
-    <lastBuildDate>Wed, 18 Nov 2026 01:40:30 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 19 Nov 2026 01:39:08 +0000</lastBuildDate>
     <atom:link xmlns:atom="http://www.w3.org/2005/Atom" href="https://thillairaj.github.io/The-Signal-AI-Quantum/signal/ai.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>Google launches Gemini 4 Neon, a faster frontier model for coding and knowledge work</title>
+      <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/2026-11-19/01/</link>
+      <guid isPermaLink="false">brief-2026-11-19-01</guid>
+      <pubDate>Thu, 19 Nov 2026 01:30:00 +0000</pubDate>
+      <category>AI</category>
+      <description>Google DeepMind has introduced Gemini 4 Neon, a model built for complex software engineering, knowledge work and science workflows, with a 1 million token context window and prices of $3 per million input tokens and $15 per million output tokens. It ranks third overall with a score of 61 on the Artificial Analysis Intelligence Index at its highest thinking level and second on the Vals Index. On the SWE sweep coding benchmark it scores 12.8% with the mini harness and 39.0% inside Google Antigravity. It is rolling out in the Gemini API, AI Studio, Antigravity and the Gemini app for Pro and Ultra subscribers. Why it matters for tech: A frontier class model tuned for long agent runs at a lower cost per task changes which workloads teams run on a mid tier model instead of a flagship.</description>
+      <content:encoded><![CDATA[<p>Google DeepMind has introduced Gemini 4 Neon, a model built for complex software engineering, knowledge work and science workflows, with a 1 million token context window and prices of $3 per million input tokens and $15 per million output tokens. It ranks third overall with a score of 61 on the Artificial Analysis Intelligence Index at its highest thinking level and second on the Vals Index. On the SWE sweep coding benchmark it scores 12.8% with the mini harness and 39.0% inside Google Antigravity. It is rolling out in the Gemini API, AI Studio, Antigravity and the Gemini app for Pro and Ultra subscribers.</p><p><strong>Why it matters for tech:</strong> A frontier class model tuned for long agent runs at a lower cost per task changes which workloads teams run on a mid tier model instead of a flagship.</p><p>Source: </p><ul><li><a href="https://deepmind.google/blog/introducing-gemini-4-neon/">Google DeepMind</a></li><li><a href="https://thenewstack.io/gemini-neon-antigravity-harness/">The New Stack</a></li></ul>]]></content:encoded>
+    </item>
+    <item>
+      <title>OpenAI agents find working exploits for 948 Linux kernel flaws for about $1.2 million</title>
+      <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/2026-11-19/02/</link>
+      <guid isPermaLink="false">brief-2026-11-19-02</guid>
+      <pubDate>Thu, 19 Nov 2026 01:30:00 +0000</pubDate>
+      <category>AI</category>
+      <description>OpenAI says an automated pipeline reproduced 1,724 Linux kernel vulnerabilities and generated working exploits for 948 of them, at about $1.2 million in API costs, in a November 4 technical report titled A thousand fewer paths to root. Human security researchers reviewed the findings before they went to Linux kernel maintainers, and the company notes the cost is an upper bound because the harness was not tuned for cost. Sam Altman, speaking at the New York Times DealBook Summit, said OpenAI is the only company that has the entire intelligence stack. Why it matters for tech: Agents that reproduce and exploit real kernel flaws for about $1.2 million change the economics of vulnerability research for defenders and attackers alike.</description>
+      <content:encoded><![CDATA[<p>OpenAI says an automated pipeline reproduced 1,724 Linux kernel vulnerabilities and generated working exploits for 948 of them, at about $1.2 million in API costs, in a November 4 technical report titled A thousand fewer paths to root. Human security researchers reviewed the findings before they went to Linux kernel maintainers, and the company notes the cost is an upper bound because the harness was not tuned for cost. Sam Altman, speaking at the New York Times DealBook Summit, said OpenAI is the only company that has the entire intelligence stack.</p><p><strong>Why it matters for tech:</strong> Agents that reproduce and exploit real kernel flaws for about $1.2 million change the economics of vulnerability research for defenders and attackers alike.</p><p>Source: </p><ul><li><a href="https://thenewstack.io/openai-entire-ai-stack/">The New Stack</a></li></ul>]]></content:encoded>
+    </item>
+    <item>
+      <title>Suno adds AI video to its music platform with Visuals</title>
+      <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/2026-11-19/03/</link>
+      <guid isPermaLink="false">brief-2026-11-19-03</guid>
+      <pubDate>Thu, 19 Nov 2026 01:30:00 +0000</pubDate>
+      <category>AI</category>
+      <description>Suno has added image and video generation to its AI music platform with a feature called Visuals. Users can turn a song into 15 second video clips that sync to the music and lip sync to the lyrics, or generate images to use as thumbnails and album artwork. Visuals runs on the H3 Move model, based on MiniMax H3, and uses its own Visuals credits, separate from the credits used to make songs. It is available on web, iOS and Android. Why it matters for tech: Music generation tools are adding video to keep creators inside one app, so the contest among AI creative tools now covers sound and picture together.</description>
+      <content:encoded><![CDATA[<p>Suno has added image and video generation to its AI music platform with a feature called Visuals. Users can turn a song into 15 second video clips that sync to the music and lip sync to the lyrics, or generate images to use as thumbnails and album artwork. Visuals runs on the H3 Move model, based on MiniMax H3, and uses its own Visuals credits, separate from the credits used to make songs. It is available on web, iOS and Android.</p><p><strong>Why it matters for tech:</strong> Music generation tools are adding video to keep creators inside one app, so the contest among AI creative tools now covers sound and picture together.</p><p>Source: </p><ul><li><a href="https://www.theverge.com/ai-artificial-intelligence/1036415/suno-visuals-ai-generated-video-images-feature">The Verge</a></li></ul>]]></content:encoded>
+    </item>
     <item>
       <title>OpenAI launches GPT-6.2 Astra and Sol, and its own tests flag a reporting weakness</title>
       <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/2026-11-18/01/</link>
