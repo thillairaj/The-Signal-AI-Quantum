@@ -1,0 +1,19 @@
+<p><em>Signal Research Notes is an original-research series on The Signal, published three times a week. Each edition asks one question, works through it from primary sources, and keeps confirmed facts separate from analysis. Sources are linked at the end.</em></p>
+
+<p>Open models now carry two numbers in their names. DeepSeek-V3 has 671 billion parameters, with 37 billion active for each token. The gap is the whole idea of a mixture of experts, or MoE: a model that stores far more knowledge than it uses on any single word.</p>
+
+<h3>The router decides, token by token</h3>
+
+<p>In a dense transformer, every token passes through the same feed-forward network in every layer. An MoE model replaces that network with many smaller networks, called experts, plus a small router. For each token, at each MoE layer, the router scores every expert, picks the top few, and blends their outputs. The experts it does not pick do no work for that token. Attention stays dense. Only the feed-forward part is split.</p>
+
+<h3>Two numbers that matter</h3>
+
+<p>Mixtral 8x7B, from Mistral AI, December 2023, has eight experts per layer and routes each token to two of them: 46.7 billion parameters in total, 12.9 billion active per token. DeepSeek-V3 goes further, with 256 routed experts plus one shared expert, eight activated per token: 671 billion total, 37 billion active. IFM's K2-Horizon flagship is the same pattern at 375 billion total and 23 billion active. Total size sets memory needs. Active size sets speed and cost per token.</p>
+
+<h3>The failure the router must avoid</h3>
+
+<p>Left alone, a router can collapse onto a few favourite experts, which then take all the training. Early designs fought this with an auxiliary loss that spread tokens evenly. DeepSeek-V3 pioneered an auxiliary-loss-free approach instead, nudging each expert's selection bias so balancing does not distort learning. Experts do not map to neat topics like biology or law. Specialisation is real, but it is a pattern training discovers.</p>
+
+<h3>What it does not buy you</h3>
+
+<p>MoE does not make a model cheaper to store: all 671 billion parameters of DeepSeek-V3 must still sit in memory. What it buys is cheaper compute per token and more capacity per unit of compute. That is why reading a model name now means reading two numbers: what it stores, and what it actually uses.</p>

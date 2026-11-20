@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>How Does a Mixture of Experts Model Use Only a Fraction of Itself? · The Signal</title>
+<meta name="description" content="The routing trick behind the biggest open models">
+<link rel="canonical" href="https://thillairaj.github.io/The-Signal-AI-Quantum/research/2026-11-20-mixture-of-experts/">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="The Signal">
+<meta property="og:title" content="How Does a Mixture of Experts Model Use Only a Fraction of Itself?">
+<meta property="og:description" content="The routing trick behind the biggest open models">
+<meta property="og:url" content="https://thillairaj.github.io/The-Signal-AI-Quantum/research/2026-11-20-mixture-of-experts/">
+<meta property="og:image" content="https://thillairaj.github.io/The-Signal-AI-Quantum/research/cards/edition-16.png">
+<link rel="stylesheet" href="../../style.css">
+<style>
+.ap-weekly{max-width:1060px;margin:18px auto 0;padding:0 20px;font:600 13px var(--font-body)}
+.ap-weekly a{color:var(--muted);text-decoration:none}
+.ap-weekly a:hover{color:var(--ink)}
+.ap-wrap{max-width:1060px;margin:0 auto;padding:28px 20px 8px}
+.ap-head{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:26px}
+.ap-brand{font-family:var(--font-display);font-weight:800;font-size:26px;color:var(--ink);text-decoration:none}
+.ap-brand em{color:#B8860B;font-style:italic}
+.ap-back{font:600 13px var(--font-body);color:var(--muted);text-decoration:none}
+.ap-back:hover{color:var(--ink)}
+.ap-foot{max-width:1060px;margin:34px auto 0;padding:18px 20px 30px;border-top:1px solid var(--border);color:var(--muted);font-size:13px;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.ap-foot a{color:var(--muted)}
+</style>
+
+<meta name="signal-build" content="2026-11-07.footer1">
+<link rel="stylesheet" href="../../assets/signal-footer.css?v=2026-11-07.footer1">
+</head>
+<body>
+<div class="ap-wrap">
+  <header class="ap-head">
+    <a class="ap-brand" href="../../">The <em>Signal</em></a>
+    <a class="ap-back" href="../../#research">← All articles</a>
+  </header>
+  <p class="research-kicker">THE SIGNAL · RESEARCH NOTES · BRIEF</p>
+  <h1 class="research-title">How Does a Mixture of Experts Model Use Only a Fraction of Itself?</h1>
+  <p class="research-sub">The routing trick behind the biggest open models</p>
+  <p class="research-date">20 Nov 2026 · By The Signal</p>
+  <div class="research-share" id="artShare"></div>
+  <div class="research-layout">
+    <div class="research-main">
+      <div class="research-body"><p><em>Signal Research Notes is an original-research series on The Signal, published three times a week. Each edition asks one question, works through it from primary sources, and keeps confirmed facts separate from analysis. Sources are linked at the end.</em></p>
+
+<p>Open models now carry two numbers in their names. DeepSeek-V3 has 671 billion parameters, with 37 billion active for each token. The gap is the whole idea of a mixture of experts, or MoE: a model that stores far more knowledge than it uses on any single word.</p>
+
+<h3>The router decides, token by token</h3>
+
+<p>In a dense transformer, every token passes through the same feed-forward network in every layer. An MoE model replaces that network with many smaller networks, called experts, plus a small router. For each token, at each MoE layer, the router scores every expert, picks the top few, and blends their outputs. The experts it does not pick do no work for that token. Attention stays dense. Only the feed-forward part is split.</p>
+
+<h3>Two numbers that matter</h3>
+
+<p>Mixtral 8x7B, from Mistral AI, December 2023, has eight experts per layer and routes each token to two of them: 46.7 billion parameters in total, 12.9 billion active per token. DeepSeek-V3 goes further, with 256 routed experts plus one shared expert, eight activated per token: 671 billion total, 37 billion active. IFM's K2-Horizon flagship is the same pattern at 375 billion total and 23 billion active. Total size sets memory needs. Active size sets speed and cost per token.</p>
+
+<h3>The failure the router must avoid</h3>
+
+<p>Left alone, a router can collapse onto a few favourite experts, which then take all the training. Early designs fought this with an auxiliary loss that spread tokens evenly. DeepSeek-V3 pioneered an auxiliary-loss-free approach instead, nudging each expert's selection bias so balancing does not distort learning. Experts do not map to neat topics like biology or law. Specialisation is real, but it is a pattern training discovers.</p>
+
+<h3>What it does not buy you</h3>
+
+<p>MoE does not make a model cheaper to store: all 671 billion parameters of DeepSeek-V3 must still sit in memory. What it buys is cheaper compute per token and more capacity per unit of compute. That is why reading a model name now means reading two numbers: what it stores, and what it actually uses.</p>
+</div>
+      <h3 class="research-sources-h">Sources</h3><ul class="research-sources"><li><a href="https://arxiv.org/html/2412.19437v1" target="_blank" rel="noopener">DeepSeek-AI: DeepSeek-V3 Technical Report (arXiv:2412.19437, Dec 2024)</a></li><li><a href="https://mistral.ai/news/mixtral-of-experts/" target="_blank" rel="noopener">Mistral AI: Mixtral of experts (Dec 11, 2023)</a></li><li><a href="https://arxiv.org/abs/2611.21003" target="_blank" rel="noopener">IFM: K2-Horizon: A Frontier Fleet of Open Source Language Models (arXiv:2611.21003, Nov 16, 2026)</a></li><li><a href="https://huggingface.co/blog/moe" target="_blank" rel="noopener">Hugging Face: Mixture of Experts Explained</a></li></ul>
+    </div>
+    <aside class="research-rail">
+      <img src="../../research/cards/edition-16.webp" alt="How Does a Mixture of Experts Model Use Only a Fraction of Itself? cover" style="width:100%;border-radius:12px">
+    </aside>
+  </div>
+</div>
+
+<footer class="ap-foot">
+  <span>The Signal · Research Notes</span>
+  <a href="../../#research">All articles</a>
+</footer>
+<script src="../../assets/signal-share.js"></script>
+<script>
+(function () {
+  var A = { id: "2026-11-20-mixture-of-experts", title: "How Does a Mixture of Experts Model Use Only a Fraction of Itself?", subtitle: "The routing trick behind the biggest open models" };
+  var url = SignalShare.BASE + "/research/" + A.id + "/";
+  var caption = SignalShare.articleCaption(A.title, A.subtitle, url);
+  window.__articleCaption = caption;
+  window.__articleUrl = url;
+  var spec = { title: A.title, line: A.subtitle, link: url, caption: caption,
+    tags: "#TheSignal " + SignalShare.topicHashtag(A.title + " " + A.subtitle),
+    image: { kind: "static", url: SignalShare.BASE + "/" + "research/cards/edition-16.png",
+             filename: A.id + ".png" } };
+  window.__articleSpec = spec;
+  document.getElementById("artShare").appendChild(SignalShare.shareButton(spec));
+})();
+</script>
+<footer class="signal-footer">
+  <div class="sf-follow"><span class="sf-label">Follow along</span><span class="sf-links"><a class="sf-link" href="https://www.linkedin.com/in/thillairaj" target="_blank" rel="noopener"><span class="sf-badge" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.55V9h3.57v11.45z"/></svg></span>Thillai Raj</a><a class="sf-link" href="https://www.linkedin.com/showcase/qu-bits/" target="_blank" rel="noopener"><span class="sf-badge" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.55V9h3.57v11.45z"/></svg></span>QuBits · Quantum &amp; AI</a><a class="sf-link" href="https://www.linkedin.com/showcase/agentic-ai-architect/" target="_blank" rel="noopener"><span class="sf-badge" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.55V9h3.57v11.45z"/></svg></span>Agentic AI Architect</a></span></div>
+  <p class="sf-copy">© 2026 The Signal</p>
+  <p class="sf-tag">Learn it. Then share it.</p>
+</footer>
+<script src="../../assets/version-check.js?v=2026-11-07.footer1"></script>
+</body>
+</html>
