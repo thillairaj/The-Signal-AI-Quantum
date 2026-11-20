@@ -3206,6 +3206,215 @@
      ]
     }
    ]
+  },
+  {
+   "date": "2026-11-20",
+   "items": [
+    {
+     "category": "AI",
+     "company": "Google",
+     "headline": "Google adds AI chats to its search homepage",
+     "id": "brief-2026-11-20-01",
+     "source_date": "2026-11-20",
+     "sources": [
+      {
+       "label": "The Verge",
+       "url": "https://www.theverge.com/tech/1038059/google-search-homepage-ai-chats"
+      }
+     ],
+     "summary": "Google is adding a collapsible sidebar to its search homepage so people can view and continue their AI Mode chats without leaving google.com. The sidebar lists past AI Mode searches and lets users start a new thread, search their threads, or connect a Gemini Notebook. Google product vice president Robby Stein announced the change in a post on X, and the company says it is rolling out globally on desktop.",
+     "why": "The homepage is the starting point for most web searches, so putting AI chats there makes multi step research a default part of Search rather than a separate mode."
+    },
+    {
+     "category": "AI",
+     "company": "Amazon",
+     "headline": "Amazon Polly adds voice cloning for brand voices",
+     "id": "brief-2026-11-20-02",
+     "source_date": "2026-11-19",
+     "sources": [
+      {
+       "label": "AWS Machine Learning Blog",
+       "url": "https://aws.amazon.com/blogs/machine-learning/amazon-polly-launches-voice-cloning-a-unique-voice-for-your-brand/"
+      }
+     ],
+     "summary": "Amazon Polly has launched voice cloning as a generally available, gated release. A few minutes of recordings from a speaker who has agreed to be cloned produces a cloned voice on the Polly generative engine, in seven languages: English, Spanish, German, French, Italian, Portuguese and Hindi. Cloned voices are encrypted, scoped to the AWS account that created them, and generated audio carries a watermark; Amazon says it does not keep the recordings or use them to train its models. Building a voice is free and usage is charged on a pay as you go basis.",
+     "why": "A brand can keep one voice across phone systems, apps and content without booking a studio for every script change, while consent checks and watermarking set the guardrails for its use."
+    },
+    {
+     "category": "Quantum",
+     "company": "Google",
+     "headline": "Google Willow chip beats classical limits in teamwork tests",
+     "id": "brief-2026-11-20-03",
+     "source_date": "2026-11-19",
+     "sources": [
+      {
+       "label": "Google Blog",
+       "url": "https://blog.google/innovation-and-ai/models-and-research/quantum-computing/putting-one-of-quantum-mechanics-deepest-features-to-test-at-scale/"
+      },
+      {
+       "label": "The Quantum Insider",
+       "url": "https://thequantuminsider.com/2026/11/19/googles-quantum-chip-beats-classical-limits-in-tests-of-teamwork/"
+      }
+     ],
+     "summary": "Google Quantum AI has published a study in Science showing that quantum contextuality holds at scale on its Willow processor. In the four qubit magic square game, Willow won 98.3% of the time against a classical ceiling of 88.9%, and it stayed above the classical limit in a multi player game up to 71 qubits. A separate test on up to 105 qubits returned valid answers more than half the time, though the classical benchmark at that scale rests on an unproven conjecture. The team says the tests also expose hardware errors that random checks miss.",
+     "why": "A test that separates quantum from classical behaviour at scale gives engineers a practical benchmark for tracking hardware progress and spotting errors."
+    },
+    {
+     "category": "Quantum",
+     "company": "BMO",
+     "headline": "BMO reports quantum utility in machine learning with IBM computers",
+     "id": "brief-2026-11-20-04",
+     "source_date": "2026-11-19",
+     "sources": [
+      {
+       "label": "The Quantum Insider",
+       "url": "https://thequantuminsider.com/2026/11/19/bmo-reports-quantum-utility-in-machine-learning-application-using-ibm-quantum-computers/"
+      }
+     ],
+     "summary": "BMO says it has demonstrated quantum utility in a machine learning application run on IBM quantum computers, including the IBM Quantum Nighthawk r2 processor. Built with Democritus University of Thrace, the method picks the most useful variables in a dataset and matched the quality of conventional feature selection while using roughly one tenth to one hundredth as many data samples, according to BMO. The bank cites client modelling, risk assessment and more personalised banking as possible applications.",
+     "why": "A bank showing a quantum method matching classical quality with far less data is a concrete step toward quantum tools earning a place in financial modelling."
+    },
+    {
+     "category": "Cloud & DevOps",
+     "company": "Microsoft",
+     "headline": "Azure VMs can now recover across zones in public preview",
+     "id": "brief-2026-11-20-05",
+     "source_date": "2026-11-19",
+     "sources": [
+      {
+       "label": "Azure Updates",
+       "url": "https://azure.microsoft.com/updates?id=581254"
+      }
+     ],
+     "summary": "Zone resilience for Azure VMs is now in public preview. It lets an eligible zonal virtual machine be recovered in another availability zone in the same region while keeping the same VM resource and configuration. Zone redundant storage managed disks replicate data synchronously across zones, so the recovered VM starts with its data intact.",
+     "why": "A zone failure no longer has to mean rebuilding a VM by hand, which shortens recovery for services that run on single zonal machines."
+    },
+    {
+     "category": "Cybersecurity",
+     "company": "Broadcom",
+     "headline": "Critical VMware vCenter flaw bypassed authentication and was exploited since September",
+     "id": "brief-2026-11-20-06",
+     "source_date": "2026-11-19",
+     "sources": [
+      {
+       "label": "The Hacker News",
+       "url": "https://thehackernews.com/2026/11/critical-vmware-vcenter-flaw-cvss-98.html"
+      },
+      {
+       "label": "BleepingComputer",
+       "url": "https://www.bleepingcomputer.com/news/security/vmware-patches-vcenter-zero-day-exploited-in-attacks-since-september/"
+      }
+     ],
+     "summary": "Broadcom has patched a critical authentication bypass in VMware vCenter, tracked as CVE-2026-123890 and rated 9.8. An attacker with network access could bypass authentication in the VMware Directory Service and gain unauthorised access; Broadcom lists no workaround and calls the update an emergency change. Fixed versions are available for vCenter 8.0, 9.0 and 9.1 and for the vCenter builds inside VMware Cloud Foundation. Google Mandiant and Threat Intelligence Group report the flaw was exploited in the wild by a group suspected of links to China, tracked as ARMORY CASTLE, since early September 2026.",
+     "why": "vCenter controls an organisation's virtual machines, so an unauthenticated bypass there hands an attacker the keys to the whole virtual estate."
+    },
+    {
+     "category": "Cybersecurity",
+     "company": "Transport for London",
+     "headline": "Transport for London breach exposes data of 265,000 Oyster photocard users",
+     "id": "brief-2026-11-20-07",
+     "source_date": "2026-11-19",
+     "sources": [
+      {
+       "label": "BleepingComputer",
+       "url": "https://www.bleepingcomputer.com/news/security/transport-for-london-breach-exposes-265-000-oyster-card-users-data/"
+      },
+      {
+       "label": "The Register",
+       "url": "https://www.theregister.com/security/2026/11/19/tfl-takes-oyster-photocard-website-offline-after-attackers-compromise-customer-accounts/5310985"
+      }
+     ],
+     "summary": "Transport for London says around 265,000 Oyster photocard customers may have had account details exposed in a breach discovered on November 16. The exposed data may include names, phone numbers, email and home addresses, dates of birth and security questions and answers. TfL says passwords, bank and payment card details, journey information and children's details were not compromised, and it has found no evidence of misuse so far. The photocard website is offline, the incident is contained, and the UK Information Commissioner's Office has been notified.",
+     "why": "Security questions and answers are the keys to account recovery, so their exposure puts affected customers at risk well beyond the travel system."
+    },
+    {
+     "category": "Cybersecurity",
+     "company": "CISA",
+     "headline": "CISA adds four actively exploited flaws to its must fix catalogue",
+     "id": "brief-2026-11-20-08",
+     "source_date": "2026-11-19",
+     "sources": [
+      {
+       "label": "The Hacker News",
+       "url": "https://thehackernews.com/2026/11/cisa-warns-of-4-exploited-flaws-linked.html"
+      },
+      {
+       "label": "CISA",
+       "url": "https://www.cisa.gov/known-exploited-vulnerabilities-catalog"
+      }
+     ],
+     "summary": "CISA has added four vulnerabilities to its Known Exploited Vulnerabilities catalogue, citing evidence of active exploitation. They affect Apache Axis (CVE-2026-90436, rated 9.8), REDCap (CVE-2026-90817, rated 9.8), BerriAI LiteLLM (CVE-2026-40217, rated 8.8) and Synology DiskStation Manager (CVE-2024-10441, rated 9.8). The flaws are linked to cryptomining, ransomware and LLMjacking attacks, and federal agencies must fix or mitigate the first three by November 21 and the LiteLLM flaw by December 2.",
+     "why": "Four actively exploited flaws in one catalogue update, including one in an unpatched library at end of life, shows how quickly attackers turn new bugs into working attacks."
+    },
+    {
+     "category": "Industry",
+     "company": "Anthropic",
+     "headline": "Anthropic begins trading on Nasdaq after record IPO worth $81.3 billion",
+     "id": "brief-2026-11-20-09",
+     "source_date": "2026-11-19",
+     "sources": [
+      {
+       "label": "The Verge",
+       "url": "https://www.theverge.com/ai-artificial-intelligence/1035384/anthropic-ipo-trading-nasdaq"
+      },
+      {
+       "label": "Associated Press",
+       "url": "https://rockbridgereport.academic.wlu.edu/2026/11/19/anthropic-begins-trading-in-the-biggest-ipo-on-record-despite-the-many-fears-surrounding-ai/"
+      }
+     ],
+     "summary": "Anthropic began trading on the Nasdaq on November 19 under the ticker ANT, in the largest initial public offering on record. The company priced 980 million shares at $83 each, raising $81.3 billion and valuing the business at about $1.5 trillion, above the $70 to $78 range it had marketed. Shares opened at $111.50, briefly valuing Anthropic above $2 trillion, and closed at $97.17, up 17% on the IPO price.",
+     "why": "A public listing of this size for a company that sells AI models tests whether investor appetite for AI spending holds up under a public market verdict."
+    },
+    {
+     "category": "Industry",
+     "company": "NVIDIA",
+     "headline": "NVIDIA and Microsoft extend AI stack from Azure to Windows PCs",
+     "id": "brief-2026-11-20-10",
+     "source_date": "2026-11-19",
+     "sources": [
+      {
+       "label": "NVIDIA Blog",
+       "url": "https://blogs.nvidia.com/blog/microsoft-ignite-accelerated-computing-azure-windows-pcs/"
+      }
+     ],
+     "summary": "NVIDIA and Microsoft are extending their AI collaboration from Azure infrastructure to Windows PCs. Azure virtual machines running NVIDIA Vera Rubin NVL72 systems are now available, and NVIDIA open models and customisation tools are expanding through Microsoft Foundry. The companies are also bringing NVIDIA Nemotron models to Azure Local and Jetson edge platforms, and showing local language model experiences on Windows PCs powered by NVIDIA RTX Spark.",
+     "why": "The same AI stack running in Azure, on local servers and on PCs lets companies keep sensitive work on their own hardware without giving up cloud models."
+    },
+    {
+     "category": "Policy",
+     "company": "IOSCO",
+     "headline": "Securities regulators say finance is still early in quantum security preparations",
+     "id": "brief-2026-11-20-11",
+     "source_date": "2026-11-19",
+     "sources": [
+      {
+       "label": "IOSCO",
+       "url": "https://www.iosco.org/library/pubdocs/pdf/IOSCOPD833.pdf"
+      },
+      {
+       "label": "The Quantum Insider",
+       "url": "https://thequantuminsider.com/2026/11/19/securities-regulators-warn-that-slow-progress-on-quantum-security-is-a-mistake/"
+      }
+     ],
+     "summary": "The International Organization of Securities Commissions has published a 63 page report warning that financial markets are still in the early stages of preparing for quantum computers that could break widely used cryptography. The report says no quantum computer capable of breaking today's encryption is known to exist, with conservative estimates placing such machines in 2030 to 2035, while some industry participants urged firms to prepare for capability within five years. It calls on firms to move to post quantum cryptography and build crypto agility, warns against quantum washing in company claims, and notes that public blockchains face a particularly hard migration because post quantum signatures run 35 to 40 times larger than today's.",
+     "why": "Regulators are telling banks and markets to start a migration that takes years, before anyone knows when the threat arrives, because waiting leaves data already collected exposed."
+    },
+    {
+     "category": "Policy",
+     "company": "Cloudflare",
+     "headline": "Midterm election sites faced probing, not outages, Cloudflare finds",
+     "id": "brief-2026-11-20-12",
+     "source_date": "2026-11-19",
+     "sources": [
+      {
+       "label": "Cloudflare Blog",
+       "url": "https://blog.cloudflare.com/internet-traffic-2026-us-election/"
+      }
+     ],
+     "summary": "Cloudflare says traffic to US government election websites rose 363% on November 3, the day of the 2026 midterm elections, reaching about 602 million requests, while no major DDoS attack hit the 1,400 election sites it protects on Election Day. Attackers instead focused on breaking into systems: vulnerability exploit attempts against election sites climbed from 200,000 a day in January to 2 million a day in October, and Cloudflare recorded at least one attempt to exploit a recently disclosed PHP flaw on a state voting site. The company says attacks peaked weeks before the election and recommends year round defences.",
+     "why": "Election security is now a year round problem of probing for weak code rather than a single day of knocking sites offline, which changes how election offices must defend themselves."
+    }
+   ]
   }
  ]
 }

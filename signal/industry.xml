@@ -4,8 +4,26 @@
     <title>Signal Brief · Industry</title>
     <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/</link>
     <description>Signal Brief: the day in technology, in The Signal's own words. Every item is written from linked official sources and fact checked before publication.</description>
-    <lastBuildDate>Thu, 19 Nov 2026 01:39:08 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 20 Nov 2026 01:40:03 +0000</lastBuildDate>
     <atom:link xmlns:atom="http://www.w3.org/2005/Atom" href="https://thillairaj.github.io/The-Signal-AI-Quantum/signal/industry.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>Anthropic begins trading on Nasdaq after record IPO worth $81.3 billion</title>
+      <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/2026-11-20/09/</link>
+      <guid isPermaLink="false">brief-2026-11-20-09</guid>
+      <pubDate>Fri, 20 Nov 2026 01:30:00 +0000</pubDate>
+      <category>Industry</category>
+      <description>Anthropic began trading on the Nasdaq on November 19 under the ticker ANT, in the largest initial public offering on record. The company priced 980 million shares at $83 each, raising $81.3 billion and valuing the business at about $1.5 trillion, above the $70 to $78 range it had marketed. Shares opened at $111.50, briefly valuing Anthropic above $2 trillion, and closed at $97.17, up 17% on the IPO price. Why it matters for tech: A public listing of this size for a company that sells AI models tests whether investor appetite for AI spending holds up under a public market verdict.</description>
+      <content:encoded><![CDATA[<p>Anthropic began trading on the Nasdaq on November 19 under the ticker ANT, in the largest initial public offering on record. The company priced 980 million shares at $83 each, raising $81.3 billion and valuing the business at about $1.5 trillion, above the $70 to $78 range it had marketed. Shares opened at $111.50, briefly valuing Anthropic above $2 trillion, and closed at $97.17, up 17% on the IPO price.</p><p><strong>Why it matters for tech:</strong> A public listing of this size for a company that sells AI models tests whether investor appetite for AI spending holds up under a public market verdict.</p><p>Source: </p><ul><li><a href="https://www.theverge.com/ai-artificial-intelligence/1035384/anthropic-ipo-trading-nasdaq">The Verge</a></li><li><a href="https://rockbridgereport.academic.wlu.edu/2026/11/19/anthropic-begins-trading-in-the-biggest-ipo-on-record-despite-the-many-fears-surrounding-ai/">Associated Press</a></li></ul>]]></content:encoded>
+    </item>
+    <item>
+      <title>NVIDIA and Microsoft extend AI stack from Azure to Windows PCs</title>
+      <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/2026-11-20/10/</link>
+      <guid isPermaLink="false">brief-2026-11-20-10</guid>
+      <pubDate>Fri, 20 Nov 2026 01:30:00 +0000</pubDate>
+      <category>Industry</category>
+      <description>NVIDIA and Microsoft are extending their AI collaboration from Azure infrastructure to Windows PCs. Azure virtual machines running NVIDIA Vera Rubin NVL72 systems are now available, and NVIDIA open models and customisation tools are expanding through Microsoft Foundry. The companies are also bringing NVIDIA Nemotron models to Azure Local and Jetson edge platforms, and showing local language model experiences on Windows PCs powered by NVIDIA RTX Spark. Why it matters for tech: The same AI stack running in Azure, on local servers and on PCs lets companies keep sensitive work on their own hardware without giving up cloud models.</description>
+      <content:encoded><![CDATA[<p>NVIDIA and Microsoft are extending their AI collaboration from Azure infrastructure to Windows PCs. Azure virtual machines running NVIDIA Vera Rubin NVL72 systems are now available, and NVIDIA open models and customisation tools are expanding through Microsoft Foundry. The companies are also bringing NVIDIA Nemotron models to Azure Local and Jetson edge platforms, and showing local language model experiences on Windows PCs powered by NVIDIA RTX Spark.</p><p><strong>Why it matters for tech:</strong> The same AI stack running in Azure, on local servers and on PCs lets companies keep sensitive work on their own hardware without giving up cloud models.</p><p>Source: </p><ul><li><a href="https://blogs.nvidia.com/blog/microsoft-ignite-accelerated-computing-azure-windows-pcs/">NVIDIA Blog</a></li></ul>]]></content:encoded>
+    </item>
     <item>
       <title>NVIDIA RTX Spark compact desktops go on sale for local AI work</title>
       <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/2026-11-19/10/</link>

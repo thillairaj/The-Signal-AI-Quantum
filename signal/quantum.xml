@@ -4,8 +4,26 @@
     <title>Signal Brief · Quantum</title>
     <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/</link>
     <description>Signal Brief: the day in technology, in The Signal's own words. Every item is written from linked official sources and fact checked before publication.</description>
-    <lastBuildDate>Thu, 19 Nov 2026 01:39:08 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 20 Nov 2026 01:40:03 +0000</lastBuildDate>
     <atom:link xmlns:atom="http://www.w3.org/2005/Atom" href="https://thillairaj.github.io/The-Signal-AI-Quantum/signal/quantum.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>Google Willow chip beats classical limits in teamwork tests</title>
+      <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/2026-11-20/03/</link>
+      <guid isPermaLink="false">brief-2026-11-20-03</guid>
+      <pubDate>Fri, 20 Nov 2026 01:30:00 +0000</pubDate>
+      <category>Quantum</category>
+      <description>Google Quantum AI has published a study in Science showing that quantum contextuality holds at scale on its Willow processor. In the four qubit magic square game, Willow won 98.3% of the time against a classical ceiling of 88.9%, and it stayed above the classical limit in a multi player game up to 71 qubits. A separate test on up to 105 qubits returned valid answers more than half the time, though the classical benchmark at that scale rests on an unproven conjecture. The team says the tests also expose hardware errors that random checks miss. Why it matters for tech: A test that separates quantum from classical behaviour at scale gives engineers a practical benchmark for tracking hardware progress and spotting errors.</description>
+      <content:encoded><![CDATA[<p>Google Quantum AI has published a study in Science showing that quantum contextuality holds at scale on its Willow processor. In the four qubit magic square game, Willow won 98.3% of the time against a classical ceiling of 88.9%, and it stayed above the classical limit in a multi player game up to 71 qubits. A separate test on up to 105 qubits returned valid answers more than half the time, though the classical benchmark at that scale rests on an unproven conjecture. The team says the tests also expose hardware errors that random checks miss.</p><p><strong>Why it matters for tech:</strong> A test that separates quantum from classical behaviour at scale gives engineers a practical benchmark for tracking hardware progress and spotting errors.</p><p>Source: </p><ul><li><a href="https://blog.google/innovation-and-ai/models-and-research/quantum-computing/putting-one-of-quantum-mechanics-deepest-features-to-test-at-scale/">Google Blog</a></li><li><a href="https://thequantuminsider.com/2026/11/19/googles-quantum-chip-beats-classical-limits-in-tests-of-teamwork/">The Quantum Insider</a></li></ul>]]></content:encoded>
+    </item>
+    <item>
+      <title>BMO reports quantum utility in machine learning with IBM computers</title>
+      <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/2026-11-20/04/</link>
+      <guid isPermaLink="false">brief-2026-11-20-04</guid>
+      <pubDate>Fri, 20 Nov 2026 01:30:00 +0000</pubDate>
+      <category>Quantum</category>
+      <description>BMO says it has demonstrated quantum utility in a machine learning application run on IBM quantum computers, including the IBM Quantum Nighthawk r2 processor. Built with Democritus University of Thrace, the method picks the most useful variables in a dataset and matched the quality of conventional feature selection while using roughly one tenth to one hundredth as many data samples, according to BMO. The bank cites client modelling, risk assessment and more personalised banking as possible applications. Why it matters for tech: A bank showing a quantum method matching classical quality with far less data is a concrete step toward quantum tools earning a place in financial modelling.</description>
+      <content:encoded><![CDATA[<p>BMO says it has demonstrated quantum utility in a machine learning application run on IBM quantum computers, including the IBM Quantum Nighthawk r2 processor. Built with Democritus University of Thrace, the method picks the most useful variables in a dataset and matched the quality of conventional feature selection while using roughly one tenth to one hundredth as many data samples, according to BMO. The bank cites client modelling, risk assessment and more personalised banking as possible applications.</p><p><strong>Why it matters for tech:</strong> A bank showing a quantum method matching classical quality with far less data is a concrete step toward quantum tools earning a place in financial modelling.</p><p>Source: </p><ul><li><a href="https://thequantuminsider.com/2026/11/19/bmo-reports-quantum-utility-in-machine-learning-application-using-ibm-quantum-computers/">The Quantum Insider</a></li></ul>]]></content:encoded>
+    </item>
     <item>
       <title>Alice &amp; Bob doubles its target to 200 logical qubits by 2030</title>
       <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/2026-11-19/04/</link>

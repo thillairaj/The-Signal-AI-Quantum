@@ -4,8 +4,26 @@
     <title>Signal Brief · AI</title>
     <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/</link>
     <description>Signal Brief: the day in technology, in The Signal's own words. Every item is written from linked official sources and fact checked before publication.</description>
-    <lastBuildDate>Thu, 19 Nov 2026 01:39:08 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 20 Nov 2026 01:40:03 +0000</lastBuildDate>
     <atom:link xmlns:atom="http://www.w3.org/2005/Atom" href="https://thillairaj.github.io/The-Signal-AI-Quantum/signal/ai.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>Google adds AI chats to its search homepage</title>
+      <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/2026-11-20/01/</link>
+      <guid isPermaLink="false">brief-2026-11-20-01</guid>
+      <pubDate>Fri, 20 Nov 2026 01:30:00 +0000</pubDate>
+      <category>AI</category>
+      <description>Google is adding a collapsible sidebar to its search homepage so people can view and continue their AI Mode chats without leaving google.com. The sidebar lists past AI Mode searches and lets users start a new thread, search their threads, or connect a Gemini Notebook. Google product vice president Robby Stein announced the change in a post on X, and the company says it is rolling out globally on desktop. Why it matters for tech: The homepage is the starting point for most web searches, so putting AI chats there makes multi step research a default part of Search rather than a separate mode.</description>
+      <content:encoded><![CDATA[<p>Google is adding a collapsible sidebar to its search homepage so people can view and continue their AI Mode chats without leaving google.com. The sidebar lists past AI Mode searches and lets users start a new thread, search their threads, or connect a Gemini Notebook. Google product vice president Robby Stein announced the change in a post on X, and the company says it is rolling out globally on desktop.</p><p><strong>Why it matters for tech:</strong> The homepage is the starting point for most web searches, so putting AI chats there makes multi step research a default part of Search rather than a separate mode.</p><p>Source: </p><ul><li><a href="https://www.theverge.com/tech/1038059/google-search-homepage-ai-chats">The Verge</a></li></ul>]]></content:encoded>
+    </item>
+    <item>
+      <title>Amazon Polly adds voice cloning for brand voices</title>
+      <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/2026-11-20/02/</link>
+      <guid isPermaLink="false">brief-2026-11-20-02</guid>
+      <pubDate>Fri, 20 Nov 2026 01:30:00 +0000</pubDate>
+      <category>AI</category>
+      <description>Amazon Polly has launched voice cloning as a generally available, gated release. A few minutes of recordings from a speaker who has agreed to be cloned produces a cloned voice on the Polly generative engine, in seven languages: English, Spanish, German, French, Italian, Portuguese and Hindi. Cloned voices are encrypted, scoped to the AWS account that created them, and generated audio carries a watermark; Amazon says it does not keep the recordings or use them to train its models. Building a voice is free and usage is charged on a pay as you go basis. Why it matters for tech: A brand can keep one voice across phone systems, apps and content without booking a studio for every script change, while consent checks and watermarking set the guardrails for its use.</description>
+      <content:encoded><![CDATA[<p>Amazon Polly has launched voice cloning as a generally available, gated release. A few minutes of recordings from a speaker who has agreed to be cloned produces a cloned voice on the Polly generative engine, in seven languages: English, Spanish, German, French, Italian, Portuguese and Hindi. Cloned voices are encrypted, scoped to the AWS account that created them, and generated audio carries a watermark; Amazon says it does not keep the recordings or use them to train its models. Building a voice is free and usage is charged on a pay as you go basis.</p><p><strong>Why it matters for tech:</strong> A brand can keep one voice across phone systems, apps and content without booking a studio for every script change, while consent checks and watermarking set the guardrails for its use.</p><p>Source: </p><ul><li><a href="https://aws.amazon.com/blogs/machine-learning/amazon-polly-launches-voice-cloning-a-unique-voice-for-your-brand/">AWS Machine Learning Blog</a></li></ul>]]></content:encoded>
+    </item>
     <item>
       <title>Google launches Gemini 4 Neon, a faster frontier model for coding and knowledge work</title>
       <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/2026-11-19/01/</link>

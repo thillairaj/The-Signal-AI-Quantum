@@ -4,8 +4,17 @@
     <title>Signal Brief · Cloud &amp; DevOps</title>
     <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/</link>
     <description>Signal Brief: the day in technology, in The Signal's own words. Every item is written from linked official sources and fact checked before publication.</description>
-    <lastBuildDate>Thu, 19 Nov 2026 01:39:08 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 20 Nov 2026 01:40:03 +0000</lastBuildDate>
     <atom:link xmlns:atom="http://www.w3.org/2005/Atom" href="https://thillairaj.github.io/The-Signal-AI-Quantum/signal/cloud-devops.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>Azure VMs can now recover across zones in public preview</title>
+      <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/2026-11-20/05/</link>
+      <guid isPermaLink="false">brief-2026-11-20-05</guid>
+      <pubDate>Fri, 20 Nov 2026 01:30:00 +0000</pubDate>
+      <category>Cloud &amp; DevOps</category>
+      <description>Zone resilience for Azure VMs is now in public preview. It lets an eligible zonal virtual machine be recovered in another availability zone in the same region while keeping the same VM resource and configuration. Zone redundant storage managed disks replicate data synchronously across zones, so the recovered VM starts with its data intact. Why it matters for tech: A zone failure no longer has to mean rebuilding a VM by hand, which shortens recovery for services that run on single zonal machines.</description>
+      <content:encoded><![CDATA[<p>Zone resilience for Azure VMs is now in public preview. It lets an eligible zonal virtual machine be recovered in another availability zone in the same region while keeping the same VM resource and configuration. Zone redundant storage managed disks replicate data synchronously across zones, so the recovered VM starts with its data intact.</p><p><strong>Why it matters for tech:</strong> A zone failure no longer has to mean rebuilding a VM by hand, which shortens recovery for services that run on single zonal machines.</p><p>Source: </p><ul><li><a href="https://azure.microsoft.com/updates?id=581254">Azure Updates</a></li></ul>]]></content:encoded>
+    </item>
     <item>
       <title>AWS Lambda now runs GPU workloads for event driven functions</title>
       <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/2026-11-19/06/</link>
