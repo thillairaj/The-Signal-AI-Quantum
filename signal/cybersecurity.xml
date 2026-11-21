@@ -4,8 +4,35 @@
     <title>Signal Brief · Cybersecurity</title>
     <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/</link>
     <description>Signal Brief: the day in technology, in The Signal's own words. Every item is written from linked official sources and fact checked before publication.</description>
-    <lastBuildDate>Fri, 20 Nov 2026 01:40:03 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 21 Nov 2026 01:39:04 +0000</lastBuildDate>
     <atom:link xmlns:atom="http://www.w3.org/2005/Atom" href="https://thillairaj.github.io/The-Signal-AI-Quantum/signal/cybersecurity.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>Bell Canada says an AI-driven attacker stole enterprise customer data</title>
+      <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/2026-11-21/07/</link>
+      <guid isPermaLink="false">brief-2026-11-21-07</guid>
+      <pubDate>Sat, 21 Nov 2026 01:30:00 +0000</pubDate>
+      <category>Cybersecurity</category>
+      <description>Bell Canada has confirmed that an attacker it describes as agentic breached its systems on November 17 and stole enterprise customer data. The attacker reached a pre-production environment of Maximo, the system Bell uses to order and provision telecom circuits, and took business contact details, ticket titles and some IP addresses. Bell says the data did not include credentials or highly sensitive personal information, and it has not identified who was behind the attack. Why it matters for tech: A major carrier attributing a breach to an AI-driven attacker is a concrete sign that automated tools are now part of real intrusions, not only a research topic.</description>
+      <content:encoded><![CDATA[<p>Bell Canada has confirmed that an attacker it describes as agentic breached its systems on November 17 and stole enterprise customer data. The attacker reached a pre-production environment of Maximo, the system Bell uses to order and provision telecom circuits, and took business contact details, ticket titles and some IP addresses. Bell says the data did not include credentials or highly sensitive personal information, and it has not identified who was behind the attack.</p><p><strong>Why it matters for tech:</strong> A major carrier attributing a breach to an AI-driven attacker is a concrete sign that automated tools are now part of real intrusions, not only a research topic.</p><p>Source: </p><ul><li><a href="https://www.bleepingcomputer.com/news/security/bell-canada-says-agentic-hacker-stole-enterprise-customer-data/">BleepingComputer</a></li></ul>]]></content:encoded>
+    </item>
+    <item>
+      <title>F5 issues emergency patches for critical BIG-IP remote code flaws</title>
+      <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/2026-11-21/08/</link>
+      <guid isPermaLink="false">brief-2026-11-21-08</guid>
+      <pubDate>Sat, 21 Nov 2026 01:30:00 +0000</pubDate>
+      <category>Cybersecurity</category>
+      <description>F5 has released out-of-band hotfixes for five critical vulnerabilities in its BIG-IP products that unauthenticated attackers can exploit to run code remotely or knock systems offline. The stack-based buffer overflow flaws affect the Access Policy Manager and the iRules scripting feature, and F5 says there are no mitigations other than patching. Threat tracker Shadowserver counts more than 177,000 BIG-IP instances exposed online, though F5 has not flagged the flaws as exploited in attacks. Why it matters for tech: BIG-IP sits at the front of corporate networks, so a remotely exploitable flaw in it gives attackers a direct route into the organisations behind it.</description>
+      <content:encoded><![CDATA[<p>F5 has released out-of-band hotfixes for five critical vulnerabilities in its BIG-IP products that unauthenticated attackers can exploit to run code remotely or knock systems offline. The stack-based buffer overflow flaws affect the Access Policy Manager and the iRules scripting feature, and F5 says there are no mitigations other than patching. Threat tracker Shadowserver counts more than 177,000 BIG-IP instances exposed online, though F5 has not flagged the flaws as exploited in attacks.</p><p><strong>Why it matters for tech:</strong> BIG-IP sits at the front of corporate networks, so a remotely exploitable flaw in it gives attackers a direct route into the organisations behind it.</p><p>Source: </p><ul><li><a href="https://www.bleepingcomputer.com/news/security/f5-releases-emergency-patches-for-critical-big-ip-rce-flaws/">BleepingComputer</a></li></ul>]]></content:encoded>
+    </item>
+    <item>
+      <title>WhatsApp patches three flaws, including one suspected of use in scams</title>
+      <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/2026-11-21/09/</link>
+      <guid isPermaLink="false">brief-2026-11-21-09</guid>
+      <pubDate>Sat, 21 Nov 2026 01:30:00 +0000</pubDate>
+      <category>Cybersecurity</category>
+      <description>WhatsApp has patched three security flaws, including an Android bug the company suspects was used alongside scam messages. The flaw, CVE-2026-23871, could reveal a target's IP address when a crafted ad-reply message was rendered, and WhatsApp says a scammer appeared to use it to make scam messages look more credible. The other two fixes cover an SQL injection flaw in WhatsApp for Android and a trust-validation flaw in the certificate checks for Meta AI's confidential computing infrastructure. Why it matters for tech: A flaw scammers may already be abusing in a messaging app of WhatsApp's scale is a reminder to update the app, since the fix only protects users who install it.</description>
+      <content:encoded><![CDATA[<p>WhatsApp has patched three security flaws, including an Android bug the company suspects was used alongside scam messages. The flaw, CVE-2026-23871, could reveal a target's IP address when a crafted ad-reply message was rendered, and WhatsApp says a scammer appeared to use it to make scam messages look more credible. The other two fixes cover an SQL injection flaw in WhatsApp for Android and a trust-validation flaw in the certificate checks for Meta AI's confidential computing infrastructure.</p><p><strong>Why it matters for tech:</strong> A flaw scammers may already be abusing in a messaging app of WhatsApp's scale is a reminder to update the app, since the fix only protects users who install it.</p><p>Source: </p><ul><li><a href="https://thehackernews.com/2026/11/whatsapp-patches-3-security-flaws.html">The Hacker News</a></li></ul>]]></content:encoded>
+    </item>
     <item>
       <title>Critical VMware vCenter flaw bypassed authentication and was exploited since September</title>
       <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/2026-11-20/06/</link>

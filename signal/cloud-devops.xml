@@ -4,8 +4,26 @@
     <title>Signal Brief · Cloud &amp; DevOps</title>
     <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/</link>
     <description>Signal Brief: the day in technology, in The Signal's own words. Every item is written from linked official sources and fact checked before publication.</description>
-    <lastBuildDate>Fri, 20 Nov 2026 01:40:03 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 21 Nov 2026 01:39:04 +0000</lastBuildDate>
     <atom:link xmlns:atom="http://www.w3.org/2005/Atom" href="https://thillairaj.github.io/The-Signal-AI-Quantum/signal/cloud-devops.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>Five new nginx flaws can give unauthenticated attackers code execution</title>
+      <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/2026-11-21/05/</link>
+      <guid isPermaLink="false">brief-2026-11-21-05</guid>
+      <pubDate>Sat, 21 Nov 2026 01:30:00 +0000</pubDate>
+      <category>Cloud &amp; DevOps</category>
+      <description>F5 and nginx.org disclosed ten vulnerabilities in nginx on November 18, including five memory corruption flaws grouped under the name nginx2root that let an unauthenticated attacker crash a server or run code on it. The worst flaw, CVE-2026-123007, needs only HTTP/2 enabled and has been present since 2015, and Censys counts about 8.8 million services running a potentially affected version with HTTP/2 on. The fixes are nginx 1.30.7 or 1.31.9, and as of November 19 none of the five flaws was listed in CISA's exploited-vulnerabilities catalogue. Why it matters for tech: nginx runs a large share of the world's web servers, so a remotely exploitable flaw in its HTTP/2 handling is a patch-now event for anyone running an exposed server.</description>
+      <content:encoded><![CDATA[<p>F5 and nginx.org disclosed ten vulnerabilities in nginx on November 18, including five memory corruption flaws grouped under the name nginx2root that let an unauthenticated attacker crash a server or run code on it. The worst flaw, CVE-2026-123007, needs only HTTP/2 enabled and has been present since 2015, and Censys counts about 8.8 million services running a potentially affected version with HTTP/2 on. The fixes are nginx 1.30.7 or 1.31.9, and as of November 19 none of the five flaws was listed in CISA's exploited-vulnerabilities catalogue.</p><p><strong>Why it matters for tech:</strong> nginx runs a large share of the world's web servers, so a remotely exploitable flaw in its HTTP/2 handling is a patch-now event for anyone running an exposed server.</p><p>Source: </p><ul><li><a href="https://blog.cloudflare.com/nginx2root/">Cloudflare Blog</a></li></ul>]]></content:encoded>
+    </item>
+    <item>
+      <title>Google makes sidecarless networking generally available on GKE</title>
+      <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/2026-11-21/06/</link>
+      <guid isPermaLink="false">brief-2026-11-21-06</guid>
+      <pubDate>Sat, 21 Nov 2026 01:30:00 +0000</pubDate>
+      <category>Cloud &amp; DevOps</category>
+      <description>Google has made ambient networking for Google Kubernetes Engine generally available, offering a service mesh without sidecar proxies in every pod. Networking moves to shared per-node components and managed control plane services, with mutual TLS, authorisation policies and traffic telemetry built in. Google says the approach cuts resource use for layer 4 mesh features by up to ten times compared with sidecars and reduces pod restarts for proxy patches. Why it matters for tech: Removing sidecars takes the per-pod cost of running a service mesh off every workload, which makes mesh security and observability practical for clusters that could not afford the overhead.</description>
+      <content:encoded><![CDATA[<p>Google has made ambient networking for Google Kubernetes Engine generally available, offering a service mesh without sidecar proxies in every pod. Networking moves to shared per-node components and managed control plane services, with mutual TLS, authorisation policies and traffic telemetry built in. Google says the approach cuts resource use for layer 4 mesh features by up to ten times compared with sidecars and reduces pod restarts for proxy patches.</p><p><strong>Why it matters for tech:</strong> Removing sidecars takes the per-pod cost of running a service mesh off every workload, which makes mesh security and observability practical for clusters that could not afford the overhead.</p><p>Source: </p><ul><li><a href="https://cloud.google.com/blog/products/networking/ambient-networking-for-gke-sidecarless-service-mesh/">Google Cloud Blog</a></li></ul>]]></content:encoded>
+    </item>
     <item>
       <title>Azure VMs can now recover across zones in public preview</title>
       <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/2026-11-20/05/</link>
