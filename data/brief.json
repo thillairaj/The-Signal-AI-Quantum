@@ -3608,6 +3608,191 @@
      "company": "US Department of Commerce"
     }
    ]
+  },
+  {
+   "date": "2026-11-22",
+   "items": [
+    {
+     "category": "AI",
+     "headline": "OpenAI hardens GPT-6.2 against attempts to copy its reasoning",
+     "id": "brief-2026-11-22-01",
+     "source_date": "2026-11-20",
+     "sources": [
+      {
+       "label": "OpenAI",
+       "url": "https://openai.com/index/combatting-adversarial-distillation/"
+      }
+     ],
+     "summary": "OpenAI has described how it defends its models against adversarial distillation, in which another party uses a frontier model's outputs to train a rival model without comparable safeguards. The company says it tied the protected reasoning of GPT-6.2 Astra and GPT-6.2 Sol to the conversation that produced it, so rewriting an earlier message drops the reasoning that followed, and blocked older model families from reading that reasoning. In internal red-team testing across six attacker models, the success rate for recovering reasoning from an earlier request fell from 54.0% on GPT-6 Astra to 0.2% on GPT-6.2 Astra, and from 22.9% to 0.9% for the current request.",
+     "why": "The defence makes it harder for rivals to lift a frontier model's reasoning wholesale, which protects the safety work built into the model from being stripped out in a copy.",
+     "company": "OpenAI"
+    },
+    {
+     "category": "AI",
+     "headline": "A single malicious webpage let researchers hijack Meta Muse",
+     "id": "brief-2026-11-22-02",
+     "source_date": "2026-11-21",
+     "sources": [
+      {
+       "label": "The Hacker News",
+       "url": "https://thehackernews.com/2026/11/a-single-malicious-webpage-let.html"
+      }
+     ],
+     "summary": "Security firm NebuSec has shown that one malicious webpage opened by Meta's Muse personal assistant could pull a user's conversation history and stored memories to an outside server without triggering an approval prompt. The researchers then chained a flaw in Muse's built-in browser with a Linux kernel flaw to take full control of the individual user's cloud machine, though they did not break out to the shared server or reach other users. NebuSec says it reported the findings to Meta and that every weakness described was patched before publication, while Meta has not publicly confirmed the fixes.",
+     "why": "The chain shows how an AI agent that acts on web content can turn one bad page into a full account takeover, so agent builders have to treat every page an agent opens as untrusted input.",
+     "company": "Meta"
+    },
+    {
+     "category": "Quantum",
+     "headline": "Qubrio lets language-model agents compile circuits for neutral-atom processors",
+     "id": "brief-2026-11-22-03",
+     "source_date": "2026-11-21",
+     "sources": [
+      {
+       "label": "Quantum Computing Report",
+       "url": "https://quantumcomputingreport.com/university-of-california-quera-and-collaborators-introduce-multi-agent-llm-compiler-qubrio-for-neutral-atom-processors/"
+      }
+     ],
+     "summary": "Researchers from the University of California, San Diego, Rice University, QuEra Computing and two other institutions have introduced Qubrio, a framework that uses specialised language-model agents to compile quantum circuits for neutral-atom processors. The agents propose qubit placements, routing and schedules, while deterministic verifiers and a hardware simulator check each proposal against the processor's constraints. Tested on workloads of up to 78 qubits, Qubrio cut compilation time by 4.7 times on average against the leading heuristic compiler and improved circuit fidelity by 1.3 times.",
+     "why": "Compiling circuits by hand for each new processor layout is slow work, and an agent system that adapts through constraints instead of rewrites could keep software pace with changing hardware.",
+     "company": "UC San Diego"
+    },
+    {
+     "category": "Quantum",
+     "headline": "Rydberg embeddings turn out to be error-correcting codes in their own right",
+     "id": "brief-2026-11-22-04",
+     "source_date": "2026-11-21",
+     "sources": [
+      {
+       "label": "Quantum Computing Report",
+       "url": "https://quantumcomputingreport.com/university-of-innsbruck-parityqc-and-quera-turn-rydberg-array-embeddings-into-intrinsic-error-correcting-codes/"
+      }
+     ],
+     "summary": "Researchers from the University of Innsbruck, ParityQC and QuEra Computing have shown that the auxiliary qubits used to map optimisation problems onto neutral-atom processors also form a classical error-correcting code, with no extra hardware needed. By counting Rydberg excitations, the team can extract error syndromes locally, and a new Cluster decoder they built resolves those syndromes into corrections. Tested on QuEra's Aquila processor with up to 107 atoms, the decoder recovered exact optimal solutions in cases where raw readouts and standard post-processing found none.",
+     "why": "Getting error correction out of qubits that are already there, rather than adding more, gives neutral-atom machines a cheaper path to reliable results.",
+     "company": "QuEra Computing"
+    },
+    {
+     "category": "Cloud & DevOps",
+     "headline": "CloudWatch Omni now pulls in Azure telemetry",
+     "id": "brief-2026-11-22-05",
+     "source_date": "2026-11-21",
+     "sources": [
+      {
+       "label": "AWS What's New",
+       "url": "https://aws.amazon.com/about-aws/whats-new/2026/11/amazon-cloudwatch-omni-microsoft-azure"
+      }
+     ],
+     "summary": "Amazon CloudWatch Omni can now collect Azure resource logs, Azure Monitor platform metrics, virtual network flow logs and Application Insights traces, AWS has announced. Teams running workloads on both clouds can now view Azure and AWS telemetry side by side in CloudWatch instead of maintaining separate monitoring tools. Setup connects a Microsoft Entra ID tenant to an AWS account and region, and the telemetry is available in all Azure public regions.",
+     "why": "Multi-cloud teams usually stitch monitoring together by hand, and one console for both clouds shortens the path from an alert to the failing service.",
+     "company": "AWS"
+    },
+    {
+     "category": "Cloud & DevOps",
+     "headline": "Cloudflare WAF now blocks ruby2shell attacks on every plan",
+     "id": "brief-2026-11-22-06",
+     "source_date": "2026-11-20",
+     "sources": [
+      {
+       "label": "Cloudflare Blog",
+       "url": "https://blog.cloudflare.com/ruby2shell-waf-protection/"
+      }
+     ],
+     "summary": "Cloudflare has added blocking rules to its web application firewall for ruby2shell, a critical heap overflow in Ruby's string case conversion disclosed on November 19 that Ruby rates as capable of remote code execution in some scenarios. The rules cover all customers, including the free plan, and a second rule covers a related integer overflow fixed in the same Ruby releases. Cloudflare stresses the firewall only buys time: the complete fix is upgrading to Ruby 3.3.14, 3.4.13 or 4.0.10.",
+     "why": "A firewall rule that ships to every customer at once gives teams breathing room to patch, but the flaw sits in the language runtime, so the upgrade is what actually closes it.",
+     "company": "Cloudflare"
+    },
+    {
+     "category": "Cybersecurity",
+     "headline": "Microsoft warns attackers exploited an Entra Connect Health flaw to take tenant data",
+     "id": "brief-2026-11-22-07",
+     "source_date": "2026-11-21",
+     "sources": [
+      {
+       "label": "BleepingComputer",
+       "url": "https://www.bleepingcomputer.com/news/security/microsoft-entra-connect-health-flaw-exploited-to-steal-tenant-data/"
+      }
+     ],
+     "summary": "Microsoft has told administrators that attackers exploited a flaw in its Entra Connect Health service to gain unauthorised access to administrator email addresses and tenant configuration information. The company found the flaw in the service's API on November 9, deployed a server-side fix on November 19, and concluded its investigation on November 20, when it began notifying affected organisations. Microsoft says no passwords, tokens or valid cryptographic keys were exposed, and it has not said how many tenants were affected or who carried out the attack.",
+     "why": "Admin contact details and tenant configuration are the raw material for targeted phishing, so affected organisations need to treat the exposure as a prompt to check privileged accounts.",
+     "company": "Microsoft"
+    },
+    {
+     "category": "Cybersecurity",
+     "headline": "Rackspace Spot breach let attackers read customer Kubernetes secrets",
+     "id": "brief-2026-11-22-08",
+     "source_date": "2026-11-21",
+     "sources": [
+      {
+       "label": "BleepingComputer",
+       "url": "https://www.bleepingcomputer.com/news/security/rackspace-spot-breach-let-hackers-access-customer-kubernetes-secrets/"
+      }
+     ],
+     "summary": "Rackspace has warned customers that attackers used leaked credentials to access its Rackspace Spot cloud platform on November 17, where they created pods in customer Kubernetes clusters and read stored secrets. The company says it has revoked affected tokens and sessions, removed the unauthorised pods, rotated keys and strengthened access controls, and service was fully restored on November 21. Affected customers have been told to reissue API tokens, replace refresh tokens and rotate credentials held in cluster secrets, and to review logs back to November 17.",
+     "why": "Secrets stored in a cluster are only as safe as the platform around them, and a leaked credential at the platform level can hand an attacker every key a team keeps there.",
+     "company": "Rackspace"
+    },
+    {
+     "category": "Cybersecurity",
+     "headline": "Signal blocks screenshots so AI agents cannot read private chats",
+     "id": "brief-2026-11-22-09",
+     "source_date": "2026-11-21",
+     "sources": [
+      {
+       "label": "The Hacker News",
+       "url": "https://thehackernews.com/2026/11/signal-blocks-ai-agents-from-reading.html"
+      }
+     ],
+     "summary": "Signal is now restricting screenshots in its Android and iOS apps by default to stop operating-system AI agents from reading private chats off the screen. On iOS 27 the app blocks screenshots and adds a Block Siri AI setting, while on Android it turns on screen security when it detects an AI assistant trying to scan the display. Signal concedes the protection is incomplete, since agents can still reach data already stored on the device through the file system, and it is asking Apple, Google and Microsoft to give developers a way to keep agents out of their apps.",
+     "why": "Encryption protects messages in transit, not text already on screen, so messaging apps are having to defend the display itself as operating systems build agents into every surface.",
+     "company": "Signal"
+    },
+    {
+     "category": "Industry",
+     "headline": "Anthropic closes its $93.5 billion IPO and a $26 billion private placement",
+     "id": "brief-2026-11-22-10",
+     "source_date": "2026-11-20",
+     "sources": [
+      {
+       "label": "Anthropic",
+       "url": "https://www.anthropic.com/news/ipo-close"
+      }
+     ],
+     "summary": "Anthropic has closed its initial public offering, selling 1.127 billion Class A shares at $83 each for about $93.5 billion in gross proceeds, after underwriters exercised their option to buy 147 million additional shares in full. Anthropic received about $91.6 billion of the proceeds before expenses. The company also closed a $26 billion private placement of Class N shares with AMD, Broadcom, Google, Micron, Microsoft, Nvidia and TSMC Partners, bringing the combined total raised to about $119.5 billion.",
+     "why": "A frontier AI lab answering to public shareholders changes how its spending and pricing get judged, and the private placement puts its main chip and cloud suppliers on its share register.",
+     "company": "Anthropic"
+    },
+    {
+     "category": "Policy",
+     "headline": "Trump-Xi summit leaves chip controls tighter and the trade truce on hold",
+     "id": "brief-2026-11-22-11",
+     "source_date": "2026-11-21",
+     "sources": [
+      {
+       "label": "Reuters",
+       "url": "https://www.reuters.com/world/china/trump-basks-summit-pomp-chinas-xi-strengthens-his-hand-2026-11-21/"
+      }
+     ],
+     "summary": "Donald Trump's meeting with Xi Jinping in China produced fanfare, including the first trilateral meeting with Vladimir Putin, but few concrete gains, Reuters reports. On the day the two leaders met, a US rule further restricting China's access to advanced AI chips from companies such as Nvidia took effect, and the US is also weighing a rule requiring companies to disclose their use of Chinese AI models. Beijing's readout did not mention the trade truce, rare earths, chip controls or the detained Americans, and the truce expires on January 10.",
+     "why": "Chip controls now move through summits as well as rulebooks, so the state of US-China technology trade is set as much by leaders' meetings as by export licences.",
+     "company": "US Government"
+    },
+    {
+     "category": "Policy",
+     "headline": "US approved nearly 900,000 AI chip sales to China in six months",
+     "id": "brief-2026-11-22-12",
+     "source_date": "2026-11-19",
+     "sources": [
+      {
+       "label": "Reuters",
+       "url": "https://www.reuters.com/world/license-information-ai-chips-sent-china-released-by-us-house-committee-2026-11-19/"
+      }
+     ],
+     "summary": "The Trump administration approved shipments of nearly 900,000 advanced AI chips made by Nvidia and AMD for Chinese companies between December 2025 and May 2026, the House Foreign Affairs Committee has disclosed. The Commerce Department's Bureau of Industry and Security approved more than 879,000 of the 3.4 million chips requested, including 75,000 for Alibaba, 150,000 for Tencent, 43,000 for Baidu and 4,000 for BYD, all companies the Pentagon lists as linked to China's military. Committee chair Brian Mast used his authority under the Export Control Reform Act to make the licensing data public.",
+     "why": "The figures show how much of the requested computing power actually crossed the export control line, and they set the terms for the argument over whether the controls are working.",
+     "company": "US Department of Commerce"
+    }
+   ]
   }
  ]
 }

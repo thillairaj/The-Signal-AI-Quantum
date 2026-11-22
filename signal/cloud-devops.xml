@@ -4,8 +4,26 @@
     <title>Signal Brief · Cloud &amp; DevOps</title>
     <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/</link>
     <description>Signal Brief: the day in technology, in The Signal's own words. Every item is written from linked official sources and fact checked before publication.</description>
-    <lastBuildDate>Sat, 21 Nov 2026 01:39:04 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 22 Nov 2026 01:38:49 +0000</lastBuildDate>
     <atom:link xmlns:atom="http://www.w3.org/2005/Atom" href="https://thillairaj.github.io/The-Signal-AI-Quantum/signal/cloud-devops.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>CloudWatch Omni now pulls in Azure telemetry</title>
+      <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/2026-11-22/05/</link>
+      <guid isPermaLink="false">brief-2026-11-22-05</guid>
+      <pubDate>Sun, 22 Nov 2026 01:30:00 +0000</pubDate>
+      <category>Cloud &amp; DevOps</category>
+      <description>Amazon CloudWatch Omni can now collect Azure resource logs, Azure Monitor platform metrics, virtual network flow logs and Application Insights traces, AWS has announced. Teams running workloads on both clouds can now view Azure and AWS telemetry side by side in CloudWatch instead of maintaining separate monitoring tools. Setup connects a Microsoft Entra ID tenant to an AWS account and region, and the telemetry is available in all Azure public regions. Why it matters for tech: Multi-cloud teams usually stitch monitoring together by hand, and one console for both clouds shortens the path from an alert to the failing service.</description>
+      <content:encoded><![CDATA[<p>Amazon CloudWatch Omni can now collect Azure resource logs, Azure Monitor platform metrics, virtual network flow logs and Application Insights traces, AWS has announced. Teams running workloads on both clouds can now view Azure and AWS telemetry side by side in CloudWatch instead of maintaining separate monitoring tools. Setup connects a Microsoft Entra ID tenant to an AWS account and region, and the telemetry is available in all Azure public regions.</p><p><strong>Why it matters for tech:</strong> Multi-cloud teams usually stitch monitoring together by hand, and one console for both clouds shortens the path from an alert to the failing service.</p><p>Source: </p><ul><li><a href="https://aws.amazon.com/about-aws/whats-new/2026/11/amazon-cloudwatch-omni-microsoft-azure">AWS What's New</a></li></ul>]]></content:encoded>
+    </item>
+    <item>
+      <title>Cloudflare WAF now blocks ruby2shell attacks on every plan</title>
+      <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/2026-11-22/06/</link>
+      <guid isPermaLink="false">brief-2026-11-22-06</guid>
+      <pubDate>Sun, 22 Nov 2026 01:30:00 +0000</pubDate>
+      <category>Cloud &amp; DevOps</category>
+      <description>Cloudflare has added blocking rules to its web application firewall for ruby2shell, a critical heap overflow in Ruby's string case conversion disclosed on November 19 that Ruby rates as capable of remote code execution in some scenarios. The rules cover all customers, including the free plan, and a second rule covers a related integer overflow fixed in the same Ruby releases. Cloudflare stresses the firewall only buys time: the complete fix is upgrading to Ruby 3.3.14, 3.4.13 or 4.0.10. Why it matters for tech: A firewall rule that ships to every customer at once gives teams breathing room to patch, but the flaw sits in the language runtime, so the upgrade is what actually closes it.</description>
+      <content:encoded><![CDATA[<p>Cloudflare has added blocking rules to its web application firewall for ruby2shell, a critical heap overflow in Ruby's string case conversion disclosed on November 19 that Ruby rates as capable of remote code execution in some scenarios. The rules cover all customers, including the free plan, and a second rule covers a related integer overflow fixed in the same Ruby releases. Cloudflare stresses the firewall only buys time: the complete fix is upgrading to Ruby 3.3.14, 3.4.13 or 4.0.10.</p><p><strong>Why it matters for tech:</strong> A firewall rule that ships to every customer at once gives teams breathing room to patch, but the flaw sits in the language runtime, so the upgrade is what actually closes it.</p><p>Source: </p><ul><li><a href="https://blog.cloudflare.com/ruby2shell-waf-protection/">Cloudflare Blog</a></li></ul>]]></content:encoded>
+    </item>
     <item>
       <title>Five new nginx flaws can give unauthenticated attackers code execution</title>
       <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/2026-11-21/05/</link>

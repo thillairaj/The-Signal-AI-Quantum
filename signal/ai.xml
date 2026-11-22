@@ -4,8 +4,26 @@
     <title>Signal Brief · AI</title>
     <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/</link>
     <description>Signal Brief: the day in technology, in The Signal's own words. Every item is written from linked official sources and fact checked before publication.</description>
-    <lastBuildDate>Sat, 21 Nov 2026 01:39:04 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 22 Nov 2026 01:38:49 +0000</lastBuildDate>
     <atom:link xmlns:atom="http://www.w3.org/2005/Atom" href="https://thillairaj.github.io/The-Signal-AI-Quantum/signal/ai.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>OpenAI hardens GPT-6.2 against attempts to copy its reasoning</title>
+      <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/2026-11-22/01/</link>
+      <guid isPermaLink="false">brief-2026-11-22-01</guid>
+      <pubDate>Sun, 22 Nov 2026 01:30:00 +0000</pubDate>
+      <category>AI</category>
+      <description>OpenAI has described how it defends its models against adversarial distillation, in which another party uses a frontier model's outputs to train a rival model without comparable safeguards. The company says it tied the protected reasoning of GPT-6.2 Astra and GPT-6.2 Sol to the conversation that produced it, so rewriting an earlier message drops the reasoning that followed, and blocked older model families from reading that reasoning. In internal red-team testing across six attacker models, the success rate for recovering reasoning from an earlier request fell from 54.0% on GPT-6 Astra to 0.2% on GPT-6.2 Astra, and from 22.9% to 0.9% for the current request. Why it matters for tech: The defence makes it harder for rivals to lift a frontier model's reasoning wholesale, which protects the safety work built into the model from being stripped out in a copy.</description>
+      <content:encoded><![CDATA[<p>OpenAI has described how it defends its models against adversarial distillation, in which another party uses a frontier model's outputs to train a rival model without comparable safeguards. The company says it tied the protected reasoning of GPT-6.2 Astra and GPT-6.2 Sol to the conversation that produced it, so rewriting an earlier message drops the reasoning that followed, and blocked older model families from reading that reasoning. In internal red-team testing across six attacker models, the success rate for recovering reasoning from an earlier request fell from 54.0% on GPT-6 Astra to 0.2% on GPT-6.2 Astra, and from 22.9% to 0.9% for the current request.</p><p><strong>Why it matters for tech:</strong> The defence makes it harder for rivals to lift a frontier model's reasoning wholesale, which protects the safety work built into the model from being stripped out in a copy.</p><p>Source: </p><ul><li><a href="https://openai.com/index/combatting-adversarial-distillation/">OpenAI</a></li></ul>]]></content:encoded>
+    </item>
+    <item>
+      <title>A single malicious webpage let researchers hijack Meta Muse</title>
+      <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/2026-11-22/02/</link>
+      <guid isPermaLink="false">brief-2026-11-22-02</guid>
+      <pubDate>Sun, 22 Nov 2026 01:30:00 +0000</pubDate>
+      <category>AI</category>
+      <description>Security firm NebuSec has shown that one malicious webpage opened by Meta's Muse personal assistant could pull a user's conversation history and stored memories to an outside server without triggering an approval prompt. The researchers then chained a flaw in Muse's built-in browser with a Linux kernel flaw to take full control of the individual user's cloud machine, though they did not break out to the shared server or reach other users. NebuSec says it reported the findings to Meta and that every weakness described was patched before publication, while Meta has not publicly confirmed the fixes. Why it matters for tech: The chain shows how an AI agent that acts on web content can turn one bad page into a full account takeover, so agent builders have to treat every page an agent opens as untrusted input.</description>
+      <content:encoded><![CDATA[<p>Security firm NebuSec has shown that one malicious webpage opened by Meta's Muse personal assistant could pull a user's conversation history and stored memories to an outside server without triggering an approval prompt. The researchers then chained a flaw in Muse's built-in browser with a Linux kernel flaw to take full control of the individual user's cloud machine, though they did not break out to the shared server or reach other users. NebuSec says it reported the findings to Meta and that every weakness described was patched before publication, while Meta has not publicly confirmed the fixes.</p><p><strong>Why it matters for tech:</strong> The chain shows how an AI agent that acts on web content can turn one bad page into a full account takeover, so agent builders have to treat every page an agent opens as untrusted input.</p><p>Source: </p><ul><li><a href="https://thehackernews.com/2026/11/a-single-malicious-webpage-let.html">The Hacker News</a></li></ul>]]></content:encoded>
+    </item>
     <item>
       <title>Anthropic mathematician says Claude helped him prove the Riemann hypothesis</title>
       <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/2026-11-21/01/</link>
