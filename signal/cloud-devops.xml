@@ -4,8 +4,26 @@
     <title>Signal Brief · Cloud &amp; DevOps</title>
     <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/</link>
     <description>Signal Brief: the day in technology, in The Signal's own words. Every item is written from linked official sources and fact checked before publication.</description>
-    <lastBuildDate>Sun, 22 Nov 2026 01:38:49 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 23 Nov 2026 01:39:33 +0000</lastBuildDate>
     <atom:link xmlns:atom="http://www.w3.org/2005/Atom" href="https://thillairaj.github.io/The-Signal-AI-Quantum/signal/cloud-devops.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>Microsoft Foundry now surfaces governance policy as agents are built</title>
+      <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/2026-11-23/05/</link>
+      <guid isPermaLink="false">brief-2026-11-23-05</guid>
+      <pubDate>Mon, 23 Nov 2026 01:30:00 +0000</pubDate>
+      <category>Cloud &amp; DevOps</category>
+      <description>Microsoft has made governance policy guidance generally available in Microsoft Foundry, in both Foundry Canvas and the Foundry Toolkit for Visual Studio Code. As developers build agents, the two experiences surface the policies that apply to the agent type, models, toolboxes and guardrails in use. The feature brings governance guidance into the tools where agents are built, so developers see the rules that apply to what they are building. Why it matters for tech: Policy checks that appear while an agent is being built catch rule-breaking choices early, when they are cheapest to fix.</description>
+      <content:encoded><![CDATA[<p>Microsoft has made governance policy guidance generally available in Microsoft Foundry, in both Foundry Canvas and the Foundry Toolkit for Visual Studio Code. As developers build agents, the two experiences surface the policies that apply to the agent type, models, toolboxes and guardrails in use. The feature brings governance guidance into the tools where agents are built, so developers see the rules that apply to what they are building.</p><p><strong>Why it matters for tech:</strong> Policy checks that appear while an agent is being built catch rule-breaking choices early, when they are cheapest to fix.</p><p>Source: </p><ul><li><a href="https://azure.microsoft.com/updates?id=581463">Azure Updates</a></li></ul>]]></content:encoded>
+    </item>
+    <item>
+      <title>A GitHub authentication bug signed users out of web sessions for two weeks</title>
+      <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/2026-11-23/06/</link>
+      <guid isPermaLink="false">brief-2026-11-23-06</guid>
+      <pubDate>Mon, 23 Nov 2026 01:30:00 +0000</pubDate>
+      <category>Cloud &amp; DevOps</category>
+      <description>GitHub has resolved an incident in which users were repeatedly signed out of web sessions between November 5 and November 19, despite staying active. An authentication change had stopped web requests from renewing session activity and cookies, so sessions expired at their original time instead of being extended. GitHub says it deployed a fix on November 19 and is adding monitoring to catch drops in session renewal sooner. Why it matters for tech: Session handling sits underneath every web workflow, so a quiet renewal bug can sign people out without any visible error.</description>
+      <content:encoded><![CDATA[<p>GitHub has resolved an incident in which users were repeatedly signed out of web sessions between November 5 and November 19, despite staying active. An authentication change had stopped web requests from renewing session activity and cookies, so sessions expired at their original time instead of being extended. GitHub says it deployed a fix on November 19 and is adding monitoring to catch drops in session renewal sooner.</p><p><strong>Why it matters for tech:</strong> Session handling sits underneath every web workflow, so a quiet renewal bug can sign people out without any visible error.</p><p>Source: </p><ul><li><a href="https://www.githubstatus.com/incidents/m310qbkfm3ww">GitHub Status</a></li></ul>]]></content:encoded>
+    </item>
     <item>
       <title>CloudWatch Omni now pulls in Azure telemetry</title>
       <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/2026-11-22/05/</link>

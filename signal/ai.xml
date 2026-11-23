@@ -4,8 +4,26 @@
     <title>Signal Brief · AI</title>
     <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/</link>
     <description>Signal Brief: the day in technology, in The Signal's own words. Every item is written from linked official sources and fact checked before publication.</description>
-    <lastBuildDate>Sun, 22 Nov 2026 01:38:49 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 23 Nov 2026 01:39:33 +0000</lastBuildDate>
     <atom:link xmlns:atom="http://www.w3.org/2005/Atom" href="https://thillairaj.github.io/The-Signal-AI-Quantum/signal/ai.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>OpenAI proposes perplexity as a shared yardstick for frontier AI safety</title>
+      <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/2026-11-23/01/</link>
+      <guid isPermaLink="false">brief-2026-11-23-01</guid>
+      <pubDate>Mon, 23 Nov 2026 01:30:00 +0000</pubDate>
+      <category>AI</category>
+      <description>OpenAI has published internal measurements showing how its models' perplexity, a score for how well a model predicts the next token, has fallen from GPT-3.5 through GPT-4 to below 0.8 today, and argues the metric tracks the emergence of new capabilities. The post links lower perplexity to abilities in conversation, reasoning, cybersecurity and mathematics, and proposes that frontier labs agree on shared transparency standards and common development limits tied to perplexity and other measurements. It also warns that as models improve, current alignment checks such as chain-of-thought monitoring may degrade. Why it matters for tech: A shared metric for measuring progress would let labs, regulators and researchers compare frontier models on the same terms instead of each using its own benchmarks.</description>
+      <content:encoded><![CDATA[<p>OpenAI has published internal measurements showing how its models' perplexity, a score for how well a model predicts the next token, has fallen from GPT-3.5 through GPT-4 to below 0.8 today, and argues the metric tracks the emergence of new capabilities. The post links lower perplexity to abilities in conversation, reasoning, cybersecurity and mathematics, and proposes that frontier labs agree on shared transparency standards and common development limits tied to perplexity and other measurements. It also warns that as models improve, current alignment checks such as chain-of-thought monitoring may degrade.</p><p><strong>Why it matters for tech:</strong> A shared metric for measuring progress would let labs, regulators and researchers compare frontier models on the same terms instead of each using its own benchmarks.</p><p>Source: </p><ul><li><a href="https://openai.com/index/perplexity-and-intelligence">OpenAI</a></li></ul>]]></content:encoded>
+    </item>
+    <item>
+      <title>Gemini API gains Tool Retrieval so agents load tool details only when needed</title>
+      <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/2026-11-23/02/</link>
+      <guid isPermaLink="false">brief-2026-11-23-02</guid>
+      <pubDate>Mon, 23 Nov 2026 01:30:00 +0000</pubDate>
+      <category>AI</category>
+      <description>Google has added Tool Retrieval to the Gemini API in preview, letting agents keep a large tool library on standby and load a tool's full parameter schema only when the model asks for it. The model still sees every tool's name and description, so it can find the right one, while the schemas stay out of the prompt until needed, which cuts input tokens and keeps tool choice accurate as the library grows. The feature works with Gemini 3.6 and later models, including all Gemini 4 models, carries no separate charge, and also applies to tools exposed through remote MCP servers. Why it matters for tech: Agents that juggle dozens or hundreds of tools can stay fast and accurate without paying the token cost of describing every tool on every call.</description>
+      <content:encoded><![CDATA[<p>Google has added Tool Retrieval to the Gemini API in preview, letting agents keep a large tool library on standby and load a tool's full parameter schema only when the model asks for it. The model still sees every tool's name and description, so it can find the right one, while the schemas stay out of the prompt until needed, which cuts input tokens and keeps tool choice accurate as the library grows. The feature works with Gemini 3.6 and later models, including all Gemini 4 models, carries no separate charge, and also applies to tools exposed through remote MCP servers.</p><p><strong>Why it matters for tech:</strong> Agents that juggle dozens or hundreds of tools can stay fast and accurate without paying the token cost of describing every tool on every call.</p><p>Source: </p><ul><li><a href="https://blog.google/innovation-and-ai/technology/developers-tools/gemini-api-tool-retrieval/">Google</a></li></ul>]]></content:encoded>
+    </item>
     <item>
       <title>OpenAI hardens GPT-6.2 against attempts to copy its reasoning</title>
       <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/2026-11-22/01/</link>

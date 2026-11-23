@@ -4,8 +4,26 @@
     <title>Signal Brief · Quantum</title>
     <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/</link>
     <description>Signal Brief: the day in technology, in The Signal's own words. Every item is written from linked official sources and fact checked before publication.</description>
-    <lastBuildDate>Sun, 22 Nov 2026 01:38:49 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 23 Nov 2026 01:39:33 +0000</lastBuildDate>
     <atom:link xmlns:atom="http://www.w3.org/2005/Atom" href="https://thillairaj.github.io/The-Signal-AI-Quantum/signal/quantum.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>NIST uses entangled photons to prove where a device really is</title>
+      <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/2026-11-23/03/</link>
+      <guid isPermaLink="false">brief-2026-11-23-03</guid>
+      <pubDate>Mon, 23 Nov 2026 01:30:00 +0000</pubDate>
+      <category>Quantum</category>
+      <description>Researchers at the US National Institute of Standards and Technology and collaborators have demonstrated quantum position verification, a method that uses quantum physics to confirm a device's physical location. Two verifier stations 195 metres apart sent an entangled photon and random numbers to a device between them, then used the timing of its reply and a loophole-free Bell test to confirm it was where it claimed to be. The team reported the results in Nature, describing the experiment as the first complete demonstration of the technique. Why it matters for tech: Location checks that rest on physics rather than on signals a device can fake could give banks, power grids and other infrastructure a stronger defence against impersonation.</description>
+      <content:encoded><![CDATA[<p>Researchers at the US National Institute of Standards and Technology and collaborators have demonstrated quantum position verification, a method that uses quantum physics to confirm a device's physical location. Two verifier stations 195 metres apart sent an entangled photon and random numbers to a device between them, then used the timing of its reply and a loophole-free Bell test to confirm it was where it claimed to be. The team reported the results in Nature, describing the experiment as the first complete demonstration of the technique.</p><p><strong>Why it matters for tech:</strong> Location checks that rest on physics rather than on signals a device can fake could give banks, power grids and other infrastructure a stronger defence against impersonation.</p><p>Source: </p><ul><li><a href="https://www.nist.gov/news-events/news/2026/11/quantum-physics-can-verify-persons-location-nist-researchers-show">NIST</a></li><li><a href="https://doi.org/10.1038/s41586-026-11247-3">Nature</a></li></ul>]]></content:encoded>
+    </item>
+    <item>
+      <title>QuEra and NVIDIA release an open digital twin for testing quantum processors</title>
+      <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/2026-11-23/04/</link>
+      <guid isPermaLink="false">brief-2026-11-23-04</guid>
+      <pubDate>Mon, 23 Nov 2026 01:30:00 +0000</pubDate>
+      <category>Quantum</category>
+      <description>QuEra Computing and NVIDIA, with researchers from Ecole Normale Superieure and the University of Massachusetts Amherst, have released PPVM, an open-source simulation framework that acts as a digital twin for quantum processors. It models the processor, realistic hardware noise and classical control logic together, combining stabilizer tableau simulation with Pauli propagation so teams can test error-correction routines and noise models before running them on real hardware. In benchmarks, one backend simulated a 1,435-qubit error-correction workload at about 0.1 seconds per shot, and a GPU backend tracked 15 million Pauli terms in about nine minutes. Why it matters for tech: A realistic simulator lets researchers debug error correction and control logic on ordinary hardware instead of competing for scarce time on a real quantum machine.</description>
+      <content:encoded><![CDATA[<p>QuEra Computing and NVIDIA, with researchers from Ecole Normale Superieure and the University of Massachusetts Amherst, have released PPVM, an open-source simulation framework that acts as a digital twin for quantum processors. It models the processor, realistic hardware noise and classical control logic together, combining stabilizer tableau simulation with Pauli propagation so teams can test error-correction routines and noise models before running them on real hardware. In benchmarks, one backend simulated a 1,435-qubit error-correction workload at about 0.1 seconds per shot, and a GPU backend tracked 15 million Pauli terms in about nine minutes.</p><p><strong>Why it matters for tech:</strong> A realistic simulator lets researchers debug error correction and control logic on ordinary hardware instead of competing for scarce time on a real quantum machine.</p><p>Source: </p><ul><li><a href="https://quantumcomputingreport.com/quera-computing-and-nvidia-introduce-ppvm-open-source-digital-twin-simulation-framework-for-quantum-processors/">Quantum Computing Report</a></li></ul>]]></content:encoded>
+    </item>
     <item>
       <title>Qubrio lets language-model agents compile circuits for neutral-atom processors</title>
       <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/2026-11-22/03/</link>
