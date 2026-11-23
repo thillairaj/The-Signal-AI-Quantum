@@ -1,6 +1,45 @@
 {
  "articles": [
   {
+   "id": "2026-11-23-frontier-ai-pause-chip-boom",
+   "title": "Why Did the Frontier AI Pause Fail to Slow the Chip Boom?",
+   "subtitle": "Record chip revenue after a summer of slowdown calls",
+   "date": "2026-11-23",
+   "kind": "Deep Dive",
+   "card": "research/cards/edition-17.webp",
+   "body": "research/articles/2026-11-23-frontier-ai-pause-chip-boom.html",
+   "sources": [
+    {
+     "label": "NVIDIA Newsroom: NVIDIA Announces Financial Results for Third Quarter Fiscal 2027 (Nov 17, 2026)",
+     "url": "https://nvidianews.nvidia.com/news/nvidia-announces-financial-results-for-third-quarter-fiscal-2027"
+    },
+    {
+     "label": "SEC: NVIDIA Q3 FY27 press release (8-K exhibit, Nov 17, 2026)",
+     "url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000088/q3fy27pr.htm"
+    },
+    {
+     "label": "Reuters: OpenAI slows model training to bolster security after Hugging Face hack (Aug 18, 2026)",
+     "url": "https://www.reuters.com/technology/openai-slows-model-training-bolster-security-after-hugging-face-hack-2026-08-18/"
+    },
+    {
+     "label": "MoneyControl: Anthropic weighs new AI model to counter OpenAI's GPT-6 Astra, days after CEO urged slowdown (Sep 19, 2026)",
+     "url": "https://www.moneycontrol.com/artificial-intelligence/anthropic-weighs-new-ai-model-to-counter-openai-s-gpt-6-astra-days-after-ceo-urged-slowdown-article-14033326.html"
+    },
+    {
+     "label": "TipRanks: NVIDIA Earnings Call Signals Powerful AI Growth Ahead (Nov 2026)",
+     "url": "https://www.tipranks.com/news/company-announcements/nvidia-earnings-call-signals-powerful-ai-growth-ahead"
+    },
+    {
+     "label": "NextFin: AI Race Heats Up Again a Month After Calls for a Slowdown (Oct 2026)",
+     "url": "https://www.nextfin.ai/en/news/ai-race-heats-up-again-a-month-after-calls-for-a-slowdown-cef5ee58ec"
+    },
+    {
+     "label": "Briefing.com: NVIDIA delivers beat and raise as Rubin ramp accelerates (Nov 18, 2026)",
+     "url": "https://www.briefing.com/story-stocks/archive/2026/11/18/nvidia-delivers-beat-and-raise-as-rubin-ramp-accelerates-leadership-uncertainty-remains-(nvda)"
+    }
+   ]
+  },
+  {
    "id": "2026-11-20-mixture-of-experts",
    "title": "How Does a Mixture of Experts Model Use Only a Fraction of Itself?",
    "subtitle": "The routing trick behind the biggest open models",
@@ -477,5 +516,5 @@
    "title": "Where Does Value Accrue in the AI Stack?"
   }
  ],
- "generated_at": "2026-11-20T04:16:34.699538+00:00"
+ "generated_at": "2026-11-23T04:16:15.250141+00:00"
 }
