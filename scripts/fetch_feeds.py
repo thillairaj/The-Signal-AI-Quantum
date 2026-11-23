@@ -26,11 +26,19 @@ entry has no standalone <link> (common for podcast feeds), the audio URL
 itself is used as the link.
 Also writes feed.xml.
 
+Local podcast fallback (Thillai, Nov 23, 2026): the muse.ai podcast feeds
+are unreachable from this runtime (proxy 403), so a podcast series whose
+feed returns no entries is rebuilt from the local podcast-helper manifest
+instead — see local_podcast_items below. Only manifest entries carrying an
+episode_url (i.e. actually published) are used.
+
 Usage: python3 scripts/fetch_feeds.py
 """
 import json
 import hashlib
+import os
 import re
+import subprocess
 from collections import defaultdict
 from datetime import datetime, timezone, timedelta
 from pathlib import Path
@@ -47,6 +55,60 @@ RSS_FILE = ROOT / "feed.xml"
 SITE_URL = "https://thillairaj.github.io/The-Signal-AI-Quantum/"
 MAX_PER_SOURCE = 10
 RSS_ITEM_LIMIT = 60
+
+# Local fallback for the muse.ai podcast feeds (Thillai, Nov 23, 2026):
+# the egress proxy blocks muse.ai from this runtime (403 "Tunnel
+# connection failed" on every poll since Nov 15, 2026), which froze
+# The Signal's podcast catalogue at Daily AI Episode 45 / Quantum
+# Episode 4 while the podcasts kept publishing. The podcast-helper
+# manifest is the local source of truth for published episodes: an
+# entry counts as published only when it carries an episode_url
+# (unpublished drafts and duplicate generations have none, so they
+# are never picked up). Fields map one to one onto the stored item
+# shape: episode_url is both link and audio_url (the id is the same
+# sha1 of the link), created_at is published, duration_secs is the
+# duration, and an empty description becomes "AI Generated", the
+# same placeholder the RSS feed itself carries for those episodes.
+PODCAST_HELPER = os.environ.get(
+    "SIGNAL_PODCAST_HELPER",
+    "/opt/muse/skills/generate_podcast/scripts/podcast-helper")
+_manifest_cache = None
+
+
+def local_podcast_items(feed):
+    """Stored-shape items for one podcast series, from the local manifest.
+
+    Returns a list of article dicts, or None if the manifest cannot be
+    read (the caller then treats the source as failed, as before)."""
+    global _manifest_cache
+    if _manifest_cache is None:
+        try:
+            raw = subprocess.run([PODCAST_HELPER, "manifest", "read"],
+                                 capture_output=True, timeout=180)
+            _manifest_cache = json.loads(raw.stdout.decode("utf-8"))
+        except Exception as exc:  # noqa: BLE001 - any helper failure
+            print(f"  [FAILED] {feed['source']}: local manifest fallback "
+                  f"unavailable ({exc})")
+            _manifest_cache = False
+    if not _manifest_cache:
+        return None
+    items = []
+    for ep in _manifest_cache.get("episodes", []):
+        if ep.get("feed_url") != feed["url"] or not ep.get("episode_url"):
+            continue
+        link = ep["episode_url"]
+        items.append({
+            "id": article_id(link),
+            "title": (ep.get("title") or "").strip(),
+            "link": link,
+            "source": feed["source"],
+            "category": feed.get("category", "Podcast"),
+            "summary": clean_html(ep.get("description", "")) or "AI Generated",
+            "published": ep.get("created_at") or datetime.now(timezone.utc).isoformat(),
+            "audio_url": link,
+            "duration": str(ep.get("duration_secs") or ""),
+        })
+    return [i for i in items if i["title"]]
 
 # Weekly health thresholds: minimum posts in the trailing 7 days, by
 # source type (Thillai, Nov 5, 2026). Official company and lab sources:
@@ -100,6 +162,35 @@ QUANTUM_KEYWORDS = re.compile(
     r"quantum gate|quantum annealing)\w*",
     re.IGNORECASE,
 )
+
+
+def parse_feed(url, source):
+    """Parse one feed without letting a single bad feed crash the run.
+
+    feedparser's urllib path truncates the European Commission Press
+    Corner chunked response (http.client.IncompleteRead, ~2,159 bytes
+    read; verified 17 Nov 2026, 2,198 bytes on retest), while curl
+    fetches the same URL whole (7,397 bytes, 10 entries). So a failed
+    direct parse is retried once through curl. If both fail, return an
+    empty parse so the caller records the source as failed/empty and
+    moves on instead of aborting the whole fetch (Thillai, Nov 17,
+    2026: three 4-hourly refreshes failed this way, live wire stuck
+    on the 03:30 IST data)."""
+    try:
+        return feedparser.parse(url)
+    except Exception as exc:  # noqa: BLE001 - any transport/parse failure
+        print(f"  [RETRY]  {source}: direct parse failed ({exc}); "
+              f"retrying via curl")
+    try:
+        raw = subprocess.run(["curl", "-sS", "--max-time", "30", url],
+                             capture_output=True, timeout=40)
+        if raw.returncode == 0 and raw.stdout:
+            return feedparser.parse(raw.stdout)
+        print(f"  [FAILED] {source}: curl retry failed "
+              f"(rc={raw.returncode})")
+    except Exception as exc:  # noqa: BLE001
+        print(f"  [FAILED] {source}: curl retry failed ({exc})")
+    return feedparser.parse(b"")
 
 
 def clean_html(raw: str) -> str:
@@ -303,10 +394,28 @@ def main():
         source = feed["source"]
         url = feed["url"]
         category = feed.get("category", "AI")
-        parsed = feedparser.parse(url)
+        parsed = parse_feed(url, source)
         feed_stats[source] = sum(
             1 for e in parsed.entries
             if (entry_datetime(e) or datetime.min.replace(tzinfo=timezone.utc)) >= week_ago)
+
+        # Podcast series whose feed cannot be fetched (the muse.ai
+        # proxy block) are rebuilt from the local manifest instead, so
+        # new episodes keep reaching the site (Thillai, Nov 23, 2026).
+        if category == "Podcast" and not parsed.entries:
+            items = local_podcast_items(feed)
+            if items is not None:
+                new_here = 0
+                for item in items:
+                    if item["id"] not in by_id:
+                        by_id[item["id"]] = item
+                        added += 1
+                        new_here += 1
+                seen_sources.append(source)
+                print(f"  [LOCAL]  {source}: feed unreachable; "
+                      f"{len(items)} published episode(s) from the local "
+                      f"manifest ({new_here} new)")
+                continue
 
         if parsed.bozo and not parsed.entries:
             print(f"  [FAILED] {source}: could not parse feed ({parsed.bozo_exception})")
