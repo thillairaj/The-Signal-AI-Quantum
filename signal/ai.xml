@@ -4,8 +4,35 @@
     <title>Signal Brief · AI</title>
     <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/</link>
     <description>Signal Brief: the day in technology, in The Signal's own words. Every item is written from linked official sources and fact checked before publication.</description>
-    <lastBuildDate>Mon, 23 Nov 2026 01:39:33 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 24 Nov 2026 01:38:20 +0000</lastBuildDate>
     <atom:link xmlns:atom="http://www.w3.org/2005/Atom" href="https://thillairaj.github.io/The-Signal-AI-Quantum/signal/ai.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>Claude Ship lets AI agents review, fix and approve pull requests</title>
+      <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/2026-11-24/01/</link>
+      <guid isPermaLink="false">brief-2026-11-24-01</guid>
+      <pubDate>Tue, 24 Nov 2026 01:30:00 +0000</pubDate>
+      <category>AI</category>
+      <description>Anthropic has launched Claude Ship, a set of three agents that takes a GitHub pull request through review, fixes and an approval decision. Code Review, already generally available, checks proposed changes against the codebase, while the two new beta agents, PR Steward and Claude Approvals, work on failing checks, merge conflicts and review feedback, and approve routine changes under a policy file the team writes. The tool is available in beta on Claude Team and Enterprise plans, and developers can start the flow from Claude Code with a new /ship command. Why it matters for tech: Approval is the bottleneck now that agents write most code, so automating review and sign-off under team-set rules changes how fast teams can ship.</description>
+      <content:encoded><![CDATA[<p>Anthropic has launched Claude Ship, a set of three agents that takes a GitHub pull request through review, fixes and an approval decision. Code Review, already generally available, checks proposed changes against the codebase, while the two new beta agents, PR Steward and Claude Approvals, work on failing checks, merge conflicts and review feedback, and approve routine changes under a policy file the team writes. The tool is available in beta on Claude Team and Enterprise plans, and developers can start the flow from Claude Code with a new /ship command.</p><p><strong>Why it matters for tech:</strong> Approval is the bottleneck now that agents write most code, so automating review and sign-off under team-set rules changes how fast teams can ship.</p><p>Source: </p><ul><li><a href="https://thenewstack.io/anthropic-claude-ship-approvals/">The New Stack</a></li></ul>]]></content:encoded>
+    </item>
+    <item>
+      <title>OpenAI and Cisco launch Shirudo, an open-source shield for patching live Linux systems</title>
+      <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/2026-11-24/02/</link>
+      <guid isPermaLink="false">brief-2026-11-24-02</guid>
+      <pubDate>Tue, 24 Nov 2026 01:30:00 +0000</pubDate>
+      <category>AI</category>
+      <description>OpenAI and Cisco have launched Shirudo, an open-source runtime that protects running Linux systems while permanent patches are prepared. It uses eBPF to place a temporary shield on a vulnerable code path, blocking exploit behaviour while letting legitimate requests through, without restarting the service. In a controlled test, a Codex-generated shield blocked a Java4Shell exploit attempt against a running Elasticsearch service, and the project is released under a BSD 2-Clause licence with cryptographically signed shields. Why it matters for tech: Patching can take days or weeks, so a tested temporary shield gives operators a way to close the exposure window without taking services offline.</description>
+      <content:encoded><![CDATA[<p>OpenAI and Cisco have launched Shirudo, an open-source runtime that protects running Linux systems while permanent patches are prepared. It uses eBPF to place a temporary shield on a vulnerable code path, blocking exploit behaviour while letting legitimate requests through, without restarting the service. In a controlled test, a Codex-generated shield blocked a Java4Shell exploit attempt against a running Elasticsearch service, and the project is released under a BSD 2-Clause licence with cryptographically signed shields.</p><p><strong>Why it matters for tech:</strong> Patching can take days or weeks, so a tested temporary shield gives operators a way to close the exposure window without taking services offline.</p><p>Source: </p><ul><li><a href="https://openai.com/index/introducing-shirudo">OpenAI</a></li></ul>]]></content:encoded>
+    </item>
+    <item>
+      <title>AWS releases five open decision models for AI agents</title>
+      <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/2026-11-24/03/</link>
+      <guid isPermaLink="false">brief-2026-11-24-03</guid>
+      <pubDate>Tue, 24 Nov 2026 01:30:00 +0000</pubDate>
+      <category>AI</category>
+      <description>Amazon Web Services has released Strands Decider v2, five open-weight models that choose between options a developer supplies and return a probability for each in a single pass, instead of generating text. The models are built on Google's Gemma 4, range from E2B to 31 billion parameters, and are released under the Apache 2.0 licence with weights on Hugging Face. AWS reports the 31 billion parameter model averages 82.1 across six public text benchmarks, up from 70.0 for the previous version, and says the earlier version cut ticket-labelling cost by 98 percent on one of Amazon's largest internal ticketing systems. Why it matters for tech: Agents constantly make small routing and classification choices, and a cheap model built only for those decisions cuts the cost of running agents at scale.</description>
+      <content:encoded><![CDATA[<p>Amazon Web Services has released Strands Decider v2, five open-weight models that choose between options a developer supplies and return a probability for each in a single pass, instead of generating text. The models are built on Google's Gemma 4, range from E2B to 31 billion parameters, and are released under the Apache 2.0 licence with weights on Hugging Face. AWS reports the 31 billion parameter model averages 82.1 across six public text benchmarks, up from 70.0 for the previous version, and says the earlier version cut ticket-labelling cost by 98 percent on one of Amazon's largest internal ticketing systems.</p><p><strong>Why it matters for tech:</strong> Agents constantly make small routing and classification choices, and a cheap model built only for those decisions cuts the cost of running agents at scale.</p><p>Source: </p><ul><li><a href="https://strandsagents.com/blog/introducing-strands-decider-v2/">Strands Agents</a></li><li><a href="https://thenewstack.io/aws-strands-decider-v2/">The New Stack</a></li></ul>]]></content:encoded>
+    </item>
     <item>
       <title>OpenAI proposes perplexity as a shared yardstick for frontier AI safety</title>
       <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/2026-11-23/01/</link>

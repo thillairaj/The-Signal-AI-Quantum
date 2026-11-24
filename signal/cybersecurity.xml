@@ -4,8 +4,26 @@
     <title>Signal Brief · Cybersecurity</title>
     <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/</link>
     <description>Signal Brief: the day in technology, in The Signal's own words. Every item is written from linked official sources and fact checked before publication.</description>
-    <lastBuildDate>Mon, 23 Nov 2026 01:39:33 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 24 Nov 2026 01:38:20 +0000</lastBuildDate>
     <atom:link xmlns:atom="http://www.w3.org/2005/Atom" href="https://thillairaj.github.io/The-Signal-AI-Quantum/signal/cybersecurity.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>South Korea's power giant KEPCO confirms a breach exposing 1.5 million people</title>
+      <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/2026-11-24/08/</link>
+      <guid isPermaLink="false">brief-2026-11-24-08</guid>
+      <pubDate>Tue, 24 Nov 2026 01:30:00 +0000</pubDate>
+      <category>Cybersecurity</category>
+      <description>Korea Electric Power Corporation has confirmed a breach of its internal network that exposed data on more than 1.5 million people, detected on November 20 in its KEPCO ON billing platform and its SRM procurement system. The exposed data covers 650,487 customers, including names, ID information, phone numbers, addresses and bank and card details, plus 426,827 company representatives and 442,934 employees. KEPCO says the breach involved advanced technologies such as AI but gave no details of how attackers got in, and it has reported the incident to data protection authorities while notifying those affected. Why it matters for tech: A state-controlled power operator holding payment details for hundreds of thousands of customers makes this a critical-infrastructure breach with direct fraud risk for those exposed.</description>
+      <content:encoded><![CDATA[<p>Korea Electric Power Corporation has confirmed a breach of its internal network that exposed data on more than 1.5 million people, detected on November 20 in its KEPCO ON billing platform and its SRM procurement system. The exposed data covers 650,487 customers, including names, ID information, phone numbers, addresses and bank and card details, plus 426,827 company representatives and 442,934 employees. KEPCO says the breach involved advanced technologies such as AI but gave no details of how attackers got in, and it has reported the incident to data protection authorities while notifying those affected.</p><p><strong>Why it matters for tech:</strong> A state-controlled power operator holding payment details for hundreds of thousands of customers makes this a critical-infrastructure breach with direct fraud risk for those exposed.</p><p>Source: </p><ul><li><a href="https://www.bleepingcomputer.com/news/security/south-koreas-power-giant-kepco-confirms-data-breach-impacting-15-million/">BleepingComputer</a></li></ul>]]></content:encoded>
+    </item>
+    <item>
+      <title>Microsoft warns an Azure flaw was used to steal customers' API credentials</title>
+      <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/2026-11-24/09/</link>
+      <guid isPermaLink="false">brief-2026-11-24-09</guid>
+      <pubDate>Tue, 24 Nov 2026 01:30:00 +0000</pubDate>
+      <category>Cybersecurity</category>
+      <description>Microsoft has warned customers that a flaw in Azure API Management Classic tiers was exploited to steal stored API credentials, after identifying the vulnerability on November 18 and deploying a mitigation the next day. The flaw allowed unauthorised access to management functions on instances not configured to recommended practices, exposing secrets in Named Values, identity provider client secrets, subscription keys and direct management API tokens. Norway's National Security Authority linked the flaw to attacks on energy companies including Equinor and Skagerak Energi, and Microsoft says customers must rotate credentials because the fix does not invalidate secrets already accessed. Why it matters for tech: Stolen API credentials open the door to every system behind them, and a fix that leaves already-taken secrets valid means rotation is the only real remedy.</description>
+      <content:encoded><![CDATA[<p>Microsoft has warned customers that a flaw in Azure API Management Classic tiers was exploited to steal stored API credentials, after identifying the vulnerability on November 18 and deploying a mitigation the next day. The flaw allowed unauthorised access to management functions on instances not configured to recommended practices, exposing secrets in Named Values, identity provider client secrets, subscription keys and direct management API tokens. Norway's National Security Authority linked the flaw to attacks on energy companies including Equinor and Skagerak Energi, and Microsoft says customers must rotate credentials because the fix does not invalidate secrets already accessed.</p><p><strong>Why it matters for tech:</strong> Stolen API credentials open the door to every system behind them, and a fix that leaves already-taken secrets valid means rotation is the only real remedy.</p><p>Source: </p><ul><li><a href="https://www.bleepingcomputer.com/news/security/microsoft-azure-flaw-exploited-to-steal-customers-api-credentials/">BleepingComputer</a></li></ul>]]></content:encoded>
+    </item>
     <item>
       <title>OpenRouter drops three AI providers after researchers catch months of prompt theft</title>
       <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/2026-11-23/07/</link>

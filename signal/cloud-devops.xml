@@ -4,8 +4,17 @@
     <title>Signal Brief · Cloud &amp; DevOps</title>
     <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/</link>
     <description>Signal Brief: the day in technology, in The Signal's own words. Every item is written from linked official sources and fact checked before publication.</description>
-    <lastBuildDate>Mon, 23 Nov 2026 01:39:33 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 24 Nov 2026 01:38:20 +0000</lastBuildDate>
     <atom:link xmlns:atom="http://www.w3.org/2005/Atom" href="https://thillairaj.github.io/The-Signal-AI-Quantum/signal/cloud-devops.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>Agent Insights in Microsoft Foundry reaches general availability</title>
+      <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/2026-11-24/07/</link>
+      <guid isPermaLink="false">brief-2026-11-24-07</guid>
+      <pubDate>Tue, 24 Nov 2026 01:30:00 +0000</pubDate>
+      <category>Cloud &amp; DevOps</category>
+      <description>Microsoft has made Agent Insights in Microsoft Foundry generally available, giving teams a way to observe agents running in production. The feature analyses an agent's recent traces with a model the team chooses, then groups recurring problems with their severity, the linked traces and a proposed next step. The same visibility now covers agents built outside Foundry with LangGraph, LangChain and CrewAI, by registering them through OpenTelemetry traces sent to Application Insights. Why it matters for tech: Agents fail in patterns across thousands of runs, so grouping those failures with evidence turns debugging from guesswork into a repeatable loop.</description>
+      <content:encoded><![CDATA[<p>Microsoft has made Agent Insights in Microsoft Foundry generally available, giving teams a way to observe agents running in production. The feature analyses an agent's recent traces with a model the team chooses, then groups recurring problems with their severity, the linked traces and a proposed next step. The same visibility now covers agents built outside Foundry with LangGraph, LangChain and CrewAI, by registering them through OpenTelemetry traces sent to Application Insights.</p><p><strong>Why it matters for tech:</strong> Agents fail in patterns across thousands of runs, so grouping those failures with evidence turns debugging from guesswork into a repeatable loop.</p><p>Source: </p><ul><li><a href="https://techcommunity.microsoft.com/blog/azure-ai-foundry-blog/external-agents-in-microsoft-foundry-are-now-generally-available/4572630">Microsoft Tech Community</a></li><li><a href="https://azure.microsoft.com/updates?id=581363">Azure Updates</a></li></ul>]]></content:encoded>
+    </item>
     <item>
       <title>Microsoft Foundry now surfaces governance policy as agents are built</title>
       <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/2026-11-23/05/</link>
