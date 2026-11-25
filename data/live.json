@@ -1,0 +1,43 @@
+{
+  "updated": "2026-11-24T22:47:39+05:30",
+  "next_update": "2026-11-25T00:00:00+05:30",
+  "delay_hours": 2,
+  "items": [
+    {
+      "id": "live-2026-11-24-02",
+      "published": "2026-11-24T14:00:00+05:30",
+      "category": "Quantum",
+      "company": "National Research Council of Canada",
+      "headline": "Researchers set out a germanium and silicon chip design aimed at a million qubits",
+      "what": "Canada's National Research Council and the University of Warwick published peer reviewed research showing that engineered layers of germanium and silicon can serve as a foundation for chips that use quantum dots as qubits.",
+      "why": "Scaling from a handful of qubits to very large chips is one of the central problems in quantum computing, and a materials platform that can be manufactured precisely is a step toward larger machines.",
+      "financial": false,
+      "sources": [
+        {
+          "label": "The Quantum Insider",
+          "url": "https://thequantuminsider.com/2026/11/24/canadian-researchers-piece-together-a-million-qubit-quantum-chip/"
+        }
+      ]
+    },
+    {
+      "id": "live-2026-11-24-03",
+      "published": "2026-11-24T16:00:00+05:30",
+      "category": "Industry",
+      "company": "Spotify",
+      "headline": "Spotify outage logged thousands of users out before service recovered",
+      "what": "Reports on Downdetector began rising at about 16:59 IST and peaked above 14,000 in the United States, with more than 4,500 in the United Kingdom. Many listeners were signed out of the app and could not log back in or stream. Spotify said it was checking the issue, and reports fell sharply within the hour as service recovered.",
+      "why": "Spotify is one of the largest consumer services on the internet, and this incident shows how quickly a fault at a large platform becomes visible worldwide.",
+      "financial": false,
+      "sources": [
+        {
+          "label": "Reuters via Moneycontrol",
+          "url": "https://www.moneycontrol.com/world/14088181-article-14088181.html"
+        },
+        {
+          "label": "USA Today",
+          "url": "https://www.usatoday.com/story/tech/2026/11/24/spotify-down-outage/92938497007/"
+        }
+      ]
+    }
+  ]
+}

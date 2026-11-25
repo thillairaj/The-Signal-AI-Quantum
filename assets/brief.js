@@ -6,8 +6,8 @@
    the news card image is rendered here in the deck card pattern. */
 window.SignalBriefUI = (function () {
   var CAT_COLOURS = {
-    "AI": "#4F46E5", "Quantum": "#7C3AED", "Cloud & DevOps": "#0E7490",
-    "Cybersecurity": "#DC2626", "Industry": "#B45309", "Policy": "#0F766E"
+    "AI": "#3B82C4", "Quantum": "#7C5CBF", "Cloud & DevOps": "#1B7A6E",
+    "Cybersecurity": "#A62B25", "Industry": "#201B14", "Policy": "#201B14"
   };
   var CAT_TAGS = {
     "AI": "#AI", "Quantum": "#QuantumComputing",
@@ -305,137 +305,6 @@ window.SignalBriefUI = (function () {
     return "rgb(" + out.join(",") + ")";
   }
 
-  /* ---------- news share card image (deck card pattern) ---------- */
-  function wrap(x, t, mw) {
-    var w = String(t || "").split(" "), L = [], l = "";
-    w.forEach(function (s) {
-      var t2 = l ? l + " " + s : s;
-      if (x.measureText(t2).width > mw && l) { L.push(l); l = s; }
-      else l = t2;
-    });
-    if (l) L.push(l);
-    return L;
-  }
-  function renderNewsBlob(item, ed, size, theme) {
-    return new Promise(function (resolve) {
-      var SS = window.SignalShare;
-      var P = (SS && SS.PALETTES[theme]) || SS.PALETTES.obsidian;
-      var parts = size.split("x").map(Number), W = parts[0], H = parts[1];
-      var k = W / 1080;
-      var cat = CAT_COLOURS[item.category] || "#5a6b7f";
-      var cv = document.createElement("canvas");
-      cv.width = W; cv.height = H;
-      var x = cv.getContext("2d");
-      var grd = x.createLinearGradient(0, 0, 0, H);
-      grd.addColorStop(0, P.bg0); grd.addColorStop(1, P.bg1);
-      x.fillStyle = grd; x.fillRect(0, 0, W, H);
-      x.fillStyle = cat; x.fillRect(0, 0, W, Math.round(16 * k));
-      var pad = Math.round(84 * k), mw = W - 2 * pad, cx = W / 2;
-      var footTop = H - Math.round(150 * k);
-      var dateLine = fmtDate(ed.date) + " · " + editionTime(ed) + " IST";
-      var first = firstSentence(item.summary);
-      var hf = 66, bf = 40;
-      function measure() {
-        x.font = "700 " + Math.round(hf * k) + "px Georgia, serif";
-        var head = wrap(x, item.headline, mw);
-        x.font = Math.round(bf * k) + "px system-ui, sans-serif";
-        var body = wrap(x, first, mw);
-        x.font = Math.round((bf - 4) * k) + "px system-ui, sans-serif";
-        var why = wrap(x, item.why, mw - Math.round(44 * k));
-        var h = Math.round(30 * k) + Math.round(44 * k) + Math.round(30 * k) +
-          head.length * Math.round(hf * 1.22 * k) + Math.round(30 * k) +
-          body.length * Math.round(bf * 1.3 * k) + Math.round(34 * k) +
-          why.length * Math.round((bf - 4) * 1.32 * k) + Math.round(84 * k) +
-          Math.round(34 * k) + Math.round(30 * k);
-        return { head: head, body: body, why: why, h: h };
-      }
-      var m = measure();
-      var avail = footTop - Math.round(56 * k);
-      while (m.h > avail && hf > 30) { hf -= 3; bf -= 2; m = measure(); }
-      var y = Math.round(56 * k);
-      /* Category pill */
-      x.font = "700 " + Math.round(27 * k) + "px system-ui, sans-serif";
-      var label = "SIGNAL BRIEF · " + String(item.category).toUpperCase();
-      var tw = x.measureText(label).width;
-      x.fillStyle = cat;
-      var pillH = Math.round(46 * k), pillW = tw + Math.round(40 * k);
-      x.beginPath();
-      if (x.roundRect) x.roundRect(pad, y, pillW, pillH, pillH / 2);
-      else x.rect(pad, y, pillW, pillH);
-      x.fill();
-      x.fillStyle = "#ffffff"; x.textAlign = "left"; x.textBaseline = "middle";
-      x.fillText(label, pad + Math.round(20 * k), y + pillH / 2 + Math.round(2 * k));
-      x.textBaseline = "alphabetic";
-      y += pillH + Math.round(40 * k);
-      x.fillStyle = P.foot;
-      x.font = "600 " + Math.round(28 * k) + "px system-ui, sans-serif";
-      x.fillText(dateLine, pad, y);
-      y += Math.round(56 * k);
-      x.fillStyle = P.head;
-      x.font = "700 " + Math.round(hf * k) + "px Georgia, serif";
-      m.head.forEach(function (l) {
-        x.fillText(l, pad, y); y += Math.round(hf * 1.22 * k);
-      });
-      y += Math.round(28 * k);
-      x.fillStyle = P.body;
-      x.font = Math.round(bf * k) + "px system-ui, sans-serif";
-      m.body.forEach(function (l) {
-        if (y < footTop) x.fillText(l, pad, y);
-        y += Math.round(bf * 1.3 * k);
-      });
-      y += Math.round(22 * k);
-      /* WHY IT MATTERS box, tinted in the category colour */
-      var whyH = m.why.length * Math.round((bf - 4) * 1.32 * k) +
-        Math.round(84 * k);
-      x.fillStyle = tint(cat, 0.16);
-      x.beginPath();
-      if (x.roundRect) x.roundRect(pad, y, mw, whyH, Math.round(14 * k));
-      else x.rect(pad, y, mw, whyH);
-      x.fill();
-      x.strokeStyle = tint(cat, 0.55); x.lineWidth = Math.max(1, 1.5 * k);
-      x.stroke();
-      var wy = y + Math.round(38 * k);
-      x.fillStyle = P.accent;
-      x.font = "800 " + Math.round(23 * k) + "px system-ui, sans-serif";
-      x.fillText("WHY IT MATTERS", pad + Math.round(22 * k), wy);
-      wy += Math.round(36 * k);
-      x.fillStyle = P.body;
-      x.font = Math.round((bf - 4) * k) + "px system-ui, sans-serif";
-      m.why.forEach(function (l) {
-        x.fillText(l, pad + Math.round(22 * k), wy);
-        wy += Math.round((bf - 4) * 1.32 * k);
-      });
-      y += whyH + Math.round(34 * k);
-      x.fillStyle = P.foot;
-      x.font = "600 " + Math.round(27 * k) + "px system-ui, sans-serif";
-      x.fillText("Source: " + (item.sources[0] ?
-        item.sources[0].label : ""), pad, y);
-      /* Footer: THE SIGNAL · free learning, with the TRT badge */
-      x.strokeStyle = P.dim; x.lineWidth = 2 * k;
-      x.beginPath();
-      x.moveTo(pad, H - Math.round(116 * k));
-      x.lineTo(W - pad, H - Math.round(116 * k));
-      x.stroke();
-      x.textAlign = "center";
-      x.fillStyle = P.foot;
-      x.font = "600 " + Math.round(28 * k) + "px system-ui, sans-serif";
-      x.fillText("THE SIGNAL · free learning", cx, H - Math.round(62 * k));
-      var bx = W - pad - Math.round(38 * k), by = H - Math.round(62 * k),
-        br = Math.round(34 * k);
-      x.strokeStyle = P.accent; x.lineWidth = Math.round(3 * k);
-      x.beginPath(); x.arc(bx, by, br, 0, Math.PI * 2); x.stroke();
-      x.fillStyle = P.accent;
-      x.font = "700 " + Math.round(26 * k) + "px Georgia, serif";
-      x.textBaseline = "middle";
-      try { x.letterSpacing = "3px"; } catch (e) {}
-      x.fillText("TRT", bx, by + Math.round(2 * k));
-      try { x.letterSpacing = "0px"; } catch (e) {}
-      x.textAlign = "left"; x.textBaseline = "alphabetic";
-      if (cv.toBlob) cv.toBlob(function (b) { resolve(b); }, "image/png");
-      else resolve(null);
-    });
-  }
-
   /* ---------- captions ---------- */
   function storyUrl(state, item, ed) {
     return state.siteRoot + "brief/" + ed.date + "/" + storyNN(item) + "/";
@@ -458,13 +327,15 @@ window.SignalBriefUI = (function () {
       link: url,
       caption: caption,
       tags: "#TheSignal " + (CAT_TAGS[item.category] || "#AI"),
-      image: {
-        kind: "render",
-        filename: "signal-brief-" + ed.date + "-" + storyNN(item) + ".png",
-        render: function (size, theme) {
-          return renderNewsBlob(item, ed, size, theme);
-        }
-      }
+      image: SS.cardImage({
+        type: "Signal Brief \u00b7 " + fmtDateShort(ed.date),
+        tech: SS.techForCategory(item.category),
+        heading: item.headline,
+        body: item.summary,
+        boxLabel: "Why it matters",
+        box: item.why,
+        source: srcName
+      }, item.id + ".png")
     };
   }
 
@@ -627,6 +498,7 @@ window.SignalBriefUI = (function () {
   function mount(root) {
     var prefix = root.getAttribute("data-root-prefix") || "./";
     var state = {
+      tab: prefix === "./",
       root: root,
       siteRoot: new URL(prefix, window.location.href).href,
       data: null, edIdx: 0, cat: "", view: [], cal: null,
@@ -707,10 +579,13 @@ window.SignalBriefUI = (function () {
     state.root.innerHTML =
       '<div class="brief-ui">' +
       '<header class="bu-head">' +
-      '<p class="bu-kicker">Signal Brief · Daily at 07:00 IST</p>' +
-      '<h2 class="bu-title">Today in tech, in one swipe.</h2>' +
-      '<p class="bu-desc">The day in technology, in our own words. ' +
-      "Every story is checked and linked to its source.</p>" +
+      (state.tab
+        ? '<h2 class="bu-title">Signal Brief</h2>' +
+          '<p class="bu-desc">The day in technology, in our own words. ' +
+          "New every day at 07:00 IST.</p>"
+        : '<h2 class="bu-title">Signal Brief</h2>' +
+          '<p class="bu-desc">The day in technology, in our own words. ' +
+          "New every day at 07:00 IST.</p>") +
       '<button type="button" class="bu-follow">Follow</button>' +
       "</header>" +
       '<div class="bu-cal" role="group" ' +

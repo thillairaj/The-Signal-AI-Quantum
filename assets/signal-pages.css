@@ -1,0 +1,67 @@
+/* The Signal standard for every individual page (stage 2).
+   Same fonts and colours as signal-standard.css, but every name is prefixed --sg- so nothing clashes with a page's own styles.
+   Only the text around the content changes: one heading, one line, the technology colour, a light page. Content is untouched. */
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Figtree:wght@400;500;600;700;800&display=swap');
+html.sgp{--sg-paper:#FAF7F1;--sg-surface:#FFFFFF;--sg-wash:#F1ECE2;--sg-ink:#201B14;--sg-soft:#4C463B;--sg-muted:#7C7365;--sg-line:#E4DAC6;
+  --sg-ai:#3B82C4;--sg-quantum:#7C5CBF;--sg-cloud:#1B7A6E;--sg-cyber:#A62B25;--sg-founders:#B7791F;--sg-tech:var(--sg-ink);
+  --sg-display:'DM Serif Display',Georgia,serif;--sg-body:Figtree,system-ui,-apple-system,'Segoe UI',sans-serif}
+html.sgp[data-theme="dark"]{--sg-paper:#12100D;--sg-surface:#1B1814;--sg-wash:#242019;--sg-ink:#F1EBDD;--sg-soft:#C9C0AF;--sg-muted:#9D937F;--sg-line:#2C2720;
+  --sg-ai:#7FB3E0;--sg-quantum:#A78BDB;--sg-cloud:#5FBFA9;--sg-cyber:#E58A80;--sg-founders:#E0A85A}
+html.sgp[data-tech="ai"]{--sg-tech:var(--sg-ai)}html.sgp[data-tech="quantum"]{--sg-tech:var(--sg-quantum)}html.sgp[data-tech="cloud"]{--sg-tech:var(--sg-cloud)}
+html.sgp[data-tech="cyber"]{--sg-tech:var(--sg-cyber)}html.sgp[data-tech="founders"]{--sg-tech:var(--sg-founders)}
+html.sgp body{background:var(--sg-paper);color:var(--sg-ink);font-family:var(--sg-body)}
+/* the heading colour rule */
+.sg-t{font-style:italic}
+.sg-t-ai{color:var(--sg-ai)}.sg-t-quantum{color:var(--sg-quantum)}.sg-t-cloud{color:var(--sg-cloud)}.sg-t-cyber{color:var(--sg-cyber)}.sg-t-founders{color:var(--sg-founders)}
+/* the standard header: one heading, one line */
+.sgp-head{position:relative;max-width:1100px;margin:0 auto;padding:30px 24px 12px;box-sizing:border-box}
+.sgp-h1{font:400 clamp(36px,5.6vw,56px)/1.04 var(--sg-display);letter-spacing:-.01em;margin:0;color:var(--sg-ink);text-wrap:balance}
+.sgp-sub{font:400 18px/1.5 var(--sg-body);color:var(--sg-soft);max-width:680px;margin:10px 0 0}
+.sgp-head .theme-toggle{position:absolute;right:24px;top:30px;margin:0}
+@media(max-width:600px){.sgp-head{padding:22px 18px 8px}.sgp-sub{font-size:16.5px}.sgp-head .theme-toggle{right:18px;top:22px}}
+/* decks */
+html.sgp-deck{--gold:var(--sg-tech);--gold-dim:color-mix(in srgb,var(--sg-tech) 40%,transparent)}
+html.sgp-deck body{background:var(--sg-paper)}
+html.sgp-deck .tnum,html.sgp-deck .tlabel,html.sgp-deck .tsub,html.sgp-deck .rowhead p{display:none!important}
+html.sgp-deck h2,html.sgp-deck .topic-head h2{font-family:var(--sg-display);font-weight:400}
+html.sgp-deck body,html.sgp-deck button,html.sgp-deck input{font-family:var(--sg-body)}
+/* periodic tables: light by default (dark stays on the theme button) */
+html.sgp-table:not([data-theme="dark"]){--bg:#FAF7F1;--panel:#FFFFFF;--panel2:#F1ECE2;--ink:#201B14;--muted:#7C7365;--line:#E4DAC6}
+html.sgp-table body,html.sgp-table button,html.sgp-table input{font-family:var(--sg-body)}
+html.sgp-table h1,html.sgp-table h2,html.sgp-table h3{font-family:var(--sg-display);font-weight:400}
+html.sgp-table:not([data-theme="dark"]) body{background:var(--sg-paper);color:var(--sg-ink)}
+/* term pages */
+html.sgp-term body{background:var(--sg-paper);color:var(--sg-ink);font-family:var(--sg-body)}
+html.sgp-term h1{font:400 clamp(36px,5.4vw,52px)/1.05 var(--sg-display);letter-spacing:-.01em;color:var(--sg-ink)}
+html.sgp-term p.desc{color:var(--sg-soft)}
+html.sgp-term .cat{color:var(--sg-tech)}
+html.sgp-term .box{border-color:var(--sg-line);color:var(--sg-ink);background:var(--sg-surface)}
+html.sgp-term .box b{color:var(--sg-tech)}
+html.sgp-term .rule{background:var(--sg-tech)!important}
+html.sgp-term footer{color:var(--sg-muted)}
+/* explainers */
+html.sgp-explainer{--gold:var(--sg-tech);--accent:var(--sg-tech)}
+html.sgp-explainer body{background:var(--sg-paper);font-family:var(--sg-body)}
+html.sgp-explainer h2,html.sgp-explainer h3{font-family:var(--sg-display);font-weight:400}
+/* video rooms: the heading follows the colour rule */
+html.sgp-video #mastTitle .sg-t{font-style:italic}
+/* articles and podcast episodes */
+html.sgp-article body{background:var(--sg-paper);color:var(--sg-ink);font-family:var(--sg-body)}
+html.sgp-article .research-title{font:400 clamp(32px,4.8vw,48px)/1.08 var(--sg-display);letter-spacing:-.01em;color:var(--sg-ink)}
+html.sgp-article .research-body h2,html.sgp-article .research-body h3{font-family:var(--sg-display);font-weight:400}
+html.sgp-article .research-date{font:600 13px var(--sg-body);color:var(--sg-muted);letter-spacing:.02em}
+html.sgp-article .sgp-note{color:var(--sg-muted);font-size:14px;border-top:1px solid var(--sg-line);padding-top:12px;margin-top:28px}
+/* Signal Brief items */
+html.sgp-brief body{background:var(--sg-paper);color:var(--sg-ink);font-family:var(--sg-body)}
+html.sgp-brief h1{font:400 clamp(32px,4.8vw,46px)/1.08 var(--sg-display);color:var(--sg-ink)}
+html.sgp-brief .story-pill{background:var(--sg-tech)!important;color:#fff!important}
+html.sgp-brief .story-why{background:color-mix(in srgb,var(--sg-tech) 9%,var(--sg-surface))!important}
+/* the standalone /brief/ index (stage 2 fix f): its header is rendered by brief.js with bu- classes */
+html.sgp-brief .bu-title{font-family:var(--sg-display);font-weight:400;font-size:clamp(32px,4.8vw,46px);line-height:1.08;color:var(--sg-ink)}
+html.sgp-brief .bu-card-h{font-family:var(--sg-display);font-weight:400}
+html.sgp-brief .bu-desc{color:var(--sg-soft)}
+/* the colour rule always wins over a page's own heading colours */
+html.sgp .sg-t-ai{color:var(--sg-ai)!important}html.sgp .sg-t-quantum{color:var(--sg-quantum)!important}html.sgp .sg-t-cloud{color:var(--sg-cloud)!important}html.sgp .sg-t-cyber{color:var(--sg-cyber)!important}html.sgp .sg-t-founders{color:var(--sg-founders)!important}
+html.sgp .sg-t{font-style:italic!important}
+/* video rooms: their script writes the heading, so the whole heading takes the room's colour here */
+html.sgp-video #mastTitle,html.sgp-video #mastTitle *{color:var(--sg-tech)!important;font-style:italic}

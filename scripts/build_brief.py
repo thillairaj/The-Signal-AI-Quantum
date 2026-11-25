@@ -29,6 +29,16 @@ editions by the daily job rerunning this builder.
 Usage: python3 scripts/build_brief.py [--base-url https://example.org/site/]
 The base URL defaults to the live site; the preview build passes the
 preview base explicitly.
+
+Stage 2 standard (Nov 25, 2026; this preview copy only, port at go-live):
+story pages emit the sharing standard's cardImage spec (category colour,
+Paper/Tint/Night/Deep themes in assets/signal-share.js) and load
+signal-share.js by relative path; brief/index.html is emitted with the
+sgp-brief standard (signal-pages.css + signal-brand.css, relative script
+paths); main() ends with postprocess(), which runs the shell injection,
+stage2_apply.py and the brand CSS insertion as a safety net. The standard
+footer step (apply_standard_footer.py) remains a separate job step, as
+before.
 """
 import json
 import re
@@ -238,7 +248,7 @@ def build_page(data, base):
         "else{go();}})();\n</script>\n<!-- ss-page-share:end -->"
     )
     return f"""<!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="sgp sgp-brief">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -256,6 +266,8 @@ def build_page(data, base):
 <link rel="alternate" type="application/rss+xml" title="Signal Brief" href="{base}signal.xml">
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,800;1,9..144,500;1,9..144,600&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="{base}assets/brief.css?v=20261117">
+<link rel="stylesheet" href="../assets/signal-pages.css">
+<link rel="stylesheet" href="../assets/signal-brand.css?v=20261125">
 <style>{PAGE_CSS}</style>
 {THEME_SCRIPT}
 </head>
@@ -266,8 +278,8 @@ def build_page(data, base):
     {RULES_BOX}
   </main>
   {FOOTER}
-  <script src="{base}assets/signal-share.js"></script>
-  <script src="{base}assets/brief.js?v=20261117"></script>
+  <script src="../assets/signal-share.js"></script>
+  <script src="../assets/brief.js?v=20261117"></script>
   {page_share_script}
 </body>
 </html>
@@ -488,10 +500,14 @@ def build_story_page(item, ed, base):
         f'<li><a href="{escape(s["url"])}" target="_blank" '
         f'rel="noopener">{escape(s["label"])}</a></li>'
         for s in item["sources"])
+    tech = {
+        "AI": "ai", "Quantum": "quantum", "Cloud & DevOps": "cloud",
+        "Cybersecurity": "cyber"}.get(item["category"], "signal")
     spec = {
         "title": item["headline"],
         "line": first_sentence(item["summary"]),
         "link": url,
+        "tech": tech,
         "caption": "\n\n".join([
             item["headline"], item["summary"],
             "Why it matters: " + item["why"],
@@ -503,10 +519,22 @@ def build_story_page(item, ed, base):
                 "Cybersecurity": "#CyberSecurity",
                 "Industry": "#TechIndustry",
                 "Policy": "#TechPolicy"}.get(item["category"], "#AI")]),
-        "image": {"kind": "static", "url": og,
-                  "filename": f"signal-brief-{ed['date']}-{story_nn(item)}.png"},
     }
     spec_js = json.dumps(spec).replace("</", "<\\/")
+    # Sharing standard (Thillai, Nov 25, 2026): the panel image is the one
+    # shared card layout, rendered by SignalShare.cardImage in the item's
+    # category colour; the og.png stays as the link preview only.
+    card = {
+        "type": "Signal Brief · " + fmt_date_short(ed["date"]),
+        "tech": tech,
+        "heading": item["headline"],
+        "body": item["summary"],
+        "boxLabel": "Why it matters",
+        "box": item["why"],
+        "source": item["sources"][0]["label"],
+    }
+    card_js = json.dumps(card).replace("</", "<\\/")
+    share_filename = f"signal-brief-{ed['date']}-{story_nn(item)}.png"
     correction = (item.get("correction") or "").strip()
     correction_html = (f'\n    <p class="story-correction">{escape(correction)}</p>'
                        if correction else "")
@@ -555,12 +583,14 @@ def build_story_page(item, ed, base):
     <a class="story-edition" href="{base}#brief">Read the whole {escape(fmt_date(ed['date']))} edition in the Signal Brief tab →</a>
   </main>
   {FOOTER}
-  <script src="{base}assets/signal-share.js"></script>
+  <script src="../../../assets/signal-share.js"></script>
   <script>
     (function () {{
       var slot = document.getElementById("storyShare");
       if (slot && window.SignalShare) {{
-        slot.appendChild(SignalShare.shareButton({spec_js}));
+        var spec = {spec_js};
+        spec.image = SignalShare.cardImage({card_js}, "{share_filename}");
+        slot.appendChild(SignalShare.shareButton(spec));
       }}
     }})();
   </script>
@@ -642,6 +672,32 @@ def update_home(data, base):
     HOME_FILE.write_text(before + start_marker + "\n            " + inner +
                          "\n            " + end_marker + after, encoding="utf-8")
     print(f"homepage: latest edition {latest['date']} injected")
+
+
+def postprocess():
+    """Stage 2 safety net (Thillai, Nov 25, 2026): after every build, run
+    the same standardisation passes the site was standardised with, so new
+    pages come out in the new standard: the shell injection, stage2_apply.py
+    and the brand CSS insertion. Every pass is idempotent. A failing pass is
+    printed loudly but does not invalidate the outputs already written."""
+    import subprocess
+    qa = Path.home() / "workspace" / "signal-qa"
+    steps = [
+        [sys.executable, str(qa / "inject-shell-stage1.py"), str(ROOT)],
+        [sys.executable, str(ROOT / "stage2_apply.py")],
+        [sys.executable, str(qa / "insert-brand-css.py"), str(ROOT)],
+    ]
+    for cmd in steps:
+        try:
+            r = subprocess.run(cmd, cwd=str(ROOT), capture_output=True,
+                               text=True, timeout=1800)
+            lines = (r.stdout or "").strip().splitlines()
+            print(f"postprocess {Path(cmd[1]).name}: rc={r.returncode}"
+                  + (f" | {lines[-1]}" if lines else ""))
+            if r.returncode != 0:
+                print("postprocess stderr: " + (r.stderr or "")[-500:])
+        except Exception as exc:
+            print(f"postprocess step could not run: {cmd}: {exc}")
 
 
 def main():
@@ -728,6 +784,7 @@ def main():
     print(f"story-urls.txt: {len(urls)} URLs")
     update_sitemap(data, base)
     update_home(data, base)
+    postprocess()
 
 
 if __name__ == "__main__":

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="sgp sgp-term" data-tech="cyber">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -34,24 +34,64 @@ footer{text-align:center;color:#a9bcd4;font-size:14px;margin-top:44px}
 .rule{width:60px;height:3px;background:#c9a227;margin:0 auto 16px}
 .li-btn{display:inline-block;background:#0a66c2;color:#fff;text-decoration:none;font-weight:700;border-radius:8px;padding:3px 10px;margin-left:6px}
 </style>
+<link rel="stylesheet" href="../../../assets/signal-shell.css?v=20261125">
+<link rel="stylesheet" href="../../../assets/signal-pages.css">
+<link rel="stylesheet" href="../../../assets/signal-brand.css?v=20261125">
+<meta name="sg-stage" content="2">
 
 <meta name="signal-build" content="2026-11-07.footer1">
 <link rel="stylesheet" href="../../../assets/signal-footer.css?v=2026-11-07.footer1">
 </head>
 <body>
 <main class="wrap">
-  <div class="kicker">The Signal · AI &amp; Cybersecurity Table</div>
   <div class="sym">ShA</div>
-  <h1>Shadow AI</h1>
+  <h1>Shadow <span class="sg-t sg-t-ai">AI</span></h1>
   <div class="cat">AI as Attack Surface</div>
   <p class="desc">AI tools and services adopted by employees without IT or security approval: free chatbot accounts, browser extensions, transcription bots and code assistants fed with company data. Each one is an unvetted data processor and a potential leak channel. Shadow AI is usually a productivity signal, not malice — people route around slow approval processes.</p>
   <div class="box fact"><b>Key fact</b>Shadow AI is the AI-era repeat of shadow IT, with one difference: the data does not just get stored by the tool, it can be absorbed into prompts, logs and sometimes training pipelines.</div>
   <div class="box lens"><b>Leader lens</b>Banning chatbots wholesale rarely works; publish an approved AI tool list with a fast approval path, and shadow usage shrinks on its own.</div>
 
-  <p class="src">From the AI &amp; Cybersecurity table on The Signal</p>
-  <a class="cta" href="https://thillairaj.github.io/The-Signal-AI-Quantum/periodic-tables/ai-cybersecurity/#ShA">Explore the full AI &amp; Cybersecurity table</a>
-</main>
+  </main>
 <script data-goatcounter="https://trttech.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+<script src="../../../assets/signal-shell.js?v=20261125" defer></script>
+<!-- term-share:start -->
+<script src="../../../assets/signal-share.js?v=20261117"></script>
+<style>.sg-term-share-wrap{position:relative}.sg-term-share-wrap .sg-term-share-pos{position:absolute;top:0;right:0;z-index:5}.sg-share-btn{width:32px;height:32px;border-radius:50%;border:1px solid var(--sg-line,#E4DAC6);background:var(--sg-surface,#fff);color:var(--sg-ink,#201B14);display:inline-flex;align-items:center;justify-content:center;cursor:pointer;padding:0}.sg-share-btn svg{width:15px;height:15px}</style>
+<script>
+(function(){
+  var TECH="cyber", FAMILY="#CyberSecurity";
+  function txt(sel){var el=document.querySelector(sel);return el?el.textContent.trim():"";}
+  function oneLine(d){ if(!d) return ""; var parts=d.match(/[^.!?]+[.!?]+["']?\s*/g)||[d]; var out=""; for(var i=0;i<parts.length;i++){ out+=parts[i]; if(out.trim().length>=50) break; } return out.trim(); }
+  function go(){
+    if(!window.SignalShare) return;
+    var wrap=document.querySelector("main.wrap")||document.querySelector(".wrap");
+    if(!wrap||wrap.querySelector(".sg-term-share-pos")) return;
+    wrap.classList.add("sg-term-share-wrap");
+    var name=txt("h1"), sym=txt(".sym"), def=txt("p.desc"), lens="";
+    var lensEl=document.querySelector(".box.lens");
+    if(lensEl){ var c=lensEl.cloneNode(true); var b=c.querySelector("b"); if(b) b.remove(); lens=c.textContent.trim(); }
+    var tparts=document.title.split(" \u00b7 ");
+    var table=tparts.length>2?tparts[1]:"The Signal";
+    var canon=document.querySelector('link[rel="canonical"]');
+    var url=(canon&&canon.href)||location.href;
+    var seg=location.pathname.replace(/\/+$/,"").split("/").pop();
+    var caption=SignalShare.buildCaption([name, oneLine(def),
+      lens?("Leader's lens: "+lens):"",
+      "Explore the "+table+" periodic table, free, no sign-up:\n"+url,
+      "#TheSignal "+FAMILY]);
+    var spec={ title:name, line:oneLine(def), link:url, caption:caption,
+      tags:"#TheSignal "+FAMILY,
+      image:SignalShare.cardImage({ type:"Periodic table \u00b7 "+table,
+        tech:TECH, heading:sym?(name+" ("+sym+")"):name, body:def,
+        boxLabel:"Leader lens", box:lens, source:table }, seg+".png") };
+    var pos=document.createElement("span"); pos.className="sg-term-share-pos";
+    pos.appendChild(SignalShare.shareButton(spec));
+    wrap.appendChild(pos);
+  }
+  if(document.readyState==="loading"){ document.addEventListener("DOMContentLoaded",go); } else { go(); }
+})();
+</script>
+<!-- term-share:end -->
 <footer class="signal-footer">
   <div class="sf-follow"><span class="sf-label">Follow along</span><span class="sf-links"><a class="sf-link" href="https://www.linkedin.com/in/thillairaj" target="_blank" rel="noopener"><span class="sf-badge" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.55V9h3.57v11.45z"/></svg></span>Thillai Raj</a><a class="sf-link" href="https://www.linkedin.com/showcase/qu-bits/" target="_blank" rel="noopener"><span class="sf-badge" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.55V9h3.57v11.45z"/></svg></span>QuBits · Quantum &amp; AI</a><a class="sf-link" href="https://www.linkedin.com/showcase/agentic-ai-architect/" target="_blank" rel="noopener"><span class="sf-badge" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.55V9h3.57v11.45z"/></svg></span>Agentic AI Architect</a></span></div>
   <p class="sf-copy">© 2026 The Signal</p>

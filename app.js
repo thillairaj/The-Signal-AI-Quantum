@@ -158,6 +158,25 @@ function episodeTrack(a) {
   if (/^Tech Learning Series\s*—\s*Ep\s*\d+/.test(t)) return "IT Infrastructure & Cloud";
   return "";
 }
+/* Episode title format (Nov 25, 2026): heading = the episode title only;
+   facts = "Series · [Track ·] Episode N · D Mon YYYY · M:SS". Episodes with
+   no separate title get heading "Episode N". Mirrors
+   signal-qa/fix-episode-format.py and the episode page builder. */
+function episodeParts(a) {
+  const t = String(a.title || "");
+  let heading = t, num = "", track = "";
+  let m = t.match(/^(.+?)\s+—\s+Episode\s+(\d+)\s*(?:\([^)]*\))?\s*:\s*(.+)$/);
+  if (m) { num = m[2]; heading = m[3].trim(); }
+  else if ((m = t.match(/^Tech Learning:\s*(.+?)\s+—\s*Ep\s*(\d+)\s*:\s*(.+)$/))) { track = m[1].trim(); num = m[2]; heading = m[3].trim(); }
+  else if ((m = t.match(/^Tech Learning Series\s+—\s+Ep\s*(\d+)\s*:\s*(.+)$/))) { num = m[1]; heading = m[2].trim(); }
+  else if ((m = t.match(/^(.+?)\s+—\s+Episode\s+(\d+)$/))) { num = m[2]; heading = "Episode " + num; }
+  else if (a.source && t.startsWith(a.source + " — ")) { heading = t.slice(a.source.length + 3); }
+  const date = fmtResearchDate(a.published);
+  const facts = [a.source, (a.source === "Technology Learnings" && track) ? track : "", num ? "Episode " + num : "", date, a.duration ? fmtDur(a.duration) : ""].filter(Boolean).join(" · ");
+  const cardType = num ? "Episode " + num + " · " + date : (heading.includes("5-Minute Edition") ? "5-Minute Edition · " + date : date);
+  return { heading, num, track, date, facts, cardType };
+}
+
 function refreshTrackRail() {
   if (!podcastTracksEl || !trackRailEl) return;
   const wrap = podcastTracksEl.querySelector(".track-wrap");
@@ -193,7 +212,7 @@ function renderPodcast() {
     .sort((a, b) => new Date(b.published) - new Date(a.published));
   /* Series selector with episode counts — filters in place, no outbound links. */
   const seriesEl = document.getElementById("podcastSeries");
-  const seriesOrder = ["Daily AI Intelligence", "Technology Learnings", "Quantum Intelligence"];
+  const seriesOrder = ["Daily AI Intelligence", "Quantum Intelligence", "Technology Learnings"];
   const present = seriesOrder.filter(s => eps.some(e => e.source === s));
   const countOf = s => eps.filter(e => e.source === s).length;
   seriesEl.innerHTML =
@@ -203,6 +222,9 @@ function renderPodcast() {
     ).join("");
   seriesEl.querySelectorAll(".series-btn").forEach(b =>
     b.addEventListener("click", () => { activeSeries = b.dataset.series; activeTrack = ""; podcastPage = 0; renderPodcast(); }));
+  /* Listen box (stage 1): fill the per-series episode counts and the tab total. */
+  document.querySelectorAll("[data-episodes]").forEach(el => { el.textContent = countOf(el.dataset.episodes); });
+  document.querySelectorAll("[data-pod-total]").forEach(el => { el.textContent = eps.length; });
   renderTracks(eps);
   let list = activeSeries ? eps.filter(e => e.source === activeSeries) : eps;
   if (activeTrack) list = list.filter(e => episodeTrack(e) === activeTrack);
@@ -230,8 +252,8 @@ function renderPodcast() {
     heroHtml = `
     <div class="pod-featured" data-epid="${latest.id}">
       <p class="pod-kicker">${q ? "Top result" : "Latest episode"} · ${latest.source}</p>
-      <h3>${latest.title}</h3>
-      <p class="pod-meta">${timeAgo(latest.published)}${latest.duration ? " · " + fmtDur(latest.duration) : ""}</p>
+      <h3>${escapeHtml(episodeParts(latest).heading)}</h3>
+      <p class="pod-meta">${escapeHtml(episodeParts(latest).facts)}</p>
       <audio controls preload="none" src="${AUDIO_PROXY + encodeURIComponent(latest.audio_url)}"></audio>
       <div class="pod-share-slot" data-share-for="${latest.id}"></div>
     </div>`;
@@ -242,8 +264,8 @@ function renderPodcast() {
   podcastListEl.innerHTML = rows.map(a => `
     <div class="pod-row" data-epid="${a.id}">
       <div class="pod-row-text">
-        <p class="pod-row-title">${a.title}</p>
-        <p class="pod-row-meta">${a.source} · ${timeAgo(a.published)}${a.duration ? " · " + fmtDur(a.duration) : ""}</p>
+        <p class="pod-row-title">${escapeHtml(episodeParts(a).heading)}</p>
+        <p class="pod-row-meta">${escapeHtml(episodeParts(a).facts)}</p>
       </div>
       <audio controls preload="none" src="${AUDIO_PROXY + encodeURIComponent(a.audio_url)}"></audio>
       <div class="pod-share-slot" data-share-for="${a.id}"></div>
@@ -264,13 +286,12 @@ function renderPodcast() {
 
 
 function episodeSpec(a) {
-  const line = [a.source, fmtResearchDate(a.published), a.duration ? fmtDur(a.duration) : ""].filter(Boolean).join(" \u00b7 ");
+  const parts = episodeParts(a);
   const link = SignalShare.BASE + "/podcast/" + a.id + "/";
-  const slug = String(a.source || "").toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/-+/g, "-").replace(/^-|-$/g, "");
-  return { title: a.title, line, link,
-    caption: SignalShare.podcastCaption(a.title, line, link),
+  return { title: parts.heading, line: parts.facts, link,
+    caption: SignalShare.podcastCaption(parts.heading, parts.facts, link),
     tags: "#TheSignal #Podcast",
-    image: { kind: "static", url: SignalShare.BASE + "/assets/podcast-covers/" + slug + ".png", filename: a.id + ".png" } };
+    image: SignalShare.cardImage({ type: parts.cardType, tech: SignalShare.techForSeries(a.source), pill: a.source, heading: parts.heading, body: SignalShare.episodeBody(a.summary, a.title), source: a.source }, a.id + ".png") };
 }
 
 function mountPodShares(eps) {
@@ -421,7 +442,7 @@ function feedSpec(a) {
     tags: "#TheSignal " + tag,
     xText: SS.feedShort(a.title, a.source, a.link, tag),
     waText: SS.feedWa(a.title, a.source, a.link),
-    image: null
+    image: SS.cardImage({ type: "RSS Feed", tech: SS.techForCategory(a.category), heading: a.title, body: a.summary, source: a.source }, a.id + ".png")
   };
 }
 function mountFeedShares(shown) {
@@ -505,6 +526,8 @@ async function loadData() {
     const data = await res.json();
 
     allArticles = data.articles || [];
+    const wc = document.getElementById("wireCount");
+    if (wc) wc.textContent = allArticles.filter(a => a.category !== "Podcast").length;
     renderSources();
     renderFeed();
     fillHomeWire();
@@ -699,13 +722,13 @@ function scrollToLearnId(id) {
     if (el) el.scrollIntoView({ block: "start" });
   }));
 }
+/* Stage 1: the Learning Space tab is the menu and the hub pages now.
+   Old deep links into the doors land on the matching hub page instead. */
+const LEARN_HUB = { "learn": "videos/", "learn-videos": "videos/", "learn-decks": "decks/", "learn-explainers": "explainers/", "learn-games": "games/", "learn-tables": "periodic-tables/", "learn-tables-ai": "periodic-tables/#ai", "learn-tables-quantum": "periodic-tables/#quantum", "learn-tables-cloud": "periodic-tables/#cloud", "learn-tables-cyber": "periodic-tables/#cyber", "learn-tables-founders": "periodic-tables/#founders" };
 function openLearnTarget() {
-  const h = location.hash;
-  if (h === "#learn") { showView("learn"); return; }
-  const id = h.startsWith("#") ? h.slice(1) : "";
-  if (LEARN_TARGETS.includes(id)) {
-    showView("learn");
-    scrollToLearnId(id);
+  const id = location.hash.startsWith("#") ? location.hash.slice(1) : "";
+  if (Object.prototype.hasOwnProperty.call(LEARN_HUB, id)) {
+    window.location.replace(LEARN_HUB[id]);
   }
 }
 openLearnTarget();
@@ -717,7 +740,10 @@ function openResearchTarget() {
   }
 }
 openResearchTarget();
-const SECTION_HASH = { "#home": "home", "#learn": "learn", "#podcast": "podcast", "#research": "research", "#feed": "feed", "#brief": "brief" };
+/* Stage 2: "#learn" is deliberately absent here — openLearnTarget
+   above redirects it to the videos hub; the in-page learn view is
+   retired and must not be reachable from anywhere. */
+const SECTION_HASH = { "#home": "home", "#podcast": "podcast", "#research": "research", "#feed": "feed", "#brief": "brief" };
 function openSectionTarget() {
   const v = SECTION_HASH[location.hash];
   if (v) { showView(v); scrollToViewTop(v); return; }
@@ -741,8 +767,22 @@ window.addEventListener("hashchange", function () { openLearnTarget(); openResea
   if (brand) brand.addEventListener("click", function () { showView("home"); window.scrollTo({ top: 0 }); });
 
   document.querySelectorAll(".hm-go[data-goto]").forEach(function (btn) {
-    btn.addEventListener("click", function () {
+    btn.addEventListener("click", function (ev) {
       var view = btn.getAttribute("data-goto");
+      if (view === "learn") {
+        /* Stage 2: room 01 Enter opens the Learning Space menu, like
+           the 01 tab (signal-shell.js intercepts that tab's click in
+           the capture phase and opens the menu). The old in-page
+           learn view is retired and no longer reachable.
+           stopPropagation matters: the shell closes the menu on any
+           document click that lands outside it, so this button's own
+           click must not bubble on to document after the tab click
+           has opened the menu. */
+        ev.stopPropagation();
+        var tab = document.querySelector('.top-tab[data-view="learn"]');
+        if (tab) tab.click();
+        return;
+      }
       if (view === "podcast") { activeSeries = ""; podcastPage = 0; }
       showView(view);
       window.scrollTo({ top: 0 });
@@ -750,9 +790,10 @@ window.addEventListener("hashchange", function () { openLearnTarget(); openResea
   });
 
   /* Rail items are links: each rotating card navigates to what it shows. */
-  document.querySelectorAll(".hm-ritem[data-goto], .hm-ritem[data-ext]").forEach(function (item) {
+  document.querySelectorAll(".hm-ritem[data-goto], .hm-ritem[data-ext], .hm-ritem[data-href]").forEach(function (item) {
     item.setAttribute("tabindex", "0");
     function nav() {
+      if (item.dataset.href) { window.location.href = item.dataset.href; return; }
       if (item.dataset.ext) { window.open(item.dataset.ext, "_blank", "noopener"); return; }
       var view = item.dataset.goto;
       if (view === "podcast") { activeSeries = item.dataset.series || ""; podcastPage = 0; }
@@ -760,13 +801,18 @@ window.addEventListener("hashchange", function () { openLearnTarget(); openResea
         window.location.href = "research/" + item.dataset.artId + "/";
         return;
       }
+      if (view === "learn") {
+        /* Stage 2: learn rail cards go to the matching hub page (the
+           LEARN_HUB map above); the in-page learn view is retired. */
+        window.location.href = LEARN_HUB[item.dataset.scroll] || "videos/";
+        return;
+      }
       showView(view);
       if (view === "brief" && item.dataset.briefItem && window.SignalBriefUI) {
         SignalBriefUI.openStory(item.dataset.briefItem);
         return;
       }
-      if (view === "learn" && item.dataset.scroll) scrollToLearnId(item.dataset.scroll);
-      else window.scrollTo({ top: 0 });
+      window.scrollTo({ top: 0 });
     }
     item.addEventListener("click", nav);
     item.addEventListener("keydown", function (e) {
@@ -869,12 +915,9 @@ function fillHomeArticles() {
   popup.addEventListener("click", function (ev) { if (ev.target === popup) { mark(); hide(); } });
   document.getElementById("gamesPopupGo").addEventListener("click", function () {
     mark(); hide();
-    showView("learn");
-    openDoor("explainers");
-    requestAnimationFrame(function () {
-      var el = document.getElementById("learn-explainers");
-      if (el) el.scrollIntoView({ block: "start" });
-    });
+    /* Stage 2: the explainers door lives on the hub page now; the
+       in-page learn view is retired. */
+    window.location.href = "explainers/";
   });
   setTimeout(function () { popup.hidden = false; }, 900);
 })();

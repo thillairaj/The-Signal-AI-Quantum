@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="sgp sgp-article">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -26,26 +26,23 @@
 .ap-foot{max-width:1060px;margin:34px auto 0;padding:18px 20px 30px;border-top:1px solid var(--border);color:var(--muted);font-size:13px;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
 .ap-foot a{color:var(--muted)}
 </style>
+<link rel="stylesheet" href="../../assets/signal-shell.css?v=20261125">
+<link rel="stylesheet" href="../../assets/signal-pages.css">
+<link rel="stylesheet" href="../../assets/signal-brand.css?v=20261125">
+<meta name="sg-stage" content="2">
 
 <meta name="signal-build" content="2026-11-07.footer1">
 <link rel="stylesheet" href="../../assets/signal-footer.css?v=2026-11-07.footer1">
 </head>
 <body>
 <div class="ap-wrap">
-  <header class="ap-head">
-    <a class="ap-brand" href="../../">The <em>Signal</em></a>
-    <a class="ap-back" href="../../#research">← All articles</a>
-  </header>
-  <p class="research-kicker">THE SIGNAL · RESEARCH NOTES · BRIEF</p>
-  <h1 class="research-title">How Does a Hybrid Handshake Make TLS Quantum Safe?</h1>
+  <h1 class="research-title">How Does a Hybrid Handshake Make TLS <span class="sg-t sg-t-quantum">Quantum Safe</span>?</h1>
   <p class="research-sub">One TLS handshake, two key exchanges, and the harvest now, decrypt later problem</p>
   <p class="research-date">23 Oct 2026 · By The Signal</p>
   <div class="research-share" id="artShare"></div>
   <div class="research-layout">
     <div class="research-main">
-      <div class="research-body"><p><em>Signal Research Notes is an original-research series on The Signal, published three times a week. Each edition asks one question, works through it from primary sources, and keeps confirmed facts separate from analysis. Sources are linked at the end.</em></p>
-
-<p>In August 2026, the IETF published RFC 10024, standardizing hybrid post-quantum key agreement for TLS 1.3. It defines three key-exchange groups: X25519MLKEM768, SecP256r1MLKEM768, and SecP384r1MLKEM1024. Each runs classical elliptic-curve key agreement alongside ML-KEM, the key-encapsulation mechanism NIST standardized as FIPS 203 in August 2024. Two key agreements run inside one handshake, and the session stays safe as long as either one holds.</p>
+      <div class="research-body"><p>In August 2026, the IETF published RFC 10024, standardizing hybrid post-quantum key agreement for TLS 1.3. It defines three key-exchange groups: X25519MLKEM768, SecP256r1MLKEM768, and SecP384r1MLKEM1024. Each runs classical elliptic-curve key agreement alongside ML-KEM, the key-encapsulation mechanism NIST standardized as FIPS 203 in August 2024. Two key agreements run inside one handshake, and the session stays safe as long as either one holds.</p>
 
 <h3>How the handshake works</h3>
 
@@ -57,6 +54,7 @@
 
 <p>Deployment is nearly invisible. On October 15, 2026, the UK's National Cyber Security Centre issued updated TLS guidance recommending hybrid ML-KEM key exchange, and every major browser now negotiates hybrid post-quantum key exchange by default. Imperva switched it on with no measurable performance penalty, and Cloudflare's September 2026 figures put hybrid traffic at roughly 70% of its browser connections. The operator's action item is short: run OpenSSL 3.5 or later, which carries X25519MLKEM768 by default, and confirm both legs of every connection can negotiate it.</p>
 </div>
+      <p class="sgp-note">Signal Research Notes is an original-research series on The Signal, published three times a week. Each edition asks one question, works through it from primary sources, and keeps confirmed facts separate from analysis. Sources are linked at the end.</p>
       <h3 class="research-sources-h">Sources</h3><ul class="research-sources"><li><a href="https://www.imperva.com/blog/harvest-now-decrypt-later-post-quantum-tls/" target="_blank" rel="noopener">Imperva: Harvest Now, Decrypt Later: End-to-End PQC TLS (Oct 5, 2026)</a></li><li><a href="https://blog.cloudflare.com/post-quantum-visibility/" target="_blank" rel="noopener">Cloudflare blog: post-quantum visibility, about 70 percent of browser traffic (Sep 2026)</a></li><li><a href="https://www.ncsc.gov.uk/guidance/using-tls-to-protect-data" target="_blank" rel="noopener">NCSC: Using Transport Layer Security (TLS) to protect data (guidance, updated Oct 2026)</a></li><li><a href="https://www.rfc-editor.org/info/rfc10024" target="_blank" rel="noopener">RFC 10024: Post-Quantum Traditional (PQ/T) Hybrid Key Agreement Mechanisms for TLS 1.3 (IETF, Aug 2026)</a></li><li><a href="https://www.anthropic.com/research/discovering-cryptographic-weaknesses" target="_blank" rel="noopener">Anthropic Frontier Red Team: Discovering cryptographic weaknesses with Claude (Jul 2026)</a></li><li><a href="https://shattered.io/ml-kem-vs-x25519-tls-1-3-2026/" target="_blank" rel="noopener">shattered.io: ML-KEM vs X25519 TLS 1.3 adoption and overhead (2026)</a></li></ul>
     </div>
     <aside class="research-rail">
@@ -67,7 +65,7 @@
 
 <footer class="ap-foot">
   <span>The Signal · Research Notes</span>
-  <a href="../../#research">All articles</a>
+  
 </footer>
 <script src="../../assets/signal-share.js"></script>
 <script>
@@ -79,12 +77,12 @@
   window.__articleUrl = url;
   var spec = { title: A.title, line: A.subtitle, link: url, caption: caption,
     tags: "#TheSignal " + SignalShare.topicHashtag(A.title + " " + A.subtitle),
-    image: { kind: "static", url: SignalShare.BASE + "/" + "research/cards/edition-04.png",
-             filename: A.id + ".png" } };
+    image: SignalShare.cardImage({ type: "Article \u00b7 Research Notes", tech: "quantum", heading: A.title, body: A.subtitle, source: "Research Notes" }, A.id + ".png") };
   window.__articleSpec = spec;
   document.getElementById("artShare").appendChild(SignalShare.shareButton(spec));
 })();
 </script>
+<script src="../../assets/signal-shell.js?v=20261125" defer></script>
 <footer class="signal-footer">
   <div class="sf-follow"><span class="sf-label">Follow along</span><span class="sf-links"><a class="sf-link" href="https://www.linkedin.com/in/thillairaj" target="_blank" rel="noopener"><span class="sf-badge" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.55V9h3.57v11.45z"/></svg></span>Thillai Raj</a><a class="sf-link" href="https://www.linkedin.com/showcase/qu-bits/" target="_blank" rel="noopener"><span class="sf-badge" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.55V9h3.57v11.45z"/></svg></span>QuBits · Quantum &amp; AI</a><a class="sf-link" href="https://www.linkedin.com/showcase/agentic-ai-architect/" target="_blank" rel="noopener"><span class="sf-badge" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.55V9h3.57v11.45z"/></svg></span>Agentic AI Architect</a></span></div>
   <p class="sf-copy">© 2026 The Signal</p>

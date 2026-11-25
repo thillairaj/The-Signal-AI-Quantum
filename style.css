@@ -929,3 +929,6 @@ body[data-view="research"] .feed-only { display: none; }
 
 /* Home-only quiet automation line (Nov 7, 2026) */
 .hm-auto-note { font-size: 13px; color: var(--muted); margin: 0 0 10px; }
+/* games door cards: reuse the existing explainer tint for daily puzzles and the deck tints for learning games */
+.learn-card.game-daily { background-color: #F3EDDE; border: 1px solid #D8C9A3; }
+.learn-card.game-daily:hover { background-color: #E9DDC0; border-color: #B99F5F; }

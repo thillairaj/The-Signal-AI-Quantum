@@ -1,0 +1,18 @@
+/* The Signal's own colour, for the site's own parts only (never a technology): Signal green. */
+:root{--sg-brand:#3F7D20}
+:root[data-theme="dark"]{--sg-brand:#8CC56A}
+.brand-h em,.sg-wm em,.hm-h1 em{color:var(--sg-brand)!important}
+.hm-room-no{color:var(--sg-brand)!important}
+.hm-go{border-bottom-color:var(--sg-brand)!important}.hm-go:hover{color:var(--sg-brand)!important}
+.hm-dots button.on,.hm-bar i{background:var(--sg-brand)!important}
+.hm-chip.navy{background:var(--sg-brand)!important;border-color:var(--sg-brand)!important;color:#fff!important}
+.top-tab.active,.sg-tab.on{background:var(--sg-brand)!important;border-color:var(--sg-brand)!important;color:#fff!important}
+.top-tab.active .tab-num,.sg-tab.on .n{color:#fff!important;opacity:.8}
+.hm-day b,.hm-week-head h3{color:var(--sg-brand)!important}
+.live-strip .ls-label{color:var(--sg-brand)!important}
+.sg-copy button,.sg-chip.on{background:var(--sg-brand)!important;border-color:var(--sg-brand)!important;color:#fff!important}
+.sg-bc a:hover{color:var(--sg-brand)!important}
+/* the one share button: icon only, small, same everywhere */
+.sg-share-btn{width:32px;height:32px;border-radius:50%;border:1px solid var(--sg-line,#E4DAC6);background:var(--sg-surface,#fff);color:var(--sg-ink,#201B14);display:inline-flex;align-items:center;justify-content:center;cursor:pointer;padding:0}
+.sg-share-btn:hover{border-color:var(--sg-brand);color:var(--sg-brand)}
+.sg-share-btn svg{width:15px;height:15px}

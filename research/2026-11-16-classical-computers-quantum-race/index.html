@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="sgp sgp-article">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -26,26 +26,23 @@
 .ap-foot{max-width:1060px;margin:34px auto 0;padding:18px 20px 30px;border-top:1px solid var(--border);color:var(--muted);font-size:13px;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
 .ap-foot a{color:var(--muted)}
 </style>
+<link rel="stylesheet" href="../../assets/signal-shell.css?v=20261125">
+<link rel="stylesheet" href="../../assets/signal-pages.css">
+<link rel="stylesheet" href="../../assets/signal-brand.css?v=20261125">
+<meta name="sg-stage" content="2">
 
 <meta name="signal-build" content="2026-11-07.footer1">
 <link rel="stylesheet" href="../../assets/signal-footer.css?v=2026-11-07.footer1">
 </head>
 <body>
 <div class="ap-wrap">
-  <header class="ap-head">
-    <a class="ap-brand" href="../../">The <em>Signal</em></a>
-    <a class="ap-back" href="../../#research">← All articles</a>
-  </header>
-  <p class="research-kicker">THE SIGNAL · RESEARCH NOTES · DEEP DIVE</p>
-  <h1 class="research-title">Why Are Classical Computers Now the Deciding Factor in the Quantum Race?</h1>
+  <h1 class="research-title">Why Are Classical Computers Now the Deciding Factor in the <span class="sg-t sg-t-quantum">Quantum Race</span>?</h1>
   <p class="research-sub">IBM&#x27;s Nighthawk r3 and PsiQuantum&#x27;s AMD pact put decoders, interconnects and HPC at the centre</p>
   <p class="research-date">16 Nov 2026 · By The Signal</p>
   <div class="research-share" id="artShare"></div>
   <div class="research-layout">
     <div class="research-main">
-      <div class="research-body"><p><em>Signal Research Notes is an original-research series on The Signal, published three times a week. Each edition asks one question, works through it from primary sources, and keeps confirmed facts separate from analysis. Sources are linked at the end.</em></p>
-
-<p>In six days, quantum computing had its busiest week of the year, and almost none of the news was about qubits alone. On November 6, IBM switched on a Quantum System Two in Chicago. On November 11, it announced Nighthawk r3, a processor designed for 10,000 quantum operations across 520 programmable qubits. On November 12, PsiQuantum and AMD expanded their partnership to co-design the classical infrastructure around fault-tolerant photonic machines. Three announcements, three different companies, one shared message: the race is no longer decided inside the quantum chip. It is decided by the classical computers wrapped around it.</p>
+      <div class="research-body"><p>In six days, quantum computing had its busiest week of the year, and almost none of the news was about qubits alone. On November 6, IBM switched on a Quantum System Two in Chicago. On November 11, it announced Nighthawk r3, a processor designed for 10,000 quantum operations across 520 programmable qubits. On November 12, PsiQuantum and AMD expanded their partnership to co-design the classical infrastructure around fault-tolerant photonic machines. Three announcements, three different companies, one shared message: the race is no longer decided inside the quantum chip. It is decided by the classical computers wrapped around it.</p>
 
 <p>The numbers behind the IBM announcement explain why. Nighthawk r2, introduced in September, delivers up to 100,000 samples per second and supports accurate computations with more than 7,500 quantum operations on 120 qubits. Partners including E.ON, Algorithmiq and Q-CTRL have run more than 34 billion circuits on it, reporting speedups of up to 19 times over previous IBM processors. E.ON reported a 15 times speedup in quantum machine learning for energy grid optimisation. An IBM experiment with Oak Ridge National Laboratory simulated real magnetic materials 12 times faster than before, with results consistent with neutron scattering experiments. Speed, not qubit count, is the metric IBM chose to lead with, because a quantum computer returns its answer one sample at a time, and useful workloads need millions or billions of them.</p>
 
@@ -65,6 +62,7 @@
 
 <p>That is the shift this week marks. For a decade the quantum race was scored by counting qubits. The companies now leading it are scoring it by samples per second, decoder latency and interconnect fidelity, and they are hiring chipmakers and supercomputer builders to win on those numbers. The qubit is still the star of the announcement. The classical computer next to it is doing more of the work.</p>
 </div>
+      <p class="sgp-note">Signal Research Notes is an original-research series on The Signal, published three times a week. Each edition asks one question, works through it from primary sources, and keeps confirmed facts separate from analysis. Sources are linked at the end.</p>
       <h3 class="research-sources-h">Sources</h3><ul class="research-sources"><li><a href="https://newsroom.ibm.com/2026-11-11-ibm-quantum-nighthawk-demonstrates-new-levels-of-speed-and-quality,-with-plans-to-scale-beyond-1,000-qubits-in-2027" target="_blank" rel="noopener">IBM Newsroom: IBM Quantum Nighthawk Demonstrates New Levels of Speed and Quality, with Plans to Scale Beyond 1,000 Qubits in 2027 (Nov 11, 2026)</a></li><li><a href="https://www.psiquantum.com/news-import/psiquantum-amd-partnership-future-of-computing" target="_blank" rel="noopener">PsiQuantum: PsiQuantum and AMD Collaborate to Build the Computing Foundation for Utility-Scale Quantum Computing (Nov 12, 2026)</a></li><li><a href="https://arxiv.org/abs/2611.13630" target="_blank" rel="noopener">Barter et al.: Machine-learning decoders for fusion-based quantum computing in real time (arXiv:2611.13630, Nov 10, 2026)</a></li><li><a href="https://www.quantumcomputing.ai/blog/ibm-quantum-system-two-chicago-nighthawk-r2" target="_blank" rel="noopener">QuantumComputing.ai: IBM&#x27;s Quantum System Two Arrives in Chicago: Inside Nighthawk r2 and the Race Toward Useful Quantum Computing (Nov 6, 2026)</a></li></ul>
     </div>
     <aside class="research-rail">
@@ -75,7 +73,7 @@
 
 <footer class="ap-foot">
   <span>The Signal · Research Notes</span>
-  <a href="../../#research">All articles</a>
+  
 </footer>
 <script src="../../assets/signal-share.js"></script>
 <script>
@@ -87,12 +85,12 @@
   window.__articleUrl = url;
   var spec = { title: A.title, line: A.subtitle, link: url, caption: caption,
     tags: "#TheSignal " + SignalShare.topicHashtag(A.title + " " + A.subtitle),
-    image: { kind: "static", url: SignalShare.BASE + "/" + "research/cards/edition-14.png",
-             filename: A.id + ".png" } };
+    image: SignalShare.cardImage({ type: "Article \u00b7 Research Notes", tech: "quantum", heading: A.title, body: A.subtitle, source: "Research Notes" }, A.id + ".png") };
   window.__articleSpec = spec;
   document.getElementById("artShare").appendChild(SignalShare.shareButton(spec));
 })();
 </script>
+<script src="../../assets/signal-shell.js?v=20261125" defer></script>
 <footer class="signal-footer">
   <div class="sf-follow"><span class="sf-label">Follow along</span><span class="sf-links"><a class="sf-link" href="https://www.linkedin.com/in/thillairaj" target="_blank" rel="noopener"><span class="sf-badge" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.55V9h3.57v11.45z"/></svg></span>Thillai Raj</a><a class="sf-link" href="https://www.linkedin.com/showcase/qu-bits/" target="_blank" rel="noopener"><span class="sf-badge" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.55V9h3.57v11.45z"/></svg></span>QuBits · Quantum &amp; AI</a><a class="sf-link" href="https://www.linkedin.com/showcase/agentic-ai-architect/" target="_blank" rel="noopener"><span class="sf-badge" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.55V9h3.57v11.45z"/></svg></span>Agentic AI Architect</a></span></div>
   <p class="sf-copy">© 2026 The Signal</p>

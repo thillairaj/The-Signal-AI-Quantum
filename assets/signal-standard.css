@@ -1,0 +1,68 @@
+/* The Signal standard (stage 1): one set of fonts and colours for the whole site.
+   Load it AFTER each page's own styles. Fonts: DM Serif Display (headings) and Figtree (everything else).
+   Colours: warm paper page; one colour per technology; Founders & Leadership in ochre; everything else black. */
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Figtree:wght@400;500;600;700;800&display=swap');
+:root{
+  --sg-paper:#FAF7F1;--sg-surface:#FFFFFF;--sg-wash:#F1ECE2;--sg-ink:#201B14;--sg-soft:#4C463B;--sg-muted:#7C7365;--sg-line:#E4DAC6;
+  --sg-ai:#3B82C4;--sg-quantum:#7C5CBF;--sg-cloud:#1B7A6E;--sg-cyber:#A62B25;--sg-founders:#B7791F;
+  --sg-display:'DM Serif Display',Georgia,serif;--sg-body:Figtree,system-ui,-apple-system,'Segoe UI',sans-serif;
+  /* front page tokens (style.css) mapped onto the standard */
+  --font-display:var(--sg-display);--font-body:var(--sg-body);
+  --bg:var(--sg-paper);--surface:var(--sg-wash);--ink:var(--sg-ink);--muted:var(--sg-muted);--border:var(--sg-line);--accent:var(--sg-ink)}
+:root[data-theme="dark"]{--sg-paper:#12100D;--sg-surface:#1B1814;--sg-wash:#242019;--sg-ink:#F1EBDD;--sg-soft:#C9C0AF;--sg-muted:#9D937F;--sg-line:#2C2720;
+  --sg-ai:#7FB3E0;--sg-quantum:#A78BDB;--sg-cloud:#5FBFA9;--sg-cyber:#E58A80;--sg-founders:#E0A85A}
+/* the heading colour rule: wrap the technology name and the words that follow it */
+.sg-t{font-style:italic}
+.sg-t-ai{color:var(--sg-ai)}.sg-t-quantum{color:var(--sg-quantum)}.sg-t-cloud{color:var(--sg-cloud)}.sg-t-cyber{color:var(--sg-cyber)}.sg-t-founders{color:var(--sg-founders)}
+/* DM Serif Display has one weight: never fake-bold it */
+h1,h2,h3,.brand-h,.hm-h1,.hm-room-head h3,.hm-room-no,.hm-tick b,.hm-week-head h3{font-family:var(--sg-display);font-weight:400!important;letter-spacing:-.005em}
+body{background:var(--sg-paper);color:var(--sg-ink);font-family:var(--sg-body)}
+/* top bar on the front page */
+.brand-h{color:var(--sg-ink)}.brand-h em{color:var(--sg-ink);font-style:italic}
+.top-tab.active{background:var(--sg-ink);border-color:var(--sg-ink);color:var(--sg-paper)}
+.top-tab .tab-num{color:var(--sg-muted)}.top-tab.active .tab-num{color:var(--sg-paper);opacity:.7}
+/* hero: light, no navy, no gold */
+.hm-hero{background:var(--sg-surface);color:var(--sg-ink);border:1px solid var(--sg-line)}
+.hm-h1{color:var(--sg-ink);font-size:clamp(30px,4vw,44px);line-height:1.08}
+.hm-h1 em{color:var(--sg-ink)}
+.hm-lede{color:var(--sg-soft)}
+.hm-tick b{color:var(--sg-ink)}.hm-tick span{color:var(--sg-muted)}
+.hm-ticker{border-top-color:var(--sg-line)!important}
+/* rooms */
+.hm-room-no{color:var(--sg-muted);font-size:30px}
+.hm-meta{color:var(--sg-muted)}
+.hm-go:hover,.hm-rbtn:hover{color:var(--sg-ink);border-color:var(--sg-ink)}
+.hm-chip.navy{background:var(--sg-ink);border-color:var(--sg-ink);color:var(--sg-paper)}
+.hm-bar i,.hm-dots button.on{background:var(--sg-ink)}
+.hm-ritem[data-goto]:hover h4,.hm-ritem[data-ext]:hover h4{text-decoration-color:var(--sg-ink)}
+.hm-ritem[data-goto]:focus-visible,.hm-ritem[data-ext]:focus-visible{outline-color:var(--sg-ink)}
+/* the week strip: light */
+.hm-week{background:var(--sg-surface);border:1px solid var(--sg-line)}
+.hm-week-head h3{color:var(--sg-ink)}.hm-week-head p{color:var(--sg-muted)}
+.hm-day{background:var(--sg-paper);border-color:var(--sg-line)}
+.hm-day b{color:var(--sg-muted)}.hm-day span{color:var(--sg-soft)}
+
+/* Stage 1 install additions (preview, 25 Nov 2026): the front page's remaining
+   gold/navy accents from style.css and brief.css, mapped to the standard.
+   The bundle file above is unchanged; these rules sit after it and win. */
+.masthead h1.brand-h em{color:var(--sg-ink)}
+.hm-go{border-bottom-color:var(--sg-ink)}
+.hm-chip.gold{background:var(--sg-wash);border-color:var(--sg-line);color:var(--sg-ink)}
+.tab-new{background:var(--sg-ink);color:var(--sg-paper)}
+.learn-door-no,.learn-door-chev,.fam-door-chev{color:var(--sg-muted)}
+.learn-door-enter{color:var(--sg-ink)}
+.games-popup h3{color:var(--sg-ink)}
+.feed-tools .cat-btn:hover,.feed-tools .source-toggle:hover{border-color:var(--sg-ink)}
+.feed-tools .cat-btn.active{background:var(--sg-ink);border-color:var(--sg-ink);color:var(--sg-paper)}
+.feed-tools .cat-btn.active[data-category="AI"]{background:var(--sg-ai);border-color:var(--sg-ai);color:#fff}
+.feed-tools .cat-btn.active[data-category="Quantum"]{background:var(--sg-quantum);border-color:var(--sg-quantum);color:#fff}
+.feed-tools .cat-btn.active[data-category="Cloud & DevOps"]{background:var(--sg-cloud);border-color:var(--sg-cloud);color:#fff}
+.feed-tools .cat-btn.active[data-category="Cybersecurity"]{background:var(--sg-cyber);border-color:var(--sg-cyber);color:#fff}
+.feed-tools .source-toggle.active{background:var(--sg-ink);border-color:var(--sg-ink);color:var(--sg-paper)}
+.series-btn.active[data-series="Daily AI Intelligence"]{background:var(--sg-ai);border-color:var(--sg-ai);color:#fff}
+.series-btn.active[data-series="Quantum Intelligence"]{background:var(--sg-quantum);border-color:var(--sg-quantum);color:#fff}
+.brief-ui,.bu-sheet{--b-gold:var(--sg-ink)}
+:root[data-theme="dark"] .brief-ui,:root[data-theme="dark"] .bu-sheet{--b-gold:var(--sg-ink)}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .brief-ui,:root:not([data-theme="light"]) .bu-sheet{--b-gold:var(--sg-ink)}}
+.games-popup-close:hover{color:var(--sg-ink)}
+.games-popup-later:hover{border-color:var(--sg-ink);color:var(--sg-ink)}

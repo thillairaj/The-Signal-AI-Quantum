@@ -8,16 +8,204 @@ window.SignalShare = (function () {
     { v: "1080x1350", label: "1080\u00d71350" },
     { v: "1080x1080", label: "1080\u00d71080" }
   ];
-  var THEME_OPTIONS = [
-    { v: "obsidian", label: "Obsidian Gold" },
-    { v: "aubergine", label: "Aubergine" },
-    { v: "ivory", label: "Ivory" }
-  ];
-  var PALETTES = {
-    obsidian: { bg0: "#151923", bg1: "#0d0f14", accent: "#d4af6a", dim: "rgba(212,175,106,.5)", head: "#ffffff", body: "#c3ccd9", foot: "#8fa0b5" },
-    aubergine: { bg0: "#2C1734", bg1: "#160A1B", accent: "#E0B45A", dim: "rgba(224,180,90,.5)", head: "#FBF3FF", body: "#D9C8DE", foot: "#E0B45A" },
-    ivory: { bg0: "#fffdf9", bg1: "#f0ebdf", accent: "#a8842f", dim: "rgba(168,132,47,.45)", head: "#171b24", body: "#334052", foot: "#6b7280" }
-  };
+  var THEME_OPTIONS = [{"v": "paper", "label": "Paper"}, {"v": "tint", "label": "Tint"}, {"v": "night", "label": "Night"}, {"v": "deep", "label": "Deep"}];
+  /* The sharing standard's colour sets, one per technology plus The Signal
+     itself (for items that belong to no technology). Injected from
+     signal-settings.json (tech_colors). */
+  var TECH = {"ai": {"n": "AI", "c": "#3B82C4", "dk": "#7FB3E0", "deep": "#1F5E99", "tint": "#E8F1FA"}, "quantum": {"n": "Quantum", "c": "#7C5CBF", "dk": "#A78BDB", "deep": "#4B2F96", "tint": "#EFEAF8"}, "cloud": {"n": "Cloud & DevOps", "c": "#1B7A6E", "dk": "#5FBFA9", "deep": "#0F5249", "tint": "#E4F2EF"}, "cyber": {"n": "Cybersecurity", "c": "#A62B25", "dk": "#E58A80", "deep": "#741A16", "tint": "#F8E9E7"}, "founders": {"n": "Founders & Leadership", "c": "#B7791F", "dk": "#E0A85A", "deep": "#7A4E10", "tint": "#F6EEDF"}, "signal": {"n": "The Signal", "c": "#3F7D20", "dk": "#8CC56A", "deep": "#2A5714", "tint": "#EAF3E3"}};
+  /* The four image themes, exactly as in the sharing standard: Paper is
+     light and fixed, Tint is light in the item's pale colour with a top
+     band, Night is dark and fixed, Deep is dark in the item's deep colour. */
+  function themeVars(name, tech) {
+    var T = TECH[tech] || TECH.signal;
+    if (name === "paper") return { bg: "#FAF7F1", ink: "#201B14", soft: "#4C463B", muted: "#7C7365", line: "#E4DAC6", hl: T.c, pillbg: T.c, pillfg: "#fff", box: "#FFFFFF", bar: T.c, boxlabel: T.c, band: 0 };
+    if (name === "tint") return { bg: T.tint, ink: "#201B14", soft: "#4C463B", muted: "#6E665A", line: "rgba(32,27,20,.14)", hl: T.c, pillbg: T.c, pillfg: "#fff", box: "#FFFFFF", bar: T.c, boxlabel: T.c, band: 1 };
+    if (name === "night") return { bg: "#12100D", ink: "#F1EBDD", soft: "#C9C0AF", muted: "#9D937F", line: "#2C2720", hl: T.dk, pillbg: T.dk, pillfg: "#12100D", box: "#1F1B16", bar: T.dk, boxlabel: T.dk, band: 0 };
+    return { bg: T.deep, ink: "#FFFFFF", soft: "rgba(255,255,255,.86)", muted: "rgba(255,255,255,.72)", line: "rgba(255,255,255,.22)", hl: "#FFFFFF", pillbg: "#FFFFFF", pillfg: T.deep, box: "rgba(255,255,255,.12)", bar: "#FFFFFF", boxlabel: "#FFFFFF", band: 0 };
+  }
+  /* Wire and Brief items are coloured by their category, never guessed
+     from the text. Industry, Policy and anything unmapped take The Signal. */
+  function techForCategory(category) {
+    var map = { "AI": "ai", "Quantum": "quantum",
+      "Cloud & DevOps": "cloud", "Cloud": "cloud",
+      "Cybersecurity": "cyber", "Security": "cyber",
+      "Founders & Leadership": "founders" };
+    return map[category] || "signal";
+  }
+  function techForSeries(series) {
+    var map = { "Daily AI Intelligence": "ai",
+      "Quantum Intelligence": "quantum",
+      "Technology Learnings": "signal" };
+    return map[series] || "signal";
+  }
+  /* The body text for an episode's share card: the episode's published
+     summary, with the feed's trailing "AI Generated" label removed (it is
+     an attribution tag, not description prose, and must never print on a
+     card). Where the summary is only that label, no description was ever
+     published for the episode; fall back to the topic segment of the
+     episode's own published title (the part after "Episode N:"). */
+  function episodeBody(summary, title) {
+    var s = String(summary || "").replace(/\s+AI Generated\s*$/, "").trim();
+    if (s && s !== "AI Generated") return s;
+    var m = String(title || "").match(/Ep(?:isode)?\s+\d+(?:\s*\([^)]*\))?\s*:\s*(.+)$/);
+    return m ? m[1].trim() : String(title || "");
+  }
+  /* ---------- the one share image renderer ----------
+     Implements the shared layout (share-image-template.html) on canvas for
+     every item type. card = { type, tech, pill (optional, defaults to the
+     technology name), heading, hlText (optional substring of the heading
+     shown italic in the highlight colour), body, boxLabel, box, source }.
+     size is "1080x1350" (Portrait) or "1080x1080" (Square). */
+  function wrapLines(x, text, maxW, maxLines) {
+    var words = String(text || "").split(/\s+/).filter(Boolean);
+    var lines = [], cur = "";
+    for (var i = 0; i < words.length; i++) {
+      var trial = cur ? cur + " " + words[i] : words[i];
+      if (x.measureText(trial).width <= maxW || !cur) { cur = trial; }
+      else { lines.push(cur); cur = words[i]; if (lines.length === maxLines) break; }
+    }
+    if (lines.length < maxLines && cur) lines.push(cur);
+    if (lines.length === maxLines && i < words.length - 1) {
+      var last = lines[maxLines - 1];
+      while (last.length > 1 && x.measureText(last + "\u2026").width > maxW) last = last.slice(0, -1);
+      lines[maxLines - 1] = last.replace(/[\s,.;:]+$/, "") + "\u2026";
+    }
+    return lines;
+  }
+  function roundRectPath(x, px, py, w, h, r) {
+    x.beginPath();
+    x.moveTo(px + r, py);
+    x.arcTo(px + w, py, px + w, py + h, r);
+    x.arcTo(px + w, py + h, px, py + h, r);
+    x.arcTo(px, py + h, px, py, r);
+    x.arcTo(px, py, px + w, py, r);
+    x.closePath();
+  }
+  function renderCard(card, size, theme) {
+    var ready = (document.fonts && document.fonts.ready) ? document.fonts.ready : Promise.resolve();
+    return ready.then(function () {
+      var W = 1080, H = size === "1080x1080" ? 1080 : 1350;
+      var square = H === 1080;
+      var v = themeVars(theme, card.tech);
+      var T = TECH[card.tech] || TECH.signal;
+      var cv = document.createElement("canvas");
+      cv.width = W; cv.height = H;
+      var x = cv.getContext("2d");
+      x.fillStyle = v.bg; x.fillRect(0, 0, W, H);
+      if (v.band) { x.fillStyle = v.bar; x.fillRect(0, 0, W, 22); }
+      var pad = 84, right = W - pad, maxW = right - pad;
+      var footLineY = H - 118, footBase = H - 54;
+      var y = pad;
+      /* top row: wordmark left, item type right */
+      x.textAlign = "left"; x.textBaseline = "alphabetic";
+      x.fillStyle = v.ink;
+      x.font = "44px 'DM Serif Display', Georgia, serif";
+      var wThe = x.measureText("The ").width;
+      x.fillText("The ", pad, y + 42);
+      x.font = "italic 44px 'DM Serif Display', Georgia, serif";
+      x.fillText("Signal", pad + wThe, y + 42);
+      try { x.letterSpacing = "3.5px"; } catch (e) {}
+      x.font = "700 22px Figtree, system-ui, sans-serif";
+      x.fillStyle = v.muted; x.textAlign = "right";
+      x.fillText(String(card.type || "").toUpperCase(), right, y + 38);
+      x.textAlign = "left";
+      try { x.letterSpacing = "0px"; } catch (e) {}
+      y += 44 + 70;
+      /* colour pill: the technology name */
+      var pillText = card.pill || T.n;
+      x.font = "700 24px Figtree, system-ui, sans-serif";
+      var pw = x.measureText(pillText).width + 44;
+      roundRectPath(x, pad, y, pw, 46, 23);
+      x.fillStyle = v.pillbg; x.fill();
+      x.fillStyle = v.pillfg;
+      x.fillText(pillText, pad + 22, y + 31);
+      y += 46 + 30;
+      /* heading, DM Serif, the technology part italic in the highlight */
+      var headMax = square ? 2 : 3;
+      x.font = "76px 'DM Serif Display', Georgia, serif";
+      var heading = String(card.heading || "");
+      var hlAt = card.hlText ? heading.indexOf(card.hlText) : -1;
+      var headLines = wrapLines(x, heading, maxW, headMax);
+      var hlStart = -1, hlEnd = -1, pos = 0;
+      if (hlAt >= 0) {
+        var joined = headLines.join(" ");
+        hlStart = joined.indexOf(card.hlText);
+        if (hlStart >= 0) hlEnd = hlStart + card.hlText.length;
+      }
+      x.fillStyle = v.ink;
+      headLines.forEach(function (ln) {
+        if (hlStart < 0) { x.fillText(ln, pad, y + 66); }
+        else {
+          var cx = pad;
+          for (var ci = 0; ci < ln.length; ci++) {
+            var gPos = pos + ci;
+            var isHl = gPos >= hlStart && gPos < hlEnd;
+            x.font = (isHl ? "italic " : "") + "76px 'DM Serif Display', Georgia, serif";
+            x.fillStyle = isHl ? v.hl : v.ink;
+            x.fillText(ln[ci], cx, y + 66);
+            cx += x.measureText(ln[ci]).width;
+          }
+          x.font = "76px 'DM Serif Display', Georgia, serif";
+          x.fillStyle = v.ink;
+        }
+        pos += ln.length + 1;
+        y += 79;
+      });
+      y += 28 - 13;
+      /* the highlighted box is sized first so the body gets what remains */
+      var boxLines = [], boxH = 0;
+      if (card.box) {
+        x.font = "500 31px Figtree, system-ui, sans-serif";
+        boxLines = wrapLines(x, card.box, maxW - 60 - 8, square ? 2 : 4);
+        boxH = 26 + 22 + 8 + boxLines.length * 44 + 26;
+      }
+      /* body, up to six lines (three on square), shortened if space runs out */
+      if (card.body) {
+        x.font = "32px Figtree, system-ui, sans-serif";
+        var room = footLineY - 20 - y - (boxH ? boxH + 34 : 0);
+        var maxBody = Math.max(1, Math.min(square ? 3 : 6, Math.floor(room / 46.4)));
+        var bodyLines = wrapLines(x, card.body, maxW, maxBody);
+        x.fillStyle = v.soft;
+        bodyLines.forEach(function (ln) { x.fillText(ln, pad, y + 32); y += 46.4; });
+        y += 6;
+      }
+      /* the one highlighted box */
+      if (card.box) {
+        var boxY = y + 28;
+        x.fillStyle = v.box;
+        roundRectPath(x, pad, boxY, maxW, boxH, 18);
+        x.fill();
+        x.fillStyle = v.bar; x.fillRect(pad, boxY, 8, boxH);
+        try { x.letterSpacing = "3px"; } catch (e) {}
+        x.font = "700 22px Figtree, system-ui, sans-serif";
+        x.fillStyle = v.boxlabel;
+        x.fillText(String(card.boxLabel || "").toUpperCase(), pad + 30, boxY + 26 + 20);
+        try { x.letterSpacing = "0px"; } catch (e) {}
+        x.font = "500 31px Figtree, system-ui, sans-serif";
+        x.fillStyle = v.ink;
+        var by = boxY + 26 + 22 + 8;
+        boxLines.forEach(function (ln) { x.fillText(ln, pad + 30, by + 31); by += 44; });
+      }
+      /* footer: source left, site address right */
+      x.fillStyle = v.line; x.fillRect(pad, footLineY, maxW, 2);
+      x.font = "600 24px Figtree, system-ui, sans-serif";
+      x.fillStyle = v.muted; x.textAlign = "left";
+      x.fillText(String(card.source || ""), pad, footBase);
+      x.font = "500 24px Figtree, system-ui, sans-serif";
+      x.textAlign = "right";
+      x.fillText("thillairaj.github.io/The-Signal-AI-Quantum", right, footBase);
+      x.textAlign = "left";
+      return new Promise(function (res) {
+        if (cv.toBlob) cv.toBlob(function (b) { res(b); }, "image/png");
+        else res(null);
+      });
+    });
+  }
+  /* Build the panel image object for an item from its card spec. */
+  function cardImage(card, filename) {
+    return { kind: "render", tech: card.tech, filename: filename,
+      render: function (size, theme) { return renderCard(card, size, theme); } };
+  }
   function isMobile() { return /Android|iPhone|iPad|iPod/i.test(navigator.userAgent || ""); }
   function copy(text) {
     if (navigator.clipboard && window.isSecureContext) {
@@ -95,12 +283,12 @@ window.SignalShare = (function () {
     return spec.title + tail;
   }
   /* The WhatsApp version: bold title, one line, link. */
-  /* Icon only variant of the Share button (feed items): the caller
-     supplies the button styling class from its own stylesheet. */
+  /* The one share button (sharing standard): icon only, a 32 px circle,
+     class sg-share-btn; the page button is the same at 34 px. */
   function iconShareButton(spec, cls) {
     var b = document.createElement("button");
     b.type = "button";
-    b.className = "icon-btn " + (cls || "");
+    b.className = "sg-share-btn " + (cls || "");
     b.setAttribute("aria-label", "Share");
     b.title = "Share";
     b.innerHTML = ICONS.share;
@@ -157,7 +345,7 @@ window.SignalShare = (function () {
     ".ss-rowlabel{margin:16px 0 8px;font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#9aa3b2}",
     ".ss-textrow{display:flex;gap:6px;justify-content:space-between}",
     ".ss-icobtn{flex:1;display:flex;flex-direction:column;align-items:center;gap:6px;padding:10px 0 8px;background:#1e212b;border:1px solid #2c303c;border-radius:12px;color:#ece7db;cursor:pointer;font:inherit}",
-    ".ss-icobtn:hover,.ss-icobtn:focus-visible{border-color:#d4af6a;outline:none}",
+    ".ss-icobtn:hover,.ss-icobtn:focus-visible{border-color:#8CC56A;outline:none}",
     ".ss-icobtn svg{width:22px;height:22px}",
     ".ss-icobtn[data-ss='linkedin'] svg{color:#0A66C2}",
     ".ss-icobtn[data-ss='whatsapp'] svg{color:#25D366}",
@@ -165,23 +353,20 @@ window.SignalShare = (function () {
     ".ss-opts{display:flex;align-items:center;gap:12px;flex-wrap:wrap}",
     ".ss-optgroup{display:flex;align-items:center;gap:7px}",
     ".ss-sizebtn{width:42px;height:42px;display:grid;place-items:center;background:#1e212b;border:1px solid #2c303c;border-radius:10px;color:#9aa3b2;cursor:pointer}",
-    ".ss-sizebtn[aria-pressed='true']{border-color:#d4af6a;color:#d4af6a}",
+    ".ss-sizebtn[aria-pressed='true']{border-color:#8CC56A;color:#8CC56A}",
     ".ss-themebtn{width:30px;height:30px;border-radius:50%;border:2px solid rgba(255,255,255,.25);cursor:pointer;padding:0}",
-    ".ss-themebtn[aria-pressed='true']{border-color:#d4af6a;box-shadow:0 0 0 2px #14161d,0 0 0 4px #d4af6a}",
+    ".ss-themebtn[aria-pressed='true']{border-color:#8CC56A;box-shadow:0 0 0 2px #14161d,0 0 0 4px #8CC56A}",
     ".ss-selname{font-size:12.5px;color:#c3ccd9;margin-top:8px}",
     ".ss-thumb{display:block;width:100%;max-height:290px;object-fit:contain;background:#0d0f14;border-radius:12px;margin-top:10px}",
     ".ss-imgbtns{display:flex;gap:10px;margin-top:12px}",
     ".ss-imgbtns button{flex:1;padding:11px 8px;border-radius:10px;font:inherit;font-weight:600;cursor:pointer}",
-    ".ss-shareimg{background:#d4af6a;border:1px solid #d4af6a;color:#171207}",
+    ".ss-shareimg{background:#8CC56A;border:1px solid #8CC56A;color:#171207}",
     ".ss-download{background:transparent;border:1px solid #3a3f4d;color:#ece7db}",
-    ".ss-status{min-height:18px;margin:12px 0 0;font-size:12.5px;color:#d4af6a;text-align:center}",
-    ".ss-share-btn{display:inline-flex;align-items:center;gap:7px;padding:8px 15px;border-radius:999px;border:1px solid rgba(135,135,135,.5);background:rgba(135,135,135,.10);color:inherit;font:inherit;font-size:13.5px;font-weight:600;cursor:pointer}",
-    ".ss-share-btn svg{width:15px;height:15px}",
-    ".ss-share-btn:hover{border-color:#d4af6a}",
-    ".ss-page-btn{display:inline-flex;align-items:center;gap:7px;padding:8px 15px;border-radius:999px;border:1px solid rgba(135,135,135,.5);background:rgba(135,135,135,.10);color:inherit;font:inherit;font-size:13.5px;font-weight:600;cursor:pointer;white-space:nowrap}",
-    ".ss-page-btn svg{width:15px;height:15px;flex:0 0 auto}",
-    ".ss-page-btn:hover{border-color:#d4af6a}",
-    "@media (max-width:899px){.ss-page-btn{width:38px;height:38px;padding:0;border-radius:50%;justify-content:center;gap:0}.ss-page-btn .ss-page-label{display:none}.ss-page-btn svg{width:17px;height:17px}}",
+    ".ss-status{min-height:18px;margin:12px 0 0;font-size:12.5px;color:#8CC56A;text-align:center}",
+    ".sg-share-btn{width:32px;height:32px;border-radius:50%;border:1px solid var(--sg-line,#E4DAC6);background:var(--sg-surface,#fff);color:var(--sg-ink,#201B14);display:inline-flex;align-items:center;justify-content:center;cursor:pointer;padding:0;flex:0 0 auto}",
+    ".sg-share-btn:hover{border-color:#3F7D20;color:#3F7D20}",
+    ".sg-share-btn svg{width:15px;height:15px}",
+    ".sg-share-btn.sg-page-btn{width:34px;height:34px}",
     ".ss-page-mount{display:inline-flex;align-items:center}"
   ].join("\n");
   var ICONS = {
@@ -190,7 +375,7 @@ window.SignalShare = (function () {
     whatsapp: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>',
     copy: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="14" height="14" x="8" y="8" rx="2"/><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"/></svg>',
     more: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" x2="15.42" y1="13.51" y2="17.49"/><line x1="15.41" x2="8.59" y1="6.51" y2="10.49"/></svg>',
-    share: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" x2="15.42" y1="13.51" y2="17.49"/><line x1="15.41" x2="8.59" y1="6.51" y2="10.49"/></svg>',
+    share: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path d="M8.6 13.5l6.8 4M15.4 6.5l-6.8 4"/></svg>',
     portrait: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="6" y="3" width="12" height="18" rx="2"/></svg>',
     square: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="4" y="4" width="16" height="16" rx="2"/></svg>'
   };
@@ -255,8 +440,6 @@ window.SignalShare = (function () {
       b.title = t.label;
       b.setAttribute("aria-label", "Theme: " + t.label);
       b.setAttribute("aria-pressed", "false");
-      b.style.background = PALETTES[t.v].bg1;
-      b.style.color = PALETTES[t.v].accent;
       themesEl.appendChild(b);
     });
     panel = {
@@ -267,7 +450,7 @@ window.SignalShare = (function () {
       optsEl: overlay.querySelector(".ss-opts"),
       selNameEl: overlay.querySelector(".ss-selname"),
       thumbEl: overlay.querySelector(".ss-thumb"),
-      spec: null, invoker: null, size: "1080x1350", theme: "obsidian",
+      spec: null, invoker: null, size: "1080x1350", theme: "paper",
       blob: null, blobKey: "", thumbUrl: "", statusTimer: null
     };
     overlay.querySelector(".ss-close").addEventListener("click", closePanel);
@@ -303,6 +486,11 @@ window.SignalShare = (function () {
     });
     return panel;
   }
+  function specTech() {
+    if (!panel || !panel.spec) return "signal";
+    return panel.spec.tech ||
+      (panel.spec.image && panel.spec.image.tech) || "signal";
+  }
   function syncImageControls() {
     if (!panel || !panel.spec) return;
     panel.overlay.querySelectorAll(".ss-sizebtn").forEach(function (b) {
@@ -310,6 +498,9 @@ window.SignalShare = (function () {
     });
     panel.overlay.querySelectorAll(".ss-themebtn").forEach(function (b) {
       b.setAttribute("aria-pressed", b.dataset.theme === panel.theme ? "true" : "false");
+      var tv = themeVars(b.dataset.theme, specTech());
+      b.style.background = tv.bg;
+      b.style.color = tv.hl;
     });
     var sizeLabel = panel.size === "1080x1350" ? "Portrait \u00b7 1080\u00d71350" : "Square \u00b7 1080\u00d71080";
     var themeLabel = "";
@@ -403,7 +594,7 @@ window.SignalShare = (function () {
     panel.spec = spec;
     panel.invoker = invoker || document.activeElement;
     panel.size = "1080x1350";
-    panel.theme = "obsidian";
+    panel.theme = "paper";
     panel.blob = null; panel.blobKey = "";
     panel.itemEl.textContent = spec.title || "";
     panel.itemEl.title = spec.title || "";
@@ -428,14 +619,10 @@ window.SignalShare = (function () {
       try { panel.invoker.focus(); } catch (e) {}
     }
   }
-  /* A ready made Share button element for surfaces that build their own DOM. */
+  /* A ready made Share button element for surfaces that build their own
+     DOM: the standard icon-only 32 px circle. */
   function shareButton(spec) {
-    var b = document.createElement("button");
-    b.type = "button";
-    b.className = "ss-share-btn";
-    b.innerHTML = ICONS.share + "<span>Share</span>";
-    b.addEventListener("click", function () { openPanel(spec, b); });
-    return b;
+    return iconShareButton(spec);
   }
   /* ---------- page level sharing ----------
      One facility for every page type (Thillai, Nov 9, 2026): a "Share
@@ -498,11 +685,10 @@ window.SignalShare = (function () {
     ensurePageStyle();
     var b = document.createElement("button");
     b.type = "button";
-    b.className = "ss-page-btn";
-    b.setAttribute("aria-label", "Share this page");
-    b.title = "Share this page";
-    b.innerHTML = ICONS.share +
-      '<span class="ss-page-label">Share this page</span>';
+    b.className = "sg-share-btn sg-page-btn";
+    b.setAttribute("aria-label", "Share");
+    b.title = "Share";
+    b.innerHTML = ICONS.share;
     if (typeof cfgOrFn !== "function") b._ssPageConfig = cfgOrFn;
     b.addEventListener("click", function () {
       var cfg = typeof cfgOrFn === "function" ? cfgOrFn() : cfgOrFn;
@@ -570,7 +756,9 @@ window.SignalShare = (function () {
   }
   return {
     BASE: BASE, NOTICE: NOTICE, SIZES: SIZES, THEME_OPTIONS: THEME_OPTIONS,
-    PALETTES: PALETTES, isMobile: isMobile, copy: copy, download: download,
+    TECH: TECH, themeVars: themeVars, techForCategory: techForCategory,
+    techForSeries: techForSeries, episodeBody: episodeBody, renderCard: renderCard, cardImage: cardImage,
+    isMobile: isMobile, copy: copy, download: download,
     buildCaption: buildCaption, shareImage: shareImage,
     shareTextFlow: shareTextFlow, fillOptions: fillOptions,
     topicHashtag: topicHashtag, categoryHashtag: categoryHashtag, articleCaption: articleCaption,

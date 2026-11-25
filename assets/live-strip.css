@@ -1,0 +1,15 @@
+/* Live news strip: sits under the top bar on every page. Calm by design: no red, no pulsing, slow sideways movement, pauses on hover. */
+.live-strip{display:flex;align-items:center;gap:.9rem;max-width:1200px;margin:0 auto;padding:.45rem 2rem;border-bottom:1px solid var(--border);background:var(--bg);font-family:var(--font-body);font-size:13px;color:var(--ink);overflow:hidden}
+.live-strip .ls-label{flex:0 0 auto;display:inline-flex;align-items:center;gap:.45rem;font:600 11px var(--font-mono);letter-spacing:.14em;text-transform:uppercase;color:var(--accent);text-decoration:none;white-space:nowrap}
+.live-strip .ls-ring{width:9px;height:9px;border-radius:50%;border:1.5px solid currentColor;display:inline-block}
+.live-strip .ls-meta{flex:0 0 auto;font:500 11px var(--font-mono);color:var(--muted);white-space:nowrap;padding-right:.9rem;border-right:1px solid var(--border)}
+.live-strip .ls-trk{flex:1;min-width:0;overflow:hidden;-webkit-mask-image:linear-gradient(90deg,transparent,#000 18px,#000 calc(100% - 18px),transparent);mask-image:linear-gradient(90deg,transparent,#000 18px,#000 calc(100% - 18px),transparent)}
+.live-strip .ls-mv{display:inline-flex;align-items:center;gap:1.6rem;white-space:nowrap;animation:lsmv 110s linear infinite;will-change:transform}
+.live-strip .ls-trk:hover .ls-mv,.live-strip .ls-trk:focus-within .ls-mv{animation-play-state:paused}
+.live-strip .ls-mv a{color:var(--ink);text-decoration:none}
+.live-strip .ls-mv a:hover{text-decoration:underline;text-underline-offset:3px}
+.live-strip .ls-mv b{font:600 11px var(--font-mono);color:var(--muted);margin-right:.4rem}
+.live-strip .ls-sep{color:var(--accent);opacity:.7}
+@keyframes lsmv{to{transform:translateX(-50%)}}
+@media (prefers-reduced-motion:reduce){.live-strip .ls-mv{animation:none}}
+@media (max-width:700px){.live-strip{padding:.4rem 1rem;gap:.6rem}.live-strip .ls-meta{display:none}}

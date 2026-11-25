@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="sgp sgp-deck" data-tech="quantum">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -218,17 +218,17 @@
 :root[data-theme="dark"] .pnum, :root[data-theme="dark"] #zoom-num, :root[data-theme="dark"] .fback .fnum { color: #8a6d2f; }
 @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .tsub { color: #a8b0ba; } :root:not([data-theme="light"]) .ptag { color: #5b6470; } :root:not([data-theme="light"]) .pnum, :root:not([data-theme="light"]) #zoom-num, :root:not([data-theme="light"]) .fback .fnum { color: #8a6d2f; } }
 </style>
+<link rel="stylesheet" href="../assets/signal-shell.css?v=20261125">
+<link rel="stylesheet" href="../assets/signal-pages.css">
+<link rel="stylesheet" href="../assets/signal-brand.css?v=20261125">
+<meta name="sg-stage" content="2">
 
 <meta name="signal-build" content="2026-11-07.footer1">
 <link rel="stylesheet" href="../assets/signal-footer.css?v=2026-11-07.footer1">
 </head>
 <body>
 
-<header>
-  <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">☾</button>
-  <div class="kicker" id="deck-kicker">QUANTUM COMPUTING, MADE VISUAL</div>
-  <h1>The <span class="thin">Quantum</span> Deck</h1>
-</header>
+<div class="sgp-head"><button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">☾</button><h1 class="sgp-h1"><span class="sg-t sg-t-quantum">Quantum deck</span></h1><p class="sgp-sub">Read the cards, flip the flashcards, then take the quiz.</p></div>
 <div class="topicbar">
   <a class="navcard back" href="../#learn-decks"><span class="nc-dir">← Back to</span><span class="nc-title">Learning Spaces</span></a>
   <span class="tlabel">SELECT TOPIC</span>
@@ -276,10 +276,6 @@
 const FOOTER="The Signal";
 const BRAND="The Quantum Deck";
 const PUBLIC_URL=(window.SignalShare&&window.SignalShare.BASE?window.SignalShare.BASE:"https://thillairaj.github.io/The-Signal-AI-Quantum")+"/quantum-deck/";
-const THEMES={
-obsidian:{bg0:"#151923",bg1:"#0d0f14",accent:"#d4af6a",dim:"rgba(212,175,106,.5)",head:"#ffffff",body:"#c3ccd9",foot:"#8fa0b5"},
-aubergine:{bg0:"#2C1734",bg1:"#160A1B",accent:"#E0B45A",dim:"rgba(224,180,90,.5)",head:"#FBF3FF",body:"#D9C8DE",foot:"#E0B45A"},
-ivory:{bg0:"#fffdf9",bg1:"#f0ebdf",accent:"#a8842f",dim:"rgba(168,132,47,.45)",head:"#171b24",body:"#334052",foot:"#6b7280"}};
 /* ---------- topics: one data block per deck; shared render below ---------- */
 /* ---------- Theme (same pattern as The Signal) ---------- */
 const THEME_KEY="deck_theme";
@@ -648,7 +644,7 @@ function renderLearn(){
     d.innerHTML='<div class="pnum">'+c.n+' / '+L.length+'</div><div class="ptag">'+c.tag+'</div>'
       +'<h3 class="pq">'+c.q+'</h3>'
       +'<div class="pbody">'+c.body.map(p=>"<p>"+p+"</p>").join("")+'</div>'
-      +'<div class="toolbar"><button data-act="share" data-i="'+i+'" class="ss-share-btn">'+SignalShare.ICONS.share+'<span>Share</span></button>'
+      +'<div class="toolbar"><button data-act="share" data-i="'+i+'" class="sg-share-btn" aria-label="Share" title="Share">'+SignalShare.ICONS.share+'</button>'
       +'<span class="copied" id="copied-'+i+'">Copied ✓</span></div>';
     rail.appendChild(d);
   });
@@ -692,81 +688,43 @@ document.addEventListener("click",e=>{
 document.addEventListener("keydown",e=>{
   if(e.key==="Escape"){const ov=document.getElementById("zoom-ov");if(ov&&ov.classList.contains("open"))closeZoom();}
 });
-/* ---------- card -> PNG (premium obsidian/gold) ---------- */
-function wrap(x,t,mw){const w=t.split(" "),L=[];let l="";w.forEach(s=>{const t2=l?l+" "+s:s;
-  if(x.measureText(t2).width>mw&&l){L.push(l);l=s;}else l=t2;});if(l)L.push(l);return L;}
-
+/* ---------- share cards: the shared renderer (Nov 25, 2026 standard) ---------- */
+const DECK_TECH="quantum";
+const DECK_LABEL="Quantum deck";
+function lastSentence(text){const parts=String(text||"").match(/[^.!?]+[.!?]+["']?\s*/g);if(!parts||!parts.length)return String(text||"").trim();return parts[parts.length-1].trim();}
+function cardFor(i){const c=activeTopic.learn[i];const text=c.body.join(" ");
+  return {type:DECK_LABEL+" \u00b7 Card "+c.n+" of "+activeTopic.learn.length,tech:DECK_TECH,heading:c.q,body:text,boxLabel:"In one line",box:lastSentence(text),source:BRAND};}
+function cardFilename(i){const c=activeTopic.learn[i];return "quantum-deck-"+activeTopic.id+"-"+c.n+".png";}
 function openCardPanel(i,invoker){
   const c=activeTopic.learn[i];if(!c||!window.SignalShare)return;
   const first=(c.body[0]||"").split(/(?<=[.!?])\s+/)[0];
   SignalShare.openPanel({
     title:c.q, line:first, link:cardLink(i), caption:cardText(i),
     tags:activeTopic.xTags||"", xText:xText(i),
-    image:{ kind:"render",
-      filename:"quantum-deck-"+activeTopic.id+"-"+c.n+".png",
-      render:function(size,theme){
-        return new Promise(function(res){
-          renderCardBlob(i,size,theme,function(blob){ res(blob); });
-        });
-      } }
+    image:SignalShare.cardImage(cardFor(i),cardFilename(i))
   }, invoker);
 }
-
-function renderCardBlob(i,size,theme,cb){
-  const [W,H]=size.split("x").map(Number),c=activeTopic.learn[i],k=W/1080;
-  const T=THEMES[theme]||THEMES.obsidian;
-  const cv=document.createElement("canvas");cv.width=W;cv.height=H;const x=cv.getContext("2d");
-  const grd=x.createLinearGradient(0,0,0,H);grd.addColorStop(0,T.bg0);grd.addColorStop(1,T.bg1);
-  x.fillStyle=grd;x.fillRect(0,0,W,H);
-  x.fillStyle=T.accent;x.fillRect(0,0,W,8*k);
-  const pad=84*k,mw=W-2*pad,cx=W/2;
-  const topSafe=48*k,footTop=H-150*k;
-  x.textAlign="left";
-  x.fillStyle=T.head;x.font="700 "+Math.round(72*k)+"px Georgia,serif";
-  const headLines=wrap(x,c.tag,mw);
-  const headH=headLines.length*Math.round(86*k);
-  let bf=44;
-  const fit=()=>{x.font=Math.round(bf*k)+"px system-ui,sans-serif";const L=[];
-    c.body.forEach(p=>{wrap(x,p,mw).forEach(l=>L.push(l));L.push("");});return L;};
-  const measure=()=>{const L=fit();return{L,h:L.length*Math.round((bf+14)*k)};};
-  let m=measure();
-  const gapH=Math.round(34*k),divGap=Math.round(56*k);
-  while((headH+gapH+divGap+m.h)>(footTop-topSafe)&&bf>24){bf-=2;m=measure();}
-  const lines=m.L,lh=Math.round((bf+14)*k);
-  let y=topSafe+Math.round(66*k);
-  x.fillStyle=T.head;x.font="700 "+Math.round(72*k)+"px Georgia,serif";
-  headLines.forEach(l=>{x.fillText(l,pad,y);y+=Math.round(86*k);});
-  y+=gapH;
-  x.strokeStyle=T.dim;x.lineWidth=2*k;
-  x.beginPath();x.moveTo(pad,y);x.lineTo(pad+130*k,y);x.stroke();
-  const divY=y;
-  y=divY+divGap+Math.max(0,(footTop-(divY+divGap)-m.h)/2);
-  x.fillStyle=T.body;x.font=Math.round(bf*k)+"px system-ui,sans-serif";
-  lines.forEach(l=>{if(l&&y<footTop){x.fillText(l,pad,y);}y+=lh;});
-  x.textAlign="center";
-  x.strokeStyle=T.dim;x.lineWidth=2*k;
-  x.beginPath();x.moveTo(pad,H-116*k);x.lineTo(W-pad,H-116*k);x.stroke();
-  x.fillStyle=T.foot;x.font="600 "+Math.round(28*k)+"px system-ui,sans-serif";
-  x.fillText("THE QUANTUM DECK",cx,H-68*k);
-  x.fillStyle=T.accent;x.fillText(activeTopic.title,cx,H-30*k);
-  x.textAlign="left";
-  const bx=W-pad-Math.round(38*k),by=H-Math.round(62*k),br=Math.round(34*k);
-  x.strokeStyle=T.accent;x.lineWidth=Math.round(3*k);
-  x.beginPath();x.arc(bx,by,br,0,Math.PI*2);x.stroke();
-  x.fillStyle=T.accent;x.font="700 "+Math.round(26*k)+"px Georgia,'Times New Roman',serif";
-  x.textAlign="center";x.textBaseline="middle";
-  try{x.letterSpacing="3px";}catch(e){}
-  x.fillText("TRT",bx,by+Math.round(2*k));
-  try{x.letterSpacing="0px";}catch(e){}
-  x.textAlign="left";x.textBaseline="alphabetic";
-  const filename="quantum-deck-"+activeTopic.id+"-"+c.n+".png";
-  cv.toBlob(function(blob){ cb(blob,filename); },"image/png");
-}
 function downloadCard(i,size,theme){
-  renderCardBlob(i,size,theme,function(blob,filename){
+  SignalShare.renderCard(cardFor(i),size,theme).then(function(blob){
     if(!blob){return;}
-    SignalShare.shareImage({blob:blob,filename:filename,caption:cardText(i),notify:function(m){showCopied(i,m);}});
+    SignalShare.shareImage({blob:blob,filename:cardFilename(i),caption:cardText(i),notify:function(m){showCopied(i,m);}});
   });
+}
+/* ---------- flashcard sharing: same panel, Answer box ---------- */
+function flashCardFor(j){const f=activeTopic.flash[j];
+  return {type:DECK_LABEL+" \u00b7 Flashcard "+(j+1)+" of "+activeTopic.flash.length,tech:DECK_TECH,heading:f.q,body:"",boxLabel:"Answer",box:f.a,source:BRAND};}
+function flashText(j){const f=activeTopic.flash[j];
+  const parts=[f.q,"Answer: "+f.a];
+  parts.push("Explore all "+activeTopic.learn.length+" cards in "+activeTopic.title+", free, no sign-up:\n"+PUBLIC_URL+"#"+activeTopic.id);
+  parts.push(activeTopic.liTags);
+  return SignalShare.buildCaption(parts);}
+function openFlashPanel(j,invoker){
+  const f=activeTopic.flash[j];if(!f||!window.SignalShare)return;
+  SignalShare.openPanel({
+    title:f.q, line:"", link:PUBLIC_URL+"#"+activeTopic.id, caption:flashText(j),
+    tags:activeTopic.xTags||"",
+    image:SignalShare.cardImage(flashCardFor(j),"quantum-deck-"+activeTopic.id+"-flash-"+(j+1)+".png")
+  }, invoker);
 }
 /* ---------- compact flashcard rail ---------- */
 function renderFlash(){
@@ -780,8 +738,8 @@ function renderFlash(){
     const d=document.createElement("div");d.className="fcard";
     d.innerHTML='<div class="finner"><div class="fface ffront"><div class="fnum">'+(i+1)+' / '+F.length+'</div>'
       +'<div class="fq">'+f.q+'</div><div class="fhint">TAP TO FLIP</div></div>'
-      +'<div class="fface fback"><div class="fnum">'+(i+1)+' / '+F.length+' · ANSWER</div><div>'+f.a+'</div></div></div>';
-    d.addEventListener("click",()=>d.classList.toggle("flipped"));
+      +'<div class="fface fback"><div class="fnum">'+(i+1)+' / '+F.length+' · ANSWER</div><div>'+f.a+'</div><div style="margin-top:10px"><button type="button" class="sg-share-btn" data-flash="'+i+'" aria-label="Share flashcard" title="Share">'+SignalShare.ICONS.share+'</button></div></div></div>';
+    d.addEventListener("click",e=>{const sb=e.target.closest("button[data-flash]");if(sb){e.stopPropagation();openFlashPanel(+sb.dataset.flash,sb);return;}d.classList.toggle("flipped");});
     rail.appendChild(d);
   });
 }
@@ -858,6 +816,7 @@ document.getElementById("tstrip-next").addEventListener("click",()=>document.get
 (function(){function go(){if(window.SignalShare&&SignalShare.mountPageShare){SignalShare.mountPageShare(document.getElementById("ssPageMount"), {"title": "The Quantum Deck", "desc": "Eight topics from quantum fundamentals to sensing, each with Learn cards, flashcards and a ten question quiz.", "inside": "15 cards a topic, 8 topics live", "link": "https://thillairaj.github.io/The-Signal-AI-Quantum/quantum-deck/", "tag": "#QuantumComputing", "image": {"url": "https://thillairaj.github.io/The-Signal-AI-Quantum/assets/og/decks/quantum.png", "filename": "quantum-deck.png"}});}}if(document.readyState==="loading"){document.addEventListener("DOMContentLoaded",go);}else{go();}})();
 </script>
 <!-- ss-page-share:end -->
+<script src="../assets/signal-shell.js?v=20261125" defer></script>
 <footer class="signal-footer">
   <div class="sf-follow"><span class="sf-label">Follow along</span><span class="sf-links"><a class="sf-link" href="https://www.linkedin.com/in/thillairaj" target="_blank" rel="noopener"><span class="sf-badge" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.55V9h3.57v11.45z"/></svg></span>Thillai Raj</a><a class="sf-link" href="https://www.linkedin.com/showcase/qu-bits/" target="_blank" rel="noopener"><span class="sf-badge" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.55V9h3.57v11.45z"/></svg></span>QuBits · Quantum &amp; AI</a><a class="sf-link" href="https://www.linkedin.com/showcase/agentic-ai-architect/" target="_blank" rel="noopener"><span class="sf-badge" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.55V9h3.57v11.45z"/></svg></span>Agentic AI Architect</a></span></div>
   <p class="sf-copy">© 2026 The Signal</p>

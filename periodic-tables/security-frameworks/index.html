@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="sgp sgp-table" data-tech="cyber">
 <head>
 <meta charset="UTF-8">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -184,19 +184,16 @@ html[data-theme="light"] #detail .d-cat[data-cat="privacy"]{color:#a21caf}
 html[data-theme="light"] #detail .d-cat[data-cat="sector"]{color:#c3490a}
 /* themefix:end */
 </style>
+<link rel="stylesheet" href="../../assets/signal-shell.css?v=20261125">
+<link rel="stylesheet" href="../../assets/signal-pages.css">
+<link rel="stylesheet" href="../../assets/signal-brand.css?v=20261125">
+<meta name="sg-stage" content="2">
 
 <meta name="signal-build" content="2026-11-07.footer1">
 <link rel="stylesheet" href="../../assets/signal-footer.css?v=2026-11-07.footer1">
 </head>
 <body>
-<header>
-  
-  <button class="theme-toggle" id="themeToggle" type="button" aria-label="Switch light or dark theme" title="Switch light / dark theme">☀</button>
-  <div class="kicker">The Frameworks Table</div>
-  <h1>Security Frameworks & <span>Compliance</span></h1>
-  <p class="sub">The standards, laws and certifications that shape what good security looks like — and what leaders are accountable for.</p>
-  <div class="principle"><strong>Core principle:</strong> Frameworks are floors, not ceilings. Compliance proves a baseline was met on audit day; security is what happens every other day. Use frameworks to set the minimum and to structure the conversation with the board, then invest past the floor where your real risks live.</div>
-</header>
+<div class="sgp-head"><button class="theme-toggle" id="themeToggle" type="button" aria-label="Switch light or dark theme" title="Switch light / dark theme">☀</button><h1 class="sgp-h1">Security Frameworks &amp; Compliance</h1><p class="sgp-sub">56 terms in plain business language.</p></div>
 
 <div class="toolbar">
   <div class="navrow"><a class="navcard back" href="../../#learn-tables-cyber"><span class="nc-dir">← Back to</span><span class="nc-title">Learning Spaces</span></a><span class="navside"><a class="navcard prev" href="../cyber-threats/"><span class="nc-dir">← Previous</span><span class="nc-title">Cyber Threats &amp; Attack Techniques</span></a><a class="navcard next" href="../ai-cybersecurity/"><span class="nc-dir">Next →</span><span class="nc-title">AI &amp; Cybersecurity</span></a></span></div>
@@ -212,7 +209,7 @@ html[data-theme="light"] #detail .d-cat[data-cat="sector"]{color:#c3490a}
   <div id="grid" role="list"></div>
   <aside id="detail" aria-live="polite">
     <div class="d-no">Element detail</div>
-    <p class="hint" style="margin-top:12px">Click any element in the table to zoom into its full explanation.<br><br>Start with: <strong>CSF, ISO 27001, SOC 2, DPDP</strong>.</p>
+    <p class="hint" style="margin-top:12px">Click any term to read it.</p>
   </aside>
 </main>
 <div id="overlay"></div>
@@ -364,7 +361,7 @@ function applyTheme(th){
   try{localStorage.setItem('security_frameworks_theme',th);}catch(e){}
 }
 let savedTheme='dark';
-try{savedTheme=localStorage.getItem('security_frameworks_theme')||'dark';}catch(e){}
+try{savedTheme=localStorage.getItem('security_frameworks_theme')||'light';}catch(e){}
 applyTheme(savedTheme==='light'?'light':'dark');
 themeBtn.addEventListener('click',()=>{
   const cur=document.documentElement.getAttribute('data-theme')==='light'?'light':'dark';
@@ -401,10 +398,7 @@ render();
 </script>
 <!-- termshare:start -->
 <style>
-.ts-share{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-top:16px;padding-top:14px;border-top:1px solid var(--line,rgba(127,140,160,.35))}
-.ts-share button{border:1px solid var(--line,rgba(127,140,160,.45));background:rgba(127,140,160,.14);color:inherit;border-radius:999px;padding:8px 15px;font:600 13px system-ui,sans-serif;cursor:pointer}
-.ts-share button:hover{filter:brightness(1.25)}
-.ts-share select{font:inherit;background:rgba(127,140,160,.14);color:inherit;border:1px solid var(--line,rgba(127,140,160,.45));border-radius:8px;padding:7px 8px}
+.ts-share{position:absolute;top:15px;right:60px;z-index:3}
 .ts-status{font-size:12.5px;color:#c9a227}
 .tile.hl{animation:tsHl 2s ease}
 @keyframes tsHl{0%,55%{box-shadow:0 0 0 4px #fff,0 0 34px 8px rgba(255,255,255,.55)}100%{box-shadow:0 0 0 0 rgba(255,255,255,0)}}
@@ -414,7 +408,7 @@ render();
 <script>
 (function(){
 "use strict";
-var CFG = {"base": "https://thillairaj.github.io/The-Signal-AI-Quantum", "table": "security-frameworks", "display": "Security Frameworks", "brandTag": "#TheSignal", "familyTag": "#CyberSecurity", "footer1": "THE SECURITY FRAMEWORKS PERIODIC TABLE", "footer2": "Security Frameworks & Compliance", "badge": "TRT", "aliases": {}};
+var CFG = {"base": "https://thillairaj.github.io/The-Signal-AI-Quantum", "table": "security-frameworks", "display": "Security Frameworks", "brandTag": "#TheSignal", "familyTag": "#CyberSecurity", "footer1": "THE SECURITY FRAMEWORKS PERIODIC TABLE", "footer2": "Security Frameworks", "badge": "TRT", "aliases": {}};
 function slugifyName(n){
   var part = n.indexOf(" \u2014 ") >= 0 ? n.split(" \u2014 ")[1] : n;
   return part.toLowerCase().replace(/[^a-z0-9]+/g,"-").replace(/^-+|-+$/g,"");
@@ -435,89 +429,14 @@ function copyText(s){
 }
 function wrap(x,t,mw){ var w=t.split(" "),L=[],l=""; w.forEach(function(s){ var t2=l?l+" "+s:s; if(x.measureText(t2).width>mw&&l){ L.push(l); l=s; } else { l=t2; } }); if(l) L.push(l); return L; }
 function roundRect(x,px,py,w,h,r){ x.beginPath(); x.moveTo(px+r,py); x.arcTo(px+w,py,px+w,py+h,r); x.arcTo(px+w,py+h,px,py+h,r); x.arcTo(px,py+h,px,py,r); x.arcTo(px,py,px+w,py,r); x.closePath(); }
-var FALLBACK_PALETTE={obsidian:{bg0:"#151923",bg1:"#0d0f14",accent:"#d4af6a",dim:"rgba(212,175,106,.5)",head:"#ffffff",body:"#c3ccd9",foot:"#8fa0b5"}};
-function hexRgb(h){ h=h.replace("#",""); return [parseInt(h.substr(0,2),16),parseInt(h.substr(2,2),16),parseInt(h.substr(4,2),16)]; }
-function relLum(rgb){ function f(c){ c/=255; return c<=0.03928?c/12.92:Math.pow((c+0.055)/1.055,2.4); } return 0.2126*f(rgb[0])+0.7152*f(rgb[1])+0.0722*f(rgb[2]); }
-function contrastRgb(a,b){ var la=relLum(a),lb=relLum(b); return (Math.max(la,lb)+0.05)/(Math.min(la,lb)+0.05); }
-function kickerColor(hex,bgs,lighten){ var c=hexRgb(hex); var targets=bgs.map(hexRgb);
-  function ok(col){ return targets.every(function(bg){ return contrastRgb(col,bg)>=4.55; }); }
-  if(ok(c)) return hex;
-  for(var s=0.05;s<=1.001;s+=0.05){ var m=c.map(function(v){ return Math.round(lighten?v+(255-v)*s:v*(1-s)); }); if(ok(m)){ return "#"+m.map(function(v){ return ("0"+v.toString(16)).slice(-2); }).join(""); } }
-  return lighten?"#ffffff":"#000000"; }
-function renderCard(t,size,theme){
-  var dims=(size||"1080x1350").split("x"), W=+dims[0], H=+dims[1]; if(!W||!H){ W=1080; H=1350; }
-  var k=W/1080;
-  var PAL=(window.SignalShare&&SignalShare.PALETTES)||FALLBACK_PALETTE;
-  var T=PAL[theme]||PAL.obsidian;
-  var cv=document.createElement("canvas"); cv.width=W; cv.height=H;
-  var x=cv.getContext("2d");
-  var catCol=(typeof CATS!=="undefined"&&CATS[t.c])?CATS[t.c].color:"#c9a227";
-  var catName=(typeof CATS!=="undefined"&&CATS[t.c])?CATS[t.c].name:t.c;
-  var grd=x.createLinearGradient(0,0,0,H); grd.addColorStop(0,T.bg0); grd.addColorStop(1,T.bg1);
-  x.fillStyle=grd; x.fillRect(0,0,W,H);
-  x.fillStyle=catCol; x.fillRect(0,0,W,Math.round(8*k));
-  var pad=Math.round(84*k), mw=W-2*pad, cx=W/2;
-  var topSafe=Math.round(48*k), footTop=H-Math.round(150*k);
-  x.textAlign="left"; x.textBaseline="alphabetic";
-  var y=topSafe+Math.round(34*k);
-  x.fillStyle=kickerColor(catCol,[T.bg0,T.bg1],theme!=="ivory"); x.font="600 "+Math.round(27*k)+"px system-ui,sans-serif";
-  try{ x.letterSpacing="3px"; }catch(e){}
-  x.fillText((CFG.display+" \u00b7 "+catName).toUpperCase(),pad,y);
-  try{ x.letterSpacing="0px"; }catch(e){}
-  y+=Math.round(46*k);
-  var ts=Math.round(150*k);
-  x.fillStyle=catCol; roundRect(x,pad,y,ts,ts,Math.round(22*k)); x.fill();
-  var ss=Math.round(62*k); x.fillStyle="#ffffff"; x.textAlign="center"; x.textBaseline="middle";
-  do{ x.font="700 "+ss+"px Georgia,serif"; ss-=2; }while(x.measureText(t.s).width>ts-Math.round(24*k)&&ss>Math.round(28*k));
-  x.fillText(t.s,pad+ts/2,y+ts/2+Math.round(2*k));
-  x.textAlign="left"; x.textBaseline="alphabetic";
-  y+=ts+Math.round(64*k);
-  var nf=Math.round(56*k), nameLines;
-  do{ x.font="700 "+nf+"px Georgia,serif"; nameLines=wrap(x,t.n,mw); nf-=2; }while(nameLines.length>2&&nf>Math.round(36*k));
-  x.fillStyle=T.head;
-  nameLines.forEach(function(l){ x.fillText(l,pad,y); y+=Math.round(nf*1.24); });
-  y+=Math.round(10*k);
-  x.strokeStyle=T.dim; x.lineWidth=Math.max(1,Math.round(2*k));
-  x.beginPath(); x.moveTo(pad,y); x.lineTo(pad+Math.round(130*k),y); x.stroke();
-  y+=Math.round(52*k);
-  var bf=Math.round(34*k), lines=[];
-  function buildLines(withLens){ var L=[]; x.font=bf+"px system-ui,sans-serif";
-    wrap(x,oneLine(t.d),mw).forEach(function(l){ L.push({s:l,label:false}); });
-    if(t.f){ L.push({s:"",label:false}); L.push({s:"KEY FACT",label:true});
-      wrap(x,t.f,mw).forEach(function(l){ L.push({s:l,label:false}); }); }
-    if(withLens&&t.l){ L.push({s:"",label:false}); L.push({s:"LEADER'S LENS",label:true});
-      wrap(x,t.l,mw).forEach(function(l){ L.push({s:l,label:false}); }); }
-    return L; }
-  var withLens=(H>W)&&!!t.l;
-  lines=buildLines(withLens);
-  var lh=bf+Math.round(12*k);
-  while(y+lines.length*lh>footTop&&bf>Math.round(24*k)){ bf-=2; lh=bf+Math.round(12*k); lines=buildLines(withLens); }
-  if(H<=W&&t.l){ var extra=buildLines(true); if(y+extra.length*lh<=footTop){ lines=extra; } }
-  lines.forEach(function(o){
-    if(y<footTop){ if(o.label){ x.fillStyle=T.accent; x.font="700 "+Math.round(24*k)+"px system-ui,sans-serif"; try{ x.letterSpacing="3px"; }catch(e){} x.fillText(o.s,pad,y); try{ x.letterSpacing="0px"; }catch(e){} }
-      else if(o.s){ x.fillStyle=T.body; x.font=bf+"px system-ui,sans-serif"; x.fillText(o.s,pad,y); } }
-    y+=lh; });
-  x.strokeStyle=T.dim; x.lineWidth=Math.max(1,Math.round(2*k));
-  x.beginPath(); x.moveTo(pad,H-Math.round(116*k)); x.lineTo(W-pad,H-Math.round(116*k)); x.stroke();
-  x.textAlign="center"; x.fillStyle=T.foot; x.font="600 "+Math.round(28*k)+"px system-ui,sans-serif";
-  x.fillText(CFG.footer1,cx,H-Math.round(68*k));
-  x.fillStyle=T.accent; x.fillText(CFG.footer2,cx,H-Math.round(30*k));
-  var bx=W-pad-Math.round(38*k), by=H-Math.round(62*k), br=Math.round(34*k);
-  x.strokeStyle=T.accent; x.lineWidth=Math.round(3*k);
-  x.beginPath(); x.arc(bx,by,br,0,Math.PI*2); x.stroke();
-  x.fillStyle=T.accent; x.font="700 "+Math.round(26*k)+"px Georgia,'Times New Roman',serif"; x.textBaseline="middle";
-  try{ x.letterSpacing="3px"; }catch(e){}
-  x.fillText(CFG.badge,bx,by+Math.round(2*k));
-  try{ x.letterSpacing="0px"; }catch(e){}
-  x.textAlign="left"; x.textBaseline="alphabetic";
-  return cv;
-}
-function drawCard(t,size,theme){
-  var cv=renderCard(t,size,theme);
-  return new Promise(function(resolve){ if(cv.toBlob){ cv.toBlob(function(b){ resolve(b); },"image/png"); } else { resolve(null); } });
-}
 function download(blob,name){ var a=document.createElement("a"); a.href=URL.createObjectURL(blob); a.download=name; document.body.appendChild(a); a.click(); setTimeout(function(){ URL.revokeObjectURL(a.href); a.remove(); },400); }
 var isMobile=/Android|iPhone|iPad|iPod/i.test(navigator.userAgent||"");
+function cardFor(t){
+  return { type:"Periodic table \u00b7 "+CFG.display,
+    tech:document.documentElement.getAttribute("data-tech")||"signal",
+    heading:t.n+" ("+t.s+")", body:t.d||"",
+    boxLabel:"Leader lens", box:t.l||"", source:CFG.display };
+}
 function shareText(t){
   var parts=[t.n, oneLine(t.d)];
   if(t.l) parts.push("Leader's lens: "+t.l);
@@ -534,11 +453,10 @@ window.__tsEnhance=function(t,i,el){
   var row=document.createElement("div"); row.className="ts-share";
   var spec={ title:t.n, line:oneLine(t.d), link:termUrl(t), caption:shareText(t),
     tags:CFG.brandTag+" "+CFG.familyTag,
-    image:{ kind:"render", filename:folderFor(t)+".png",
-            render:function(size,theme){ return drawCard(t,size,theme); } },
+    image:SS.cardImage(cardFor(t), folderFor(t)+".png"),
     onShare:function(kind){ gc("share/"+kind+"/"+CFG.table); } };
   row.appendChild(SS.shareButton(spec));
-  detail.appendChild(row);
+  detail.insertBefore(row, detail.firstChild);
 };
 function openFromHash(){
   var raw=(location.hash||"").replace(/^#/,""); if(!raw) return;
@@ -559,7 +477,7 @@ function openFromHash(){
 }
 window.addEventListener("hashchange",openFromHash);
 openFromHash();
-window.__tsFolder=folderFor; window.__tsShareText=shareText; window.__tsTermUrl=termUrl; window.__tsDrawCard=function(t,size,theme){ return renderCard(t,size,theme); };
+window.__tsFolder=folderFor; window.__tsShareText=shareText; window.__tsTermUrl=termUrl; window.__tsDrawCard=function(t,size,theme){ return SignalShare.renderCard(cardFor(t),size,theme); };
 })();
 </script>
 <script data-goatcounter="https://trttech.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
@@ -569,6 +487,7 @@ window.__tsFolder=folderFor; window.__tsShareText=shareText; window.__tsTermUrl=
 (function(){function go(){if(window.SignalShare&&SignalShare.mountPageShare){SignalShare.mountPageShare(document.getElementById("ssPageMount"), {"title": "Security Frameworks & Compliance — The Periodic Table", "desc": "56 frameworks, laws and certifications: NIST CSF, ISO 27001, SOC 2, PCI DSS, GDPR, DORA, India's DPDP Act and CERT-In rules — what each demands and who it applies to.", "inside": "56 terms in 6 groups", "link": "https://thillairaj.github.io/The-Signal-AI-Quantum/periodic-tables/security-frameworks/", "tag": "#CyberSecurity", "image": {"url": "https://thillairaj.github.io/The-Signal-AI-Quantum/assets/og/security-frameworks.png", "filename": "security-frameworks.png"}});}}if(document.readyState==="loading"){document.addEventListener("DOMContentLoaded",go);}else{go();}})();
 </script>
 <!-- ss-page-share:end -->
+<script src="../../assets/signal-shell.js?v=20261125" defer></script>
 <footer class="signal-footer">
   <div class="sf-follow"><span class="sf-label">Follow along</span><span class="sf-links"><a class="sf-link" href="https://www.linkedin.com/in/thillairaj" target="_blank" rel="noopener"><span class="sf-badge" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.55V9h3.57v11.45z"/></svg></span>Thillai Raj</a><a class="sf-link" href="https://www.linkedin.com/showcase/qu-bits/" target="_blank" rel="noopener"><span class="sf-badge" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.55V9h3.57v11.45z"/></svg></span>QuBits · Quantum &amp; AI</a><a class="sf-link" href="https://www.linkedin.com/showcase/agentic-ai-architect/" target="_blank" rel="noopener"><span class="sf-badge" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.55V9h3.57v11.45z"/></svg></span>Agentic AI Architect</a></span></div>
   <p class="sf-copy">© 2026 The Signal</p>

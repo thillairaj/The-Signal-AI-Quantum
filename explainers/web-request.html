@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="sgp sgp-explainer" data-tech="cloud">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
@@ -308,18 +308,17 @@ body.flow-on .pname-row .ss-share-btn{display:none}
 }
 /* mainshare:style:end */
 </style>
+<link rel="stylesheet" href="../assets/signal-shell.css?v=20261125">
+<link rel="stylesheet" href="../assets/signal-pages.css">
+<link rel="stylesheet" href="../assets/signal-brand.css?v=20261125">
+<meta name="sg-stage" content="2">
 
 <meta name="signal-build" content="2026-11-07.footer1">
 <link rel="stylesheet" href="../assets/signal-footer.css?v=2026-11-07.footer1">
 </head>
 <body>
 
-<header>
-  <button class="theme-toggle" id="themeToggle" type="button" aria-label="Toggle dark mode">☾</button>
-  <div class="kicker">Interactive Explainer · Cloud &amp; DevOps</div>
-  <h1>Journey of a <span class="thin">Web Request</span></h1>
-  <p>You press enter and a page appears, usually in less than a second. In that blink, your request crosses the planet and back, passes through a dozen specialised systems, and returns as a page your browser assembles on the fly. Tap any part to follow it, in simple words first and then in more depth.</p>
-</header>
+<div class="sgp-head"><button class="theme-toggle" id="themeToggle" type="button" aria-label="Toggle dark mode">☾</button><h1 class="sgp-h1">Journey of a Web Request</h1><p class="sgp-sub">Tap any part to see what it does.</p></div>
 <div class="topicbar">
   <a class="navcard back" href="cloud-devops.html"><span class="nc-dir">← Back to</span><span class="nc-title">Cloud &amp; DevOps Explainers</span></a>
   <div class="tabs" role="tablist" aria-label="View">
@@ -1221,28 +1220,65 @@ body.flow-on .pname-row .ss-share-btn{display:none}
   $('pNext').addEventListener('click', () => step(1));
 
   /* ---------- Share cards (explainer-share:start) ---------- */
+  /* New sharing standard (Nov 25, 2026): no local card drawing and no
+     palettes. Every explainer share image is built by
+     SignalShare.cardImage / SignalShare.renderCard from the standard
+     card mapping: heading = the part name, body = the part's
+     simple-words text, boxLabel = "Going deeper", box = the first
+     sentence of the part's going-deeper text, type =
+     "Explainer · <page title>", tech = the page's technology,
+     source = the page title. Themes Paper/Tint/Night/Deep and the
+     image layout live inside assets/signal-share.js. */
   function expData() { return (window.EXPLAINER_SHARE_DATA || { pages: {} }).pages[location.pathname.split('/').pop()] || null; }
-  function expBadge() { return (window.EXPLAINER_SHARE_DATA || {}).badge || 'TRT'; }
   function expPageUrl() { return SignalShare.BASE + '/explainers/' + location.pathname.split('/').pop(); }
-  function expHexRgb(h) { h = h.replace('#', ''); return [parseInt(h.substr(0, 2), 16), parseInt(h.substr(2, 2), 16), parseInt(h.substr(4, 2), 16)]; }
-  function expRelLum(rgb) { function f(c) { c /= 255; return c <= 0.03928 ? c / 12.92 : Math.pow((c + 0.055) / 1.055, 2.4); } return 0.2126 * f(rgb[0]) + 0.7152 * f(rgb[1]) + 0.0722 * f(rgb[2]); }
-  function expContrast(a, b) { var la = expRelLum(a), lb = expRelLum(b); return (Math.max(la, lb) + 0.05) / (Math.min(la, lb) + 0.05); }
-  function expKickerColor(hex, bgs, lighten) {
-    var c = expHexRgb(hex); var targets = bgs.map(expHexRgb);
-    function ok(col) { return targets.every(function (bg) { return expContrast(col, bg) >= 4.55; }); }
-    if (ok(c)) return hex;
-    for (var s = 0.05; s <= 1.001; s += 0.05) {
-      var m = c.map(function (v) { return Math.round(lighten ? v + (255 - v) * s : v * (1 - s)); });
-      if (ok(m)) return '#' + m.map(function (v) { return ('0' + v.toString(16)).slice(-2); }).join('');
-    }
-    return lighten ? '#ffffff' : '#000000';
+  function expTech() {
+    const dt = document.documentElement.getAttribute('data-tech');
+    if (dt) return dt;
+    const map = { 'llm-answers.html': 'ai', 'quantum-hardware.html': 'quantum', 'web-request.html': 'cloud' };
+    return map[location.pathname.split('/').pop()] || 'signal';
   }
-  function expKicker(theme) {
-    if (!expData()) return '#d4af6a';
-    const P = SignalShare.PALETTES[theme] || SignalShare.PALETTES.obsidian;
-    return expKickerColor(expData().familyColor, [P.bg0, P.bg1], theme !== 'ivory');
+  function expFirstSentence(text) {
+    const m = String(text || '').match(/^[\s\S]*?[.!?](?=\s|$)/);
+    return (m ? m[0] : String(text || '')).trim();
   }
-  window.__expKickerColor = expKicker;
+  function expCard(partId) {
+    const d = expData(); const p = PARTS[partId || current];
+    if (!d || !p) return null;
+    return { type: 'Explainer · ' + d.title, tech: expTech(), heading: p.name,
+      body: p.simple, boxLabel: 'Going deeper', box: expFirstSentence(p.deep),
+      source: d.title };
+  }
+  function expPartSpec(partId) {
+    const d = expData(); const p = PARTS[partId || current];
+    if (!d || !p || !window.SignalShare) return null;
+    const url = expPageUrl() + '#' + (partId || current);
+    const tags = ('#TheSignal ' + (d.hashtag || '')).trim();
+    const caption = SignalShare.buildCaption([p.name, p.simple,
+      'See it inside the full interactive explainer, free:\n' + url, tags]);
+    return { title: p.name, line: p.simple, link: url, caption: caption, tags: tags,
+      tech: expTech(),
+      image: SignalShare.cardImage(expCard(partId), 'the-signal-explainer-part.png') };
+  }
+  function expMainSpec() {
+    /* The main (page) Share button shares the current/selected part,
+       with the same standard mapping as the part button. */
+    return expPartSpec(current);
+  }
+  window.__expOpenMain = function (btn) {
+    const spec = (window.SignalShare && expData()) ? expMainSpec() : null;
+    if (spec) SignalShare.openPanel(spec, btn);
+  };
+  /* Compatibility shims for older QA tooling: the card is now drawn by
+     the shared renderer, and any theme name outside the new standard
+     (paper/tint/night/deep) falls back to Night. */
+  window.__expDrawCard = function (kind, size, theme) {
+    const t = ['paper', 'tint', 'night', 'deep'].indexOf(theme) >= 0 ? theme : 'night';
+    return SignalShare.renderCard(expCard(current), size, t);
+  };
+  window.__expKickerColor = function () {
+    const d = expData();
+    return d ? d.familyColor : '#d4af6a';
+  };
   function expViewSvg(name) { const v = document.getElementById('view-' + name); return v ? v.querySelector('svg') : null; }
   function expFirstSvg() { const keys = Object.keys(ORDER || {}); return (keys.length && expViewSvg(keys[0])) || document.querySelector('.art svg'); }
   function expPartSvg(partId) {
@@ -1278,181 +1314,34 @@ body.flow-on .pname-row .ss-share-btn{display:none}
     return new XMLSerializer().serializeToString(clone);
   }
   window.__expSvgText = function (kind, theme, partId) {
-    const dark = theme !== 'ivory';
+    const dark = theme !== 'paper';
     return expThemedSvg(kind === 'part' ? expPartSvg(partId || current) : expFirstSvg(), dark, kind === 'part' ? (partId || current) : null);
   };
-  function expSvgImage(svgText) {
-    return new Promise(function (resolve) {
-      if (!svgText) return resolve(null);
-      const img = new Image();
-      let url;
-      try { url = URL.createObjectURL(new Blob([svgText], { type: 'image/svg+xml;charset=utf-8' })); }
-      catch (e) { return resolve(null); }
-      const done = function (v) { try { URL.revokeObjectURL(url); } catch (e) {} resolve(v); };
-      const timer = setTimeout(function () { done(null); }, 1500);
-      img.onload = function () { clearTimeout(timer); done(img); };
-      img.onerror = function () { clearTimeout(timer); done(null); };
-      img.src = url;
-    });
-  }
-  function expWrap(ctx, text, maxW) {
-    const words = String(text || '').split(/\s+/); const lines = []; let line = '';
-    for (const w of words) { const t = line ? line + ' ' + w : w; if (ctx.measureText(t).width > maxW && line) { lines.push(line); line = w; } else line = t; }
-    if (line) lines.push(line); return lines;
-  }
-  function expRoundRect(ctx, x, y, w, h, r) {
-    ctx.beginPath(); ctx.moveTo(x + r, y);
-    ctx.arcTo(x + w, y, x + w, y + h, r); ctx.arcTo(x + w, y + h, x, y + h, r);
-    ctx.arcTo(x, y + h, x, y, r); ctx.arcTo(x, y, x + w, y, r); ctx.closePath();
-  }
-  function expDrawHook(ctx, hook, x, y, maxW, P) {
-    ctx.font = '700 54px Georgia, "Times New Roman", serif';
-    const words = String(hook).split(/\s+/);
-    const lines = []; let lineWords = [];
-    for (const w of words) {
-      const t = lineWords.concat([w]).join(' ');
-      if (ctx.measureText(t).width > maxW && lineWords.length) { lines.push(lineWords); lineWords = [w]; } else lineWords.push(w);
-    }
-    if (lineWords.length) lines.push(lineWords);
-    let idx = 0;
-    lines.slice(0, 3).forEach(function (lw) {
-      let cx = x;
-      lw.forEach(function (w) {
-        ctx.fillStyle = (idx >= words.length - 2) ? P.accent : P.head;
-        ctx.fillText(w, cx, y);
-        cx += ctx.measureText(w + ' ').width;
-        idx++;
-      });
-      y += 66;
-    });
-    return y;
-  }
-  function expDrawChips(ctx, square, P, y, M, CW) {
-    const items = [Object.keys(PARTS).length + ' parts to tap',
-      JOURNEY.length + '-step ' + expData().noun + ' journey',
-      QUIZ.length + '-question quiz', 'Free, no sign-up'];
-    if (square) {
-      ctx.font = '600 22px Arial, sans-serif';
-      ctx.fillStyle = P.body; ctx.textAlign = 'center';
-      ctx.fillText(items.join('  ·  '), M + CW / 2, y + 28);
-      ctx.textAlign = 'left'; return;
-    }
-    let fs = 23;
-    ctx.font = '600 ' + fs + 'px Arial, sans-serif';
-    let total = items.reduce(function (a, t) { return a + ctx.measureText(t).width + 36; }, 0) + 14 * (items.length - 1);
-    if (total > CW) { fs = 20; ctx.font = '600 ' + fs + 'px Arial, sans-serif'; }
-    let x = M;
-    items.forEach(function (t) {
-      const w = ctx.measureText(t).width + 36;
-      expRoundRect(ctx, x, y, w, 46, 23); ctx.strokeStyle = P.dim; ctx.stroke();
-      ctx.fillStyle = P.body; ctx.fillText(t, x + 18, y + 30);
-      x += w + 14;
-    });
-  }
-  function expDrawFooter(ctx, P, W, H, M) {
-    const y = H - 96;
-    ctx.strokeStyle = P.dim; ctx.beginPath(); ctx.moveTo(M, y); ctx.lineTo(W - M, y); ctx.stroke();
-    ctx.fillStyle = P.foot; ctx.font = '600 19px Arial, sans-serif';
-    try { ctx.letterSpacing = '2px'; } catch (e) {}
-    ctx.fillText('THE SIGNAL · INTERACTIVE EXPLAINERS', M, y + 38);
-    try { ctx.letterSpacing = '0px'; } catch (e) {}
-    ctx.fillStyle = P.accent; ctx.font = 'italic 600 24px Georgia, serif';
-    ctx.fillText(expData().title, M, y + 72);
-    expRoundRect(ctx, W - M - 52, y + 20, 52, 52, 12); ctx.strokeStyle = P.accent; ctx.stroke();
-    ctx.fillStyle = P.accent; ctx.font = '700 19px Georgia, serif'; ctx.textAlign = 'center';
-    ctx.fillText(expBadge(), W - M - 26, y + 55); ctx.textAlign = 'left';
-  }
-  function drawExplainerCard(kind, size, theme, partId) {
-    const P = (SignalShare.PALETTES || {})[theme] || SignalShare.PALETTES.obsidian;
-    const dark = theme !== 'ivory';
-    const dims = (size || '1080x1350').split('x'); const W = +dims[0], H = +dims[1];
-    const square = H <= 1080;
-    const cv = document.createElement('canvas'); cv.width = W; cv.height = H;
-    const ctx = cv.getContext('2d');
-    const M = 64, CW = W - 2 * M;
-    const grad = ctx.createLinearGradient(0, 0, W * 0.35, H);
-    grad.addColorStop(0, P.bg0); grad.addColorStop(1, P.bg1);
-    ctx.fillStyle = grad; ctx.fillRect(0, 0, W, H);
-    ctx.fillStyle = expKicker(theme); ctx.font = '700 21px Arial, sans-serif';
-    try { ctx.letterSpacing = '3px'; } catch (e) {}
-    ctx.fillText('INTERACTIVE EXPLAINER · ' + expData().family, M, 92);
-    try { ctx.letterSpacing = '0px'; } catch (e) {}
-    let y = 158;
-    let svgEl;
-    if (kind === 'main') {
-      y = expDrawHook(ctx, expData().hook, M, y, CW, P);
-      ctx.fillStyle = P.body; ctx.font = '27px Georgia, serif';
-      expWrap(ctx, expData().summary, CW).slice(0, 2).forEach(function (ln) { ctx.fillText(ln, M, y); y += 37; });
-      y += 12;
-      svgEl = expFirstSvg();
-    } else {
-      const p = PARTS[partId || current];
-      ctx.fillStyle = P.head; ctx.font = '700 52px Georgia, serif';
-      expWrap(ctx, p.name, CW).slice(0, 2).forEach(function (ln) { ctx.fillText(ln, M, y); y += 62; });
-      if (p.temp) {
-        ctx.font = '600 22px Arial, sans-serif';
-        const tw = ctx.measureText(p.temp).width + 36;
-        expRoundRect(ctx, M, y + 2, tw, 42, 21); ctx.strokeStyle = P.dim; ctx.stroke();
-        ctx.fillStyle = P.body; ctx.fillText(p.temp, M + 18, y + 31);
-        y += 62;
-      }
-      ctx.fillStyle = P.body; ctx.font = '27px Georgia, serif';
-      expWrap(ctx, p.simple, CW).slice(0, square ? 3 : 4).forEach(function (ln) { ctx.fillText(ln, M, y + 6); y += 37; });
-      y += 14;
-      svgEl = expPartSvg(partId || current);
-    }
-    const chipsH = kind === 'main' ? (square ? 46 : 60) : 12;
-    const footTop = H - 96;
-    const diaBottom = footTop - chipsH - 26;
-    const svgText = expThemedSvg(svgEl, dark, kind === 'part' ? (partId || current) : null);
-    return expSvgImage(svgText).then(function (img) {
-      const dx = M, dy = y, dw = CW, dh = Math.max(120, diaBottom - dy);
-      expRoundRect(ctx, dx, dy, dw, dh, 18);
-      ctx.fillStyle = dark ? 'rgba(255,255,255,.05)' : 'rgba(23,27,36,.045)';
-      ctx.fill(); ctx.strokeStyle = P.dim; ctx.stroke();
-      if (img) {
-        const vb = svgEl.viewBox.baseVal;
-        const pad = 22;
-        const sc = Math.min((dw - 2 * pad) / vb.width, (dh - 2 * pad) / vb.height);
-        const w2 = vb.width * sc, h2 = vb.height * sc;
-        ctx.drawImage(img, dx + (dw - w2) / 2, dy + (dh - h2) / 2, w2, h2);
-      }
-      if (kind === 'main') expDrawChips(ctx, square, P, footTop - chipsH - 4, M, CW);
-      expDrawFooter(ctx, P, W, H, M);
-      return new Promise(function (res) { cv.toBlob(res, 'image/png'); });
-    });
-  }
-  window.__expDrawCard = function (kind, size, theme) { return drawExplainerCard(kind, size, theme, current); };
-  function expMainSpec() {
-    const url = expPageUrl();
-    const tags = '#TheSignal ' + expData().hashtag;
-    const mid = 'Tap any of its ' + Object.keys(PARTS).length + ' parts, follow the ' + expData().noun + ' journey, then test yourself.';
-    const caption = SignalShare.buildCaption([expData().hook, expData().summary, mid,
-      'Explore it free, no sign-up:\n' + url, tags]);
-    return { title: expData().title, line: expData().summary, link: url, caption: caption, tags: tags,
-      image: { kind: 'render', filename: 'the-signal-explainer.png',
-        render: function (s, t) { return drawExplainerCard('main', s, t); } } };
-  }
-  window.__expOpenMain = function (btn) {
-    if (window.SignalShare && expData()) SignalShare.openPanel(expMainSpec(), btn);
-  };
   const pShareBtn = $('pShareBtn');
-  if (window.SignalShare && pShareBtn) {
-    pShareBtn.innerHTML = SignalShare.ICONS.share + '<span>Share this part</span>';
-  }
-  $('pShareBtn').addEventListener('click', () => {
-    const p = PARTS[current];
-    if (!p) return;
-    const url = location.href.split('#')[0] + '#' + current;
-    if (window.SignalShare) {
-      const d = expData();
-      const tags = ('#TheSignal ' + (d ? d.hashtag : '')).trim();
-      const caption = SignalShare.buildCaption([p.name, p.simple,
-        'See it inside the full interactive explainer, free:\n' + url, tags]);
-      SignalShare.openPanel({ title: p.name, line: p.simple, link: url, caption: caption, tags: tags,
-        image: d ? { kind: 'render', filename: 'the-signal-explainer-part.png',
-          render: function (s, t) { return drawExplainerCard('part', s, t, current); } } : null }, pShareBtn);
+  function expWirePartBtn() {
+    if (!window.SignalShare || !pShareBtn || pShareBtn.dataset.sgWired) return;
+    pShareBtn.dataset.sgWired = '1';
+    if (!document.getElementById('exp-share-style')) {
+      const st = document.createElement('style');
+      st.id = 'exp-share-style';
+      st.textContent = '.sg-share-btn{width:32px;height:32px;border-radius:50%;border:1px solid var(--sg-line,#E4DAC6);background:var(--sg-surface,#fff);color:var(--sg-ink,#201B14);display:inline-flex;align-items:center;justify-content:center;cursor:pointer;padding:0;flex:0 0 auto}.sg-share-btn:hover{border-color:#3F7D20;color:#3F7D20}.sg-share-btn svg{width:15px;height:15px}';
+      document.head.appendChild(st);
     }
+    pShareBtn.classList.add('sg-share-btn');
+    pShareBtn.setAttribute('aria-label', 'Share');
+    pShareBtn.title = 'Share';
+    pShareBtn.innerHTML = SignalShare.ICONS.share;
+  }
+  /* This script runs before assets/signal-share.js loads, so the
+     icon/class setup is retried once the DOM is ready (by then
+     SignalShare exists); the click handler below resolves its spec
+     at click time either way. */
+  expWirePartBtn();
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', expWirePartBtn);
+  else expWirePartBtn();
+  $('pShareBtn').addEventListener('click', () => {
+    const spec = expPartSpec(current);
+    if (spec) SignalShare.openPanel(spec, pShareBtn);
   });
   /* ---------- Share cards (explainer-share:end) ---------- */
 
@@ -1628,6 +1517,7 @@ body.flow-on .pname-row .ss-share-btn{display:none}
   slot.appendChild(btn);
 })();
 </script>
+<script src="../assets/signal-shell.js?v=20261125" defer></script>
 <footer class="signal-footer">
   <div class="sf-follow"><span class="sf-label">Follow along</span><span class="sf-links"><a class="sf-link" href="https://www.linkedin.com/in/thillairaj" target="_blank" rel="noopener"><span class="sf-badge" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.55V9h3.57v11.45z"/></svg></span>Thillai Raj</a><a class="sf-link" href="https://www.linkedin.com/showcase/qu-bits/" target="_blank" rel="noopener"><span class="sf-badge" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.55V9h3.57v11.45z"/></svg></span>QuBits · Quantum &amp; AI</a><a class="sf-link" href="https://www.linkedin.com/showcase/agentic-ai-architect/" target="_blank" rel="noopener"><span class="sf-badge" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.55V9h3.57v11.45z"/></svg></span>Agentic AI Architect</a></span></div>
   <p class="sf-copy">© 2026 The Signal</p>

@@ -20,8 +20,14 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,800;1,9..144,500;1,9..144,600&family=Inter:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css?v=20261117">
+<link rel="stylesheet" href="style.css?v=20261125">
 <link rel="stylesheet" href="assets/brief.css?v=20261117">
+<link rel="stylesheet" href="assets/live-strip.css?v=20261117">
+<link rel="stylesheet" href="assets/signal-standard.css?v=20261125">
+<link rel="stylesheet" href="assets/signal-brand.css?v=20261125">
+<link rel="stylesheet" href="assets/signal-podcast.css?v=20261125">
+<style>a.top-tab{text-decoration:none;display:inline-flex;align-items:center}</style>
+<link rel="stylesheet" href="assets/signal-shell.css?v=20261125">
 
 <meta name="signal-build" content="2026-11-07.footer1">
 <link rel="stylesheet" href="assets/signal-footer.css?v=2026-11-07.footer1">
@@ -41,6 +47,7 @@
     <button class="top-tab" data-view="research"><span class="tab-num">03</span>Articles</button>
     <button class="top-tab" data-view="feed"><span class="tab-num">04</span>RSS Feed</button>
     <button class="top-tab" data-view="brief"><span class="tab-num">05</span>Signal Brief<span class="tab-new" id="briefNewBadge" hidden>NEW</span></button>
+    <a class="top-tab" href="live/">Live news</a>
     </nav>
     <span class="tabs-fade" id="tabsFade" aria-hidden="true"></span>
     <button class="rail-btn tab-arrow next" id="tabsNext" type="button" aria-label="Scroll sections right">›</button>
@@ -55,16 +62,15 @@
     <div class="views" id="viewsText"></div>
   </div>
 </header>
+<div id="liveStripMount"></div>
 
 <div class="layout">
 
   <section id="home-view" class="view-section">
     <div class="hm-hero">
       <div class="hm-hero-in">
-        <p class="hm-kicker">AI &amp; Quantum · On a schedule, not by chance</p>
         <h2 class="hm-h1">One front door to everything <em>The Signal</em> publishes.</h2>
-        <p class="hm-auto-note">Updated automatically, every few hours.</p>
-            <p class="hm-lede">Five rooms — a learning space, a podcast studio, a research desk, a live wire and a daily brief. Everything moves on its own; hover or tap a box to hold it still and read.</p>
+            <p class="hm-lede">Six rooms — a learning space, a podcast studio, a research desk, a live wire, a daily brief and a games room, with live news running above them all. Everything moves on its own; hover or tap a box to hold it still and read.</p>
       </div>
       <div class="hm-ticker" aria-label="Key numbers">
         <div class="hm-ticker-track" id="hmTickerTrack">
@@ -90,8 +96,8 @@
         </div>
         <div class="hm-rail" data-hm-rail>
           <div class="hm-rview"><div class="hm-rtrack">
-            <section class="hm-ritem" data-goto="learn" data-scroll="learn-videos"><span class="hm-ghost">1</span><p class="hm-meta">Video · Quantum Learning Space</p><h4>Quantum, straight from the labs</h4><p>A video room for quantum only: <b>IBM, Google Quantum AI, Microsoft and Qiskit</b>, from first circuits to fault tolerance roadmaps, with the newest lessons leading the rail.</p><div class="hm-chips"><span class="hm-chip gold">New · 31 lessons</span></div></section>
-            <section class="hm-ritem" data-goto="learn" data-scroll="learn-videos"><span class="hm-ghost">2</span><p class="hm-meta">Video · AI Learning Space</p><h4>Bots, assistants and the frontier, in one room</h4><p>One room for all of AI video: <b>AI bots, AI assistants and the frontier lessons from the labs</b>, thirteen tracks in all, refreshed twice a week.</p><div class="hm-chips"><span class="hm-chip gold">New · 234 lessons</span></div></section>
+            <section class="hm-ritem" data-goto="learn" data-scroll="learn-videos"><span class="hm-ghost">1</span><p class="hm-meta">Video · AI Learning Space</p><h4>Bots, assistants and the frontier, in one room</h4><p>One room for all of AI video: <b>AI bots, AI assistants and the frontier lessons from the labs</b>, thirteen tracks in all, refreshed twice a week.</p><div class="hm-chips"><span class="hm-chip gold">New · 234 lessons</span></div></section>
+            <section class="hm-ritem" data-goto="learn" data-scroll="learn-videos"><span class="hm-ghost">2</span><p class="hm-meta">Video · Quantum Learning Space</p><h4>Quantum, straight from the labs</h4><p>A video room for quantum only: <b>IBM, Google Quantum AI, Microsoft and Qiskit</b>, from first circuits to fault tolerance roadmaps, with the newest lessons leading the rail.</p><div class="hm-chips"><span class="hm-chip gold">New · 31 lessons</span></div></section>
             <section class="hm-ritem" data-goto="learn" data-scroll="learn-videos"><span class="hm-ghost">3</span><p class="hm-meta">Video · Cloud &amp; DevOps Learning Space</p><h4>The cloud, taught properly</h4><p>A third video room: <b>cloud foundations, AWS, Azure, Google Cloud, DevOps &amp; Kubernetes, observability &amp; AIOps</b> — from the official channels and trusted trainers.</p><div class="hm-chips"><span class="hm-chip gold">New · 100 lessons</span></div></section>
             <section class="hm-ritem" data-goto="learn" data-scroll="learn-videos"><span class="hm-ghost">4</span><p class="hm-meta">Video · Cybersecurity &amp; SOC Learning Space</p><h4>Security, from first principles to the SOC</h4><p>A fourth video room: <b>security foundations, network security, identity &amp; zero trust, SOC &amp; incident response, cloud security, threat intelligence &amp; AI security</b> — from the official channels and trusted trainers.</p><div class="hm-chips"><span class="hm-chip gold">New · 47 lessons</span></div></section>
             
@@ -114,8 +120,8 @@
         <div class="hm-rail" data-hm-rail>
           <div class="hm-rview"><div class="hm-rtrack">
             <section class="hm-ritem" data-goto="podcast" data-series="Daily AI Intelligence"><span class="hm-ghost">1</span><p class="hm-meta">Daily · 6:30 AM IST (01:00 GMT) · ~5 min</p><h4>Daily AI Intelligence</h4><p>The day's most important AI stories, every morning, with hosts <b>Luna &amp; Bhavesh</b>. A new episode lands daily at 6:30 AM IST.</p><div class="hm-chips"><span class="hm-chip navy">Daily</span><span class="hm-chip">Since 2 Oct</span></div></section>
-            <section class="hm-ritem" data-goto="podcast" data-series="Technology Learnings"><span class="hm-ghost">2</span><p class="hm-meta">Mon · Wed · Fri · 7:00 AM IST (01:30 GMT)</p><h4>Tech Learning Series — 60 of 60</h4><p>A structured course in audio: <b>Cybersecurity, Infrastructure, Data Engineering</b> — 20 episodes per track, beginner to intermediate, real scenarios.</p><div class="hm-bar"><i data-hm-fill="100.0"></i></div><div class="hm-chips"><span class="hm-chip gold">Infra 20/20</span><span class="hm-chip">Cyber 20/20</span><span class="hm-chip">Data 20/20</span></div></section>
-            <section class="hm-ritem" data-goto="podcast" data-series="Quantum Intelligence"><span class="hm-ghost">3</span><p class="hm-meta">Mondays · 8:44 AM IST (03:14 GMT) · 5–8 min · Host: Alex</p><h4>Quantum Intelligence</h4><p>The week's top quantum stories + one concept in plain language. Episode 2: Quantinuum's five errors per million, the post quantum deadline, Xanadu's DARPA extension. <b>Episode 3 lands Mon 2 Nov.</b></p><div class="hm-chips"><span class="hm-chip navy">Weekly</span><span class="hm-chip">Ep 3 · 2 Nov</span></div></section>
+            <section class="hm-ritem" data-goto="podcast" data-series="Quantum Intelligence"><span class="hm-ghost">2</span><p class="hm-meta">Mondays · 8:44 AM IST (03:14 GMT) · 5–8 min · Host: Alex</p><h4>Quantum Intelligence</h4><p>The week's top quantum stories + one concept in plain language. Episode 2: Quantinuum's five errors per million, the post quantum deadline, Xanadu's DARPA extension. <b>Episode 3 lands Mon 2 Nov.</b></p><div class="hm-chips"><span class="hm-chip navy">Weekly</span><span class="hm-chip">Ep 3 · 2 Nov</span></div></section>
+            <section class="hm-ritem" data-goto="podcast" data-series="Technology Learnings"><span class="hm-ghost">3</span><p class="hm-meta">Mon · Wed · Fri · 7:00 AM IST (01:30 GMT)</p><h4>Tech Learning Series — 60 of 60</h4><p>A structured course in audio: <b>Cybersecurity, Infrastructure, Data Engineering</b> — 20 episodes per track, beginner to intermediate, real scenarios.</p><div class="hm-bar"><i data-hm-fill="100.0"></i></div><div class="hm-chips"><span class="hm-chip gold">Infra 20/20</span><span class="hm-chip">Cyber 20/20</span><span class="hm-chip">Data 20/20</span></div></section>
             <section class="hm-ritem" data-goto="podcast" data-series=""><span class="hm-ghost">4</span><p class="hm-meta">How episodes are made</p><h4>Configured once, published on schedule</h4><p>Each series has a fixed format, voices and slot. The pipeline researches, scripts and voices each episode — it appears <b>on its day, at its time</b>, with nothing to press.</p><div class="hm-chips"><span class="hm-chip">Daily · 6:30 AM IST / 01:00 GMT</span><span class="hm-chip">Mon/Wed/Fri · 7:00 AM IST / 01:30 GMT</span><span class="hm-chip">Mon · 8:44 AM IST / 03:14 GMT</span></div></section>
           </div></div>
           <div class="hm-railbar"><button class="hm-rbtn" type="button" data-hm-prev aria-label="Previous">‹</button><div class="hm-dots"></div><span class="hm-count"></span><button class="hm-rbtn" type="button" data-hm-next aria-label="Next">›</button></div>
@@ -174,6 +180,25 @@
           <div class="hm-railbar"><button class="hm-rbtn" type="button" data-hm-prev aria-label="Previous">&#8249;</button><div class="hm-dots"></div><span class="hm-count"></span><button class="hm-rbtn" type="button" data-hm-next aria-label="Next">&#8250;</button></div>
         </div>
       </article>
+      <article class="hm-room">
+        <div class="hm-room-head">
+          <div class="hm-room-no">06</div>
+          <div><h3>Games</h3><p class="hm-what">New puzzles every day, and games that make the learning stick.</p></div>
+          <a class="hm-go" href="games/" style="text-decoration:none">Play →</a>
+        </div>
+        <div class="hm-rail" data-hm-rail>
+          <div class="hm-rview"><div class="hm-rtrack">
+            <section class="hm-ritem" data-href="games/"><span class="hm-ghost">1</span><p class="hm-meta">Daily puzzle · New at 00:00 IST</p><h4>Kings</h4><p>Place one king in every row, column and colour region, with none touching. <b>One play a day</b>, a fresh board tomorrow.</p><div class="hm-chips"><span class="hm-chip">4 min</span><span class="hm-chip navy">Once a day</span></div></section>
+            <section class="hm-ritem" data-href="games/"><span class="hm-ghost">2</span><p class="hm-meta">Daily puzzle · New at 00:00 IST</p><h4>Mini Sudoku</h4><p>Fill the 6 by 6 grid so every row, column and box holds 1 to 6. <b>Hints are always there</b>, and your score is time plus hints.</p><div class="hm-chips"><span class="hm-chip">4 min</span><span class="hm-chip navy">Once a day</span></div></section>
+            <section class="hm-ritem" data-href="games/"><span class="hm-ghost">3</span><p class="hm-meta">Daily puzzle · New at 00:00 IST</p><h4>Trail</h4><p>Draw one path through every square, in number order, around the walls.</p><div class="hm-chips"><span class="hm-chip">3 min</span><span class="hm-chip navy">Once a day</span></div></section>
+            <section class="hm-ritem" data-href="games/"><span class="hm-ghost">4</span><p class="hm-meta">Daily puzzle · New at 00:00 IST</p><h4>Leaf and Gem</h4><p>Three of each in every row and column, never three the same in a row.</p><div class="hm-chips"><span class="hm-chip">3 min</span><span class="hm-chip navy">Once a day</span></div></section>
+            <section class="hm-ritem" data-href="games/"><span class="hm-ghost">5</span><p class="hm-meta">Daily puzzle · New at 00:00 IST</p><h4>Double Up</h4><p>Merge equal numbers, use the wildcards, and finish with a single tile.</p><div class="hm-chips"><span class="hm-chip">3 min</span><span class="hm-chip navy">Once a day</span></div></section>
+            <section class="hm-ritem" data-href="games/"><span class="hm-ghost">6</span><p class="hm-meta">Learn and play · Unlimited</p><h4>Four games from the decks</h4><p><b>Guess the Group, Term Ladder, Path Words and Answer Duel.</b> Pick AI, Quantum, Cloud &amp; DevOps or Cybersecurity and play as long as you like.</p><div class="hm-chips"><span class="hm-chip navy">Unlimited</span><span class="hm-chip">2 players</span></div></section>
+          </div></div>
+          <div class="hm-railbar"><button class="hm-rbtn" type="button" data-hm-prev aria-label="Previous">&#8249;</button><div class="hm-dots"></div><span class="hm-count"></span><button class="hm-rbtn" type="button" data-hm-next aria-label="Next">&#8250;</button></div>
+        </div>
+      </article>
+
     </div>
 
     <div class="hm-week">
@@ -191,6 +216,10 @@
   </section>
 
   <section id="feed-tools" class="feed-tools" hidden>
+    <div class="view-intro">
+      <h2>RSS Feed</h2>
+      <p><span id="wireCount">…</span> stories from 34 sources, refreshed every 4 hours</p>
+    </div>
     <div class="ft-row">
       <div class="ft-search">
         <label class="ft-label" for="search">Search the wire</label>
@@ -202,8 +231,8 @@
           <button class="cat-btn active" data-category="">All</button>
           <button class="cat-btn" data-category="AI">AI</button>
           <button class="cat-btn" data-category="Quantum">Quantum</button>
-          <button class="cat-btn" data-category="Cybersecurity">Cybersecurity</button>
           <button class="cat-btn" data-category="Cloud &amp; DevOps">Cloud &amp; DevOps</button>
+          <button class="cat-btn" data-category="Cybersecurity">Cybersecurity</button>
           <button class="cat-btn" data-category="__bookmarked">★ Saved</button>
         </div>
       </div>
@@ -215,7 +244,6 @@
       </button>
       <ul class="source-list is-collapsed" id="sourceList"><!-- populated by app.js --></ul>
     </div>
-    <p class="ft-tip">Two things you can do on every story: tap <b>★</b> to save it and find it later under ★ Saved, and tap <b>Share</b> to send the story to LinkedIn, X or WhatsApp, or copy its caption.</p>
   </section>
 
   <main class="feed" id="feedList" hidden>
@@ -243,31 +271,31 @@
       </div>
 
     <div class="rail-wrap"><button class="rail-btn prev" type="button" aria-label="Previous cards">‹</button><div class="table-rail">
-                              <a class="learn-card video-quantum" href="https://thillairaj.github.io/The-Signal-AI-Quantum/quantum-learning-space/">
-        <span class="learn-play" aria-hidden="true">▶</span>
-        <span class="learn-kicker">Video Learning · Quantum</span>
-        <span class="learn-title">Quantum Learning Space</span>
-        <span class="learn-desc">Thirty-one lessons from IBM, Google Quantum AI, Microsoft and Qiskit: first circuits to fault tolerance roadmaps, straight from the labs.</span>
-        <span class="learn-open">Open space ↗</span>
-      </a>
-            <a class="learn-card video-ai" href="https://thillairaj.github.io/The-Signal-AI-Quantum/ai-learning-space/">
+                              <a class="learn-card video-ai" href="https://thillairaj.github.io/The-Signal-AI-Quantum/ai-learning-space/">
         <span class="learn-play" aria-hidden="true">▶</span>
         <span class="learn-kicker">Video Learning · AI</span>
-        <span class="learn-title">AI Learning Space</span>
+        <span class="learn-title"><span class="sg-t sg-t-ai">AI Learning Space</span></span>
         <span class="learn-desc">Bots, assistants and frontier lessons in one room: 234 videos across thirteen tracks, from Grok and Claude Duet to ChatGPT and Perplexity.</span>
+        <span class="learn-open">Open space ↗</span>
+      </a>
+            <a class="learn-card video-quantum" href="https://thillairaj.github.io/The-Signal-AI-Quantum/quantum-learning-space/">
+        <span class="learn-play" aria-hidden="true">▶</span>
+        <span class="learn-kicker">Video Learning · Quantum</span>
+        <span class="learn-title"><span class="sg-t sg-t-quantum">Quantum Learning Space</span></span>
+        <span class="learn-desc">Thirty-one lessons from IBM, Google Quantum AI, Microsoft and Qiskit: first circuits to fault tolerance roadmaps, straight from the labs.</span>
         <span class="learn-open">Open space ↗</span>
       </a>
       <a class="learn-card video-cloud" href="https://thillairaj.github.io/The-Signal-AI-Quantum/cloud-devops-learning-space/">
         <span class="learn-play" aria-hidden="true">▶</span>
         <span class="learn-kicker">Video Learning · New</span>
-        <span class="learn-title">Cloud &amp; DevOps Learning Space</span>
+        <span class="learn-title"><span class="sg-t sg-t-cloud">Cloud &amp; DevOps Learning Space</span></span>
         <span class="learn-desc">Cloud foundations, AWS, Azure, Google Cloud, DevOps &amp; Kubernetes, and observability &amp; AIOps — from the official channels.</span>
         <span class="learn-open">Open space ↗</span>
       </a>
       <a class="learn-card video-cyber" href="cybersecurity-learning-space/">
         <span class="learn-play" aria-hidden="true">▶</span>
         <span class="learn-kicker">Video Learning · New</span>
-        <span class="learn-title">Cybersecurity &amp; SOC Learning Space</span>
+        <span class="learn-title"><span class="sg-t sg-t-cyber">Cybersecurity &amp; SOC Learning Space</span></span>
         <span class="learn-desc">Security foundations, network security, identity &amp; zero trust, SOC &amp; incident response, cloud security, and threat intelligence &amp; AI security — from the official channels and trusted trainers.</span>
         <span class="learn-open">Open space ↗</span>
       </a>
@@ -292,31 +320,31 @@
       </div>
 
     <div class="rail-wrap"><button class="rail-btn prev" type="button" aria-label="Previous cards">‹</button><div class="table-rail">
-            <a class="learn-card deck-quantum" href="quantum-deck/">
+            <a class="learn-card deck-ai" href="ai-deck/">
         <span class="learn-play" aria-hidden="true">▤</span>
         <span class="learn-kicker">Interactive Deck · 8 topics</span>
-        <span class="learn-title">The Quantum Deck</span>
+        <span class="learn-title">The <span class="sg-t sg-t-ai">AI Deck</span></span>
         <span class="learn-desc">15-card visual lessons with flashcards and quizzes — 8 topics live now.</span>
         <span class="learn-open">Open deck ↗</span>
       </a>
-      <a class="learn-card deck-ai" href="ai-deck/">
+      <a class="learn-card deck-quantum" href="quantum-deck/">
         <span class="learn-play" aria-hidden="true">▤</span>
         <span class="learn-kicker">Interactive Deck · 8 topics</span>
-        <span class="learn-title">The AI Deck</span>
+        <span class="learn-title">The <span class="sg-t sg-t-quantum">Quantum Deck</span></span>
         <span class="learn-desc">15-card visual lessons with flashcards and quizzes — 8 topics live now.</span>
         <span class="learn-open">Open deck ↗</span>
       </a>
       <a class="learn-card deck-cloud" href="cloud-deck/">
         <span class="learn-play" aria-hidden="true">▤</span>
         <span class="learn-kicker">Interactive Deck · 8 topics · New</span>
-        <span class="learn-title">The Cloud &amp; DevOps Deck</span>
+        <span class="learn-title">The <span class="sg-t sg-t-cloud">Cloud &amp; DevOps Deck</span></span>
         <span class="learn-desc">15-card visual lessons with flashcards and quizzes — 7 topics live now.</span>
         <span class="learn-open">Open deck ↗</span>
       </a>
       <a class="learn-card deck-cyber" href="cybersecurity-deck/">
         <span class="learn-play" aria-hidden="true">▤</span>
         <span class="learn-kicker">Interactive Deck · 8 topics · New</span>
-        <span class="learn-title">The Cybersecurity Deck</span>
+        <span class="learn-title">The <span class="sg-t sg-t-cyber">Cybersecurity Deck</span></span>
         <span class="learn-desc">15-card visual lessons with flashcards and quizzes — 5 topics live now.</span>
         <span class="learn-open">Open deck ↗</span>
       </a>
@@ -341,24 +369,24 @@
 
 
     <div class="rail-wrap"><button class="rail-btn prev" type="button" aria-label="Previous cards">‹</button><div class="table-rail">
-      <a class="learn-card explainer-quantum" href="explainers/quantum.html">
+      <a class="learn-card explainer-quantum" href="explainers/ai.html">
+        <span class="learn-play" aria-hidden="true">▦</span>
+        <span class="learn-kicker">Interactive Explainers · AI</span>
+        <span class="learn-title"><span class="sg-t sg-t-ai">AI Explainers</span></span>
+        <span class="learn-desc">How an LLM answers a prompt, live now, with Inside a GPU and Inside an AI training cluster to come.</span>
+        <span class="learn-open">Open family deck ↗</span>
+      </a>
+      <a class="learn-card explainer-cloud" href="explainers/cloud-devops.html">href="explainers/quantum.html">
         <span class="learn-play" aria-hidden="true">▦</span>
         <span class="learn-kicker">Interactive Explainers · Quantum</span>
-        <span class="learn-title">Quantum Explainers</span>
+        <span class="learn-title"><span class="sg-t sg-t-quantum">Quantum Explainers</span></span>
         <span class="learn-desc">Four topics in one family deck: the superconducting computer live now, trapped ion and neutral atom coming next, surface code to come.</span>
         <span class="learn-open">Open family deck ↗</span>
       </a>
       <a class="learn-card explainer-ai" href="explainers/ai.html">
         <span class="learn-play" aria-hidden="true">▦</span>
-        <span class="learn-kicker">Interactive Explainers · AI</span>
-        <span class="learn-title">AI Explainers</span>
-        <span class="learn-desc">How an LLM answers a prompt, live now, with Inside a GPU and Inside an AI training cluster to come.</span>
-        <span class="learn-open">Open family deck ↗</span>
-      </a>
-      <a class="learn-card explainer-cloud" href="explainers/cloud-devops.html">
-        <span class="learn-play" aria-hidden="true">▦</span>
         <span class="learn-kicker">Interactive Explainers · Cloud &amp; DevOps</span>
-        <span class="learn-title">Cloud &amp; DevOps Explainers</span>
+        <span class="learn-title"><span class="sg-t sg-t-cloud">Cloud &amp; DevOps Explainers</span></span>
         <span class="learn-desc">Journey of a web request, live now, with Inside a cloud data centre and the Kubernetes cluster explorer to come.</span>
         <span class="learn-open">Open family deck ↗</span>
       </a>
@@ -381,10 +409,170 @@
       <span class="learn-desc"><b>What you learn:</b> the working language of five fields, 1,316 terms in all. <b>How you learn:</b> open a family below, tap any element, and read its meaning, its lens, and its formula where one truly exists. <b>Why this path:</b> when a term stops you in the middle of an article, this is the fastest way to clear it and read on.</span>
     </div>
 
-    <div class="table-rail-group" id="learn-tables-founders"><div class="fam-door" id="learn-tables-founders" data-famdoor="founders">
+    <div class="table-rail-group" id="learn-tables-founders"><div class="fam-door" id="learn-tables-ai" data-famdoor="ai">
+      <button class="fam-door-head" type="button" data-fam-btn aria-expanded="false">
+        <i class="fam-dot fam-ai" aria-hidden="true"></i>
+        <span class="fam-door-name"><span class="sg-t sg-t-ai">AI</span></span>
+        <span class="fam-door-count">4 tables · 238 terms</span>
+        <span class="fam-door-chev" aria-hidden="true">▾</span>
+      </button>
+      <div class="fam-door-body" hidden>
+<div class="rail-wrap"><button class="rail-btn prev" type="button" aria-label="Previous cards">‹</button><div class="table-rail">
+      <a class="learn-card table-ai" href="periodic-tables/ai-keywords/">
+        <span class="learn-play" aria-hidden="true">▦</span>
+        <span class="learn-kicker">Interactive Table · 70 terms</span>
+        <span class="learn-title"><span class="sg-t sg-t-ai">AI Keywords</span> for Leaders</span>
+        <span class="learn-desc">Machine learning, LLMs, RAG, fine-tuning, hallucinations, AI safety and strategy — the AI vocabulary leaders need, as clickable elements.</span>
+        <span class="learn-open">Open table ↗</span>
+      </a>
+      <a class="learn-card table-agentic" href="periodic-tables/agentic-ai-keywords/">
+        <span class="learn-play" aria-hidden="true">▦</span>
+        <span class="learn-kicker">Interactive Table · 64 terms</span>
+        <span class="learn-title">Agentic <span class="sg-t sg-t-ai">AI Keywords</span></span>
+        <span class="learn-desc">Agent loops, MCP, tool use, memory, guardrails, evals and AgentOps — how autonomous AI systems actually work, in plain language.</span>
+        <span class="learn-open">Open table ↗</span>
+      </a>
+      <a class="learn-card table-tools" href="periodic-tables/agentic-ai-tools/">
+        <span class="learn-play" aria-hidden="true">▦</span>
+        <span class="learn-kicker">Interactive Table · 52 tools</span>
+        <span class="learn-title">Agentic <span class="sg-t sg-t-ai">AI Tools</span></span>
+        <span class="learn-desc">The tool landscape mapped: frameworks, coding agents, computer-use agents, voice agents, eval platforms and enterprise platforms. As of Oct 2026.</span>
+        <span class="learn-open">Open table ↗</span>
+      </a>
+          <a class="learn-card table-aitools" href="periodic-tables/ai-tools/">
+        <span class="learn-play" aria-hidden="true">▦</span>
+        <span class="learn-kicker">Interactive Table · 52 tools</span>
+        <span class="learn-title"><span class="sg-t sg-t-ai">AI Tools</span> for Leaders</span>
+        <span class="learn-desc">Everyday generative AI tools mapped: assistants, AI search, image and video creation, meeting tools and workplace suites. As of Oct 2026.</span>
+        <span class="learn-open">Open table ↗</span>
+      </a>
+      </div><button class="rail-btn next" type="button" aria-label="Next cards">›</button></div>
+      </div>
+    </div>
+    <div class="fam-door" id="learn-tables-quantum" data-famdoor="quantum">
+      <button class="fam-door-head" type="button" data-fam-btn aria-expanded="false">
+        <i class="fam-dot fam-quantum" aria-hidden="true"></i>
+        <span class="fam-door-name"><span class="sg-t sg-t-quantum">Quantum</span></span>
+        <span class="fam-door-count">4 tables · 259 terms</span>
+        <span class="fam-door-chev" aria-hidden="true">▾</span>
+      </button>
+      <div class="fam-door-body" hidden>
+<div class="rail-wrap"><button class="rail-btn prev" type="button" aria-label="Previous cards">‹</button><div class="table-rail">
+      <a class="learn-card table-quantum" href="periodic-tables/quantum-keywords/">
+        <span class="learn-play" aria-hidden="true">▦</span>
+        <span class="learn-kicker">Interactive Table · 85 terms</span>
+        <span class="learn-title"><span class="sg-t sg-t-quantum">Quantum Keywords</span> for Leaders</span>
+        <span class="learn-desc">Qubits, entanglement, NISQ, error correction, post-quantum cryptography and quantum strategy — in plain business language, as clickable elements.</span>
+        <span class="learn-open">Open table ↗</span>
+      </a>
+          <a class="learn-card table-qalgo" href="periodic-tables/quantum-algorithms/">
+        <span class="learn-play" aria-hidden="true">▦</span>
+        <span class="learn-kicker">Interactive Table · 60 terms</span>
+        <span class="learn-title"><span class="sg-t sg-t-quantum">Quantum Algorithms</span></span>
+        <span class="learn-desc">Shor, Grover, QFT, VQE, QAOA and fault-tolerant algorithms — with real formulas and an honest reality check on every claim.</span>
+        <span class="learn-open">Open table ↗</span>
+      </a>
+          <a class="learn-card table-qhw" href="periodic-tables/quantum-hardware/">
+        <span class="learn-play" aria-hidden="true">▦</span>
+        <span class="learn-kicker">Interactive Table · 58 terms</span>
+        <span class="learn-title"><span class="sg-t sg-t-quantum">Quantum Hardware</span></span>
+        <span class="learn-desc">Superconducting, trapped-ion, photonic and neutral-atom machines, cryogenics, the metrics that matter, and the platforms behind them.</span>
+        <span class="learn-open">Open table ↗</span>
+      </a>
+          <a class="learn-card table-qsec" href="periodic-tables/quantum-security/">
+        <span class="learn-play" aria-hidden="true">▦</span>
+        <span class="learn-kicker">Interactive Table · 56 terms</span>
+        <span class="learn-title"><span class="sg-t sg-t-quantum">Quantum Security & Post-Quantum Crypto</span></span>
+        <span class="learn-desc">The quantum threat, NIST's FIPS 203/204/205 standards, ML-KEM migration and crypto-agility — the PQC playbook for leaders.</span>
+        <span class="learn-open">Open table ↗</span>
+      </a>
+      </div><button class="rail-btn next" type="button" aria-label="Next cards">›</button></div>
+      </div>
+    </div>
+    <div class="fam-door" id="learn-tables-cloud" data-famdoor="cloud">
+      <button class="fam-door-head" type="button" data-fam-btn aria-expanded="false">
+        <i class="fam-dot fam-cloud" aria-hidden="true"></i>
+        <span class="fam-door-name"><span class="sg-t sg-t-cloud">Cloud &amp; DevOps</span></span>
+        <span class="fam-door-count">4 tables · 250 terms</span>
+        <span class="fam-door-chev" aria-hidden="true">▾</span>
+      </button>
+      <div class="fam-door-body" hidden>
+<div class="rail-wrap"><button class="rail-btn prev" type="button" aria-label="Previous cards">‹</button><div class="table-rail">
+      <a class="learn-card table-cloud" href="periodic-tables/cloud-devops/">
+        <span class="learn-play" aria-hidden="true">▦</span>
+        <span class="learn-kicker">Interactive Table · 72 terms</span>
+        <span class="learn-title"><span class="sg-t sg-t-cloud">Cloud & DevOps</span> for Leaders</span>
+        <span class="learn-desc">Kubernetes, CI/CD, Terraform, SRE, SLOs, FinOps and cloud migration — infrastructure vocabulary for leaders, as clickable elements.</span>
+        <span class="learn-open">Open table ↗</span>
+      </a>
+          <a class="learn-card table-aws" href="periodic-tables/aws-leaders/">
+        <span class="learn-play" aria-hidden="true">▦</span>
+        <span class="learn-kicker">Interactive Table · 60 services</span>
+        <span class="learn-title">AWS for Leaders</span>
+        <span class="learn-desc">EC2, S3, Lambda, EKS, Bedrock, Savings Plans and the Well-Architected Framework — the AWS service map and its cost mechanics.</span>
+        <span class="learn-open">Open table ↗</span>
+      </a>
+          <a class="learn-card table-azure" href="periodic-tables/azure-leaders/">
+        <span class="learn-play" aria-hidden="true">▦</span>
+        <span class="learn-kicker">Interactive Table · 60 services</span>
+        <span class="learn-title">Microsoft Azure for Leaders</span>
+        <span class="learn-desc">AKS, Entra ID, Azure OpenAI, Cosmos DB, landing zones and enterprise agreements — Azure for Microsoft-centric organisations.</span>
+        <span class="learn-open">Open table ↗</span>
+      </a>
+          <a class="learn-card table-gcp" href="periodic-tables/google-cloud-leaders/">
+        <span class="learn-play" aria-hidden="true">▦</span>
+        <span class="learn-kicker">Interactive Table · 58 services</span>
+        <span class="learn-title">Google <span class="sg-t sg-t-cloud">Cloud</span> for Leaders</span>
+        <span class="learn-desc">BigQuery, GKE, Spanner, Vertex AI and Gemini — where data, containers and AI meet, plus the discount mechanics.</span>
+        <span class="learn-open">Open table ↗</span>
+      </a>
+      </div><button class="rail-btn next" type="button" aria-label="Next cards">›</button></div>
+      </div>
+    </div>
+    <div class="fam-door" id="learn-tables-cyber" data-famdoor="cyber">
+      <button class="fam-door-head" type="button" data-fam-btn aria-expanded="false">
+        <i class="fam-dot fam-cyber" aria-hidden="true"></i>
+        <span class="fam-door-name"><span class="sg-t sg-t-cyber">Cybersecurity</span></span>
+        <span class="fam-door-count">4 tables · 241 terms</span>
+        <span class="fam-door-chev" aria-hidden="true">▾</span>
+      </button>
+      <div class="fam-door-body" hidden>
+<div class="rail-wrap"><button class="rail-btn prev" type="button" aria-label="Previous cards">‹</button><div class="table-rail">
+      <a class="learn-card table-cyber" href="periodic-tables/cybersecurity/">
+        <span class="learn-play" aria-hidden="true">▦</span>
+        <span class="learn-kicker">Interactive Table · 69 terms</span>
+        <span class="learn-title"><span class="sg-t sg-t-cyber">Cybersecurity</span> for Leaders</span>
+        <span class="learn-desc">Ransomware, zero trust, MFA, SOC, SIEM, incident response and compliance — security as a business discipline, as clickable elements.</span>
+        <span class="learn-open">Open table ↗</span>
+      </a>
+          <a class="learn-card table-threats" href="periodic-tables/cyber-threats/">
+        <span class="learn-play" aria-hidden="true">▦</span>
+        <span class="learn-kicker">Interactive Table · 60 terms</span>
+        <span class="learn-title"><span class="sg-t sg-t-cyber">Cyber Threats & Attack Techniques</span></span>
+        <span class="learn-desc">How attacks unfold stage by stage — MITRE ATT&CK, ransomware-as-a-service, BEC, lateral movement and AI-era threats.</span>
+        <span class="learn-open">Open table ↗</span>
+      </a>
+          <a class="learn-card table-frameworks" href="periodic-tables/security-frameworks/">
+        <span class="learn-play" aria-hidden="true">▦</span>
+        <span class="learn-kicker">Interactive Table · 56 terms</span>
+        <span class="learn-title">Security Frameworks & Compliance</span>
+        <span class="learn-desc">NIST CSF, ISO 27001, SOC 2, PCI DSS, GDPR and India's DPDP Act and CERT-In rules — what each standard demands.</span>
+        <span class="learn-open">Open table ↗</span>
+      </a>
+          <a class="learn-card table-aicyber" href="periodic-tables/ai-cybersecurity/">
+        <span class="learn-play" aria-hidden="true">▦</span>
+        <span class="learn-kicker">Interactive Table · 56 terms</span>
+        <span class="learn-title">AI & <span class="sg-t sg-t-cyber">Cybersecurity</span></span>
+        <span class="learn-desc">Prompt injection, deepfake fraud, adversarial ML, AI red teaming — and how AI strengthens the defence. MITRE ATLAS and OWASP LLM included.</span>
+        <span class="learn-open">Open table ↗</span>
+      </a>
+      </div><button class="rail-btn next" type="button" aria-label="Next cards">›</button></div>
+      </div>
+    </div>
+    <div class="fam-door" id="learn-tables-founders" data-famdoor="founders">
       <button class="fam-door-head" type="button" data-fam-btn aria-expanded="false">
         <i class="fam-dot fam-founders" aria-hidden="true"></i>
-        <span class="fam-door-name">Founders &amp; Leadership</span>
+        <span class="fam-door-name"><span class="sg-t sg-t-founders">Founders &amp; Leadership</span></span>
         <span class="fam-door-count">4 tables · 328 terms</span>
         <span class="fam-door-chev" aria-hidden="true">▾</span>
       </button>
@@ -421,166 +609,6 @@
       </div><button class="rail-btn next" type="button" aria-label="Next cards">›</button></div>
       </div>
     </div>
-    <div class="fam-door" id="learn-tables-quantum" data-famdoor="quantum">
-      <button class="fam-door-head" type="button" data-fam-btn aria-expanded="false">
-        <i class="fam-dot fam-quantum" aria-hidden="true"></i>
-        <span class="fam-door-name">Quantum</span>
-        <span class="fam-door-count">4 tables · 259 terms</span>
-        <span class="fam-door-chev" aria-hidden="true">▾</span>
-      </button>
-      <div class="fam-door-body" hidden>
-<div class="rail-wrap"><button class="rail-btn prev" type="button" aria-label="Previous cards">‹</button><div class="table-rail">
-      <a class="learn-card table-quantum" href="periodic-tables/quantum-keywords/">
-        <span class="learn-play" aria-hidden="true">▦</span>
-        <span class="learn-kicker">Interactive Table · 85 terms</span>
-        <span class="learn-title">Quantum Keywords for Leaders</span>
-        <span class="learn-desc">Qubits, entanglement, NISQ, error correction, post-quantum cryptography and quantum strategy — in plain business language, as clickable elements.</span>
-        <span class="learn-open">Open table ↗</span>
-      </a>
-          <a class="learn-card table-qalgo" href="periodic-tables/quantum-algorithms/">
-        <span class="learn-play" aria-hidden="true">▦</span>
-        <span class="learn-kicker">Interactive Table · 60 terms</span>
-        <span class="learn-title">Quantum Algorithms</span>
-        <span class="learn-desc">Shor, Grover, QFT, VQE, QAOA and fault-tolerant algorithms — with real formulas and an honest reality check on every claim.</span>
-        <span class="learn-open">Open table ↗</span>
-      </a>
-          <a class="learn-card table-qhw" href="periodic-tables/quantum-hardware/">
-        <span class="learn-play" aria-hidden="true">▦</span>
-        <span class="learn-kicker">Interactive Table · 58 terms</span>
-        <span class="learn-title">Quantum Hardware</span>
-        <span class="learn-desc">Superconducting, trapped-ion, photonic and neutral-atom machines, cryogenics, the metrics that matter, and the platforms behind them.</span>
-        <span class="learn-open">Open table ↗</span>
-      </a>
-          <a class="learn-card table-qsec" href="periodic-tables/quantum-security/">
-        <span class="learn-play" aria-hidden="true">▦</span>
-        <span class="learn-kicker">Interactive Table · 56 terms</span>
-        <span class="learn-title">Quantum Security & Post-Quantum Crypto</span>
-        <span class="learn-desc">The quantum threat, NIST's FIPS 203/204/205 standards, ML-KEM migration and crypto-agility — the PQC playbook for leaders.</span>
-        <span class="learn-open">Open table ↗</span>
-      </a>
-      </div><button class="rail-btn next" type="button" aria-label="Next cards">›</button></div>
-      </div>
-    </div>
-    <div class="fam-door" id="learn-tables-ai" data-famdoor="ai">
-      <button class="fam-door-head" type="button" data-fam-btn aria-expanded="false">
-        <i class="fam-dot fam-ai" aria-hidden="true"></i>
-        <span class="fam-door-name">AI</span>
-        <span class="fam-door-count">4 tables · 238 terms</span>
-        <span class="fam-door-chev" aria-hidden="true">▾</span>
-      </button>
-      <div class="fam-door-body" hidden>
-<div class="rail-wrap"><button class="rail-btn prev" type="button" aria-label="Previous cards">‹</button><div class="table-rail">
-      <a class="learn-card table-ai" href="periodic-tables/ai-keywords/">
-        <span class="learn-play" aria-hidden="true">▦</span>
-        <span class="learn-kicker">Interactive Table · 70 terms</span>
-        <span class="learn-title">AI Keywords for Leaders</span>
-        <span class="learn-desc">Machine learning, LLMs, RAG, fine-tuning, hallucinations, AI safety and strategy — the AI vocabulary leaders need, as clickable elements.</span>
-        <span class="learn-open">Open table ↗</span>
-      </a>
-      <a class="learn-card table-agentic" href="periodic-tables/agentic-ai-keywords/">
-        <span class="learn-play" aria-hidden="true">▦</span>
-        <span class="learn-kicker">Interactive Table · 64 terms</span>
-        <span class="learn-title">Agentic AI Keywords</span>
-        <span class="learn-desc">Agent loops, MCP, tool use, memory, guardrails, evals and AgentOps — how autonomous AI systems actually work, in plain language.</span>
-        <span class="learn-open">Open table ↗</span>
-      </a>
-      <a class="learn-card table-tools" href="periodic-tables/agentic-ai-tools/">
-        <span class="learn-play" aria-hidden="true">▦</span>
-        <span class="learn-kicker">Interactive Table · 52 tools</span>
-        <span class="learn-title">Agentic AI Tools</span>
-        <span class="learn-desc">The tool landscape mapped: frameworks, coding agents, computer-use agents, voice agents, eval platforms and enterprise platforms. As of Oct 2026.</span>
-        <span class="learn-open">Open table ↗</span>
-      </a>
-          <a class="learn-card table-aitools" href="periodic-tables/ai-tools/">
-        <span class="learn-play" aria-hidden="true">▦</span>
-        <span class="learn-kicker">Interactive Table · 52 tools</span>
-        <span class="learn-title">AI Tools for Leaders</span>
-        <span class="learn-desc">Everyday generative AI tools mapped: assistants, AI search, image and video creation, meeting tools and workplace suites. As of Oct 2026.</span>
-        <span class="learn-open">Open table ↗</span>
-      </a>
-      </div><button class="rail-btn next" type="button" aria-label="Next cards">›</button></div>
-      </div>
-    </div>
-    <div class="fam-door" id="learn-tables-cloud" data-famdoor="cloud">
-      <button class="fam-door-head" type="button" data-fam-btn aria-expanded="false">
-        <i class="fam-dot fam-cloud" aria-hidden="true"></i>
-        <span class="fam-door-name">Cloud &amp; DevOps</span>
-        <span class="fam-door-count">4 tables · 250 terms</span>
-        <span class="fam-door-chev" aria-hidden="true">▾</span>
-      </button>
-      <div class="fam-door-body" hidden>
-<div class="rail-wrap"><button class="rail-btn prev" type="button" aria-label="Previous cards">‹</button><div class="table-rail">
-      <a class="learn-card table-cloud" href="periodic-tables/cloud-devops/">
-        <span class="learn-play" aria-hidden="true">▦</span>
-        <span class="learn-kicker">Interactive Table · 72 terms</span>
-        <span class="learn-title">Cloud & DevOps for Leaders</span>
-        <span class="learn-desc">Kubernetes, CI/CD, Terraform, SRE, SLOs, FinOps and cloud migration — infrastructure vocabulary for leaders, as clickable elements.</span>
-        <span class="learn-open">Open table ↗</span>
-      </a>
-          <a class="learn-card table-aws" href="periodic-tables/aws-leaders/">
-        <span class="learn-play" aria-hidden="true">▦</span>
-        <span class="learn-kicker">Interactive Table · 60 services</span>
-        <span class="learn-title">AWS for Leaders</span>
-        <span class="learn-desc">EC2, S3, Lambda, EKS, Bedrock, Savings Plans and the Well-Architected Framework — the AWS service map and its cost mechanics.</span>
-        <span class="learn-open">Open table ↗</span>
-      </a>
-          <a class="learn-card table-azure" href="periodic-tables/azure-leaders/">
-        <span class="learn-play" aria-hidden="true">▦</span>
-        <span class="learn-kicker">Interactive Table · 60 services</span>
-        <span class="learn-title">Microsoft Azure for Leaders</span>
-        <span class="learn-desc">AKS, Entra ID, Azure OpenAI, Cosmos DB, landing zones and enterprise agreements — Azure for Microsoft-centric organisations.</span>
-        <span class="learn-open">Open table ↗</span>
-      </a>
-          <a class="learn-card table-gcp" href="periodic-tables/google-cloud-leaders/">
-        <span class="learn-play" aria-hidden="true">▦</span>
-        <span class="learn-kicker">Interactive Table · 58 services</span>
-        <span class="learn-title">Google Cloud for Leaders</span>
-        <span class="learn-desc">BigQuery, GKE, Spanner, Vertex AI and Gemini — where data, containers and AI meet, plus the discount mechanics.</span>
-        <span class="learn-open">Open table ↗</span>
-      </a>
-      </div><button class="rail-btn next" type="button" aria-label="Next cards">›</button></div>
-      </div>
-    </div>
-    <div class="fam-door" id="learn-tables-cyber" data-famdoor="cyber">
-      <button class="fam-door-head" type="button" data-fam-btn aria-expanded="false">
-        <i class="fam-dot fam-cyber" aria-hidden="true"></i>
-        <span class="fam-door-name">Cybersecurity</span>
-        <span class="fam-door-count">4 tables · 241 terms</span>
-        <span class="fam-door-chev" aria-hidden="true">▾</span>
-      </button>
-      <div class="fam-door-body" hidden>
-<div class="rail-wrap"><button class="rail-btn prev" type="button" aria-label="Previous cards">‹</button><div class="table-rail">
-      <a class="learn-card table-cyber" href="periodic-tables/cybersecurity/">
-        <span class="learn-play" aria-hidden="true">▦</span>
-        <span class="learn-kicker">Interactive Table · 69 terms</span>
-        <span class="learn-title">Cybersecurity for Leaders</span>
-        <span class="learn-desc">Ransomware, zero trust, MFA, SOC, SIEM, incident response and compliance — security as a business discipline, as clickable elements.</span>
-        <span class="learn-open">Open table ↗</span>
-      </a>
-          <a class="learn-card table-threats" href="periodic-tables/cyber-threats/">
-        <span class="learn-play" aria-hidden="true">▦</span>
-        <span class="learn-kicker">Interactive Table · 60 terms</span>
-        <span class="learn-title">Cyber Threats & Attack Techniques</span>
-        <span class="learn-desc">How attacks unfold stage by stage — MITRE ATT&CK, ransomware-as-a-service, BEC, lateral movement and AI-era threats.</span>
-        <span class="learn-open">Open table ↗</span>
-      </a>
-          <a class="learn-card table-frameworks" href="periodic-tables/security-frameworks/">
-        <span class="learn-play" aria-hidden="true">▦</span>
-        <span class="learn-kicker">Interactive Table · 56 terms</span>
-        <span class="learn-title">Security Frameworks & Compliance</span>
-        <span class="learn-desc">NIST CSF, ISO 27001, SOC 2, PCI DSS, GDPR and India's DPDP Act and CERT-In rules — what each standard demands.</span>
-        <span class="learn-open">Open table ↗</span>
-      </a>
-          <a class="learn-card table-aicyber" href="periodic-tables/ai-cybersecurity/">
-        <span class="learn-play" aria-hidden="true">▦</span>
-        <span class="learn-kicker">Interactive Table · 56 terms</span>
-        <span class="learn-title">AI & Cybersecurity</span>
-        <span class="learn-desc">Prompt injection, deepfake fraud, adversarial ML, AI red teaming — and how AI strengthens the defence. MITRE ATLAS and OWASP LLM included.</span>
-        <span class="learn-open">Open table ↗</span>
-      </a>
-      </div><button class="rail-btn next" type="button" aria-label="Next cards">›</button></div>
-      </div>
-    </div>
     </div>
 
       </div>
@@ -589,7 +617,7 @@
       <button class="learn-door-head" type="button" data-door-btn aria-expanded="false">
         <span class="learn-door-no">05</span>
         <span class="learn-door-name">Interactive Games</span>
-        <span class="learn-door-count">2 games · more coming</span>
+        <span class="learn-door-count">9 games · new puzzles daily</span>
         <span class="learn-door-enter">Click to enter</span>
         <span class="learn-door-chev" aria-hidden="true">▾</span>
       </button>
@@ -601,27 +629,64 @@
       </div>
 
     <div class="rail-wrap"><button class="rail-btn prev" type="button" aria-label="Previous cards">‹</button><div class="table-rail">
-            <a class="learn-card game-duel" href="games/answer-duel/">
-        <span class="learn-play" aria-hidden="true">♠</span>
-        <span class="learn-kicker">Interactive Game · Throwing</span>
+                        <a class="learn-card game-daily" href="games/#queens">
+        <span class="learn-play" aria-hidden="true">♛</span>
+        <span class="learn-kicker">Daily puzzle · Once a day</span>
+        <span class="learn-title">Kings</span>
+        <span class="learn-desc">One king in every row, column and colour region, none touching.</span>
+        <span class="learn-open">Play game ↗</span>
+      </a>
+      <a class="learn-card game-daily" href="games/#sudoku">
+        <span class="learn-play" aria-hidden="true">▦</span>
+        <span class="learn-kicker">Daily puzzle · Once a day</span>
+        <span class="learn-title">Mini Sudoku</span>
+        <span class="learn-desc">Fill the 6 by 6 grid with 1 to 6. Hints are always there.</span>
+        <span class="learn-open">Play game ↗</span>
+      </a>
+      <a class="learn-card game-daily" href="games/#trail">
+        <span class="learn-play" aria-hidden="true">⌁</span>
+        <span class="learn-kicker">Daily puzzle · Once a day</span>
+        <span class="learn-title">Trail</span>
+        <span class="learn-desc">Draw one path through every square, in number order.</span>
+        <span class="learn-open">Play game ↗</span>
+      </a>
+      <a class="learn-card game-daily" href="games/#gems">
+        <span class="learn-play" aria-hidden="true">❦</span>
+        <span class="learn-kicker">Daily puzzle · Once a day</span>
+        <span class="learn-title">Leaf and Gem</span>
+        <span class="learn-desc">Three of each in every row and column, never three in a row.</span>
+        <span class="learn-open">Play game ↗</span>
+      </a>
+      <a class="learn-card game-daily" href="games/#double">
+        <span class="learn-play" aria-hidden="true">⧉</span>
+        <span class="learn-kicker">Daily puzzle · Once a day</span>
+        <span class="learn-title">Double Up</span>
+        <span class="learn-desc">Merge equal numbers and finish with a single tile.</span>
+        <span class="learn-open">Play game ↗</span>
+      </a>
+      <a class="learn-card game-duel" href="games/#guess">
+        <span class="learn-kicker">Learn and play · Unlimited</span>
+        <span class="learn-title">Guess the Group</span>
+        <span class="learn-desc">Name what the clues share. Choose AI, Quantum, Cloud or Security.</span>
+      <a class="learn-card game-duel" href="games/#ladder">
+        <span class="learn-play" aria-hidden="true">☰</span>
+        <span class="learn-kicker">Learn and play · Unlimited</span>
+        <span class="learn-title">Term Ladder</span>
+        <span class="learn-desc">Match the terms, then put the steps in order.</span>
+      <a class="learn-card game-duel" href="games/#path">
+        <span class="learn-play" aria-hidden="true">⌗</span>
+        <span class="learn-kicker">Learn and play · Unlimited</span>
+        <span class="learn-title">Path Words</span>
+        <span class="learn-desc">Trace the hidden terms letter by letter.</span>
+        <span class="learn-open">Play game ↗</span>
+      </a>
+      <a class="learn-card game-duel" href="games/#duel">
+        <span class="learn-play" aria-hidden="true">♦</span>
+        <span class="learn-kicker">Learn and play · Unlimited, 2 players</span>
         <span class="learn-title">Answer Duel</span>
-        <span class="learn-desc">One question, four answer cards: throw the right card to score, with points falling on every wrong throw.</span>
+        <span class="learn-desc">Drag the right card to the question. Play solo or duel a friend.</span>
         <span class="learn-open">Play game ↗</span>
       </a>
-      <a class="learn-card game-run" href="games/target-run/">
-        <span class="learn-play" aria-hidden="true">◎</span>
-        <span class="learn-kicker">Interactive Game · Bursting</span>
-        <span class="learn-title">Target Run</span>
-        <span class="learn-desc">Burst the right answers as they glide by: stages of questions rising in complexity, starting with the AI family.</span>
-        <span class="learn-open">Play game ↗</span>
-      </a>
-      <div class="learn-card game-soon">
-        <span class="learn-play" aria-hidden="true">✦</span>
-        <span class="learn-kicker">Interactive Games · Coming</span>
-        <span class="learn-title">Two More Games</span>
-        <span class="learn-desc">Two more games are being decided and will join this door in a later part.</span>
-        <span class="learn-open">Coming soon</span>
-      </div>
     </div><button class="rail-btn next" type="button" aria-label="Next cards">›</button></div>
 
       </div>
@@ -630,9 +695,28 @@
 
   <section id="podcast-view" class="view-section" hidden>
     <div class="view-intro">
-      <h2>Podcasts</h2>
-      <p>Daily AI Intelligence, the Tech Learning series and Quantum Intelligence — listen right here.</p>
+      <h2>Podcast</h2>
+      <p>Three series, <span data-pod-total>122</span> episodes. Listen here, or follow them in your podcast app.</p>
       <div class="series-toggle" id="podcastSeries"><!-- populated by app.js --></div>
+<!-- Podcast tab: insert under the series buttons. Episode counts: fill each [data-episodes] from the episode data, as the series buttons already do. -->
+<section class="sg-listen" aria-labelledby="sgListenTitle">
+  <h2 id="sgListenTitle">Listen every day in your podcast app</h2>
+  <p>Copy a series address and add it to your podcast app once. New episodes then arrive on their own.</p>
+  <div class="sg-feed"><img src="assets/podcast-covers/daily-ai-intelligence.png" alt="Daily AI Intelligence cover"><div><b class="sg-t-ai">Daily AI Intelligence</b><small><span data-episodes="Daily AI Intelligence"></span> episodes · every morning at 6:30 AM IST</small><div class="sg-copy"><input readonly value="https://muse.ai/podcasts/feed/1248297608376725/94f09345-ad4a-4981-83dd-e3206bbf5c4e" aria-label="Daily AI Intelligence podcast feed address"><button type="button" data-copy="https://muse.ai/podcasts/feed/1248297608376725/94f09345-ad4a-4981-83dd-e3206bbf5c4e">Copy</button></div></div></div>
+  <div class="sg-feed"><img src="assets/podcast-covers/quantum-intelligence.png" alt="Quantum Intelligence cover"><div><b class="sg-t-quantum">Quantum Intelligence</b><small><span data-episodes="Quantum Intelligence"></span> episodes · the quantum briefing</small><div class="sg-copy"><input readonly value="https://muse.ai/podcasts/feed/1248297608376725/e94514d7-438c-4486-b16c-5a6c5b6bd1cd" aria-label="Quantum Intelligence podcast feed address"><button type="button" data-copy="https://muse.ai/podcasts/feed/1248297608376725/e94514d7-438c-4486-b16c-5a6c5b6bd1cd">Copy</button></div></div></div>
+  <div class="sg-feed"><img src="assets/podcast-covers/technology-learnings.png" alt="Technology Learnings cover"><div><b>Technology Learnings</b><small><span data-episodes="Technology Learnings"></span> episodes · Cybersecurity, Infrastructure, Data</small><div class="sg-copy"><input readonly value="https://muse.ai/podcasts/feed/1248297608376725/4720f1e9-8c94-4958-8367-c455f31c5edc" aria-label="Technology Learnings podcast feed address"><button type="button" data-copy="https://muse.ai/podcasts/feed/1248297608376725/4720f1e9-8c94-4958-8367-c455f31c5edc">Copy</button></div></div></div>
+  <div class="sg-how">
+    <div><b>iPhone · Apple Podcasts</b><ol><li>Copy an address above.</li><li>Open Apple Podcasts, go to <strong>Library</strong>, tap <strong>⋯</strong>.</li><li>Tap <strong>Follow a Show by URL</strong>, paste, tap <strong>Follow</strong>.</li></ol></div>
+    <div><b>Android</b><ol><li>Copy an address above.</li><li>Open a podcast app that accepts an address, such as Pocket Casts, AntennaPod or Podcast Addict.</li><li>Choose <strong>Add podcast by URL</strong>, paste, and follow.</li></ol></div>
+  </div>
+  <p class="sg-note">Episodes are researched, scripted and voiced with AI. Spotify does not accept addresses like these; use one of the apps above.</p>
+</section>
+<script>
+document.addEventListener('click',function(e){var b=e.target.closest('button[data-copy]');if(!b)return;var u=b.getAttribute('data-copy'),i=b.parentNode.querySelector('input');
+function done(){b.textContent='Copied';b.classList.add('ok');setTimeout(function(){b.textContent='Copy';b.classList.remove('ok')},1800)}
+function fallback(){i.select();try{document.execCommand('copy')}catch(_){}done()}
+if(navigator.clipboard&&navigator.clipboard.writeText)navigator.clipboard.writeText(u).then(done,fallback);else fallback()});
+</script>
       <div class="track-row" id="podcastTracks" hidden>
         <span class="track-label">Track</span>
         <div class="rail-wrap track-wrap"><button class="rail-btn prev" type="button" aria-label="Previous tracks">‹</button><div class="track-rail" id="trackRail"><!-- populated by app.js --></div><button class="rail-btn next" type="button" aria-label="Next tracks">›</button></div>
@@ -645,8 +729,8 @@
 
   <section id="research-view" class="view-section" hidden>
     <div class="view-intro">
-      <h2>Research Notes</h2>
-      <p>Original research from The Signal — one question-led analysis at a time, on AI and quantum.</p>
+      <h2>Articles</h2>
+      <p>Original research, one question at a time.</p>
     </div>
     <div class="research-grid" id="researchGrid"></div>
   </section>
@@ -675,18 +759,20 @@
   </div>
 
 <script data-goatcounter="https://trttech.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
-<script src="assets/signal-share.js?v=20261117"></script>
-<script src="assets/brief.js?v=20261117"></script>
-<script src="app.js?v=20261117"></script>
+<script src="assets/signal-share.js?v=20261125"></script>
+<script src="assets/live-strip.js?v=20261117"></script>
+<script src="assets/brief.js?v=20261125"></script>
+<script src="app.js?v=20261125"></script>
 <!-- ss-page-share:start -->
 <script>
-window.__ssHomeShareConfigs = {"home": {"title": "The Signal", "desc": "A self-updating feed of AI, quantum computing, cybersecurity, cloud and DevOps, and podcast updates.", "inside": "33 learning pages · 24 of 32 deck topics live · 1,316 terms", "link": "https://thillairaj.github.io/The-Signal-AI-Quantum/", "tag": "#Learning", "image": {"url": "https://thillairaj.github.io/The-Signal-AI-Quantum/assets/og/home.png", "filename": "the-signal.png"}}, "learn": {"title": "Learning Space · The Signal", "desc": "A self-updating feed of AI, quantum computing, cybersecurity, cloud and DevOps, and podcast updates.", "inside": "4 learning spaces, 412 video lessons", "link": "https://thillairaj.github.io/The-Signal-AI-Quantum/#learn", "tag": "#Learning", "image": {"url": "https://thillairaj.github.io/The-Signal-AI-Quantum/assets/og/home.png", "filename": "the-signal.png"}}, "podcast": {"title": "Podcast · The Signal", "desc": "A self-updating feed of AI, quantum computing, cybersecurity, cloud and DevOps, and podcast updates.", "inside": "111 episodes across 3 series", "link": "https://thillairaj.github.io/The-Signal-AI-Quantum/#podcast", "tag": "#Podcasts", "image": {"url": "https://thillairaj.github.io/The-Signal-AI-Quantum/assets/og/home.png", "filename": "the-signal.png"}}, "research": {"title": "Articles · The Signal", "desc": "A self-updating feed of AI, quantum computing, cybersecurity, cloud and DevOps, and podcast updates.", "inside": "14 research articles", "link": "https://thillairaj.github.io/The-Signal-AI-Quantum/#research", "tag": "#TechNews", "image": {"url": "https://thillairaj.github.io/The-Signal-AI-Quantum/assets/og/home.png", "filename": "the-signal.png"}}, "feed": {"title": "RSS Feed · The Signal", "desc": "A self-updating feed of AI, quantum computing, cybersecurity, cloud and DevOps, and podcast updates.", "inside": "210 stories on the live wire", "link": "https://thillairaj.github.io/The-Signal-AI-Quantum/#feed", "tag": "#TechNews", "image": {"url": "https://thillairaj.github.io/The-Signal-AI-Quantum/assets/og/home.png", "filename": "the-signal.png"}}, "brief": {"title": "Signal Brief · The Signal", "desc": "A self-updating feed of AI, quantum computing, cybersecurity, cloud and DevOps, and podcast updates.", "inside": "A fresh brief every morning at 07:00, 12 stories today", "link": "https://thillairaj.github.io/The-Signal-AI-Quantum/#brief", "tag": "#SignalBrief", "image": {"url": "https://thillairaj.github.io/The-Signal-AI-Quantum/assets/og/home.png", "filename": "the-signal.png"}}};
+window.__ssHomeShareConfigs = {"home": {"title": "The Signal", "desc": "A self-updating feed of AI, quantum computing, cybersecurity, cloud and DevOps, and podcast updates.", "inside": "33 learning pages · 28 of 32 deck topics live · 1,316 terms", "link": "https://thillairaj.github.io/The-Signal-AI-Quantum/", "tag": "#Learning", "image": {"url": "https://thillairaj.github.io/The-Signal-AI-Quantum/assets/og/home.png", "filename": "the-signal.png"}}, "learn": {"title": "Learning Space · The Signal", "desc": "A self-updating feed of AI, quantum computing, cybersecurity, cloud and DevOps, and podcast updates.", "inside": "4 learning spaces, 536 video lessons", "link": "https://thillairaj.github.io/The-Signal-AI-Quantum/#learn", "tag": "#Learning", "image": {"url": "https://thillairaj.github.io/The-Signal-AI-Quantum/assets/og/home.png", "filename": "the-signal.png"}}, "podcast": {"title": "Podcast · The Signal", "desc": "A self-updating feed of AI, quantum computing, cybersecurity, cloud and DevOps, and podcast updates.", "inside": "123 episodes across 3 series", "link": "https://thillairaj.github.io/The-Signal-AI-Quantum/#podcast", "tag": "#Podcasts", "image": {"url": "https://thillairaj.github.io/The-Signal-AI-Quantum/assets/og/home.png", "filename": "the-signal.png"}}, "research": {"title": "Articles · The Signal", "desc": "A self-updating feed of AI, quantum computing, cybersecurity, cloud and DevOps, and podcast updates.", "inside": "18 research articles", "link": "https://thillairaj.github.io/The-Signal-AI-Quantum/#research", "tag": "#TechNews", "image": {"url": "https://thillairaj.github.io/The-Signal-AI-Quantum/assets/og/home.png", "filename": "the-signal.png"}}, "feed": {"title": "RSS Feed · The Signal", "desc": "A self-updating feed of AI, quantum computing, cybersecurity, cloud and DevOps, and podcast updates.", "inside": "339 stories on the live wire", "link": "https://thillairaj.github.io/The-Signal-AI-Quantum/#feed", "tag": "#TechNews", "image": {"url": "https://thillairaj.github.io/The-Signal-AI-Quantum/assets/og/home.png", "filename": "the-signal.png"}}, "brief": {"title": "Signal Brief · The Signal", "desc": "A self-updating feed of AI, quantum computing, cybersecurity, cloud and DevOps, and podcast updates.", "inside": "A fresh brief every morning at 07:00, 12 stories today", "link": "https://thillairaj.github.io/The-Signal-AI-Quantum/#brief", "tag": "#SignalBrief", "image": {"url": "https://thillairaj.github.io/The-Signal-AI-Quantum/assets/og/home.png", "filename": "the-signal.png"}}};
 </script>
 <!-- ss-page-share:start -->
 <script>
-(function(){function go(){if(window.SignalShare&&SignalShare.mountPageShare){SignalShare.mountPageShare(document.getElementById("ssPageMount"), function(){var t=document.querySelector(".top-tab.active");var v=t?t.getAttribute("data-view"):"home";return window.__ssHomeShareConfigs[v]||window.__ssHomeShareConfigs.home;});}}if(document.readyState==="loading"){document.addEventListener("DOMContentLoaded",go);}else{go();}})();
+(function(){function go(){if(window.SignalShare&&SignalShare.mountPageShare){SignalShare.mountPageShare(document.getElementById("ssPageMount"), function(){var v=(document.body&&document.body.dataset&&document.body.dataset.view)||"home";return window.__ssHomeShareConfigs[v]||window.__ssHomeShareConfigs.home;});}}if(document.readyState==="loading"){document.addEventListener("DOMContentLoaded",go);}else{go();}})();
 </script>
 <!-- ss-page-share:end -->
+<script src="assets/signal-shell.js?v=20261125" defer></script>
 <footer class="signal-footer">
   <div class="sf-follow"><span class="sf-label">Follow along</span><span class="sf-links"><a class="sf-link" href="https://www.linkedin.com/in/thillairaj" target="_blank" rel="noopener"><span class="sf-badge" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.55V9h3.57v11.45z"/></svg></span>Thillai Raj</a><a class="sf-link" href="https://www.linkedin.com/showcase/qu-bits/" target="_blank" rel="noopener"><span class="sf-badge" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.55V9h3.57v11.45z"/></svg></span>QuBits · Quantum &amp; AI</a><a class="sf-link" href="https://www.linkedin.com/showcase/agentic-ai-architect/" target="_blank" rel="noopener"><span class="sf-badge" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.55V9h3.57v11.45z"/></svg></span>Agentic AI Architect</a></span></div>
   <p class="sf-copy">© 2026 The Signal</p>

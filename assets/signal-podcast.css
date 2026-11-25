@@ -1,0 +1,18 @@
+/* Podcast tab: the "Listen every day in your podcast app" box. Uses the standard tokens from signal-standard.css. */
+.sg-listen{background:var(--sg-surface);border:1px solid var(--sg-line);border-radius:18px;padding:22px 22px 18px;margin:18px 0 26px;font-family:var(--sg-body);color:var(--sg-ink)}
+.sg-listen h2{font:400 30px/1.1 var(--sg-display);margin:0 0 4px}
+.sg-listen>p{color:var(--sg-soft);margin:0 0 16px}
+.sg-feed{display:grid;grid-template-columns:76px minmax(0,1fr);gap:14px;align-items:center;padding:12px 0;border-top:1px solid var(--sg-line)}
+.sg-feed img{width:76px;height:76px;border-radius:12px;display:block}
+.sg-feed b{display:block;font:400 22px/1.15 var(--sg-display)}
+.sg-feed small{display:block;color:var(--sg-muted);font-size:13px;margin:2px 0 8px}
+.sg-copy{display:flex;gap:8px;min-width:0}
+.sg-copy input{flex:1;min-width:0;border:1px solid var(--sg-line);border-radius:10px;background:var(--sg-paper);padding:9px 11px;font:500 12.5px ui-monospace,Menlo,monospace;color:var(--sg-soft)}
+.sg-copy button{flex:0 0 auto;border:0;border-radius:10px;background:var(--sg-ink);color:var(--sg-paper);font:700 14px var(--sg-body);padding:9px 16px;cursor:pointer}
+.sg-copy button.ok{background:#2e7d4f}
+.sg-how{display:grid;grid-template-columns:1fr;gap:12px;margin-top:16px}
+@media(min-width:760px){.sg-how{grid-template-columns:1fr 1fr}}
+.sg-how div{background:var(--sg-wash);border-radius:14px;padding:14px 16px}
+.sg-how b{display:block;font:700 12px ui-monospace,Menlo,monospace;letter-spacing:.1em;text-transform:uppercase;color:var(--sg-muted);margin-bottom:6px}
+.sg-how ol{margin:0;padding-left:20px;color:var(--sg-soft);font-size:14.5px}
+.sg-listen .sg-note{color:var(--sg-muted);font-size:13px;margin:14px 0 0}

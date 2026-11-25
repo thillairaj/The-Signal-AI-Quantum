@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="sgp sgp-deck" data-tech="cyber">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -8,6 +8,10 @@
 <meta property="og:title" content="The Cybersecurity Deck — learn cybersecurity, one card at a time">
 <meta property="og:description" content="15-card visual lessons on cybersecurity: foundations and the threat landscape, identity and zero trust, network security, SOC operations, incident response, cloud and application security, governance and frameworks, and AI in cybersecurity. Read a card, flip it, prove you know it.">
 <meta property="og:url" content="https://thillairaj.github.io/The-Signal-AI-Quantum/cybersecurity-deck/">
+<meta property="og:image" content="https://thillairaj.github.io/The-Signal-AI-Quantum/assets/og/decks/cybersecurity.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:type" content="image/png">
 <style>
   :root{
     --obsidian:#0d0f14; --obsidian2:#151923; --gold:#b08d3e; --gold-dim:rgba(176,141,62,.4);
@@ -208,17 +212,17 @@
   .li-dir{font-size:9.5px;letter-spacing:1.8px;text-transform:uppercase;opacity:.85;font-weight:700}
   .li-name{font-size:15.5px;font-weight:800;letter-spacing:.01em}
 </style>
+<link rel="stylesheet" href="../assets/signal-shell.css?v=20261125">
+<link rel="stylesheet" href="../assets/signal-pages.css">
+<link rel="stylesheet" href="../assets/signal-brand.css?v=20261125">
+<meta name="sg-stage" content="2">
 
 <meta name="signal-build" content="2026-11-07.footer1">
 <link rel="stylesheet" href="../assets/signal-footer.css?v=2026-11-07.footer1">
 </head>
 <body>
 
-<header>
-  <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">☾</button>
-  <div class="kicker" id="deck-kicker">CYBERSECURITY, MADE VISUAL</div>
-  <h1>The <span class="thin">Cybersecurity</span> Deck</h1>
-</header>
+<div class="sgp-head"><button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">☾</button><h1 class="sgp-h1"><span class="sg-t sg-t-cyber">Cybersecurity deck</span></h1><p class="sgp-sub">Read the cards, flip the flashcards, then take the quiz.</p></div>
 <div class="topicbar">
   <a class="navcard back" href="../#learn-decks"><span class="nc-dir">← Back to</span><span class="nc-title">Learning Spaces</span></a>
   <span class="tlabel">SELECT TOPIC</span>
@@ -226,6 +230,7 @@
   <div class="tstrip-wrap"><div class="tstrip" id="topic-strip"></div></div>
   <button class="tnav" id="tstrip-next" aria-label="Scroll topics right">›</button>
   <label class="tsearch"><input id="topic-search" type="search" placeholder="Search topics…" aria-label="Search topics"></label>
+  <span id="ssPageMount" class="ss-page-mount"></span>
   <a class="navcard sib prev" href="../cloud-deck/"><span class="nc-dir">← Previous</span><span class="nc-title">The Cloud &amp; DevOps Deck</span></a>
 </div>
 <main>
@@ -260,14 +265,11 @@
   </div>
 </main>
 
+<script src="../assets/signal-share.js?v=20261117"></script>
 <script>
 const FOOTER="The Signal";
 const BRAND="The Cybersecurity Deck";
 const PUBLIC_URL="https://thillairaj.github.io/The-Signal-AI-Quantum/cybersecurity-deck/";
-const THEMES={
-obsidian:{bg0:"#151923",bg1:"#0d0f14",accent:"#d4af6a",dim:"rgba(212,175,106,.5)",head:"#ffffff",body:"#c3ccd9",foot:"#8fa0b5"},
-ivory:{bg0:"#fffdf9",bg1:"#f0ebdf",accent:"#a8842f",dim:"rgba(168,132,47,.45)",head:"#171b24",body:"#334052",foot:"#6b7280"},
-midnight:{bg0:"#122c55",bg1:"#0b1f3b",accent:"#d4af6a",dim:"rgba(212,175,106,.5)",head:"#ffffff",body:"#c3ccd9",foot:"#8fa0b5"}};
 /* ---------- topics: one data block per deck; shared render below ---------- */
 /* ---------- Theme (same pattern as The Signal) ---------- */
 const THEME_KEY="deck_theme";
@@ -377,18 +379,22 @@ function selectTopic(id,skipHash){
   if(!skipHash){try{history.replaceState(null,"","#"+t.id);}catch(e){}}
 }
 /* ---------- learn rail ---------- */
+function cardLink(i){const c=activeTopic.learn[i];
+  return PUBLIC_URL+"#card-"+activeTopic.id+"-"+c.n;}
 function cardText(i){const c=activeTopic.learn[i];
-  return c.q+"\n\n"+c.body.join("\n\n");}
-/* social-media rewrites: text only, no URLs, no credentials needed (intent links) */
+  const parts=[c.q].concat(c.body);
+  parts.push("Explore all "+activeTopic.learn.length+" cards in "+activeTopic.title+", free, no sign-up:\n"+cardLink(i));
+  parts.push(activeTopic.liTags);
+  return SignalShare.buildCaption(parts);}
+/* social-media rewrites: intent links only, no credentials needed */
 function xText(i){const c=activeTopic.learn[i];
   const first=c.body[0].split(/(?<=[.!?])\s+/)[0];
-  const tags="\n\n"+activeTopic.xTags;
+  const tailCounted=2+23+2+activeTopic.xTags.length;
   let t=c.q+"\n\n"+first;
-  const max=280-tags.length;
-  if(t.length>max){t=t.slice(0,max-1).trimEnd()+"\u2026";}
-  return t+tags;}
-function liText(i){const c=activeTopic.learn[i];
-  return "\u201c"+c.q+"\u201d\n\n"+c.body.join("\n\n")+"\n\n"+activeTopic.liTags;}
+  const max=280-tailCounted;
+  if(t.length>max){t=t.slice(0,Math.max(0,max-1)).trimEnd()+"\u2026";}
+  return t+"\n\n"+cardLink(i)+"\n\n"+activeTopic.xTags;}
+function liText(i){return cardText(i);}
 let learnBound=false;
 function renderLearn(){
   const rail=document.getElementById("learn-rail");rail.innerHTML="";
@@ -401,13 +407,7 @@ function renderLearn(){
     d.innerHTML='<div class="pnum">'+c.n+' / '+L.length+'</div><div class="ptag">'+c.tag+'</div>'
       +'<h3 class="pq">'+c.q+'</h3>'
       +'<div class="pbody">'+c.body.map(p=>"<p>"+p+"</p>").join("")+'</div>'
-      +'<div class="toolbar"><select id="size-'+i+'" aria-label="Image size">'
-      +'<option value="1080x1350">1080×1350</option><option value="1080x1080">1080×1080</option>'
-      +'</select><select id="theme-'+i+'" aria-label="Colour theme">'
-      +'<option value="obsidian">Obsidian Gold</option><option value="ivory">Ivory</option><option value="midnight">Deep Tech Blue</option>'
-      +'</select><button data-act="dl" data-i="'+i+'">PNG</button>'
-      +'<button data-act="x" data-i="'+i+'">X</button><button data-act="li" data-i="'+i+'">in</button>'
-      +'<button data-act="copy" data-i="'+i+'">Copy</button>'
+      +'<div class="toolbar"><button data-act="share" data-i="'+i+'" class="sg-share-btn" aria-label="Share" title="Share">'+SignalShare.ICONS.share+'</button>'
       +'<span class="copied" id="copied-'+i+'">Copied ✓</span></div>';
     rail.appendChild(d);
   });
@@ -415,12 +415,7 @@ function renderLearn(){
     rail.addEventListener("click",e=>{
       const b=e.target.closest("button[data-act]");if(!b)return;
       const i=+b.dataset.i,act=b.dataset.act;
-      if(act==="copy"){copyText(cardText(i),i);}
-      else if(act==="x"){window.open("https://twitter.com/intent/tweet?text="+encodeURIComponent(xText(i)),"_blank","width=560,height=460");}
-      else if(act==="li"){const t=liText(i);
-        copyText(t,i,"Copied \u2014 paste into the LinkedIn composer");
-        window.open("https://www.linkedin.com/sharing/share-offsite/?url="+encodeURIComponent(PUBLIC_URL),"_blank");}
-      else if(act==="dl"){downloadCard(i,document.getElementById("size-"+i).value,document.getElementById("theme-"+i).value);}
+      if(act==="share"){openCardPanel(i,b);}
     });
     rail.addEventListener("click",e=>{
       if(e.target.closest("button[data-act]"))return;
@@ -456,72 +451,43 @@ document.addEventListener("click",e=>{
 document.addEventListener("keydown",e=>{
   if(e.key==="Escape"){const ov=document.getElementById("zoom-ov");if(ov&&ov.classList.contains("open"))closeZoom();}
 });
-/* ---------- card -> PNG (premium obsidian/gold) ---------- */
-function wrap(x,t,mw){const w=t.split(" "),L=[];let l="";w.forEach(s=>{const t2=l?l+" "+s:s;
-  if(x.measureText(t2).width>mw&&l){L.push(l);l=s;}else l=t2;});if(l)L.push(l);return L;}
-function downloadCard(i,size,theme){
-  const [W,H]=size.split("x").map(Number),c=activeTopic.learn[i],k=W/1080;
-  const T=THEMES[theme]||THEMES.obsidian;
-  const cv=document.createElement("canvas");cv.width=W;cv.height=H;const x=cv.getContext("2d");
-  const grd=x.createLinearGradient(0,0,0,H);grd.addColorStop(0,T.bg0);grd.addColorStop(1,T.bg1);
-  x.fillStyle=grd;x.fillRect(0,0,W,H);
-  x.fillStyle=T.accent;x.fillRect(0,0,W,8*k);
-  const pad=84*k,mw=W-2*pad,cx=W/2;
-  const topSafe=48*k,footTop=H-150*k;
-  x.textAlign="left";
-  x.fillStyle=T.head;x.font="700 "+Math.round(72*k)+"px Georgia,serif";
-  const headLines=wrap(x,c.tag,mw);
-  const headH=headLines.length*Math.round(86*k);
-  let bf=44;
-  const fit=()=>{x.font=Math.round(bf*k)+"px system-ui,sans-serif";const L=[];
-    c.body.forEach(p=>{wrap(x,p,mw).forEach(l=>L.push(l));L.push("");});return L;};
-  const measure=()=>{const L=fit();return{L,h:L.length*Math.round((bf+14)*k)};};
-  let m=measure();
-  const gapH=Math.round(34*k),divGap=Math.round(56*k);
-  while((headH+gapH+divGap+m.h)>(footTop-topSafe)&&bf>24){bf-=2;m=measure();}
-  const lines=m.L,lh=Math.round((bf+14)*k);
-  let y=topSafe+Math.round(66*k);
-  x.fillStyle=T.head;x.font="700 "+Math.round(72*k)+"px Georgia,serif";
-  headLines.forEach(l=>{x.fillText(l,pad,y);y+=Math.round(86*k);});
-  y+=gapH;
-  x.strokeStyle=T.dim;x.lineWidth=2*k;
-  x.beginPath();x.moveTo(pad,y);x.lineTo(pad+130*k,y);x.stroke();
-  const divY=y;
-  y=divY+divGap+Math.max(0,(footTop-(divY+divGap)-m.h)/2);
-  x.fillStyle=T.body;x.font=Math.round(bf*k)+"px system-ui,sans-serif";
-  lines.forEach(l=>{if(l&&y<footTop){x.fillText(l,pad,y);}y+=lh;});
-  x.textAlign="center";
-  x.strokeStyle=T.dim;x.lineWidth=2*k;
-  x.beginPath();x.moveTo(pad,H-116*k);x.lineTo(W-pad,H-116*k);x.stroke();
-  x.fillStyle=T.foot;x.font="600 "+Math.round(28*k)+"px system-ui,sans-serif";
-  x.fillText("THE CYBERSECURITY DECK",cx,H-68*k);
-  x.fillStyle=T.accent;x.fillText(activeTopic.title,cx,H-30*k);
-  x.textAlign="left";
-  const bx=W-pad-Math.round(38*k),by=H-Math.round(62*k),br=Math.round(34*k);
-  x.strokeStyle=T.accent;x.lineWidth=Math.round(3*k);
-  x.beginPath();x.arc(bx,by,br,0,Math.PI*2);x.stroke();
-  x.fillStyle=T.accent;x.font="700 "+Math.round(26*k)+"px Georgia,'Times New Roman',serif";
-  x.textAlign="center";x.textBaseline="middle";
-  try{x.letterSpacing="3px";}catch(e){}
-  x.fillText("TRT",bx,by+Math.round(2*k));
-  try{x.letterSpacing="0px";}catch(e){}
-  x.textAlign="left";x.textBaseline="alphabetic";
-  const filename="cybersecurity-deck-"+activeTopic.id+"-"+c.n+".png";
-  cv.toBlob(function(blob){
-    if(!blob){return;}
-    const file=new File([blob],filename,{type:"image/png"});
-    const mobile=/Android|iPhone|iPad|iPod/i.test(navigator.userAgent||"");
-    if(mobile&&navigator.canShare&&navigator.canShare({files:[file]})){
-      navigator.share({files:[file],title:filename}).catch(function(e){
-        if(e&&e.name!=="AbortError"){fallbackDownload(blob,filename);}
-      });
-    }else{fallbackDownload(blob,filename);}
-  },"image/png");
+/* ---------- share cards: the shared renderer (Nov 25, 2026 standard) ---------- */
+const DECK_TECH="cyber";
+const DECK_LABEL="Cybersecurity deck";
+function lastSentence(text){const parts=String(text||"").match(/[^.!?]+[.!?]+["']?\s*/g);if(!parts||!parts.length)return String(text||"").trim();return parts[parts.length-1].trim();}
+function cardFor(i){const c=activeTopic.learn[i];const text=c.body.join(" ");
+  return {type:DECK_LABEL+" \u00b7 Card "+c.n+" of "+activeTopic.learn.length,tech:DECK_TECH,heading:c.q,body:text,boxLabel:"In one line",box:lastSentence(text),source:BRAND};}
+function cardFilename(i){const c=activeTopic.learn[i];return "cybersecurity-deck-"+activeTopic.id+"-"+c.n+".png";}
+function openCardPanel(i,invoker){
+  const c=activeTopic.learn[i];if(!c||!window.SignalShare)return;
+  const first=(c.body[0]||"").split(/(?<=[.!?])\s+/)[0];
+  SignalShare.openPanel({
+    title:c.q, line:first, link:cardLink(i), caption:cardText(i),
+    tags:activeTopic.xTags||"", xText:xText(i),
+    image:SignalShare.cardImage(cardFor(i),cardFilename(i))
+  }, invoker);
 }
-function fallbackDownload(blob,filename){
-  const url=URL.createObjectURL(blob);
-  triggerDownload(url,filename);
-  setTimeout(function(){URL.revokeObjectURL(url);},8000);
+function downloadCard(i,size,theme){
+  SignalShare.renderCard(cardFor(i),size,theme).then(function(blob){
+    if(!blob){return;}
+    SignalShare.shareImage({blob:blob,filename:cardFilename(i),caption:cardText(i),notify:function(m){showCopied(i,m);}});
+  });
+}
+/* ---------- flashcard sharing: same panel, Answer box ---------- */
+function flashCardFor(j){const f=activeTopic.flash[j];
+  return {type:DECK_LABEL+" \u00b7 Flashcard "+(j+1)+" of "+activeTopic.flash.length,tech:DECK_TECH,heading:f.q,body:"",boxLabel:"Answer",box:f.a,source:BRAND};}
+function flashText(j){const f=activeTopic.flash[j];
+  const parts=[f.q,"Answer: "+f.a];
+  parts.push("Explore all "+activeTopic.learn.length+" cards in "+activeTopic.title+", free, no sign-up:\n"+PUBLIC_URL+"#"+activeTopic.id);
+  parts.push(activeTopic.liTags);
+  return SignalShare.buildCaption(parts);}
+function openFlashPanel(j,invoker){
+  const f=activeTopic.flash[j];if(!f||!window.SignalShare)return;
+  SignalShare.openPanel({
+    title:f.q, line:"", link:PUBLIC_URL+"#"+activeTopic.id, caption:flashText(j),
+    tags:activeTopic.xTags||"",
+    image:SignalShare.cardImage(flashCardFor(j),"cybersecurity-deck-"+activeTopic.id+"-flash-"+(j+1)+".png")
+  }, invoker);
 }
 /* ---------- compact flashcard rail ---------- */
 function renderFlash(){
@@ -535,8 +501,8 @@ function renderFlash(){
     const d=document.createElement("div");d.className="fcard";
     d.innerHTML='<div class="finner"><div class="fface ffront"><div class="fnum">'+(i+1)+' / '+F.length+'</div>'
       +'<div class="fq">'+f.q+'</div><div class="fhint">TAP TO FLIP</div></div>'
-      +'<div class="fface fback"><div class="fnum">'+(i+1)+' / '+F.length+' · ANSWER</div><div>'+f.a+'</div></div></div>';
-    d.addEventListener("click",()=>d.classList.toggle("flipped"));
+      +'<div class="fface fback"><div class="fnum">'+(i+1)+' / '+F.length+' · ANSWER</div><div>'+f.a+'</div><div style="margin-top:10px"><button type="button" class="sg-share-btn" data-flash="'+i+'" aria-label="Share flashcard" title="Share">'+SignalShare.ICONS.share+'</button></div></div></div>';
+    d.addEventListener("click",e=>{const sb=e.target.closest("button[data-flash]");if(sb){e.stopPropagation();openFlashPanel(+sb.dataset.flash,sb);return;}d.classList.toggle("flipped");});
     rail.appendChild(d);
   });
 }
@@ -618,6 +584,12 @@ document.getElementById("tstrip-next").addEventListener("click",()=>document.get
     <div id="zoom-body"></div>
   </div>
 </div>
+<script src="../assets/signal-shell.js?v=20261125" defer></script>
+<!-- ss-page-share:start -->
+<script>
+(function(){function go(){if(window.SignalShare&&SignalShare.mountPageShare){SignalShare.mountPageShare(document.getElementById("ssPageMount"), {"title": "The Cybersecurity Deck", "desc": "", "inside": "15 cards a topic, 5 topics live", "link": "https://thillairaj.github.io/The-Signal-AI-Quantum/cybersecurity-deck/", "tag": "#CyberSecurity", "image": {"url": "https://thillairaj.github.io/The-Signal-AI-Quantum/assets/og/decks/cybersecurity.png", "filename": "cybersecurity-deck.png"}});}}if(document.readyState==="loading"){document.addEventListener("DOMContentLoaded",go);}else{go();}})();
+</script>
+<!-- ss-page-share:end -->
 <footer class="signal-footer">
   <div class="sf-follow"><span class="sf-label">Follow along</span><span class="sf-links"><a class="sf-link" href="https://www.linkedin.com/in/thillairaj" target="_blank" rel="noopener"><span class="sf-badge" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.55V9h3.57v11.45z"/></svg></span>Thillai Raj</a><a class="sf-link" href="https://www.linkedin.com/showcase/qu-bits/" target="_blank" rel="noopener"><span class="sf-badge" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.55V9h3.57v11.45z"/></svg></span>QuBits · Quantum &amp; AI</a><a class="sf-link" href="https://www.linkedin.com/showcase/agentic-ai-architect/" target="_blank" rel="noopener"><span class="sf-badge" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.55V9h3.57v11.45z"/></svg></span>Agentic AI Architect</a></span></div>
   <p class="sf-copy">© 2026 The Signal</p>
