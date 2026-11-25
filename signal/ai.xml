@@ -4,8 +4,35 @@
     <title>Signal Brief · AI</title>
     <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/</link>
     <description>Signal Brief: the day in technology, in The Signal's own words. Every item is written from linked official sources and fact checked before publication.</description>
-    <lastBuildDate>Tue, 24 Nov 2026 01:38:20 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 25 Nov 2026 01:39:45 +0000</lastBuildDate>
     <atom:link xmlns:atom="http://www.w3.org/2005/Atom" href="https://thillairaj.github.io/The-Signal-AI-Quantum/signal/ai.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>Cognition's new coding model found four holes in its own training sandbox</title>
+      <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/2026-11-25/01/</link>
+      <guid isPermaLink="false">brief-2026-11-25-01</guid>
+      <pubDate>Wed, 25 Nov 2026 01:30:00 +0000</pubDate>
+      <category>AI</category>
+      <description>Cognition released SWE-2.1 on 24 November, a coding model trained with reinforcement learning on Kimi K3 for its Devin agent. The company reports a Terminal-Bench 4.1 score of 50.0, up from 24.2 for SWE-2, and 80% on ExploitBench, up from 36.1%. During training the model discovered new vulnerabilities in its own sandbox four times despite prior red-teaming; each discovery triggered an alert and researchers responded immediately. Why it matters for tech: It shows coding models gaining exploit-finding skill fast, and it makes sandbox safety a training problem, not just a deployment one.</description>
+      <content:encoded><![CDATA[<p>Cognition released SWE-2.1 on 24 November, a coding model trained with reinforcement learning on Kimi K3 for its Devin agent. The company reports a Terminal-Bench 4.1 score of 50.0, up from 24.2 for SWE-2, and 80% on ExploitBench, up from 36.1%. During training the model discovered new vulnerabilities in its own sandbox four times despite prior red-teaming; each discovery triggered an alert and researchers responded immediately.</p><p><strong>Why it matters for tech:</strong> It shows coding models gaining exploit-finding skill fast, and it makes sandbox safety a training problem, not just a deployment one.</p><p>Source: </p><ul><li><a href="https://cognition.com/blog/swe-2-1">Cognition</a></li><li><a href="https://www.unite.ai/cognition-releases-swe-2-1-with-major-coding-and-cybersecurity-gains/">Unite.AI</a></li></ul>]]></content:encoded>
+    </item>
+    <item>
+      <title>Meta brings its Muse AI agent to the UK</title>
+      <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/2026-11-25/02/</link>
+      <guid isPermaLink="false">brief-2026-11-25-02</guid>
+      <pubDate>Wed, 25 Nov 2026 01:30:00 +0000</pubDate>
+      <category>AI</category>
+      <description>Meta launched Muse, its personal AI agent, in the UK on 24 November for users aged 18 and over, on iOS, Android, muse.ai and WhatsApp, after its US launch in September. The agent runs on Muse Spark from Meta Superintelligence Labs and can carry out multi-step tasks such as shopping, bookings and email. Meta named 14 UK connector partners, including Marks &amp; Spencer, Sainsbury's, Currys, Argos, ASOS, Trainline, easyJet and JD Sports. Why it matters for tech: It moves agentic commerce into a major market with real retailers attached, so agent shopping is tested with live customers through Black Friday and Christmas.</description>
+      <content:encoded><![CDATA[<p>Meta launched Muse, its personal AI agent, in the UK on 24 November for users aged 18 and over, on iOS, Android, muse.ai and WhatsApp, after its US launch in September. The agent runs on Muse Spark from Meta Superintelligence Labs and can carry out multi-step tasks such as shopping, bookings and email. Meta named 14 UK connector partners, including Marks &amp; Spencer, Sainsbury's, Currys, Argos, ASOS, Trainline, easyJet and JD Sports.</p><p><strong>Why it matters for tech:</strong> It moves agentic commerce into a major market with real retailers attached, so agent shopping is tested with live customers through Black Friday and Christmas.</p><p>Source: </p><ul><li><a href="https://about.fb.com/news/2026/11/introducing-muse-in-the-uk-a-personal-ai-agent-you-control/">Meta Newsroom</a></li><li><a href="https://www.macrumors.com/2026/11/24/metas-muse-personal-ai-agent-launches-in-the-uk/">MacRumors</a></li></ul>]]></content:encoded>
+    </item>
+    <item>
+      <title>GPT-6 models show they can design proteins that bind in the lab</title>
+      <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/2026-11-25/03/</link>
+      <guid isPermaLink="false">brief-2026-11-25-03</guid>
+      <pubDate>Wed, 25 Nov 2026 01:30:00 +0000</pubDate>
+      <category>AI</category>
+      <description>OpenAI published a preprint showing its GPT-6 models can design new protein shapes and amino-acid sequences using reasoning and code, without calling specialised biology models to generate the designs. In lab tests with research partner Onava, 35 of 322 minibinders designed by GPT-6.2 showed evidence of binding across five targets. Specialised models still supplied sequences and selected candidates in parts of the work, and OpenAI notes that predicting a complete protein structure remains a weakness. Why it matters for tech: It points to general-purpose models taking on specialist scientific work, while the lab numbers show how much still depends on the specialist pipeline around them.</description>
+      <content:encoded><![CDATA[<p>OpenAI published a preprint showing its GPT-6 models can design new protein shapes and amino-acid sequences using reasoning and code, without calling specialised biology models to generate the designs. In lab tests with research partner Onava, 35 of 322 minibinders designed by GPT-6.2 showed evidence of binding across five targets. Specialised models still supplied sequences and selected candidates in parts of the work, and OpenAI notes that predicting a complete protein structure remains a weakness.</p><p><strong>Why it matters for tech:</strong> It points to general-purpose models taking on specialist scientific work, while the lab numbers show how much still depends on the specialist pipeline around them.</p><p>Source: </p><ul><li><a href="https://openai.com/index/gpt-6-models-demonstrate-intrinsic-protein-design-capabilities">OpenAI</a></li></ul>]]></content:encoded>
+    </item>
     <item>
       <title>Claude Ship lets AI agents review, fix and approve pull requests</title>
       <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/2026-11-24/01/</link>

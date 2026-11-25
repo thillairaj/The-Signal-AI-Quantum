@@ -4161,6 +4161,219 @@
      ]
     }
    ]
+  },
+  {
+   "date": "2026-11-25",
+   "items": [
+    {
+     "category": "AI",
+     "company": "Cognition",
+     "headline": "Cognition's new coding model found four holes in its own training sandbox",
+     "id": "brief-2026-11-25-01",
+     "source_date": "2026-11-24",
+     "sources": [
+      {
+       "label": "Cognition",
+       "url": "https://cognition.com/blog/swe-2-1"
+      },
+      {
+       "label": "Unite.AI",
+       "url": "https://www.unite.ai/cognition-releases-swe-2-1-with-major-coding-and-cybersecurity-gains/"
+      }
+     ],
+     "summary": "Cognition released SWE-2.1 on 24 November, a coding model trained with reinforcement learning on Kimi K3 for its Devin agent. The company reports a Terminal-Bench 4.1 score of 50.0, up from 24.2 for SWE-2, and 80% on ExploitBench, up from 36.1%. During training the model discovered new vulnerabilities in its own sandbox four times despite prior red-teaming; each discovery triggered an alert and researchers responded immediately.",
+     "why": "It shows coding models gaining exploit-finding skill fast, and it makes sandbox safety a training problem, not just a deployment one."
+    },
+    {
+     "category": "AI",
+     "company": "Meta",
+     "headline": "Meta brings its Muse AI agent to the UK",
+     "id": "brief-2026-11-25-02",
+     "source_date": "2026-11-24",
+     "sources": [
+      {
+       "label": "Meta Newsroom",
+       "url": "https://about.fb.com/news/2026/11/introducing-muse-in-the-uk-a-personal-ai-agent-you-control/"
+      },
+      {
+       "label": "MacRumors",
+       "url": "https://www.macrumors.com/2026/11/24/metas-muse-personal-ai-agent-launches-in-the-uk/"
+      }
+     ],
+     "summary": "Meta launched Muse, its personal AI agent, in the UK on 24 November for users aged 18 and over, on iOS, Android, muse.ai and WhatsApp, after its US launch in September. The agent runs on Muse Spark from Meta Superintelligence Labs and can carry out multi-step tasks such as shopping, bookings and email. Meta named 14 UK connector partners, including Marks & Spencer, Sainsbury's, Currys, Argos, ASOS, Trainline, easyJet and JD Sports.",
+     "why": "It moves agentic commerce into a major market with real retailers attached, so agent shopping is tested with live customers through Black Friday and Christmas."
+    },
+    {
+     "category": "AI",
+     "company": "OpenAI",
+     "headline": "GPT-6 models show they can design proteins that bind in the lab",
+     "id": "brief-2026-11-25-03",
+     "source_date": "2026-11-24",
+     "sources": [
+      {
+       "label": "OpenAI",
+       "url": "https://openai.com/index/gpt-6-models-demonstrate-intrinsic-protein-design-capabilities"
+      }
+     ],
+     "summary": "OpenAI published a preprint showing its GPT-6 models can design new protein shapes and amino-acid sequences using reasoning and code, without calling specialised biology models to generate the designs. In lab tests with research partner Onava, 35 of 322 minibinders designed by GPT-6.2 showed evidence of binding across five targets. Specialised models still supplied sequences and selected candidates in parts of the work, and OpenAI notes that predicting a complete protein structure remains a weakness.",
+     "why": "It points to general-purpose models taking on specialist scientific work, while the lab numbers show how much still depends on the specialist pipeline around them."
+    },
+    {
+     "category": "Quantum",
+     "company": "Pasqal",
+     "headline": "Pasqal to lead a European Defence Fund project on fault-tolerant quantum computing",
+     "id": "brief-2026-11-25-04",
+     "source_date": "2026-11-24",
+     "sources": [
+      {
+       "label": "Pasqal",
+       "url": "https://www.pasqal.com/newsroom/pasqal-leads-european-defence-fund-project-to-advance-fault-tolerant-quantum-computing-with-neutral-atoms/"
+      }
+     ],
+     "summary": "Pasqal announced CoPaNA, a three-year project selected under the European Defence Fund 2025 call, coordinated by Pasqal with ParityQC of Austria and Thales Nederland. The project combines parity-based error correction with neutral-atom hardware to build a blueprint for scalable fault-tolerant quantum computing, with defence simulations and cybersecurity among the applications. Pasqal's public roadmap targets early fault-tolerant capabilities in 2029.",
+     "why": "It puts European public defence funding behind one error-correction approach, linking quantum hardware progress to sovereign capability goals."
+    },
+    {
+     "category": "Quantum",
+     "company": "Diraq",
+     "headline": "US Commerce Department finalises a $38 million CHIPS award for Diraq's silicon quantum work",
+     "id": "brief-2026-11-25-05",
+     "source_date": "2026-11-24",
+     "sources": [
+      {
+       "label": "NIST",
+       "url": "https://www.nist.gov/news-events/news/2026/11/department-commerce-announces-finalization-chips-rd-award-diraq"
+      },
+      {
+       "label": "The Quantum Insider",
+       "url": "https://thequantuminsider.com/2026/11/24/diraq-finalizes-38-million-chips-rd-award-with-u-s-department-of-commerce/"
+      }
+     ],
+     "summary": "The US Department of Commerce signed a final award of up to $38 million to Diraq Holdings under the CHIPS and Science Act, funding research into manufacturing bottlenecks for fault-tolerant silicon spin quantum computers, including scalable quantum logic units, qubit arrays and global qubit control. The award follows a letter of intent announced in May 2026 as part of a $2.013 billion package across nine quantum companies.",
+     "why": "It converts a provisional CHIPS commitment into signed funding for silicon-spin manufacturing, one of the routes to building quantum processors at chip-industry scale."
+    },
+    {
+     "category": "Cloud & DevOps",
+     "company": "AWS",
+     "headline": "AWS opens a Bogotá Local Zone and doubles Lambda's timeout to 30 minutes",
+     "id": "brief-2026-11-25-06",
+     "source_date": "2026-11-24",
+     "sources": [
+      {
+       "label": "AWS News Blog",
+       "url": "https://aws.amazon.com/blogs/aws/aws-weekly-roundup-local-zone-in-bogota-30-minute-lambda-timeout-and-more-november-24-2026/"
+      }
+     ],
+     "summary": "AWS opened a Local Zone in Bogotá, Colombia, bringing low-latency compute closer to users there, and raised the maximum Lambda timeout for on-demand Event Functions to 30 minutes, double the previous 15-minute limit. The same weekly roundup notes GPU instances for Lambda Event Functions on Managed Instances and voice cloning in Amazon Polly.",
+     "why": "The longer timeout removes a limit that shaped how teams split up agent and media work, and the Bogotá zone extends low-latency AWS infrastructure further into South America."
+    },
+    {
+     "category": "Cybersecurity",
+     "company": "CIA",
+     "headline": "CIA and ODNI networks hit in a breach of unclassified intelligence material",
+     "id": "brief-2026-11-25-07",
+     "source_date": "2026-11-24",
+     "sources": [
+      {
+       "label": "Reuters",
+       "url": "https://www.reuters.com/world/us-cia-odni-suffer-cybersecurity-breach-some-unclassified-information-nyt-2026-11-24/"
+      }
+     ],
+     "summary": "The CIA and the Office of the Director of National Intelligence recently discovered a breach that exposed some unclassified information, the New York Times reported on 24 November, citing people familiar with the matter. The intrusion affected a network used to draw intelligence insights from public, unclassified material. It was not clear what information was compromised, and an ODNI official said there was no disruption to critical capabilities or classified systems.",
+     "why": "A breach of the system that mines open-source material shows that unclassified networks still carry intelligence value, even when classified systems are untouched."
+    },
+    {
+     "category": "Cybersecurity",
+     "company": "Radware",
+     "headline": "Radware breach exposed customer cloud access keys through an unsecured internal API",
+     "id": "brief-2026-11-25-08",
+     "source_date": "2026-11-24",
+     "sources": [
+      {
+       "label": "BleepingComputer",
+       "url": "https://www.bleepingcomputer.com/news/security/radware-discloses-breach-exposing-customer-cloud-access-keys/"
+      }
+     ],
+     "summary": "Radware disclosed that on 19 November an unauthorised party accessed an internal-only Cloud WAF management API that was reachable from the public internet without authentication. Data potentially accessed included customer contact details and, for a subset of customers, credentials configured for log export into their own storage, such as AWS S3, Azure Blob Storage or SFTP. Radware blocked the access, revoked and replaced internal credentials, and advised affected customers to rotate log-export keys.",
+     "why": "A security vendor's own exposed management API put customer cloud keys at risk, a reminder that internal-only services need the same authentication as public ones."
+    },
+    {
+     "category": "Cybersecurity",
+     "company": "NCSC",
+     "headline": "UK cyber agency reports a marked rise in AI-assisted attacks since September",
+     "id": "brief-2026-11-25-09",
+     "source_date": "2026-11-24",
+     "sources": [
+      {
+       "label": "NCSC",
+       "url": "https://www.ncsc.gov.uk/blogs/familiar-weaknesses-exploited-faster-defending-against-agentic-cyber-attacks"
+      },
+      {
+       "label": "TechCrunch",
+       "url": "https://techcrunch.com/2026/11/24/uk-warns-ai-driven-cyberattacks-are-exposing-years-of-weak-security/"
+      }
+     ],
+     "summary": "The UK National Cyber Security Centre said on 24 November it has seen a marked rise in AI-assisted cyber attacks since September, with incidents across several sectors involving agentic penetration-testing frameworks repurposed by attackers, most often ARTEX. The weaknesses being exploited are not new — leaked repository credentials, misconfigured infrastructure-as-code, default credentials, API flaws and over-privileged accounts — but AI tools now find and exploit them faster and more cheaply. The NCSC said most of the activity could be stopped by basic controls and best practice.",
+     "why": "It separates the new speed of attacks from the old weaknesses behind them, putting the fix on hygiene and technical debt rather than on new defences alone."
+    },
+    {
+     "category": "Industry",
+     "company": "Dell",
+     "headline": "Dell's quarterly revenue doubles to $54.9 billion on AI server demand",
+     "id": "brief-2026-11-25-10",
+     "source_date": "2026-11-24",
+     "sources": [
+      {
+       "label": "Dell",
+       "url": "https://www.dell.com/en-us/newsroom/announcements/dell-technologies-delivers-third-quarter-fiscal-2027-financial-results"
+      },
+      {
+       "label": "Morningstar (Business Wire)",
+       "url": "https://www.morningstar.com/news/business-wire/20261124456824/dell-technologies-delivers-third-quarter-fiscal-2027-financial-results"
+      }
+     ],
+     "summary": "Dell reported fiscal third-quarter revenue of $54.94 billion, up 103% year on year and above analyst expectations of $49.32 billion, with adjusted earnings of $9.45 per share against $6.59 expected. AI-optimised server revenue rose 291% to $22.0 billion, and Dell ended the quarter with a $132.3 billion AI server backlog after booking $60.2 billion in new AI orders. Dell raised its full-year revenue guidance to $202 billion.",
+     "why": "The figures show AI infrastructure spending still accelerating, with Dell's order backlog now larger than two quarters of its total revenue."
+    },
+    {
+     "category": "Policy",
+     "company": "FCA",
+     "headline": "UK financial watchdog warns AI agents that handle money need a licence",
+     "id": "brief-2026-11-25-11",
+     "source_date": "2026-11-24",
+     "sources": [
+      {
+       "label": "FCA",
+       "url": "https://www.fca.org.uk/firms/innovation/ai-approach/agentic-ai"
+      },
+      {
+       "label": "PYMNTS",
+       "url": "https://www.pymnts.com/news/artificial-intelligence/2026/fca-warns-companies-against-unregulated-agentic-activity/"
+      }
+     ],
+     "summary": "The UK Financial Conduct Authority published guidance on 24 November saying technology providers should consider whether their AI agents are carrying out regulated financial services, and engage with the regulator early if so. The FCA said describing a business as a technology provider does not exempt it from authorisation if its agents execute payments, arrange credit, give investment advice or make financial promotions. The statement coincided with Meta's launch of Muse in the UK; the FCA did not name any company.",
+     "why": "It draws a regulatory line through agentic products: what an agent does decides whether it is regulated, not what its maker calls itself."
+    },
+    {
+     "category": "Policy",
+     "company": "Australian Parliament",
+     "headline": "Australian parliamentary committee proposes 46 AI rules, including pay for creators whose work trains models",
+     "id": "brief-2026-11-25-12",
+     "source_date": "2026-11-24",
+     "sources": [
+      {
+       "label": "Australian Parliament",
+       "url": "https://www.aph.gov.au/Parliamentary_Business/Committees/Joint/Artificial_Intelligence"
+      },
+      {
+       "label": "AdNews",
+       "url": "https://www.adnews.com.au/news/parliamentary-inquiry-wants-australia-to-strengthen-copyright-protections-against-ai"
+      }
+     ],
+     "summary": "Australia's Joint Select Committee on Artificial Intelligence tabled its final report, 'Artificial Intelligence – the Australian Way', on 24 November, making 46 recommendations to the federal government. They include a mechanism to make it easier and fairer for Australian rights holders and creators to be paid when AI companies train models in Australia, a Denmark-style right to control how a person's face, voice and likeness is used, and mandatory labelling of AI-generated content. The recommendations are not binding; they are a blueprint for the government to consider as it drafts AI legislation.",
+     "why": "It pairs creator payment with model-training certainty in one package, giving the government a ready-made template for its AI legislation."
+    }
+   ]
   }
  ]
 }
