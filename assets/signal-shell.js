@@ -83,10 +83,25 @@
     if(t[0]==='Learning Space')return '<button type="button" class="sg-tab'+(on?' on':'')+'" data-menu="1"><span class="n">01</span>Learning Space <i>▾</i></button>';
     return '<a class="sg-tab'+(on?' on':'')+'" href="'+esc(t[1])+'">'+(t[2]?'<span class="n">'+t[2]+'</span>':'')+esc(t[0])+'</a>'}).join('');
   shell.innerHTML='<div class="sg-in"><div class="sg-top"><a class="sg-wm" href="'+esc(BASE)+'">The <em>Signal</em></a><nav class="sg-tabs" aria-label="Main">'+tabs+'</nav><button type="button" class="sg-menub" aria-label="Menu" aria-expanded="false">☰</button></div></div>';
-  var sheet=el('div','sg-sheet');sheet.innerHTML='<a href="'+esc(BASE)+'">Home</a>'+MENU.map(function(c){return '<h4>'+esc(c.h)+'</h4><div class="sub">'+c.items.map(function(i){return '<a href="'+esc(BASE+i[1])+'">'+esc(i[0])+'</a>'}).join('')+'</div>'}).join('')+'<h4>More</h4><a href="'+esc(BASE+'#podcast')+'">Podcast</a><a href="'+esc(BASE+'#research')+'">Articles</a><a href="'+esc(BASE+'#feed')+'">RSS Feed</a><a href="'+esc(BASE+'#brief')+'">Signal Brief</a><a href="'+esc(BASE+'live/')+'">Live news</a>';
+  var sheet=el('div','sg-sheet');sheet.innerHTML='<a href="'+esc(BASE)+'">Home</a><h4>Learning Space</h4><div class="sub">'+MENU.map(function(c){return '<a href="'+esc(c.u)+'">'+esc(c.h)+'</a>'}).join('')+'</div><h4>More</h4><a href="'+esc(BASE+'#podcast')+'">Podcast</a><a href="'+esc(BASE+'#research')+'">Articles</a><a href="'+esc(BASE+'#feed')+'">RSS Feed</a><a href="'+esc(BASE+'#brief')+'">Signal Brief</a><a href="'+esc(BASE+'live/')+'">Live news</a>';
   shell.querySelector('.sg-menub').onclick=function(){sheet.classList.toggle('open')};
   var row2=el('div','sg-crumbrow');row2.innerHTML='<div class="sg-in"><nav class="sg-bc" aria-label="Path">'+bcHtml(crumbs())+'</nav><span class="sg-shareslot"></span></div>';
   var first=document.body.firstChild;document.body.insertBefore(row2,first);document.body.insertBefore(sheet,row2);document.body.insertBefore(shell,sheet);
   var mount=document.querySelector('.ss-page-mount,#ssPageMount');if(mount)row2.querySelector('.sg-shareslot').appendChild(mount);
   tidy();setTimeout(tidy,800);
+})();
+
+;(function(){
+  /* by Luzovi next to the wordmark (top bar on inner pages and the front page) */
+  function byLuzovi(){document.querySelectorAll('.sg-wm,.brand-h').forEach(function(w){if(!w.querySelector('.sg-by')){var b=document.createElement('span');b.className='sg-by';b.textContent='by Luzovi';w.appendChild(b)}})}
+  /* footer: the luzovi.com address on every page; remove the old broken "Follow on LinkedIn" */
+  function footer(){document.querySelectorAll('.site-footer .li-txt').forEach(function(e){e.remove()});
+    document.querySelectorAll('.signal-footer').forEach(function(f){if(f.querySelector('.sf-luz'))return;var d=document.createElement('div');d.className='sf-luz';d.innerHTML='<a href="https://luzovi.com/">luzovi.com</a>';var fol=f.querySelector('.sf-follow');if(fol&&fol.nextSibling)f.insertBefore(d,fol.nextSibling);else f.appendChild(d)})}
+  /* keep the path row right under the top bar, and slim the front-page masthead once scrolled */
+  function measure(){var sh=document.querySelector('.sg-shell')||document.querySelector('.masthead');if(sh)document.documentElement.style.setProperty('--sg-shell-h',sh.getBoundingClientRect().height+'px')}
+  function onScroll(){var on=(window.scrollY||0)>40,h=document.documentElement;if(h.classList.contains('sg-scrolled')!==on){h.classList.toggle('sg-scrolled',on);requestAnimationFrame(measure)}}
+  function run(){byLuzovi();footer();measure();onScroll()}
+  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',run);else run();
+  window.addEventListener('load',function(){byLuzovi();footer();measure()});
+  window.addEventListener('resize',measure);window.addEventListener('scroll',onScroll,{passive:true});
 })();

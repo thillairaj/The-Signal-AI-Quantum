@@ -32,8 +32,8 @@ const trackRailEl = document.getElementById("trackRail");
 let activeSeries = "";
 let activeTrack = "";
 let podcastQuery = "";
-let podcastPage = 0;
-const POD_PAGE_SIZE = 10;
+let podcastVisible = 5;
+const POD_WINDOW = 5;
 const sourceListEl = document.getElementById("sourceList");
 const searchEl = document.getElementById("search");
 const categoryToggleEl = document.getElementById("categoryToggle");
@@ -201,7 +201,7 @@ function renderTracks(eps) {
     `<button class="series-btn track-btn${!activeTrack ? " active" : ""}" data-track="">All tracks (${seriesEps.length})</button>` +
     names.map(n => `<button class="series-btn track-btn${activeTrack === n ? " active" : ""}" data-track="${escapeHtml(n)}">${escapeHtml(n)} (${counts[n]})</button>`).join("");
   trackRailEl.querySelectorAll(".track-btn").forEach(b =>
-    b.addEventListener("click", () => { activeTrack = b.dataset.track; podcastPage = 0; renderPodcast(); }));
+    b.addEventListener("click", () => { activeTrack = b.dataset.track; podcastVisible = POD_WINDOW; renderPodcast(); }));
   podcastTracksEl.hidden = false;
   requestAnimationFrame(refreshTrackRail);
 }
@@ -221,7 +221,7 @@ function renderPodcast() {
       `<button class="series-btn${activeSeries === s ? " active" : ""}" data-series="${s}">${s} (${countOf(s)})</button>`
     ).join("");
   seriesEl.querySelectorAll(".series-btn").forEach(b =>
-    b.addEventListener("click", () => { activeSeries = b.dataset.series; activeTrack = ""; podcastPage = 0; renderPodcast(); }));
+    b.addEventListener("click", () => { activeSeries = b.dataset.series; activeTrack = ""; podcastVisible = POD_WINDOW; renderPodcast(); }));
   /* Listen box (stage 1): fill the per-series episode counts and the tab total. */
   document.querySelectorAll("[data-episodes]").forEach(el => { el.textContent = countOf(el.dataset.episodes); });
   document.querySelectorAll("[data-pod-total]").forEach(el => { el.textContent = eps.length; });
@@ -232,21 +232,21 @@ function renderPodcast() {
   if (q) list = list.filter(e => (e.title || "").toLowerCase().includes(q));
 
   const total = list.length;
-  const totalPages = Math.max(1, Math.ceil(total / POD_PAGE_SIZE));
-  if (podcastPage > totalPages - 1) podcastPage = totalPages - 1;
-  const start = podcastPage * POD_PAGE_SIZE;
-  const pageItems = list.slice(start, start + POD_PAGE_SIZE);
+  if (podcastVisible < POD_WINDOW) podcastVisible = POD_WINDOW;
+  const pageItems = list.slice(0, podcastVisible);
 
   if (!pageItems.length) {
     podcastFeaturedEl.innerHTML = "";
+    const moreBtnE = document.getElementById("podcastMore");
+    if (moreBtnE) moreBtnE.hidden = true;
     podcastListEl.innerHTML = `<p class="empty-state">${q ? `No episodes match "${escapeHtml(podcastQuery.trim())}". Try another search.` : "No episodes in this series yet — check back after the next scheduled run."}</p>`;
     return;
   }
 
-  /* Page 1 leads with the featured hero card; later pages are all rows. */
+  /* The window always leads with the featured hero card (the latest episode in the filtered list). */
   let heroHtml = "";
   let rows = pageItems;
-  if (podcastPage === 0) {
+  {
     const [latest, ...rest] = pageItems;
     rows = rest;
     heroHtml = `
@@ -259,8 +259,7 @@ function renderPodcast() {
     </div>`;
   }
   podcastFeaturedEl.innerHTML = heroHtml;
-  const from = total ? start + 1 : 0;
-  const to = Math.min(start + POD_PAGE_SIZE, total);
+  const to = pageItems.length;
   podcastListEl.innerHTML = rows.map(a => `
     <div class="pod-row" data-epid="${a.id}">
       <div class="pod-row-text">
@@ -271,17 +270,11 @@ function renderPodcast() {
       <div class="pod-share-slot" data-share-for="${a.id}"></div>
     </div>`).join("") + `
     <div class="pager">
-      <button class="pager-btn" id="podPrev" ${podcastPage === 0 ? "disabled" : ""}>← Prev</button>
-      <span class="pager-info">${from}–${to} of ${total}${q ? ` for "${escapeHtml(podcastQuery.trim())}"` : ""}</span>
-      <button class="pager-btn" id="podNext" ${podcastPage >= totalPages - 1 ? "disabled" : ""}>Next →</button>
+      <span class="pager-info">Showing ${to} of ${total}${q ? ` for "${escapeHtml(podcastQuery.trim())}"` : ""}</span>
     </div>`;
+  const moreBtn = document.getElementById("podcastMore");
+  if (moreBtn) moreBtn.hidden = podcastVisible >= total;
   mountPodShares(eps);
-  document.getElementById("podPrev").addEventListener("click", () => {
-    if (podcastPage > 0) { podcastPage--; renderPodcast(); podcastViewEl.scrollIntoView(); }
-  });
-  document.getElementById("podNext").addEventListener("click", () => {
-    if (podcastPage < totalPages - 1) { podcastPage++; renderPodcast(); podcastViewEl.scrollIntoView(); }
-  });
 }
 
 
@@ -322,7 +315,7 @@ function openPodcastTarget() {
     .sort((a, b) => new Date(b.published) - new Date(a.published))
     .filter(e => e.source === activeSeries);
   const idx = eps.findIndex(e => e.id === id);
-  if (idx >= 0) podcastPage = Math.floor(idx / POD_PAGE_SIZE);
+  if (idx >= 0) podcastVisible = Math.max(POD_WINDOW, Math.ceil((idx + 1) / POD_WINDOW) * POD_WINDOW);
   renderPodcast();
   requestAnimationFrame(() => {
     const row = document.querySelector('[data-epid="' + id + '"]');
@@ -558,7 +551,13 @@ searchEl.addEventListener("input", (e) => {
 
 document.getElementById("podcastSearch").addEventListener("input", (e) => {
   podcastQuery = e.target.value;
-  podcastPage = 0;
+  podcastVisible = POD_WINDOW;
+  renderPodcast();
+});
+
+const podcastMoreBtn = document.getElementById("podcastMore");
+if (podcastMoreBtn) podcastMoreBtn.addEventListener("click", () => {
+  podcastVisible += POD_WINDOW;
   renderPodcast();
 });
 
@@ -783,7 +782,7 @@ window.addEventListener("hashchange", function () { openLearnTarget(); openResea
         if (tab) tab.click();
         return;
       }
-      if (view === "podcast") { activeSeries = ""; podcastPage = 0; }
+      if (view === "podcast") { activeSeries = ""; podcastVisible = POD_WINDOW; }
       showView(view);
       window.scrollTo({ top: 0 });
     });
@@ -796,7 +795,7 @@ window.addEventListener("hashchange", function () { openLearnTarget(); openResea
       if (item.dataset.href) { window.location.href = item.dataset.href; return; }
       if (item.dataset.ext) { window.open(item.dataset.ext, "_blank", "noopener"); return; }
       var view = item.dataset.goto;
-      if (view === "podcast") { activeSeries = item.dataset.series || ""; podcastPage = 0; }
+      if (view === "podcast") { activeSeries = item.dataset.series || ""; podcastVisible = POD_WINDOW; }
       if (view === "research" && item.dataset.artId) {
         window.location.href = "research/" + item.dataset.artId + "/";
         return;
