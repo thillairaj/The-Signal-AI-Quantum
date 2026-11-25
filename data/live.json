@@ -1,45 +1,25 @@
 {
-  "updated": "2026-11-25T18:02:46+05:30",
-  "next_update": "2026-11-25T20:00:00+05:30",
+  "updated": "2026-11-25T22:05:25+05:30",
+  "next_update": "2026-11-26T00:00:00+05:30",
   "delay_hours": 2,
   "items": [
     {
-      "category": "Cybersecurity",
-      "company": "Hex.pm",
-      "financial": false,
-      "headline": "Hex.pm reports a breach of its package registry through a flaw rated at the highest severity",
-      "id": "live-2026-11-24-04",
-      "published": "2026-11-24T20:00:00+05:30",
-      "sources": [
-        {
-          "label": "Hex.pm incident report",
-          "url": "https://hex.pm/blog/security-incident-on-hexpm"
-        },
-        {
-          "label": "The Hacker News",
-          "url": "http://thehackernews.com/2026/11/hackers-exploited-cvss-100-hexpm-rce.html"
-        }
-      ],
-      "what": "Hex.pm, the package registry used by Elixir and Erlang developers, said an attacker ran commands on six of its production servers on November 23 after exploiting a flaw in how the registry reads request data. The flaw carries the maximum CVSS score of 10.0. Hex.pm said it found no sign that any package was changed, but it could not rule out that the attacker read account data such as email addresses, password hashes and two-factor authentication secrets. Every account holder has been logged out and is asked to change their password and reset two-factor authentication.",
-      "why": "Package registries sit at the center of software supply chains, so a breach there can reach every project that downloads from them. The flaw had been present in the registry code since 2016, which shows how long a weakness in trusted infrastructure can go unnoticed."
-    },
-    {
-      "id": "live-2026-11-24-05",
-      "published": "2026-11-24T20:00:00+05:30",
-      "category": "Industry",
-      "company": "Microsoft",
-      "headline": "Microsoft launches a top priority overhaul after its worst email outage",
-      "what": "Microsoft has started a Code Red drive to overhaul how it prevents and responds to major service failures, after a 24-hour outage on November 12 and 13 disrupted Exchange Online, Outlook, Teams, Copilot and other Microsoft 365 products, according to internal memos reviewed by Reuters. Microsoft said it was the most customer-impacting incident in the history of Exchange Online and blamed an undetected Windows scalability defect introduced in July. The drive sets a target of resolving future worldwide incidents within an hour and will use AI agents to help engineers diagnose problems faster.",
-      "why": "The outage hit governments, trading firms and airlines across several countries and exposed gaps in how Microsoft engineers coordinate during a crisis. The response sets a public standard Microsoft will now be judged against.",
+      "id": "live-2026-11-25-03",
+      "published": "2026-11-25T02:00:00+05:30",
+      "category": "Policy",
+      "company": "Huawei",
+      "headline": "US jury convicts Huawei on 10 of 12 counts in trade secrets and sanctions case",
+      "what": "A jury in a Brooklyn federal court convicted Huawei and three subsidiaries on 10 of 12 criminal counts, including bank fraud, wire fraud, sanctions violations and conspiracy to steal trade secrets from US companies. The jury acquitted the company on the two most serious counts, racketeering conspiracy and conspiracy to obstruct justice. Sentencing is set for September 14, 2027. Prosecutors said Huawei stole router source code from Cisco, antenna technology from Quintel and other technology from US companies, and deceived banks about its business in Iran.",
+      "why": "The verdict ends a case that began in 2018 and sits at the center of the US China technology dispute.",
       "financial": false,
       "sources": [
         {
-          "label": "Reuters",
-          "url": "https://www.reuters.com/business/microsoft-declares-code-red-after-historic-outage-internal-memos-show-2026-11-24/"
+          "label": "CNN",
+          "url": "https://www.cnn.com/2026/11/24/china/china-huawei-iran-conviction-intl-hnk?cid=external-feeds_iluminar_meta"
         },
         {
-          "label": "The Indian Express",
-          "url": "https://indianexpress.com/article/technology/tech-news-technology/microsoft-code-red-after-major-outage-what-it-means-10977435/"
+          "label": "Al Jazeera",
+          "url": "https://www.aljazeera.com/amp/economy/2026/11/24/chinese-tech-giant-huawei-found-guilty-of-conspiracy-to-steal-trade-secrets"
         }
       ]
     },
