@@ -43,30 +43,7 @@
    "what": "A global Microsoft 365 outage that began on 12 November 2026 disrupted Outlook email, Teams, Copilot and other Microsoft 365 services, with reports from 74 countries and more than 130,000 reports on outage tracker Downdetector at the peak. Microsoft traced the fault to a technical issue linked to an earlier network capacity upgrade and a recent network change, said there was no evidence of malicious activity, and confirmed services were fully restored on 14 November."
   }
  ],
- "review_queue": [
-  {
-   "category": "Cybersecurity",
-   "company": "North Korea (FBI attribution)",
-   "financial": false,
-   "headline": "FBI says North Korea linked hackers stole over $400 million with a recorded video call scheme",
-   "held_reason": "Sensitive item: a nation state attribution that the accused state publicly denies, with a live geopolitical dispute around it. Held for Thillai's approval under the sensitive items rule; never auto published and never rendered on any page.",
-   "id": "breaking-2026-11-15-q1",
-   "impact": "The scheme targets tech and crypto workers through the meeting tools they trust every day, and the FBI says the group is adding AI generated deepfake videos of well known figures. Verification habits for video calls and for files sent during them now matter as much as email phishing defences.",
-   "published": null,
-   "slot": "2026-11-15T10:00:00+05:30",
-   "sources": [
-    {
-     "label": "FBI FLASH AC-111226-MS, 12 November 2026 (IC3)",
-     "url": "https://www.ic3.gov/CSA/2026/261112.pdf"
-    },
-    {
-     "label": "Reuters via GMA News: North Korean hackers steal more than $400 million using video images, FBI says",
-     "url": "https://www.gmanetwork.com/news/topstories/world/1009346/north-korean-hackers-steal-more-than-400-million-using-video-images-fbi-says/story/?just_in"
-    }
-   ],
-   "what": "In a FLASH alert dated 12 November 2026, the FBI said North Korea linked hackers behind a scheme it calls FaceStealer stole more than $400 million in cryptocurrency over 18 months, using fake video meetings and secretly recorded webcam videos of earlier victims to impersonate people the next target knew. The FBI says it has seized over 900 of those videos, and the US Justice Department obtained court orders covering $1.2 billion linked to a separate exchange theft. North Korea has denied involvement."
-  }
- ],
+ "review_queue": [],
  "slots": [],
  "updated": "2026-11-15T18:15:38+05:30",
  "version": 1
