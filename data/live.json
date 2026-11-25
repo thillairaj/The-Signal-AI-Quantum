@@ -1,6 +1,6 @@
 {
-  "updated": "2026-11-26T02:06:50+05:30",
-  "next_update": "2026-11-26T04:00:00+05:30",
+  "updated": "2026-11-26T04:00:15+05:30",
+  "next_update": "2026-11-26T06:00:00+05:30",
   "delay_hours": 2,
   "items": [
     {
@@ -80,6 +80,26 @@
         {
           "label": "Light Reading",
           "url": "https://www.lightreading.com/satellite/fcc-greenlights-spacex-plan-to-deploy-up-to-1m-ai-satellites"
+        }
+      ]
+    },
+    {
+      "id": "live-2026-11-26-01",
+      "published": "2026-11-26T00:00:00+05:30",
+      "category": "Cybersecurity",
+      "company": "1Password",
+      "headline": "1Password discloses breach of customer account records after employee GitHub account compromise",
+      "what": "1Password said an attacker gained access to an employee's corporate GitHub account and used it to reach private source code repositories and push malicious code to backend services. The code downloaded account records for a subset of users, including names and email addresses, account and user identifiers, account creation and last sign in times, public keys, Secure Remote Password protocol parameters, and tokens embedded in emailed links for invitations, provisioning and account recovery. The attacker also copied source code and reached the company's continuous integration and delivery system. 1Password said customer vault contents and the keys that protect them were not accessed at any point, and that it does not store account passwords or Secret Keys. The company disabled the compromised GitHub account, revoked the stolen token, rotated or revoked credentials that may have been exposed, and lengthened the codes in invitation and recovery emails from six numeric digits to ten alphanumeric characters. It said it found no evidence of account takeovers and has hired independent cybersecurity experts to validate its remediation.",
+      "why": "1Password is one of the most widely used password managers, so a breach of its backend systems matters even though vault contents stayed out of reach. The stolen names and email addresses give attackers a verified list of 1Password users to target with phishing, and the company warns customers to expect fake invitations and account recovery messages. The incident also shows how a single compromised employee account can become a route into production systems.",
+      "financial": false,
+      "sources": [
+        {
+          "label": "1Password Blog",
+          "url": "https://1password.com/blog/update-on-nov-2026-security-incident"
+        },
+        {
+          "label": "TechCrunch",
+          "url": "https://techcrunch.com/2026/11/25/1password-said-hackers-broke-into-its-internal-systems-but-customer-passwords-are-safe/"
         }
       ]
     }
