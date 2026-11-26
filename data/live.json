@@ -1,6 +1,6 @@
 {
-  "updated": "2026-11-26T06:06:02+05:30",
-  "next_update": "2026-11-26T08:00:00+05:30",
+  "updated": "2026-11-26T08:04:08+05:30",
+  "next_update": "2026-11-26T10:00:00+05:30",
   "delay_hours": 2,
   "items": [
     {
@@ -20,6 +20,26 @@
         {
           "label": "The Quantum Insider",
           "url": "https://thequantuminsider.com/2026/11/25/european-commission-proposes-quantum-act-and-new-sovereign-tech-equity-fund/"
+        }
+      ]
+    },
+    {
+      "id": "live-2026-11-25-06",
+      "published": "2026-11-25T18:00:00+05:30",
+      "category": "Policy",
+      "company": "US Trade Representative",
+      "headline": "US proposes new tariffs on 14 trading partners, with China facing 20 percent",
+      "what": "The US Trade Representative proposed new tariffs on goods from 14 trading partners, including China, the European Union, India and Japan, after an eight month investigation into excess industrial capacity. China would face a proposed 20 percent duty on top of roughly 25 percent tariffs from the first Trump term, while the European Union would start at 15 percent. The proposal covers steel, aluminium, electric vehicles, appliances, solar products and other goods. It will go through a public comment period and a hearing before it can take effect, which officials said could push implementation into January. The move follows the Supreme Court striking down the administration's earlier sweeping tariffs in February.",
+      "why": "The technology angle is in the goods themselves: the proposal names electric vehicles and solar products among the products Washington says are flooding world markets, and the partner list includes Taiwan, South Korea and Japan, the centre of the chip supply chain, though neither source says semiconductors are themselves in scope. US technology shares took the early hit, with the tech heavy Nasdaq down 0.6 percent at the close after falling more than 4 percent in early trading. The duties are proposed, not final: a public comment period and a hearing come first.",
+      "financial": true,
+      "sources": [
+        {
+          "label": "Reuters",
+          "url": "https://www.reuters.com/world/china/us-proposes-new-tariffs-14-trading-partners-fight-excess-factory-capacity-2026-11-25/"
+        },
+        {
+          "label": "Al Jazeera",
+          "url": "https://www.aljazeera.com/economy/2026/11/25/world-reacts-to-trumps-new-tariffs-as-us-stocks-tumble?traffic_source=rss"
         }
       ]
     },
