@@ -437,47 +437,73 @@ window.SignalBriefUI = (function () {
     }
   }
   /* ---------- the Follow section (bottom of the Brief) ----------
-     The shared component (assets/signal-follow.css and
-     assets/signal-follow.js): one row per feed with its colour dot
-     and a tiny copy button. Feed addresses are the canonical
-     signal.luzovi.com ones, as in the component. */
+     The one standard follow section (assets/signal-follow.css and
+     assets/signal-follow.js): "All stories" alone on a full-width
+     row, then the category feeds in rows of three. A chip is a
+     colour dot, a name and a tiny copy icon; no addresses are
+     shown, and tapping a chip copies its address. Feed addresses
+     are the canonical signal.luzovi.com ones. */
   var FEED_DOTS = {
     "ai": "var(--sg-ai,#2C6FAE)", "quantum": "var(--sg-quantum,#7C5CBF)",
     "cloud-devops": "var(--sg-cloud,#1B7A6E)",
     "cybersecurity": "var(--sg-cyber,#A62B25)",
     "industry": "var(--sg-ink,#201B14)", "policy": "var(--sg-ink,#201B14)"
   };
+  var FEED_SHORT = {
+    "ai": "AI", "quantum": "Quantum",
+    "cloud-devops": "Cloud &<br>DevOps",
+    "cybersecurity": "Cyber<br>security",
+    "industry": "Industry", "policy": "Policy"
+  };
   var COPY_SVG =
     '<svg class="cy" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg>' +
-    '<svg class="ok" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l4 4 10-10"/></svg>' +
-    '<span class="tip">Copied</span>';
+    '<svg class="ok" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l4 4 10-10"/></svg>';
+  function feedChip(f) {
+    var url = "https://signal.luzovi.com/" + f.file;
+    return '<button type="button" class="sg-fchip" data-url="' + url +
+      '" aria-label="Copy the ' + esc(f.label) + ' feed link">' +
+      '<span class="sg-fdot" style="--dot:' + f.dot + '"></span>' +
+      '<span class="sg-fname"><span class="l">' + esc(f.label) +
+      '</span><span class="s">' + (f.short || esc(f.label)) +
+      "</span></span>" +
+      '<span class="sg-fcp">' + COPY_SVG + "</span></button>";
+  }
   function feedsSection(state) {
-    var feeds = [{ label: "All stories", file: "signal.xml",
-      dot: "var(--sg-ink,#201B14)" }].concat(
-      (state.data.categories || []).map(function (c) {
-        return { label: c.label, file: c.file,
-          dot: FEED_DOTS[c.key] || "var(--sg-ink,#201B14)" };
-      }));
-    var rows = feeds.map(function (f) {
-      var url = "https://signal.luzovi.com/" + f.file;
-      return '<li><span class="sg-dot" style="--dot:' + f.dot +
-        '"></span><span class="sg-feedname">' + esc(f.label) + "</span>" +
-        '<button type="button" class="sg-copyfeed" data-url="' + url +
-        '" aria-label="Copy the ' + esc(f.label) + ' feed link">' +
-        COPY_SVG + "</button></li>";
-    }).join("");
-    return '<section class="sg-feeds" id="follow-feeds" ' +
+    var cats = (state.data.categories || []).map(function (c) {
+      return { label: c.label, file: c.file,
+        dot: FEED_DOTS[c.key] || "var(--sg-ink,#201B14)",
+        short: FEED_SHORT[c.key] };
+    });
+    var rows = "";
+    for (var i = 0; i < cats.length; i += 3) {
+      rows += '<div class="sg-frow3">' +
+        cats.slice(i, i + 3).map(feedChip).join("") + "</div>";
+    }
+    return '<section class="sg-fsec" id="follow-feeds" ' +
       'aria-labelledby="sgFeedsTitle">' +
-      '<h2 id="sgFeedsTitle">Follow in a news reader</h2>' +
-      "<p>Copy a feed and paste it into Feedly, Inoreader or any " +
-      "reader. New items arrive on their own.</p>" +
-      '<ul class="sg-feedlist">' + rows + "</ul></section>";
+      '<div class="sg-fsec-hd"><span class="sg-fsec-ic">' + FEED_ICON +
+      '</span><h2 id="sgFeedsTitle">Follow in a news reader</h2></div>' +
+      '<p class="sg-fsec-how">Tap a feed to copy it, then paste it ' +
+      "into your reader app. <strong>For example:</strong> Feedly " +
+      "or Inoreader (web, iPhone, Android), NetNewsWire (iPhone), " +
+      "Feeder (Android), or any news-reader app.</p>" +
+      '<div class="sg-frow1">' +
+      feedChip({ label: "All stories", file: "signal.xml",
+        dot: "var(--sg-ink,#201B14)", short: "All stories" }) +
+      "</div>" + rows + "</section>";
   }
   var FEED_ICON =
     '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" aria-hidden="true"><path d="M5 11a8 8 0 0 1 8 8M5 5a14 14 0 0 1 14 14"/><circle cx="6" cy="18" r="1.8" fill="currentColor" stroke="none"/></svg>';
 
   /* ---------- the mounted UI ---------- */
   var states = [];
+  /* The surface class lets brief.css give the heading block the
+     standard 20px phone margin on both surfaces: the front page tab
+     already sits inside a padded view section, the /brief/ page
+     does not. */
+  function uiClass(state) {
+    return state.tab ? "brief-ui bu-on-tab" : "brief-ui bu-on-page";
+  }
   function mount(root) {
     var prefix = root.getAttribute("data-root-prefix") || "./";
     var state = {
@@ -489,7 +515,8 @@ window.SignalBriefUI = (function () {
     };
     states.push(state);
     root.innerHTML =
-      '<div class="brief-ui"><p class="bu-empty">Loading the brief…</p></div>';
+      '<div class="' + uiClass(state) +
+      '"><p class="bu-empty">Loading the brief…</p></div>';
     fetch(state.siteRoot + "data/brief.json")
       .then(function (r) { return r.json(); })
       .then(function (data) {
@@ -502,7 +529,8 @@ window.SignalBriefUI = (function () {
         render(state);
       })
       .catch(function () {
-        root.innerHTML = '<div class="brief-ui"><p class="bu-empty">' +
+        root.innerHTML = '<div class="' + uiClass(state) +
+          '"><p class="bu-empty">' +
           "The brief could not be loaded. Please reload the page.</p></div>";
       });
     return state;
@@ -561,7 +589,7 @@ window.SignalBriefUI = (function () {
         '"></span></div></div></article>';
     }).join("");
     state.root.innerHTML =
-      '<div class="brief-ui">' +
+      '<div class="' + uiClass(state) + '">' +
       '<div class="sg-headrow">' +
       '<h2 class="sg-pagetitle">Signal Brief</h2>' +
       '<a class="sg-followpill" href="#follow-feeds">' +

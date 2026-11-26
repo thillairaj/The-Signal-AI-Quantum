@@ -331,3 +331,25 @@ button.bu-cal-day:hover, button.bu-cal-day:focus-visible { border-color: var(--b
 :root[data-tone="rose"] .tab-new { background: #2F6A18; }
 :root[data-theme="dark"] .tab-new { background: #8CC56A; color: #171B24; }
 :root[data-tone="rose"] .ss-share-btn:hover { border-color: #2F6A18; }
+
+/* Brief phone margin (Nov 26, 2026): the heading block (the heading
+   row, the line under it, the edition bar and the chips) takes the
+   standard 20px page side margin on phones, the same as the other
+   tabs and pages (.sg-in and the front masthead use 20px; the front
+   page view sections use 1.25rem at this width). Before: on /brief/
+   the block sat 6px from the edge (.brief-ui padding 4px plus the
+   elements' own 2px); on the front page tab it sat 26px in (the view
+   section's 20px plus the same 6px). Now both surfaces total 20px.
+   Laptop layout is unchanged, and the story rail keeps its own
+   padding. brief.js marks the surface: bu-on-page for /brief/,
+   bu-on-tab for the front page tab. */
+@media (max-width: 780px) {
+  .brief-ui.bu-on-page .sg-headrow { padding-left: 16px; padding-right: 16px; }
+  .brief-ui.bu-on-page .bu-desc { padding-left: 16px; padding-right: 16px; }
+  .brief-ui.bu-on-page .bu-edbar { padding-left: 16px; padding-right: 16px; }
+  .brief-ui.bu-on-page .bu-chips { padding-left: 16px; }
+  .brief-ui.bu-on-tab .sg-headrow { margin-left: -4px; margin-right: -4px; padding-left: 0; padding-right: 0; }
+  .brief-ui.bu-on-tab .bu-desc { margin-left: -4px; margin-right: -4px; padding-left: 0; padding-right: 0; }
+  .brief-ui.bu-on-tab .bu-edbar { margin-left: -4px; margin-right: -4px; padding-left: 0; padding-right: 0; }
+  .brief-ui.bu-on-tab .bu-chips { margin-left: -4px; padding-left: 0; }
+}
