@@ -41,6 +41,33 @@
     --title-ink:#f2ede0; --row-sub:#a8adb5;
     --foot-ink:#9aa0aa; --foot-border:#4a5260;
   }
+  /* Themes step 2 (preview): Rose values for the deck tokens. --gold and
+     --gold-dim are not set here: signal-pages.css already routes them to the
+     deck's technology colour, whose Rose shade comes from signal-themes.css.
+     --obsidian, --obsidian2 and --ivory are the fixed dark panels (flashcard
+     fronts, quiz question band) and stay as they are in every theme. */
+  :root[data-tone="rose"]{
+    --card:#F9E7EC; --ink:#2A1A1F; --muted:#7A5F68; --line:#E2B9C5;
+    --green:#2F6A18; --red:#9A2620;
+    --page:#F3D7DF; --page-ink:#2A1A1F;
+    --header-bg:radial-gradient(1200px 400px at 50% -80px,#F9E7EC 0%,#F3D7DF 65%);
+    --header-ink:#2A1A1F; --header-sub:#4F3A41;
+    --bar:rgba(243,215,223,.97); --bar-border:#E2B9C5;
+    --chip-bg:#F9E7EC; --chip-ink:#2A1A1F; --chip-small:#7A5F68;
+    --nav-bg:#F9E7EC;
+    --title-ink:#2A1A1F; --row-sub:#4F3A41;
+    --foot-ink:#7A5F68; --foot-border:#E2B9C5;
+  }
+  :root[data-tone="rose"] .tchip.active{color:#fff}
+  :root[data-tone="rose"] .tchip.active small{color:rgba(255,255,255,.8)}
+  :root[data-tone="rose"] .pbody{color:#2A1A1F}
+  :root[data-tone="rose"] .toolbar select{background:#EDCBD5}
+  :root[data-tone="rose"] .opt.correct{background:#E9DDDB}
+  :root[data-tone="rose"] .opt.wrong{background:#F1D8DC}
+  :root[data-tone="rose"] #quiz-score{color:#2A1A1F}
+  :root[data-tone="rose"] .upcard b{color:#2A1A1F}
+  :root[data-tone="rose"] #zoom-card::before{background:linear-gradient(90deg,var(--gold),#F9E7EC,var(--gold))}
+
   
   .theme-toggle{position:absolute;top:14px;right:14px;background:var(--chip-bg);
     border:1px solid var(--bar-border);border-radius:50%;width:32px;height:32px;
