@@ -643,7 +643,7 @@ body[data-view="research"] .feed-only { display: none; }
   display: flex;
   align-items: center;
   justify-content: center;
-  z-index: 60;
+  z-index: 500;
   cursor: zoom-out;
   padding: 1.5rem;
 }
@@ -867,7 +867,7 @@ body[data-view="research"] .feed-only { display: none; }
 .learn-card.game-soon:hover { transform: none; box-shadow: none; }
 
 /* Play and Learn launch pop up (Thillai, Oct 23 2026): shown once per visitor */
-.games-popup-backdrop { position: fixed; inset: 0; z-index: 200; background: rgba(11,31,59,.55); display: flex; align-items: center; justify-content: center; padding: 18px; }
+.games-popup-backdrop { position: fixed; inset: 0; z-index: 500; background: rgba(11,31,59,.55); display: flex; align-items: center; justify-content: center; padding: 18px; }
 .games-popup-backdrop[hidden] { display: none; }
 .games-popup { position: relative; max-width: 430px; width: 100%; background: #FFFCF4; border: 1px solid #D8C9A3; border-radius: 18px; padding: 26px 24px 22px; box-shadow: 0 24px 60px rgba(0,0,0,.35); text-align: left; }
 .games-popup-kicker { font-family: var(--font-mono); font-size: 11px; letter-spacing: .14em; text-transform: uppercase; color: #7C63C0; font-weight: 700; }
