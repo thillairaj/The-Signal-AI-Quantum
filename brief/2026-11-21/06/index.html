@@ -20,8 +20,9 @@
 <link rel="canonical" href="https://signal.luzovi.com/brief/2026-11-21/06/">
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,800;1,9..144,500;1,9..144,600&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
-  :root { --ink:#171b24; --muted:#5a6270; --gold:#b8860b; --paper:#faf9f6; --card:#ffffff; --line:#e5dfce; }
-  :root[data-theme="dark"] { --ink:#ecede4; --muted:#9aa08d; --paper:#15170f; --card:#1d2019; --line:#3a3d31; }
+  :root { --ink:#171b24; --muted:#5a6270; --gold:#b8860b; --paper:#faf9f6; --card:#ffffff; --line:#e5dfce; --cat:#0E7490; --cat-rgb:14,116,144; --cat-pill:#0E7490; }
+  :root[data-theme="dark"] { --ink:#ecede4; --muted:#9aa08d; --paper:#15170f; --card:#1d2019; --line:#3a3d31; --cat:#5FBFA9; --cat-rgb:95,191,169; }
+:root[data-tone="rose"] { --ink:#2A1A1F; --muted:#7A5F68; --gold:#8F5C10; --paper:#F3D7DF; --card:#F9E7EC; --line:#E2B9C5; --cat:#176A5F; --cat-rgb:23,106,95; --cat-pill:#176A5F; }
   
   * { box-sizing:border-box; }
   body { margin:0; font-family: Inter, system-ui, sans-serif; background:var(--paper); color:var(--ink); }
@@ -53,6 +54,9 @@
 
   .story-why-label { color:#0d6f8a; }
   :root[data-theme="dark"] .story-why-label { color:#5aa1b3; }
+:root[data-tone="rose"] .story-why-label { color:#16665B; }
+:root[data-theme="dark"] .story-srcs a { color:#7FB3E0; }
+:root[data-tone="rose"] .story-srcs a { color:#2A6AA6; }
   
 </style>
 <script>
@@ -94,11 +98,11 @@
 <body>
   <div class="brief-topbar"><a class="brief-back" href="https://signal.luzovi.com/brief/"><small>← Back to</small>Signal Brief</a><button class="brief-theme" id="briefTheme" type="button" aria-label="Toggle dark mode">☾</button></div>
   <main>
-    <span class="story-pill" style="background:#0E7490">Cloud &amp; DevOps</span>
+    <span class="story-pill" style="background:var(--cat-pill)">Cloud &amp; DevOps</span>
     <p class="story-dates">Sat, 21 Nov 2026 · 07:00 IST · Source dated 21 Nov 2026</p>
     <h1>Google makes sidecarless networking generally available on GKE</h1>
     <p class="story-sum">Google has made ambient networking for Google Kubernetes Engine generally available, offering a service mesh without sidecar proxies in every pod. Networking moves to shared per-node components and managed control plane services, with mutual TLS, authorisation policies and traffic telemetry built in. Google says the approach cuts resource use for layer 4 mesh features by up to ten times compared with sidecars and reduces pod restarts for proxy patches.</p>
-    <div class="story-why" style="background:rgba(14,116,144,0.12)"><span class="story-why-label">WHY IT MATTERS FOR TECH</span><p>Removing sidecars takes the per-pod cost of running a service mesh off every workload, which makes mesh security and observability practical for clusters that could not afford the overhead.</p></div>
+    <div class="story-why" style="background:rgba(var(--cat-rgb),0.12)"><span class="story-why-label">WHY IT MATTERS FOR TECH</span><p>Removing sidecars takes the per-pod cost of running a service mesh off every workload, which makes mesh security and observability practical for clusters that could not afford the overhead.</p></div>
     <p class="bu-srcs-label" style="font-size:.7rem;font-weight:800;letter-spacing:.16em;color:var(--muted);text-transform:uppercase">Sources</p>
     <ul class="story-srcs"><li><a href="https://cloud.google.com/blog/products/networking/ambient-networking-for-gke-sidecarless-service-mesh/" target="_blank" rel="noopener">Google Cloud Blog</a></li></ul>
     <div class="story-actions"><span id="storyShare"></span></div>

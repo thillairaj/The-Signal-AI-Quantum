@@ -20,8 +20,9 @@
 <link rel="canonical" href="https://signal.luzovi.com/brief/2026-11-20/11/">
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,800;1,9..144,500;1,9..144,600&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
-  :root { --ink:#171b24; --muted:#5a6270; --gold:#b8860b; --paper:#faf9f6; --card:#ffffff; --line:#e5dfce; }
-  :root[data-theme="dark"] { --ink:#ecede4; --muted:#9aa08d; --paper:#15170f; --card:#1d2019; --line:#3a3d31; }
+  :root { --ink:#171b24; --muted:#5a6270; --gold:#b8860b; --paper:#faf9f6; --card:#ffffff; --line:#e5dfce; --cat:#0F766E; --cat-rgb:15,118,110; --cat-pill:#0F766E; }
+  :root[data-theme="dark"] { --ink:#ecede4; --muted:#9aa08d; --paper:#15170f; --card:#1d2019; --line:#3a3d31; --cat:#F1EBDD; --cat-rgb:241,235,221; }
+:root[data-tone="rose"] { --ink:#2A1A1F; --muted:#7A5F68; --gold:#8F5C10; --paper:#F3D7DF; --card:#F9E7EC; --line:#E2B9C5; --cat:#2A1A1F; --cat-rgb:42,26,31; --cat-pill:#2A1A1F; }
   
   * { box-sizing:border-box; }
   body { margin:0; font-family: Inter, system-ui, sans-serif; background:var(--paper); color:var(--ink); }
@@ -53,6 +54,9 @@
 
   .story-why-label { color:#0f766e; }
   :root[data-theme="dark"] .story-why-label { color:#5ba29c; }
+:root[data-tone="rose"] .story-why-label { color:#2A1A1F; }
+:root[data-theme="dark"] .story-srcs a { color:#7FB3E0; }
+:root[data-tone="rose"] .story-srcs a { color:#2A6AA6; }
   
 </style>
 <script>
@@ -94,11 +98,11 @@
 <body>
   <div class="brief-topbar"><a class="brief-back" href="https://signal.luzovi.com/brief/"><small>← Back to</small>Signal Brief</a><button class="brief-theme" id="briefTheme" type="button" aria-label="Toggle dark mode">☾</button></div>
   <main>
-    <span class="story-pill" style="background:#0F766E">Policy</span>
+    <span class="story-pill" style="background:var(--cat-pill)">Policy</span>
     <p class="story-dates">Fri, 20 Nov 2026 · 07:00 IST · Source dated 19 Nov 2026</p>
     <h1>Securities regulators say finance is still early in quantum security preparations</h1>
     <p class="story-sum">The International Organization of Securities Commissions has published a 63 page report warning that financial markets are still in the early stages of preparing for quantum computers that could break widely used cryptography. The report says no quantum computer capable of breaking today's encryption is known to exist, with conservative estimates placing such machines in 2030 to 2035, while some industry participants urged firms to prepare for capability within five years. It calls on firms to move to post quantum cryptography and build crypto agility, warns against quantum washing in company claims, and notes that public blockchains face a particularly hard migration because post quantum signatures run 35 to 40 times larger than today's.</p>
-    <div class="story-why" style="background:rgba(15,118,110,0.12)"><span class="story-why-label">WHY IT MATTERS FOR TECH</span><p>Regulators are telling banks and markets to start a migration that takes years, before anyone knows when the threat arrives, because waiting leaves data already collected exposed.</p></div>
+    <div class="story-why" style="background:rgba(var(--cat-rgb),0.12)"><span class="story-why-label">WHY IT MATTERS FOR TECH</span><p>Regulators are telling banks and markets to start a migration that takes years, before anyone knows when the threat arrives, because waiting leaves data already collected exposed.</p></div>
     <p class="bu-srcs-label" style="font-size:.7rem;font-weight:800;letter-spacing:.16em;color:var(--muted);text-transform:uppercase">Sources</p>
     <ul class="story-srcs"><li><a href="https://www.iosco.org/library/pubdocs/pdf/IOSCOPD833.pdf" target="_blank" rel="noopener">IOSCO</a></li><li><a href="https://thequantuminsider.com/2026/11/19/securities-regulators-warn-that-slow-progress-on-quantum-security-is-a-mistake/" target="_blank" rel="noopener">The Quantum Insider</a></li></ul>
     <div class="story-actions"><span id="storyShare"></span></div>

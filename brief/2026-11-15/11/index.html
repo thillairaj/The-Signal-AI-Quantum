@@ -20,8 +20,9 @@
 <link rel="canonical" href="https://signal.luzovi.com/brief/2026-11-15/11/">
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,800;1,9..144,500;1,9..144,600&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
-  :root { --ink:#171b24; --muted:#5a6270; --gold:#b8860b; --paper:#faf9f6; --card:#ffffff; --line:#e5dfce; }
-  :root[data-theme="dark"] { --ink:#ecede4; --muted:#9aa08d; --paper:#15170f; --card:#1d2019; --line:#3a3d31; }
+  :root { --ink:#171b24; --muted:#5a6270; --gold:#b8860b; --paper:#faf9f6; --card:#ffffff; --line:#e5dfce; --cat:#B45309; --cat-rgb:180,83,9; --cat-pill:#B45309; }
+  :root[data-theme="dark"] { --ink:#ecede4; --muted:#9aa08d; --paper:#15170f; --card:#1d2019; --line:#3a3d31; --cat:#F1EBDD; --cat-rgb:241,235,221; }
+:root[data-tone="rose"] { --ink:#2A1A1F; --muted:#7A5F68; --gold:#8F5C10; --paper:#F3D7DF; --card:#F9E7EC; --line:#E2B9C5; --cat:#2A1A1F; --cat-rgb:42,26,31; --cat-pill:#2A1A1F; }
   
   * { box-sizing:border-box; }
   body { margin:0; font-family: Inter, system-ui, sans-serif; background:var(--paper); color:var(--ink); }
@@ -53,6 +54,9 @@
 
   .story-why-label { color:#a64d09; }
   :root[data-theme="dark"] .story-why-label { color:#cc8a58; }
+:root[data-tone="rose"] .story-why-label { color:#2A1A1F; }
+:root[data-theme="dark"] .story-srcs a { color:#7FB3E0; }
+:root[data-tone="rose"] .story-srcs a { color:#2A6AA6; }
   
 </style>
 <script>
@@ -94,11 +98,11 @@
 <body>
   <div class="brief-topbar"><a class="brief-back" href="https://signal.luzovi.com/brief/"><small>← Back to</small>Signal Brief</a><button class="brief-theme" id="briefTheme" type="button" aria-label="Toggle dark mode">☾</button></div>
   <main>
-    <span class="story-pill" style="background:#B45309">Industry</span>
+    <span class="story-pill" style="background:var(--cat-pill)">Industry</span>
     <p class="story-dates">Sun, 15 Nov 2026 · 07:00 IST · Source dated 13 Nov 2026</p>
     <h1>Amazon plans a product index covering the whole internet&#x27;s shopping data</h1>
     <p class="story-sum">Amazon plans to build a World Product Graph, a vault of data on every product sold anywhere on the internet, including products Amazon does not sell, and make it available through its own site. According to Reuters, an internal document says the aim is to keep shoppers from doing product research on Reddit or Google and to make AI agents rely on Amazon's index, with an October 1, 2027 release date in the document. Amazon told Reuters that draft documents often paint an incomplete picture and do not necessarily reflect its current plans, and Reuters says it is unclear if or when the plan may be implemented.</p>
-    <div class="story-why" style="background:rgba(180,83,9,0.12)"><span class="story-why-label">WHY IT MATTERS FOR TECH</span><p>Whoever holds the product index shapes what shopping agents recommend, so Amazon's plan is a bid to control that layer of AI shopping.</p></div>
+    <div class="story-why" style="background:rgba(var(--cat-rgb),0.12)"><span class="story-why-label">WHY IT MATTERS FOR TECH</span><p>Whoever holds the product index shapes what shopping agents recommend, so Amazon's plan is a bid to control that layer of AI shopping.</p></div>
     <p class="bu-srcs-label" style="font-size:.7rem;font-weight:800;letter-spacing:.16em;color:var(--muted);text-transform:uppercase">Sources</p>
     <ul class="story-srcs"><li><a href="https://www.reuters.com/technology/artificial-intelligence/amazon-world-product-graph-ai-shopping-2026-11-13/" target="_blank" rel="noopener">Reuters</a></li><li><a href="https://www.theverge.com/tech/1033697/amazon-world-product-graph-ai-search" target="_blank" rel="noopener">The Verge</a></li></ul>
     <div class="story-actions"><span id="storyShare"></span></div>

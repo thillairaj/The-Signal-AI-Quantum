@@ -20,8 +20,9 @@
 <link rel="canonical" href="https://signal.luzovi.com/brief/2026-11-14/12/">
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,800;1,9..144,500;1,9..144,600&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
-  :root { --ink:#171b24; --muted:#5a6270; --gold:#b8860b; --paper:#faf9f6; --card:#ffffff; --line:#e5dfce; }
-  :root[data-theme="dark"] { --ink:#ecede4; --muted:#9aa08d; --paper:#15170f; --card:#1d2019; --line:#3a3d31; }
+  :root { --ink:#171b24; --muted:#5a6270; --gold:#b8860b; --paper:#faf9f6; --card:#ffffff; --line:#e5dfce; --cat:#0F766E; --cat-rgb:15,118,110; --cat-pill:#0F766E; }
+  :root[data-theme="dark"] { --ink:#ecede4; --muted:#9aa08d; --paper:#15170f; --card:#1d2019; --line:#3a3d31; --cat:#F1EBDD; --cat-rgb:241,235,221; }
+:root[data-tone="rose"] { --ink:#2A1A1F; --muted:#7A5F68; --gold:#8F5C10; --paper:#F3D7DF; --card:#F9E7EC; --line:#E2B9C5; --cat:#2A1A1F; --cat-rgb:42,26,31; --cat-pill:#2A1A1F; }
   
   * { box-sizing:border-box; }
   body { margin:0; font-family: Inter, system-ui, sans-serif; background:var(--paper); color:var(--ink); }
@@ -53,6 +54,9 @@
 
   .story-why-label { color:#0f766e; }
   :root[data-theme="dark"] .story-why-label { color:#5ba29c; }
+:root[data-tone="rose"] .story-why-label { color:#2A1A1F; }
+:root[data-theme="dark"] .story-srcs a { color:#7FB3E0; }
+:root[data-tone="rose"] .story-srcs a { color:#2A6AA6; }
   
 </style>
 <script>
@@ -94,11 +98,11 @@
 <body>
   <div class="brief-topbar"><a class="brief-back" href="https://signal.luzovi.com/brief/"><small>← Back to</small>Signal Brief</a><button class="brief-theme" id="briefTheme" type="button" aria-label="Toggle dark mode">☾</button></div>
   <main>
-    <span class="story-pill" style="background:#0F766E">Policy</span>
+    <span class="story-pill" style="background:var(--cat-pill)">Policy</span>
     <p class="story-dates">Sat, 14 Nov 2026 · 07:00 IST · Source dated 12 Nov 2026</p>
     <h1>Operation TorNado arrests 354 in global dark web crackdown</h1>
     <p class="story-sum">Police in 14 countries have arrested 354 people and seized more than $234 million in cash and virtual currencies in Operation TorNado, a coordinated action against vendors and buyers on five dark web marketplaces that had already been seized by law enforcement. The operation, which ran from May 2025 to October 2026, also seized about 5.7 metric tons of illicit drugs, 209 firearms and 38 pill presses. The US Justice Department, which announced the results with Europol, said 132 of the arrests were in the United States.</p>
-    <div class="story-why" style="background:rgba(15,118,110,0.12)"><span class="story-why-label">WHY IT MATTERS FOR TECH</span><p>Seized marketplaces keep producing leads, so each takedown feeds the next round of arrests rather than ending the trade.</p></div>
+    <div class="story-why" style="background:rgba(var(--cat-rgb),0.12)"><span class="story-why-label">WHY IT MATTERS FOR TECH</span><p>Seized marketplaces keep producing leads, so each takedown feeds the next round of arrests rather than ending the trade.</p></div>
     <p class="bu-srcs-label" style="font-size:.7rem;font-weight:800;letter-spacing:.16em;color:var(--muted);text-transform:uppercase">Sources</p>
     <ul class="story-srcs"><li><a href="https://www.justice.gov/opa/pr/international-law-enforcement-operation-targeting-opioid-and-fentanyl-traffickers-dark-web" target="_blank" rel="noopener">US Department of Justice</a></li><li><a href="https://www.bleepingcomputer.com/news/security/police-arrest-354-vendors-buyers-in-global-cybercrime-crackdown/" target="_blank" rel="noopener">BleepingComputer</a></li></ul>
     <div class="story-actions"><span id="storyShare"></span></div>

@@ -20,8 +20,9 @@
 <link rel="canonical" href="https://signal.luzovi.com/brief/2026-11-13/02/">
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,800;1,9..144,500;1,9..144,600&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
-  :root { --ink:#171b24; --muted:#5a6270; --gold:#b8860b; --paper:#faf9f6; --card:#ffffff; --line:#e5dfce; }
-  :root[data-theme="dark"] { --ink:#ecede4; --muted:#9aa08d; --paper:#15170f; --card:#1d2019; --line:#3a3d31; }
+  :root { --ink:#171b24; --muted:#5a6270; --gold:#b8860b; --paper:#faf9f6; --card:#ffffff; --line:#e5dfce; --cat:#4F46E5; --cat-rgb:79,70,229; --cat-pill:#4F46E5; }
+  :root[data-theme="dark"] { --ink:#ecede4; --muted:#9aa08d; --paper:#15170f; --card:#1d2019; --line:#3a3d31; --cat:#7FB3E0; --cat-rgb:127,179,224; }
+:root[data-tone="rose"] { --ink:#2A1A1F; --muted:#7A5F68; --gold:#8F5C10; --paper:#F3D7DF; --card:#F9E7EC; --line:#E2B9C5; --cat:#2A6AA6; --cat-rgb:42,106,166; --cat-pill:#2A6AA6; }
   
   * { box-sizing:border-box; }
   body { margin:0; font-family: Inter, system-ui, sans-serif; background:var(--paper); color:var(--ink); }
@@ -53,6 +54,9 @@
 
   .story-why-label { color:#4f46e5; }
   :root[data-theme="dark"] .story-why-label { color:#8781ed; }
+:root[data-tone="rose"] .story-why-label { color:#245E93; }
+:root[data-theme="dark"] .story-srcs a { color:#7FB3E0; }
+:root[data-tone="rose"] .story-srcs a { color:#2A6AA6; }
   
 </style>
 <script>
@@ -94,11 +98,11 @@
 <body>
   <div class="brief-topbar"><a class="brief-back" href="https://signal.luzovi.com/brief/"><small>← Back to</small>Signal Brief</a><button class="brief-theme" id="briefTheme" type="button" aria-label="Toggle dark mode">☾</button></div>
   <main>
-    <span class="story-pill" style="background:#4F46E5">AI</span>
+    <span class="story-pill" style="background:var(--cat-pill)">AI</span>
     <p class="story-dates">Fri, 13 Nov 2026 · 07:00 IST · Source dated 12 Nov 2026</p>
     <h1>Google opens preorders for Gemini smartglasses starting at $395</h1>
     <p class="story-sum">Google has opened preorders for its first Gemini-powered smartglasses, built with Samsung, Gentle Monster and Warby Parker, with shipping and store availability from December 10. The glasses have no in-lens display; wearers talk to Gemini by voice, use touch controls, or use a 12 megapixel camera. Warby Parker frames start at $395 in the US and Gentle Monster styles at $449, and Google says the camera has an always-on recording light, a physical off switch, no livestreaming and no real-time face recognition.</p>
-    <div class="story-why" style="background:rgba(79,70,229,0.12)"><span class="story-why-label">WHY IT MATTERS FOR TECH</span><p>Glasses put an AI assistant on the face rather than in the hand, so the privacy controls Google ships with them set the pattern other makers will be judged against.</p></div>
+    <div class="story-why" style="background:rgba(var(--cat-rgb),0.12)"><span class="story-why-label">WHY IT MATTERS FOR TECH</span><p>Glasses put an AI assistant on the face rather than in the hand, so the privacy controls Google ships with them set the pattern other makers will be judged against.</p></div>
     <p class="bu-srcs-label" style="font-size:.7rem;font-weight:800;letter-spacing:.16em;color:var(--muted);text-transform:uppercase">Sources</p>
     <ul class="story-srcs"><li><a href="https://arstechnica.com/google/2026/11/google-pushes-privacy-angle-as-gemini-powered-smartglasses-debut-starting-at-395/" target="_blank" rel="noopener">Ars Technica</a></li></ul>
     <div class="story-actions"><span id="storyShare"></span></div>

@@ -20,8 +20,9 @@
 <link rel="canonical" href="https://signal.luzovi.com/brief/2026-11-19/05/">
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,800;1,9..144,500;1,9..144,600&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
-  :root { --ink:#171b24; --muted:#5a6270; --gold:#b8860b; --paper:#faf9f6; --card:#ffffff; --line:#e5dfce; }
-  :root[data-theme="dark"] { --ink:#ecede4; --muted:#9aa08d; --paper:#15170f; --card:#1d2019; --line:#3a3d31; }
+  :root { --ink:#171b24; --muted:#5a6270; --gold:#b8860b; --paper:#faf9f6; --card:#ffffff; --line:#e5dfce; --cat:#7C3AED; --cat-rgb:124,58,237; --cat-pill:#7C3AED; }
+  :root[data-theme="dark"] { --ink:#ecede4; --muted:#9aa08d; --paper:#15170f; --card:#1d2019; --line:#3a3d31; --cat:#A78BDB; --cat-rgb:167,139,219; }
+:root[data-tone="rose"] { --ink:#2A1A1F; --muted:#7A5F68; --gold:#8F5C10; --paper:#F3D7DF; --card:#F9E7EC; --line:#E2B9C5; --cat:#6A47B0; --cat-rgb:106,71,176; --cat-pill:#6A47B0; }
   
   * { box-sizing:border-box; }
   body { margin:0; font-family: Inter, system-ui, sans-serif; background:var(--paper); color:var(--ink); }
@@ -53,6 +54,9 @@
 
   .story-why-label { color:#7c3aed; }
   :root[data-theme="dark"] .story-why-label { color:#a679f3; }
+:root[data-tone="rose"] .story-why-label { color:#6A47B0; }
+:root[data-theme="dark"] .story-srcs a { color:#7FB3E0; }
+:root[data-tone="rose"] .story-srcs a { color:#2A6AA6; }
   
 </style>
 <script>
@@ -94,11 +98,11 @@
 <body>
   <div class="brief-topbar"><a class="brief-back" href="https://signal.luzovi.com/brief/"><small>← Back to</small>Signal Brief</a><button class="brief-theme" id="briefTheme" type="button" aria-label="Toggle dark mode">☾</button></div>
   <main>
-    <span class="story-pill" style="background:#7C3AED">Quantum</span>
+    <span class="story-pill" style="background:var(--cat-pill)">Quantum</span>
     <p class="story-dates">Thu, 19 Nov 2026 · 07:00 IST · Source dated 18 Nov 2026</p>
     <h1>QuEra and Berkeley Lab publish a Nature study of quantum dynamics on up to 180 qubits</h1>
     <p class="story-sum">QuEra Computing and Lawrence Berkeley National Laboratory researchers have published a study in Nature using Aquila, QuEra's analog neutral atom quantum computer, to watch how quantum systems settle after sudden changes. Experiments on arrays of up to 180 atoms found long lived prethermal states, resonant melting and a dynamical phase transition with no equilibrium counterpart. Classical calculations on NERSC's Perlmutter supercomputer validated the results at small scales.</p>
-    <div class="story-why" style="background:rgba(124,58,237,0.12)"><span class="story-why-label">WHY IT MATTERS FOR TECH</span><p>Programmable quantum hardware that reveals physics classical machines cannot reach shows the machines are already producing publishable science, not only benchmarks.</p></div>
+    <div class="story-why" style="background:rgba(var(--cat-rgb),0.12)"><span class="story-why-label">WHY IT MATTERS FOR TECH</span><p>Programmable quantum hardware that reveals physics classical machines cannot reach shows the machines are already producing publishable science, not only benchmarks.</p></div>
     <p class="bu-srcs-label" style="font-size:.7rem;font-weight:800;letter-spacing:.16em;color:var(--muted);text-transform:uppercase">Sources</p>
     <ul class="story-srcs"><li><a href="https://thequantuminsider.com/2026/11/18/quera-berkeley-lab-study-quantum-dynamics-aquila/" target="_blank" rel="noopener">The Quantum Insider</a></li></ul>
     <div class="story-actions"><span id="storyShare"></span></div>

@@ -20,8 +20,9 @@
 <link rel="canonical" href="https://signal.luzovi.com/brief/2026-11-08/04/">
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,800;1,9..144,500;1,9..144,600&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
-  :root { --ink:#171b24; --muted:#5a6270; --gold:#b8860b; --paper:#faf9f6; --card:#ffffff; --line:#e5dfce; }
-  :root[data-theme="dark"] { --ink:#ecede4; --muted:#9aa08d; --paper:#15170f; --card:#1d2019; --line:#3a3d31; }
+  :root { --ink:#171b24; --muted:#5a6270; --gold:#b8860b; --paper:#faf9f6; --card:#ffffff; --line:#e5dfce; --cat:#7C3AED; --cat-rgb:124,58,237; --cat-pill:#7C3AED; }
+  :root[data-theme="dark"] { --ink:#ecede4; --muted:#9aa08d; --paper:#15170f; --card:#1d2019; --line:#3a3d31; --cat:#A78BDB; --cat-rgb:167,139,219; }
+:root[data-tone="rose"] { --ink:#2A1A1F; --muted:#7A5F68; --gold:#8F5C10; --paper:#F3D7DF; --card:#F9E7EC; --line:#E2B9C5; --cat:#6A47B0; --cat-rgb:106,71,176; --cat-pill:#6A47B0; }
   
   * { box-sizing:border-box; }
   body { margin:0; font-family: Inter, system-ui, sans-serif; background:var(--paper); color:var(--ink); }
@@ -53,6 +54,9 @@
 
   .story-why-label { color:#7c3aed; }
   :root[data-theme="dark"] .story-why-label { color:#a679f3; }
+:root[data-tone="rose"] .story-why-label { color:#6A47B0; }
+:root[data-theme="dark"] .story-srcs a { color:#7FB3E0; }
+:root[data-tone="rose"] .story-srcs a { color:#2A6AA6; }
   
 </style>
 <script>
@@ -94,11 +98,11 @@
 <body>
   <div class="brief-topbar"><a class="brief-back" href="https://signal.luzovi.com/brief/"><small>← Back to</small>Signal Brief</a><button class="brief-theme" id="briefTheme" type="button" aria-label="Toggle dark mode">☾</button></div>
   <main>
-    <span class="story-pill" style="background:#7C3AED">Quantum</span>
+    <span class="story-pill" style="background:var(--cat-pill)">Quantum</span>
     <p class="story-dates">Sun, 8 Nov 2026 · 07:00 IST · Source dated 7 Nov 2026</p>
     <h1>Oxford team simulates Aharonov-Bohm effect with two trapped ions</h1>
     <p class="story-sum">Researchers at the University of Oxford have simulated the Aharonov-Bohm effect in a lattice gauge theory using a hybrid trapped-ion quantum computer, in a study published in Nature Physics. Two trapped ions formed a loop with two paths, and entangling the qubits that encode the magnetic flux changed whether a particle could tunnel between sites. When the entangled qubits encoded a nonzero flux, the two paths cancelled out and tunnelling stopped entirely, showing the simulation captures how flux affects particle motion.</p>
-    <div class="story-why" style="background:rgba(124,58,237,0.12)"><span class="story-why-label">WHY IT MATTERS FOR TECH</span><p>Simulating gauge theories with matter and flux together moves quantum simulation closer to the physics behind particle interactions and exotic materials.</p></div>
+    <div class="story-why" style="background:rgba(var(--cat-rgb),0.12)"><span class="story-why-label">WHY IT MATTERS FOR TECH</span><p>Simulating gauge theories with matter and flux together moves quantum simulation closer to the physics behind particle interactions and exotic materials.</p></div>
     <p class="bu-srcs-label" style="font-size:.7rem;font-weight:800;letter-spacing:.16em;color:var(--muted);text-transform:uppercase">Sources</p>
     <ul class="story-srcs"><li><a href="https://phys.org/news/2026-11-paths-flux-ions-simulate-aharonovbohm.html" target="_blank" rel="noopener">Phys.org</a></li><li><a href="https://doi.org/10.1038/s41567-026-03400-6" target="_blank" rel="noopener">Nature Physics</a></li></ul>
     <div class="story-actions"><span id="storyShare"></span></div>

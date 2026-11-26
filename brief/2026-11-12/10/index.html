@@ -20,8 +20,9 @@
 <link rel="canonical" href="https://signal.luzovi.com/brief/2026-11-12/10/">
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,800;1,9..144,500;1,9..144,600&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
-  :root { --ink:#171b24; --muted:#5a6270; --gold:#b8860b; --paper:#faf9f6; --card:#ffffff; --line:#e5dfce; }
-  :root[data-theme="dark"] { --ink:#ecede4; --muted:#9aa08d; --paper:#15170f; --card:#1d2019; --line:#3a3d31; }
+  :root { --ink:#171b24; --muted:#5a6270; --gold:#b8860b; --paper:#faf9f6; --card:#ffffff; --line:#e5dfce; --cat:#B45309; --cat-rgb:180,83,9; --cat-pill:#B45309; }
+  :root[data-theme="dark"] { --ink:#ecede4; --muted:#9aa08d; --paper:#15170f; --card:#1d2019; --line:#3a3d31; --cat:#F1EBDD; --cat-rgb:241,235,221; }
+:root[data-tone="rose"] { --ink:#2A1A1F; --muted:#7A5F68; --gold:#8F5C10; --paper:#F3D7DF; --card:#F9E7EC; --line:#E2B9C5; --cat:#2A1A1F; --cat-rgb:42,26,31; --cat-pill:#2A1A1F; }
   
   * { box-sizing:border-box; }
   body { margin:0; font-family: Inter, system-ui, sans-serif; background:var(--paper); color:var(--ink); }
@@ -53,6 +54,9 @@
 
   .story-why-label { color:#a64d09; }
   :root[data-theme="dark"] .story-why-label { color:#cc8a58; }
+:root[data-tone="rose"] .story-why-label { color:#2A1A1F; }
+:root[data-theme="dark"] .story-srcs a { color:#7FB3E0; }
+:root[data-tone="rose"] .story-srcs a { color:#2A6AA6; }
   
 </style>
 <script>
@@ -94,11 +98,11 @@
 <body>
   <div class="brief-topbar"><a class="brief-back" href="https://signal.luzovi.com/brief/"><small>← Back to</small>Signal Brief</a><button class="brief-theme" id="briefTheme" type="button" aria-label="Toggle dark mode">☾</button></div>
   <main>
-    <span class="story-pill" style="background:#B45309">Industry</span>
+    <span class="story-pill" style="background:var(--cat-pill)">Industry</span>
     <p class="story-dates">Thu, 12 Nov 2026 · 07:00 IST · Source dated 11 Nov 2026</p>
     <h1>TSMC plans $1 billion in stakes in OpenAI and Anthropic</h1>
     <p class="story-sum">TSMC is ready to invest $1 billion in Anthropic and OpenAI, with its board approving the plans. Up to $500 million would go into OpenAI preferred stock reserved for large investors, and $500 million into Anthropic common shares at the price of its expected public listing. TSMC manufactures most of NVIDIA's AI data-centre chips and most of Apple's custom chips, while Anthropic and OpenAI buy large volumes of TSMC-made hardware for their data-centre projects.</p>
-    <div class="story-why" style="background:rgba(180,83,9,0.12)"><span class="story-why-label">WHY IT MATTERS FOR TECH</span><p>A chipmaker taking stakes in the AI developers that buy its hardware ties supplier and buyer together, and analysts warn this kind of circular financing makes real demand for AI hardware harder to read.</p></div>
+    <div class="story-why" style="background:rgba(var(--cat-rgb),0.12)"><span class="story-why-label">WHY IT MATTERS FOR TECH</span><p>A chipmaker taking stakes in the AI developers that buy its hardware ties supplier and buyer together, and analysts warn this kind of circular financing makes real demand for AI hardware harder to read.</p></div>
     <p class="bu-srcs-label" style="font-size:.7rem;font-weight:800;letter-spacing:.16em;color:var(--muted);text-transform:uppercase">Sources</p>
     <ul class="story-srcs"><li><a href="https://arstechnica.com/ai/2026/11/taiwans-chipmaking-giant-tsmc-to-invest-1b-in-anthropic-openai/" target="_blank" rel="noopener">Ars Technica</a></li></ul>
     <div class="story-actions"><span id="storyShare"></span></div>

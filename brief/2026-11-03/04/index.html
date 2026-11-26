@@ -20,8 +20,9 @@
 <link rel="canonical" href="https://signal.luzovi.com/brief/2026-11-03/04/">
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,800;1,9..144,500;1,9..144,600&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
-  :root { --ink:#171b24; --muted:#5a6270; --gold:#b8860b; --paper:#faf9f6; --card:#ffffff; --line:#e5dfce; }
-  :root[data-theme="dark"] { --ink:#ecede4; --muted:#9aa08d; --paper:#15170f; --card:#1d2019; --line:#3a3d31; }
+  :root { --ink:#171b24; --muted:#5a6270; --gold:#b8860b; --paper:#faf9f6; --card:#ffffff; --line:#e5dfce; --cat:#0E7490; --cat-rgb:14,116,144; --cat-pill:#0E7490; }
+  :root[data-theme="dark"] { --ink:#ecede4; --muted:#9aa08d; --paper:#15170f; --card:#1d2019; --line:#3a3d31; --cat:#5FBFA9; --cat-rgb:95,191,169; }
+:root[data-tone="rose"] { --ink:#2A1A1F; --muted:#7A5F68; --gold:#8F5C10; --paper:#F3D7DF; --card:#F9E7EC; --line:#E2B9C5; --cat:#176A5F; --cat-rgb:23,106,95; --cat-pill:#176A5F; }
   
   * { box-sizing:border-box; }
   body { margin:0; font-family: Inter, system-ui, sans-serif; background:var(--paper); color:var(--ink); }
@@ -53,6 +54,9 @@
 
   .story-why-label { color:#0d6f8a; }
   :root[data-theme="dark"] .story-why-label { color:#5aa1b3; }
+:root[data-tone="rose"] .story-why-label { color:#16665B; }
+:root[data-theme="dark"] .story-srcs a { color:#7FB3E0; }
+:root[data-tone="rose"] .story-srcs a { color:#2A6AA6; }
   
 </style>
 <script>
@@ -94,11 +98,11 @@
 <body>
   <div class="brief-topbar"><a class="brief-back" href="https://signal.luzovi.com/brief/"><small>← Back to</small>Signal Brief</a><button class="brief-theme" id="briefTheme" type="button" aria-label="Toggle dark mode">☾</button></div>
   <main>
-    <span class="story-pill" style="background:#0E7490">Cloud &amp; DevOps</span>
+    <span class="story-pill" style="background:var(--cat-pill)">Cloud &amp; DevOps</span>
     <p class="story-dates">Tue, 3 Nov 2026 · 07:00 IST · Source dated 2 Nov 2026</p>
     <h1>AWS makes Step Functions callable as agent tools</h1>
     <p class="story-sum">In its weekly roundup, AWS notes that Step Functions, its workflow service spanning more than 220 AWS services, can now be handed to AI agents as a tool. Workflows that teams already run and trust become callable by agents without being rewritten.</p>
-    <div class="story-why" style="background:rgba(14,116,144,0.12)"><span class="story-why-label">WHY IT MATTERS FOR TECH</span><p>It shows cloud platforms adapting established automation for agents rather than replacing it.</p></div>
+    <div class="story-why" style="background:rgba(var(--cat-rgb),0.12)"><span class="story-why-label">WHY IT MATTERS FOR TECH</span><p>It shows cloud platforms adapting established automation for agents rather than replacing it.</p></div>
     <p class="bu-srcs-label" style="font-size:.7rem;font-weight:800;letter-spacing:.16em;color:var(--muted);text-transform:uppercase">Sources</p>
     <ul class="story-srcs"><li><a href="https://aws.amazon.com/blogs/aws/aws-weekly-roundup-gpt-6-1-terra-on-bedrock-step-functions-as-agent-tools-and-more-november-2-2026/" target="_blank" rel="noopener">AWS News Blog</a></li></ul>
     <div class="story-actions"><span id="storyShare"></span></div>

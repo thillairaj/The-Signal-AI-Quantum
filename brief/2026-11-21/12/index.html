@@ -20,8 +20,9 @@
 <link rel="canonical" href="https://signal.luzovi.com/brief/2026-11-21/12/">
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,800;1,9..144,500;1,9..144,600&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
-  :root { --ink:#171b24; --muted:#5a6270; --gold:#b8860b; --paper:#faf9f6; --card:#ffffff; --line:#e5dfce; }
-  :root[data-theme="dark"] { --ink:#ecede4; --muted:#9aa08d; --paper:#15170f; --card:#1d2019; --line:#3a3d31; }
+  :root { --ink:#171b24; --muted:#5a6270; --gold:#b8860b; --paper:#faf9f6; --card:#ffffff; --line:#e5dfce; --cat:#0F766E; --cat-rgb:15,118,110; --cat-pill:#0F766E; }
+  :root[data-theme="dark"] { --ink:#ecede4; --muted:#9aa08d; --paper:#15170f; --card:#1d2019; --line:#3a3d31; --cat:#F1EBDD; --cat-rgb:241,235,221; }
+:root[data-tone="rose"] { --ink:#2A1A1F; --muted:#7A5F68; --gold:#8F5C10; --paper:#F3D7DF; --card:#F9E7EC; --line:#E2B9C5; --cat:#2A1A1F; --cat-rgb:42,26,31; --cat-pill:#2A1A1F; }
   
   * { box-sizing:border-box; }
   body { margin:0; font-family: Inter, system-ui, sans-serif; background:var(--paper); color:var(--ink); }
@@ -53,6 +54,9 @@
 
   .story-why-label { color:#0f766e; }
   :root[data-theme="dark"] .story-why-label { color:#5ba29c; }
+:root[data-tone="rose"] .story-why-label { color:#2A1A1F; }
+:root[data-theme="dark"] .story-srcs a { color:#7FB3E0; }
+:root[data-tone="rose"] .story-srcs a { color:#2A6AA6; }
   
 </style>
 <script>
@@ -94,11 +98,11 @@
 <body>
   <div class="brief-topbar"><a class="brief-back" href="https://signal.luzovi.com/brief/"><small>← Back to</small>Signal Brief</a><button class="brief-theme" id="briefTheme" type="button" aria-label="Toggle dark mode">☾</button></div>
   <main>
-    <span class="story-pill" style="background:#0F766E">Policy</span>
+    <span class="story-pill" style="background:var(--cat-pill)">Policy</span>
     <p class="story-dates">Sat, 21 Nov 2026 · 07:00 IST · Source dated 20 Nov 2026</p>
     <h1>US quantum awards pair CHIPS funding with government equity stakes</h1>
     <p class="story-sum">Agreements disclosed in SEC filings show how the US Department of Commerce's quantum computing awards work: nine companies share a proposed $2.013 billion in CHIPS incentives, and the department takes a minority, non-controlling equity stake in each as a condition of funding. Rigetti, D-Wave and Quantinuum each received awards of up to $100 million, with some money available at once and the rest tied to milestones, and each issued the department shares calculated against the full award. The department can recover funding if required work is not completed, and Atom Computing's award was finalised on November 13.</p>
-    <div class="story-why" style="background:rgba(15,118,110,0.12)"><span class="story-why-label">WHY IT MATTERS FOR TECH</span><p>The structure ties public research money to ownership and milestones, which sets the terms for how the US funds the engineering behind larger quantum computers.</p></div>
+    <div class="story-why" style="background:rgba(var(--cat-rgb),0.12)"><span class="story-why-label">WHY IT MATTERS FOR TECH</span><p>The structure ties public research money to ownership and milestones, which sets the terms for how the US funds the engineering behind larger quantum computers.</p></div>
     <p class="bu-srcs-label" style="font-size:.7rem;font-weight:800;letter-spacing:.16em;color:var(--muted);text-transform:uppercase">Sources</p>
     <ul class="story-srcs"><li><a href="https://thequantuminsider.com/2026/11/20/how-the-department-of-commerces-quantum-awards-work-and-what-companies-give-in-return/" target="_blank" rel="noopener">The Quantum Insider</a></li><li><a href="https://www.nist.gov/system/files/documents/2026/05/21/Quantum%20CHIPS%20Press%20Release-2026-05-21-Updated_Final.pdf" target="_blank" rel="noopener">NIST (Department of Commerce announcement, May 21, 2026)</a></li></ul>
     <div class="story-actions"><span id="storyShare"></span></div>

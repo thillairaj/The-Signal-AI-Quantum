@@ -9,6 +9,31 @@ window.SignalBriefUI = (function () {
     "AI": "#3B82C4", "Quantum": "#7C5CBF", "Cloud & DevOps": "#1B7A6E",
     "Cybersecurity": "#A62B25", "Industry": "#201B14", "Policy": "#201B14"
   };
+  /* Themes step 2 (preview): each theme uses its own category shades.
+     Industry and Policy take the theme ink, as in the Light map. */
+  var CAT_COLOURS_ROSE = {
+    "AI": "#2A6AA6", "Quantum": "#6A47B0", "Cloud & DevOps": "#176A5F",
+    "Cybersecurity": "#9A2620", "Industry": "#2A1A1F", "Policy": "#2A1A1F"
+  };
+  var CAT_COLOURS_DARK = {
+    "AI": "#7FB3E0", "Quantum": "#A78BDB", "Cloud & DevOps": "#5FBFA9",
+    "Cybersecurity": "#E58A80", "Industry": "#F1EBDD", "Policy": "#F1EBDD"
+  };
+  function themeName() {
+    var el = document.documentElement;
+    if (el.getAttribute("data-tone") === "rose") return "rose";
+    return el.getAttribute("data-theme") === "dark" ? "dark" : "light";
+  }
+  function catColour(name) {
+    var t = themeName();
+    var map = t === "rose" ? CAT_COLOURS_ROSE :
+      t === "dark" ? CAT_COLOURS_DARK : CAT_COLOURS;
+    return map[name] ||
+      (t === "dark" ? "#9D937F" : t === "rose" ? "#7A5F68" : "#5a6b7f");
+  }
+  function pillText() {
+    return themeName() === "dark" ? "#12100D" : "#FFFFFF";
+  }
   var CAT_TAGS = {
     "AI": "#AI", "Quantum": "#QuantumComputing",
     "Cloud & DevOps": "#CloudComputing", "Cybersecurity": "#CyberSecurity",
@@ -278,15 +303,12 @@ window.SignalBriefUI = (function () {
     return [(n >> 16) & 255, (n >> 8) & 255, n & 255];
   }
   function isDark() {
-    var t = document.documentElement.getAttribute("data-theme");
-    if (t) return t === "dark";
-    try {
-      return window.matchMedia("(prefers-color-scheme: dark)").matches;
-    } catch (e) { return false; }
+    return themeName() === "dark";
   }
   function labelColour(cat) {
-    var c = hexRgb(cat), dark = isDark();
-    var card = dark ? [29, 32, 25] : [255, 255, 255];
+    var c = hexRgb(catColour(cat)), dark = isDark();
+    var card = dark ? [29, 32, 25] :
+      themeName() === "rose" ? [249, 231, 236] : [255, 255, 255];
     var bg = c.map(function (v, i) {
       return Math.round(v * 0.12 + card[i] * 0.88);
     });
@@ -384,7 +406,7 @@ window.SignalBriefUI = (function () {
         '<div class="bu-sheet" role="dialog" aria-modal="true" ' +
         'aria-label="Follow Signal Brief">' +
         '<div class="bu-sheet-top"><div class="bu-sheet-meta">' +
-        '<span class="bu-pill" style="background:#b8860b">Follow</span>' +
+        '<span class="bu-pill" style="background:var(--b-gold);color:var(--b-pill-ink,#fff)">Follow</span>' +
         '</div><button type="button" class="bu-close" aria-label="Close">' +
         "×</button></div>" +
         "<h3>Follow Signal Brief</h3>" +
@@ -409,9 +431,10 @@ window.SignalBriefUI = (function () {
   }
   function openSheet(state, item, ed, invoker) {
     ensureOverlays(state);
-    var cat = CAT_COLOURS[item.category] || "#5a6b7f";
+    var cat = catColour(item.category);
     sheet.meta.innerHTML =
-      '<span><span class="bu-pill" style="background:' + cat + '">' +
+      '<span><span class="bu-pill" style="background:' + cat +
+      ';color:' + pillText() + '">' +
       esc(item.category) + "</span></span>" +
       '<p class="bu-sheet-dates">' + esc(fmtDate(ed.date)) + " · " +
       esc(editionTime(ed)) + " IST · Source dated " +
@@ -550,19 +573,19 @@ window.SignalBriefUI = (function () {
         return '<button type="button" class="bu-chip" data-cat="' +
           esc(c) + '" aria-pressed="' + (state.cat === c) + '">' +
           '<span class="bu-dot" style="background:' +
-          (CAT_COLOURS[c] || "#5a6b7f") + '"></span>' + esc(c) +
+          catColour(c) + '"></span>' + esc(c) +
           '<span class="bu-count">' + n + "</span></button>";
       })).join("");
     var cards = state.view.map(function (item) {
       var pos = ed.items.indexOf(item) + 1;
-      var cat = CAT_COLOURS[item.category] || "#5a6b7f";
+      var cat = catColour(item.category);
       return '<article class="bu-card" tabindex="0" role="button" ' +
         'data-item="' + esc(item.id) + '" aria-label="' +
         esc(item.headline) + '">' +
         '<div class="bu-band" style="background:' + cat + '"></div>' +
         '<div class="bu-card-in">' +
         '<p class="bu-card-meta"><span class="bu-pill" style="background:' +
-        cat + '">' + esc(item.category) + '</span>' +
+        cat + ';color:' + pillText() + '">' + esc(item.category) + '</span>' +
         '<span class="bu-card-date">' + esc(fmtDate(ed.date)) + " · " +
         esc(time) + " IST</span></p>" +
         '<h3 class="bu-card-h">' + esc(item.headline) + "</h3>" +

@@ -20,8 +20,9 @@
 <link rel="canonical" href="https://signal.luzovi.com/brief/2026-11-12/03/">
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,800;1,9..144,500;1,9..144,600&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
-  :root { --ink:#171b24; --muted:#5a6270; --gold:#b8860b; --paper:#faf9f6; --card:#ffffff; --line:#e5dfce; }
-  :root[data-theme="dark"] { --ink:#ecede4; --muted:#9aa08d; --paper:#15170f; --card:#1d2019; --line:#3a3d31; }
+  :root { --ink:#171b24; --muted:#5a6270; --gold:#b8860b; --paper:#faf9f6; --card:#ffffff; --line:#e5dfce; --cat:#7C3AED; --cat-rgb:124,58,237; --cat-pill:#7C3AED; }
+  :root[data-theme="dark"] { --ink:#ecede4; --muted:#9aa08d; --paper:#15170f; --card:#1d2019; --line:#3a3d31; --cat:#A78BDB; --cat-rgb:167,139,219; }
+:root[data-tone="rose"] { --ink:#2A1A1F; --muted:#7A5F68; --gold:#8F5C10; --paper:#F3D7DF; --card:#F9E7EC; --line:#E2B9C5; --cat:#6A47B0; --cat-rgb:106,71,176; --cat-pill:#6A47B0; }
   
   * { box-sizing:border-box; }
   body { margin:0; font-family: Inter, system-ui, sans-serif; background:var(--paper); color:var(--ink); }
@@ -53,6 +54,9 @@
 
   .story-why-label { color:#7c3aed; }
   :root[data-theme="dark"] .story-why-label { color:#a679f3; }
+:root[data-tone="rose"] .story-why-label { color:#6A47B0; }
+:root[data-theme="dark"] .story-srcs a { color:#7FB3E0; }
+:root[data-tone="rose"] .story-srcs a { color:#2A6AA6; }
   
 </style>
 <script>
@@ -94,11 +98,11 @@
 <body>
   <div class="brief-topbar"><a class="brief-back" href="https://signal.luzovi.com/brief/"><small>← Back to</small>Signal Brief</a><button class="brief-theme" id="briefTheme" type="button" aria-label="Toggle dark mode">☾</button></div>
   <main>
-    <span class="story-pill" style="background:#7C3AED">Quantum</span>
+    <span class="story-pill" style="background:var(--cat-pill)">Quantum</span>
     <p class="story-dates">Thu, 12 Nov 2026 · 07:00 IST · Source dated 11 Nov 2026</p>
     <h1>IBM details Nighthawk r3 chip and a 1,040-qubit system for 2027</h1>
     <p class="story-sum">IBM has announced Nighthawk r3, a processor designed to run 10,000 quantum operations across 520 programmable qubits, with 2,034 physical qubits in total. IBM plans to link two r3 processors into a single 1,040-qubit system in 2027, using chip to chip interconnects it has already demonstrated. The current Nighthawk r2 runs up to 100,000 samples a second and more than 7,500 operations on 120 qubits, and partners have run 34 billion circuits on it so far.</p>
-    <div class="story-why" style="background:rgba(124,58,237,0.12)"><span class="story-why-label">WHY IT MATTERS FOR TECH</span><p>Linking processors with chip to chip interconnects is IBM's route to larger systems without building one giant chip, and sample speed decides whether heavy workloads finish in practical time.</p></div>
+    <div class="story-why" style="background:rgba(var(--cat-rgb),0.12)"><span class="story-why-label">WHY IT MATTERS FOR TECH</span><p>Linking processors with chip to chip interconnects is IBM's route to larger systems without building one giant chip, and sample speed decides whether heavy workloads finish in practical time.</p></div>
     <p class="bu-srcs-label" style="font-size:.7rem;font-weight:800;letter-spacing:.16em;color:var(--muted);text-transform:uppercase">Sources</p>
     <ul class="story-srcs"><li><a href="https://thequantuminsider.com/2026/11/11/ibm-nighthawk-r3-processor-520-programmable-qubits/" target="_blank" rel="noopener">The Quantum Insider</a></li></ul>
     <div class="story-actions"><span id="storyShare"></span></div>
