@@ -1,7 +1,6 @@
 /* Games inside The Signal: tokens map onto the site's existing design (style.css) */
 .games-page{--card:#FFFFFF;--soft:#EAEBE3;--soft2:#F2F3EE;--line:#D7D9CD;--brand:#2F6B4F;--brandInk:#FFFFFF;--sig-green:#3F7D20;--bad:#B4372A;--good:#2F6B4F;--goodbg:#E1ECE4;--badbg:#F7E9E6;--shadow:rgba(20,24,15,.4);--hov:#F3E9CC}
 :root[data-theme="dark"] .games-page{--card:#1D1F16;--soft:#24271C;--soft2:#1A1C14;--line:#33362A;--brand:#6FBE94;--brandInk:#0E1A12;--sig-green:#8CC56A;--bad:#F08A7C;--good:#6FBE94;--goodbg:#1F2B22;--badbg:#3A1F1B;--shadow:rgba(0,0,0,.6);--hov:#3A3115}
-@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .games-page{--card:#1D1F16;--soft:#24271C;--soft2:#1A1C14;--line:#33362A;--brand:#6FBE94;--brandInk:#0E1A12;--sig-green:#8CC56A;--bad:#F08A7C;--good:#6FBE94;--goodbg:#1F2B22;--badbg:#3A1F1B;--shadow:rgba(0,0,0,.6);--hov:#3A3115}}
 .games-page *,.games-page *::before,.games-page *::after{box-sizing:border-box}
 .games-page{background:var(--bg);color:var(--ink);font-family:var(--font-body);line-height:1.5;margin:0}
 .games-page a{color:var(--brand)}
@@ -149,7 +148,7 @@ button{font-family:inherit;color:inherit}
 @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
 /* previews */
 :root{--hov:#FBF1D6}
-@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--hov:#3A3115}}
+:root[data-theme="dark"]{--hov:#3A3115}
 .sc.hot{background:var(--hov)!important}
 .sc.rev{background:#FBF1D6;color:#7A5410}
 .sc.err{background:var(--badbg)!important;color:var(--bad)!important}
@@ -387,3 +386,37 @@ a.stk{text-decoration:none;color:var(--muted)}
 
 .res .sg-share-btn{position:absolute;top:10px;right:10px;width:32px;height:32px;padding:0;border-radius:50%;display:inline-flex;align-items:center;justify-content:center}
 .res .sg-share-btn svg{width:15px;height:15px}
+
+/* Themes step 2 (preview): Rose tokens for the games page, plus Rose and Dark
+   values for the hard-coded ink and error colours. Game art colours (board and
+   tile palettes in games.js, the Queens and Duel tile colours, the hero and the
+   celebration panels) are unchanged in every theme, as on the live site.
+   Rose washes are mixes of the spec shade on the Rose card: goodbg = Signal
+   #2F6A18 at 8% on #F9E7EC, badbg = Cyber #9A2620 at 10%, hov = Founders
+   #8F5C10 at 16%. */
+:root[data-tone="rose"] .games-page{--card:#F9E7EC;--soft:#EDCBD5;--soft2:#F3D7DF;--line:#E2B9C5;--brand:#2F6A18;--brandInk:#FFFFFF;--sig-green:#2F6A18;--bad:#9A2620;--good:#2F6A18;--goodbg:#E9DDDB;--badbg:#F0D4D8;--shadow:rgba(42,26,31,.4);--hov:#E8D1C9}
+:root[data-tone="rose"]{--hov:#E8D1C9}
+/* ink marks: stars, streak dots, highlight rings and frames take the theme ink */
+:root[data-tone="rose"] .stars i.on,:root[data-tone="rose"] .stk i,:root[data-tone="rose"] .hgs .mini i.on{background:#2A1A1F}
+:root[data-theme="dark"] .stars i.on,:root[data-theme="dark"] .stk i,:root[data-theme="dark"] .hgs .mini i.on{background:#F1EBDD}
+:root[data-tone="rose"] .tile.glow,:root[data-tone="rose"] .slot.glow,:root[data-tone="rose"] .bubble.glow,:root[data-tone="rose"] .dt.glow{outline-color:#2A1A1F}
+:root[data-theme="dark"] .tile.glow,:root[data-theme="dark"] .slot.glow,:root[data-theme="dark"] .bubble.glow,:root[data-theme="dark"] .dt.glow{outline-color:#F1EBDD}
+:root[data-tone="rose"] .pc.hl{box-shadow:inset 0 0 0 4px #2A1A1F}
+:root[data-theme="dark"] .pc.hl{box-shadow:inset 0 0 0 4px #F1EBDD}
+:root[data-tone="rose"] .qc.hot,:root[data-tone="rose"] .qc.rev{box-shadow:inset 0 0 0 4px #2A1A1F}
+:root[data-theme="dark"] .qc.hot,:root[data-theme="dark"] .qc.rev{box-shadow:inset 0 0 0 4px #F1EBDD}
+:root[data-tone="rose"] .mc.rev,:root[data-tone="rose"] .dc.hot,:root[data-tone="rose"] .dc.tgt{box-shadow:inset 0 0 0 3px #2A1A1F}
+:root[data-theme="dark"] .mc.rev,:root[data-theme="dark"] .dc.hot,:root[data-theme="dark"] .dc.tgt{box-shadow:inset 0 0 0 3px #F1EBDD}
+:root[data-tone="rose"] .wi .tl b.rv,:root[data-tone="rose"] .wi .tl b.hn{border-color:#2A1A1F}
+:root[data-theme="dark"] .wi .tl b.rv,:root[data-theme="dark"] .wi .tl b.hn{border-color:#F1EBDD}
+:root[data-tone="rose"] .exb{border-color:#2A1A1F}
+:root[data-theme="dark"] .exb{border-color:#F1EBDD}
+/* error and trail tints take the Rose shades */
+:root[data-tone="rose"] .qc.err .cr{color:#9A2620}
+:root[data-tone="rose"] .qc.err,:root[data-tone="rose"] .mc.err{outline-color:#9A2620}
+:root[data-tone="rose"] .hatch{background-image:repeating-linear-gradient(135deg,rgba(154,38,32,.7) 0 2px,transparent 2px 9px)}
+:root[data-tone="rose"] .exc.hatch{background-image:repeating-linear-gradient(135deg,rgba(154,38,32,.75) 0 2px,transparent 2px 7px)}
+:root[data-tone="rose"] .tc.red{background:rgba(154,38,32,.28)}
+:root[data-tone="rose"] .pc.wr{background:rgba(154,38,32,.55)!important}
+:root[data-tone="rose"] .tc.on{background:rgba(47,106,24,.10)}
+:root[data-tone="rose"] .tc.gold{background:rgba(47,106,24,.28)}
