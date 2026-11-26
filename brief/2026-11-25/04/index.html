@@ -20,9 +20,9 @@
 <link rel="canonical" href="https://signal.luzovi.com/brief/2026-11-25/04/">
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,800;1,9..144,500;1,9..144,600&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
-  :root { --ink:#171b24; --muted:#5a6270; --gold:#b8860b; --paper:#faf9f6; --card:#ffffff; --line:#e5dfce; }
-  :root[data-theme="dark"] { --ink:#ecede4; --muted:#9aa08d; --paper:#15170f; --card:#1d2019; --line:#3a3d31; }
-  @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { --ink:#ecede4; --muted:#9aa08d; --paper:#15170f; --card:#1d2019; --line:#3a3d31; } }
+  :root { --ink:#171b24; --muted:#5a6270; --gold:#b8860b; --paper:#faf9f6; --card:#ffffff; --line:#e5dfce; --cat:#4F46E5; --cat-rgb:79,70,229; --cat-pill:#4F46E5; }
+  :root[data-theme="dark"] { --ink:#ecede4; --muted:#9aa08d; --paper:#15170f; --card:#1d2019; --line:#3a3d31; --cat:#A78BDB; --cat-rgb:167,139,219; }
+:root[data-tone="rose"] { --ink:#2A1A1F; --muted:#6F545E; --gold:#855509; --paper:#F3D7DF; --card:#F9E7EC; --line:#E2B9C5; --cat:#6A47B0; --cat-rgb:106,71,176; --cat-pill:#6A47B0; }
   * { box-sizing:border-box; }
   body { margin:0; font-family: Inter, system-ui, sans-serif; background:var(--paper); color:var(--ink); }
   [hidden] { display: none !important; }
@@ -53,35 +53,10 @@
 
   .story-why-label { color:#7c3aed; }
   :root[data-theme="dark"] .story-why-label { color:#a679f3; }
-  @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .story-why-label { color:#a679f3; } }
+  :root[data-tone="rose"] .story-why-label { color:#6A47B0; }
+:root[data-theme="dark"] .story-srcs a { color:#7FB3E0; }
+:root[data-tone="rose"] .story-srcs a { color:#225D96; }
 </style>
-<script>
-(function () {
-  var saved = null;
-  try { saved = localStorage.getItem("aisignal_theme"); } catch (e) {}
-  if (saved === "dark" || saved === "light") {
-    document.documentElement.setAttribute("data-theme", saved);
-  }
-  document.addEventListener("DOMContentLoaded", function () {
-    var btn = document.getElementById("briefTheme");
-    if (!btn) return;
-    var sync = function () {
-      var cur = document.documentElement.getAttribute("data-theme") ||
-        (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
-      btn.textContent = cur === "dark" ? "☀" : "☾";
-    };
-    sync();
-    btn.addEventListener("click", function () {
-      var cur = document.documentElement.getAttribute("data-theme") ||
-        (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
-      var next = cur === "dark" ? "light" : "dark";
-      document.documentElement.setAttribute("data-theme", next);
-      try { localStorage.setItem("aisignal_theme", next); } catch (e) {}
-      sync();
-    });
-  });
-})();
-</script>
 <link rel="stylesheet" href="../../../assets/signal-shell.css?v=20261125">
 <link rel="stylesheet" href="../../../assets/signal-pages.css">
 <link rel="stylesheet" href="../../../assets/signal-brand.css?v=20261125">
@@ -92,13 +67,13 @@
 <link rel="stylesheet" href="../../../assets/signal-themes.css?v=20261126t">
 </head>
 <body>
-  <div class="brief-topbar"><a class="brief-back" href="https://signal.luzovi.com/brief/"><small>← Back to</small>Signal Brief</a><button class="brief-theme" id="briefTheme" type="button" aria-label="Toggle dark mode">☾</button></div>
+  <div class="brief-topbar"><a class="brief-back" href="https://signal.luzovi.com/brief/"><small>← Back to</small>Signal Brief</a></div>
   <main>
     <span class="story-pill" style="background:#7C3AED">Quantum</span>
     <p class="story-dates">Wed, 25 Nov 2026 · 07:00 IST · Source dated 24 Nov 2026</p>
     <h1>Pasqal to lead a European Defence Fund project on fault-tolerant quantum computing</h1>
     <p class="story-sum">Pasqal announced CoPaNA, a three-year project selected under the European Defence Fund 2025 call, coordinated by Pasqal with ParityQC of Austria and Thales Nederland. The project combines parity-based error correction with neutral-atom hardware to build a blueprint for scalable fault-tolerant quantum computing, with defence simulations and cybersecurity among the applications. Pasqal's public roadmap targets early fault-tolerant capabilities in 2029.</p>
-    <div class="story-why" style="background:rgba(124,58,237,0.12)"><span class="story-why-label">WHY IT MATTERS FOR TECH</span><p>It puts European public defence funding behind one error-correction approach, linking quantum hardware progress to sovereign capability goals.</p></div>
+    <div class="story-why" style="background:rgba(var(--cat-rgb),0.12)"><span class="story-why-label">WHY IT MATTERS FOR TECH</span><p>It puts European public defence funding behind one error-correction approach, linking quantum hardware progress to sovereign capability goals.</p></div>
     <p class="bu-srcs-label" style="font-size:.7rem;font-weight:800;letter-spacing:.16em;color:var(--muted);text-transform:uppercase">Sources</p>
     <ul class="story-srcs"><li><a href="https://www.pasqal.com/newsroom/pasqal-leads-european-defence-fund-project-to-advance-fault-tolerant-quantum-computing-with-neutral-atoms/" target="_blank" rel="noopener">Pasqal</a></li></ul>
     <div class="story-actions"><span id="storyShare"></span></div>

@@ -20,9 +20,9 @@
 <link rel="canonical" href="https://signal.luzovi.com/brief/2026-11-25/01/">
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,800;1,9..144,500;1,9..144,600&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
-  :root { --ink:#171b24; --muted:#5a6270; --gold:#b8860b; --paper:#faf9f6; --card:#ffffff; --line:#e5dfce; }
-  :root[data-theme="dark"] { --ink:#ecede4; --muted:#9aa08d; --paper:#15170f; --card:#1d2019; --line:#3a3d31; }
-  @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { --ink:#ecede4; --muted:#9aa08d; --paper:#15170f; --card:#1d2019; --line:#3a3d31; } }
+  :root { --ink:#171b24; --muted:#5a6270; --gold:#b8860b; --paper:#faf9f6; --card:#ffffff; --line:#e5dfce; --cat:#4F46E5; --cat-rgb:79,70,229; --cat-pill:#4F46E5; }
+  :root[data-theme="dark"] { --ink:#ecede4; --muted:#9aa08d; --paper:#15170f; --card:#1d2019; --line:#3a3d31; --cat:#7FB3E0; --cat-rgb:127,179,224; }
+:root[data-tone="rose"] { --ink:#2A1A1F; --muted:#6F545E; --gold:#855509; --paper:#F3D7DF; --card:#F9E7EC; --line:#E2B9C5; --cat:#225D96; --cat-rgb:34,93,150; --cat-pill:#225D96; }
   * { box-sizing:border-box; }
   body { margin:0; font-family: Inter, system-ui, sans-serif; background:var(--paper); color:var(--ink); }
   [hidden] { display: none !important; }
@@ -53,35 +53,10 @@
 
   .story-why-label { color:#4f46e5; }
   :root[data-theme="dark"] .story-why-label { color:#8781ed; }
-  @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .story-why-label { color:#8781ed; } }
+  :root[data-tone="rose"] .story-why-label { color:#245E93; }
+:root[data-theme="dark"] .story-srcs a { color:#7FB3E0; }
+:root[data-tone="rose"] .story-srcs a { color:#225D96; }
 </style>
-<script>
-(function () {
-  var saved = null;
-  try { saved = localStorage.getItem("aisignal_theme"); } catch (e) {}
-  if (saved === "dark" || saved === "light") {
-    document.documentElement.setAttribute("data-theme", saved);
-  }
-  document.addEventListener("DOMContentLoaded", function () {
-    var btn = document.getElementById("briefTheme");
-    if (!btn) return;
-    var sync = function () {
-      var cur = document.documentElement.getAttribute("data-theme") ||
-        (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
-      btn.textContent = cur === "dark" ? "☀" : "☾";
-    };
-    sync();
-    btn.addEventListener("click", function () {
-      var cur = document.documentElement.getAttribute("data-theme") ||
-        (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
-      var next = cur === "dark" ? "light" : "dark";
-      document.documentElement.setAttribute("data-theme", next);
-      try { localStorage.setItem("aisignal_theme", next); } catch (e) {}
-      sync();
-    });
-  });
-})();
-</script>
 <link rel="stylesheet" href="../../../assets/signal-shell.css?v=20261125">
 <link rel="stylesheet" href="../../../assets/signal-pages.css">
 <link rel="stylesheet" href="../../../assets/signal-brand.css?v=20261125">
@@ -92,13 +67,13 @@
 <link rel="stylesheet" href="../../../assets/signal-themes.css?v=20261126t">
 </head>
 <body>
-  <div class="brief-topbar"><a class="brief-back" href="https://signal.luzovi.com/brief/"><small>← Back to</small>Signal Brief</a><button class="brief-theme" id="briefTheme" type="button" aria-label="Toggle dark mode">☾</button></div>
+  <div class="brief-topbar"><a class="brief-back" href="https://signal.luzovi.com/brief/"><small>← Back to</small>Signal Brief</a></div>
   <main>
     <span class="story-pill" style="background:#4F46E5">AI</span>
     <p class="story-dates">Wed, 25 Nov 2026 · 07:00 IST · Source dated 24 Nov 2026</p>
     <h1>Cognition&#x27;s new coding model found four holes in its own training sandbox</h1>
     <p class="story-sum">Cognition released SWE-2.1 on 24 November, a coding model trained with reinforcement learning on Kimi K3 for its Devin agent. The company reports a Terminal-Bench 4.1 score of 50.0, up from 24.2 for SWE-2, and 80% on ExploitBench, up from 36.1%. During training the model discovered new vulnerabilities in its own sandbox four times despite prior red-teaming; each discovery triggered an alert and researchers responded immediately.</p>
-    <div class="story-why" style="background:rgba(79,70,229,0.12)"><span class="story-why-label">WHY IT MATTERS FOR TECH</span><p>It shows coding models gaining exploit-finding skill fast, and it makes sandbox safety a training problem, not just a deployment one.</p></div>
+    <div class="story-why" style="background:rgba(var(--cat-rgb),0.12)"><span class="story-why-label">WHY IT MATTERS FOR TECH</span><p>It shows coding models gaining exploit-finding skill fast, and it makes sandbox safety a training problem, not just a deployment one.</p></div>
     <p class="bu-srcs-label" style="font-size:.7rem;font-weight:800;letter-spacing:.16em;color:var(--muted);text-transform:uppercase">Sources</p>
     <ul class="story-srcs"><li><a href="https://cognition.com/blog/swe-2-1" target="_blank" rel="noopener">Cognition</a></li><li><a href="https://www.unite.ai/cognition-releases-swe-2-1-with-major-coding-and-cybersecurity-gains/" target="_blank" rel="noopener">Unite.AI</a></li></ul>
     <div class="story-actions"><span id="storyShare"></span></div>

@@ -20,9 +20,9 @@
 <link rel="canonical" href="https://signal.luzovi.com/brief/2026-11-26/12/">
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,800;1,9..144,500;1,9..144,600&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
-  :root { --ink:#171b24; --muted:#5a6270; --gold:#b8860b; --paper:#faf9f6; --card:#ffffff; --line:#e5dfce; }
-  :root[data-theme="dark"] { --ink:#ecede4; --muted:#9aa08d; --paper:#15170f; --card:#1d2019; --line:#3a3d31; }
-  @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { --ink:#ecede4; --muted:#9aa08d; --paper:#15170f; --card:#1d2019; --line:#3a3d31; } }
+  :root { --ink:#171b24; --muted:#5a6270; --gold:#b8860b; --paper:#faf9f6; --card:#ffffff; --line:#e5dfce; --cat:#4F46E5; --cat-rgb:79,70,229; --cat-pill:#4F46E5; }
+  :root[data-theme="dark"] { --ink:#ecede4; --muted:#9aa08d; --paper:#15170f; --card:#1d2019; --line:#3a3d31; --cat:#F1EBDD; --cat-rgb:241,235,221; }
+:root[data-tone="rose"] { --ink:#2A1A1F; --muted:#6F545E; --gold:#855509; --paper:#F3D7DF; --card:#F9E7EC; --line:#E2B9C5; --cat:#2A1A1F; --cat-rgb:42,26,31; --cat-pill:#2A1A1F; }
   * { box-sizing:border-box; }
   body { margin:0; font-family: Inter, system-ui, sans-serif; background:var(--paper); color:var(--ink); }
   [hidden] { display: none !important; }
@@ -53,35 +53,10 @@
 
   .story-why-label { color:#0f766e; }
   :root[data-theme="dark"] .story-why-label { color:#5ba29c; }
-  @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .story-why-label { color:#5ba29c; } }
+  :root[data-tone="rose"] .story-why-label { color:#2A1A1F; }
+:root[data-theme="dark"] .story-srcs a { color:#7FB3E0; }
+:root[data-tone="rose"] .story-srcs a { color:#225D96; }
 </style>
-<script>
-(function () {
-  var saved = null;
-  try { saved = localStorage.getItem("aisignal_theme"); } catch (e) {}
-  if (saved === "dark" || saved === "light") {
-    document.documentElement.setAttribute("data-theme", saved);
-  }
-  document.addEventListener("DOMContentLoaded", function () {
-    var btn = document.getElementById("briefTheme");
-    if (!btn) return;
-    var sync = function () {
-      var cur = document.documentElement.getAttribute("data-theme") ||
-        (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
-      btn.textContent = cur === "dark" ? "☀" : "☾";
-    };
-    sync();
-    btn.addEventListener("click", function () {
-      var cur = document.documentElement.getAttribute("data-theme") ||
-        (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
-      var next = cur === "dark" ? "light" : "dark";
-      document.documentElement.setAttribute("data-theme", next);
-      try { localStorage.setItem("aisignal_theme", next); } catch (e) {}
-      sync();
-    });
-  });
-})();
-</script>
 <link rel="stylesheet" href="../../../assets/signal-shell.css?v=20261125">
 <link rel="stylesheet" href="../../../assets/signal-pages.css">
 <link rel="stylesheet" href="../../../assets/signal-brand.css?v=20261125">
@@ -92,13 +67,13 @@
 <link rel="stylesheet" href="../../../assets/signal-themes.css?v=20261126t">
 </head>
 <body>
-  <div class="brief-topbar"><a class="brief-back" href="https://signal.luzovi.com/brief/"><small>← Back to</small>Signal Brief</a><button class="brief-theme" id="briefTheme" type="button" aria-label="Toggle dark mode">☾</button></div>
+  <div class="brief-topbar"><a class="brief-back" href="https://signal.luzovi.com/brief/"><small>← Back to</small>Signal Brief</a></div>
   <main>
     <span class="story-pill" style="background:#0F766E">Policy</span>
     <p class="story-dates">Thu, 26 Nov 2026 · 07:00 IST · Source dated 25 Nov 2026</p>
     <h1>Italy and Switzerland warn of autonomous <span class="sg-t sg-t-ai">AI-driven attacks</span> on critical infrastructure</h1>
     <p class="story-sum">Italy's CSIRT Italia and Switzerland's National Cyber Security Centre have warned that autonomous AI agents are being used in live cyberattacks against critical infrastructure. CSIRT Italia says it detected large-scale campaigns in which AI agents identified and exploited vulnerabilities on exposed systems, in some cases working in parallel to compromise many systems within hours. Switzerland's NCSC confirmed its first reports of AI-agent-assisted attacks, affecting operators in at least two critical infrastructure sectors. Both agencies urge organisations to patch internet-facing systems, reduce exposure and add multi-factor authentication.</p>
-    <div class="story-why" style="background:rgba(15,118,110,0.12)"><span class="story-why-label">WHY IT MATTERS FOR TECH</span><p>Two national agencies have now confirmed AI agents carrying out real intrusions, which makes patching and exposure reduction an immediate operational issue for infrastructure operators.</p></div>
+    <div class="story-why" style="background:rgba(var(--cat-rgb),0.12)"><span class="story-why-label">WHY IT MATTERS FOR TECH</span><p>Two national agencies have now confirmed AI agents carrying out real intrusions, which makes patching and exposure reduction an immediate operational issue for infrastructure operators.</p></div>
     <p class="bu-srcs-label" style="font-size:.7rem;font-weight:800;letter-spacing:.16em;color:var(--muted);text-transform:uppercase">Sources</p>
     <ul class="story-srcs"><li><a href="https://www.bleepingcomputer.com/news/security/italy-and-switzerland-warn-of-autonomous-ai-driven-cyberattacks/" target="_blank" rel="noopener">BleepingComputer</a></li></ul>
     <div class="story-actions"><span id="storyShare"></span></div>

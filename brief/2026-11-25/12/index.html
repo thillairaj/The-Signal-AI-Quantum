@@ -20,9 +20,9 @@
 <link rel="canonical" href="https://signal.luzovi.com/brief/2026-11-25/12/">
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,800;1,9..144,500;1,9..144,600&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
-  :root { --ink:#171b24; --muted:#5a6270; --gold:#b8860b; --paper:#faf9f6; --card:#ffffff; --line:#e5dfce; }
-  :root[data-theme="dark"] { --ink:#ecede4; --muted:#9aa08d; --paper:#15170f; --card:#1d2019; --line:#3a3d31; }
-  @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { --ink:#ecede4; --muted:#9aa08d; --paper:#15170f; --card:#1d2019; --line:#3a3d31; } }
+  :root { --ink:#171b24; --muted:#5a6270; --gold:#b8860b; --paper:#faf9f6; --card:#ffffff; --line:#e5dfce; --cat:#4F46E5; --cat-rgb:79,70,229; --cat-pill:#4F46E5; }
+  :root[data-theme="dark"] { --ink:#ecede4; --muted:#9aa08d; --paper:#15170f; --card:#1d2019; --line:#3a3d31; --cat:#F1EBDD; --cat-rgb:241,235,221; }
+:root[data-tone="rose"] { --ink:#2A1A1F; --muted:#6F545E; --gold:#855509; --paper:#F3D7DF; --card:#F9E7EC; --line:#E2B9C5; --cat:#2A1A1F; --cat-rgb:42,26,31; --cat-pill:#2A1A1F; }
   * { box-sizing:border-box; }
   body { margin:0; font-family: Inter, system-ui, sans-serif; background:var(--paper); color:var(--ink); }
   [hidden] { display: none !important; }
@@ -53,35 +53,10 @@
 
   .story-why-label { color:#0f766e; }
   :root[data-theme="dark"] .story-why-label { color:#5ba29c; }
-  @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .story-why-label { color:#5ba29c; } }
+  :root[data-tone="rose"] .story-why-label { color:#2A1A1F; }
+:root[data-theme="dark"] .story-srcs a { color:#7FB3E0; }
+:root[data-tone="rose"] .story-srcs a { color:#225D96; }
 </style>
-<script>
-(function () {
-  var saved = null;
-  try { saved = localStorage.getItem("aisignal_theme"); } catch (e) {}
-  if (saved === "dark" || saved === "light") {
-    document.documentElement.setAttribute("data-theme", saved);
-  }
-  document.addEventListener("DOMContentLoaded", function () {
-    var btn = document.getElementById("briefTheme");
-    if (!btn) return;
-    var sync = function () {
-      var cur = document.documentElement.getAttribute("data-theme") ||
-        (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
-      btn.textContent = cur === "dark" ? "☀" : "☾";
-    };
-    sync();
-    btn.addEventListener("click", function () {
-      var cur = document.documentElement.getAttribute("data-theme") ||
-        (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
-      var next = cur === "dark" ? "light" : "dark";
-      document.documentElement.setAttribute("data-theme", next);
-      try { localStorage.setItem("aisignal_theme", next); } catch (e) {}
-      sync();
-    });
-  });
-})();
-</script>
 <link rel="stylesheet" href="../../../assets/signal-shell.css?v=20261125">
 <link rel="stylesheet" href="../../../assets/signal-pages.css">
 <link rel="stylesheet" href="../../../assets/signal-brand.css?v=20261125">
@@ -92,13 +67,13 @@
 <link rel="stylesheet" href="../../../assets/signal-themes.css?v=20261126t">
 </head>
 <body>
-  <div class="brief-topbar"><a class="brief-back" href="https://signal.luzovi.com/brief/"><small>← Back to</small>Signal Brief</a><button class="brief-theme" id="briefTheme" type="button" aria-label="Toggle dark mode">☾</button></div>
+  <div class="brief-topbar"><a class="brief-back" href="https://signal.luzovi.com/brief/"><small>← Back to</small>Signal Brief</a></div>
   <main>
     <span class="story-pill" style="background:#0F766E">Policy</span>
     <p class="story-dates">Wed, 25 Nov 2026 · 07:00 IST · Source dated 24 Nov 2026</p>
     <h1>Australian parliamentary committee proposes 46 <span class="sg-t sg-t-ai">AI rules, including pay</span> for creators whose work trains models</h1>
     <p class="story-sum">Australia's Joint Select Committee on Artificial Intelligence tabled its final report, 'Artificial Intelligence – the Australian Way', on 24 November, making 46 recommendations to the federal government. They include a mechanism to make it easier and fairer for Australian rights holders and creators to be paid when AI companies train models in Australia, a Denmark-style right to control how a person's face, voice and likeness is used, and mandatory labelling of AI-generated content. The recommendations are not binding; they are a blueprint for the government to consider as it drafts AI legislation.</p>
-    <div class="story-why" style="background:rgba(15,118,110,0.12)"><span class="story-why-label">WHY IT MATTERS FOR TECH</span><p>It pairs creator payment with model-training certainty in one package, giving the government a ready-made template for its AI legislation.</p></div>
+    <div class="story-why" style="background:rgba(var(--cat-rgb),0.12)"><span class="story-why-label">WHY IT MATTERS FOR TECH</span><p>It pairs creator payment with model-training certainty in one package, giving the government a ready-made template for its AI legislation.</p></div>
     <p class="bu-srcs-label" style="font-size:.7rem;font-weight:800;letter-spacing:.16em;color:var(--muted);text-transform:uppercase">Sources</p>
     <ul class="story-srcs"><li><a href="https://www.aph.gov.au/Parliamentary_Business/Committees/Joint/Artificial_Intelligence" target="_blank" rel="noopener">Australian Parliament</a></li><li><a href="https://www.adnews.com.au/news/parliamentary-inquiry-wants-australia-to-strengthen-copyright-protections-against-ai" target="_blank" rel="noopener">AdNews</a></li></ul>
     <div class="story-actions"><span id="storyShare"></span></div>
