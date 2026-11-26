@@ -21,14 +21,7 @@
   --b-soft: #26281e;
   --b-gold: #d4af6a;
 }
-@media (prefers-color-scheme: dark) {
-  :root:not([data-theme="light"]) .brief-ui {
-    --b-card: #1d2019;
-    --b-line: #3a3d31;
-    --b-soft: #26281e;
-    --b-gold: #d4af6a;
-  }
-}
+
 .brief-ui * { box-sizing: border-box; }
 
 /* Header */
@@ -263,12 +256,7 @@ button.bu-cal-day:hover, button.bu-cal-day:focus-visible { border-color: var(--b
   --b-card: #1d2019; --b-ink: #ecede4; --b-muted: #9aa08d;
   --b-line: #3a3d31; --b-soft: #26281e; --b-gold: #d4af6a;
 }
-@media (prefers-color-scheme: dark) {
-  :root:not([data-theme="light"]) .bu-sheet {
-    --b-card: #1d2019; --b-ink: #ecede4; --b-muted: #9aa08d;
-    --b-line: #3a3d31; --b-soft: #26281e; --b-gold: #d4af6a;
-  }
-}
+
 @media (min-width: 641px) {
   .bu-overlay { align-items: center; padding: 18px; }
   .bu-sheet { border-radius: 18px; }

@@ -41,19 +41,7 @@
     --title-ink:#f2ede0; --row-sub:#a8adb5;
     --foot-ink:#9aa0aa; --foot-border:#4a5260;
   }
-  @media (prefers-color-scheme: dark){
-    :root:not([data-theme="light"]){
-      --gold:#d4af6a; --gold-dim:rgba(212,175,106,.4);
-      --page:#2f353e; --page-ink:#e9e4d6;
-      --header-bg:radial-gradient(1200px 400px at 50% -80px,#454e5b 0%,#2b3038 65%);
-      --header-ink:#ffffff; --header-sub:#aeb8c8;
-      --bar:rgba(47,53,62,.97); --bar-border:#4a5260;
-      --chip-bg:#22272f; --chip-ink:#cfd6e2; --chip-small:#8a919c;
-      --nav-bg:rgba(70,78,90,.45);
-      --title-ink:#f2ede0; --row-sub:#a8adb5;
-      --foot-ink:#9aa0aa; --foot-border:#4a5260;
-    }
-  }
+  
   .theme-toggle{position:absolute;top:14px;right:14px;background:var(--chip-bg);
     border:1px solid var(--bar-border);border-radius:50%;width:32px;height:32px;
     font-size:.95rem;cursor:pointer;color:var(--chip-ink);z-index:60;line-height:1}
@@ -217,7 +205,7 @@
 :root[data-theme="dark"] .tsub { color: #a8b0ba; }
 :root[data-theme="dark"] .ptag { color: #5b6470; }
 :root[data-theme="dark"] .pnum, :root[data-theme="dark"] #zoom-num, :root[data-theme="dark"] .fback .fnum { color: #8a6d2f; }
-@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .tsub { color: #a8b0ba; } :root:not([data-theme="light"]) .ptag { color: #5b6470; } :root:not([data-theme="light"]) .pnum, :root:not([data-theme="light"]) #zoom-num, :root:not([data-theme="light"]) .fback .fnum { color: #8a6d2f; } }
+
 </style>
 <link rel="stylesheet" href="../assets/signal-shell.css?v=20261125f">
 <link rel="stylesheet" href="../assets/signal-pages.css">

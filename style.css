@@ -21,17 +21,7 @@
   --accent-dim: #2B4838;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root:not([data-theme="light"]) {
-    --bg: #15170F;
-    --surface: #1D1F16;
-    --ink: #ECEDE4;
-    --muted: #9AA08D;
-    --border: #33362A;
-    --accent: #6FBE94;
-    --accent-dim: #2B4838;
-  }
-}
+
 
 * { box-sizing: border-box; }
 html { -webkit-font-smoothing: antialiased; }
@@ -67,9 +57,7 @@ body {
   color: #14253F; /* the preview's deep navy — the site --ink is green-black and read as a mismatch (Thillai, Oct 21 2026) */
 }
 :root[data-theme="dark"] .masthead h1 { color: var(--ink); }
-@media (prefers-color-scheme: dark) {
-  :root:not([data-theme="light"]) .masthead h1 { color: var(--ink); }
-}
+
 .masthead h1 em { font-style: italic; font-weight: 600; color: #B8860B; }
 
 .tagline {

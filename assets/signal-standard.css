@@ -51,7 +51,7 @@ body{background:var(--sg-paper);color:var(--sg-ink);font-family:var(--sg-body)}
    Scoped to .masthead h1.brand-h, which exists only on the front page. */
 .masthead h1.brand-h{color:var(--sg-ink)}
 :root[data-theme="dark"] .masthead h1.brand-h{color:var(--sg-ink)}
-@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .masthead h1.brand-h{color:var(--sg-ink)}}
+
 .hm-go{border-bottom-color:var(--sg-ink)}
 .hm-chip.gold{background:var(--sg-wash);border-color:var(--sg-line);color:var(--sg-ink)}
 .tab-new{background:var(--sg-ink);color:var(--sg-paper)}
@@ -69,7 +69,7 @@ body{background:var(--sg-paper);color:var(--sg-ink);font-family:var(--sg-body)}
 .series-btn.active[data-series="Quantum Intelligence"]{background:var(--sg-quantum);border-color:var(--sg-quantum);color:#fff}
 .brief-ui,.bu-sheet{--b-gold:var(--sg-ink)}
 :root[data-theme="dark"] .brief-ui,:root[data-theme="dark"] .bu-sheet{--b-gold:var(--sg-ink)}
-@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .brief-ui,:root:not([data-theme="light"]) .bu-sheet{--b-gold:var(--sg-ink)}}
+
 .games-popup-close:hover{color:var(--sg-ink)}
 .games-popup-later:hover{border-color:var(--sg-ink);color:var(--sg-ink)}
 /* Signal fixes: podcast series buttons in the standard chip style; the selected chip is Signal green. */
