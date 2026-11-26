@@ -90,13 +90,23 @@ html[data-theme="dark"] .sg-shell,html[data-theme="dark"] .sg-crumbrow{backgroun
    (.sg-top): wordmark, tabs, theme button, menu button. Nothing about it
    changes while scrolling (the old slim switching is removed), and the
    share / updated row (.sg-statusrow) is ordinary page content below the
-   header that scrolls away. */
-.masthead{position:sticky;top:0;z-index:280;background:var(--bg,#FAF7F1)}
+   header that scrolls away. The sticky position applies to that front page
+   header only (scoped by .front-masthead, Nov 26, 2026, Thillai): the rule
+   used to catch every .masthead, which froze the four video rooms' own
+   headers over their lessons and player, so every other .masthead is
+   static and only its themed background stays shared. */
+.masthead{position:static;background:var(--bg,#FAF7F1)}
+header.masthead.front-masthead{position:sticky;top:0;z-index:280}
 .front-masthead{height:62px;padding-top:0;padding-bottom:0;padding-left:20px;padding-right:20px;flex-wrap:nowrap;gap:18px;align-items:center}
 .front-masthead .tabs-bar{margin-left:auto}
 .front-masthead .sg-themeb{flex:0 0 auto}
 .front-masthead .sg-menub{margin-left:0;flex:0 0 auto}
 .sg-statusrow{max-width:1200px;margin:0 auto;padding:8px 20px 0;justify-content:flex-end}
+/* Video rooms: tapping a lesson scrolls the player into view, and the
+   margin keeps the whole player below the fixed top bar and path row
+   (the same 120px the follow sections use). Only the four rooms carry
+   a #player element, so the rule reaches nothing else. */
+#player{scroll-margin-top:120px}
 @media(max-width:999px){
   .front-masthead .tabs-bar{display:none}
   .front-masthead .sg-themeb{margin-left:auto}
