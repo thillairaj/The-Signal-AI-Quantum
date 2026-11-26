@@ -84,16 +84,12 @@
   document.getElementById("artShare").appendChild(SignalShare.shareButton(spec));
 })();
 </script>
-<section class="sg-feeds" id="follow-feeds" aria-labelledby="sgFeedsTitle">
-  <h2 id="sgFeedsTitle">Follow in a news reader</h2>
-  <p>Copy a feed and paste it into Feedly, Inoreader or any reader. New items arrive on their own.</p>
-  <ul class="sg-feedlist">
-    <li><span class="sg-dot" style="--dot:var(--sg-ink,#201B14)"></span><span class="sg-feedname">All articles</span>
-      <button type="button" class="sg-copyfeed" data-url="https://signal.luzovi.com/articles.xml" aria-label="Copy the All articles feed link">
-        <svg class="cy" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg>
-        <svg class="ok" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l4 4 10-10"/></svg>
-        <span class="tip">Copied</span></button></li>
-  </ul>
+<section class="sg-fsec" id="follow-feeds" aria-labelledby="fsArticle">
+  <div class="sg-fsec-hd"><span class="sg-fsec-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" aria-hidden="true"><path d="M5 11a8 8 0 0 1 8 8M5 5a14 14 0 0 1 14 14"/><circle cx="6" cy="18" r="1.8" fill="currentColor" stroke="none"/></svg></span><h2 id="fsArticle">Follow in a news reader</h2></div>
+  <p class="sg-fsec-how">Tap to copy, then paste it into your reader app. For example: Feedly or Inoreader (web, iPhone, Android), NetNewsWire (iPhone), Feeder (Android), or any news-reader app.</p>
+  <div class="sg-frow1">
+    <button type="button" class="sg-fchip" data-url="https://signal.luzovi.com/articles.xml" aria-label="Copy the All articles feed link"><span class="sg-fdot" style="--dot:var(--sg-ink)"></span><span class="sg-fname"><span class="l">All articles</span><span class="s">All articles</span></span><span class="sg-fcp"><svg class="cy" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg><svg class="ok" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l4 4 10-10"/></svg></span></button>
+  </div>
 </section>
 <script src="../../assets/signal-shell.js?v=20261126f" defer></script>
 <footer class="signal-footer">
