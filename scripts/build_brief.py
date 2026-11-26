@@ -176,33 +176,8 @@ PAGE_CSS = """
   .li-btn { display:inline-block; margin-left:8px; background:#0a66c2; color:#fff; text-decoration:none; border-radius:6px; padding:3px 10px; font-size:.8rem; }
 """
 
-THEME_SCRIPT = """<script>
-(function () {
-  var saved = null;
-  try { saved = localStorage.getItem("aisignal_theme"); } catch (e) {}
-  if (saved === "dark" || saved === "light") {
-    document.documentElement.setAttribute("data-theme", saved);
-  }
-  document.addEventListener("DOMContentLoaded", function () {
-    var btn = document.getElementById("briefTheme");
-    if (!btn) return;
-    var sync = function () {
-      var cur = document.documentElement.getAttribute("data-theme") ||
-        (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
-      btn.textContent = cur === "dark" ? "☀" : "☾";
-    };
-    sync();
-    btn.addEventListener("click", function () {
-      var cur = document.documentElement.getAttribute("data-theme") ||
-        (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
-      var next = cur === "dark" ? "light" : "dark";
-      document.documentElement.setAttribute("data-theme", next);
-      try { localStorage.setItem("aisignal_theme", next); } catch (e) {}
-      sync();
-    });
-  });
-})();
-</script>"""
+# Theme script removed (Themes step 3, Nov 26, 2026): Brief pages follow the
+# site-wide theme (assets/signal-theme.js); the old per-page toggle is gone.
 
 RULES_BOX = """<div class="brief-rules"><div class="brief-rules-in"><strong>How Signal Brief is made:</strong> items are written from the validated wire sources, official government and company pages, and Reuters or AP for geopolitical events. Policy coverage is limited to events with a clear technology impact, is neutral and factual, and carries each side's official position where relevant. Any item whose claims cannot be linked to a source is dropped before publication.</div></div>"""
 
@@ -269,10 +244,9 @@ def build_page(data, base):
 <link rel="stylesheet" href="../assets/signal-pages.css">
 <link rel="stylesheet" href="../assets/signal-brand.css?v=20261125">
 <style>{PAGE_CSS}</style>
-{THEME_SCRIPT}
 </head>
 <body>
-  <div class="brief-topbar"><a class="brief-back" href="{base}#brief"><small>← Back to</small>The Signal</a>{page_share_block}<button class="brief-theme" id="briefTheme" type="button" aria-label="Toggle dark mode">☾</button></div>
+  <div class="brief-topbar"><a class="brief-back" href="{base}#brief"><small>← Back to</small>The Signal</a>{page_share_block}</div>
   <main>
     <div data-brief-root data-root-prefix="../"></div>
     {RULES_BOX}
@@ -567,10 +541,9 @@ def build_story_page(item, ed, base):
   :root[data-theme="dark"] .story-why-label {{ color:{label_dark}; }}
   @media (prefers-color-scheme: dark) {{ :root:not([data-theme="light"]) .story-why-label {{ color:{label_dark}; }} }}{correction_css}
 </style>
-{THEME_SCRIPT}
 </head>
 <body>
-  <div class="brief-topbar"><a class="brief-back" href="{base}brief/"><small>← Back to</small>Signal Brief</a><button class="brief-theme" id="briefTheme" type="button" aria-label="Toggle dark mode">☾</button></div>
+  <div class="brief-topbar"><a class="brief-back" href="{base}brief/"><small>← Back to</small>Signal Brief</a></div>
   <main>
     <span class="story-pill" style="background:{colour}">{escape(item['category'])}</span>
     <p class="story-dates">{escape(fmt_date(ed['date']))} · {escape(edition_time(ed))} IST · Source dated {escape(fmt_date_short(item['source_date']))}</p>
