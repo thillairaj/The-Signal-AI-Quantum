@@ -393,7 +393,7 @@ a.stk{text-decoration:none;color:var(--muted)}
    celebration panels) are unchanged in every theme, as on the live site.
    Rose washes are mixes of the spec shade on the Rose card: goodbg = Signal
    #2F6A18 at 8% on #F9E7EC, badbg = Cyber #9A2620 at 10%, hov = Founders
-   #8F5C10 at 16%. */
+   #855509 at 16%. */
 :root[data-tone="rose"] .games-page{--card:#F9E7EC;--soft:#EDCBD5;--soft2:#F3D7DF;--line:#E2B9C5;--brand:#2F6A18;--brandInk:#FFFFFF;--sig-green:#2F6A18;--bad:#9A2620;--good:#2F6A18;--goodbg:#E9DDDB;--badbg:#F0D4D8;--shadow:rgba(42,26,31,.4);--hov:#E8D1C9}
 :root[data-tone="rose"]{--hov:#E8D1C9}
 /* ink marks: stars, streak dots, highlight rings and frames take the theme ink */

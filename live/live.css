@@ -60,3 +60,7 @@
 .lv-card{min-width:0}
 .lv-card h2,.lv-card p,.lv-why,.lv-src{overflow-wrap:anywhere}
 .lv-chip{max-width:100%;white-space:normal;overflow-wrap:anywhere;line-height:1.35}
+/* Themes step 2 (preview): Rose value for the one hard-coded colour on this page.
+   Everything else on the Live page and the strip uses the style.css tokens, whose
+   Rose values are set in signal-themes.css. Dark kicker is already above (#CBA24A). */
+:root[data-tone="rose"] .lv-kicker{color:#855509}

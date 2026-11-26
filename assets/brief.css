@@ -334,16 +334,16 @@ button.bu-cal-day:hover, button.bu-cal-day:focus-visible { border-color: var(--b
 /* Themes step 2 (preview): Rose values for the Brief tab, story sheet and
    Follow panel; Dark fixes for the breaking label and the NEW badge. */
 :root[data-tone="rose"] .brief-ui {
-  --b-card: #F9E7EC; --b-line: #E2B9C5; --b-soft: #EDCBD5; --b-gold: #8F5C10;
+  --b-card: #F9E7EC; --b-line: #E2B9C5; --b-soft: #EDCBD5; --b-gold: #855509;
 }
 :root[data-tone="rose"] .bu-sheet {
-  --b-card: #F9E7EC; --b-ink: #2A1A1F; --b-muted: #7A5F68;
-  --b-line: #E2B9C5; --b-soft: #EDCBD5; --b-gold: #8F5C10;
+  --b-card: #F9E7EC; --b-ink: #2A1A1F; --b-muted: #6F545E;
+  --b-line: #E2B9C5; --b-soft: #EDCBD5; --b-gold: #855509;
 }
 :root[data-theme="dark"] .bu-sheet { --b-pill-ink: #171B24; }
 :root[data-tone="rose"] .bu-breaking { color: #9A2620; }
 :root[data-theme="dark"] .bu-breaking { color: #E58A80; }
 :root[data-tone="rose"] .bu-srcs a { color: #2A6AA6; }
-:root[data-tone="rose"] .tab-new { background: #8F5C10; }
+:root[data-tone="rose"] .tab-new { background: #855509; }
 :root[data-theme="dark"] .tab-new { background: #D4AF6A; color: #171B24; }
-:root[data-tone="rose"] .ss-share-btn:hover { border-color: #8F5C10; }
+:root[data-tone="rose"] .ss-share-btn:hover { border-color: #855509; }

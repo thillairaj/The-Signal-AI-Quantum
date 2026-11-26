@@ -2,17 +2,17 @@
    1) Rose tokens for every shared layer  2) shared top bar, menu, tab strip and footer in Rose and Dark  3) the one theme button  4) old per-page toggles hidden. */
 :root[data-tone="rose"]{
   /* front page and Live news tokens (style.css) */
-  --bg:#F3D7DF;--surface:#EDCBD5;--ink:#2A1A1F;--muted:#7A5F68;--border:#E2B9C5;--accent:#2F6A18;--accent-dim:#D9B4C0;
+  --bg:#F3D7DF;--surface:#EDCBD5;--ink:#2A1A1F;--muted:#6F545E;--border:#E2B9C5;--accent:#2F6A18;--accent-dim:#D9B4C0;
   /* shared tokens (signal-standard.css, signal-pages.css, hub, podcast, share panel) */
-  --sg-paper:#F3D7DF;--sg-surface:#F9E7EC;--sg-wash:#EDCBD5;--sg-ink:#2A1A1F;--sg-soft:#4F3A41;--sg-muted:#7A5F68;--sg-line:#E2B9C5;
-  --sg-ai:#2A6AA6;--sg-quantum:#6A47B0;--sg-cloud:#176A5F;--sg-cyber:#9A2620;--sg-founders:#8F5C10;--sg-brand:#2F6A18;
+  --sg-paper:#F3D7DF;--sg-surface:#F9E7EC;--sg-wash:#EDCBD5;--sg-ink:#2A1A1F;--sg-soft:#4F3A41;--sg-muted:#6F545E;--sg-line:#E2B9C5;
+  --sg-ai:#2A6AA6;--sg-quantum:#6A47B0;--sg-cloud:#176A5F;--sg-cyber:#9A2620;--sg-founders:#855509;--sg-brand:#2F6A18;
 }
 :root[data-tone="rose"] body{background:var(--bg,#F3D7DF);color:var(--ink,#2A1A1F)}
 /* shared top bar, path, menus, footer: Rose */
 :root[data-tone="rose"] .sg-shell,:root[data-tone="rose"] .sg-crumbrow,:root[data-tone="rose"] .sg-sheet,:root[data-tone="rose"] .sg-tabstrip{background:#F3D7DF;border-color:#E2B9C5;color:#2A1A1F}
 :root[data-tone="rose"] .sg-mega{background:#F9E7EC;border-color:#E2B9C5}
 :root[data-tone="rose"] .sg-wm,:root[data-tone="rose"] .sg-wm em,:root[data-tone="rose"] .sg-tab .n,:root[data-tone="rose"] .sg-bc .cur,:root[data-tone="rose"] .sg-col a.it,:root[data-tone="rose"] .sg-sheet a{color:#2A1A1F}
-:root[data-tone="rose"] .sg-tab,:root[data-tone="rose"] .sg-bc,:root[data-tone="rose"] .sg-bc a,:root[data-tone="rose"] .sg-bc button,:root[data-tone="rose"] .sg-col h4 a,:root[data-tone="rose"] .sg-col a.all,:root[data-tone="rose"] .sg-sheet h4,:root[data-tone="rose"] .sg-sheet .sub a{color:#7A5F68}
+:root[data-tone="rose"] .sg-tab,:root[data-tone="rose"] .sg-bc,:root[data-tone="rose"] .sg-bc a,:root[data-tone="rose"] .sg-bc button,:root[data-tone="rose"] .sg-col h4 a,:root[data-tone="rose"] .sg-col a.all,:root[data-tone="rose"] .sg-sheet h4,:root[data-tone="rose"] .sg-sheet .sub a{color:#6F545E}
 :root[data-tone="rose"] .sg-tab:hover,:root[data-tone="rose"] .sg-col a.it:hover{background:#EDCBD5;color:#2A1A1F}
 :root[data-tone="rose"] .sg-tab.on{background:#2F6A18;color:#fff}
 :root[data-tone="rose"] .sg-menub,:root[data-tone="rose"] .sg-themeb{background:#F9E7EC;border-color:#E2B9C5;color:#2A1A1F}

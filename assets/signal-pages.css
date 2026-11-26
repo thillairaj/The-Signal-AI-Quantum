@@ -67,9 +67,9 @@ html.sgp .sg-t{font-style:italic!important}
 html.sgp-video #mastTitle,html.sgp-video #mastTitle *{color:var(--sg-tech)!important;font-style:italic}
 /* Themes step 2 (preview): periodic tables on Rose take the Rose tokens
    (the :not([data-theme="dark"]) rule above gives them the Light values). */
-html.sgp-table[data-tone="rose"]{--bg:#F3D7DF;--panel:#F9E7EC;--panel2:#EDCBD5;--ink:#2A1A1F;--muted:#7A5F68;--line:#E2B9C5}
+html.sgp-table[data-tone="rose"]{--bg:#F3D7DF;--panel:#F9E7EC;--panel2:#EDCBD5;--ink:#2A1A1F;--muted:#6F545E;--line:#E2B9C5}
 /* Themes step 2 (preview): article pages (podcast episodes, research) use
    --text and --gold-deep, which were defined nowhere; the fallbacks were
    near-black in every theme. Dark and Rose now define them. */
 html.sgp-article[data-theme="dark"]{--text:#F1EBDD}
-html.sgp-article[data-tone="rose"]{--text:#2A1A1F;--gold-deep:#8F5C10}
+html.sgp-article[data-tone="rose"]{--text:#2A1A1F;--gold-deep:#855509}

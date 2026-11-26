@@ -29,7 +29,7 @@ window.SignalBriefUI = (function () {
     var map = t === "rose" ? CAT_COLOURS_ROSE :
       t === "dark" ? CAT_COLOURS_DARK : CAT_COLOURS;
     return map[name] ||
-      (t === "dark" ? "#9D937F" : t === "rose" ? "#7A5F68" : "#5a6b7f");
+      (t === "dark" ? "#9D937F" : t === "rose" ? "#6F545E" : "#5a6b7f");
   }
   function pillText() {
     return themeName() === "dark" ? "#12100D" : "#FFFFFF";

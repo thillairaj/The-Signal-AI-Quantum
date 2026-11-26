@@ -86,7 +86,7 @@ html.sg-scrolled .masthead .brand-h .sg-by{font-size:11px}
    the !important base rule above otherwise keeps cream in every theme. */
 html[data-tone="rose"] .sg-menub{background:#F9E7EC;border-color:#E2B9C5;color:#2A1A1F}
 html[data-theme="dark"] .sg-by{color:#9D937F}
-html[data-tone="rose"] .sg-by{color:#7A5F68}
+html[data-tone="rose"] .sg-by{color:#6F545E}
 html[data-tone="rose"].sg-scrolled .masthead{box-shadow:0 1px 0 #E2B9C5}
 html[data-tone="rose"] .signal-footer{border-top-color:#E2B9C5!important}
 html[data-theme="dark"] .signal-footer{border-top-color:#2C2720!important}
@@ -96,5 +96,5 @@ html[data-theme="dark"] .signal-footer .sf-luz a:hover{color:#8CC56A}
   html[data-tone="rose"] .sg-mega .sg-col{border-bottom-color:#E2B9C5}
   html[data-theme="dark"] .sg-mega .sg-col{border-bottom-color:#2C2720}
   html[data-tone="rose"] .sg-mega .sg-col h4 a{color:#2A1A1F}
-  html[data-tone="rose"] .sg-mega .sg-col h4 a::after{color:#7A5F68}
+  html[data-tone="rose"] .sg-mega .sg-col h4 a::after{color:#6F545E}
 }
