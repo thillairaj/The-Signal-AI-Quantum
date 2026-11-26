@@ -4,7 +4,6 @@ const CLIENT_REFRESH_MS = 5 * 60 * 1000;
 const TICK_MS = 30 * 1000;
 const PAGE_SIZE = 10;
 const BOOKMARK_KEY = "aisignal_bookmarks";
-const THEME_KEY = "aisignal_theme";
 const GOATCOUNTER_TOTAL_URL = "https://trttech.goatcounter.com/counter/TOTAL.json";
 
 let allArticles = [];
@@ -41,7 +40,6 @@ const statusDot = document.getElementById("statusDot");
 const statusText = document.getElementById("statusText");
 const viewsTextEl = document.getElementById("viewsText");
 const footerMeta = document.getElementById("footerMeta");
-const themeToggleBtn = document.getElementById("themeToggle");
 const sourcesToggleBtn = document.getElementById("sourcesToggle");
 const sourcesCountEl = document.getElementById("sourcesCount");
 
@@ -61,27 +59,6 @@ function updateStatusText() {
     statusText.textContent = `updated ${timeAgo(lastGeneratedAt)}`;
   }
 }
-
-/* ---------- Theme ---------- */
-function applyTheme(theme) {
-  if (theme === "dark" || theme === "light") {
-    document.documentElement.setAttribute("data-theme", theme);
-  } else {
-    document.documentElement.removeAttribute("data-theme");
-  }
-  themeToggleBtn.textContent = (theme === "dark") ? "☀" : "☾";
-}
-(function initTheme() {
-  const saved = localStorage.getItem(THEME_KEY);
-  applyTheme(saved);
-})();
-themeToggleBtn.addEventListener("click", () => {
-  const current = document.documentElement.getAttribute("data-theme") ||
-    (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
-  const next = current === "dark" ? "light" : "dark";
-  localStorage.setItem(THEME_KEY, next);
-  applyTheme(next);
-});
 
 /* ---------- Bookmarks ---------- */
 function saveBookmarks() {
