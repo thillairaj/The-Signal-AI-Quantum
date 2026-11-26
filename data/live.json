@@ -1,28 +1,8 @@
 {
-  "updated": "2026-11-26T04:00:15+05:30",
-  "next_update": "2026-11-26T06:00:00+05:30",
+  "updated": "2026-11-26T06:06:02+05:30",
+  "next_update": "2026-11-26T08:00:00+05:30",
   "delay_hours": 2,
   "items": [
-    {
-      "id": "live-2026-11-25-01",
-      "published": "2026-11-25T06:00:00+05:30",
-      "category": "Cybersecurity",
-      "company": "FinCEN",
-      "headline": "US Treasury financial crimes unit reports unauthorized access to its systems",
-      "what": "The Financial Crimes Enforcement Network, the US Treasury bureau that collects suspicious activity reports from banks, said it is investigating a cybersecurity incident after an unauthorized party gained access to a limited subset of its systems. FinCEN took some systems offline as a precaution. Banks can still file suspicious activity reports online, and the bureau hotline for time sensitive reports is unaffected. FinCEN has not said which systems were reached, whether any data was taken, when the intrusion began or who was behind it. It also issued an order giving some filers until December 30 to submit reports that were due between November 18 and December 29.",
-      "why": "FinCEN holds sensitive financial transaction data used by law enforcement to track money laundering and terrorist financing, so unauthorized access to its systems raises questions about the protection of that data. The disclosure came the same day as reports of a separate breach at US intelligence agencies, adding to scrutiny of government network security.",
-      "financial": false,
-      "sources": [
-        {
-          "label": "CNBC-TV18",
-          "url": "https://www.cnbctv18.com/world/us-financial-crimes-bureau-probes-cyber-breach-takes-some-systems-offline-20040767.htm"
-        },
-        {
-          "label": "ITechPost",
-          "url": "https://www.itechpost.com/articles/237887/20261125/fincen-discloses-cybersecurity-incident-us-treasury-investigates-potential-cyberattack.htm"
-        }
-      ]
-    },
     {
       "id": "live-2026-11-25-02",
       "published": "2026-11-25T14:00:00+05:30",
