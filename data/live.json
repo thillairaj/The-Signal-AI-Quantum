@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-26T12:00:13+05:30",
+  "updated": "2026-11-26T12:55:52+05:30",
   "next_update": "2026-11-26T14:00:00+05:30",
   "delay_hours": 2,
   "items": [
@@ -120,6 +120,26 @@
         {
           "label": "Runtime Wire",
           "url": "https://runtimewire.com/article/openai-corrects-gpt-6-2-billing-error-making-usage-limits-arrive-sooner"
+        }
+      ]
+    },
+    {
+      "id": "live-2026-11-26-03",
+      "published": "2026-11-26T10:00:00+05:30",
+      "category": "Quantum",
+      "company": "Equal1",
+      "headline": "Equal1, NVIDIA and Dell demonstrate hybrid quantum and classical computing in one server rack",
+      "what": "Equal1, NVIDIA and Dell demonstrated a hybrid quantum and classical computing setup at the SC26 supercomputing conference in Chicago. Equal1's rack-mounted RacQ silicon quantum computer, which draws 1.6 kilowatts, ran alongside Dell data centre servers inside a standard rack. NVIDIA NVQLink provided low-latency communication between the quantum processor and graphics processors, with automated gate tuning from NVIDIA's open Ising Calibration models, and Dell's Quantum Intelligent Orchestrator software coordinated work across the classical and quantum hardware.",
+      "why": "Quantum computers have mostly run as standalone machines, so fitting one into a standard data centre rack with live links to classical servers is a step toward running quantum and classical work together in production settings. The demonstration also shows the three vendors' software working as one system, from gate tuning to job orchestration.",
+      "financial": false,
+      "sources": [
+        {
+          "label": "Quantum Computing Report",
+          "url": "https://quantumcomputingreport.com/equal1-nvidia-and-dell-technologies-demonstrate-real-time-hybrid-quantum-classical-rack-integration-at-sc26/"
+        },
+        {
+          "label": "Equal1",
+          "url": "https://www.equal1.com/insights/tuning-a-cz-gate-in-real-time"
         }
       ]
     }
