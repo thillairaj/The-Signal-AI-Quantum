@@ -24,34 +24,66 @@
 
 .brief-ui * { box-sizing: border-box; }
 
-/* Header */
-.bu-head { text-align: center; padding: 26px 12px 6px; }
-.bu-kicker {
-  letter-spacing: .28em; font-size: .7rem; font-weight: 700;
-  color: var(--b-brand); text-transform: uppercase; margin: 0 0 10px;
-}
-.bu-title {
+/* Header: the shared heading row (title left, Follow pill right, from
+   assets/signal-follow.css) and the one line under it. */
+.brief-ui .sg-headrow { padding: 26px 2px 0; }
+.brief-ui .sg-pagetitle {
   font-family: Fraunces, Georgia, "Times New Roman", serif;
   font-size: clamp(1.7rem, 4.5vw, 2.5rem); font-weight: 600;
-  margin: 0 0 8px; line-height: 1.15;
+  margin: 0; line-height: 1.15;
 }
-.bu-desc { color: var(--b-muted); margin: 0 auto 14px; max-width: 620px; line-height: 1.5; font-size: .95rem; }
-.bu-follow {
-  display: inline-flex; align-items: center; gap: 7px;
-  padding: 8px 18px; border-radius: 999px; cursor: pointer;
-  border: 1px solid var(--b-brand); background: var(--b-card);
-  color: var(--b-ink); font: inherit; font-size: .88rem; font-weight: 600;
-}
-.bu-follow:hover, .bu-follow:focus-visible { border-color: var(--b-ink); outline: none; }
+.bu-desc { color: var(--b-muted); margin: 0 0 6px; padding: 0 2px; max-width: 620px; line-height: 1.5; font-size: .95rem; }
 
-/* Edition calendar (Nov 14, 2026): replaces the switcher row and the
-   Past editions list. One month of day numbers; edition dates are
-   buttons with a green dot, other dates are muted text. */
+/* Edition bar (Nov 26, 2026): one slim bar under the heading line.
+   Previous and next edition day arrows flank the centred date; the
+   Calendar link jumps to the Earlier editions section at the bottom. */
+.bu-edbar {
+  display: flex; align-items: center; gap: 10px;
+  max-width: 560px; margin: 10px auto 2px; padding: 0 2px;
+}
+.bu-ednav {
+  width: 40px; height: 40px; border-radius: 50%; flex: 0 0 auto;
+  border: 1px solid var(--b-line); background: var(--b-card);
+  color: var(--b-ink); font-size: 1.3rem; line-height: 1; cursor: pointer;
+  display: grid; place-items: center;
+}
+.bu-ednav:hover:not([disabled]), .bu-ednav:focus-visible { border-color: var(--b-brand); outline: none; }
+.bu-ednav[disabled] { opacity: .35; cursor: default; }
+.bu-edmid { flex: 1 1 auto; min-width: 0; text-align: center; }
+.bu-eddate {
+  font-family: Fraunces, Georgia, serif; font-size: 1.18rem;
+  font-weight: 600; line-height: 1.2;
+}
+.bu-edsub { color: var(--b-muted); font-size: .82rem; margin-top: 2px; }
+.bu-callink {
+  flex: 0 0 auto; font-size: .85rem; font-weight: 600;
+  color: var(--b-brand); text-decoration: none; white-space: nowrap;
+}
+.bu-callink:hover, .bu-callink:focus-visible { text-decoration: underline; outline: none; }
+
+/* Earlier editions (Nov 26, 2026): the calendar lives at the bottom
+   now. A compact strip of the fourteen days ending today (below
+   900px only the last seven show), then a card whose expander,
+   labelled with the shown month, opens the full month grid only
+   when tapped. Edition dates are buttons with a green dot, other
+   dates are muted text. */
+.bu-earlier { max-width: 640px; margin: 30px auto 0; scroll-margin-top: 120px; }
+.bu-earlier-h {
+  font-family: Fraunces, Georgia, serif; font-size: 1.05rem;
+  font-weight: 600; margin: 0 0 10px;
+}
+.bu-edstrip { display: grid; grid-template-columns: repeat(14, 1fr); gap: 4px; }
+@media (max-width: 899px) {
+  .bu-edstrip { grid-template-columns: repeat(7, 1fr); }
+  .bu-edstrip > *:nth-child(-n+7) { display: none; }
+}
 .bu-cal {
-  max-width: 430px; margin: 18px auto 4px;
+  margin: 12px 0 0;
   background: var(--b-card); border: 1px solid var(--b-line);
   border-radius: 16px; padding: 14px 14px 12px;
 }
+.bu-earlier .bu-strip-exp { width: 100%; }
+.bu-cal-full { margin-top: 12px; }
 .bu-cal-head {
   display: flex; align-items: center; justify-content: space-between;
   margin-bottom: 8px;
@@ -92,29 +124,8 @@ button.bu-cal-day:hover, button.bu-cal-day:focus-visible { border-color: var(--b
 .bu-cal-today { box-shadow: inset 0 0 0 2px var(--b-brand); }
 .bu-cal-off { color: var(--b-muted); opacity: .45; }
 
-/* Week strip (Nov 15, 2026): below 900px the calendar collapses to
-   the shown week plus a month expander, and the month grid above
-   shows only while the calendar is expanded. At 900px and above the
-   strip is not shown and the month grid always shows. The seven day
-   cells sit on their own row at the full card width (the week arrows
-   moved to the control row below, flanking the expander) so each
-   cell stays at least 44px wide on a 390px phone. */
-.bu-cal-strip { display: none; }
-.bu-strip-days {
-  display: grid;
-  grid-template-columns: repeat(7, 1fr); gap: 4px;
-}
-.bu-strip-ctl {
-  display: flex; align-items: stretch; gap: 6px; margin-top: 10px;
-}
-.bu-strip-step {
-  width: 44px; flex: 0 0 auto; display: grid; place-items: center;
-  border: 1px solid var(--b-line); border-radius: 999px;
-  background: transparent; color: var(--b-ink); cursor: pointer;
-  font-size: 1.25rem; line-height: 1;
-}
-.bu-strip-step:hover:not([disabled]), .bu-strip-step:focus-visible { border-color: var(--b-brand); outline: none; }
-.bu-strip-step[disabled] { opacity: .35; cursor: default; }
+/* The month expander: a full width pill in the calendar card; the
+   grid under it is rendered only while the calendar is open. */
 .bu-strip-exp {
   flex: 1 1 auto; padding: 9px 12px;
   display: flex; align-items: center; justify-content: center; gap: 8px;
@@ -125,17 +136,10 @@ button.bu-cal-day:hover, button.bu-cal-day:focus-visible { border-color: var(--b
 .bu-strip-exp:hover, .bu-strip-exp:focus-visible { border-color: var(--b-brand); outline: none; }
 .bu-strip-month { font-family: Fraunces, Georgia, serif; font-size: 1.02rem; }
 .bu-strip-chev { color: var(--b-brand); font-size: .8rem; }
-@media (max-width: 899px) {
-  .bu-cal-strip { display: block; }
-  .bu-cal-full { display: none; }
-  .bu-cal.is-open .bu-cal-full { display: block; margin-top: 12px; }
-}
 .bu-breaking {
   color: #b00020; font-weight: 700; letter-spacing: .08em; font-size: .72rem;
   text-transform: uppercase; display: block; font-family: Inter, sans-serif;
 }
-.bu-edmeta { text-align: center; color: var(--b-muted); font-size: .82rem; margin: 2px 0 0; }
-
 /* Category chips */
 .bu-chips {
   display: flex; gap: 8px; overflow-x: auto; padding: 16px 26px 6px 2px;
@@ -237,7 +241,7 @@ button.bu-cal-day:hover, button.bu-cal-day:focus-visible { border-color: var(--b
 
 .bu-empty { color: var(--b-muted); text-align: center; padding: 30px 10px; }
 
-/* Story sheet and Follow panel: bottom sheet on phones, centred dialog up */
+/* Story sheet: bottom sheet on phones, centred dialog up */
 .bu-overlay {
   position: fixed; inset: 0; z-index: 9998;
   background: rgba(7, 9, 13, .58);
@@ -285,26 +289,6 @@ button.bu-cal-day:hover, button.bu-cal-day:focus-visible { border-color: var(--b
 .bu-sheet-share { display: flex; align-items: center; gap: 12px; }
 .bu-sheet-page { font-size: .85rem; color: var(--b-muted); }
 
-/* Follow panel feed rows */
-.bu-feed-rows { display: flex; flex-direction: column; gap: 9px; margin-top: 14px; }
-.bu-feed-row {
-  display: flex; align-items: center; gap: 10px;
-  border: 1px solid var(--b-line); border-radius: 11px; padding: 9px 12px;
-}
-.bu-feed-name { font-weight: 700; font-size: .9rem; flex: 0 0 auto; }
-.bu-feed-url {
-  flex: 1; min-width: 0; font-size: .76rem; color: var(--b-muted);
-  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
-  font-family: "IBM Plex Mono", monospace;
-}
-.bu-copy {
-  flex: 0 0 auto; padding: 7px 13px; border-radius: 999px; cursor: pointer;
-  border: 1px solid var(--b-brand); background: transparent;
-  color: var(--b-ink); font: inherit; font-size: .82rem; font-weight: 600;
-}
-.bu-follow-status { min-height: 18px; color: var(--b-brand); font-size: .85rem; text-align: center; margin: 12px 0 0; }
-.bu-follow-text { line-height: 1.6; font-size: .95rem; margin: 6px 0 0; }
-
 /* Homepage tab NEW badge */
 .tab-new {
   display: inline-block; margin-left: 7px; padding: 1px 7px;
@@ -331,8 +315,8 @@ button.bu-cal-day:hover, button.bu-cal-day:focus-visible { border-color: var(--b
 .ss-share-btn svg{width:15px;height:15px;flex:0 0 auto}
 .ss-share-btn:hover{border-color:var(--b-brand,#3F7D20)}
 
-/* Themes step 2 (preview): Rose values for the Brief tab, story sheet and
-   Follow panel; Dark fixes for the breaking label and the NEW badge. */
+/* Themes step 2 (preview): Rose values for the Brief tab and the story
+   sheet; Dark fixes for the breaking label and the NEW badge. */
 :root[data-tone="rose"] .brief-ui {
   --b-card: #F9E7EC; --b-line: #E2B9C5; --b-soft: #EDCBD5; --b-brand: #2F6A18;
 }

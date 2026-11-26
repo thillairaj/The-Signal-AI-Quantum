@@ -88,20 +88,21 @@ window.SignalBriefUI = (function () {
     var m = String(s || "").match(/^[\s\S]*?[.!?](?=\s|$)/);
     return (m ? m[0] : String(s || "")).trim();
   }
-  /* ---------- edition calendar (Nov 14, 2026; week strip Nov 15) ----------
-     One component replaces the edition switcher row and the Past
-     editions list on both surfaces. At 900px and above it is a month
-     grid of day numbers. Below 900px it collapses to a one week strip
-     (the shown week, stepped by its own arrows) whose expander,
-     labelled with the month and year, opens the same month grid.
-     A date with an edition is a button (green dot, full readable date
-     plus story count as its aria-label); other dates are muted text.
-     The today ring shows only on a date that has an edition.
-     state.cal is the shown month and state.weekMs the Monday of the
-     shown week; full renders sync both to the open edition, while the
-     arrows re-render only the calendar so browsing months or weeks
-     never changes the open edition. Opening an edition collapses the
-     grid again (state.calOpen reset on every full render). */
+  /* ---------- earlier editions (Nov 14, 2026; moved to the bottom
+     Nov 26, 2026) ----------
+     The calendar now sits at the bottom of the Brief, under an
+     "Earlier editions" heading: a compact strip of the fourteen days
+     ending today (CSS shows the last seven below 900px), and under it
+     an expander, labelled with the shown month, that opens the full
+     month grid only when tapped. A date with an edition is a button
+     (green dot, full readable date plus story count as its
+     aria-label); other dates are muted text. The today ring shows
+     only on a date that has an edition. state.cal is the shown month;
+     full renders reset it to the current month and collapse the grid
+     (state.calOpen), while the month arrows re-render only the
+     calendar so browsing months never changes the open edition. The
+     edition bar at the top steps by edition day, using the same
+     editionsByDate map, so its arrows skip days with no edition. */
   function dateParts(iso) {
     var p = String(iso || "").split("-").map(Number);
     return { y: p[0], m: p[1] - 1, d: p[2] };
@@ -115,11 +116,6 @@ window.SignalBriefUI = (function () {
       if (!(ed.date in map)) map[ed.date] = i;
     });
     return map;
-  }
-  /* Monday (00:00 UTC) of the week containing the calendar date. */
-  function mondayMs(y, m, d) {
-    var t = Date.UTC(y, m, d);
-    return t - ((new Date(t).getUTCDay() + 6) % 7) * 86400000;
   }
   function isoOf(t) {
     var d = new Date(t);
@@ -177,46 +173,26 @@ window.SignalBriefUI = (function () {
     }
     return out + '<div class="bu-cal-grid">' + cells + "</div></div>";
   }
-  /* The compact week strip shown below 900px: the shown week's seven
-     day cells on their own row, using the full card width so each
-     cell stays comfortably tappable, and below them a control row
-     where two week chevrons flank the expander that opens the month
-     grid. The expander label takes the month of the shown week's
-     Thursday, the standard week to month convention. The strip
-     cannot step to a week entirely before the first edition's week,
-     nor past the week containing today. */
-  function weekStrip(state, byDate, first, curY, curM, curD) {
-    if (state.weekMs == null) {
-      var ep = dateParts(state.data.editions[state.edIdx].date);
-      state.weekMs = mondayMs(ep.y, ep.m, ep.d);
-    }
-    var prevOff = state.weekMs <= mondayMs(first.y, first.m, first.d);
-    var nextOff = state.weekMs >= mondayMs(curY, curM, curD);
+  /* The compact date strip at the bottom: the fourteen days ending
+     today, oldest first, one shared day cell per day (CSS shows only
+     the last seven below 900px). */
+  function editionStrip(state) {
+    var byDate = editionsByDate(state);
+    var now = new Date();
+    var todayMs = Date.UTC(now.getFullYear(), now.getMonth(),
+      now.getDate());
     var cells = "";
-    for (var i = 0; i < 7; i++) {
-      var t = state.weekMs + i * 86400000;
+    for (var i = 13; i >= 0; i--) {
+      var t = todayMs - i * 86400000;
       var dt = new Date(t);
-      var isToday = dt.getUTCFullYear() === curY &&
-        dt.getUTCMonth() === curM && dt.getUTCDate() === curD;
-      cells += dayCell(state, byDate, isoOf(t), dt.getUTCDate(), isToday);
+      cells += dayCell(state, byDate, isoOf(t), dt.getUTCDate(),
+        i === 0);
     }
-    var thu = new Date(state.weekMs + 3 * 86400000);
-    var label = MONTHS_FULL[thu.getUTCMonth()] + " " + thu.getUTCFullYear();
-    return '<div class="bu-cal-strip">' +
-      '<div class="bu-strip-days">' + cells + "</div>" +
-      '<div class="bu-strip-ctl">' +
-      '<button type="button" class="bu-strip-step" data-strip-prev ' +
-      'aria-label="Previous week"' + (prevOff ? " disabled" : "") +
-      ">‹</button>" +
-      '<button type="button" class="bu-strip-exp" data-cal-expand ' +
-      'aria-expanded="' + (state.calOpen ? "true" : "false") + '">' +
-      '<span class="bu-strip-month">' + label + "</span>" +
-      '<span class="bu-strip-chev" aria-hidden="true">' +
-      (state.calOpen ? "▴" : "▾") + "</span></button>" +
-      '<button type="button" class="bu-strip-step" data-strip-next ' +
-      'aria-label="Next week"' + (nextOff ? " disabled" : "") +
-      ">›</button></div></div>";
+    return cells;
   }
+  /* The bottom calendar: the month expander (the shown month, the
+     current month until the reader steps) above the month grid,
+     which renders only while the calendar is open. */
   function calendarInner(state) {
     var eds = state.data.editions;
     var first = dateParts(eds[eds.length - 1].date);
@@ -224,8 +200,15 @@ window.SignalBriefUI = (function () {
     var curY = now.getFullYear(), curM = now.getMonth(),
       curD = now.getDate();
     var byDate = editionsByDate(state);
-    return weekStrip(state, byDate, first, curY, curM, curD) +
-      monthGrid(state, byDate, first, curY, curM, curD);
+    var label = MONTHS_FULL[state.cal.m] + " " + state.cal.y;
+    return '<button type="button" class="bu-strip-exp" data-cal-expand ' +
+      'aria-expanded="' + (state.calOpen ? "true" : "false") + '">' +
+      '<span class="bu-strip-month">' + label + "</span>" +
+      '<span class="bu-strip-chev" aria-hidden="true">' +
+      (state.calOpen ? "▴" : "▾") + "</span></button>" +
+      (state.calOpen
+        ? monthGrid(state, byDate, first, curY, curM, curD)
+        : "");
   }
   function renderCalendar(state) {
     var cal = state.root.querySelector(".bu-cal");
@@ -249,29 +232,38 @@ window.SignalBriefUI = (function () {
         : { y: state.cal.y, m: state.cal.m + 1 };
       renderCalendar(state);
     });
-    var sprev = state.root.querySelector("[data-strip-prev]");
-    var snext = state.root.querySelector("[data-strip-next]");
-    if (sprev) sprev.addEventListener("click", function () {
-      state.weekMs -= 7 * 86400000;
-      renderCalendar(state);
-    });
-    if (snext) snext.addEventListener("click", function () {
-      state.weekMs += 7 * 86400000;
-      renderCalendar(state);
-    });
     var exp = state.root.querySelector("[data-cal-expand]");
     if (exp) exp.addEventListener("click", function () {
       state.calOpen = !state.calOpen;
       renderCalendar(state);
     });
-    state.root.querySelectorAll("[data-cal-ed]").forEach(function (b) {
+    /* Only the grid's own day buttons: the strip above the calendar
+       is wired once per full render in wire(), and the calendar
+       re-renders must not bind it twice. */
+    var cal = state.root.querySelector(".bu-cal");
+    if (cal) cal.querySelectorAll("[data-cal-ed]").forEach(function (b) {
       b.addEventListener("click", function () {
-        state.edIdx = Number(b.getAttribute("data-cal-ed"));
-        state.cat = "";
-        render(state);
-        state.root.scrollIntoView({ block: "start" });
+        openEdition(state, Number(b.getAttribute("data-cal-ed")));
       });
     });
+  }
+  /* Open an edition (from a day cell or the edition bar): full render,
+     then back to the very top of the page. */
+  function openEdition(state, ei) {
+    state.edIdx = ei;
+    state.cat = "";
+    render(state);
+    window.scrollTo({ top: 0, behavior: "instant" });
+  }
+  /* Step to the nearest edition day in the given direction (negative
+     is the previous, older day): the editionsByDate keys are the only
+     days that exist, so days without an edition are skipped. */
+  function stepEdition(state, dir) {
+    var byDate = editionsByDate(state);
+    var dates = Object.keys(byDate).sort();
+    var i = dates.indexOf(curEd(state).date) + dir;
+    if (i < 0 || i >= dates.length) return;
+    openEdition(state, byDate[dates[i]]);
   }
   function storyNN(item) {
     var m = String(item.id || "").match(/-(\d+)$/);
@@ -361,8 +353,8 @@ window.SignalBriefUI = (function () {
     };
   }
 
-  /* ---------- story sheet and Follow panel (one of each per page) ---------- */
-  var sheet = null, followPanel = null;
+  /* ---------- story sheet (one per page) ---------- */
+  var sheet = null;
   function ensureOverlays(state) {
     if (!sheet) {
       var ov = document.createElement("div");
@@ -396,36 +388,6 @@ window.SignalBriefUI = (function () {
       });
       ov.addEventListener("keydown", function (e) {
         if (e.key === "Escape") closeSheet();
-      });
-    }
-    if (!followPanel) {
-      var fo = document.createElement("div");
-      fo.className = "bu-overlay";
-      fo.hidden = true;
-      fo.innerHTML =
-        '<div class="bu-sheet" role="dialog" aria-modal="true" ' +
-        'aria-label="Follow Signal Brief">' +
-        '<div class="bu-sheet-top"><div class="bu-sheet-meta">' +
-        '<span class="bu-pill" style="background:var(--b-brand);color:var(--b-pill-ink,#fff)">Follow</span>' +
-        '</div><button type="button" class="bu-close" aria-label="Close">' +
-        "×</button></div>" +
-        "<h3>Follow Signal Brief</h3>" +
-        '<p class="bu-follow-text">Get every edition in a news reader ' +
-        "app such as Feedly or Inoreader. Copy a feed link and paste it " +
-        "into the app's follow box.</p>" +
-        '<div class="bu-feed-rows"></div>' +
-        '<p class="bu-follow-status" aria-live="polite"></p></div>';
-      document.body.appendChild(fo);
-      followPanel = {
-        ov: fo, rows: fo.querySelector(".bu-feed-rows"),
-        status: fo.querySelector(".bu-follow-status"), invoker: null
-      };
-      fo.querySelector(".bu-close").addEventListener("click", closeFollow);
-      fo.addEventListener("click", function (e) {
-        if (e.target === fo) closeFollow();
-      });
-      fo.addEventListener("keydown", function (e) {
-        if (e.key === "Escape") closeFollow();
       });
     }
   }
@@ -474,47 +436,45 @@ window.SignalBriefUI = (function () {
       try { sheet.invoker.focus(); } catch (e) {}
     }
   }
-  function openFollow(state, invoker) {
-    ensureOverlays(state);
-    var feeds = [{ label: "All stories", file: "signal.xml" }]
-      .concat(state.data.categories || []);
-    followPanel.rows.innerHTML = "";
-    feeds.forEach(function (f) {
-      var url = state.siteRoot + f.file;
-      var row = document.createElement("div");
-      row.className = "bu-feed-row";
-      row.innerHTML = '<span class="bu-feed-name">' + esc(f.label) +
-        '</span><span class="bu-feed-url">' + esc(url) + "</span>";
-      var b = document.createElement("button");
-      b.type = "button";
-      b.className = "bu-copy";
-      b.textContent = "Copy link";
-      b.addEventListener("click", function () {
-        var done = function () {
-          followPanel.status.textContent = "Copied: " + f.label + " feed link";
-        };
-        if (window.SignalShare) window.SignalShare.copy(url).then(done);
-        else done();
-      });
-      row.appendChild(b);
-      followPanel.rows.appendChild(row);
-    });
-    followPanel.status.textContent = "";
-    followPanel.invoker = invoker || document.activeElement;
-    followPanel.ov.hidden = false;
-    followPanel.prevOverflow = document.body.style.overflow;
-    document.body.style.overflow = "hidden";
-    var c = followPanel.ov.querySelector(".bu-close");
-    if (c) c.focus();
+  /* ---------- the Follow section (bottom of the Brief) ----------
+     The shared component (assets/signal-follow.css and
+     assets/signal-follow.js): one row per feed with its colour dot
+     and a tiny copy button. Feed addresses are the canonical
+     signal.luzovi.com ones, as in the component. */
+  var FEED_DOTS = {
+    "ai": "var(--sg-ai,#2C6FAE)", "quantum": "var(--sg-quantum,#7C5CBF)",
+    "cloud-devops": "var(--sg-cloud,#1B7A6E)",
+    "cybersecurity": "var(--sg-cyber,#A62B25)",
+    "industry": "var(--sg-ink,#201B14)", "policy": "var(--sg-ink,#201B14)"
+  };
+  var COPY_SVG =
+    '<svg class="cy" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg>' +
+    '<svg class="ok" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l4 4 10-10"/></svg>' +
+    '<span class="tip">Copied</span>';
+  function feedsSection(state) {
+    var feeds = [{ label: "All stories", file: "signal.xml",
+      dot: "var(--sg-ink,#201B14)" }].concat(
+      (state.data.categories || []).map(function (c) {
+        return { label: c.label, file: c.file,
+          dot: FEED_DOTS[c.key] || "var(--sg-ink,#201B14)" };
+      }));
+    var rows = feeds.map(function (f) {
+      var url = "https://signal.luzovi.com/" + f.file;
+      return '<li><span class="sg-dot" style="--dot:' + f.dot +
+        '"></span><span class="sg-feedname">' + esc(f.label) + "</span>" +
+        '<button type="button" class="sg-copyfeed" data-url="' + url +
+        '" aria-label="Copy the ' + esc(f.label) + ' feed link">' +
+        COPY_SVG + "</button></li>";
+    }).join("");
+    return '<section class="sg-feeds" id="follow-feeds" ' +
+      'aria-labelledby="sgFeedsTitle">' +
+      '<h2 id="sgFeedsTitle">Follow in a news reader</h2>' +
+      "<p>Copy a feed and paste it into Feedly, Inoreader or any " +
+      "reader. New items arrive on their own.</p>" +
+      '<ul class="sg-feedlist">' + rows + "</ul></section>";
   }
-  function closeFollow() {
-    if (!followPanel) return;
-    followPanel.ov.hidden = true;
-    document.body.style.overflow = followPanel.prevOverflow || "";
-    if (followPanel.invoker && followPanel.invoker.focus) {
-      try { followPanel.invoker.focus(); } catch (e) {}
-    }
-  }
+  var FEED_ICON =
+    '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" aria-hidden="true"><path d="M5 11a8 8 0 0 1 8 8M5 5a14 14 0 0 1 14 14"/><circle cx="6" cy="18" r="1.8" fill="currentColor" stroke="none"/></svg>';
 
   /* ---------- the mounted UI ---------- */
   var states = [];
@@ -525,7 +485,7 @@ window.SignalBriefUI = (function () {
       root: root,
       siteRoot: new URL(prefix, window.location.href).href,
       data: null, edIdx: 0, cat: "", view: [], cal: null,
-      weekMs: null, calOpen: false
+      calOpen: false
     };
     states.push(state);
     root.innerHTML =
@@ -559,10 +519,11 @@ window.SignalBriefUI = (function () {
       ? ed.items.filter(function (i) { return i.category === state.cat; })
       : ed.items.slice();
     var time = editionTime(ed);
-    var edp = dateParts(ed.date);
-    state.cal = { y: edp.y, m: edp.m };
-    state.weekMs = mondayMs(edp.y, edp.m, edp.d);
+    var now = new Date();
+    state.cal = { y: now.getFullYear(), m: now.getMonth() };
     state.calOpen = false;
+    var edDates = Object.keys(editionsByDate(state)).sort();
+    var edPos = edDates.indexOf(ed.date);
     var chips = ['<button type="button" class="bu-chip" data-cat="" ' +
       'aria-pressed="' + (!state.cat) + '">All' +
       '<span class="bu-count">' + ed.items.length + "</span></button>"]
@@ -601,23 +562,28 @@ window.SignalBriefUI = (function () {
     }).join("");
     state.root.innerHTML =
       '<div class="brief-ui">' +
-      '<header class="bu-head">' +
-      (state.tab
-        ? '<h2 class="bu-title">Signal Brief</h2>' +
-          '<p class="bu-desc">The day in technology, in our own words. ' +
-          "New every day at 07:00 IST.</p>"
-        : '<h2 class="bu-title">Signal Brief</h2>' +
-          '<p class="bu-desc">The day in technology, in our own words. ' +
-          "New every day at 07:00 IST.</p>") +
-      '<button type="button" class="bu-follow">Follow</button>' +
-      "</header>" +
-      '<div class="bu-cal" role="group" ' +
-      'aria-label="Choose an edition by date">' +
-      calendarInner(state) + "</div>" +
-      '<p class="bu-edmeta">' +
+      '<div class="sg-headrow">' +
+      '<h2 class="sg-pagetitle">Signal Brief</h2>' +
+      '<a class="sg-followpill" href="#follow-feeds">' +
+      '<span class="sg-fp-ic">' + FEED_ICON + "</span>" +
+      'Follow in a reader <span aria-hidden="true">↓</span></a></div>' +
+      '<p class="bu-desc">The day in technology, in our own words. ' +
+      "New every day at 07:00 IST.</p>" +
+      '<div class="bu-edbar">' +
+      '<button type="button" class="bu-ednav" data-ed-prev ' +
+      'aria-label="Previous edition day"' +
+      (edPos > 0 ? "" : " disabled") + ">‹</button>" +
+      '<div class="bu-edmid">' +
       (ed.breaking ? '<span class="bu-breaking">Breaking update</span>' : "") +
-      esc(fmtDate(ed.date)) + " · " + ed.items.length +
-      " stories · published " + esc(time) + " IST</p>" +
+      '<div class="bu-eddate">' + esc(fmtDate(ed.date)) + "</div>" +
+      '<div class="bu-edsub">' + ed.items.length +
+      (ed.items.length === 1 ? " story" : " stories") + " · " +
+      esc(time) + " IST</div></div>" +
+      '<button type="button" class="bu-ednav" data-ed-next ' +
+      'aria-label="Next edition day"' +
+      (edPos < edDates.length - 1 ? "" : " disabled") + ">›</button>" +
+      '<a class="bu-callink" href="#earlier-editions">Calendar ' +
+      '<span aria-hidden="true">↓</span></a></div>' +
       '<div class="bu-chips">' + chips + "</div>" +
       '<div class="bu-rail">' + cards + "</div>" +
       '<div class="bu-railbar">' +
@@ -627,14 +593,33 @@ window.SignalBriefUI = (function () {
       '<span class="bu-railcount"></span>' +
       '<button type="button" class="bu-rbtn" data-bu-next ' +
       'aria-label="Next story">›</button></div>' +
+      '<section class="bu-earlier" id="earlier-editions">' +
+      '<h3 class="bu-earlier-h">Earlier editions</h3>' +
+      '<div class="bu-edstrip">' + editionStrip(state) + "</div>" +
+      '<div class="bu-cal" role="group" ' +
+      'aria-label="Choose an edition by date">' +
+      calendarInner(state) + "</div>" +
+      "</section>" +
+      feedsSection(state) +
       "</div>";
     wire(state);
   }
   function wire(state) {
     var root = state.root, ed = curEd(state);
-    root.querySelector(".bu-follow").addEventListener("click", function () {
-      openFollow(state, this);
+    var edPrev = root.querySelector("[data-ed-prev]");
+    var edNext = root.querySelector("[data-ed-next]");
+    if (edPrev) edPrev.addEventListener("click", function () {
+      stepEdition(state, -1);
     });
+    if (edNext) edNext.addEventListener("click", function () {
+      stepEdition(state, 1);
+    });
+    root.querySelectorAll(".bu-edstrip [data-cal-ed]").forEach(
+      function (b) {
+        b.addEventListener("click", function () {
+          openEdition(state, Number(b.getAttribute("data-cal-ed")));
+        });
+      });
     wireCalendar(state);
     root.querySelectorAll(".bu-chip").forEach(function (chip) {
       chip.addEventListener("click", function () {

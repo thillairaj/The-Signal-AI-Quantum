@@ -18,11 +18,13 @@
 <meta name="twitter:description" content="A self-updating feed of AI, quantum computing, cybersecurity, cloud and DevOps, and podcast updates.">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📡</text></svg>">
 <link rel="alternate" type="application/rss+xml" title="The Signal RSS" href="feed.xml">
+<link rel="alternate" type="application/rss+xml" title="The Signal: Articles" href="https://signal.luzovi.com/articles.xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,800;1,9..144,500;1,9..144,600&family=Inter:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css?v=20261125">
-<link rel="stylesheet" href="assets/brief.css?v=20261117">
+<link rel="stylesheet" href="assets/brief.css?v=20261126g">
+<link rel="stylesheet" href="assets/signal-follow.css?v=20261126g">
 <link rel="stylesheet" href="assets/live-strip.css?v=20261117">
 <link rel="stylesheet" href="assets/signal-standard.css?v=20261125f">
 <link rel="stylesheet" href="assets/signal-brand.css?v=20261125">
@@ -696,10 +698,12 @@
 
   <section id="podcast-view" class="view-section" hidden>
     <div class="view-intro">
-      <h2>Podcast</h2>
+      <div class="sg-headrow">
+        <h2 class="sg-pagetitle">Podcast</h2>
+        <a class="sg-followpill" href="#sg-listen"><span class="sg-fp-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M4 15v-3a8 8 0 0 1 16 0v3"/><rect x="3" y="14" width="4" height="6" rx="1.5" fill="currentColor" stroke="none"/><rect x="17" y="14" width="4" height="6" rx="1.5" fill="currentColor" stroke="none"/></svg></span>Follow on your phone <span aria-hidden="true">↓</span></a>
+      </div>
       <p>Three series, <span data-pod-total>122</span> episodes. Listen here, or follow them in your podcast app.</p>
       <div class="series-toggle" id="podcastSeries"><!-- populated by app.js --></div>
-      <p class="sg-follow-jump"><a href="#sg-listen">Follow the podcast on your phone ↓</a></p>
 <!-- Podcast tab: insert under the series buttons. Episode counts: fill each [data-episodes] from the episode data, as the series buttons already do. -->
       <div class="track-row" id="podcastTracks" hidden>
         <span class="track-label">Track</span>
@@ -732,10 +736,24 @@ if(navigator.clipboard&&navigator.clipboard.writeText)navigator.clipboard.writeT
 
   <section id="research-view" class="view-section" hidden>
     <div class="view-intro">
-      <h2>Articles</h2>
+      <div class="sg-headrow">
+        <h2 class="sg-pagetitle">Articles</h2>
+        <a class="sg-followpill" href="#follow-articles"><span class="sg-fp-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" aria-hidden="true"><path d="M5 11a8 8 0 0 1 8 8M5 5a14 14 0 0 1 14 14"/><circle cx="6" cy="18" r="1.8" fill="currentColor" stroke="none"/></svg></span>Follow in a reader <span aria-hidden="true">↓</span></a>
+      </div>
       <p>Original research, one question at a time.</p>
     </div>
     <div class="research-grid" id="researchGrid"></div>
+    <section class="sg-feeds" id="follow-articles" aria-labelledby="sgFeedsTitleArticles">
+      <h2 id="sgFeedsTitleArticles">Follow in a news reader</h2>
+      <p>Copy a feed and paste it into Feedly, Inoreader or any reader. New items arrive on their own.</p>
+      <ul class="sg-feedlist">
+        <li><span class="sg-dot" style="--dot:var(--sg-ink,#201B14)"></span><span class="sg-feedname">All articles</span>
+          <button type="button" class="sg-copyfeed" data-url="https://signal.luzovi.com/articles.xml" aria-label="Copy the All articles feed link">
+            <svg class="cy" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg>
+            <svg class="ok" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l4 4 10-10"/></svg>
+            <span class="tip">Copied</span></button></li>
+      </ul>
+    </section>
   </section>
 
   <section id="brief-view" class="view-section" hidden>
@@ -763,8 +781,9 @@ if(navigator.clipboard&&navigator.clipboard.writeText)navigator.clipboard.writeT
 <script data-goatcounter="https://trttech.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
 <script src="assets/signal-share.js?v=20261125"></script>
 <script src="assets/live-strip.js?v=20261117"></script>
-<script src="assets/brief.js?v=20261125"></script>
-<script src="app.js?v=20261125f"></script>
+<script src="assets/brief.js?v=20261126g"></script>
+<script src="assets/signal-follow.js?v=20261126g"></script>
+<script src="app.js?v=20261126f"></script>
 <!-- ss-page-share:start -->
 <script>
 window.__ssHomeShareConfigs = {"home": {"title": "The Signal", "desc": "A self-updating feed of AI, quantum computing, cybersecurity, cloud and DevOps, and podcast updates.", "inside": "33 learning pages · 28 of 32 deck topics live · 1,316 terms", "link": "https://signal.luzovi.com/", "tag": "#Learning", "image": {"url": "https://signal.luzovi.com/assets/og/home.png", "filename": "the-signal.png"}}, "learn": {"title": "Learning Space · The Signal", "desc": "A self-updating feed of AI, quantum computing, cybersecurity, cloud and DevOps, and podcast updates.", "inside": "4 learning spaces, 536 video lessons", "link": "https://signal.luzovi.com/#learn", "tag": "#Learning", "image": {"url": "https://signal.luzovi.com/assets/og/home.png", "filename": "the-signal.png"}}, "podcast": {"title": "Podcast · The Signal", "desc": "A self-updating feed of AI, quantum computing, cybersecurity, cloud and DevOps, and podcast updates.", "inside": "123 episodes across 3 series", "link": "https://signal.luzovi.com/#podcast", "tag": "#Podcasts", "image": {"url": "https://signal.luzovi.com/assets/og/home.png", "filename": "the-signal.png"}}, "research": {"title": "Articles · The Signal", "desc": "A self-updating feed of AI, quantum computing, cybersecurity, cloud and DevOps, and podcast updates.", "inside": "18 research articles", "link": "https://signal.luzovi.com/#research", "tag": "#TechNews", "image": {"url": "https://signal.luzovi.com/assets/og/home.png", "filename": "the-signal.png"}}, "feed": {"title": "RSS Feed · The Signal", "desc": "A self-updating feed of AI, quantum computing, cybersecurity, cloud and DevOps, and podcast updates.", "inside": "339 stories on the live wire", "link": "https://signal.luzovi.com/#feed", "tag": "#TechNews", "image": {"url": "https://signal.luzovi.com/assets/og/home.png", "filename": "the-signal.png"}}, "brief": {"title": "Signal Brief · The Signal", "desc": "A self-updating feed of AI, quantum computing, cybersecurity, cloud and DevOps, and podcast updates.", "inside": "A fresh brief every morning at 07:00, 12 stories today", "link": "https://signal.luzovi.com/#brief", "tag": "#SignalBrief", "image": {"url": "https://signal.luzovi.com/assets/og/home.png", "filename": "the-signal.png"}}};
