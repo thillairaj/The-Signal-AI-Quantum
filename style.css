@@ -955,3 +955,14 @@ body[data-view="research"] .feed-only { display: none; }
 :root[data-tone="rose"] .games-popup-go{background:#6A47B0;color:#FFF8E7}
 :root[data-tone="rose"] .games-popup-go:hover{background:#573A94}
 :root[data-tone="rose"] .games-popup-later{color:#4F3A41;border-color:#E2B9C5}
+
+/* Themes step 2 (preview): remaining front-page gold accents on Rose
+   (Dark keeps #B8860B, which passes on the dark page). */
+:root[data-tone="rose"] .tab-num,
+:root[data-tone="rose"] .learn-door-no,
+:root[data-tone="rose"] .learn-door-enter,
+:root[data-tone="rose"] .learn-door-chev,
+:root[data-tone="rose"] .fam-door-chev { color: #8F5C10; }
+:root[data-tone="rose"] .feed-tools .cat-btn:hover,
+:root[data-tone="rose"] .feed-tools .source-toggle:hover { border-color: #8F5C10; color: #8F5C10; }
+:root[data-tone="rose"] .door-guide { background: #EDCBD5; border-color: #E2B9C5; }
