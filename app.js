@@ -85,18 +85,14 @@ async function loadViews() {
 }
 
 /* ---------- Views: feed / learn / podcast ---------- */
-/* Tab landing rule (Thillai, Nov 6, 2026): opening any section tab, by tap,
-   link or back button, lands at the top of that tab's content. Two guards:
-   the browser must not restore a saved scroll position for a tab entry, and
-   no element id on this page may equal a section hash (the feed list element
-   is #feedList, not #feed), so no fragment jump can move the landing point. */
+/* Tab landing rule (Thillai, Nov 26, 2026; replaces the Nov 6 rule):
+   opening any section tab, by tap, link or back button, lands at the
+   very top of the page (scrollY 0), so the fixed top row and the Live
+   news strip are always in view. The browser must not restore a saved
+   scroll position for a tab entry. */
 try { history.scrollRestoration = "manual"; } catch (e) {}
-const VIEW_TOP = { home: homeViewEl, feed: feedToolsEl, learn: learnViewEl, podcast: podcastViewEl, research: researchViewEl, brief: briefViewEl };
-function scrollToViewTop(name) {
-  const el = VIEW_TOP[name];
-  if (!el) return;
-  const y = el.getBoundingClientRect().top + window.scrollY;
-  window.scrollTo({ top: Math.max(0, y), behavior: "instant" });
+function scrollToPageTop() {
+  window.scrollTo({ top: 0, behavior: "instant" });
 }
 function showView(name) {
   document.body.dataset.view = name;
@@ -556,7 +552,7 @@ topTabsEl.querySelectorAll(".top-tab").forEach(btn => {
     topTabsEl.querySelectorAll(".top-tab").forEach(b => b.classList.remove("active"));
     btn.classList.add("active");
     showView(btn.dataset.view);
-    scrollToViewTop(btn.dataset.view);
+    scrollToPageTop();
     const h = "#" + btn.dataset.view;
     if (location.hash !== h) history.pushState(null, "", h);
   });
@@ -722,8 +718,8 @@ openResearchTarget();
 const SECTION_HASH = { "#home": "home", "#podcast": "podcast", "#research": "research", "#feed": "feed", "#brief": "brief" };
 function openSectionTarget() {
   const v = SECTION_HASH[location.hash];
-  if (v) { showView(v); scrollToViewTop(v); return; }
-  if (!location.hash || location.hash === "#") { showView("home"); scrollToViewTop("home"); }
+  if (v) { showView(v); scrollToPageTop(); return; }
+  if (!location.hash || location.hash === "#") { showView("home"); scrollToPageTop(); }
 }
 openSectionTarget();
 openPodcastTarget();
