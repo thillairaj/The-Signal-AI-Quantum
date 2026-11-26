@@ -83,6 +83,14 @@ html[data-theme="dark"] .sg-shell,html[data-theme="dark"] .sg-crumbrow{backgroun
   .front-masthead .tabs-bar{display:none}
   .front-masthead .sg-themeb{margin-left:auto}
 }
+/* At 360px the front wordmark (2rem under 780px, from style.css) makes the
+   masthead row about 9px wider than the content box, so the theme button's
+   auto margin collapses to 0 and the button sits 9px right of its place on
+   inner pages. Trimming the wordmark at this width lets the row fit and
+   the button right-anchor exactly as elsewhere; 390px and up are untouched. */
+@media(max-width:380px){
+  .front-masthead .brand-h{font-size:29px}
+}
 /* "by Luzovi" next to the wordmark */
 .sg-by{font:500 12px Figtree,system-ui,sans-serif;letter-spacing:.04em;color:#70675A;margin-left:8px;white-space:nowrap;font-style:normal;vertical-align:middle}
 .brand-h .sg-by{font-size:13px}

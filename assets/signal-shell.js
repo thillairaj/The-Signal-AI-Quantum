@@ -79,6 +79,11 @@
     strip.innerHTML=[].slice.call(document.querySelectorAll('.top-tabs .top-tab')).map(function(t){
       var inner=t.innerHTML.replace(' id="briefNewBadge"','');
       if(t.tagName==='A')return '<a class="sg-tab" href="'+t.getAttribute('href')+'">'+inner+'</a>';
+      /* Learning Space carries the menu behaviour itself (data-menu, as on
+         the inner pages' strips): forwarding its tap to the real tab opened
+         the menu via the capture listener, and the same tap then bubbled to
+         the document listener and closed it again, so the tap did nothing. */
+      if(t.getAttribute('data-view')==='learn')return '<button type="button" class="sg-tab" data-menu="1">'+inner+'</button>';
       return '<button type="button" class="sg-tab" data-strip-view="'+t.getAttribute('data-view')+'">'+inner+'</button>';
     }).join('');
     if(row.parentNode)row.parentNode.insertBefore(strip,row.nextSibling);
