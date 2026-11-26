@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>The Signal: Articles</title>
+    <link>https://signal.luzovi.com/#research</link>
+    <description>Original research from The Signal (Research Notes): one question at a time.</description>
+    <language>en</language>
+    <lastBuildDate>Mon, 23 Nov 2026 07:00:00 +0530</lastBuildDate>
+    <atom:link href="https://signal.luzovi.com/articles.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>Why Did the Frontier AI Pause Fail to Slow the Chip Boom?</title>
+      <link>https://signal.luzovi.com/research/2026-11-23-frontier-ai-pause-chip-boom/</link>
+      <guid isPermaLink="true">https://signal.luzovi.com/research/2026-11-23-frontier-ai-pause-chip-boom/</guid>
+      <pubDate>Mon, 23 Nov 2026 07:00:00 +0530</pubDate>
+      <description>Record chip revenue after a summer of slowdown calls</description>
+    </item>
+    <item>
+      <title>How Does a Mixture of Experts Model Use Only a Fraction of Itself?</title>
+      <link>https://signal.luzovi.com/research/2026-11-20-mixture-of-experts/</link>
+      <guid isPermaLink="true">https://signal.luzovi.com/research/2026-11-20-mixture-of-experts/</guid>
+      <pubDate>Fri, 20 Nov 2026 07:00:00 +0530</pubDate>
+      <description>The routing trick behind the biggest open models</description>
+    </item>
+    <item>
+      <title>What Does IFM's K2-Horizon Change About Open Weights?</title>
+      <link>https://signal.luzovi.com/research/2026-11-18-k2-horizon-open-weights/</link>
+      <guid isPermaLink="true">https://signal.luzovi.com/research/2026-11-18-k2-horizon-open-weights/</guid>
+      <pubDate>Wed, 18 Nov 2026 07:00:00 +0530</pubDate>
+      <description>IFM's six-model open fleet ships the training recipe too</description>
+    </item>
+    <item>
+      <title>Why Are Classical Computers Now the Deciding Factor in the Quantum Race?</title>
+      <link>https://signal.luzovi.com/research/2026-11-16-classical-computers-quantum-race/</link>
+      <guid isPermaLink="true">https://signal.luzovi.com/research/2026-11-16-classical-computers-quantum-race/</guid>
+      <pubDate>Mon, 16 Nov 2026 07:00:00 +0530</pubDate>
+      <description>IBM's Nighthawk r3 and PsiQuantum's AMD pact put decoders, interconnects and HPC at the centre</description>
+    </item>
+    <item>
+      <title>How Do You Fix a Quantum Error You Cannot Look At?</title>
+      <link>https://signal.luzovi.com/research/2026-11-13-quantum-error-correction/</link>
+      <guid isPermaLink="true">https://signal.luzovi.com/research/2026-11-13-quantum-error-correction/</guid>
+      <pubDate>Fri, 13 Nov 2026 07:00:00 +0530</pubDate>
+      <description>Q-CTRL raised $290M to fight quantum errors. The fix: a grid and a parity check</description>
+    </item>
+    <item>
+      <title>Why Did Anthropic Ship Its Strongest Model in Two Versions?</title>
+      <link>https://signal.luzovi.com/research/2026-11-11-claude-fable-mythos-5-2/</link>
+      <guid isPermaLink="true">https://signal.luzovi.com/research/2026-11-11-claude-fable-mythos-5-2/</guid>
+      <pubDate>Wed, 11 Nov 2026 07:00:00 +0530</pubDate>
+      <description>Fable 5.2 is open to everyone. Mythos 5.2 is the same model, gated to vetted labs</description>
+    </item>
+    <item>
+      <title>Why Does Frontier AI Cost More the Faster It Grows?</title>
+      <link>https://signal.luzovi.com/research/2026-11-09-frontier-ai-economics/</link>
+      <guid isPermaLink="true">https://signal.luzovi.com/research/2026-11-09-frontier-ai-economics/</guid>
+      <pubDate>Mon, 09 Nov 2026 07:00:00 +0530</pubDate>
+      <description>Anthropic's S-1 puts the frontier lab business model on the public record: $17 billion in a quarter, and a $895 billion compute bill behind it</description>
+    </item>
+    <item>
+      <title>How Does Multi-Head Latent Attention Shrink the KV Cache?</title>
+      <link>https://signal.luzovi.com/research/2026-11-06-multi-head-latent-attention/</link>
+      <guid isPermaLink="true">https://signal.luzovi.com/research/2026-11-06-multi-head-latent-attention/</guid>
+      <pubDate>Fri, 06 Nov 2026 07:00:00 +0530</pubDate>
+      <description>DeepSeek's MLA cuts the KV cache 93 percent, and eight model families followed</description>
+    </item>
+    <item>
+      <title>Why Does NIST Now Give RSA and Elliptic Curves a 2030 Expiry Date?</title>
+      <link>https://signal.luzovi.com/research/2026-11-04-nist-pqc-deadline/</link>
+      <guid isPermaLink="true">https://signal.luzovi.com/research/2026-11-04-nist-pqc-deadline/</guid>
+      <pubDate>Wed, 04 Nov 2026 07:00:00 +0530</pubDate>
+      <description>Final IR 8547 sets deprecation after 2030, disallowance after 2035</description>
+    </item>
+    <item>
+      <title>Why Is the Next AI Race Being Won by Power Companies, Not Chipmakers?</title>
+      <link>https://signal.luzovi.com/research/2026-11-02-ai-power-race/</link>
+      <guid isPermaLink="true">https://signal.luzovi.com/research/2026-11-02-ai-power-race/</guid>
+      <pubDate>Mon, 02 Nov 2026 07:00:00 +0530</pubDate>
+      <description>Megawatts on a date now decide where AI capacity gets built</description>
+    </item>
+    <item>
+      <title>How Does Speculative Decoding Answer Faster?</title>
+      <link>https://signal.luzovi.com/research/2026-10-30-speculative-decoding/</link>
+      <guid isPermaLink="true">https://signal.luzovi.com/research/2026-10-30-speculative-decoding/</guid>
+      <pubDate>Fri, 30 Oct 2026 07:00:00 +0530</pubDate>
+      <description>A small draft model guesses ahead, and the big model checks the guesses in one pass</description>
+    </item>
+    <item>
+      <title>What Changes When an AI World Can Talk Back?</title>
+      <link>https://signal.luzovi.com/research/2026-10-28-genie-4-world-model/</link>
+      <guid isPermaLink="true">https://signal.luzovi.com/research/2026-10-28-genie-4-world-model/</guid>
+      <pubDate>Wed, 28 Oct 2026 07:00:00 +0530</pubDate>
+      <description>Genie 4 adds native audio and live steering to real time simulation</description>
+    </item>
+    <item>
+      <title>Why Does Finishing the Task No Longer Prove an AI Agent Works?</title>
+      <link>https://signal.luzovi.com/research/2026-10-26-agent-decision-taste-bench/</link>
+      <guid isPermaLink="true">https://signal.luzovi.com/research/2026-10-26-agent-decision-taste-bench/</guid>
+      <pubDate>Mon, 26 Oct 2026 07:00:00 +0530</pubDate>
+      <description>Taste-Bench and the judgment gap in long running agents</description>
+    </item>
+    <item>
+      <title>How Does a Hybrid Handshake Make TLS Quantum Safe?</title>
+      <link>https://signal.luzovi.com/research/2026-10-23-hybrid-tls-handshake/</link>
+      <guid isPermaLink="true">https://signal.luzovi.com/research/2026-10-23-hybrid-tls-handshake/</guid>
+      <pubDate>Fri, 23 Oct 2026 07:00:00 +0530</pubDate>
+      <description>One TLS handshake, two key exchanges, and the harvest now, decrypt later problem</description>
+    </item>
+    <item>
+      <title>Meta Ships Muse Wonder: Its First Frontier Model, Built for Agents That Remember</title>
+      <link>https://signal.luzovi.com/research/2026-10-21-meta-muse-wonder/</link>
+      <guid isPermaLink="true">https://signal.luzovi.com/research/2026-10-21-meta-muse-wonder/</guid>
+      <pubDate>Wed, 21 Oct 2026 07:00:00 +0530</pubDate>
+      <description>Active Memory and Active Focus move the frontier pitch from raw capability to persistent behavior</description>
+    </item>
+    <item>
+      <title>Did Google Just Crack Quantum's Biggest Bottleneck?</title>
+      <link>https://signal.luzovi.com/research/2026-10-19-willow-magic-states/</link>
+      <guid isPermaLink="true">https://signal.luzovi.com/research/2026-10-19-willow-magic-states/</guid>
+      <pubDate>Mon, 19 Oct 2026 07:00:00 +0530</pubDate>
+      <description>Willow's 40x magic-state error cut, and what it means for the migration clock</description>
+    </item>
+    <item>
+      <title>Where Does Value Accrue in the AI Stack?</title>
+      <link>https://signal.luzovi.com/research/2026-10-16-ai-stack-value/</link>
+      <guid isPermaLink="true">https://signal.luzovi.com/research/2026-10-16-ai-stack-value/</guid>
+      <pubDate>Fri, 16 Oct 2026 07:00:00 +0530</pubDate>
+      <description>Why profits pool at the two ends of the stack</description>
+    </item>
+  </channel>
+</rss>
