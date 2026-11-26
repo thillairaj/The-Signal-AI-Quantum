@@ -67,3 +67,6 @@ html[data-theme="light"]:not([data-tone]) .sg-themeb .i-sun,html[data-tone="rose
    --bg (front page, decks, tables) are unchanged. */
 :root[data-theme="dark"] .masthead{background:var(--bg,#12100D)}
 :root[data-tone="rose"] .masthead{background:var(--bg,#F3D7DF)}
+/* Render-check round 2 (Thillai, 26 Nov 2026): in Dark the Brief category
+   pill sits on a pale technology shade; its forced white text was 2.2:1. */
+:root[data-theme="dark"] .story-pill{color:#12100D!important}

@@ -466,7 +466,7 @@ body[data-view="research"] .feed-only { display: none; }
 @media (max-width: 640px) { .rail-btn { width: 38px; height: 38px; font-size: 22px; } .rail-btn.prev { left: 2px; } .rail-btn.next { right: 2px; } }
 .fam-dot.fam-founders { background: #D9A92C; }
 .fam-dot.fam-quantum { background: #7C5CBF; }
-.fam-dot.fam-ai { background: #3B82C4; }
+.fam-dot.fam-ai { background: #2C6FAE; }
 .fam-dot.fam-tech { background: #64748B; }
 .fam-dot.fam-cloud { background: #2E8B7A; }
 .fam-dot.fam-cyber { background: #C25454; }

@@ -16,7 +16,7 @@ window.EXPLAINER_SHARE_DATA = {
    "hook": "Nobody is typing. It's one token at a time.",
    "summary": "You type a question and an answer appears, token by token, as if someone were writing it.",
    "family": "AI",
-   "familyColor": "#3B82C4",
+   "familyColor": "#2C6FAE",
    "hashtag": "#AI",
    "noun": "token"
   },

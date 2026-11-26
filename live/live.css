@@ -64,3 +64,6 @@
    Everything else on the Live page and the strip uses the style.css tokens, whose
    Rose values are set in signal-themes.css. Dark kicker is already above (#CBA24A). */
 :root[data-tone="rose"] .lv-kicker{color:#855509}
+/* Rose: the bold labels sit on the wash-toned surface alias (#EDCBD5), where
+   the Signal green computed to 4.4:1; one shade deeper reaches 4.87:1. */
+:root[data-tone="rose"] .lv-stat b,:root[data-tone="rose"] .lv-slot.has span,:root[data-tone="rose"] .lv-how-grid b,:root[data-tone="rose"] .lv-chip.t{color:#2A6316}

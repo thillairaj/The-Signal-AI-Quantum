@@ -12,7 +12,7 @@ window.SignalShare = (function () {
   /* The sharing standard's colour sets, one per technology plus The Signal
      itself (for items that belong to no technology). Injected from
      signal-settings.json (tech_colors). */
-  var TECH = {"ai": {"n": "AI", "c": "#3B82C4", "dk": "#7FB3E0", "deep": "#1F5E99", "tint": "#E8F1FA"}, "quantum": {"n": "Quantum", "c": "#7C5CBF", "dk": "#A78BDB", "deep": "#4B2F96", "tint": "#EFEAF8"}, "cloud": {"n": "Cloud & DevOps", "c": "#1B7A6E", "dk": "#5FBFA9", "deep": "#0F5249", "tint": "#E4F2EF"}, "cyber": {"n": "Cybersecurity", "c": "#A62B25", "dk": "#E58A80", "deep": "#741A16", "tint": "#F8E9E7"}, "founders": {"n": "Founders & Leadership", "c": "#B7791F", "dk": "#E0A85A", "deep": "#7A4E10", "tint": "#F6EEDF"}, "signal": {"n": "The Signal", "c": "#3F7D20", "dk": "#8CC56A", "deep": "#2A5714", "tint": "#EAF3E3"}};
+  var TECH = {"ai": {"n": "AI", "c": "#2C6FAE", "dk": "#7FB3E0", "deep": "#1F5E99", "tint": "#E8F1FA"}, "quantum": {"n": "Quantum", "c": "#7C5CBF", "dk": "#A78BDB", "deep": "#4B2F96", "tint": "#EFEAF8"}, "cloud": {"n": "Cloud & DevOps", "c": "#1B7A6E", "dk": "#5FBFA9", "deep": "#0F5249", "tint": "#E4F2EF"}, "cyber": {"n": "Cybersecurity", "c": "#A62B25", "dk": "#E58A80", "deep": "#741A16", "tint": "#F8E9E7"}, "founders": {"n": "Founders & Leadership", "c": "#B7791F", "dk": "#E0A85A", "deep": "#7A4E10", "tint": "#F6EEDF"}, "signal": {"n": "The Signal", "c": "#3F7D20", "dk": "#8CC56A", "deep": "#2A5714", "tint": "#EAF3E3"}};
   /* The four image themes, exactly as in the sharing standard: Paper is
      light and fixed, Tint is light in the item's pale colour with a top
      band, Night is dark and fixed, Deep is dark in the item's deep colour. */

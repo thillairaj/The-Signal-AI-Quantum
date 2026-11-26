@@ -50,6 +50,7 @@
   --foot-ink: #6F545E; --foot-border: #E2B9C5;
 }
 :root[data-tone="rose"] .tab[aria-selected="true"], :root[data-tone="rose"] .journey-btn[aria-pressed="true"] { color: #FFFFFF; }
+:root[data-theme="light"] .tab[aria-selected="true"], :root[data-theme="light"] .journey-btn[aria-pressed="true"] { color: #FFFFFF; }
 :root[data-theme="dark"] .sg-share-btn:hover { border-color: #8CC56A; color: #8CC56A; }
 :root[data-tone="rose"] .sg-share-btn:hover { border-color: #2F6A18; color: #2F6A18; }
 
@@ -617,7 +618,7 @@ body.flow-on .pname-row .ss-share-btn{display:none}
     "name": "Your prompt",
     "where": "Where you start",
     "temp": "Input",
-    "tc": "#3B82C4",
+    "tc": "#2C6FAE",
     "simple": "Everything begins with text: your question, plus the conversation so far and any instructions the app adds. The model never sees your words as words. First, they are chopped into tokens.",
     "deep": "The full input is assembled by the app: a system prompt that sets the model's role, the visible conversation history, anything fetched for the question, and your new message. All of it becomes one long token sequence. The model itself has no memory of earlier chats; whatever is not in this sequence does not exist for it.",
     "facts": [
@@ -637,7 +638,7 @@ body.flow-on .pname-row .ss-share-btn{display:none}
     "name": "Tokenizer",
     "where": "First step inside the pipeline",
     "temp": "Input",
-    "tc": "#3B82C4",
+    "tc": "#2C6FAE",
     "simple": "The tokenizer chops text into tokens: chunks that can be a whole word, part of a word, or a single character. Each token is then swapped for a number, its ID in the model's vocabulary.",
     "deep": "Most models tokenize by subwords, learned from training text by merging frequent pairs of pieces. Common words stay whole; rare words split, so a word like unwatched can become un, watch and ed. As a rule of thumb for English, one token is about 4 characters, or three quarters of a word. The vocabulary holds tens of thousands of tokens, and every later step works on their IDs, never on letters.",
     "facts": [
@@ -657,7 +658,7 @@ body.flow-on .pname-row .ss-share-btn{display:none}
     "name": "Embeddings",
     "where": "Turning IDs into meaning",
     "temp": "Input",
-    "tc": "#3B82C4",
+    "tc": "#2C6FAE",
     "simple": "Each token ID is looked up in a giant table that turns it into a long list of numbers, called an embedding. Tokens used in similar ways end up with similar lists, which is how the model keeps a sense of meaning.",
     "deep": "The embedding table has one row per token, and each row is a vector of hundreds to thousands of numbers, learned in training. Similar contexts pull vectors together, so the geometry of the table encodes relationships between words and ideas. From here on, the model only ever manipulates these vectors; the text is gone until the very end.",
     "facts": [
@@ -677,7 +678,7 @@ body.flow-on .pname-row .ss-share-btn{display:none}
     "name": "Position information",
     "where": "Marking the order",
     "temp": "Input",
-    "tc": "#3B82C4",
+    "tc": "#2C6FAE",
     "simple": "A list of numbers alone does not say which token came first. So a second signal is added to each vector marking its position: first, second, third, and so on through your prompt.",
     "deep": "The original transformer added a fixed pattern of sine and cosine waves, a different fingerprint for each position. Many modern models instead rotate the vectors in a scheme called RoPE, which encodes the relative distance between tokens. Either way, position is information the attention step can use, because attention on its own treats the input as a set, not a sequence.",
     "facts": [

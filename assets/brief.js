@@ -6,7 +6,7 @@
    the news card image is rendered here in the deck card pattern. */
 window.SignalBriefUI = (function () {
   var CAT_COLOURS = {
-    "AI": "#3B82C4", "Quantum": "#7C5CBF", "Cloud & DevOps": "#1B7A6E",
+    "AI": "#2C6FAE", "Quantum": "#7C5CBF", "Cloud & DevOps": "#1B7A6E",
     "Cybersecurity": "#A62B25", "Industry": "#201B14", "Policy": "#201B14"
   };
   /* Themes step 2 (preview): each theme uses its own category shades.

@@ -4,7 +4,7 @@
 @import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Figtree:wght@400;500;600;700;800&display=swap');
 :root{
   --sg-paper:#FAF7F1;--sg-surface:#FFFFFF;--sg-wash:#F1ECE2;--sg-ink:#201B14;--sg-soft:#4C463B;--sg-muted:#70675A;--sg-line:#E4DAC6;
-  --sg-ai:#3B82C4;--sg-quantum:#7C5CBF;--sg-cloud:#1B7A6E;--sg-cyber:#A62B25;--sg-founders:#B7791F;
+  --sg-ai:#2C6FAE;--sg-quantum:#7C5CBF;--sg-cloud:#1B7A6E;--sg-cyber:#A62B25;--sg-founders:#B7791F;
   --sg-display:'DM Serif Display',Georgia,serif;--sg-body:Figtree,system-ui,-apple-system,'Segoe UI',sans-serif;
   /* front page tokens (style.css) mapped onto the standard */
   --font-display:var(--sg-display);--font-body:var(--sg-body);
