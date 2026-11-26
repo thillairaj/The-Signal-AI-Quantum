@@ -1,0 +1,59 @@
+/* The Signal themes. Load LAST on every page. Rose = a light pink mid-tone (data-tone="rose" on <html>). Dark and Light come from each page's own rules.
+   1) Rose tokens for every shared layer  2) shared top bar, menu, tab strip and footer in Rose and Dark  3) the one theme button  4) old per-page toggles hidden. */
+:root[data-tone="rose"]{
+  /* front page and Live news tokens (style.css) */
+  --bg:#F3D7DF;--surface:#EDCBD5;--ink:#2A1A1F;--muted:#7A5F68;--border:#E2B9C5;--accent:#2F6A18;--accent-dim:#D9B4C0;
+  /* shared tokens (signal-standard.css, signal-pages.css, hub, podcast, share panel) */
+  --sg-paper:#F3D7DF;--sg-surface:#F9E7EC;--sg-wash:#EDCBD5;--sg-ink:#2A1A1F;--sg-soft:#4F3A41;--sg-muted:#7A5F68;--sg-line:#E2B9C5;
+  --sg-ai:#2A6AA6;--sg-quantum:#6A47B0;--sg-cloud:#176A5F;--sg-cyber:#9A2620;--sg-founders:#8F5C10;--sg-brand:#2F6A18;
+}
+:root[data-tone="rose"] body{background:var(--bg,#F3D7DF);color:var(--ink,#2A1A1F)}
+/* shared top bar, path, menus, footer: Rose */
+:root[data-tone="rose"] .sg-shell,:root[data-tone="rose"] .sg-crumbrow,:root[data-tone="rose"] .sg-sheet,:root[data-tone="rose"] .sg-tabstrip{background:#F3D7DF;border-color:#E2B9C5;color:#2A1A1F}
+:root[data-tone="rose"] .sg-mega{background:#F9E7EC;border-color:#E2B9C5}
+:root[data-tone="rose"] .sg-wm,:root[data-tone="rose"] .sg-wm em,:root[data-tone="rose"] .sg-tab .n,:root[data-tone="rose"] .sg-bc .cur,:root[data-tone="rose"] .sg-col a.it,:root[data-tone="rose"] .sg-sheet a{color:#2A1A1F}
+:root[data-tone="rose"] .sg-tab,:root[data-tone="rose"] .sg-bc,:root[data-tone="rose"] .sg-bc a,:root[data-tone="rose"] .sg-bc button,:root[data-tone="rose"] .sg-col h4 a,:root[data-tone="rose"] .sg-col a.all,:root[data-tone="rose"] .sg-sheet h4,:root[data-tone="rose"] .sg-sheet .sub a{color:#7A5F68}
+:root[data-tone="rose"] .sg-tab:hover,:root[data-tone="rose"] .sg-col a.it:hover{background:#EDCBD5;color:#2A1A1F}
+:root[data-tone="rose"] .sg-tab.on{background:#2F6A18;color:#fff}
+:root[data-tone="rose"] .sg-menub,:root[data-tone="rose"] .sg-themeb{background:#F9E7EC;border-color:#E2B9C5;color:#2A1A1F}
+:root[data-tone="rose"] .sg-sheet a{border-color:#E2B9C5}
+:root[data-tone="rose"] .signal-footer{color:#4F3A41;border-top-color:#E2B9C5}
+/* shared top bar, menus, footer: Dark (completes the dark overrides already in signal-shell.css) */
+:root[data-theme="dark"] .sg-shell,:root[data-theme="dark"] .sg-crumbrow,:root[data-theme="dark"] .sg-sheet,:root[data-theme="dark"] .sg-tabstrip{background:#12100D;border-color:#2C2720;color:#F1EBDD}
+:root[data-theme="dark"] .sg-mega{background:#1B1814;border-color:#2C2720}
+:root[data-theme="dark"] .sg-wm,:root[data-theme="dark"] .sg-wm em,:root[data-theme="dark"] .sg-tab .n,:root[data-theme="dark"] .sg-bc .cur,:root[data-theme="dark"] .sg-col a.it,:root[data-theme="dark"] .sg-sheet a{color:#F1EBDD}
+:root[data-theme="dark"] .sg-tab,:root[data-theme="dark"] .sg-bc,:root[data-theme="dark"] .sg-bc a,:root[data-theme="dark"] .sg-bc button,:root[data-theme="dark"] .sg-col h4 a,:root[data-theme="dark"] .sg-col a.all,:root[data-theme="dark"] .sg-sheet h4,:root[data-theme="dark"] .sg-sheet .sub a{color:#9D937F}
+:root[data-theme="dark"] .sg-tab:hover,:root[data-theme="dark"] .sg-col a.it:hover{background:#242019;color:#F1EBDD}
+:root[data-theme="dark"] .sg-tab.on{background:#8CC56A;color:#12100D}
+:root[data-theme="dark"] .sg-menub,:root[data-theme="dark"] .sg-themeb{background:#1B1814;border-color:#2C2720;color:#F1EBDD}
+:root[data-theme="dark"] .sg-sheet a{border-color:#2C2720}
+:root[data-theme="dark"] .signal-footer{color:#C9C0AF;border-top-color:#2C2720}
+/* the one theme button: sun = Light, half circle = Rose, moon = Dark */
+.sg-themeb{width:40px;height:40px;border-radius:50%;border:1px solid #E4DAC6;background:#fff;color:#201B14;display:inline-flex;align-items:center;justify-content:center;cursor:pointer;padding:0;flex:0 0 auto;position:relative}
+.sg-themeb:hover,.sg-themeb:focus-visible{border-color:#3F7D20}
+.sg-themeb svg{width:18px;height:18px;display:none}
+html[data-theme="light"]:not([data-tone]) .sg-themeb .i-sun,html[data-tone="rose"] .sg-themeb .i-half,html[data-theme="dark"] .sg-themeb .i-moon{display:block}
+.sg-themetip{position:fixed;z-index:100000;background:#201B14;color:#FAF7F1;font:600 12px Figtree,system-ui,sans-serif;border-radius:999px;padding:6px 12px;opacity:0;transition:opacity .2s;pointer-events:none}
+.sg-themetip.on{opacity:1}
+.sg-top .sg-themeb{margin-left:auto}.sg-top .sg-themeb+.sg-menub{margin-left:0}
+@media(min-width:1000px){.sg-top .sg-tabs{margin-left:auto}.sg-top .sg-tabs+.sg-themeb{margin-left:8px}}
+/* the old per-page theme buttons are replaced by the one button; the code behind them is removed in the cleanup */
+#themeToggle:not(.sg-themeb),.theme-toggle:not(.sg-themeb){display:none!important}
+/* inner pages on phones: the tab strip under the path (scrolls away; the top bar and path stay fixed) */
+.sg-tabstrip{display:none;overflow-x:auto;white-space:nowrap;scrollbar-width:none;padding:8px 20px;background:#FAF7F1;border-bottom:1px solid #E4DAC6}
+.sg-tabstrip::-webkit-scrollbar{display:none}
+.sg-tabstrip .sg-tab{font-size:13.5px;padding:7px 12px}
+@media(max-width:999px){.sg-tabstrip{display:block}}
+/* front page: the theme button and the menu button live in the top row (next to the wordmark) and stay reachable while scrolling.
+   Phones and tablets: both are pinned top right. Laptops: the theme button stays in the header; the tab strip and the Learning Space dropdown remain. */
+@media(max-width:999px){
+  .masthead-right .sg-themeb{position:absolute;top:8px;right:62px;z-index:2}
+  .masthead-right .sg-menub{position:absolute;top:8px;right:14px;z-index:2;display:inline-flex!important;align-items:center;justify-content:center;margin-left:0;width:40px;height:40px;padding:0}
+  html.sg-scrolled .masthead .masthead-right{display:block!important;position:static;height:0;overflow:visible}
+  html.sg-scrolled .masthead .masthead-right>*:not(.sg-themeb):not(.sg-menub){display:none!important}
+}
+@media(min-width:1000px){
+  html.sg-scrolled .masthead .masthead-right{display:flex!important}
+  html.sg-scrolled .masthead .masthead-right>*:not(.sg-themeb){display:none!important}
+}
+.masthead-right{align-items:center}
