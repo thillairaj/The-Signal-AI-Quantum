@@ -19,6 +19,8 @@
       ".rail .card>.sg-share-btn{position:absolute;top:8px;right:8px;z-index:6}",
       ".sg-share-btn{width:32px;height:32px;border-radius:50%;border:1px solid var(--sg-line,#E4DAC6);background:var(--sg-surface,#fff);color:var(--sg-ink,#201B14);display:inline-flex;align-items:center;justify-content:center;cursor:pointer;padding:0;flex:0 0 auto}",
       ".sg-share-btn:hover{border-color:#3F7D20;color:#3F7D20}",
+      ":root[data-tone='rose'] .sg-share-btn:hover{border-color:#2F6A18;color:#2F6A18}",
+      ":root[data-theme='dark'] .sg-share-btn:hover{border-color:#8CC56A;color:#8CC56A}",
       ".sg-share-btn svg{width:15px;height:15px}"
     ].join("\n");
     document.head.appendChild(st);

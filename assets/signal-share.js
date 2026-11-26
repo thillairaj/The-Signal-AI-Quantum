@@ -367,7 +367,24 @@ window.SignalShare = (function () {
     ".sg-share-btn:hover{border-color:#3F7D20;color:#3F7D20}",
     ".sg-share-btn svg{width:15px;height:15px}",
     ".sg-share-btn.sg-page-btn{width:34px;height:34px}",
-    ".ss-page-mount{display:inline-flex;align-items:center}"
+    ".ss-page-mount{display:inline-flex;align-items:center}",
+    ":root[data-tone='rose'] .ss-panel{background:#F9E7EC;color:#2A1A1F;color-scheme:light;box-shadow:0 18px 50px rgba(42,26,31,.45)}",
+    ":root[data-tone='rose'] .ss-item{color:#7A5F68}",
+    ":root[data-tone='rose'] .ss-close{border-color:#E2B9C5;background:#EDCBD5;color:#2A1A1F}",
+    ":root[data-tone='rose'] .ss-rowlabel{color:#7A5F68}",
+    ":root[data-tone='rose'] .ss-icobtn{background:#EDCBD5;border-color:#E2B9C5;color:#2A1A1F}",
+    ":root[data-tone='rose'] .ss-icobtn:hover,:root[data-tone='rose'] .ss-icobtn:focus-visible{border-color:#2F6A18}",
+    ":root[data-tone='rose'] .ss-sizebtn{background:#EDCBD5;border-color:#E2B9C5;color:#7A5F68}",
+    ":root[data-tone='rose'] .ss-sizebtn[aria-pressed='true']{border-color:#2F6A18;color:#2F6A18}",
+    ":root[data-tone='rose'] .ss-themebtn{border-color:rgba(42,26,31,.25)}",
+    ":root[data-tone='rose'] .ss-themebtn[aria-pressed='true']{border-color:#2F6A18;box-shadow:0 0 0 2px #F9E7EC,0 0 0 4px #2F6A18}",
+    ":root[data-tone='rose'] .ss-selname{color:#4F3A41}",
+    ":root[data-tone='rose'] .ss-thumb{background:#EDCBD5}",
+    ":root[data-tone='rose'] .ss-shareimg{background:#2F6A18;border-color:#2F6A18;color:#FFFFFF}",
+    ":root[data-tone='rose'] .ss-download{border-color:#E2B9C5;color:#2A1A1F}",
+    ":root[data-tone='rose'] .ss-status{color:#2F6A18}",
+    ":root[data-tone='rose'] .sg-share-btn:hover{border-color:#2F6A18;color:#2F6A18}",
+    ":root[data-theme='dark'] .sg-share-btn:hover{border-color:#8CC56A;color:#8CC56A}"
   ].join("\n");
   var ICONS = {
     linkedin: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4V8h4"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>',
