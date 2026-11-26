@@ -663,6 +663,14 @@ def postprocess():
         [sys.executable, str(qa / "insert-brand-css.py"), str(ROOT)],
         [sys.executable, str(ROOT / "rewrite_address.py"), "--check"],
     ]
+    # Theme layer (Thillai, Nov 26, 2026): every new page is born with the
+    # site-wide theme tags. Guarded: before the theme go-live the target
+    # repo has no apply_theme_layer.py and the step skips itself.
+    _theme_layer = ROOT / "apply_theme_layer.py"
+    if _theme_layer.exists():
+        steps.append([sys.executable, str(_theme_layer)])
+    else:
+        print("postprocess apply_theme_layer.py: skipped (not in target repo)")
     for cmd in steps:
         try:
             r = subprocess.run(cmd, cwd=str(ROOT), capture_output=True,
