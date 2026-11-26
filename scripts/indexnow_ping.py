@@ -18,8 +18,8 @@ import urllib.request
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
-SITE_URL = "https://thillairaj.github.io/The-Signal-AI-Quantum/"
-HOST = "thillairaj.github.io"
+SITE_URL = "https://signal.luzovi.com/"
+HOST = "signal.luzovi.com"
 ENDPOINT = "https://api.indexnow.org/indexnow"
 
 

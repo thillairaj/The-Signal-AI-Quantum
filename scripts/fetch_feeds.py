@@ -52,7 +52,7 @@ FEEDS_FILE = ROOT / "feeds.json"
 DATA_FILE = ROOT / "data" / "articles.json"
 HEALTH_FILE = ROOT / "data" / "wire-health.json"
 RSS_FILE = ROOT / "feed.xml"
-SITE_URL = "https://thillairaj.github.io/The-Signal-AI-Quantum/"
+SITE_URL = "https://signal.luzovi.com/"
 MAX_PER_SOURCE = 10
 RSS_ITEM_LIMIT = 60
 

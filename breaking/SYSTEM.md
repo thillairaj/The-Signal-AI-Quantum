@@ -1,6 +1,6 @@
 # Breaking: system notes (built Nov 15, 2026; live Nov 17, 2026)
 
-Status: LIVE on thillairaj.github.io/The-Signal-AI-Quantum since Nov 17,
+Status: LIVE on signal.luzovi.com since Nov 17,
 2026, approved by Thillai. Built and reviewed on the preview site first.
 The four hour job (signal-breaking-4h) runs the lane.
 

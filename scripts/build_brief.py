@@ -55,7 +55,7 @@ PAGE_DIR = ROOT / "brief"
 HOME_FILE = ROOT / "index.html"
 SITEMAP_FILE = ROOT / "sitemap.xml"
 
-DEFAULT_BASE = "https://thillairaj.github.io/The-Signal-AI-Quantum/"
+DEFAULT_BASE = "https://signal.luzovi.com/"
 EDITION_TIME_UTC = timezone(timedelta(hours=1, minutes=30))  # 07:00 IST
 
 # Category colours from the approved card design (Thillai, Nov 6, 2026).
@@ -679,13 +679,16 @@ def postprocess():
     the same standardisation passes the site was standardised with, so new
     pages come out in the new standard: the shell injection, stage2_apply.py
     and the brand CSS insertion. Every pass is idempotent. A failing pass is
-    printed loudly but does not invalidate the outputs already written."""
+    printed loudly but does not invalidate the outputs already written.
+    Final gate (Nov 25, 2026): rewrite_address.py --check runs last, so an
+    old site address can never slip back into the tree unnoticed."""
     import subprocess
     qa = Path.home() / "workspace" / "signal-qa"
     steps = [
         [sys.executable, str(qa / "inject-shell-stage1.py"), str(ROOT)],
         [sys.executable, str(ROOT / "stage2_apply.py")],
         [sys.executable, str(qa / "insert-brand-css.py"), str(ROOT)],
+        [sys.executable, str(ROOT / "rewrite_address.py"), "--check"],
     ]
     for cmd in steps:
         try:
@@ -696,6 +699,9 @@ def postprocess():
                   + (f" | {lines[-1]}" if lines else ""))
             if r.returncode != 0:
                 print("postprocess stderr: " + (r.stderr or "")[-500:])
+            if cmd[-1] == "--check" and r.returncode != 0:
+                print("FINAL ADDRESS GATE FAILED: an old site address is "
+                      "present in the tree (see rewrite_address.py --check)")
         except Exception as exc:
             print(f"postprocess step could not run: {cmd}: {exc}")
 

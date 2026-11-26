@@ -2,13 +2,13 @@
 <rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Signal Brief · Cloud &amp; DevOps</title>
-    <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/</link>
+    <link>https://signal.luzovi.com/brief/</link>
     <description>Signal Brief: the day in technology, in The Signal's own words. Every item is written from linked official sources and fact checked before publication.</description>
     <lastBuildDate>Thu, 26 Nov 2026 01:48:34 +0000</lastBuildDate>
-    <atom:link xmlns:atom="http://www.w3.org/2005/Atom" href="https://thillairaj.github.io/The-Signal-AI-Quantum/signal/cloud-devops.xml" rel="self" type="application/rss+xml"/>
+    <atom:link xmlns:atom="http://www.w3.org/2005/Atom" href="https://signal.luzovi.com/signal/cloud-devops.xml" rel="self" type="application/rss+xml"/>
     <item>
       <title>Cloudflare lets sites offer a search API for AI agents with one toggle</title>
-      <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/2026-11-26/05/</link>
+      <link>https://signal.luzovi.com/brief/2026-11-26/05/</link>
       <guid isPermaLink="false">brief-2026-11-26-05</guid>
       <pubDate>Thu, 26 Nov 2026 01:30:00 +0000</pubDate>
       <category>Cloud &amp; DevOps</category>
@@ -17,7 +17,7 @@
     </item>
     <item>
       <title>JetBrains' Mellum 2.1 coding model uses 45% fewer tokens by skipping the reasoning step</title>
-      <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/2026-11-26/06/</link>
+      <link>https://signal.luzovi.com/brief/2026-11-26/06/</link>
       <guid isPermaLink="false">brief-2026-11-26-06</guid>
       <pubDate>Thu, 26 Nov 2026 01:30:00 +0000</pubDate>
       <category>Cloud &amp; DevOps</category>
@@ -26,7 +26,7 @@
     </item>
     <item>
       <title>AWS opens a Bogotá Local Zone and doubles Lambda's timeout to 30 minutes</title>
-      <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/2026-11-25/06/</link>
+      <link>https://signal.luzovi.com/brief/2026-11-25/06/</link>
       <guid isPermaLink="false">brief-2026-11-25-06</guid>
       <pubDate>Wed, 25 Nov 2026 01:30:00 +0000</pubDate>
       <category>Cloud &amp; DevOps</category>
@@ -35,7 +35,7 @@
     </item>
     <item>
       <title>Agent Insights in Microsoft Foundry reaches general availability</title>
-      <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/2026-11-24/07/</link>
+      <link>https://signal.luzovi.com/brief/2026-11-24/07/</link>
       <guid isPermaLink="false">brief-2026-11-24-07</guid>
       <pubDate>Tue, 24 Nov 2026 01:30:00 +0000</pubDate>
       <category>Cloud &amp; DevOps</category>
@@ -44,7 +44,7 @@
     </item>
     <item>
       <title>Microsoft Foundry now surfaces governance policy as agents are built</title>
-      <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/2026-11-23/05/</link>
+      <link>https://signal.luzovi.com/brief/2026-11-23/05/</link>
       <guid isPermaLink="false">brief-2026-11-23-05</guid>
       <pubDate>Mon, 23 Nov 2026 01:30:00 +0000</pubDate>
       <category>Cloud &amp; DevOps</category>
@@ -53,7 +53,7 @@
     </item>
     <item>
       <title>A GitHub authentication bug signed users out of web sessions for two weeks</title>
-      <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/2026-11-23/06/</link>
+      <link>https://signal.luzovi.com/brief/2026-11-23/06/</link>
       <guid isPermaLink="false">brief-2026-11-23-06</guid>
       <pubDate>Mon, 23 Nov 2026 01:30:00 +0000</pubDate>
       <category>Cloud &amp; DevOps</category>
@@ -62,7 +62,7 @@
     </item>
     <item>
       <title>CloudWatch Omni now pulls in Azure telemetry</title>
-      <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/2026-11-22/05/</link>
+      <link>https://signal.luzovi.com/brief/2026-11-22/05/</link>
       <guid isPermaLink="false">brief-2026-11-22-05</guid>
       <pubDate>Sun, 22 Nov 2026 01:30:00 +0000</pubDate>
       <category>Cloud &amp; DevOps</category>
@@ -71,7 +71,7 @@
     </item>
     <item>
       <title>Cloudflare WAF now blocks ruby2shell attacks on every plan</title>
-      <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/2026-11-22/06/</link>
+      <link>https://signal.luzovi.com/brief/2026-11-22/06/</link>
       <guid isPermaLink="false">brief-2026-11-22-06</guid>
       <pubDate>Sun, 22 Nov 2026 01:30:00 +0000</pubDate>
       <category>Cloud &amp; DevOps</category>
@@ -80,7 +80,7 @@
     </item>
     <item>
       <title>Five new nginx flaws can give unauthenticated attackers code execution</title>
-      <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/2026-11-21/05/</link>
+      <link>https://signal.luzovi.com/brief/2026-11-21/05/</link>
       <guid isPermaLink="false">brief-2026-11-21-05</guid>
       <pubDate>Sat, 21 Nov 2026 01:30:00 +0000</pubDate>
       <category>Cloud &amp; DevOps</category>
@@ -89,7 +89,7 @@
     </item>
     <item>
       <title>Google makes sidecarless networking generally available on GKE</title>
-      <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/2026-11-21/06/</link>
+      <link>https://signal.luzovi.com/brief/2026-11-21/06/</link>
       <guid isPermaLink="false">brief-2026-11-21-06</guid>
       <pubDate>Sat, 21 Nov 2026 01:30:00 +0000</pubDate>
       <category>Cloud &amp; DevOps</category>
@@ -98,7 +98,7 @@
     </item>
     <item>
       <title>Azure VMs can now recover across zones in public preview</title>
-      <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/2026-11-20/05/</link>
+      <link>https://signal.luzovi.com/brief/2026-11-20/05/</link>
       <guid isPermaLink="false">brief-2026-11-20-05</guid>
       <pubDate>Fri, 20 Nov 2026 01:30:00 +0000</pubDate>
       <category>Cloud &amp; DevOps</category>
@@ -107,7 +107,7 @@
     </item>
     <item>
       <title>AWS Lambda now runs GPU workloads for event driven functions</title>
-      <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/2026-11-19/06/</link>
+      <link>https://signal.luzovi.com/brief/2026-11-19/06/</link>
       <guid isPermaLink="false">brief-2026-11-19-06</guid>
       <pubDate>Thu, 19 Nov 2026 01:30:00 +0000</pubDate>
       <category>Cloud &amp; DevOps</category>
@@ -116,7 +116,7 @@
     </item>
     <item>
       <title>Microsoft announces Windows Server 2028 with hardened security by default</title>
-      <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/2026-11-19/07/</link>
+      <link>https://signal.luzovi.com/brief/2026-11-19/07/</link>
       <guid isPermaLink="false">brief-2026-11-19-07</guid>
       <pubDate>Thu, 19 Nov 2026 01:30:00 +0000</pubDate>
       <category>Cloud &amp; DevOps</category>
@@ -125,7 +125,7 @@
     </item>
     <item>
       <title>Azure HorizonDB leaves preview as Microsoft's cloud-native PostgreSQL</title>
-      <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/2026-11-18/06/</link>
+      <link>https://signal.luzovi.com/brief/2026-11-18/06/</link>
       <guid isPermaLink="false">brief-2026-11-18-06</guid>
       <pubDate>Wed, 18 Nov 2026 01:30:00 +0000</pubDate>
       <category>Cloud &amp; DevOps</category>
@@ -134,7 +134,7 @@
     </item>
     <item>
       <title>GitHub pull request merges timed out for hours before recovery</title>
-      <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/2026-11-17/06/</link>
+      <link>https://signal.luzovi.com/brief/2026-11-17/06/</link>
       <guid isPermaLink="false">brief-2026-11-17-06</guid>
       <pubDate>Tue, 17 Nov 2026 01:30:00 +0000</pubDate>
       <category>Cloud &amp; DevOps</category>
@@ -143,7 +143,7 @@
     </item>
     <item>
       <title>DuckDB's Quack protocol streams database results in column batches</title>
-      <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/2026-11-16/05/</link>
+      <link>https://signal.luzovi.com/brief/2026-11-16/05/</link>
       <guid isPermaLink="false">brief-2026-11-16-05</guid>
       <pubDate>Mon, 16 Nov 2026 01:30:00 +0000</pubDate>
       <category>Cloud &amp; DevOps</category>
@@ -152,7 +152,7 @@
     </item>
     <item>
       <title>DuckLake 1.1 turns data lake metadata into plain SQL tables</title>
-      <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/2026-11-15/06/</link>
+      <link>https://signal.luzovi.com/brief/2026-11-15/06/</link>
       <guid isPermaLink="false">brief-2026-11-15-06</guid>
       <pubDate>Sun, 15 Nov 2026 01:30:00 +0000</pubDate>
       <category>Cloud &amp; DevOps</category>
@@ -161,7 +161,7 @@
     </item>
     <item>
       <title>AWS Emulator gives agents a local copy of the cloud to test against</title>
-      <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/2026-11-15/07/</link>
+      <link>https://signal.luzovi.com/brief/2026-11-15/07/</link>
       <guid isPermaLink="false">brief-2026-11-15-07</guid>
       <pubDate>Sun, 15 Nov 2026 01:30:00 +0000</pubDate>
       <category>Cloud &amp; DevOps</category>
@@ -170,7 +170,7 @@
     </item>
     <item>
       <title>Google Cloud brings agentic HPC to SC26</title>
-      <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/2026-11-14/06/</link>
+      <link>https://signal.luzovi.com/brief/2026-11-14/06/</link>
       <guid isPermaLink="false">brief-2026-11-14-06</guid>
       <pubDate>Sat, 14 Nov 2026 01:30:00 +0000</pubDate>
       <category>Cloud &amp; DevOps</category>
@@ -179,7 +179,7 @@
     </item>
     <item>
       <title>AWS upgrades its AgentCore runtime for faster, cheaper agent sessions</title>
-      <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/2026-11-13/05/</link>
+      <link>https://signal.luzovi.com/brief/2026-11-13/05/</link>
       <guid isPermaLink="false">brief-2026-11-13-05</guid>
       <pubDate>Fri, 13 Nov 2026 01:30:00 +0000</pubDate>
       <category>Cloud &amp; DevOps</category>
@@ -188,7 +188,7 @@
     </item>
     <item>
       <title>Chainguard defends shipping PHP patches six hours before the agreed release time</title>
-      <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/2026-11-13/06/</link>
+      <link>https://signal.luzovi.com/brief/2026-11-13/06/</link>
       <guid isPermaLink="false">brief-2026-11-13-06</guid>
       <pubDate>Fri, 13 Nov 2026 01:30:00 +0000</pubDate>
       <category>Cloud &amp; DevOps</category>
@@ -197,7 +197,7 @@
     </item>
     <item>
       <title>AWS ships a local emulator that runs AWS APIs on your laptop</title>
-      <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/2026-11-12/05/</link>
+      <link>https://signal.luzovi.com/brief/2026-11-12/05/</link>
       <guid isPermaLink="false">brief-2026-11-12-05</guid>
       <pubDate>Thu, 12 Nov 2026 01:30:00 +0000</pubDate>
       <category>Cloud &amp; DevOps</category>
@@ -206,7 +206,7 @@
     </item>
     <item>
       <title>NVIDIA hands OpenShell, its agent security runtime, to the CNCF</title>
-      <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/2026-11-12/06/</link>
+      <link>https://signal.luzovi.com/brief/2026-11-12/06/</link>
       <guid isPermaLink="false">brief-2026-11-12-06</guid>
       <pubDate>Thu, 12 Nov 2026 01:30:00 +0000</pubDate>
       <category>Cloud &amp; DevOps</category>
@@ -215,7 +215,7 @@
     </item>
     <item>
       <title>Ubuntu Core 26 enters public preview on AWS, Azure and Google Cloud</title>
-      <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/2026-11-11/05/</link>
+      <link>https://signal.luzovi.com/brief/2026-11-11/05/</link>
       <guid isPermaLink="false">brief-2026-11-11-05</guid>
       <pubDate>Wed, 11 Nov 2026 01:30:00 +0000</pubDate>
       <category>Cloud &amp; DevOps</category>
@@ -224,7 +224,7 @@
     </item>
     <item>
       <title>Azure Front Door edge actions reach general availability</title>
-      <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/2026-11-11/06/</link>
+      <link>https://signal.luzovi.com/brief/2026-11-11/06/</link>
       <guid isPermaLink="false">brief-2026-11-11-06</guid>
       <pubDate>Wed, 11 Nov 2026 01:30:00 +0000</pubDate>
       <category>Cloud &amp; DevOps</category>
@@ -233,7 +233,7 @@
     </item>
     <item>
       <title>Google launches TPU 8tx and TPU 8i Max for AI inference and training</title>
-      <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/2026-11-10/03/</link>
+      <link>https://signal.luzovi.com/brief/2026-11-10/03/</link>
       <guid isPermaLink="false">brief-2026-11-10-03</guid>
       <pubDate>Tue, 10 Nov 2026 01:30:00 +0000</pubDate>
       <category>Cloud &amp; DevOps</category>
@@ -242,7 +242,7 @@
     </item>
     <item>
       <title>AWS makes AgentCore Runtime V2 generally available in 10 regions</title>
-      <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/2026-11-10/06/</link>
+      <link>https://signal.luzovi.com/brief/2026-11-10/06/</link>
       <guid isPermaLink="false">brief-2026-11-10-06</guid>
       <pubDate>Tue, 10 Nov 2026 01:30:00 +0000</pubDate>
       <category>Cloud &amp; DevOps</category>
@@ -251,7 +251,7 @@
     </item>
     <item>
       <title>Perplexity's Teammates keep AI agents working between sessions</title>
-      <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/2026-11-09/04/</link>
+      <link>https://signal.luzovi.com/brief/2026-11-09/04/</link>
       <guid isPermaLink="false">brief-2026-11-09-04</guid>
       <pubDate>Mon, 09 Nov 2026 01:30:00 +0000</pubDate>
       <category>Cloud &amp; DevOps</category>
@@ -260,7 +260,7 @@
     </item>
     <item>
       <title>A decision framework for moving autonomous agents from Lambda to EKS</title>
-      <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/2026-11-09/07/</link>
+      <link>https://signal.luzovi.com/brief/2026-11-09/07/</link>
       <guid isPermaLink="false">brief-2026-11-09-07</guid>
       <pubDate>Mon, 09 Nov 2026 01:30:00 +0000</pubDate>
       <category>Cloud &amp; DevOps</category>
@@ -269,7 +269,7 @@
     </item>
     <item>
       <title>Docusign turns AI coding tools into an engineering operating model</title>
-      <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/2026-11-09/08/</link>
+      <link>https://signal.luzovi.com/brief/2026-11-09/08/</link>
       <guid isPermaLink="false">brief-2026-11-09-08</guid>
       <pubDate>Mon, 09 Nov 2026 01:30:00 +0000</pubDate>
       <category>Cloud &amp; DevOps</category>
@@ -278,7 +278,7 @@
     </item>
     <item>
       <title>AWS makes Kiro bots generally available in Kiro Crew</title>
-      <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/2026-11-08/05/</link>
+      <link>https://signal.luzovi.com/brief/2026-11-08/05/</link>
       <guid isPermaLink="false">brief-2026-11-08-05</guid>
       <pubDate>Sun, 08 Nov 2026 01:30:00 +0000</pubDate>
       <category>Cloud &amp; DevOps</category>
@@ -287,7 +287,7 @@
     </item>
     <item>
       <title>SageMaker Inference now supports NVIDIA multi-instance GPU partitioning</title>
-      <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/2026-11-08/06/</link>
+      <link>https://signal.luzovi.com/brief/2026-11-08/06/</link>
       <guid isPermaLink="false">brief-2026-11-08-06</guid>
       <pubDate>Sun, 08 Nov 2026 01:30:00 +0000</pubDate>
       <category>Cloud &amp; DevOps</category>
@@ -296,7 +296,7 @@
     </item>
     <item>
       <title>Google hands gVisor and its agent stack to the CNCF</title>
-      <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/2026-11-07/06/</link>
+      <link>https://signal.luzovi.com/brief/2026-11-07/06/</link>
       <guid isPermaLink="false">brief-2026-11-07-06</guid>
       <pubDate>Sat, 07 Nov 2026 01:30:00 +0000</pubDate>
       <category>Cloud &amp; DevOps</category>
@@ -305,7 +305,7 @@
     </item>
     <item>
       <title>Cursor will now publish AI built apps to a live URL</title>
-      <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/2026-11-07/07/</link>
+      <link>https://signal.luzovi.com/brief/2026-11-07/07/</link>
       <guid isPermaLink="false">brief-2026-11-07-07</guid>
       <pubDate>Sat, 07 Nov 2026 01:30:00 +0000</pubDate>
       <category>Cloud &amp; DevOps</category>
@@ -314,7 +314,7 @@
     </item>
     <item>
       <title>Azure Front Door gains generally available post quantum TLS key exchange</title>
-      <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/2026-11-06/06/</link>
+      <link>https://signal.luzovi.com/brief/2026-11-06/06/</link>
       <guid isPermaLink="false">brief-2026-11-06-06</guid>
       <pubDate>Fri, 06 Nov 2026 01:30:00 +0000</pubDate>
       <category>Cloud &amp; DevOps</category>
@@ -323,7 +323,7 @@
     </item>
     <item>
       <title>Google donates its agent runtime stack to the CNCF as Agent Substrate hits 1.0</title>
-      <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/2026-11-06/07/</link>
+      <link>https://signal.luzovi.com/brief/2026-11-06/07/</link>
       <guid isPermaLink="false">brief-2026-11-06-07</guid>
       <pubDate>Fri, 06 Nov 2026 01:30:00 +0000</pubDate>
       <category>Cloud &amp; DevOps</category>
@@ -332,7 +332,7 @@
     </item>
     <item>
       <title>Google previews AlloyDB Express, a scale to zero PostgreSQL for developers and agents</title>
-      <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/2026-11-05/10/</link>
+      <link>https://signal.luzovi.com/brief/2026-11-05/10/</link>
       <guid isPermaLink="false">brief-2026-11-05-10</guid>
       <pubDate>Thu, 05 Nov 2026 01:30:00 +0000</pubDate>
       <category>Cloud &amp; DevOps</category>
@@ -341,7 +341,7 @@
     </item>
     <item>
       <title>Amazon S3 Tables can now migrate Hive tables to Iceberg for you</title>
-      <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/2026-11-05/11/</link>
+      <link>https://signal.luzovi.com/brief/2026-11-05/11/</link>
       <guid isPermaLink="false">brief-2026-11-05-11</guid>
       <pubDate>Thu, 05 Nov 2026 01:30:00 +0000</pubDate>
       <category>Cloud &amp; DevOps</category>
@@ -350,7 +350,7 @@
     </item>
     <item>
       <title>Azure previews an MCP gateway for its container application gateway</title>
-      <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/2026-11-04/06/</link>
+      <link>https://signal.luzovi.com/brief/2026-11-04/06/</link>
       <guid isPermaLink="false">brief-2026-11-04-06</guid>
       <pubDate>Wed, 04 Nov 2026 01:30:00 +0000</pubDate>
       <category>Cloud &amp; DevOps</category>
@@ -359,7 +359,7 @@
     </item>
     <item>
       <title>Nammu21 runs syndicated loan automation on Google Cloud's ledger in a proof of concept</title>
-      <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/2026-11-04/07/</link>
+      <link>https://signal.luzovi.com/brief/2026-11-04/07/</link>
       <guid isPermaLink="false">brief-2026-11-04-07</guid>
       <pubDate>Wed, 04 Nov 2026 01:30:00 +0000</pubDate>
       <category>Cloud &amp; DevOps</category>
@@ -368,7 +368,7 @@
     </item>
     <item>
       <title>AWS makes Step Functions callable as agent tools</title>
-      <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/2026-11-03/04/</link>
+      <link>https://signal.luzovi.com/brief/2026-11-03/04/</link>
       <guid isPermaLink="false">brief-2026-11-03-04</guid>
       <pubDate>Tue, 03 Nov 2026 01:30:00 +0000</pubDate>
       <category>Cloud &amp; DevOps</category>
@@ -377,7 +377,7 @@
     </item>
     <item>
       <title>Developers choose smaller AI models on purpose, and report better results</title>
-      <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/2026-11-03/05/</link>
+      <link>https://signal.luzovi.com/brief/2026-11-03/05/</link>
       <guid isPermaLink="false">brief-2026-11-03-05</guid>
       <pubDate>Tue, 03 Nov 2026 01:30:00 +0000</pubDate>
       <category>Cloud &amp; DevOps</category>
