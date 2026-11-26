@@ -16,10 +16,6 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,800;1,9..144,500;1,9..144,600&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
-<script>
-  /* Same theme key as the main site, so the choice carries over. */
-  try { const t = localStorage.getItem('aisignal_theme'); if (t === 'dark' || t === 'light') document.documentElement.setAttribute('data-theme', t); } catch (e) {}
-</script>
 <style>
 :root {
   --bg: #F2F3EE; --surface: #EAEBE3; --ink: #14180F; --muted: #63695E; --border: #D7D9CD;
@@ -319,7 +315,7 @@ body.flow-on .pname-row .ss-share-btn{display:none}
 </head>
 <body>
 
-<div class="sgp-head"><button class="theme-toggle" id="themeToggle" type="button" aria-label="Toggle dark mode">☾</button><h1 class="sgp-h1">Inside a Superconducting <span class="sg-t sg-t-quantum">Quantum Computer</span></h1><p class="sgp-sub">Tap any part to see what it does.</p></div>
+<div class="sgp-head"><h1 class="sgp-h1">Inside a Superconducting <span class="sg-t sg-t-quantum">Quantum Computer</span></h1><p class="sgp-sub">Tap any part to see what it does.</p></div>
 <div class="topicbar">
   <a class="navcard back" href="quantum.html"><span class="nc-dir">← Back to</span><span class="nc-title">Quantum Explainers</span></a>
   <div class="tabs" role="tablist" aria-label="View">
@@ -994,17 +990,6 @@ body.flow-on .pname-row .ss-share-btn{display:none}
   let view = 'fridge';
   let current = null;
 
-  /* ---------- Theme ---------- */
-  const themeBtn = $('themeToggle');
-  const isDark = () => (document.documentElement.getAttribute('data-theme') || (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light')) === 'dark';
-  const syncThemeBtn = () => { themeBtn.textContent = isDark() ? '☀' : '☾'; };
-  syncThemeBtn();
-  themeBtn.addEventListener('click', () => {
-    const next = isDark() ? 'light' : 'dark';
-    document.documentElement.setAttribute('data-theme', next);
-    try { localStorage.setItem('aisignal_theme', next); } catch (e) {}
-    syncThemeBtn();
-  });
 
   /* ---------- Chip grid (decor) ---------- */
   (() => {
