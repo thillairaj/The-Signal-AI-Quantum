@@ -193,7 +193,7 @@ window.SignalShare = (function () {
       x.fillText(String(card.source || ""), pad, footBase);
       x.font = "500 24px Figtree, system-ui, sans-serif";
       x.textAlign = "right";
-      x.fillText("signal.luzovi.com", right, footBase);
+      x.fillText("luzovi.com", right, footBase);
       x.textAlign = "left";
       return new Promise(function (res) {
         if (cv.toBlob) cv.toBlob(function (b) { res(b); }, "image/png");
