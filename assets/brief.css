@@ -8,7 +8,7 @@
   --b-muted: var(--muted, #5a6270);
   --b-line: #e3ddcb;
   --b-soft: #f6f2e7;
-  --b-gold: #b8860b;
+  --b-brand: #3F7D20;
   color: var(--b-ink);
   font-family: Inter, system-ui, -apple-system, "Segoe UI", sans-serif;
   max-width: 1060px;
@@ -19,7 +19,7 @@
   --b-card: #1d2019;
   --b-line: #3a3d31;
   --b-soft: #26281e;
-  --b-gold: #d4af6a;
+  --b-brand: #8CC56A;
 }
 
 .brief-ui * { box-sizing: border-box; }
@@ -28,7 +28,7 @@
 .bu-head { text-align: center; padding: 26px 12px 6px; }
 .bu-kicker {
   letter-spacing: .28em; font-size: .7rem; font-weight: 700;
-  color: var(--b-gold); text-transform: uppercase; margin: 0 0 10px;
+  color: var(--b-brand); text-transform: uppercase; margin: 0 0 10px;
 }
 .bu-title {
   font-family: Fraunces, Georgia, "Times New Roman", serif;
@@ -39,14 +39,14 @@
 .bu-follow {
   display: inline-flex; align-items: center; gap: 7px;
   padding: 8px 18px; border-radius: 999px; cursor: pointer;
-  border: 1px solid var(--b-gold); background: var(--b-card);
+  border: 1px solid var(--b-brand); background: var(--b-card);
   color: var(--b-ink); font: inherit; font-size: .88rem; font-weight: 600;
 }
 .bu-follow:hover, .bu-follow:focus-visible { border-color: var(--b-ink); outline: none; }
 
 /* Edition calendar (Nov 14, 2026): replaces the switcher row and the
    Past editions list. One month of day numbers; edition dates are
-   buttons with a gold dot, other dates are muted text. */
+   buttons with a green dot, other dates are muted text. */
 .bu-cal {
   max-width: 430px; margin: 18px auto 4px;
   background: var(--b-card); border: 1px solid var(--b-line);
@@ -66,7 +66,7 @@
   color: var(--b-ink); font-size: 1.3rem; line-height: 1; cursor: pointer;
   display: grid; place-items: center;
 }
-.bu-cal-arrow:hover:not([disabled]), .bu-cal-arrow:focus-visible { border-color: var(--b-gold); outline: none; }
+.bu-cal-arrow:hover:not([disabled]), .bu-cal-arrow:focus-visible { border-color: var(--b-brand); outline: none; }
 .bu-cal-arrow[disabled] { opacity: .35; cursor: default; }
 .bu-cal-dow {
   display: grid; grid-template-columns: repeat(7, 1fr);
@@ -83,13 +83,13 @@
   background: transparent; border: 1px solid transparent;
 }
 button.bu-cal-day { cursor: pointer; font-weight: 600; }
-button.bu-cal-day:hover, button.bu-cal-day:focus-visible { border-color: var(--b-gold); outline: none; }
+button.bu-cal-day:hover, button.bu-cal-day:focus-visible { border-color: var(--b-brand); outline: none; }
 .bu-cal-dot {
   width: 6px; height: 6px; border-radius: 50%;
-  background: var(--b-gold); flex: 0 0 auto;
+  background: var(--b-brand); flex: 0 0 auto;
 }
 .bu-cal-sel { background: var(--b-ink); color: var(--b-card); }
-.bu-cal-today { box-shadow: inset 0 0 0 2px var(--b-gold); }
+.bu-cal-today { box-shadow: inset 0 0 0 2px var(--b-brand); }
 .bu-cal-off { color: var(--b-muted); opacity: .45; }
 
 /* Week strip (Nov 15, 2026): below 900px the calendar collapses to
@@ -113,7 +113,7 @@ button.bu-cal-day:hover, button.bu-cal-day:focus-visible { border-color: var(--b
   background: transparent; color: var(--b-ink); cursor: pointer;
   font-size: 1.25rem; line-height: 1;
 }
-.bu-strip-step:hover:not([disabled]), .bu-strip-step:focus-visible { border-color: var(--b-gold); outline: none; }
+.bu-strip-step:hover:not([disabled]), .bu-strip-step:focus-visible { border-color: var(--b-brand); outline: none; }
 .bu-strip-step[disabled] { opacity: .35; cursor: default; }
 .bu-strip-exp {
   flex: 1 1 auto; padding: 9px 12px;
@@ -122,9 +122,9 @@ button.bu-cal-day:hover, button.bu-cal-day:focus-visible { border-color: var(--b
   background: transparent; color: var(--b-ink); cursor: pointer;
   font: inherit; font-size: .9rem; font-weight: 600;
 }
-.bu-strip-exp:hover, .bu-strip-exp:focus-visible { border-color: var(--b-gold); outline: none; }
+.bu-strip-exp:hover, .bu-strip-exp:focus-visible { border-color: var(--b-brand); outline: none; }
 .bu-strip-month { font-family: Fraunces, Georgia, serif; font-size: 1.02rem; }
-.bu-strip-chev { color: var(--b-gold); font-size: .8rem; }
+.bu-strip-chev { color: var(--b-brand); font-size: .8rem; }
 @media (max-width: 899px) {
   .bu-cal-strip { display: block; }
   .bu-cal-full { display: none; }
@@ -158,7 +158,7 @@ button.bu-cal-day:hover, button.bu-cal-day:focus-visible { border-color: var(--b
 .bu-chip .bu-dot { width: 9px; height: 9px; border-radius: 50%; flex: 0 0 auto; }
 .bu-chip .bu-count { color: var(--b-muted); font-weight: 500; font-size: .8rem; }
 .bu-chip[aria-pressed="true"] { border-color: var(--b-ink); box-shadow: inset 0 0 0 1px var(--b-ink); }
-.bu-chip:focus-visible { outline: 2px solid var(--b-gold); outline-offset: 2px; }
+.bu-chip:focus-visible { outline: 2px solid var(--b-brand); outline-offset: 2px; }
 
 /* Card rail: phones swipe one card per screen; desktop 3 column grid */
 .bu-rail {
@@ -173,7 +173,7 @@ button.bu-cal-day:hover, button.bu-cal-day:focus-visible { border-color: var(--b
   border-radius: 16px; overflow: hidden; cursor: pointer;
   display: flex; flex-direction: column; text-align: left;
 }
-.bu-card:focus-visible { outline: 2px solid var(--b-gold); outline-offset: 2px; }
+.bu-card:focus-visible { outline: 2px solid var(--b-brand); outline-offset: 2px; }
 .bu-band { height: 7px; flex: 0 0 auto; }
 .bu-card-in { padding: 16px 18px 14px; display: flex; flex-direction: column; gap: 10px; flex: 1; }
 .bu-card-meta { display: flex; align-items: center; gap: 10px; margin: 0; flex-wrap: wrap; }
@@ -224,7 +224,7 @@ button.bu-cal-day:hover, button.bu-cal-day:focus-visible { border-color: var(--b
   width: 8px; height: 8px; border-radius: 50%; border: 0; padding: 0;
   background: var(--b-line); cursor: pointer;
 }
-.bu-dots button.on { background: var(--b-gold); }
+.bu-dots button.on { background: var(--b-brand); }
 .bu-railcount { font-size: .8rem; color: var(--b-muted); min-width: 44px; text-align: center; }
 @media (min-width: 900px) {
   .bu-rail {
@@ -250,11 +250,11 @@ button.bu-cal-day:hover, button.bu-cal-day:focus-visible { border-color: var(--b
   border-radius: 18px 18px 0 0; padding: 20px 20px 22px;
   font-family: Inter, system-ui, sans-serif;
   --b-card: #ffffff; --b-ink: #171b24; --b-muted: #5a6270;
-  --b-line: #e3ddcb; --b-soft: #f6f2e7; --b-gold: #b8860b;
+  --b-line: #e3ddcb; --b-soft: #f6f2e7; --b-brand: #3F7D20;
 }
 :root[data-theme="dark"] .bu-sheet {
   --b-card: #1d2019; --b-ink: #ecede4; --b-muted: #9aa08d;
-  --b-line: #3a3d31; --b-soft: #26281e; --b-gold: #d4af6a;
+  --b-line: #3a3d31; --b-soft: #26281e; --b-brand: #8CC56A;
 }
 
 @media (min-width: 641px) {
@@ -299,16 +299,16 @@ button.bu-cal-day:hover, button.bu-cal-day:focus-visible { border-color: var(--b
 }
 .bu-copy {
   flex: 0 0 auto; padding: 7px 13px; border-radius: 999px; cursor: pointer;
-  border: 1px solid var(--b-gold); background: transparent;
+  border: 1px solid var(--b-brand); background: transparent;
   color: var(--b-ink); font: inherit; font-size: .82rem; font-weight: 600;
 }
-.bu-follow-status { min-height: 18px; color: var(--b-gold); font-size: .85rem; text-align: center; margin: 12px 0 0; }
+.bu-follow-status { min-height: 18px; color: var(--b-brand); font-size: .85rem; text-align: center; margin: 12px 0 0; }
 .bu-follow-text { line-height: 1.6; font-size: .95rem; margin: 6px 0 0; }
 
 /* Homepage tab NEW badge */
 .tab-new {
   display: inline-block; margin-left: 7px; padding: 1px 7px;
-  border-radius: 999px; background: #b8860b; color: #fff;
+  border-radius: 999px; background: #3F7D20; color: #fff;
   font-size: .6rem; font-weight: 800; letter-spacing: .1em; vertical-align: 2px;
 }
 .tab-new[hidden] { display: none; }
@@ -329,21 +329,21 @@ button.bu-cal-day:hover, button.bu-cal-day:focus-visible { border-color: var(--b
 .bu-share-slot { display: inline-flex; margin-left: auto; }
 .ss-share-btn{display:inline-flex;align-items:center;gap:7px;padding:8px 15px;border-radius:999px;border:1px solid rgba(135,135,135,.5);background:rgba(135,135,135,.10);color:inherit;font:inherit;font-size:13.5px;font-weight:600;cursor:pointer;white-space:nowrap}
 .ss-share-btn svg{width:15px;height:15px;flex:0 0 auto}
-.ss-share-btn:hover{border-color:#d4af6a}
+.ss-share-btn:hover{border-color:var(--b-brand,#3F7D20)}
 
 /* Themes step 2 (preview): Rose values for the Brief tab, story sheet and
    Follow panel; Dark fixes for the breaking label and the NEW badge. */
 :root[data-tone="rose"] .brief-ui {
-  --b-card: #F9E7EC; --b-line: #E2B9C5; --b-soft: #EDCBD5; --b-gold: #855509;
+  --b-card: #F9E7EC; --b-line: #E2B9C5; --b-soft: #EDCBD5; --b-brand: #2F6A18;
 }
 :root[data-tone="rose"] .bu-sheet {
   --b-card: #F9E7EC; --b-ink: #2A1A1F; --b-muted: #6F545E;
-  --b-line: #E2B9C5; --b-soft: #EDCBD5; --b-gold: #855509;
+  --b-line: #E2B9C5; --b-soft: #EDCBD5; --b-brand: #2F6A18;
 }
 :root[data-theme="dark"] .bu-sheet { --b-pill-ink: #171B24; }
 :root[data-tone="rose"] .bu-breaking { color: #9A2620; }
 :root[data-theme="dark"] .bu-breaking { color: #E58A80; }
 :root[data-tone="rose"] .bu-srcs a { color: #225D96; }
-:root[data-tone="rose"] .tab-new { background: #855509; }
-:root[data-theme="dark"] .tab-new { background: #D4AF6A; color: #171B24; }
-:root[data-tone="rose"] .ss-share-btn:hover { border-color: #855509; }
+:root[data-tone="rose"] .tab-new { background: #2F6A18; }
+:root[data-theme="dark"] .tab-new { background: #8CC56A; color: #171B24; }
+:root[data-tone="rose"] .ss-share-btn:hover { border-color: #2F6A18; }

@@ -94,7 +94,7 @@ window.SignalBriefUI = (function () {
      grid of day numbers. Below 900px it collapses to a one week strip
      (the shown week, stepped by its own arrows) whose expander,
      labelled with the month and year, opens the same month grid.
-     A date with an edition is a button (gold dot, full readable date
+     A date with an edition is a button (green dot, full readable date
      plus story count as its aria-label); other dates are muted text.
      The today ring shows only on a date that has an edition.
      state.cal is the shown month and state.weekMs the Monday of the
@@ -129,7 +129,7 @@ window.SignalBriefUI = (function () {
   }
   /* One day cell, shared by the month grid and the week strip so the
      two views can never drift: edition dates are buttons with the
-     gold dot, the open edition is the filled pill, today rings only
+     green dot, the open edition is the filled pill, today rings only
      when the date has an edition, and other dates are muted text. */
   function dayCell(state, byDate, iso, dnum, isToday) {
     if (iso in byDate) {
@@ -406,7 +406,7 @@ window.SignalBriefUI = (function () {
         '<div class="bu-sheet" role="dialog" aria-modal="true" ' +
         'aria-label="Follow Signal Brief">' +
         '<div class="bu-sheet-top"><div class="bu-sheet-meta">' +
-        '<span class="bu-pill" style="background:var(--b-gold);color:var(--b-pill-ink,#fff)">Follow</span>' +
+        '<span class="bu-pill" style="background:var(--b-brand);color:var(--b-pill-ink,#fff)">Follow</span>' +
         '</div><button type="button" class="bu-close" aria-label="Close">' +
         "×</button></div>" +
         "<h3>Follow Signal Brief</h3>" +
