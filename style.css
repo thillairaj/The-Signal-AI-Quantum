@@ -934,7 +934,7 @@ body[data-view="research"] .feed-only { display: none; }
 /* family dots take the theme's own shade of each technology colour */
 :root[data-tone="rose"] .fam-dot.fam-founders{background:#855509}
 :root[data-tone="rose"] .fam-dot.fam-quantum{background:#6A47B0}
-:root[data-tone="rose"] .fam-dot.fam-ai{background:#2A6AA6}
+:root[data-tone="rose"] .fam-dot.fam-ai{background:#225D96}
 :root[data-tone="rose"] .fam-dot.fam-cloud{background:#176A5F}
 :root[data-tone="rose"] .fam-dot.fam-cyber{background:#9A2620}
 :root[data-theme="dark"] .fam-dot.fam-founders{background:#E0A85A}

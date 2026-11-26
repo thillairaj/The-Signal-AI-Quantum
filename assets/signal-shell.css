@@ -7,7 +7,7 @@
 .sg-wm em{font-style:italic;font-weight:600;color:#201B14}
 .sg-tabs{display:none;margin-left:auto;gap:2px;align-items:center}
 @media(min-width:1000px){.sg-tabs{display:flex}}
-.sg-tab{font:600 14px Figtree,system-ui,sans-serif;padding:8px 13px;border-radius:999px;color:#7C7365;text-decoration:none;border:0;background:transparent;cursor:pointer;display:inline-flex;gap:6px;align-items:center;white-space:nowrap}
+.sg-tab{font:600 14px Figtree,system-ui,sans-serif;padding:8px 13px;border-radius:999px;color:#70675A;text-decoration:none;border:0;background:transparent;cursor:pointer;display:inline-flex;gap:6px;align-items:center;white-space:nowrap}
 .sg-tab:hover{background:#F1ECE2;color:#201B14}
 .sg-tab .n{font:600 10.5px 'IBM Plex Mono',ui-monospace,monospace;color:#201B14}
 .sg-tab i{font-style:normal;font-size:10px;opacity:.7}
@@ -17,9 +17,9 @@
 /* path */
 .sg-crumbrow{background:#FAF7F1;border-bottom:1px solid #E4DAC6;position:relative;z-index:290}
 .sg-crumbrow .sg-in{display:flex;align-items:center;gap:12px;min-height:46px}
-.sg-bc{flex:1;min-width:0;display:flex;align-items:center;gap:8px;overflow-x:auto;white-space:nowrap;scrollbar-width:none;font-size:13.5px;color:#7C7365}
+.sg-bc{flex:1;min-width:0;display:flex;align-items:center;gap:8px;overflow-x:auto;white-space:nowrap;scrollbar-width:none;font-size:13.5px;color:#70675A}
 .sg-bc::-webkit-scrollbar{display:none}
-.sg-bc a,.sg-bc button{color:#7C7365;text-decoration:none;background:none;border:0;padding:0;font:inherit;cursor:pointer}
+.sg-bc a,.sg-bc button{color:#70675A;text-decoration:none;background:none;border:0;padding:0;font:inherit;cursor:pointer}
 .sg-bc a:hover,.sg-bc button:hover{color:#201B14;text-decoration:underline;text-underline-offset:3px}
 .sg-bc .sep{opacity:.5}
 .sg-bc .cur{color:#201B14;font-weight:600}
@@ -28,17 +28,17 @@
 .sg-mega{display:none;position:absolute;z-index:400;background:#fff;border:1px solid #E4DAC6;border-radius:16px;box-shadow:0 26px 54px -22px rgba(20,24,15,.35);padding:18px 20px 16px;width:min(1020px,calc(100vw - 24px))}
 .sg-mega.open{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:6px 22px}
 .sg-col h4{margin:0 0 8px;font:600 11px 'IBM Plex Mono',ui-monospace,monospace;letter-spacing:.14em;text-transform:uppercase}
-.sg-col h4 a{color:#7C7365;text-decoration:none}.sg-col h4 a:hover{text-decoration:underline}
+.sg-col h4 a{color:#70675A;text-decoration:none}.sg-col h4 a:hover{text-decoration:underline}
 .sg-col a.it{display:block;padding:7px 8px;margin:0 -8px;border-radius:8px;color:#201B14;text-decoration:none;font-size:14.5px;font-weight:500;line-height:1.3}
 .sg-col a.it:hover{background:#F1ECE2;color:#201B14}
-.sg-col a.all{color:#7C7365;font-size:13px}
+.sg-col a.all{color:#70675A;font-size:13px}
 /* phone menu */
 .sg-sheet{display:none;background:#FAF7F1;border-bottom:1px solid #E4DAC6;padding:6px 20px 16px;max-height:80vh;overflow:auto}
 .sg-sheet.open{display:block}
 @media(min-width:1000px){.sg-sheet{display:none!important}}
 .sg-sheet a{display:block;padding:11px 2px;text-decoration:none;color:#201B14;font-weight:600;border-bottom:1px solid #E4DAC6}
-.sg-sheet h4{margin:14px 0 2px;font:600 11px 'IBM Plex Mono',ui-monospace,monospace;letter-spacing:.14em;text-transform:uppercase;color:#7C7365}
-.sg-sheet .sub a{font-weight:500;color:#7C7365;padding:8px 2px 8px 14px;border:0}
+.sg-sheet h4{margin:14px 0 2px;font:600 11px 'IBM Plex Mono',ui-monospace,monospace;letter-spacing:.14em;text-transform:uppercase;color:#70675A}
+.sg-sheet .sub a{font-weight:500;color:#70675A;padding:8px 2px 8px 14px;border:0}
 /* the buttons this replaces */
 .navcard,a.navcard{display:none!important}
 .sg-gone{display:none!important}
@@ -59,7 +59,7 @@ html[data-theme="dark"] .sg-sheet a{color:#ECEDE4;border-color:#33362A}
   .sg-mega .sg-col:last-child{border-bottom:0}
   .sg-mega .sg-col h4{margin:0;font:600 17px Figtree,system-ui,sans-serif;letter-spacing:0;text-transform:none}
   .sg-mega .sg-col h4 a{display:flex;justify-content:space-between;align-items:center;padding:15px 18px;color:#201B14}
-  .sg-mega .sg-col h4 a::after{content:"›";font-size:20px;color:#7C7365}
+  .sg-mega .sg-col h4 a::after{content:"›";font-size:20px;color:#70675A}
   .sg-mega .sg-col a.it{display:none}
 }
 html[data-theme="dark"] .sg-mega .sg-col h4 a{color:#F1EBDD}
@@ -74,7 +74,7 @@ html.sg-scrolled .masthead .brand-h{font-size:24px!important;line-height:1.1}
 html.sg-scrolled .masthead .masthead-right{display:none!important}
 html[data-theme="dark"].sg-scrolled .masthead{box-shadow:0 1px 0 #2C2720}
 /* "by Luzovi" next to the wordmark */
-.sg-by{font:500 12px Figtree,system-ui,sans-serif;letter-spacing:.04em;color:#7C7365;margin-left:8px;white-space:nowrap;font-style:normal;vertical-align:middle}
+.sg-by{font:500 12px Figtree,system-ui,sans-serif;letter-spacing:.04em;color:#70675A;margin-left:8px;white-space:nowrap;font-style:normal;vertical-align:middle}
 .brand-h .sg-by{font-size:13px}
 html.sg-scrolled .masthead .brand-h .sg-by{font-size:11px}
 /* Footer: the luzovi.com address; the footer line takes the standard colour instead of gold */

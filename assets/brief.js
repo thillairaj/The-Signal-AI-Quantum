@@ -12,7 +12,7 @@ window.SignalBriefUI = (function () {
   /* Themes step 2 (preview): each theme uses its own category shades.
      Industry and Policy take the theme ink, as in the Light map. */
   var CAT_COLOURS_ROSE = {
-    "AI": "#2A6AA6", "Quantum": "#6A47B0", "Cloud & DevOps": "#176A5F",
+    "AI": "#225D96", "Quantum": "#6A47B0", "Cloud & DevOps": "#176A5F",
     "Cybersecurity": "#9A2620", "Industry": "#2A1A1F", "Policy": "#2A1A1F"
   };
   var CAT_COLOURS_DARK = {

@@ -2,7 +2,7 @@
    Same fonts and colours as signal-standard.css, but every name is prefixed --sg- so nothing clashes with a page's own styles.
    Only the text around the content changes: one heading, one line, the technology colour, a light page. Content is untouched. */
 @import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Figtree:wght@400;500;600;700;800&display=swap');
-html.sgp{--sg-paper:#FAF7F1;--sg-surface:#FFFFFF;--sg-wash:#F1ECE2;--sg-ink:#201B14;--sg-soft:#4C463B;--sg-muted:#7C7365;--sg-line:#E4DAC6;
+html.sgp{--sg-paper:#FAF7F1;--sg-surface:#FFFFFF;--sg-wash:#F1ECE2;--sg-ink:#201B14;--sg-soft:#4C463B;--sg-muted:#70675A;--sg-line:#E4DAC6;
   --sg-ai:#3B82C4;--sg-quantum:#7C5CBF;--sg-cloud:#1B7A6E;--sg-cyber:#A62B25;--sg-founders:#B7791F;--sg-tech:var(--sg-ink);
   --sg-display:'DM Serif Display',Georgia,serif;--sg-body:Figtree,system-ui,-apple-system,'Segoe UI',sans-serif}
 html.sgp[data-theme="dark"]{--sg-paper:#12100D;--sg-surface:#1B1814;--sg-wash:#242019;--sg-ink:#F1EBDD;--sg-soft:#C9C0AF;--sg-muted:#9D937F;--sg-line:#2C2720;
@@ -26,7 +26,7 @@ html.sgp-deck .tnum,html.sgp-deck .tlabel,html.sgp-deck .tsub,html.sgp-deck .row
 html.sgp-deck h2,html.sgp-deck .topic-head h2{font-family:var(--sg-display);font-weight:400}
 html.sgp-deck body,html.sgp-deck button,html.sgp-deck input{font-family:var(--sg-body)}
 /* periodic tables: light by default (dark stays on the theme button) */
-html.sgp-table:not([data-theme="dark"]){--bg:#FAF7F1;--panel:#FFFFFF;--panel2:#F1ECE2;--ink:#201B14;--muted:#7C7365;--line:#E4DAC6}
+html.sgp-table:not([data-theme="dark"]){--bg:#FAF7F1;--panel:#FFFFFF;--panel2:#F1ECE2;--ink:#201B14;--muted:#70675A;--line:#E4DAC6}
 html.sgp-table body,html.sgp-table button,html.sgp-table input{font-family:var(--sg-body)}
 html.sgp-table h1,html.sgp-table h2,html.sgp-table h3{font-family:var(--sg-display);font-weight:400}
 html.sgp-table:not([data-theme="dark"]) body{background:var(--sg-paper);color:var(--sg-ink)}

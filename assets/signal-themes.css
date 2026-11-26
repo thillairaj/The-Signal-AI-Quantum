@@ -5,7 +5,7 @@
   --bg:#F3D7DF;--surface:#EDCBD5;--ink:#2A1A1F;--muted:#6F545E;--border:#E2B9C5;--accent:#2F6A18;--accent-dim:#D9B4C0;
   /* shared tokens (signal-standard.css, signal-pages.css, hub, podcast, share panel) */
   --sg-paper:#F3D7DF;--sg-surface:#F9E7EC;--sg-wash:#EDCBD5;--sg-ink:#2A1A1F;--sg-soft:#4F3A41;--sg-muted:#6F545E;--sg-line:#E2B9C5;
-  --sg-ai:#2A6AA6;--sg-quantum:#6A47B0;--sg-cloud:#176A5F;--sg-cyber:#9A2620;--sg-founders:#855509;--sg-brand:#2F6A18;
+  --sg-ai:#225D96;--sg-quantum:#6A47B0;--sg-cloud:#176A5F;--sg-cyber:#9A2620;--sg-founders:#855509;--sg-brand:#2F6A18;
 }
 :root[data-tone="rose"] body{background:var(--bg,#F3D7DF);color:var(--ink,#2A1A1F)}
 /* shared top bar, path, menus, footer: Rose */
@@ -57,3 +57,13 @@ html[data-theme="light"]:not([data-tone]) .sg-themeb .i-sun,html[data-tone="rose
   html.sg-scrolled .masthead .masthead-right>*:not(.sg-themeb){display:none!important}
 }
 .masthead-right{align-items:center}
+/* Render-check fixes (Thillai, 26 Nov 2026). In Dark, every pill on the light
+   Signal green (#8CC56A) takes dark text: white on that green is 2.0:1. */
+:root[data-theme="dark"] .hm-chip.navy,:root[data-theme="dark"] .top-tab.active,:root[data-theme="dark"] .sg-tab.on,:root[data-theme="dark"] .sg-chip.on,:root[data-theme="dark"] .sg-copy button,:root[data-theme="dark"] .series-btn.active{color:#12100D!important}
+:root[data-theme="dark"] .top-tab.active .tab-num,:root[data-theme="dark"] .sg-tab.on .n{color:#12100D!important;opacity:1}
+/* The shell makes every .masthead sticky with background var(--bg, cream).
+   Pages that define no --bg (the learning spaces) kept the cream panel in
+   Dark and Rose. Follow the theme where --bg is undefined; pages that define
+   --bg (front page, decks, tables) are unchanged. */
+:root[data-theme="dark"] .masthead{background:var(--bg,#12100D)}
+:root[data-tone="rose"] .masthead{background:var(--bg,#F3D7DF)}
