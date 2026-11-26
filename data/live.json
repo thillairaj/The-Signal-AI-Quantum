@@ -1,6 +1,6 @@
 {
-  "updated": "2026-11-26T10:00:32+05:30",
-  "next_update": "2026-11-26T12:00:00+05:30",
+  "updated": "2026-11-26T12:00:13+05:30",
+  "next_update": "2026-11-26T14:00:00+05:30",
   "delay_hours": 2,
   "items": [
     {
@@ -100,6 +100,26 @@
         {
           "label": "TechCrunch",
           "url": "https://techcrunch.com/2026/11/25/1password-said-hackers-broke-into-its-internal-systems-but-customer-passwords-are-safe/"
+        }
+      ]
+    },
+    {
+      "id": "live-2026-11-26-02",
+      "published": "2026-11-26T08:00:00+05:30",
+      "category": "AI",
+      "company": "OpenAI",
+      "headline": "OpenAI fixes GPT-6.2 billing error that had discounted usage for paid users",
+      "what": "OpenAI said a billing error at the launch of GPT-6.2 on November 17 had undercounted usage of GPT-6.2 Astra and Sol for most subscribers. With the fix in place, the same work uses up a plan allowance faster: users reach their limits about 40 percent faster on Astra and 25 percent faster on Sol than last week. OpenAI said other models are unaffected, it will not charge for the undercounted past usage, and users on Go, Plus, Pro and Business plans will get one banked usage reset. From December, ChatGPT and Codex will also share one usage allowance for those plans.",
+      "why": "GPT-6.2 Astra is OpenAI's flagship model and Sol is its everyday model, so the correction changes how much work paying subscribers get from their plans. It lands days before the shared ChatGPT and Codex allowance takes effect, which puts chat and coding usage into one pool.",
+      "financial": false,
+      "sources": [
+        {
+          "label": "AI Tool Ranked",
+          "url": "https://aitoolranked.com/news/chatgpt-codex-shared-usage-limits-gpt-6-2-billing-fix-banked-reset"
+        },
+        {
+          "label": "Runtime Wire",
+          "url": "https://runtimewire.com/article/openai-corrects-gpt-6-2-billing-error-making-usage-limits-arrive-sooner"
         }
       ]
     }
