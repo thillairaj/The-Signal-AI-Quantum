@@ -57,6 +57,24 @@
   document.addEventListener('click',function(e){var b=e.target.closest('[data-menu]');if(b){e.preventDefault();e.stopPropagation();if(mega.classList.contains('open'))closeMenu();else openMenu(b);return}if(!e.target.closest('.sg-mega'))closeMenu()});
   document.addEventListener('keydown',function(e){if(e.key==='Escape')closeMenu()});
   addEventListener('resize',closeMenu);
+  /* Phone menu sheet controller. The sheet is fixed under the sticky top
+     rows (see signal-shell.css); this positions it at the exact bottom of
+     those rows when it opens, shows the backdrop, locks the page scroll
+     while it is open, and closes it on a backdrop tap, a link tap or
+     Escape. Shared by the inner pages and the front page, whose sheets
+     are built separately below and in the theme button script. */
+  var backdrop=el('div','sg-backdrop');document.body.appendChild(backdrop);
+  function sheetNow(){return document.querySelector('.sg-sheet')}
+  function headBottom(){var b=0,sh=document.querySelector('.sg-shell')||document.querySelector('.masthead');if(sh)b=Math.max(b,sh.getBoundingClientRect().bottom);var cr=document.querySelector('.sg-crumbrow');if(cr&&getComputedStyle(cr).display!=='none')b=Math.max(b,cr.getBoundingClientRect().bottom);if(b>0)return Math.round(b);var v=parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--sg-head-h'));return isNaN(v)?109:v}
+  function syncMenub(open){document.querySelectorAll('.sg-menub').forEach(function(x){x.setAttribute('aria-expanded',open?'true':'false')})}
+  function openSheet(){var s=sheetNow();if(!s)return;var t=headBottom();s.style.top=t+'px';s.style.maxHeight='calc(100dvh - '+t+'px)';s.classList.add('open');backdrop.classList.add('on');document.documentElement.classList.add('sg-noscroll');syncMenub(true)}
+  function closeSheet(){var s=sheetNow();if(s)s.classList.remove('open');backdrop.classList.remove('on');document.documentElement.classList.remove('sg-noscroll');syncMenub(false)}
+  function toggleSheet(){var s=sheetNow();if(!s)return;if(s.classList.contains('open'))closeSheet();else openSheet()}
+  backdrop.addEventListener('click',closeSheet);
+  document.addEventListener('click',function(e){if(e.target.closest&&e.target.closest('.sg-sheet a'))closeSheet()});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape')closeSheet()});
+  addEventListener('resize',closeSheet);
+  window.__sgSheet={open:openSheet,close:closeSheet,toggle:toggleSheet};
   /* hide the old Back / Next / Home buttons and any bar that is left empty. Buttons that do a job inside a page (Previous part, Up next) are not touched. */
   function tidy(){
     var mount=document.querySelector('.ss-page-mount,#ssPageMount');
@@ -103,7 +121,7 @@
     return '<a class="sg-tab'+(on?' on':'')+'" href="'+esc(t[1])+'">'+(t[2]?'<span class="n">'+t[2]+'</span>':'')+esc(t[0])+'</a>'}).join('');
   shell.innerHTML='<div class="sg-in"><div class="sg-top"><a class="sg-wm" href="'+esc(BASE)+'">The <em>Signal</em></a><nav class="sg-tabs" aria-label="Main">'+tabs+'</nav><button type="button" class="sg-menub" aria-label="Menu" aria-expanded="false">☰</button></div></div>';
   var sheet=el('div','sg-sheet');sheet.innerHTML='<a href="'+esc(BASE)+'">Home</a><h4>Learning Space</h4><div class="sub">'+MENU.map(function(c){return '<a href="'+esc(c.u)+'">'+esc(c.h)+'</a>'}).join('')+'</div><h4>More</h4><a href="'+esc(BASE+'#podcast')+'">Podcast</a><a href="'+esc(BASE+'#research')+'">Articles</a><a href="'+esc(BASE+'#feed')+'">RSS Feed</a><a href="'+esc(BASE+'#brief')+'">Signal Brief</a><a href="'+esc(BASE+'live/')+'">Live news</a>';
-  shell.querySelector('.sg-menub').onclick=function(){sheet.classList.toggle('open')};
+  shell.querySelector('.sg-menub').onclick=function(){toggleSheet()};
   var row2=el('div','sg-crumbrow');row2.innerHTML='<div class="sg-in"><nav class="sg-bc" aria-label="Path">'+bcHtml(crumbs())+'</nav><span class="sg-shareslot"></span></div>';
   var first=document.body.firstChild;document.body.insertBefore(row2,first);document.body.insertBefore(sheet,row2);document.body.insertBefore(shell,sheet);
   var mount=document.querySelector('.ss-page-mount,#ssPageMount');if(mount)row2.querySelector('.sg-shareslot').appendChild(mount);
@@ -119,7 +137,7 @@
   /* keep the path row right under the top bar; the scrolled class is kept
      in sync for the shared chrome (the front-page masthead no longer
      changes on scroll since the Nov 26, 2026 fixes) */
-  function measure(){var sh=document.querySelector('.sg-shell')||document.querySelector('.masthead');if(sh)document.documentElement.style.setProperty('--sg-shell-h',sh.getBoundingClientRect().height+'px')}
+  function measure(){var sh=document.querySelector('.sg-shell')||document.querySelector('.masthead');if(sh)document.documentElement.style.setProperty('--sg-shell-h',sh.getBoundingClientRect().height+'px');var cr=document.querySelector('.sg-crumbrow'),hh=sh?sh.getBoundingClientRect().height:0;if(cr&&getComputedStyle(cr).display!=='none')hh+=cr.getBoundingClientRect().height;if(hh>0)document.documentElement.style.setProperty('--sg-head-h',hh+'px')}
   function onScroll(){var on=(window.scrollY||0)>40,h=document.documentElement;if(h.classList.contains('sg-scrolled')!==on){h.classList.toggle('sg-scrolled',on);requestAnimationFrame(measure)}}
   function run(){byLuzovi();footer();measure();onScroll()}
   if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',run);else run();
@@ -157,7 +175,7 @@
         var nb=makeBtn();mh.appendChild(nb);
         var mbtn=document.createElement('button');mbtn.type='button';mbtn.className='sg-menub';mbtn.setAttribute('aria-label','Menu');mbtn.setAttribute('aria-expanded','false');mbtn.textContent='☰';
         mh.appendChild(mbtn);
-        mbtn.addEventListener('click',function(){var sh=sheetFor();if(sh){sh.classList.toggle('open');mbtn.setAttribute('aria-expanded',sh.classList.contains('open'))}});
+        mbtn.addEventListener('click',function(){if(window.__sgSheet){window.__sgSheet.toggle();return}var sh=sheetFor();if(sh){sh.classList.toggle('open');mbtn.setAttribute('aria-expanded',sh.classList.contains('open'))}});
       }
     }
   }

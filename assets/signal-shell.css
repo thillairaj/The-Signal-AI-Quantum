@@ -33,12 +33,23 @@
 .sg-col a.it:hover{background:#F1ECE2;color:#201B14}
 .sg-col a.all{color:#70675A;font-size:13px}
 /* phone menu */
-.sg-sheet{display:none;background:#FAF7F1;border-bottom:1px solid #E4DAC6;padding:6px 20px 16px;max-height:80vh;overflow:auto}
+.sg-sheet{display:none;position:fixed;left:0;right:0;top:var(--sg-head-h,109px);z-index:270;background:#FAF7F1;border-bottom:1px solid #E4DAC6;padding:6px 20px 16px;max-height:calc(100dvh - var(--sg-head-h,109px));overflow:auto}
 .sg-sheet.open{display:block}
 @media(min-width:1000px){.sg-sheet{display:none!important}}
 .sg-sheet a{display:block;padding:11px 2px;text-decoration:none;color:#201B14;font-weight:600;border-bottom:1px solid #E4DAC6}
 .sg-sheet h4{margin:14px 0 2px;font:600 11px 'IBM Plex Mono',ui-monospace,monospace;letter-spacing:.14em;text-transform:uppercase;color:#70675A}
 .sg-sheet .sub a{font-weight:500;color:#70675A;padding:8px 2px 8px 14px;border:0}
+/* Backdrop and scroll lock while the phone menu sheet is open. The sheet
+   used to be a static block at the top of the page, so once the page was
+   scrolled it opened off screen. It is now fixed under the sticky rows:
+   the top bar is 62px and the path row is 47px, 109px in all, measured
+   live by the shell script into --sg-head-h. The backdrop (260) sits
+   below the sheet (270) and below the sticky rows (280 to 300), so the
+   top bar and the path stay above it and stay tappable. */
+.sg-backdrop{display:none;position:fixed;inset:0;z-index:260;background:rgba(32,27,20,.45)}
+.sg-backdrop.on{display:block}
+@media(min-width:1000px){.sg-backdrop{display:none!important}}
+html.sg-noscroll,html.sg-noscroll body{overflow:hidden!important}
 /* the buttons this replaces */
 .navcard,a.navcard{display:none!important}
 .sg-gone{display:none!important}
@@ -52,6 +63,7 @@ html[data-theme="dark"] .sg-mega{background:#1D1F16;border-color:#33362A}
 html[data-theme="dark"] .sg-col a.it{color:#ECEDE4}html[data-theme="dark"] .sg-col a.it:hover{background:#24271C;color:#6FBE94}
 html[data-theme="dark"] .sg-menub{background:#1D1F16;border-color:#33362A;color:#ECEDE4}
 html[data-theme="dark"] .sg-sheet a{color:#ECEDE4;border-color:#33362A}
+html[data-theme="dark"] .sg-backdrop{background:rgba(0,0,0,.55)}
 /* Phones: the Learning Space menu shows only the five sections, one per line, easy to tap. Each opens its page with everything in it. */
 @media (max-width:760px){
   .sg-mega.open{display:block;left:12px!important;width:calc(100vw - 24px)!important;padding:6px 0;max-height:72vh;overflow:auto}
