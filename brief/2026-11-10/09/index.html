@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" class="sgp sgp-brief">
 <head>
+<meta name="robots" content="noindex, nofollow">
 <meta charset="utf-8">
 <script src="../../../assets/signal-theme.js?v=20261126t"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -59,44 +60,17 @@
 :root[data-tone="rose"] .story-srcs a { color:#2A6AA6; }
   
 </style>
-<script>
-(function () {
-  var saved = null;
-  try { saved = localStorage.getItem("aisignal_theme"); } catch (e) {}
-  if (saved === "dark" || saved === "light") {
-    document.documentElement.setAttribute("data-theme", saved);
-  }
-  document.addEventListener("DOMContentLoaded", function () {
-    var btn = document.getElementById("briefTheme");
-    if (!btn) return;
-    var sync = function () {
-      var cur = document.documentElement.getAttribute("data-theme") ||
-        (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
-      btn.textContent = cur === "dark" ? "☀" : "☾";
-    };
-    sync();
-    btn.addEventListener("click", function () {
-      var cur = document.documentElement.getAttribute("data-theme") ||
-        (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
-      var next = cur === "dark" ? "light" : "dark";
-      document.documentElement.setAttribute("data-theme", next);
-      try { localStorage.setItem("aisignal_theme", next); } catch (e) {}
-      sync();
-    });
-  });
-})();
-</script>
+
+<meta name="signal-build" content="2026-11-07.footer1">
+<link rel="stylesheet" href="../../../assets/signal-footer.css?v=2026-11-07.footer1">
 <link rel="stylesheet" href="../../../assets/signal-shell.css?v=20261125">
 <link rel="stylesheet" href="../../../assets/signal-pages.css">
 <link rel="stylesheet" href="../../../assets/signal-brand.css?v=20261125">
 <meta name="sg-stage" content="2">
-
-<meta name="signal-build" content="2026-11-07.footer1">
-<link rel="stylesheet" href="../../../assets/signal-footer.css?v=2026-11-07.footer1">
 <link rel="stylesheet" href="../../../assets/signal-themes.css?v=20261126t">
 </head>
 <body>
-  <div class="brief-topbar"><a class="brief-back" href="https://signal.luzovi.com/brief/"><small>← Back to</small>Signal Brief</a><button class="brief-theme" id="briefTheme" type="button" aria-label="Toggle dark mode">☾</button></div>
+  <div class="brief-topbar"><a class="brief-back" href="https://signal.luzovi.com/brief/"><small>← Back to</small>Signal Brief</a></div>
   <main>
     <span class="story-pill" style="background:var(--cat-pill)">Industry</span>
     <p class="story-dates">Tue, 10 Nov 2026 · 07:00 IST · Source dated 9 Nov 2026</p>
@@ -112,18 +86,18 @@
     (function () {
       var slot = document.getElementById("storyShare");
       if (slot && window.SignalShare) {
-        var spec = {"title": "Anthropic spends $3.4 billion on gas turbines to power AI data centres", "line": "Anthropic has agreed to spend $3.4 billion on 1.7 gigawatts of gas-powered generators, taking over Texas supplier OnePWR Solutions' existing Caterpillar orders placed about two years ago.", "link": "https://signal.luzovi.com/brief/2026-11-10/09/", "tech": "signal", "caption": "Anthropic spends $3.4 billion on gas turbines to power AI data centres\n\nAnthropic has agreed to spend $3.4 billion on 1.7 gigawatts of gas-powered generators, taking over Texas supplier OnePWR Solutions' existing Caterpillar orders placed about two years ago. The deal, reached in late September according to Reuters, also covers engineering and construction work. It lets Anthropic sidestep a waitlist for turbines that averages six years in the United States.\n\nWhy it matters: Securing power generation directly shows that electricity supply, not just chips, now sets the pace for AI data centre expansion, and it ties a leading AI lab to new gas capacity.\n\nSource: Tom's Hardware\n\nRead on Signal Brief, free:\nhttps://signal.luzovi.com/brief/2026-11-10/09/\n\n#TheSignal #TechIndustry"};
-        spec.image = SignalShare.cardImage({"type": "Signal Brief \u00b7 10 Nov 2026", "tech": "signal", "heading": "Anthropic spends $3.4 billion on gas turbines to power AI data centres", "body": "Anthropic has agreed to spend $3.4 billion on 1.7 gigawatts of gas-powered generators, taking over Texas supplier OnePWR Solutions' existing Caterpillar orders placed about two years ago. The deal, reached in late September according to Reuters, also covers engineering and construction work. It lets Anthropic sidestep a waitlist for turbines that averages six years in the United States.", "boxLabel": "Why it matters", "box": "Securing power generation directly shows that electricity supply, not just chips, now sets the pace for AI data centre expansion, and it ties a leading AI lab to new gas capacity.", "source": "Tom's Hardware"}, "signal-brief-2026-11-10-09.png");
+        var spec = {"title": "Anthropic spends $3.4 billion on gas turbines to power AI data centres", "line": "Anthropic has agreed to spend $3.4 billion on 1.7 gigawatts of gas-powered generators, taking over Texas supplier OnePWR Solutions' existing Caterpillar orders placed about two years ago.", "link": "https://signal.luzovi.com/brief/2026-11-10/09/", "caption": "Anthropic spends $3.4 billion on gas turbines to power AI data centres\n\nAnthropic has agreed to spend $3.4 billion on 1.7 gigawatts of gas-powered generators, taking over Texas supplier OnePWR Solutions' existing Caterpillar orders placed about two years ago. The deal, reached in late September according to Reuters, also covers engineering and construction work. It lets Anthropic sidestep a waitlist for turbines that averages six years in the United States.\n\nWhy it matters: Securing power generation directly shows that electricity supply, not just chips, now sets the pace for AI data centre expansion, and it ties a leading AI lab to new gas capacity.\n\nSource: Tom's Hardware\n\nRead on Signal Brief, free:\nhttps://signal.luzovi.com/brief/2026-11-10/09/\n\n#TheSignal #TechIndustry", "tech": "signal"};
+        spec.image = SignalShare.cardImage({"type": "Signal Brief · 10 Nov 2026", "tech": "signal", "heading": "Anthropic spends $3.4 billion on gas turbines to power AI data centres", "body": "Anthropic has agreed to spend $3.4 billion on 1.7 gigawatts of gas-powered generators, taking over Texas supplier OnePWR Solutions' existing Caterpillar orders placed about two years ago. The deal, reached in late September according to Reuters, also covers engineering and construction work. It lets Anthropic sidestep a waitlist for turbines that averages six years in the United States.", "boxLabel": "Why it matters", "box": "Securing power generation directly shows that electricity supply, not just chips, now sets the pace for AI data centre expansion, and it ties a leading AI lab to new gas capacity.", "source": "Tom's Hardware"}, "signal-brief-2026-11-10-09.png");
         slot.appendChild(SignalShare.shareButton(spec));
       }
     })();
   </script>
-<script src="../../../assets/signal-shell.js?v=20261125" defer></script>
 <footer class="signal-footer">
   <div class="sf-follow"><span class="sf-label">Follow along</span><span class="sf-links"><a class="sf-link" href="https://www.linkedin.com/in/thillairaj" target="_blank" rel="noopener"><span class="sf-badge" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.55V9h3.57v11.45z"/></svg></span>Thillai Raj</a><a class="sf-link" href="https://www.linkedin.com/showcase/qu-bits/" target="_blank" rel="noopener"><span class="sf-badge" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.55V9h3.57v11.45z"/></svg></span>QuBits · Quantum &amp; AI</a><a class="sf-link" href="https://www.linkedin.com/showcase/agentic-ai-architect/" target="_blank" rel="noopener"><span class="sf-badge" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.55V9h3.57v11.45z"/></svg></span>Agentic AI Architect</a></span></div>
   <p class="sf-copy">© 2026 The Signal</p>
   <p class="sf-tag">Learn it. Then share it.</p>
 </footer>
 <script src="../../../assets/version-check.js?v=2026-11-07.footer1"></script>
+<script src="../../../assets/signal-shell.js?v=20261126t" defer></script>
 </body>
 </html>
