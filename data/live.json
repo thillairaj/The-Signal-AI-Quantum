@@ -1,28 +1,8 @@
 {
-  "updated": "2026-11-26T20:00:00+05:30",
-  "next_update": "2026-11-26T22:00:00+05:30",
+  "updated": "2026-11-26T22:01:12+05:30",
+  "next_update": "2026-11-27T00:00:00+05:30",
   "delay_hours": 2,
   "items": [
-    {
-      "id": "live-2026-11-25-04",
-      "published": "2026-11-25T20:00:00+05:30",
-      "category": "Cloud & DevOps",
-      "company": "GitHub",
-      "headline": "GitHub recovers from database fault that disrupted Issues, pull requests and Actions",
-      "what": "GitHub reported degraded service across its core products on Wednesday after high database load caused increased failures. Issues and pull requests were unavailable for a time, while Actions, Git operations, Packages, Pages, webhooks and API requests ran with degraded performance. GitHub said it rebalanced database load and began seeing recovery within about half an hour, and reported the degradation mitigated within the hour.",
-      "why": "GitHub hosts code and collaboration workflows for millions of developers, so a fault across its core services stalls software work worldwide until it is fixed.",
-      "financial": false,
-      "sources": [
-        {
-          "label": "GitHub Status",
-          "url": "https://www.githubstatus.com/incidents/qn8mfv6q5hlx"
-        },
-        {
-          "label": "Windows Forum",
-          "url": "https://windowsforum.com/news/github-outage-on-november-25-2026-high-database-load-disrupts-git-actions-and-pull-requests.454087/"
-        }
-      ]
-    },
     {
       "id": "live-2026-11-25-05",
       "published": "2026-11-25T22:00:00+05:30",
