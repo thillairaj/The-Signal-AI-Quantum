@@ -73,7 +73,20 @@
     var mh=document.querySelector('header.masthead,.masthead,header');if(mh&&mh.parentNode)mh.parentNode.insertBefore(row,mh.nextSibling);
     var hs=el('div','sg-sheet');hs.innerHTML='<a href="'+esc(BASE)+'">Home</a><h4>Learning Space</h4><div class="sub">'+MENU.map(function(c){return '<a href="'+esc(c.u)+'">'+esc(c.h)+'</a>'}).join('')+'</div><h4>More</h4><a href="'+esc(BASE+'#podcast')+'">Podcast</a><a href="'+esc(BASE+'#research')+'">Articles</a><a href="'+esc(BASE+'#feed')+'">RSS Feed</a><a href="'+esc(BASE+'#brief')+'">Signal Brief</a><a href="'+esc(BASE+'live/')+'">Live news</a>';if(mh&&mh.parentNode)mh.parentNode.insertBefore(hs,row.nextSibling);
     var names={learn:'Learning Space',podcast:'Podcast',research:'Articles',feed:'RSS Feed',brief:'Signal Brief'};
-    function sync(){var a=document.querySelector('.top-tab.active');var v=a&&a.dataset.view;if(!v||v==='home'){row.style.display='none';return}
+    /* phone tab strip under the path, as on inner pages: it mirrors the
+       page's own tabs and forwards every tap to the real tab button */
+    var strip=el('nav','sg-tabstrip');strip.setAttribute('aria-label','Sections');
+    strip.innerHTML=[].slice.call(document.querySelectorAll('.top-tabs .top-tab')).map(function(t){
+      var inner=t.innerHTML.replace(' id="briefNewBadge"','');
+      if(t.tagName==='A')return '<a class="sg-tab" href="'+t.getAttribute('href')+'">'+inner+'</a>';
+      return '<button type="button" class="sg-tab" data-strip-view="'+t.getAttribute('data-view')+'">'+inner+'</button>';
+    }).join('');
+    if(row.parentNode)row.parentNode.insertBefore(strip,row.nextSibling);
+    strip.addEventListener('click',function(e){var b=e.target.closest('[data-strip-view]');if(!b)return;
+      var orig=document.querySelector('.top-tab[data-view="'+b.getAttribute('data-strip-view')+'"]');if(orig)orig.click()});
+    function sync(){var a=document.querySelector('.top-tab.active');var v=a&&a.dataset.view;
+      strip.querySelectorAll('[data-strip-view]').forEach(function(b){b.classList.toggle('on',b.getAttribute('data-strip-view')===v)});
+      if(!v||v==='home'){row.style.display='none';return}
       row.querySelector('.sg-bc').innerHTML=bcHtml([['Home',BASE+'#home'],[names[v]||v]]);row.style.display=''}
     document.addEventListener('click',function(e){var t=e.target.closest('.top-tab[data-view="learn"]');if(t){e.preventDefault();e.stopPropagation();if(mega.classList.contains('open'))closeMenu();else openMenu(t)}},true);
     new MutationObserver(sync).observe(document.body,{subtree:true,attributes:true,attributeFilter:['class']});addEventListener('hashchange',sync);sync();
@@ -98,7 +111,9 @@
   /* footer: the luzovi.com address on every page; remove the old broken "Follow on LinkedIn" */
   function footer(){document.querySelectorAll('.site-footer .li-txt').forEach(function(e){e.remove()});
     document.querySelectorAll('.signal-footer').forEach(function(f){if(f.querySelector('.sf-luz'))return;var d=document.createElement('div');d.className='sf-luz';d.innerHTML='<a href="https://luzovi.com/">luzovi.com</a>';var fol=f.querySelector('.sf-follow');if(fol&&fol.nextSibling)f.insertBefore(d,fol.nextSibling);else f.appendChild(d)})}
-  /* keep the path row right under the top bar, and slim the front-page masthead once scrolled */
+  /* keep the path row right under the top bar; the scrolled class is kept
+     in sync for the shared chrome (the front-page masthead no longer
+     changes on scroll since the Nov 26, 2026 fixes) */
   function measure(){var sh=document.querySelector('.sg-shell')||document.querySelector('.masthead');if(sh)document.documentElement.style.setProperty('--sg-shell-h',sh.getBoundingClientRect().height+'px')}
   function onScroll(){var on=(window.scrollY||0)>40,h=document.documentElement;if(h.classList.contains('sg-scrolled')!==on){h.classList.toggle('sg-scrolled',on);requestAnimationFrame(measure)}}
   function run(){byLuzovi();footer();measure();onScroll()}
@@ -128,12 +143,15 @@
       if(!document.querySelector('.sg-tabstrip')){var tabs=document.querySelector('.sg-tabs'),row=document.querySelector('.sg-crumbrow');
         if(tabs&&row){var st=document.createElement('nav');st.className='sg-tabstrip';st.setAttribute('aria-label','Sections');st.innerHTML=tabs.innerHTML;row.parentNode.insertBefore(st,row.nextSibling)}}
     }else{
-      var right=document.querySelector('.masthead-right');
-      if(right&&!right.querySelector('.sg-themeb')){
-        var old=document.getElementById('themeToggle'),nb=makeBtn();
-        if(old&&old.parentNode===right)right.insertBefore(nb,old);else right.appendChild(nb);
+      /* front page: the theme button and the menu button are the last two
+         items of the fixed masthead row itself (Nov 26, 2026 fixes), at the
+         same spot as on inner pages; the share / updated row is page
+         content below the header and scrolls away */
+      var mh=document.querySelector('header.masthead');
+      if(mh&&!mh.querySelector('.sg-themeb')){
+        var nb=makeBtn();mh.appendChild(nb);
         var mbtn=document.createElement('button');mbtn.type='button';mbtn.className='sg-menub';mbtn.setAttribute('aria-label','Menu');mbtn.setAttribute('aria-expanded','false');mbtn.textContent='☰';
-        right.insertBefore(mbtn,nb.nextSibling);
+        mh.appendChild(mbtn);
         mbtn.addEventListener('click',function(){var sh=sheetFor();if(sh){sh.classList.toggle('open');mbtn.setAttribute('aria-expanded',sh.classList.contains('open'))}});
       }
     }

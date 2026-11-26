@@ -67,16 +67,25 @@ html[data-theme="dark"] .sg-mega .sg-col h4 a{color:#F1EBDD}
 .sg-shell{position:sticky!important;top:0;z-index:300}
 .sg-crumbrow{position:sticky!important;top:var(--sg-shell-h,57px);z-index:290}
 html[data-theme="dark"] .sg-shell,html[data-theme="dark"] .sg-crumbrow{background:#12100D}
-/* Front page: the masthead (The Signal + the tabs) stays at the top; once scrolled it gets slimmer. */
+/* Front page: the masthead stays at the top. Since the Nov 26, 2026 fixes
+   it is ONE fixed row with the same geometry as the inner pages' top bar
+   (.sg-top): wordmark, tabs, theme button, menu button. Nothing about it
+   changes while scrolling (the old slim switching is removed), and the
+   share / updated row (.sg-statusrow) is ordinary page content below the
+   header that scrolls away. */
 .masthead{position:sticky;top:0;z-index:280;background:var(--bg,#FAF7F1)}
-html.sg-scrolled .masthead{padding-top:8px!important;padding-bottom:6px!important;box-shadow:0 1px 0 #E4DAC6}
-html.sg-scrolled .masthead .brand-h{font-size:24px!important;line-height:1.1}
-html.sg-scrolled .masthead .masthead-right{display:none!important}
-html[data-theme="dark"].sg-scrolled .masthead{box-shadow:0 1px 0 #2C2720}
+.front-masthead{height:62px;padding-top:0;padding-bottom:0;padding-left:20px;padding-right:20px;flex-wrap:nowrap;gap:18px;align-items:center}
+.front-masthead .tabs-bar{margin-left:auto}
+.front-masthead .sg-themeb{flex:0 0 auto}
+.front-masthead .sg-menub{margin-left:0;flex:0 0 auto}
+.sg-statusrow{max-width:1200px;margin:0 auto;padding:8px 20px 0;justify-content:flex-end}
+@media(max-width:999px){
+  .front-masthead .tabs-bar{display:none}
+  .front-masthead .sg-themeb{margin-left:auto}
+}
 /* "by Luzovi" next to the wordmark */
 .sg-by{font:500 12px Figtree,system-ui,sans-serif;letter-spacing:.04em;color:#70675A;margin-left:8px;white-space:nowrap;font-style:normal;vertical-align:middle}
 .brand-h .sg-by{font-size:13px}
-html.sg-scrolled .masthead .brand-h .sg-by{font-size:11px}
 /* Footer: the luzovi.com address; the footer line takes the standard colour instead of gold */
 .signal-footer{border-top-color:#E4DAC6!important}
 .signal-footer .sf-luz{margin-top:10px}
@@ -87,7 +96,6 @@ html.sg-scrolled .masthead .brand-h .sg-by{font-size:11px}
 html[data-tone="rose"] .sg-menub{background:#F9E7EC;border-color:#E2B9C5;color:#2A1A1F}
 html[data-theme="dark"] .sg-by{color:#9D937F}
 html[data-tone="rose"] .sg-by{color:#6F545E}
-html[data-tone="rose"].sg-scrolled .masthead{box-shadow:0 1px 0 #E2B9C5}
 html[data-tone="rose"] .signal-footer{border-top-color:#E2B9C5!important}
 html[data-theme="dark"] .signal-footer{border-top-color:#2C2720!important}
 html[data-tone="rose"] .signal-footer .sf-luz a:hover{color:#2F6A18}

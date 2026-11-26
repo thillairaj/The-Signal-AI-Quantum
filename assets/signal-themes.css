@@ -44,19 +44,14 @@ html[data-theme="light"]:not([data-tone]) .sg-themeb .i-sun,html[data-tone="rose
 .sg-tabstrip::-webkit-scrollbar{display:none}
 .sg-tabstrip .sg-tab{font-size:13.5px;padding:7px 12px}
 @media(max-width:999px){.sg-tabstrip{display:block}}
-/* front page: the theme button and the menu button live in the top row (next to the wordmark) and stay reachable while scrolling.
-   Phones and tablets: both are pinned top right. Laptops: the theme button stays in the header; the tab strip and the Learning Space dropdown remain. */
-@media(max-width:999px){
-  .masthead-right .sg-themeb{position:absolute;top:8px;right:62px;z-index:2}
-  .masthead-right .sg-menub{position:absolute;top:8px;right:14px;z-index:2;display:inline-flex!important;align-items:center;justify-content:center;margin-left:0;width:40px;height:40px;padding:0}
-  html.sg-scrolled .masthead .masthead-right{display:block!important;position:static;height:0;overflow:visible}
-  html.sg-scrolled .masthead .masthead-right>*:not(.sg-themeb):not(.sg-menub){display:none!important}
-}
-@media(min-width:1000px){
-  html.sg-scrolled .masthead .masthead-right{display:flex!important}
-  html.sg-scrolled .masthead .masthead-right>*:not(.sg-themeb){display:none!important}
-}
+/* front page: since the Nov 26, 2026 fixes the theme button and the menu
+   button are ordinary items of the fixed masthead row (see .front-masthead
+   in signal-shell.css), at the same spot as on inner pages; the old
+   absolute pinning and the scrolled switching that moved them are gone. */
 .masthead-right{align-items:center}
+/* the front page phone tab strip mirrors the page's own tabs */
+.sg-tabstrip .tab-num{font:600 10.5px 'IBM Plex Mono',ui-monospace,monospace;margin-right:6px;opacity:.75}
+.sg-tabstrip .tab-new{display:none}
 /* Render-check fixes (Thillai, 26 Nov 2026). In Dark, every pill on the light
    Signal green (#8CC56A) takes dark text: white on that green is 2.0:1. */
 :root[data-theme="dark"] .hm-chip.navy,:root[data-theme="dark"] .top-tab.active,:root[data-theme="dark"] .sg-tab.on,:root[data-theme="dark"] .sg-chip.on,:root[data-theme="dark"] .sg-copy button,:root[data-theme="dark"] .series-btn.active{color:#12100D!important}

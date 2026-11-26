@@ -36,7 +36,7 @@
 </head>
 <body data-view="home">
 
-<header class="masthead">
+<header class="masthead front-masthead">
   <div class="masthead-left">
     <h1 class="brand-h" title="Back to the front page">The <em>Signal</em></h1>
   </div>
@@ -54,15 +54,15 @@
     <span class="tabs-fade" id="tabsFade" aria-hidden="true"></span>
     <button class="rail-btn tab-arrow next" id="tabsNext" type="button" aria-label="Scroll sections right">›</button>
   </div>
-  <div class="masthead-right">
-    <span id="ssPageMount" class="ss-page-mount"></span>
-    <div class="status">
-      <span class="dot" id="statusDot"></span>
-      <span id="statusText">connecting…</span>
-    </div>
-    <div class="views" id="viewsText"></div>
-  </div>
 </header>
+<div class="masthead-right sg-statusrow">
+  <span id="ssPageMount" class="ss-page-mount"></span>
+  <div class="status">
+    <span class="dot" id="statusDot"></span>
+    <span id="statusText">connecting…</span>
+  </div>
+  <div class="views" id="viewsText"></div>
+</div>
 <div id="liveStripMount"></div>
 
 <div class="layout">
