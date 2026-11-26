@@ -1,28 +1,8 @@
 {
-  "updated": "2026-11-26T18:00:00+05:30",
-  "next_update": "2026-11-26T20:00:00+05:30",
+  "updated": "2026-11-26T20:00:00+05:30",
+  "next_update": "2026-11-26T22:00:00+05:30",
   "delay_hours": 2,
   "items": [
-    {
-      "id": "live-2026-11-25-06",
-      "published": "2026-11-25T18:00:00+05:30",
-      "category": "Policy",
-      "company": "US Trade Representative",
-      "headline": "US proposes new tariffs on 14 trading partners, with China facing 20 percent",
-      "what": "The US Trade Representative proposed new tariffs on goods from 14 trading partners, including China, the European Union, India and Japan, after an eight month investigation into excess industrial capacity. China would face a proposed 20 percent duty on top of roughly 25 percent tariffs from the first Trump term, while the European Union would start at 15 percent. The proposal covers steel, aluminium, electric vehicles, appliances, solar products and other goods. It will go through a public comment period and a hearing before it can take effect, which officials said could push implementation into January. The move follows the Supreme Court striking down the administration's earlier sweeping tariffs in February.",
-      "why": "The technology angle is in the goods themselves: the proposal names electric vehicles and solar products among the products Washington says are flooding world markets, and the partner list includes Taiwan, South Korea and Japan, the centre of the chip supply chain, though neither source says semiconductors are themselves in scope. US technology shares took the early hit, with the tech heavy Nasdaq down 0.6 percent at the close after falling more than 4 percent in early trading. The duties are proposed, not final: a public comment period and a hearing come first.",
-      "financial": true,
-      "sources": [
-        {
-          "label": "Reuters",
-          "url": "https://www.reuters.com/world/china/us-proposes-new-tariffs-14-trading-partners-fight-excess-factory-capacity-2026-11-25/"
-        },
-        {
-          "label": "Al Jazeera",
-          "url": "https://www.aljazeera.com/economy/2026/11/25/world-reacts-to-trumps-new-tariffs-as-us-stocks-tumble?traffic_source=rss"
-        }
-      ]
-    },
     {
       "id": "live-2026-11-25-04",
       "published": "2026-11-25T20:00:00+05:30",
@@ -80,6 +60,26 @@
         {
           "label": "TechCrunch",
           "url": "https://techcrunch.com/2026/11/25/1password-said-hackers-broke-into-its-internal-systems-but-customer-passwords-are-safe/"
+        }
+      ]
+    },
+    {
+      "id": "live-2026-11-26-05",
+      "published": "2026-11-26T00:00:00+05:30",
+      "category": "Cybersecurity",
+      "company": "Linux kernel",
+      "headline": "Critical Linux kernel flaw gives unauthenticated remote root on NFS servers",
+      "what": "Security firm OpenSec disclosed a pre-authentication heap overflow in the Linux kernel NFS server, tracked as CVE-2026-99362 and scored 9.8 out of 10. A single TCP connection to port 2049 can write past a kernel heap object, and OpenSec's automated harness chained the flaw into a full root shell. The bug has been present since Linux 3.16 in 2014. Fixes are available in kernels 6.12.117, 6.18.61, 7.3.2 and 7.4-rc1, with backports for older long term branches. No exploitation in the wild has been reported and the exploit itself stays private.",
+      "why": "The NFS server runs inside the Linux kernel and parses network input before it knows who sent it, so the flaw reaches the most privileged layer with no login at all. File servers, NAS boxes, build farms and Kubernetes storage nodes that expose port 2049 are at risk. Patching the kernel and rebooting closes it, and blocking port 2049 at the firewall is the stopgap where patching cannot happen yet.",
+      "financial": false,
+      "sources": [
+        {
+          "label": "OpenSec",
+          "url": "https://opensec.in/blog/nfs2root-cve-2026-99362"
+        },
+        {
+          "label": "Cybernews",
+          "url": "https://cybernews.com/security/nfs2root-linux-kernel-vulnerability-exposes-nas-kubernetes/"
         }
       ]
     },
