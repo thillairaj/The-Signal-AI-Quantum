@@ -671,6 +671,13 @@ def postprocess():
         steps.append([sys.executable, str(_theme_layer)])
     else:
         print("postprocess apply_theme_layer.py: skipped (not in target repo)")
+    # Icon layer (Thillai, Nov 26, 2026): every new page is born with the
+    # Luzovi tab icon block. Guarded the same way as the theme layer.
+    _icon_layer = ROOT / "apply_icon_layer.py"
+    if _icon_layer.exists():
+        steps.append([sys.executable, str(_icon_layer)])
+    else:
+        print("postprocess apply_icon_layer.py: skipped (not in target repo)")
     for cmd in steps:
         try:
             r = subprocess.run(cmd, cwd=str(ROOT), capture_output=True,
