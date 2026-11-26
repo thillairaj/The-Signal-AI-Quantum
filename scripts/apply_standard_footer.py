@@ -4,8 +4,9 @@
 Applies, to every full HTML page under the site root:
   1. Removes every old per-page credit line ("Curated by ... Follow on LinkedIn")
      in all its variants; a footer left empty by the removal is removed too.
-  2. Injects the ONE standard footer (Follow along row with the three LinkedIn
-     links, the copyright line and the tagline) from FOOTER_TEMPLATE below.
+  2. Injects the ONE standard footer (Follow along row with the four LinkedIn
+     links, Luzovi first since Nov 26, 2026, the copyright line and the
+     tagline) from FOOTER_TEMPLATE below.
   3. Stamps the build id: <meta name="signal-build"> in <head>, the shared
      assets/signal-footer.css link, and the assets/version-check.js script.
   4. Writes /version.json with the same build id.
@@ -36,6 +37,7 @@ FOOTER_TEMPLATE = (
     '<footer class="signal-footer">\n'
     '  <div class="sf-follow"><span class="sf-label">Follow along</span>'
     '<span class="sf-links">'
+    + sf_link('https://www.linkedin.com/company/luzovi/', 'Luzovi')
     + sf_link('https://www.linkedin.com/in/thillairaj', 'Thillai Raj')
     + sf_link('https://www.linkedin.com/showcase/qu-bits/', 'QuBits · Quantum &amp; AI')
     + sf_link('https://www.linkedin.com/showcase/agentic-ai-architect/', 'Agentic AI Architect')
