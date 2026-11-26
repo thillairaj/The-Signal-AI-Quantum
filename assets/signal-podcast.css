@@ -21,3 +21,5 @@
 .sg-follow-jump a{color:var(--sg-brand,#3F7D20);text-decoration:none;border-bottom:1px solid currentColor}
 #sg-listen{scroll-margin-top:120px}
 .pod-more{margin:16px 0 0}
+/* Themes step 2 (preview): the copied-state button takes the Rose Signal shade. */
+:root[data-tone="rose"] .sg-copy button.ok{background:#2F6A18}
