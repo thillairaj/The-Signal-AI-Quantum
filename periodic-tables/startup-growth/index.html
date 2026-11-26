@@ -239,7 +239,7 @@ html[data-theme="light"] #detail .d-cat[data-cat="revenue"]{color:#af6005}
 <link rel="stylesheet" href="../../assets/signal-themes.css?v=20261126t">
 </head>
 <body>
-<div class="sgp-head"><button class="theme-toggle" id="themeToggle" type="button" aria-label="Switch light or dark theme" title="Switch light / dark theme">☀</button><h1 class="sgp-h1">Startup Growth for Founders</h1><p class="sgp-sub">57 terms in plain business language.</p></div>
+<div class="sgp-head"><h1 class="sgp-h1">Startup Growth for Founders</h1><p class="sgp-sub">57 terms in plain business language.</p></div>
 
 <div class="toolbar">
   <div class="navrow"><a class="navcard back" href="../../#learn-tables-founders"><span class="nc-dir">← Back to</span><span class="nc-title">Learning Spaces</span></a><span class="navside"><a class="navcard prev" href="../founder-finance/"><span class="nc-dir">← Previous</span><span class="nc-title">Founder Finance Periodic Table</span></a><a class="navcard next" href="../leadership/"><span class="nc-dir">Next →</span><span class="nc-title">Leadership Keywords</span></a></span></div>
@@ -430,20 +430,6 @@ document.getElementById('resetBtn').addEventListener('click',()=>{
   document.querySelectorAll('.chip').forEach(x=>x.classList.remove('active')); applyFilter();
 });
 document.addEventListener('keydown',e=>{if(e.key==='Escape')closeDetail();});
-/* Theme toggle: saved choice wins, otherwise dark (the original look) */
-const themeBtn=document.getElementById('themeToggle');
-function applyTheme(th){
-  document.documentElement.setAttribute('data-theme',th);
-  themeBtn.textContent = th==='light' ? '☾' : '☀';
-  try{localStorage.setItem('startup_growth_theme',th);}catch(e){}
-}
-let savedTheme='dark';
-try{savedTheme=localStorage.getItem('startup_growth_theme')||'light';}catch(e){}
-applyTheme(savedTheme==='light'?'light':'dark');
-themeBtn.addEventListener('click',()=>{
-  const cur=document.documentElement.getAttribute('data-theme')==='light'?'light':'dark';
-  applyTheme(cur==='light'?'dark':'light');
-});
 render();
 </script>
 <script>
