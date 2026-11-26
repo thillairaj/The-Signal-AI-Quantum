@@ -920,3 +920,38 @@ body[data-view="research"] .feed-only { display: none; }
 /* games door cards: reuse the existing explainer tint for daily puzzles and the deck tints for learning games */
 .learn-card.game-daily { background-color: #F3EDDE; border: 1px solid #D8C9A3; }
 .learn-card.game-daily:hover { background-color: #E9DDC0; border-color: #B99F5F; }
+
+/* ---------- Themes step 2 (preview): Rose values for the front page's
+   hard-coded colours. The navy and gold accents already mapped to the
+   standard tokens in signal-standard.css and signal-brand.css follow the
+   themes through var(--sg-*); the tinted learn cards keep their family
+   tints in all three themes (as they do in Dark today), with dark text. */
+:root[data-tone="rose"] .ft-tip b{color:#8F5C10}
+:root[data-tone="rose"] .rail-btn:focus-visible{outline-color:#8F5C10}
+:root[data-tone="rose"] .learn-play{color:#8F5C10}
+:root[data-tone="rose"] .learn-open{color:#8F5C10}
+:root[data-tone="rose"] .pod-hl{outline-color:#8F5C10}
+/* family dots take the theme's own shade of each technology colour */
+:root[data-tone="rose"] .fam-dot.fam-founders{background:#8F5C10}
+:root[data-tone="rose"] .fam-dot.fam-quantum{background:#6A47B0}
+:root[data-tone="rose"] .fam-dot.fam-ai{background:#2A6AA6}
+:root[data-tone="rose"] .fam-dot.fam-cloud{background:#176A5F}
+:root[data-tone="rose"] .fam-dot.fam-cyber{background:#9A2620}
+:root[data-theme="dark"] .fam-dot.fam-founders{background:#E0A85A}
+:root[data-theme="dark"] .fam-dot.fam-quantum{background:#A78BDB}
+:root[data-theme="dark"] .fam-dot.fam-ai{background:#7FB3E0}
+:root[data-theme="dark"] .fam-dot.fam-cloud{background:#5FBFA9}
+:root[data-theme="dark"] .fam-dot.fam-cyber{background:#E58A80}
+/* the near-white video card base and the dashed coming-soon card take the Rose card */
+:root[data-tone="rose"] .learn-card.video-bot,:root[data-tone="rose"] .learn-card.video-assistants{background-color:#F9E7EC;border-color:#E2B9C5}
+:root[data-tone="rose"] .learn-card.video-bot:hover,:root[data-tone="rose"] .learn-card.video-assistants:hover{background-color:#EDCBD5;border-color:#E2B9C5}
+:root[data-tone="rose"] .learn-card.game-soon{background-color:#F9E7EC;border-color:#E2B9C5}
+/* Play and Learn launch pop-up on Rose */
+:root[data-tone="rose"] .games-popup{background:#F9E7EC;border-color:#E2B9C5}
+:root[data-tone="rose"] .games-popup-kicker{color:#6A47B0}
+:root[data-tone="rose"] .games-popup p{color:#4F3A41}
+:root[data-tone="rose"] .games-popup-close{color:#7A5F68}
+:root[data-tone="rose"] .games-popup-close:hover{background:#EDCBD5}
+:root[data-tone="rose"] .games-popup-go{background:#6A47B0;color:#FFF8E7}
+:root[data-tone="rose"] .games-popup-go:hover{background:#573A94}
+:root[data-tone="rose"] .games-popup-later{color:#4F3A41;border-color:#E2B9C5}
