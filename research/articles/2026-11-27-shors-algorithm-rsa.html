@@ -1,0 +1,15 @@
+<p><em>Signal Research Notes is an original-research series on The Signal, published three times a week. Each edition asks one question, works through it from primary sources, and keeps confirmed facts separate from analysis. Sources are linked at the end.</em></p>
+
+<p>In 1994, Peter Shor showed a quantum computer could factor large numbers in polynomial time. RSA rests on factoring, and Diffie-Hellman and elliptic curve schemes rest on discrete logarithms, so one algorithm threatens most public key cryptography on the internet. The threat is real in theory and absent in practice: no RSA key has ever been factored by a quantum computer, and the largest number factored without shortcuts is 35.</p>
+
+<h3>Factoring is really a clock problem</h3>
+
+<p>Shor's trick is to stop hunting for factors. Pick a number a that shares no factor with N. Compute a, a squared, a cubed, and so on modulo N. Modular arithmetic wraps around, so the sequence repeats with some period r. If r is even, then a to the power r/2 minus 1 and plus 1 usually share a factor with N, and a greatest common divisor reveals it. The hard part is finding r: classically, finding the period is no easier than factoring itself.</p>
+
+<h3>Where the quantum computer earns its keep</h3>
+
+<p>A quantum computer evaluates the sequence for all exponents at once in superposition, then applies a quantum Fourier transform. The transform concentrates probability on outcomes that encode the period, so a few runs reveal r. The classical steps are cheap. The quantum step is the whole advantage: an exponential speedup from interference, not from trying factors faster.</p>
+
+<h3>What it would actually take</h3>
+
+<p>On October 29, 2026, Alice and Bob with Inria, CEA and the University of Edinburgh published a full compilation of Shor's algorithm onto superconducting cat qubits (IACR ePrint 2026/2665): 22,593 physical qubits and 3.14 days to factor one RSA-2048 key, and 29,588 qubits in about an hour for a 256-bit elliptic curve key. That is roughly 40 times fewer than Google Quantum AI's May 2025 estimate of under one million. The catch is the assumption of no bit-flip errors, while the largest published cat-qubit chip holds 12 qubits. Estimates keep falling while hardware stands still, which is why NIST's calendar, 112-bit RSA and ECC deprecated after 2030 and disallowed after 2035, reads as a deadline, not an attack date.</p>

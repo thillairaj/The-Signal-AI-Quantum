@@ -4,8 +4,26 @@
     <title>Signal Brief · Quantum</title>
     <link>https://signal.luzovi.com/brief/</link>
     <description>Signal Brief: the day in technology, in The Signal's own words. Every item is written from linked official sources and fact checked before publication.</description>
-    <lastBuildDate>Thu, 26 Nov 2026 01:48:34 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 27 Nov 2026 01:40:25 +0000</lastBuildDate>
     <atom:link xmlns:atom="http://www.w3.org/2005/Atom" href="https://signal.luzovi.com/signal/quantum.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>SAP plugs a quantum computer into its enterprise software for the first time</title>
+      <link>https://signal.luzovi.com/brief/2026-11-27/03/</link>
+      <guid isPermaLink="false">brief-2026-11-27-03</guid>
+      <pubDate>Fri, 27 Nov 2026 01:30:00 +0000</pubDate>
+      <category>Quantum</category>
+      <description>SAP and planqc demonstrated a cloud interface connecting SAP applications to planqc's neutral-atom quantum computing platform, the first live integration of its kind. In a logistics demo at Quantum Day Munich, an SAP process sent a beverage truck-loading problem to a quantum simulator and received the loading plan back inside the SAP workflow. The companies plan to start testing business applications on planqc's real quantum hardware in 2027, and SAP is building a dedicated quantum team in Munich. Why it matters for tech: It moves quantum computing from standalone experiments into the business software where logistics decisions are actually made.</description>
+      <content:encoded><![CDATA[<p>SAP and planqc demonstrated a cloud interface connecting SAP applications to planqc's neutral-atom quantum computing platform, the first live integration of its kind. In a logistics demo at Quantum Day Munich, an SAP process sent a beverage truck-loading problem to a quantum simulator and received the loading plan back inside the SAP workflow. The companies plan to start testing business applications on planqc's real quantum hardware in 2027, and SAP is building a dedicated quantum team in Munich.</p><p><strong>Why it matters for tech:</strong> It moves quantum computing from standalone experiments into the business software where logistics decisions are actually made.</p><p>Source: </p><ul><li><a href="https://thequantuminsider.com/2026/11/26/sap-and-planqc-expand-quantum-computing-partnership-plan-hardware-tests-in-2027/">The Quantum Insider</a></li></ul>]]></content:encoded>
+    </item>
+    <item>
+      <title>Equal1, NVIDIA and Dell squeeze a hybrid quantum-classical system into one server rack</title>
+      <link>https://signal.luzovi.com/brief/2026-11-27/04/</link>
+      <guid isPermaLink="false">brief-2026-11-27-04</guid>
+      <pubDate>Fri, 27 Nov 2026 01:30:00 +0000</pubDate>
+      <category>Quantum</category>
+      <description>Equal1, NVIDIA and Dell demonstrated a hybrid quantum-classical system at the SC26 supercomputing conference in Chicago, pairing Equal1's 1.6 kW rack-mounted RacQ silicon quantum computer with Dell servers in a standard rack. NVIDIA's software handles automated gate tuning and low-latency links between the quantum processor and GPUs, while Dell's Quantum Intelligent Orchestrator coordinates work across the two kinds of hardware. The setup is aimed at running quantum and classical steps together in real time, rather than treating the quantum machine as a separate system. Why it matters for tech: Fitting quantum hardware into standard data-centre racks is a practical step toward running hybrid workloads where classical computing already lives.</description>
+      <content:encoded><![CDATA[<p>Equal1, NVIDIA and Dell demonstrated a hybrid quantum-classical system at the SC26 supercomputing conference in Chicago, pairing Equal1's 1.6 kW rack-mounted RacQ silicon quantum computer with Dell servers in a standard rack. NVIDIA's software handles automated gate tuning and low-latency links between the quantum processor and GPUs, while Dell's Quantum Intelligent Orchestrator coordinates work across the two kinds of hardware. The setup is aimed at running quantum and classical steps together in real time, rather than treating the quantum machine as a separate system.</p><p><strong>Why it matters for tech:</strong> Fitting quantum hardware into standard data-centre racks is a practical step toward running hybrid workloads where classical computing already lives.</p><p>Source: </p><ul><li><a href="https://quantumcomputingreport.com/equal1-nvidia-and-dell-technologies-demonstrate-real-time-hybrid-quantum-classical-rack-integration-at-sc26/">Quantum Computing Report</a></li></ul>]]></content:encoded>
+    </item>
     <item>
       <title>IQM to install a 54-qubit computer at a Seoul data centre</title>
       <link>https://signal.luzovi.com/brief/2026-11-26/03/</link>

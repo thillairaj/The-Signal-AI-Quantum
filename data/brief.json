@@ -4571,6 +4571,188 @@
      "why": "Two national agencies have now confirmed AI agents carrying out real intrusions, which makes patching and exposure reduction an immediate operational issue for infrastructure operators."
     }
    ]
+  },
+  {
+   "date": "2026-11-27",
+   "items": [
+    {
+     "id": "brief-2026-11-27-01",
+     "category": "AI",
+     "company": "OpenAI",
+     "headline": "OpenAI fixes a billing bug that made GPT-6.2 cheaper to run, so usage limits now arrive faster",
+     "summary": "OpenAI fixed a billing error that had been discounting usage of its GPT-6.2 Astra and Sol models, so the same work now consumes more of a subscriber's allowance. An OpenAI engineer said users will reach their limits 40% faster on GPT-6.2 Astra and 25% faster on Sol, though both models still use allowance more efficiently than their predecessors. As compensation, OpenAI is adding one banked usage reset for subscribers on Go, Plus, Pro and Business plans, and says it will not charge for the usage difference caused by the mistake.",
+     "why": "It shows how a metering error can change what subscribers actually get from a plan, and why model pricing deserves the same scrutiny as model capability.",
+     "source_date": "2026-11-26",
+     "sources": [
+      {
+       "label": "BleepingComputer",
+       "url": "https://www.bleepingcomputer.com/news/artificial-intelligence/openai-warns-gpt-62-astra-will-hit-usage-limits-40-percent-faster-because-it-fixed-a-bug/"
+      }
+     ]
+    },
+    {
+     "id": "brief-2026-11-27-02",
+     "category": "AI",
+     "company": "NVIDIA",
+     "headline": "NVIDIA opens up its document parser's training data and makes it run faster",
+     "summary": "NVIDIA published the training data, fine-tuning recipe and faster inference setup behind Nemotron 3.5 Parse, a compact model that turns page images into structured data for retrieval and agents. The release includes three synthetic datasets totalling about 18.9 million examples, covering charts, tables and multilingual pages, plus a training recipe built on supervised fine-tuning and reinforcement learning. A new DFlash2 speculative decoder lifts throughput to 20.44 pages per second on a single H200 at high concurrency, against 2.98 for the previous version.",
+     "why": "Open training data and a faster parser lower the cost of building document AI, and give teams a recipe to adapt the model to their own documents.",
+     "source_date": "2026-11-26",
+     "sources": [
+      {
+       "label": "Hugging Face Blog",
+       "url": "https://huggingface.co/blog/nvidia/building-on-nemotron-35-parse-open-data-fine-tunin"
+      }
+     ]
+    },
+    {
+     "id": "brief-2026-11-27-03",
+     "category": "Quantum",
+     "company": "SAP",
+     "headline": "SAP plugs a quantum computer into its enterprise software for the first time",
+     "summary": "SAP and planqc demonstrated a cloud interface connecting SAP applications to planqc's neutral-atom quantum computing platform, the first live integration of its kind. In a logistics demo at Quantum Day Munich, an SAP process sent a beverage truck-loading problem to a quantum simulator and received the loading plan back inside the SAP workflow. The companies plan to start testing business applications on planqc's real quantum hardware in 2027, and SAP is building a dedicated quantum team in Munich.",
+     "why": "It moves quantum computing from standalone experiments into the business software where logistics decisions are actually made.",
+     "source_date": "2026-11-26",
+     "sources": [
+      {
+       "label": "The Quantum Insider",
+       "url": "https://thequantuminsider.com/2026/11/26/sap-and-planqc-expand-quantum-computing-partnership-plan-hardware-tests-in-2027/"
+      }
+     ]
+    },
+    {
+     "id": "brief-2026-11-27-04",
+     "category": "Quantum",
+     "company": "Equal1",
+     "headline": "Equal1, NVIDIA and Dell squeeze a hybrid quantum-classical system into one server rack",
+     "summary": "Equal1, NVIDIA and Dell demonstrated a hybrid quantum-classical system at the SC26 supercomputing conference in Chicago, pairing Equal1's 1.6 kW rack-mounted RacQ silicon quantum computer with Dell servers in a standard rack. NVIDIA's software handles automated gate tuning and low-latency links between the quantum processor and GPUs, while Dell's Quantum Intelligent Orchestrator coordinates work across the two kinds of hardware. The setup is aimed at running quantum and classical steps together in real time, rather than treating the quantum machine as a separate system.",
+     "why": "Fitting quantum hardware into standard data-centre racks is a practical step toward running hybrid workloads where classical computing already lives.",
+     "source_date": "2026-11-26",
+     "sources": [
+      {
+       "label": "Quantum Computing Report",
+       "url": "https://quantumcomputingreport.com/equal1-nvidia-and-dell-technologies-demonstrate-real-time-hybrid-quantum-classical-rack-integration-at-sc26/"
+      }
+     ]
+    },
+    {
+     "id": "brief-2026-11-27-05",
+     "category": "Cloud & DevOps",
+     "company": "Cognition",
+     "headline": "Cognition's new engineers build entirely through Devin without downloading the code",
+     "summary": "Cognition co-founder and CEO Scott Wu said new engineers joining the company no longer download code to their machines, pull up a terminal or run commands, and instead build entirely through the Devin coding agent. Over about a year, Cognition doubled its engineering headcount while increasing merged pull requests 20-fold, roughly ten times as many per engineer. Wu estimated about 90% of the company's internal Devin usage is now automated, with no human trigger, and said one large banking customer was on track to merge 250,000 pull requests with Devin in October.",
+     "why": "It is a concrete example of an engineering organisation reorganising itself around agents, and a test of whether that model holds up at scale.",
+     "source_date": "2026-11-26",
+     "sources": [
+      {
+       "label": "The New Stack",
+       "url": "https://thenewstack.io/cognition-devin-automated-engineering/"
+      }
+     ]
+    },
+    {
+     "id": "brief-2026-11-27-06",
+     "category": "Cybersecurity",
+     "company": "GitHub",
+     "headline": "North Korea-linked campaign poisoned more than 7,600 GitHub repositories",
+     "summary": "A campaign linked to North Korean threat actors, tracked as PolinRider, planted a small Python loader in GitHub repositories, with researchers counting at least 7,609 affected repositories owned by 2,330 accounts. The loader hides in a utilities package or test configuration file and reads its command server address from transactions on an Ethereum wallet, so taking down a server does not stop it. The campaign also uses fake hiring portals and hijacked maintainer accounts, and more than 2,000 repositories were hit in a wave between 27 October and 6 November.",
+     "why": "It turns trusted open-source repositories into malware delivery, so developers need to treat even familiar projects as untrusted until checked.",
+     "source_date": "2026-11-26",
+     "sources": [
+      {
+       "label": "The Hacker News",
+       "url": "https://thehackernews.com/2026/11/north-korea-linked-polinrider-poisons.html"
+      }
+     ]
+    },
+    {
+     "id": "brief-2026-11-27-07",
+     "category": "Cybersecurity",
+     "company": "Drupal",
+     "headline": "Drupal warns of a highly critical flaw already being exploited to take over sites",
+     "summary": "Drupal disclosed a highly critical flaw in its core software, tracked as CVE-2026-136716, and said it is already being exploited in the wild. The flaw affects sites left in unusual or incomplete installation states after an earlier installer fix, and can lead to full site takeover; sites that secured their installer are not affected. Fixed versions are available for supported branches, including 11.4.14, 11.3.23 and 10.6.23, while older branches have no fix. Researchers counted about 55,800 internet-facing Drupal sites, with roughly 31,500 running branches affected by the earlier installer issue.",
+     "why": "An exploited flaw in a widely used content platform puts site owners on a short clock to patch and check their administrator accounts.",
+     "source_date": "2026-11-26",
+     "sources": [
+      {
+       "label": "The Hacker News",
+       "url": "https://thehackernews.com/2026/11/drupal-warns-of-new-highly-critical.html"
+      }
+     ]
+    },
+    {
+     "id": "brief-2026-11-27-08",
+     "category": "Industry",
+     "company": "Quantum Australia",
+     "headline": "Global investors line up to scout Australia's quantum industry at its 2027 conference",
+     "summary": "Quantum Australia said international investment firms including the Novo Nordisk Foundation, ACTAI Ventures, Serendipity Capital and Playground Global will attend its February 2027 conference in Sydney to explore co-investment in Australian quantum companies. The 2027 event is expected to draw more than 1,000 delegates, up from over 800 attendees and 18 international delegations in 2026, with an added Asia-Pacific startup competition. The move follows a year in which Australian quantum companies drew global attention, including Diraq advancing to the final stage of DARPA's utility-scale assessment program and 26 new quantum companies emerging from national commercialisation programs in 18 months.",
+     "why": "It shows capital following quantum capability into new regions, and gives Australian startups a direct route to global investors and customers.",
+     "source_date": "2026-11-26",
+     "sources": [
+      {
+       "label": "The Quantum Insider",
+       "url": "https://thequantuminsider.com/2026/11/26/global-investors-explore-australia-quantum-industry-2027-conference/"
+      }
+     ]
+    },
+    {
+     "id": "brief-2026-11-27-09",
+     "category": "Policy",
+     "company": "Temu",
+     "headline": "Temu agrees to drop forced games, fake discounts and pressure selling across the EU",
+     "summary": "Temu committed to bringing several of its commercial practices in line with EU consumer protection rules, after coordinated action by the European Commission and national consumer authorities in Belgium, Germany and Ireland. The commitments cover fake discounts, fake reviews, pressure selling, forced gamification and missing or misleading information, including an end to features that made users spin a wheel to reach the marketplace and to 'almost sold out' messages. Temu will also process refunds within 14 days, screen reviews for fakes before publication, and show taxes and fees before checkout. National authorities will monitor compliance, and failure to comply can bring fines of 4% or more of Temu's annual turnover in the member states concerned.",
+     "why": "It sets a binding baseline for how large marketplaces may present prices, reviews and promotions to consumers in the EU.",
+     "source_date": "2026-11-26",
+     "sources": [
+      {
+       "label": "European Commission",
+       "url": "https://ec.europa.eu/commission/presscorner/detail/en/ip_26_2594"
+      },
+      {
+       "label": "Reuters",
+       "url": "https://www.reuters.com/business/retail-consumer/temu-commits-changing-some-its-commercial-practices-eu-commission-says-2026-11-26/"
+      }
+     ]
+    },
+    {
+     "id": "brief-2026-11-27-10",
+     "category": "Policy",
+     "company": "Character.AI",
+     "headline": "42 state attorneys general ask a court to block the auction of Character.AI users' chats",
+     "summary": "A bipartisan coalition of 42 state attorneys general is asking a bankruptcy court to reject Character.AI's plan to auction its platform and the private chat histories of more than 21 million US accounts, including more than 2.1 million registered to minors. The attorneys general say the sale, scheduled for 1 December, places no requirements on the buyer to honour existing privacy policies or delete user data, and the only bidder disclosed so far, Smirks and Pangs Acquisition LLC, was set up on 13 November with no parent company or investors named. Character.AI filed for bankruptcy in October, and Disney has since bought some of its assets and hired its chief executive. New York, Connecticut, California and Colorado have passed chatbot laws that take effect on 1 January 2027.",
+     "why": "It tests whether bankruptcy can be used to sell private conversations despite promises they would not be sold, and what protections survive a sale.",
+     "source_date": "2026-11-26",
+     "sources": [
+      {
+       "label": "The Verge",
+       "url": "https://www.theverge.com/policy/1042620/character-ai-sale-state-ags-block-selling-users-chats"
+      },
+      {
+       "label": "Connecticut Attorney General",
+       "url": "https://portal.ct.gov/ag/press-releases/2026-press-releases/attorney-general-tong-challenges-plan-to-auction-off-character-ai-private-chats"
+      }
+     ]
+    },
+    {
+     "id": "brief-2026-11-27-11",
+     "category": "Policy",
+     "company": "Nordic Council of Ministers",
+     "headline": "Nordic ministers sign a joint declaration to coordinate quantum research",
+     "summary": "Education and research ministers from the Nordic countries signed a joint declaration in Copenhagen on 26 November to work more closely on quantum research facilities, workforce training and commercialisation. The declaration, adopted by the Nordic Council of Ministers for Education and Research, sets up a cross-sector working group to follow up on a May 2025 agreement among Nordic prime ministers, and points to the NordForsk organisation as a way for researchers to share facilities across borders. The ministers said closer coordination could help turn laboratory findings into technologies businesses can use, and cited growing international competition over critical technologies.",
+     "why": "It pools the region's research facilities and talent behind one quantum plan, instead of leaving each country to fund and build alone.",
+     "source_date": "2026-11-26",
+     "sources": [
+      {
+       "label": "Nordic Co-operation",
+       "url": "https://www.norden.org/en/news/nordic-region-be-world-leading-destination-quantum-technology"
+      },
+      {
+       "label": "The Quantum Insider",
+       "url": "https://thequantuminsider.com/2026/11/26/nordic-ministers-pledge-closer-cooperation-on-quantum-research/"
+      }
+     ]
+    }
+   ]
   }
  ]
 }

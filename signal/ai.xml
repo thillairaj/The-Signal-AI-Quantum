@@ -4,8 +4,26 @@
     <title>Signal Brief · AI</title>
     <link>https://signal.luzovi.com/brief/</link>
     <description>Signal Brief: the day in technology, in The Signal's own words. Every item is written from linked official sources and fact checked before publication.</description>
-    <lastBuildDate>Thu, 26 Nov 2026 01:48:34 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 27 Nov 2026 01:40:25 +0000</lastBuildDate>
     <atom:link xmlns:atom="http://www.w3.org/2005/Atom" href="https://signal.luzovi.com/signal/ai.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>OpenAI fixes a billing bug that made GPT-6.2 cheaper to run, so usage limits now arrive faster</title>
+      <link>https://signal.luzovi.com/brief/2026-11-27/01/</link>
+      <guid isPermaLink="false">brief-2026-11-27-01</guid>
+      <pubDate>Fri, 27 Nov 2026 01:30:00 +0000</pubDate>
+      <category>AI</category>
+      <description>OpenAI fixed a billing error that had been discounting usage of its GPT-6.2 Astra and Sol models, so the same work now consumes more of a subscriber's allowance. An OpenAI engineer said users will reach their limits 40% faster on GPT-6.2 Astra and 25% faster on Sol, though both models still use allowance more efficiently than their predecessors. As compensation, OpenAI is adding one banked usage reset for subscribers on Go, Plus, Pro and Business plans, and says it will not charge for the usage difference caused by the mistake. Why it matters for tech: It shows how a metering error can change what subscribers actually get from a plan, and why model pricing deserves the same scrutiny as model capability.</description>
+      <content:encoded><![CDATA[<p>OpenAI fixed a billing error that had been discounting usage of its GPT-6.2 Astra and Sol models, so the same work now consumes more of a subscriber's allowance. An OpenAI engineer said users will reach their limits 40% faster on GPT-6.2 Astra and 25% faster on Sol, though both models still use allowance more efficiently than their predecessors. As compensation, OpenAI is adding one banked usage reset for subscribers on Go, Plus, Pro and Business plans, and says it will not charge for the usage difference caused by the mistake.</p><p><strong>Why it matters for tech:</strong> It shows how a metering error can change what subscribers actually get from a plan, and why model pricing deserves the same scrutiny as model capability.</p><p>Source: </p><ul><li><a href="https://www.bleepingcomputer.com/news/artificial-intelligence/openai-warns-gpt-62-astra-will-hit-usage-limits-40-percent-faster-because-it-fixed-a-bug/">BleepingComputer</a></li></ul>]]></content:encoded>
+    </item>
+    <item>
+      <title>NVIDIA opens up its document parser's training data and makes it run faster</title>
+      <link>https://signal.luzovi.com/brief/2026-11-27/02/</link>
+      <guid isPermaLink="false">brief-2026-11-27-02</guid>
+      <pubDate>Fri, 27 Nov 2026 01:30:00 +0000</pubDate>
+      <category>AI</category>
+      <description>NVIDIA published the training data, fine-tuning recipe and faster inference setup behind Nemotron 3.5 Parse, a compact model that turns page images into structured data for retrieval and agents. The release includes three synthetic datasets totalling about 18.9 million examples, covering charts, tables and multilingual pages, plus a training recipe built on supervised fine-tuning and reinforcement learning. A new DFlash2 speculative decoder lifts throughput to 20.44 pages per second on a single H200 at high concurrency, against 2.98 for the previous version. Why it matters for tech: Open training data and a faster parser lower the cost of building document AI, and give teams a recipe to adapt the model to their own documents.</description>
+      <content:encoded><![CDATA[<p>NVIDIA published the training data, fine-tuning recipe and faster inference setup behind Nemotron 3.5 Parse, a compact model that turns page images into structured data for retrieval and agents. The release includes three synthetic datasets totalling about 18.9 million examples, covering charts, tables and multilingual pages, plus a training recipe built on supervised fine-tuning and reinforcement learning. A new DFlash2 speculative decoder lifts throughput to 20.44 pages per second on a single H200 at high concurrency, against 2.98 for the previous version.</p><p><strong>Why it matters for tech:</strong> Open training data and a faster parser lower the cost of building document AI, and give teams a recipe to adapt the model to their own documents.</p><p>Source: </p><ul><li><a href="https://huggingface.co/blog/nvidia/building-on-nemotron-35-parse-open-data-fine-tunin">Hugging Face Blog</a></li></ul>]]></content:encoded>
+    </item>
     <item>
       <title>Anthropic set 1,700 traps for Claude to test whether coding agents escape their sandboxes</title>
       <link>https://signal.luzovi.com/brief/2026-11-26/01/</link>

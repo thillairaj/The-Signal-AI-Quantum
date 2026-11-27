@@ -4,8 +4,26 @@
     <title>Signal Brief · Cybersecurity</title>
     <link>https://signal.luzovi.com/brief/</link>
     <description>Signal Brief: the day in technology, in The Signal's own words. Every item is written from linked official sources and fact checked before publication.</description>
-    <lastBuildDate>Thu, 26 Nov 2026 01:48:34 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 27 Nov 2026 01:40:25 +0000</lastBuildDate>
     <atom:link xmlns:atom="http://www.w3.org/2005/Atom" href="https://signal.luzovi.com/signal/cybersecurity.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>North Korea-linked campaign poisoned more than 7,600 GitHub repositories</title>
+      <link>https://signal.luzovi.com/brief/2026-11-27/06/</link>
+      <guid isPermaLink="false">brief-2026-11-27-06</guid>
+      <pubDate>Fri, 27 Nov 2026 01:30:00 +0000</pubDate>
+      <category>Cybersecurity</category>
+      <description>A campaign linked to North Korean threat actors, tracked as PolinRider, planted a small Python loader in GitHub repositories, with researchers counting at least 7,609 affected repositories owned by 2,330 accounts. The loader hides in a utilities package or test configuration file and reads its command server address from transactions on an Ethereum wallet, so taking down a server does not stop it. The campaign also uses fake hiring portals and hijacked maintainer accounts, and more than 2,000 repositories were hit in a wave between 27 October and 6 November. Why it matters for tech: It turns trusted open-source repositories into malware delivery, so developers need to treat even familiar projects as untrusted until checked.</description>
+      <content:encoded><![CDATA[<p>A campaign linked to North Korean threat actors, tracked as PolinRider, planted a small Python loader in GitHub repositories, with researchers counting at least 7,609 affected repositories owned by 2,330 accounts. The loader hides in a utilities package or test configuration file and reads its command server address from transactions on an Ethereum wallet, so taking down a server does not stop it. The campaign also uses fake hiring portals and hijacked maintainer accounts, and more than 2,000 repositories were hit in a wave between 27 October and 6 November.</p><p><strong>Why it matters for tech:</strong> It turns trusted open-source repositories into malware delivery, so developers need to treat even familiar projects as untrusted until checked.</p><p>Source: </p><ul><li><a href="https://thehackernews.com/2026/11/north-korea-linked-polinrider-poisons.html">The Hacker News</a></li></ul>]]></content:encoded>
+    </item>
+    <item>
+      <title>Drupal warns of a highly critical flaw already being exploited to take over sites</title>
+      <link>https://signal.luzovi.com/brief/2026-11-27/07/</link>
+      <guid isPermaLink="false">brief-2026-11-27-07</guid>
+      <pubDate>Fri, 27 Nov 2026 01:30:00 +0000</pubDate>
+      <category>Cybersecurity</category>
+      <description>Drupal disclosed a highly critical flaw in its core software, tracked as CVE-2026-136716, and said it is already being exploited in the wild. The flaw affects sites left in unusual or incomplete installation states after an earlier installer fix, and can lead to full site takeover; sites that secured their installer are not affected. Fixed versions are available for supported branches, including 11.4.14, 11.3.23 and 10.6.23, while older branches have no fix. Researchers counted about 55,800 internet-facing Drupal sites, with roughly 31,500 running branches affected by the earlier installer issue. Why it matters for tech: An exploited flaw in a widely used content platform puts site owners on a short clock to patch and check their administrator accounts.</description>
+      <content:encoded><![CDATA[<p>Drupal disclosed a highly critical flaw in its core software, tracked as CVE-2026-136716, and said it is already being exploited in the wild. The flaw affects sites left in unusual or incomplete installation states after an earlier installer fix, and can lead to full site takeover; sites that secured their installer are not affected. Fixed versions are available for supported branches, including 11.4.14, 11.3.23 and 10.6.23, while older branches have no fix. Researchers counted about 55,800 internet-facing Drupal sites, with roughly 31,500 running branches affected by the earlier installer issue.</p><p><strong>Why it matters for tech:</strong> An exploited flaw in a widely used content platform puts site owners on a short clock to patch and check their administrator accounts.</p><p>Source: </p><ul><li><a href="https://thehackernews.com/2026/11/drupal-warns-of-new-highly-critical.html">The Hacker News</a></li></ul>]]></content:encoded>
+    </item>
     <item>
       <title>1Password discloses a breach of customer account records via a compromised GitHub account</title>
       <link>https://signal.luzovi.com/brief/2026-11-26/07/</link>
