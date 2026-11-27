@@ -1221,7 +1221,8 @@ body.flow-on .pname-row .ss-share-btn{display:none}
      card mapping: heading = the part name, body = the part's
      simple-words text, boxLabel = "Going deeper", box = the first
      sentence of the part's going-deeper text, type =
-     "Explainer · <page title>", tech = the page's technology,
+     "Explainer", topic = the explainer's short title, tech =
+     the page's technology,
      source = the page title. Themes Paper/Tint/Night/Deep and the
      image layout live inside assets/signal-share.js. */
   function expData() { return (window.EXPLAINER_SHARE_DATA || { pages: {} }).pages[location.pathname.split('/').pop()] || null; }
@@ -1236,10 +1237,21 @@ body.flow-on .pname-row .ss-share-btn{display:none}
     const m = String(text || '').match(/^[\s\S]*?[.!?](?=\s|$)/);
     return (m ? m[0] : String(text || '')).trim();
   }
+  function expTopicCase(tag){var KEEP={AI:"AI",API:"API","ATT&CK":"ATT&CK",BB84:"BB84","CI/CD":"CI/CD",CSS:"CSS",DNS:"DNS",E91:"E91",EDR:"EDR",GPU:"GPU",GPUS:"GPUs",HHL:"HHL",LLM:"LLM",LLMS:"LLMs",MITRE:"MITRE",ML:"ML",MLOPS:"MLOps",NISQ:"NISQ",NMR:"NMR",NV:"NV",PQC:"PQC",QAOA:"QAOA",QKD:"QKD",QML:"QML",QNLP:"QNLP",QRNG:"QRNG",RAG:"RAG",SI:"SI",SIEM:"SIEM",SOC:"SOC",TLS:"TLS",VM:"VM",VQE:"VQE",VPN:"VPN",VPNS:"VPNs",YAML:"YAML"};var words=String(tag||"").split(/\s+/).filter(Boolean).map(function(w){return KEEP[w]||w.toLowerCase();});var s=words.join(" ");return s.charAt(0).toUpperCase()+s.slice(1);}
+  function expShortTitle(title) {
+    /* The topic box carries the explainer's own short title: a
+       leading "Inside a/an/the ..." framing is dropped and the rest
+       takes the decks' normal case, acronyms kept. Example: "Inside
+       a Superconducting Quantum Computer" becomes "Superconducting
+       quantum computer". */
+    var t = String(title || '').replace(/^\s*Inside\s+(a|an|the)\s+/i, '');
+    return expTopicCase(t.toUpperCase());
+  }
   function expCard(partId) {
     const d = expData(); const p = PARTS[partId || current];
     if (!d || !p) return null;
-    return { type: 'Explainer · ' + d.title, tech: expTech(), heading: p.name, topic: p.name,
+    return { type: 'Explainer', tech: expTech(), heading: p.name,
+      topic: expShortTitle(d.title),
       body: p.simple, boxLabel: 'Going deeper', box: expFirstSentence(p.deep),
       source: d.title };
   }
@@ -1491,7 +1503,7 @@ body.flow-on .pname-row .ss-share-btn{display:none}
 
 
 <script src="../assets/explainer-share-data.js?v=20261117"></script>
-<script src="../assets/signal-share.js?v=20261127a"></script>
+<script src="../assets/signal-share.js?v=20261127b"></script>
 <div class="flow-toast" id="flowToast" role="status" hidden>Request flow ended.</div>
 <script>
 (() => {

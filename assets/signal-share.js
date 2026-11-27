@@ -110,7 +110,19 @@ window.SignalShare = (function () {
       try { x.letterSpacing = "3.5px"; } catch (e) {}
       x.font = "700 22px Figtree, system-ui, sans-serif";
       x.fillStyle = v.muted; x.textAlign = "right";
-      x.fillText(String(card.type || "").toUpperCase(), right, y + 38);
+      /* the type label is capped at about 55% of the content width and
+         shortened with an ellipsis, so it can never run into the
+         wordmark at the left of the top row. */
+      var typeText = String(card.type || "").toUpperCase();
+      var typeMax = Math.floor(maxW * 0.55);
+      if (x.measureText(typeText).width > typeMax) {
+        while (typeText.length > 1 &&
+               x.measureText(typeText + "\u2026").width > typeMax) {
+          typeText = typeText.slice(0, -1);
+        }
+        typeText = typeText.replace(/[\s,.;:]+$/, "") + "\u2026";
+      }
+      x.fillText(typeText, right, y + 38);
       x.textAlign = "left";
       try { x.letterSpacing = "0px"; } catch (e) {}
       y += 44 + 70;
