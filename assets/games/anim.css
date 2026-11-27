@@ -1,0 +1,33 @@
+/* Signal Games character animation layer (Round 1).
+   Transform and opacity only: no layout property is animated here.
+   html.sg-quiet is set by anim.js when Calm animations are off or the
+   device asks for reduced motion; the media query below is a second,
+   CSS-only guard for reduced motion. */
+.sg-pop{animation:sgpop .45s cubic-bezier(.2,1.6,.4,1)}
+@keyframes sgpop{0%{transform:scale(.55);opacity:.2}60%{transform:scale(1.1);opacity:1}100%{transform:scale(1);opacity:1}}
+.sg-shake{animation:sgshake .45s ease}
+@keyframes sgshake{0%,100%{transform:translateX(0)}20%{transform:translateX(-5px)}45%{transform:translateX(5px)}70%{transform:translateX(-3px)}90%{transform:translateX(2px)}}
+.sg-hop{animation:sghop .45s cubic-bezier(.2,1.6,.4,1)}
+@keyframes sghop{0%{transform:translateY(0)}40%{transform:translateY(-7px)}100%{transform:translateY(0)}}
+.sg-shimmer{animation:sgshimmer .65s ease}
+@keyframes sgshimmer{0%{opacity:.45}45%{opacity:1}100%{opacity:1}}
+.sg-blink{animation:sgblink 1s ease}
+@keyframes sgblink{0%,100%{transform:scaleY(1)}45%{transform:scaleY(.88)}}
+.sg-breathe{animation:sgbreathe 1s ease}
+@keyframes sgbreathe{0%,100%{transform:rotate(0deg)}50%{transform:rotate(2deg)}}
+.sg-fidget{animation:sgfidget 3s ease}
+@keyframes sgfidget{0%,100%{transform:rotate(0deg)}18%{transform:rotate(-4deg)}38%{transform:rotate(4deg)}58%{transform:rotate(-3deg)}78%{transform:rotate(2deg)}}
+.sg-nap{animation:sgnap 4.2s ease-in-out 3}
+@keyframes sgnap{0%,100%{transform:scale(1)}50%{transform:scale(1.025)}}
+.sg-gasp{position:absolute;top:-8px;right:-4px;z-index:6;width:20px;height:20px;border-radius:50%;background:#B4372A;color:#fff;font:800 13px Inter,sans-serif;display:flex;align-items:center;justify-content:center;animation:sgpop .3s ease}
+.sg-burst{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font:800 20px Inter,sans-serif;color:#7A5410;pointer-events:none;animation:sgburst .8s ease forwards}
+@keyframes sgburst{0%{transform:scale(.4) rotate(-8deg);opacity:0}35%{transform:scale(1.25) rotate(3deg);opacity:1}100%{transform:scale(1.5) rotate(0deg);opacity:0}}
+.sg-zz{position:absolute;top:-12px;right:-2px;z-index:6;font:700 12px Inter,sans-serif;color:var(--muted,#6b6b60);pointer-events:none;animation:sgzz 3s ease forwards}
+@keyframes sgzz{0%{transform:translateY(4px);opacity:0}25%{opacity:1}100%{transform:translateY(-12px);opacity:0}}
+.sg-hintbubble{position:absolute;z-index:30;margin-top:6px;background:var(--card,#fff);border:1.5px solid var(--line,#D7D9CD);color:var(--ink,#201B14);border-radius:999px;padding:6px 14px;font:600 13px Inter,sans-serif;box-shadow:0 12px 26px -16px rgba(20,24,15,.45);animation:sgpop .3s ease}
+.sg-trailglow{animation:sgtrail 1.6s ease-in-out infinite alternate}
+@keyframes sgtrail{from{opacity:.35}to{opacity:.65}}
+html.sg-quiet .sg-pop,html.sg-quiet .sg-shake,html.sg-quiet .sg-hop,html.sg-quiet .sg-shimmer,html.sg-quiet .sg-blink,html.sg-quiet .sg-breathe,html.sg-quiet .sg-fidget,html.sg-quiet .sg-nap,html.sg-quiet .sg-trailglow{animation:none!important}
+@media (prefers-reduced-motion:reduce){
+.sg-pop,.sg-shake,.sg-hop,.sg-shimmer,.sg-blink,.sg-breathe,.sg-fidget,.sg-nap,.sg-trailglow,.sg-gasp,.sg-burst,.sg-zz{animation:none!important}
+}
