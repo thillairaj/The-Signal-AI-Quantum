@@ -4,8 +4,17 @@
     <title>Signal Brief · Cloud &amp; DevOps</title>
     <link>https://signal.luzovi.com/brief/</link>
     <description>Signal Brief: the day in technology, in The Signal's own words. Every item is written from linked official sources and fact checked before publication.</description>
-    <lastBuildDate>Thu, 26 Nov 2026 01:48:34 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 27 Nov 2026 01:40:25 +0000</lastBuildDate>
     <atom:link xmlns:atom="http://www.w3.org/2005/Atom" href="https://signal.luzovi.com/signal/cloud-devops.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>Cognition's new engineers build entirely through Devin without downloading the code</title>
+      <link>https://signal.luzovi.com/brief/2026-11-27/05/</link>
+      <guid isPermaLink="false">brief-2026-11-27-05</guid>
+      <pubDate>Fri, 27 Nov 2026 01:30:00 +0000</pubDate>
+      <category>Cloud &amp; DevOps</category>
+      <description>Cognition co-founder and CEO Scott Wu said new engineers joining the company no longer download code to their machines, pull up a terminal or run commands, and instead build entirely through the Devin coding agent. Over about a year, Cognition doubled its engineering headcount while increasing merged pull requests 20-fold, roughly ten times as many per engineer. Wu estimated about 90% of the company's internal Devin usage is now automated, with no human trigger, and said one large banking customer was on track to merge 250,000 pull requests with Devin in October. Why it matters for tech: It is a concrete example of an engineering organisation reorganising itself around agents, and a test of whether that model holds up at scale.</description>
+      <content:encoded><![CDATA[<p>Cognition co-founder and CEO Scott Wu said new engineers joining the company no longer download code to their machines, pull up a terminal or run commands, and instead build entirely through the Devin coding agent. Over about a year, Cognition doubled its engineering headcount while increasing merged pull requests 20-fold, roughly ten times as many per engineer. Wu estimated about 90% of the company's internal Devin usage is now automated, with no human trigger, and said one large banking customer was on track to merge 250,000 pull requests with Devin in October.</p><p><strong>Why it matters for tech:</strong> It is a concrete example of an engineering organisation reorganising itself around agents, and a test of whether that model holds up at scale.</p><p>Source: </p><ul><li><a href="https://thenewstack.io/cognition-devin-automated-engineering/">The New Stack</a></li></ul>]]></content:encoded>
+    </item>
     <item>
       <title>Cloudflare lets sites offer a search API for AI agents with one toggle</title>
       <link>https://signal.luzovi.com/brief/2026-11-26/05/</link>

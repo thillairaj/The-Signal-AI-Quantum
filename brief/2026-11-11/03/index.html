@@ -20,10 +20,9 @@
 <link rel="canonical" href="https://signal.luzovi.com/brief/2026-11-11/03/">
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,800;1,9..144,500;1,9..144,600&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
-  :root { --ink:#171b24; --muted:#5a6270; --gold:#b8860b; --paper:#faf9f6; --card:#ffffff; --line:#e5dfce; --cat:#7C3AED; --cat-rgb:124,58,237; --cat-pill:#7C3AED; }
-  :root[data-theme="dark"] { --ink:#ecede4; --muted:#9aa08d; --paper:#15170f; --card:#1d2019; --line:#3a3d31; --cat:#A78BDB; --cat-rgb:167,139,219; }
-:root[data-tone="rose"] { --ink:#2A1A1F; --muted:#6F545E; --gold:#855509; --paper:#F3D7DF; --card:#F9E7EC; --line:#E2B9C5; --cat:#6A47B0; --cat-rgb:106,71,176; --cat-pill:#6A47B0; }
-  
+  :root { --ink:#171b24; --muted:#5a6270; --gold:#b8860b; --paper:#faf9f6; --card:#ffffff; --line:#e5dfce; }
+  :root[data-theme="dark"] { --ink:#ecede4; --muted:#9aa08d; --paper:#15170f; --card:#1d2019; --line:#3a3d31; }
+  @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { --ink:#ecede4; --muted:#9aa08d; --paper:#15170f; --card:#1d2019; --line:#3a3d31; } }
   * { box-sizing:border-box; }
   body { margin:0; font-family: Inter, system-ui, sans-serif; background:var(--paper); color:var(--ink); }
   [hidden] { display: none !important; }
@@ -54,33 +53,30 @@
 
   .story-why-label { color:#7c3aed; }
   :root[data-theme="dark"] .story-why-label { color:#a679f3; }
-:root[data-tone="rose"] .story-why-label { color:#6A47B0; }
-:root[data-theme="dark"] .story-srcs a { color:#7FB3E0; }
-:root[data-tone="rose"] .story-srcs a { color:#225D96; }
-  
+  @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .story-why-label { color:#a679f3; } }
 </style>
 <link rel="stylesheet" href="../../../assets/signal-shell.css?v=20261126k">
 <link rel="stylesheet" href="../../../assets/signal-pages.css">
 <link rel="stylesheet" href="../../../assets/signal-brand.css?v=20261125">
 <meta name="sg-stage" content="2">
 <link rel="stylesheet" href="../../../assets/signal-themes.css?v=20261126t">
-
-<meta name="signal-build" content="2026-11-07.footer1">
-<link rel="stylesheet" href="../../../assets/signal-footer.css?v=2026-11-07.footer1">
 <link rel="icon" href="../../../favicon.svg" type="image/svg+xml">
 <link rel="icon" href="../../../favicon.ico" sizes="any">
 <link rel="apple-touch-icon" href="../../../apple-touch-icon.png">
 <link rel="manifest" href="../../../site.webmanifest">
 <meta name="theme-color" content="#3F7D20">
+
+<meta name="signal-build" content="2026-11-07.footer1">
+<link rel="stylesheet" href="../../../assets/signal-footer.css?v=2026-11-07.footer1">
 </head>
 <body>
   <div class="brief-topbar"><a class="brief-back" href="https://signal.luzovi.com/brief/"><small>← Back to</small>Signal Brief</a></div>
   <main>
-    <span class="story-pill" style="background:var(--cat-pill)">Quantum</span>
+    <span class="story-pill" style="background:#7C3AED">Quantum</span>
     <p class="story-dates">Wed, 11 Nov 2026 · 07:00 IST · Source dated 10 Nov 2026</p>
     <h1>Quantinuum and RIKEN complete the Reimei upgrade to the H2 system</h1>
     <p class="story-sum">Quantinuum and RIKEN have completed the upgrade of the Reimei quantum computer at RIKEN to Quantinuum's System Model H2, and expanded their partnership around quantum-AI hybrid supercomputing in Japan. The upgraded machine sits alongside RIKEN's Fugaku supercomputer and the ROQUO GPU system, and the partners have started two research projects on it, one training an AI model on quantum data for magnetism simulations and one simulating a light-absorbing biomolecule. Under a separate agreement with SoftBank, the partners will study connecting quantum computers directly with AI data centres in Japan.</p>
-    <div class="story-why" style="background:rgba(var(--cat-rgb),0.12)"><span class="story-why-label">WHY IT MATTERS FOR TECH</span><p>A working three-way hybrid of quantum, supercomputing and AI hardware gives researchers a live platform for testing whether quantum-generated data improves AI models for materials and biology.</p></div>
+    <div class="story-why" style="background:rgba(124,58,237,0.12)"><span class="story-why-label">WHY IT MATTERS FOR TECH</span><p>A working three-way hybrid of quantum, supercomputing and AI hardware gives researchers a live platform for testing whether quantum-generated data improves AI models for materials and biology.</p></div>
     <p class="bu-srcs-label" style="font-size:.7rem;font-weight:800;letter-spacing:.16em;color:var(--muted);text-transform:uppercase">Sources</p>
     <ul class="story-srcs"><li><a href="https://www.quantinuum.com/press-releases/quantinuum-and-riken-expand-partnership-to-accelerate-the-commercialization-of-quantum-ai-hybrid-supercomputing-in-japan" target="_blank" rel="noopener">Quantinuum</a></li><li><a href="https://english.kyodonews.net/articles/-/90965" target="_blank" rel="noopener">Kyodo News</a></li></ul>
     <div class="story-actions"><span id="storyShare"></span></div>
@@ -90,13 +86,13 @@
     (function () {
       var slot = document.getElementById("storyShare");
       if (slot && window.SignalShare) {
-        var spec = {"title": "Quantinuum and RIKEN complete the Reimei upgrade to the H2 system", "line": "Quantinuum and RIKEN have completed the upgrade of the Reimei quantum computer at RIKEN to Quantinuum's System Model H2, and expanded their partnership around quantum-AI hybrid supercomputing in Japan.", "link": "https://signal.luzovi.com/brief/2026-11-11/03/", "caption": "Quantinuum and RIKEN complete the Reimei upgrade to the H2 system\n\nQuantinuum and RIKEN have completed the upgrade of the Reimei quantum computer at RIKEN to Quantinuum's System Model H2, and expanded their partnership around quantum-AI hybrid supercomputing in Japan. The upgraded machine sits alongside RIKEN's Fugaku supercomputer and the ROQUO GPU system, and the partners have started two research projects on it, one training an AI model on quantum data for magnetism simulations and one simulating a light-absorbing biomolecule. Under a separate agreement with SoftBank, the partners will study connecting quantum computers directly with AI data centres in Japan.\n\nWhy it matters: A working three-way hybrid of quantum, supercomputing and AI hardware gives researchers a live platform for testing whether quantum-generated data improves AI models for materials and biology.\n\nSource: Quantinuum\n\nRead on Signal Brief, free:\nhttps://signal.luzovi.com/brief/2026-11-11/03/\n\n#TheSignal #QuantumComputing", "tech": "quantum"};
-        spec.image = SignalShare.cardImage({"type": "Signal Brief · 11 Nov 2026", "tech": "quantum", "heading": "Quantinuum and RIKEN complete the Reimei upgrade to the H2 system", "body": "Quantinuum and RIKEN have completed the upgrade of the Reimei quantum computer at RIKEN to Quantinuum's System Model H2, and expanded their partnership around quantum-AI hybrid supercomputing in Japan. The upgraded machine sits alongside RIKEN's Fugaku supercomputer and the ROQUO GPU system, and the partners have started two research projects on it, one training an AI model on quantum data for magnetism simulations and one simulating a light-absorbing biomolecule. Under a separate agreement with SoftBank, the partners will study connecting quantum computers directly with AI data centres in Japan.", "boxLabel": "Why it matters", "box": "A working three-way hybrid of quantum, supercomputing and AI hardware gives researchers a live platform for testing whether quantum-generated data improves AI models for materials and biology.", "source": "Quantinuum"}, "signal-brief-2026-11-11-03.png");
+        var spec = {"title": "Quantinuum and RIKEN complete the Reimei upgrade to the H2 system", "line": "Quantinuum and RIKEN have completed the upgrade of the Reimei quantum computer at RIKEN to Quantinuum's System Model H2, and expanded their partnership around quantum-AI hybrid supercomputing in Japan.", "link": "https://signal.luzovi.com/brief/2026-11-11/03/", "tech": "quantum", "caption": "Quantinuum and RIKEN complete the Reimei upgrade to the H2 system\n\nQuantinuum and RIKEN have completed the upgrade of the Reimei quantum computer at RIKEN to Quantinuum's System Model H2, and expanded their partnership around quantum-AI hybrid supercomputing in Japan. The upgraded machine sits alongside RIKEN's Fugaku supercomputer and the ROQUO GPU system, and the partners have started two research projects on it, one training an AI model on quantum data for magnetism simulations and one simulating a light-absorbing biomolecule. Under a separate agreement with SoftBank, the partners will study connecting quantum computers directly with AI data centres in Japan.\n\nWhy it matters: A working three-way hybrid of quantum, supercomputing and AI hardware gives researchers a live platform for testing whether quantum-generated data improves AI models for materials and biology.\n\nSource: Quantinuum\n\nRead on Signal Brief, free:\nhttps://signal.luzovi.com/brief/2026-11-11/03/\n\n#TheSignal #QuantumComputing"};
+        spec.image = SignalShare.cardImage({"type": "Signal Brief \u00b7 11 Nov 2026", "tech": "quantum", "heading": "Quantinuum and RIKEN complete the Reimei upgrade to the H2 system", "body": "Quantinuum and RIKEN have completed the upgrade of the Reimei quantum computer at RIKEN to Quantinuum's System Model H2, and expanded their partnership around quantum-AI hybrid supercomputing in Japan. The upgraded machine sits alongside RIKEN's Fugaku supercomputer and the ROQUO GPU system, and the partners have started two research projects on it, one training an AI model on quantum data for magnetism simulations and one simulating a light-absorbing biomolecule. Under a separate agreement with SoftBank, the partners will study connecting quantum computers directly with AI data centres in Japan.", "boxLabel": "Why it matters", "box": "A working three-way hybrid of quantum, supercomputing and AI hardware gives researchers a live platform for testing whether quantum-generated data improves AI models for materials and biology.", "source": "Quantinuum"}, "signal-brief-2026-11-11-03.png");
         slot.appendChild(SignalShare.shareButton(spec));
       }
     })();
   </script>
-<script src="../../../assets/signal-shell.js?v=20261126i" defer></script>
+<script src="../../../assets/signal-shell.js?v=20261126k" defer></script>
 <footer class="signal-footer">
   <div class="sf-follow"><span class="sf-label">Follow along</span><span class="sf-links"><a class="sf-link" href="https://www.linkedin.com/company/luzovi/" target="_blank" rel="noopener"><span class="sf-badge" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.55V9h3.57v11.45z"/></svg></span>Luzovi</a><a class="sf-link" href="https://www.linkedin.com/in/thillairaj" target="_blank" rel="noopener"><span class="sf-badge" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.55V9h3.57v11.45z"/></svg></span>Thillai Raj</a><a class="sf-link" href="https://www.linkedin.com/showcase/qu-bits/" target="_blank" rel="noopener"><span class="sf-badge" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.55V9h3.57v11.45z"/></svg></span>QuBits · Quantum &amp; AI</a><a class="sf-link" href="https://www.linkedin.com/showcase/agentic-ai-architect/" target="_blank" rel="noopener"><span class="sf-badge" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.55V9h3.57v11.45z"/></svg></span>Agentic AI Architect</a></span></div>
   <p class="sf-copy">© 2026 The Signal</p>

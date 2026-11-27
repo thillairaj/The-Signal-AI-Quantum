@@ -20,10 +20,9 @@
 <link rel="canonical" href="https://signal.luzovi.com/brief/2026-11-24/08/">
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,800;1,9..144,500;1,9..144,600&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
-  :root { --ink:#171b24; --muted:#5a6270; --gold:#b8860b; --paper:#faf9f6; --card:#ffffff; --line:#e5dfce; --cat:#DC2626; --cat-rgb:220,38,38; --cat-pill:#DC2626; }
-  :root[data-theme="dark"] { --ink:#ecede4; --muted:#9aa08d; --paper:#15170f; --card:#1d2019; --line:#3a3d31; --cat:#E58A80; --cat-rgb:229,138,128; }
-:root[data-tone="rose"] { --ink:#2A1A1F; --muted:#6F545E; --gold:#855509; --paper:#F3D7DF; --card:#F9E7EC; --line:#E2B9C5; --cat:#9A2620; --cat-rgb:154,38,32; --cat-pill:#9A2620; }
-  
+  :root { --ink:#171b24; --muted:#5a6270; --gold:#b8860b; --paper:#faf9f6; --card:#ffffff; --line:#e5dfce; }
+  :root[data-theme="dark"] { --ink:#ecede4; --muted:#9aa08d; --paper:#15170f; --card:#1d2019; --line:#3a3d31; }
+  @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { --ink:#ecede4; --muted:#9aa08d; --paper:#15170f; --card:#1d2019; --line:#3a3d31; } }
   * { box-sizing:border-box; }
   body { margin:0; font-family: Inter, system-ui, sans-serif; background:var(--paper); color:var(--ink); }
   [hidden] { display: none !important; }
@@ -54,33 +53,30 @@
 
   .story-why-label { color:#c32222; }
   :root[data-theme="dark"] .story-why-label { color:#e76b6b; }
-:root[data-tone="rose"] .story-why-label { color:#9A2620; }
-:root[data-theme="dark"] .story-srcs a { color:#7FB3E0; }
-:root[data-tone="rose"] .story-srcs a { color:#225D96; }
-  
+  @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .story-why-label { color:#e76b6b; } }
 </style>
 <link rel="stylesheet" href="../../../assets/signal-shell.css?v=20261126k">
 <link rel="stylesheet" href="../../../assets/signal-pages.css">
 <link rel="stylesheet" href="../../../assets/signal-brand.css?v=20261125">
 <meta name="sg-stage" content="2">
 <link rel="stylesheet" href="../../../assets/signal-themes.css?v=20261126t">
-
-<meta name="signal-build" content="2026-11-07.footer1">
-<link rel="stylesheet" href="../../../assets/signal-footer.css?v=2026-11-07.footer1">
 <link rel="icon" href="../../../favicon.svg" type="image/svg+xml">
 <link rel="icon" href="../../../favicon.ico" sizes="any">
 <link rel="apple-touch-icon" href="../../../apple-touch-icon.png">
 <link rel="manifest" href="../../../site.webmanifest">
 <meta name="theme-color" content="#3F7D20">
+
+<meta name="signal-build" content="2026-11-07.footer1">
+<link rel="stylesheet" href="../../../assets/signal-footer.css?v=2026-11-07.footer1">
 </head>
 <body>
   <div class="brief-topbar"><a class="brief-back" href="https://signal.luzovi.com/brief/"><small>← Back to</small>Signal Brief</a></div>
   <main>
-    <span class="story-pill" style="background:var(--cat-pill)">Cybersecurity</span>
+    <span class="story-pill" style="background:#DC2626">Cybersecurity</span>
     <p class="story-dates">Tue, 24 Nov 2026 · 07:00 IST · Source dated 23 Nov 2026</p>
     <h1>South Korea&#x27;s power giant KEPCO confirms a breach exposing 1.5 million people</h1>
     <p class="story-sum">Korea Electric Power Corporation has confirmed a breach of its internal network that exposed data on more than 1.5 million people, detected on November 20 in its KEPCO ON billing platform and its SRM procurement system. The exposed data covers 650,487 customers, including names, ID information, phone numbers, addresses and bank and card details, plus 426,827 company representatives and 442,934 employees. KEPCO says the breach involved advanced technologies such as AI but gave no details of how attackers got in, and it has reported the incident to data protection authorities while notifying those affected.</p>
-    <div class="story-why" style="background:rgba(var(--cat-rgb),0.12)"><span class="story-why-label">WHY IT MATTERS FOR TECH</span><p>A state-controlled power operator holding payment details for hundreds of thousands of customers makes this a critical-infrastructure breach with direct fraud risk for those exposed.</p></div>
+    <div class="story-why" style="background:rgba(220,38,38,0.12)"><span class="story-why-label">WHY IT MATTERS FOR TECH</span><p>A state-controlled power operator holding payment details for hundreds of thousands of customers makes this a critical-infrastructure breach with direct fraud risk for those exposed.</p></div>
     <p class="bu-srcs-label" style="font-size:.7rem;font-weight:800;letter-spacing:.16em;color:var(--muted);text-transform:uppercase">Sources</p>
     <ul class="story-srcs"><li><a href="https://www.bleepingcomputer.com/news/security/south-koreas-power-giant-kepco-confirms-data-breach-impacting-15-million/" target="_blank" rel="noopener">BleepingComputer</a></li></ul>
     <div class="story-actions"><span id="storyShare"></span></div>
@@ -90,13 +86,13 @@
     (function () {
       var slot = document.getElementById("storyShare");
       if (slot && window.SignalShare) {
-        var spec = {"title": "South Korea's power giant KEPCO confirms a breach exposing 1.5 million people", "line": "Korea Electric Power Corporation has confirmed a breach of its internal network that exposed data on more than 1.5 million people, detected on November 20 in its KEPCO ON billing platform and its SRM procurement system.", "link": "https://signal.luzovi.com/brief/2026-11-24/08/", "caption": "South Korea's power giant KEPCO confirms a breach exposing 1.5 million people\n\nKorea Electric Power Corporation has confirmed a breach of its internal network that exposed data on more than 1.5 million people, detected on November 20 in its KEPCO ON billing platform and its SRM procurement system. The exposed data covers 650,487 customers, including names, ID information, phone numbers, addresses and bank and card details, plus 426,827 company representatives and 442,934 employees. KEPCO says the breach involved advanced technologies such as AI but gave no details of how attackers got in, and it has reported the incident to data protection authorities while notifying those affected.\n\nWhy it matters: A state-controlled power operator holding payment details for hundreds of thousands of customers makes this a critical-infrastructure breach with direct fraud risk for those exposed.\n\nSource: BleepingComputer\n\nRead on Signal Brief, free:\nhttps://signal.luzovi.com/brief/2026-11-24/08/\n\n#TheSignal #CyberSecurity", "tech": "cyber"};
-        spec.image = SignalShare.cardImage({"type": "Signal Brief · 24 Nov 2026", "tech": "cyber", "heading": "South Korea's power giant KEPCO confirms a breach exposing 1.5 million people", "body": "Korea Electric Power Corporation has confirmed a breach of its internal network that exposed data on more than 1.5 million people, detected on November 20 in its KEPCO ON billing platform and its SRM procurement system. The exposed data covers 650,487 customers, including names, ID information, phone numbers, addresses and bank and card details, plus 426,827 company representatives and 442,934 employees. KEPCO says the breach involved advanced technologies such as AI but gave no details of how attackers got in, and it has reported the incident to data protection authorities while notifying those affected.", "boxLabel": "Why it matters", "box": "A state-controlled power operator holding payment details for hundreds of thousands of customers makes this a critical-infrastructure breach with direct fraud risk for those exposed.", "source": "BleepingComputer"}, "signal-brief-2026-11-24-08.png");
+        var spec = {"title": "South Korea's power giant KEPCO confirms a breach exposing 1.5 million people", "line": "Korea Electric Power Corporation has confirmed a breach of its internal network that exposed data on more than 1.5 million people, detected on November 20 in its KEPCO ON billing platform and its SRM procurement system.", "link": "https://signal.luzovi.com/brief/2026-11-24/08/", "tech": "cyber", "caption": "South Korea's power giant KEPCO confirms a breach exposing 1.5 million people\n\nKorea Electric Power Corporation has confirmed a breach of its internal network that exposed data on more than 1.5 million people, detected on November 20 in its KEPCO ON billing platform and its SRM procurement system. The exposed data covers 650,487 customers, including names, ID information, phone numbers, addresses and bank and card details, plus 426,827 company representatives and 442,934 employees. KEPCO says the breach involved advanced technologies such as AI but gave no details of how attackers got in, and it has reported the incident to data protection authorities while notifying those affected.\n\nWhy it matters: A state-controlled power operator holding payment details for hundreds of thousands of customers makes this a critical-infrastructure breach with direct fraud risk for those exposed.\n\nSource: BleepingComputer\n\nRead on Signal Brief, free:\nhttps://signal.luzovi.com/brief/2026-11-24/08/\n\n#TheSignal #CyberSecurity"};
+        spec.image = SignalShare.cardImage({"type": "Signal Brief \u00b7 24 Nov 2026", "tech": "cyber", "heading": "South Korea's power giant KEPCO confirms a breach exposing 1.5 million people", "body": "Korea Electric Power Corporation has confirmed a breach of its internal network that exposed data on more than 1.5 million people, detected on November 20 in its KEPCO ON billing platform and its SRM procurement system. The exposed data covers 650,487 customers, including names, ID information, phone numbers, addresses and bank and card details, plus 426,827 company representatives and 442,934 employees. KEPCO says the breach involved advanced technologies such as AI but gave no details of how attackers got in, and it has reported the incident to data protection authorities while notifying those affected.", "boxLabel": "Why it matters", "box": "A state-controlled power operator holding payment details for hundreds of thousands of customers makes this a critical-infrastructure breach with direct fraud risk for those exposed.", "source": "BleepingComputer"}, "signal-brief-2026-11-24-08.png");
         slot.appendChild(SignalShare.shareButton(spec));
       }
     })();
   </script>
-<script src="../../../assets/signal-shell.js?v=20261126i" defer></script>
+<script src="../../../assets/signal-shell.js?v=20261126k" defer></script>
 <footer class="signal-footer">
   <div class="sf-follow"><span class="sf-label">Follow along</span><span class="sf-links"><a class="sf-link" href="https://www.linkedin.com/company/luzovi/" target="_blank" rel="noopener"><span class="sf-badge" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.55V9h3.57v11.45z"/></svg></span>Luzovi</a><a class="sf-link" href="https://www.linkedin.com/in/thillairaj" target="_blank" rel="noopener"><span class="sf-badge" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.55V9h3.57v11.45z"/></svg></span>Thillai Raj</a><a class="sf-link" href="https://www.linkedin.com/showcase/qu-bits/" target="_blank" rel="noopener"><span class="sf-badge" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.55V9h3.57v11.45z"/></svg></span>QuBits · Quantum &amp; AI</a><a class="sf-link" href="https://www.linkedin.com/showcase/agentic-ai-architect/" target="_blank" rel="noopener"><span class="sf-badge" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.55V9h3.57v11.45z"/></svg></span>Agentic AI Architect</a></span></div>
   <p class="sf-copy">© 2026 The Signal</p>

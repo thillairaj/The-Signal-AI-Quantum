@@ -20,10 +20,9 @@
 <link rel="canonical" href="https://signal.luzovi.com/brief/2026-11-05/12/">
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,800;1,9..144,500;1,9..144,600&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
-  :root { --ink:#171b24; --muted:#5a6270; --gold:#b8860b; --paper:#faf9f6; --card:#ffffff; --line:#e5dfce; --cat:#0F766E; --cat-rgb:15,118,110; --cat-pill:#0F766E; }
-  :root[data-theme="dark"] { --ink:#ecede4; --muted:#9aa08d; --paper:#15170f; --card:#1d2019; --line:#3a3d31; --cat:#F1EBDD; --cat-rgb:241,235,221; }
-:root[data-tone="rose"] { --ink:#2A1A1F; --muted:#6F545E; --gold:#855509; --paper:#F3D7DF; --card:#F9E7EC; --line:#E2B9C5; --cat:#2A1A1F; --cat-rgb:42,26,31; --cat-pill:#2A1A1F; }
-  
+  :root { --ink:#171b24; --muted:#5a6270; --gold:#b8860b; --paper:#faf9f6; --card:#ffffff; --line:#e5dfce; }
+  :root[data-theme="dark"] { --ink:#ecede4; --muted:#9aa08d; --paper:#15170f; --card:#1d2019; --line:#3a3d31; }
+  @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { --ink:#ecede4; --muted:#9aa08d; --paper:#15170f; --card:#1d2019; --line:#3a3d31; } }
   * { box-sizing:border-box; }
   body { margin:0; font-family: Inter, system-ui, sans-serif; background:var(--paper); color:var(--ink); }
   [hidden] { display: none !important; }
@@ -54,33 +53,30 @@
 
   .story-why-label { color:#0f766e; }
   :root[data-theme="dark"] .story-why-label { color:#5ba29c; }
-:root[data-tone="rose"] .story-why-label { color:#2A1A1F; }
-:root[data-theme="dark"] .story-srcs a { color:#7FB3E0; }
-:root[data-tone="rose"] .story-srcs a { color:#225D96; }
-  
+  @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .story-why-label { color:#5ba29c; } }
 </style>
 <link rel="stylesheet" href="../../../assets/signal-shell.css?v=20261126k">
 <link rel="stylesheet" href="../../../assets/signal-pages.css">
 <link rel="stylesheet" href="../../../assets/signal-brand.css?v=20261125">
 <meta name="sg-stage" content="2">
 <link rel="stylesheet" href="../../../assets/signal-themes.css?v=20261126t">
-
-<meta name="signal-build" content="2026-11-07.footer1">
-<link rel="stylesheet" href="../../../assets/signal-footer.css?v=2026-11-07.footer1">
 <link rel="icon" href="../../../favicon.svg" type="image/svg+xml">
 <link rel="icon" href="../../../favicon.ico" sizes="any">
 <link rel="apple-touch-icon" href="../../../apple-touch-icon.png">
 <link rel="manifest" href="../../../site.webmanifest">
 <meta name="theme-color" content="#3F7D20">
+
+<meta name="signal-build" content="2026-11-07.footer1">
+<link rel="stylesheet" href="../../../assets/signal-footer.css?v=2026-11-07.footer1">
 </head>
 <body>
   <div class="brief-topbar"><a class="brief-back" href="https://signal.luzovi.com/brief/"><small>← Back to</small>Signal Brief</a></div>
   <main>
-    <span class="story-pill" style="background:var(--cat-pill)">Policy</span>
+    <span class="story-pill" style="background:#0F766E">Policy</span>
     <p class="story-dates">Thu, 5 Nov 2026 · 07:00 IST · Source dated 4 Nov 2026</p>
     <h1>US voters decide 41 local data centre measures in the midterm elections</h1>
     <p class="story-sum">Ballotpedia counted 41 local ballot measures on data centre policy across 10 states on November 3: 28 would limit development and 13 would facilitate it. In reported results, Edgewater, Florida voted to add a ban on new data centres to its city charter, Alhambra, California voted to prohibit data centres, and Harwood, North Dakota rejected its restrictive measure, the only one voted down in USA Today's tally of local results.</p>
-    <div class="story-why" style="background:rgba(var(--cat-rgb),0.12)"><span class="story-why-label">WHY IT MATTERS FOR TECH</span><p>Local ballot outcomes now directly decide where large data centres can be built in the United States.</p></div>
+    <div class="story-why" style="background:rgba(15,118,110,0.12)"><span class="story-why-label">WHY IT MATTERS FOR TECH</span><p>Local ballot outcomes now directly decide where large data centres can be built in the United States.</p></div>
     <p class="bu-srcs-label" style="font-size:.7rem;font-weight:800;letter-spacing:.16em;color:var(--muted);text-transform:uppercase">Sources</p>
     <ul class="story-srcs"><li><a href="https://news.ballotpedia.org/2026/11/03/voters-in-ten-states-will-vote-on-data-center-related-ballot-measures-november-3/" target="_blank" rel="noopener">Ballotpedia News</a></li><li><a href="https://www.usatoday.com/story/news/nation/2026/11/04/data-centers-midterm-elections/92611809007/" target="_blank" rel="noopener">USA Today</a></li></ul>
     <div class="story-actions"><span id="storyShare"></span></div>
@@ -90,13 +86,13 @@
     (function () {
       var slot = document.getElementById("storyShare");
       if (slot && window.SignalShare) {
-        var spec = {"title": "US voters decide 41 local data centre measures in the midterm elections", "line": "Ballotpedia counted 41 local ballot measures on data centre policy across 10 states on November 3: 28 would limit development and 13 would facilitate it.", "link": "https://signal.luzovi.com/brief/2026-11-05/12/", "caption": "US voters decide 41 local data centre measures in the midterm elections\n\nBallotpedia counted 41 local ballot measures on data centre policy across 10 states on November 3: 28 would limit development and 13 would facilitate it. In reported results, Edgewater, Florida voted to add a ban on new data centres to its city charter, Alhambra, California voted to prohibit data centres, and Harwood, North Dakota rejected its restrictive measure, the only one voted down in USA Today's tally of local results.\n\nWhy it matters: Local ballot outcomes now directly decide where large data centres can be built in the United States.\n\nSource: Ballotpedia News\n\nRead on Signal Brief, free:\nhttps://signal.luzovi.com/brief/2026-11-05/12/\n\n#TheSignal #TechPolicy", "tech": "signal"};
-        spec.image = SignalShare.cardImage({"type": "Signal Brief · 5 Nov 2026", "tech": "signal", "heading": "US voters decide 41 local data centre measures in the midterm elections", "body": "Ballotpedia counted 41 local ballot measures on data centre policy across 10 states on November 3: 28 would limit development and 13 would facilitate it. In reported results, Edgewater, Florida voted to add a ban on new data centres to its city charter, Alhambra, California voted to prohibit data centres, and Harwood, North Dakota rejected its restrictive measure, the only one voted down in USA Today's tally of local results.", "boxLabel": "Why it matters", "box": "Local ballot outcomes now directly decide where large data centres can be built in the United States.", "source": "Ballotpedia News"}, "signal-brief-2026-11-05-12.png");
+        var spec = {"title": "US voters decide 41 local data centre measures in the midterm elections", "line": "Ballotpedia counted 41 local ballot measures on data centre policy across 10 states on November 3: 28 would limit development and 13 would facilitate it.", "link": "https://signal.luzovi.com/brief/2026-11-05/12/", "tech": "signal", "caption": "US voters decide 41 local data centre measures in the midterm elections\n\nBallotpedia counted 41 local ballot measures on data centre policy across 10 states on November 3: 28 would limit development and 13 would facilitate it. In reported results, Edgewater, Florida voted to add a ban on new data centres to its city charter, Alhambra, California voted to prohibit data centres, and Harwood, North Dakota rejected its restrictive measure, the only one voted down in USA Today's tally of local results.\n\nWhy it matters: Local ballot outcomes now directly decide where large data centres can be built in the United States.\n\nSource: Ballotpedia News\n\nRead on Signal Brief, free:\nhttps://signal.luzovi.com/brief/2026-11-05/12/\n\n#TheSignal #TechPolicy"};
+        spec.image = SignalShare.cardImage({"type": "Signal Brief \u00b7 5 Nov 2026", "tech": "signal", "heading": "US voters decide 41 local data centre measures in the midterm elections", "body": "Ballotpedia counted 41 local ballot measures on data centre policy across 10 states on November 3: 28 would limit development and 13 would facilitate it. In reported results, Edgewater, Florida voted to add a ban on new data centres to its city charter, Alhambra, California voted to prohibit data centres, and Harwood, North Dakota rejected its restrictive measure, the only one voted down in USA Today's tally of local results.", "boxLabel": "Why it matters", "box": "Local ballot outcomes now directly decide where large data centres can be built in the United States.", "source": "Ballotpedia News"}, "signal-brief-2026-11-05-12.png");
         slot.appendChild(SignalShare.shareButton(spec));
       }
     })();
   </script>
-<script src="../../../assets/signal-shell.js?v=20261126i" defer></script>
+<script src="../../../assets/signal-shell.js?v=20261126k" defer></script>
 <footer class="signal-footer">
   <div class="sf-follow"><span class="sf-label">Follow along</span><span class="sf-links"><a class="sf-link" href="https://www.linkedin.com/company/luzovi/" target="_blank" rel="noopener"><span class="sf-badge" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.55V9h3.57v11.45z"/></svg></span>Luzovi</a><a class="sf-link" href="https://www.linkedin.com/in/thillairaj" target="_blank" rel="noopener"><span class="sf-badge" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.55V9h3.57v11.45z"/></svg></span>Thillai Raj</a><a class="sf-link" href="https://www.linkedin.com/showcase/qu-bits/" target="_blank" rel="noopener"><span class="sf-badge" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.55V9h3.57v11.45z"/></svg></span>QuBits · Quantum &amp; AI</a><a class="sf-link" href="https://www.linkedin.com/showcase/agentic-ai-architect/" target="_blank" rel="noopener"><span class="sf-badge" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.55V9h3.57v11.45z"/></svg></span>Agentic AI Architect</a></span></div>
   <p class="sf-copy">© 2026 The Signal</p>

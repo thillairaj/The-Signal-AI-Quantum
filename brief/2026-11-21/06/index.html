@@ -20,10 +20,9 @@
 <link rel="canonical" href="https://signal.luzovi.com/brief/2026-11-21/06/">
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,800;1,9..144,500;1,9..144,600&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
-  :root { --ink:#171b24; --muted:#5a6270; --gold:#b8860b; --paper:#faf9f6; --card:#ffffff; --line:#e5dfce; --cat:#0E7490; --cat-rgb:14,116,144; --cat-pill:#0E7490; }
-  :root[data-theme="dark"] { --ink:#ecede4; --muted:#9aa08d; --paper:#15170f; --card:#1d2019; --line:#3a3d31; --cat:#5FBFA9; --cat-rgb:95,191,169; }
-:root[data-tone="rose"] { --ink:#2A1A1F; --muted:#6F545E; --gold:#855509; --paper:#F3D7DF; --card:#F9E7EC; --line:#E2B9C5; --cat:#176A5F; --cat-rgb:23,106,95; --cat-pill:#176A5F; }
-  
+  :root { --ink:#171b24; --muted:#5a6270; --gold:#b8860b; --paper:#faf9f6; --card:#ffffff; --line:#e5dfce; }
+  :root[data-theme="dark"] { --ink:#ecede4; --muted:#9aa08d; --paper:#15170f; --card:#1d2019; --line:#3a3d31; }
+  @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { --ink:#ecede4; --muted:#9aa08d; --paper:#15170f; --card:#1d2019; --line:#3a3d31; } }
   * { box-sizing:border-box; }
   body { margin:0; font-family: Inter, system-ui, sans-serif; background:var(--paper); color:var(--ink); }
   [hidden] { display: none !important; }
@@ -54,33 +53,30 @@
 
   .story-why-label { color:#0d6f8a; }
   :root[data-theme="dark"] .story-why-label { color:#5aa1b3; }
-:root[data-tone="rose"] .story-why-label { color:#16665B; }
-:root[data-theme="dark"] .story-srcs a { color:#7FB3E0; }
-:root[data-tone="rose"] .story-srcs a { color:#225D96; }
-  
+  @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .story-why-label { color:#5aa1b3; } }
 </style>
 <link rel="stylesheet" href="../../../assets/signal-shell.css?v=20261126k">
 <link rel="stylesheet" href="../../../assets/signal-pages.css">
 <link rel="stylesheet" href="../../../assets/signal-brand.css?v=20261125">
 <meta name="sg-stage" content="2">
 <link rel="stylesheet" href="../../../assets/signal-themes.css?v=20261126t">
-
-<meta name="signal-build" content="2026-11-07.footer1">
-<link rel="stylesheet" href="../../../assets/signal-footer.css?v=2026-11-07.footer1">
 <link rel="icon" href="../../../favicon.svg" type="image/svg+xml">
 <link rel="icon" href="../../../favicon.ico" sizes="any">
 <link rel="apple-touch-icon" href="../../../apple-touch-icon.png">
 <link rel="manifest" href="../../../site.webmanifest">
 <meta name="theme-color" content="#3F7D20">
+
+<meta name="signal-build" content="2026-11-07.footer1">
+<link rel="stylesheet" href="../../../assets/signal-footer.css?v=2026-11-07.footer1">
 </head>
 <body>
   <div class="brief-topbar"><a class="brief-back" href="https://signal.luzovi.com/brief/"><small>← Back to</small>Signal Brief</a></div>
   <main>
-    <span class="story-pill" style="background:var(--cat-pill)">Cloud &amp; DevOps</span>
+    <span class="story-pill" style="background:#0E7490">Cloud &amp; DevOps</span>
     <p class="story-dates">Sat, 21 Nov 2026 · 07:00 IST · Source dated 21 Nov 2026</p>
     <h1>Google makes sidecarless networking generally available on GKE</h1>
     <p class="story-sum">Google has made ambient networking for Google Kubernetes Engine generally available, offering a service mesh without sidecar proxies in every pod. Networking moves to shared per-node components and managed control plane services, with mutual TLS, authorisation policies and traffic telemetry built in. Google says the approach cuts resource use for layer 4 mesh features by up to ten times compared with sidecars and reduces pod restarts for proxy patches.</p>
-    <div class="story-why" style="background:rgba(var(--cat-rgb),0.12)"><span class="story-why-label">WHY IT MATTERS FOR TECH</span><p>Removing sidecars takes the per-pod cost of running a service mesh off every workload, which makes mesh security and observability practical for clusters that could not afford the overhead.</p></div>
+    <div class="story-why" style="background:rgba(14,116,144,0.12)"><span class="story-why-label">WHY IT MATTERS FOR TECH</span><p>Removing sidecars takes the per-pod cost of running a service mesh off every workload, which makes mesh security and observability practical for clusters that could not afford the overhead.</p></div>
     <p class="bu-srcs-label" style="font-size:.7rem;font-weight:800;letter-spacing:.16em;color:var(--muted);text-transform:uppercase">Sources</p>
     <ul class="story-srcs"><li><a href="https://cloud.google.com/blog/products/networking/ambient-networking-for-gke-sidecarless-service-mesh/" target="_blank" rel="noopener">Google Cloud Blog</a></li></ul>
     <div class="story-actions"><span id="storyShare"></span></div>
@@ -90,13 +86,13 @@
     (function () {
       var slot = document.getElementById("storyShare");
       if (slot && window.SignalShare) {
-        var spec = {"title": "Google makes sidecarless networking generally available on GKE", "line": "Google has made ambient networking for Google Kubernetes Engine generally available, offering a service mesh without sidecar proxies in every pod.", "link": "https://signal.luzovi.com/brief/2026-11-21/06/", "caption": "Google makes sidecarless networking generally available on GKE\n\nGoogle has made ambient networking for Google Kubernetes Engine generally available, offering a service mesh without sidecar proxies in every pod. Networking moves to shared per-node components and managed control plane services, with mutual TLS, authorisation policies and traffic telemetry built in. Google says the approach cuts resource use for layer 4 mesh features by up to ten times compared with sidecars and reduces pod restarts for proxy patches.\n\nWhy it matters: Removing sidecars takes the per-pod cost of running a service mesh off every workload, which makes mesh security and observability practical for clusters that could not afford the overhead.\n\nSource: Google Cloud Blog\n\nRead on Signal Brief, free:\nhttps://signal.luzovi.com/brief/2026-11-21/06/\n\n#TheSignal #CloudComputing", "tech": "cloud"};
-        spec.image = SignalShare.cardImage({"type": "Signal Brief · 21 Nov 2026", "tech": "cloud", "heading": "Google makes sidecarless networking generally available on GKE", "body": "Google has made ambient networking for Google Kubernetes Engine generally available, offering a service mesh without sidecar proxies in every pod. Networking moves to shared per-node components and managed control plane services, with mutual TLS, authorisation policies and traffic telemetry built in. Google says the approach cuts resource use for layer 4 mesh features by up to ten times compared with sidecars and reduces pod restarts for proxy patches.", "boxLabel": "Why it matters", "box": "Removing sidecars takes the per-pod cost of running a service mesh off every workload, which makes mesh security and observability practical for clusters that could not afford the overhead.", "source": "Google Cloud Blog"}, "signal-brief-2026-11-21-06.png");
+        var spec = {"title": "Google makes sidecarless networking generally available on GKE", "line": "Google has made ambient networking for Google Kubernetes Engine generally available, offering a service mesh without sidecar proxies in every pod.", "link": "https://signal.luzovi.com/brief/2026-11-21/06/", "tech": "cloud", "caption": "Google makes sidecarless networking generally available on GKE\n\nGoogle has made ambient networking for Google Kubernetes Engine generally available, offering a service mesh without sidecar proxies in every pod. Networking moves to shared per-node components and managed control plane services, with mutual TLS, authorisation policies and traffic telemetry built in. Google says the approach cuts resource use for layer 4 mesh features by up to ten times compared with sidecars and reduces pod restarts for proxy patches.\n\nWhy it matters: Removing sidecars takes the per-pod cost of running a service mesh off every workload, which makes mesh security and observability practical for clusters that could not afford the overhead.\n\nSource: Google Cloud Blog\n\nRead on Signal Brief, free:\nhttps://signal.luzovi.com/brief/2026-11-21/06/\n\n#TheSignal #CloudComputing"};
+        spec.image = SignalShare.cardImage({"type": "Signal Brief \u00b7 21 Nov 2026", "tech": "cloud", "heading": "Google makes sidecarless networking generally available on GKE", "body": "Google has made ambient networking for Google Kubernetes Engine generally available, offering a service mesh without sidecar proxies in every pod. Networking moves to shared per-node components and managed control plane services, with mutual TLS, authorisation policies and traffic telemetry built in. Google says the approach cuts resource use for layer 4 mesh features by up to ten times compared with sidecars and reduces pod restarts for proxy patches.", "boxLabel": "Why it matters", "box": "Removing sidecars takes the per-pod cost of running a service mesh off every workload, which makes mesh security and observability practical for clusters that could not afford the overhead.", "source": "Google Cloud Blog"}, "signal-brief-2026-11-21-06.png");
         slot.appendChild(SignalShare.shareButton(spec));
       }
     })();
   </script>
-<script src="../../../assets/signal-shell.js?v=20261126i" defer></script>
+<script src="../../../assets/signal-shell.js?v=20261126k" defer></script>
 <footer class="signal-footer">
   <div class="sf-follow"><span class="sf-label">Follow along</span><span class="sf-links"><a class="sf-link" href="https://www.linkedin.com/company/luzovi/" target="_blank" rel="noopener"><span class="sf-badge" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.55V9h3.57v11.45z"/></svg></span>Luzovi</a><a class="sf-link" href="https://www.linkedin.com/in/thillairaj" target="_blank" rel="noopener"><span class="sf-badge" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.55V9h3.57v11.45z"/></svg></span>Thillai Raj</a><a class="sf-link" href="https://www.linkedin.com/showcase/qu-bits/" target="_blank" rel="noopener"><span class="sf-badge" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.55V9h3.57v11.45z"/></svg></span>QuBits · Quantum &amp; AI</a><a class="sf-link" href="https://www.linkedin.com/showcase/agentic-ai-architect/" target="_blank" rel="noopener"><span class="sf-badge" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.55V9h3.57v11.45z"/></svg></span>Agentic AI Architect</a></span></div>
   <p class="sf-copy">© 2026 The Signal</p>

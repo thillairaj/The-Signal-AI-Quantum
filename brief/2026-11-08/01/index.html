@@ -20,10 +20,9 @@
 <link rel="canonical" href="https://signal.luzovi.com/brief/2026-11-08/01/">
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,800;1,9..144,500;1,9..144,600&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
-  :root { --ink:#171b24; --muted:#5a6270; --gold:#b8860b; --paper:#faf9f6; --card:#ffffff; --line:#e5dfce; --cat:#4F46E5; --cat-rgb:79,70,229; --cat-pill:#4F46E5; }
-  :root[data-theme="dark"] { --ink:#ecede4; --muted:#9aa08d; --paper:#15170f; --card:#1d2019; --line:#3a3d31; --cat:#7FB3E0; --cat-rgb:127,179,224; }
-:root[data-tone="rose"] { --ink:#2A1A1F; --muted:#6F545E; --gold:#855509; --paper:#F3D7DF; --card:#F9E7EC; --line:#E2B9C5; --cat:#225D96; --cat-rgb:34,93,150; --cat-pill:#225D96; }
-  
+  :root { --ink:#171b24; --muted:#5a6270; --gold:#b8860b; --paper:#faf9f6; --card:#ffffff; --line:#e5dfce; }
+  :root[data-theme="dark"] { --ink:#ecede4; --muted:#9aa08d; --paper:#15170f; --card:#1d2019; --line:#3a3d31; }
+  @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { --ink:#ecede4; --muted:#9aa08d; --paper:#15170f; --card:#1d2019; --line:#3a3d31; } }
   * { box-sizing:border-box; }
   body { margin:0; font-family: Inter, system-ui, sans-serif; background:var(--paper); color:var(--ink); }
   [hidden] { display: none !important; }
@@ -54,33 +53,30 @@
 
   .story-why-label { color:#4f46e5; }
   :root[data-theme="dark"] .story-why-label { color:#8781ed; }
-:root[data-tone="rose"] .story-why-label { color:#245E93; }
-:root[data-theme="dark"] .story-srcs a { color:#7FB3E0; }
-:root[data-tone="rose"] .story-srcs a { color:#225D96; }
-  
+  @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .story-why-label { color:#8781ed; } }
 </style>
 <link rel="stylesheet" href="../../../assets/signal-shell.css?v=20261126k">
 <link rel="stylesheet" href="../../../assets/signal-pages.css">
 <link rel="stylesheet" href="../../../assets/signal-brand.css?v=20261125">
 <meta name="sg-stage" content="2">
 <link rel="stylesheet" href="../../../assets/signal-themes.css?v=20261126t">
-
-<meta name="signal-build" content="2026-11-07.footer1">
-<link rel="stylesheet" href="../../../assets/signal-footer.css?v=2026-11-07.footer1">
 <link rel="icon" href="../../../favicon.svg" type="image/svg+xml">
 <link rel="icon" href="../../../favicon.ico" sizes="any">
 <link rel="apple-touch-icon" href="../../../apple-touch-icon.png">
 <link rel="manifest" href="../../../site.webmanifest">
 <meta name="theme-color" content="#3F7D20">
+
+<meta name="signal-build" content="2026-11-07.footer1">
+<link rel="stylesheet" href="../../../assets/signal-footer.css?v=2026-11-07.footer1">
 </head>
 <body>
   <div class="brief-topbar"><a class="brief-back" href="https://signal.luzovi.com/brief/"><small>← Back to</small>Signal Brief</a></div>
   <main>
-    <span class="story-pill" style="background:var(--cat-pill)">AI</span>
+    <span class="story-pill" style="background:#4F46E5">AI</span>
     <p class="story-dates">Sun, 8 Nov 2026 · 07:00 IST · Source dated 6 Nov 2026</p>
     <h1>DeepMind <span class="sg-t sg-t-ai">AI agents find two weaknesses</span> in retired 1024-bit RSA</h1>
     <p class="story-sum">Google DeepMind says AI agents working under human supervision found two weaknesses in legacy 1024-bit RSA encryption, a key size the industry retired years ago. In a sandbox test, the agents reproduced a signature forgery on a solved benchmark key using 3.5 times less CPU time, and a new algorithm improved on the previous best method by roughly 1,600 times in theoretical estimates for short fingerprints, while a second result cuts the average cost of factoring each additional 1024-bit key by about 30 times. DeepMind states modern 2048-bit and larger keys are unaffected and no live systems were touched.</p>
-    <div class="story-why" style="background:rgba(var(--cat-rgb),0.12)"><span class="story-why-label">WHY IT MATTERS FOR TECH</span><p>AI agents are now doing original cryptanalysis in weeks, so hardness assumptions need continuous re-testing rather than being treated as fixed.</p></div>
+    <div class="story-why" style="background:rgba(79,70,229,0.12)"><span class="story-why-label">WHY IT MATTERS FOR TECH</span><p>AI agents are now doing original cryptanalysis in weeks, so hardness assumptions need continuous re-testing rather than being treated as fixed.</p></div>
     <p class="bu-srcs-label" style="font-size:.7rem;font-weight:800;letter-spacing:.16em;color:var(--muted);text-transform:uppercase">Sources</p>
     <ul class="story-srcs"><li><a href="https://lnkd.in/eKU6VKMp" target="_blank" rel="noopener">Google DeepMind</a></li></ul>
     <div class="story-actions"><span id="storyShare"></span></div>
@@ -90,13 +86,13 @@
     (function () {
       var slot = document.getElementById("storyShare");
       if (slot && window.SignalShare) {
-        var spec = {"title": "DeepMind AI agents find two weaknesses in retired 1024-bit RSA", "line": "Google DeepMind says AI agents working under human supervision found two weaknesses in legacy 1024-bit RSA encryption, a key size the industry retired years ago.", "link": "https://signal.luzovi.com/brief/2026-11-08/01/", "caption": "DeepMind AI agents find two weaknesses in retired 1024-bit RSA\n\nGoogle DeepMind says AI agents working under human supervision found two weaknesses in legacy 1024-bit RSA encryption, a key size the industry retired years ago. In a sandbox test, the agents reproduced a signature forgery on a solved benchmark key using 3.5 times less CPU time, and a new algorithm improved on the previous best method by roughly 1,600 times in theoretical estimates for short fingerprints, while a second result cuts the average cost of factoring each additional 1024-bit key by about 30 times. DeepMind states modern 2048-bit and larger keys are unaffected and no live systems were touched.\n\nWhy it matters: AI agents are now doing original cryptanalysis in weeks, so hardness assumptions need continuous re-testing rather than being treated as fixed.\n\nSource: Google DeepMind\n\nRead on Signal Brief, free:\nhttps://signal.luzovi.com/brief/2026-11-08/01/\n\n#TheSignal #AI", "tech": "ai"};
-        spec.image = SignalShare.cardImage({"type": "Signal Brief · 8 Nov 2026", "tech": "ai", "heading": "DeepMind AI agents find two weaknesses in retired 1024-bit RSA", "body": "Google DeepMind says AI agents working under human supervision found two weaknesses in legacy 1024-bit RSA encryption, a key size the industry retired years ago. In a sandbox test, the agents reproduced a signature forgery on a solved benchmark key using 3.5 times less CPU time, and a new algorithm improved on the previous best method by roughly 1,600 times in theoretical estimates for short fingerprints, while a second result cuts the average cost of factoring each additional 1024-bit key by about 30 times. DeepMind states modern 2048-bit and larger keys are unaffected and no live systems were touched.", "boxLabel": "Why it matters", "box": "AI agents are now doing original cryptanalysis in weeks, so hardness assumptions need continuous re-testing rather than being treated as fixed.", "source": "Google DeepMind"}, "signal-brief-2026-11-08-01.png");
+        var spec = {"title": "DeepMind AI agents find two weaknesses in retired 1024-bit RSA", "line": "Google DeepMind says AI agents working under human supervision found two weaknesses in legacy 1024-bit RSA encryption, a key size the industry retired years ago.", "link": "https://signal.luzovi.com/brief/2026-11-08/01/", "tech": "ai", "caption": "DeepMind AI agents find two weaknesses in retired 1024-bit RSA\n\nGoogle DeepMind says AI agents working under human supervision found two weaknesses in legacy 1024-bit RSA encryption, a key size the industry retired years ago. In a sandbox test, the agents reproduced a signature forgery on a solved benchmark key using 3.5 times less CPU time, and a new algorithm improved on the previous best method by roughly 1,600 times in theoretical estimates for short fingerprints, while a second result cuts the average cost of factoring each additional 1024-bit key by about 30 times. DeepMind states modern 2048-bit and larger keys are unaffected and no live systems were touched.\n\nWhy it matters: AI agents are now doing original cryptanalysis in weeks, so hardness assumptions need continuous re-testing rather than being treated as fixed.\n\nSource: Google DeepMind\n\nRead on Signal Brief, free:\nhttps://signal.luzovi.com/brief/2026-11-08/01/\n\n#TheSignal #AI"};
+        spec.image = SignalShare.cardImage({"type": "Signal Brief \u00b7 8 Nov 2026", "tech": "ai", "heading": "DeepMind AI agents find two weaknesses in retired 1024-bit RSA", "body": "Google DeepMind says AI agents working under human supervision found two weaknesses in legacy 1024-bit RSA encryption, a key size the industry retired years ago. In a sandbox test, the agents reproduced a signature forgery on a solved benchmark key using 3.5 times less CPU time, and a new algorithm improved on the previous best method by roughly 1,600 times in theoretical estimates for short fingerprints, while a second result cuts the average cost of factoring each additional 1024-bit key by about 30 times. DeepMind states modern 2048-bit and larger keys are unaffected and no live systems were touched.", "boxLabel": "Why it matters", "box": "AI agents are now doing original cryptanalysis in weeks, so hardness assumptions need continuous re-testing rather than being treated as fixed.", "source": "Google DeepMind"}, "signal-brief-2026-11-08-01.png");
         slot.appendChild(SignalShare.shareButton(spec));
       }
     })();
   </script>
-<script src="../../../assets/signal-shell.js?v=20261126i" defer></script>
+<script src="../../../assets/signal-shell.js?v=20261126k" defer></script>
 <footer class="signal-footer">
   <div class="sf-follow"><span class="sf-label">Follow along</span><span class="sf-links"><a class="sf-link" href="https://www.linkedin.com/company/luzovi/" target="_blank" rel="noopener"><span class="sf-badge" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.55V9h3.57v11.45z"/></svg></span>Luzovi</a><a class="sf-link" href="https://www.linkedin.com/in/thillairaj" target="_blank" rel="noopener"><span class="sf-badge" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.55V9h3.57v11.45z"/></svg></span>Thillai Raj</a><a class="sf-link" href="https://www.linkedin.com/showcase/qu-bits/" target="_blank" rel="noopener"><span class="sf-badge" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.55V9h3.57v11.45z"/></svg></span>QuBits · Quantum &amp; AI</a><a class="sf-link" href="https://www.linkedin.com/showcase/agentic-ai-architect/" target="_blank" rel="noopener"><span class="sf-badge" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.55V9h3.57v11.45z"/></svg></span>Agentic AI Architect</a></span></div>
   <p class="sf-copy">© 2026 The Signal</p>
