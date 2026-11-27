@@ -55,6 +55,7 @@ button{font-family:inherit;color:inherit}
 .meta{margin-top:12px;display:flex;justify-content:space-between;align-items:center;font-size:13px;font-weight:700;letter-spacing:.1em}
 .stars{display:flex;gap:4px}.stars i{width:12px;height:12px;border-radius:50%;background:var(--line);display:block}.stars i.on{background:#201B14}
 .tile{user-select:none;-webkit-user-select:none;touch-action:manipulation;cursor:pointer;position:relative;border-radius:14px;padding:12px 14px;font-weight:600;font-size:15px;text-align:center;background:var(--card);border:1.5px solid var(--line);box-shadow:0 10px 22px -16px var(--shadow);transition:transform .25s ease,opacity .2s}
+.tile.drag{z-index:60;cursor:grabbing;box-shadow:0 24px 44px -18px var(--shadow);transform-origin:center}
 .tile.dead{opacity:.4;text-decoration:line-through;pointer-events:none}
 .tray{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px;min-height:56px}
 .tray.dock{position:sticky;bottom:8px;z-index:20;background:var(--card);border:1px solid var(--line);border-radius:18px;padding:8px;box-shadow:0 18px 40px -20px var(--shadow)}
@@ -127,6 +128,7 @@ button{font-family:inherit;color:inherit}
 .bubble{position:absolute;top:0;height:44px;padding:0 14px;border-radius:999px;display:flex;align-items:center;font-weight:700;font-size:14px;white-space:nowrap;background:var(--card);border:2px solid var(--ink);animation:roam var(--t,9s) linear infinite alternate;box-shadow:0 8px 18px -12px var(--shadow)}
 @keyframes roam{from{left:0}to{left:calc(100% - var(--w,150px))}}
 .xh{position:absolute;left:50%;bottom:8px;width:54px;height:54px;margin-left:-27px;border-radius:50%;border:3px solid var(--bad);background:color-mix(in srgb,var(--card) 80%,transparent);touch-action:none;cursor:grab;z-index:5;transition:transform .25s}
+.xh.drag{transition:none;z-index:60}
 .xh::before,.xh::after{content:"";position:absolute;background:var(--bad)}
 .xh::before{left:50%;top:6px;bottom:6px;width:2px;margin-left:-1px}
 .xh::after{top:50%;left:6px;right:6px;height:2px;margin-top:-1px}
@@ -205,7 +207,7 @@ button{font-family:inherit;color:inherit}
 .exb{display:grid;grid-template-columns:repeat(5,1fr);border:3px solid #13241B;border-radius:8px;overflow:hidden}
 .exc{aspect-ratio:1;display:flex;align-items:center;justify-content:center;font-size:16px}
 .exc.hatch{background-image:repeating-linear-gradient(135deg,rgba(180,55,42,.75) 0 2px,transparent 2px 7px)}
-.tb{position:relative;display:grid;margin-top:12px;border:3px solid var(--ink);border-radius:12px;overflow:hidden;background:var(--card);touch-action:manipulation;user-select:none;-webkit-user-select:none}
+.tb{position:relative;display:grid;margin-top:12px;border:3px solid var(--ink);border-radius:12px;overflow:hidden;background:var(--card);touch-action:none;user-select:none;-webkit-user-select:none}
 .tc{aspect-ratio:1;position:relative;display:flex;align-items:center;justify-content:center;z-index:1}
 .tc.on{background:rgba(14,107,71,.10)}
 .tc.gold{background:rgba(63,125,32,.28)}
@@ -308,6 +310,7 @@ button{font-family:inherit;color:inherit}
 .dc.hot{background:var(--hov);box-shadow:inset 0 0 0 3px #201B14}
 .dc.tgt{box-shadow:inset 0 0 0 3px #201B14}
 .dt{width:92%;height:92%;border-radius:14px;display:flex;align-items:center;justify-content:center;font:800 clamp(20px,6.4vw,30px) Inter,sans-serif;color:#13241B;cursor:pointer;touch-action:manipulation;user-select:none;-webkit-user-select:none;box-shadow:0 8px 16px -10px rgba(19,36,27,.5);transition:transform .2s ease;position:relative}
+.dt.drag{z-index:60}
 .dt.wild{background:#F0C65A;clip-path:polygon(50% 0,61% 9%,75% 6%,81% 19%,94% 25%,91% 39%,100% 50%,91% 61%,94% 75%,81% 81%,75% 94%,61% 91%,50% 100%,39% 91%,25% 94%,19% 81%,6% 75%,9% 61%,0 50%,9% 39%,6% 25%,19% 19%,25% 6%,39% 9%);font-size:clamp(16px,5vw,24px)}
 .dt.glow{outline:3px solid #201B14;outline-offset:2px;animation:glow 1s ease-in-out infinite}
 .dt.pop{animation:pop .35s cubic-bezier(.2,1.5,.4,1)}
@@ -432,6 +435,7 @@ body.sg-play .qb,body.sg-play .sg,body.sg-play .mb,body.sg-play .tb,body.sg-play
 .hgi img{width:62px;height:62px;display:block}
 .tile.sel,.rung.sel{outline:3px solid var(--brand);outline-offset:1px}
 .sc.sel{box-shadow:inset 0 0 0 3px var(--brand)}
+.sc.unitok{background:var(--goodbg);color:var(--good)}
 .dt.sel{outline:3px solid var(--brand);outline-offset:1px}
 .qstat{display:flex;align-items:center;justify-content:center;gap:8px;margin-top:10px;font:700 15px Inter,sans-serif;color:var(--ink)}
 .qstat .cr{width:26px;height:26px;display:inline-block}

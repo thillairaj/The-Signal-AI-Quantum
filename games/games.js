@@ -152,15 +152,38 @@ function finish(run){
 }
 /* ---------- tap utility ---------- */
 /* Every game is tap only: tap an item to select it, tap its target to place it. */
+/* ---------- drag utility ---------- */
+function attachDrag(el,h){
+  el.style.touchAction='none';
+  el.addEventListener('pointerdown',e=>{
+    if(e.pointerType==='mouse'&&e.button!==0)return;
+    e.preventDefault();
+    try{el.setPointerCapture(e.pointerId)}catch(_){}
+    const st={x0:e.clientX,y0:e.clientY,moved:false};
+    h.start&&h.start(e,st);
+    const mv=ev=>{if(ev.pointerId!==e.pointerId)return;if(Math.abs(ev.clientX-st.x0)+Math.abs(ev.clientY-st.y0)>3)st.moved=true;h.move&&h.move(ev,st)};
+    const up=ev=>{if(ev.pointerId!==e.pointerId)return;window.removeEventListener('pointermove',mv);window.removeEventListener('pointerup',up);window.removeEventListener('pointercancel',up);try{el.releasePointerCapture(e.pointerId)}catch(_){}h.end&&h.end(ev,st)};
+    window.addEventListener('pointermove',mv);window.addEventListener('pointerup',up);window.addEventListener('pointercancel',up);
+  });
+}
+function bounce(t){t.classList.remove('drag');t.style.transform=''}
+function dragTile(tile,zones,onDrop){
+  attachDrag(tile,{
+    start(){tile.classList.add('drag');tile.style.transition='none'},
+    move(e,st){tile.style.transform='translate('+(e.clientX-st.x0)+'px,'+(e.clientY-st.y0)+'px)';zones().forEach(z=>z.classList.toggle('hot',inside(z,e.clientX,e.clientY)))},
+    end(e,st){tile.style.transition='';tile.classList.remove('drag');const zs=zones();const hit=zs.find(z=>inside(z,e.clientX,e.clientY));zs.forEach(z=>z.classList.remove('hot'));
+      if(hit&&st.moved){if(onDrop(hit,tile)===false)bounce(tile)}else bounce(tile)}
+  });
+}
 /* ---------- shell ---------- */
 const HELP={
  guess:['You see one clue term at a time.','Tap an answer tile to place it in the clue box.','Stuck? Tap Hint. It removes a wrong answer or shows another clue.'],
- ladder:['Tap a term tile to fill the first open clue. Tap a filled clue to send its term back.','Then tap two rows to swap them into the order they happen.','Hint shows the next tile, marks wrong rows, then fixes one for you.'],
- path:['Tap letters one after another, each next letter touching the last, to spell a hidden term.','Tap the last letter again to step back. Use every square.','Hint reveals the starting letter, then the next letters of a word.'],
+ ladder:['Drag each term tile onto the clue it matches.','Then drag the rows by their handle into the order they happen.','Hint shows the next tile, marks wrong rows, then fixes one for you.'],
+ path:['Press on a letter and drag through touching letters to spell a hidden term.','Letters connect side to side or up and down. Use every square.','Hint reveals the starting letter, then the next letters of a word.'],
  duel:['Tap the card that matches the meaning to answer.','First try 100 points, then 50, 25, 0.','Hint removes a wrong card, so use it when you need it.'],
  queens:['Tap a square once for a \u00d7 mark, tap again for a crown, tap again to clear. Hold a square to clear it at once.','One crown in every row, column and colour group. Crowns may not touch, not even diagonally.','Hint marks wrong crowns in red. If all are right, it places one for you.'],
- trail:['Tap the squares one after another, starting at 1, to draw the path in number order.','The path fills every square and cannot cross itself or the thick walls.','Hint removes a wrong stretch, then draws the next three squares.'],
- double:['Tap a number. With one equal neighbour it merges at once; with more, tap the neighbour you want.','Only side by side, above or below. +3 and \u00d72 tokens join any number.','Merge until one number is left. Hint shows the next merge, then does it.'],
+ trail:['Press on square 1 and drag through the numbers in order.','The path fills every square and cannot cross itself or the thick walls.','Drag back to undo a step. Hint removes a wrong stretch, then draws the next three squares.'],
+ double:['Drag a number onto a neighbour with the same number. They add up.','Only side by side, above or below. +3 and \u00d72 tokens join any number.','Merge until one number is left. Hint shows the next merge, then does it.'],
  gems:['Tap a square to place a fox. Tap again to swap fox and penguin. Given squares cannot change.','Three of each in every row and column. Never three of the same in a row, side by side or stacked.','Hint marks wrong squares in red. If all are right, it fills one for you.'],
  sudoku:['Tap a square, then tap a number on the pad. Erase clears the square you picked.','Each row, column and 2 by 3 box has each number once.','Hint marks wrong numbers in red. If all are right, it fills one square.']
 };
@@ -268,7 +291,7 @@ function mountLadder(mode){
   let order=sshuffle(mids,'ord|'+L.title+'|'+DAYN);if(mode!=='daily')order=shuffle(mids.slice());
   while(order.every((s,i)=>s===i+1))order=shuffle(order.slice());
   const run=newRun('ladder',fam,mode);
-  const filled={};let stage=1,msg='Tap a term to fill the first open clue.',summary='',glowStep=-1,redShown=false,selStep=null,selRow=null,actSlot=-1;
+  const filled={};let stage=1,msg='Drag each term onto the clue it matches.',summary='',glowStep=-1,redShown=false;
   const bank1=sshuffle(mids,'b1|'+L.title),bank3=sshuffle([0,LAST],'b3|'+L.title);
   const g=$('#game');
   const stageText=()=>({1:'STEP 1 OF 3 · MATCH THE TERMS',2:'STEP 2 OF 3 · PUT IN ORDER',3:'STEP 3 OF 3 · UNLOCK THE ENDS',4:'LADDER COMPLETE'}[stage]);
@@ -276,17 +299,16 @@ function mountLadder(mode){
     const end=i===0||i===LAST;
     if(end&&stage<3)return '<div class="rung locked">'+LOCK+'<span>Locked · order the ladder to unlock</span></div>';
     const done=filled[i];
-    const slot=done?'<div class="slot ok" data-fill="'+i+'">'+esc(S[i][0])+'</div>':'<div class="slot'+(stage===1&&i===actSlot?' act':'')+'" data-slot="'+i+'">'+(stage===1?'Tap a term to fill':'Choose a term below')+'</div>';
+    const slot=done?'<div class="slot ok">'+esc(S[i][0])+'</div>':'<div class="slot" data-slot="'+i+'">Drop the term here</div>';
     if(end||stage===1)return '<div class="rung'+(done?' ok':'')+'" data-step="'+i+'"><div class="clue">'+esc(S[i][1])+'</div>'+slot+'</div>';
-    return '<div class="rung mid" data-step="'+i+'"><div class="clue"><span class="term">'+esc(S[i][0])+'</span>'+esc(S[i][1])+'</div>'+(stage===2?'<div class="handle" aria-hidden="true">\u2261</div>':'')+'</div>';
+    return '<div class="rung mid" data-step="'+i+'"><div class="clue"><span class="term">'+esc(S[i][0])+'</span>'+esc(S[i][1])+'</div>'+(stage===2?'<div class="handle" aria-label="Drag to reorder">≡</div>':'')+'</div>';
   }
   function place(st){filled[st]=true;glowStep=-1;
-    if(stage===1&&mids.every(s=>filled[s])){stage=2;msg='All matched. Now tap two rows to swap them into the order they happen.'}
+    if(stage===1&&mids.every(s=>filled[s])){stage=2;msg='All matched. Now drag the rows into the order they happen.'}
     else if(stage===3&&filled[0]&&filled[LAST]){stage=4;msg='';summary=finish(run)}
     else msg='Right match.';
     render()}
   function render(){
-    actSlot=stage===1?order.find(s=>!filled[s]):-1;
     const bank=stage===1?bank1.filter(s=>!filled[s]):stage===3?bank3.filter(s=>!filled[s]):[];
     g.innerHTML=metaHead(run,LABEL[pf],' · '+stageText())+'<div class="serif" style="font-size:24px;line-height:1.1;margin-top:2px">'+esc(L.title)+'</div>'+
     '<div class="ladder" id="ladder">'+row(0)+order.map(row).join('')+row(LAST)+'</div>'+
@@ -296,25 +318,29 @@ function mountLadder(mode){
     if(glowStep>=0){const t=$('#tray .tile[data-v="'+glowStep+'"]'),sl=$('[data-slot="'+glowStep+'"]');t&&t.classList.add('glow');sl&&sl.classList.add('glow')}
     bindHint(run,hint);
     if(stage===4){const a=$('#again');if(a)a.onclick=rr;return}
-    if(stage===1){
-      $$('#tray .tile').forEach(t=>{t.onclick=()=>{const st=+t.dataset.v;
-        if(st===actSlot){place(st);return}
-        run.wrong++;t.classList.add('shake');setTimeout(()=>t.classList.remove('shake'),400);$('#msg').textContent='Not that one. The open clue needs a different term.'}});
-      $$('.slot[data-fill]').forEach(sl=>{sl.onclick=()=>{const st=+sl.dataset.fill;filled[st]=false;glowStep=-1;msg='Term sent back to the tray.';render()}});
-    }
-    if(stage===3){
-      $$('#tray .tile').forEach(t=>{t.onclick=()=>{selStep=+t.dataset.v;$$('#tray .tile').forEach(x=>x.classList.toggle('sel',x===t));$('#msg').textContent='Now tap the end row it belongs to.'}});
-      $$('.slot[data-slot]').forEach(sl=>{sl.onclick=()=>{if(selStep===null)return;const st=+sl.dataset.slot,tv=selStep;selStep=null;
-        if(tv===st){place(st);return}
-        run.wrong++;sl.classList.add('shake');setTimeout(()=>sl.classList.remove('shake'),400);$('#msg').textContent='Not that one. Try the other end.'}});
+    if(stage===1||stage===3){
+      const slots=()=>$$('.slot[data-slot]');
+      $$('#tray .tile').forEach(t=>dragTile(t,slots,sl=>{
+        const st=+sl.dataset.slot,tv=+t.dataset.v;
+        if(tv===st){place(st);return true}
+        run.wrong++;sl.classList.add('shake');setTimeout(()=>sl.classList.remove('shake'),400);$('#msg').textContent='Not that one. Try another clue.';return false;
+      }));
     }
     if(stage===2){
-      $$('.rung.mid').forEach(rEl=>{rEl.onclick=()=>{const st=+rEl.dataset.step;
-        if(selRow===null){selRow=st;rEl.classList.add('sel');$('#msg').textContent='Now tap the row to swap with.';return}
-        if(selRow===st){selRow=null;rEl.classList.remove('sel');return}
-        const i=order.indexOf(selRow),j=order.indexOf(st);const o=order.slice();const t2=o[i];o[i]=o[j];o[j]=t2;order=o;selRow=null;redShown=false;
-        if(order.every((sv,k)=>sv===k+1)){stage=3;msg='Ladder solved. The top and bottom rows are open: tap their terms in.'}else{run.wrong++;msg='Swapped. Tap Hint to see which rows are off.'}
-        render()}});
+      $$('.rung.mid .handle').forEach(h=>{
+        const rowEl=h.closest('.rung');let clone,offY,container;
+        attachDrag(h,{
+          start(e){container=rowEl.parentNode;const r=rowEl.getBoundingClientRect();offY=e.clientY-r.top;clone=rowEl.cloneNode(true);clone.classList.add('floating');clone.style.cssText='position:fixed;left:'+r.left+'px;top:'+r.top+'px;width:'+r.width+'px;z-index:99;pointer-events:none';document.body.appendChild(clone);rowEl.classList.add('ghosted')},
+          move(e){clone.style.top=(e.clientY-offY)+'px';
+            const ms=$$('.rung.mid',container);const others=ms.filter(r=>r!==rowEl);let idx=0;others.forEach(r=>{const b=r.getBoundingClientRect();if(e.clientY>b.top+b.height/2)idx++});
+            const cur=ms.indexOf(rowEl);
+            if(idx!==cur){if(idx>=others.length)others[others.length-1].after(rowEl);else container.insertBefore(rowEl,others[idx])}},
+          end(){clone.remove();rowEl.classList.remove('ghosted');
+            order=$$('.rung.mid',container).map(r=>+r.dataset.step);redShown=false;
+            if(order.every((s,i)=>s===i+1)){stage=3;msg='Ladder solved. The top and bottom rows are open: drag their terms in.'}else{run.wrong++;msg='Not quite yet. Tap Hint to see which rows are off.'}
+            render()}
+        });
+      });
     }
   }
   function hint(){
@@ -323,12 +349,12 @@ function mountLadder(mode){
       if(!wrongIdx.length)return false;
       if(!redShown){redShown=true;$$('.rung.mid').forEach((r,i)=>{if(+r.dataset.step!==i+1)r.classList.add('bad')});$('#msg').textContent='Hint: red rows are in the wrong place.';return true}
       const i=wrongIdx[0],j=order.indexOf(i+1);const o=order.slice();const t=o[i];o[i]=o[j];o[j]=t;order=o;redShown=false;
-      if(order.every((s,k)=>s===k+1)){stage=3;msg='Ladder solved. The top and bottom rows are open: tap their terms in.'}else msg='Hint: one row was moved to its place.';
+      if(order.every((s,k)=>s===k+1)){stage=3;msg='Ladder solved. The top and bottom rows are open: drag their terms in.'}else msg='Hint: one row was moved to its place.';
       render();return true;
     }
-    const t=stage===1?actSlot:bank3.find(s=>!filled[s]);if(t===undefined||t<0)return false;
+    const b=stage===1?bank1:bank3;const t=b.find(s=>!filled[s]);if(t===undefined)return false;
     if(glowStep===t){place(t);msg='Hint: placed for you.';$('#msg').textContent=msg;return true}
-    glowStep=t;render();$('#msg').textContent='Hint: tap the glowing tile to place it in the glowing clue. Use Hint again to place it for you.';return true;
+    glowStep=t;render();$('#msg').textContent='Hint: drag the glowing tile onto the glowing clue. Use Hint again to place it for you.';return true;
   }
   render();
 }
@@ -343,7 +369,7 @@ function mountPath(mode){
   const acc=ACC[pf],g=$('#game'),R=D.R,C=D.C,words=D.words;
   const run=newRun('path',fam,mode);
   const found={};let partials=[],cur=[],drawing=false,base=null,flash=false,wrongTail=[],hintCell=null,hintWord=-1,summary='';
-  g.innerHTML='<div id="ph"></div><div class="pgrid" id="pg" style="grid-template-columns:repeat('+C+',minmax(0,1fr))"></div><div class="wl" id="wl"></div><div class="msg" id="msg">Tap letters one after another, each touching the last, to spell a hidden term. Correct letters stay.</div><div id="pres"></div>';
+  g.innerHTML='<div id="ph"></div><div class="pgrid" id="pg" style="grid-template-columns:repeat('+C+',minmax(0,1fr))"></div><div class="wl" id="wl"></div><div class="msg" id="msg">Drag through touching letters to spell a hidden term. Correct letters stay.</div><div id="pres"></div>';
   $('#ph').innerHTML=metaHead(run,LABEL[pf],' · <span id="pn"></span>');
   const pg=$('#pg');
   const cells=[];for(let r=0;r<R;r++)for(let c=0;c<C;c++){const ch=D.grid[r][c];const d=document.createElement('div');d.className='pc'+(ch==='#'?' x':'');d.textContent=ch==='#'?'':ch;d.dataset.r=r;d.dataset.c=c;pg.appendChild(d);cells.push(d)}
@@ -410,26 +436,19 @@ function mountPath(mode){
       $('#msg').textContent=best.k>=1?'Those last letters are wrong. Your correct letters stay. Carry on from the end.':'That is not the start of a hidden word. Try another square.';
       cur=trace;paint();
       setTimeout(()=>{flash=false;wrongTail=[];cur=[];paint()},1100);
-    }else{$('#msg').textContent=best.k>=2?'Good, those letters stay. Tap on from the last one, or tap Hint for the next letter.':$('#msg').textContent}
+    }else{$('#msg').textContent=best.k>=2?'Good, those letters stay. Drag on from the last one, or tap Hint for the next letter.':$('#msg').textContent}
     base=null;paint();
   }
-  pg.addEventListener('click',e=>{
-    const c=cellAt(e);if(!c||c.classList.contains('x')||flash)return;const k=key(c.dataset.r,c.dataset.c);if(foundSet()[k])return;
-    if(cur.length&&k===cur[cur.length-1]){cur.pop();paint();return}
-    if(!cur.length){for(const p of partials){if(p.cells[p.cells.length-1]===k){p.cells.pop();if(!p.cells.length)partials=partials.filter(q=>q!==p);paint();return}}}
-    if(!cur.length){base=null;cur=[k];for(const p of partials){const i=p.cells.indexOf(k);if(i>=0){base=p;cur=p.cells.slice(0,i+1);break}}wrongTail=[];paint();return}
-    const last=cur[cur.length-1];if(k===last)return;
+  pg.addEventListener('pointerdown',e=>{const c=cellAt(e);if(!c||c.classList.contains('x')||flash)return;const k=key(c.dataset.r,c.dataset.c);if(foundSet()[k])return;
+    base=null;cur=[k];
+    for(const p of partials){const i=p.cells.indexOf(k);if(i>=0){base=p;cur=p.cells.slice(0,i+1);break}}
+    e.preventDefault();pg.setPointerCapture(e.pointerId);drawing=true;wrongTail=[];paint()});
+  pg.addEventListener('pointermove',e=>{if(!drawing)return;const c=cellAt(e);if(!c||c.classList.contains('x'))return;const k=key(c.dataset.r,c.dataset.c);const last=cur[cur.length-1];if(k===last)return;
     if(cur.length>1&&k===cur[cur.length-2]){cur.pop();paint();return}
     const other=partialSet(base),fs=foundSet();
-    if(adj(last,k)&&cur.indexOf(k)<0&&!fs[k]&&!other[k]){cur.push(k);
-      const ls=cur.map(letter).join('');const idx=words.findIndex((x,i)=>!found[i]&&(x===ls||rev(x)===ls));
-      if(idx>=0){const tr=cur.slice();cur=[];lockWord(idx,tr);$('#msg').textContent='Word found.';base=null;paint();return}
-      const best=bestPrefix(cur.slice(),base?base.word:-1);
-      if(best.k<cur.length){finishTrace();return}
-      paint();return}
-    finishTrace();
-    base=null;cur=[k];wrongTail=[];paint();
-  });
+    if(adj(last,k)&&cur.indexOf(k)<0&&!fs[k]&&!other[k]){cur.push(k);paint()}});
+  const end=e=>{if(!drawing)return;drawing=false;try{pg.releasePointerCapture(e.pointerId)}catch(_){}finishTrace()};
+  pg.addEventListener('pointerup',end);pg.addEventListener('pointercancel',end);
 
   bindHint(run,()=>{
     if(flash)return false;
@@ -588,7 +607,7 @@ function mountTrail(mode){
   const wl=new Set();P.walls.forEach(([a,b])=>wl.add(a[0]+','+a[1]+'|'+b[0]+','+b[1]));
   const wall=(a,b)=>{const [r1,c1]=a.split(',').map(Number),[r2,c2]=b.split(',').map(Number);const x=[[r1,c1],[r2,c2]].sort((p,q)=>p[0]-q[0]||p[1]-q[1]);return wl.has(x[0][0]+','+x[0][1]+'|'+x[1][0]+','+x[1][1])};
   const run=newRun('trail',fam,mode);const g=$('#game');
-  let path=[],drawing=false,solved=false,summary='',msg='Tap square 1, then tap each next square to draw the path.',gold=new Set(),red=new Set(),supTap=false;
+  let path=[],drawing=false,solved=false,summary='',msg='Press on square 1 and drag through every square.',gold=new Set(),red=new Set();
   const hist=[];
   function nextNeeded(){let n=0;path.forEach(k=>{if(nums[k])n++});return n+1}
   function render(){
@@ -607,23 +626,16 @@ function mountTrail(mode){
     const cellAt=e=>{const t=e.target&&e.target.closest?e.target.closest('.tc'):null;if(t&&tb.contains(t))return t.dataset.r+','+t.dataset.c;const el=document.elementFromPoint(e.clientX,e.clientY);const c=el&&el.closest&&el.closest('.tc');return c&&tb.contains(c)?c.dataset.r+','+c.dataset.c:null};
     tb.addEventListener('pointerdown',e=>{const k=cellAt(e);if(!k)return;
       if(!path.length){if(nums[k]!==1)return}
-      else if(path[path.length-1]!==k){const i=path.indexOf(k);if(i<0)return;path=path.slice(0,i+1);supTap=true}
-      e.preventDefault();tb.setPointerCapture(e.pointerId);drawing=true;gold.clear();red.clear();if(!path.length){path=[k];supTap=true}paint()});
+      else if(path[path.length-1]!==k){const i=path.indexOf(k);if(i<0)return;path=path.slice(0,i+1)}
+      e.preventDefault();tb.setPointerCapture(e.pointerId);drawing=true;gold.clear();red.clear();if(!path.length)path=[k];paint()});
     tb.addEventListener('pointermove',e=>{if(!drawing)return;const k=cellAt(e);if(!k)return;const last=path[path.length-1];if(k===last)return;
       const [r1,c1]=last.split(',').map(Number),[r2,c2]=k.split(',').map(Number);if(Math.abs(r1-r2)+Math.abs(c1-c2)!==1)return;
-      if(path.length>1&&k===path[path.length-2]){path.pop();supTap=true;paint();return}
+      if(path.length>1&&k===path[path.length-2]){path.pop();paint();return}
       if(path.indexOf(k)>=0||wall(last,k))return;
       if(nums[k]&&nums[k]!==nextNeeded())return;
-      path.push(k);supTap=true;paint()});
+      path.push(k);paint()});
     const end=e=>{if(!drawing)return;drawing=false;try{tb.releasePointerCapture(e.pointerId)}catch(_){}render()};
     tb.addEventListener('pointerup',end);tb.addEventListener('pointercancel',end);
-    tb.addEventListener('click',e=>{if(solved)return;if(supTap){supTap=false;return}
-      const t=e.target&&e.target.closest?e.target.closest('.tc'):null;if(!t||!tb.contains(t))return;const k=t.dataset.r+','+t.dataset.c;
-      if(!path.length)return;
-      if(k===path[path.length-1]){path.pop()}
-      else{const i=path.indexOf(k);if(i>=0)path=path.slice(0,i+1);
-        else{const last=path[path.length-1];const [r1,c1]=last.split(',').map(Number),[r2,c2]=k.split(',').map(Number);if(Math.abs(r1-r2)+Math.abs(c1-c2)!==1)return;if(wall(last,k))return;if(nums[k]&&nums[k]!==nextNeeded())return;path.push(k)}}
-      gold.clear();red.clear();render()});
   }
   function paint(){
     const tb=$('#tb');if(!tb)return;const cells=$$('.tc',tb);const svg=$('#tov');const pb=tb.getBoundingClientRect();
@@ -705,7 +717,7 @@ function mountDouble(mode){
   shell('double','Double Up',false,rr,mode);
   const fam='any';if(doneCard('double',fam,mode,'Double Up',rr))return;
   const P=mode==='daily'?pickNonRepeat(DOUBLE,'double',DAYN):DOUBLE[Math.floor(Math.random()*DOUBLE.length)];
-  const N=P.N;let grid=P.cells.slice();const hist=[];let solved=false,summary='',msg='Tap a number to merge it with an equal neighbour.',pending=null,lastTo=-1,selI=null,burstTo=-1;
+  const N=P.N;let grid=P.cells.slice();const hist=[];let solved=false,summary='',msg='Drag a number onto an equal neighbour.',pending=null,lastTo=-1,burstTo=-1;
   const run=newRun('double',fam,mode);const g=$('#game');
   const nb=i=>{const r=Math.floor(i/N),c=i%N,o=[];[[0,1],[1,0],[0,-1],[-1,0]].forEach(([dr,dc])=>{const rr_=r+dr,cc=c+dc;if(rr_>=0&&cc>=0&&rr_<N&&cc<N)o.push(rr_*N+cc)});return o};
   const memo=new Map();
@@ -721,24 +733,23 @@ function mountDouble(mode){
     if(left()===1&&isNum(grid.find(x=>x!==''))&&!solved){solved=true;summary=finish(run);setTimeout(()=>{if(window.SGAnim)SGAnim.win($('#db'),'.dt')},60)}
     const stuck=!solved&&!anyMove(grid);
     let h=metaHead(run,'PUZZLE',' · '+left()+' LEFT')+'<div class="db" id="db" style="grid-template-columns:repeat('+N+',minmax(0,1fr))">';
-    for(let i=0;i<N*N;i++){const t=grid[i];const isP=(pending&&pending.from===i)||selI===i,isT=(pending&&pending.to===i)||(selI!==null&&selI!==i&&nb(selI).indexOf(i)>=0&&mergeVal(grid[selI],grid[i])!==null);
+    for(let i=0;i<N*N;i++){const t=grid[i];const isP=pending&&pending.from===i,isT=pending&&pending.to===i;
       h+='<div class="dc'+(isT?' tgt':'')+'" data-i="'+i+'">'+(t===''?'':'<div class="dt'+(isNum(t)?'':' wild')+(isP?' glow':'')+(i===lastTo?' pop':'')+'" data-i="'+i+'" style="'+(isNum(t)?'background:'+DCOL(t):'')+'">'+(isNum(t)?t:(t==='+3'?'+3':'×2'))+'</div>')+'</div>'}
     h+='</div><div class="qact"><button class="ghost" id="undo"'+(hist.length?'':' disabled')+'>Undo</button><button class="ghost" id="reset">Reset</button></div><div class="msg" id="msg" style="text-align:center">'+(stuck?'<b style="color:var(--bad)">No more merges are possible. Tap Undo or Reset.</b>':msg)+'</div>';
     if(solved)h+='<div class="res"><div class="k" style="color:var(--good)">SOLVED</div><div class="a">One number left: '+grid.find(x=>x!=='')+'.</div>'+summary+'<div class="acts">'+(mode==='daily'?'<a class="p" href="#hub">More puzzles</a>':'<button class="p" id="da">New puzzle</button>')+''+SHARE_BTN+'</div></div>';
     g.innerHTML=h;bindHint(run,hint);
-    const u=$('#undo');if(u)u.onclick=()=>{if(!hist.length||solved)return;grid=hist.pop();pending=null;selI=null;lastTo=-1;msg='Undone.';render()};
-    const rs=$('#reset');if(rs)rs.onclick=()=>{hist.push(grid.slice());grid=P.cells.slice();pending=null;selI=null;lastTo=-1;msg='Board reset.';render()};
+    const u=$('#undo');if(u)u.onclick=()=>{if(!hist.length||solved)return;grid=hist.pop();pending=null;lastTo=-1;msg='Undone.';render()};
+    const rs=$('#reset');if(rs)rs.onclick=()=>{hist.push(grid.slice());grid=P.cells.slice();pending=null;lastTo=-1;msg='Board reset.';render()};
     const da=$('#da');if(da)da.onclick=rr;
     if(solved)return;
     $$('#db .dt').forEach(tile=>{const i=+tile.dataset.i;
-      tile.onclick=()=>{
-        if(selI===i){selI=null;render();return}
-        if(selI!==null&&nb(selI).indexOf(i)>=0&&mergeVal(grid[selI],grid[i])!==null){const from=selI;selI=null;doMerge(from,i);burstTo=i;msg='Merged.';render();return}
-        if(selI!==null&&nb(selI).indexOf(i)>=0){run.wrong++;msg='Those two cannot merge. Equal numbers only, side by side.'}
-        const eqs=nb(i).filter(j=>mergeVal(grid[i],grid[j])!==null);
-        if(!eqs.length){selI=null;if(window.SGAnim)SGAnim.shake(tile);const m=$('#msg');if(m)m.textContent='That number has no equal neighbour to merge with.';return}
-        if(eqs.length===1){selI=null;doMerge(i,eqs[0]);burstTo=eqs[0];msg='Merged.';render();return}
-        selI=i;render()};
+      attachDrag(tile,{start(){tile.classList.add('drag');tile.style.transition='none';tile.style.zIndex=60},
+        move(e,st){tile.style.transform='translate('+(e.clientX-st.x0)+'px,'+(e.clientY-st.y0)+'px) scale(1.08)';
+          $$('#db .dc').forEach(c=>{const j=+c.dataset.i;c.classList.toggle('hot',j!==i&&nb(i).indexOf(j)>=0&&inside(c,e.clientX,e.clientY)&&mergeVal(grid[i],grid[j])!==null)})},
+        end(e,st){tile.classList.remove('drag');const hit=$$('#db .dc').find(c=>{const j=+c.dataset.i;return j!==i&&nb(i).indexOf(j)>=0&&inside(c,e.clientX,e.clientY)});
+          $$('#db .dc').forEach(c=>c.classList.remove('hot'));
+          if(hit&&st.moved&&mergeVal(grid[i],grid[+hit.dataset.i])!==null){doMerge(i,+hit.dataset.i);burstTo=+hit.dataset.i;msg='Merged.';render()}
+          else{tile.style.transition='';tile.style.transform='';tile.style.zIndex='';if(hit&&st.moved){run.wrong++;msg='Those two cannot merge. Equal numbers only.';const m=$('#msg');if(m)m.textContent=msg}}}})
     });
     if(burstTo>=0){const bt=burstTo;burstTo=-1;const el=$('#db .dt[data-i="'+bt+'"]');if(el&&window.SGAnim){SGAnim.pop(el);SGAnim.burst(el,'×2')}}
   }
@@ -747,7 +758,7 @@ function mountDouble(mode){
     if(!solvable(grid)){let n=0;while(hist.length&&!solvable(grid)){grid=hist.pop();n++}pending=null;lastTo=-1;msg='Hint: that position could not be finished, so the last '+n+(n===1?' move was':' moves were')+' undone.';render();return true}
     const m=bestMove(grid);if(!m)return false;
     if(pending&&pending.from===m.from&&pending.to===m.to){doMerge(m.from,m.to);msg='Hint: that merge was made for you.';render();return true}
-    pending={from:m.from,to:m.to};msg='Hint: the glowing number merges with the gold-ringed neighbour. Tap Hint again to do it for you.';render();return true;
+    pending={from:m.from,to:m.to};msg='Hint: drag the glowing number onto the gold-ringed neighbour. Tap Hint again to do it for you.';render();return true;
   }
   render();
 }
@@ -765,8 +776,12 @@ function mountSudoku(mode){
   function render(){
     const bad=conflicts();const full=grid.every(r=>r.every(v=>v>0));
     if(full&&bad.size===0&&!solved){solved=true;summary=finish(run);setTimeout(()=>{if(window.SGAnim)SGAnim.win($('#sg'),'.sc')},60)}
+    const okCells=new Set();const unitOk=u=>u.every(([r,c])=>grid[r][c]===sol[r][c]);
+    for(let r=0;r<6;r++){const u=[];for(let c=0;c<6;c++)u.push([r,c]);if(unitOk(u))u.forEach(([a,b])=>okCells.add(a+','+b))}
+    for(let c=0;c<6;c++){const u=[];for(let r=0;r<6;r++)u.push([r,c]);if(unitOk(u))u.forEach(([a,b])=>okCells.add(a+','+b))}
+    for(let br=0;br<6;br+=2)for(let bc=0;bc<6;bc+=3){const u=[];for(let i=0;i<2;i++)for(let j=0;j<3;j++)u.push([br+i,bc+j]);if(unitOk(u))u.forEach(([a,b])=>okCells.add(a+','+b))}
     let h=metaHead(run,'PUZZLE',' · #'+(idx+1))+'<div class="sg" id="sg">';
-    for(let r=0;r<6;r++)for(let c=0;c<6;c++){const k=r+','+c;const v=grid[r][c];h+='<div class="sc '+(given[r][c]?'g':'u')+((bad.has(k)||wrongMark.has(k))?' err':'')+(revealed.has(k)?' rev':'')+((c===2)?' br':'')+((r===1||r===3)?' bb':'')+'" data-r="'+r+'" data-c="'+c+'">'+(v||'')+'</div>'}
+    for(let r=0;r<6;r++)for(let c=0;c<6;c++){const k=r+','+c;const v=grid[r][c];h+='<div class="sc '+(given[r][c]?'g':'u')+(okCells.has(k)?' unitok':'')+((bad.has(k)||wrongMark.has(k))?' err':'')+(revealed.has(k)?' rev':'')+((c===2)?' br':'')+((r===1||r===3)?' bb':'')+'" data-r="'+r+'" data-c="'+c+'">'+(v||'')+'</div>'}
     h+='</div><div class="spad" id="pad">'+[1,2,3,4,5,6].map(n=>'<div class="tile" data-n="'+n+'">'+n+'</div>').join('')+'<div class="tile erase" data-n="0" aria-label="Erase">Erase</div></div><div class="msg" id="msg" style="text-align:center">'+msg+'</div>';
     if(solved)h+='<div class="res"><div class="k" style="color:var(--good)">SOLVED</div><p>Every row, column and box has 1 to 6 once.</p>'+summary+'<div class="acts">'+(mode==='daily'?'<a class="p" href="#hub">More games</a>':'<button class="p" id="nw">New puzzle</button>')+''+SHARE_BTN+'</div></div>';
     g.innerHTML=h;
@@ -775,7 +790,7 @@ function mountSudoku(mode){
     if(selC){const sc=$('#sg .sc[data-r="'+selC[0]+'"][data-c="'+selC[1]+'"]');if(sc)sc.classList.add('sel')}
     if(lastPlace){const lp=lastPlace;lastPlace=null;const el=$('#sg .sc[data-r="'+lp[0]+'"][data-c="'+lp[1]+'"]');if(el&&window.SGAnim){SGAnim.pop(el);
       const bad=conflicts();const units=[];const ru=[],cu=[],bu=[];for(let i=0;i<6;i++){ru.push(lp[0]+','+i);cu.push(i+','+lp[1])}const br=Math.floor(lp[0]/2)*2,bc=Math.floor(lp[1]/3)*3;for(let i=0;i<2;i++)for(let j=0;j<3;j++)bu.push((br+i)+','+(bc+j));
-      [ru,cu,bu].forEach(u=>{if(u.every(k=>{const [r,c]=k.split(',').map(Number);return grid[r][c]>0&&!bad.has(k)}))units.push(u)});
+      [ru,cu,bu].forEach(u=>{if(u.every(k=>{const [r,c]=k.split(',').map(Number);return grid[r][c]===sol[r][c]}))units.push(u)});
       units.forEach(u=>SGAnim.shimmer(u.map(k=>{const [r,c]=k.split(',').map(Number);return $('#sg .sc[data-r="'+r+'"][data-c="'+c+'"]')})))}}
     $$('#sg .sc').forEach(cell=>{if(cell.classList.contains('g'))return;cell.onclick=()=>{const r=+cell.dataset.r,c=+cell.dataset.c;
       selC=[r,c];msg='Now tap a number, or tap Erase to clear it.';render()}});
