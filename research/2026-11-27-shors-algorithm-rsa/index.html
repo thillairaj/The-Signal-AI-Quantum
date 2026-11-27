@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en" class="sgp sgp-article">
+<head>
+<meta charset="UTF-8">
+<script src="../../assets/signal-theme.js?v=20261126t"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>How Does Shor&#x27;s Algorithm Break RSA Without Trying Every Factor? · The Signal</title>
+<meta name="description" content="Factoring is a clock problem, and the clock just got cheaper.">
+<link rel="canonical" href="https://signal.luzovi.com/research/2026-11-27-shors-algorithm-rsa/">
+<link rel="alternate" type="application/rss+xml" title="The Signal: Articles" href="https://signal.luzovi.com/articles.xml">
+<link rel="stylesheet" href="../../assets/signal-follow.css?v=20261126g">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="The Signal">
+<meta property="og:title" content="How Does Shor&#x27;s Algorithm Break RSA Without Trying Every Factor?">
+<meta property="og:description" content="Factoring is a clock problem, and the clock just got cheaper.">
+<meta property="og:url" content="https://signal.luzovi.com/research/2026-11-27-shors-algorithm-rsa/">
+<meta property="og:image" content="https://signal.luzovi.com/research/cards/edition-19.png">
+<link rel="stylesheet" href="../../style.css">
+<style>
+.ap-weekly{max-width:1060px;margin:18px auto 0;padding:0 20px;font:600 13px var(--font-body)}
+.ap-weekly a{color:var(--muted);text-decoration:none}
+.ap-weekly a:hover{color:var(--ink)}
+.ap-wrap{max-width:1060px;margin:0 auto;padding:28px 20px 8px}
+.ap-head{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:26px}
+.ap-brand{font-family:var(--font-display);font-weight:800;font-size:26px;color:var(--ink);text-decoration:none}
+.ap-brand em{color:#B8860B;font-style:italic}
+.ap-back{font:600 13px var(--font-body);color:var(--muted);text-decoration:none}
+.ap-back:hover{color:var(--ink)}
+.ap-foot{max-width:1060px;margin:34px auto 0;padding:18px 20px 30px;border-top:1px solid var(--border);color:var(--muted);font-size:13px;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.ap-foot a{color:var(--muted)}
+</style>
+<link rel="stylesheet" href="../../assets/signal-shell.css?v=20261126k">
+<link rel="stylesheet" href="../../assets/signal-pages.css">
+<link rel="stylesheet" href="../../assets/signal-brand.css?v=20261125">
+<meta name="sg-stage" content="2">
+<link rel="stylesheet" href="../../assets/signal-themes.css?v=20261126t">
+<link rel="icon" href="../../favicon.svg" type="image/svg+xml">
+<link rel="icon" href="../../favicon.ico" sizes="any">
+<link rel="apple-touch-icon" href="../../apple-touch-icon.png">
+<link rel="manifest" href="../../site.webmanifest">
+<meta name="theme-color" content="#3F7D20">
+
+<meta name="signal-build" content="2026-11-07.footer1">
+<link rel="stylesheet" href="../../assets/signal-footer.css?v=2026-11-07.footer1">
+</head>
+<body>
+<div class="ap-wrap">
+  <h1 class="research-title">How Does Shor&#x27;s Algorithm Break RSA Without Trying Every Factor?</h1>
+  <p class="research-sub">Factoring is a clock problem, and the clock just got cheaper.</p>
+  <p class="research-date">27 Nov 2026 · By The Signal</p>
+  <div class="research-share" id="artShare"></div>
+  <div class="research-layout">
+    <div class="research-main">
+      <div class="research-body"><p>In 1994, Peter Shor showed a quantum computer could factor large numbers in polynomial time. RSA rests on factoring, and Diffie-Hellman and elliptic curve schemes rest on discrete logarithms, so one algorithm threatens most public key cryptography on the internet. The threat is real in theory and absent in practice: no RSA key has ever been factored by a quantum computer, and the largest number factored without shortcuts is 35.</p>
+
+<h3>Factoring is really a clock problem</h3>
+
+<p>Shor's trick is to stop hunting for factors. Pick a number a that shares no factor with N. Compute a, a squared, a cubed, and so on modulo N. Modular arithmetic wraps around, so the sequence repeats with some period r. If r is even, then a to the power r/2 minus 1 and plus 1 usually share a factor with N, and a greatest common divisor reveals it. The hard part is finding r: classically, finding the period is no easier than factoring itself.</p>
+
+<h3>Where the quantum computer earns its keep</h3>
+
+<p>A quantum computer evaluates the sequence for all exponents at once in superposition, then applies a quantum Fourier transform. The transform concentrates probability on outcomes that encode the period, so a few runs reveal r. The classical steps are cheap. The quantum step is the whole advantage: an exponential speedup from interference, not from trying factors faster.</p>
+
+<h3>What it would actually take</h3>
+
+<p>On October 29, 2026, Alice and Bob with Inria, CEA and the University of Edinburgh published a full compilation of Shor's algorithm onto superconducting cat qubits (IACR ePrint 2026/2665): 22,593 physical qubits and 3.14 days to factor one RSA-2048 key, and 29,588 qubits in about an hour for a 256-bit elliptic curve key. That is roughly 40 times fewer than Google Quantum AI's May 2025 estimate of under one million. The catch is the assumption of no bit-flip errors, while the largest published cat-qubit chip holds 12 qubits. Estimates keep falling while hardware stands still, which is why NIST's calendar, 112-bit RSA and ECC deprecated after 2030 and disallowed after 2035, reads as a deadline, not an attack date.</p>
+</div>
+      <p class="sgp-note">Signal Research Notes is an original-research series on The Signal, published three times a week. Each edition asks one question, works through it from primary sources, and keeps confirmed facts separate from analysis. Sources are linked at the end.</p><h3 class="research-sources-h">Sources</h3><ul class="research-sources"><li><a href="https://eprint.iacr.asia/2026/2665.pdf" target="_blank" rel="noopener">Alice &amp; Bob et al.: Shor&#x27;s algorithm compiled on cat qubits (IACR ePrint 2026/2665, Oct 29, 2026)</a></li><li><a href="https://rosettaquantum.com/blog/how-many-qubits-does-it-take-to-break-rsa-2048-en/" target="_blank" rel="noopener">Rosetta Quantum: How many qubits does it take to break RSA-2048? (Nov 2026)</a></li><li><a href="https://quantumwire.com/article/17935930357936.html" target="_blank" rel="noopener">QuantumWire: Alice &amp; Bob Sets Record Low for Quantum Resources Required To Break Internet Encryption (Oct 29, 2026)</a></li></ul>
+    </div>
+    <aside class="research-rail">
+      <img src="../../research/cards/edition-19.webp" alt="How Does Shor&#x27;s Algorithm Break RSA Without Trying Every Factor? cover" style="width:100%;border-radius:12px">
+    </aside>
+  </div>
+</div>
+
+<section class="sg-fsec" id="follow-feeds" aria-labelledby="fsArticle">
+  <div class="sg-fsec-hd"><span class="sg-fsec-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" aria-hidden="true"><path d="M5 11a8 8 0 0 1 8 8M5 5a14 14 0 0 1 14 14"/><circle cx="6" cy="18" r="1.8" fill="currentColor" stroke="none"/></svg></span><h2 id="fsArticle">Follow in a news reader</h2></div>
+  <p class="sg-fsec-how">Tap to copy, then paste it into your reader app. For example: Feedly or Inoreader (web, iPhone, Android), NetNewsWire (iPhone), Feeder (Android), or any news-reader app.</p>
+  <div class="sg-frow1">
+    <button type="button" class="sg-fchip" data-url="https://signal.luzovi.com/articles.xml" aria-label="Copy the All articles feed link"><span class="sg-fdot" style="--dot:var(--sg-ink)"></span><span class="sg-fname"><span class="l">All articles</span><span class="s">All articles</span></span><span class="sg-fcp"><svg class="cy" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg><svg class="ok" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l4 4 10-10"/></svg></span></button>
+  </div>
+</section>
+<footer class="ap-foot">
+  <span>The Signal · Research Notes</span>
+  
+</footer>
+<script src="../../assets/signal-share.js?v=20261126m"></script>
+<script>
+(function () {
+  var A = { id: "2026-11-27-shors-algorithm-rsa", title: "How Does Shor's Algorithm Break RSA Without Trying Every Factor?", subtitle: "Factoring is a clock problem, and the clock just got cheaper." };
+  var url = SignalShare.BASE + "/research/" + A.id + "/";
+  var caption = SignalShare.articleCaption(A.title, A.subtitle, url);
+  window.__articleCaption = caption;
+  window.__articleUrl = url;
+  var spec = { title: A.title, line: A.subtitle, link: url, caption: caption,
+    tags: "#TheSignal " + SignalShare.topicHashtag(A.title + " " + A.subtitle),
+    image: SignalShare.cardImage({ type: "Article \u00b7 Research Notes", tech: "signal", heading: A.title, body: A.subtitle, source: "Research Notes" }, A.id + ".png") };
+  window.__articleSpec = spec;
+  document.getElementById("artShare").appendChild(SignalShare.shareButton(spec));
+})();
+</script>
+<script src="../../assets/signal-follow.js?v=20261126g"></script>
+<script src="../../assets/signal-shell.js?v=20261126k" defer></script>
+<footer class="signal-footer">
+  <div class="sf-follow"><span class="sf-label">Follow along</span><span class="sf-links"><a class="sf-link" href="https://www.linkedin.com/company/luzovi/" target="_blank" rel="noopener"><span class="sf-badge" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.55V9h3.57v11.45z"/></svg></span>Luzovi</a><a class="sf-link" href="https://www.linkedin.com/in/thillairaj" target="_blank" rel="noopener"><span class="sf-badge" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.55V9h3.57v11.45z"/></svg></span>Thillai Raj</a><a class="sf-link" href="https://www.linkedin.com/showcase/qu-bits/" target="_blank" rel="noopener"><span class="sf-badge" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.55V9h3.57v11.45z"/></svg></span>QuBits · Quantum &amp; AI</a><a class="sf-link" href="https://www.linkedin.com/showcase/agentic-ai-architect/" target="_blank" rel="noopener"><span class="sf-badge" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.55V9h3.57v11.45z"/></svg></span>Agentic AI Architect</a></span></div>
+  <p class="sf-copy">© 2026 The Signal</p>
+  <p class="sf-tag">Learn it. Then share it.</p>
+</footer>
+<script src="../../assets/version-check.js?v=2026-11-07.footer1"></script>
+</body>
+</html>

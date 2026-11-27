@@ -1,6 +1,29 @@
 {
   "articles": [
     {
+      "id": "2026-11-27-shors-algorithm-rsa",
+      "title": "How Does Shor's Algorithm Break RSA Without Trying Every Factor?",
+      "subtitle": "Factoring is a clock problem, and the clock just got cheaper.",
+      "date": "2026-11-27",
+      "kind": "Brief",
+      "card": "research/cards/edition-19.webp",
+      "body": "research/articles/2026-11-27-shors-algorithm-rsa.html",
+      "sources": [
+        {
+          "label": "Alice & Bob et al.: Shor's algorithm compiled on cat qubits (IACR ePrint 2026/2665, Oct 29, 2026)",
+          "url": "https://eprint.iacr.asia/2026/2665.pdf"
+        },
+        {
+          "label": "Rosetta Quantum: How many qubits does it take to break RSA-2048? (Nov 2026)",
+          "url": "https://rosettaquantum.com/blog/how-many-qubits-does-it-take-to-break-rsa-2048-en/"
+        },
+        {
+          "label": "QuantumWire: Alice & Bob Sets Record Low for Quantum Resources Required To Break Internet Encryption (Oct 29, 2026)",
+          "url": "https://quantumwire.com/article/17935930357936.html"
+        }
+      ]
+    },
+    {
       "id": "2026-11-25-glm-5-4-loop-transformer",
       "title": "Why Does Z.ai's GLM-5.4 Run the Same Layers Twice?",
       "subtitle": "A 750B model trades parameters for depth, but its headline claim still has no benchmark behind it.",
@@ -543,5 +566,5 @@
       "title": "Where Does Value Accrue in the AI Stack?"
     }
   ],
-  "generated_at": "2026-11-25T04:17:58.937186+00:00"
+  "generated_at": "2026-11-27T04:18:36.393978+00:00"
 }

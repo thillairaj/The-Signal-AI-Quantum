@@ -5,8 +5,22 @@
     <link>https://signal.luzovi.com/#research</link>
     <description>Original research from The Signal (Research Notes): one question at a time.</description>
     <language>en</language>
-    <lastBuildDate>Mon, 23 Nov 2026 07:00:00 +0530</lastBuildDate>
+    <lastBuildDate>Fri, 27 Nov 2026 07:00:00 +0530</lastBuildDate>
     <atom:link href="https://signal.luzovi.com/articles.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>How Does Shor's Algorithm Break RSA Without Trying Every Factor?</title>
+      <link>https://signal.luzovi.com/research/2026-11-27-shors-algorithm-rsa/</link>
+      <guid isPermaLink="true">https://signal.luzovi.com/research/2026-11-27-shors-algorithm-rsa/</guid>
+      <pubDate>Fri, 27 Nov 2026 07:00:00 +0530</pubDate>
+      <description>Factoring is a clock problem, and the clock just got cheaper.</description>
+    </item>
+    <item>
+      <title>Why Does Z.ai's GLM-5.4 Run the Same Layers Twice?</title>
+      <link>https://signal.luzovi.com/research/2026-11-25-glm-5-4-loop-transformer/</link>
+      <guid isPermaLink="true">https://signal.luzovi.com/research/2026-11-25-glm-5-4-loop-transformer/</guid>
+      <pubDate>Wed, 25 Nov 2026 07:00:00 +0530</pubDate>
+      <description>A 750B model trades parameters for depth, but its headline claim still has no benchmark behind it.</description>
+    </item>
     <item>
       <title>Why Did the Frontier AI Pause Fail to Slow the Chip Boom?</title>
       <link>https://signal.luzovi.com/research/2026-11-23-frontier-ai-pause-chip-boom/</link>

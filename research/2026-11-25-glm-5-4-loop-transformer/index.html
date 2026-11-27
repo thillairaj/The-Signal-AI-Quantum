@@ -7,6 +7,8 @@
 <title>Why Does Z.ai&#x27;s GLM-5.4 Run the Same Layers Twice? · The Signal</title>
 <meta name="description" content="A 750B model trades parameters for depth, but its headline claim still has no benchmark behind it.">
 <link rel="canonical" href="https://signal.luzovi.com/research/2026-11-25-glm-5-4-loop-transformer/">
+<link rel="alternate" type="application/rss+xml" title="The Signal: Articles" href="https://signal.luzovi.com/articles.xml">
+<link rel="stylesheet" href="../../assets/signal-follow.css?v=20261126g">
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="The Signal">
 <meta property="og:title" content="Why Does Z.ai&#x27;s GLM-5.4 Run the Same Layers Twice?">
@@ -59,8 +61,7 @@
 
 <p>The strongest evidence Z.ai published comes from a 30-billion-parameter model, not the flagship. At the same size and about 10 percent more training compute, the looped version improved AIME25 from 19.2 to 30.4 and GPQA-Diamond from 47.6 to 56.3, while cutting output length by 10 to 14 percent on most benchmarks. In effect, part of the reasoning moves from written tokens into the loop's hidden depth. Z.ai also reports up to 200 tokens per second off peak and 70 to 80 at peak. No flagship benchmark scores have been published, and the weights are promised only after safety hardening, with no date. It is available now through the GLM Coding Plan, ZCode and Z.ai Chat. Z.ai admits one flaw: the model can fall into marathon thinking. The same week, Thinking Machines shipped Inkling 2 Mini, an open-weights model that loops its middle layers three times per token. The test that matters is independent: benchmark the flagship, or the 2-to-3-trillion claim stays a vendor number.</p>
 </div>
-      <p class="sgp-note">Signal Research Notes is an original-research series on The Signal, published three times a week. Each edition asks one question, works through it from primary sources, and keeps confirmed facts separate from analysis. Sources are linked at the end.</p>
-      <h3 class="research-sources-h">Sources</h3><ul class="research-sources"><li><a href="https://z.ai/blog/glm-5.4" target="_blank" rel="noopener">Z.ai: Toward Generalized Coding with Our First Loop Transformer (Nov 23, 2026)</a></li><li><a href="https://the-decoder.com/z-ai-follows-openai-into-loop-transformer-territory-with-its-new-750b-flagship-model/" target="_blank" rel="noopener">The Decoder: Z.ai follows OpenAI into loop transformer territory with its new 750B flagship model (Nov 23, 2026)</a></li><li><a href="https://www.techtimes.com/articles/331387/20261124/zai-unveils-glm-54-ai-model-rerunning-28-layers-saves-memory-not-compute-china-law-applies.htm" target="_blank" rel="noopener">Tech Times: Z.ai Unveils GLM-5.4 AI Model (Nov 24, 2026)</a></li><li><a href="https://www.demandsphere.com/research/demandsphere-radar/ai-frontier-model-tracker/changelog/" target="_blank" rel="noopener">DemandSphere: AI Frontier Model Tracker changelog, Inkling 2 Mini (Nov 20, 2026)</a></li></ul>
+      <p class="sgp-note">Signal Research Notes is an original-research series on The Signal, published three times a week. Each edition asks one question, works through it from primary sources, and keeps confirmed facts separate from analysis. Sources are linked at the end.</p><h3 class="research-sources-h">Sources</h3><ul class="research-sources"><li><a href="https://z.ai/blog/glm-5.4" target="_blank" rel="noopener">Z.ai: Toward Generalized Coding with Our First Loop Transformer (Nov 23, 2026)</a></li><li><a href="https://the-decoder.com/z-ai-follows-openai-into-loop-transformer-territory-with-its-new-750b-flagship-model/" target="_blank" rel="noopener">The Decoder: Z.ai follows OpenAI into loop transformer territory with its new 750B flagship model (Nov 23, 2026)</a></li><li><a href="https://www.techtimes.com/articles/331387/20261124/zai-unveils-glm-54-ai-model-rerunning-28-layers-saves-memory-not-compute-china-law-applies.htm" target="_blank" rel="noopener">Tech Times: Z.ai Unveils GLM-5.4 AI Model (Nov 24, 2026)</a></li><li><a href="https://www.demandsphere.com/research/demandsphere-radar/ai-frontier-model-tracker/changelog/" target="_blank" rel="noopener">DemandSphere: AI Frontier Model Tracker changelog, Inkling 2 Mini (Nov 20, 2026)</a></li></ul>
     </div>
     <aside class="research-rail">
       <img src="../../research/cards/edition-18.webp" alt="Why Does Z.ai&#x27;s GLM-5.4 Run the Same Layers Twice? cover" style="width:100%;border-radius:12px">
@@ -68,6 +69,13 @@
   </div>
 </div>
 
+<section class="sg-fsec" id="follow-feeds" aria-labelledby="fsArticle">
+  <div class="sg-fsec-hd"><span class="sg-fsec-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" aria-hidden="true"><path d="M5 11a8 8 0 0 1 8 8M5 5a14 14 0 0 1 14 14"/><circle cx="6" cy="18" r="1.8" fill="currentColor" stroke="none"/></svg></span><h2 id="fsArticle">Follow in a news reader</h2></div>
+  <p class="sg-fsec-how">Tap to copy, then paste it into your reader app. For example: Feedly or Inoreader (web, iPhone, Android), NetNewsWire (iPhone), Feeder (Android), or any news-reader app.</p>
+  <div class="sg-frow1">
+    <button type="button" class="sg-fchip" data-url="https://signal.luzovi.com/articles.xml" aria-label="Copy the All articles feed link"><span class="sg-fdot" style="--dot:var(--sg-ink)"></span><span class="sg-fname"><span class="l">All articles</span><span class="s">All articles</span></span><span class="sg-fcp"><svg class="cy" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg><svg class="ok" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l4 4 10-10"/></svg></span></button>
+  </div>
+</section>
 <footer class="ap-foot">
   <span>The Signal · Research Notes</span>
   
@@ -87,7 +95,8 @@
   document.getElementById("artShare").appendChild(SignalShare.shareButton(spec));
 })();
 </script>
-<script src="../../assets/signal-shell.js?v=20261126i" defer></script>
+<script src="../../assets/signal-follow.js?v=20261126g"></script>
+<script src="../../assets/signal-shell.js?v=20261126k" defer></script>
 <footer class="signal-footer">
   <div class="sf-follow"><span class="sf-label">Follow along</span><span class="sf-links"><a class="sf-link" href="https://www.linkedin.com/company/luzovi/" target="_blank" rel="noopener"><span class="sf-badge" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.55V9h3.57v11.45z"/></svg></span>Luzovi</a><a class="sf-link" href="https://www.linkedin.com/in/thillairaj" target="_blank" rel="noopener"><span class="sf-badge" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.55V9h3.57v11.45z"/></svg></span>Thillai Raj</a><a class="sf-link" href="https://www.linkedin.com/showcase/qu-bits/" target="_blank" rel="noopener"><span class="sf-badge" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.55V9h3.57v11.45z"/></svg></span>QuBits · Quantum &amp; AI</a><a class="sf-link" href="https://www.linkedin.com/showcase/agentic-ai-architect/" target="_blank" rel="noopener"><span class="sf-badge" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.55V9h3.57v11.45z"/></svg></span>Agentic AI Architect</a></span></div>
   <p class="sf-copy">© 2026 The Signal</p>
