@@ -51,6 +51,12 @@ from xml.sax.saxutils import escape
 
 ROOT = Path(__file__).resolve().parent.parent
 DATA_FILE = ROOT / "data" / "brief.json"
+# Follow-standard asset tag (Thillai, Nov 27, 2026): brief.js,
+# signal-follow.js and signal-follow.css on brief/index.html all carry this
+# tag, exactly as the live page has them. The template below interpolates
+# this constant and the postprocess gate asserts it, so the two cannot
+# drift apart. When the follow assets are next re-tagged, change it here.
+BRIEF_ASSET_TAG = "20261126g"
 PAGE_DIR = ROOT / "brief"
 HOME_FILE = ROOT / "index.html"
 SITEMAP_FILE = ROOT / "sitemap.xml"
@@ -240,7 +246,8 @@ def build_page(data, base):
 <link rel="canonical" href="{base}brief/">
 <link rel="alternate" type="application/rss+xml" title="Signal Brief" href="{base}signal.xml">
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,800;1,9..144,500;1,9..144,600&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="{base}assets/brief.css?v=20261117">
+<link rel="stylesheet" href="../assets/brief.css?v={BRIEF_ASSET_TAG}">
+<link rel="stylesheet" href="../assets/signal-follow.css?v={BRIEF_ASSET_TAG}">
 <link rel="stylesheet" href="../assets/signal-pages.css">
 <link rel="stylesheet" href="../assets/signal-brand.css?v=20261125">
 <style>{PAGE_CSS}</style>
@@ -253,7 +260,8 @@ def build_page(data, base):
   </main>
   {FOOTER}
   <script src="../assets/signal-share.js?v=20261127b"></script>
-  <script src="../assets/brief.js?v=20261117"></script>
+  <script src="../assets/brief.js?v={BRIEF_ASSET_TAG}"></script>
+  <script src="../assets/signal-follow.js?v={BRIEF_ASSET_TAG}"></script>
   {page_share_script}
 </body>
 </html>
@@ -692,6 +700,36 @@ def postprocess():
                       "present in the tree (see rewrite_address.py --check)")
         except Exception as exc:
             print(f"postprocess step could not run: {cmd}: {exc}")
+
+    # Follow-standard gate (Thillai, Nov 27, 2026): brief/index.html must
+    # carry the follow-standard lines at the current tag. A Brief run on
+    # Nov 27 silently dropped the signal-follow.js script and reverted
+    # brief.js to an old tag because the template had never been updated;
+    # this gate fails the run instead of publishing that regression.
+    import re as _re
+    _page = (PAGE_DIR / "index.html").read_text(encoding="utf-8")
+    _problems = []
+    if f'<script src="../assets/signal-follow.js?v={BRIEF_ASSET_TAG}"></script>' not in _page:
+        _problems.append(
+            f"brief/index.html is missing the follow script "
+            f"(../assets/signal-follow.js?v={BRIEF_ASSET_TAG})")
+    if f'<link rel="stylesheet" href="../assets/signal-follow.css?v={BRIEF_ASSET_TAG}">' not in _page:
+        _problems.append(
+            f"brief/index.html is missing the follow stylesheet "
+            f"(../assets/signal-follow.css?v={BRIEF_ASSET_TAG})")
+    _brief_js = _re.findall(r'src="(\.\./assets/brief\.js[^"]*)"', _page)
+    if not _brief_js:
+        _problems.append("brief/index.html does not load brief.js")
+    elif any(src != f"../assets/brief.js?v={BRIEF_ASSET_TAG}" for src in _brief_js):
+        _problems.append(
+            f"brief/index.html loads brief.js as {_brief_js}, expected "
+            f"../assets/brief.js?v={BRIEF_ASSET_TAG}")
+    if _problems:
+        for p in _problems:
+            print(f"GATE: {p}")
+        sys.exit(1)
+    print(f"postprocess follow gate: brief/index.html carries the "
+          f"follow-standard lines at ?v={BRIEF_ASSET_TAG}")
 
 
 def main():
