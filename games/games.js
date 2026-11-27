@@ -154,15 +154,15 @@ function finish(run){
 /* Every game is tap only: tap an item to select it, tap its target to place it. */
 /* ---------- shell ---------- */
 const HELP={
- guess:['You see one clue term at a time.','Tap an answer tile, then tap the box to place it.','Stuck? Tap Hint. It removes a wrong answer or shows another clue.'],
- ladder:['Tap a term tile, then tap the clue it matches.','Then tap two rows to swap them into the order they happen.','Hint shows the next tile, marks wrong rows, then fixes one for you.'],
+ guess:['You see one clue term at a time.','Tap an answer tile to place it in the clue box.','Stuck? Tap Hint. It removes a wrong answer or shows another clue.'],
+ ladder:['Tap a term tile to fill the first open clue. Tap a filled clue to send its term back.','Then tap two rows to swap them into the order they happen.','Hint shows the next tile, marks wrong rows, then fixes one for you.'],
  path:['Tap letters one after another, each next letter touching the last, to spell a hidden term.','Tap the last letter again to step back. Use every square.','Hint reveals the starting letter, then the next letters of a word.'],
- duel:['Tap the card that matches the meaning, then tap the question.','First try 100 points, then 50, 25, 0.','Hint removes a wrong card, so use it when you need it.'],
+ duel:['Tap the card that matches the meaning to answer.','First try 100 points, then 50, 25, 0.','Hint removes a wrong card, so use it when you need it.'],
  queens:['Tap a square once for a \u00d7 mark, tap again for a crown, tap again to clear. Hold a square to clear it at once.','One crown in every row, column and colour group. Crowns may not touch, not even diagonally.','Hint marks wrong crowns in red. If all are right, it places one for you.'],
  trail:['Tap the squares one after another, starting at 1, to draw the path in number order.','The path fills every square and cannot cross itself or the thick walls.','Hint removes a wrong stretch, then draws the next three squares.'],
- double:['Tap a number, then tap a neighbour with the same number. They add up.','Only side by side, above or below. +3 and \u00d72 tokens join any number.','Merge until one number is left. Hint shows the next merge, then does it.'],
- gems:['Tap a square to cycle it: fox, penguin, then empty. Or tap a tray tile first, then tap squares to place it. Given squares cannot change.','Three of each in every row and column. Never three of the same in a row, side by side or stacked.','Hint marks wrong squares in red. If all are right, it fills one for you.'],
- sudoku:['Tap a square, then tap a number on the pad. Or tap a number first, then tap squares to fill them.','Each row, column and 2 by 3 box has each number once.','Hint marks wrong numbers in red. If all are right, it fills one square.']
+ double:['Tap a number. With one equal neighbour it merges at once; with more, tap the neighbour you want.','Only side by side, above or below. +3 and \u00d72 tokens join any number.','Merge until one number is left. Hint shows the next merge, then does it.'],
+ gems:['Tap a square to place a fox. Tap again to swap fox and penguin. Given squares cannot change.','Three of each in every row and column. Never three of the same in a row, side by side or stacked.','Hint marks wrong squares in red. If all are right, it fills one for you.'],
+ sudoku:['Tap a square, then tap a number on the pad. Erase clears the square you picked.','Each row, column and 2 by 3 box has each number once.','Hint marks wrong numbers in red. If all are right, it fills one square.']
 };
 const KEY={guess:'guess',ladder:'ladder',path:'path',duel:'duel',target:'target',sudoku:'sudoku'};
 function shell(key,title,withFam,mount,mode){
@@ -223,26 +223,25 @@ function mountGuess(mode){
   shell('guess','Guess the Group',true,rr,mode);
   const fam=state.fam;if(doneCard('guess',fam,mode,'Guess the Group',rr))return;
   const P=guessPuzzle(fam,mode),pf=P.f,acc=ACC[pf],bands=BANDS[pf];
-  const run=newRun('guess',fam,mode);let shown=1,solved=false,summary='',selV=null;const wrong=new Set();const g=$('#game');
+  const run=newRun('guess',fam,mode);let shown=1,solved=false,summary='';const wrong=new Set();const g=$('#game');
   function render(){
     g.innerHTML=metaHead(run,LABEL[pf],' · CLUE '+Math.min(shown,5)+' OF 5')+
     '<div class="bands">'+P.clues.map((c,i)=>{const o=i<shown||solved;return '<div class="band'+(o?' open':'')+'" style="'+(o?'background:'+bands[i]+';color:'+(i>2?'#fff':'#13241B'):'')+'">'+(o?esc(c):'Clue '+(i+1)+' locked')+'</div>'}).join('')+'</div>'+
     (solved?'<div class="res"><div class="k" style="color:var(--good)">SOLVED</div><div class="a">'+esc(P.answer)+'</div><p>'+esc(P.explain)+'</p>'+summary+'<div class="acts"><a class="p" href="#hub">Learn this group ›</a>'+(mode==='daily'?'<a href="#hub">More games</a>':'<button id="again">Play another</button>')+''+SHARE_BTN+'</div></div>':
-    '<div class="zone" id="zone">Tap an answer, then tap here</div><div class="tray" id="tray">'+P.options.map(o=>'<div class="tile'+(wrong.has(o)?' dead':'')+'" data-v="'+esc(o)+'">'+esc(o)+'</div>').join('')+'</div><div class="msg" id="msg"></div>');
+    '<div class="tray" id="tray">'+P.options.map(o=>'<div class="tile'+(wrong.has(o)?' dead':'')+'" data-v="'+esc(o)+'">'+esc(o)+'</div>').join('')+'</div><div class="msg" id="msg"></div>');
     bindHint(run,hint);
     if(solved){const a=$('#again');if(a)a.onclick=rr;return}
-    const zone=$('#zone');
-    $$('#tray .tile:not(.dead)').forEach(t=>{t.onclick=()=>{selV=t.dataset.v;$$('#tray .tile').forEach(x=>x.classList.toggle('sel',x===t));$('#msg').textContent='Now tap the box to place your answer.'}});
-    zone.onclick=()=>{if(selV===null)return;const v=selV;selV=null;
+    let lock=false;
+    $$('#tray .tile:not(.dead)').forEach(t=>{t.onclick=()=>{if(lock)return;const v=t.dataset.v;
       if(v===P.answer){solved=true;summary=finish(run);render();return}
-      wrong.add(v);run.wrong++;if(shown<5)shown++;zone.classList.add('shake');setTimeout(render,320)};
+      lock=true;wrong.add(v);run.wrong++;if(shown<5)shown++;t.classList.add('shake');setTimeout(render,320)}});
   }
   function hint(){
     const wrongLeft=P.options.filter(o=>o!==P.answer&&!wrong.has(o));
     const lvl=run.hints;
     if(wrongLeft.length>0&&(lvl%2===0||shown>=5)){wrong.add(wrongLeft[0]);render();$('#msg').textContent='Hint: one wrong answer removed.';return true}
     if(shown<5){shown++;render();$('#msg').textContent='Hint: a new clue is shown.';return true}
-    const t=$('#tray .tile[data-v="'+P.answer.replace(/"/g,'\\"')+'"]');if(t){t.classList.add('glow');$('#msg').textContent='Hint: tap the glowing tile, then tap the box.'}return true;
+    const t=$('#tray .tile[data-v="'+P.answer.replace(/"/g,'\\"')+'"]');if(t){t.classList.add('glow');$('#msg').textContent='Hint: tap the glowing tile to place it.'}return true;
   }
   render();
 }
@@ -269,7 +268,7 @@ function mountLadder(mode){
   let order=sshuffle(mids,'ord|'+L.title+'|'+DAYN);if(mode!=='daily')order=shuffle(mids.slice());
   while(order.every((s,i)=>s===i+1))order=shuffle(order.slice());
   const run=newRun('ladder',fam,mode);
-  const filled={};let stage=1,msg='Tap a term, then tap the clue it matches.',summary='',glowStep=-1,redShown=false,selStep=null,selRow=null;
+  const filled={};let stage=1,msg='Tap a term to fill the first open clue.',summary='',glowStep=-1,redShown=false,selStep=null,selRow=null,actSlot=-1;
   const bank1=sshuffle(mids,'b1|'+L.title),bank3=sshuffle([0,LAST],'b3|'+L.title);
   const g=$('#game');
   const stageText=()=>({1:'STEP 1 OF 3 · MATCH THE TERMS',2:'STEP 2 OF 3 · PUT IN ORDER',3:'STEP 3 OF 3 · UNLOCK THE ENDS',4:'LADDER COMPLETE'}[stage]);
@@ -277,7 +276,7 @@ function mountLadder(mode){
     const end=i===0||i===LAST;
     if(end&&stage<3)return '<div class="rung locked">'+LOCK+'<span>Locked · order the ladder to unlock</span></div>';
     const done=filled[i];
-    const slot=done?'<div class="slot ok">'+esc(S[i][0])+'</div>':'<div class="slot" data-slot="'+i+'">Tap a term, then tap here</div>';
+    const slot=done?'<div class="slot ok" data-fill="'+i+'">'+esc(S[i][0])+'</div>':'<div class="slot'+(stage===1&&i===actSlot?' act':'')+'" data-slot="'+i+'">'+(stage===1?'Tap a term to fill':'Choose a term below')+'</div>';
     if(end||stage===1)return '<div class="rung'+(done?' ok':'')+'" data-step="'+i+'"><div class="clue">'+esc(S[i][1])+'</div>'+slot+'</div>';
     return '<div class="rung mid" data-step="'+i+'"><div class="clue"><span class="term">'+esc(S[i][0])+'</span>'+esc(S[i][1])+'</div>'+(stage===2?'<div class="handle" aria-hidden="true">\u2261</div>':'')+'</div>';
   }
@@ -287,6 +286,7 @@ function mountLadder(mode){
     else msg='Right match.';
     render()}
   function render(){
+    actSlot=stage===1?order.find(s=>!filled[s]):-1;
     const bank=stage===1?bank1.filter(s=>!filled[s]):stage===3?bank3.filter(s=>!filled[s]):[];
     g.innerHTML=metaHead(run,LABEL[pf],' · '+stageText())+'<div class="serif" style="font-size:24px;line-height:1.1;margin-top:2px">'+esc(L.title)+'</div>'+
     '<div class="ladder" id="ladder">'+row(0)+order.map(row).join('')+row(LAST)+'</div>'+
@@ -296,11 +296,17 @@ function mountLadder(mode){
     if(glowStep>=0){const t=$('#tray .tile[data-v="'+glowStep+'"]'),sl=$('[data-slot="'+glowStep+'"]');t&&t.classList.add('glow');sl&&sl.classList.add('glow')}
     bindHint(run,hint);
     if(stage===4){const a=$('#again');if(a)a.onclick=rr;return}
-    if(stage===1||stage===3){
-      $$('#tray .tile').forEach(t=>{t.onclick=()=>{selStep=+t.dataset.v;$$('#tray .tile').forEach(x=>x.classList.toggle('sel',x===t));$('#msg').textContent='Now tap the clue it matches.'}});
+    if(stage===1){
+      $$('#tray .tile').forEach(t=>{t.onclick=()=>{const st=+t.dataset.v;
+        if(st===actSlot){place(st);return}
+        run.wrong++;t.classList.add('shake');setTimeout(()=>t.classList.remove('shake'),400);$('#msg').textContent='Not that one. The open clue needs a different term.'}});
+      $$('.slot[data-fill]').forEach(sl=>{sl.onclick=()=>{const st=+sl.dataset.fill;filled[st]=false;glowStep=-1;msg='Term sent back to the tray.';render()}});
+    }
+    if(stage===3){
+      $$('#tray .tile').forEach(t=>{t.onclick=()=>{selStep=+t.dataset.v;$$('#tray .tile').forEach(x=>x.classList.toggle('sel',x===t));$('#msg').textContent='Now tap the end row it belongs to.'}});
       $$('.slot[data-slot]').forEach(sl=>{sl.onclick=()=>{if(selStep===null)return;const st=+sl.dataset.slot,tv=selStep;selStep=null;
         if(tv===st){place(st);return}
-        run.wrong++;sl.classList.add('shake');setTimeout(()=>sl.classList.remove('shake'),400);$('#msg').textContent='Not that one. Try another clue.'}});
+        run.wrong++;sl.classList.add('shake');setTimeout(()=>sl.classList.remove('shake'),400);$('#msg').textContent='Not that one. Try the other end.'}});
     }
     if(stage===2){
       $$('.rung.mid').forEach(rEl=>{rEl.onclick=()=>{const st=+rEl.dataset.step;
@@ -320,9 +326,9 @@ function mountLadder(mode){
       if(order.every((s,k)=>s===k+1)){stage=3;msg='Ladder solved. The top and bottom rows are open: tap their terms in.'}else msg='Hint: one row was moved to its place.';
       render();return true;
     }
-    const b=stage===1?bank1:bank3;const t=b.find(s=>!filled[s]);if(t===undefined)return false;
+    const t=stage===1?actSlot:bank3.find(s=>!filled[s]);if(t===undefined||t<0)return false;
     if(glowStep===t){place(t);msg='Hint: placed for you.';$('#msg').textContent=msg;return true}
-    glowStep=t;render();$('#msg').textContent='Hint: tap the glowing tile, then tap the glowing clue. Use Hint again to place it for you.';return true;
+    glowStep=t;render();$('#msg').textContent='Hint: tap the glowing tile to place it in the glowing clue. Use Hint again to place it for you.';return true;
   }
   render();
 }
@@ -469,18 +475,17 @@ function mountDuel(mode,players){
     if(phase==='ready'){g.innerHTML=sb+'<div class="ready"><div class="eyebrow" style="color:var(--muted)">PASS THE PHONE</div><div class="serif" style="font-size:38px;line-height:1.1;margin-top:6px">'+(turn===0?'Player One':'Player Two')+', you’re up.</div><p style="color:var(--muted)">One question. Four cards.</p><button class="btn" id="go" style="background:'+acc+';color:#fff;margin-top:12px">Start</button></div>';$('#go').onclick=()=>{phase='play';removed=[];render()};return}
     if(phase==='over'){if(players===2&&!run.celeb){run.celeb=1;const dw=scores[0]===scores[1]?'draw':scores[0]>scores[1]?'Player One':'Player Two';setTimeout(()=>celebrate({title:dw==='draw'?'A shared win!':'Winner: '+dw+'!',sub:scores[0]+' to '+scores[1],stars:3,noSuper:true,noStats:true,sound:dw==='draw'?'draw':'win'}),350)}const w=players===1?scores[0]+' points':scores[0]===scores[1]?'A shared win.':scores[0]>scores[1]?'Player One wins.':'Player Two wins.';g.innerHTML=sb+'<div class="res" style="text-align:center"><div class="k" style="color:var(--good)">'+(players===1?'ALL 5 ANSWERED':'MATCH OVER')+'</div><div class="a" style="font-size:38px">'+w+'</div>'+summary+'<div class="acts" style="justify-content:center">'+(mode==='daily'&&players===1?'<a class="p" href="#hub">More games</a>':'<button class="p" id="rm">Play again</button>')+'<a href="#hub">Review the terms ›</a></div></div>';const rm=$('#rm');if(rm)rm.onclick=rr;refreshHint(run);return}
     if(phase==='result'){g.innerHTML=sb+'<div class="res" style="text-align:center"><div class="k" style="color:'+(lastRight?'var(--good)':'var(--bad)')+'">'+(lastRight?'CORRECT · +'+gained+' POINTS':'THE RIGHT CARD WAS')+'</div><div class="a" style="font-size:36px">'+esc(q.answer)+'</div><p>'+esc(q.q)+'</p><div class="acts" style="justify-content:center"><button class="p" id="nx">'+(qi>=4?'See the result':'Next')+'</button></div></div>';$('#nx').onclick=()=>{if(qi>=4){phase='over';summary=players===1?finish(run):''}else{qi++;phase=players===2?'ready':'play';removed=[]}render()};bindHint(run,()=>false);return}
-    g.innerHTML=sb+'<div class="qcard" id="qz"><small>TAP A CARD, THEN TAP HERE</small><div class="q">'+esc(q.q)+'</div></div><div class="hand" id="hand">'+q.opts.map(t=>'<div class="tile'+(removed.indexOf(t)>=0?' gone':'')+'" data-v="'+esc(t)+'">'+esc(t)+'</div>').join('')+'</div><div class="msg" id="msg" style="text-align:center">This card is worth '+PTS[Math.min(removed.length,3)]+' points right now.</div>';
+    g.innerHTML=sb+'<div class="qcard" id="qz"><small>TAP A CARD TO ANSWER</small><div class="q">'+esc(q.q)+'</div></div><div class="hand" id="hand">'+q.opts.map(t=>'<div class="tile'+(removed.indexOf(t)>=0?' gone':'')+'" data-v="'+esc(t)+'">'+esc(t)+'</div>').join('')+'</div><div class="msg" id="msg" style="text-align:center">This card is worth '+PTS[Math.min(removed.length,3)]+' points right now.</div>';
     if(players===1)bindHint(run,hint);
-    const qz=$('#qz');let selCard=null;
-    $$('#hand .tile:not(.gone)').forEach(t=>{t.onclick=()=>{selCard=t.dataset.v;$$('#hand .tile').forEach(x=>x.classList.toggle('sel',x===t));const m=$('#msg');if(m)m.textContent='Now tap the question to play that card.'}});
-    qz.onclick=()=>{if(selCard===null||phase!=='play')return;const v=selCard;selCard=null;
+    const qz=$('#qz');let lock=false;
+    $$('#hand .tile:not(.gone)').forEach(t=>{t.onclick=()=>{if(lock||phase!=='play')return;const v=t.dataset.v;
       if(v===q.answer){gained=PTS[Math.min(removed.length,3)];scores[turn]+=gained;lastRight=true;phase='result';render();return}
-      removed.push(v);run.wrong++;qz.classList.add('shake');setTimeout(()=>{if(removed.length===3){gained=0;lastRight=false;phase='result'}render()},300)};
+      lock=true;removed.push(v);run.wrong++;qz.classList.add('shake');setTimeout(()=>{if(removed.length===3){gained=0;lastRight=false;phase='result'}render()},300)}});
   }
   function hint(){
     const q=Q[Math.min(qi,4)];const wrongLeft=q.opts.filter(o=>o!==q.answer&&removed.indexOf(o)<0);
     if(wrongLeft.length>1){removed.push(wrongLeft[0]);render();$('#msg').textContent='Hint: one wrong card removed. This card is now worth '+PTS[Math.min(removed.length,3)]+' points.';return true}
-    const t=$('#hand .tile[data-v="'+q.answer.replace(/"/g,'\\"')+'"]');if(t){t.classList.add('glow');$('#msg').textContent='Hint: tap the glowing card, then tap the question.'}return true;
+    const t=$('#hand .tile[data-v="'+q.answer.replace(/"/g,'\\"')+'"]');if(t){t.classList.add('glow');$('#msg').textContent='Hint: tap the glowing card to answer.'}return true;
   }
   render();
 }
@@ -647,7 +652,7 @@ function mountSunMoon(mode){
   const P=mode==='daily'?pickNonRepeat(SUNMOON,'gems',DAYN):SUNMOON[Math.floor(Math.random()*SUNMOON.length)];
   const N=6,sol=P.sol.map(r=>r.split('').map(Number));const given={};P.given.forEach(([r,c,v])=>given[r+','+c]=v);
   const grid=Array.from({length:N},(_,r)=>Array.from({length:N},(_,c)=>given[r+','+c]||0));
-  const run=newRun('gems',fam,mode);const g=$('#game');const wrongMark=new Set(),revealed=new Set();let solved=false,summary='',msg='Tap a square: fox, penguin, then empty.',toolN=null,lastPlace=null;const hist=[];
+  const run=newRun('gems',fam,mode);const g=$('#game');const wrongMark=new Set(),revealed=new Set();let solved=false,summary='',msg='Tap a square: fox first, then swap.',lastPlace=null;const hist=[];
   const sym=v=>v===1?FOXSVG:v===2?PENGSVG:'';
   let reason={};
   function violations(){
@@ -664,7 +669,7 @@ function mountSunMoon(mode){
     let h=metaHead(run,'PUZZLE',' · FOX AND PENGUIN')+'<div class="mb" id="mb">';
     for(let r=0;r<N;r++)for(let c=0;c<N;c++){const k=r+','+c;const gv=!!given[k];h+='<div class="mc'+(gv?' gv':'')+((bad.has(k)||wrongMark.has(k))?' err':'')+(revealed.has(k)?' rev':'')+'" data-r="'+r+'" data-c="'+c+'">'+sym(grid[r][c])+'</div>'}
     P.edges.forEach(([r1,c1,r2,c2,t])=>{const horiz=r1===r2;const left=horiz?((c1+1)/N*100):((c1+.5)/N*100),top=horiz?((r1+.5)/N*100):((r1+1)/N*100);h+='<span class="eg" style="left:'+left+'%;top:'+top+'%">'+(t==='='?'=':'×')+'</span>'});
-    h+='</div><div class="dtray" id="dt" style="grid-template-columns:1fr 1fr 1fr"><div class="tile" data-n="1" aria-label="Fox"><span style="width:30px;height:30px;display:inline-block">'+FOXSVG+'</span></div><div class="tile" data-n="2" aria-label="Penguin"><span style="width:30px;height:30px;display:inline-block">'+PENGSVG+'</span></div><div class="tile" data-n="0" style="font-size:14px">Erase</div></div>';
+    h+='</div><div class="glegend"><span class="glg"><span class="glgi">'+FOXSVG+'</span> first tap</span><span aria-hidden="true">\u00b7</span><span class="glg"><span class="glgi">'+PENGSVG+'</span> next taps swap</span></div>';
     h+='<div class="qact"><button class="ghost" id="undo"'+(hist.length?'':' disabled')+'>Undo</button><button class="ghost" id="reset">Reset</button></div><div class="msg" id="msg" style="text-align:center">'+(reason.triple?'<b style="color:var(--bad)">Rule broken: never three of the same icon in a row.</b>':reason.count?'<b style="color:var(--bad)">Rule broken: only three of each icon per row and column.</b>':reason.edge?'<b style="color:var(--bad)">Rule broken: check the = and × marks.</b>':msg)+'</div>';
     if(solved)h+='<div class="res"><div class="k" style="color:var(--good)">SOLVED</div><div class="a">Perfectly balanced.</div>'+summary+'<div class="acts">'+(mode==='daily'?'<a class="p" href="#hub">More puzzles</a>':'<button class="p" id="sa">New puzzle</button>')+''+SHARE_BTN+'</div></div>';
     g.innerHTML=h;bindHint(run,hint);
@@ -673,13 +678,11 @@ function mountSunMoon(mode){
     const rs=$('#reset');if(rs)rs.onclick=()=>{snap();for(let r=0;r<N;r++)for(let c=0;c<N;c++)if(!given[r+','+c])grid[r][c]=0;wrongMark.clear();revealed.clear();msg='Board cleared.';render()};
     const sa=$('#sa');if(sa)sa.onclick=rr;
     if(solved)return;
-    const cellEls=()=>$$('#mb .mc').filter(c=>!c.classList.contains('gv'));
-    $$('#dt .tile').forEach(t=>{t.onclick=()=>{toolN=+t.dataset.n;$$('#dt .tile').forEach(x=>x.classList.toggle('sel',x===t));$('#msg').textContent=toolN===0?'Now tap a square to clear it.':'Now tap a square to place it.'}});
-    $$('#mb .mc').forEach(cell=>{if(cell.classList.contains('gv'))return;cell.onclick=()=>{const r=+cell.dataset.r,c=+cell.dataset.c;snap();grid[r][c]=toolN===null?(grid[r][c]+1)%3:toolN;wrongMark.delete(r+','+c);revealed.delete(r+','+c);lastPlace=[r,c];msg='Tap a square: fox, penguin, then empty.';render()}});
+    $$('#mb .mc').forEach(cell=>{if(cell.classList.contains('gv'))return;cell.onclick=()=>{const r=+cell.dataset.r,c=+cell.dataset.c;snap();grid[r][c]=grid[r][c]===0?1:grid[r][c]===1?2:1;wrongMark.delete(r+','+c);revealed.delete(r+','+c);lastPlace=[r,c];msg='Tap a square: fox first, then swap.';render()}});
   }
   function hint(){
     const wrongs=[];for(let r=0;r<N;r++)for(let c=0;c<N;c++)if(!given[r+','+c]&&grid[r][c]>0&&grid[r][c]!==sol[r][c])wrongs.push(r+','+c);
-    if(wrongs.length){wrongs.forEach(k=>wrongMark.add(k));msg='Hint: the red squares are wrong. Tap them to change them, or use the Erase tile.';run.wrong++;render();return true}
+    if(wrongs.length){wrongs.forEach(k=>wrongMark.add(k));msg='Hint: the red squares are wrong. Tap them to swap them.';run.wrong++;render();return true}
     let best=null,bs=-1;for(let r=0;r<N;r++)for(let c=0;c<N;c++)if(grid[r][c]===0){let s=0;if(grid[r].filter(x=>x>0).length>=4)s+=2;if(grid.map(rw=>rw[c]).filter(x=>x>0).length>=4)s+=2;P.edges.forEach(e=>{if((e[0]===r&&e[1]===c)||(e[2]===r&&e[3]===c))s++});if(s>bs){bs=s;best=[r,c]}}
     if(!best)return false;snap();const [r,c]=best;grid[r][c]=sol[r][c];revealed.add(r+','+c);msg='Hint: a square was filled for you (shown in green).';render();return true;
   }
@@ -702,7 +705,7 @@ function mountDouble(mode){
   shell('double','Double Up',false,rr,mode);
   const fam='any';if(doneCard('double',fam,mode,'Double Up',rr))return;
   const P=mode==='daily'?pickNonRepeat(DOUBLE,'double',DAYN):DOUBLE[Math.floor(Math.random()*DOUBLE.length)];
-  const N=P.N;let grid=P.cells.slice();const hist=[];let solved=false,summary='',msg='Tap a number, then tap an equal neighbour.',pending=null,lastTo=-1,selI=null,burstTo=-1;
+  const N=P.N;let grid=P.cells.slice();const hist=[];let solved=false,summary='',msg='Tap a number to merge it with an equal neighbour.',pending=null,lastTo=-1,selI=null,burstTo=-1;
   const run=newRun('double',fam,mode);const g=$('#game');
   const nb=i=>{const r=Math.floor(i/N),c=i%N,o=[];[[0,1],[1,0],[0,-1],[-1,0]].forEach(([dr,dc])=>{const rr_=r+dr,cc=c+dc;if(rr_>=0&&cc>=0&&rr_<N&&cc<N)o.push(rr_*N+cc)});return o};
   const memo=new Map();
@@ -723,16 +726,19 @@ function mountDouble(mode){
     h+='</div><div class="qact"><button class="ghost" id="undo"'+(hist.length?'':' disabled')+'>Undo</button><button class="ghost" id="reset">Reset</button></div><div class="msg" id="msg" style="text-align:center">'+(stuck?'<b style="color:var(--bad)">No more merges are possible. Tap Undo or Reset.</b>':msg)+'</div>';
     if(solved)h+='<div class="res"><div class="k" style="color:var(--good)">SOLVED</div><div class="a">One number left: '+grid.find(x=>x!=='')+'.</div>'+summary+'<div class="acts">'+(mode==='daily'?'<a class="p" href="#hub">More puzzles</a>':'<button class="p" id="da">New puzzle</button>')+''+SHARE_BTN+'</div></div>';
     g.innerHTML=h;bindHint(run,hint);
-    const u=$('#undo');if(u)u.onclick=()=>{if(!hist.length||solved)return;grid=hist.pop();pending=null;lastTo=-1;msg='Undone.';render()};
-    const rs=$('#reset');if(rs)rs.onclick=()=>{hist.push(grid.slice());grid=P.cells.slice();pending=null;lastTo=-1;msg='Board reset.';render()};
+    const u=$('#undo');if(u)u.onclick=()=>{if(!hist.length||solved)return;grid=hist.pop();pending=null;selI=null;lastTo=-1;msg='Undone.';render()};
+    const rs=$('#reset');if(rs)rs.onclick=()=>{hist.push(grid.slice());grid=P.cells.slice();pending=null;selI=null;lastTo=-1;msg='Board reset.';render()};
     const da=$('#da');if(da)da.onclick=rr;
     if(solved)return;
     $$('#db .dt').forEach(tile=>{const i=+tile.dataset.i;
       tile.onclick=()=>{
-        if(selI===null){selI=i;render();return}
         if(selI===i){selI=null;render();return}
-        if(nb(selI).indexOf(i)>=0&&mergeVal(grid[selI],grid[i])!==null){const from=selI;selI=null;doMerge(from,i);burstTo=i;msg='Merged.';render();return}
-        run.wrong++;msg='Those two cannot merge. Equal numbers only, side by side.';selI=i;render()};
+        if(selI!==null&&nb(selI).indexOf(i)>=0&&mergeVal(grid[selI],grid[i])!==null){const from=selI;selI=null;doMerge(from,i);burstTo=i;msg='Merged.';render();return}
+        if(selI!==null&&nb(selI).indexOf(i)>=0){run.wrong++;msg='Those two cannot merge. Equal numbers only, side by side.'}
+        const eqs=nb(i).filter(j=>mergeVal(grid[i],grid[j])!==null);
+        if(!eqs.length){selI=null;if(window.SGAnim)SGAnim.shake(tile);const m=$('#msg');if(m)m.textContent='That number has no equal neighbour to merge with.';return}
+        if(eqs.length===1){selI=null;doMerge(i,eqs[0]);burstTo=eqs[0];msg='Merged.';render();return}
+        selI=i;render()};
     });
     if(burstTo>=0){const bt=burstTo;burstTo=-1;const el=$('#db .dt[data-i="'+bt+'"]');if(el&&window.SGAnim){SGAnim.pop(el);SGAnim.burst(el,'×2')}}
   }
@@ -741,7 +747,7 @@ function mountDouble(mode){
     if(!solvable(grid)){let n=0;while(hist.length&&!solvable(grid)){grid=hist.pop();n++}pending=null;lastTo=-1;msg='Hint: that position could not be finished, so the last '+n+(n===1?' move was':' moves were')+' undone.';render();return true}
     const m=bestMove(grid);if(!m)return false;
     if(pending&&pending.from===m.from&&pending.to===m.to){doMerge(m.from,m.to);msg='Hint: that merge was made for you.';render();return true}
-    pending={from:m.from,to:m.to};msg='Hint: tap the glowing number, then tap the gold-ringed neighbour. Tap Hint again to do it for you.';render();return true;
+    pending={from:m.from,to:m.to};msg='Hint: the glowing number merges with the gold-ringed neighbour. Tap Hint again to do it for you.';render();return true;
   }
   render();
 }
@@ -753,7 +759,7 @@ function mountSudoku(mode){
   const idx=mode==='daily'?((DAYN%SUD.length)+SUD.length)%SUD.length:Math.floor(Math.random()*SUD.length);
   const P=SUD[idx];const g=$('#game');
   const grid=P.puz.map(r=>r.split('').map(Number));const given=grid.map(r=>r.map(v=>v>0));const sol=P.sol.map(r=>r.split('').map(Number));
-  const run=newRun('sudoku',fam,mode);const wrongMark=new Set(),revealed=new Set();let solved=false,msg='Tap a square, then tap a number.',summary='',selC=null,armed=null,lastPlace=null;
+  const run=newRun('sudoku',fam,mode);const wrongMark=new Set(),revealed=new Set();let solved=false,msg='Tap a square, then tap a number.',summary='',selC=null,lastPlace=null;
   const conflicts=()=>{const bad=new Set();for(let r=0;r<6;r++)for(let c=0;c<6;c++){const v=grid[r][c];if(!v)continue;for(let i=0;i<6;i++){if(i!==c&&grid[r][i]===v)bad.add(r+','+c);if(i!==r&&grid[i][c]===v)bad.add(r+','+c)}const br=Math.floor(r/2)*2,bc=Math.floor(c/3)*3;for(let i=0;i<2;i++)for(let j=0;j<3;j++){const rr_=br+i,cc=bc+j;if((rr_!==r||cc!==c)&&grid[rr_][cc]===v)bad.add(r+','+c)}}return bad};
   const cands=(r,c)=>{const s=[];for(let v=1;v<=6;v++){let ok=true;for(let i=0;i<6;i++){if(grid[r][i]===v||grid[i][c]===v)ok=false}const br=Math.floor(r/2)*2,bc=Math.floor(c/3)*3;for(let i=0;i<2;i++)for(let j=0;j<3;j++)if(grid[br+i][bc+j]===v)ok=false;if(ok)s.push(v)}return s};
   function render(){
@@ -761,27 +767,25 @@ function mountSudoku(mode){
     if(full&&bad.size===0&&!solved){solved=true;summary=finish(run);setTimeout(()=>{if(window.SGAnim)SGAnim.win($('#sg'),'.sc')},60)}
     let h=metaHead(run,'PUZZLE',' · #'+(idx+1))+'<div class="sg" id="sg">';
     for(let r=0;r<6;r++)for(let c=0;c<6;c++){const k=r+','+c;const v=grid[r][c];h+='<div class="sc '+(given[r][c]?'g':'u')+((bad.has(k)||wrongMark.has(k))?' err':'')+(revealed.has(k)?' rev':'')+((c===2)?' br':'')+((r===1||r===3)?' bb':'')+'" data-r="'+r+'" data-c="'+c+'">'+(v||'')+'</div>'}
-    h+='</div><div class="dtray" id="dt">'+[1,2,3,4,5,6].map(n=>'<div class="tile" data-n="'+n+'">'+n+'</div>').join('')+'<div class="tile" data-n="0" aria-label="Eraser" style="font-size:15px">Erase</div></div><div class="msg" id="msg" style="text-align:center">'+msg+'</div>';
+    h+='</div><div class="spad" id="pad">'+[1,2,3,4,5,6].map(n=>'<div class="tile" data-n="'+n+'">'+n+'</div>').join('')+'<div class="tile erase" data-n="0" aria-label="Erase">Erase</div></div><div class="msg" id="msg" style="text-align:center">'+msg+'</div>';
     if(solved)h+='<div class="res"><div class="k" style="color:var(--good)">SOLVED</div><p>Every row, column and box has 1 to 6 once.</p>'+summary+'<div class="acts">'+(mode==='daily'?'<a class="p" href="#hub">More games</a>':'<button class="p" id="nw">New puzzle</button>')+''+SHARE_BTN+'</div></div>';
     g.innerHTML=h;
     bindHint(run,hint);
     if(solved){const nw=$('#nw');if(nw)nw.onclick=rr;return}
     if(selC){const sc=$('#sg .sc[data-r="'+selC[0]+'"][data-c="'+selC[1]+'"]');if(sc)sc.classList.add('sel')}
-    if(armed!==null){const at=$('#dt .tile[data-n="'+armed+'"]');if(at)at.classList.add('sel')}
     if(lastPlace){const lp=lastPlace;lastPlace=null;const el=$('#sg .sc[data-r="'+lp[0]+'"][data-c="'+lp[1]+'"]');if(el&&window.SGAnim){SGAnim.pop(el);
       const bad=conflicts();const units=[];const ru=[],cu=[],bu=[];for(let i=0;i<6;i++){ru.push(lp[0]+','+i);cu.push(i+','+lp[1])}const br=Math.floor(lp[0]/2)*2,bc=Math.floor(lp[1]/3)*3;for(let i=0;i<2;i++)for(let j=0;j<3;j++)bu.push((br+i)+','+(bc+j));
       [ru,cu,bu].forEach(u=>{if(u.every(k=>{const [r,c]=k.split(',').map(Number);return grid[r][c]>0&&!bad.has(k)}))units.push(u)});
       units.forEach(u=>SGAnim.shimmer(u.map(k=>{const [r,c]=k.split(',').map(Number);return $('#sg .sc[data-r="'+r+'"][data-c="'+c+'"]')})))}}
     $$('#sg .sc').forEach(cell=>{if(cell.classList.contains('g'))return;cell.onclick=()=>{const r=+cell.dataset.r,c=+cell.dataset.c;
-      if(armed!==null){grid[r][c]=armed;wrongMark.delete(r+','+c);revealed.delete(r+','+c);lastPlace=[r,c];msg=armed===0?'Erased.':'Placed. Tap more squares to keep filling, or tap Erase to stop.';render();return}
-      selC=[r,c];render()}});
-    $$('#dt .tile').forEach(t=>{t.onclick=()=>{const n=+t.dataset.n;
-      if(selC){grid[selC[0]][selC[1]]=n;wrongMark.delete(selC[0]+','+selC[1]);revealed.delete(selC[0]+','+selC[1]);lastPlace=selC;msg=n===0?'Erased.':'Placed.';render();return}
-      armed=n;msg=n===0?'Tap a square to erase it.':'Now tap squares to fill them with '+n+'.';render()}});
+      selC=[r,c];msg='Now tap a number, or tap Erase to clear it.';render()}});
+    $$('#pad .tile').forEach(t=>{t.onclick=()=>{const n=+t.dataset.n;
+      if(!selC){msg='Tap a square first, then tap a number.';render();return}
+      grid[selC[0]][selC[1]]=n;wrongMark.delete(selC[0]+','+selC[1]);revealed.delete(selC[0]+','+selC[1]);lastPlace=[selC[0],selC[1]];msg=n===0?'Erased.':'Placed.';render()}});
   }
   function hint(){
     const wrongs=[];for(let r=0;r<6;r++)for(let c=0;c<6;c++)if(!given[r][c]&&grid[r][c]>0&&grid[r][c]!==sol[r][c])wrongs.push(r+','+c);
-    if(wrongs.length){wrongs.forEach(k=>wrongMark.add(k));msg='Hint: the red numbers are wrong. Tap a red square, then tap the eraser or a new number.';run.wrong++;render();return true}
+    if(wrongs.length){wrongs.forEach(k=>wrongMark.add(k));msg='Hint: the red numbers are wrong. Tap a red square, then tap Erase or a new number.';run.wrong++;render();return true}
     let best=null,bn=9;for(let r=0;r<6;r++)for(let c=0;c<6;c++)if(grid[r][c]===0){const n=cands(r,c).length;if(n<bn){bn=n;best=[r,c]}}
     if(!best)return false;
     const [r,c]=best;grid[r][c]=sol[r][c];revealed.add(r+','+c);msg='Hint: a square was filled for you (shown in green).';render();return true;
@@ -839,7 +843,7 @@ function mountProfile(){
   window.scrollTo(0,0);
 }
 const PV={
- guess:()=>'<div style="width:78%;display:flex;flex-direction:column;gap:5px"><div style="background:#A9CCFA;border-radius:8px;padding:6px 10px;font-weight:600;font-size:13px;color:#13241B">Hadamard Gate</div><div style="background:#7FB0F5;border-radius:8px;padding:6px 10px;font-weight:600;font-size:13px;color:#13241B">CNOT Gate</div><div style="border:2px dashed var(--brand);border-radius:8px;padding:6px 10px;font-size:13px;color:var(--brand);font-weight:700;animation:fade 4s infinite">Drop the group here</div></div>',
+ guess:()=>'<div style="width:78%;display:flex;flex-direction:column;gap:5px"><div style="background:#A9CCFA;border-radius:8px;padding:6px 10px;font-weight:600;font-size:13px;color:#13241B">Hadamard Gate</div><div style="background:#7FB0F5;border-radius:8px;padding:6px 10px;font-weight:600;font-size:13px;color:#13241B">CNOT Gate</div><div style="border:2px dashed var(--brand);border-radius:8px;padding:6px 10px;font-size:13px;color:var(--brand);font-weight:700;animation:fade 4s infinite">The group they share</div></div>',
  ladder:()=>'<div style="width:78%;display:flex;flex-direction:column;gap:6px"><div style="background:var(--card);border-radius:9px;padding:7px 10px;font-size:13px;font-weight:600;animation:swap 6s infinite;--d:40px">Build</div><div style="background:var(--card);border-radius:9px;padding:7px 10px;font-size:13px;font-weight:600;animation:swap 6s infinite;--d:-40px">Test</div><div style="background:var(--card);border-radius:9px;padding:7px 10px;font-size:13px;font-weight:600">Deploy</div></div>',
  path:()=>'<div style="display:grid;grid-template-columns:repeat(5,26px);gap:3px;font-size:12px;font-weight:700;text-align:center;line-height:26px">'+'QUBIT#GATENOISE'.split('').map((ch,i)=>ch==='#'?'<div style="background:color-mix(in srgb,var(--muted) 25%,transparent);border-radius:6px"></div>':'<div style="--c:'+(i<5?'#6B4FD8':i<10?'#0E8F6B':'#D9822B')+';border-radius:6px;animation:fill 6s '+(i*.3)+'s infinite">'+ch+'</div>').join('')+'</div>',
  duel:()=>'<div style="position:absolute;inset:0;background:linear-gradient(150deg,#2A1458,#4B2A96)"></div><div style="position:relative;display:flex;gap:7px;align-items:flex-end;height:100%;padding-bottom:18px"><i style="width:50px;height:70px;border-radius:8px;background:#FFF7E6;display:block;animation:fade 5s infinite"></i><i style="width:50px;height:70px;border-radius:8px;background:#FFF7E6;display:block;animation:dropc 5s infinite"></i><i style="width:50px;height:70px;border-radius:8px;background:#FFF7E6;display:block"></i><i style="width:50px;height:70px;border-radius:8px;background:#FFF7E6;display:block"></i></div>',

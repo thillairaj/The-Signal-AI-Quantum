@@ -140,8 +140,6 @@ button{font-family:inherit;color:inherit}
 .sc.br{border-right:2px solid var(--ink)}
 .sc.bb{border-bottom:2px solid var(--ink)}
 .sc.bl{box-shadow:inset 0 0 0 0 transparent}
-.dtray{display:grid;grid-template-columns:repeat(7,1fr);gap:6px;margin-top:14px}
-.dtray .tile{padding:10px 0;font-size:22px;font-weight:700}
 .row{display:flex;justify-content:space-between;align-items:center;margin-top:10px;font-size:14px;color:var(--muted)}
 @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
 /* previews */
@@ -453,16 +451,16 @@ body.sg-play .qb,body.sg-play .sg,body.sg-play .mb,body.sg-play .tb,body.sg-play
 .segbar i.on{background:var(--brand)}
 .sec3{display:flex;justify-content:space-between;align-items:baseline;gap:8px;margin-top:12px}
 .sec3 h2{font-size:24px;margin:0;line-height:1.1}
-.dgrid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:10px}
-.dtile{display:flex;align-items:center;gap:10px;background:var(--card);border:1px solid var(--line);border-radius:18px;padding:8px 10px;text-decoration:none;color:var(--ink);min-height:68px}
-.dti{width:46px;height:46px;flex:0 0 auto;border-radius:14px;display:flex;align-items:center;justify-content:center;background:color-mix(in srgb,var(--tilec) var(--tilep,100%),var(--card))}
+.dgrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin-top:10px}
+.dtile{display:flex;align-items:center;gap:10px;background:var(--card);border:1px solid var(--line);border-radius:18px;padding:8px 10px;text-decoration:none;color:var(--ink);min-height:68px;min-width:0}
+.dti{width:44px;height:44px;flex:0 0 auto;border-radius:14px;display:flex;align-items:center;justify-content:center;background:color-mix(in srgb,var(--tilec) var(--tilep,100%),var(--card))}
 .dti img{width:36px;height:36px;display:block}
 .dtm2{flex:1;min-width:0;display:flex;flex-direction:column;gap:1px}
-.dtn{font:700 15px/1.15 Inter,sans-serif}
-.dtt{font-size:12px;color:var(--muted)}
-.dtdone{font-size:11px;color:var(--good);font-weight:700}
-.playbtn{width:44px;height:44px;flex:0 0 auto;border-radius:50%;background:var(--brand);color:var(--brandInk);display:flex;align-items:center;justify-content:center}
-.playbtn svg{width:16px;height:16px}
+.dtn{font:700 13.5px/1.15 Inter,sans-serif;min-width:0}
+.dtt{font-size:12px;color:var(--muted);min-width:0}
+.dtdone{font-size:11px;color:var(--good);font-weight:700;min-width:0}
+.playbtn{width:28px;height:28px;flex:0 0 auto;border-radius:50%;background:var(--brand);color:var(--brandInk);display:flex;align-items:center;justify-content:center}
+.playbtn svg{width:12px;height:12px}
 .playbtn.done{background:var(--goodbg);color:var(--good)}
 .dtile.badget{background:var(--goodbg);border-color:transparent;flex-direction:column;align-items:flex-start;justify-content:center;gap:2px}
 .dtile.badget b{color:var(--good);font-size:15px}
@@ -470,7 +468,6 @@ body.sg-play .qb,body.sg-play .sg,body.sg-play .mb,body.sg-play .tb,body.sg-play
 .lrow{display:flex;gap:12px;overflow-x:auto;padding:4px 2px 12px;scroll-snap-type:x proximity;scrollbar-width:none}
 .lrow::-webkit-scrollbar{display:none}
 .lrow .hg{scroll-snap-align:start}
-.dtray .tile{min-height:48px}
 .chips button{min-height:44px}
 
 .lrow .hg{width:126px}
@@ -479,4 +476,24 @@ body.sg-play .qb,body.sg-play .sg,body.sg-play .mb,body.sg-play .tb,body.sg-play
 .lrow .hgd{-webkit-line-clamp:1;min-height:1.3em}
 
 .lrow .hg{padding:9px}
-body.sg-play .dtray .tile{height:52px;min-height:52px}
+
+/* ===== Round 1 fix round: sudoku pad, gems legend, ladder active slot ===== */
+/* Mini Sudoku pad: 4 columns by 2 rows, numbers 64 by 44, Erase 72 wide
+   spanning both rows, gaps 6, about 94 px tall in total */
+.spad{display:grid;grid-template-columns:repeat(3,64px) 72px;grid-template-rows:44px 44px;gap:6px;justify-content:center;margin-top:14px}
+.spad .tile{padding:0;display:flex;align-items:center;justify-content:center;font-size:22px;font-weight:700;min-height:44px}
+.spad .tile.erase{grid-row:1/span 2;font-size:15px}
+/* Sudoku board may shrink on short phones (floor 300 px) so board, pad and
+   controls fit one screen; Fox & Penguin board uses the space the tray freed */
+body.sg-play .sg{width:min(100%,calc(100dvh - 330px))}
+@media (max-height:620px){body.sg-play .sg{width:min(100%,max(300px,calc(100dvh - 330px)))}}
+body.sg-play .mb{width:min(100%,calc(100dvh - 300px))}
+/* Fox & Penguin legend under the board, with the real pieces */
+.glegend{display:flex;align-items:center;justify-content:center;gap:12px;margin-top:10px;font-size:13px;color:var(--muted)}
+.glegend .glg{display:flex;align-items:center;gap:6px}
+.glegend .glgi{width:24px;height:24px;display:inline-block;flex:0 0 auto}
+.glegend .glgi svg{width:100%;height:100%}
+/* Term Ladder matching stage: the first open slot is the active slot */
+.slot.act{border-color:var(--brand);background:var(--goodbg);color:var(--good)}
+.slot.ok{cursor:pointer}
+.tile.shake{animation:shake .4s}
