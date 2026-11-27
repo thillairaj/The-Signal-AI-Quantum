@@ -252,7 +252,7 @@ def build_page(data, base):
     {RULES_BOX}
   </main>
   {FOOTER}
-  <script src="../assets/signal-share.js"></script>
+  <script src="../assets/signal-share.js?v=20261127b"></script>
   <script src="../assets/brief.js?v=20261117"></script>
   {page_share_script}
 </body>
@@ -556,7 +556,7 @@ def build_story_page(item, ed, base):
     <a class="story-edition" href="{base}#brief">Read the whole {escape(fmt_date(ed['date']))} edition in the Signal Brief tab →</a>
   </main>
   {FOOTER}
-  <script src="../../../assets/signal-share.js"></script>
+  <script src="../../../assets/signal-share.js?v=20261127b"></script>
   <script>
     (function () {{
       var slot = document.getElementById("storyShare");
@@ -770,9 +770,11 @@ def main():
     print("brief/index.html written")
     build_story_pages(data, base)
     urls = [f"{base}brief/", f"{base}signal.xml"]
-    for ed in data["editions"]:
-        for item in ed["items"]:
-            urls.append(f"{base}{story_path(ed, item)}")
+    # Newest first (all_items is sorted newest edition first): indexnow_ping.py
+    # submits only the first 200 URLs, so oldest-first ordering used to drop
+    # the newest stories (82 missed on 27 Nov). The two head URLs stay first.
+    for item, ed in all_items:
+        urls.append(f"{base}{story_path(ed, item)}")
     (PAGE_DIR / "story-urls.txt").write_text(
         "\n".join(urls) + "\n", encoding="utf-8")
     print(f"story-urls.txt: {len(urls)} URLs")
