@@ -299,7 +299,7 @@
   </div>
 </main>
 
-<script src="../assets/signal-share.js?v=20261126m"></script>
+<script src="../assets/signal-share.js?v=20261127a"></script>
 <script>
 const FOOTER="The Signal";
 const BRAND="The AI Deck";
@@ -629,8 +629,10 @@ document.addEventListener("keydown",e=>{
 const DECK_TECH="ai";
 const DECK_LABEL="AI deck";
 function lastSentence(text){const parts=String(text||"").match(/[^.!?]+[.!?]+["']?\s*/g);if(!parts||!parts.length)return String(text||"").trim();return parts[parts.length-1].trim();}
+/* topicCase: card tags are stored in capitals ("QUANTUM MEASUREMENT"); the share image topic pill carries the tag in normal case ("Quantum measurement"), keeping the deck data's acronyms in capitals. */
+function topicCase(tag){var KEEP={AI:"AI",API:"API","ATT&CK":"ATT&CK",BB84:"BB84","CI/CD":"CI/CD",CSS:"CSS",DNS:"DNS",E91:"E91",EDR:"EDR",GPU:"GPU",GPUS:"GPUs",HHL:"HHL",LLM:"LLM",LLMS:"LLMs",MITRE:"MITRE",ML:"ML",MLOPS:"MLOps",NISQ:"NISQ",NMR:"NMR",NV:"NV",PQC:"PQC",QAOA:"QAOA",QKD:"QKD",QML:"QML",QNLP:"QNLP",QRNG:"QRNG",RAG:"RAG",SI:"SI",SIEM:"SIEM",SOC:"SOC",TLS:"TLS",VM:"VM",VQE:"VQE",VPN:"VPN",VPNS:"VPNs",YAML:"YAML"};var words=String(tag||"").split(/\s+/).filter(Boolean).map(function(w){return KEEP[w]||w.toLowerCase();});var s=words.join(" ");return s.charAt(0).toUpperCase()+s.slice(1);}
 function cardFor(i){const c=activeTopic.learn[i];const text=c.body.join(" ");
-  return {type:DECK_LABEL+" \u00b7 Card "+c.n+" of "+activeTopic.learn.length,tech:DECK_TECH,heading:c.q,body:text,boxLabel:"In one line",box:lastSentence(text),source:BRAND};}
+  return {type:DECK_LABEL+" \u00b7 Card "+c.n+" of "+activeTopic.learn.length,tech:DECK_TECH,heading:c.q,topic:topicCase(c.tag),body:text,boxLabel:"In one line",box:lastSentence(text),source:BRAND};}
 function cardFilename(i){const c=activeTopic.learn[i];return "ai-deck-"+activeTopic.id+"-"+c.n+".png";}
 function openCardPanel(i,invoker){
   const c=activeTopic.learn[i];if(!c||!window.SignalShare)return;
@@ -649,7 +651,7 @@ function downloadCard(i,size,theme){
 }
 /* ---------- flashcard sharing: same panel, Answer box ---------- */
 function flashCardFor(j){const f=activeTopic.flash[j];
-  return {type:DECK_LABEL+" \u00b7 Flashcard "+(j+1)+" of "+activeTopic.flash.length,tech:DECK_TECH,heading:f.q,body:"",boxLabel:"Answer",box:f.a,source:BRAND};}
+  return {type:DECK_LABEL+" \u00b7 Flashcard "+(j+1)+" of "+activeTopic.flash.length,tech:DECK_TECH,heading:f.q,topic:activeTopic.title,body:"",boxLabel:"Answer",box:f.a,source:BRAND};}
 function flashText(j){const f=activeTopic.flash[j];
   const parts=[f.q,"Answer: "+f.a];
   parts.push("Explore all "+activeTopic.learn.length+" cards in "+activeTopic.title+", free, no sign-up:\n"+PUBLIC_URL+"#"+activeTopic.id);

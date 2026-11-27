@@ -61,7 +61,7 @@ footer{text-align:center;color:#a9bcd4;font-size:14px;margin-top:44px}
 <script data-goatcounter="https://trttech.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
 <script src="../../../assets/signal-shell.js?v=20261126i" defer></script>
 <!-- term-share:start -->
-<script src="../../../assets/signal-share.js?v=20261126m"></script>
+<script src="../../../assets/signal-share.js?v=20261127a"></script>
 <style>.sg-term-share-wrap{position:relative}.sg-term-share-wrap .sg-term-share-pos{position:absolute;top:0;right:0;z-index:5}.sg-share-btn{width:32px;height:32px;border-radius:50%;border:1px solid var(--sg-line,#E4DAC6);background:var(--sg-surface,#fff);color:var(--sg-ink,#201B14);display:inline-flex;align-items:center;justify-content:center;cursor:pointer;padding:0}.sg-share-btn svg{width:15px;height:15px}</style>
 <script>
 (function(){
@@ -88,7 +88,7 @@ footer{text-align:center;color:#a9bcd4;font-size:14px;margin-top:44px}
     var spec={ title:name, line:oneLine(def), link:url, caption:caption,
       tags:"#TheSignal "+FAMILY,
       image:SignalShare.cardImage({ type:"Periodic table \u00b7 "+table,
-        tech:TECH, heading:sym?(name+" ("+sym+")"):name, body:def,
+        tech:TECH, topic:txt(".cat"), heading:sym?(name+" ("+sym+")"):name, body:def,
         boxLabel:"Leader lens", box:lens, source:table }, seg+".png") };
     var pos=document.createElement("span"); pos.className="sg-term-share-pos";
     pos.appendChild(SignalShare.shareButton(spec));

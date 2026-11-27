@@ -71,6 +71,10 @@
       channel = strong ? strong.textContent.trim() : "";
       meta = byline.textContent.replace(/\s+/g, " ").trim().replace(/^By\s+/i, "");
     }
+    var trackEl = card.closest ? card.closest("section.track") : null;
+    var trackH = trackEl ? trackEl.querySelector(".track-head h2") : null;
+    var track = trackH ?
+      trackH.textContent.replace(/\s+/g, " ").trim() : "";
     var levelEl = card.querySelector(".level");
     var level = levelEl ? levelEl.textContent.trim() : "";
     if (level && meta.indexOf(level) < 0) meta = meta ? meta + " · " + level : level;
@@ -85,7 +89,8 @@
       tags: "#TheSignal " + hashtagFor(tech),
       tech: tech,
       image: SignalShare.cardImage({
-        type: "Video lesson", tech: tech, heading: title, body: meta,
+        type: "Video lesson", tech: tech, heading: title,
+        topic: track || "Video room", body: meta,
         source: channel || spaceName()
       }, slugify(title) + ".png")
     };

@@ -53,7 +53,10 @@ window.SignalShare = (function () {
   /* ---------- the one share image renderer ----------
      Implements the shared layout (share-image-template.html) on canvas for
      every item type. card = { type, tech, pill (optional, defaults to the
-     technology name), heading, hlText (optional substring of the heading
+     technology name), topic (optional: the item's topic, drawn as a second
+     pill beside the technology pill on the same line, in the same style,
+     shortened with an ellipsis so the two pills never leave the line),
+     heading, hlText (optional substring of the heading
      shown italic in the highlight colour), body, boxLabel, box, source }.
      size is "1080x1350" (Portrait) or "1080x1080" (Square). */
   function wrapLines(x, text, maxW, maxLines) {
@@ -119,6 +122,29 @@ window.SignalShare = (function () {
       x.fillStyle = v.pillbg; x.fill();
       x.fillStyle = v.pillfg;
       x.fillText(pillText, pad + 22, y + 31);
+      /* topic pill: a second box on the same line, in the same colour and
+         style as the technology pill, holding the item's topic where the
+         item has one. It shortens with an ellipsis so the two boxes
+         always stay on one line inside the image margins. */
+      if (card.topic) {
+        var topicGap = 14;
+        var topicText = String(card.topic);
+        var topicRoom = maxW - pw - topicGap - 44;
+        if (topicRoom > 40) {
+          if (x.measureText(topicText).width > topicRoom) {
+            while (topicText.length > 1 &&
+                   x.measureText(topicText + "\u2026").width > topicRoom) {
+              topicText = topicText.slice(0, -1);
+            }
+            topicText = topicText.replace(/[\s,.;:]+$/, "") + "\u2026";
+          }
+          var topicW = x.measureText(topicText).width + 44;
+          roundRectPath(x, pad + pw + topicGap, y, topicW, 46, 23);
+          x.fillStyle = v.pillbg; x.fill();
+          x.fillStyle = v.pillfg;
+          x.fillText(topicText, pad + pw + topicGap + 22, y + 31);
+        }
+      }
       y += 46 + 30;
       /* heading, DM Serif, the technology part italic in the highlight */
       var headMax = square ? 2 : 3;

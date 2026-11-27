@@ -1240,7 +1240,7 @@ body.flow-on .pname-row .ss-share-btn{display:none}
   function expCard(partId) {
     const d = expData(); const p = PARTS[partId || current];
     if (!d || !p) return null;
-    return { type: 'Explainer · ' + d.title, tech: expTech(), heading: p.name,
+    return { type: 'Explainer · ' + d.title, tech: expTech(), heading: p.name, topic: p.name,
       body: p.simple, boxLabel: 'Going deeper', box: expFirstSentence(p.deep),
       source: d.title };
   }
@@ -1492,7 +1492,7 @@ body.flow-on .pname-row .ss-share-btn{display:none}
 
 
 <script src="../assets/explainer-share-data.js?v=20261117"></script>
-<script src="../assets/signal-share.js?v=20261126m"></script>
+<script src="../assets/signal-share.js?v=20261127a"></script>
 <div class="flow-toast" id="flowToast" role="status" hidden>Token flow ended.</div>
 <script>
 (() => {
