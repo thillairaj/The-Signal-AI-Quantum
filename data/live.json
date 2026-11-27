@@ -1,45 +1,25 @@
 {
-  "updated": "2026-11-27T08:00:00+05:30",
-  "next_update": "2026-11-27T10:00:00+05:30",
+  "updated": "2026-11-27T10:07:15+05:30",
+  "next_update": "2026-11-27T12:00:00+05:30",
   "delay_hours": 2,
   "items": [
     {
-      "id": "live-2026-11-26-02",
-      "published": "2026-11-26T08:00:00+05:30",
-      "category": "AI",
-      "company": "OpenAI",
-      "headline": "OpenAI fixes GPT-6.2 billing error that had discounted usage for paid users",
-      "what": "OpenAI said a billing error at the launch of GPT-6.2 on November 17 had undercounted usage of GPT-6.2 Astra and Sol for most subscribers. With the fix in place, the same work uses up a plan allowance faster: users reach their limits about 40 percent faster on Astra and 25 percent faster on Sol than last week. OpenAI said other models are unaffected, it will not charge for the undercounted past usage, and users on Go, Plus, Pro and Business plans will get one banked usage reset. From December, ChatGPT and Codex will also share one usage allowance for those plans.",
-      "why": "GPT-6.2 Astra is OpenAI's flagship model and Sol is its everyday model, so the correction changes how much work paying subscribers get from their plans. It lands days before the shared ChatGPT and Codex allowance takes effect, which puts chat and coding usage into one pool.",
+      "id": "live-2026-11-26-05",
+      "published": "2026-11-26T12:00:00+05:30",
+      "category": "Industry",
+      "company": "NVIDIA",
+      "headline": "Nvidia pauses AI server shipments to four Southeast Asian countries",
+      "what": "Nvidia has told manufacturing partners including Dell and Supermicro to stop shipping servers containing its chips to Malaysia, Singapore, Thailand and Indonesia while it checks compliance with new United States export controls. The controls, which took effect on November 19, require licenses for advanced chip shipments to the four countries and for overseas data centres supplying large amounts of computing power to Chinese companies. It is not clear whether the pause is temporary.",
+      "why": "Southeast Asia has become a major hub for AI data centres, so the pause interrupts supply to one of the fastest growing regions for AI hardware. The controls are aimed at closing a route Chinese firms used to reach restricted computing power without buying the chips directly.",
       "financial": false,
       "sources": [
         {
-          "label": "AI Tool Ranked",
-          "url": "https://aitoolranked.com/news/chatgpt-codex-shared-usage-limits-gpt-6-2-billing-fix-banked-reset"
+          "label": "Business Standard",
+          "url": "https://www.business-standard.com/amp/world-news/nvidia-halts-shipments-of-ai-servers-to-four-southeast-asian-countries-126112601562_1.html"
         },
         {
-          "label": "Runtime Wire",
-          "url": "https://runtimewire.com/article/openai-corrects-gpt-6-2-billing-error-making-usage-limits-arrive-sooner"
-        }
-      ]
-    },
-    {
-      "id": "live-2026-11-26-03",
-      "published": "2026-11-26T10:00:00+05:30",
-      "category": "Quantum",
-      "company": "Equal1",
-      "headline": "Equal1, NVIDIA and Dell demonstrate hybrid quantum and classical computing in one server rack",
-      "what": "Equal1, NVIDIA and Dell demonstrated a hybrid quantum and classical computing setup at the SC26 supercomputing conference in Chicago. Equal1's rack-mounted RacQ silicon quantum computer, which draws 1.6 kilowatts, ran alongside Dell data centre servers inside a standard rack. NVIDIA NVQLink provided low-latency communication between the quantum processor and graphics processors, with automated gate tuning from NVIDIA's open Ising Calibration models, and Dell's Quantum Intelligent Orchestrator software coordinated work across the classical and quantum hardware.",
-      "why": "Quantum computers have mostly run as standalone machines, so fitting one into a standard data centre rack with live links to classical servers is a step toward running quantum and classical work together in production settings. The demonstration also shows the three vendors' software working as one system, from gate tuning to job orchestration.",
-      "financial": false,
-      "sources": [
-        {
-          "label": "Quantum Computing Report",
-          "url": "https://quantumcomputingreport.com/equal1-nvidia-and-dell-technologies-demonstrate-real-time-hybrid-quantum-classical-rack-integration-at-sc26/"
-        },
-        {
-          "label": "Equal1",
-          "url": "https://www.equal1.com/insights/tuning-a-cz-gate-in-real-time"
+          "label": "Reuters",
+          "url": "https://www.reuters.com/world/asia-pacific/us-chip-curbs-will-slow-asia-data-center-investment-fitch-says-2026-11-26/"
         }
       ]
     },
