@@ -2,62 +2,6 @@
   "delay_hours": 2,
   "items": [
     {
-      "category": "Policy",
-      "company": "Bank of England",
-      "financial": false,
-      "headline": "Bank of England tells major firms to move faster on quantum-safe encryption",
-      "id": "live-2026-11-26-07",
-      "published": "2026-11-26T16:00:00+05:30",
-      "sources": [
-        {
-          "label": "Bank of England",
-          "url": "https://www.bankofengland.co.uk/financial-stability-report/2026/november-2026"
-        },
-        {
-          "label": "Reuters",
-          "url": "https://www.reuters.com/business/finance/bank-england-sees-growing-financial-risks-ai-borrowing-surges-2026-11-26/"
-        }
-      ],
-      "what": "The Bank of England's Financial Policy Committee has named the move to quantum-resistant cryptography the immediate priority for financial stability, in its November Financial Stability Report published on 26 November. It said firms whose disruption would matter most to the wider financial system should move ahead of the UK national timetable, which asks organisations to draw up migration plans by the end of 2028, complete priority upgrades by the end of 2031 and finish the move by the end of 2035. The committee warned that attackers can already collect encrypted records today and read them later once a powerful enough quantum computer exists, and that delays at a shared supplier could disrupt several firms at once.",
-      "why": "UK banks, payment systems and market infrastructure run on encryption that a future quantum computer could break, so the central bank is pushing the firms that matter most to the system to start the switch early rather than wait for the 2035 deadline. The call sets a clear expectation for the financial sector and for the technology suppliers it depends on, and it puts quantum-safe migration on the agenda as a stability issue rather than a distant technical project."
-    },
-    {
-      "category": "Cybersecurity",
-      "company": "Zodia Custody",
-      "financial": false,
-      "headline": "Standard Chartered crypto custody unit Zodia discloses breach of client data",
-      "id": "live-2026-11-26-04",
-      "published": "2026-11-26T16:00:00+05:30",
-      "sources": [
-        {
-          "label": "Reuters",
-          "url": "https://www.reuters.com/business/finance/stancharts-crypto-unit-zodia-custody-suffers-security-breach-client-data-exposed-2026-11-26/"
-        },
-        {
-          "label": "The Business Times",
-          "url": "https://www.businesstimes.com.sg/companies-markets/banking-finance/stancharts-crypto-unit-zodia-custody-hit-security-breach-some-client-data-exposed"
-        }
-      ],
-      "what": "Zodia Custody, the institutional crypto custody business owned by Standard Chartered, said a security breach detected on Monday exposed names and email addresses of some clients and employees. Chief executive Richard Clark told Reuters the company took its institutional connectivity software offline on Monday after spotting attempts to probe its systems, and determined on Tuesday that an unauthorized party had accessed limited client information. The service has been restored, affected clients and regulators have been told, and the company said it found no unauthorized transactions.",
-      "why": "Zodia holds crypto assets for banks, asset managers and hedge funds, so a breach at a regulated custodian owned by a major bank tests confidence in the safeguards around institutional crypto holdings. The exposed data was limited to names and contact details and no funds moved, but the names give attackers a verified list of institutional crypto users to target with phishing."
-    },
-    {
-      "category": "Cybersecurity",
-      "company": "FIFA",
-      "financial": false,
-      "headline": "FIFA confirms criminal cyberattack accessed personal and business data",
-      "id": "live-2026-11-26-05",
-      "published": "2026-11-26T18:00:00+05:30",
-      "sources": [
-        {
-          "label": "Reuters",
-          "url": "https://www.reuters.com/sports/soccer/fifa-victim-cyber-attack-files-related-world-cup-stake-selloff-unaffected-2026-11-26/"
-        }
-      ],
-      "what": "FIFA said on Thursday it was the victim of a criminal cyberattack that gave unauthorised access to a limited set of personal and business information. The organisation did not say how many people were affected, when the attack took place, or what business information was involved. A person familiar with the matter said less than 0.1 percent of the data FIFA holds was affected, and files related to the planned sale of a stake in the World Cup were not touched. Hackers had claimed online to have stolen 12 gigabytes of data.",
-      "why": "FIFA holds personal details of players, officials and staff and commercially sensitive material about the World Cup, so a confirmed intrusion at world football's governing body matters even though the affected set was small. The disclosure comes in a month that has already seen breaches at several prominent organisations."
-    },
-    {
       "category": "Cybersecurity",
       "company": "SAP",
       "financial": false,
@@ -78,6 +22,6 @@
       "why": "SAP supplies software that runs core business processes at many of the largest companies and public bodies, so an intrusion into its development environment raises questions about the safety of the software it ships. Stolen tokens that let attackers copy and change source code could open a supply chain route into customer systems, which is why the company moved to lock down GitHub access and rotate signing keys while the investigation continues."
     }
   ],
-  "next_update": "2026-11-27T18:00:00+05:30",
-  "updated": "2026-11-27T17:59:25+05:30"
+  "next_update": "2026-11-27T20:00:00+05:30",
+  "updated": "2026-11-27T20:04:29+05:30"
 }
