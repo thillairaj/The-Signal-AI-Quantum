@@ -4,8 +4,26 @@
     <title>Signal Brief · Cybersecurity</title>
     <link>https://signal.luzovi.com/brief/</link>
     <description>Signal Brief: the day in technology, in The Signal's own words. Every item is written from linked official sources and fact checked before publication.</description>
-    <lastBuildDate>Fri, 27 Nov 2026 01:40:25 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 28 Nov 2026 01:45:38 +0000</lastBuildDate>
     <atom:link xmlns:atom="http://www.w3.org/2005/Atom" href="https://signal.luzovi.com/signal/cybersecurity.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>Unpatched Cacti flaw lets attackers run code without logging in</title>
+      <link>https://signal.luzovi.com/brief/2026-11-28/06/</link>
+      <guid isPermaLink="false">brief-2026-11-28-06</guid>
+      <pubDate>Sat, 28 Nov 2026 01:30:00 +0000</pubDate>
+      <category>Cybersecurity</category>
+      <description>A zero day in the Cacti network monitoring platform lets unauthenticated attackers run commands on vulnerable servers with four HTTP requests, and a public proof of concept exploit is now available. The attack abuses weak validation of guest users' graph display settings to inject SQL statements and alter the commands run by Cacti's real time poller, and it needs the guest account to be enabled. The researcher tested it against Cacti Core 1.2.31, no patch is available, and no exploitation in attacks had been reported as of November 27. Why it matters for tech: A public exploit for an unpatched flaw in a tool that stores network credentials puts every exposed Cacti server on a short clock.</description>
+      <content:encoded><![CDATA[<p>A zero day in the Cacti network monitoring platform lets unauthenticated attackers run commands on vulnerable servers with four HTTP requests, and a public proof of concept exploit is now available. The attack abuses weak validation of guest users' graph display settings to inject SQL statements and alter the commands run by Cacti's real time poller, and it needs the guest account to be enabled. The researcher tested it against Cacti Core 1.2.31, no patch is available, and no exploitation in attacks had been reported as of November 27.</p><p><strong>Why it matters for tech:</strong> A public exploit for an unpatched flaw in a tool that stores network credentials puts every exposed Cacti server on a short clock.</p><p>Source: </p><ul><li><a href="https://www.bleepingcomputer.com/news/security/unpatched-cacti-zero-day-with-public-poc-gives-remote-code-execution/">BleepingComputer</a></li><li><a href="https://thehackernews.com/2026/11/unpatched-cacti-zero-day-enables-rce-in.html">The Hacker News</a></li></ul>]]></content:encoded>
+    </item>
+    <item>
+      <title>SAP confirms a security incident after suspicious activity in its GitHub environment</title>
+      <link>https://signal.luzovi.com/brief/2026-11-28/07/</link>
+      <guid isPermaLink="false">brief-2026-11-28-07</guid>
+      <pubDate>Sat, 28 Nov 2026 01:30:00 +0000</pubDate>
+      <category>Cybersecurity</category>
+      <description>SAP confirmed it found suspicious activity in its IT environment and took urgent steps to protect customers, after Der Spiegel reported the attack from an internal memo under the code name Project Granite. Sources inside the company said attackers breached SAP's GitHub environment, stole employee authentication tokens, and copied and modified source code. SAP said its investigation so far shows no evidence of unauthorised access to customer business data, and it did not say which environments were affected. Why it matters for tech: A breach that reaches a vendor's source code and tokens raises questions for every customer that pulls code or updates from its repositories.</description>
+      <content:encoded><![CDATA[<p>SAP confirmed it found suspicious activity in its IT environment and took urgent steps to protect customers, after Der Spiegel reported the attack from an internal memo under the code name Project Granite. Sources inside the company said attackers breached SAP's GitHub environment, stole employee authentication tokens, and copied and modified source code. SAP said its investigation so far shows no evidence of unauthorised access to customer business data, and it did not say which environments were affected.</p><p><strong>Why it matters for tech:</strong> A breach that reaches a vendor's source code and tokens raises questions for every customer that pulls code or updates from its repositories.</p><p>Source: </p><ul><li><a href="https://www.bleepingcomputer.com/news/security/sap-confirms-security-incident-after-suspicious-github-activity/">BleepingComputer</a></li></ul>]]></content:encoded>
+    </item>
     <item>
       <title>North Korea-linked campaign poisoned more than 7,600 GitHub repositories</title>
       <link>https://signal.luzovi.com/brief/2026-11-27/06/</link>

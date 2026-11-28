@@ -4,8 +4,17 @@
     <title>Signal Brief · Cloud &amp; DevOps</title>
     <link>https://signal.luzovi.com/brief/</link>
     <description>Signal Brief: the day in technology, in The Signal's own words. Every item is written from linked official sources and fact checked before publication.</description>
-    <lastBuildDate>Fri, 27 Nov 2026 01:40:25 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 28 Nov 2026 01:45:38 +0000</lastBuildDate>
     <atom:link xmlns:atom="http://www.w3.org/2005/Atom" href="https://signal.luzovi.com/signal/cloud-devops.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>Microsoft drops the WSUS server role from Windows Server 2028</title>
+      <link>https://signal.luzovi.com/brief/2026-11-28/05/</link>
+      <guid isPermaLink="false">brief-2026-11-28-05</guid>
+      <pubDate>Sat, 28 Nov 2026 01:30:00 +0000</pubDate>
+      <category>Cloud &amp; DevOps</category>
+      <description>Microsoft will remove the Windows Server Update Services server role from Windows Server 2028, according to an updated support document. WSUS, introduced in 2005, lets administrators manage updates centrally across corporate networks, and Microsoft deprecated it in September 2024 while keeping it supported in earlier releases. Businesses are now pointed to cloud tools such as Windows Autopatch, Microsoft Intune and Azure Update Manager, and the same release also removes VBScript, WMIC and WINS. Why it matters for tech: A tool that has managed updates in corporate networks for two decades is being retired, so teams running WSUS need a migration plan before 2028.</description>
+      <content:encoded><![CDATA[<p>Microsoft will remove the Windows Server Update Services server role from Windows Server 2028, according to an updated support document. WSUS, introduced in 2005, lets administrators manage updates centrally across corporate networks, and Microsoft deprecated it in September 2024 while keeping it supported in earlier releases. Businesses are now pointed to cloud tools such as Windows Autopatch, Microsoft Intune and Azure Update Manager, and the same release also removes VBScript, WMIC and WINS.</p><p><strong>Why it matters for tech:</strong> A tool that has managed updates in corporate networks for two decades is being retired, so teams running WSUS need a migration plan before 2028.</p><p>Source: </p><ul><li><a href="https://www.bleepingcomputer.com/news/microsoft/microsoft-removes-wsus-server-role-in-windows-server-2028/">BleepingComputer</a></li></ul>]]></content:encoded>
+    </item>
     <item>
       <title>Cognition's new engineers build entirely through Devin without downloading the code</title>
       <link>https://signal.luzovi.com/brief/2026-11-27/05/</link>

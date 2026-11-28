@@ -4,8 +4,17 @@
     <title>Signal Brief · AI</title>
     <link>https://signal.luzovi.com/brief/</link>
     <description>Signal Brief: the day in technology, in The Signal's own words. Every item is written from linked official sources and fact checked before publication.</description>
-    <lastBuildDate>Fri, 27 Nov 2026 01:40:25 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 28 Nov 2026 01:45:38 +0000</lastBuildDate>
     <atom:link xmlns:atom="http://www.w3.org/2005/Atom" href="https://signal.luzovi.com/signal/ai.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>Hugging Face gets video generation running on AWS Trainium3 at API matching speed</title>
+      <link>https://signal.luzovi.com/brief/2026-11-28/01/</link>
+      <guid isPermaLink="false">brief-2026-11-28-01</guid>
+      <pubDate>Sat, 28 Nov 2026 01:30:00 +0000</pubDate>
+      <category>AI</category>
+      <description>Hugging Face ran Lightricks' LTX-2.5 video model on an AWS Trainium3 machine and produced 10 second clips with sound in 22 to 23 seconds at 2048x1024 resolution, matching the model's paid API. The team split the transformer across 32 of the machine's 64 NeuronCores using tensor and sequence parallelism, cutting the time from an initial 5 minutes 20 seconds. The work also produced short films assembled from prompted shots, with subjects kept consistent by starting or ending shots on frames from other shots. Why it matters for tech: It shows a non-NVIDIA chip running a current video model at usable speed, and gives teams a practical recipe for splitting large models across many cores.</description>
+      <content:encoded><![CDATA[<p>Hugging Face ran Lightricks' LTX-2.5 video model on an AWS Trainium3 machine and produced 10 second clips with sound in 22 to 23 seconds at 2048x1024 resolution, matching the model's paid API. The team split the transformer across 32 of the machine's 64 NeuronCores using tensor and sequence parallelism, cutting the time from an initial 5 minutes 20 seconds. The work also produced short films assembled from prompted shots, with subjects kept consistent by starting or ending shots on frames from other shots.</p><p><strong>Why it matters for tech:</strong> It shows a non-NVIDIA chip running a current video model at usable speed, and gives teams a practical recipe for splitting large models across many cores.</p><p>Source: </p><ul><li><a href="https://huggingface.co/blog/video-trainium3">Hugging Face Blog</a></li></ul>]]></content:encoded>
+    </item>
     <item>
       <title>OpenAI fixes a billing bug that made GPT-6.2 cheaper to run, so usage limits now arrive faster</title>
       <link>https://signal.luzovi.com/brief/2026-11-27/01/</link>

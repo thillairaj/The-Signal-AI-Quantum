@@ -4753,6 +4753,173 @@
      ]
     }
    ]
+  },
+  {
+   "date": "2026-11-28",
+   "items": [
+    {
+     "id": "brief-2026-11-28-01",
+     "category": "AI",
+     "company": "Hugging Face",
+     "headline": "Hugging Face gets video generation running on AWS Trainium3 at API matching speed",
+     "summary": "Hugging Face ran Lightricks' LTX-2.5 video model on an AWS Trainium3 machine and produced 10 second clips with sound in 22 to 23 seconds at 2048x1024 resolution, matching the model's paid API. The team split the transformer across 32 of the machine's 64 NeuronCores using tensor and sequence parallelism, cutting the time from an initial 5 minutes 20 seconds. The work also produced short films assembled from prompted shots, with subjects kept consistent by starting or ending shots on frames from other shots.",
+     "why": "It shows a non-NVIDIA chip running a current video model at usable speed, and gives teams a practical recipe for splitting large models across many cores.",
+     "source_date": "2026-11-27",
+     "sources": [
+      {
+       "label": "Hugging Face Blog",
+       "url": "https://huggingface.co/blog/video-trainium3"
+      }
+     ]
+    },
+    {
+     "id": "brief-2026-11-28-02",
+     "category": "Quantum",
+     "company": "Bank of England",
+     "headline": "Bank of England tells big financial firms to move faster on quantum safe encryption",
+     "summary": "The Bank of England's Financial Policy Committee urged systemically important financial firms to adopt quantum resistant cryptography ahead of the UK's national timetable, in its November Financial Stability Report. The UK roadmap asks organisations for migration plans by the end of 2028, priority upgrades by 2031 and full migration by 2035, and the Bank wants the most consequential firms to move sooner. It warned that delays at a shared supplier could disrupt several firms at once, and that the migration itself could break transactions if firms upgrade out of step.",
+     "why": "The timetable for post-quantum cryptography now reaches board level at the central bank, and shared suppliers are the weak link it names.",
+     "source_date": "2026-11-27",
+     "sources": [
+      {
+       "label": "The Quantum Insider",
+       "url": "https://thequantuminsider.com/2026/11/27/bank-of-england-urges-firms-to-move-faster-on-quantum-security/"
+      },
+      {
+       "label": "Bank of England",
+       "url": "https://www.bankofengland.co.uk/financial-stability-report/2026/november-2026"
+      }
+     ]
+    },
+    {
+     "id": "brief-2026-11-28-03",
+     "category": "Quantum",
+     "company": "Ethereum",
+     "headline": "Ethereum plans to replace its signatures with hash based ones to resist quantum attacks",
+     "summary": "Ethereum developers plan to replace the network's elliptic curve signatures with hash based alternatives, in a security effort set out in blog posts published on November 23 and 24 under the PQAI banner. The change would cover validator signatures, wallet accounts and data blob commitments, with Keccak-256 picked as the preferred hash function. The Ethereum Foundation is targeting December 2029 for the migration, though the larger signatures, about 3,000 bytes against 96 for BLS signatures, would raise costs for node operators.",
+     "why": "A major smart contract network is now planning its post-quantum migration in public, with a date and a chosen hash function.",
+     "source_date": "2026-11-27",
+     "sources": [
+      {
+       "label": "The Quantum Insider",
+       "url": "https://thequantuminsider.com/2026/11/27/ethereum-shift-hash-based-signatures-post-quantum-security/"
+      }
+     ]
+    },
+    {
+     "id": "brief-2026-11-28-04",
+     "category": "Quantum",
+     "company": "QuTech",
+     "headline": "QuTech shows coherent control of a Majorana based qubit",
+     "summary": "Researchers at QuTech and Delft University of Technology, working with Eindhoven University of Technology, demonstrated coherent control of a parity qubit built from Majorana quasiparticles, publishing the results in Nature. The device joins two minimal Kitaev chains in an indium antimonide nanowire, and the team drove Rabi oscillations at 113.4 and 117.7 megahertz in the two parity manifolds. Coherence lasted only tens of nanoseconds, and the team is now building longer chains to test whether greater separation suppresses decoherence.",
+     "why": "It moves Majorana qubits from detection to controlled operation, which is the step a topological quantum computer needs.",
+     "source_date": "2026-11-28",
+     "sources": [
+      {
+       "label": "Quantum Computing Report",
+       "url": "https://quantumcomputingreport.com/qutech-demonstrates-coherent-control-of-a-majorana-based-qubit-in-coupled-kitaev-chains/"
+      }
+     ]
+    },
+    {
+     "id": "brief-2026-11-28-05",
+     "category": "Cloud & DevOps",
+     "company": "Microsoft",
+     "headline": "Microsoft drops the WSUS server role from Windows Server 2028",
+     "summary": "Microsoft will remove the Windows Server Update Services server role from Windows Server 2028, according to an updated support document. WSUS, introduced in 2005, lets administrators manage updates centrally across corporate networks, and Microsoft deprecated it in September 2024 while keeping it supported in earlier releases. Businesses are now pointed to cloud tools such as Windows Autopatch, Microsoft Intune and Azure Update Manager, and the same release also removes VBScript, WMIC and WINS.",
+     "why": "A tool that has managed updates in corporate networks for two decades is being retired, so teams running WSUS need a migration plan before 2028.",
+     "source_date": "2026-11-27",
+     "sources": [
+      {
+       "label": "BleepingComputer",
+       "url": "https://www.bleepingcomputer.com/news/microsoft/microsoft-removes-wsus-server-role-in-windows-server-2028/"
+      }
+     ]
+    },
+    {
+     "id": "brief-2026-11-28-06",
+     "category": "Cybersecurity",
+     "company": "Cacti",
+     "headline": "Unpatched Cacti flaw lets attackers run code without logging in",
+     "summary": "A zero day in the Cacti network monitoring platform lets unauthenticated attackers run commands on vulnerable servers with four HTTP requests, and a public proof of concept exploit is now available. The attack abuses weak validation of guest users' graph display settings to inject SQL statements and alter the commands run by Cacti's real time poller, and it needs the guest account to be enabled. The researcher tested it against Cacti Core 1.2.31, no patch is available, and no exploitation in attacks had been reported as of November 27.",
+     "why": "A public exploit for an unpatched flaw in a tool that stores network credentials puts every exposed Cacti server on a short clock.",
+     "source_date": "2026-11-27",
+     "sources": [
+      {
+       "label": "BleepingComputer",
+       "url": "https://www.bleepingcomputer.com/news/security/unpatched-cacti-zero-day-with-public-poc-gives-remote-code-execution/"
+      },
+      {
+       "label": "The Hacker News",
+       "url": "https://thehackernews.com/2026/11/unpatched-cacti-zero-day-enables-rce-in.html"
+      }
+     ]
+    },
+    {
+     "id": "brief-2026-11-28-07",
+     "category": "Cybersecurity",
+     "company": "SAP",
+     "headline": "SAP confirms a security incident after suspicious activity in its GitHub environment",
+     "summary": "SAP confirmed it found suspicious activity in its IT environment and took urgent steps to protect customers, after Der Spiegel reported the attack from an internal memo under the code name Project Granite. Sources inside the company said attackers breached SAP's GitHub environment, stole employee authentication tokens, and copied and modified source code. SAP said its investigation so far shows no evidence of unauthorised access to customer business data, and it did not say which environments were affected.",
+     "why": "A breach that reaches a vendor's source code and tokens raises questions for every customer that pulls code or updates from its repositories.",
+     "source_date": "2026-11-27",
+     "sources": [
+      {
+       "label": "BleepingComputer",
+       "url": "https://www.bleepingcomputer.com/news/security/sap-confirms-security-incident-after-suspicious-github-activity/"
+      }
+     ]
+    },
+    {
+     "id": "brief-2026-11-28-08",
+     "category": "Industry",
+     "company": "Meta",
+     "headline": "Instagram for TV arrives in India, bringing Reels to the big screen",
+     "summary": "Meta announced at its House of Instagram event in Mumbai that Instagram for TV will soon be available in India, on supported Apple TV, Fire TV and Google TV devices. The app centres on Reels and Stories, with horizontal Reels in widescreen, channels for discovery, automatic playback and casting from a phone, and up to five accounts per household. Teen safeguards from the mobile app carry over, including content limits and time spent reminders.",
+     "why": "Meta is moving short video from phones to shared living room screens, opening a new surface for creators in India.",
+     "source_date": "2026-11-27",
+     "sources": [
+      {
+       "label": "Meta Newsroom",
+       "url": "https://about.fb.com/news/2026/11/instagram-for-tv-comes-to-india-introducing-new-ways-to-watch-reels-together/"
+      }
+     ]
+    },
+    {
+     "id": "brief-2026-11-28-09",
+     "category": "Industry",
+     "company": "planqc",
+     "headline": "planqc opens a UK quantum facility with a double digit million euro investment",
+     "summary": "German neutral atom company planqc set up a UK subsidiary and will build an assembly, integration and commissioning laboratory in Cambridge, backed by a double digit million euro investment. The facility will house laser and optical subsystems and hire quantum hardware, error correction, FPGA and software engineers over the next two years. Working with a group at Cambridge's Cavendish Laboratory, the team will develop optical lattice architectures aimed at scaling neutral atom processors toward millions of qubits.",
+     "why": "A European quantum hardware maker is planting a flag in Cambridge, close to the university researchers and the London finance and pharma customers it wants to reach.",
+     "source_date": "2026-11-27",
+     "sources": [
+      {
+       "label": "Quantum Computing Report",
+       "url": "https://quantumcomputingreport.com/planqc-expands-into-the-uk-with-double-digit-million-euro-cambridge-optical-lattice-facility/"
+      }
+     ]
+    },
+    {
+     "id": "brief-2026-11-28-10",
+     "category": "Policy",
+     "company": "NVIDIA",
+     "headline": "Nvidia halts AI server shipments to four Southeast Asian countries as US export rules tighten",
+     "summary": "Nvidia told manufacturing partners including Dell and Supermicro to halt shipments of AI servers to Malaysia, Singapore, Thailand and Indonesia, the Financial Times reported, citing people familiar with the matter. The move follows a US Commerce Department interim final rule, effective November 19, that requires licences for advanced semiconductors shipped to those countries and for data centres that supply large volumes of compute to companies headquartered in China. Existing data centre operations have 90 days to obtain a licence, and it is unclear how long the shipment halt will last.",
+     "why": "Export controls now reach beyond chips to who can rent their computing power, and the pause shows suppliers halting shipments while they work out compliance.",
+     "source_date": "2026-11-26",
+     "sources": [
+      {
+       "label": "Financial Express",
+       "url": "https://www.financialexpress.com/world-news/nvidia-freezes-pending-ai-server-orders-to-4-southeast-asian-nations-report/4394785/"
+      },
+      {
+       "label": "Federal Register",
+       "url": "https://www.federalregister.gov/d/2026-23529"
+      }
+     ]
+    }
+   ]
   }
  ]
 }
