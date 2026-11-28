@@ -156,26 +156,21 @@
     .viewbar-reset:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
 
     /* ---------- Sections ---------- */
-    .group-head { margin: 44px 0 2px; }
-.group-head h2 { font-family: "DM Serif Display", Georgia, serif; font-size: 1.7rem; font-weight: 600; margin: 0 0 4px; }
-.group-head h2 em { font-style: italic; color: var(--accent); }
-.group-head p { color: var(--ink-soft); font-size: 15.5px; margin: 0; max-width: 68ch; }
-    section.track { margin: 34px 0 10px; }
+    section.track { margin: 12px 0 10px; }
     .track-head {
       display: flex; align-items: baseline; gap: 14px; flex-wrap: wrap;
-      margin-bottom: 6px;
+      margin: 18px 0 8px;
     }
     .track-head h2 {
       font-family: "DM Serif Display", Georgia, serif;
-      font-weight: 400; font-size: clamp(27px, 4vw, 34px); margin: 0;
-      line-height: 1.15;
+      font-weight: 400; font-size: 20px; margin: 0;
+      line-height: 1.2;
     }
     .track-head h2 em { font-style: italic; color: var(--accent); }
     .track-head .count {
       font-family: ui-monospace, "SF Mono", Menlo, monospace;
       font-size: 13px; color: var(--muted);
     }
-    .track-sub { color: var(--ink-soft); font-size: 15.5px; margin: 0 0 20px; max-width: 68ch; }
 
     /* ---------- New arrivals ---------- */
     .newarrivals { margin: 0 0 14px; }
@@ -247,7 +242,7 @@
       overflow: hidden;
       box-shadow: var(--frame-shadow);
       max-width: 720px;
-      margin: 24px auto 6px;
+      margin: 14px auto 4px;
     }
     .stage-screen {
       position: relative;
@@ -271,7 +266,7 @@
       display: flex; align-items: center; justify-content: center;
     }
     .stage-idle .ring svg { width: 24px; height: 24px; }
-    .stage-meta { padding: 16px 20px 18px; }
+    .stage-meta { padding: 10px 16px 12px; }
     .stage-meta .level { margin-bottom: 6px; }
     .level[hidden] { display: none; }
     .stage-title {
@@ -501,7 +496,7 @@
         <div class="stage-screen">
           <div class="stage-idle" data-stage-idle>
             <span class="ring"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M9.5 7.8v8.4l6.8-4.2z" fill="currentColor" stroke="none"></path></svg></span>
-            <span>Pick any lesson below — it plays here, one video at a time.</span>
+            <span>Pick any lesson below — it plays here.</span>
           </div>
         </div>
         <div class="stage-meta">
@@ -511,16 +506,11 @@
         </div>
       </div>
 
-            <div class="group-head">
-        <h2>AI <em>Bots</em></h2>
-        <p>Agents that act for you: always on assistants that connect, remember and get things done.</p>
-      </div>
 <section class="track" id="bot-grok" aria-label="Grok Bot videos">
         <div class="track-head">
           <h2>Grok Bot</h2>
           <span class="count" data-count></span>
         </div>
-        <p class="track-sub">Grok working as a bot: xAI's assistant connected to cars, devices and apps, with setup guides and real workflows.</p>
         <div class="newarrivals" data-newarrivals data-railwrap>
           <div class="na-head">
             <h3>New <em>arrivals</em></h3>
@@ -549,7 +539,6 @@
           <h2>Meta Muse</h2>
           <span class="count" data-count></span>
         </div>
-        <p class="track-sub">Meta's personal agent in action: what Muse can take on, how it connects to your apps, and how people put it to work.</p>
         <div class="newarrivals" data-newarrivals data-railwrap>
           <div class="na-head">
             <h3>New <em>arrivals</em></h3>
@@ -578,7 +567,6 @@
           <h2>OpenAI dots</h2>
           <span class="count" data-count></span>
         </div>
-        <p class="track-sub">OpenAI's dots, the background agents that watch, prepare and act between your sessions, explained through demos and walkthroughs.</p>
         <div class="newarrivals" data-newarrivals data-railwrap>
           <div class="na-head">
             <h3>New <em>arrivals</em></h3>
@@ -607,7 +595,6 @@
           <h2>Claude Duet</h2>
           <span class="count" data-count></span>
         </div>
-        <p class="track-sub">Claude as a working partner: pairing on documents, code and research, side by side, in real time.</p>
         <div class="newarrivals" data-newarrivals data-railwrap>
           <div class="na-head">
             <h3>New <em>arrivals</em></h3>
@@ -636,7 +623,6 @@
           <h2>Copilot Autopilot</h2>
           <span class="count" data-count></span>
         </div>
-        <p class="track-sub">Microsoft's always on agent with an identity and a machine of its own: setting up, remembering context and acting on its own.</p>
         <div class="newarrivals" data-newarrivals data-railwrap>
           <div class="na-head">
             <h3>New <em>arrivals</em></h3>
@@ -665,7 +651,6 @@
           <h2>Gemini Spark</h2>
           <span class="count" data-count></span>
         </div>
-        <p class="track-sub">Google's round the clock personal agent: what Spark does while you are away, and how to direct it well.</p>
         <div class="newarrivals" data-newarrivals data-railwrap>
           <div class="na-head">
             <h3>New <em>arrivals</em></h3>
@@ -689,16 +674,11 @@
         </div>
         <p class="empty-note" data-empty hidden>No lessons at this level in this section.</p>
       </section>
-      <div class="group-head">
-        <h2>AI <em>Assistants</em></h2>
-        <p>The assistants you talk to: ChatGPT, Claude, Gemini, Copilot, Grok and Perplexity, taught properly.</p>
-      </div>
 <section class="track" id="chatgpt" aria-label="ChatGPT videos">
         <div class="track-head">
           <h2>ChatGPT</h2>
           <span class="count" data-count></span>
         </div>
-        <p class="track-sub">OpenAI's assistant, end to end — the interface, the prompt framework, Projects, deep research and the new interactive answers, from first setup to daily workflows.</p>
         <div class="newarrivals" data-newarrivals data-railwrap>
           <div class="na-head">
             <h3>New <em>arrivals</em></h3>
@@ -728,7 +708,6 @@
           <h2>Claude</h2>
           <span class="count" data-count></span>
         </div>
-        <p class="track-sub">Anthropic's assistant for thinking and making — models and effort levels, Artifacts, Projects, Connectors and Skills, plus the prompting habits that get professional results.</p>
         <div class="newarrivals" data-newarrivals data-railwrap>
           <div class="na-head">
             <h3>New <em>arrivals</em></h3>
@@ -758,7 +737,6 @@
           <h2>Gemini</h2>
           <span class="count" data-count></span>
         </div>
-        <p class="track-sub">Google's assistant in the app and on Android — Gemini 4 Argon, the million-token context window, image creation with Nano Banana, and honest end-to-end workflow tests.</p>
         <div class="newarrivals" data-newarrivals data-railwrap>
           <div class="na-head">
             <h3>New <em>arrivals</em></h3>
@@ -788,7 +766,6 @@
           <h2>Copilot</h2>
           <span class="count" data-count></span>
         </div>
-        <p class="track-sub">Microsoft's assistant where work already lives — Word, Excel, PowerPoint, Outlook and Teams: drafting, analysis, meetings and decks, with the October 2026 features.</p>
         <div class="newarrivals" data-newarrivals data-railwrap>
           <div class="na-head">
             <h3>New <em>arrivals</em></h3>
@@ -818,7 +795,6 @@
           <h2>Grok</h2>
           <span class="count" data-count></span>
         </div>
-        <p class="track-sub">xAI's assistant — Auto, Fast, Expert and Heavy modes, Grok Imagine for images and video, voice, automations and slash-command documents for real business workflows.</p>
         <div class="newarrivals" data-newarrivals data-railwrap>
           <div class="na-head">
             <h3>New <em>arrivals</em></h3>
@@ -848,7 +824,6 @@
           <h2>Perplexity</h2>
           <span class="count" data-count></span>
         </div>
-        <p class="track-sub">The answer engine — structured questions, verifiable citations, focus modes, Pro Search and Research, Spaces, the Comet browser and the Computer agent.</p>
         <div class="newarrivals" data-newarrivals data-railwrap>
           <div class="na-head">
             <h3>New <em>arrivals</em></h3>
@@ -872,16 +847,11 @@
         </div>
         <p class="empty-note" data-empty hidden>No lessons at this level in this section.</p>
       </section>
-      <div class="group-head">
-        <h2>AI <em>Lessons</em></h2>
-        <p>Straight from the labs building the frontier: model launches, agents and developer tooling.</p>
-      </div>
 <section class="track" id="lessons" aria-label="AI from the labs videos">
         <div class="track-head">
           <h2>AI from the labs</h2>
           <span class="count" data-count></span>
         </div>
-        <p class="track-sub">Frontier model launches, agents and developer tooling: the releases shaping how AI gets built and used, from the teams shipping them.</p>
         <div class="newarrivals" data-newarrivals data-railwrap>
           <div class="na-head">
             <h3>New <em>arrivals</em></h3>

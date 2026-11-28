@@ -156,22 +156,21 @@
     .viewbar-reset:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
 
     /* ---------- Sections ---------- */
-    section.track { margin: 34px 0 10px; }
+    section.track { margin: 12px 0 10px; }
     .track-head {
       display: flex; align-items: baseline; gap: 14px; flex-wrap: wrap;
-      margin-bottom: 6px;
+      margin: 18px 0 8px;
     }
     .track-head h2 {
       font-family: "DM Serif Display", Georgia, serif;
-      font-weight: 400; font-size: clamp(27px, 4vw, 34px); margin: 0;
-      line-height: 1.15;
+      font-weight: 400; font-size: 20px; margin: 0;
+      line-height: 1.2;
     }
     .track-head h2 em { font-style: italic; color: var(--accent); }
     .track-head .count {
       font-family: ui-monospace, "SF Mono", Menlo, monospace;
       font-size: 13px; color: var(--muted);
     }
-    .track-sub { color: var(--ink-soft); font-size: 15.5px; margin: 0 0 20px; max-width: 68ch; }
 
     /* ---------- New arrivals ---------- */
     .newarrivals { margin: 0 0 14px; }
@@ -243,7 +242,7 @@
       overflow: hidden;
       box-shadow: var(--frame-shadow);
       max-width: 720px;
-      margin: 24px auto 6px;
+      margin: 14px auto 4px;
     }
     .stage-screen {
       position: relative;
@@ -267,7 +266,7 @@
       display: flex; align-items: center; justify-content: center;
     }
     .stage-idle .ring svg { width: 24px; height: 24px; }
-    .stage-meta { padding: 16px 20px 18px; }
+    .stage-meta { padding: 10px 16px 12px; }
     .stage-meta .level { margin-bottom: 6px; }
     .level[hidden] { display: none; }
     .stage-title {
@@ -482,7 +481,7 @@
         <div class="stage-screen">
           <div class="stage-idle" data-stage-idle>
             <span class="ring"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M9.5 7.8v8.4l6.8-4.2z" fill="currentColor" stroke="none"></path></svg></span>
-            <span>Pick any lesson below — it plays here, one video at a time.</span>
+            <span>Pick any lesson below — it plays here.</span>
           </div>
         </div>
         <div class="stage-meta">
@@ -497,7 +496,6 @@
           <h2>Quantum <em>computing</em></h2>
           <span class="count" data-count></span>
         </div>
-        <p class="track-sub">From first circuits to fault-tolerance roadmaps: how IBM, Google, Microsoft and Qiskit are turning fragile qubits into machines that solve real problems.</p>
         <div class="newarrivals" data-newarrivals data-railwrap>
           <div class="na-head">
             <h3>New <em>arrivals</em></h3>
